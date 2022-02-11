@@ -36,6 +36,7 @@ class DoggyItemsDtosItemDto {
     this.md5,
     this.contentType,
     this.type,
+    this.displayStyle,
     this.extension_,
     this.storageClass,
     this.fileCreatedAt,
@@ -91,6 +92,8 @@ class DoggyItemsDtosItemDto {
 
   DoggyFilesItemType? type;
 
+  DoggyItemsDisplayStyle? displayStyle;
+
   String? extension_;
 
   String? storageClass;
@@ -128,6 +131,7 @@ class DoggyItemsDtosItemDto {
      other.md5 == md5 &&
      other.contentType == contentType &&
      other.type == type &&
+     other.displayStyle == displayStyle &&
      other.extension_ == extension_ &&
      other.storageClass == storageClass &&
      other.fileCreatedAt == fileCreatedAt &&
@@ -160,6 +164,7 @@ class DoggyItemsDtosItemDto {
     md5.hashCode +
     contentType.hashCode +
     type.hashCode +
+    displayStyle.hashCode +
     extension_.hashCode +
     storageClass.hashCode +
     fileCreatedAt.hashCode +
@@ -168,7 +173,7 @@ class DoggyItemsDtosItemDto {
     file.hashCode;
 
   @override
-  String toString() => 'DoggyItemsDtosItemDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, description=$description, totalCount=$totalCount, password=$password, parentItemId=$parentItemId, thumbId=$thumbId, thumb=$thumb, children=$children, tags=$tags, key=$key, url=$url, size=$size, md5=$md5, contentType=$contentType, type=$type, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, fileId=$fileId, file=$file]';
+  String toString() => 'DoggyItemsDtosItemDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, description=$description, totalCount=$totalCount, password=$password, parentItemId=$parentItemId, thumbId=$thumbId, thumb=$thumb, children=$children, tags=$tags, key=$key, url=$url, size=$size, md5=$md5, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, fileId=$fileId, file=$file]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -241,6 +246,9 @@ class DoggyItemsDtosItemDto {
     if (type != null) {
       json[r'type'] = type;
     }
+    if (displayStyle != null) {
+      json[r'displayStyle'] = displayStyle;
+    }
     if (extension_ != null) {
       json[r'extension'] = extension_;
     }
@@ -289,6 +297,7 @@ class DoggyItemsDtosItemDto {
         md5: json[r'md5'] == null ? null : json[r'md5'] as String?,
         contentType: json[r'contentType'] == null ? null : json[r'contentType'] as String?,
         type: json[r'type'] == null ? null : DoggyFilesItemType.fromJson(json[r'type']),
+        displayStyle: json[r'displayStyle'] == null ? null : DoggyItemsDisplayStyle.fromJson(json[r'displayStyle']),
         extension_: json[r'extension'] == null ? null : json[r'extension'] as String?,
         storageClass: json[r'storageClass'] == null ? null : json[r'storageClass'] as String?,
         fileCreatedAt: json[r'fileCreatedAt'] == null ? null : mapDateTime(json, r'fileCreatedAt', ''),

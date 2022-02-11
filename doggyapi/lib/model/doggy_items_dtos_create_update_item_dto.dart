@@ -24,6 +24,7 @@ class DoggyItemsDtosCreateUpdateItemDto {
     this.md5,
     this.contentType,
     this.type,
+    this.displayStyle,
     this.extension_,
     this.storageClass,
     this.fileCreatedAt,
@@ -53,6 +54,8 @@ class DoggyItemsDtosCreateUpdateItemDto {
 
   DoggyFilesItemType? type;
 
+  DoggyItemsDisplayStyle? displayStyle;
+
   String? extension_;
 
   String? storageClass;
@@ -74,6 +77,7 @@ class DoggyItemsDtosCreateUpdateItemDto {
      other.md5 == md5 &&
      other.contentType == contentType &&
      other.type == type &&
+     other.displayStyle == displayStyle &&
      other.extension_ == extension_ &&
      other.storageClass == storageClass &&
      other.fileCreatedAt == fileCreatedAt &&
@@ -92,13 +96,14 @@ class DoggyItemsDtosCreateUpdateItemDto {
     md5.hashCode +
     contentType.hashCode +
     type.hashCode +
+    displayStyle.hashCode +
     extension_.hashCode +
     storageClass.hashCode +
     fileCreatedAt.hashCode +
     fileUpdatedAt.hashCode;
 
   @override
-  String toString() => 'DoggyItemsDtosCreateUpdateItemDto[name=$name, description=$description, password=$password, parentItemId=$parentItemId, tagIds=$tagIds, thumbId=$thumbId, key=$key, size=$size, md5=$md5, contentType=$contentType, type=$type, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt]';
+  String toString() => 'DoggyItemsDtosCreateUpdateItemDto[name=$name, description=$description, password=$password, parentItemId=$parentItemId, tagIds=$tagIds, thumbId=$thumbId, key=$key, size=$size, md5=$md5, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -135,6 +140,9 @@ class DoggyItemsDtosCreateUpdateItemDto {
     if (type != null) {
       json[r'type'] = type;
     }
+    if (displayStyle != null) {
+      json[r'displayStyle'] = displayStyle;
+    }
     if (extension_ != null) {
       json[r'extension'] = extension_;
     }
@@ -167,6 +175,7 @@ class DoggyItemsDtosCreateUpdateItemDto {
         md5: json[r'md5'] == null ? null : json[r'md5'] as String?,
         contentType: json[r'contentType'] == null ? null : json[r'contentType'] as String?,
         type: json[r'type'] == null ? null : DoggyFilesItemType.fromJson(json[r'type']),
+        displayStyle: json[r'displayStyle'] == null ? null : DoggyItemsDisplayStyle.fromJson(json[r'displayStyle']),
         extension_: json[r'extension'] == null ? null : json[r'extension'] as String?,
         storageClass: json[r'storageClass'] == null ? null : json[r'storageClass'] as String?,
         fileCreatedAt: json[r'fileCreatedAt'] == null ? null : mapDateTime(json, r'fileCreatedAt', ''),

@@ -17,6 +17,8 @@ class DoggyTodosDtosCreateUpdateTodoDto {
     this.priority,
     this.tagIds,
     this.isDone,
+    this.parentId,
+    this.endAt,
   });
 
 
@@ -28,22 +30,30 @@ class DoggyTodosDtosCreateUpdateTodoDto {
 
   bool? isDone;
 
+  String? parentId;
+
+  DateTime? endAt;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is DoggyTodosDtosCreateUpdateTodoDto &&
      other.title == title &&
      other.priority == priority &&
      other.tagIds == tagIds &&
-     other.isDone == isDone;
+     other.isDone == isDone &&
+     other.parentId == parentId &&
+     other.endAt == endAt;
 
   @override
   int get hashCode =>
     title.hashCode +
     priority.hashCode +
     tagIds.hashCode +
-    isDone.hashCode;
+    isDone.hashCode +
+    parentId.hashCode +
+    endAt.hashCode;
 
   @override
-  String toString() => 'DoggyTodosDtosCreateUpdateTodoDto[title=$title, priority=$priority, tagIds=$tagIds, isDone=$isDone]';
+  String toString() => 'DoggyTodosDtosCreateUpdateTodoDto[title=$title, priority=$priority, tagIds=$tagIds, isDone=$isDone, parentId=$parentId, endAt=$endAt]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -59,6 +69,12 @@ class DoggyTodosDtosCreateUpdateTodoDto {
     if (isDone != null) {
       json[r'isDone'] = isDone;
     }
+    if (parentId != null) {
+      json[r'parentId'] = parentId;
+    }
+    if (endAt != null) {
+      json[r'endAt'] = endAt!.toUtc().toIso8601String();
+    }
     return json;
   }
 
@@ -72,6 +88,8 @@ class DoggyTodosDtosCreateUpdateTodoDto {
           ? (json[r'tagIds'] as List).cast<String>()
           : [],
         isDone: json[r'isDone'] == null ? null : json[r'isDone'] as bool?,
+        parentId: json[r'parentId'] == null ? null : json[r'parentId'] as String?,
+        endAt: json[r'endAt'] == null ? null : mapDateTime(json, r'endAt', ''),
     );
 
   static List<DoggyTodosDtosCreateUpdateTodoDto> listFromJson(List json, {bool? growable,}) =>

@@ -9,6 +9,7 @@ doc/AccountApi.md
 doc/DoggyFilesDtosFileDto.md
 doc/DoggyFilesItemType.md
 doc/DoggyFilesUploadCredentials.md
+doc/DoggyItemsDisplayStyle.md
 doc/DoggyItemsDtosCreateUpdateItemDto.md
 doc/DoggyItemsDtosItemDto.md
 doc/DoggyItemsDtosItemThumbDto.md
@@ -154,6 +155,7 @@ lib/auth/oauth.dart
 lib/model/doggy_files_dtos_file_dto.dart
 lib/model/doggy_files_item_type.dart
 lib/model/doggy_files_upload_credentials.dart
+lib/model/doggy_items_display_style.dart
 lib/model/doggy_items_dtos_create_update_item_dto.dart
 lib/model/doggy_items_dtos_item_dto.dart
 lib/model/doggy_items_dtos_item_thumb_dto.dart

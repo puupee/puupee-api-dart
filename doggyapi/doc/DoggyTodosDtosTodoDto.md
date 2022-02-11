@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **tags** | [**List<DoggyTagsDtosTagDto>**](DoggyTagsDtosTagDto.md) |  | [optional] [default to const []]
 **doneAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **isDone** | **bool** |  | [optional] 
+**children** | [**List<DoggyTodosDtosTodoDto>**](DoggyTodosDtosTodoDto.md) |  | [optional] [default to const []]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

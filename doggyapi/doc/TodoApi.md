@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **apiAppTodoGet**
-> VoloAbpApplicationDtosPagedResultDto1DoggyTodosDtosTodoDtoDoggyApplicationContractsVersion1000CultureneutralPublicKeyTokennull apiAppTodoGet(searchKey, isDone, tagId, maxResultCount, sorting, skipCount)
+> VoloAbpApplicationDtosPagedResultDto1DoggyTodosDtosTodoDtoDoggyApplicationContractsVersion1000CultureneutralPublicKeyTokennull apiAppTodoGet(searchKey, isDone, tagId, maxResultCount, parentId, isExpired, sorting, skipCount)
 
 
 
@@ -32,11 +32,13 @@ final searchKey = searchKey_example; // String |
 final isDone = true; // bool | 
 final tagId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 final maxResultCount = 56; // int | 
+final parentId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final isExpired = true; // bool | 
 final sorting = sorting_example; // String | 
 final skipCount = 56; // int | 
 
 try {
-    final result = api_instance.apiAppTodoGet(searchKey, isDone, tagId, maxResultCount, sorting, skipCount);
+    final result = api_instance.apiAppTodoGet(searchKey, isDone, tagId, maxResultCount, parentId, isExpired, sorting, skipCount);
     print(result);
 } catch (e) {
     print('Exception when calling TodoApi->apiAppTodoGet: $e\n');
@@ -51,6 +53,8 @@ Name | Type | Description  | Notes
  **isDone** | **bool**|  | [optional] 
  **tagId** | **String**|  | [optional] 
  **maxResultCount** | **int**|  | [optional] 
+ **parentId** | **String**|  | [optional] 
+ **isExpired** | **bool**|  | [optional] 
  **sorting** | **String**|  | [optional] 
  **skipCount** | **int**|  | [optional] 
 

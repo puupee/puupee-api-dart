@@ -195,6 +195,9 @@ class ApiClient {
           
         case 'DoggyFilesUploadCredentials':
           return DoggyFilesUploadCredentials.fromJson(value);
+        case 'DoggyItemsDisplayStyle':
+          return DoggyItemsDisplayStyleTypeTransformer().decode(value);
+          
         case 'DoggyItemsDtosCreateUpdateItemDto':
           return DoggyItemsDtosCreateUpdateItemDto.fromJson(value);
         case 'DoggyItemsDtosItemDto':

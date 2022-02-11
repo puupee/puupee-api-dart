@@ -7600,6 +7600,21 @@
             }
           },
           {
+            "name": "ParentId",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          {
+            "name": "IsExpired",
+            "in": "query",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
             "name": "Sorting",
             "in": "query",
             "schema": {
@@ -10690,6 +10705,13 @@
         },
         "additionalProperties": false
       },
+      "Doggy.Items.DisplayStyle": {
+        "enum": [
+          "ListItem",
+          "LargeThumbnail"
+        ],
+        "type": "string"
+      },
       "Doggy.Items.Dtos.CreateUpdateItemDto": {
         "type": "object",
         "properties": {
@@ -10741,6 +10763,9 @@
           },
           "type": {
             "$ref": "#/components/schemas/Doggy.Files.ItemType"
+          },
+          "displayStyle": {
+            "$ref": "#/components/schemas/Doggy.Items.DisplayStyle"
           },
           "extension": {
             "type": "string",
@@ -10867,6 +10892,9 @@
           },
           "type": {
             "$ref": "#/components/schemas/Doggy.Files.ItemType"
+          },
+          "displayStyle": {
+            "$ref": "#/components/schemas/Doggy.Items.DisplayStyle"
           },
           "extension": {
             "type": "string",
@@ -11147,6 +11175,16 @@
           },
           "isDone": {
             "type": "boolean"
+          },
+          "parentId": {
+            "type": "string",
+            "format": "uuid",
+            "nullable": true
+          },
+          "endAt": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -11211,6 +11249,13 @@
           },
           "isDone": {
             "type": "boolean"
+          },
+          "children": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Doggy.Todos.Dtos.TodoDto"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false

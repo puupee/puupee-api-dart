@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **md5** | **String** |  | [optional] 
 **contentType** | **String** |  | [optional] 
 **type** | [**DoggyFilesItemType**](DoggyFilesItemType.md) |  | [optional] 
+**displayStyle** | [**DoggyItemsDisplayStyle**](DoggyItemsDisplayStyle.md) |  | [optional] 
 **extension_** | **String** |  | [optional] 
 **storageClass** | **String** |  | [optional] 
 **fileCreatedAt** | [**DateTime**](DateTime.md) |  | [optional] 

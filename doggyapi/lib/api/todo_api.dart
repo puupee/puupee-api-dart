@@ -27,10 +27,14 @@ class TodoApi {
   ///
   /// * [int] maxResultCount:
   ///
+  /// * [String] parentId:
+  ///
+  /// * [bool] isExpired:
+  ///
   /// * [String] sorting:
   ///
   /// * [int] skipCount:
-  Future<Response> apiAppTodoGetWithHttpInfo({ String? searchKey, bool? isDone, String? tagId, int? maxResultCount, String? sorting, int? skipCount, }) async {
+  Future<Response> apiAppTodoGetWithHttpInfo({ String? searchKey, bool? isDone, String? tagId, int? maxResultCount, String? parentId, bool? isExpired, String? sorting, int? skipCount, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/app/todo';
 
@@ -52,6 +56,12 @@ class TodoApi {
     }
     if (maxResultCount != null) {
       queryParams.addAll(_convertParametersForCollectionFormat('', 'MaxResultCount', maxResultCount));
+    }
+    if (parentId != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'ParentId', parentId));
+    }
+    if (isExpired != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'IsExpired', isExpired));
     }
     if (sorting != null) {
       queryParams.addAll(_convertParametersForCollectionFormat('', 'Sorting', sorting));
@@ -86,11 +96,15 @@ class TodoApi {
   ///
   /// * [int] maxResultCount:
   ///
+  /// * [String] parentId:
+  ///
+  /// * [bool] isExpired:
+  ///
   /// * [String] sorting:
   ///
   /// * [int] skipCount:
-  Future<VoloAbpApplicationDtosPagedResultDto1DoggyTodosDtosTodoDtoDoggyApplicationContractsVersion1000CultureneutralPublicKeyTokennull?> apiAppTodoGet({ String? searchKey, bool? isDone, String? tagId, int? maxResultCount, String? sorting, int? skipCount, }) async {
-    final response = await apiAppTodoGetWithHttpInfo( searchKey: searchKey, isDone: isDone, tagId: tagId, maxResultCount: maxResultCount, sorting: sorting, skipCount: skipCount, );
+  Future<VoloAbpApplicationDtosPagedResultDto1DoggyTodosDtosTodoDtoDoggyApplicationContractsVersion1000CultureneutralPublicKeyTokennull?> apiAppTodoGet({ String? searchKey, bool? isDone, String? tagId, int? maxResultCount, String? parentId, bool? isExpired, String? sorting, int? skipCount, }) async {
+    final response = await apiAppTodoGetWithHttpInfo( searchKey: searchKey, isDone: isDone, tagId: tagId, maxResultCount: maxResultCount, parentId: parentId, isExpired: isExpired, sorting: sorting, skipCount: skipCount, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

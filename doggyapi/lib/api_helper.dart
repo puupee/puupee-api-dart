@@ -63,6 +63,9 @@ String parameterToString(dynamic value) {
   if (value is DoggyFilesItemType) {
     return DoggyFilesItemTypeTypeTransformer().encode(value).toString();
   }
+  if (value is DoggyItemsDisplayStyle) {
+    return DoggyItemsDisplayStyleTypeTransformer().encode(value).toString();
+  }
   if (value is DoggyItemsSpecialItems) {
     return DoggyItemsSpecialItemsTypeTransformer().encode(value).toString();
   }

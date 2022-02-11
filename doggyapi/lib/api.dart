@@ -49,6 +49,7 @@ part 'api/user_lookup_api.dart';
 part 'model/doggy_files_dtos_file_dto.dart';
 part 'model/doggy_files_item_type.dart';
 part 'model/doggy_files_upload_credentials.dart';
+part 'model/doggy_items_display_style.dart';
 part 'model/doggy_items_dtos_create_update_item_dto.dart';
 part 'model/doggy_items_dtos_item_dto.dart';
 part 'model/doggy_items_dtos_item_thumb_dto.dart';

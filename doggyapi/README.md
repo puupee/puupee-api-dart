@@ -132,6 +132,7 @@ Class | Method | HTTP request | Description
  - [DoggyFilesDtosFileDto](doc\/DoggyFilesDtosFileDto.md)
  - [DoggyFilesItemType](doc\/DoggyFilesItemType.md)
  - [DoggyFilesUploadCredentials](doc\/DoggyFilesUploadCredentials.md)
+ - [DoggyItemsDisplayStyle](doc\/DoggyItemsDisplayStyle.md)
  - [DoggyItemsDtosCreateUpdateItemDto](doc\/DoggyItemsDtosCreateUpdateItemDto.md)
  - [DoggyItemsDtosItemDto](doc\/DoggyItemsDtosItemDto.md)
  - [DoggyItemsDtosItemThumbDto](doc\/DoggyItemsDtosItemThumbDto.md)

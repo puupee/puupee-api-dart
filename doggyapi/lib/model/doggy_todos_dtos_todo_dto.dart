@@ -26,6 +26,7 @@ class DoggyTodosDtosTodoDto {
     this.tags,
     this.doneAt,
     this.isDone,
+    this.children,
   });
 
 
@@ -55,6 +56,8 @@ class DoggyTodosDtosTodoDto {
 
   bool? isDone;
 
+  List<DoggyTodosDtosTodoDto>? children;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is DoggyTodosDtosTodoDto &&
      other.id == id &&
@@ -69,7 +72,8 @@ class DoggyTodosDtosTodoDto {
      other.priority == priority &&
      other.tags == tags &&
      other.doneAt == doneAt &&
-     other.isDone == isDone;
+     other.isDone == isDone &&
+     other.children == children;
 
   @override
   int get hashCode =>
@@ -85,10 +89,11 @@ class DoggyTodosDtosTodoDto {
     priority.hashCode +
     tags.hashCode +
     doneAt.hashCode +
-    isDone.hashCode;
+    isDone.hashCode +
+    children.hashCode;
 
   @override
-  String toString() => 'DoggyTodosDtosTodoDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, title=$title, priority=$priority, tags=$tags, doneAt=$doneAt, isDone=$isDone]';
+  String toString() => 'DoggyTodosDtosTodoDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, title=$title, priority=$priority, tags=$tags, doneAt=$doneAt, isDone=$isDone, children=$children]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -131,6 +136,9 @@ class DoggyTodosDtosTodoDto {
     if (isDone != null) {
       json[r'isDone'] = isDone;
     }
+    if (children != null) {
+      json[r'children'] = children;
+    }
     return json;
   }
 
@@ -151,6 +159,7 @@ class DoggyTodosDtosTodoDto {
         tags: json[r'tags'] == null ? null : DoggyTagsDtosTagDto.listFromJson(json[r'tags']),
         doneAt: json[r'doneAt'] == null ? null : mapDateTime(json, r'doneAt', ''),
         isDone: json[r'isDone'] == null ? null : json[r'isDone'] as bool?,
+        children: json[r'children'] == null ? null : DoggyTodosDtosTodoDto.listFromJson(json[r'children']),
     );
 
   static List<DoggyTodosDtosTodoDto> listFromJson(List json, {bool? growable,}) =>
