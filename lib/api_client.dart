@@ -202,6 +202,10 @@ class ApiClient {
           return ApplicationLocalizationConfigurationDto.fromJson(value);
         case 'ApplicationSettingConfigurationDto':
           return ApplicationSettingConfigurationDto.fromJson(value);
+        case 'BooleanKeyValue':
+          return BooleanKeyValue.fromJson(value);
+        case 'BooleanSetKeyValueDto':
+          return BooleanSetKeyValueDto.fromJson(value);
         case 'ChangePasswordInput':
           return ChangePasswordInput.fromJson(value);
         case 'ClockDto':
@@ -224,9 +228,21 @@ class ApiClient {
           return CurrentUserDto.fromJson(value);
         case 'DateTimeFormatDto':
           return DateTimeFormatDto.fromJson(value);
+        case 'DateTimeKeyValue':
+          return DateTimeKeyValue.fromJson(value);
+        case 'DateTimeSetKeyValueDto':
+          return DateTimeSetKeyValueDto.fromJson(value);
+        case 'DecimalKeyValue':
+          return DecimalKeyValue.fromJson(value);
+        case 'DecimalSetKeyValueDto':
+          return DecimalSetKeyValueDto.fromJson(value);
         case 'DisplayStyle':
           return DisplayStyleTypeTransformer().decode(value);
           
+        case 'DoubleKeyValue':
+          return DoubleKeyValue.fromJson(value);
+        case 'DoubleSetKeyValueDto':
+          return DoubleSetKeyValueDto.fromJson(value);
         case 'EmailSettingsDto':
           return EmailSettingsDto.fromJson(value);
         case 'EntityExtensionDto':
@@ -295,6 +311,10 @@ class ApiClient {
           return IdentityUserUpdateDto.fromJson(value);
         case 'IdentityUserUpdateRolesDto':
           return IdentityUserUpdateRolesDto.fromJson(value);
+        case 'Int32KeyValue':
+          return Int32KeyValue.fromJson(value);
+        case 'Int32SetKeyValueDto':
+          return Int32SetKeyValueDto.fromJson(value);
         case 'ItemDto':
           return ItemDto.fromJson(value);
         case 'ItemDtoPagedResultDto':
@@ -358,6 +378,10 @@ class ApiClient {
         case 'SpecialItems':
           return SpecialItemsTypeTransformer().decode(value);
           
+        case 'StringKeyValue':
+          return StringKeyValue.fromJson(value);
+        case 'StringSetKeyValueDto':
+          return StringSetKeyValueDto.fromJson(value);
         case 'TagDto':
           return TagDto.fromJson(value);
         case 'TagDtoPagedResultDto':

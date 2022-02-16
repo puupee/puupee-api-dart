@@ -28,19 +28,19 @@ java -jar ./openapi-generator-cli.jar generate -g dart -o ./ \
   -i swagger.json \
   --skip-validate-spec
 
-./fcr/fcr \
+./fcr/fcr.exe \
   "./lib/model/extension_enum_field_dto.dart" \
   "json[r'value'] == null ? null : Map<String, dynamic>.fromJson(json[r'value'])" \
   "json[r'value']"
-./fcr/fcr \
+./fcr/fcr.exe \
   "./lib/model/extension_property_dto.dart" \
   "defaultValue: json[r'defaultValue'] == null ? null : Map<String, dynamic>.fromJson(json[r'defaultValue'])" \
   "defaultValue: json[r'defaultValue']"
-./fcr/fcr \
+./fcr/fcr.exe \
   "./lib/model/method_parameter_api_description_model.dart" \
   "defaultValue: json[r'defaultValue'] == null ? null : Map<String, dynamic>.fromJson(json[r'defaultValue'])" \
   "defaultValue: json[r'defaultValue']"
-./fcr/fcr \
+./fcr/fcr.exe \
   "./lib/model/parameter_api_description_model.dart" \
   "defaultValue: json[r'defaultValue'] == null ? null : Map<String, dynamic>.fromJson(json[r'defaultValue'])" \
   "defaultValue: json[r'defaultValue']"
@@ -48,3 +48,5 @@ java -jar ./openapi-generator-cli.jar generate -g dart -o ./ \
 # swagger-codegen generate -l dart -o clie`n`ts/flutter \
 #   -c clients/configs/dart.json \
 #   -i swagger.json
+
+git commit -a -m "update"
