@@ -49,4 +49,5 @@ java -jar ./openapi-generator-cli.jar generate -g dart -o ./ \
 #   -c clients/configs/dart.json \
 #   -i swagger.json
 
+git add .
 git commit -a -m "update"
