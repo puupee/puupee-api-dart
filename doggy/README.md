@@ -17,7 +17,7 @@ If this Dart package is published to Github, add the following dependency to you
 ```
 dependencies:
   doggy_api:
-    git: https://github.com/jerloo/doggy-sdk-flutter.git
+    git: https://github.com/mr-doggy/doggy-sdk-flutter.git
 ```
 
 ### Local

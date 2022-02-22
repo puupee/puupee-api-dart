@@ -4,8 +4,8 @@
 
 name: 'doggy_api'
 version: '1.0.0'
-description: 'OpenAPI API client'
-homepage: 'homepage'
+description: 'api for Mr Doggy app service.'
+homepage: 'https://github.com/mr-doggy/doggy-sdk-flutter'
 environment:
   sdk: '>=2.14.0 <3.0.0'
 dependencies:
