@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**apiAppItemCreateOrGetFilePost**](ItemApi.md#apiappitemcreateorgetfilepost) | **POST** /api/app/item/create-or-get-file | 
 [**apiAppItemGet**](ItemApi.md#apiappitemget) | **GET** /api/app/item | 
 [**apiAppItemIdDelete**](ItemApi.md#apiappitemiddelete) | **DELETE** /api/app/item/{id} | 
 [**apiAppItemIdGet**](ItemApi.md#apiappitemidget) | **GET** /api/app/item/{id} | 
@@ -16,6 +17,49 @@ Method | HTTP request | Description
 [**apiAppItemPost**](ItemApi.md#apiappitempost) | **POST** /api/app/item | 
 [**apiAppItemSpecialItemsGet**](ItemApi.md#apiappitemspecialitemsget) | **GET** /api/app/item/special-items | 
 
+
+# **apiAppItemCreateOrGetFilePost**
+> File apiAppItemCreateOrGetFilePost(createThumbDto)
+
+
+
+### Example
+```dart
+import 'package:doggy_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api_instance = ItemApi();
+final createThumbDto = CreateThumbDto(); // CreateThumbDto | 
+
+try {
+    final result = api_instance.apiAppItemCreateOrGetFilePost(createThumbDto);
+    print(result);
+} catch (e) {
+    print('Exception when calling ItemApi->apiAppItemCreateOrGetFilePost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createThumbDto** | [**CreateThumbDto**](CreateThumbDto.md)|  | [optional] 
+
+### Return type
+
+[**File**](File.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppItemGet**
 > ItemDtoPagedResultDto apiAppItemGet(parentItemId, searchKey, name, types, extension_, contentType, tagId, maxResultCount, sorting, skipCount)
