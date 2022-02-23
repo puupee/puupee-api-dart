@@ -111,7 +111,6 @@ Class | Method | HTTP request | Description
  - [AbpLoginResult](doc\/AbpLoginResult.md)
  - [ActionApiDescriptionModel](doc\/ActionApiDescriptionModel.md)
  - [AppTheme](doc\/AppTheme.md)
- - [AppThemePlatformSettings](doc\/AppThemePlatformSettings.md)
  - [ApplicationApiDescriptionModel](doc\/ApplicationApiDescriptionModel.md)
  - [ApplicationAuthConfigurationDto](doc\/ApplicationAuthConfigurationDto.md)
  - [ApplicationConfigurationDto](doc\/ApplicationConfigurationDto.md)

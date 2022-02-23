@@ -42,7 +42,6 @@ part 'api/todo_api.dart';
 part 'model/abp_login_result.dart';
 part 'model/action_api_description_model.dart';
 part 'model/app_theme.dart';
-part 'model/app_theme_platform_settings.dart';
 part 'model/application_api_description_model.dart';
 part 'model/application_auth_configuration_dto.dart';
 part 'model/application_configuration_dto.dart';

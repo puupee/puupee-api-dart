@@ -6,7 +6,6 @@ doc/AbpLoginResult.md
 doc/AccountApi.md
 doc/ActionApiDescriptionModel.md
 doc/AppTheme.md
-doc/AppThemePlatformSettings.md
 doc/ApplicationApiDescriptionModel.md
 doc/ApplicationAuthConfigurationDto.md
 doc/ApplicationConfigurationDto.md
@@ -159,7 +158,6 @@ lib/auth/oauth.dart
 lib/model/abp_login_result.dart
 lib/model/action_api_description_model.dart
 lib/model/app_theme.dart
-lib/model/app_theme_platform_settings.dart
 lib/model/application_api_description_model.dart
 lib/model/application_auth_configuration_dto.dart
 lib/model/application_configuration_dto.dart

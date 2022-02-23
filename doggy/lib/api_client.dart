@@ -195,8 +195,6 @@ class ApiClient {
         case 'AppTheme':
           return AppThemeTypeTransformer().decode(value);
           
-        case 'AppThemePlatformSettings':
-          return AppThemePlatformSettings.fromJson(value);
         case 'ApplicationApiDescriptionModel':
           return ApplicationApiDescriptionModel.fromJson(value);
         case 'ApplicationAuthConfigurationDto':

@@ -13,27 +13,27 @@ part of doggy_api;
 class SettingsDto {
   /// Returns a new [SettingsDto] instance.
   SettingsDto({
-    this.appThemes,
+    this.appTheme,
   });
 
 
-  AppThemePlatformSettings? appThemes;
+  AppTheme? appTheme;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is SettingsDto &&
-     other.appThemes == appThemes;
+     other.appTheme == appTheme;
 
   @override
   int get hashCode =>
-    appThemes.hashCode;
+    appTheme.hashCode;
 
   @override
-  String toString() => 'SettingsDto[appThemes=$appThemes]';
+  String toString() => 'SettingsDto[appTheme=$appTheme]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (appThemes != null) {
-      json[r'appThemes'] = appThemes;
+    if (appTheme != null) {
+      json[r'appTheme'] = appTheme;
     }
     return json;
   }
@@ -42,7 +42,7 @@ class SettingsDto {
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
   static SettingsDto fromJson(Map<String, dynamic> json) => SettingsDto(
-        appThemes: json[r'appThemes'] == null ? null : AppThemePlatformSettings.fromJson(json[r'appThemes']),
+        appTheme: json[r'appTheme'] == null ? null : AppTheme.fromJson(json[r'appTheme']),
     );
 
   static List<SettingsDto> listFromJson(List json, {bool? growable,}) =>
