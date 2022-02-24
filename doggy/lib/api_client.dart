@@ -219,8 +219,6 @@ class ApiClient {
           return ControllerApiDescriptionModel.fromJson(value);
         case 'ControllerInterfaceApiDescriptionModel':
           return ControllerInterfaceApiDescriptionModel.fromJson(value);
-        case 'CreateThumbDto':
-          return CreateThumbDto.fromJson(value);
         case 'CreateUpdateItemDto':
           return CreateUpdateItemDto.fromJson(value);
         case 'CreateUpdateTagDto':
@@ -284,8 +282,6 @@ class ApiClient {
           return FeatureGroupDto.fromJson(value);
         case 'FeatureProviderDto':
           return FeatureProviderDto.fromJson(value);
-        case 'File':
-          return File.fromJson(value);
         case 'FileDto':
           return FileDto.fromJson(value);
         case 'FindTenantResultDto':
@@ -310,24 +306,12 @@ class ApiClient {
           return IdentityRoleDtoPagedResultDto.fromJson(value);
         case 'IdentityRoleUpdateDto':
           return IdentityRoleUpdateDto.fromJson(value);
-        case 'IdentityUser':
-          return IdentityUser.fromJson(value);
-        case 'IdentityUserClaim':
-          return IdentityUserClaim.fromJson(value);
         case 'IdentityUserCreateDto':
           return IdentityUserCreateDto.fromJson(value);
         case 'IdentityUserDto':
           return IdentityUserDto.fromJson(value);
         case 'IdentityUserDtoPagedResultDto':
           return IdentityUserDtoPagedResultDto.fromJson(value);
-        case 'IdentityUserLogin':
-          return IdentityUserLogin.fromJson(value);
-        case 'IdentityUserOrganizationUnit':
-          return IdentityUserOrganizationUnit.fromJson(value);
-        case 'IdentityUserRole':
-          return IdentityUserRole.fromJson(value);
-        case 'IdentityUserToken':
-          return IdentityUserToken.fromJson(value);
         case 'IdentityUserUpdateDto':
           return IdentityUserUpdateDto.fromJson(value);
         case 'IdentityUserUpdateRolesDto':
@@ -336,16 +320,10 @@ class ApiClient {
           return Int32KeyValue.fromJson(value);
         case 'Int32SetKeyValueDto':
           return Int32SetKeyValueDto.fromJson(value);
-        case 'Item':
-          return Item.fromJson(value);
         case 'ItemDto':
           return ItemDto.fromJson(value);
         case 'ItemDtoPagedResultDto':
           return ItemDtoPagedResultDto.fromJson(value);
-        case 'ItemTag':
-          return ItemTag.fromJson(value);
-        case 'ItemThumb':
-          return ItemThumb.fromJson(value);
         case 'ItemThumbDto':
           return ItemThumbDto.fromJson(value);
         case 'ItemType':
@@ -414,8 +392,6 @@ class ApiClient {
           return StringKeyValue.fromJson(value);
         case 'StringSetKeyValueDto':
           return StringSetKeyValueDto.fromJson(value);
-        case 'Tag':
-          return Tag.fromJson(value);
         case 'TagDto':
           return TagDto.fromJson(value);
         case 'TagDtoPagedResultDto':
@@ -432,14 +408,10 @@ class ApiClient {
           return TimeZone.fromJson(value);
         case 'TimingDto':
           return TimingDto.fromJson(value);
-        case 'Todo':
-          return Todo.fromJson(value);
         case 'TodoDto':
           return TodoDto.fromJson(value);
         case 'TodoDtoPagedResultDto':
           return TodoDtoPagedResultDto.fromJson(value);
-        case 'TodoTag':
-          return TodoTag.fromJson(value);
         case 'TypeApiDescriptionModel':
           return TypeApiDescriptionModel.fromJson(value);
         case 'UpdateEmailSettingsDto':

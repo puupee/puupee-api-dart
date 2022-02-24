@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **parentItemId** | **String** |  | [optional] 
 **tagIds** | **List<String>** |  | [optional] [default to const []]
 **thumbId** | **String** |  | [optional] 
+**thumbItemId** | **String** |  | [optional] 
 **key** | **String** |  | [optional] 
 **md5** | **String** |  | [optional] 
 **contentType** | **String** |  | [optional] 
@@ -23,7 +24,6 @@ Name | Type | Description | Notes
 **storageClass** | **String** |  | [optional] 
 **fileCreatedAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **fileUpdatedAt** | [**DateTime**](DateTime.md) |  | [optional] 
-**thumb** | [**CreateThumbDto**](CreateThumbDto.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

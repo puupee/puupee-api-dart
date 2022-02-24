@@ -19,6 +19,7 @@ class CreateUpdateItemDto {
     this.parentItemId,
     this.tagIds,
     this.thumbId,
+    this.thumbItemId,
     this.key,
     this.md5,
     this.contentType,
@@ -28,7 +29,6 @@ class CreateUpdateItemDto {
     this.storageClass,
     this.fileCreatedAt,
     this.fileUpdatedAt,
-    this.thumb,
   });
 
 
@@ -43,6 +43,8 @@ class CreateUpdateItemDto {
   List<String>? tagIds;
 
   String? thumbId;
+
+  String? thumbItemId;
 
   String? key;
 
@@ -62,8 +64,6 @@ class CreateUpdateItemDto {
 
   DateTime? fileUpdatedAt;
 
-  CreateThumbDto? thumb;
-
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateUpdateItemDto &&
      other.name == name &&
@@ -72,6 +72,7 @@ class CreateUpdateItemDto {
      other.parentItemId == parentItemId &&
      other.tagIds == tagIds &&
      other.thumbId == thumbId &&
+     other.thumbItemId == thumbItemId &&
      other.key == key &&
      other.md5 == md5 &&
      other.contentType == contentType &&
@@ -80,8 +81,7 @@ class CreateUpdateItemDto {
      other.extension_ == extension_ &&
      other.storageClass == storageClass &&
      other.fileCreatedAt == fileCreatedAt &&
-     other.fileUpdatedAt == fileUpdatedAt &&
-     other.thumb == thumb;
+     other.fileUpdatedAt == fileUpdatedAt;
 
   @override
   int get hashCode =>
@@ -91,6 +91,7 @@ class CreateUpdateItemDto {
     parentItemId.hashCode +
     tagIds.hashCode +
     thumbId.hashCode +
+    thumbItemId.hashCode +
     key.hashCode +
     md5.hashCode +
     contentType.hashCode +
@@ -99,11 +100,10 @@ class CreateUpdateItemDto {
     extension_.hashCode +
     storageClass.hashCode +
     fileCreatedAt.hashCode +
-    fileUpdatedAt.hashCode +
-    thumb.hashCode;
+    fileUpdatedAt.hashCode;
 
   @override
-  String toString() => 'CreateUpdateItemDto[name=$name, description=$description, password=$password, parentItemId=$parentItemId, tagIds=$tagIds, thumbId=$thumbId, key=$key, md5=$md5, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, thumb=$thumb]';
+  String toString() => 'CreateUpdateItemDto[name=$name, description=$description, password=$password, parentItemId=$parentItemId, tagIds=$tagIds, thumbId=$thumbId, thumbItemId=$thumbItemId, key=$key, md5=$md5, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -124,6 +124,9 @@ class CreateUpdateItemDto {
     }
     if (thumbId != null) {
       json[r'thumbId'] = thumbId;
+    }
+    if (thumbItemId != null) {
+      json[r'thumbItemId'] = thumbItemId;
     }
     if (key != null) {
       json[r'key'] = key;
@@ -152,9 +155,6 @@ class CreateUpdateItemDto {
     if (fileUpdatedAt != null) {
       json[r'fileUpdatedAt'] = fileUpdatedAt!.toUtc().toIso8601String();
     }
-    if (thumb != null) {
-      json[r'thumb'] = thumb;
-    }
     return json;
   }
 
@@ -170,6 +170,7 @@ class CreateUpdateItemDto {
           ? (json[r'tagIds'] as List).cast<String>()
           : [],
         thumbId: json[r'thumbId'] == null ? null : json[r'thumbId'] as String?,
+        thumbItemId: json[r'thumbItemId'] == null ? null : json[r'thumbItemId'] as String?,
         key: json[r'key'] == null ? null : json[r'key'] as String?,
         md5: json[r'md5'] == null ? null : json[r'md5'] as String?,
         contentType: json[r'contentType'] == null ? null : json[r'contentType'] as String?,
@@ -179,7 +180,6 @@ class CreateUpdateItemDto {
         storageClass: json[r'storageClass'] == null ? null : json[r'storageClass'] as String?,
         fileCreatedAt: json[r'fileCreatedAt'] == null ? null : mapDateTime(json, r'fileCreatedAt', ''),
         fileUpdatedAt: json[r'fileUpdatedAt'] == null ? null : mapDateTime(json, r'fileUpdatedAt', ''),
-        thumb: json[r'thumb'] == null ? null : CreateThumbDto.fromJson(json[r'thumb']),
     );
 
   static List<CreateUpdateItemDto> listFromJson(List json, {bool? growable,}) =>
