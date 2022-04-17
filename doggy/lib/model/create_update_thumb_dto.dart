@@ -13,43 +13,67 @@ part of doggy_api;
 class CreateUpdateThumbDto {
   /// Returns a new [CreateUpdateThumbDto] instance.
   CreateUpdateThumbDto({
-    this.fileId,
-    this.file,
-    this.creator,
+    this.key,
+    this.size,
+    this.md5,
+    this.contentType,
+    this.extension_,
+    this.storageClass,
   });
 
 
-  String? fileId;
+  String? key;
 
-  FileDto? file;
+  int? size;
 
-  String? creator;
+  String? md5;
+
+  String? contentType;
+
+  String? extension_;
+
+  String? storageClass;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateUpdateThumbDto &&
-     other.fileId == fileId &&
-     other.file == file &&
-     other.creator == creator;
+     other.key == key &&
+     other.size == size &&
+     other.md5 == md5 &&
+     other.contentType == contentType &&
+     other.extension_ == extension_ &&
+     other.storageClass == storageClass;
 
   @override
   int get hashCode =>
-    fileId.hashCode +
-    file.hashCode +
-    creator.hashCode;
+    key.hashCode +
+    size.hashCode +
+    md5.hashCode +
+    contentType.hashCode +
+    extension_.hashCode +
+    storageClass.hashCode;
 
   @override
-  String toString() => 'CreateUpdateThumbDto[fileId=$fileId, file=$file, creator=$creator]';
+  String toString() => 'CreateUpdateThumbDto[key=$key, size=$size, md5=$md5, contentType=$contentType, extension_=$extension_, storageClass=$storageClass]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (fileId != null) {
-      json[r'fileId'] = fileId;
+    if (key != null) {
+      json[r'key'] = key;
     }
-    if (file != null) {
-      json[r'file'] = file;
+    if (size != null) {
+      json[r'size'] = size;
     }
-    if (creator != null) {
-      json[r'creator'] = creator;
+    if (md5 != null) {
+      json[r'md5'] = md5;
+    }
+    if (contentType != null) {
+      json[r'contentType'] = contentType;
+    }
+    if (extension_ != null) {
+      json[r'extension'] = extension_;
+    }
+    if (storageClass != null) {
+      json[r'storageClass'] = storageClass;
     }
     return json;
   }
@@ -58,9 +82,12 @@ class CreateUpdateThumbDto {
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
   static CreateUpdateThumbDto fromJson(Map<String, dynamic> json) => CreateUpdateThumbDto(
-        fileId: json[r'fileId'] == null ? null : json[r'fileId'] as String?,
-        file: json[r'file'] == null ? null : FileDto.fromJson(json[r'file']),
-        creator: json[r'creator'] == null ? null : json[r'creator'] as String?,
+        key: json[r'key'] == null ? null : json[r'key'] as String?,
+        size: json[r'size'] == null ? null : json[r'size'] as int?,
+        md5: json[r'md5'] == null ? null : json[r'md5'] as String?,
+        contentType: json[r'contentType'] == null ? null : json[r'contentType'] as String?,
+        extension_: json[r'extension'] == null ? null : json[r'extension'] as String?,
+        storageClass: json[r'storageClass'] == null ? null : json[r'storageClass'] as String?,
     );
 
   static List<CreateUpdateThumbDto> listFromJson(List json, {bool? growable,}) =>
