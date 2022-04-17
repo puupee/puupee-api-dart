@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **parentItemId** | **String** |  | [optional] 
 **tagIds** | **List<String>** |  | [optional] [default to const []]
 **thumbId** | **String** |  | [optional] 
-**thumbItemId** | **String** |  | [optional] 
 **key** | **String** |  | [optional] 
 **md5** | **String** |  | [optional] 
 **contentType** | **String** |  | [optional] 

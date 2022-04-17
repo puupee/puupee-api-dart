@@ -42,14 +42,14 @@ import 'package:doggy_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = AccountApi();
-final registerDto = RegisterDto(); // RegisterDto | 
+final api_instance = FileApi();
+final key = key_example; // String | 
 
 try {
-    final result = api_instance.apiAccountRegisterPost(registerDto);
+    final result = api_instance.apiAppFilePreSignUrlPost(key);
     print(result);
 } catch (e) {
-    print('Exception when calling AccountApi->apiAccountRegisterPost: $e\n');
+    print('Exception when calling FileApi->apiAppFilePreSignUrlPost: $e\n');
 }
 
 ```
@@ -60,9 +60,6 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AccountApi* | [**apiAccountRegisterPost**](doc\/AccountApi.md#apiaccountregisterpost) | **POST** /api/account/register | 
-*AccountApi* | [**apiAccountResetPasswordPost**](doc\/AccountApi.md#apiaccountresetpasswordpost) | **POST** /api/account/reset-password | 
-*AccountApi* | [**apiAccountSendPasswordResetCodePost**](doc\/AccountApi.md#apiaccountsendpasswordresetcodepost) | **POST** /api/account/send-password-reset-code | 
 *FileApi* | [**apiAppFilePreSignUrlPost**](doc\/FileApi.md#apiappfilepresignurlpost) | **POST** /api/app/file/pre-sign-url | 
 *FileApi* | [**apiAppFileUploadCredentialsGet**](doc\/FileApi.md#apiappfileuploadcredentialsget) | **GET** /api/app/file/upload-credentials | 
 *ItemApi* | [**apiAppItemGet**](doc\/ItemApi.md#apiappitemget) | **GET** /api/app/item | 
@@ -83,13 +80,7 @@ Class | Method | HTTP request | Description
 *KeyValueApi* | [**apiAppKeyValueSetIntPost**](doc\/KeyValueApi.md#apiappkeyvaluesetintpost) | **POST** /api/app/key-value/set-int | 
 *KeyValueApi* | [**apiAppKeyValueSetStringPost**](doc\/KeyValueApi.md#apiappkeyvaluesetstringpost) | **POST** /api/app/key-value/set-string | 
 *KeyValueApi* | [**apiAppKeyValueStringGet**](doc\/KeyValueApi.md#apiappkeyvaluestringget) | **GET** /api/app/key-value/string | 
-*LoginApi* | [**apiAccountCheckPasswordPost**](doc\/LoginApi.md#apiaccountcheckpasswordpost) | **POST** /api/account/check-password | 
-*LoginApi* | [**apiAccountLoginPost**](doc\/LoginApi.md#apiaccountloginpost) | **POST** /api/account/login | 
-*LoginApi* | [**apiAccountLogoutGet**](doc\/LoginApi.md#apiaccountlogoutget) | **GET** /api/account/logout | 
 *NoteApi* | [**apiAppNoteNoteSpecsGet**](doc\/NoteApi.md#apiappnotenotespecsget) | **GET** /api/app/note/note-specs | 
-*ProfileApi* | [**apiAccountMyProfileChangePasswordPost**](doc\/ProfileApi.md#apiaccountmyprofilechangepasswordpost) | **POST** /api/account/my-profile/change-password | 
-*ProfileApi* | [**apiAccountMyProfileGet**](doc\/ProfileApi.md#apiaccountmyprofileget) | **GET** /api/account/my-profile | 
-*ProfileApi* | [**apiAccountMyProfilePut**](doc\/ProfileApi.md#apiaccountmyprofileput) | **PUT** /api/account/my-profile | 
 *SettingsApi* | [**apiAppSettingsGet**](doc\/SettingsApi.md#apiappsettingsget) | **GET** /api/app/settings | 
 *SettingsApi* | [**apiAppSettingsSetPost**](doc\/SettingsApi.md#apiappsettingssetpost) | **POST** /api/app/settings/set | 
 *SmsApi* | [**apiAppSmsSendChangePhoneCodePost**](doc\/SmsApi.md#apiappsmssendchangephonecodepost) | **POST** /api/app/sms/send-change-phone-code | 
@@ -99,6 +90,10 @@ Class | Method | HTTP request | Description
 *TagApi* | [**apiAppTagIdGet**](doc\/TagApi.md#apiapptagidget) | **GET** /api/app/tag/{id} | 
 *TagApi* | [**apiAppTagIdPut**](doc\/TagApi.md#apiapptagidput) | **PUT** /api/app/tag/{id} | 
 *TagApi* | [**apiAppTagPost**](doc\/TagApi.md#apiapptagpost) | **POST** /api/app/tag | 
+*ThumbApi* | [**apiAppThumbGet**](doc\/ThumbApi.md#apiappthumbget) | **GET** /api/app/thumb | 
+*ThumbApi* | [**apiAppThumbIdDelete**](doc\/ThumbApi.md#apiappthumbiddelete) | **DELETE** /api/app/thumb/{id} | 
+*ThumbApi* | [**apiAppThumbIdGet**](doc\/ThumbApi.md#apiappthumbidget) | **GET** /api/app/thumb/{id} | 
+*ThumbApi* | [**apiAppThumbPost**](doc\/ThumbApi.md#apiappthumbpost) | **POST** /api/app/thumb | 
 *TodoApi* | [**apiAppTodoGet**](doc\/TodoApi.md#apiapptodoget) | **GET** /api/app/todo | 
 *TodoApi* | [**apiAppTodoIdDelete**](doc\/TodoApi.md#apiapptodoiddelete) | **DELETE** /api/app/todo/{id} | 
 *TodoApi* | [**apiAppTodoIdGet**](doc\/TodoApi.md#apiapptodoidget) | **GET** /api/app/todo/{id} | 
@@ -108,7 +103,6 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [AbpLoginResult](doc\/AbpLoginResult.md)
  - [ActionApiDescriptionModel](doc\/ActionApiDescriptionModel.md)
  - [AppTheme](doc\/AppTheme.md)
  - [ApplicationApiDescriptionModel](doc\/ApplicationApiDescriptionModel.md)
@@ -125,6 +119,7 @@ Class | Method | HTTP request | Description
  - [ControllerInterfaceApiDescriptionModel](doc\/ControllerInterfaceApiDescriptionModel.md)
  - [CreateUpdateItemDto](doc\/CreateUpdateItemDto.md)
  - [CreateUpdateTagDto](doc\/CreateUpdateTagDto.md)
+ - [CreateUpdateThumbDto](doc\/CreateUpdateThumbDto.md)
  - [CreateUpdateTodoDto](doc\/CreateUpdateTodoDto.md)
  - [CurrentCultureDto](doc\/CurrentCultureDto.md)
  - [CurrentTenantDto](doc\/CurrentTenantDto.md)
@@ -175,11 +170,9 @@ Class | Method | HTTP request | Description
  - [Int32SetKeyValueDto](doc\/Int32SetKeyValueDto.md)
  - [ItemDto](doc\/ItemDto.md)
  - [ItemDtoPagedResultDto](doc\/ItemDtoPagedResultDto.md)
- - [ItemThumbDto](doc\/ItemThumbDto.md)
  - [ItemType](doc\/ItemType.md)
  - [LanguageInfo](doc\/LanguageInfo.md)
  - [LocalizableStringDto](doc\/LocalizableStringDto.md)
- - [LoginResultType](doc\/LoginResultType.md)
  - [MethodParameterApiDescriptionModel](doc\/MethodParameterApiDescriptionModel.md)
  - [ModuleApiDescriptionModel](doc\/ModuleApiDescriptionModel.md)
  - [ModuleExtensionDto](doc\/ModuleExtensionDto.md)
@@ -213,6 +206,8 @@ Class | Method | HTTP request | Description
  - [TenantDto](doc\/TenantDto.md)
  - [TenantDtoPagedResultDto](doc\/TenantDtoPagedResultDto.md)
  - [TenantUpdateDto](doc\/TenantUpdateDto.md)
+ - [ThumbDto](doc\/ThumbDto.md)
+ - [ThumbDtoPagedResultDto](doc\/ThumbDtoPagedResultDto.md)
  - [TimeZone](doc\/TimeZone.md)
  - [TimingDto](doc\/TimingDto.md)
  - [TodoDto](doc\/TodoDto.md)
@@ -227,7 +222,6 @@ Class | Method | HTTP request | Description
  - [UploadCredentials](doc\/UploadCredentials.md)
  - [UserData](doc\/UserData.md)
  - [UserDataListResultDto](doc\/UserDataListResultDto.md)
- - [UserLoginInfo](doc\/UserLoginInfo.md)
  - [WindowsTimeZone](doc\/WindowsTimeZone.md)
 
 
@@ -238,7 +232,7 @@ Class | Method | HTTP request | Description
 
 - **Type**: OAuth
 - **Flow**: accessCode
-- **Authorization URL**: https://api.doggy.code2code.cn/connect/authorize
+- **Authorization URL**: https://localhost:44306/connect/authorize
 - **Scopes**: 
  - **Doggy**: Doggy API
 

@@ -74,7 +74,7 @@ class ItemDto {
 
   String? thumbId;
 
-  ItemThumbDto? thumb;
+  ThumbDto? thumb;
 
   List<ItemDto>? children;
 
@@ -288,7 +288,7 @@ class ItemDto {
         password: json[r'password'] == null ? null : json[r'password'] as String?,
         parentItemId: json[r'parentItemId'] == null ? null : json[r'parentItemId'] as String?,
         thumbId: json[r'thumbId'] == null ? null : json[r'thumbId'] as String?,
-        thumb: json[r'thumb'] == null ? null : ItemThumbDto.fromJson(json[r'thumb']),
+        thumb: json[r'thumb'] == null ? null : ThumbDto.fromJson(json[r'thumb']),
         children: json[r'children'] == null ? null : ItemDto.listFromJson(json[r'children']),
         tags: json[r'tags'] == null ? null : TagDto.listFromJson(json[r'tags']),
         key: json[r'key'] == null ? null : json[r'key'] as String?,

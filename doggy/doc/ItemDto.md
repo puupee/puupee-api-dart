@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **password** | **String** |  | [optional] 
 **parentItemId** | **String** |  | [optional] 
 **thumbId** | **String** |  | [optional] 
-**thumb** | [**ItemThumbDto**](ItemThumbDto.md) |  | [optional] 
+**thumb** | [**ThumbDto**](ThumbDto.md) |  | [optional] 
 **children** | [**List<ItemDto>**](ItemDto.md) |  | [optional] [default to const []]
 **tags** | [**List<TagDto>**](TagDto.md) |  | [optional] [default to const []]
 **key** | **String** |  | [optional] 

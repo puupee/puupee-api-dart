@@ -27,6 +27,7 @@ class FileDto {
     this.size,
     this.md5,
     this.contentType,
+    this.extension_,
     this.storageClass,
     this.fileCreatedAt,
     this.fileUpdatedAt,
@@ -65,6 +66,8 @@ class FileDto {
 
   String? contentType;
 
+  String? extension_;
+
   String? storageClass;
 
   DateTime? fileCreatedAt;
@@ -95,6 +98,7 @@ class FileDto {
      other.size == size &&
      other.md5 == md5 &&
      other.contentType == contentType &&
+     other.extension_ == extension_ &&
      other.storageClass == storageClass &&
      other.fileCreatedAt == fileCreatedAt &&
      other.fileUpdatedAt == fileUpdatedAt &&
@@ -119,6 +123,7 @@ class FileDto {
     size.hashCode +
     md5.hashCode +
     contentType.hashCode +
+    extension_.hashCode +
     storageClass.hashCode +
     fileCreatedAt.hashCode +
     fileUpdatedAt.hashCode +
@@ -128,7 +133,7 @@ class FileDto {
     tags.hashCode;
 
   @override
-  String toString() => 'FileDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, key=$key, url=$url, size=$size, md5=$md5, contentType=$contentType, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, fileId=$fileId, file=$file, folders=$folders, tags=$tags]';
+  String toString() => 'FileDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, key=$key, url=$url, size=$size, md5=$md5, contentType=$contentType, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, fileId=$fileId, file=$file, folders=$folders, tags=$tags]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -174,6 +179,9 @@ class FileDto {
     if (contentType != null) {
       json[r'contentType'] = contentType;
     }
+    if (extension_ != null) {
+      json[r'extension'] = extension_;
+    }
     if (storageClass != null) {
       json[r'storageClass'] = storageClass;
     }
@@ -216,6 +224,7 @@ class FileDto {
         size: json[r'size'] == null ? null : json[r'size'] as int?,
         md5: json[r'md5'] == null ? null : json[r'md5'] as String?,
         contentType: json[r'contentType'] == null ? null : json[r'contentType'] as String?,
+        extension_: json[r'extension'] == null ? null : json[r'extension'] as String?,
         storageClass: json[r'storageClass'] == null ? null : json[r'storageClass'] as String?,
         fileCreatedAt: json[r'fileCreatedAt'] == null ? null : mapDateTime(json, r'fileCreatedAt', ''),
         fileUpdatedAt: json[r'fileUpdatedAt'] == null ? null : mapDateTime(json, r'fileUpdatedAt', ''),

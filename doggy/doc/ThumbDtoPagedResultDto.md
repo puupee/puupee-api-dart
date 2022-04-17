@@ -1,4 +1,4 @@
-# doggy_api.model.UserLoginInfo
+# doggy_api.model.ThumbDtoPagedResultDto
 
 ## Load the model package
 ```dart
@@ -8,9 +8,8 @@ import 'package:doggy_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**userNameOrEmailAddress** | **String** |  | 
-**password** | **String** |  | 
-**rememberMe** | **bool** |  | [optional] 
+**items** | [**List<ThumbDto>**](ThumbDto.md) |  | [optional] [default to const []]
+**totalCount** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

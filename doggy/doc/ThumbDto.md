@@ -1,4 +1,4 @@
-# doggy_api.model.ItemThumbDto
+# doggy_api.model.ThumbDto
 
 ## Load the model package
 ```dart
@@ -16,9 +16,10 @@ Name | Type | Description | Notes
 **isDeleted** | **bool** |  | [optional] 
 **deleterId** | **String** |  | [optional] 
 **deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
-**itemId** | **String** |  | [optional] 
-**thumbItemId** | **String** |  | [optional] 
-**thumbItem** | [**ItemDto**](ItemDto.md) |  | [optional] 
+**fileId** | **String** |  | [optional] 
+**file** | [**FileDto**](FileDto.md) |  | [optional] 
+**creator** | **String** |  | [optional] 
+**url** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

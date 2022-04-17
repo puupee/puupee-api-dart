@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **size** | **int** |  | [optional] 
 **md5** | **String** |  | [optional] 
 **contentType** | **String** |  | [optional] 
+**extension_** | **String** |  | [optional] 
 **storageClass** | **String** |  | [optional] 
 **fileCreatedAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **fileUpdatedAt** | [**DateTime**](DateTime.md) |  | [optional] 

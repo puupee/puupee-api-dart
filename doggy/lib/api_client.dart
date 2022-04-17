@@ -188,8 +188,6 @@ class ApiClient {
           }
           final valueString = '$value'.toLowerCase();
           return valueString == 'true' || valueString == '1';
-        case 'AbpLoginResult':
-          return AbpLoginResult.fromJson(value);
         case 'ActionApiDescriptionModel':
           return ActionApiDescriptionModel.fromJson(value);
         case 'AppTheme':
@@ -223,6 +221,8 @@ class ApiClient {
           return CreateUpdateItemDto.fromJson(value);
         case 'CreateUpdateTagDto':
           return CreateUpdateTagDto.fromJson(value);
+        case 'CreateUpdateThumbDto':
+          return CreateUpdateThumbDto.fromJson(value);
         case 'CreateUpdateTodoDto':
           return CreateUpdateTodoDto.fromJson(value);
         case 'CurrentCultureDto':
@@ -324,8 +324,6 @@ class ApiClient {
           return ItemDto.fromJson(value);
         case 'ItemDtoPagedResultDto':
           return ItemDtoPagedResultDto.fromJson(value);
-        case 'ItemThumbDto':
-          return ItemThumbDto.fromJson(value);
         case 'ItemType':
           return ItemTypeTypeTransformer().decode(value);
           
@@ -333,9 +331,6 @@ class ApiClient {
           return LanguageInfo.fromJson(value);
         case 'LocalizableStringDto':
           return LocalizableStringDto.fromJson(value);
-        case 'LoginResultType':
-          return LoginResultTypeTypeTransformer().decode(value);
-          
         case 'MethodParameterApiDescriptionModel':
           return MethodParameterApiDescriptionModel.fromJson(value);
         case 'ModuleApiDescriptionModel':
@@ -404,6 +399,10 @@ class ApiClient {
           return TenantDtoPagedResultDto.fromJson(value);
         case 'TenantUpdateDto':
           return TenantUpdateDto.fromJson(value);
+        case 'ThumbDto':
+          return ThumbDto.fromJson(value);
+        case 'ThumbDtoPagedResultDto':
+          return ThumbDtoPagedResultDto.fromJson(value);
         case 'TimeZone':
           return TimeZone.fromJson(value);
         case 'TimingDto':
@@ -432,8 +431,6 @@ class ApiClient {
           return UserData.fromJson(value);
         case 'UserDataListResultDto':
           return UserDataListResultDto.fromJson(value);
-        case 'UserLoginInfo':
-          return UserLoginInfo.fromJson(value);
         case 'WindowsTimeZone':
           return WindowsTimeZone.fromJson(value);
         default:
