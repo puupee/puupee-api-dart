@@ -188,8 +188,6 @@ class ApiClient {
           }
           final valueString = '$value'.toLowerCase();
           return valueString == 'true' || valueString == '1';
-        case 'AbpLoginResult':
-          return AbpLoginResult.fromJson(value);
         case 'ActionApiDescriptionModel':
           return ActionApiDescriptionModel.fromJson(value);
         case 'AppTheme':
@@ -335,9 +333,6 @@ class ApiClient {
           return LanguageInfo.fromJson(value);
         case 'LocalizableStringDto':
           return LocalizableStringDto.fromJson(value);
-        case 'LoginResultType':
-          return LoginResultTypeTypeTransformer().decode(value);
-          
         case 'MemberDto':
           return MemberDto.fromJson(value);
         case 'MemberLevel':
@@ -443,8 +438,6 @@ class ApiClient {
           return UserData.fromJson(value);
         case 'UserDataListResultDto':
           return UserDataListResultDto.fromJson(value);
-        case 'UserLoginInfo':
-          return UserLoginInfo.fromJson(value);
         case 'UserStorageDto':
           return UserStorageDto.fromJson(value);
         case 'WindowsTimeZone':

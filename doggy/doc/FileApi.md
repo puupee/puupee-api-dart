@@ -9,12 +9,12 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiAppFileFileOrCredentialsCreatorIdGet**](FileApi.md#apiappfilefileorcredentialscreatoridget) | **GET** /api/app/file/file-or-credentials/{creatorId} | 
+[**apiAppFileFileOrCredentialsGet**](FileApi.md#apiappfilefileorcredentialsget) | **GET** /api/app/file/file-or-credentials | 
 [**apiAppFilePreSignUrlPost**](FileApi.md#apiappfilepresignurlpost) | **POST** /api/app/file/pre-sign-url | 
 
 
-# **apiAppFileFileOrCredentialsCreatorIdGet**
-> FileOrCredentialsDto apiAppFileFileOrCredentialsCreatorIdGet(creatorId, rapidCode)
+# **apiAppFileFileOrCredentialsGet**
+> FileOrCredentialsDto apiAppFileFileOrCredentialsGet(rapidCode)
 
 
 
@@ -25,14 +25,13 @@ import 'package:doggy_api/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = FileApi();
-final creatorId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 final rapidCode = rapidCode_example; // String | 
 
 try {
-    final result = api_instance.apiAppFileFileOrCredentialsCreatorIdGet(creatorId, rapidCode);
+    final result = api_instance.apiAppFileFileOrCredentialsGet(rapidCode);
     print(result);
 } catch (e) {
-    print('Exception when calling FileApi->apiAppFileFileOrCredentialsCreatorIdGet: $e\n');
+    print('Exception when calling FileApi->apiAppFileFileOrCredentialsGet: $e\n');
 }
 ```
 
@@ -40,7 +39,6 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **creatorId** | **String**|  | 
  **rapidCode** | **String**|  | [optional] 
 
 ### Return type

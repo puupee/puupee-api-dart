@@ -42,14 +42,14 @@ import 'package:doggy_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = AccountApi();
-final registerDto = RegisterDto(); // RegisterDto | 
+final api_instance = FileApi();
+final rapidCode = rapidCode_example; // String | 
 
 try {
-    final result = api_instance.apiAccountRegisterPost(registerDto);
+    final result = api_instance.apiAppFileFileOrCredentialsGet(rapidCode);
     print(result);
 } catch (e) {
-    print('Exception when calling AccountApi->apiAccountRegisterPost: $e\n');
+    print('Exception when calling FileApi->apiAppFileFileOrCredentialsGet: $e\n');
 }
 
 ```
@@ -60,10 +60,7 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AccountApi* | [**apiAccountRegisterPost**](doc\/AccountApi.md#apiaccountregisterpost) | **POST** /api/account/register | 
-*AccountApi* | [**apiAccountResetPasswordPost**](doc\/AccountApi.md#apiaccountresetpasswordpost) | **POST** /api/account/reset-password | 
-*AccountApi* | [**apiAccountSendPasswordResetCodePost**](doc\/AccountApi.md#apiaccountsendpasswordresetcodepost) | **POST** /api/account/send-password-reset-code | 
-*FileApi* | [**apiAppFileFileOrCredentialsCreatorIdGet**](doc\/FileApi.md#apiappfilefileorcredentialscreatoridget) | **GET** /api/app/file/file-or-credentials/{creatorId} | 
+*FileApi* | [**apiAppFileFileOrCredentialsGet**](doc\/FileApi.md#apiappfilefileorcredentialsget) | **GET** /api/app/file/file-or-credentials | 
 *FileApi* | [**apiAppFilePreSignUrlPost**](doc\/FileApi.md#apiappfilepresignurlpost) | **POST** /api/app/file/pre-sign-url | 
 *ItemApi* | [**apiAppItemGet**](doc\/ItemApi.md#apiappitemget) | **GET** /api/app/item | 
 *ItemApi* | [**apiAppItemIdDelete**](doc\/ItemApi.md#apiappitemiddelete) | **DELETE** /api/app/item/{id} | 
@@ -83,14 +80,8 @@ Class | Method | HTTP request | Description
 *KeyValueApi* | [**apiAppKeyValueSetIntPost**](doc\/KeyValueApi.md#apiappkeyvaluesetintpost) | **POST** /api/app/key-value/set-int | 
 *KeyValueApi* | [**apiAppKeyValueSetStringPost**](doc\/KeyValueApi.md#apiappkeyvaluesetstringpost) | **POST** /api/app/key-value/set-string | 
 *KeyValueApi* | [**apiAppKeyValueStringGet**](doc\/KeyValueApi.md#apiappkeyvaluestringget) | **GET** /api/app/key-value/string | 
-*LoginApi* | [**apiAccountCheckPasswordPost**](doc\/LoginApi.md#apiaccountcheckpasswordpost) | **POST** /api/account/check-password | 
-*LoginApi* | [**apiAccountLoginPost**](doc\/LoginApi.md#apiaccountloginpost) | **POST** /api/account/login | 
-*LoginApi* | [**apiAccountLogoutGet**](doc\/LoginApi.md#apiaccountlogoutget) | **GET** /api/account/logout | 
 *MemberApi* | [**apiAppMemberGet**](doc\/MemberApi.md#apiappmemberget) | **GET** /api/app/member | 
 *NoteApi* | [**apiAppNoteNoteSpecsGet**](doc\/NoteApi.md#apiappnotenotespecsget) | **GET** /api/app/note/note-specs | 
-*ProfileApi* | [**apiAccountMyProfileChangePasswordPost**](doc\/ProfileApi.md#apiaccountmyprofilechangepasswordpost) | **POST** /api/account/my-profile/change-password | 
-*ProfileApi* | [**apiAccountMyProfileGet**](doc\/ProfileApi.md#apiaccountmyprofileget) | **GET** /api/account/my-profile | 
-*ProfileApi* | [**apiAccountMyProfilePut**](doc\/ProfileApi.md#apiaccountmyprofileput) | **PUT** /api/account/my-profile | 
 *SettingsApi* | [**apiAppSettingsGet**](doc\/SettingsApi.md#apiappsettingsget) | **GET** /api/app/settings | 
 *SettingsApi* | [**apiAppSettingsSetPost**](doc\/SettingsApi.md#apiappsettingssetpost) | **POST** /api/app/settings/set | 
 *SmsApi* | [**apiAppSmsSendChangePhoneCodePost**](doc\/SmsApi.md#apiappsmssendchangephonecodepost) | **POST** /api/app/sms/send-change-phone-code | 
@@ -114,7 +105,6 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [AbpLoginResult](doc\/AbpLoginResult.md)
  - [ActionApiDescriptionModel](doc\/ActionApiDescriptionModel.md)
  - [AppTheme](doc\/AppTheme.md)
  - [ApplicationApiDescriptionModel](doc\/ApplicationApiDescriptionModel.md)
@@ -186,7 +176,6 @@ Class | Method | HTTP request | Description
  - [ItemType](doc\/ItemType.md)
  - [LanguageInfo](doc\/LanguageInfo.md)
  - [LocalizableStringDto](doc\/LocalizableStringDto.md)
- - [LoginResultType](doc\/LoginResultType.md)
  - [MemberDto](doc\/MemberDto.md)
  - [MemberLevel](doc\/MemberLevel.md)
  - [MethodParameterApiDescriptionModel](doc\/MethodParameterApiDescriptionModel.md)
@@ -238,7 +227,6 @@ Class | Method | HTTP request | Description
  - [UploadCredentials](doc\/UploadCredentials.md)
  - [UserData](doc\/UserData.md)
  - [UserDataListResultDto](doc\/UserDataListResultDto.md)
- - [UserLoginInfo](doc\/UserLoginInfo.md)
  - [UserStorageDto](doc\/UserStorageDto.md)
  - [WindowsTimeZone](doc\/WindowsTimeZone.md)
 
@@ -250,7 +238,7 @@ Class | Method | HTTP request | Description
 
 - **Type**: OAuth
 - **Flow**: accessCode
-- **Authorization URL**: https://api.doggy.code2code.cn/connect/authorize
+- **Authorization URL**: https://localhost:44306/connect/authorize
 - **Scopes**: 
  - **Doggy**: Doggy API
 

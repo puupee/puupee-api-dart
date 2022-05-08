@@ -16,16 +16,13 @@ class FileApi {
 
   final ApiClient apiClient;
 
-  /// Performs an HTTP 'GET /api/app/file/file-or-credentials/{creatorId}' operation and returns the [Response].
+  /// Performs an HTTP 'GET /api/app/file/file-or-credentials' operation and returns the [Response].
   /// Parameters:
   ///
-  /// * [String] creatorId (required):
-  ///
   /// * [String] rapidCode:
-  Future<Response> apiAppFileFileOrCredentialsCreatorIdGetWithHttpInfo(String creatorId, { String? rapidCode, }) async {
+  Future<Response> apiAppFileFileOrCredentialsGetWithHttpInfo({ String? rapidCode, }) async {
     // ignore: prefer_const_declarations
-    final path = r'/api/app/file/file-or-credentials/{creatorId}'
-      .replaceAll('{creatorId}', creatorId);
+    final path = r'/api/app/file/file-or-credentials';
 
     // ignore: prefer_final_locals
     Object? postBody;
@@ -56,11 +53,9 @@ class FileApi {
 
   /// Parameters:
   ///
-  /// * [String] creatorId (required):
-  ///
   /// * [String] rapidCode:
-  Future<FileOrCredentialsDto?> apiAppFileFileOrCredentialsCreatorIdGet(String creatorId, { String? rapidCode, }) async {
-    final response = await apiAppFileFileOrCredentialsCreatorIdGetWithHttpInfo(creatorId,  rapidCode: rapidCode, );
+  Future<FileOrCredentialsDto?> apiAppFileFileOrCredentialsGet({ String? rapidCode, }) async {
+    final response = await apiAppFileFileOrCredentialsGetWithHttpInfo( rapidCode: rapidCode, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
