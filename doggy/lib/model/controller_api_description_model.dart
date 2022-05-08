@@ -15,6 +15,8 @@ class ControllerApiDescriptionModel {
   ControllerApiDescriptionModel({
     this.controllerName,
     this.controllerGroupName,
+    this.isRemoteService,
+    this.apiVersion,
     this.type,
     this.interfaces,
     this.actions,
@@ -24,6 +26,10 @@ class ControllerApiDescriptionModel {
   String? controllerName;
 
   String? controllerGroupName;
+
+  bool? isRemoteService;
+
+  String? apiVersion;
 
   String? type;
 
@@ -35,6 +41,8 @@ class ControllerApiDescriptionModel {
   bool operator ==(Object other) => identical(this, other) || other is ControllerApiDescriptionModel &&
      other.controllerName == controllerName &&
      other.controllerGroupName == controllerGroupName &&
+     other.isRemoteService == isRemoteService &&
+     other.apiVersion == apiVersion &&
      other.type == type &&
      other.interfaces == interfaces &&
      other.actions == actions;
@@ -43,12 +51,14 @@ class ControllerApiDescriptionModel {
   int get hashCode =>
     controllerName.hashCode +
     controllerGroupName.hashCode +
+    isRemoteService.hashCode +
+    apiVersion.hashCode +
     type.hashCode +
     interfaces.hashCode +
     actions.hashCode;
 
   @override
-  String toString() => 'ControllerApiDescriptionModel[controllerName=$controllerName, controllerGroupName=$controllerGroupName, type=$type, interfaces=$interfaces, actions=$actions]';
+  String toString() => 'ControllerApiDescriptionModel[controllerName=$controllerName, controllerGroupName=$controllerGroupName, isRemoteService=$isRemoteService, apiVersion=$apiVersion, type=$type, interfaces=$interfaces, actions=$actions]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -57,6 +67,12 @@ class ControllerApiDescriptionModel {
     }
     if (controllerGroupName != null) {
       json[r'controllerGroupName'] = controllerGroupName;
+    }
+    if (isRemoteService != null) {
+      json[r'isRemoteService'] = isRemoteService;
+    }
+    if (apiVersion != null) {
+      json[r'apiVersion'] = apiVersion;
     }
     if (type != null) {
       json[r'type'] = type;
@@ -76,6 +92,8 @@ class ControllerApiDescriptionModel {
   static ControllerApiDescriptionModel fromJson(Map<String, dynamic> json) => ControllerApiDescriptionModel(
         controllerName: json[r'controllerName'] == null ? null : json[r'controllerName'] as String?,
         controllerGroupName: json[r'controllerGroupName'] == null ? null : json[r'controllerGroupName'] as String?,
+        isRemoteService: json[r'isRemoteService'] == null ? null : json[r'isRemoteService'] as bool?,
+        apiVersion: json[r'apiVersion'] == null ? null : json[r'apiVersion'] as String?,
         type: json[r'type'] == null ? null : json[r'type'] as String?,
         interfaces: json[r'interfaces'] == null ? null : ControllerInterfaceApiDescriptionModel.listFromJson(json[r'interfaces']),
         actions: json[r'actions'] == null ? null : json[r'actions'] as Map<String, ActionApiDescriptionModel>?,

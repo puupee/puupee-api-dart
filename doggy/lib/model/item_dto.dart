@@ -34,6 +34,8 @@ class ItemDto {
     this.url,
     this.size,
     this.md5,
+    this.sliceMd5,
+    this.rapidCode,
     this.contentType,
     this.type,
     this.displayStyle,
@@ -88,6 +90,10 @@ class ItemDto {
 
   String? md5;
 
+  String? sliceMd5;
+
+  String? rapidCode;
+
   String? contentType;
 
   ItemType? type;
@@ -129,6 +135,8 @@ class ItemDto {
      other.url == url &&
      other.size == size &&
      other.md5 == md5 &&
+     other.sliceMd5 == sliceMd5 &&
+     other.rapidCode == rapidCode &&
      other.contentType == contentType &&
      other.type == type &&
      other.displayStyle == displayStyle &&
@@ -162,6 +170,8 @@ class ItemDto {
     url.hashCode +
     size.hashCode +
     md5.hashCode +
+    sliceMd5.hashCode +
+    rapidCode.hashCode +
     contentType.hashCode +
     type.hashCode +
     displayStyle.hashCode +
@@ -173,7 +183,7 @@ class ItemDto {
     file.hashCode;
 
   @override
-  String toString() => 'ItemDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, description=$description, totalCount=$totalCount, password=$password, parentItemId=$parentItemId, thumbId=$thumbId, thumb=$thumb, children=$children, tags=$tags, key=$key, url=$url, size=$size, md5=$md5, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, fileId=$fileId, file=$file]';
+  String toString() => 'ItemDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, description=$description, totalCount=$totalCount, password=$password, parentItemId=$parentItemId, thumbId=$thumbId, thumb=$thumb, children=$children, tags=$tags, key=$key, url=$url, size=$size, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, fileId=$fileId, file=$file]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -240,6 +250,12 @@ class ItemDto {
     if (md5 != null) {
       json[r'md5'] = md5;
     }
+    if (sliceMd5 != null) {
+      json[r'sliceMd5'] = sliceMd5;
+    }
+    if (rapidCode != null) {
+      json[r'rapidCode'] = rapidCode;
+    }
     if (contentType != null) {
       json[r'contentType'] = contentType;
     }
@@ -295,6 +311,8 @@ class ItemDto {
         url: json[r'url'] == null ? null : json[r'url'] as String?,
         size: json[r'size'] == null ? null : json[r'size'] as int?,
         md5: json[r'md5'] == null ? null : json[r'md5'] as String?,
+        sliceMd5: json[r'sliceMd5'] == null ? null : json[r'sliceMd5'] as String?,
+        rapidCode: json[r'rapidCode'] == null ? null : json[r'rapidCode'] as String?,
         contentType: json[r'contentType'] == null ? null : json[r'contentType'] as String?,
         type: json[r'type'] == null ? null : ItemType.fromJson(json[r'type']),
         displayStyle: json[r'displayStyle'] == null ? null : DisplayStyle.fromJson(json[r'displayStyle']),

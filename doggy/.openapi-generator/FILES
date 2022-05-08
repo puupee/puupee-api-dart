@@ -3,6 +3,8 @@
 .travis.yml
 README.md
 analysis_options.yaml
+doc/AbpLoginResult.md
+doc/AccountApi.md
 doc/ActionApiDescriptionModel.md
 doc/AppTheme.md
 doc/ApplicationApiDescriptionModel.md
@@ -51,6 +53,7 @@ doc/FeatureGroupDto.md
 doc/FeatureProviderDto.md
 doc/FileApi.md
 doc/FileDto.md
+doc/FileOrCredentialsDto.md
 doc/FindTenantResultDto.md
 doc/GetFeatureListResultDto.md
 doc/GetPermissionListResultDto.md
@@ -76,6 +79,11 @@ doc/ItemType.md
 doc/KeyValueApi.md
 doc/LanguageInfo.md
 doc/LocalizableStringDto.md
+doc/LoginApi.md
+doc/LoginResultType.md
+doc/MemberApi.md
+doc/MemberDto.md
+doc/MemberLevel.md
 doc/MethodParameterApiDescriptionModel.md
 doc/ModuleApiDescriptionModel.md
 doc/ModuleExtensionDto.md
@@ -88,6 +96,7 @@ doc/ParameterApiDescriptionModel.md
 doc/PermissionGrantInfoDto.md
 doc/PermissionGroupDto.md
 doc/Priority.md
+doc/ProfileApi.md
 doc/ProfileDto.md
 doc/PropertyApiDescriptionModel.md
 doc/ProviderInfoDto.md
@@ -104,6 +113,7 @@ doc/SettingsDto.md
 doc/SmsApi.md
 doc/SpecialItemDto.md
 doc/SpecialItems.md
+doc/StorageApi.md
 doc/StringKeyValue.md
 doc/StringSetKeyValueDto.md
 doc/TagApi.md
@@ -131,15 +141,22 @@ doc/UpdateProfileDto.md
 doc/UploadCredentials.md
 doc/UserData.md
 doc/UserDataListResultDto.md
+doc/UserLoginInfo.md
+doc/UserStorageDto.md
 doc/WindowsTimeZone.md
 git_push.sh
 lib/api.dart
+lib/api/account_api.dart
 lib/api/file_api.dart
 lib/api/item_api.dart
 lib/api/key_value_api.dart
+lib/api/login_api.dart
+lib/api/member_api.dart
 lib/api/note_api.dart
+lib/api/profile_api.dart
 lib/api/settings_api.dart
 lib/api/sms_api.dart
+lib/api/storage_api.dart
 lib/api/tag_api.dart
 lib/api/thumb_api.dart
 lib/api/todo_api.dart
@@ -151,6 +168,7 @@ lib/auth/authentication.dart
 lib/auth/http_basic_auth.dart
 lib/auth/http_bearer_auth.dart
 lib/auth/oauth.dart
+lib/model/abp_login_result.dart
 lib/model/action_api_description_model.dart
 lib/model/app_theme.dart
 lib/model/application_api_description_model.dart
@@ -198,6 +216,7 @@ lib/model/feature_dto.dart
 lib/model/feature_group_dto.dart
 lib/model/feature_provider_dto.dart
 lib/model/file_dto.dart
+lib/model/file_or_credentials_dto.dart
 lib/model/find_tenant_result_dto.dart
 lib/model/get_feature_list_result_dto.dart
 lib/model/get_permission_list_result_dto.dart
@@ -221,6 +240,9 @@ lib/model/item_dto_paged_result_dto.dart
 lib/model/item_type.dart
 lib/model/language_info.dart
 lib/model/localizable_string_dto.dart
+lib/model/login_result_type.dart
+lib/model/member_dto.dart
+lib/model/member_level.dart
 lib/model/method_parameter_api_description_model.dart
 lib/model/module_api_description_model.dart
 lib/model/module_extension_dto.dart
@@ -270,5 +292,7 @@ lib/model/update_profile_dto.dart
 lib/model/upload_credentials.dart
 lib/model/user_data.dart
 lib/model/user_data_list_result_dto.dart
+lib/model/user_login_info.dart
+lib/model/user_storage_dto.dart
 lib/model/windows_time_zone.dart
 pubspec.yaml

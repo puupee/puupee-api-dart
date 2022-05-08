@@ -29,6 +29,8 @@ Name | Type | Description | Notes
 **url** | **String** |  | [optional] 
 **size** | **int** |  | [optional] 
 **md5** | **String** |  | [optional] 
+**sliceMd5** | **String** |  | [optional] 
+**rapidCode** | **String** |  | [optional] 
 **contentType** | **String** |  | [optional] 
 **type** | [**ItemType**](ItemType.md) |  | [optional] 
 **displayStyle** | [**DisplayStyle**](DisplayStyle.md) |  | [optional] 

@@ -16,6 +16,62 @@ class FileApi {
 
   final ApiClient apiClient;
 
+  /// Performs an HTTP 'GET /api/app/file/file-or-credentials/{creatorId}' operation and returns the [Response].
+  /// Parameters:
+  ///
+  /// * [String] creatorId (required):
+  ///
+  /// * [String] rapidCode:
+  Future<Response> apiAppFileFileOrCredentialsCreatorIdGetWithHttpInfo(String creatorId, { String? rapidCode, }) async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/app/file/file-or-credentials/{creatorId}'
+      .replaceAll('{creatorId}', creatorId);
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    if (rapidCode != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'rapidCode', rapidCode));
+    }
+
+    const authNames = <String>['oauth2'];
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes[0],
+      authNames,
+    );
+  }
+
+  /// Parameters:
+  ///
+  /// * [String] creatorId (required):
+  ///
+  /// * [String] rapidCode:
+  Future<FileOrCredentialsDto?> apiAppFileFileOrCredentialsCreatorIdGet(String creatorId, { String? rapidCode, }) async {
+    final response = await apiAppFileFileOrCredentialsCreatorIdGetWithHttpInfo(creatorId,  rapidCode: rapidCode, );
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'FileOrCredentialsDto',) as FileOrCredentialsDto;
+        }
+  }
+
   /// Performs an HTTP 'POST /api/app/file/pre-sign-url' operation and returns the [Response].
   /// Parameters:
   ///
@@ -64,47 +120,6 @@ class FileApi {
     // FormatException when trying to decode an empty string.
     if (response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'String',) as String;
-        }
-  }
-
-  /// Performs an HTTP 'GET /api/app/file/upload-credentials' operation and returns the [Response].
-  Future<Response> apiAppFileUploadCredentialsGetWithHttpInfo() async {
-    // ignore: prefer_const_declarations
-    final path = r'/api/app/file/upload-credentials';
-
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    const authNames = <String>['oauth2'];
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
-    );
-  }
-
-  Future<UploadCredentials?> apiAppFileUploadCredentialsGet() async {
-    final response = await apiAppFileUploadCredentialsGetWithHttpInfo();
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'UploadCredentials',) as UploadCredentials;
         }
   }
 }

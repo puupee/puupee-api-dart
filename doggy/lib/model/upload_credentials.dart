@@ -24,6 +24,7 @@ class UploadCredentials {
     this.accessKeySecret,
     this.expiration,
     this.expiredTime,
+    this.appId,
   });
 
 
@@ -49,6 +50,8 @@ class UploadCredentials {
 
   int? expiredTime;
 
+  String? appId;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is UploadCredentials &&
      other.storageClass == storageClass &&
@@ -61,7 +64,8 @@ class UploadCredentials {
      other.accessKeyId == accessKeyId &&
      other.accessKeySecret == accessKeySecret &&
      other.expiration == expiration &&
-     other.expiredTime == expiredTime;
+     other.expiredTime == expiredTime &&
+     other.appId == appId;
 
   @override
   int get hashCode =>
@@ -75,10 +79,11 @@ class UploadCredentials {
     accessKeyId.hashCode +
     accessKeySecret.hashCode +
     expiration.hashCode +
-    expiredTime.hashCode;
+    expiredTime.hashCode +
+    appId.hashCode;
 
   @override
-  String toString() => 'UploadCredentials[storageClass=$storageClass, endPoint=$endPoint, protocal=$protocal, bucketName=$bucketName, regionId=$regionId, prefix=$prefix, securityToken=$securityToken, accessKeyId=$accessKeyId, accessKeySecret=$accessKeySecret, expiration=$expiration, expiredTime=$expiredTime]';
+  String toString() => 'UploadCredentials[storageClass=$storageClass, endPoint=$endPoint, protocal=$protocal, bucketName=$bucketName, regionId=$regionId, prefix=$prefix, securityToken=$securityToken, accessKeyId=$accessKeyId, accessKeySecret=$accessKeySecret, expiration=$expiration, expiredTime=$expiredTime, appId=$appId]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -115,6 +120,9 @@ class UploadCredentials {
     if (expiredTime != null) {
       json[r'expiredTime'] = expiredTime;
     }
+    if (appId != null) {
+      json[r'appId'] = appId;
+    }
     return json;
   }
 
@@ -133,6 +141,7 @@ class UploadCredentials {
         accessKeySecret: json[r'accessKeySecret'] == null ? null : json[r'accessKeySecret'] as String?,
         expiration: json[r'expiration'] == null ? null : json[r'expiration'] as String?,
         expiredTime: json[r'expiredTime'] == null ? null : json[r'expiredTime'] as int?,
+        appId: json[r'appId'] == null ? null : json[r'appId'] as String?,
     );
 
   static List<UploadCredentials> listFromJson(List json, {bool? growable,}) =>

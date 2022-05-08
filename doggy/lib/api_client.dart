@@ -188,6 +188,8 @@ class ApiClient {
           }
           final valueString = '$value'.toLowerCase();
           return valueString == 'true' || valueString == '1';
+        case 'AbpLoginResult':
+          return AbpLoginResult.fromJson(value);
         case 'ActionApiDescriptionModel':
           return ActionApiDescriptionModel.fromJson(value);
         case 'AppTheme':
@@ -284,6 +286,8 @@ class ApiClient {
           return FeatureProviderDto.fromJson(value);
         case 'FileDto':
           return FileDto.fromJson(value);
+        case 'FileOrCredentialsDto':
+          return FileOrCredentialsDto.fromJson(value);
         case 'FindTenantResultDto':
           return FindTenantResultDto.fromJson(value);
         case 'GetFeatureListResultDto':
@@ -331,6 +335,14 @@ class ApiClient {
           return LanguageInfo.fromJson(value);
         case 'LocalizableStringDto':
           return LocalizableStringDto.fromJson(value);
+        case 'LoginResultType':
+          return LoginResultTypeTypeTransformer().decode(value);
+          
+        case 'MemberDto':
+          return MemberDto.fromJson(value);
+        case 'MemberLevel':
+          return MemberLevelTypeTransformer().decode(value);
+          
         case 'MethodParameterApiDescriptionModel':
           return MethodParameterApiDescriptionModel.fromJson(value);
         case 'ModuleApiDescriptionModel':
@@ -431,6 +443,10 @@ class ApiClient {
           return UserData.fromJson(value);
         case 'UserDataListResultDto':
           return UserDataListResultDto.fromJson(value);
+        case 'UserLoginInfo':
+          return UserLoginInfo.fromJson(value);
+        case 'UserStorageDto':
+          return UserStorageDto.fromJson(value);
         case 'WindowsTimeZone':
           return WindowsTimeZone.fromJson(value);
         default:

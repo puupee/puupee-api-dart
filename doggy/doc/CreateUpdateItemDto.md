@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 **thumbId** | **String** |  | [optional] 
 **key** | **String** |  | [optional] 
 **md5** | **String** |  | [optional] 
+**sliceMd5** | **String** |  | [optional] 
+**rapidCode** | **String** |  | [optional] 
 **contentType** | **String** |  | [optional] 
 **type** | [**ItemType**](ItemType.md) |  | [optional] 
 **displayStyle** | [**DisplayStyle**](DisplayStyle.md) |  | [optional] 

@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **controllerName** | **String** |  | [optional] 
 **controllerGroupName** | **String** |  | [optional] 
+**isRemoteService** | **bool** |  | [optional] 
+**apiVersion** | **String** |  | [optional] 
 **type** | **String** |  | [optional] 
 **interfaces** | [**List<ControllerInterfaceApiDescriptionModel>**](ControllerInterfaceApiDescriptionModel.md) |  | [optional] [default to const []]
 **actions** | [**Map<String, ActionApiDescriptionModel>**](ActionApiDescriptionModel.md) |  | [optional] [default to const {}]

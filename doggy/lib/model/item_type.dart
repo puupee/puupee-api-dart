@@ -24,7 +24,7 @@ class ItemType {
   String? toJson() => value;
 
   static const folder = ItemType._(r'Folder');
-  static const picture = ItemType._(r'Picture');
+  static const image = ItemType._(r'Image');
   static const video = ItemType._(r'Video');
   static const audio = ItemType._(r'Audio');
   static const word = ItemType._(r'Word');
@@ -37,7 +37,7 @@ class ItemType {
   /// List of all possible values in this [enum][ItemType].
   static const values = <ItemType>[
     folder,
-    picture,
+    image,
     video,
     audio,
     word,
@@ -73,8 +73,8 @@ class ItemTypeTypeTransformer {
     if (data == r'Folder') {
       return ItemType.folder;
     }
-    if (data == r'Picture') {
-      return ItemType.picture;
+    if (data == r'Image') {
+      return ItemType.image;
     }
     if (data == r'Video') {
       return ItemType.video;

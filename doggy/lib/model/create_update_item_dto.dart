@@ -21,6 +21,8 @@ class CreateUpdateItemDto {
     this.thumbId,
     this.key,
     this.md5,
+    this.sliceMd5,
+    this.rapidCode,
     this.contentType,
     this.type,
     this.displayStyle,
@@ -47,6 +49,10 @@ class CreateUpdateItemDto {
 
   String? md5;
 
+  String? sliceMd5;
+
+  String? rapidCode;
+
   String? contentType;
 
   ItemType? type;
@@ -71,6 +77,8 @@ class CreateUpdateItemDto {
      other.thumbId == thumbId &&
      other.key == key &&
      other.md5 == md5 &&
+     other.sliceMd5 == sliceMd5 &&
+     other.rapidCode == rapidCode &&
      other.contentType == contentType &&
      other.type == type &&
      other.displayStyle == displayStyle &&
@@ -89,6 +97,8 @@ class CreateUpdateItemDto {
     thumbId.hashCode +
     key.hashCode +
     md5.hashCode +
+    sliceMd5.hashCode +
+    rapidCode.hashCode +
     contentType.hashCode +
     type.hashCode +
     displayStyle.hashCode +
@@ -98,7 +108,7 @@ class CreateUpdateItemDto {
     fileUpdatedAt.hashCode;
 
   @override
-  String toString() => 'CreateUpdateItemDto[name=$name, description=$description, password=$password, parentItemId=$parentItemId, tagIds=$tagIds, thumbId=$thumbId, key=$key, md5=$md5, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt]';
+  String toString() => 'CreateUpdateItemDto[name=$name, description=$description, password=$password, parentItemId=$parentItemId, tagIds=$tagIds, thumbId=$thumbId, key=$key, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -125,6 +135,12 @@ class CreateUpdateItemDto {
     }
     if (md5 != null) {
       json[r'md5'] = md5;
+    }
+    if (sliceMd5 != null) {
+      json[r'sliceMd5'] = sliceMd5;
+    }
+    if (rapidCode != null) {
+      json[r'rapidCode'] = rapidCode;
     }
     if (contentType != null) {
       json[r'contentType'] = contentType;
@@ -164,6 +180,8 @@ class CreateUpdateItemDto {
         thumbId: json[r'thumbId'] == null ? null : json[r'thumbId'] as String?,
         key: json[r'key'] == null ? null : json[r'key'] as String?,
         md5: json[r'md5'] == null ? null : json[r'md5'] as String?,
+        sliceMd5: json[r'sliceMd5'] == null ? null : json[r'sliceMd5'] as String?,
+        rapidCode: json[r'rapidCode'] == null ? null : json[r'rapidCode'] as String?,
         contentType: json[r'contentType'] == null ? null : json[r'contentType'] as String?,
         type: json[r'type'] == null ? null : ItemType.fromJson(json[r'type']),
         displayStyle: json[r'displayStyle'] == null ? null : DisplayStyle.fromJson(json[r'displayStyle']),
