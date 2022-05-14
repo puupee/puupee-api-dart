@@ -23,11 +23,13 @@ class DisplayStyle {
 
   String? toJson() => value;
 
+  static const none = DisplayStyle._(r'None');
   static const listItem = DisplayStyle._(r'ListItem');
   static const largeThumbnail = DisplayStyle._(r'LargeThumbnail');
 
   /// List of all possible values in this [enum][DisplayStyle].
   static const values = <DisplayStyle>[
+    none,
     listItem,
     largeThumbnail,
   ];
@@ -54,6 +56,9 @@ class DisplayStyleTypeTransformer {
   ///
   /// If the [dynamic value][data] cannot be decoded successfully, then an [UnimplementedError] is thrown.
   DisplayStyle decode(dynamic data) {
+    if (data == r'None') {
+      return DisplayStyle.none;
+    }
     if (data == r'ListItem') {
       return DisplayStyle.listItem;
     }

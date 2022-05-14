@@ -16,6 +16,8 @@ class CreateUpdateThumbDto {
     this.key,
     this.size,
     this.md5,
+    this.sliceMd5,
+    this.rapidCode,
     this.contentType,
     this.extension_,
     this.storageClass,
@@ -28,6 +30,10 @@ class CreateUpdateThumbDto {
 
   String? md5;
 
+  String? sliceMd5;
+
+  String? rapidCode;
+
   String? contentType;
 
   String? extension_;
@@ -39,6 +45,8 @@ class CreateUpdateThumbDto {
      other.key == key &&
      other.size == size &&
      other.md5 == md5 &&
+     other.sliceMd5 == sliceMd5 &&
+     other.rapidCode == rapidCode &&
      other.contentType == contentType &&
      other.extension_ == extension_ &&
      other.storageClass == storageClass;
@@ -48,12 +56,14 @@ class CreateUpdateThumbDto {
     key.hashCode +
     size.hashCode +
     md5.hashCode +
+    sliceMd5.hashCode +
+    rapidCode.hashCode +
     contentType.hashCode +
     extension_.hashCode +
     storageClass.hashCode;
 
   @override
-  String toString() => 'CreateUpdateThumbDto[key=$key, size=$size, md5=$md5, contentType=$contentType, extension_=$extension_, storageClass=$storageClass]';
+  String toString() => 'CreateUpdateThumbDto[key=$key, size=$size, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, extension_=$extension_, storageClass=$storageClass]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -65,6 +75,12 @@ class CreateUpdateThumbDto {
     }
     if (md5 != null) {
       json[r'md5'] = md5;
+    }
+    if (sliceMd5 != null) {
+      json[r'sliceMd5'] = sliceMd5;
+    }
+    if (rapidCode != null) {
+      json[r'rapidCode'] = rapidCode;
     }
     if (contentType != null) {
       json[r'contentType'] = contentType;
@@ -85,6 +101,8 @@ class CreateUpdateThumbDto {
         key: json[r'key'] == null ? null : json[r'key'] as String?,
         size: json[r'size'] == null ? null : json[r'size'] as int?,
         md5: json[r'md5'] == null ? null : json[r'md5'] as String?,
+        sliceMd5: json[r'sliceMd5'] == null ? null : json[r'sliceMd5'] as String?,
+        rapidCode: json[r'rapidCode'] == null ? null : json[r'rapidCode'] as String?,
         contentType: json[r'contentType'] == null ? null : json[r'contentType'] as String?,
         extension_: json[r'extension'] == null ? null : json[r'extension'] as String?,
         storageClass: json[r'storageClass'] == null ? null : json[r'storageClass'] as String?,
