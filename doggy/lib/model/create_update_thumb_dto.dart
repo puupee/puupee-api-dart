@@ -13,6 +13,7 @@ part of doggy_api;
 class CreateUpdateThumbDto {
   /// Returns a new [CreateUpdateThumbDto] instance.
   CreateUpdateThumbDto({
+    this.name,
     this.key,
     this.size,
     this.md5,
@@ -23,6 +24,8 @@ class CreateUpdateThumbDto {
     this.storageClass,
   });
 
+
+  String? name;
 
   String? key;
 
@@ -42,6 +45,7 @@ class CreateUpdateThumbDto {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateUpdateThumbDto &&
+     other.name == name &&
      other.key == key &&
      other.size == size &&
      other.md5 == md5 &&
@@ -53,6 +57,7 @@ class CreateUpdateThumbDto {
 
   @override
   int get hashCode =>
+    name.hashCode +
     key.hashCode +
     size.hashCode +
     md5.hashCode +
@@ -63,10 +68,13 @@ class CreateUpdateThumbDto {
     storageClass.hashCode;
 
   @override
-  String toString() => 'CreateUpdateThumbDto[key=$key, size=$size, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, extension_=$extension_, storageClass=$storageClass]';
+  String toString() => 'CreateUpdateThumbDto[name=$name, key=$key, size=$size, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, extension_=$extension_, storageClass=$storageClass]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
+    if (name != null) {
+      json[r'name'] = name;
+    }
     if (key != null) {
       json[r'key'] = key;
     }
@@ -98,6 +106,7 @@ class CreateUpdateThumbDto {
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
   static CreateUpdateThumbDto fromJson(Map<String, dynamic> json) => CreateUpdateThumbDto(
+        name: json[r'name'] == null ? null : json[r'name'] as String?,
         key: json[r'key'] == null ? null : json[r'key'] as String?,
         size: json[r'size'] == null ? null : json[r'size'] as int?,
         md5: json[r'md5'] == null ? null : json[r'md5'] as String?,

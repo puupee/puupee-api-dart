@@ -8,6 +8,7 @@ import 'package:doggy_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**name** | **String** |  | [optional] 
 **key** | **String** |  | [optional] 
 **size** | **int** |  | [optional] 
 **md5** | **String** |  | [optional] 
