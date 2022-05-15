@@ -63,6 +63,9 @@ String parameterToString(dynamic value) {
   if (value is AppTheme) {
     return AppThemeTypeTransformer().encode(value).toString();
   }
+  if (value is DeviceStatus) {
+    return DeviceStatusTypeTransformer().encode(value).toString();
+  }
   if (value is DisplayStyle) {
     return DisplayStyleTypeTransformer().encode(value).toString();
   }
@@ -71,6 +74,9 @@ String parameterToString(dynamic value) {
   }
   if (value is MemberLevel) {
     return MemberLevelTypeTransformer().encode(value).toString();
+  }
+  if (value is Platform) {
+    return PlatformTypeTransformer().encode(value).toString();
   }
   if (value is Priority) {
     return PriorityTypeTransformer().encode(value).toString();

@@ -42,14 +42,16 @@ import 'package:doggy_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = FileApi();
-final rapidCode = rapidCode_example; // String | 
+final api_instance = DeviceApi();
+final sorting = sorting_example; // String | 
+final skipCount = 56; // int | 
+final maxResultCount = 56; // int | 
 
 try {
-    final result = api_instance.apiAppFileFileOrCredentialsGet(rapidCode);
+    final result = api_instance.apiAppDeviceGet(sorting, skipCount, maxResultCount);
     print(result);
 } catch (e) {
-    print('Exception when calling FileApi->apiAppFileFileOrCredentialsGet: $e\n');
+    print('Exception when calling DeviceApi->apiAppDeviceGet: $e\n');
 }
 
 ```
@@ -60,6 +62,9 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*DeviceApi* | [**apiAppDeviceGet**](doc\/DeviceApi.md#apiappdeviceget) | **GET** /api/app/device | 
+*DeviceApi* | [**apiAppDeviceIdDelete**](doc\/DeviceApi.md#apiappdeviceiddelete) | **DELETE** /api/app/device/{id} | 
+*DeviceApi* | [**apiAppDeviceRefreshPost**](doc\/DeviceApi.md#apiappdevicerefreshpost) | **POST** /api/app/device/refresh | 
 *FileApi* | [**apiAppFileFileOrCredentialsGet**](doc\/FileApi.md#apiappfilefileorcredentialsget) | **GET** /api/app/file/file-or-credentials | 
 *FileApi* | [**apiAppFilePreSignUrlPost**](doc\/FileApi.md#apiappfilepresignurlpost) | **POST** /api/app/file/pre-sign-url | 
 *ItemApi* | [**apiAppItemGet**](doc\/ItemApi.md#apiappitemget) | **GET** /api/app/item | 
@@ -82,6 +87,9 @@ Class | Method | HTTP request | Description
 *KeyValueApi* | [**apiAppKeyValueStringGet**](doc\/KeyValueApi.md#apiappkeyvaluestringget) | **GET** /api/app/key-value/string | 
 *MemberApi* | [**apiAppMemberGet**](doc\/MemberApi.md#apiappmemberget) | **GET** /api/app/member | 
 *NoteApi* | [**apiAppNoteNoteSpecsGet**](doc\/NoteApi.md#apiappnotenotespecsget) | **GET** /api/app/note/note-specs | 
+*NotificationApi* | [**apiAppNotificationBarkApiKeyMessageGet**](doc\/NotificationApi.md#apiappnotificationbarkapikeymessageget) | **GET** /api/app/notification/bark/{apiKey}/{message} | 
+*NotificationApi* | [**apiAppNotificationGet**](doc\/NotificationApi.md#apiappnotificationget) | **GET** /api/app/notification | 
+*NotificationApi* | [**apiAppNotificationPushPost**](doc\/NotificationApi.md#apiappnotificationpushpost) | **POST** /api/app/notification/push | 
 *SettingsApi* | [**apiAppSettingsGet**](doc\/SettingsApi.md#apiappsettingsget) | **GET** /api/app/settings | 
 *SettingsApi* | [**apiAppSettingsSetPost**](doc\/SettingsApi.md#apiappsettingssetpost) | **POST** /api/app/settings/set | 
 *SmsApi* | [**apiAppSmsSendChangePhoneCodePost**](doc\/SmsApi.md#apiappsmssendchangephonecodepost) | **POST** /api/app/sms/send-change-phone-code | 
@@ -119,7 +127,9 @@ Class | Method | HTTP request | Description
  - [ClockDto](doc\/ClockDto.md)
  - [ControllerApiDescriptionModel](doc\/ControllerApiDescriptionModel.md)
  - [ControllerInterfaceApiDescriptionModel](doc\/ControllerInterfaceApiDescriptionModel.md)
+ - [CreatePushNotificationDto](doc\/CreatePushNotificationDto.md)
  - [CreateUpdateItemDto](doc\/CreateUpdateItemDto.md)
+ - [CreateUpdateNotificationDto](doc\/CreateUpdateNotificationDto.md)
  - [CreateUpdateTagDto](doc\/CreateUpdateTagDto.md)
  - [CreateUpdateThumbDto](doc\/CreateUpdateThumbDto.md)
  - [CreateUpdateTodoDto](doc\/CreateUpdateTodoDto.md)
@@ -131,6 +141,9 @@ Class | Method | HTTP request | Description
  - [DateTimeSetKeyValueDto](doc\/DateTimeSetKeyValueDto.md)
  - [DecimalKeyValue](doc\/DecimalKeyValue.md)
  - [DecimalSetKeyValueDto](doc\/DecimalSetKeyValueDto.md)
+ - [DeviceDto](doc\/DeviceDto.md)
+ - [DeviceDtoPagedResultDto](doc\/DeviceDtoPagedResultDto.md)
+ - [DeviceStatus](doc\/DeviceStatus.md)
  - [DisplayStyle](doc\/DisplayStyle.md)
  - [DoubleKeyValue](doc\/DoubleKeyValue.md)
  - [DoubleSetKeyValueDto](doc\/DoubleSetKeyValueDto.md)
@@ -184,14 +197,20 @@ Class | Method | HTTP request | Description
  - [MultiTenancyInfoDto](doc\/MultiTenancyInfoDto.md)
  - [NameValue](doc\/NameValue.md)
  - [NoteSpecDto](doc\/NoteSpecDto.md)
+ - [NotificationDto](doc\/NotificationDto.md)
+ - [NotificationDtoPagedResultDto](doc\/NotificationDtoPagedResultDto.md)
+ - [NotificationInfoDto](doc\/NotificationInfoDto.md)
+ - [NotificationInfoDtoPagedResultDto](doc\/NotificationInfoDtoPagedResultDto.md)
  - [ObjectExtensionsDto](doc\/ObjectExtensionsDto.md)
  - [ParameterApiDescriptionModel](doc\/ParameterApiDescriptionModel.md)
  - [PermissionGrantInfoDto](doc\/PermissionGrantInfoDto.md)
  - [PermissionGroupDto](doc\/PermissionGroupDto.md)
+ - [Platform](doc\/Platform.md)
  - [Priority](doc\/Priority.md)
  - [ProfileDto](doc\/ProfileDto.md)
  - [PropertyApiDescriptionModel](doc\/PropertyApiDescriptionModel.md)
  - [ProviderInfoDto](doc\/ProviderInfoDto.md)
+ - [RefreshDeviceStatusDto](doc\/RefreshDeviceStatusDto.md)
  - [RegisterDto](doc\/RegisterDto.md)
  - [RemoteServiceErrorInfo](doc\/RemoteServiceErrorInfo.md)
  - [RemoteServiceErrorResponse](doc\/RemoteServiceErrorResponse.md)

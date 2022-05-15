@@ -217,8 +217,12 @@ class ApiClient {
           return ControllerApiDescriptionModel.fromJson(value);
         case 'ControllerInterfaceApiDescriptionModel':
           return ControllerInterfaceApiDescriptionModel.fromJson(value);
+        case 'CreatePushNotificationDto':
+          return CreatePushNotificationDto.fromJson(value);
         case 'CreateUpdateItemDto':
           return CreateUpdateItemDto.fromJson(value);
+        case 'CreateUpdateNotificationDto':
+          return CreateUpdateNotificationDto.fromJson(value);
         case 'CreateUpdateTagDto':
           return CreateUpdateTagDto.fromJson(value);
         case 'CreateUpdateThumbDto':
@@ -241,6 +245,13 @@ class ApiClient {
           return DecimalKeyValue.fromJson(value);
         case 'DecimalSetKeyValueDto':
           return DecimalSetKeyValueDto.fromJson(value);
+        case 'DeviceDto':
+          return DeviceDto.fromJson(value);
+        case 'DeviceDtoPagedResultDto':
+          return DeviceDtoPagedResultDto.fromJson(value);
+        case 'DeviceStatus':
+          return DeviceStatusTypeTransformer().decode(value);
+          
         case 'DisplayStyle':
           return DisplayStyleTypeTransformer().decode(value);
           
@@ -350,6 +361,14 @@ class ApiClient {
           return NameValue.fromJson(value);
         case 'NoteSpecDto':
           return NoteSpecDto.fromJson(value);
+        case 'NotificationDto':
+          return NotificationDto.fromJson(value);
+        case 'NotificationDtoPagedResultDto':
+          return NotificationDtoPagedResultDto.fromJson(value);
+        case 'NotificationInfoDto':
+          return NotificationInfoDto.fromJson(value);
+        case 'NotificationInfoDtoPagedResultDto':
+          return NotificationInfoDtoPagedResultDto.fromJson(value);
         case 'ObjectExtensionsDto':
           return ObjectExtensionsDto.fromJson(value);
         case 'ParameterApiDescriptionModel':
@@ -358,6 +377,9 @@ class ApiClient {
           return PermissionGrantInfoDto.fromJson(value);
         case 'PermissionGroupDto':
           return PermissionGroupDto.fromJson(value);
+        case 'Platform':
+          return PlatformTypeTransformer().decode(value);
+          
         case 'Priority':
           return PriorityTypeTransformer().decode(value);
           
@@ -367,6 +389,8 @@ class ApiClient {
           return PropertyApiDescriptionModel.fromJson(value);
         case 'ProviderInfoDto':
           return ProviderInfoDto.fromJson(value);
+        case 'RefreshDeviceStatusDto':
+          return RefreshDeviceStatusDto.fromJson(value);
         case 'RegisterDto':
           return RegisterDto.fromJson(value);
         case 'RemoteServiceErrorInfo':
