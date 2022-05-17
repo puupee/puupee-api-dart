@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **apiAppStorageGet**
-> UserStorageDto apiAppStorageGet(creatorId)
+> UserStorageDto apiAppStorageGet()
 
 
 
@@ -24,10 +24,9 @@ import 'package:doggy_api/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = StorageApi();
-final creatorId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final result = api_instance.apiAppStorageGet(creatorId);
+    final result = api_instance.apiAppStorageGet();
     print(result);
 } catch (e) {
     print('Exception when calling StorageApi->apiAppStorageGet: $e\n');
@@ -35,10 +34,7 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **creatorId** | **String**|  | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 

@@ -17,10 +17,7 @@ class StorageApi {
   final ApiClient apiClient;
 
   /// Performs an HTTP 'GET /api/app/storage' operation and returns the [Response].
-  /// Parameters:
-  ///
-  /// * [String] creatorId:
-  Future<Response> apiAppStorageGetWithHttpInfo({ String? creatorId, }) async {
+  Future<Response> apiAppStorageGetWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/api/app/storage';
 
@@ -30,10 +27,6 @@ class StorageApi {
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
-
-    if (creatorId != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'creatorId', creatorId));
-    }
 
     const authNames = <String>['oauth2'];
     const contentTypes = <String>[];
@@ -51,11 +44,8 @@ class StorageApi {
     );
   }
 
-  /// Parameters:
-  ///
-  /// * [String] creatorId:
-  Future<UserStorageDto?> apiAppStorageGet({ String? creatorId, }) async {
-    final response = await apiAppStorageGetWithHttpInfo( creatorId: creatorId, );
+  Future<UserStorageDto?> apiAppStorageGet() async {
+    final response = await apiAppStorageGetWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
