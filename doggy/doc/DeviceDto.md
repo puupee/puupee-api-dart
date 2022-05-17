@@ -8,9 +8,16 @@ import 'package:doggy_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**deviceId** | **String** |  | [optional] 
+**id** | **String** |  | [optional] 
+**creationTime** | [**DateTime**](DateTime.md) |  | [optional] 
+**creatorId** | **String** |  | [optional] 
+**lastModificationTime** | [**DateTime**](DateTime.md) |  | [optional] 
+**lastModifierId** | **String** |  | [optional] 
+**isDeleted** | **bool** |  | [optional] 
+**deleterId** | **String** |  | [optional] 
+**deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
+**token** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
-**displayName** | **String** |  | [optional] 
 **type** | [**Platform**](Platform.md) |  | [optional] 
 **brand** | **String** |  | [optional] 
 **systemVersion** | **String** |  | [optional] 

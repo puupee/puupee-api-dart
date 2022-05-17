@@ -3,6 +3,7 @@
 .travis.yml
 README.md
 analysis_options.yaml
+doc/AbpLoginResult.md
 doc/ActionApiDescriptionModel.md
 doc/AppTheme.md
 doc/ApplicationApiDescriptionModel.md
@@ -83,6 +84,7 @@ doc/ItemType.md
 doc/KeyValueApi.md
 doc/LanguageInfo.md
 doc/LocalizableStringDto.md
+doc/LoginResultType.md
 doc/MemberApi.md
 doc/MemberDto.md
 doc/MemberLevel.md
@@ -149,7 +151,9 @@ doc/UpdateProfileDto.md
 doc/UploadCredentials.md
 doc/UserData.md
 doc/UserDataListResultDto.md
+doc/UserLoginInfo.md
 doc/UserStorageDto.md
+doc/UserStorageItemDto.md
 doc/WindowsTimeZone.md
 git_push.sh
 lib/api.dart
@@ -174,6 +178,7 @@ lib/auth/authentication.dart
 lib/auth/http_basic_auth.dart
 lib/auth/http_bearer_auth.dart
 lib/auth/oauth.dart
+lib/model/abp_login_result.dart
 lib/model/action_api_description_model.dart
 lib/model/app_theme.dart
 lib/model/application_api_description_model.dart
@@ -250,6 +255,7 @@ lib/model/item_dto_paged_result_dto.dart
 lib/model/item_type.dart
 lib/model/language_info.dart
 lib/model/localizable_string_dto.dart
+lib/model/login_result_type.dart
 lib/model/member_dto.dart
 lib/model/member_level.dart
 lib/model/method_parameter_api_description_model.dart
@@ -307,6 +313,8 @@ lib/model/update_profile_dto.dart
 lib/model/upload_credentials.dart
 lib/model/user_data.dart
 lib/model/user_data_list_result_dto.dart
+lib/model/user_login_info.dart
 lib/model/user_storage_dto.dart
+lib/model/user_storage_item_dto.dart
 lib/model/windows_time_zone.dart
 pubspec.yaml

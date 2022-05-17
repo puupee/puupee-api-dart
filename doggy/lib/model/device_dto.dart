@@ -13,20 +13,41 @@ part of doggy_api;
 class DeviceDto {
   /// Returns a new [DeviceDto] instance.
   DeviceDto({
-    this.deviceId,
+    this.id,
+    this.creationTime,
+    this.creatorId,
+    this.lastModificationTime,
+    this.lastModifierId,
+    this.isDeleted,
+    this.deleterId,
+    this.deletionTime,
+    this.token,
     this.name,
-    this.displayName,
     this.type,
     this.brand,
     this.systemVersion,
   });
 
 
-  String? deviceId;
+  String? id;
+
+  DateTime? creationTime;
+
+  String? creatorId;
+
+  DateTime? lastModificationTime;
+
+  String? lastModifierId;
+
+  bool? isDeleted;
+
+  String? deleterId;
+
+  DateTime? deletionTime;
+
+  String? token;
 
   String? name;
-
-  String? displayName;
 
   Platform? type;
 
@@ -36,35 +57,70 @@ class DeviceDto {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is DeviceDto &&
-     other.deviceId == deviceId &&
+     other.id == id &&
+     other.creationTime == creationTime &&
+     other.creatorId == creatorId &&
+     other.lastModificationTime == lastModificationTime &&
+     other.lastModifierId == lastModifierId &&
+     other.isDeleted == isDeleted &&
+     other.deleterId == deleterId &&
+     other.deletionTime == deletionTime &&
+     other.token == token &&
      other.name == name &&
-     other.displayName == displayName &&
      other.type == type &&
      other.brand == brand &&
      other.systemVersion == systemVersion;
 
   @override
   int get hashCode =>
-    deviceId.hashCode +
+    id.hashCode +
+    creationTime.hashCode +
+    creatorId.hashCode +
+    lastModificationTime.hashCode +
+    lastModifierId.hashCode +
+    isDeleted.hashCode +
+    deleterId.hashCode +
+    deletionTime.hashCode +
+    token.hashCode +
     name.hashCode +
-    displayName.hashCode +
     type.hashCode +
     brand.hashCode +
     systemVersion.hashCode;
 
   @override
-  String toString() => 'DeviceDto[deviceId=$deviceId, name=$name, displayName=$displayName, type=$type, brand=$brand, systemVersion=$systemVersion]';
+  String toString() => 'DeviceDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, token=$token, name=$name, type=$type, brand=$brand, systemVersion=$systemVersion]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (deviceId != null) {
-      json[r'deviceId'] = deviceId;
+    if (id != null) {
+      json[r'id'] = id;
+    }
+    if (creationTime != null) {
+      json[r'creationTime'] = creationTime!.toUtc().toIso8601String();
+    }
+    if (creatorId != null) {
+      json[r'creatorId'] = creatorId;
+    }
+    if (lastModificationTime != null) {
+      json[r'lastModificationTime'] = lastModificationTime!.toUtc().toIso8601String();
+    }
+    if (lastModifierId != null) {
+      json[r'lastModifierId'] = lastModifierId;
+    }
+    if (isDeleted != null) {
+      json[r'isDeleted'] = isDeleted;
+    }
+    if (deleterId != null) {
+      json[r'deleterId'] = deleterId;
+    }
+    if (deletionTime != null) {
+      json[r'deletionTime'] = deletionTime!.toUtc().toIso8601String();
+    }
+    if (token != null) {
+      json[r'token'] = token;
     }
     if (name != null) {
       json[r'name'] = name;
-    }
-    if (displayName != null) {
-      json[r'displayName'] = displayName;
     }
     if (type != null) {
       json[r'type'] = type;
@@ -82,9 +138,16 @@ class DeviceDto {
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
   static DeviceDto fromJson(Map<String, dynamic> json) => DeviceDto(
-        deviceId: json[r'deviceId'] == null ? null : json[r'deviceId'] as String?,
+        id: json[r'id'] == null ? null : json[r'id'] as String?,
+        creationTime: json[r'creationTime'] == null ? null : mapDateTime(json, r'creationTime', ''),
+        creatorId: json[r'creatorId'] == null ? null : json[r'creatorId'] as String?,
+        lastModificationTime: json[r'lastModificationTime'] == null ? null : mapDateTime(json, r'lastModificationTime', ''),
+        lastModifierId: json[r'lastModifierId'] == null ? null : json[r'lastModifierId'] as String?,
+        isDeleted: json[r'isDeleted'] == null ? null : json[r'isDeleted'] as bool?,
+        deleterId: json[r'deleterId'] == null ? null : json[r'deleterId'] as String?,
+        deletionTime: json[r'deletionTime'] == null ? null : mapDateTime(json, r'deletionTime', ''),
+        token: json[r'token'] == null ? null : json[r'token'] as String?,
         name: json[r'name'] == null ? null : json[r'name'] as String?,
-        displayName: json[r'displayName'] == null ? null : json[r'displayName'] as String?,
         type: json[r'type'] == null ? null : Platform.fromJson(json[r'type']),
         brand: json[r'brand'] == null ? null : json[r'brand'] as String?,
         systemVersion: json[r'systemVersion'] == null ? null : json[r'systemVersion'] as String?,

@@ -72,6 +72,9 @@ String parameterToString(dynamic value) {
   if (value is ItemType) {
     return ItemTypeTypeTransformer().encode(value).toString();
   }
+  if (value is LoginResultType) {
+    return LoginResultTypeTypeTransformer().encode(value).toString();
+  }
   if (value is MemberLevel) {
     return MemberLevelTypeTransformer().encode(value).toString();
   }

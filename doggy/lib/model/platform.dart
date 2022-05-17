@@ -23,20 +23,24 @@ class Platform {
 
   String? toJson() => value;
 
+  static const none = Platform._(r'None');
+  static const unknow = Platform._(r'Unknow');
   static const android = Platform._(r'Android');
   static const IOS = Platform._(r'IOS');
   static const windows = Platform._(r'Windows');
-  static const mac = Platform._(r'Mac');
+  static const macos = Platform._(r'Macos');
   static const linux = Platform._(r'Linux');
   static const web = Platform._(r'Web');
   static const other = Platform._(r'Other');
 
   /// List of all possible values in this [enum][Platform].
   static const values = <Platform>[
+    none,
+    unknow,
     android,
     IOS,
     windows,
-    mac,
+    macos,
     linux,
     web,
     other,
@@ -64,6 +68,12 @@ class PlatformTypeTransformer {
   ///
   /// If the [dynamic value][data] cannot be decoded successfully, then an [UnimplementedError] is thrown.
   Platform decode(dynamic data) {
+    if (data == r'None') {
+      return Platform.none;
+    }
+    if (data == r'Unknow') {
+      return Platform.unknow;
+    }
     if (data == r'Android') {
       return Platform.android;
     }
@@ -73,8 +83,8 @@ class PlatformTypeTransformer {
     if (data == r'Windows') {
       return Platform.windows;
     }
-    if (data == r'Mac') {
-      return Platform.mac;
+    if (data == r'Macos') {
+      return Platform.macos;
     }
     if (data == r'Linux') {
       return Platform.linux;

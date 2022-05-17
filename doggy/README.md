@@ -113,6 +113,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [AbpLoginResult](doc\/AbpLoginResult.md)
  - [ActionApiDescriptionModel](doc\/ActionApiDescriptionModel.md)
  - [AppTheme](doc\/AppTheme.md)
  - [ApplicationApiDescriptionModel](doc\/ApplicationApiDescriptionModel.md)
@@ -189,6 +190,7 @@ Class | Method | HTTP request | Description
  - [ItemType](doc\/ItemType.md)
  - [LanguageInfo](doc\/LanguageInfo.md)
  - [LocalizableStringDto](doc\/LocalizableStringDto.md)
+ - [LoginResultType](doc\/LoginResultType.md)
  - [MemberDto](doc\/MemberDto.md)
  - [MemberLevel](doc\/MemberLevel.md)
  - [MethodParameterApiDescriptionModel](doc\/MethodParameterApiDescriptionModel.md)
@@ -246,7 +248,9 @@ Class | Method | HTTP request | Description
  - [UploadCredentials](doc\/UploadCredentials.md)
  - [UserData](doc\/UserData.md)
  - [UserDataListResultDto](doc\/UserDataListResultDto.md)
+ - [UserLoginInfo](doc\/UserLoginInfo.md)
  - [UserStorageDto](doc\/UserStorageDto.md)
+ - [UserStorageItemDto](doc\/UserStorageItemDto.md)
  - [WindowsTimeZone](doc\/WindowsTimeZone.md)
 
 
