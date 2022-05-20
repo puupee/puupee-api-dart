@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**apiAppItemIdPut**](ItemApi.md#apiappitemidput) | **PUT** /api/app/item/{id} | 
 [**apiAppItemPost**](ItemApi.md#apiappitempost) | **POST** /api/app/item | 
 [**apiAppItemSpecialItemsGet**](ItemApi.md#apiappitemspecialitemsget) | **GET** /api/app/item/special-items | 
+[**apiAppItemSyncGet**](ItemApi.md#apiappitemsyncget) | **GET** /api/app/item/sync | 
 
 
 # **apiAppItemGet**
@@ -279,6 +280,53 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**SpecialItemDto**](SpecialItemDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **apiAppItemSyncGet**
+> ItemDtoPagedResultDto apiAppItemSyncGet(afterVersion, skipCount, maxResultCount)
+
+
+
+### Example
+```dart
+import 'package:doggy_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api_instance = ItemApi();
+final afterVersion = 789; // int | 
+final skipCount = 56; // int | 
+final maxResultCount = 56; // int | 
+
+try {
+    final result = api_instance.apiAppItemSyncGet(afterVersion, skipCount, maxResultCount);
+    print(result);
+} catch (e) {
+    print('Exception when calling ItemApi->apiAppItemSyncGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **afterVersion** | **int**|  | [optional] 
+ **skipCount** | **int**|  | [optional] 
+ **maxResultCount** | **int**|  | [optional] 
+
+### Return type
+
+[**ItemDtoPagedResultDto**](ItemDtoPagedResultDto.md)
 
 ### Authorization
 

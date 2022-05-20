@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **isDone** | **bool** |  | [optional] 
 **parentId** | **String** |  | [optional] 
 **endAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**syncVersion** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

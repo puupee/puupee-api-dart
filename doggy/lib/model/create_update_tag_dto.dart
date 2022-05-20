@@ -15,6 +15,7 @@ class CreateUpdateTagDto {
   CreateUpdateTagDto({
     this.name,
     this.parentTagId,
+    this.syncVersion,
   });
 
 
@@ -22,18 +23,22 @@ class CreateUpdateTagDto {
 
   String? parentTagId;
 
+  int? syncVersion;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateUpdateTagDto &&
      other.name == name &&
-     other.parentTagId == parentTagId;
+     other.parentTagId == parentTagId &&
+     other.syncVersion == syncVersion;
 
   @override
   int get hashCode =>
     name.hashCode +
-    parentTagId.hashCode;
+    parentTagId.hashCode +
+    syncVersion.hashCode;
 
   @override
-  String toString() => 'CreateUpdateTagDto[name=$name, parentTagId=$parentTagId]';
+  String toString() => 'CreateUpdateTagDto[name=$name, parentTagId=$parentTagId, syncVersion=$syncVersion]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -42,6 +47,9 @@ class CreateUpdateTagDto {
     }
     if (parentTagId != null) {
       json[r'parentTagId'] = parentTagId;
+    }
+    if (syncVersion != null) {
+      json[r'syncVersion'] = syncVersion;
     }
     return json;
   }
@@ -52,6 +60,7 @@ class CreateUpdateTagDto {
   static CreateUpdateTagDto fromJson(Map<String, dynamic> json) => CreateUpdateTagDto(
         name: json[r'name'] == null ? null : json[r'name'] as String?,
         parentTagId: json[r'parentTagId'] == null ? null : json[r'parentTagId'] as String?,
+        syncVersion: json[r'syncVersion'] == null ? null : json[r'syncVersion'] as int?,
     );
 
   static List<CreateUpdateTagDto> listFromJson(List json, {bool? growable,}) =>

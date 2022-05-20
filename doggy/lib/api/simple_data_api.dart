@@ -11,24 +11,24 @@
 part of doggy_api;
 
 
-class ThumbApi {
-  ThumbApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
+class SimpleDataApi {
+  SimpleDataApi([ApiClient? apiClient]) : apiClient = apiClient ?? defaultApiClient;
 
   final ApiClient apiClient;
 
-  /// Performs an HTTP 'GET /api/app/thumb' operation and returns the [Response].
+  /// Performs an HTTP 'GET /api/app/simple-data' operation and returns the [Response].
   /// Parameters:
   ///
-  /// * [String] searchKey:
-  ///
-  /// * [int] maxResultCount:
+  /// * [String] collection:
   ///
   /// * [String] sorting:
   ///
   /// * [int] skipCount:
-  Future<Response> apiAppThumbGetWithHttpInfo({ String? searchKey, int? maxResultCount, String? sorting, int? skipCount, }) async {
+  ///
+  /// * [int] maxResultCount:
+  Future<Response> apiAppSimpleDataGetWithHttpInfo({ String? collection, String? sorting, int? skipCount, int? maxResultCount, }) async {
     // ignore: prefer_const_declarations
-    final path = r'/api/app/thumb';
+    final path = r'/api/app/simple-data';
 
     // ignore: prefer_final_locals
     Object? postBody;
@@ -37,17 +37,17 @@ class ThumbApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    if (searchKey != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'SearchKey', searchKey));
-    }
-    if (maxResultCount != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'MaxResultCount', maxResultCount));
+    if (collection != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'Collection', collection));
     }
     if (sorting != null) {
       queryParams.addAll(_convertParametersForCollectionFormat('', 'Sorting', sorting));
     }
     if (skipCount != null) {
       queryParams.addAll(_convertParametersForCollectionFormat('', 'SkipCount', skipCount));
+    }
+    if (maxResultCount != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'MaxResultCount', maxResultCount));
     }
 
     const authNames = <String>['oauth2'];
@@ -68,15 +68,15 @@ class ThumbApi {
 
   /// Parameters:
   ///
-  /// * [String] searchKey:
-  ///
-  /// * [int] maxResultCount:
+  /// * [String] collection:
   ///
   /// * [String] sorting:
   ///
   /// * [int] skipCount:
-  Future<ThumbDtoPagedResultDto?> apiAppThumbGet({ String? searchKey, int? maxResultCount, String? sorting, int? skipCount, }) async {
-    final response = await apiAppThumbGetWithHttpInfo( searchKey: searchKey, maxResultCount: maxResultCount, sorting: sorting, skipCount: skipCount, );
+  ///
+  /// * [int] maxResultCount:
+  Future<SimpleDataDtoPagedResultDto?> apiAppSimpleDataGet({ String? collection, String? sorting, int? skipCount, int? maxResultCount, }) async {
+    final response = await apiAppSimpleDataGetWithHttpInfo( collection: collection, sorting: sorting, skipCount: skipCount, maxResultCount: maxResultCount, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -84,17 +84,17 @@ class ThumbApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ThumbDtoPagedResultDto',) as ThumbDtoPagedResultDto;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SimpleDataDtoPagedResultDto',) as SimpleDataDtoPagedResultDto;
         }
   }
 
-  /// Performs an HTTP 'DELETE /api/app/thumb/{id}' operation and returns the [Response].
+  /// Performs an HTTP 'DELETE /api/app/simple-data/{id}' operation and returns the [Response].
   /// Parameters:
   ///
   /// * [String] id (required):
-  Future<Response> apiAppThumbIdDeleteWithHttpInfo(String id,) async {
+  Future<Response> apiAppSimpleDataIdDeleteWithHttpInfo(String id,) async {
     // ignore: prefer_const_declarations
-    final path = r'/api/app/thumb/{id}'
+    final path = r'/api/app/simple-data/{id}'
       .replaceAll('{id}', id);
 
     // ignore: prefer_final_locals
@@ -123,8 +123,8 @@ class ThumbApi {
   /// Parameters:
   ///
   /// * [String] id (required):
-  Future<Map<String, dynamic>?> apiAppThumbIdDelete(String id,) async {
-    final response = await apiAppThumbIdDeleteWithHttpInfo(id,);
+  Future<Map<String, dynamic>?> apiAppSimpleDataIdDelete(String id,) async {
+    final response = await apiAppSimpleDataIdDeleteWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -136,13 +136,13 @@ class ThumbApi {
         }
   }
 
-  /// Performs an HTTP 'GET /api/app/thumb/{id}' operation and returns the [Response].
+  /// Performs an HTTP 'GET /api/app/simple-data/{id}' operation and returns the [Response].
   /// Parameters:
   ///
   /// * [String] id (required):
-  Future<Response> apiAppThumbIdGetWithHttpInfo(String id,) async {
+  Future<Response> apiAppSimpleDataIdGetWithHttpInfo(String id,) async {
     // ignore: prefer_const_declarations
-    final path = r'/api/app/thumb/{id}'
+    final path = r'/api/app/simple-data/{id}'
       .replaceAll('{id}', id);
 
     // ignore: prefer_final_locals
@@ -171,8 +171,8 @@ class ThumbApi {
   /// Parameters:
   ///
   /// * [String] id (required):
-  Future<ThumbDto?> apiAppThumbIdGet(String id,) async {
-    final response = await apiAppThumbIdGetWithHttpInfo(id,);
+  Future<SimpleDataDto?> apiAppSimpleDataIdGet(String id,) async {
+    final response = await apiAppSimpleDataIdGetWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -180,20 +180,20 @@ class ThumbApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ThumbDto',) as ThumbDto;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SimpleDataDto',) as SimpleDataDto;
         }
   }
 
-  /// Performs an HTTP 'POST /api/app/thumb' operation and returns the [Response].
+  /// Performs an HTTP 'POST /api/app/simple-data/save' operation and returns the [Response].
   /// Parameters:
   ///
-  /// * [CreateUpdateThumbDto] createUpdateThumbDto:
-  Future<Response> apiAppThumbPostWithHttpInfo({ CreateUpdateThumbDto? createUpdateThumbDto, }) async {
+  /// * [SimpleDataDto] simpleDataDto:
+  Future<Response> apiAppSimpleDataSavePostWithHttpInfo({ SimpleDataDto? simpleDataDto, }) async {
     // ignore: prefer_const_declarations
-    final path = r'/api/app/thumb';
+    final path = r'/api/app/simple-data/save';
 
     // ignore: prefer_final_locals
-    Object? postBody = createUpdateThumbDto;
+    Object? postBody = simpleDataDto;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
@@ -217,9 +217,9 @@ class ThumbApi {
 
   /// Parameters:
   ///
-  /// * [CreateUpdateThumbDto] createUpdateThumbDto:
-  Future<ThumbDto?> apiAppThumbPost({ CreateUpdateThumbDto? createUpdateThumbDto, }) async {
-    final response = await apiAppThumbPostWithHttpInfo( createUpdateThumbDto: createUpdateThumbDto, );
+  /// * [SimpleDataDto] simpleDataDto:
+  Future<SimpleDataDto?> apiAppSimpleDataSavePost({ SimpleDataDto? simpleDataDto, }) async {
+    final response = await apiAppSimpleDataSavePostWithHttpInfo( simpleDataDto: simpleDataDto, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -227,72 +227,7 @@ class ThumbApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ThumbDto',) as ThumbDto;
-        }
-  }
-
-  /// Performs an HTTP 'GET /api/app/thumb/sync' operation and returns the [Response].
-  /// Parameters:
-  ///
-  /// * [int] afterVersion:
-  ///
-  /// * [int] skipCount:
-  ///
-  /// * [int] maxResultCount:
-  Future<Response> apiAppThumbSyncGetWithHttpInfo({ int? afterVersion, int? skipCount, int? maxResultCount, }) async {
-    // ignore: prefer_const_declarations
-    final path = r'/api/app/thumb/sync';
-
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    if (afterVersion != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'afterVersion', afterVersion));
-    }
-    if (skipCount != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'skipCount', skipCount));
-    }
-    if (maxResultCount != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'maxResultCount', maxResultCount));
-    }
-
-    const authNames = <String>['oauth2'];
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
-    );
-  }
-
-  /// Parameters:
-  ///
-  /// * [int] afterVersion:
-  ///
-  /// * [int] skipCount:
-  ///
-  /// * [int] maxResultCount:
-  Future<ThumbDtoPagedResultDto?> apiAppThumbSyncGet({ int? afterVersion, int? skipCount, int? maxResultCount, }) async {
-    final response = await apiAppThumbSyncGetWithHttpInfo( afterVersion: afterVersion, skipCount: skipCount, maxResultCount: maxResultCount, );
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ThumbDtoPagedResultDto',) as ThumbDtoPagedResultDto;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SimpleDataDto',) as SimpleDataDto;
         }
   }
 }

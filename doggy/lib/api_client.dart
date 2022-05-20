@@ -414,6 +414,10 @@ class ApiClient {
           return SendSmsCodeDto.fromJson(value);
         case 'SettingsDto':
           return SettingsDto.fromJson(value);
+        case 'SimpleDataDto':
+          return SimpleDataDto.fromJson(value);
+        case 'SimpleDataDtoPagedResultDto':
+          return SimpleDataDtoPagedResultDto.fromJson(value);
         case 'SpecialItemDto':
           return SpecialItemDto.fromJson(value);
         case 'SpecialItems':
@@ -423,6 +427,8 @@ class ApiClient {
           return StringKeyValue.fromJson(value);
         case 'StringSetKeyValueDto':
           return StringSetKeyValueDto.fromJson(value);
+        case 'SyncStateDto':
+          return SyncStateDto.fromJson(value);
         case 'TagDto':
           return TagDto.fromJson(value);
         case 'TagDtoPagedResultDto':

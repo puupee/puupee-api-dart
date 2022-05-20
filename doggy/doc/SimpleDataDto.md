@@ -1,4 +1,4 @@
-# doggy_api.model.CreateUpdateTagDto
+# doggy_api.model.SimpleDataDto
 
 ## Load the model package
 ```dart
@@ -8,9 +8,11 @@ import 'package:doggy_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** |  | [optional] 
-**parentTagId** | **String** |  | [optional] 
-**syncVersion** | **int** |  | [optional] 
+**extraProperties** | **Map<String, dynamic>** |  | [optional] [readonly] [default to const {}]
+**id** | **String** |  | [optional] 
+**creationTime** | [**DateTime**](DateTime.md) |  | [optional] 
+**creatorId** | **String** |  | [optional] 
+**collection** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

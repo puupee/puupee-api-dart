@@ -1,4 +1,4 @@
-# doggy_api.api.ThumbApi
+# doggy_api.api.SimpleDataApi
 
 ## Load the API package
 ```dart
@@ -9,15 +9,14 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiAppThumbGet**](ThumbApi.md#apiappthumbget) | **GET** /api/app/thumb | 
-[**apiAppThumbIdDelete**](ThumbApi.md#apiappthumbiddelete) | **DELETE** /api/app/thumb/{id} | 
-[**apiAppThumbIdGet**](ThumbApi.md#apiappthumbidget) | **GET** /api/app/thumb/{id} | 
-[**apiAppThumbPost**](ThumbApi.md#apiappthumbpost) | **POST** /api/app/thumb | 
-[**apiAppThumbSyncGet**](ThumbApi.md#apiappthumbsyncget) | **GET** /api/app/thumb/sync | 
+[**apiAppSimpleDataGet**](SimpleDataApi.md#apiappsimpledataget) | **GET** /api/app/simple-data | 
+[**apiAppSimpleDataIdDelete**](SimpleDataApi.md#apiappsimpledataiddelete) | **DELETE** /api/app/simple-data/{id} | 
+[**apiAppSimpleDataIdGet**](SimpleDataApi.md#apiappsimpledataidget) | **GET** /api/app/simple-data/{id} | 
+[**apiAppSimpleDataSavePost**](SimpleDataApi.md#apiappsimpledatasavepost) | **POST** /api/app/simple-data/save | 
 
 
-# **apiAppThumbGet**
-> ThumbDtoPagedResultDto apiAppThumbGet(searchKey, maxResultCount, sorting, skipCount)
+# **apiAppSimpleDataGet**
+> SimpleDataDtoPagedResultDto apiAppSimpleDataGet(collection, sorting, skipCount, maxResultCount)
 
 
 
@@ -27,17 +26,17 @@ import 'package:doggy_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = ThumbApi();
-final searchKey = searchKey_example; // String | 
-final maxResultCount = 56; // int | 
+final api_instance = SimpleDataApi();
+final collection = collection_example; // String | 
 final sorting = sorting_example; // String | 
 final skipCount = 56; // int | 
+final maxResultCount = 56; // int | 
 
 try {
-    final result = api_instance.apiAppThumbGet(searchKey, maxResultCount, sorting, skipCount);
+    final result = api_instance.apiAppSimpleDataGet(collection, sorting, skipCount, maxResultCount);
     print(result);
 } catch (e) {
-    print('Exception when calling ThumbApi->apiAppThumbGet: $e\n');
+    print('Exception when calling SimpleDataApi->apiAppSimpleDataGet: $e\n');
 }
 ```
 
@@ -45,14 +44,14 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **searchKey** | **String**|  | [optional] 
- **maxResultCount** | **int**|  | [optional] 
+ **collection** | **String**|  | [optional] 
  **sorting** | **String**|  | [optional] 
  **skipCount** | **int**|  | [optional] 
+ **maxResultCount** | **int**|  | [optional] 
 
 ### Return type
 
-[**ThumbDtoPagedResultDto**](ThumbDtoPagedResultDto.md)
+[**SimpleDataDtoPagedResultDto**](SimpleDataDtoPagedResultDto.md)
 
 ### Authorization
 
@@ -65,8 +64,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppThumbIdDelete**
-> Map<String, dynamic> apiAppThumbIdDelete(id)
+# **apiAppSimpleDataIdDelete**
+> Map<String, dynamic> apiAppSimpleDataIdDelete(id)
 
 
 
@@ -76,14 +75,14 @@ import 'package:doggy_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = ThumbApi();
+final api_instance = SimpleDataApi();
 final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final result = api_instance.apiAppThumbIdDelete(id);
+    final result = api_instance.apiAppSimpleDataIdDelete(id);
     print(result);
 } catch (e) {
-    print('Exception when calling ThumbApi->apiAppThumbIdDelete: $e\n');
+    print('Exception when calling SimpleDataApi->apiAppSimpleDataIdDelete: $e\n');
 }
 ```
 
@@ -108,8 +107,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppThumbIdGet**
-> ThumbDto apiAppThumbIdGet(id)
+# **apiAppSimpleDataIdGet**
+> SimpleDataDto apiAppSimpleDataIdGet(id)
 
 
 
@@ -119,14 +118,14 @@ import 'package:doggy_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = ThumbApi();
+final api_instance = SimpleDataApi();
 final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final result = api_instance.apiAppThumbIdGet(id);
+    final result = api_instance.apiAppSimpleDataIdGet(id);
     print(result);
 } catch (e) {
-    print('Exception when calling ThumbApi->apiAppThumbIdGet: $e\n');
+    print('Exception when calling SimpleDataApi->apiAppSimpleDataIdGet: $e\n');
 }
 ```
 
@@ -138,7 +137,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ThumbDto**](ThumbDto.md)
+[**SimpleDataDto**](SimpleDataDto.md)
 
 ### Authorization
 
@@ -151,8 +150,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppThumbPost**
-> ThumbDto apiAppThumbPost(createUpdateThumbDto)
+# **apiAppSimpleDataSavePost**
+> SimpleDataDto apiAppSimpleDataSavePost(simpleDataDto)
 
 
 
@@ -162,14 +161,14 @@ import 'package:doggy_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = ThumbApi();
-final createUpdateThumbDto = CreateUpdateThumbDto(); // CreateUpdateThumbDto | 
+final api_instance = SimpleDataApi();
+final simpleDataDto = SimpleDataDto(); // SimpleDataDto | 
 
 try {
-    final result = api_instance.apiAppThumbPost(createUpdateThumbDto);
+    final result = api_instance.apiAppSimpleDataSavePost(simpleDataDto);
     print(result);
 } catch (e) {
-    print('Exception when calling ThumbApi->apiAppThumbPost: $e\n');
+    print('Exception when calling SimpleDataApi->apiAppSimpleDataSavePost: $e\n');
 }
 ```
 
@@ -177,11 +176,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createUpdateThumbDto** | [**CreateUpdateThumbDto**](CreateUpdateThumbDto.md)|  | [optional] 
+ **simpleDataDto** | [**SimpleDataDto**](SimpleDataDto.md)|  | [optional] 
 
 ### Return type
 
-[**ThumbDto**](ThumbDto.md)
+[**SimpleDataDto**](SimpleDataDto.md)
 
 ### Authorization
 
@@ -190,53 +189,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/_*+json
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **apiAppThumbSyncGet**
-> ThumbDtoPagedResultDto apiAppThumbSyncGet(afterVersion, skipCount, maxResultCount)
-
-
-
-### Example
-```dart
-import 'package:doggy_api/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api_instance = ThumbApi();
-final afterVersion = 789; // int | 
-final skipCount = 56; // int | 
-final maxResultCount = 56; // int | 
-
-try {
-    final result = api_instance.apiAppThumbSyncGet(afterVersion, skipCount, maxResultCount);
-    print(result);
-} catch (e) {
-    print('Exception when calling ThumbApi->apiAppThumbSyncGet: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **afterVersion** | **int**|  | [optional] 
- **skipCount** | **int**|  | [optional] 
- **maxResultCount** | **int**|  | [optional] 
-
-### Return type
-
-[**ThumbDtoPagedResultDto**](ThumbDtoPagedResultDto.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

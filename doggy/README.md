@@ -73,6 +73,7 @@ Class | Method | HTTP request | Description
 *ItemApi* | [**apiAppItemIdPut**](doc\/ItemApi.md#apiappitemidput) | **PUT** /api/app/item/{id} | 
 *ItemApi* | [**apiAppItemPost**](doc\/ItemApi.md#apiappitempost) | **POST** /api/app/item | 
 *ItemApi* | [**apiAppItemSpecialItemsGet**](doc\/ItemApi.md#apiappitemspecialitemsget) | **GET** /api/app/item/special-items | 
+*ItemApi* | [**apiAppItemSyncGet**](doc\/ItemApi.md#apiappitemsyncget) | **GET** /api/app/item/sync | 
 *KeyValueApi* | [**apiAppKeyValueBoolGet**](doc\/KeyValueApi.md#apiappkeyvalueboolget) | **GET** /api/app/key-value/bool | 
 *KeyValueApi* | [**apiAppKeyValueDateTimeGet**](doc\/KeyValueApi.md#apiappkeyvaluedatetimeget) | **GET** /api/app/key-value/date-time | 
 *KeyValueApi* | [**apiAppKeyValueDecimalGet**](doc\/KeyValueApi.md#apiappkeyvaluedecimalget) | **GET** /api/app/key-value/decimal | 
@@ -92,23 +93,31 @@ Class | Method | HTTP request | Description
 *NotificationApi* | [**apiAppNotificationPushPost**](doc\/NotificationApi.md#apiappnotificationpushpost) | **POST** /api/app/notification/push | 
 *SettingsApi* | [**apiAppSettingsGet**](doc\/SettingsApi.md#apiappsettingsget) | **GET** /api/app/settings | 
 *SettingsApi* | [**apiAppSettingsSetPost**](doc\/SettingsApi.md#apiappsettingssetpost) | **POST** /api/app/settings/set | 
+*SimpleDataApi* | [**apiAppSimpleDataGet**](doc\/SimpleDataApi.md#apiappsimpledataget) | **GET** /api/app/simple-data | 
+*SimpleDataApi* | [**apiAppSimpleDataIdDelete**](doc\/SimpleDataApi.md#apiappsimpledataiddelete) | **DELETE** /api/app/simple-data/{id} | 
+*SimpleDataApi* | [**apiAppSimpleDataIdGet**](doc\/SimpleDataApi.md#apiappsimpledataidget) | **GET** /api/app/simple-data/{id} | 
+*SimpleDataApi* | [**apiAppSimpleDataSavePost**](doc\/SimpleDataApi.md#apiappsimpledatasavepost) | **POST** /api/app/simple-data/save | 
 *SmsApi* | [**apiAppSmsSendChangePhoneCodePost**](doc\/SmsApi.md#apiappsmssendchangephonecodepost) | **POST** /api/app/sms/send-change-phone-code | 
 *SmsApi* | [**apiAppSmsSendLoginCodePost**](doc\/SmsApi.md#apiappsmssendlogincodepost) | **POST** /api/app/sms/send-login-code | 
 *StorageApi* | [**apiAppStorageGet**](doc\/StorageApi.md#apiappstorageget) | **GET** /api/app/storage | 
+*SyncStateApi* | [**apiAppSyncStateGet**](doc\/SyncStateApi.md#apiappsyncstateget) | **GET** /api/app/sync-state | 
 *TagApi* | [**apiAppTagGet**](doc\/TagApi.md#apiapptagget) | **GET** /api/app/tag | 
 *TagApi* | [**apiAppTagIdDelete**](doc\/TagApi.md#apiapptagiddelete) | **DELETE** /api/app/tag/{id} | 
 *TagApi* | [**apiAppTagIdGet**](doc\/TagApi.md#apiapptagidget) | **GET** /api/app/tag/{id} | 
 *TagApi* | [**apiAppTagIdPut**](doc\/TagApi.md#apiapptagidput) | **PUT** /api/app/tag/{id} | 
 *TagApi* | [**apiAppTagPost**](doc\/TagApi.md#apiapptagpost) | **POST** /api/app/tag | 
+*TagApi* | [**apiAppTagSyncGet**](doc\/TagApi.md#apiapptagsyncget) | **GET** /api/app/tag/sync | 
 *ThumbApi* | [**apiAppThumbGet**](doc\/ThumbApi.md#apiappthumbget) | **GET** /api/app/thumb | 
 *ThumbApi* | [**apiAppThumbIdDelete**](doc\/ThumbApi.md#apiappthumbiddelete) | **DELETE** /api/app/thumb/{id} | 
 *ThumbApi* | [**apiAppThumbIdGet**](doc\/ThumbApi.md#apiappthumbidget) | **GET** /api/app/thumb/{id} | 
 *ThumbApi* | [**apiAppThumbPost**](doc\/ThumbApi.md#apiappthumbpost) | **POST** /api/app/thumb | 
+*ThumbApi* | [**apiAppThumbSyncGet**](doc\/ThumbApi.md#apiappthumbsyncget) | **GET** /api/app/thumb/sync | 
 *TodoApi* | [**apiAppTodoGet**](doc\/TodoApi.md#apiapptodoget) | **GET** /api/app/todo | 
 *TodoApi* | [**apiAppTodoIdDelete**](doc\/TodoApi.md#apiapptodoiddelete) | **DELETE** /api/app/todo/{id} | 
 *TodoApi* | [**apiAppTodoIdGet**](doc\/TodoApi.md#apiapptodoidget) | **GET** /api/app/todo/{id} | 
 *TodoApi* | [**apiAppTodoIdPut**](doc\/TodoApi.md#apiapptodoidput) | **PUT** /api/app/todo/{id} | 
 *TodoApi* | [**apiAppTodoPost**](doc\/TodoApi.md#apiapptodopost) | **POST** /api/app/todo | 
+*TodoApi* | [**apiAppTodoSyncGet**](doc\/TodoApi.md#apiapptodosyncget) | **GET** /api/app/todo/sync | 
 
 
 ## Documentation For Models
@@ -222,10 +231,13 @@ Class | Method | HTTP request | Description
  - [SendPasswordResetCodeDto](doc\/SendPasswordResetCodeDto.md)
  - [SendSmsCodeDto](doc\/SendSmsCodeDto.md)
  - [SettingsDto](doc\/SettingsDto.md)
+ - [SimpleDataDto](doc\/SimpleDataDto.md)
+ - [SimpleDataDtoPagedResultDto](doc\/SimpleDataDtoPagedResultDto.md)
  - [SpecialItemDto](doc\/SpecialItemDto.md)
  - [SpecialItems](doc\/SpecialItems.md)
  - [StringKeyValue](doc\/StringKeyValue.md)
  - [StringSetKeyValueDto](doc\/StringSetKeyValueDto.md)
+ - [SyncStateDto](doc\/SyncStateDto.md)
  - [TagDto](doc\/TagDto.md)
  - [TagDtoPagedResultDto](doc\/TagDtoPagedResultDto.md)
  - [TenantCreateDto](doc\/TenantCreateDto.md)

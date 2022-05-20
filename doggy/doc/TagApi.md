@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**apiAppTagIdGet**](TagApi.md#apiapptagidget) | **GET** /api/app/tag/{id} | 
 [**apiAppTagIdPut**](TagApi.md#apiapptagidput) | **PUT** /api/app/tag/{id} | 
 [**apiAppTagPost**](TagApi.md#apiapptagpost) | **POST** /api/app/tag | 
+[**apiAppTagSyncGet**](TagApi.md#apiapptagsyncget) | **GET** /api/app/tag/sync | 
 
 
 # **apiAppTagGet**
@@ -237,6 +238,53 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **apiAppTagSyncGet**
+> TagDtoPagedResultDto apiAppTagSyncGet(afterVersion, skipCount, maxResultCount)
+
+
+
+### Example
+```dart
+import 'package:doggy_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api_instance = TagApi();
+final afterVersion = 789; // int | 
+final skipCount = 56; // int | 
+final maxResultCount = 56; // int | 
+
+try {
+    final result = api_instance.apiAppTagSyncGet(afterVersion, skipCount, maxResultCount);
+    print(result);
+} catch (e) {
+    print('Exception when calling TagApi->apiAppTagSyncGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **afterVersion** | **int**|  | [optional] 
+ **skipCount** | **int**|  | [optional] 
+ **maxResultCount** | **int**|  | [optional] 
+
+### Return type
+
+[**TagDtoPagedResultDto**](TagDtoPagedResultDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
