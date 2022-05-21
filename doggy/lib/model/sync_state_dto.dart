@@ -14,34 +14,66 @@ class SyncStateDto {
   /// Returns a new [SyncStateDto] instance.
   SyncStateDto({
     this.lastSyncAt,
-    this.version,
+    this.tagVersion,
+    this.fileVersion,
+    this.thumbVersion,
+    this.itemVersion,
+    this.todoVersion,
   });
 
 
   DateTime? lastSyncAt;
 
-  int? version;
+  int? tagVersion;
+
+  int? fileVersion;
+
+  int? thumbVersion;
+
+  int? itemVersion;
+
+  int? todoVersion;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is SyncStateDto &&
      other.lastSyncAt == lastSyncAt &&
-     other.version == version;
+     other.tagVersion == tagVersion &&
+     other.fileVersion == fileVersion &&
+     other.thumbVersion == thumbVersion &&
+     other.itemVersion == itemVersion &&
+     other.todoVersion == todoVersion;
 
   @override
   int get hashCode =>
     lastSyncAt.hashCode +
-    version.hashCode;
+    tagVersion.hashCode +
+    fileVersion.hashCode +
+    thumbVersion.hashCode +
+    itemVersion.hashCode +
+    todoVersion.hashCode;
 
   @override
-  String toString() => 'SyncStateDto[lastSyncAt=$lastSyncAt, version=$version]';
+  String toString() => 'SyncStateDto[lastSyncAt=$lastSyncAt, tagVersion=$tagVersion, fileVersion=$fileVersion, thumbVersion=$thumbVersion, itemVersion=$itemVersion, todoVersion=$todoVersion]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
     if (lastSyncAt != null) {
       json[r'lastSyncAt'] = lastSyncAt!.toUtc().toIso8601String();
     }
-    if (version != null) {
-      json[r'version'] = version;
+    if (tagVersion != null) {
+      json[r'tagVersion'] = tagVersion;
+    }
+    if (fileVersion != null) {
+      json[r'fileVersion'] = fileVersion;
+    }
+    if (thumbVersion != null) {
+      json[r'thumbVersion'] = thumbVersion;
+    }
+    if (itemVersion != null) {
+      json[r'itemVersion'] = itemVersion;
+    }
+    if (todoVersion != null) {
+      json[r'todoVersion'] = todoVersion;
     }
     return json;
   }
@@ -51,7 +83,11 @@ class SyncStateDto {
   // ignore: prefer_constructors_over_static_methods
   static SyncStateDto fromJson(Map<String, dynamic> json) => SyncStateDto(
         lastSyncAt: json[r'lastSyncAt'] == null ? null : mapDateTime(json, r'lastSyncAt', ''),
-        version: json[r'version'] == null ? null : json[r'version'] as int?,
+        tagVersion: json[r'tagVersion'] == null ? null : json[r'tagVersion'] as int?,
+        fileVersion: json[r'fileVersion'] == null ? null : json[r'fileVersion'] as int?,
+        thumbVersion: json[r'thumbVersion'] == null ? null : json[r'thumbVersion'] as int?,
+        itemVersion: json[r'itemVersion'] == null ? null : json[r'itemVersion'] as int?,
+        todoVersion: json[r'todoVersion'] == null ? null : json[r'todoVersion'] as int?,
     );
 
   static List<SyncStateDto> listFromJson(List json, {bool? growable,}) =>

@@ -30,6 +30,7 @@ class CreateUpdateItemDto {
     this.storageClass,
     this.fileCreatedAt,
     this.fileUpdatedAt,
+    this.syncVersion,
   });
 
 
@@ -67,6 +68,8 @@ class CreateUpdateItemDto {
 
   DateTime? fileUpdatedAt;
 
+  int? syncVersion;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateUpdateItemDto &&
      other.name == name &&
@@ -85,7 +88,8 @@ class CreateUpdateItemDto {
      other.extension_ == extension_ &&
      other.storageClass == storageClass &&
      other.fileCreatedAt == fileCreatedAt &&
-     other.fileUpdatedAt == fileUpdatedAt;
+     other.fileUpdatedAt == fileUpdatedAt &&
+     other.syncVersion == syncVersion;
 
   @override
   int get hashCode =>
@@ -105,10 +109,11 @@ class CreateUpdateItemDto {
     extension_.hashCode +
     storageClass.hashCode +
     fileCreatedAt.hashCode +
-    fileUpdatedAt.hashCode;
+    fileUpdatedAt.hashCode +
+    syncVersion.hashCode;
 
   @override
-  String toString() => 'CreateUpdateItemDto[name=$name, description=$description, password=$password, parentItemId=$parentItemId, tagIds=$tagIds, thumbId=$thumbId, key=$key, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt]';
+  String toString() => 'CreateUpdateItemDto[name=$name, description=$description, password=$password, parentItemId=$parentItemId, tagIds=$tagIds, thumbId=$thumbId, key=$key, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, syncVersion=$syncVersion]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -163,6 +168,9 @@ class CreateUpdateItemDto {
     if (fileUpdatedAt != null) {
       json[r'fileUpdatedAt'] = fileUpdatedAt!.toUtc().toIso8601String();
     }
+    if (syncVersion != null) {
+      json[r'syncVersion'] = syncVersion;
+    }
     return json;
   }
 
@@ -189,6 +197,7 @@ class CreateUpdateItemDto {
         storageClass: json[r'storageClass'] == null ? null : json[r'storageClass'] as String?,
         fileCreatedAt: json[r'fileCreatedAt'] == null ? null : mapDateTime(json, r'fileCreatedAt', ''),
         fileUpdatedAt: json[r'fileUpdatedAt'] == null ? null : mapDateTime(json, r'fileUpdatedAt', ''),
+        syncVersion: json[r'syncVersion'] == null ? null : json[r'syncVersion'] as int?,
     );
 
   static List<CreateUpdateItemDto> listFromJson(List json, {bool? growable,}) =>
