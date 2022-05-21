@@ -27,6 +27,9 @@ class TodoDto {
     this.doneAt,
     this.isDone,
     this.children,
+    this.syncVersion,
+    this.parentId,
+    this.endAt,
   });
 
 
@@ -58,6 +61,12 @@ class TodoDto {
 
   List<TodoDto>? children;
 
+  int? syncVersion;
+
+  String? parentId;
+
+  DateTime? endAt;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is TodoDto &&
      other.id == id &&
@@ -73,7 +82,10 @@ class TodoDto {
      other.tags == tags &&
      other.doneAt == doneAt &&
      other.isDone == isDone &&
-     other.children == children;
+     other.children == children &&
+     other.syncVersion == syncVersion &&
+     other.parentId == parentId &&
+     other.endAt == endAt;
 
   @override
   int get hashCode =>
@@ -90,10 +102,13 @@ class TodoDto {
     tags.hashCode +
     doneAt.hashCode +
     isDone.hashCode +
-    children.hashCode;
+    children.hashCode +
+    syncVersion.hashCode +
+    parentId.hashCode +
+    endAt.hashCode;
 
   @override
-  String toString() => 'TodoDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, title=$title, priority=$priority, tags=$tags, doneAt=$doneAt, isDone=$isDone, children=$children]';
+  String toString() => 'TodoDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, title=$title, priority=$priority, tags=$tags, doneAt=$doneAt, isDone=$isDone, children=$children, syncVersion=$syncVersion, parentId=$parentId, endAt=$endAt]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -139,6 +154,15 @@ class TodoDto {
     if (children != null) {
       json[r'children'] = children;
     }
+    if (syncVersion != null) {
+      json[r'syncVersion'] = syncVersion;
+    }
+    if (parentId != null) {
+      json[r'parentId'] = parentId;
+    }
+    if (endAt != null) {
+      json[r'endAt'] = endAt!.toUtc().toIso8601String();
+    }
     return json;
   }
 
@@ -160,6 +184,9 @@ class TodoDto {
         doneAt: json[r'doneAt'] == null ? null : mapDateTime(json, r'doneAt', ''),
         isDone: json[r'isDone'] == null ? null : json[r'isDone'] as bool?,
         children: json[r'children'] == null ? null : TodoDto.listFromJson(json[r'children']),
+        syncVersion: json[r'syncVersion'] == null ? null : json[r'syncVersion'] as int?,
+        parentId: json[r'parentId'] == null ? null : json[r'parentId'] as String?,
+        endAt: json[r'endAt'] == null ? null : mapDateTime(json, r'endAt', ''),
     );
 
   static List<TodoDto> listFromJson(List json, {bool? growable,}) =>
