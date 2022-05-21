@@ -20,6 +20,7 @@ class CreateUpdateTodoDto {
     this.parentId,
     this.endAt,
     this.syncVersion,
+    this.doneAt,
   });
 
 
@@ -37,6 +38,8 @@ class CreateUpdateTodoDto {
 
   int? syncVersion;
 
+  DateTime? doneAt;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateUpdateTodoDto &&
      other.title == title &&
@@ -45,7 +48,8 @@ class CreateUpdateTodoDto {
      other.isDone == isDone &&
      other.parentId == parentId &&
      other.endAt == endAt &&
-     other.syncVersion == syncVersion;
+     other.syncVersion == syncVersion &&
+     other.doneAt == doneAt;
 
   @override
   int get hashCode =>
@@ -55,10 +59,11 @@ class CreateUpdateTodoDto {
     isDone.hashCode +
     parentId.hashCode +
     endAt.hashCode +
-    syncVersion.hashCode;
+    syncVersion.hashCode +
+    doneAt.hashCode;
 
   @override
-  String toString() => 'CreateUpdateTodoDto[title=$title, priority=$priority, tagIds=$tagIds, isDone=$isDone, parentId=$parentId, endAt=$endAt, syncVersion=$syncVersion]';
+  String toString() => 'CreateUpdateTodoDto[title=$title, priority=$priority, tagIds=$tagIds, isDone=$isDone, parentId=$parentId, endAt=$endAt, syncVersion=$syncVersion, doneAt=$doneAt]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -83,6 +88,9 @@ class CreateUpdateTodoDto {
     if (syncVersion != null) {
       json[r'syncVersion'] = syncVersion;
     }
+    if (doneAt != null) {
+      json[r'doneAt'] = doneAt!.toUtc().toIso8601String();
+    }
     return json;
   }
 
@@ -99,6 +107,7 @@ class CreateUpdateTodoDto {
         parentId: json[r'parentId'] == null ? null : json[r'parentId'] as String?,
         endAt: json[r'endAt'] == null ? null : mapDateTime(json, r'endAt', ''),
         syncVersion: json[r'syncVersion'] == null ? null : json[r'syncVersion'] as int?,
+        doneAt: json[r'doneAt'] == null ? null : mapDateTime(json, r'doneAt', ''),
     );
 
   static List<CreateUpdateTodoDto> listFromJson(List json, {bool? growable,}) =>
