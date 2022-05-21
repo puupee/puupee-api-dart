@@ -40,6 +40,7 @@ Name | Type | Description | Notes
 **fileUpdatedAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **fileId** | **String** |  | [optional] 
 **file** | [**FileDto**](FileDto.md) |  | [optional] 
+**syncVersion** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

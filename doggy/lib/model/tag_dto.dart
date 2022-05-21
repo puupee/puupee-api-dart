@@ -22,11 +22,12 @@ class TagDto {
     this.deleterId,
     this.deletionTime,
     this.name,
-    this.tagCount,
+    this.refCount,
     this.parentTagId,
     this.parentTag,
     this.children,
     this.fullPath,
+    this.syncVersion,
   });
 
 
@@ -48,7 +49,7 @@ class TagDto {
 
   String? name;
 
-  int? tagCount;
+  int? refCount;
 
   String? parentTagId;
 
@@ -57,6 +58,8 @@ class TagDto {
   List<TagDto>? children;
 
   String? fullPath;
+
+  int? syncVersion;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is TagDto &&
@@ -69,11 +72,12 @@ class TagDto {
      other.deleterId == deleterId &&
      other.deletionTime == deletionTime &&
      other.name == name &&
-     other.tagCount == tagCount &&
+     other.refCount == refCount &&
      other.parentTagId == parentTagId &&
      other.parentTag == parentTag &&
      other.children == children &&
-     other.fullPath == fullPath;
+     other.fullPath == fullPath &&
+     other.syncVersion == syncVersion;
 
   @override
   int get hashCode =>
@@ -86,14 +90,15 @@ class TagDto {
     deleterId.hashCode +
     deletionTime.hashCode +
     name.hashCode +
-    tagCount.hashCode +
+    refCount.hashCode +
     parentTagId.hashCode +
     parentTag.hashCode +
     children.hashCode +
-    fullPath.hashCode;
+    fullPath.hashCode +
+    syncVersion.hashCode;
 
   @override
-  String toString() => 'TagDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, tagCount=$tagCount, parentTagId=$parentTagId, parentTag=$parentTag, children=$children, fullPath=$fullPath]';
+  String toString() => 'TagDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, refCount=$refCount, parentTagId=$parentTagId, parentTag=$parentTag, children=$children, fullPath=$fullPath, syncVersion=$syncVersion]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -124,8 +129,8 @@ class TagDto {
     if (name != null) {
       json[r'name'] = name;
     }
-    if (tagCount != null) {
-      json[r'tagCount'] = tagCount;
+    if (refCount != null) {
+      json[r'refCount'] = refCount;
     }
     if (parentTagId != null) {
       json[r'parentTagId'] = parentTagId;
@@ -138,6 +143,9 @@ class TagDto {
     }
     if (fullPath != null) {
       json[r'fullPath'] = fullPath;
+    }
+    if (syncVersion != null) {
+      json[r'syncVersion'] = syncVersion;
     }
     return json;
   }
@@ -155,11 +163,12 @@ class TagDto {
         deleterId: json[r'deleterId'] == null ? null : json[r'deleterId'] as String?,
         deletionTime: json[r'deletionTime'] == null ? null : mapDateTime(json, r'deletionTime', ''),
         name: json[r'name'] == null ? null : json[r'name'] as String?,
-        tagCount: json[r'tagCount'] == null ? null : json[r'tagCount'] as int?,
+        refCount: json[r'refCount'] == null ? null : json[r'refCount'] as int?,
         parentTagId: json[r'parentTagId'] == null ? null : json[r'parentTagId'] as String?,
         parentTag: json[r'parentTag'] == null ? null : TagDto.fromJson(json[r'parentTag']),
         children: json[r'children'] == null ? null : TagDto.listFromJson(json[r'children']),
         fullPath: json[r'fullPath'] == null ? null : json[r'fullPath'] as String?,
+        syncVersion: json[r'syncVersion'] == null ? null : json[r'syncVersion'] as int?,
     );
 
   static List<TagDto> listFromJson(List json, {bool? growable,}) =>

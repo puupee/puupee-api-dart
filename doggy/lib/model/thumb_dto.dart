@@ -25,6 +25,7 @@ class ThumbDto {
     this.file,
     this.creator,
     this.url,
+    this.syncVersion,
   });
 
 
@@ -52,6 +53,8 @@ class ThumbDto {
 
   String? url;
 
+  int? syncVersion;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is ThumbDto &&
      other.id == id &&
@@ -65,7 +68,8 @@ class ThumbDto {
      other.fileId == fileId &&
      other.file == file &&
      other.creator == creator &&
-     other.url == url;
+     other.url == url &&
+     other.syncVersion == syncVersion;
 
   @override
   int get hashCode =>
@@ -80,10 +84,11 @@ class ThumbDto {
     fileId.hashCode +
     file.hashCode +
     creator.hashCode +
-    url.hashCode;
+    url.hashCode +
+    syncVersion.hashCode;
 
   @override
-  String toString() => 'ThumbDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, fileId=$fileId, file=$file, creator=$creator, url=$url]';
+  String toString() => 'ThumbDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, fileId=$fileId, file=$file, creator=$creator, url=$url, syncVersion=$syncVersion]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -123,6 +128,9 @@ class ThumbDto {
     if (url != null) {
       json[r'url'] = url;
     }
+    if (syncVersion != null) {
+      json[r'syncVersion'] = syncVersion;
+    }
     return json;
   }
 
@@ -142,6 +150,7 @@ class ThumbDto {
         file: json[r'file'] == null ? null : FileDto.fromJson(json[r'file']),
         creator: json[r'creator'] == null ? null : json[r'creator'] as String?,
         url: json[r'url'] == null ? null : json[r'url'] as String?,
+        syncVersion: json[r'syncVersion'] == null ? null : json[r'syncVersion'] as int?,
     );
 
   static List<ThumbDto> listFromJson(List json, {bool? growable,}) =>

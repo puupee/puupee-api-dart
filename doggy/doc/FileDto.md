@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **file** | [**FileDto**](FileDto.md) |  | [optional] 
 **folders** | [**List<ItemDto>**](ItemDto.md) |  | [optional] [default to const []]
 **tags** | [**List<TagDto>**](TagDto.md) |  | [optional] [default to const []]
+**syncVersion** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

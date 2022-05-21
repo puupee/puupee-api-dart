@@ -45,6 +45,7 @@ class ItemDto {
     this.fileUpdatedAt,
     this.fileId,
     this.file,
+    this.syncVersion,
   });
 
 
@@ -112,6 +113,8 @@ class ItemDto {
 
   FileDto? file;
 
+  int? syncVersion;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is ItemDto &&
      other.id == id &&
@@ -145,7 +148,8 @@ class ItemDto {
      other.fileCreatedAt == fileCreatedAt &&
      other.fileUpdatedAt == fileUpdatedAt &&
      other.fileId == fileId &&
-     other.file == file;
+     other.file == file &&
+     other.syncVersion == syncVersion;
 
   @override
   int get hashCode =>
@@ -180,10 +184,11 @@ class ItemDto {
     fileCreatedAt.hashCode +
     fileUpdatedAt.hashCode +
     fileId.hashCode +
-    file.hashCode;
+    file.hashCode +
+    syncVersion.hashCode;
 
   @override
-  String toString() => 'ItemDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, description=$description, totalCount=$totalCount, password=$password, parentItemId=$parentItemId, thumbId=$thumbId, thumb=$thumb, children=$children, tags=$tags, key=$key, url=$url, size=$size, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, fileId=$fileId, file=$file]';
+  String toString() => 'ItemDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, description=$description, totalCount=$totalCount, password=$password, parentItemId=$parentItemId, thumbId=$thumbId, thumb=$thumb, children=$children, tags=$tags, key=$key, url=$url, size=$size, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, fileId=$fileId, file=$file, syncVersion=$syncVersion]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -283,6 +288,9 @@ class ItemDto {
     if (file != null) {
       json[r'file'] = file;
     }
+    if (syncVersion != null) {
+      json[r'syncVersion'] = syncVersion;
+    }
     return json;
   }
 
@@ -322,6 +330,7 @@ class ItemDto {
         fileUpdatedAt: json[r'fileUpdatedAt'] == null ? null : mapDateTime(json, r'fileUpdatedAt', ''),
         fileId: json[r'fileId'] == null ? null : json[r'fileId'] as String?,
         file: json[r'file'] == null ? null : FileDto.fromJson(json[r'file']),
+        syncVersion: json[r'syncVersion'] == null ? null : json[r'syncVersion'] as int?,
     );
 
   static List<ItemDto> listFromJson(List json, {bool? growable,}) =>

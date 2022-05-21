@@ -35,6 +35,7 @@ class FileDto {
     this.file,
     this.folders,
     this.tags,
+    this.syncVersion,
   });
 
 
@@ -82,6 +83,8 @@ class FileDto {
 
   List<TagDto>? tags;
 
+  int? syncVersion;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is FileDto &&
      other.id == id &&
@@ -105,7 +108,8 @@ class FileDto {
      other.fileId == fileId &&
      other.file == file &&
      other.folders == folders &&
-     other.tags == tags;
+     other.tags == tags &&
+     other.syncVersion == syncVersion;
 
   @override
   int get hashCode =>
@@ -130,10 +134,11 @@ class FileDto {
     fileId.hashCode +
     file.hashCode +
     folders.hashCode +
-    tags.hashCode;
+    tags.hashCode +
+    syncVersion.hashCode;
 
   @override
-  String toString() => 'FileDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, key=$key, url=$url, size=$size, md5=$md5, contentType=$contentType, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, fileId=$fileId, file=$file, folders=$folders, tags=$tags]';
+  String toString() => 'FileDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, key=$key, url=$url, size=$size, md5=$md5, contentType=$contentType, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, fileId=$fileId, file=$file, folders=$folders, tags=$tags, syncVersion=$syncVersion]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -203,6 +208,9 @@ class FileDto {
     if (tags != null) {
       json[r'tags'] = tags;
     }
+    if (syncVersion != null) {
+      json[r'syncVersion'] = syncVersion;
+    }
     return json;
   }
 
@@ -232,6 +240,7 @@ class FileDto {
         file: json[r'file'] == null ? null : FileDto.fromJson(json[r'file']),
         folders: json[r'folders'] == null ? null : ItemDto.listFromJson(json[r'folders']),
         tags: json[r'tags'] == null ? null : TagDto.listFromJson(json[r'tags']),
+        syncVersion: json[r'syncVersion'] == null ? null : json[r'syncVersion'] as int?,
     );
 
   static List<FileDto> listFromJson(List json, {bool? growable,}) =>

@@ -17,11 +17,12 @@ Name | Type | Description | Notes
 **deleterId** | **String** |  | [optional] 
 **deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
 **name** | **String** |  | [optional] 
-**tagCount** | **int** |  | [optional] 
+**refCount** | **int** |  | [optional] 
 **parentTagId** | **String** |  | [optional] 
 **parentTag** | [**TagDto**](TagDto.md) |  | [optional] 
 **children** | [**List<TagDto>**](TagDto.md) |  | [optional] [default to const []]
 **fullPath** | **String** |  | [optional] 
+**syncVersion** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
