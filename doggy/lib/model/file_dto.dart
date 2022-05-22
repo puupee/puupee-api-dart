@@ -26,15 +26,13 @@ class FileDto {
     this.url,
     this.size,
     this.md5,
+    this.sliceMd5,
+    this.rapidCode,
     this.contentType,
     this.extension_,
     this.storageClass,
     this.fileCreatedAt,
     this.fileUpdatedAt,
-    this.fileId,
-    this.file,
-    this.folders,
-    this.tags,
     this.syncVersion,
   });
 
@@ -65,6 +63,10 @@ class FileDto {
 
   String? md5;
 
+  String? sliceMd5;
+
+  String? rapidCode;
+
   String? contentType;
 
   String? extension_;
@@ -74,14 +76,6 @@ class FileDto {
   DateTime? fileCreatedAt;
 
   DateTime? fileUpdatedAt;
-
-  String? fileId;
-
-  FileDto? file;
-
-  List<ItemDto>? folders;
-
-  List<TagDto>? tags;
 
   int? syncVersion;
 
@@ -100,15 +94,13 @@ class FileDto {
      other.url == url &&
      other.size == size &&
      other.md5 == md5 &&
+     other.sliceMd5 == sliceMd5 &&
+     other.rapidCode == rapidCode &&
      other.contentType == contentType &&
      other.extension_ == extension_ &&
      other.storageClass == storageClass &&
      other.fileCreatedAt == fileCreatedAt &&
      other.fileUpdatedAt == fileUpdatedAt &&
-     other.fileId == fileId &&
-     other.file == file &&
-     other.folders == folders &&
-     other.tags == tags &&
      other.syncVersion == syncVersion;
 
   @override
@@ -126,19 +118,17 @@ class FileDto {
     url.hashCode +
     size.hashCode +
     md5.hashCode +
+    sliceMd5.hashCode +
+    rapidCode.hashCode +
     contentType.hashCode +
     extension_.hashCode +
     storageClass.hashCode +
     fileCreatedAt.hashCode +
     fileUpdatedAt.hashCode +
-    fileId.hashCode +
-    file.hashCode +
-    folders.hashCode +
-    tags.hashCode +
     syncVersion.hashCode;
 
   @override
-  String toString() => 'FileDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, key=$key, url=$url, size=$size, md5=$md5, contentType=$contentType, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, fileId=$fileId, file=$file, folders=$folders, tags=$tags, syncVersion=$syncVersion]';
+  String toString() => 'FileDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, key=$key, url=$url, size=$size, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, syncVersion=$syncVersion]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -181,6 +171,12 @@ class FileDto {
     if (md5 != null) {
       json[r'md5'] = md5;
     }
+    if (sliceMd5 != null) {
+      json[r'sliceMd5'] = sliceMd5;
+    }
+    if (rapidCode != null) {
+      json[r'rapidCode'] = rapidCode;
+    }
     if (contentType != null) {
       json[r'contentType'] = contentType;
     }
@@ -195,18 +191,6 @@ class FileDto {
     }
     if (fileUpdatedAt != null) {
       json[r'fileUpdatedAt'] = fileUpdatedAt!.toUtc().toIso8601String();
-    }
-    if (fileId != null) {
-      json[r'fileId'] = fileId;
-    }
-    if (file != null) {
-      json[r'file'] = file;
-    }
-    if (folders != null) {
-      json[r'folders'] = folders;
-    }
-    if (tags != null) {
-      json[r'tags'] = tags;
     }
     if (syncVersion != null) {
       json[r'syncVersion'] = syncVersion;
@@ -231,15 +215,13 @@ class FileDto {
         url: json[r'url'] == null ? null : json[r'url'] as String?,
         size: json[r'size'] == null ? null : json[r'size'] as int?,
         md5: json[r'md5'] == null ? null : json[r'md5'] as String?,
+        sliceMd5: json[r'sliceMd5'] == null ? null : json[r'sliceMd5'] as String?,
+        rapidCode: json[r'rapidCode'] == null ? null : json[r'rapidCode'] as String?,
         contentType: json[r'contentType'] == null ? null : json[r'contentType'] as String?,
         extension_: json[r'extension'] == null ? null : json[r'extension'] as String?,
         storageClass: json[r'storageClass'] == null ? null : json[r'storageClass'] as String?,
         fileCreatedAt: json[r'fileCreatedAt'] == null ? null : mapDateTime(json, r'fileCreatedAt', ''),
         fileUpdatedAt: json[r'fileUpdatedAt'] == null ? null : mapDateTime(json, r'fileUpdatedAt', ''),
-        fileId: json[r'fileId'] == null ? null : json[r'fileId'] as String?,
-        file: json[r'file'] == null ? null : FileDto.fromJson(json[r'file']),
-        folders: json[r'folders'] == null ? null : ItemDto.listFromJson(json[r'folders']),
-        tags: json[r'tags'] == null ? null : TagDto.listFromJson(json[r'tags']),
         syncVersion: json[r'syncVersion'] == null ? null : json[r'syncVersion'] as int?,
     );
 

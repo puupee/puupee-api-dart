@@ -21,15 +21,13 @@ Name | Type | Description | Notes
 **url** | **String** |  | [optional] 
 **size** | **int** |  | [optional] 
 **md5** | **String** |  | [optional] 
+**sliceMd5** | **String** |  | [optional] 
+**rapidCode** | **String** |  | [optional] 
 **contentType** | **String** |  | [optional] 
 **extension_** | **String** |  | [optional] 
 **storageClass** | **String** |  | [optional] 
 **fileCreatedAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **fileUpdatedAt** | [**DateTime**](DateTime.md) |  | [optional] 
-**fileId** | **String** |  | [optional] 
-**file** | [**FileDto**](FileDto.md) |  | [optional] 
-**folders** | [**List<ItemDto>**](ItemDto.md) |  | [optional] [default to const []]
-**tags** | [**List<TagDto>**](TagDto.md) |  | [optional] [default to const []]
 **syncVersion** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

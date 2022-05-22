@@ -271,8 +271,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **afterVersion** | **int**|  | [optional] 
- **skipCount** | **int**|  | [optional] 
- **maxResultCount** | **int**|  | [optional] 
+ **skipCount** | **int**|  | [optional] [default to 0]
+ **maxResultCount** | **int**|  | [optional] [default to 100]
 
 ### Return type
 
