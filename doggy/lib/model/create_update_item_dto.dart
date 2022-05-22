@@ -33,6 +33,8 @@ class CreateUpdateItemDto {
     this.syncVersion,
     this.isDeleted,
     this.deletionTime,
+    this.creationTime,
+    this.lastModificationTime,
   });
 
 
@@ -76,6 +78,10 @@ class CreateUpdateItemDto {
 
   DateTime? deletionTime;
 
+  DateTime? creationTime;
+
+  DateTime? lastModificationTime;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateUpdateItemDto &&
      other.name == name &&
@@ -97,7 +103,9 @@ class CreateUpdateItemDto {
      other.fileUpdatedAt == fileUpdatedAt &&
      other.syncVersion == syncVersion &&
      other.isDeleted == isDeleted &&
-     other.deletionTime == deletionTime;
+     other.deletionTime == deletionTime &&
+     other.creationTime == creationTime &&
+     other.lastModificationTime == lastModificationTime;
 
   @override
   int get hashCode =>
@@ -120,10 +128,12 @@ class CreateUpdateItemDto {
     fileUpdatedAt.hashCode +
     syncVersion.hashCode +
     isDeleted.hashCode +
-    deletionTime.hashCode;
+    deletionTime.hashCode +
+    creationTime.hashCode +
+    lastModificationTime.hashCode;
 
   @override
-  String toString() => 'CreateUpdateItemDto[name=$name, description=$description, password=$password, parentItemId=$parentItemId, tagIds=$tagIds, thumbId=$thumbId, key=$key, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, syncVersion=$syncVersion, isDeleted=$isDeleted, deletionTime=$deletionTime]';
+  String toString() => 'CreateUpdateItemDto[name=$name, description=$description, password=$password, parentItemId=$parentItemId, tagIds=$tagIds, thumbId=$thumbId, key=$key, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, syncVersion=$syncVersion, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -187,6 +197,12 @@ class CreateUpdateItemDto {
     if (deletionTime != null) {
       json[r'deletionTime'] = deletionTime!.toUtc().toIso8601String();
     }
+    if (creationTime != null) {
+      json[r'creationTime'] = creationTime!.toUtc().toIso8601String();
+    }
+    if (lastModificationTime != null) {
+      json[r'lastModificationTime'] = lastModificationTime!.toUtc().toIso8601String();
+    }
     return json;
   }
 
@@ -216,6 +232,8 @@ class CreateUpdateItemDto {
         syncVersion: json[r'syncVersion'] == null ? null : json[r'syncVersion'] as int?,
         isDeleted: json[r'isDeleted'] == null ? null : json[r'isDeleted'] as bool?,
         deletionTime: json[r'deletionTime'] == null ? null : mapDateTime(json, r'deletionTime', ''),
+        creationTime: json[r'creationTime'] == null ? null : mapDateTime(json, r'creationTime', ''),
+        lastModificationTime: json[r'lastModificationTime'] == null ? null : mapDateTime(json, r'lastModificationTime', ''),
     );
 
   static List<CreateUpdateItemDto> listFromJson(List json, {bool? growable,}) =>

@@ -23,6 +23,8 @@ class CreateUpdateTodoDto {
     this.doneAt,
     this.isDeleted,
     this.deletionTime,
+    this.creationTime,
+    this.lastModificationTime,
   });
 
 
@@ -46,6 +48,10 @@ class CreateUpdateTodoDto {
 
   DateTime? deletionTime;
 
+  DateTime? creationTime;
+
+  DateTime? lastModificationTime;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateUpdateTodoDto &&
      other.title == title &&
@@ -57,7 +63,9 @@ class CreateUpdateTodoDto {
      other.syncVersion == syncVersion &&
      other.doneAt == doneAt &&
      other.isDeleted == isDeleted &&
-     other.deletionTime == deletionTime;
+     other.deletionTime == deletionTime &&
+     other.creationTime == creationTime &&
+     other.lastModificationTime == lastModificationTime;
 
   @override
   int get hashCode =>
@@ -70,10 +78,12 @@ class CreateUpdateTodoDto {
     syncVersion.hashCode +
     doneAt.hashCode +
     isDeleted.hashCode +
-    deletionTime.hashCode;
+    deletionTime.hashCode +
+    creationTime.hashCode +
+    lastModificationTime.hashCode;
 
   @override
-  String toString() => 'CreateUpdateTodoDto[title=$title, priority=$priority, tagIds=$tagIds, isDone=$isDone, parentId=$parentId, endAt=$endAt, syncVersion=$syncVersion, doneAt=$doneAt, isDeleted=$isDeleted, deletionTime=$deletionTime]';
+  String toString() => 'CreateUpdateTodoDto[title=$title, priority=$priority, tagIds=$tagIds, isDone=$isDone, parentId=$parentId, endAt=$endAt, syncVersion=$syncVersion, doneAt=$doneAt, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -107,6 +117,12 @@ class CreateUpdateTodoDto {
     if (deletionTime != null) {
       json[r'deletionTime'] = deletionTime!.toUtc().toIso8601String();
     }
+    if (creationTime != null) {
+      json[r'creationTime'] = creationTime!.toUtc().toIso8601String();
+    }
+    if (lastModificationTime != null) {
+      json[r'lastModificationTime'] = lastModificationTime!.toUtc().toIso8601String();
+    }
     return json;
   }
 
@@ -126,6 +142,8 @@ class CreateUpdateTodoDto {
         doneAt: json[r'doneAt'] == null ? null : mapDateTime(json, r'doneAt', ''),
         isDeleted: json[r'isDeleted'] == null ? null : json[r'isDeleted'] as bool?,
         deletionTime: json[r'deletionTime'] == null ? null : mapDateTime(json, r'deletionTime', ''),
+        creationTime: json[r'creationTime'] == null ? null : mapDateTime(json, r'creationTime', ''),
+        lastModificationTime: json[r'lastModificationTime'] == null ? null : mapDateTime(json, r'lastModificationTime', ''),
     );
 
   static List<CreateUpdateTodoDto> listFromJson(List json, {bool? growable,}) =>

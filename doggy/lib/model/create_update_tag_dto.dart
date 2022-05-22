@@ -18,6 +18,8 @@ class CreateUpdateTagDto {
     this.syncVersion,
     this.isDeleted,
     this.deletionTime,
+    this.creationTime,
+    this.lastModificationTime,
   });
 
 
@@ -31,13 +33,19 @@ class CreateUpdateTagDto {
 
   DateTime? deletionTime;
 
+  DateTime? creationTime;
+
+  DateTime? lastModificationTime;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateUpdateTagDto &&
      other.name == name &&
      other.parentTagId == parentTagId &&
      other.syncVersion == syncVersion &&
      other.isDeleted == isDeleted &&
-     other.deletionTime == deletionTime;
+     other.deletionTime == deletionTime &&
+     other.creationTime == creationTime &&
+     other.lastModificationTime == lastModificationTime;
 
   @override
   int get hashCode =>
@@ -45,10 +53,12 @@ class CreateUpdateTagDto {
     parentTagId.hashCode +
     syncVersion.hashCode +
     isDeleted.hashCode +
-    deletionTime.hashCode;
+    deletionTime.hashCode +
+    creationTime.hashCode +
+    lastModificationTime.hashCode;
 
   @override
-  String toString() => 'CreateUpdateTagDto[name=$name, parentTagId=$parentTagId, syncVersion=$syncVersion, isDeleted=$isDeleted, deletionTime=$deletionTime]';
+  String toString() => 'CreateUpdateTagDto[name=$name, parentTagId=$parentTagId, syncVersion=$syncVersion, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -67,6 +77,12 @@ class CreateUpdateTagDto {
     if (deletionTime != null) {
       json[r'deletionTime'] = deletionTime!.toUtc().toIso8601String();
     }
+    if (creationTime != null) {
+      json[r'creationTime'] = creationTime!.toUtc().toIso8601String();
+    }
+    if (lastModificationTime != null) {
+      json[r'lastModificationTime'] = lastModificationTime!.toUtc().toIso8601String();
+    }
     return json;
   }
 
@@ -79,6 +95,8 @@ class CreateUpdateTagDto {
         syncVersion: json[r'syncVersion'] == null ? null : json[r'syncVersion'] as int?,
         isDeleted: json[r'isDeleted'] == null ? null : json[r'isDeleted'] as bool?,
         deletionTime: json[r'deletionTime'] == null ? null : mapDateTime(json, r'deletionTime', ''),
+        creationTime: json[r'creationTime'] == null ? null : mapDateTime(json, r'creationTime', ''),
+        lastModificationTime: json[r'lastModificationTime'] == null ? null : mapDateTime(json, r'lastModificationTime', ''),
     );
 
   static List<CreateUpdateTagDto> listFromJson(List json, {bool? growable,}) =>

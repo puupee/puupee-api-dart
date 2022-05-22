@@ -24,6 +24,8 @@ class CreateUpdateThumbDto {
     this.storageClass,
     this.isDeleted,
     this.deletionTime,
+    this.creationTime,
+    this.lastModificationTime,
   });
 
 
@@ -49,6 +51,10 @@ class CreateUpdateThumbDto {
 
   DateTime? deletionTime;
 
+  DateTime? creationTime;
+
+  DateTime? lastModificationTime;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateUpdateThumbDto &&
      other.name == name &&
@@ -61,7 +67,9 @@ class CreateUpdateThumbDto {
      other.extension_ == extension_ &&
      other.storageClass == storageClass &&
      other.isDeleted == isDeleted &&
-     other.deletionTime == deletionTime;
+     other.deletionTime == deletionTime &&
+     other.creationTime == creationTime &&
+     other.lastModificationTime == lastModificationTime;
 
   @override
   int get hashCode =>
@@ -75,10 +83,12 @@ class CreateUpdateThumbDto {
     extension_.hashCode +
     storageClass.hashCode +
     isDeleted.hashCode +
-    deletionTime.hashCode;
+    deletionTime.hashCode +
+    creationTime.hashCode +
+    lastModificationTime.hashCode;
 
   @override
-  String toString() => 'CreateUpdateThumbDto[name=$name, key=$key, size=$size, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, extension_=$extension_, storageClass=$storageClass, isDeleted=$isDeleted, deletionTime=$deletionTime]';
+  String toString() => 'CreateUpdateThumbDto[name=$name, key=$key, size=$size, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, extension_=$extension_, storageClass=$storageClass, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -115,6 +125,12 @@ class CreateUpdateThumbDto {
     if (deletionTime != null) {
       json[r'deletionTime'] = deletionTime!.toUtc().toIso8601String();
     }
+    if (creationTime != null) {
+      json[r'creationTime'] = creationTime!.toUtc().toIso8601String();
+    }
+    if (lastModificationTime != null) {
+      json[r'lastModificationTime'] = lastModificationTime!.toUtc().toIso8601String();
+    }
     return json;
   }
 
@@ -133,6 +149,8 @@ class CreateUpdateThumbDto {
         storageClass: json[r'storageClass'] == null ? null : json[r'storageClass'] as String?,
         isDeleted: json[r'isDeleted'] == null ? null : json[r'isDeleted'] as bool?,
         deletionTime: json[r'deletionTime'] == null ? null : mapDateTime(json, r'deletionTime', ''),
+        creationTime: json[r'creationTime'] == null ? null : mapDateTime(json, r'creationTime', ''),
+        lastModificationTime: json[r'lastModificationTime'] == null ? null : mapDateTime(json, r'lastModificationTime', ''),
     );
 
   static List<CreateUpdateThumbDto> listFromJson(List json, {bool? growable,}) =>
