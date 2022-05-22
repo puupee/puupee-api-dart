@@ -16,6 +16,8 @@ class CreateUpdateTagDto {
     this.name,
     this.parentTagId,
     this.syncVersion,
+    this.isDeleted,
+    this.deletionTime,
   });
 
 
@@ -25,20 +27,28 @@ class CreateUpdateTagDto {
 
   int? syncVersion;
 
+  bool? isDeleted;
+
+  DateTime? deletionTime;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateUpdateTagDto &&
      other.name == name &&
      other.parentTagId == parentTagId &&
-     other.syncVersion == syncVersion;
+     other.syncVersion == syncVersion &&
+     other.isDeleted == isDeleted &&
+     other.deletionTime == deletionTime;
 
   @override
   int get hashCode =>
     name.hashCode +
     parentTagId.hashCode +
-    syncVersion.hashCode;
+    syncVersion.hashCode +
+    isDeleted.hashCode +
+    deletionTime.hashCode;
 
   @override
-  String toString() => 'CreateUpdateTagDto[name=$name, parentTagId=$parentTagId, syncVersion=$syncVersion]';
+  String toString() => 'CreateUpdateTagDto[name=$name, parentTagId=$parentTagId, syncVersion=$syncVersion, isDeleted=$isDeleted, deletionTime=$deletionTime]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -51,6 +61,12 @@ class CreateUpdateTagDto {
     if (syncVersion != null) {
       json[r'syncVersion'] = syncVersion;
     }
+    if (isDeleted != null) {
+      json[r'isDeleted'] = isDeleted;
+    }
+    if (deletionTime != null) {
+      json[r'deletionTime'] = deletionTime!.toUtc().toIso8601String();
+    }
     return json;
   }
 
@@ -61,6 +77,8 @@ class CreateUpdateTagDto {
         name: json[r'name'] == null ? null : json[r'name'] as String?,
         parentTagId: json[r'parentTagId'] == null ? null : json[r'parentTagId'] as String?,
         syncVersion: json[r'syncVersion'] == null ? null : json[r'syncVersion'] as int?,
+        isDeleted: json[r'isDeleted'] == null ? null : json[r'isDeleted'] as bool?,
+        deletionTime: json[r'deletionTime'] == null ? null : mapDateTime(json, r'deletionTime', ''),
     );
 
   static List<CreateUpdateTagDto> listFromJson(List json, {bool? growable,}) =>

@@ -21,6 +21,8 @@ class CreateUpdateTodoDto {
     this.endAt,
     this.syncVersion,
     this.doneAt,
+    this.isDeleted,
+    this.deletionTime,
   });
 
 
@@ -40,6 +42,10 @@ class CreateUpdateTodoDto {
 
   DateTime? doneAt;
 
+  bool? isDeleted;
+
+  DateTime? deletionTime;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateUpdateTodoDto &&
      other.title == title &&
@@ -49,7 +55,9 @@ class CreateUpdateTodoDto {
      other.parentId == parentId &&
      other.endAt == endAt &&
      other.syncVersion == syncVersion &&
-     other.doneAt == doneAt;
+     other.doneAt == doneAt &&
+     other.isDeleted == isDeleted &&
+     other.deletionTime == deletionTime;
 
   @override
   int get hashCode =>
@@ -60,10 +68,12 @@ class CreateUpdateTodoDto {
     parentId.hashCode +
     endAt.hashCode +
     syncVersion.hashCode +
-    doneAt.hashCode;
+    doneAt.hashCode +
+    isDeleted.hashCode +
+    deletionTime.hashCode;
 
   @override
-  String toString() => 'CreateUpdateTodoDto[title=$title, priority=$priority, tagIds=$tagIds, isDone=$isDone, parentId=$parentId, endAt=$endAt, syncVersion=$syncVersion, doneAt=$doneAt]';
+  String toString() => 'CreateUpdateTodoDto[title=$title, priority=$priority, tagIds=$tagIds, isDone=$isDone, parentId=$parentId, endAt=$endAt, syncVersion=$syncVersion, doneAt=$doneAt, isDeleted=$isDeleted, deletionTime=$deletionTime]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -91,6 +101,12 @@ class CreateUpdateTodoDto {
     if (doneAt != null) {
       json[r'doneAt'] = doneAt!.toUtc().toIso8601String();
     }
+    if (isDeleted != null) {
+      json[r'isDeleted'] = isDeleted;
+    }
+    if (deletionTime != null) {
+      json[r'deletionTime'] = deletionTime!.toUtc().toIso8601String();
+    }
     return json;
   }
 
@@ -108,6 +124,8 @@ class CreateUpdateTodoDto {
         endAt: json[r'endAt'] == null ? null : mapDateTime(json, r'endAt', ''),
         syncVersion: json[r'syncVersion'] == null ? null : json[r'syncVersion'] as int?,
         doneAt: json[r'doneAt'] == null ? null : mapDateTime(json, r'doneAt', ''),
+        isDeleted: json[r'isDeleted'] == null ? null : json[r'isDeleted'] as bool?,
+        deletionTime: json[r'deletionTime'] == null ? null : mapDateTime(json, r'deletionTime', ''),
     );
 
   static List<CreateUpdateTodoDto> listFromJson(List json, {bool? growable,}) =>

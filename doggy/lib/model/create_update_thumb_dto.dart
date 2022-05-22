@@ -22,6 +22,8 @@ class CreateUpdateThumbDto {
     this.contentType,
     this.extension_,
     this.storageClass,
+    this.isDeleted,
+    this.deletionTime,
   });
 
 
@@ -43,6 +45,10 @@ class CreateUpdateThumbDto {
 
   String? storageClass;
 
+  bool? isDeleted;
+
+  DateTime? deletionTime;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateUpdateThumbDto &&
      other.name == name &&
@@ -53,7 +59,9 @@ class CreateUpdateThumbDto {
      other.rapidCode == rapidCode &&
      other.contentType == contentType &&
      other.extension_ == extension_ &&
-     other.storageClass == storageClass;
+     other.storageClass == storageClass &&
+     other.isDeleted == isDeleted &&
+     other.deletionTime == deletionTime;
 
   @override
   int get hashCode =>
@@ -65,10 +73,12 @@ class CreateUpdateThumbDto {
     rapidCode.hashCode +
     contentType.hashCode +
     extension_.hashCode +
-    storageClass.hashCode;
+    storageClass.hashCode +
+    isDeleted.hashCode +
+    deletionTime.hashCode;
 
   @override
-  String toString() => 'CreateUpdateThumbDto[name=$name, key=$key, size=$size, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, extension_=$extension_, storageClass=$storageClass]';
+  String toString() => 'CreateUpdateThumbDto[name=$name, key=$key, size=$size, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, extension_=$extension_, storageClass=$storageClass, isDeleted=$isDeleted, deletionTime=$deletionTime]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -99,6 +109,12 @@ class CreateUpdateThumbDto {
     if (storageClass != null) {
       json[r'storageClass'] = storageClass;
     }
+    if (isDeleted != null) {
+      json[r'isDeleted'] = isDeleted;
+    }
+    if (deletionTime != null) {
+      json[r'deletionTime'] = deletionTime!.toUtc().toIso8601String();
+    }
     return json;
   }
 
@@ -115,6 +131,8 @@ class CreateUpdateThumbDto {
         contentType: json[r'contentType'] == null ? null : json[r'contentType'] as String?,
         extension_: json[r'extension'] == null ? null : json[r'extension'] as String?,
         storageClass: json[r'storageClass'] == null ? null : json[r'storageClass'] as String?,
+        isDeleted: json[r'isDeleted'] == null ? null : json[r'isDeleted'] as bool?,
+        deletionTime: json[r'deletionTime'] == null ? null : mapDateTime(json, r'deletionTime', ''),
     );
 
   static List<CreateUpdateThumbDto> listFromJson(List json, {bool? growable,}) =>

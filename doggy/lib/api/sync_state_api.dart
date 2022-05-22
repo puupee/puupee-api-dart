@@ -17,10 +17,7 @@ class SyncStateApi {
   final ApiClient apiClient;
 
   /// Performs an HTTP 'GET /api/app/sync-state' operation and returns the [Response].
-  /// Parameters:
-  ///
-  /// * [String] creatorId:
-  Future<Response> apiAppSyncStateGetWithHttpInfo({ String? creatorId, }) async {
+  Future<Response> apiAppSyncStateGetWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/api/app/sync-state';
 
@@ -30,10 +27,6 @@ class SyncStateApi {
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
-
-    if (creatorId != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'creatorId', creatorId));
-    }
 
     const authNames = <String>['oauth2'];
     const contentTypes = <String>[];
@@ -51,11 +44,8 @@ class SyncStateApi {
     );
   }
 
-  /// Parameters:
-  ///
-  /// * [String] creatorId:
-  Future<SyncStateDto?> apiAppSyncStateGet({ String? creatorId, }) async {
-    final response = await apiAppSyncStateGetWithHttpInfo( creatorId: creatorId, );
+  Future<SyncStateDto?> apiAppSyncStateGet() async {
+    final response = await apiAppSyncStateGetWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
