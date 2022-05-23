@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **password** | **String** |  | [optional] 
 **parentItemId** | **String** |  | [optional] 
 **tagIds** | **List<String>** |  | [optional] [default to const []]
-**thumbId** | **String** |  | [optional] 
 **key** | **String** |  | [optional] 
 **md5** | **String** |  | [optional] 
 **sliceMd5** | **String** |  | [optional] 

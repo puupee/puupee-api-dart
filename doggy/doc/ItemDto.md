@@ -21,8 +21,6 @@ Name | Type | Description | Notes
 **totalCount** | **int** |  | [optional] 
 **password** | **String** |  | [optional] 
 **parentItemId** | **String** |  | [optional] 
-**thumbId** | **String** |  | [optional] 
-**thumb** | [**ThumbDto**](ThumbDto.md) |  | [optional] 
 **children** | [**List<ItemDto>**](ItemDto.md) |  | [optional] [default to const []]
 **tags** | [**List<TagDto>**](TagDto.md) |  | [optional] [default to const []]
 **key** | **String** |  | [optional] 

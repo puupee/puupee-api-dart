@@ -26,8 +26,6 @@ class ItemDto {
     this.totalCount,
     this.password,
     this.parentItemId,
-    this.thumbId,
-    this.thumb,
     this.children,
     this.tags,
     this.key,
@@ -74,10 +72,6 @@ class ItemDto {
   String? password;
 
   String? parentItemId;
-
-  String? thumbId;
-
-  ThumbDto? thumb;
 
   List<ItemDto>? children;
 
@@ -130,8 +124,6 @@ class ItemDto {
      other.totalCount == totalCount &&
      other.password == password &&
      other.parentItemId == parentItemId &&
-     other.thumbId == thumbId &&
-     other.thumb == thumb &&
      other.children == children &&
      other.tags == tags &&
      other.key == key &&
@@ -166,8 +158,6 @@ class ItemDto {
     totalCount.hashCode +
     password.hashCode +
     parentItemId.hashCode +
-    thumbId.hashCode +
-    thumb.hashCode +
     children.hashCode +
     tags.hashCode +
     key.hashCode +
@@ -188,7 +178,7 @@ class ItemDto {
     syncVersion.hashCode;
 
   @override
-  String toString() => 'ItemDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, description=$description, totalCount=$totalCount, password=$password, parentItemId=$parentItemId, thumbId=$thumbId, thumb=$thumb, children=$children, tags=$tags, key=$key, url=$url, size=$size, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, fileId=$fileId, file=$file, syncVersion=$syncVersion]';
+  String toString() => 'ItemDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, description=$description, totalCount=$totalCount, password=$password, parentItemId=$parentItemId, children=$children, tags=$tags, key=$key, url=$url, size=$size, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, fileId=$fileId, file=$file, syncVersion=$syncVersion]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -230,12 +220,6 @@ class ItemDto {
     }
     if (parentItemId != null) {
       json[r'parentItemId'] = parentItemId;
-    }
-    if (thumbId != null) {
-      json[r'thumbId'] = thumbId;
-    }
-    if (thumb != null) {
-      json[r'thumb'] = thumb;
     }
     if (children != null) {
       json[r'children'] = children;
@@ -311,8 +295,6 @@ class ItemDto {
         totalCount: json[r'totalCount'] == null ? null : json[r'totalCount'] as int?,
         password: json[r'password'] == null ? null : json[r'password'] as String?,
         parentItemId: json[r'parentItemId'] == null ? null : json[r'parentItemId'] as String?,
-        thumbId: json[r'thumbId'] == null ? null : json[r'thumbId'] as String?,
-        thumb: json[r'thumb'] == null ? null : ThumbDto.fromJson(json[r'thumb']),
         children: json[r'children'] == null ? null : ItemDto.listFromJson(json[r'children']),
         tags: json[r'tags'] == null ? null : TagDto.listFromJson(json[r'tags']),
         key: json[r'key'] == null ? null : json[r'key'] as String?,

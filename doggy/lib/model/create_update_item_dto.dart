@@ -18,7 +18,6 @@ class CreateUpdateItemDto {
     this.password,
     this.parentItemId,
     this.tagIds,
-    this.thumbId,
     this.key,
     this.md5,
     this.sliceMd5,
@@ -47,8 +46,6 @@ class CreateUpdateItemDto {
   String? parentItemId;
 
   List<String>? tagIds;
-
-  String? thumbId;
 
   String? key;
 
@@ -89,7 +86,6 @@ class CreateUpdateItemDto {
      other.password == password &&
      other.parentItemId == parentItemId &&
      other.tagIds == tagIds &&
-     other.thumbId == thumbId &&
      other.key == key &&
      other.md5 == md5 &&
      other.sliceMd5 == sliceMd5 &&
@@ -114,7 +110,6 @@ class CreateUpdateItemDto {
     password.hashCode +
     parentItemId.hashCode +
     tagIds.hashCode +
-    thumbId.hashCode +
     key.hashCode +
     md5.hashCode +
     sliceMd5.hashCode +
@@ -133,7 +128,7 @@ class CreateUpdateItemDto {
     lastModificationTime.hashCode;
 
   @override
-  String toString() => 'CreateUpdateItemDto[name=$name, description=$description, password=$password, parentItemId=$parentItemId, tagIds=$tagIds, thumbId=$thumbId, key=$key, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, syncVersion=$syncVersion, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime]';
+  String toString() => 'CreateUpdateItemDto[name=$name, description=$description, password=$password, parentItemId=$parentItemId, tagIds=$tagIds, key=$key, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, syncVersion=$syncVersion, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -151,9 +146,6 @@ class CreateUpdateItemDto {
     }
     if (tagIds != null) {
       json[r'tagIds'] = tagIds;
-    }
-    if (thumbId != null) {
-      json[r'thumbId'] = thumbId;
     }
     if (key != null) {
       json[r'key'] = key;
@@ -217,7 +209,6 @@ class CreateUpdateItemDto {
         tagIds: json[r'tagIds'] is List
           ? (json[r'tagIds'] as List).cast<String>()
           : [],
-        thumbId: json[r'thumbId'] == null ? null : json[r'thumbId'] as String?,
         key: json[r'key'] == null ? null : json[r'key'] as String?,
         md5: json[r'md5'] == null ? null : json[r'md5'] as String?,
         sliceMd5: json[r'sliceMd5'] == null ? null : json[r'sliceMd5'] as String?,

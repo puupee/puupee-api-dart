@@ -22,7 +22,6 @@ doc/CreatePushNotificationDto.md
 doc/CreateUpdateItemDto.md
 doc/CreateUpdateNotificationDto.md
 doc/CreateUpdateTagDto.md
-doc/CreateUpdateThumbDto.md
 doc/CreateUpdateTodoDto.md
 doc/CurrentCultureDto.md
 doc/CurrentTenantDto.md
@@ -138,9 +137,6 @@ doc/TenantCreateDto.md
 doc/TenantDto.md
 doc/TenantDtoPagedResultDto.md
 doc/TenantUpdateDto.md
-doc/ThumbApi.md
-doc/ThumbDto.md
-doc/ThumbDtoPagedResultDto.md
 doc/TimeZone.md
 doc/TimingDto.md
 doc/TodoApi.md
@@ -175,7 +171,6 @@ lib/api/sms_api.dart
 lib/api/storage_api.dart
 lib/api/sync_state_api.dart
 lib/api/tag_api.dart
-lib/api/thumb_api.dart
 lib/api/todo_api.dart
 lib/api_client.dart
 lib/api_exception.dart
@@ -204,7 +199,6 @@ lib/model/create_push_notification_dto.dart
 lib/model/create_update_item_dto.dart
 lib/model/create_update_notification_dto.dart
 lib/model/create_update_tag_dto.dart
-lib/model/create_update_thumb_dto.dart
 lib/model/create_update_todo_dto.dart
 lib/model/current_culture_dto.dart
 lib/model/current_tenant_dto.dart
@@ -307,8 +301,6 @@ lib/model/tenant_create_dto.dart
 lib/model/tenant_dto.dart
 lib/model/tenant_dto_paged_result_dto.dart
 lib/model/tenant_update_dto.dart
-lib/model/thumb_dto.dart
-lib/model/thumb_dto_paged_result_dto.dart
 lib/model/time_zone.dart
 lib/model/timing_dto.dart
 lib/model/todo_dto.dart

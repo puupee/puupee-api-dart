@@ -107,11 +107,6 @@ Class | Method | HTTP request | Description
 *TagApi* | [**apiAppTagIdPut**](doc\/TagApi.md#apiapptagidput) | **PUT** /api/app/tag/{id} | 
 *TagApi* | [**apiAppTagPost**](doc\/TagApi.md#apiapptagpost) | **POST** /api/app/tag | 
 *TagApi* | [**apiAppTagSyncGet**](doc\/TagApi.md#apiapptagsyncget) | **GET** /api/app/tag/sync | 
-*ThumbApi* | [**apiAppThumbGet**](doc\/ThumbApi.md#apiappthumbget) | **GET** /api/app/thumb | 
-*ThumbApi* | [**apiAppThumbIdDelete**](doc\/ThumbApi.md#apiappthumbiddelete) | **DELETE** /api/app/thumb/{id} | 
-*ThumbApi* | [**apiAppThumbIdGet**](doc\/ThumbApi.md#apiappthumbidget) | **GET** /api/app/thumb/{id} | 
-*ThumbApi* | [**apiAppThumbPost**](doc\/ThumbApi.md#apiappthumbpost) | **POST** /api/app/thumb | 
-*ThumbApi* | [**apiAppThumbSyncGet**](doc\/ThumbApi.md#apiappthumbsyncget) | **GET** /api/app/thumb/sync | 
 *TodoApi* | [**apiAppTodoGet**](doc\/TodoApi.md#apiapptodoget) | **GET** /api/app/todo | 
 *TodoApi* | [**apiAppTodoIdDelete**](doc\/TodoApi.md#apiapptodoiddelete) | **DELETE** /api/app/todo/{id} | 
 *TodoApi* | [**apiAppTodoIdGet**](doc\/TodoApi.md#apiapptodoidget) | **GET** /api/app/todo/{id} | 
@@ -141,7 +136,6 @@ Class | Method | HTTP request | Description
  - [CreateUpdateItemDto](doc\/CreateUpdateItemDto.md)
  - [CreateUpdateNotificationDto](doc\/CreateUpdateNotificationDto.md)
  - [CreateUpdateTagDto](doc\/CreateUpdateTagDto.md)
- - [CreateUpdateThumbDto](doc\/CreateUpdateThumbDto.md)
  - [CreateUpdateTodoDto](doc\/CreateUpdateTodoDto.md)
  - [CurrentCultureDto](doc\/CurrentCultureDto.md)
  - [CurrentTenantDto](doc\/CurrentTenantDto.md)
@@ -244,8 +238,6 @@ Class | Method | HTTP request | Description
  - [TenantDto](doc\/TenantDto.md)
  - [TenantDtoPagedResultDto](doc\/TenantDtoPagedResultDto.md)
  - [TenantUpdateDto](doc\/TenantUpdateDto.md)
- - [ThumbDto](doc\/ThumbDto.md)
- - [ThumbDtoPagedResultDto](doc\/ThumbDtoPagedResultDto.md)
  - [TimeZone](doc\/TimeZone.md)
  - [TimingDto](doc\/TimingDto.md)
  - [TodoDto](doc\/TodoDto.md)
