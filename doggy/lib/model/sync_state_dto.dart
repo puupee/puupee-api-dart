@@ -15,8 +15,6 @@ class SyncStateDto {
   SyncStateDto({
     this.lastSyncAt,
     this.tagVersion,
-    this.fileVersion,
-    this.thumbVersion,
     this.itemVersion,
     this.todoVersion,
   });
@@ -26,10 +24,6 @@ class SyncStateDto {
 
   int? tagVersion;
 
-  int? fileVersion;
-
-  int? thumbVersion;
-
   int? itemVersion;
 
   int? todoVersion;
@@ -38,8 +32,6 @@ class SyncStateDto {
   bool operator ==(Object other) => identical(this, other) || other is SyncStateDto &&
      other.lastSyncAt == lastSyncAt &&
      other.tagVersion == tagVersion &&
-     other.fileVersion == fileVersion &&
-     other.thumbVersion == thumbVersion &&
      other.itemVersion == itemVersion &&
      other.todoVersion == todoVersion;
 
@@ -47,13 +39,11 @@ class SyncStateDto {
   int get hashCode =>
     lastSyncAt.hashCode +
     tagVersion.hashCode +
-    fileVersion.hashCode +
-    thumbVersion.hashCode +
     itemVersion.hashCode +
     todoVersion.hashCode;
 
   @override
-  String toString() => 'SyncStateDto[lastSyncAt=$lastSyncAt, tagVersion=$tagVersion, fileVersion=$fileVersion, thumbVersion=$thumbVersion, itemVersion=$itemVersion, todoVersion=$todoVersion]';
+  String toString() => 'SyncStateDto[lastSyncAt=$lastSyncAt, tagVersion=$tagVersion, itemVersion=$itemVersion, todoVersion=$todoVersion]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -62,12 +52,6 @@ class SyncStateDto {
     }
     if (tagVersion != null) {
       json[r'tagVersion'] = tagVersion;
-    }
-    if (fileVersion != null) {
-      json[r'fileVersion'] = fileVersion;
-    }
-    if (thumbVersion != null) {
-      json[r'thumbVersion'] = thumbVersion;
     }
     if (itemVersion != null) {
       json[r'itemVersion'] = itemVersion;
@@ -84,8 +68,6 @@ class SyncStateDto {
   static SyncStateDto fromJson(Map<String, dynamic> json) => SyncStateDto(
         lastSyncAt: json[r'lastSyncAt'] == null ? null : mapDateTime(json, r'lastSyncAt', ''),
         tagVersion: json[r'tagVersion'] == null ? null : json[r'tagVersion'] as int?,
-        fileVersion: json[r'fileVersion'] == null ? null : json[r'fileVersion'] as int?,
-        thumbVersion: json[r'thumbVersion'] == null ? null : json[r'thumbVersion'] as int?,
         itemVersion: json[r'itemVersion'] == null ? null : json[r'itemVersion'] as int?,
         todoVersion: json[r'todoVersion'] == null ? null : json[r'todoVersion'] as int?,
     );

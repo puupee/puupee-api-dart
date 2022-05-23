@@ -10,8 +10,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **lastSyncAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **tagVersion** | **int** |  | [optional] 
-**fileVersion** | **int** |  | [optional] 
-**thumbVersion** | **int** |  | [optional] 
 **itemVersion** | **int** |  | [optional] 
 **todoVersion** | **int** |  | [optional] 
 
