@@ -43,6 +43,7 @@ class ItemDto {
     this.fileUpdatedAt,
     this.fileId,
     this.file,
+    this.thumb,
     this.syncVersion,
   });
 
@@ -107,6 +108,8 @@ class ItemDto {
 
   FileDto? file;
 
+  FileDto? thumb;
+
   int? syncVersion;
 
   @override
@@ -141,6 +144,7 @@ class ItemDto {
      other.fileUpdatedAt == fileUpdatedAt &&
      other.fileId == fileId &&
      other.file == file &&
+     other.thumb == thumb &&
      other.syncVersion == syncVersion;
 
   @override
@@ -175,10 +179,11 @@ class ItemDto {
     fileUpdatedAt.hashCode +
     fileId.hashCode +
     file.hashCode +
+    thumb.hashCode +
     syncVersion.hashCode;
 
   @override
-  String toString() => 'ItemDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, description=$description, totalCount=$totalCount, password=$password, parentItemId=$parentItemId, children=$children, tags=$tags, key=$key, url=$url, size=$size, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, fileId=$fileId, file=$file, syncVersion=$syncVersion]';
+  String toString() => 'ItemDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, description=$description, totalCount=$totalCount, password=$password, parentItemId=$parentItemId, children=$children, tags=$tags, key=$key, url=$url, size=$size, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, fileId=$fileId, file=$file, thumb=$thumb, syncVersion=$syncVersion]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -272,6 +277,9 @@ class ItemDto {
     if (file != null) {
       json[r'file'] = file;
     }
+    if (thumb != null) {
+      json[r'thumb'] = thumb;
+    }
     if (syncVersion != null) {
       json[r'syncVersion'] = syncVersion;
     }
@@ -312,6 +320,7 @@ class ItemDto {
         fileUpdatedAt: json[r'fileUpdatedAt'] == null ? null : mapDateTime(json, r'fileUpdatedAt', ''),
         fileId: json[r'fileId'] == null ? null : json[r'fileId'] as String?,
         file: json[r'file'] == null ? null : FileDto.fromJson(json[r'file']),
+        thumb: json[r'thumb'] == null ? null : FileDto.fromJson(json[r'thumb']),
         syncVersion: json[r'syncVersion'] == null ? null : json[r'syncVersion'] as int?,
     );
 
