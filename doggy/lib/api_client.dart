@@ -192,6 +192,14 @@ class ApiClient {
           return AbpLoginResult.fromJson(value);
         case 'ActionApiDescriptionModel':
           return ActionApiDescriptionModel.fromJson(value);
+        case 'AppDto':
+          return AppDto.fromJson(value);
+        case 'AppDtoPagedResultDto':
+          return AppDtoPagedResultDto.fromJson(value);
+        case 'AppReleaseDto':
+          return AppReleaseDto.fromJson(value);
+        case 'AppReleaseDtoPagedResultDto':
+          return AppReleaseDtoPagedResultDto.fromJson(value);
         case 'AppTheme':
           return AppThemeTypeTransformer().decode(value);
           
@@ -219,6 +227,10 @@ class ApiClient {
           return ControllerApiDescriptionModel.fromJson(value);
         case 'ControllerInterfaceApiDescriptionModel':
           return ControllerInterfaceApiDescriptionModel.fromJson(value);
+        case 'CreateOrUpdateAppDto':
+          return CreateOrUpdateAppDto.fromJson(value);
+        case 'CreateOrUpdateAppReleaseDto':
+          return CreateOrUpdateAppReleaseDto.fromJson(value);
         case 'CreatePushNotificationDto':
           return CreatePushNotificationDto.fromJson(value);
         case 'CreateUpdateItemDto':
@@ -299,10 +311,16 @@ class ApiClient {
           return FileOrCredentialsDto.fromJson(value);
         case 'FindTenantResultDto':
           return FindTenantResultDto.fromJson(value);
+        case 'Framework':
+          return FrameworkTypeTransformer().decode(value);
+          
         case 'GetFeatureListResultDto':
           return GetFeatureListResultDto.fromJson(value);
         case 'GetPermissionListResultDto':
           return GetPermissionListResultDto.fromJson(value);
+        case 'GitRepositoryType':
+          return GitRepositoryTypeTypeTransformer().decode(value);
+          
         case 'IStringValueType':
           return IStringValueType.fromJson(value);
         case 'IValueValidator':
@@ -385,6 +403,9 @@ class ApiClient {
           
         case 'Priority':
           return PriorityTypeTransformer().decode(value);
+          
+        case 'ProductType':
+          return ProductTypeTypeTransformer().decode(value);
           
         case 'ProfileDto':
           return ProfileDto.fromJson(value);

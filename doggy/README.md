@@ -42,16 +42,15 @@ import 'package:doggy_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = DeviceApi();
-final sorting = sorting_example; // String | 
-final skipCount = 56; // int | 
-final maxResultCount = 56; // int | 
+final api_instance = AppApi();
+final rapidCode = rapidCode_example; // String | 
+final key = key_example; // String | 
 
 try {
-    final result = api_instance.apiAppDeviceGet(sorting, skipCount, maxResultCount);
+    final result = api_instance.apiAppAppFileOrCredentialsGet(rapidCode, key);
     print(result);
 } catch (e) {
-    print('Exception when calling DeviceApi->apiAppDeviceGet: $e\n');
+    print('Exception when calling AppApi->apiAppAppFileOrCredentialsGet: $e\n');
 }
 
 ```
@@ -62,11 +61,23 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AppApi* | [**apiAppAppFileOrCredentialsGet**](doc\/AppApi.md#apiappappfileorcredentialsget) | **GET** /api/app/app/file-or-credentials | 
+*AppApi* | [**apiAppAppGet**](doc\/AppApi.md#apiappappget) | **GET** /api/app/app | 
+*AppApi* | [**apiAppAppIdDelete**](doc\/AppApi.md#apiappappiddelete) | **DELETE** /api/app/app/{id} | 
+*AppApi* | [**apiAppAppIdGet**](doc\/AppApi.md#apiappappidget) | **GET** /api/app/app/{id} | 
+*AppApi* | [**apiAppAppIdPut**](doc\/AppApi.md#apiappappidput) | **PUT** /api/app/app/{id} | 
+*AppApi* | [**apiAppAppPost**](doc\/AppApi.md#apiappapppost) | **POST** /api/app/app | 
+*AppReleaseApi* | [**apiAppAppReleaseGet**](doc\/AppReleaseApi.md#apiappappreleaseget) | **GET** /api/app/app-release | 
+*AppReleaseApi* | [**apiAppAppReleaseIdDelete**](doc\/AppReleaseApi.md#apiappappreleaseiddelete) | **DELETE** /api/app/app-release/{id} | 
+*AppReleaseApi* | [**apiAppAppReleaseIdGet**](doc\/AppReleaseApi.md#apiappappreleaseidget) | **GET** /api/app/app-release/{id} | 
+*AppReleaseApi* | [**apiAppAppReleaseIdPut**](doc\/AppReleaseApi.md#apiappappreleaseidput) | **PUT** /api/app/app-release/{id} | 
+*AppReleaseApi* | [**apiAppAppReleasePost**](doc\/AppReleaseApi.md#apiappappreleasepost) | **POST** /api/app/app-release | 
 *DeviceApi* | [**apiAppDeviceGet**](doc\/DeviceApi.md#apiappdeviceget) | **GET** /api/app/device | 
 *DeviceApi* | [**apiAppDeviceIdDelete**](doc\/DeviceApi.md#apiappdeviceiddelete) | **DELETE** /api/app/device/{id} | 
 *DeviceApi* | [**apiAppDeviceRefreshPost**](doc\/DeviceApi.md#apiappdevicerefreshpost) | **POST** /api/app/device/refresh | 
 *FileApi* | [**apiAppFileFileOrCredentialsGet**](doc\/FileApi.md#apiappfilefileorcredentialsget) | **GET** /api/app/file/file-or-credentials | 
 *FileApi* | [**apiAppFilePreSignUrlPost**](doc\/FileApi.md#apiappfilepresignurlpost) | **POST** /api/app/file/pre-sign-url | 
+*FileApi* | [**apiAppFileUrlPost**](doc\/FileApi.md#apiappfileurlpost) | **POST** /api/app/file/url | 
 *ItemApi* | [**apiAppItemGet**](doc\/ItemApi.md#apiappitemget) | **GET** /api/app/item | 
 *ItemApi* | [**apiAppItemIdDelete**](doc\/ItemApi.md#apiappitemiddelete) | **DELETE** /api/app/item/{id} | 
 *ItemApi* | [**apiAppItemIdGet**](doc\/ItemApi.md#apiappitemidget) | **GET** /api/app/item/{id} | 
@@ -119,6 +130,10 @@ Class | Method | HTTP request | Description
 
  - [AbpLoginResult](doc\/AbpLoginResult.md)
  - [ActionApiDescriptionModel](doc\/ActionApiDescriptionModel.md)
+ - [AppDto](doc\/AppDto.md)
+ - [AppDtoPagedResultDto](doc\/AppDtoPagedResultDto.md)
+ - [AppReleaseDto](doc\/AppReleaseDto.md)
+ - [AppReleaseDtoPagedResultDto](doc\/AppReleaseDtoPagedResultDto.md)
  - [AppTheme](doc\/AppTheme.md)
  - [ApplicationApiDescriptionModel](doc\/ApplicationApiDescriptionModel.md)
  - [ApplicationAuthConfigurationDto](doc\/ApplicationAuthConfigurationDto.md)
@@ -132,6 +147,8 @@ Class | Method | HTTP request | Description
  - [ClockDto](doc\/ClockDto.md)
  - [ControllerApiDescriptionModel](doc\/ControllerApiDescriptionModel.md)
  - [ControllerInterfaceApiDescriptionModel](doc\/ControllerInterfaceApiDescriptionModel.md)
+ - [CreateOrUpdateAppDto](doc\/CreateOrUpdateAppDto.md)
+ - [CreateOrUpdateAppReleaseDto](doc\/CreateOrUpdateAppReleaseDto.md)
  - [CreatePushNotificationDto](doc\/CreatePushNotificationDto.md)
  - [CreateUpdateItemDto](doc\/CreateUpdateItemDto.md)
  - [CreateUpdateNotificationDto](doc\/CreateUpdateNotificationDto.md)
@@ -171,8 +188,10 @@ Class | Method | HTTP request | Description
  - [FileDto](doc\/FileDto.md)
  - [FileOrCredentialsDto](doc\/FileOrCredentialsDto.md)
  - [FindTenantResultDto](doc\/FindTenantResultDto.md)
+ - [Framework](doc\/Framework.md)
  - [GetFeatureListResultDto](doc\/GetFeatureListResultDto.md)
  - [GetPermissionListResultDto](doc\/GetPermissionListResultDto.md)
+ - [GitRepositoryType](doc\/GitRepositoryType.md)
  - [IStringValueType](doc\/IStringValueType.md)
  - [IValueValidator](doc\/IValueValidator.md)
  - [IanaTimeZone](doc\/IanaTimeZone.md)
@@ -212,6 +231,7 @@ Class | Method | HTTP request | Description
  - [PermissionGroupDto](doc\/PermissionGroupDto.md)
  - [Platform](doc\/Platform.md)
  - [Priority](doc\/Priority.md)
+ - [ProductType](doc\/ProductType.md)
  - [ProfileDto](doc\/ProfileDto.md)
  - [PropertyApiDescriptionModel](doc\/PropertyApiDescriptionModel.md)
  - [ProviderInfoDto](doc\/ProviderInfoDto.md)

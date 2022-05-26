@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **protocal** | **String** |  | [optional] 
 **bucketName** | **String** |  | [optional] 
 **regionId** | **String** |  | [optional] 
-**prefix** | **String** |  | [optional] 
 **securityToken** | **String** |  | [optional] 
 **accessKeyId** | **String** |  | [optional] 
 **accessKeySecret** | **String** |  | [optional] 

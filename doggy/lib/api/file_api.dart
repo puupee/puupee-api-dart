@@ -20,7 +20,9 @@ class FileApi {
   /// Parameters:
   ///
   /// * [String] rapidCode:
-  Future<Response> apiAppFileFileOrCredentialsGetWithHttpInfo({ String? rapidCode, }) async {
+  ///
+  /// * [String] key:
+  Future<Response> apiAppFileFileOrCredentialsGetWithHttpInfo({ String? rapidCode, String? key, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/app/file/file-or-credentials';
 
@@ -33,6 +35,9 @@ class FileApi {
 
     if (rapidCode != null) {
       queryParams.addAll(_convertParametersForCollectionFormat('', 'rapidCode', rapidCode));
+    }
+    if (key != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'key', key));
     }
 
     const authNames = <String>['oauth2'];
@@ -54,8 +59,10 @@ class FileApi {
   /// Parameters:
   ///
   /// * [String] rapidCode:
-  Future<FileOrCredentialsDto?> apiAppFileFileOrCredentialsGet({ String? rapidCode, }) async {
-    final response = await apiAppFileFileOrCredentialsGetWithHttpInfo( rapidCode: rapidCode, );
+  ///
+  /// * [String] key:
+  Future<FileOrCredentialsDto?> apiAppFileFileOrCredentialsGet({ String? rapidCode, String? key, }) async {
+    final response = await apiAppFileFileOrCredentialsGetWithHttpInfo( rapidCode: rapidCode, key: key, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -115,6 +122,57 @@ class FileApi {
     // FormatException when trying to decode an empty string.
     if (response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'String',) as String;
+        }
+  }
+
+  /// Performs an HTTP 'POST /api/app/file/url' operation and returns the [Response].
+  /// Parameters:
+  ///
+  /// * [String] key:
+  Future<Response> apiAppFileUrlPostWithHttpInfo({ String? key, }) async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/app/file/url';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    if (key != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'key', key));
+    }
+
+    const authNames = <String>['oauth2'];
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes[0],
+      authNames,
+    );
+  }
+
+  /// Parameters:
+  ///
+  /// * [String] key:
+  Future<Map<String, dynamic>?> apiAppFileUrlPost({ String? key, }) async {
+    final response = await apiAppFileUrlPostWithHttpInfo( key: key, );
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Map<String, dynamic>',) as Map<String, dynamic>;
         }
   }
 }

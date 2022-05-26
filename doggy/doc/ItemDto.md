@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 **totalCount** | **int** |  | [optional] 
 **password** | **String** |  | [optional] 
-**parentItemId** | **String** |  | [optional] 
+**parentId** | **String** |  | [optional] 
 **children** | [**List<ItemDto>**](ItemDto.md) |  | [optional] [default to const []]
 **tags** | [**List<TagDto>**](TagDto.md) |  | [optional] [default to const []]
 **key** | **String** |  | [optional] 

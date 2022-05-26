@@ -18,7 +18,6 @@ class UploadCredentials {
     this.protocal,
     this.bucketName,
     this.regionId,
-    this.prefix,
     this.securityToken,
     this.accessKeyId,
     this.accessKeySecret,
@@ -37,8 +36,6 @@ class UploadCredentials {
   String? bucketName;
 
   String? regionId;
-
-  String? prefix;
 
   String? securityToken;
 
@@ -59,7 +56,6 @@ class UploadCredentials {
      other.protocal == protocal &&
      other.bucketName == bucketName &&
      other.regionId == regionId &&
-     other.prefix == prefix &&
      other.securityToken == securityToken &&
      other.accessKeyId == accessKeyId &&
      other.accessKeySecret == accessKeySecret &&
@@ -74,7 +70,6 @@ class UploadCredentials {
     protocal.hashCode +
     bucketName.hashCode +
     regionId.hashCode +
-    prefix.hashCode +
     securityToken.hashCode +
     accessKeyId.hashCode +
     accessKeySecret.hashCode +
@@ -83,7 +78,7 @@ class UploadCredentials {
     appId.hashCode;
 
   @override
-  String toString() => 'UploadCredentials[storageClass=$storageClass, endPoint=$endPoint, protocal=$protocal, bucketName=$bucketName, regionId=$regionId, prefix=$prefix, securityToken=$securityToken, accessKeyId=$accessKeyId, accessKeySecret=$accessKeySecret, expiration=$expiration, expiredTime=$expiredTime, appId=$appId]';
+  String toString() => 'UploadCredentials[storageClass=$storageClass, endPoint=$endPoint, protocal=$protocal, bucketName=$bucketName, regionId=$regionId, securityToken=$securityToken, accessKeyId=$accessKeyId, accessKeySecret=$accessKeySecret, expiration=$expiration, expiredTime=$expiredTime, appId=$appId]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -101,9 +96,6 @@ class UploadCredentials {
     }
     if (regionId != null) {
       json[r'regionId'] = regionId;
-    }
-    if (prefix != null) {
-      json[r'prefix'] = prefix;
     }
     if (securityToken != null) {
       json[r'securityToken'] = securityToken;
@@ -135,7 +127,6 @@ class UploadCredentials {
         protocal: json[r'protocal'] == null ? null : json[r'protocal'] as String?,
         bucketName: json[r'bucketName'] == null ? null : json[r'bucketName'] as String?,
         regionId: json[r'regionId'] == null ? null : json[r'regionId'] as String?,
-        prefix: json[r'prefix'] == null ? null : json[r'prefix'] as String?,
         securityToken: json[r'securityToken'] == null ? null : json[r'securityToken'] as String?,
         accessKeyId: json[r'accessKeyId'] == null ? null : json[r'accessKeyId'] as String?,
         accessKeySecret: json[r'accessKeySecret'] == null ? null : json[r'accessKeySecret'] as String?,

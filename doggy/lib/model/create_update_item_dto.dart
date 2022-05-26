@@ -16,7 +16,7 @@ class CreateUpdateItemDto {
     this.name,
     this.description,
     this.password,
-    this.parentItemId,
+    this.parentId,
     this.tagIds,
     this.key,
     this.md5,
@@ -43,7 +43,7 @@ class CreateUpdateItemDto {
 
   String? password;
 
-  String? parentItemId;
+  String? parentId;
 
   List<String>? tagIds;
 
@@ -84,7 +84,7 @@ class CreateUpdateItemDto {
      other.name == name &&
      other.description == description &&
      other.password == password &&
-     other.parentItemId == parentItemId &&
+     other.parentId == parentId &&
      other.tagIds == tagIds &&
      other.key == key &&
      other.md5 == md5 &&
@@ -108,7 +108,7 @@ class CreateUpdateItemDto {
     name.hashCode +
     description.hashCode +
     password.hashCode +
-    parentItemId.hashCode +
+    parentId.hashCode +
     tagIds.hashCode +
     key.hashCode +
     md5.hashCode +
@@ -128,7 +128,7 @@ class CreateUpdateItemDto {
     lastModificationTime.hashCode;
 
   @override
-  String toString() => 'CreateUpdateItemDto[name=$name, description=$description, password=$password, parentItemId=$parentItemId, tagIds=$tagIds, key=$key, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, syncVersion=$syncVersion, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime]';
+  String toString() => 'CreateUpdateItemDto[name=$name, description=$description, password=$password, parentId=$parentId, tagIds=$tagIds, key=$key, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, syncVersion=$syncVersion, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -141,8 +141,8 @@ class CreateUpdateItemDto {
     if (password != null) {
       json[r'password'] = password;
     }
-    if (parentItemId != null) {
-      json[r'parentItemId'] = parentItemId;
+    if (parentId != null) {
+      json[r'parentId'] = parentId;
     }
     if (tagIds != null) {
       json[r'tagIds'] = tagIds;
@@ -205,7 +205,7 @@ class CreateUpdateItemDto {
         name: json[r'name'] == null ? null : json[r'name'] as String?,
         description: json[r'description'] == null ? null : json[r'description'] as String?,
         password: json[r'password'] == null ? null : json[r'password'] as String?,
-        parentItemId: json[r'parentItemId'] == null ? null : json[r'parentItemId'] as String?,
+        parentId: json[r'parentId'] == null ? null : json[r'parentId'] as String?,
         tagIds: json[r'tagIds'] is List
           ? (json[r'tagIds'] as List).cast<String>()
           : [],

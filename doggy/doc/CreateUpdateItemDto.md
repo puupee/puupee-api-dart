@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **name** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
 **password** | **String** |  | [optional] 
-**parentItemId** | **String** |  | [optional] 
+**parentId** | **String** |  | [optional] 
 **tagIds** | **List<String>** |  | [optional] [default to const []]
 **key** | **String** |  | [optional] 
 **md5** | **String** |  | [optional] 

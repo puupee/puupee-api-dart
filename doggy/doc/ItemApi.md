@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **apiAppItemGet**
-> ItemDtoPagedResultDto apiAppItemGet(parentItemId, searchKey, name, types, extension_, contentType, tagId, maxResultCount, sorting, skipCount)
+> ItemDtoPagedResultDto apiAppItemGet(parentId, searchKey, name, types, extension_, contentType, tagId, maxResultCount, sorting, skipCount)
 
 
 
@@ -30,7 +30,7 @@ import 'package:doggy_api/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = ItemApi();
-final parentItemId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final parentId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 final searchKey = searchKey_example; // String | 
 final name = name_example; // String | 
 final types = []; // List<ItemType> | 
@@ -42,7 +42,7 @@ final sorting = sorting_example; // String |
 final skipCount = 56; // int | 
 
 try {
-    final result = api_instance.apiAppItemGet(parentItemId, searchKey, name, types, extension_, contentType, tagId, maxResultCount, sorting, skipCount);
+    final result = api_instance.apiAppItemGet(parentId, searchKey, name, types, extension_, contentType, tagId, maxResultCount, sorting, skipCount);
     print(result);
 } catch (e) {
     print('Exception when calling ItemApi->apiAppItemGet: $e\n');
@@ -53,7 +53,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parentItemId** | **String**|  | [optional] 
+ **parentId** | **String**|  | [optional] 
  **searchKey** | **String**|  | [optional] 
  **name** | **String**|  | [optional] 
  **types** | [**List<ItemType>**](ItemType.md)|  | [optional] [default to const []]

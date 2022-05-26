@@ -5,6 +5,12 @@ README.md
 analysis_options.yaml
 doc/AbpLoginResult.md
 doc/ActionApiDescriptionModel.md
+doc/AppApi.md
+doc/AppDto.md
+doc/AppDtoPagedResultDto.md
+doc/AppReleaseApi.md
+doc/AppReleaseDto.md
+doc/AppReleaseDtoPagedResultDto.md
 doc/AppTheme.md
 doc/ApplicationApiDescriptionModel.md
 doc/ApplicationAuthConfigurationDto.md
@@ -18,6 +24,8 @@ doc/ChangePasswordInput.md
 doc/ClockDto.md
 doc/ControllerApiDescriptionModel.md
 doc/ControllerInterfaceApiDescriptionModel.md
+doc/CreateOrUpdateAppDto.md
+doc/CreateOrUpdateAppReleaseDto.md
 doc/CreatePushNotificationDto.md
 doc/CreateUpdateItemDto.md
 doc/CreateUpdateNotificationDto.md
@@ -59,8 +67,10 @@ doc/FileApi.md
 doc/FileDto.md
 doc/FileOrCredentialsDto.md
 doc/FindTenantResultDto.md
+doc/Framework.md
 doc/GetFeatureListResultDto.md
 doc/GetPermissionListResultDto.md
+doc/GitRepositoryType.md
 doc/IStringValueType.md
 doc/IValueValidator.md
 doc/IanaTimeZone.md
@@ -105,6 +115,7 @@ doc/PermissionGrantInfoDto.md
 doc/PermissionGroupDto.md
 doc/Platform.md
 doc/Priority.md
+doc/ProductType.md
 doc/ProfileDto.md
 doc/PropertyApiDescriptionModel.md
 doc/ProviderInfoDto.md
@@ -158,6 +169,8 @@ doc/UserStorageItemDto.md
 doc/WindowsTimeZone.md
 git_push.sh
 lib/api.dart
+lib/api/app_api.dart
+lib/api/app_release_api.dart
 lib/api/device_api.dart
 lib/api/file_api.dart
 lib/api/item_api.dart
@@ -182,6 +195,10 @@ lib/auth/http_bearer_auth.dart
 lib/auth/oauth.dart
 lib/model/abp_login_result.dart
 lib/model/action_api_description_model.dart
+lib/model/app_dto.dart
+lib/model/app_dto_paged_result_dto.dart
+lib/model/app_release_dto.dart
+lib/model/app_release_dto_paged_result_dto.dart
 lib/model/app_theme.dart
 lib/model/application_api_description_model.dart
 lib/model/application_auth_configuration_dto.dart
@@ -195,6 +212,8 @@ lib/model/change_password_input.dart
 lib/model/clock_dto.dart
 lib/model/controller_api_description_model.dart
 lib/model/controller_interface_api_description_model.dart
+lib/model/create_or_update_app_dto.dart
+lib/model/create_or_update_app_release_dto.dart
 lib/model/create_push_notification_dto.dart
 lib/model/create_update_item_dto.dart
 lib/model/create_update_notification_dto.dart
@@ -234,8 +253,10 @@ lib/model/feature_provider_dto.dart
 lib/model/file_dto.dart
 lib/model/file_or_credentials_dto.dart
 lib/model/find_tenant_result_dto.dart
+lib/model/framework.dart
 lib/model/get_feature_list_result_dto.dart
 lib/model/get_permission_list_result_dto.dart
+lib/model/git_repository_type.dart
 lib/model/i_string_value_type.dart
 lib/model/i_value_validator.dart
 lib/model/iana_time_zone.dart
@@ -275,6 +296,7 @@ lib/model/permission_grant_info_dto.dart
 lib/model/permission_group_dto.dart
 lib/model/platform.dart
 lib/model/priority.dart
+lib/model/product_type.dart
 lib/model/profile_dto.dart
 lib/model/property_api_description_model.dart
 lib/model/provider_info_dto.dart

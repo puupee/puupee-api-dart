@@ -19,7 +19,7 @@ class ItemApi {
   /// Performs an HTTP 'GET /api/app/item' operation and returns the [Response].
   /// Parameters:
   ///
-  /// * [String] parentItemId:
+  /// * [String] parentId:
   ///
   /// * [String] searchKey:
   ///
@@ -38,7 +38,7 @@ class ItemApi {
   /// * [String] sorting:
   ///
   /// * [int] skipCount:
-  Future<Response> apiAppItemGetWithHttpInfo({ String? parentItemId, String? searchKey, String? name, List<ItemType>? types, String? extension_, String? contentType, String? tagId, int? maxResultCount, String? sorting, int? skipCount, }) async {
+  Future<Response> apiAppItemGetWithHttpInfo({ String? parentId, String? searchKey, String? name, List<ItemType>? types, String? extension_, String? contentType, String? tagId, int? maxResultCount, String? sorting, int? skipCount, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/app/item';
 
@@ -49,8 +49,8 @@ class ItemApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    if (parentItemId != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'ParentItemId', parentItemId));
+    if (parentId != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'ParentId', parentId));
     }
     if (searchKey != null) {
       queryParams.addAll(_convertParametersForCollectionFormat('', 'SearchKey', searchKey));
@@ -98,7 +98,7 @@ class ItemApi {
 
   /// Parameters:
   ///
-  /// * [String] parentItemId:
+  /// * [String] parentId:
   ///
   /// * [String] searchKey:
   ///
@@ -117,8 +117,8 @@ class ItemApi {
   /// * [String] sorting:
   ///
   /// * [int] skipCount:
-  Future<ItemDtoPagedResultDto?> apiAppItemGet({ String? parentItemId, String? searchKey, String? name, List<ItemType>? types, String? extension_, String? contentType, String? tagId, int? maxResultCount, String? sorting, int? skipCount, }) async {
-    final response = await apiAppItemGetWithHttpInfo( parentItemId: parentItemId, searchKey: searchKey, name: name, types: types, extension_: extension_, contentType: contentType, tagId: tagId, maxResultCount: maxResultCount, sorting: sorting, skipCount: skipCount, );
+  Future<ItemDtoPagedResultDto?> apiAppItemGet({ String? parentId, String? searchKey, String? name, List<ItemType>? types, String? extension_, String? contentType, String? tagId, int? maxResultCount, String? sorting, int? skipCount, }) async {
+    final response = await apiAppItemGetWithHttpInfo( parentId: parentId, searchKey: searchKey, name: name, types: types, extension_: extension_, contentType: contentType, tagId: tagId, maxResultCount: maxResultCount, sorting: sorting, skipCount: skipCount, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

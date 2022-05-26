@@ -69,6 +69,12 @@ String parameterToString(dynamic value) {
   if (value is DisplayStyle) {
     return DisplayStyleTypeTransformer().encode(value).toString();
   }
+  if (value is Framework) {
+    return FrameworkTypeTransformer().encode(value).toString();
+  }
+  if (value is GitRepositoryType) {
+    return GitRepositoryTypeTypeTransformer().encode(value).toString();
+  }
   if (value is ItemType) {
     return ItemTypeTypeTransformer().encode(value).toString();
   }
@@ -83,6 +89,9 @@ String parameterToString(dynamic value) {
   }
   if (value is Priority) {
     return PriorityTypeTransformer().encode(value).toString();
+  }
+  if (value is ProductType) {
+    return ProductTypeTypeTransformer().encode(value).toString();
   }
   if (value is SpecialItems) {
     return SpecialItemsTypeTransformer().encode(value).toString();
