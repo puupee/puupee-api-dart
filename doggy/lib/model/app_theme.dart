@@ -16,22 +16,22 @@ class AppTheme {
   const AppTheme._(this.value);
 
   /// The underlying value of this enum member.
-  final int? value;
+  final String? value;
 
   @override
-  String toString() => value == null ? '' : value.toString();
+  String toString() => value ?? '';
 
-  int? toJson() => value;
+  String? toJson() => value;
 
-  static const number0 = AppTheme._(0);
-  static const number1 = AppTheme._(1);
-  static const number2 = AppTheme._(2);
+  static const system = AppTheme._(r'System');
+  static const light = AppTheme._(r'Light');
+  static const dark = AppTheme._(r'Dark');
 
   /// List of all possible values in this [enum][AppTheme].
   static const values = <AppTheme>[
-    number0,
-    number1,
-    number2,
+    system,
+    light,
+    dark,
   ];
 
   static AppTheme fromJson(dynamic value) =>
@@ -43,27 +43,27 @@ class AppTheme {
       : <AppTheme>[];
 }
 
-/// Transformation class that can [encode] an instance of [AppTheme] to int,
+/// Transformation class that can [encode] an instance of [AppTheme] to String,
 /// and [decode] dynamic data back to [AppTheme].
 class AppThemeTypeTransformer {
   factory AppThemeTypeTransformer() => _instance ??= const AppThemeTypeTransformer._();
 
   const AppThemeTypeTransformer._();
 
-  int? encode(AppTheme data) => data.value;
+  String? encode(AppTheme data) => data.value;
 
   /// Decodes a [dynamic value][data] to a AppTheme.
   ///
   /// If the [dynamic value][data] cannot be decoded successfully, then an [UnimplementedError] is thrown.
   AppTheme decode(dynamic data) {
-    if (data == 0) {
-      return AppTheme.number0;
+    if (data == r'System') {
+      return AppTheme.system;
     }
-    if (data == 1) {
-      return AppTheme.number1;
+    if (data == r'Light') {
+      return AppTheme.light;
     }
-    if (data == 2) {
-      return AppTheme.number2;
+    if (data == r'Dark') {
+      return AppTheme.dark;
     }
     throw ArgumentError('Unknown enum value to decode: $data');
 

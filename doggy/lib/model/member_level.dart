@@ -16,26 +16,26 @@ class MemberLevel {
   const MemberLevel._(this.value);
 
   /// The underlying value of this enum member.
-  final int? value;
+  final String? value;
 
   @override
-  String toString() => value == null ? '' : value.toString();
+  String toString() => value ?? '';
 
-  int? toJson() => value;
+  String? toJson() => value;
 
-  static const number0 = MemberLevel._(0);
-  static const number1 = MemberLevel._(1);
-  static const number2 = MemberLevel._(2);
-  static const number3 = MemberLevel._(3);
-  static const number5 = MemberLevel._(5);
+  static const none = MemberLevel._(r'None');
+  static const monthly = MemberLevel._(r'Monthly');
+  static const quarterly = MemberLevel._(r'Quarterly');
+  static const annual = MemberLevel._(r'Annual');
+  static const unlimited = MemberLevel._(r'Unlimited');
 
   /// List of all possible values in this [enum][MemberLevel].
   static const values = <MemberLevel>[
-    number0,
-    number1,
-    number2,
-    number3,
-    number5,
+    none,
+    monthly,
+    quarterly,
+    annual,
+    unlimited,
   ];
 
   static MemberLevel fromJson(dynamic value) =>
@@ -47,33 +47,33 @@ class MemberLevel {
       : <MemberLevel>[];
 }
 
-/// Transformation class that can [encode] an instance of [MemberLevel] to int,
+/// Transformation class that can [encode] an instance of [MemberLevel] to String,
 /// and [decode] dynamic data back to [MemberLevel].
 class MemberLevelTypeTransformer {
   factory MemberLevelTypeTransformer() => _instance ??= const MemberLevelTypeTransformer._();
 
   const MemberLevelTypeTransformer._();
 
-  int? encode(MemberLevel data) => data.value;
+  String? encode(MemberLevel data) => data.value;
 
   /// Decodes a [dynamic value][data] to a MemberLevel.
   ///
   /// If the [dynamic value][data] cannot be decoded successfully, then an [UnimplementedError] is thrown.
   MemberLevel decode(dynamic data) {
-    if (data == 0) {
-      return MemberLevel.number0;
+    if (data == r'None') {
+      return MemberLevel.none;
     }
-    if (data == 1) {
-      return MemberLevel.number1;
+    if (data == r'Monthly') {
+      return MemberLevel.monthly;
     }
-    if (data == 2) {
-      return MemberLevel.number2;
+    if (data == r'Quarterly') {
+      return MemberLevel.quarterly;
     }
-    if (data == 3) {
-      return MemberLevel.number3;
+    if (data == r'Annual') {
+      return MemberLevel.annual;
     }
-    if (data == 5) {
-      return MemberLevel.number5;
+    if (data == r'Unlimited') {
+      return MemberLevel.unlimited;
     }
     throw ArgumentError('Unknown enum value to decode: $data');
 

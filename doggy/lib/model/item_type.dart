@@ -16,36 +16,36 @@ class ItemType {
   const ItemType._(this.value);
 
   /// The underlying value of this enum member.
-  final int? value;
+  final String? value;
 
   @override
-  String toString() => value == null ? '' : value.toString();
+  String toString() => value ?? '';
 
-  int? toJson() => value;
+  String? toJson() => value;
 
-  static const number0 = ItemType._(0);
-  static const number1 = ItemType._(1);
-  static const number2 = ItemType._(2);
-  static const number3 = ItemType._(3);
-  static const number4 = ItemType._(4);
-  static const number5 = ItemType._(5);
-  static const number6 = ItemType._(6);
-  static const number7 = ItemType._(7);
-  static const number8 = ItemType._(8);
-  static const number9 = ItemType._(9);
+  static const folder = ItemType._(r'Folder');
+  static const image = ItemType._(r'Image');
+  static const video = ItemType._(r'Video');
+  static const audio = ItemType._(r'Audio');
+  static const word = ItemType._(r'Word');
+  static const excel = ItemType._(r'Excel');
+  static const powerPoint = ItemType._(r'PowerPoint');
+  static const pdf = ItemType._(r'Pdf');
+  static const note = ItemType._(r'Note');
+  static const other = ItemType._(r'Other');
 
   /// List of all possible values in this [enum][ItemType].
   static const values = <ItemType>[
-    number0,
-    number1,
-    number2,
-    number3,
-    number4,
-    number5,
-    number6,
-    number7,
-    number8,
-    number9,
+    folder,
+    image,
+    video,
+    audio,
+    word,
+    excel,
+    powerPoint,
+    pdf,
+    note,
+    other,
   ];
 
   static ItemType fromJson(dynamic value) =>
@@ -57,48 +57,48 @@ class ItemType {
       : <ItemType>[];
 }
 
-/// Transformation class that can [encode] an instance of [ItemType] to int,
+/// Transformation class that can [encode] an instance of [ItemType] to String,
 /// and [decode] dynamic data back to [ItemType].
 class ItemTypeTypeTransformer {
   factory ItemTypeTypeTransformer() => _instance ??= const ItemTypeTypeTransformer._();
 
   const ItemTypeTypeTransformer._();
 
-  int? encode(ItemType data) => data.value;
+  String? encode(ItemType data) => data.value;
 
   /// Decodes a [dynamic value][data] to a ItemType.
   ///
   /// If the [dynamic value][data] cannot be decoded successfully, then an [UnimplementedError] is thrown.
   ItemType decode(dynamic data) {
-    if (data == 0) {
-      return ItemType.number0;
+    if (data == r'Folder') {
+      return ItemType.folder;
     }
-    if (data == 1) {
-      return ItemType.number1;
+    if (data == r'Image') {
+      return ItemType.image;
     }
-    if (data == 2) {
-      return ItemType.number2;
+    if (data == r'Video') {
+      return ItemType.video;
     }
-    if (data == 3) {
-      return ItemType.number3;
+    if (data == r'Audio') {
+      return ItemType.audio;
     }
-    if (data == 4) {
-      return ItemType.number4;
+    if (data == r'Word') {
+      return ItemType.word;
     }
-    if (data == 5) {
-      return ItemType.number5;
+    if (data == r'Excel') {
+      return ItemType.excel;
     }
-    if (data == 6) {
-      return ItemType.number6;
+    if (data == r'PowerPoint') {
+      return ItemType.powerPoint;
     }
-    if (data == 7) {
-      return ItemType.number7;
+    if (data == r'Pdf') {
+      return ItemType.pdf;
     }
-    if (data == 8) {
-      return ItemType.number8;
+    if (data == r'Note') {
+      return ItemType.note;
     }
-    if (data == 9) {
-      return ItemType.number9;
+    if (data == r'Other') {
+      return ItemType.other;
     }
     throw ArgumentError('Unknown enum value to decode: $data');
 

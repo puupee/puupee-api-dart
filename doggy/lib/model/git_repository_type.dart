@@ -16,24 +16,24 @@ class GitRepositoryType {
   const GitRepositoryType._(this.value);
 
   /// The underlying value of this enum member.
-  final int? value;
+  final String? value;
 
   @override
-  String toString() => value == null ? '' : value.toString();
+  String toString() => value ?? '';
 
-  int? toJson() => value;
+  String? toJson() => value;
 
-  static const number0 = GitRepositoryType._(0);
-  static const number1 = GitRepositoryType._(1);
-  static const number2 = GitRepositoryType._(2);
-  static const number3 = GitRepositoryType._(3);
+  static const gitHub = GitRepositoryType._(r'GitHub');
+  static const gitLab = GitRepositoryType._(r'GitLab');
+  static const bitBucket = GitRepositoryType._(r'BitBucket');
+  static const other = GitRepositoryType._(r'Other');
 
   /// List of all possible values in this [enum][GitRepositoryType].
   static const values = <GitRepositoryType>[
-    number0,
-    number1,
-    number2,
-    number3,
+    gitHub,
+    gitLab,
+    bitBucket,
+    other,
   ];
 
   static GitRepositoryType fromJson(dynamic value) =>
@@ -45,30 +45,30 @@ class GitRepositoryType {
       : <GitRepositoryType>[];
 }
 
-/// Transformation class that can [encode] an instance of [GitRepositoryType] to int,
+/// Transformation class that can [encode] an instance of [GitRepositoryType] to String,
 /// and [decode] dynamic data back to [GitRepositoryType].
 class GitRepositoryTypeTypeTransformer {
   factory GitRepositoryTypeTypeTransformer() => _instance ??= const GitRepositoryTypeTypeTransformer._();
 
   const GitRepositoryTypeTypeTransformer._();
 
-  int? encode(GitRepositoryType data) => data.value;
+  String? encode(GitRepositoryType data) => data.value;
 
   /// Decodes a [dynamic value][data] to a GitRepositoryType.
   ///
   /// If the [dynamic value][data] cannot be decoded successfully, then an [UnimplementedError] is thrown.
   GitRepositoryType decode(dynamic data) {
-    if (data == 0) {
-      return GitRepositoryType.number0;
+    if (data == r'GitHub') {
+      return GitRepositoryType.gitHub;
     }
-    if (data == 1) {
-      return GitRepositoryType.number1;
+    if (data == r'GitLab') {
+      return GitRepositoryType.gitLab;
     }
-    if (data == 2) {
-      return GitRepositoryType.number2;
+    if (data == r'BitBucket') {
+      return GitRepositoryType.bitBucket;
     }
-    if (data == 3) {
-      return GitRepositoryType.number3;
+    if (data == r'Other') {
+      return GitRepositoryType.other;
     }
     throw ArgumentError('Unknown enum value to decode: $data');
 

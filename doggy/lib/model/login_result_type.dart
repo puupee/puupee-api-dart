@@ -16,26 +16,26 @@ class LoginResultType {
   const LoginResultType._(this.value);
 
   /// The underlying value of this enum member.
-  final int? value;
+  final String? value;
 
   @override
-  String toString() => value == null ? '' : value.toString();
+  String toString() => value ?? '';
 
-  int? toJson() => value;
+  String? toJson() => value;
 
-  static const number1 = LoginResultType._(1);
-  static const number2 = LoginResultType._(2);
-  static const number3 = LoginResultType._(3);
-  static const number4 = LoginResultType._(4);
-  static const number5 = LoginResultType._(5);
+  static const success = LoginResultType._(r'Success');
+  static const invalidUserNameOrPassword = LoginResultType._(r'InvalidUserNameOrPassword');
+  static const notAllowed = LoginResultType._(r'NotAllowed');
+  static const lockedOut = LoginResultType._(r'LockedOut');
+  static const requiresTwoFactor = LoginResultType._(r'RequiresTwoFactor');
 
   /// List of all possible values in this [enum][LoginResultType].
   static const values = <LoginResultType>[
-    number1,
-    number2,
-    number3,
-    number4,
-    number5,
+    success,
+    invalidUserNameOrPassword,
+    notAllowed,
+    lockedOut,
+    requiresTwoFactor,
   ];
 
   static LoginResultType fromJson(dynamic value) =>
@@ -47,33 +47,33 @@ class LoginResultType {
       : <LoginResultType>[];
 }
 
-/// Transformation class that can [encode] an instance of [LoginResultType] to int,
+/// Transformation class that can [encode] an instance of [LoginResultType] to String,
 /// and [decode] dynamic data back to [LoginResultType].
 class LoginResultTypeTypeTransformer {
   factory LoginResultTypeTypeTransformer() => _instance ??= const LoginResultTypeTypeTransformer._();
 
   const LoginResultTypeTypeTransformer._();
 
-  int? encode(LoginResultType data) => data.value;
+  String? encode(LoginResultType data) => data.value;
 
   /// Decodes a [dynamic value][data] to a LoginResultType.
   ///
   /// If the [dynamic value][data] cannot be decoded successfully, then an [UnimplementedError] is thrown.
   LoginResultType decode(dynamic data) {
-    if (data == 1) {
-      return LoginResultType.number1;
+    if (data == r'Success') {
+      return LoginResultType.success;
     }
-    if (data == 2) {
-      return LoginResultType.number2;
+    if (data == r'InvalidUserNameOrPassword') {
+      return LoginResultType.invalidUserNameOrPassword;
     }
-    if (data == 3) {
-      return LoginResultType.number3;
+    if (data == r'NotAllowed') {
+      return LoginResultType.notAllowed;
     }
-    if (data == 4) {
-      return LoginResultType.number4;
+    if (data == r'LockedOut') {
+      return LoginResultType.lockedOut;
     }
-    if (data == 5) {
-      return LoginResultType.number5;
+    if (data == r'RequiresTwoFactor') {
+      return LoginResultType.requiresTwoFactor;
     }
     throw ArgumentError('Unknown enum value to decode: $data');
 

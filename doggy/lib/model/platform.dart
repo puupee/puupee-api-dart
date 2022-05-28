@@ -16,34 +16,34 @@ class Platform {
   const Platform._(this.value);
 
   /// The underlying value of this enum member.
-  final int? value;
+  final String? value;
 
   @override
-  String toString() => value == null ? '' : value.toString();
+  String toString() => value ?? '';
 
-  int? toJson() => value;
+  String? toJson() => value;
 
-  static const number0 = Platform._(0);
-  static const number1 = Platform._(1);
-  static const number2 = Platform._(2);
-  static const number3 = Platform._(3);
-  static const number4 = Platform._(4);
-  static const number5 = Platform._(5);
-  static const number6 = Platform._(6);
-  static const number7 = Platform._(7);
-  static const number8 = Platform._(8);
+  static const none = Platform._(r'None');
+  static const unknow = Platform._(r'Unknow');
+  static const android = Platform._(r'Android');
+  static const IOS = Platform._(r'IOS');
+  static const windows = Platform._(r'Windows');
+  static const macos = Platform._(r'Macos');
+  static const linux = Platform._(r'Linux');
+  static const web = Platform._(r'Web');
+  static const other = Platform._(r'Other');
 
   /// List of all possible values in this [enum][Platform].
   static const values = <Platform>[
-    number0,
-    number1,
-    number2,
-    number3,
-    number4,
-    number5,
-    number6,
-    number7,
-    number8,
+    none,
+    unknow,
+    android,
+    IOS,
+    windows,
+    macos,
+    linux,
+    web,
+    other,
   ];
 
   static Platform fromJson(dynamic value) =>
@@ -55,45 +55,45 @@ class Platform {
       : <Platform>[];
 }
 
-/// Transformation class that can [encode] an instance of [Platform] to int,
+/// Transformation class that can [encode] an instance of [Platform] to String,
 /// and [decode] dynamic data back to [Platform].
 class PlatformTypeTransformer {
   factory PlatformTypeTransformer() => _instance ??= const PlatformTypeTransformer._();
 
   const PlatformTypeTransformer._();
 
-  int? encode(Platform data) => data.value;
+  String? encode(Platform data) => data.value;
 
   /// Decodes a [dynamic value][data] to a Platform.
   ///
   /// If the [dynamic value][data] cannot be decoded successfully, then an [UnimplementedError] is thrown.
   Platform decode(dynamic data) {
-    if (data == 0) {
-      return Platform.number0;
+    if (data == r'None') {
+      return Platform.none;
     }
-    if (data == 1) {
-      return Platform.number1;
+    if (data == r'Unknow') {
+      return Platform.unknow;
     }
-    if (data == 2) {
-      return Platform.number2;
+    if (data == r'Android') {
+      return Platform.android;
     }
-    if (data == 3) {
-      return Platform.number3;
+    if (data == r'IOS') {
+      return Platform.IOS;
     }
-    if (data == 4) {
-      return Platform.number4;
+    if (data == r'Windows') {
+      return Platform.windows;
     }
-    if (data == 5) {
-      return Platform.number5;
+    if (data == r'Macos') {
+      return Platform.macos;
     }
-    if (data == 6) {
-      return Platform.number6;
+    if (data == r'Linux') {
+      return Platform.linux;
     }
-    if (data == 7) {
-      return Platform.number7;
+    if (data == r'Web') {
+      return Platform.web;
     }
-    if (data == 8) {
-      return Platform.number8;
+    if (data == r'Other') {
+      return Platform.other;
     }
     throw ArgumentError('Unknown enum value to decode: $data');
 

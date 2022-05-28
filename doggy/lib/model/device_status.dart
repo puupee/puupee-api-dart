@@ -16,22 +16,22 @@ class DeviceStatus {
   const DeviceStatus._(this.value);
 
   /// The underlying value of this enum member.
-  final int? value;
+  final String? value;
 
   @override
-  String toString() => value == null ? '' : value.toString();
+  String toString() => value ?? '';
 
-  int? toJson() => value;
+  String? toJson() => value;
 
-  static const number0 = DeviceStatus._(0);
-  static const number1 = DeviceStatus._(1);
-  static const number2 = DeviceStatus._(2);
+  static const none = DeviceStatus._(r'None');
+  static const online = DeviceStatus._(r'Online');
+  static const offline = DeviceStatus._(r'Offline');
 
   /// List of all possible values in this [enum][DeviceStatus].
   static const values = <DeviceStatus>[
-    number0,
-    number1,
-    number2,
+    none,
+    online,
+    offline,
   ];
 
   static DeviceStatus fromJson(dynamic value) =>
@@ -43,27 +43,27 @@ class DeviceStatus {
       : <DeviceStatus>[];
 }
 
-/// Transformation class that can [encode] an instance of [DeviceStatus] to int,
+/// Transformation class that can [encode] an instance of [DeviceStatus] to String,
 /// and [decode] dynamic data back to [DeviceStatus].
 class DeviceStatusTypeTransformer {
   factory DeviceStatusTypeTransformer() => _instance ??= const DeviceStatusTypeTransformer._();
 
   const DeviceStatusTypeTransformer._();
 
-  int? encode(DeviceStatus data) => data.value;
+  String? encode(DeviceStatus data) => data.value;
 
   /// Decodes a [dynamic value][data] to a DeviceStatus.
   ///
   /// If the [dynamic value][data] cannot be decoded successfully, then an [UnimplementedError] is thrown.
   DeviceStatus decode(dynamic data) {
-    if (data == 0) {
-      return DeviceStatus.number0;
+    if (data == r'None') {
+      return DeviceStatus.none;
     }
-    if (data == 1) {
-      return DeviceStatus.number1;
+    if (data == r'Online') {
+      return DeviceStatus.online;
     }
-    if (data == 2) {
-      return DeviceStatus.number2;
+    if (data == r'Offline') {
+      return DeviceStatus.offline;
     }
     throw ArgumentError('Unknown enum value to decode: $data');
 

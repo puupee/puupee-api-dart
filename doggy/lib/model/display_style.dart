@@ -16,22 +16,22 @@ class DisplayStyle {
   const DisplayStyle._(this.value);
 
   /// The underlying value of this enum member.
-  final int? value;
+  final String? value;
 
   @override
-  String toString() => value == null ? '' : value.toString();
+  String toString() => value ?? '';
 
-  int? toJson() => value;
+  String? toJson() => value;
 
-  static const number0 = DisplayStyle._(0);
-  static const number1 = DisplayStyle._(1);
-  static const number2 = DisplayStyle._(2);
+  static const none = DisplayStyle._(r'None');
+  static const listItem = DisplayStyle._(r'ListItem');
+  static const largeThumbnail = DisplayStyle._(r'LargeThumbnail');
 
   /// List of all possible values in this [enum][DisplayStyle].
   static const values = <DisplayStyle>[
-    number0,
-    number1,
-    number2,
+    none,
+    listItem,
+    largeThumbnail,
   ];
 
   static DisplayStyle fromJson(dynamic value) =>
@@ -43,27 +43,27 @@ class DisplayStyle {
       : <DisplayStyle>[];
 }
 
-/// Transformation class that can [encode] an instance of [DisplayStyle] to int,
+/// Transformation class that can [encode] an instance of [DisplayStyle] to String,
 /// and [decode] dynamic data back to [DisplayStyle].
 class DisplayStyleTypeTransformer {
   factory DisplayStyleTypeTransformer() => _instance ??= const DisplayStyleTypeTransformer._();
 
   const DisplayStyleTypeTransformer._();
 
-  int? encode(DisplayStyle data) => data.value;
+  String? encode(DisplayStyle data) => data.value;
 
   /// Decodes a [dynamic value][data] to a DisplayStyle.
   ///
   /// If the [dynamic value][data] cannot be decoded successfully, then an [UnimplementedError] is thrown.
   DisplayStyle decode(dynamic data) {
-    if (data == 0) {
-      return DisplayStyle.number0;
+    if (data == r'None') {
+      return DisplayStyle.none;
     }
-    if (data == 1) {
-      return DisplayStyle.number1;
+    if (data == r'ListItem') {
+      return DisplayStyle.listItem;
     }
-    if (data == 2) {
-      return DisplayStyle.number2;
+    if (data == r'LargeThumbnail') {
+      return DisplayStyle.largeThumbnail;
     }
     throw ArgumentError('Unknown enum value to decode: $data');
 
