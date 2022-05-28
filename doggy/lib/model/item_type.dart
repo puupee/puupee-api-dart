@@ -27,10 +27,7 @@ class ItemType {
   static const image = ItemType._(r'Image');
   static const video = ItemType._(r'Video');
   static const audio = ItemType._(r'Audio');
-  static const word = ItemType._(r'Word');
-  static const excel = ItemType._(r'Excel');
-  static const powerPoint = ItemType._(r'PowerPoint');
-  static const pdf = ItemType._(r'Pdf');
+  static const document = ItemType._(r'Document');
   static const note = ItemType._(r'Note');
   static const other = ItemType._(r'Other');
 
@@ -40,10 +37,7 @@ class ItemType {
     image,
     video,
     audio,
-    word,
-    excel,
-    powerPoint,
-    pdf,
+    document,
     note,
     other,
   ];
@@ -82,17 +76,8 @@ class ItemTypeTypeTransformer {
     if (data == r'Audio') {
       return ItemType.audio;
     }
-    if (data == r'Word') {
-      return ItemType.word;
-    }
-    if (data == r'Excel') {
-      return ItemType.excel;
-    }
-    if (data == r'PowerPoint') {
-      return ItemType.powerPoint;
-    }
-    if (data == r'Pdf') {
-      return ItemType.pdf;
+    if (data == r'Document') {
+      return ItemType.document;
     }
     if (data == r'Note') {
       return ItemType.note;
