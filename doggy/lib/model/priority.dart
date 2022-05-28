@@ -16,24 +16,24 @@ class Priority {
   const Priority._(this.value);
 
   /// The underlying value of this enum member.
-  final String? value;
+  final int? value;
 
   @override
-  String toString() => value ?? '';
+  String toString() => value == null ? '' : value.toString();
 
-  String? toJson() => value;
+  int? toJson() => value;
 
-  static const urgentImportant = Priority._(r'UrgentImportant');
-  static const importantNotUrgent = Priority._(r'ImportantNotUrgent');
-  static const urgentNotImportant = Priority._(r'UrgentNotImportant');
-  static const notImportantNotUrgent = Priority._(r'NotImportantNotUrgent');
+  static const number0 = Priority._(0);
+  static const number1 = Priority._(1);
+  static const number2 = Priority._(2);
+  static const number3 = Priority._(3);
 
   /// List of all possible values in this [enum][Priority].
   static const values = <Priority>[
-    urgentImportant,
-    importantNotUrgent,
-    urgentNotImportant,
-    notImportantNotUrgent,
+    number0,
+    number1,
+    number2,
+    number3,
   ];
 
   static Priority fromJson(dynamic value) =>
@@ -45,30 +45,30 @@ class Priority {
       : <Priority>[];
 }
 
-/// Transformation class that can [encode] an instance of [Priority] to String,
+/// Transformation class that can [encode] an instance of [Priority] to int,
 /// and [decode] dynamic data back to [Priority].
 class PriorityTypeTransformer {
   factory PriorityTypeTransformer() => _instance ??= const PriorityTypeTransformer._();
 
   const PriorityTypeTransformer._();
 
-  String? encode(Priority data) => data.value;
+  int? encode(Priority data) => data.value;
 
   /// Decodes a [dynamic value][data] to a Priority.
   ///
   /// If the [dynamic value][data] cannot be decoded successfully, then an [UnimplementedError] is thrown.
   Priority decode(dynamic data) {
-    if (data == r'UrgentImportant') {
-      return Priority.urgentImportant;
+    if (data == 0) {
+      return Priority.number0;
     }
-    if (data == r'ImportantNotUrgent') {
-      return Priority.importantNotUrgent;
+    if (data == 1) {
+      return Priority.number1;
     }
-    if (data == r'UrgentNotImportant') {
-      return Priority.urgentNotImportant;
+    if (data == 2) {
+      return Priority.number2;
     }
-    if (data == r'NotImportantNotUrgent') {
-      return Priority.notImportantNotUrgent;
+    if (data == 3) {
+      return Priority.number3;
     }
     throw ArgumentError('Unknown enum value to decode: $data');
 

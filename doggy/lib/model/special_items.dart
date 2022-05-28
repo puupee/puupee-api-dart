@@ -16,26 +16,26 @@ class SpecialItems {
   const SpecialItems._(this.value);
 
   /// The underlying value of this enum member.
-  final String? value;
+  final int? value;
 
   @override
-  String toString() => value ?? '';
+  String toString() => value == null ? '' : value.toString();
 
-  String? toJson() => value;
+  int? toJson() => value;
 
-  static const noteFolder = SpecialItems._(r'NoteFolder');
-  static const albumFolder = SpecialItems._(r'AlbumFolder');
-  static const mediaFolder = SpecialItems._(r'MediaFolder');
-  static const musicFolder = SpecialItems._(r'MusicFolder');
-  static const documentFolder = SpecialItems._(r'DocumentFolder');
+  static const number0 = SpecialItems._(0);
+  static const number1 = SpecialItems._(1);
+  static const number2 = SpecialItems._(2);
+  static const number3 = SpecialItems._(3);
+  static const number4 = SpecialItems._(4);
 
   /// List of all possible values in this [enum][SpecialItems].
   static const values = <SpecialItems>[
-    noteFolder,
-    albumFolder,
-    mediaFolder,
-    musicFolder,
-    documentFolder,
+    number0,
+    number1,
+    number2,
+    number3,
+    number4,
   ];
 
   static SpecialItems fromJson(dynamic value) =>
@@ -47,33 +47,33 @@ class SpecialItems {
       : <SpecialItems>[];
 }
 
-/// Transformation class that can [encode] an instance of [SpecialItems] to String,
+/// Transformation class that can [encode] an instance of [SpecialItems] to int,
 /// and [decode] dynamic data back to [SpecialItems].
 class SpecialItemsTypeTransformer {
   factory SpecialItemsTypeTransformer() => _instance ??= const SpecialItemsTypeTransformer._();
 
   const SpecialItemsTypeTransformer._();
 
-  String? encode(SpecialItems data) => data.value;
+  int? encode(SpecialItems data) => data.value;
 
   /// Decodes a [dynamic value][data] to a SpecialItems.
   ///
   /// If the [dynamic value][data] cannot be decoded successfully, then an [UnimplementedError] is thrown.
   SpecialItems decode(dynamic data) {
-    if (data == r'NoteFolder') {
-      return SpecialItems.noteFolder;
+    if (data == 0) {
+      return SpecialItems.number0;
     }
-    if (data == r'AlbumFolder') {
-      return SpecialItems.albumFolder;
+    if (data == 1) {
+      return SpecialItems.number1;
     }
-    if (data == r'MediaFolder') {
-      return SpecialItems.mediaFolder;
+    if (data == 2) {
+      return SpecialItems.number2;
     }
-    if (data == r'MusicFolder') {
-      return SpecialItems.musicFolder;
+    if (data == 3) {
+      return SpecialItems.number3;
     }
-    if (data == r'DocumentFolder') {
-      return SpecialItems.documentFolder;
+    if (data == 4) {
+      return SpecialItems.number4;
     }
     throw ArgumentError('Unknown enum value to decode: $data');
 

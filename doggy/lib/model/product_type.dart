@@ -16,26 +16,26 @@ class ProductType {
   const ProductType._(this.value);
 
   /// The underlying value of this enum member.
-  final String? value;
+  final int? value;
 
   @override
-  String toString() => value ?? '';
+  String toString() => value == null ? '' : value.toString();
 
-  String? toJson() => value;
+  int? toJson() => value;
 
-  static const apk = ProductType._(r'Apk');
-  static const ipa = ProductType._(r'Ipa');
-  static const exe = ProductType._(r'Exe');
-  static const web = ProductType._(r'Web');
-  static const other = ProductType._(r'Other');
+  static const number0 = ProductType._(0);
+  static const number1 = ProductType._(1);
+  static const number2 = ProductType._(2);
+  static const number3 = ProductType._(3);
+  static const number4 = ProductType._(4);
 
   /// List of all possible values in this [enum][ProductType].
   static const values = <ProductType>[
-    apk,
-    ipa,
-    exe,
-    web,
-    other,
+    number0,
+    number1,
+    number2,
+    number3,
+    number4,
   ];
 
   static ProductType fromJson(dynamic value) =>
@@ -47,33 +47,33 @@ class ProductType {
       : <ProductType>[];
 }
 
-/// Transformation class that can [encode] an instance of [ProductType] to String,
+/// Transformation class that can [encode] an instance of [ProductType] to int,
 /// and [decode] dynamic data back to [ProductType].
 class ProductTypeTypeTransformer {
   factory ProductTypeTypeTransformer() => _instance ??= const ProductTypeTypeTransformer._();
 
   const ProductTypeTypeTransformer._();
 
-  String? encode(ProductType data) => data.value;
+  int? encode(ProductType data) => data.value;
 
   /// Decodes a [dynamic value][data] to a ProductType.
   ///
   /// If the [dynamic value][data] cannot be decoded successfully, then an [UnimplementedError] is thrown.
   ProductType decode(dynamic data) {
-    if (data == r'Apk') {
-      return ProductType.apk;
+    if (data == 0) {
+      return ProductType.number0;
     }
-    if (data == r'Ipa') {
-      return ProductType.ipa;
+    if (data == 1) {
+      return ProductType.number1;
     }
-    if (data == r'Exe') {
-      return ProductType.exe;
+    if (data == 2) {
+      return ProductType.number2;
     }
-    if (data == r'Web') {
-      return ProductType.web;
+    if (data == 3) {
+      return ProductType.number3;
     }
-    if (data == r'Other') {
-      return ProductType.other;
+    if (data == 4) {
+      return ProductType.number4;
     }
     throw ArgumentError('Unknown enum value to decode: $data');
 
