@@ -139,8 +139,10 @@ doc/SpecialItems.md
 doc/StorageApi.md
 doc/StringKeyValue.md
 doc/StringSetKeyValueDto.md
+doc/SyncItemChangedEto.md
 doc/SyncStateApi.md
 doc/SyncStateDto.md
+doc/SyncTodoChangedEto.md
 doc/TagApi.md
 doc/TagDto.md
 doc/TagDtoPagedResultDto.md
@@ -153,6 +155,8 @@ doc/TimingDto.md
 doc/TodoApi.md
 doc/TodoDto.md
 doc/TodoDtoPagedResultDto.md
+doc/TodoOrderBy.md
+doc/TodoSettingsDto.md
 doc/TypeApiDescriptionModel.md
 doc/UpdateEmailSettingsDto.md
 doc/UpdateFeatureDto.md
@@ -316,7 +320,9 @@ lib/model/special_item_dto.dart
 lib/model/special_items.dart
 lib/model/string_key_value.dart
 lib/model/string_set_key_value_dto.dart
+lib/model/sync_item_changed_eto.dart
 lib/model/sync_state_dto.dart
+lib/model/sync_todo_changed_eto.dart
 lib/model/tag_dto.dart
 lib/model/tag_dto_paged_result_dto.dart
 lib/model/tenant_create_dto.dart
@@ -327,6 +333,8 @@ lib/model/time_zone.dart
 lib/model/timing_dto.dart
 lib/model/todo_dto.dart
 lib/model/todo_dto_paged_result_dto.dart
+lib/model/todo_order_by.dart
+lib/model/todo_settings_dto.dart
 lib/model/type_api_description_model.dart
 lib/model/update_email_settings_dto.dart
 lib/model/update_feature_dto.dart

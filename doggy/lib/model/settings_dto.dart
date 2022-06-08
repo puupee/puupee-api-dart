@@ -14,26 +14,42 @@ class SettingsDto {
   /// Returns a new [SettingsDto] instance.
   SettingsDto({
     this.appTheme,
+    this.language,
+    this.todoSettings,
   });
 
 
   AppTheme? appTheme;
 
+  String? language;
+
+  TodoSettingsDto? todoSettings;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is SettingsDto &&
-     other.appTheme == appTheme;
+     other.appTheme == appTheme &&
+     other.language == language &&
+     other.todoSettings == todoSettings;
 
   @override
   int get hashCode =>
-    appTheme.hashCode;
+    appTheme.hashCode +
+    language.hashCode +
+    todoSettings.hashCode;
 
   @override
-  String toString() => 'SettingsDto[appTheme=$appTheme]';
+  String toString() => 'SettingsDto[appTheme=$appTheme, language=$language, todoSettings=$todoSettings]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
     if (appTheme != null) {
       json[r'appTheme'] = appTheme;
+    }
+    if (language != null) {
+      json[r'language'] = language;
+    }
+    if (todoSettings != null) {
+      json[r'todoSettings'] = todoSettings;
     }
     return json;
   }
@@ -43,6 +59,8 @@ class SettingsDto {
   // ignore: prefer_constructors_over_static_methods
   static SettingsDto fromJson(Map<String, dynamic> json) => SettingsDto(
         appTheme: json[r'appTheme'] == null ? null : AppTheme.fromJson(json[r'appTheme']),
+        language: json[r'language'] == null ? null : json[r'language'] as String?,
+        todoSettings: json[r'todoSettings'] == null ? null : TodoSettingsDto.fromJson(json[r'todoSettings']),
     );
 
   static List<SettingsDto> listFromJson(List json, {bool? growable,}) =>

@@ -446,8 +446,12 @@ class ApiClient {
           return StringKeyValue.fromJson(value);
         case 'StringSetKeyValueDto':
           return StringSetKeyValueDto.fromJson(value);
+        case 'SyncItemChangedEto':
+          return SyncItemChangedEto.fromJson(value);
         case 'SyncStateDto':
           return SyncStateDto.fromJson(value);
+        case 'SyncTodoChangedEto':
+          return SyncTodoChangedEto.fromJson(value);
         case 'TagDto':
           return TagDto.fromJson(value);
         case 'TagDtoPagedResultDto':
@@ -468,6 +472,11 @@ class ApiClient {
           return TodoDto.fromJson(value);
         case 'TodoDtoPagedResultDto':
           return TodoDtoPagedResultDto.fromJson(value);
+        case 'TodoOrderBy':
+          return TodoOrderByTypeTransformer().decode(value);
+          
+        case 'TodoSettingsDto':
+          return TodoSettingsDto.fromJson(value);
         case 'TypeApiDescriptionModel':
           return TypeApiDescriptionModel.fromJson(value);
         case 'UpdateEmailSettingsDto':

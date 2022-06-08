@@ -56,4 +56,86 @@ class SyncStateApi {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SyncStateDto',) as SyncStateDto;
         }
   }
+
+  /// Performs an HTTP 'POST /api/app/sync-state/item-changed-eto' operation and returns the [Response].
+  Future<Response> apiAppSyncStateItemChangedEtoPostWithHttpInfo() async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/app/sync-state/item-changed-eto';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const authNames = <String>['oauth2'];
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes[0],
+      authNames,
+    );
+  }
+
+  Future<SyncItemChangedEto?> apiAppSyncStateItemChangedEtoPost() async {
+    final response = await apiAppSyncStateItemChangedEtoPostWithHttpInfo();
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SyncItemChangedEto',) as SyncItemChangedEto;
+        }
+  }
+
+  /// Performs an HTTP 'POST /api/app/sync-state/todo-changed-eto' operation and returns the [Response].
+  Future<Response> apiAppSyncStateTodoChangedEtoPostWithHttpInfo() async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/app/sync-state/todo-changed-eto';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const authNames = <String>['oauth2'];
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes[0],
+      authNames,
+    );
+  }
+
+  Future<SyncTodoChangedEto?> apiAppSyncStateTodoChangedEtoPost() async {
+    final response = await apiAppSyncStateTodoChangedEtoPostWithHttpInfo();
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SyncTodoChangedEto',) as SyncTodoChangedEto;
+        }
+  }
 }

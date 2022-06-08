@@ -112,6 +112,8 @@ Class | Method | HTTP request | Description
 *SmsApi* | [**apiAppSmsSendLoginCodePost**](doc\/SmsApi.md#apiappsmssendlogincodepost) | **POST** /api/app/sms/send-login-code | 
 *StorageApi* | [**apiAppStorageGet**](doc\/StorageApi.md#apiappstorageget) | **GET** /api/app/storage | 
 *SyncStateApi* | [**apiAppSyncStateGet**](doc\/SyncStateApi.md#apiappsyncstateget) | **GET** /api/app/sync-state | 
+*SyncStateApi* | [**apiAppSyncStateItemChangedEtoPost**](doc\/SyncStateApi.md#apiappsyncstateitemchangedetopost) | **POST** /api/app/sync-state/item-changed-eto | 
+*SyncStateApi* | [**apiAppSyncStateTodoChangedEtoPost**](doc\/SyncStateApi.md#apiappsyncstatetodochangedetopost) | **POST** /api/app/sync-state/todo-changed-eto | 
 *TagApi* | [**apiAppTagGet**](doc\/TagApi.md#apiapptagget) | **GET** /api/app/tag | 
 *TagApi* | [**apiAppTagIdDelete**](doc\/TagApi.md#apiapptagiddelete) | **DELETE** /api/app/tag/{id} | 
 *TagApi* | [**apiAppTagIdGet**](doc\/TagApi.md#apiapptagidget) | **GET** /api/app/tag/{id} | 
@@ -251,7 +253,9 @@ Class | Method | HTTP request | Description
  - [SpecialItems](doc\/SpecialItems.md)
  - [StringKeyValue](doc\/StringKeyValue.md)
  - [StringSetKeyValueDto](doc\/StringSetKeyValueDto.md)
+ - [SyncItemChangedEto](doc\/SyncItemChangedEto.md)
  - [SyncStateDto](doc\/SyncStateDto.md)
+ - [SyncTodoChangedEto](doc\/SyncTodoChangedEto.md)
  - [TagDto](doc\/TagDto.md)
  - [TagDtoPagedResultDto](doc\/TagDtoPagedResultDto.md)
  - [TenantCreateDto](doc\/TenantCreateDto.md)
@@ -262,6 +266,8 @@ Class | Method | HTTP request | Description
  - [TimingDto](doc\/TimingDto.md)
  - [TodoDto](doc\/TodoDto.md)
  - [TodoDtoPagedResultDto](doc\/TodoDtoPagedResultDto.md)
+ - [TodoOrderBy](doc\/TodoOrderBy.md)
+ - [TodoSettingsDto](doc\/TodoSettingsDto.md)
  - [TypeApiDescriptionModel](doc\/TypeApiDescriptionModel.md)
  - [UpdateEmailSettingsDto](doc\/UpdateEmailSettingsDto.md)
  - [UpdateFeatureDto](doc\/UpdateFeatureDto.md)
