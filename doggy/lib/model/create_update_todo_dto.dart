@@ -13,6 +13,7 @@ part of doggy_api;
 class CreateUpdateTodoDto {
   /// Returns a new [CreateUpdateTodoDto] instance.
   CreateUpdateTodoDto({
+    this.id,
     this.title,
     this.priority,
     this.tagIds,
@@ -33,6 +34,8 @@ class CreateUpdateTodoDto {
     this.lastModificationTime,
   });
 
+
+  String? id;
 
   String? title;
 
@@ -72,6 +75,7 @@ class CreateUpdateTodoDto {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateUpdateTodoDto &&
+     other.id == id &&
      other.title == title &&
      other.priority == priority &&
      other.tagIds == tagIds &&
@@ -93,6 +97,7 @@ class CreateUpdateTodoDto {
 
   @override
   int get hashCode =>
+    id.hashCode +
     title.hashCode +
     priority.hashCode +
     tagIds.hashCode +
@@ -113,10 +118,13 @@ class CreateUpdateTodoDto {
     lastModificationTime.hashCode;
 
   @override
-  String toString() => 'CreateUpdateTodoDto[title=$title, priority=$priority, tagIds=$tagIds, isDone=$isDone, parentId=$parentId, startAt=$startAt, endAt=$endAt, notifyAt=$notifyAt, notifyTimingType=$notifyTimingType, notifyTimingUnit=$notifyTimingUnit, notifyTimingValue=$notifyTimingValue, repeat=$repeat, syncVersion=$syncVersion, doneAt=$doneAt, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime]';
+  String toString() => 'CreateUpdateTodoDto[id=$id, title=$title, priority=$priority, tagIds=$tagIds, isDone=$isDone, parentId=$parentId, startAt=$startAt, endAt=$endAt, notifyAt=$notifyAt, notifyTimingType=$notifyTimingType, notifyTimingUnit=$notifyTimingUnit, notifyTimingValue=$notifyTimingValue, repeat=$repeat, syncVersion=$syncVersion, doneAt=$doneAt, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
+    if (id != null) {
+      json[r'id'] = id;
+    }
     if (title != null) {
       json[r'title'] = title;
     }
@@ -178,6 +186,7 @@ class CreateUpdateTodoDto {
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
   static CreateUpdateTodoDto fromJson(Map<String, dynamic> json) => CreateUpdateTodoDto(
+        id: json[r'id'] == null ? null : json[r'id'] as String?,
         title: json[r'title'] == null ? null : json[r'title'] as String?,
         priority: json[r'priority'] == null ? null : Priority.fromJson(json[r'priority']),
         tagIds: json[r'tagIds'] is List

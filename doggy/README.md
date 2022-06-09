@@ -126,6 +126,7 @@ Class | Method | HTTP request | Description
 *TodoApi* | [**apiAppTodoIdPut**](doc\/TodoApi.md#apiapptodoidput) | **PUT** /api/app/todo/{id} | 
 *TodoApi* | [**apiAppTodoPost**](doc\/TodoApi.md#apiapptodopost) | **POST** /api/app/todo | 
 *TodoApi* | [**apiAppTodoPullGet**](doc\/TodoApi.md#apiapptodopullget) | **GET** /api/app/todo/pull | 
+*TodoApi* | [**apiAppTodoPushPost**](doc\/TodoApi.md#apiapptodopushpost) | **POST** /api/app/todo/push | 
 *TodoApi* | [**apiAppTodoSyncGet**](doc\/TodoApi.md#apiapptodosyncget) | **GET** /api/app/todo/sync | 
 
 

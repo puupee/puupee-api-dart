@@ -8,6 +8,7 @@ import 'package:doggy_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **String** |  | [optional] 
 **title** | **String** |  | [optional] 
 **priority** | [**Priority**](Priority.md) |  | [optional] 
 **tagIds** | **List<String>** |  | [optional] [default to const []]
