@@ -31,8 +31,10 @@ class TodoDto {
     this.parentId,
     this.startAt,
     this.endAt,
+    this.notifyAt,
     this.notifyTimingType,
     this.notifyTimingUnit,
+    this.notifyTimingValue,
     this.repeat,
   });
 
@@ -73,9 +75,13 @@ class TodoDto {
 
   DateTime? endAt;
 
+  DateTime? notifyAt;
+
   TodoNotifyTimingType? notifyTimingType;
 
   TodoNotifyTimingUnit? notifyTimingUnit;
+
+  int? notifyTimingValue;
 
   TodoRepeat? repeat;
 
@@ -99,8 +105,10 @@ class TodoDto {
      other.parentId == parentId &&
      other.startAt == startAt &&
      other.endAt == endAt &&
+     other.notifyAt == notifyAt &&
      other.notifyTimingType == notifyTimingType &&
      other.notifyTimingUnit == notifyTimingUnit &&
+     other.notifyTimingValue == notifyTimingValue &&
      other.repeat == repeat;
 
   @override
@@ -123,12 +131,14 @@ class TodoDto {
     parentId.hashCode +
     startAt.hashCode +
     endAt.hashCode +
+    notifyAt.hashCode +
     notifyTimingType.hashCode +
     notifyTimingUnit.hashCode +
+    notifyTimingValue.hashCode +
     repeat.hashCode;
 
   @override
-  String toString() => 'TodoDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, title=$title, priority=$priority, tags=$tags, doneAt=$doneAt, isDone=$isDone, children=$children, syncVersion=$syncVersion, parentId=$parentId, startAt=$startAt, endAt=$endAt, notifyTimingType=$notifyTimingType, notifyTimingUnit=$notifyTimingUnit, repeat=$repeat]';
+  String toString() => 'TodoDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, title=$title, priority=$priority, tags=$tags, doneAt=$doneAt, isDone=$isDone, children=$children, syncVersion=$syncVersion, parentId=$parentId, startAt=$startAt, endAt=$endAt, notifyAt=$notifyAt, notifyTimingType=$notifyTimingType, notifyTimingUnit=$notifyTimingUnit, notifyTimingValue=$notifyTimingValue, repeat=$repeat]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -186,11 +196,17 @@ class TodoDto {
     if (endAt != null) {
       json[r'endAt'] = endAt!.toUtc().toIso8601String();
     }
+    if (notifyAt != null) {
+      json[r'notifyAt'] = notifyAt!.toUtc().toIso8601String();
+    }
     if (notifyTimingType != null) {
       json[r'notifyTimingType'] = notifyTimingType;
     }
     if (notifyTimingUnit != null) {
       json[r'notifyTimingUnit'] = notifyTimingUnit;
+    }
+    if (notifyTimingValue != null) {
+      json[r'notifyTimingValue'] = notifyTimingValue;
     }
     if (repeat != null) {
       json[r'repeat'] = repeat;
@@ -220,8 +236,10 @@ class TodoDto {
         parentId: json[r'parentId'] == null ? null : json[r'parentId'] as String?,
         startAt: json[r'startAt'] == null ? null : mapDateTime(json, r'startAt', ''),
         endAt: json[r'endAt'] == null ? null : mapDateTime(json, r'endAt', ''),
+        notifyAt: json[r'notifyAt'] == null ? null : mapDateTime(json, r'notifyAt', ''),
         notifyTimingType: json[r'notifyTimingType'] == null ? null : TodoNotifyTimingType.fromJson(json[r'notifyTimingType']),
         notifyTimingUnit: json[r'notifyTimingUnit'] == null ? null : TodoNotifyTimingUnit.fromJson(json[r'notifyTimingUnit']),
+        notifyTimingValue: json[r'notifyTimingValue'] == null ? null : json[r'notifyTimingValue'] as int?,
         repeat: json[r'repeat'] == null ? null : TodoRepeat.fromJson(json[r'repeat']),
     );
 
