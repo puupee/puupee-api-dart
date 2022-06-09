@@ -14,7 +14,7 @@ Method | HTTP request | Description
 [**apiAppItemIdGet**](ItemApi.md#apiappitemidget) | **GET** /api/app/item/{id} | 
 [**apiAppItemIdPut**](ItemApi.md#apiappitemidput) | **PUT** /api/app/item/{id} | 
 [**apiAppItemPost**](ItemApi.md#apiappitempost) | **POST** /api/app/item | 
-[**apiAppItemPullPost**](ItemApi.md#apiappitempullpost) | **POST** /api/app/item/pull | 
+[**apiAppItemPullGet**](ItemApi.md#apiappitempullget) | **GET** /api/app/item/pull | 
 [**apiAppItemPushPost**](ItemApi.md#apiappitempushpost) | **POST** /api/app/item/push | 
 [**apiAppItemSpecialItemsGet**](ItemApi.md#apiappitemspecialitemsget) | **GET** /api/app/item/special-items | 
 [**apiAppItemSyncGet**](ItemApi.md#apiappitemsyncget) | **GET** /api/app/item/sync | 
@@ -255,8 +255,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppItemPullPost**
-> ItemDtoPagedResultDto apiAppItemPullPost(afterVersion, skipCount, maxResultCount)
+# **apiAppItemPullGet**
+> ItemDtoPagedResultDto apiAppItemPullGet(afterVersion, skipCount, maxResultCount)
 
 
 
@@ -272,10 +272,10 @@ final skipCount = 56; // int |
 final maxResultCount = 56; // int | 
 
 try {
-    final result = api_instance.apiAppItemPullPost(afterVersion, skipCount, maxResultCount);
+    final result = api_instance.apiAppItemPullGet(afterVersion, skipCount, maxResultCount);
     print(result);
 } catch (e) {
-    print('Exception when calling ItemApi->apiAppItemPullPost: $e\n');
+    print('Exception when calling ItemApi->apiAppItemPullGet: $e\n');
 }
 ```
 

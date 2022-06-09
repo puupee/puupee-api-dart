@@ -325,7 +325,7 @@ class ItemApi {
         }
   }
 
-  /// Performs an HTTP 'POST /api/app/item/pull' operation and returns the [Response].
+  /// Performs an HTTP 'GET /api/app/item/pull' operation and returns the [Response].
   /// Parameters:
   ///
   /// * [int] afterVersion:
@@ -333,7 +333,7 @@ class ItemApi {
   /// * [int] skipCount:
   ///
   /// * [int] maxResultCount:
-  Future<Response> apiAppItemPullPostWithHttpInfo({ int? afterVersion, int? skipCount, int? maxResultCount, }) async {
+  Future<Response> apiAppItemPullGetWithHttpInfo({ int? afterVersion, int? skipCount, int? maxResultCount, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/app/item/pull';
 
@@ -360,7 +360,7 @@ class ItemApi {
 
     return apiClient.invokeAPI(
       path,
-      'POST',
+      'GET',
       queryParams,
       postBody,
       headerParams,
@@ -377,8 +377,8 @@ class ItemApi {
   /// * [int] skipCount:
   ///
   /// * [int] maxResultCount:
-  Future<ItemDtoPagedResultDto?> apiAppItemPullPost({ int? afterVersion, int? skipCount, int? maxResultCount, }) async {
-    final response = await apiAppItemPullPostWithHttpInfo( afterVersion: afterVersion, skipCount: skipCount, maxResultCount: maxResultCount, );
+  Future<ItemDtoPagedResultDto?> apiAppItemPullGet({ int? afterVersion, int? skipCount, int? maxResultCount, }) async {
+    final response = await apiAppItemPullGetWithHttpInfo( afterVersion: afterVersion, skipCount: skipCount, maxResultCount: maxResultCount, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
