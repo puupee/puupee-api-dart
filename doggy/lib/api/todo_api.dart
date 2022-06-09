@@ -311,6 +311,71 @@ class TodoApi {
         }
   }
 
+  /// Performs an HTTP 'GET /api/app/todo/pull' operation and returns the [Response].
+  /// Parameters:
+  ///
+  /// * [int] afterVersion:
+  ///
+  /// * [int] skipCount:
+  ///
+  /// * [int] maxResultCount:
+  Future<Response> apiAppTodoPullGetWithHttpInfo({ int? afterVersion, int? skipCount, int? maxResultCount, }) async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/app/todo/pull';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    if (afterVersion != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'afterVersion', afterVersion));
+    }
+    if (skipCount != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'skipCount', skipCount));
+    }
+    if (maxResultCount != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'maxResultCount', maxResultCount));
+    }
+
+    const authNames = <String>['oauth2'];
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes[0],
+      authNames,
+    );
+  }
+
+  /// Parameters:
+  ///
+  /// * [int] afterVersion:
+  ///
+  /// * [int] skipCount:
+  ///
+  /// * [int] maxResultCount:
+  Future<TodoDtoPagedResultDto?> apiAppTodoPullGet({ int? afterVersion, int? skipCount, int? maxResultCount, }) async {
+    final response = await apiAppTodoPullGetWithHttpInfo( afterVersion: afterVersion, skipCount: skipCount, maxResultCount: maxResultCount, );
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'TodoDtoPagedResultDto',) as TodoDtoPagedResultDto;
+        }
+  }
+
   /// Performs an HTTP 'GET /api/app/todo/sync' operation and returns the [Response].
   /// Parameters:
   ///

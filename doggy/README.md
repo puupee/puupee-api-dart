@@ -125,6 +125,7 @@ Class | Method | HTTP request | Description
 *TodoApi* | [**apiAppTodoIdGet**](doc\/TodoApi.md#apiapptodoidget) | **GET** /api/app/todo/{id} | 
 *TodoApi* | [**apiAppTodoIdPut**](doc\/TodoApi.md#apiapptodoidput) | **PUT** /api/app/todo/{id} | 
 *TodoApi* | [**apiAppTodoPost**](doc\/TodoApi.md#apiapptodopost) | **POST** /api/app/todo | 
+*TodoApi* | [**apiAppTodoPullGet**](doc\/TodoApi.md#apiapptodopullget) | **GET** /api/app/todo/pull | 
 *TodoApi* | [**apiAppTodoSyncGet**](doc\/TodoApi.md#apiapptodosyncget) | **GET** /api/app/todo/sync | 
 
 
@@ -266,7 +267,10 @@ Class | Method | HTTP request | Description
  - [TimingDto](doc\/TimingDto.md)
  - [TodoDto](doc\/TodoDto.md)
  - [TodoDtoPagedResultDto](doc\/TodoDtoPagedResultDto.md)
+ - [TodoNotifyTimingType](doc\/TodoNotifyTimingType.md)
+ - [TodoNotifyTimingUnit](doc\/TodoNotifyTimingUnit.md)
  - [TodoOrderBy](doc\/TodoOrderBy.md)
+ - [TodoRepeat](doc\/TodoRepeat.md)
  - [TodoSettingsDto](doc\/TodoSettingsDto.md)
  - [TypeApiDescriptionModel](doc\/TypeApiDescriptionModel.md)
  - [UpdateEmailSettingsDto](doc\/UpdateEmailSettingsDto.md)

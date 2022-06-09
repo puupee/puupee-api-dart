@@ -24,7 +24,11 @@ Name | Type | Description | Notes
 **children** | [**List<TodoDto>**](TodoDto.md) |  | [optional] [default to const []]
 **syncVersion** | **int** |  | [optional] 
 **parentId** | **String** |  | [optional] 
+**startAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **endAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**notifyTimingType** | [**TodoNotifyTimingType**](TodoNotifyTimingType.md) |  | [optional] 
+**notifyTimingUnit** | [**TodoNotifyTimingUnit**](TodoNotifyTimingUnit.md) |  | [optional] 
+**repeat** | [**TodoRepeat**](TodoRepeat.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

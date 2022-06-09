@@ -155,7 +155,10 @@ doc/TimingDto.md
 doc/TodoApi.md
 doc/TodoDto.md
 doc/TodoDtoPagedResultDto.md
+doc/TodoNotifyTimingType.md
+doc/TodoNotifyTimingUnit.md
 doc/TodoOrderBy.md
+doc/TodoRepeat.md
 doc/TodoSettingsDto.md
 doc/TypeApiDescriptionModel.md
 doc/UpdateEmailSettingsDto.md
@@ -333,7 +336,10 @@ lib/model/time_zone.dart
 lib/model/timing_dto.dart
 lib/model/todo_dto.dart
 lib/model/todo_dto_paged_result_dto.dart
+lib/model/todo_notify_timing_type.dart
+lib/model/todo_notify_timing_unit.dart
 lib/model/todo_order_by.dart
+lib/model/todo_repeat.dart
 lib/model/todo_settings_dto.dart
 lib/model/type_api_description_model.dart
 lib/model/update_email_settings_dto.dart

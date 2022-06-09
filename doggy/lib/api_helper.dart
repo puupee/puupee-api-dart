@@ -96,8 +96,17 @@ String parameterToString(dynamic value) {
   if (value is SpecialItems) {
     return SpecialItemsTypeTransformer().encode(value).toString();
   }
+  if (value is TodoNotifyTimingType) {
+    return TodoNotifyTimingTypeTypeTransformer().encode(value).toString();
+  }
+  if (value is TodoNotifyTimingUnit) {
+    return TodoNotifyTimingUnitTypeTransformer().encode(value).toString();
+  }
   if (value is TodoOrderBy) {
     return TodoOrderByTypeTransformer().encode(value).toString();
+  }
+  if (value is TodoRepeat) {
+    return TodoRepeatTypeTransformer().encode(value).toString();
   }
   return value.toString();
 }

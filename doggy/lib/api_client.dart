@@ -472,8 +472,17 @@ class ApiClient {
           return TodoDto.fromJson(value);
         case 'TodoDtoPagedResultDto':
           return TodoDtoPagedResultDto.fromJson(value);
+        case 'TodoNotifyTimingType':
+          return TodoNotifyTimingTypeTypeTransformer().decode(value);
+          
+        case 'TodoNotifyTimingUnit':
+          return TodoNotifyTimingUnitTypeTransformer().decode(value);
+          
         case 'TodoOrderBy':
           return TodoOrderByTypeTransformer().decode(value);
+          
+        case 'TodoRepeat':
+          return TodoRepeatTypeTransformer().decode(value);
           
         case 'TodoSettingsDto':
           return TodoSettingsDto.fromJson(value);

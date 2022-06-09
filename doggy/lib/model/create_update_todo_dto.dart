@@ -18,7 +18,13 @@ class CreateUpdateTodoDto {
     this.tagIds,
     this.isDone,
     this.parentId,
+    this.startAt,
     this.endAt,
+    this.notifyAt,
+    this.notifyTimingType,
+    this.notifyTimingUnit,
+    this.notifyTimingValue,
+    this.repeat,
     this.syncVersion,
     this.doneAt,
     this.isDeleted,
@@ -38,7 +44,19 @@ class CreateUpdateTodoDto {
 
   String? parentId;
 
+  DateTime? startAt;
+
   DateTime? endAt;
+
+  DateTime? notifyAt;
+
+  TodoNotifyTimingType? notifyTimingType;
+
+  TodoNotifyTimingUnit? notifyTimingUnit;
+
+  int? notifyTimingValue;
+
+  TodoRepeat? repeat;
 
   int? syncVersion;
 
@@ -59,7 +77,13 @@ class CreateUpdateTodoDto {
      other.tagIds == tagIds &&
      other.isDone == isDone &&
      other.parentId == parentId &&
+     other.startAt == startAt &&
      other.endAt == endAt &&
+     other.notifyAt == notifyAt &&
+     other.notifyTimingType == notifyTimingType &&
+     other.notifyTimingUnit == notifyTimingUnit &&
+     other.notifyTimingValue == notifyTimingValue &&
+     other.repeat == repeat &&
      other.syncVersion == syncVersion &&
      other.doneAt == doneAt &&
      other.isDeleted == isDeleted &&
@@ -74,7 +98,13 @@ class CreateUpdateTodoDto {
     tagIds.hashCode +
     isDone.hashCode +
     parentId.hashCode +
+    startAt.hashCode +
     endAt.hashCode +
+    notifyAt.hashCode +
+    notifyTimingType.hashCode +
+    notifyTimingUnit.hashCode +
+    notifyTimingValue.hashCode +
+    repeat.hashCode +
     syncVersion.hashCode +
     doneAt.hashCode +
     isDeleted.hashCode +
@@ -83,7 +113,7 @@ class CreateUpdateTodoDto {
     lastModificationTime.hashCode;
 
   @override
-  String toString() => 'CreateUpdateTodoDto[title=$title, priority=$priority, tagIds=$tagIds, isDone=$isDone, parentId=$parentId, endAt=$endAt, syncVersion=$syncVersion, doneAt=$doneAt, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime]';
+  String toString() => 'CreateUpdateTodoDto[title=$title, priority=$priority, tagIds=$tagIds, isDone=$isDone, parentId=$parentId, startAt=$startAt, endAt=$endAt, notifyAt=$notifyAt, notifyTimingType=$notifyTimingType, notifyTimingUnit=$notifyTimingUnit, notifyTimingValue=$notifyTimingValue, repeat=$repeat, syncVersion=$syncVersion, doneAt=$doneAt, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -102,8 +132,26 @@ class CreateUpdateTodoDto {
     if (parentId != null) {
       json[r'parentId'] = parentId;
     }
+    if (startAt != null) {
+      json[r'startAt'] = startAt!.toUtc().toIso8601String();
+    }
     if (endAt != null) {
       json[r'endAt'] = endAt!.toUtc().toIso8601String();
+    }
+    if (notifyAt != null) {
+      json[r'notifyAt'] = notifyAt!.toUtc().toIso8601String();
+    }
+    if (notifyTimingType != null) {
+      json[r'notifyTimingType'] = notifyTimingType;
+    }
+    if (notifyTimingUnit != null) {
+      json[r'notifyTimingUnit'] = notifyTimingUnit;
+    }
+    if (notifyTimingValue != null) {
+      json[r'notifyTimingValue'] = notifyTimingValue;
+    }
+    if (repeat != null) {
+      json[r'repeat'] = repeat;
     }
     if (syncVersion != null) {
       json[r'syncVersion'] = syncVersion;
@@ -137,7 +185,13 @@ class CreateUpdateTodoDto {
           : [],
         isDone: json[r'isDone'] == null ? null : json[r'isDone'] as bool?,
         parentId: json[r'parentId'] == null ? null : json[r'parentId'] as String?,
+        startAt: json[r'startAt'] == null ? null : mapDateTime(json, r'startAt', ''),
         endAt: json[r'endAt'] == null ? null : mapDateTime(json, r'endAt', ''),
+        notifyAt: json[r'notifyAt'] == null ? null : mapDateTime(json, r'notifyAt', ''),
+        notifyTimingType: json[r'notifyTimingType'] == null ? null : TodoNotifyTimingType.fromJson(json[r'notifyTimingType']),
+        notifyTimingUnit: json[r'notifyTimingUnit'] == null ? null : TodoNotifyTimingUnit.fromJson(json[r'notifyTimingUnit']),
+        notifyTimingValue: json[r'notifyTimingValue'] == null ? null : json[r'notifyTimingValue'] as int?,
+        repeat: json[r'repeat'] == null ? null : TodoRepeat.fromJson(json[r'repeat']),
         syncVersion: json[r'syncVersion'] == null ? null : json[r'syncVersion'] as int?,
         doneAt: json[r'doneAt'] == null ? null : mapDateTime(json, r'doneAt', ''),
         isDeleted: json[r'isDeleted'] == null ? null : json[r'isDeleted'] as bool?,
