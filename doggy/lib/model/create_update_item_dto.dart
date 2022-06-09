@@ -13,6 +13,7 @@ part of doggy_api;
 class CreateUpdateItemDto {
   /// Returns a new [CreateUpdateItemDto] instance.
   CreateUpdateItemDto({
+    this.id,
     this.name,
     this.description,
     this.password,
@@ -36,6 +37,8 @@ class CreateUpdateItemDto {
     this.lastModificationTime,
   });
 
+
+  String? id;
 
   String? name;
 
@@ -81,6 +84,7 @@ class CreateUpdateItemDto {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateUpdateItemDto &&
+     other.id == id &&
      other.name == name &&
      other.description == description &&
      other.password == password &&
@@ -105,6 +109,7 @@ class CreateUpdateItemDto {
 
   @override
   int get hashCode =>
+    id.hashCode +
     name.hashCode +
     description.hashCode +
     password.hashCode +
@@ -128,10 +133,13 @@ class CreateUpdateItemDto {
     lastModificationTime.hashCode;
 
   @override
-  String toString() => 'CreateUpdateItemDto[name=$name, description=$description, password=$password, parentId=$parentId, tagIds=$tagIds, key=$key, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, syncVersion=$syncVersion, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime]';
+  String toString() => 'CreateUpdateItemDto[id=$id, name=$name, description=$description, password=$password, parentId=$parentId, tagIds=$tagIds, key=$key, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, syncVersion=$syncVersion, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
+    if (id != null) {
+      json[r'id'] = id;
+    }
     if (name != null) {
       json[r'name'] = name;
     }
@@ -202,6 +210,7 @@ class CreateUpdateItemDto {
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
   static CreateUpdateItemDto fromJson(Map<String, dynamic> json) => CreateUpdateItemDto(
+        id: json[r'id'] == null ? null : json[r'id'] as String?,
         name: json[r'name'] == null ? null : json[r'name'] as String?,
         description: json[r'description'] == null ? null : json[r'description'] as String?,
         password: json[r'password'] == null ? null : json[r'password'] as String?,

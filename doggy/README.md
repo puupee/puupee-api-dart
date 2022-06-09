@@ -83,6 +83,8 @@ Class | Method | HTTP request | Description
 *ItemApi* | [**apiAppItemIdGet**](doc\/ItemApi.md#apiappitemidget) | **GET** /api/app/item/{id} | 
 *ItemApi* | [**apiAppItemIdPut**](doc\/ItemApi.md#apiappitemidput) | **PUT** /api/app/item/{id} | 
 *ItemApi* | [**apiAppItemPost**](doc\/ItemApi.md#apiappitempost) | **POST** /api/app/item | 
+*ItemApi* | [**apiAppItemPullPost**](doc\/ItemApi.md#apiappitempullpost) | **POST** /api/app/item/pull | 
+*ItemApi* | [**apiAppItemPushPost**](doc\/ItemApi.md#apiappitempushpost) | **POST** /api/app/item/push | 
 *ItemApi* | [**apiAppItemSpecialItemsGet**](doc\/ItemApi.md#apiappitemspecialitemsget) | **GET** /api/app/item/special-items | 
 *ItemApi* | [**apiAppItemSyncGet**](doc\/ItemApi.md#apiappitemsyncget) | **GET** /api/app/item/sync | 
 *KeyValueApi* | [**apiAppKeyValueBoolGet**](doc\/KeyValueApi.md#apiappkeyvalueboolget) | **GET** /api/app/key-value/bool | 

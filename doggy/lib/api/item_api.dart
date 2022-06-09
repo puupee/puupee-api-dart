@@ -325,6 +325,118 @@ class ItemApi {
         }
   }
 
+  /// Performs an HTTP 'POST /api/app/item/pull' operation and returns the [Response].
+  /// Parameters:
+  ///
+  /// * [int] afterVersion:
+  ///
+  /// * [int] skipCount:
+  ///
+  /// * [int] maxResultCount:
+  Future<Response> apiAppItemPullPostWithHttpInfo({ int? afterVersion, int? skipCount, int? maxResultCount, }) async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/app/item/pull';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    if (afterVersion != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'afterVersion', afterVersion));
+    }
+    if (skipCount != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'skipCount', skipCount));
+    }
+    if (maxResultCount != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'maxResultCount', maxResultCount));
+    }
+
+    const authNames = <String>['oauth2'];
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes[0],
+      authNames,
+    );
+  }
+
+  /// Parameters:
+  ///
+  /// * [int] afterVersion:
+  ///
+  /// * [int] skipCount:
+  ///
+  /// * [int] maxResultCount:
+  Future<ItemDtoPagedResultDto?> apiAppItemPullPost({ int? afterVersion, int? skipCount, int? maxResultCount, }) async {
+    final response = await apiAppItemPullPostWithHttpInfo( afterVersion: afterVersion, skipCount: skipCount, maxResultCount: maxResultCount, );
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ItemDtoPagedResultDto',) as ItemDtoPagedResultDto;
+        }
+  }
+
+  /// Performs an HTTP 'POST /api/app/item/push' operation and returns the [Response].
+  /// Parameters:
+  ///
+  /// * [CreateUpdateItemDto] createUpdateItemDto:
+  Future<Response> apiAppItemPushPostWithHttpInfo({ CreateUpdateItemDto? createUpdateItemDto, }) async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/app/item/push';
+
+    // ignore: prefer_final_locals
+    Object? postBody = createUpdateItemDto;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const authNames = <String>['oauth2'];
+    const contentTypes = <String>['application/json', 'text/json', 'application/_*+json'];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes[0],
+      authNames,
+    );
+  }
+
+  /// Parameters:
+  ///
+  /// * [CreateUpdateItemDto] createUpdateItemDto:
+  Future<ItemDto?> apiAppItemPushPost({ CreateUpdateItemDto? createUpdateItemDto, }) async {
+    final response = await apiAppItemPushPostWithHttpInfo( createUpdateItemDto: createUpdateItemDto, );
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'ItemDto',) as ItemDto;
+        }
+  }
+
   /// Performs an HTTP 'GET /api/app/item/special-items' operation and returns the [Response].
   Future<Response> apiAppItemSpecialItemsGetWithHttpInfo() async {
     // ignore: prefer_const_declarations

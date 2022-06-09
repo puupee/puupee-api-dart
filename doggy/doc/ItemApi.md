@@ -14,6 +14,8 @@ Method | HTTP request | Description
 [**apiAppItemIdGet**](ItemApi.md#apiappitemidget) | **GET** /api/app/item/{id} | 
 [**apiAppItemIdPut**](ItemApi.md#apiappitemidput) | **PUT** /api/app/item/{id} | 
 [**apiAppItemPost**](ItemApi.md#apiappitempost) | **POST** /api/app/item | 
+[**apiAppItemPullPost**](ItemApi.md#apiappitempullpost) | **POST** /api/app/item/pull | 
+[**apiAppItemPushPost**](ItemApi.md#apiappitempushpost) | **POST** /api/app/item/push | 
 [**apiAppItemSpecialItemsGet**](ItemApi.md#apiappitemspecialitemsget) | **GET** /api/app/item/special-items | 
 [**apiAppItemSyncGet**](ItemApi.md#apiappitemsyncget) | **GET** /api/app/item/sync | 
 
@@ -229,6 +231,96 @@ try {
     print(result);
 } catch (e) {
     print('Exception when calling ItemApi->apiAppItemPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createUpdateItemDto** | [**CreateUpdateItemDto**](CreateUpdateItemDto.md)|  | [optional] 
+
+### Return type
+
+[**ItemDto**](ItemDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **apiAppItemPullPost**
+> ItemDtoPagedResultDto apiAppItemPullPost(afterVersion, skipCount, maxResultCount)
+
+
+
+### Example
+```dart
+import 'package:doggy_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api_instance = ItemApi();
+final afterVersion = 789; // int | 
+final skipCount = 56; // int | 
+final maxResultCount = 56; // int | 
+
+try {
+    final result = api_instance.apiAppItemPullPost(afterVersion, skipCount, maxResultCount);
+    print(result);
+} catch (e) {
+    print('Exception when calling ItemApi->apiAppItemPullPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **afterVersion** | **int**|  | [optional] 
+ **skipCount** | **int**|  | [optional] 
+ **maxResultCount** | **int**|  | [optional] 
+
+### Return type
+
+[**ItemDtoPagedResultDto**](ItemDtoPagedResultDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **apiAppItemPushPost**
+> ItemDto apiAppItemPushPost(createUpdateItemDto)
+
+
+
+### Example
+```dart
+import 'package:doggy_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api_instance = ItemApi();
+final createUpdateItemDto = CreateUpdateItemDto(); // CreateUpdateItemDto | 
+
+try {
+    final result = api_instance.apiAppItemPushPost(createUpdateItemDto);
+    print(result);
+} catch (e) {
+    print('Exception when calling ItemApi->apiAppItemPushPost: $e\n');
 }
 ```
 
