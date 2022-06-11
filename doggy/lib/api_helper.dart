@@ -93,9 +93,6 @@ String parameterToString(dynamic value) {
   if (value is ProductType) {
     return ProductTypeTypeTransformer().encode(value).toString();
   }
-  if (value is SpecialItems) {
-    return SpecialItemsTypeTransformer().encode(value).toString();
-  }
   if (value is TodoNotifyTimingType) {
     return TodoNotifyTimingTypeTypeTransformer().encode(value).toString();
   }

@@ -437,11 +437,6 @@ class ApiClient {
           return SimpleDataDto.fromJson(value);
         case 'SimpleDataDtoPagedResultDto':
           return SimpleDataDtoPagedResultDto.fromJson(value);
-        case 'SpecialItemDto':
-          return SpecialItemDto.fromJson(value);
-        case 'SpecialItems':
-          return SpecialItemsTypeTransformer().decode(value);
-          
         case 'StringKeyValue':
           return StringKeyValue.fromJson(value);
         case 'StringSetKeyValueDto':

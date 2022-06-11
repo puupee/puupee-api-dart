@@ -78,15 +78,10 @@ Class | Method | HTTP request | Description
 *FileApi* | [**apiAppFileFileOrCredentialsGet**](doc\/FileApi.md#apiappfilefileorcredentialsget) | **GET** /api/app/file/file-or-credentials | 
 *FileApi* | [**apiAppFilePreSignUrlPost**](doc\/FileApi.md#apiappfilepresignurlpost) | **POST** /api/app/file/pre-sign-url | 
 *FileApi* | [**apiAppFileUrlPost**](doc\/FileApi.md#apiappfileurlpost) | **POST** /api/app/file/url | 
-*ItemApi* | [**apiAppItemGet**](doc\/ItemApi.md#apiappitemget) | **GET** /api/app/item | 
-*ItemApi* | [**apiAppItemIdDelete**](doc\/ItemApi.md#apiappitemiddelete) | **DELETE** /api/app/item/{id} | 
-*ItemApi* | [**apiAppItemIdGet**](doc\/ItemApi.md#apiappitemidget) | **GET** /api/app/item/{id} | 
 *ItemApi* | [**apiAppItemIdPut**](doc\/ItemApi.md#apiappitemidput) | **PUT** /api/app/item/{id} | 
 *ItemApi* | [**apiAppItemPost**](doc\/ItemApi.md#apiappitempost) | **POST** /api/app/item | 
 *ItemApi* | [**apiAppItemPullGet**](doc\/ItemApi.md#apiappitempullget) | **GET** /api/app/item/pull | 
 *ItemApi* | [**apiAppItemPushPost**](doc\/ItemApi.md#apiappitempushpost) | **POST** /api/app/item/push | 
-*ItemApi* | [**apiAppItemSpecialItemsGet**](doc\/ItemApi.md#apiappitemspecialitemsget) | **GET** /api/app/item/special-items | 
-*ItemApi* | [**apiAppItemSyncGet**](doc\/ItemApi.md#apiappitemsyncget) | **GET** /api/app/item/sync | 
 *KeyValueApi* | [**apiAppKeyValueBoolGet**](doc\/KeyValueApi.md#apiappkeyvalueboolget) | **GET** /api/app/key-value/bool | 
 *KeyValueApi* | [**apiAppKeyValueDateTimeGet**](doc\/KeyValueApi.md#apiappkeyvaluedatetimeget) | **GET** /api/app/key-value/date-time | 
 *KeyValueApi* | [**apiAppKeyValueDecimalGet**](doc\/KeyValueApi.md#apiappkeyvaluedecimalget) | **GET** /api/app/key-value/decimal | 
@@ -122,14 +117,8 @@ Class | Method | HTTP request | Description
 *TagApi* | [**apiAppTagIdPut**](doc\/TagApi.md#apiapptagidput) | **PUT** /api/app/tag/{id} | 
 *TagApi* | [**apiAppTagPost**](doc\/TagApi.md#apiapptagpost) | **POST** /api/app/tag | 
 *TagApi* | [**apiAppTagSyncGet**](doc\/TagApi.md#apiapptagsyncget) | **GET** /api/app/tag/sync | 
-*TodoApi* | [**apiAppTodoGet**](doc\/TodoApi.md#apiapptodoget) | **GET** /api/app/todo | 
-*TodoApi* | [**apiAppTodoIdDelete**](doc\/TodoApi.md#apiapptodoiddelete) | **DELETE** /api/app/todo/{id} | 
-*TodoApi* | [**apiAppTodoIdGet**](doc\/TodoApi.md#apiapptodoidget) | **GET** /api/app/todo/{id} | 
-*TodoApi* | [**apiAppTodoIdPut**](doc\/TodoApi.md#apiapptodoidput) | **PUT** /api/app/todo/{id} | 
-*TodoApi* | [**apiAppTodoPost**](doc\/TodoApi.md#apiapptodopost) | **POST** /api/app/todo | 
 *TodoApi* | [**apiAppTodoPullGet**](doc\/TodoApi.md#apiapptodopullget) | **GET** /api/app/todo/pull | 
 *TodoApi* | [**apiAppTodoPushPost**](doc\/TodoApi.md#apiapptodopushpost) | **POST** /api/app/todo/push | 
-*TodoApi* | [**apiAppTodoSyncGet**](doc\/TodoApi.md#apiapptodosyncget) | **GET** /api/app/todo/sync | 
 
 
 ## Documentation For Models
@@ -253,8 +242,6 @@ Class | Method | HTTP request | Description
  - [SettingsDto](doc\/SettingsDto.md)
  - [SimpleDataDto](doc\/SimpleDataDto.md)
  - [SimpleDataDtoPagedResultDto](doc\/SimpleDataDtoPagedResultDto.md)
- - [SpecialItemDto](doc\/SpecialItemDto.md)
- - [SpecialItems](doc\/SpecialItems.md)
  - [StringKeyValue](doc\/StringKeyValue.md)
  - [StringSetKeyValueDto](doc\/StringSetKeyValueDto.md)
  - [SyncItemChangedEto](doc\/SyncItemChangedEto.md)
@@ -298,7 +285,7 @@ Class | Method | HTTP request | Description
 
 - **Type**: OAuth
 - **Flow**: accessCode
-- **Authorization URL**: https://localhost:44306/connect/authorize
+- **Authorization URL**: https://localhost:44342/connect/authorize
 - **Scopes**: 
  - **Doggy**: Doggy API
 
