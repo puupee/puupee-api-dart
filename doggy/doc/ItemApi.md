@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**apiAppItemPost**](ItemApi.md#apiappitempost) | **POST** /api/app/item | 
 [**apiAppItemPullGet**](ItemApi.md#apiappitempullget) | **GET** /api/app/item/pull | 
 [**apiAppItemPushPost**](ItemApi.md#apiappitempushpost) | **POST** /api/app/item/push | 
+[**apiAppItemSpecialItemsGet**](ItemApi.md#apiappitemspecialitemsget) | **GET** /api/app/item/special-items | 
 
 
 # **apiAppItemIdPut**
@@ -189,6 +190,45 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **apiAppItemSpecialItemsGet**
+> SpecialItemDto apiAppItemSpecialItemsGet()
+
+
+
+### Example
+```dart
+import 'package:doggy_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api_instance = ItemApi();
+
+try {
+    final result = api_instance.apiAppItemSpecialItemsGet();
+    print(result);
+} catch (e) {
+    print('Exception when calling ItemApi->apiAppItemSpecialItemsGet: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**SpecialItemDto**](SpecialItemDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

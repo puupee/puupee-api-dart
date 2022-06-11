@@ -134,6 +134,8 @@ doc/SimpleDataApi.md
 doc/SimpleDataDto.md
 doc/SimpleDataDtoPagedResultDto.md
 doc/SmsApi.md
+doc/SpecialItemDto.md
+doc/SpecialItems.md
 doc/StorageApi.md
 doc/StringKeyValue.md
 doc/StringSetKeyValueDto.md
@@ -317,6 +319,8 @@ lib/model/send_sms_code_dto.dart
 lib/model/settings_dto.dart
 lib/model/simple_data_dto.dart
 lib/model/simple_data_dto_paged_result_dto.dart
+lib/model/special_item_dto.dart
+lib/model/special_items.dart
 lib/model/string_key_value.dart
 lib/model/string_set_key_value_dto.dart
 lib/model/sync_item_changed_eto.dart

@@ -163,6 +163,8 @@ part 'model/send_sms_code_dto.dart';
 part 'model/settings_dto.dart';
 part 'model/simple_data_dto.dart';
 part 'model/simple_data_dto_paged_result_dto.dart';
+part 'model/special_item_dto.dart';
+part 'model/special_items.dart';
 part 'model/string_key_value.dart';
 part 'model/string_set_key_value_dto.dart';
 part 'model/sync_item_changed_eto.dart';
