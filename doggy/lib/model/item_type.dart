@@ -30,6 +30,7 @@ class ItemType {
   static const document = ItemType._(r'Document');
   static const note = ItemType._(r'Note');
   static const other = ItemType._(r'Other');
+  static const todo = ItemType._(r'Todo');
 
   /// List of all possible values in this [enum][ItemType].
   static const values = <ItemType>[
@@ -40,6 +41,7 @@ class ItemType {
     document,
     note,
     other,
+    todo,
   ];
 
   static ItemType fromJson(dynamic value) =>
@@ -84,6 +86,9 @@ class ItemTypeTypeTransformer {
     }
     if (data == r'Other') {
       return ItemType.other;
+    }
+    if (data == r'Todo') {
+      return ItemType.todo;
     }
     throw ArgumentError('Unknown enum value to decode: $data');
 
