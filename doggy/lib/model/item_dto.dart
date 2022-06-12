@@ -53,6 +53,7 @@ class ItemDto {
     this.notifyTimingValue,
     this.repeat,
     this.syncVersion,
+    this.isSpecialFolder,
   });
 
 
@@ -136,6 +137,8 @@ class ItemDto {
 
   int? syncVersion;
 
+  bool? isSpecialFolder;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is ItemDto &&
      other.id == id &&
@@ -177,7 +180,8 @@ class ItemDto {
      other.notifyTimingUnit == notifyTimingUnit &&
      other.notifyTimingValue == notifyTimingValue &&
      other.repeat == repeat &&
-     other.syncVersion == syncVersion;
+     other.syncVersion == syncVersion &&
+     other.isSpecialFolder == isSpecialFolder;
 
   @override
   int get hashCode =>
@@ -220,10 +224,11 @@ class ItemDto {
     notifyTimingUnit.hashCode +
     notifyTimingValue.hashCode +
     repeat.hashCode +
-    syncVersion.hashCode;
+    syncVersion.hashCode +
+    isSpecialFolder.hashCode;
 
   @override
-  String toString() => 'ItemDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, description=$description, totalCount=$totalCount, password=$password, parentId=$parentId, key=$key, url=$url, size=$size, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, fileId=$fileId, file=$file, thumb=$thumb, priority=$priority, doneAt=$doneAt, isDone=$isDone, startAt=$startAt, endAt=$endAt, notifyAt=$notifyAt, notifyTimingType=$notifyTimingType, notifyTimingUnit=$notifyTimingUnit, notifyTimingValue=$notifyTimingValue, repeat=$repeat, syncVersion=$syncVersion]';
+  String toString() => 'ItemDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, description=$description, totalCount=$totalCount, password=$password, parentId=$parentId, key=$key, url=$url, size=$size, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, fileId=$fileId, file=$file, thumb=$thumb, priority=$priority, doneAt=$doneAt, isDone=$isDone, startAt=$startAt, endAt=$endAt, notifyAt=$notifyAt, notifyTimingType=$notifyTimingType, notifyTimingUnit=$notifyTimingUnit, notifyTimingValue=$notifyTimingValue, repeat=$repeat, syncVersion=$syncVersion, isSpecialFolder=$isSpecialFolder]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -347,6 +352,9 @@ class ItemDto {
     if (syncVersion != null) {
       json[r'syncVersion'] = syncVersion;
     }
+    if (isSpecialFolder != null) {
+      json[r'isSpecialFolder'] = isSpecialFolder;
+    }
     return json;
   }
 
@@ -394,6 +402,7 @@ class ItemDto {
         notifyTimingValue: json[r'notifyTimingValue'] == null ? null : json[r'notifyTimingValue'] as int?,
         repeat: json[r'repeat'] == null ? null : TodoRepeat.fromJson(json[r'repeat']),
         syncVersion: json[r'syncVersion'] == null ? null : json[r'syncVersion'] as int?,
+        isSpecialFolder: json[r'isSpecialFolder'] == null ? null : json[r'isSpecialFolder'] as bool?,
     );
 
   static List<ItemDto> listFromJson(List json, {bool? growable,}) =>

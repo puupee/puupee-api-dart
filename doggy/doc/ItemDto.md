@@ -48,6 +48,7 @@ Name | Type | Description | Notes
 **notifyTimingValue** | **int** |  | [optional] 
 **repeat** | [**TodoRepeat**](TodoRepeat.md) |  | [optional] 
 **syncVersion** | **int** |  | [optional] 
+**isSpecialFolder** | **bool** |  | [optional] [readonly] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
