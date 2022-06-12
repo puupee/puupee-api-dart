@@ -9,9 +9,7 @@ import 'package:doggy_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **lastSyncAt** | [**DateTime**](DateTime.md) |  | [optional] 
-**tagVersion** | **int** |  | [optional] 
-**itemVersion** | **int** |  | [optional] 
-**todoVersion** | **int** |  | [optional] 
+**version** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
