@@ -28,6 +28,7 @@ class SpecialItems {
   static const mediaFolder = SpecialItems._(r'MediaFolder');
   static const musicFolder = SpecialItems._(r'MusicFolder');
   static const documentFolder = SpecialItems._(r'DocumentFolder');
+  static const todoFolder = SpecialItems._(r'TodoFolder');
 
   /// List of all possible values in this [enum][SpecialItems].
   static const values = <SpecialItems>[
@@ -36,6 +37,7 @@ class SpecialItems {
     mediaFolder,
     musicFolder,
     documentFolder,
+    todoFolder,
   ];
 
   static SpecialItems fromJson(dynamic value) =>
@@ -74,6 +76,9 @@ class SpecialItemsTypeTransformer {
     }
     if (data == r'DocumentFolder') {
       return SpecialItems.documentFolder;
+    }
+    if (data == r'TodoFolder') {
+      return SpecialItems.todoFolder;
     }
     throw ArgumentError('Unknown enum value to decode: $data');
 

@@ -13,27 +13,27 @@ part of doggy_api;
 class SyncItemChangedEto {
   /// Returns a new [SyncItemChangedEto] instance.
   SyncItemChangedEto({
-    this.item,
+    this.data,
   });
 
 
-  ItemDto? item;
+  ItemDto? data;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is SyncItemChangedEto &&
-     other.item == item;
+     other.data == data;
 
   @override
   int get hashCode =>
-    item.hashCode;
+    data.hashCode;
 
   @override
-  String toString() => 'SyncItemChangedEto[item=$item]';
+  String toString() => 'SyncItemChangedEto[data=$data]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (item != null) {
-      json[r'item'] = item;
+    if (data != null) {
+      json[r'data'] = data;
     }
     return json;
   }
@@ -42,7 +42,7 @@ class SyncItemChangedEto {
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
   static SyncItemChangedEto fromJson(Map<String, dynamic> json) => SyncItemChangedEto(
-        item: json[r'item'] == null ? null : ItemDto.fromJson(json[r'item']),
+        data: json[r'data'] == null ? null : ItemDto.fromJson(json[r'data']),
     );
 
   static List<SyncItemChangedEto> listFromJson(List json, {bool? growable,}) =>

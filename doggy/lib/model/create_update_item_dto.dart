@@ -18,7 +18,6 @@ class CreateUpdateItemDto {
     this.description,
     this.password,
     this.parentId,
-    this.tagIds,
     this.key,
     this.md5,
     this.sliceMd5,
@@ -35,6 +34,16 @@ class CreateUpdateItemDto {
     this.deletionTime,
     this.creationTime,
     this.lastModificationTime,
+    this.priority,
+    this.startAt,
+    this.endAt,
+    this.notifyAt,
+    this.notifyTimingType,
+    this.notifyTimingUnit,
+    this.notifyTimingValue,
+    this.repeat,
+    this.isDone,
+    this.doneAt,
   });
 
 
@@ -47,8 +56,6 @@ class CreateUpdateItemDto {
   String? password;
 
   String? parentId;
-
-  List<String>? tagIds;
 
   String? key;
 
@@ -82,6 +89,26 @@ class CreateUpdateItemDto {
 
   DateTime? lastModificationTime;
 
+  Priority? priority;
+
+  DateTime? startAt;
+
+  DateTime? endAt;
+
+  DateTime? notifyAt;
+
+  TodoNotifyTimingType? notifyTimingType;
+
+  TodoNotifyTimingUnit? notifyTimingUnit;
+
+  int? notifyTimingValue;
+
+  TodoRepeat? repeat;
+
+  bool? isDone;
+
+  DateTime? doneAt;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateUpdateItemDto &&
      other.id == id &&
@@ -89,7 +116,6 @@ class CreateUpdateItemDto {
      other.description == description &&
      other.password == password &&
      other.parentId == parentId &&
-     other.tagIds == tagIds &&
      other.key == key &&
      other.md5 == md5 &&
      other.sliceMd5 == sliceMd5 &&
@@ -105,7 +131,17 @@ class CreateUpdateItemDto {
      other.isDeleted == isDeleted &&
      other.deletionTime == deletionTime &&
      other.creationTime == creationTime &&
-     other.lastModificationTime == lastModificationTime;
+     other.lastModificationTime == lastModificationTime &&
+     other.priority == priority &&
+     other.startAt == startAt &&
+     other.endAt == endAt &&
+     other.notifyAt == notifyAt &&
+     other.notifyTimingType == notifyTimingType &&
+     other.notifyTimingUnit == notifyTimingUnit &&
+     other.notifyTimingValue == notifyTimingValue &&
+     other.repeat == repeat &&
+     other.isDone == isDone &&
+     other.doneAt == doneAt;
 
   @override
   int get hashCode =>
@@ -114,7 +150,6 @@ class CreateUpdateItemDto {
     description.hashCode +
     password.hashCode +
     parentId.hashCode +
-    tagIds.hashCode +
     key.hashCode +
     md5.hashCode +
     sliceMd5.hashCode +
@@ -130,10 +165,20 @@ class CreateUpdateItemDto {
     isDeleted.hashCode +
     deletionTime.hashCode +
     creationTime.hashCode +
-    lastModificationTime.hashCode;
+    lastModificationTime.hashCode +
+    priority.hashCode +
+    startAt.hashCode +
+    endAt.hashCode +
+    notifyAt.hashCode +
+    notifyTimingType.hashCode +
+    notifyTimingUnit.hashCode +
+    notifyTimingValue.hashCode +
+    repeat.hashCode +
+    isDone.hashCode +
+    doneAt.hashCode;
 
   @override
-  String toString() => 'CreateUpdateItemDto[id=$id, name=$name, description=$description, password=$password, parentId=$parentId, tagIds=$tagIds, key=$key, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, syncVersion=$syncVersion, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime]';
+  String toString() => 'CreateUpdateItemDto[id=$id, name=$name, description=$description, password=$password, parentId=$parentId, key=$key, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, syncVersion=$syncVersion, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime, priority=$priority, startAt=$startAt, endAt=$endAt, notifyAt=$notifyAt, notifyTimingType=$notifyTimingType, notifyTimingUnit=$notifyTimingUnit, notifyTimingValue=$notifyTimingValue, repeat=$repeat, isDone=$isDone, doneAt=$doneAt]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -151,9 +196,6 @@ class CreateUpdateItemDto {
     }
     if (parentId != null) {
       json[r'parentId'] = parentId;
-    }
-    if (tagIds != null) {
-      json[r'tagIds'] = tagIds;
     }
     if (key != null) {
       json[r'key'] = key;
@@ -203,6 +245,36 @@ class CreateUpdateItemDto {
     if (lastModificationTime != null) {
       json[r'lastModificationTime'] = lastModificationTime!.toUtc().toIso8601String();
     }
+    if (priority != null) {
+      json[r'priority'] = priority;
+    }
+    if (startAt != null) {
+      json[r'startAt'] = startAt!.toUtc().toIso8601String();
+    }
+    if (endAt != null) {
+      json[r'endAt'] = endAt!.toUtc().toIso8601String();
+    }
+    if (notifyAt != null) {
+      json[r'notifyAt'] = notifyAt!.toUtc().toIso8601String();
+    }
+    if (notifyTimingType != null) {
+      json[r'notifyTimingType'] = notifyTimingType;
+    }
+    if (notifyTimingUnit != null) {
+      json[r'notifyTimingUnit'] = notifyTimingUnit;
+    }
+    if (notifyTimingValue != null) {
+      json[r'notifyTimingValue'] = notifyTimingValue;
+    }
+    if (repeat != null) {
+      json[r'repeat'] = repeat;
+    }
+    if (isDone != null) {
+      json[r'isDone'] = isDone;
+    }
+    if (doneAt != null) {
+      json[r'doneAt'] = doneAt!.toUtc().toIso8601String();
+    }
     return json;
   }
 
@@ -215,9 +287,6 @@ class CreateUpdateItemDto {
         description: json[r'description'] == null ? null : json[r'description'] as String?,
         password: json[r'password'] == null ? null : json[r'password'] as String?,
         parentId: json[r'parentId'] == null ? null : json[r'parentId'] as String?,
-        tagIds: json[r'tagIds'] is List
-          ? (json[r'tagIds'] as List).cast<String>()
-          : [],
         key: json[r'key'] == null ? null : json[r'key'] as String?,
         md5: json[r'md5'] == null ? null : json[r'md5'] as String?,
         sliceMd5: json[r'sliceMd5'] == null ? null : json[r'sliceMd5'] as String?,
@@ -234,6 +303,16 @@ class CreateUpdateItemDto {
         deletionTime: json[r'deletionTime'] == null ? null : mapDateTime(json, r'deletionTime', ''),
         creationTime: json[r'creationTime'] == null ? null : mapDateTime(json, r'creationTime', ''),
         lastModificationTime: json[r'lastModificationTime'] == null ? null : mapDateTime(json, r'lastModificationTime', ''),
+        priority: json[r'priority'] == null ? null : Priority.fromJson(json[r'priority']),
+        startAt: json[r'startAt'] == null ? null : mapDateTime(json, r'startAt', ''),
+        endAt: json[r'endAt'] == null ? null : mapDateTime(json, r'endAt', ''),
+        notifyAt: json[r'notifyAt'] == null ? null : mapDateTime(json, r'notifyAt', ''),
+        notifyTimingType: json[r'notifyTimingType'] == null ? null : TodoNotifyTimingType.fromJson(json[r'notifyTimingType']),
+        notifyTimingUnit: json[r'notifyTimingUnit'] == null ? null : TodoNotifyTimingUnit.fromJson(json[r'notifyTimingUnit']),
+        notifyTimingValue: json[r'notifyTimingValue'] == null ? null : json[r'notifyTimingValue'] as int?,
+        repeat: json[r'repeat'] == null ? null : TodoRepeat.fromJson(json[r'repeat']),
+        isDone: json[r'isDone'] == null ? null : json[r'isDone'] as bool?,
+        doneAt: json[r'doneAt'] == null ? null : mapDateTime(json, r'doneAt', ''),
     );
 
   static List<CreateUpdateItemDto> listFromJson(List json, {bool? growable,}) =>

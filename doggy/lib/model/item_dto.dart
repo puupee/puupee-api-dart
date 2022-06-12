@@ -26,8 +26,6 @@ class ItemDto {
     this.totalCount,
     this.password,
     this.parentId,
-    this.children,
-    this.tags,
     this.key,
     this.url,
     this.size,
@@ -44,6 +42,16 @@ class ItemDto {
     this.fileId,
     this.file,
     this.thumb,
+    this.priority,
+    this.doneAt,
+    this.isDone,
+    this.startAt,
+    this.endAt,
+    this.notifyAt,
+    this.notifyTimingType,
+    this.notifyTimingUnit,
+    this.notifyTimingValue,
+    this.repeat,
     this.syncVersion,
   });
 
@@ -73,10 +81,6 @@ class ItemDto {
   String? password;
 
   String? parentId;
-
-  List<ItemDto>? children;
-
-  List<TagDto>? tags;
 
   String? key;
 
@@ -110,6 +114,26 @@ class ItemDto {
 
   FileDto? thumb;
 
+  Priority? priority;
+
+  DateTime? doneAt;
+
+  bool? isDone;
+
+  DateTime? startAt;
+
+  DateTime? endAt;
+
+  DateTime? notifyAt;
+
+  TodoNotifyTimingType? notifyTimingType;
+
+  TodoNotifyTimingUnit? notifyTimingUnit;
+
+  int? notifyTimingValue;
+
+  TodoRepeat? repeat;
+
   int? syncVersion;
 
   @override
@@ -127,8 +151,6 @@ class ItemDto {
      other.totalCount == totalCount &&
      other.password == password &&
      other.parentId == parentId &&
-     other.children == children &&
-     other.tags == tags &&
      other.key == key &&
      other.url == url &&
      other.size == size &&
@@ -145,6 +167,16 @@ class ItemDto {
      other.fileId == fileId &&
      other.file == file &&
      other.thumb == thumb &&
+     other.priority == priority &&
+     other.doneAt == doneAt &&
+     other.isDone == isDone &&
+     other.startAt == startAt &&
+     other.endAt == endAt &&
+     other.notifyAt == notifyAt &&
+     other.notifyTimingType == notifyTimingType &&
+     other.notifyTimingUnit == notifyTimingUnit &&
+     other.notifyTimingValue == notifyTimingValue &&
+     other.repeat == repeat &&
      other.syncVersion == syncVersion;
 
   @override
@@ -162,8 +194,6 @@ class ItemDto {
     totalCount.hashCode +
     password.hashCode +
     parentId.hashCode +
-    children.hashCode +
-    tags.hashCode +
     key.hashCode +
     url.hashCode +
     size.hashCode +
@@ -180,10 +210,20 @@ class ItemDto {
     fileId.hashCode +
     file.hashCode +
     thumb.hashCode +
+    priority.hashCode +
+    doneAt.hashCode +
+    isDone.hashCode +
+    startAt.hashCode +
+    endAt.hashCode +
+    notifyAt.hashCode +
+    notifyTimingType.hashCode +
+    notifyTimingUnit.hashCode +
+    notifyTimingValue.hashCode +
+    repeat.hashCode +
     syncVersion.hashCode;
 
   @override
-  String toString() => 'ItemDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, description=$description, totalCount=$totalCount, password=$password, parentId=$parentId, children=$children, tags=$tags, key=$key, url=$url, size=$size, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, fileId=$fileId, file=$file, thumb=$thumb, syncVersion=$syncVersion]';
+  String toString() => 'ItemDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, description=$description, totalCount=$totalCount, password=$password, parentId=$parentId, key=$key, url=$url, size=$size, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, fileId=$fileId, file=$file, thumb=$thumb, priority=$priority, doneAt=$doneAt, isDone=$isDone, startAt=$startAt, endAt=$endAt, notifyAt=$notifyAt, notifyTimingType=$notifyTimingType, notifyTimingUnit=$notifyTimingUnit, notifyTimingValue=$notifyTimingValue, repeat=$repeat, syncVersion=$syncVersion]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -225,12 +265,6 @@ class ItemDto {
     }
     if (parentId != null) {
       json[r'parentId'] = parentId;
-    }
-    if (children != null) {
-      json[r'children'] = children;
-    }
-    if (tags != null) {
-      json[r'tags'] = tags;
     }
     if (key != null) {
       json[r'key'] = key;
@@ -280,6 +314,36 @@ class ItemDto {
     if (thumb != null) {
       json[r'thumb'] = thumb;
     }
+    if (priority != null) {
+      json[r'priority'] = priority;
+    }
+    if (doneAt != null) {
+      json[r'doneAt'] = doneAt!.toUtc().toIso8601String();
+    }
+    if (isDone != null) {
+      json[r'isDone'] = isDone;
+    }
+    if (startAt != null) {
+      json[r'startAt'] = startAt!.toUtc().toIso8601String();
+    }
+    if (endAt != null) {
+      json[r'endAt'] = endAt!.toUtc().toIso8601String();
+    }
+    if (notifyAt != null) {
+      json[r'notifyAt'] = notifyAt!.toUtc().toIso8601String();
+    }
+    if (notifyTimingType != null) {
+      json[r'notifyTimingType'] = notifyTimingType;
+    }
+    if (notifyTimingUnit != null) {
+      json[r'notifyTimingUnit'] = notifyTimingUnit;
+    }
+    if (notifyTimingValue != null) {
+      json[r'notifyTimingValue'] = notifyTimingValue;
+    }
+    if (repeat != null) {
+      json[r'repeat'] = repeat;
+    }
     if (syncVersion != null) {
       json[r'syncVersion'] = syncVersion;
     }
@@ -303,8 +367,6 @@ class ItemDto {
         totalCount: json[r'totalCount'] == null ? null : json[r'totalCount'] as int?,
         password: json[r'password'] == null ? null : json[r'password'] as String?,
         parentId: json[r'parentId'] == null ? null : json[r'parentId'] as String?,
-        children: json[r'children'] == null ? null : ItemDto.listFromJson(json[r'children']),
-        tags: json[r'tags'] == null ? null : TagDto.listFromJson(json[r'tags']),
         key: json[r'key'] == null ? null : json[r'key'] as String?,
         url: json[r'url'] == null ? null : json[r'url'] as String?,
         size: json[r'size'] == null ? null : json[r'size'] as int?,
@@ -321,6 +383,16 @@ class ItemDto {
         fileId: json[r'fileId'] == null ? null : json[r'fileId'] as String?,
         file: json[r'file'] == null ? null : FileDto.fromJson(json[r'file']),
         thumb: json[r'thumb'] == null ? null : FileDto.fromJson(json[r'thumb']),
+        priority: json[r'priority'] == null ? null : Priority.fromJson(json[r'priority']),
+        doneAt: json[r'doneAt'] == null ? null : mapDateTime(json, r'doneAt', ''),
+        isDone: json[r'isDone'] == null ? null : json[r'isDone'] as bool?,
+        startAt: json[r'startAt'] == null ? null : mapDateTime(json, r'startAt', ''),
+        endAt: json[r'endAt'] == null ? null : mapDateTime(json, r'endAt', ''),
+        notifyAt: json[r'notifyAt'] == null ? null : mapDateTime(json, r'notifyAt', ''),
+        notifyTimingType: json[r'notifyTimingType'] == null ? null : TodoNotifyTimingType.fromJson(json[r'notifyTimingType']),
+        notifyTimingUnit: json[r'notifyTimingUnit'] == null ? null : TodoNotifyTimingUnit.fromJson(json[r'notifyTimingUnit']),
+        notifyTimingValue: json[r'notifyTimingValue'] == null ? null : json[r'notifyTimingValue'] as int?,
+        repeat: json[r'repeat'] == null ? null : TodoRepeat.fromJson(json[r'repeat']),
         syncVersion: json[r'syncVersion'] == null ? null : json[r'syncVersion'] as int?,
     );
 

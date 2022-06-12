@@ -237,10 +237,6 @@ class ApiClient {
           return CreateUpdateItemDto.fromJson(value);
         case 'CreateUpdateNotificationDto':
           return CreateUpdateNotificationDto.fromJson(value);
-        case 'CreateUpdateTagDto':
-          return CreateUpdateTagDto.fromJson(value);
-        case 'CreateUpdateTodoDto':
-          return CreateUpdateTodoDto.fromJson(value);
         case 'CurrentCultureDto':
           return CurrentCultureDto.fromJson(value);
         case 'CurrentTenantDto':
@@ -450,12 +446,6 @@ class ApiClient {
           return SyncItemChangedEto.fromJson(value);
         case 'SyncStateDto':
           return SyncStateDto.fromJson(value);
-        case 'SyncTodoChangedEto':
-          return SyncTodoChangedEto.fromJson(value);
-        case 'TagDto':
-          return TagDto.fromJson(value);
-        case 'TagDtoPagedResultDto':
-          return TagDtoPagedResultDto.fromJson(value);
         case 'TenantCreateDto':
           return TenantCreateDto.fromJson(value);
         case 'TenantDto':
@@ -468,10 +458,6 @@ class ApiClient {
           return TimeZone.fromJson(value);
         case 'TimingDto':
           return TimingDto.fromJson(value);
-        case 'TodoDto':
-          return TodoDto.fromJson(value);
-        case 'TodoDtoPagedResultDto':
-          return TodoDtoPagedResultDto.fromJson(value);
         case 'TodoNotifyTimingType':
           return TodoNotifyTimingTypeTypeTransformer().decode(value);
           

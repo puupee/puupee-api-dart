@@ -78,8 +78,6 @@ Class | Method | HTTP request | Description
 *FileApi* | [**apiAppFileFileOrCredentialsGet**](doc\/FileApi.md#apiappfilefileorcredentialsget) | **GET** /api/app/file/file-or-credentials | 
 *FileApi* | [**apiAppFilePreSignUrlPost**](doc\/FileApi.md#apiappfilepresignurlpost) | **POST** /api/app/file/pre-sign-url | 
 *FileApi* | [**apiAppFileUrlPost**](doc\/FileApi.md#apiappfileurlpost) | **POST** /api/app/file/url | 
-*ItemApi* | [**apiAppItemIdPut**](doc\/ItemApi.md#apiappitemidput) | **PUT** /api/app/item/{id} | 
-*ItemApi* | [**apiAppItemPost**](doc\/ItemApi.md#apiappitempost) | **POST** /api/app/item | 
 *ItemApi* | [**apiAppItemPullGet**](doc\/ItemApi.md#apiappitempullget) | **GET** /api/app/item/pull | 
 *ItemApi* | [**apiAppItemPushPost**](doc\/ItemApi.md#apiappitempushpost) | **POST** /api/app/item/push | 
 *ItemApi* | [**apiAppItemSpecialItemsGet**](doc\/ItemApi.md#apiappitemspecialitemsget) | **GET** /api/app/item/special-items | 
@@ -111,15 +109,6 @@ Class | Method | HTTP request | Description
 *StorageApi* | [**apiAppStorageGet**](doc\/StorageApi.md#apiappstorageget) | **GET** /api/app/storage | 
 *SyncStateApi* | [**apiAppSyncStateGet**](doc\/SyncStateApi.md#apiappsyncstateget) | **GET** /api/app/sync-state | 
 *SyncStateApi* | [**apiAppSyncStateItemChangedEtoPost**](doc\/SyncStateApi.md#apiappsyncstateitemchangedetopost) | **POST** /api/app/sync-state/item-changed-eto | 
-*SyncStateApi* | [**apiAppSyncStateTodoChangedEtoPost**](doc\/SyncStateApi.md#apiappsyncstatetodochangedetopost) | **POST** /api/app/sync-state/todo-changed-eto | 
-*TagApi* | [**apiAppTagGet**](doc\/TagApi.md#apiapptagget) | **GET** /api/app/tag | 
-*TagApi* | [**apiAppTagIdDelete**](doc\/TagApi.md#apiapptagiddelete) | **DELETE** /api/app/tag/{id} | 
-*TagApi* | [**apiAppTagIdGet**](doc\/TagApi.md#apiapptagidget) | **GET** /api/app/tag/{id} | 
-*TagApi* | [**apiAppTagIdPut**](doc\/TagApi.md#apiapptagidput) | **PUT** /api/app/tag/{id} | 
-*TagApi* | [**apiAppTagPost**](doc\/TagApi.md#apiapptagpost) | **POST** /api/app/tag | 
-*TagApi* | [**apiAppTagSyncGet**](doc\/TagApi.md#apiapptagsyncget) | **GET** /api/app/tag/sync | 
-*TodoApi* | [**apiAppTodoPullGet**](doc\/TodoApi.md#apiapptodopullget) | **GET** /api/app/todo/pull | 
-*TodoApi* | [**apiAppTodoPushPost**](doc\/TodoApi.md#apiapptodopushpost) | **POST** /api/app/todo/push | 
 
 
 ## Documentation For Models
@@ -148,8 +137,6 @@ Class | Method | HTTP request | Description
  - [CreatePushNotificationDto](doc\/CreatePushNotificationDto.md)
  - [CreateUpdateItemDto](doc\/CreateUpdateItemDto.md)
  - [CreateUpdateNotificationDto](doc\/CreateUpdateNotificationDto.md)
- - [CreateUpdateTagDto](doc\/CreateUpdateTagDto.md)
- - [CreateUpdateTodoDto](doc\/CreateUpdateTodoDto.md)
  - [CurrentCultureDto](doc\/CurrentCultureDto.md)
  - [CurrentTenantDto](doc\/CurrentTenantDto.md)
  - [CurrentUserDto](doc\/CurrentUserDto.md)
@@ -249,17 +236,12 @@ Class | Method | HTTP request | Description
  - [StringSetKeyValueDto](doc\/StringSetKeyValueDto.md)
  - [SyncItemChangedEto](doc\/SyncItemChangedEto.md)
  - [SyncStateDto](doc\/SyncStateDto.md)
- - [SyncTodoChangedEto](doc\/SyncTodoChangedEto.md)
- - [TagDto](doc\/TagDto.md)
- - [TagDtoPagedResultDto](doc\/TagDtoPagedResultDto.md)
  - [TenantCreateDto](doc\/TenantCreateDto.md)
  - [TenantDto](doc\/TenantDto.md)
  - [TenantDtoPagedResultDto](doc\/TenantDtoPagedResultDto.md)
  - [TenantUpdateDto](doc\/TenantUpdateDto.md)
  - [TimeZone](doc\/TimeZone.md)
  - [TimingDto](doc\/TimingDto.md)
- - [TodoDto](doc\/TodoDto.md)
- - [TodoDtoPagedResultDto](doc\/TodoDtoPagedResultDto.md)
  - [TodoNotifyTimingType](doc\/TodoNotifyTimingType.md)
  - [TodoNotifyTimingUnit](doc\/TodoNotifyTimingUnit.md)
  - [TodoOrderBy](doc\/TodoOrderBy.md)

@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 **password** | **String** |  | [optional] 
 **parentId** | **String** |  | [optional] 
-**tagIds** | **List<String>** |  | [optional] [default to const []]
 **key** | **String** |  | [optional] 
 **md5** | **String** |  | [optional] 
 **sliceMd5** | **String** |  | [optional] 
@@ -30,6 +29,16 @@ Name | Type | Description | Notes
 **deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
 **creationTime** | [**DateTime**](DateTime.md) |  | [optional] 
 **lastModificationTime** | [**DateTime**](DateTime.md) |  | [optional] 
+**priority** | [**Priority**](Priority.md) |  | [optional] 
+**startAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**endAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**notifyAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**notifyTimingType** | [**TodoNotifyTimingType**](TodoNotifyTimingType.md) |  | [optional] 
+**notifyTimingUnit** | [**TodoNotifyTimingUnit**](TodoNotifyTimingUnit.md) |  | [optional] 
+**notifyTimingValue** | **int** |  | [optional] 
+**repeat** | [**TodoRepeat**](TodoRepeat.md) |  | [optional] 
+**isDone** | **bool** |  | [optional] 
+**doneAt** | [**DateTime**](DateTime.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
