@@ -15,6 +15,7 @@ class CreateUpdateItemDto {
   CreateUpdateItemDto({
     this.id,
     this.name,
+    this.isHidden,
     this.description,
     this.password,
     this.parentId,
@@ -50,6 +51,8 @@ class CreateUpdateItemDto {
   String? id;
 
   String? name;
+
+  bool? isHidden;
 
   String? description;
 
@@ -113,6 +116,7 @@ class CreateUpdateItemDto {
   bool operator ==(Object other) => identical(this, other) || other is CreateUpdateItemDto &&
      other.id == id &&
      other.name == name &&
+     other.isHidden == isHidden &&
      other.description == description &&
      other.password == password &&
      other.parentId == parentId &&
@@ -147,6 +151,7 @@ class CreateUpdateItemDto {
   int get hashCode =>
     id.hashCode +
     name.hashCode +
+    isHidden.hashCode +
     description.hashCode +
     password.hashCode +
     parentId.hashCode +
@@ -178,7 +183,7 @@ class CreateUpdateItemDto {
     doneAt.hashCode;
 
   @override
-  String toString() => 'CreateUpdateItemDto[id=$id, name=$name, description=$description, password=$password, parentId=$parentId, key=$key, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, syncVersion=$syncVersion, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime, priority=$priority, startAt=$startAt, endAt=$endAt, notifyAt=$notifyAt, notifyTimingType=$notifyTimingType, notifyTimingUnit=$notifyTimingUnit, notifyTimingValue=$notifyTimingValue, repeat=$repeat, isDone=$isDone, doneAt=$doneAt]';
+  String toString() => 'CreateUpdateItemDto[id=$id, name=$name, isHidden=$isHidden, description=$description, password=$password, parentId=$parentId, key=$key, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, syncVersion=$syncVersion, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime, priority=$priority, startAt=$startAt, endAt=$endAt, notifyAt=$notifyAt, notifyTimingType=$notifyTimingType, notifyTimingUnit=$notifyTimingUnit, notifyTimingValue=$notifyTimingValue, repeat=$repeat, isDone=$isDone, doneAt=$doneAt]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -187,6 +192,9 @@ class CreateUpdateItemDto {
     }
     if (name != null) {
       json[r'name'] = name;
+    }
+    if (isHidden != null) {
+      json[r'isHidden'] = isHidden;
     }
     if (description != null) {
       json[r'description'] = description;
@@ -284,6 +292,7 @@ class CreateUpdateItemDto {
   static CreateUpdateItemDto fromJson(Map<String, dynamic> json) => CreateUpdateItemDto(
         id: json[r'id'] == null ? null : json[r'id'] as String?,
         name: json[r'name'] == null ? null : json[r'name'] as String?,
+        isHidden: json[r'isHidden'] == null ? null : json[r'isHidden'] as bool?,
         description: json[r'description'] == null ? null : json[r'description'] as String?,
         password: json[r'password'] == null ? null : json[r'password'] as String?,
         parentId: json[r'parentId'] == null ? null : json[r'parentId'] as String?,
