@@ -257,12 +257,6 @@ class ApiClient {
           return DeviceDto.fromJson(value);
         case 'DeviceDtoPagedResultDto':
           return DeviceDtoPagedResultDto.fromJson(value);
-        case 'DeviceStatus':
-          return DeviceStatusTypeTransformer().decode(value);
-          
-        case 'DisplayStyle':
-          return DisplayStyleTypeTransformer().decode(value);
-          
         case 'DoubleKeyValue':
           return DoubleKeyValue.fromJson(value);
         case 'DoubleSetKeyValueDto':
@@ -307,16 +301,10 @@ class ApiClient {
           return FileOrCredentialsDto.fromJson(value);
         case 'FindTenantResultDto':
           return FindTenantResultDto.fromJson(value);
-        case 'Framework':
-          return FrameworkTypeTransformer().decode(value);
-          
         case 'GetFeatureListResultDto':
           return GetFeatureListResultDto.fromJson(value);
         case 'GetPermissionListResultDto':
           return GetPermissionListResultDto.fromJson(value);
-        case 'GitRepositoryType':
-          return GitRepositoryTypeTypeTransformer().decode(value);
-          
         case 'IStringValueType':
           return IStringValueType.fromJson(value);
         case 'IValueValidator':
@@ -351,9 +339,6 @@ class ApiClient {
           return ItemDto.fromJson(value);
         case 'ItemDtoPagedResultDto':
           return ItemDtoPagedResultDto.fromJson(value);
-        case 'ItemType':
-          return ItemTypeTypeTransformer().decode(value);
-          
         case 'LanguageInfo':
           return LanguageInfo.fromJson(value);
         case 'LocalizableStringDto':
@@ -363,9 +348,6 @@ class ApiClient {
           
         case 'MemberDto':
           return MemberDto.fromJson(value);
-        case 'MemberLevel':
-          return MemberLevelTypeTransformer().decode(value);
-          
         case 'MethodParameterApiDescriptionModel':
           return MethodParameterApiDescriptionModel.fromJson(value);
         case 'ModuleApiDescriptionModel':
@@ -394,15 +376,6 @@ class ApiClient {
           return PermissionGrantInfoDto.fromJson(value);
         case 'PermissionGroupDto':
           return PermissionGroupDto.fromJson(value);
-        case 'Platform':
-          return PlatformTypeTransformer().decode(value);
-          
-        case 'Priority':
-          return PriorityTypeTransformer().decode(value);
-          
-        case 'ProductType':
-          return ProductTypeTypeTransformer().decode(value);
-          
         case 'ProfileDto':
           return ProfileDto.fromJson(value);
         case 'PropertyApiDescriptionModel':
@@ -435,9 +408,6 @@ class ApiClient {
           return SimpleDataDtoPagedResultDto.fromJson(value);
         case 'SpecialItemDto':
           return SpecialItemDto.fromJson(value);
-        case 'SpecialItems':
-          return SpecialItemsTypeTransformer().decode(value);
-          
         case 'StringKeyValue':
           return StringKeyValue.fromJson(value);
         case 'StringSetKeyValueDto':
@@ -458,17 +428,8 @@ class ApiClient {
           return TimeZone.fromJson(value);
         case 'TimingDto':
           return TimingDto.fromJson(value);
-        case 'TodoNotifyTimingType':
-          return TodoNotifyTimingTypeTypeTransformer().decode(value);
-          
-        case 'TodoNotifyTimingUnit':
-          return TodoNotifyTimingUnitTypeTransformer().decode(value);
-          
         case 'TodoOrderBy':
           return TodoOrderByTypeTransformer().decode(value);
-          
-        case 'TodoRepeat':
-          return TodoRepeatTypeTransformer().decode(value);
           
         case 'TodoSettingsDto':
           return TodoSettingsDto.fromJson(value);

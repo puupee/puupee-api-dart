@@ -49,7 +49,7 @@ class DeviceDto {
 
   String? name;
 
-  Platform? type;
+  String? type;
 
   String? brand;
 
@@ -148,7 +148,7 @@ class DeviceDto {
         deletionTime: json[r'deletionTime'] == null ? null : mapDateTime(json, r'deletionTime', ''),
         token: json[r'token'] == null ? null : json[r'token'] as String?,
         name: json[r'name'] == null ? null : json[r'name'] as String?,
-        type: json[r'type'] == null ? null : Platform.fromJson(json[r'type']),
+        type: json[r'type'] == null ? null : json[r'type'] as String?,
         brand: json[r'brand'] == null ? null : json[r'brand'] as String?,
         systemVersion: json[r'systemVersion'] == null ? null : json[r'systemVersion'] as String?,
     );

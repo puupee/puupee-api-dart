@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **apiAppNotificationBarkApiKeyMessageGet**
-> Map<String, dynamic> apiAppNotificationBarkApiKeyMessageGet(apiKey, message, automaticallyCopy, copy, url, isArchive, group, icon, level)
+> Map<String, dynamic> apiAppNotificationBarkApiKeyMessageGet(apiKey, message, automaticallyCopy, copy, url, isArchive, group, icon, name, value)
 
 
 
@@ -34,10 +34,11 @@ final url = url_example; // String |
 final isArchive = isArchive_example; // String | 
 final group = group_example; // String | 
 final icon = icon_example; // String | 
-final level = level_example; // String | 
+final name = name_example; // String | 
+final value = value_example; // String | 
 
 try {
-    final result = api_instance.apiAppNotificationBarkApiKeyMessageGet(apiKey, message, automaticallyCopy, copy, url, isArchive, group, icon, level);
+    final result = api_instance.apiAppNotificationBarkApiKeyMessageGet(apiKey, message, automaticallyCopy, copy, url, isArchive, group, icon, name, value);
     print(result);
 } catch (e) {
     print('Exception when calling NotificationApi->apiAppNotificationBarkApiKeyMessageGet: $e\n');
@@ -56,7 +57,8 @@ Name | Type | Description  | Notes
  **isArchive** | **String**|  | [optional] 
  **group** | **String**|  | [optional] 
  **icon** | **String**|  | [optional] 
- **level** | **String**|  | [optional] [default to 'active']
+ **name** | **String**|  | [optional] 
+ **value** | **String**|  | [optional] 
 
 ### Return type
 

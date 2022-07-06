@@ -63,50 +63,11 @@ String parameterToString(dynamic value) {
   if (value is AppTheme) {
     return AppThemeTypeTransformer().encode(value).toString();
   }
-  if (value is DeviceStatus) {
-    return DeviceStatusTypeTransformer().encode(value).toString();
-  }
-  if (value is DisplayStyle) {
-    return DisplayStyleTypeTransformer().encode(value).toString();
-  }
-  if (value is Framework) {
-    return FrameworkTypeTransformer().encode(value).toString();
-  }
-  if (value is GitRepositoryType) {
-    return GitRepositoryTypeTypeTransformer().encode(value).toString();
-  }
-  if (value is ItemType) {
-    return ItemTypeTypeTransformer().encode(value).toString();
-  }
   if (value is LoginResultType) {
     return LoginResultTypeTypeTransformer().encode(value).toString();
   }
-  if (value is MemberLevel) {
-    return MemberLevelTypeTransformer().encode(value).toString();
-  }
-  if (value is Platform) {
-    return PlatformTypeTransformer().encode(value).toString();
-  }
-  if (value is Priority) {
-    return PriorityTypeTransformer().encode(value).toString();
-  }
-  if (value is ProductType) {
-    return ProductTypeTypeTransformer().encode(value).toString();
-  }
-  if (value is SpecialItems) {
-    return SpecialItemsTypeTransformer().encode(value).toString();
-  }
-  if (value is TodoNotifyTimingType) {
-    return TodoNotifyTimingTypeTypeTransformer().encode(value).toString();
-  }
-  if (value is TodoNotifyTimingUnit) {
-    return TodoNotifyTimingUnitTypeTransformer().encode(value).toString();
-  }
   if (value is TodoOrderBy) {
     return TodoOrderByTypeTransformer().encode(value).toString();
-  }
-  if (value is TodoRepeat) {
-    return TodoRepeatTypeTransformer().encode(value).toString();
   }
   return value.toString();
 }

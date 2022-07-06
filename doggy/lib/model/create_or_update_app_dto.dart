@@ -15,7 +15,8 @@ class CreateOrUpdateAppDto {
   CreateOrUpdateAppDto({
     this.name,
     this.displayName,
-    this.fromework,
+    this.framework,
+    this.appType,
     this.description,
     this.icon,
     this.gitRepository,
@@ -27,7 +28,9 @@ class CreateOrUpdateAppDto {
 
   String? displayName;
 
-  Framework? fromework;
+  String? framework;
+
+  String? appType;
 
   String? description;
 
@@ -35,13 +38,14 @@ class CreateOrUpdateAppDto {
 
   String? gitRepository;
 
-  GitRepositoryType? gitRepositoryType;
+  String? gitRepositoryType;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateOrUpdateAppDto &&
      other.name == name &&
      other.displayName == displayName &&
-     other.fromework == fromework &&
+     other.framework == framework &&
+     other.appType == appType &&
      other.description == description &&
      other.icon == icon &&
      other.gitRepository == gitRepository &&
@@ -51,14 +55,15 @@ class CreateOrUpdateAppDto {
   int get hashCode =>
     name.hashCode +
     displayName.hashCode +
-    fromework.hashCode +
+    framework.hashCode +
+    appType.hashCode +
     description.hashCode +
     icon.hashCode +
     gitRepository.hashCode +
     gitRepositoryType.hashCode;
 
   @override
-  String toString() => 'CreateOrUpdateAppDto[name=$name, displayName=$displayName, fromework=$fromework, description=$description, icon=$icon, gitRepository=$gitRepository, gitRepositoryType=$gitRepositoryType]';
+  String toString() => 'CreateOrUpdateAppDto[name=$name, displayName=$displayName, framework=$framework, appType=$appType, description=$description, icon=$icon, gitRepository=$gitRepository, gitRepositoryType=$gitRepositoryType]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -68,8 +73,11 @@ class CreateOrUpdateAppDto {
     if (displayName != null) {
       json[r'displayName'] = displayName;
     }
-    if (fromework != null) {
-      json[r'fromework'] = fromework;
+    if (framework != null) {
+      json[r'framework'] = framework;
+    }
+    if (appType != null) {
+      json[r'appType'] = appType;
     }
     if (description != null) {
       json[r'description'] = description;
@@ -92,11 +100,12 @@ class CreateOrUpdateAppDto {
   static CreateOrUpdateAppDto fromJson(Map<String, dynamic> json) => CreateOrUpdateAppDto(
         name: json[r'name'] == null ? null : json[r'name'] as String?,
         displayName: json[r'displayName'] == null ? null : json[r'displayName'] as String?,
-        fromework: json[r'fromework'] == null ? null : Framework.fromJson(json[r'fromework']),
+        framework: json[r'framework'] == null ? null : json[r'framework'] as String?,
+        appType: json[r'appType'] == null ? null : json[r'appType'] as String?,
         description: json[r'description'] == null ? null : json[r'description'] as String?,
         icon: json[r'icon'] == null ? null : json[r'icon'] as String?,
         gitRepository: json[r'gitRepository'] == null ? null : json[r'gitRepository'] as String?,
-        gitRepositoryType: json[r'gitRepositoryType'] == null ? null : GitRepositoryType.fromJson(json[r'gitRepositoryType']),
+        gitRepositoryType: json[r'gitRepositoryType'] == null ? null : json[r'gitRepositoryType'] as String?,
     );
 
   static List<CreateOrUpdateAppDto> listFromJson(List json, {bool? growable,}) =>

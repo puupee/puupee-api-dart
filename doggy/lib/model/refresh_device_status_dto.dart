@@ -20,7 +20,7 @@ class RefreshDeviceStatusDto {
 
   String? id;
 
-  DeviceStatus? status;
+  String? status;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is RefreshDeviceStatusDto &&
@@ -51,7 +51,7 @@ class RefreshDeviceStatusDto {
   // ignore: prefer_constructors_over_static_methods
   static RefreshDeviceStatusDto fromJson(Map<String, dynamic> json) => RefreshDeviceStatusDto(
         id: json[r'id'] == null ? null : json[r'id'] as String?,
-        status: json[r'status'] == null ? null : DeviceStatus.fromJson(json[r'status']),
+        status: json[r'status'] == null ? null : json[r'status'] as String?,
     );
 
   static List<RefreshDeviceStatusDto> listFromJson(List json, {bool? growable,}) =>

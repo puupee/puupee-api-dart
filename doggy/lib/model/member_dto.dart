@@ -36,15 +36,15 @@ class MemberDto {
 
   DateTime? fileExpiredAt;
 
-  MemberLevel? level;
+  String? level;
 
-  MemberLevel? todoLevel;
+  String? todoLevel;
 
-  MemberLevel? noteLevel;
+  String? noteLevel;
 
-  MemberLevel? albumLevel;
+  String? albumLevel;
 
-  MemberLevel? fileLevel;
+  String? fileLevel;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is MemberDto &&
@@ -119,11 +119,11 @@ class MemberDto {
         noteExpiredAt: json[r'noteExpiredAt'] == null ? null : mapDateTime(json, r'noteExpiredAt', ''),
         albumExpiredAt: json[r'albumExpiredAt'] == null ? null : mapDateTime(json, r'albumExpiredAt', ''),
         fileExpiredAt: json[r'fileExpiredAt'] == null ? null : mapDateTime(json, r'fileExpiredAt', ''),
-        level: json[r'level'] == null ? null : MemberLevel.fromJson(json[r'level']),
-        todoLevel: json[r'todoLevel'] == null ? null : MemberLevel.fromJson(json[r'todoLevel']),
-        noteLevel: json[r'noteLevel'] == null ? null : MemberLevel.fromJson(json[r'noteLevel']),
-        albumLevel: json[r'albumLevel'] == null ? null : MemberLevel.fromJson(json[r'albumLevel']),
-        fileLevel: json[r'fileLevel'] == null ? null : MemberLevel.fromJson(json[r'fileLevel']),
+        level: json[r'level'] == null ? null : json[r'level'] as String?,
+        todoLevel: json[r'todoLevel'] == null ? null : json[r'todoLevel'] as String?,
+        noteLevel: json[r'noteLevel'] == null ? null : json[r'noteLevel'] as String?,
+        albumLevel: json[r'albumLevel'] == null ? null : json[r'albumLevel'] as String?,
+        fileLevel: json[r'fileLevel'] == null ? null : json[r'fileLevel'] as String?,
     );
 
   static List<MemberDto> listFromJson(List json, {bool? growable,}) =>

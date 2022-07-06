@@ -23,14 +23,16 @@ class AppReleaseApi {
   ///
   /// * [String] environment:
   ///
-  /// * [Platform] platform:
+  /// * [String] platformPeriodName:
+  ///
+  /// * [String] platformPeriodValue:
   ///
   /// * [String] sorting:
   ///
   /// * [int] skipCount:
   ///
   /// * [int] maxResultCount:
-  Future<Response> apiAppAppReleaseGetWithHttpInfo({ String? appId, String? environment, Platform? platform, String? sorting, int? skipCount, int? maxResultCount, }) async {
+  Future<Response> apiAppAppReleaseGetWithHttpInfo({ String? appId, String? environment, String? platformPeriodName, String? platformPeriodValue, String? sorting, int? skipCount, int? maxResultCount, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/app/app-release';
 
@@ -47,8 +49,11 @@ class AppReleaseApi {
     if (environment != null) {
       queryParams.addAll(_convertParametersForCollectionFormat('', 'Environment', environment));
     }
-    if (platform != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'Platform', platform));
+    if (platformPeriodName != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'Platform.Name', platformPeriodName));
+    }
+    if (platformPeriodValue != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'Platform.Value', platformPeriodValue));
     }
     if (sorting != null) {
       queryParams.addAll(_convertParametersForCollectionFormat('', 'Sorting', sorting));
@@ -82,15 +87,17 @@ class AppReleaseApi {
   ///
   /// * [String] environment:
   ///
-  /// * [Platform] platform:
+  /// * [String] platformPeriodName:
+  ///
+  /// * [String] platformPeriodValue:
   ///
   /// * [String] sorting:
   ///
   /// * [int] skipCount:
   ///
   /// * [int] maxResultCount:
-  Future<AppReleaseDtoPagedResultDto?> apiAppAppReleaseGet({ String? appId, String? environment, Platform? platform, String? sorting, int? skipCount, int? maxResultCount, }) async {
-    final response = await apiAppAppReleaseGetWithHttpInfo( appId: appId, environment: environment, platform: platform, sorting: sorting, skipCount: skipCount, maxResultCount: maxResultCount, );
+  Future<AppReleaseDtoPagedResultDto?> apiAppAppReleaseGet({ String? appId, String? environment, String? platformPeriodName, String? platformPeriodValue, String? sorting, int? skipCount, int? maxResultCount, }) async {
+    final response = await apiAppAppReleaseGetWithHttpInfo( appId: appId, environment: environment, platformPeriodName: platformPeriodName, platformPeriodValue: platformPeriodValue, sorting: sorting, skipCount: skipCount, maxResultCount: maxResultCount, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

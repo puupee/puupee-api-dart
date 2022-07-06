@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
 **token** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
-**type** | [**Platform**](Platform.md) |  | [optional] 
+**type** | **String** |  | [optional] 
 **brand** | **String** |  | [optional] 
 **systemVersion** | **String** |  | [optional] 
 

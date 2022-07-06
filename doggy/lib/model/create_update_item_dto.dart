@@ -13,8 +13,8 @@ part of doggy_api;
 class CreateUpdateItemDto {
   /// Returns a new [CreateUpdateItemDto] instance.
   CreateUpdateItemDto({
-    this.id,
-    this.name,
+    required this.id,
+    required this.name,
     this.isHidden,
     this.description,
     this.password,
@@ -70,9 +70,9 @@ class CreateUpdateItemDto {
 
   String? contentType;
 
-  ItemType? type;
+  String? type;
 
-  DisplayStyle? displayStyle;
+  String? displayStyle;
 
   String? extension_;
 
@@ -92,7 +92,7 @@ class CreateUpdateItemDto {
 
   DateTime? lastModificationTime;
 
-  Priority? priority;
+  String? priority;
 
   DateTime? startAt;
 
@@ -100,13 +100,13 @@ class CreateUpdateItemDto {
 
   DateTime? notifyAt;
 
-  TodoNotifyTimingType? notifyTimingType;
+  String? notifyTimingType;
 
-  TodoNotifyTimingUnit? notifyTimingUnit;
+  String? notifyTimingUnit;
 
   int? notifyTimingValue;
 
-  TodoRepeat? repeat;
+  String? repeat;
 
   bool? isDone;
 
@@ -187,12 +187,8 @@ class CreateUpdateItemDto {
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (id != null) {
       json[r'id'] = id;
-    }
-    if (name != null) {
       json[r'name'] = name;
-    }
     if (isHidden != null) {
       json[r'isHidden'] = isHidden;
     }
@@ -301,8 +297,8 @@ class CreateUpdateItemDto {
         sliceMd5: json[r'sliceMd5'] == null ? null : json[r'sliceMd5'] as String?,
         rapidCode: json[r'rapidCode'] == null ? null : json[r'rapidCode'] as String?,
         contentType: json[r'contentType'] == null ? null : json[r'contentType'] as String?,
-        type: json[r'type'] == null ? null : ItemType.fromJson(json[r'type']),
-        displayStyle: json[r'displayStyle'] == null ? null : DisplayStyle.fromJson(json[r'displayStyle']),
+        type: json[r'type'] == null ? null : json[r'type'] as String?,
+        displayStyle: json[r'displayStyle'] == null ? null : json[r'displayStyle'] as String?,
         extension_: json[r'extension'] == null ? null : json[r'extension'] as String?,
         storageClass: json[r'storageClass'] == null ? null : json[r'storageClass'] as String?,
         fileCreatedAt: json[r'fileCreatedAt'] == null ? null : mapDateTime(json, r'fileCreatedAt', ''),
@@ -312,14 +308,14 @@ class CreateUpdateItemDto {
         deletionTime: json[r'deletionTime'] == null ? null : mapDateTime(json, r'deletionTime', ''),
         creationTime: json[r'creationTime'] == null ? null : mapDateTime(json, r'creationTime', ''),
         lastModificationTime: json[r'lastModificationTime'] == null ? null : mapDateTime(json, r'lastModificationTime', ''),
-        priority: json[r'priority'] == null ? null : Priority.fromJson(json[r'priority']),
+        priority: json[r'priority'] == null ? null : json[r'priority'] as String?,
         startAt: json[r'startAt'] == null ? null : mapDateTime(json, r'startAt', ''),
         endAt: json[r'endAt'] == null ? null : mapDateTime(json, r'endAt', ''),
         notifyAt: json[r'notifyAt'] == null ? null : mapDateTime(json, r'notifyAt', ''),
-        notifyTimingType: json[r'notifyTimingType'] == null ? null : TodoNotifyTimingType.fromJson(json[r'notifyTimingType']),
-        notifyTimingUnit: json[r'notifyTimingUnit'] == null ? null : TodoNotifyTimingUnit.fromJson(json[r'notifyTimingUnit']),
+        notifyTimingType: json[r'notifyTimingType'] == null ? null : json[r'notifyTimingType'] as String?,
+        notifyTimingUnit: json[r'notifyTimingUnit'] == null ? null : json[r'notifyTimingUnit'] as String?,
         notifyTimingValue: json[r'notifyTimingValue'] == null ? null : json[r'notifyTimingValue'] as int?,
-        repeat: json[r'repeat'] == null ? null : TodoRepeat.fromJson(json[r'repeat']),
+        repeat: json[r'repeat'] == null ? null : json[r'repeat'] as String?,
         isDone: json[r'isDone'] == null ? null : json[r'isDone'] as bool?,
         doneAt: json[r'doneAt'] == null ? null : mapDateTime(json, r'doneAt', ''),
     );

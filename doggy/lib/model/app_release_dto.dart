@@ -35,7 +35,7 @@ class AppReleaseDto {
 
   String? notes;
 
-  Platform? platform;
+  String? platform;
 
   String? key;
 
@@ -49,7 +49,7 @@ class AppReleaseDto {
 
   String? downloadUrl;
 
-  ProductType? productType;
+  String? productType;
 
   bool? isForceUpdate;
 
@@ -156,14 +156,14 @@ class AppReleaseDto {
   static AppReleaseDto fromJson(Map<String, dynamic> json) => AppReleaseDto(
         version: json[r'version'] == null ? null : json[r'version'] as String?,
         notes: json[r'notes'] == null ? null : json[r'notes'] as String?,
-        platform: json[r'platform'] == null ? null : Platform.fromJson(json[r'platform']),
+        platform: json[r'platform'] == null ? null : json[r'platform'] as String?,
         key: json[r'key'] == null ? null : json[r'key'] as String?,
         rapidCode: json[r'rapidCode'] == null ? null : json[r'rapidCode'] as String?,
         size: json[r'size'] == null ? null : json[r'size'] as int?,
         md5: json[r'md5'] == null ? null : json[r'md5'] as String?,
         sliceMd5: json[r'sliceMd5'] == null ? null : json[r'sliceMd5'] as String?,
         downloadUrl: json[r'downloadUrl'] == null ? null : json[r'downloadUrl'] as String?,
-        productType: json[r'productType'] == null ? null : ProductType.fromJson(json[r'productType']),
+        productType: json[r'productType'] == null ? null : json[r'productType'] as String?,
         isForceUpdate: json[r'isForceUpdate'] == null ? null : json[r'isForceUpdate'] as bool?,
         appId: json[r'appId'] == null ? null : json[r'appId'] as String?,
         isEnabled: json[r'isEnabled'] == null ? null : json[r'isEnabled'] as bool?,

@@ -8,8 +8,8 @@ import 'package:doggy_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | [optional] 
-**name** | **String** |  | [optional] 
+**id** | **String** |  | 
+**name** | **String** |  | 
 **isHidden** | **bool** |  | [optional] 
 **description** | **String** |  | [optional] 
 **password** | **String** |  | [optional] 
@@ -19,8 +19,8 @@ Name | Type | Description | Notes
 **sliceMd5** | **String** |  | [optional] 
 **rapidCode** | **String** |  | [optional] 
 **contentType** | **String** |  | [optional] 
-**type** | [**ItemType**](ItemType.md) |  | [optional] 
-**displayStyle** | [**DisplayStyle**](DisplayStyle.md) |  | [optional] 
+**type** | **String** |  | [optional] 
+**displayStyle** | **String** |  | [optional] 
 **extension_** | **String** |  | [optional] 
 **storageClass** | **String** |  | [optional] 
 **fileCreatedAt** | [**DateTime**](DateTime.md) |  | [optional] 
@@ -30,14 +30,14 @@ Name | Type | Description | Notes
 **deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
 **creationTime** | [**DateTime**](DateTime.md) |  | [optional] 
 **lastModificationTime** | [**DateTime**](DateTime.md) |  | [optional] 
-**priority** | [**Priority**](Priority.md) |  | [optional] 
+**priority** | **String** |  | [optional] 
 **startAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **endAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **notifyAt** | [**DateTime**](DateTime.md) |  | [optional] 
-**notifyTimingType** | [**TodoNotifyTimingType**](TodoNotifyTimingType.md) |  | [optional] 
-**notifyTimingUnit** | [**TodoNotifyTimingUnit**](TodoNotifyTimingUnit.md) |  | [optional] 
+**notifyTimingType** | **String** |  | [optional] 
+**notifyTimingUnit** | **String** |  | [optional] 
 **notifyTimingValue** | **int** |  | [optional] 
-**repeat** | [**TodoRepeat**](TodoRepeat.md) |  | [optional] 
+**repeat** | **String** |  | [optional] 
 **isDone** | **bool** |  | [optional] 
 **doneAt** | [**DateTime**](DateTime.md) |  | [optional] 
 

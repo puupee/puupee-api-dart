@@ -16,6 +16,7 @@ class AppDto {
     this.name,
     this.displayName,
     this.fromework,
+    this.appType,
     this.description,
     this.icon,
     this.gitRepository,
@@ -28,7 +29,9 @@ class AppDto {
 
   String? displayName;
 
-  Framework? fromework;
+  String? fromework;
+
+  String? appType;
 
   String? description;
 
@@ -36,7 +39,7 @@ class AppDto {
 
   String? gitRepository;
 
-  GitRepositoryType? gitRepositoryType;
+  String? gitRepositoryType;
 
   AppReleaseDto? latestRelease;
 
@@ -45,6 +48,7 @@ class AppDto {
      other.name == name &&
      other.displayName == displayName &&
      other.fromework == fromework &&
+     other.appType == appType &&
      other.description == description &&
      other.icon == icon &&
      other.gitRepository == gitRepository &&
@@ -56,6 +60,7 @@ class AppDto {
     name.hashCode +
     displayName.hashCode +
     fromework.hashCode +
+    appType.hashCode +
     description.hashCode +
     icon.hashCode +
     gitRepository.hashCode +
@@ -63,7 +68,7 @@ class AppDto {
     latestRelease.hashCode;
 
   @override
-  String toString() => 'AppDto[name=$name, displayName=$displayName, fromework=$fromework, description=$description, icon=$icon, gitRepository=$gitRepository, gitRepositoryType=$gitRepositoryType, latestRelease=$latestRelease]';
+  String toString() => 'AppDto[name=$name, displayName=$displayName, fromework=$fromework, appType=$appType, description=$description, icon=$icon, gitRepository=$gitRepository, gitRepositoryType=$gitRepositoryType, latestRelease=$latestRelease]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -75,6 +80,9 @@ class AppDto {
     }
     if (fromework != null) {
       json[r'fromework'] = fromework;
+    }
+    if (appType != null) {
+      json[r'appType'] = appType;
     }
     if (description != null) {
       json[r'description'] = description;
@@ -100,11 +108,12 @@ class AppDto {
   static AppDto fromJson(Map<String, dynamic> json) => AppDto(
         name: json[r'name'] == null ? null : json[r'name'] as String?,
         displayName: json[r'displayName'] == null ? null : json[r'displayName'] as String?,
-        fromework: json[r'fromework'] == null ? null : Framework.fromJson(json[r'fromework']),
+        fromework: json[r'fromework'] == null ? null : json[r'fromework'] as String?,
+        appType: json[r'appType'] == null ? null : json[r'appType'] as String?,
         description: json[r'description'] == null ? null : json[r'description'] as String?,
         icon: json[r'icon'] == null ? null : json[r'icon'] as String?,
         gitRepository: json[r'gitRepository'] == null ? null : json[r'gitRepository'] as String?,
-        gitRepositoryType: json[r'gitRepositoryType'] == null ? null : GitRepositoryType.fromJson(json[r'gitRepositoryType']),
+        gitRepositoryType: json[r'gitRepositoryType'] == null ? null : json[r'gitRepositoryType'] as String?,
         latestRelease: json[r'latestRelease'] == null ? null : AppReleaseDto.fromJson(json[r'latestRelease']),
     );
 

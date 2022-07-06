@@ -97,9 +97,9 @@ class ItemDto {
 
   String? contentType;
 
-  ItemType? type;
+  String? type;
 
-  DisplayStyle? displayStyle;
+  String? displayStyle;
 
   String? extension_;
 
@@ -115,7 +115,7 @@ class ItemDto {
 
   FileDto? thumb;
 
-  Priority? priority;
+  String? priority;
 
   DateTime? doneAt;
 
@@ -127,13 +127,13 @@ class ItemDto {
 
   DateTime? notifyAt;
 
-  TodoNotifyTimingType? notifyTimingType;
+  String? notifyTimingType;
 
-  TodoNotifyTimingUnit? notifyTimingUnit;
+  String? notifyTimingUnit;
 
   int? notifyTimingValue;
 
-  TodoRepeat? repeat;
+  String? repeat;
 
   int? syncVersion;
 
@@ -382,8 +382,8 @@ class ItemDto {
         sliceMd5: json[r'sliceMd5'] == null ? null : json[r'sliceMd5'] as String?,
         rapidCode: json[r'rapidCode'] == null ? null : json[r'rapidCode'] as String?,
         contentType: json[r'contentType'] == null ? null : json[r'contentType'] as String?,
-        type: json[r'type'] == null ? null : ItemType.fromJson(json[r'type']),
-        displayStyle: json[r'displayStyle'] == null ? null : DisplayStyle.fromJson(json[r'displayStyle']),
+        type: json[r'type'] == null ? null : json[r'type'] as String?,
+        displayStyle: json[r'displayStyle'] == null ? null : json[r'displayStyle'] as String?,
         extension_: json[r'extension'] == null ? null : json[r'extension'] as String?,
         storageClass: json[r'storageClass'] == null ? null : json[r'storageClass'] as String?,
         fileCreatedAt: json[r'fileCreatedAt'] == null ? null : mapDateTime(json, r'fileCreatedAt', ''),
@@ -391,16 +391,16 @@ class ItemDto {
         fileId: json[r'fileId'] == null ? null : json[r'fileId'] as String?,
         file: json[r'file'] == null ? null : FileDto.fromJson(json[r'file']),
         thumb: json[r'thumb'] == null ? null : FileDto.fromJson(json[r'thumb']),
-        priority: json[r'priority'] == null ? null : Priority.fromJson(json[r'priority']),
+        priority: json[r'priority'] == null ? null : json[r'priority'] as String?,
         doneAt: json[r'doneAt'] == null ? null : mapDateTime(json, r'doneAt', ''),
         isDone: json[r'isDone'] == null ? null : json[r'isDone'] as bool?,
         startAt: json[r'startAt'] == null ? null : mapDateTime(json, r'startAt', ''),
         endAt: json[r'endAt'] == null ? null : mapDateTime(json, r'endAt', ''),
         notifyAt: json[r'notifyAt'] == null ? null : mapDateTime(json, r'notifyAt', ''),
-        notifyTimingType: json[r'notifyTimingType'] == null ? null : TodoNotifyTimingType.fromJson(json[r'notifyTimingType']),
-        notifyTimingUnit: json[r'notifyTimingUnit'] == null ? null : TodoNotifyTimingUnit.fromJson(json[r'notifyTimingUnit']),
+        notifyTimingType: json[r'notifyTimingType'] == null ? null : json[r'notifyTimingType'] as String?,
+        notifyTimingUnit: json[r'notifyTimingUnit'] == null ? null : json[r'notifyTimingUnit'] as String?,
         notifyTimingValue: json[r'notifyTimingValue'] == null ? null : json[r'notifyTimingValue'] as int?,
-        repeat: json[r'repeat'] == null ? null : TodoRepeat.fromJson(json[r'repeat']),
+        repeat: json[r'repeat'] == null ? null : json[r'repeat'] as String?,
         syncVersion: json[r'syncVersion'] == null ? null : json[r'syncVersion'] as int?,
         isSpecialFolder: json[r'isSpecialFolder'] == null ? null : json[r'isSpecialFolder'] as bool?,
     );

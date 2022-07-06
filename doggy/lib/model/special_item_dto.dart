@@ -20,7 +20,7 @@ class SpecialItemDto {
 
   List<ItemDto>? items;
 
-  SpecialItems? names;
+  String? names;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is SpecialItemDto &&
@@ -51,7 +51,7 @@ class SpecialItemDto {
   // ignore: prefer_constructors_over_static_methods
   static SpecialItemDto fromJson(Map<String, dynamic> json) => SpecialItemDto(
         items: json[r'items'] == null ? null : ItemDto.listFromJson(json[r'items']),
-        names: json[r'names'] == null ? null : SpecialItems.fromJson(json[r'names']),
+        names: json[r'names'] == null ? null : json[r'names'] as String?,
     );
 
   static List<SpecialItemDto> listFromJson(List json, {bool? growable,}) =>

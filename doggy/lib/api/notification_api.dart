@@ -35,8 +35,10 @@ class NotificationApi {
   ///
   /// * [String] icon:
   ///
-  /// * [String] level:
-  Future<Response> apiAppNotificationBarkApiKeyMessageGetWithHttpInfo(String apiKey, String message, { int? automaticallyCopy, String? copy, String? url, String? isArchive, String? group, String? icon, String? level, }) async {
+  /// * [String] name:
+  ///
+  /// * [String] value:
+  Future<Response> apiAppNotificationBarkApiKeyMessageGetWithHttpInfo(String apiKey, String message, { int? automaticallyCopy, String? copy, String? url, String? isArchive, String? group, String? icon, String? name, String? value, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/app/notification/bark/{apiKey}/{message}'
       .replaceAll('{apiKey}', apiKey)
@@ -67,8 +69,11 @@ class NotificationApi {
     if (icon != null) {
       queryParams.addAll(_convertParametersForCollectionFormat('', 'icon', icon));
     }
-    if (level != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'level', level));
+    if (name != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'Name', name));
+    }
+    if (value != null) {
+      queryParams.addAll(_convertParametersForCollectionFormat('', 'Value', value));
     }
 
     const authNames = <String>['oauth2'];
@@ -105,9 +110,11 @@ class NotificationApi {
   ///
   /// * [String] icon:
   ///
-  /// * [String] level:
-  Future<Map<String, dynamic>?> apiAppNotificationBarkApiKeyMessageGet(String apiKey, String message, { int? automaticallyCopy, String? copy, String? url, String? isArchive, String? group, String? icon, String? level, }) async {
-    final response = await apiAppNotificationBarkApiKeyMessageGetWithHttpInfo(apiKey, message,  automaticallyCopy: automaticallyCopy, copy: copy, url: url, isArchive: isArchive, group: group, icon: icon, level: level, );
+  /// * [String] name:
+  ///
+  /// * [String] value:
+  Future<Map<String, dynamic>?> apiAppNotificationBarkApiKeyMessageGet(String apiKey, String message, { int? automaticallyCopy, String? copy, String? url, String? isArchive, String? group, String? icon, String? name, String? value, }) async {
+    final response = await apiAppNotificationBarkApiKeyMessageGetWithHttpInfo(apiKey, message,  automaticallyCopy: automaticallyCopy, copy: copy, url: url, isArchive: isArchive, group: group, icon: icon, name: name, value: value, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

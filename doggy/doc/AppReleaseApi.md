@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **apiAppAppReleaseGet**
-> AppReleaseDtoPagedResultDto apiAppAppReleaseGet(appId, environment, platform, sorting, skipCount, maxResultCount)
+> AppReleaseDtoPagedResultDto apiAppAppReleaseGet(appId, environment, platformPeriodName, platformPeriodValue, sorting, skipCount, maxResultCount)
 
 
 
@@ -30,13 +30,14 @@ import 'package:doggy_api/api.dart';
 final api_instance = AppReleaseApi();
 final appId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 final environment = environment_example; // String | 
-final platform = ; // Platform | 
+final platformPeriodName = platformPeriodName_example; // String | 
+final platformPeriodValue = platformPeriodValue_example; // String | 
 final sorting = sorting_example; // String | 
 final skipCount = 56; // int | 
 final maxResultCount = 56; // int | 
 
 try {
-    final result = api_instance.apiAppAppReleaseGet(appId, environment, platform, sorting, skipCount, maxResultCount);
+    final result = api_instance.apiAppAppReleaseGet(appId, environment, platformPeriodName, platformPeriodValue, sorting, skipCount, maxResultCount);
     print(result);
 } catch (e) {
     print('Exception when calling AppReleaseApi->apiAppAppReleaseGet: $e\n');
@@ -49,7 +50,8 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **appId** | **String**|  | [optional] 
  **environment** | **String**|  | [optional] 
- **platform** | [**Platform**](.md)|  | [optional] 
+ **platformPeriodName** | **String**|  | [optional] 
+ **platformPeriodValue** | **String**|  | [optional] 
  **sorting** | **String**|  | [optional] 
  **skipCount** | **int**|  | [optional] 
  **maxResultCount** | **int**|  | [optional] 
