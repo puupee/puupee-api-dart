@@ -13,6 +13,14 @@ part of doggy_api;
 class AppDto {
   /// Returns a new [AppDto] instance.
   AppDto({
+    this.id,
+    this.creationTime,
+    this.creatorId,
+    this.lastModificationTime,
+    this.lastModifierId,
+    this.isDeleted,
+    this.deleterId,
+    this.deletionTime,
     this.name,
     this.displayName,
     this.fromework,
@@ -24,6 +32,22 @@ class AppDto {
     this.latestRelease,
   });
 
+
+  String? id;
+
+  DateTime? creationTime;
+
+  String? creatorId;
+
+  DateTime? lastModificationTime;
+
+  String? lastModifierId;
+
+  bool? isDeleted;
+
+  String? deleterId;
+
+  DateTime? deletionTime;
 
   String? name;
 
@@ -45,6 +69,14 @@ class AppDto {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is AppDto &&
+     other.id == id &&
+     other.creationTime == creationTime &&
+     other.creatorId == creatorId &&
+     other.lastModificationTime == lastModificationTime &&
+     other.lastModifierId == lastModifierId &&
+     other.isDeleted == isDeleted &&
+     other.deleterId == deleterId &&
+     other.deletionTime == deletionTime &&
      other.name == name &&
      other.displayName == displayName &&
      other.fromework == fromework &&
@@ -57,6 +89,14 @@ class AppDto {
 
   @override
   int get hashCode =>
+    id.hashCode +
+    creationTime.hashCode +
+    creatorId.hashCode +
+    lastModificationTime.hashCode +
+    lastModifierId.hashCode +
+    isDeleted.hashCode +
+    deleterId.hashCode +
+    deletionTime.hashCode +
     name.hashCode +
     displayName.hashCode +
     fromework.hashCode +
@@ -68,10 +108,34 @@ class AppDto {
     latestRelease.hashCode;
 
   @override
-  String toString() => 'AppDto[name=$name, displayName=$displayName, fromework=$fromework, appType=$appType, description=$description, icon=$icon, gitRepository=$gitRepository, gitRepositoryType=$gitRepositoryType, latestRelease=$latestRelease]';
+  String toString() => 'AppDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, displayName=$displayName, fromework=$fromework, appType=$appType, description=$description, icon=$icon, gitRepository=$gitRepository, gitRepositoryType=$gitRepositoryType, latestRelease=$latestRelease]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
+    if (id != null) {
+      json[r'id'] = id;
+    }
+    if (creationTime != null) {
+      json[r'creationTime'] = creationTime!.toUtc().toIso8601String();
+    }
+    if (creatorId != null) {
+      json[r'creatorId'] = creatorId;
+    }
+    if (lastModificationTime != null) {
+      json[r'lastModificationTime'] = lastModificationTime!.toUtc().toIso8601String();
+    }
+    if (lastModifierId != null) {
+      json[r'lastModifierId'] = lastModifierId;
+    }
+    if (isDeleted != null) {
+      json[r'isDeleted'] = isDeleted;
+    }
+    if (deleterId != null) {
+      json[r'deleterId'] = deleterId;
+    }
+    if (deletionTime != null) {
+      json[r'deletionTime'] = deletionTime!.toUtc().toIso8601String();
+    }
     if (name != null) {
       json[r'name'] = name;
     }
@@ -106,6 +170,14 @@ class AppDto {
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
   static AppDto fromJson(Map<String, dynamic> json) => AppDto(
+        id: json[r'id'] == null ? null : json[r'id'] as String?,
+        creationTime: json[r'creationTime'] == null ? null : mapDateTime(json, r'creationTime', ''),
+        creatorId: json[r'creatorId'] == null ? null : json[r'creatorId'] as String?,
+        lastModificationTime: json[r'lastModificationTime'] == null ? null : mapDateTime(json, r'lastModificationTime', ''),
+        lastModifierId: json[r'lastModifierId'] == null ? null : json[r'lastModifierId'] as String?,
+        isDeleted: json[r'isDeleted'] == null ? null : json[r'isDeleted'] as bool?,
+        deleterId: json[r'deleterId'] == null ? null : json[r'deleterId'] as String?,
+        deletionTime: json[r'deletionTime'] == null ? null : mapDateTime(json, r'deletionTime', ''),
         name: json[r'name'] == null ? null : json[r'name'] as String?,
         displayName: json[r'displayName'] == null ? null : json[r'displayName'] as String?,
         fromework: json[r'fromework'] == null ? null : json[r'fromework'] as String?,

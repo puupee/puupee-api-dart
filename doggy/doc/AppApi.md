@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**apiAppAppByNameGet**](AppApi.md#apiappappbynameget) | **GET** /api/app/app/by-name | 
 [**apiAppAppFileOrCredentialsGet**](AppApi.md#apiappappfileorcredentialsget) | **GET** /api/app/app/file-or-credentials | 
 [**apiAppAppGet**](AppApi.md#apiappappget) | **GET** /api/app/app | 
 [**apiAppAppIdDelete**](AppApi.md#apiappappiddelete) | **DELETE** /api/app/app/{id} | 
@@ -16,6 +17,49 @@ Method | HTTP request | Description
 [**apiAppAppIdPut**](AppApi.md#apiappappidput) | **PUT** /api/app/app/{id} | 
 [**apiAppAppPost**](AppApi.md#apiappapppost) | **POST** /api/app/app | 
 
+
+# **apiAppAppByNameGet**
+> AppDto apiAppAppByNameGet(name)
+
+
+
+### Example
+```dart
+import 'package:doggy_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api_instance = AppApi();
+final name = name_example; // String | 
+
+try {
+    final result = api_instance.apiAppAppByNameGet(name);
+    print(result);
+} catch (e) {
+    print('Exception when calling AppApi->apiAppAppByNameGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**|  | [optional] 
+
+### Return type
+
+[**AppDto**](AppDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppAppFileOrCredentialsGet**
 > FileOrCredentialsDto apiAppAppFileOrCredentialsGet(rapidCode, key)

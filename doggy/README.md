@@ -43,14 +43,13 @@ import 'package:doggy_api/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = AppApi();
-final rapidCode = rapidCode_example; // String | 
-final key = key_example; // String | 
+final name = name_example; // String | 
 
 try {
-    final result = api_instance.apiAppAppFileOrCredentialsGet(rapidCode, key);
+    final result = api_instance.apiAppAppByNameGet(name);
     print(result);
 } catch (e) {
-    print('Exception when calling AppApi->apiAppAppFileOrCredentialsGet: $e\n');
+    print('Exception when calling AppApi->apiAppAppByNameGet: $e\n');
 }
 
 ```
@@ -61,6 +60,7 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AppApi* | [**apiAppAppByNameGet**](doc\/AppApi.md#apiappappbynameget) | **GET** /api/app/app/by-name | 
 *AppApi* | [**apiAppAppFileOrCredentialsGet**](doc\/AppApi.md#apiappappfileorcredentialsget) | **GET** /api/app/app/file-or-credentials | 
 *AppApi* | [**apiAppAppGet**](doc\/AppApi.md#apiappappget) | **GET** /api/app/app | 
 *AppApi* | [**apiAppAppIdDelete**](doc\/AppApi.md#apiappappiddelete) | **DELETE** /api/app/app/{id} | 
