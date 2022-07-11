@@ -92,7 +92,7 @@ class CreateUpdateItemDto {
 
   DateTime? lastModificationTime;
 
-  String? priority;
+  int? priority;
 
   DateTime? startAt;
 
@@ -308,7 +308,7 @@ class CreateUpdateItemDto {
         deletionTime: json[r'deletionTime'] == null ? null : mapDateTime(json, r'deletionTime', ''),
         creationTime: json[r'creationTime'] == null ? null : mapDateTime(json, r'creationTime', ''),
         lastModificationTime: json[r'lastModificationTime'] == null ? null : mapDateTime(json, r'lastModificationTime', ''),
-        priority: json[r'priority'] == null ? null : json[r'priority'] as String?,
+        priority: json[r'priority'] == null ? null : json[r'priority'] as int?,
         startAt: json[r'startAt'] == null ? null : mapDateTime(json, r'startAt', ''),
         endAt: json[r'endAt'] == null ? null : mapDateTime(json, r'endAt', ''),
         notifyAt: json[r'notifyAt'] == null ? null : mapDateTime(json, r'notifyAt', ''),

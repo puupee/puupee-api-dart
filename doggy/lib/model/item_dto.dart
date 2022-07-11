@@ -115,7 +115,7 @@ class ItemDto {
 
   FileDto? thumb;
 
-  String? priority;
+  int? priority;
 
   DateTime? doneAt;
 
@@ -391,7 +391,7 @@ class ItemDto {
         fileId: json[r'fileId'] == null ? null : json[r'fileId'] as String?,
         file: json[r'file'] == null ? null : FileDto.fromJson(json[r'file']),
         thumb: json[r'thumb'] == null ? null : FileDto.fromJson(json[r'thumb']),
-        priority: json[r'priority'] == null ? null : json[r'priority'] as String?,
+        priority: json[r'priority'] == null ? null : json[r'priority'] as int?,
         doneAt: json[r'doneAt'] == null ? null : mapDateTime(json, r'doneAt', ''),
         isDone: json[r'isDone'] == null ? null : json[r'isDone'] as bool?,
         startAt: json[r'startAt'] == null ? null : mapDateTime(json, r'startAt', ''),

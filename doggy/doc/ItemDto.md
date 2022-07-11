@@ -37,7 +37,7 @@ Name | Type | Description | Notes
 **fileId** | **String** |  | [optional] 
 **file** | [**FileDto**](FileDto.md) |  | [optional] 
 **thumb** | [**FileDto**](FileDto.md) |  | [optional] 
-**priority** | **String** |  | [optional] 
+**priority** | **int** |  | [optional] 
 **doneAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **isDone** | **bool** |  | [optional] 
 **startAt** | [**DateTime**](DateTime.md) |  | [optional] 

@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
 **creationTime** | [**DateTime**](DateTime.md) |  | [optional] 
 **lastModificationTime** | [**DateTime**](DateTime.md) |  | [optional] 
-**priority** | **String** |  | [optional] 
+**priority** | **int** |  | [optional] 
 **startAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **endAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **notifyAt** | [**DateTime**](DateTime.md) |  | [optional] 
