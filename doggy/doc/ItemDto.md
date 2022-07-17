@@ -47,6 +47,8 @@ Name | Type | Description | Notes
 **notifyTimingUnit** | **String** |  | [optional] 
 **notifyTimingValue** | **int** |  | [optional] 
 **repeat** | **String** |  | [optional] 
+**repeatOffAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**repeatOffTimes** | **int** |  | [optional] 
 **syncVersion** | **int** |  | [optional] 
 **isSpecialFolder** | **bool** |  | [optional] [readonly] 
 

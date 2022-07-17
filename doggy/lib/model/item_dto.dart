@@ -52,6 +52,8 @@ class ItemDto {
     this.notifyTimingUnit,
     this.notifyTimingValue,
     this.repeat,
+    this.repeatOffAt,
+    this.repeatOffTimes,
     this.syncVersion,
     this.isSpecialFolder,
   });
@@ -135,6 +137,10 @@ class ItemDto {
 
   String? repeat;
 
+  DateTime? repeatOffAt;
+
+  int? repeatOffTimes;
+
   int? syncVersion;
 
   bool? isSpecialFolder;
@@ -180,6 +186,8 @@ class ItemDto {
      other.notifyTimingUnit == notifyTimingUnit &&
      other.notifyTimingValue == notifyTimingValue &&
      other.repeat == repeat &&
+     other.repeatOffAt == repeatOffAt &&
+     other.repeatOffTimes == repeatOffTimes &&
      other.syncVersion == syncVersion &&
      other.isSpecialFolder == isSpecialFolder;
 
@@ -224,11 +232,13 @@ class ItemDto {
     notifyTimingUnit.hashCode +
     notifyTimingValue.hashCode +
     repeat.hashCode +
+    repeatOffAt.hashCode +
+    repeatOffTimes.hashCode +
     syncVersion.hashCode +
     isSpecialFolder.hashCode;
 
   @override
-  String toString() => 'ItemDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, description=$description, totalCount=$totalCount, password=$password, parentId=$parentId, key=$key, url=$url, size=$size, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, fileId=$fileId, file=$file, thumb=$thumb, priority=$priority, doneAt=$doneAt, isDone=$isDone, startAt=$startAt, endAt=$endAt, notifyAt=$notifyAt, notifyTimingType=$notifyTimingType, notifyTimingUnit=$notifyTimingUnit, notifyTimingValue=$notifyTimingValue, repeat=$repeat, syncVersion=$syncVersion, isSpecialFolder=$isSpecialFolder]';
+  String toString() => 'ItemDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, description=$description, totalCount=$totalCount, password=$password, parentId=$parentId, key=$key, url=$url, size=$size, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, fileId=$fileId, file=$file, thumb=$thumb, priority=$priority, doneAt=$doneAt, isDone=$isDone, startAt=$startAt, endAt=$endAt, notifyAt=$notifyAt, notifyTimingType=$notifyTimingType, notifyTimingUnit=$notifyTimingUnit, notifyTimingValue=$notifyTimingValue, repeat=$repeat, repeatOffAt=$repeatOffAt, repeatOffTimes=$repeatOffTimes, syncVersion=$syncVersion, isSpecialFolder=$isSpecialFolder]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -349,6 +359,12 @@ class ItemDto {
     if (repeat != null) {
       json[r'repeat'] = repeat;
     }
+    if (repeatOffAt != null) {
+      json[r'repeatOffAt'] = repeatOffAt!.toUtc().toIso8601String();
+    }
+    if (repeatOffTimes != null) {
+      json[r'repeatOffTimes'] = repeatOffTimes;
+    }
     if (syncVersion != null) {
       json[r'syncVersion'] = syncVersion;
     }
@@ -401,6 +417,8 @@ class ItemDto {
         notifyTimingUnit: json[r'notifyTimingUnit'] == null ? null : json[r'notifyTimingUnit'] as String?,
         notifyTimingValue: json[r'notifyTimingValue'] == null ? null : json[r'notifyTimingValue'] as int?,
         repeat: json[r'repeat'] == null ? null : json[r'repeat'] as String?,
+        repeatOffAt: json[r'repeatOffAt'] == null ? null : mapDateTime(json, r'repeatOffAt', ''),
+        repeatOffTimes: json[r'repeatOffTimes'] == null ? null : json[r'repeatOffTimes'] as int?,
         syncVersion: json[r'syncVersion'] == null ? null : json[r'syncVersion'] as int?,
         isSpecialFolder: json[r'isSpecialFolder'] == null ? null : json[r'isSpecialFolder'] as bool?,
     );

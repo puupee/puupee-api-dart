@@ -43,6 +43,8 @@ class CreateUpdateItemDto {
     this.notifyTimingUnit,
     this.notifyTimingValue,
     this.repeat,
+    this.repeatOffAt,
+    this.repeatOffTimes,
     this.isDone,
     this.doneAt,
   });
@@ -108,6 +110,10 @@ class CreateUpdateItemDto {
 
   String? repeat;
 
+  DateTime? repeatOffAt;
+
+  int? repeatOffTimes;
+
   bool? isDone;
 
   DateTime? doneAt;
@@ -144,6 +150,8 @@ class CreateUpdateItemDto {
      other.notifyTimingUnit == notifyTimingUnit &&
      other.notifyTimingValue == notifyTimingValue &&
      other.repeat == repeat &&
+     other.repeatOffAt == repeatOffAt &&
+     other.repeatOffTimes == repeatOffTimes &&
      other.isDone == isDone &&
      other.doneAt == doneAt;
 
@@ -179,11 +187,13 @@ class CreateUpdateItemDto {
     notifyTimingUnit.hashCode +
     notifyTimingValue.hashCode +
     repeat.hashCode +
+    repeatOffAt.hashCode +
+    repeatOffTimes.hashCode +
     isDone.hashCode +
     doneAt.hashCode;
 
   @override
-  String toString() => 'CreateUpdateItemDto[id=$id, name=$name, isHidden=$isHidden, description=$description, password=$password, parentId=$parentId, key=$key, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, syncVersion=$syncVersion, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime, priority=$priority, startAt=$startAt, endAt=$endAt, notifyAt=$notifyAt, notifyTimingType=$notifyTimingType, notifyTimingUnit=$notifyTimingUnit, notifyTimingValue=$notifyTimingValue, repeat=$repeat, isDone=$isDone, doneAt=$doneAt]';
+  String toString() => 'CreateUpdateItemDto[id=$id, name=$name, isHidden=$isHidden, description=$description, password=$password, parentId=$parentId, key=$key, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, syncVersion=$syncVersion, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime, priority=$priority, startAt=$startAt, endAt=$endAt, notifyAt=$notifyAt, notifyTimingType=$notifyTimingType, notifyTimingUnit=$notifyTimingUnit, notifyTimingValue=$notifyTimingValue, repeat=$repeat, repeatOffAt=$repeatOffAt, repeatOffTimes=$repeatOffTimes, isDone=$isDone, doneAt=$doneAt]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -273,6 +283,12 @@ class CreateUpdateItemDto {
     if (repeat != null) {
       json[r'repeat'] = repeat;
     }
+    if (repeatOffAt != null) {
+      json[r'repeatOffAt'] = repeatOffAt!.toUtc().toIso8601String();
+    }
+    if (repeatOffTimes != null) {
+      json[r'repeatOffTimes'] = repeatOffTimes;
+    }
     if (isDone != null) {
       json[r'isDone'] = isDone;
     }
@@ -316,6 +332,8 @@ class CreateUpdateItemDto {
         notifyTimingUnit: json[r'notifyTimingUnit'] == null ? null : json[r'notifyTimingUnit'] as String?,
         notifyTimingValue: json[r'notifyTimingValue'] == null ? null : json[r'notifyTimingValue'] as int?,
         repeat: json[r'repeat'] == null ? null : json[r'repeat'] as String?,
+        repeatOffAt: json[r'repeatOffAt'] == null ? null : mapDateTime(json, r'repeatOffAt', ''),
+        repeatOffTimes: json[r'repeatOffTimes'] == null ? null : json[r'repeatOffTimes'] as int?,
         isDone: json[r'isDone'] == null ? null : json[r'isDone'] as bool?,
         doneAt: json[r'doneAt'] == null ? null : mapDateTime(json, r'doneAt', ''),
     );
