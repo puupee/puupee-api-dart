@@ -14,26 +14,34 @@ class SyncItemChangedEto {
   /// Returns a new [SyncItemChangedEto] instance.
   SyncItemChangedEto({
     this.data,
+    this.userId,
   });
 
 
   ItemDto? data;
 
+  String? userId;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is SyncItemChangedEto &&
-     other.data == data;
+     other.data == data &&
+     other.userId == userId;
 
   @override
   int get hashCode =>
-    data.hashCode;
+    data.hashCode +
+    userId.hashCode;
 
   @override
-  String toString() => 'SyncItemChangedEto[data=$data]';
+  String toString() => 'SyncItemChangedEto[data=$data, userId=$userId]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
     if (data != null) {
       json[r'data'] = data;
+    }
+    if (userId != null) {
+      json[r'userId'] = userId;
     }
     return json;
   }
@@ -43,6 +51,7 @@ class SyncItemChangedEto {
   // ignore: prefer_constructors_over_static_methods
   static SyncItemChangedEto fromJson(Map<String, dynamic> json) => SyncItemChangedEto(
         data: json[r'data'] == null ? null : ItemDto.fromJson(json[r'data']),
+        userId: json[r'userId'] == null ? null : json[r'userId'] as String?,
     );
 
   static List<SyncItemChangedEto> listFromJson(List json, {bool? growable,}) =>
