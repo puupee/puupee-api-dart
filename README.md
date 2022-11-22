@@ -92,8 +92,8 @@ Class | Method | HTTP request | Description
 *FeaturesApi* | [**apiFeatureManagementFeaturesGet**](doc//FeaturesApi.md#apifeaturemanagementfeaturesget) | **GET** /api/feature-management/features | 
 *FeaturesApi* | [**apiFeatureManagementFeaturesPut**](doc//FeaturesApi.md#apifeaturemanagementfeaturesput) | **PUT** /api/feature-management/features | 
 *FileApi* | [**apiAppFileFileOrCredentialsGet**](doc//FileApi.md#apiappfilefileorcredentialsget) | **GET** /api/app/file/file-or-credentials | 
+*FileApi* | [**apiAppFileMyGet**](doc//FileApi.md#apiappfilemyget) | **GET** /api/app/file/my | 
 *FileApi* | [**apiAppFilePreSignUrlPost**](doc//FileApi.md#apiappfilepresignurlpost) | **POST** /api/app/file/pre-sign-url | 
-*FileApi* | [**apiAppFileUrlPost**](doc//FileApi.md#apiappfileurlpost) | **POST** /api/app/file/url | 
 *HomeApi* | [**healthzGet**](doc//HomeApi.md#healthzget) | **GET** /healthz | 
 *ItemApi* | [**apiAppItemPullGet**](doc//ItemApi.md#apiappitempullget) | **GET** /api/app/item/pull | 
 *ItemApi* | [**apiAppItemPushPost**](doc//ItemApi.md#apiappitempushpost) | **POST** /api/app/item/push | 
