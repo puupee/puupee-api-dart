@@ -34,6 +34,7 @@ class FileDto {
     this.fileCreatedAt,
     this.fileUpdatedAt,
     this.syncVersion,
+    this.password,
   });
 
 
@@ -79,6 +80,8 @@ class FileDto {
 
   int? syncVersion;
 
+  String? password;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is FileDto &&
      other.id == id &&
@@ -101,7 +104,8 @@ class FileDto {
      other.storageClass == storageClass &&
      other.fileCreatedAt == fileCreatedAt &&
      other.fileUpdatedAt == fileUpdatedAt &&
-     other.syncVersion == syncVersion;
+     other.syncVersion == syncVersion &&
+     other.password == password;
 
   @override
   int get hashCode =>
@@ -125,10 +129,11 @@ class FileDto {
     storageClass.hashCode +
     fileCreatedAt.hashCode +
     fileUpdatedAt.hashCode +
-    syncVersion.hashCode;
+    syncVersion.hashCode +
+    password.hashCode;
 
   @override
-  String toString() => 'FileDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, key=$key, url=$url, size=$size, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, syncVersion=$syncVersion]';
+  String toString() => 'FileDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, key=$key, url=$url, size=$size, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, syncVersion=$syncVersion, password=$password]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -195,6 +200,9 @@ class FileDto {
     if (syncVersion != null) {
       json[r'syncVersion'] = syncVersion;
     }
+    if (password != null) {
+      json[r'password'] = password;
+    }
     return json;
   }
 
@@ -223,6 +231,7 @@ class FileDto {
         fileCreatedAt: json[r'fileCreatedAt'] == null ? null : mapDateTime(json, r'fileCreatedAt', ''),
         fileUpdatedAt: json[r'fileUpdatedAt'] == null ? null : mapDateTime(json, r'fileUpdatedAt', ''),
         syncVersion: json[r'syncVersion'] == null ? null : json[r'syncVersion'] as int?,
+        password: json[r'password'] == null ? null : json[r'password'] as String?,
     );
 
   static List<FileDto> listFromJson(List json, {bool? growable,}) =>

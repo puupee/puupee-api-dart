@@ -1,4 +1,4 @@
-# doggy_api.model.FileDto
+# doggy_api.model.AppUserScoreDto
 
 ## Load the model package
 ```dart
@@ -16,20 +16,9 @@ Name | Type | Description | Notes
 **isDeleted** | **bool** |  | [optional] 
 **deleterId** | **String** |  | [optional] 
 **deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
-**name** | **String** |  | [optional] 
-**key** | **String** |  | [optional] 
-**url** | **String** |  | [optional] 
-**size** | **int** |  | [optional] 
-**md5** | **String** |  | [optional] 
-**sliceMd5** | **String** |  | [optional] 
-**rapidCode** | **String** |  | [optional] 
-**contentType** | **String** |  | [optional] 
-**extension_** | **String** |  | [optional] 
-**storageClass** | **String** |  | [optional] 
-**fileCreatedAt** | [**DateTime**](DateTime.md) |  | [optional] 
-**fileUpdatedAt** | [**DateTime**](DateTime.md) |  | [optional] 
-**syncVersion** | **int** |  | [optional] 
-**password** | **String** |  | [optional] 
+**appId** | **String** |  | [optional] 
+**score** | **int** |  | [optional] 
+**comment** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

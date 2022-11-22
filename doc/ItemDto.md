@@ -17,8 +17,8 @@ Name | Type | Description | Notes
 **deleterId** | **String** |  | [optional] 
 **deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
 **name** | **String** |  | [optional] 
+**title** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
-**totalCount** | **int** |  | [optional] 
 **password** | **String** |  | [optional] 
 **parentId** | **String** |  | [optional] 
 **key** | **String** |  | [optional] 
@@ -50,7 +50,8 @@ Name | Type | Description | Notes
 **repeatOffAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **repeatOffTimes** | **int** |  | [optional] 
 **syncVersion** | **int** |  | [optional] 
-**isSpecialFolder** | **bool** |  | [optional] [readonly] 
+**isHidden** | **bool** |  | [optional] 
+**tagging** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

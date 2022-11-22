@@ -15,6 +15,7 @@ class CreateUpdateItemDto {
   CreateUpdateItemDto({
     required this.id,
     required this.name,
+    this.title,
     this.isHidden,
     this.description,
     this.password,
@@ -47,12 +48,20 @@ class CreateUpdateItemDto {
     this.repeatOffTimes,
     this.isDone,
     this.doneAt,
+    this.creatorId,
+    this.lastModifierId,
+    this.deleterId,
+    this.tagging,
+    this.url,
+    this.size,
   });
 
 
   String? id;
 
   String? name;
+
+  String? title;
 
   bool? isHidden;
 
@@ -118,10 +127,23 @@ class CreateUpdateItemDto {
 
   DateTime? doneAt;
 
+  String? creatorId;
+
+  String? lastModifierId;
+
+  String? deleterId;
+
+  String? tagging;
+
+  String? url;
+
+  int? size;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateUpdateItemDto &&
      other.id == id &&
      other.name == name &&
+     other.title == title &&
      other.isHidden == isHidden &&
      other.description == description &&
      other.password == password &&
@@ -153,12 +175,19 @@ class CreateUpdateItemDto {
      other.repeatOffAt == repeatOffAt &&
      other.repeatOffTimes == repeatOffTimes &&
      other.isDone == isDone &&
-     other.doneAt == doneAt;
+     other.doneAt == doneAt &&
+     other.creatorId == creatorId &&
+     other.lastModifierId == lastModifierId &&
+     other.deleterId == deleterId &&
+     other.tagging == tagging &&
+     other.url == url &&
+     other.size == size;
 
   @override
   int get hashCode =>
     id.hashCode +
     name.hashCode +
+    title.hashCode +
     isHidden.hashCode +
     description.hashCode +
     password.hashCode +
@@ -190,15 +219,24 @@ class CreateUpdateItemDto {
     repeatOffAt.hashCode +
     repeatOffTimes.hashCode +
     isDone.hashCode +
-    doneAt.hashCode;
+    doneAt.hashCode +
+    creatorId.hashCode +
+    lastModifierId.hashCode +
+    deleterId.hashCode +
+    tagging.hashCode +
+    url.hashCode +
+    size.hashCode;
 
   @override
-  String toString() => 'CreateUpdateItemDto[id=$id, name=$name, isHidden=$isHidden, description=$description, password=$password, parentId=$parentId, key=$key, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, syncVersion=$syncVersion, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime, priority=$priority, startAt=$startAt, endAt=$endAt, notifyAt=$notifyAt, notifyTimingType=$notifyTimingType, notifyTimingUnit=$notifyTimingUnit, notifyTimingValue=$notifyTimingValue, repeat=$repeat, repeatOffAt=$repeatOffAt, repeatOffTimes=$repeatOffTimes, isDone=$isDone, doneAt=$doneAt]';
+  String toString() => 'CreateUpdateItemDto[id=$id, name=$name, title=$title, isHidden=$isHidden, description=$description, password=$password, parentId=$parentId, key=$key, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, syncVersion=$syncVersion, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime, priority=$priority, startAt=$startAt, endAt=$endAt, notifyAt=$notifyAt, notifyTimingType=$notifyTimingType, notifyTimingUnit=$notifyTimingUnit, notifyTimingValue=$notifyTimingValue, repeat=$repeat, repeatOffAt=$repeatOffAt, repeatOffTimes=$repeatOffTimes, isDone=$isDone, doneAt=$doneAt, creatorId=$creatorId, lastModifierId=$lastModifierId, deleterId=$deleterId, tagging=$tagging, url=$url, size=$size]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
       json[r'id'] = id;
       json[r'name'] = name;
+    if (title != null) {
+      json[r'title'] = title;
+    }
     if (isHidden != null) {
       json[r'isHidden'] = isHidden;
     }
@@ -295,6 +333,24 @@ class CreateUpdateItemDto {
     if (doneAt != null) {
       json[r'doneAt'] = doneAt!.toUtc().toIso8601String();
     }
+    if (creatorId != null) {
+      json[r'creatorId'] = creatorId;
+    }
+    if (lastModifierId != null) {
+      json[r'lastModifierId'] = lastModifierId;
+    }
+    if (deleterId != null) {
+      json[r'deleterId'] = deleterId;
+    }
+    if (tagging != null) {
+      json[r'tagging'] = tagging;
+    }
+    if (url != null) {
+      json[r'url'] = url;
+    }
+    if (size != null) {
+      json[r'size'] = size;
+    }
     return json;
   }
 
@@ -304,6 +360,7 @@ class CreateUpdateItemDto {
   static CreateUpdateItemDto fromJson(Map<String, dynamic> json) => CreateUpdateItemDto(
         id: json[r'id'] == null ? null : json[r'id'] as String?,
         name: json[r'name'] == null ? null : json[r'name'] as String?,
+        title: json[r'title'] == null ? null : json[r'title'] as String?,
         isHidden: json[r'isHidden'] == null ? null : json[r'isHidden'] as bool?,
         description: json[r'description'] == null ? null : json[r'description'] as String?,
         password: json[r'password'] == null ? null : json[r'password'] as String?,
@@ -336,6 +393,12 @@ class CreateUpdateItemDto {
         repeatOffTimes: json[r'repeatOffTimes'] == null ? null : json[r'repeatOffTimes'] as int?,
         isDone: json[r'isDone'] == null ? null : json[r'isDone'] as bool?,
         doneAt: json[r'doneAt'] == null ? null : mapDateTime(json, r'doneAt', ''),
+        creatorId: json[r'creatorId'] == null ? null : json[r'creatorId'] as String?,
+        lastModifierId: json[r'lastModifierId'] == null ? null : json[r'lastModifierId'] as String?,
+        deleterId: json[r'deleterId'] == null ? null : json[r'deleterId'] as String?,
+        tagging: json[r'tagging'] == null ? null : json[r'tagging'] as String?,
+        url: json[r'url'] == null ? null : json[r'url'] as String?,
+        size: json[r'size'] == null ? null : json[r'size'] as int?,
     );
 
   static List<CreateUpdateItemDto> listFromJson(List json, {bool? growable,}) =>

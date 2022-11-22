@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | 
 **name** | **String** |  | 
+**title** | **String** |  | [optional] 
 **isHidden** | **bool** |  | [optional] 
 **description** | **String** |  | [optional] 
 **password** | **String** |  | [optional] 
@@ -42,6 +43,12 @@ Name | Type | Description | Notes
 **repeatOffTimes** | **int** |  | [optional] 
 **isDone** | **bool** |  | [optional] 
 **doneAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**creatorId** | **String** |  | [optional] 
+**lastModifierId** | **String** |  | [optional] 
+**deleterId** | **String** |  | [optional] 
+**tagging** | **String** |  | [optional] 
+**url** | **String** |  | [optional] 
+**size** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

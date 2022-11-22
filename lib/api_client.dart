@@ -203,6 +203,10 @@ class ApiClient {
         case 'AppTheme':
           return AppThemeTypeTransformer().decode(value);
           
+        case 'AppUserScoreDto':
+          return AppUserScoreDto.fromJson(value);
+        case 'AppUserScoreDtoPagedResultDto':
+          return AppUserScoreDtoPagedResultDto.fromJson(value);
         case 'ApplicationApiDescriptionModel':
           return ApplicationApiDescriptionModel.fromJson(value);
         case 'ApplicationAuthConfigurationDto':
@@ -233,6 +237,8 @@ class ApiClient {
           return CreateOrUpdateAppReleaseDto.fromJson(value);
         case 'CreatePushNotificationDto':
           return CreatePushNotificationDto.fromJson(value);
+        case 'CreateUpdateAppUserScoreDto':
+          return CreateUpdateAppUserScoreDto.fromJson(value);
         case 'CreateUpdateItemDto':
           return CreateUpdateItemDto.fromJson(value);
         case 'CreateUpdateNotificationDto':

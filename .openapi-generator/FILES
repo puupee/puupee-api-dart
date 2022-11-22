@@ -16,6 +16,9 @@ doc/AppReleaseApi.md
 doc/AppReleaseDto.md
 doc/AppReleaseDtoPagedResultDto.md
 doc/AppTheme.md
+doc/AppUserScoreApi.md
+doc/AppUserScoreDto.md
+doc/AppUserScoreDtoPagedResultDto.md
 doc/ApplicationApiDescriptionModel.md
 doc/ApplicationAuthConfigurationDto.md
 doc/ApplicationConfigurationDto.md
@@ -31,6 +34,7 @@ doc/ControllerInterfaceApiDescriptionModel.md
 doc/CreateOrUpdateAppDto.md
 doc/CreateOrUpdateAppReleaseDto.md
 doc/CreatePushNotificationDto.md
+doc/CreateUpdateAppUserScoreDto.md
 doc/CreateUpdateItemDto.md
 doc/CreateUpdateNotificationDto.md
 doc/CurrentCultureDto.md
@@ -175,6 +179,7 @@ lib/api/abp_tenant_api.dart
 lib/api/account_api.dart
 lib/api/app_api.dart
 lib/api/app_release_api.dart
+lib/api/app_user_score_api.dart
 lib/api/device_api.dart
 lib/api/email_settings_api.dart
 lib/api/features_api.dart
@@ -213,6 +218,8 @@ lib/model/app_dto_paged_result_dto.dart
 lib/model/app_release_dto.dart
 lib/model/app_release_dto_paged_result_dto.dart
 lib/model/app_theme.dart
+lib/model/app_user_score_dto.dart
+lib/model/app_user_score_dto_paged_result_dto.dart
 lib/model/application_api_description_model.dart
 lib/model/application_auth_configuration_dto.dart
 lib/model/application_configuration_dto.dart
@@ -228,6 +235,7 @@ lib/model/controller_interface_api_description_model.dart
 lib/model/create_or_update_app_dto.dart
 lib/model/create_or_update_app_release_dto.dart
 lib/model/create_push_notification_dto.dart
+lib/model/create_update_app_user_score_dto.dart
 lib/model/create_update_item_dto.dart
 lib/model/create_update_notification_dto.dart
 lib/model/current_culture_dto.dart

@@ -22,8 +22,8 @@ class ItemDto {
     this.deleterId,
     this.deletionTime,
     this.name,
+    this.title,
     this.description,
-    this.totalCount,
     this.password,
     this.parentId,
     this.key,
@@ -55,7 +55,8 @@ class ItemDto {
     this.repeatOffAt,
     this.repeatOffTimes,
     this.syncVersion,
-    this.isSpecialFolder,
+    this.isHidden,
+    this.tagging,
   });
 
 
@@ -77,9 +78,9 @@ class ItemDto {
 
   String? name;
 
-  String? description;
+  String? title;
 
-  int? totalCount;
+  String? description;
 
   String? password;
 
@@ -143,7 +144,9 @@ class ItemDto {
 
   int? syncVersion;
 
-  bool? isSpecialFolder;
+  bool? isHidden;
+
+  String? tagging;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ItemDto &&
@@ -156,8 +159,8 @@ class ItemDto {
      other.deleterId == deleterId &&
      other.deletionTime == deletionTime &&
      other.name == name &&
+     other.title == title &&
      other.description == description &&
-     other.totalCount == totalCount &&
      other.password == password &&
      other.parentId == parentId &&
      other.key == key &&
@@ -189,7 +192,8 @@ class ItemDto {
      other.repeatOffAt == repeatOffAt &&
      other.repeatOffTimes == repeatOffTimes &&
      other.syncVersion == syncVersion &&
-     other.isSpecialFolder == isSpecialFolder;
+     other.isHidden == isHidden &&
+     other.tagging == tagging;
 
   @override
   int get hashCode =>
@@ -202,8 +206,8 @@ class ItemDto {
     deleterId.hashCode +
     deletionTime.hashCode +
     name.hashCode +
+    title.hashCode +
     description.hashCode +
-    totalCount.hashCode +
     password.hashCode +
     parentId.hashCode +
     key.hashCode +
@@ -235,10 +239,11 @@ class ItemDto {
     repeatOffAt.hashCode +
     repeatOffTimes.hashCode +
     syncVersion.hashCode +
-    isSpecialFolder.hashCode;
+    isHidden.hashCode +
+    tagging.hashCode;
 
   @override
-  String toString() => 'ItemDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, description=$description, totalCount=$totalCount, password=$password, parentId=$parentId, key=$key, url=$url, size=$size, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, fileId=$fileId, file=$file, thumb=$thumb, priority=$priority, doneAt=$doneAt, isDone=$isDone, startAt=$startAt, endAt=$endAt, notifyAt=$notifyAt, notifyTimingType=$notifyTimingType, notifyTimingUnit=$notifyTimingUnit, notifyTimingValue=$notifyTimingValue, repeat=$repeat, repeatOffAt=$repeatOffAt, repeatOffTimes=$repeatOffTimes, syncVersion=$syncVersion, isSpecialFolder=$isSpecialFolder]';
+  String toString() => 'ItemDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, title=$title, description=$description, password=$password, parentId=$parentId, key=$key, url=$url, size=$size, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, fileId=$fileId, file=$file, thumb=$thumb, priority=$priority, doneAt=$doneAt, isDone=$isDone, startAt=$startAt, endAt=$endAt, notifyAt=$notifyAt, notifyTimingType=$notifyTimingType, notifyTimingUnit=$notifyTimingUnit, notifyTimingValue=$notifyTimingValue, repeat=$repeat, repeatOffAt=$repeatOffAt, repeatOffTimes=$repeatOffTimes, syncVersion=$syncVersion, isHidden=$isHidden, tagging=$tagging]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -269,11 +274,11 @@ class ItemDto {
     if (name != null) {
       json[r'name'] = name;
     }
+    if (title != null) {
+      json[r'title'] = title;
+    }
     if (description != null) {
       json[r'description'] = description;
-    }
-    if (totalCount != null) {
-      json[r'totalCount'] = totalCount;
     }
     if (password != null) {
       json[r'password'] = password;
@@ -368,8 +373,11 @@ class ItemDto {
     if (syncVersion != null) {
       json[r'syncVersion'] = syncVersion;
     }
-    if (isSpecialFolder != null) {
-      json[r'isSpecialFolder'] = isSpecialFolder;
+    if (isHidden != null) {
+      json[r'isHidden'] = isHidden;
+    }
+    if (tagging != null) {
+      json[r'tagging'] = tagging;
     }
     return json;
   }
@@ -387,8 +395,8 @@ class ItemDto {
         deleterId: json[r'deleterId'] == null ? null : json[r'deleterId'] as String?,
         deletionTime: json[r'deletionTime'] == null ? null : mapDateTime(json, r'deletionTime', ''),
         name: json[r'name'] == null ? null : json[r'name'] as String?,
+        title: json[r'title'] == null ? null : json[r'title'] as String?,
         description: json[r'description'] == null ? null : json[r'description'] as String?,
-        totalCount: json[r'totalCount'] == null ? null : json[r'totalCount'] as int?,
         password: json[r'password'] == null ? null : json[r'password'] as String?,
         parentId: json[r'parentId'] == null ? null : json[r'parentId'] as String?,
         key: json[r'key'] == null ? null : json[r'key'] as String?,
@@ -420,7 +428,8 @@ class ItemDto {
         repeatOffAt: json[r'repeatOffAt'] == null ? null : mapDateTime(json, r'repeatOffAt', ''),
         repeatOffTimes: json[r'repeatOffTimes'] == null ? null : json[r'repeatOffTimes'] as int?,
         syncVersion: json[r'syncVersion'] == null ? null : json[r'syncVersion'] as int?,
-        isSpecialFolder: json[r'isSpecialFolder'] == null ? null : json[r'isSpecialFolder'] as bool?,
+        isHidden: json[r'isHidden'] == null ? null : json[r'isHidden'] as bool?,
+        tagging: json[r'tagging'] == null ? null : json[r'tagging'] as String?,
     );
 
   static List<ItemDto> listFromJson(List json, {bool? growable,}) =>
