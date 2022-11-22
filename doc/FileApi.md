@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**apiAppFileFileOrCredentialsGet**](FileApi.md#apiappfilefileorcredentialsget) | **GET** /api/app/file/file-or-credentials | 
 [**apiAppFileMyGet**](FileApi.md#apiappfilemyget) | **GET** /api/app/file/my | 
 [**apiAppFilePreSignUrlPost**](FileApi.md#apiappfilepresignurlpost) | **POST** /api/app/file/pre-sign-url | 
+[**apiAppFileThumbGet**](FileApi.md#apiappfilethumbget) | **GET** /api/app/file/thumb | 
 
 
 # **apiAppFileFileOrCredentialsGet**
@@ -142,6 +143,49 @@ Name | Type | Description  | Notes
 
  - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **apiAppFileThumbGet**
+> Map<String, dynamic> apiAppFileThumbGet(key)
+
+
+
+### Example
+```dart
+import 'package:doggy_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api_instance = FileApi();
+final key = key_example; // String | 
+
+try {
+    final result = api_instance.apiAppFileThumbGet(key);
+    print(result);
+} catch (e) {
+    print('Exception when calling FileApi->apiAppFileThumbGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **key** | **String**|  | [optional] 
+
+### Return type
+
+**Map<String, dynamic>**
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
