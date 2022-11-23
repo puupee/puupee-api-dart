@@ -200,13 +200,11 @@ class ApiClient {
           return AppReleaseDto.fromJson(value);
         case 'AppReleaseDtoPagedResultDto':
           return AppReleaseDtoPagedResultDto.fromJson(value);
-        case 'AppTheme':
-          return AppThemeTypeTransformer().decode(value);
+        case 'AppThemeMode':
+          return AppThemeModeTypeTransformer().decode(value);
           
         case 'AppUserScoreDto':
           return AppUserScoreDto.fromJson(value);
-        case 'AppUserScoreDtoPagedResultDto':
-          return AppUserScoreDtoPagedResultDto.fromJson(value);
         case 'ApplicationApiDescriptionModel':
           return ApplicationApiDescriptionModel.fromJson(value);
         case 'ApplicationAuthConfigurationDto':

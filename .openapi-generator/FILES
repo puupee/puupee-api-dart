@@ -14,10 +14,9 @@ doc/AppDtoPagedResultDto.md
 doc/AppReleaseApi.md
 doc/AppReleaseDto.md
 doc/AppReleaseDtoPagedResultDto.md
-doc/AppTheme.md
+doc/AppThemeMode.md
 doc/AppUserScoreApi.md
 doc/AppUserScoreDto.md
-doc/AppUserScoreDtoPagedResultDto.md
 doc/ApplicationApiDescriptionModel.md
 doc/ApplicationAuthConfigurationDto.md
 doc/ApplicationConfigurationDto.md
@@ -216,9 +215,8 @@ lib/model/app_dto.dart
 lib/model/app_dto_paged_result_dto.dart
 lib/model/app_release_dto.dart
 lib/model/app_release_dto_paged_result_dto.dart
-lib/model/app_theme.dart
+lib/model/app_theme_mode.dart
 lib/model/app_user_score_dto.dart
-lib/model/app_user_score_dto_paged_result_dto.dart
 lib/model/application_api_description_model.dart
 lib/model/application_auth_configuration_dto.dart
 lib/model/application_configuration_dto.dart

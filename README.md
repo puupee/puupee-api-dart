@@ -79,10 +79,6 @@ Class | Method | HTTP request | Description
 *AppReleaseApi* | [**apiAppAppReleaseIdGet**](doc//AppReleaseApi.md#apiappappreleaseidget) | **GET** /api/app/app-release/{id} | 
 *AppReleaseApi* | [**apiAppAppReleaseIdPut**](doc//AppReleaseApi.md#apiappappreleaseidput) | **PUT** /api/app/app-release/{id} | 
 *AppReleaseApi* | [**apiAppAppReleasePost**](doc//AppReleaseApi.md#apiappappreleasepost) | **POST** /api/app/app-release | 
-*AppUserScoreApi* | [**apiAppAppUserScoreGet**](doc//AppUserScoreApi.md#apiappappuserscoreget) | **GET** /api/app/app-user-score | 
-*AppUserScoreApi* | [**apiAppAppUserScoreIdDelete**](doc//AppUserScoreApi.md#apiappappuserscoreiddelete) | **DELETE** /api/app/app-user-score/{id} | 
-*AppUserScoreApi* | [**apiAppAppUserScoreIdGet**](doc//AppUserScoreApi.md#apiappappuserscoreidget) | **GET** /api/app/app-user-score/{id} | 
-*AppUserScoreApi* | [**apiAppAppUserScoreIdPut**](doc//AppUserScoreApi.md#apiappappuserscoreidput) | **PUT** /api/app/app-user-score/{id} | 
 *AppUserScoreApi* | [**apiAppAppUserScorePost**](doc//AppUserScoreApi.md#apiappappuserscorepost) | **POST** /api/app/app-user-score | 
 *DeviceApi* | [**apiAppDeviceGet**](doc//DeviceApi.md#apiappdeviceget) | **GET** /api/app/device | 
 *DeviceApi* | [**apiAppDeviceIdDelete**](doc//DeviceApi.md#apiappdeviceiddelete) | **DELETE** /api/app/device/{id} | 
@@ -183,9 +179,8 @@ Class | Method | HTTP request | Description
  - [AppDtoPagedResultDto](doc//AppDtoPagedResultDto.md)
  - [AppReleaseDto](doc//AppReleaseDto.md)
  - [AppReleaseDtoPagedResultDto](doc//AppReleaseDtoPagedResultDto.md)
- - [AppTheme](doc//AppTheme.md)
+ - [AppThemeMode](doc//AppThemeMode.md)
  - [AppUserScoreDto](doc//AppUserScoreDto.md)
- - [AppUserScoreDtoPagedResultDto](doc//AppUserScoreDtoPagedResultDto.md)
  - [ApplicationApiDescriptionModel](doc//ApplicationApiDescriptionModel.md)
  - [ApplicationAuthConfigurationDto](doc//ApplicationAuthConfigurationDto.md)
  - [ApplicationConfigurationDto](doc//ApplicationConfigurationDto.md)
