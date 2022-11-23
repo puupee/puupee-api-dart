@@ -200,6 +200,8 @@ class ApiClient {
           return AppReleaseDto.fromJson(value);
         case 'AppReleaseDtoPagedResultDto':
           return AppReleaseDtoPagedResultDto.fromJson(value);
+        case 'AppTheme':
+          return AppTheme.fromJson(value);
         case 'AppThemeMode':
           return AppThemeModeTypeTransformer().decode(value);
           

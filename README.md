@@ -179,6 +179,7 @@ Class | Method | HTTP request | Description
  - [AppDtoPagedResultDto](doc//AppDtoPagedResultDto.md)
  - [AppReleaseDto](doc//AppReleaseDto.md)
  - [AppReleaseDtoPagedResultDto](doc//AppReleaseDtoPagedResultDto.md)
+ - [AppTheme](doc//AppTheme.md)
  - [AppThemeMode](doc//AppThemeMode.md)
  - [AppUserScoreDto](doc//AppUserScoreDto.md)
  - [ApplicationApiDescriptionModel](doc//ApplicationApiDescriptionModel.md)

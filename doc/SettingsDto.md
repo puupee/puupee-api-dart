@@ -8,7 +8,7 @@ import 'package:doggy_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**appTheme** | [**AppThemeMode**](AppThemeMode.md) |  | [optional] 
+**appTheme** | [**AppTheme**](AppTheme.md) |  | [optional] 
 **language** | **String** |  | [optional] 
 **todoSettings** | [**TodoSettingsDto**](TodoSettingsDto.md) |  | [optional] 
 

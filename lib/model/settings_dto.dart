@@ -19,7 +19,7 @@ class SettingsDto {
   });
 
 
-  AppThemeMode? appTheme;
+  AppTheme? appTheme;
 
   String? language;
 
@@ -58,7 +58,7 @@ class SettingsDto {
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
   static SettingsDto fromJson(Map<String, dynamic> json) => SettingsDto(
-        appTheme: json[r'appTheme'] == null ? null : AppThemeMode.fromJson(json[r'appTheme']),
+        appTheme: json[r'appTheme'] == null ? null : AppTheme.fromJson(json[r'appTheme']),
         language: json[r'language'] == null ? null : json[r'language'] as String?,
         todoSettings: json[r'todoSettings'] == null ? null : TodoSettingsDto.fromJson(json[r'todoSettings']),
     );

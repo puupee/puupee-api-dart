@@ -64,6 +64,7 @@ part 'model/app_dto.dart';
 part 'model/app_dto_paged_result_dto.dart';
 part 'model/app_release_dto.dart';
 part 'model/app_release_dto_paged_result_dto.dart';
+part 'model/app_theme.dart';
 part 'model/app_theme_mode.dart';
 part 'model/app_user_score_dto.dart';
 part 'model/application_api_description_model.dart';

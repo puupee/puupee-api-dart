@@ -10,66 +10,79 @@
 
 part of doggy_api;
 
-
 class AppTheme {
-  /// Instantiate a new enum with the provided [value].
-  const AppTheme._(this.value);
+  /// Returns a new [AppTheme] instance.
+  AppTheme({
+    this.sourceColor,
+    this.themeMode,
+  });
 
-  /// The underlying value of this enum member.
-  final String? value;
+
+  String? sourceColor;
+
+  AppThemeMode? themeMode;
 
   @override
-  String toString() => value ?? '';
+  bool operator ==(Object other) => identical(this, other) || other is AppTheme &&
+     other.sourceColor == sourceColor &&
+     other.themeMode == themeMode;
 
-  String? toJson() => value;
+  @override
+  int get hashCode =>
+    sourceColor.hashCode +
+    themeMode.hashCode;
 
-  static const system = AppTheme._(r'System');
-  static const light = AppTheme._(r'Light');
-  static const dark = AppTheme._(r'Dark');
+  @override
+  String toString() => 'AppTheme[sourceColor=$sourceColor, themeMode=$themeMode]';
 
-  /// List of all possible values in this [enum][AppTheme].
-  static const values = <AppTheme>[
-    system,
-    light,
-    dark,
-  ];
+  Map<String, dynamic> toJson() {
+    final json = <String, dynamic>{};
+    if (sourceColor != null) {
+      json[r'sourceColor'] = sourceColor;
+    }
+    if (themeMode != null) {
+      json[r'themeMode'] = themeMode;
+    }
+    return json;
+  }
 
-  static AppTheme fromJson(dynamic value) =>
-    AppThemeTypeTransformer().decode(value);
+  /// Returns a new [AppTheme] instance and imports its values from
+  /// [value] if it's a [Map], null otherwise.
+  // ignore: prefer_constructors_over_static_methods
+  static AppTheme fromJson(Map<String, dynamic> json) => AppTheme(
+        sourceColor: json[r'sourceColor'] == null ? null : json[r'sourceColor'] as String?,
+        themeMode: json[r'themeMode'] == null ? null : AppThemeMode.fromJson(json[r'themeMode']),
+    );
 
   static List<AppTheme> listFromJson(List json, {bool? growable,}) =>
     json.isNotEmpty
       ? json.map<AppTheme>((i) => AppTheme.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
       : <AppTheme>[];
-}
 
-/// Transformation class that can [encode] an instance of [AppTheme] to String,
-/// and [decode] dynamic data back to [AppTheme].
-class AppThemeTypeTransformer {
-  factory AppThemeTypeTransformer() => _instance ??= const AppThemeTypeTransformer._();
-
-  const AppThemeTypeTransformer._();
-
-  String? encode(AppTheme data) => data.value;
-
-  /// Decodes a [dynamic value][data] to a AppTheme.
-  ///
-  /// If the [dynamic value][data] cannot be decoded successfully, then an [UnimplementedError] is thrown.
-  AppTheme decode(dynamic data) {
-    if (data == r'System') {
-      return AppTheme.system;
+  static Map<String, AppTheme> mapFromJson(dynamic json) {
+    final map = <String, AppTheme>{};
+    if (json is Map && json.isNotEmpty) {
+      json
+        .cast<String, dynamic>()
+        .forEach((key, dynamic value) => map[key] = AppTheme.fromJson(value));
     }
-    if (data == r'Light') {
-      return AppTheme.light;
-    }
-    if (data == r'Dark') {
-      return AppTheme.dark;
-    }
-    throw ArgumentError('Unknown enum value to decode: $data');
-
+    return map;
   }
 
-  /// Singleton [AppThemeTypeTransformer] instance.
-  static AppThemeTypeTransformer? _instance;
+  // maps a json object with a list of AppTheme-objects as value to a dart map
+  static Map<String, List<AppTheme>> mapListFromJson(dynamic json, {bool? growable,}) {
+    final map = <String, List<AppTheme>>{};
+    if (json is Map && json.isNotEmpty) {
+      json
+        .cast<String, dynamic>()
+        .forEach((key, dynamic value) {
+          map[key] = AppTheme.listFromJson(
+            value,
+            growable: growable,
+          );
+        });
+    }
+    return map;
+  }
 }
 
