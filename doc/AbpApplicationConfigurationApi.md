@@ -13,20 +13,19 @@ Method | HTTP request | Description
 
 
 # **apiAbpApplicationConfigurationGet**
-> ApplicationConfigurationDto apiAbpApplicationConfigurationGet()
+> ApplicationConfigurationDto apiAbpApplicationConfigurationGet(includeLocalizationResources)
 
 
 
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = AbpApplicationConfigurationApi();
+final includeLocalizationResources = true; // bool | 
 
 try {
-    final result = api_instance.apiAbpApplicationConfigurationGet();
+    final result = api_instance.apiAbpApplicationConfigurationGet(includeLocalizationResources);
     print(result);
 } catch (e) {
     print('Exception when calling AbpApplicationConfigurationApi->apiAbpApplicationConfigurationGet: $e\n');
@@ -34,7 +33,10 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **includeLocalizationResources** | **bool**|  | [optional] 
 
 ### Return type
 
@@ -42,7 +44,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 

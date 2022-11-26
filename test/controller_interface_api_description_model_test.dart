@@ -21,6 +21,16 @@ void main() {
       // TODO
     });
 
+    // String name
+    test('to test the property `name`', () async {
+      // TODO
+    });
+
+    // List<InterfaceMethodApiDescriptionModel> methods (default value: const [])
+    test('to test the property `methods`', () async {
+      // TODO
+    });
+
 
   });
 

@@ -67,64 +67,6 @@ class AppApi {
     return null;
   }
 
-  /// Performs an HTTP 'GET /api/app/app/file-or-credentials' operation and returns the [Response].
-  /// Parameters:
-  ///
-  /// * [String] rapidCode:
-  ///
-  /// * [String] key:
-  Future<Response> apiAppAppFileOrCredentialsGetWithHttpInfo({ String? rapidCode, String? key, }) async {
-    // ignore: prefer_const_declarations
-    final path = r'/api/app/app/file-or-credentials';
-
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    if (rapidCode != null) {
-      queryParams.addAll(_queryParams('', 'rapidCode', rapidCode));
-    }
-    if (key != null) {
-      queryParams.addAll(_queryParams('', 'key', key));
-    }
-
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'GET',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-    );
-  }
-
-  /// Parameters:
-  ///
-  /// * [String] rapidCode:
-  ///
-  /// * [String] key:
-  Future<FileOrCredentialsDto?> apiAppAppFileOrCredentialsGet({ String? rapidCode, String? key, }) async {
-    final response = await apiAppAppFileOrCredentialsGetWithHttpInfo( rapidCode: rapidCode, key: key, );
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'FileOrCredentialsDto',) as FileOrCredentialsDto;
-    
-    }
-    return null;
-  }
-
   /// Performs an HTTP 'GET /api/app/app' operation and returns the [Response].
   /// Parameters:
   ///
@@ -379,6 +321,64 @@ class AppApi {
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'AppDto',) as AppDto;
+    
+    }
+    return null;
+  }
+
+  /// Performs an HTTP 'GET /api/app/app/storage-object-or-credentials' operation and returns the [Response].
+  /// Parameters:
+  ///
+  /// * [String] rapidCode:
+  ///
+  /// * [String] key:
+  Future<Response> apiAppAppStorageObjectOrCredentialsGetWithHttpInfo({ String? rapidCode, String? key, }) async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/app/app/storage-object-or-credentials';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    if (rapidCode != null) {
+      queryParams.addAll(_queryParams('', 'rapidCode', rapidCode));
+    }
+    if (key != null) {
+      queryParams.addAll(_queryParams('', 'key', key));
+    }
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Parameters:
+  ///
+  /// * [String] rapidCode:
+  ///
+  /// * [String] key:
+  Future<StorageObjectOrCredentialsDto?> apiAppAppStorageObjectOrCredentialsGet({ String? rapidCode, String? key, }) async {
+    final response = await apiAppAppStorageObjectOrCredentialsGetWithHttpInfo( rapidCode: rapidCode, key: key, );
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'StorageObjectOrCredentialsDto',) as StorageObjectOrCredentialsDto;
     
     }
     return null;

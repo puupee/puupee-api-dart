@@ -13,35 +13,25 @@ part of puupee_api;
 class ApplicationAuthConfigurationDto {
   /// Returns a new [ApplicationAuthConfigurationDto] instance.
   ApplicationAuthConfigurationDto({
-    this.policies = const {},
     this.grantedPolicies = const {},
   });
-
-  Map<String, bool>? policies;
 
   Map<String, bool>? grantedPolicies;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ApplicationAuthConfigurationDto &&
-     other.policies == policies &&
      other.grantedPolicies == grantedPolicies;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (policies == null ? 0 : policies!.hashCode) +
     (grantedPolicies == null ? 0 : grantedPolicies!.hashCode);
 
   @override
-  String toString() => 'ApplicationAuthConfigurationDto[policies=$policies, grantedPolicies=$grantedPolicies]';
+  String toString() => 'ApplicationAuthConfigurationDto[grantedPolicies=$grantedPolicies]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.policies != null) {
-      json[r'policies'] = this.policies;
-    } else {
-      json[r'policies'] = null;
-    }
     if (this.grantedPolicies != null) {
       json[r'grantedPolicies'] = this.grantedPolicies;
     } else {
@@ -69,7 +59,6 @@ class ApplicationAuthConfigurationDto {
       }());
 
       return ApplicationAuthConfigurationDto(
-        policies: mapCastOfType<String, bool>(json, r'policies') ?? const {},
         grantedPolicies: mapCastOfType<String, bool>(json, r'grantedPolicies') ?? const {},
       );
     }

@@ -11,6 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**apiSettingManagementEmailingGet**](EmailSettingsApi.md#apisettingmanagementemailingget) | **GET** /api/setting-management/emailing | 
 [**apiSettingManagementEmailingPost**](EmailSettingsApi.md#apisettingmanagementemailingpost) | **POST** /api/setting-management/emailing | 
+[**apiSettingManagementEmailingSendTestEmailPost**](EmailSettingsApi.md#apisettingmanagementemailingsendtestemailpost) | **POST** /api/setting-management/emailing/send-test-email | 
 
 
 # **apiSettingManagementEmailingGet**
@@ -21,8 +22,6 @@ Method | HTTP request | Description
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = EmailSettingsApi();
 
@@ -43,7 +42,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -60,8 +59,6 @@ This endpoint does not need any parameter.
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = EmailSettingsApi();
 final updateEmailSettingsDto = UpdateEmailSettingsDto(); // UpdateEmailSettingsDto | 
@@ -85,7 +82,47 @@ void (empty response body)
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **apiSettingManagementEmailingSendTestEmailPost**
+> apiSettingManagementEmailingSendTestEmailPost(sendTestEmailInput)
+
+
+
+### Example
+```dart
+import 'package:puupee_api/api.dart';
+
+final api_instance = EmailSettingsApi();
+final sendTestEmailInput = SendTestEmailInput(); // SendTestEmailInput | 
+
+try {
+    api_instance.apiSettingManagementEmailingSendTestEmailPost(sendTestEmailInput);
+} catch (e) {
+    print('Exception when calling EmailSettingsApi->apiSettingManagementEmailingSendTestEmailPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sendTestEmailInput** | [**SendTestEmailInput**](SendTestEmailInput.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 

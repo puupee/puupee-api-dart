@@ -9,6 +9,7 @@ import 'package:puupee_api/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **values** | [**Map<String, Map<String, String>>**](Map.md) |  | [optional] [default to const {}]
+**resources** | [**Map<String, ApplicationLocalizationResourceDto>**](ApplicationLocalizationResourceDto.md) |  | [optional] [default to const {}]
 **languages** | [**List<LanguageInfo>**](LanguageInfo.md) |  | [optional] [default to const []]
 **currentCulture** | [**CurrentCultureDto**](CurrentCultureDto.md) |  | [optional] 
 **defaultResourceName** | **String** |  | [optional] 

@@ -57,10 +57,10 @@ class SyncStateApi {
     return null;
   }
 
-  /// Performs an HTTP 'POST /api/app/sync-state/item-changed-eto' operation and returns the [Response].
-  Future<Response> apiAppSyncStateItemChangedEtoPostWithHttpInfo() async {
+  /// Performs an HTTP 'POST /api/app/sync-state/puupee-changed-eto' operation and returns the [Response].
+  Future<Response> apiAppSyncStatePuupeeChangedEtoPostWithHttpInfo() async {
     // ignore: prefer_const_declarations
-    final path = r'/api/app/sync-state/item-changed-eto';
+    final path = r'/api/app/sync-state/puupee-changed-eto';
 
     // ignore: prefer_final_locals
     Object? postBody;
@@ -83,8 +83,8 @@ class SyncStateApi {
     );
   }
 
-  Future<SyncItemChangedEto?> apiAppSyncStateItemChangedEtoPost() async {
-    final response = await apiAppSyncStateItemChangedEtoPostWithHttpInfo();
+  Future<PuupeeChangedEto?> apiAppSyncStatePuupeeChangedEtoPost() async {
+    final response = await apiAppSyncStatePuupeeChangedEtoPostWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -92,7 +92,7 @@ class SyncStateApi {
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
     if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'SyncItemChangedEto',) as SyncItemChangedEto;
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'PuupeeChangedEto',) as PuupeeChangedEto;
     
     }
     return null;

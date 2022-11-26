@@ -21,6 +21,11 @@ void main() {
       // TODO
     });
 
+    // Map<String, ApplicationLocalizationResourceDto> resources (default value: const {})
+    test('to test the property `resources`', () async {
+      // TODO
+    });
+
     // List<LanguageInfo> languages (default value: const [])
     test('to test the property `languages`', () async {
       // TODO

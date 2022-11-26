@@ -95,4 +95,43 @@ class EmailSettingsApi {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
   }
+
+  /// Performs an HTTP 'POST /api/setting-management/emailing/send-test-email' operation and returns the [Response].
+  /// Parameters:
+  ///
+  /// * [SendTestEmailInput] sendTestEmailInput:
+  Future<Response> apiSettingManagementEmailingSendTestEmailPostWithHttpInfo({ SendTestEmailInput? sendTestEmailInput, }) async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/setting-management/emailing/send-test-email';
+
+    // ignore: prefer_final_locals
+    Object? postBody = sendTestEmailInput;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>['application/json', 'text/json', 'application/*+json'];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Parameters:
+  ///
+  /// * [SendTestEmailInput] sendTestEmailInput:
+  Future<void> apiSettingManagementEmailingSendTestEmailPost({ SendTestEmailInput? sendTestEmailInput, }) async {
+    final response = await apiSettingManagementEmailingSendTestEmailPostWithHttpInfo( sendTestEmailInput: sendTestEmailInput, );
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+  }
 }

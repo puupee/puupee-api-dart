@@ -14,21 +14,31 @@ class ControllerInterfaceApiDescriptionModel {
   /// Returns a new [ControllerInterfaceApiDescriptionModel] instance.
   ControllerInterfaceApiDescriptionModel({
     this.type,
+    this.name,
+    this.methods = const [],
   });
 
   String? type;
 
+  String? name;
+
+  List<InterfaceMethodApiDescriptionModel>? methods;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is ControllerInterfaceApiDescriptionModel &&
-     other.type == type;
+     other.type == type &&
+     other.name == name &&
+     other.methods == methods;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (type == null ? 0 : type!.hashCode);
+    (type == null ? 0 : type!.hashCode) +
+    (name == null ? 0 : name!.hashCode) +
+    (methods == null ? 0 : methods!.hashCode);
 
   @override
-  String toString() => 'ControllerInterfaceApiDescriptionModel[type=$type]';
+  String toString() => 'ControllerInterfaceApiDescriptionModel[type=$type, name=$name, methods=$methods]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -36,6 +46,16 @@ class ControllerInterfaceApiDescriptionModel {
       json[r'type'] = this.type;
     } else {
       json[r'type'] = null;
+    }
+    if (this.name != null) {
+      json[r'name'] = this.name;
+    } else {
+      json[r'name'] = null;
+    }
+    if (this.methods != null) {
+      json[r'methods'] = this.methods;
+    } else {
+      json[r'methods'] = null;
     }
     return json;
   }
@@ -60,6 +80,8 @@ class ControllerInterfaceApiDescriptionModel {
 
       return ControllerInterfaceApiDescriptionModel(
         type: mapValueOfType<String>(json, r'type'),
+        name: mapValueOfType<String>(json, r'name'),
+        methods: InterfaceMethodApiDescriptionModel.listFromJson(json[r'methods']) ?? const [],
       );
     }
     return null;

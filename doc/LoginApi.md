@@ -22,8 +22,6 @@ Method | HTTP request | Description
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = LoginApi();
 final userLoginInfo = UserLoginInfo(); // UserLoginInfo | 
@@ -48,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -65,8 +63,6 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = LoginApi();
 final userLoginInfo = UserLoginInfo(); // UserLoginInfo | 
@@ -91,7 +87,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -108,8 +104,6 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = LoginApi();
 
@@ -129,7 +123,7 @@ void (empty response body)
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 

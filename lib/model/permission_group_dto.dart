@@ -15,6 +15,8 @@ class PermissionGroupDto {
   PermissionGroupDto({
     this.name,
     this.displayName,
+    this.displayNameKey,
+    this.displayNameResource,
     this.permissions = const [],
   });
 
@@ -22,12 +24,18 @@ class PermissionGroupDto {
 
   String? displayName;
 
+  String? displayNameKey;
+
+  String? displayNameResource;
+
   List<PermissionGrantInfoDto>? permissions;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is PermissionGroupDto &&
      other.name == name &&
      other.displayName == displayName &&
+     other.displayNameKey == displayNameKey &&
+     other.displayNameResource == displayNameResource &&
      other.permissions == permissions;
 
   @override
@@ -35,10 +43,12 @@ class PermissionGroupDto {
     // ignore: unnecessary_parenthesis
     (name == null ? 0 : name!.hashCode) +
     (displayName == null ? 0 : displayName!.hashCode) +
+    (displayNameKey == null ? 0 : displayNameKey!.hashCode) +
+    (displayNameResource == null ? 0 : displayNameResource!.hashCode) +
     (permissions == null ? 0 : permissions!.hashCode);
 
   @override
-  String toString() => 'PermissionGroupDto[name=$name, displayName=$displayName, permissions=$permissions]';
+  String toString() => 'PermissionGroupDto[name=$name, displayName=$displayName, displayNameKey=$displayNameKey, displayNameResource=$displayNameResource, permissions=$permissions]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -51,6 +61,16 @@ class PermissionGroupDto {
       json[r'displayName'] = this.displayName;
     } else {
       json[r'displayName'] = null;
+    }
+    if (this.displayNameKey != null) {
+      json[r'displayNameKey'] = this.displayNameKey;
+    } else {
+      json[r'displayNameKey'] = null;
+    }
+    if (this.displayNameResource != null) {
+      json[r'displayNameResource'] = this.displayNameResource;
+    } else {
+      json[r'displayNameResource'] = null;
     }
     if (this.permissions != null) {
       json[r'permissions'] = this.permissions;
@@ -81,6 +101,8 @@ class PermissionGroupDto {
       return PermissionGroupDto(
         name: mapValueOfType<String>(json, r'name'),
         displayName: mapValueOfType<String>(json, r'displayName'),
+        displayNameKey: mapValueOfType<String>(json, r'displayNameKey'),
+        displayNameResource: mapValueOfType<String>(json, r'displayNameResource'),
         permissions: PermissionGrantInfoDto.listFromJson(json[r'permissions']) ?? const [],
       );
     }

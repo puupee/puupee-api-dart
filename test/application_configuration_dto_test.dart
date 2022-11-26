@@ -41,6 +41,11 @@ void main() {
       // TODO
     });
 
+    // ApplicationGlobalFeatureConfigurationDto globalFeatures
+    test('to test the property `globalFeatures`', () async {
+      // TODO
+    });
+
     // MultiTenancyInfoDto multiTenancy
     test('to test the property `multiTenancy`', () async {
       // TODO
@@ -63,6 +68,11 @@ void main() {
 
     // ObjectExtensionsDto objectExtensions
     test('to test the property `objectExtensions`', () async {
+      // TODO
+    });
+
+    // Map<String, Object> extraProperties (default value: const {})
+    test('to test the property `extraProperties`', () async {
       // TODO
     });
 

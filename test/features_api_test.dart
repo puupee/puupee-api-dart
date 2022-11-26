@@ -17,6 +17,11 @@ void main() {
   // final instance = FeaturesApi();
 
   group('tests for FeaturesApi', () {
+    //Future apiFeatureManagementFeaturesDelete({ String providerName, String providerKey }) async
+    test('test apiFeatureManagementFeaturesDelete', () async {
+      // TODO
+    });
+
     //Future<GetFeatureListResultDto> apiFeatureManagementFeaturesGet({ String providerName, String providerKey }) async
     test('test apiFeatureManagementFeaturesGet', () async {
       // TODO

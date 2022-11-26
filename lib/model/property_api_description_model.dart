@@ -18,6 +18,11 @@ class PropertyApiDescriptionModel {
     this.type,
     this.typeSimple,
     this.isRequired,
+    this.minLength,
+    this.maxLength,
+    this.minimum,
+    this.maximum,
+    this.regex,
   });
 
   String? name;
@@ -36,13 +41,28 @@ class PropertyApiDescriptionModel {
   ///
   bool? isRequired;
 
+  int? minLength;
+
+  int? maxLength;
+
+  String? minimum;
+
+  String? maximum;
+
+  String? regex;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is PropertyApiDescriptionModel &&
      other.name == name &&
      other.jsonName == jsonName &&
      other.type == type &&
      other.typeSimple == typeSimple &&
-     other.isRequired == isRequired;
+     other.isRequired == isRequired &&
+     other.minLength == minLength &&
+     other.maxLength == maxLength &&
+     other.minimum == minimum &&
+     other.maximum == maximum &&
+     other.regex == regex;
 
   @override
   int get hashCode =>
@@ -51,10 +71,15 @@ class PropertyApiDescriptionModel {
     (jsonName == null ? 0 : jsonName!.hashCode) +
     (type == null ? 0 : type!.hashCode) +
     (typeSimple == null ? 0 : typeSimple!.hashCode) +
-    (isRequired == null ? 0 : isRequired!.hashCode);
+    (isRequired == null ? 0 : isRequired!.hashCode) +
+    (minLength == null ? 0 : minLength!.hashCode) +
+    (maxLength == null ? 0 : maxLength!.hashCode) +
+    (minimum == null ? 0 : minimum!.hashCode) +
+    (maximum == null ? 0 : maximum!.hashCode) +
+    (regex == null ? 0 : regex!.hashCode);
 
   @override
-  String toString() => 'PropertyApiDescriptionModel[name=$name, jsonName=$jsonName, type=$type, typeSimple=$typeSimple, isRequired=$isRequired]';
+  String toString() => 'PropertyApiDescriptionModel[name=$name, jsonName=$jsonName, type=$type, typeSimple=$typeSimple, isRequired=$isRequired, minLength=$minLength, maxLength=$maxLength, minimum=$minimum, maximum=$maximum, regex=$regex]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -83,6 +108,31 @@ class PropertyApiDescriptionModel {
     } else {
       json[r'isRequired'] = null;
     }
+    if (this.minLength != null) {
+      json[r'minLength'] = this.minLength;
+    } else {
+      json[r'minLength'] = null;
+    }
+    if (this.maxLength != null) {
+      json[r'maxLength'] = this.maxLength;
+    } else {
+      json[r'maxLength'] = null;
+    }
+    if (this.minimum != null) {
+      json[r'minimum'] = this.minimum;
+    } else {
+      json[r'minimum'] = null;
+    }
+    if (this.maximum != null) {
+      json[r'maximum'] = this.maximum;
+    } else {
+      json[r'maximum'] = null;
+    }
+    if (this.regex != null) {
+      json[r'regex'] = this.regex;
+    } else {
+      json[r'regex'] = null;
+    }
     return json;
   }
 
@@ -110,6 +160,11 @@ class PropertyApiDescriptionModel {
         type: mapValueOfType<String>(json, r'type'),
         typeSimple: mapValueOfType<String>(json, r'typeSimple'),
         isRequired: mapValueOfType<bool>(json, r'isRequired'),
+        minLength: mapValueOfType<int>(json, r'minLength'),
+        maxLength: mapValueOfType<int>(json, r'maxLength'),
+        minimum: mapValueOfType<String>(json, r'minimum'),
+        maximum: mapValueOfType<String>(json, r'maximum'),
+        regex: mapValueOfType<String>(json, r'regex'),
       );
     }
     return null;

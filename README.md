@@ -39,8 +39,6 @@ Please follow the [installation procedure](#installation--usage) and then run th
 ```dart
 import 'package:puupee_api/api.dart';
 
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = AbpApiDefinitionApi();
 final includeTypes = true; // bool | 
@@ -62,18 +60,20 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AbpApiDefinitionApi* | [**apiAbpApiDefinitionGet**](doc//AbpApiDefinitionApi.md#apiabpapidefinitionget) | **GET** /api/abp/api-definition | 
 *AbpApplicationConfigurationApi* | [**apiAbpApplicationConfigurationGet**](doc//AbpApplicationConfigurationApi.md#apiabpapplicationconfigurationget) | **GET** /api/abp/application-configuration | 
+*AbpApplicationLocalizationApi* | [**apiAbpApplicationLocalizationGet**](doc//AbpApplicationLocalizationApi.md#apiabpapplicationlocalizationget) | **GET** /api/abp/application-localization | 
 *AbpTenantApi* | [**apiAbpMultiTenancyTenantsByIdIdGet**](doc//AbpTenantApi.md#apiabpmultitenancytenantsbyididget) | **GET** /api/abp/multi-tenancy/tenants/by-id/{id} | 
 *AbpTenantApi* | [**apiAbpMultiTenancyTenantsByNameNameGet**](doc//AbpTenantApi.md#apiabpmultitenancytenantsbynamenameget) | **GET** /api/abp/multi-tenancy/tenants/by-name/{name} | 
 *AccountApi* | [**apiAccountRegisterPost**](doc//AccountApi.md#apiaccountregisterpost) | **POST** /api/account/register | 
 *AccountApi* | [**apiAccountResetPasswordPost**](doc//AccountApi.md#apiaccountresetpasswordpost) | **POST** /api/account/reset-password | 
 *AccountApi* | [**apiAccountSendPasswordResetCodePost**](doc//AccountApi.md#apiaccountsendpasswordresetcodepost) | **POST** /api/account/send-password-reset-code | 
+*AccountApi* | [**apiAccountVerifyPasswordResetTokenPost**](doc//AccountApi.md#apiaccountverifypasswordresettokenpost) | **POST** /api/account/verify-password-reset-token | 
 *AppApi* | [**apiAppAppByNameGet**](doc//AppApi.md#apiappappbynameget) | **GET** /api/app/app/by-name | 
-*AppApi* | [**apiAppAppFileOrCredentialsGet**](doc//AppApi.md#apiappappfileorcredentialsget) | **GET** /api/app/app/file-or-credentials | 
 *AppApi* | [**apiAppAppGet**](doc//AppApi.md#apiappappget) | **GET** /api/app/app | 
 *AppApi* | [**apiAppAppIdDelete**](doc//AppApi.md#apiappappiddelete) | **DELETE** /api/app/app/{id} | 
 *AppApi* | [**apiAppAppIdGet**](doc//AppApi.md#apiappappidget) | **GET** /api/app/app/{id} | 
 *AppApi* | [**apiAppAppIdPut**](doc//AppApi.md#apiappappidput) | **PUT** /api/app/app/{id} | 
 *AppApi* | [**apiAppAppPost**](doc//AppApi.md#apiappapppost) | **POST** /api/app/app | 
+*AppApi* | [**apiAppAppStorageObjectOrCredentialsGet**](doc//AppApi.md#apiappappstorageobjectorcredentialsget) | **GET** /api/app/app/storage-object-or-credentials | 
 *AppReleaseApi* | [**apiAppAppReleaseGet**](doc//AppReleaseApi.md#apiappappreleaseget) | **GET** /api/app/app-release | 
 *AppReleaseApi* | [**apiAppAppReleaseIdDelete**](doc//AppReleaseApi.md#apiappappreleaseiddelete) | **DELETE** /api/app/app-release/{id} | 
 *AppReleaseApi* | [**apiAppAppReleaseIdGet**](doc//AppReleaseApi.md#apiappappreleaseidget) | **GET** /api/app/app-release/{id} | 
@@ -85,16 +85,10 @@ Class | Method | HTTP request | Description
 *DeviceApi* | [**apiAppDeviceRefreshPost**](doc//DeviceApi.md#apiappdevicerefreshpost) | **POST** /api/app/device/refresh | 
 *EmailSettingsApi* | [**apiSettingManagementEmailingGet**](doc//EmailSettingsApi.md#apisettingmanagementemailingget) | **GET** /api/setting-management/emailing | 
 *EmailSettingsApi* | [**apiSettingManagementEmailingPost**](doc//EmailSettingsApi.md#apisettingmanagementemailingpost) | **POST** /api/setting-management/emailing | 
+*EmailSettingsApi* | [**apiSettingManagementEmailingSendTestEmailPost**](doc//EmailSettingsApi.md#apisettingmanagementemailingsendtestemailpost) | **POST** /api/setting-management/emailing/send-test-email | 
+*FeaturesApi* | [**apiFeatureManagementFeaturesDelete**](doc//FeaturesApi.md#apifeaturemanagementfeaturesdelete) | **DELETE** /api/feature-management/features | 
 *FeaturesApi* | [**apiFeatureManagementFeaturesGet**](doc//FeaturesApi.md#apifeaturemanagementfeaturesget) | **GET** /api/feature-management/features | 
 *FeaturesApi* | [**apiFeatureManagementFeaturesPut**](doc//FeaturesApi.md#apifeaturemanagementfeaturesput) | **PUT** /api/feature-management/features | 
-*FileApi* | [**apiAppFileFileOrCredentialsGet**](doc//FileApi.md#apiappfilefileorcredentialsget) | **GET** /api/app/file/file-or-credentials | 
-*FileApi* | [**apiAppFileMyGet**](doc//FileApi.md#apiappfilemyget) | **GET** /api/app/file/my | 
-*FileApi* | [**apiAppFilePreSignUrlPost**](doc//FileApi.md#apiappfilepresignurlpost) | **POST** /api/app/file/pre-sign-url | 
-*FileApi* | [**apiAppFileThumbGet**](doc//FileApi.md#apiappfilethumbget) | **GET** /api/app/file/thumb | 
-*HomeApi* | [**healthzGet**](doc//HomeApi.md#healthzget) | **GET** /healthz | 
-*ItemApi* | [**apiAppItemPullGet**](doc//ItemApi.md#apiappitempullget) | **GET** /api/app/item/pull | 
-*ItemApi* | [**apiAppItemPushPost**](doc//ItemApi.md#apiappitempushpost) | **POST** /api/app/item/push | 
-*ItemApi* | [**apiAppItemSpecialItemsGet**](doc//ItemApi.md#apiappitemspecialitemsget) | **GET** /api/app/item/special-items | 
 *KeyValueApi* | [**apiAppKeyValueBoolGet**](doc//KeyValueApi.md#apiappkeyvalueboolget) | **GET** /api/app/key-value/bool | 
 *KeyValueApi* | [**apiAppKeyValueDateTimeGet**](doc//KeyValueApi.md#apiappkeyvaluedatetimeget) | **GET** /api/app/key-value/date-time | 
 *KeyValueApi* | [**apiAppKeyValueDecimalGet**](doc//KeyValueApi.md#apiappkeyvaluedecimalget) | **GET** /api/app/key-value/decimal | 
@@ -110,43 +104,27 @@ Class | Method | HTTP request | Description
 *LoginApi* | [**apiAccountCheckPasswordPost**](doc//LoginApi.md#apiaccountcheckpasswordpost) | **POST** /api/account/check-password | 
 *LoginApi* | [**apiAccountLoginPost**](doc//LoginApi.md#apiaccountloginpost) | **POST** /api/account/login | 
 *LoginApi* | [**apiAccountLogoutGet**](doc//LoginApi.md#apiaccountlogoutget) | **GET** /api/account/logout | 
-*MemberApi* | [**apiAppMemberGet**](doc//MemberApi.md#apiappmemberget) | **GET** /api/app/member | 
-*NoteApi* | [**apiAppNoteNoteSpecsGet**](doc//NoteApi.md#apiappnotenotespecsget) | **GET** /api/app/note/note-specs | 
-*NotificationApi* | [**apiAppNotificationBarkApiKeyMessageGet**](doc//NotificationApi.md#apiappnotificationbarkapikeymessageget) | **GET** /api/app/notification/bark/{apiKey}/{message} | 
-*NotificationApi* | [**apiAppNotificationGet**](doc//NotificationApi.md#apiappnotificationget) | **GET** /api/app/notification | 
-*NotificationApi* | [**apiAppNotificationPushPost**](doc//NotificationApi.md#apiappnotificationpushpost) | **POST** /api/app/notification/push | 
-*NotificationApi* | [**apiNotificationServiceNotificationGet**](doc//NotificationApi.md#apinotificationservicenotificationget) | **GET** /api/notification-service/notification | 
-*NotificationApi* | [**apiNotificationServiceNotificationIdDelete**](doc//NotificationApi.md#apinotificationservicenotificationiddelete) | **DELETE** /api/notification-service/notification/{id} | 
-*NotificationApi* | [**apiNotificationServiceNotificationIdGet**](doc//NotificationApi.md#apinotificationservicenotificationidget) | **GET** /api/notification-service/notification/{id} | 
-*NotificationApi* | [**apiNotificationServiceNotificationIdPut**](doc//NotificationApi.md#apinotificationservicenotificationidput) | **PUT** /api/notification-service/notification/{id} | 
-*NotificationApi* | [**apiNotificationServiceNotificationPost**](doc//NotificationApi.md#apinotificationservicenotificationpost) | **POST** /api/notification-service/notification | 
-*NotificationInfoApi* | [**apiNotificationServiceNotificationInfoGet**](doc//NotificationInfoApi.md#apinotificationservicenotificationinfoget) | **GET** /api/notification-service/notification-info | 
-*NotificationInfoApi* | [**apiNotificationServiceNotificationInfoIdDelete**](doc//NotificationInfoApi.md#apinotificationservicenotificationinfoiddelete) | **DELETE** /api/notification-service/notification-info/{id} | 
-*NotificationInfoApi* | [**apiNotificationServiceNotificationInfoIdGet**](doc//NotificationInfoApi.md#apinotificationservicenotificationinfoidget) | **GET** /api/notification-service/notification-info/{id} | 
-*NotificationInfoApi* | [**apiNotificationServiceNotificationInfoIdPut**](doc//NotificationInfoApi.md#apinotificationservicenotificationinfoidput) | **PUT** /api/notification-service/notification-info/{id} | 
-*NotificationInfoApi* | [**apiNotificationServiceNotificationInfoPost**](doc//NotificationInfoApi.md#apinotificationservicenotificationinfopost) | **POST** /api/notification-service/notification-info | 
 *PermissionsApi* | [**apiPermissionManagementPermissionsGet**](doc//PermissionsApi.md#apipermissionmanagementpermissionsget) | **GET** /api/permission-management/permissions | 
 *PermissionsApi* | [**apiPermissionManagementPermissionsPut**](doc//PermissionsApi.md#apipermissionmanagementpermissionsput) | **PUT** /api/permission-management/permissions | 
 *ProfileApi* | [**apiAccountMyProfileChangePasswordPost**](doc//ProfileApi.md#apiaccountmyprofilechangepasswordpost) | **POST** /api/account/my-profile/change-password | 
 *ProfileApi* | [**apiAccountMyProfileGet**](doc//ProfileApi.md#apiaccountmyprofileget) | **GET** /api/account/my-profile | 
 *ProfileApi* | [**apiAccountMyProfilePut**](doc//ProfileApi.md#apiaccountmyprofileput) | **PUT** /api/account/my-profile | 
+*PuupeeApi* | [**apiAppPuupeePullGet**](doc//PuupeeApi.md#apiapppuupeepullget) | **GET** /api/app/puupee/pull | 
+*PuupeeApi* | [**apiAppPuupeePushPost**](doc//PuupeeApi.md#apiapppuupeepushpost) | **POST** /api/app/puupee/push | 
 *RoleApi* | [**apiIdentityRolesAllGet**](doc//RoleApi.md#apiidentityrolesallget) | **GET** /api/identity/roles/all | 
 *RoleApi* | [**apiIdentityRolesGet**](doc//RoleApi.md#apiidentityrolesget) | **GET** /api/identity/roles | 
 *RoleApi* | [**apiIdentityRolesIdDelete**](doc//RoleApi.md#apiidentityrolesiddelete) | **DELETE** /api/identity/roles/{id} | 
 *RoleApi* | [**apiIdentityRolesIdGet**](doc//RoleApi.md#apiidentityrolesidget) | **GET** /api/identity/roles/{id} | 
 *RoleApi* | [**apiIdentityRolesIdPut**](doc//RoleApi.md#apiidentityrolesidput) | **PUT** /api/identity/roles/{id} | 
 *RoleApi* | [**apiIdentityRolesPost**](doc//RoleApi.md#apiidentityrolespost) | **POST** /api/identity/roles | 
-*SettingsApi* | [**apiAppSettingsGet**](doc//SettingsApi.md#apiappsettingsget) | **GET** /api/app/settings | 
-*SettingsApi* | [**apiAppSettingsSetPost**](doc//SettingsApi.md#apiappsettingssetpost) | **POST** /api/app/settings/set | 
 *SimpleDataApi* | [**apiAppSimpleDataGet**](doc//SimpleDataApi.md#apiappsimpledataget) | **GET** /api/app/simple-data | 
 *SimpleDataApi* | [**apiAppSimpleDataIdDelete**](doc//SimpleDataApi.md#apiappsimpledataiddelete) | **DELETE** /api/app/simple-data/{id} | 
 *SimpleDataApi* | [**apiAppSimpleDataIdGet**](doc//SimpleDataApi.md#apiappsimpledataidget) | **GET** /api/app/simple-data/{id} | 
 *SimpleDataApi* | [**apiAppSimpleDataSavePost**](doc//SimpleDataApi.md#apiappsimpledatasavepost) | **POST** /api/app/simple-data/save | 
-*SmsApi* | [**apiAppSmsSendChangePhoneCodePost**](doc//SmsApi.md#apiappsmssendchangephonecodepost) | **POST** /api/app/sms/send-change-phone-code | 
-*SmsApi* | [**apiAppSmsSendLoginCodePost**](doc//SmsApi.md#apiappsmssendlogincodepost) | **POST** /api/app/sms/send-login-code | 
-*StorageApi* | [**apiAppStorageGet**](doc//StorageApi.md#apiappstorageget) | **GET** /api/app/storage | 
+*StorageObjectApi* | [**apiAppStorageObjectFileOrCredentialsGet**](doc//StorageObjectApi.md#apiappstorageobjectfileorcredentialsget) | **GET** /api/app/storage-object/file-or-credentials | 
+*StorageObjectApi* | [**apiAppStorageObjectPreSignUrlPost**](doc//StorageObjectApi.md#apiappstorageobjectpresignurlpost) | **POST** /api/app/storage-object/pre-sign-url | 
 *SyncStateApi* | [**apiAppSyncStateGet**](doc//SyncStateApi.md#apiappsyncstateget) | **GET** /api/app/sync-state | 
-*SyncStateApi* | [**apiAppSyncStateItemChangedEtoPost**](doc//SyncStateApi.md#apiappsyncstateitemchangedetopost) | **POST** /api/app/sync-state/item-changed-eto | 
+*SyncStateApi* | [**apiAppSyncStatePuupeeChangedEtoPost**](doc//SyncStateApi.md#apiappsyncstatepuupeechangedetopost) | **POST** /api/app/sync-state/puupee-changed-eto | 
 *TenantApi* | [**apiMultiTenancyTenantsGet**](doc//TenantApi.md#apimultitenancytenantsget) | **GET** /api/multi-tenancy/tenants | 
 *TenantApi* | [**apiMultiTenancyTenantsIdDefaultConnectionStringDelete**](doc//TenantApi.md#apimultitenancytenantsiddefaultconnectionstringdelete) | **DELETE** /api/multi-tenancy/tenants/{id}/default-connection-string | 
 *TenantApi* | [**apiMultiTenancyTenantsIdDefaultConnectionStringGet**](doc//TenantApi.md#apimultitenancytenantsiddefaultconnectionstringget) | **GET** /api/multi-tenancy/tenants/{id}/default-connection-string | 
@@ -169,6 +147,8 @@ Class | Method | HTTP request | Description
 *UserLookupApi* | [**apiIdentityUsersLookupCountGet**](doc//UserLookupApi.md#apiidentityuserslookupcountget) | **GET** /api/identity/users/lookup/count | 
 *UserLookupApi* | [**apiIdentityUsersLookupIdGet**](doc//UserLookupApi.md#apiidentityuserslookupidget) | **GET** /api/identity/users/lookup/{id} | 
 *UserLookupApi* | [**apiIdentityUsersLookupSearchGet**](doc//UserLookupApi.md#apiidentityuserslookupsearchget) | **GET** /api/identity/users/lookup/search | 
+*UserStorageApi* | [**apiAppUserStorageGet**](doc//UserStorageApi.md#apiappuserstorageget) | **GET** /api/app/user-storage | 
+*VerificationApi* | [**apiAppVerificationSendCodePost**](doc//VerificationApi.md#apiappverificationsendcodepost) | **POST** /api/app/verification/send-code | 
 
 
 ## Documentation For Models
@@ -179,14 +159,15 @@ Class | Method | HTTP request | Description
  - [AppDtoPagedResultDto](doc//AppDtoPagedResultDto.md)
  - [AppReleaseDto](doc//AppReleaseDto.md)
  - [AppReleaseDtoPagedResultDto](doc//AppReleaseDtoPagedResultDto.md)
- - [AppTheme](doc//AppTheme.md)
- - [AppThemeMode](doc//AppThemeMode.md)
  - [AppUserScoreDto](doc//AppUserScoreDto.md)
  - [ApplicationApiDescriptionModel](doc//ApplicationApiDescriptionModel.md)
  - [ApplicationAuthConfigurationDto](doc//ApplicationAuthConfigurationDto.md)
  - [ApplicationConfigurationDto](doc//ApplicationConfigurationDto.md)
  - [ApplicationFeatureConfigurationDto](doc//ApplicationFeatureConfigurationDto.md)
+ - [ApplicationGlobalFeatureConfigurationDto](doc//ApplicationGlobalFeatureConfigurationDto.md)
  - [ApplicationLocalizationConfigurationDto](doc//ApplicationLocalizationConfigurationDto.md)
+ - [ApplicationLocalizationDto](doc//ApplicationLocalizationDto.md)
+ - [ApplicationLocalizationResourceDto](doc//ApplicationLocalizationResourceDto.md)
  - [ApplicationSettingConfigurationDto](doc//ApplicationSettingConfigurationDto.md)
  - [BooleanKeyValue](doc//BooleanKeyValue.md)
  - [BooleanSetKeyValueDto](doc//BooleanSetKeyValueDto.md)
@@ -196,10 +177,8 @@ Class | Method | HTTP request | Description
  - [ControllerInterfaceApiDescriptionModel](doc//ControllerInterfaceApiDescriptionModel.md)
  - [CreateOrUpdateAppDto](doc//CreateOrUpdateAppDto.md)
  - [CreateOrUpdateAppReleaseDto](doc//CreateOrUpdateAppReleaseDto.md)
- - [CreatePushNotificationDto](doc//CreatePushNotificationDto.md)
  - [CreateUpdateAppUserScoreDto](doc//CreateUpdateAppUserScoreDto.md)
- - [CreateUpdateItemDto](doc//CreateUpdateItemDto.md)
- - [CreateUpdateNotificationDto](doc//CreateUpdateNotificationDto.md)
+ - [CreateUpdatePuupeeDto](doc//CreateUpdatePuupeeDto.md)
  - [CurrentCultureDto](doc//CurrentCultureDto.md)
  - [CurrentTenantDto](doc//CurrentTenantDto.md)
  - [CurrentUserDto](doc//CurrentUserDto.md)
@@ -229,8 +208,6 @@ Class | Method | HTTP request | Description
  - [FeatureDto](doc//FeatureDto.md)
  - [FeatureGroupDto](doc//FeatureGroupDto.md)
  - [FeatureProviderDto](doc//FeatureProviderDto.md)
- - [FileDto](doc//FileDto.md)
- - [FileOrCredentialsDto](doc//FileOrCredentialsDto.md)
  - [FindTenantResultDto](doc//FindTenantResultDto.md)
  - [GetFeatureListResultDto](doc//GetFeatureListResultDto.md)
  - [GetPermissionListResultDto](doc//GetPermissionListResultDto.md)
@@ -249,22 +226,15 @@ Class | Method | HTTP request | Description
  - [IdentityUserUpdateRolesDto](doc//IdentityUserUpdateRolesDto.md)
  - [Int32KeyValue](doc//Int32KeyValue.md)
  - [Int32SetKeyValueDto](doc//Int32SetKeyValueDto.md)
- - [ItemDto](doc//ItemDto.md)
- - [ItemDtoPagedResultDto](doc//ItemDtoPagedResultDto.md)
+ - [InterfaceMethodApiDescriptionModel](doc//InterfaceMethodApiDescriptionModel.md)
  - [LanguageInfo](doc//LanguageInfo.md)
  - [LocalizableStringDto](doc//LocalizableStringDto.md)
  - [LoginResultType](doc//LoginResultType.md)
- - [MemberDto](doc//MemberDto.md)
  - [MethodParameterApiDescriptionModel](doc//MethodParameterApiDescriptionModel.md)
  - [ModuleApiDescriptionModel](doc//ModuleApiDescriptionModel.md)
  - [ModuleExtensionDto](doc//ModuleExtensionDto.md)
  - [MultiTenancyInfoDto](doc//MultiTenancyInfoDto.md)
  - [NameValue](doc//NameValue.md)
- - [NoteSpecDto](doc//NoteSpecDto.md)
- - [NotificationDto](doc//NotificationDto.md)
- - [NotificationDtoPagedResultDto](doc//NotificationDtoPagedResultDto.md)
- - [NotificationInfoDto](doc//NotificationInfoDto.md)
- - [NotificationInfoDtoPagedResultDto](doc//NotificationInfoDtoPagedResultDto.md)
  - [ObjectExtensionsDto](doc//ObjectExtensionsDto.md)
  - [ParameterApiDescriptionModel](doc//ParameterApiDescriptionModel.md)
  - [PermissionGrantInfoDto](doc//PermissionGrantInfoDto.md)
@@ -272,6 +242,9 @@ Class | Method | HTTP request | Description
  - [ProfileDto](doc//ProfileDto.md)
  - [PropertyApiDescriptionModel](doc//PropertyApiDescriptionModel.md)
  - [ProviderInfoDto](doc//ProviderInfoDto.md)
+ - [PuupeeChangedEto](doc//PuupeeChangedEto.md)
+ - [PuupeeDto](doc//PuupeeDto.md)
+ - [PuupeeDtoPagedResultDto](doc//PuupeeDtoPagedResultDto.md)
  - [RefreshDeviceStatusDto](doc//RefreshDeviceStatusDto.md)
  - [RegisterDto](doc//RegisterDto.md)
  - [RemoteServiceErrorInfo](doc//RemoteServiceErrorInfo.md)
@@ -280,14 +253,15 @@ Class | Method | HTTP request | Description
  - [ResetPasswordDto](doc//ResetPasswordDto.md)
  - [ReturnValueApiDescriptionModel](doc//ReturnValueApiDescriptionModel.md)
  - [SendPasswordResetCodeDto](doc//SendPasswordResetCodeDto.md)
- - [SendSmsCodeDto](doc//SendSmsCodeDto.md)
- - [SettingsDto](doc//SettingsDto.md)
+ - [SendTestEmailInput](doc//SendTestEmailInput.md)
+ - [SendVerificationCodeDto](doc//SendVerificationCodeDto.md)
  - [SimpleDataDto](doc//SimpleDataDto.md)
  - [SimpleDataDtoPagedResultDto](doc//SimpleDataDtoPagedResultDto.md)
- - [SpecialItemDto](doc//SpecialItemDto.md)
+ - [StorageObjectCredentials](doc//StorageObjectCredentials.md)
+ - [StorageObjectDto](doc//StorageObjectDto.md)
+ - [StorageObjectOrCredentialsDto](doc//StorageObjectOrCredentialsDto.md)
  - [StringKeyValue](doc//StringKeyValue.md)
  - [StringSetKeyValueDto](doc//StringSetKeyValueDto.md)
- - [SyncItemChangedEto](doc//SyncItemChangedEto.md)
  - [SyncStateDto](doc//SyncStateDto.md)
  - [TenantCreateDto](doc//TenantCreateDto.md)
  - [TenantDto](doc//TenantDto.md)
@@ -295,8 +269,6 @@ Class | Method | HTTP request | Description
  - [TenantUpdateDto](doc//TenantUpdateDto.md)
  - [TimeZone](doc//TimeZone.md)
  - [TimingDto](doc//TimingDto.md)
- - [TodoOrderBy](doc//TodoOrderBy.md)
- - [TodoSettingsDto](doc//TodoSettingsDto.md)
  - [TypeApiDescriptionModel](doc//TypeApiDescriptionModel.md)
  - [UpdateEmailSettingsDto](doc//UpdateEmailSettingsDto.md)
  - [UpdateFeatureDto](doc//UpdateFeatureDto.md)
@@ -304,25 +276,18 @@ Class | Method | HTTP request | Description
  - [UpdatePermissionDto](doc//UpdatePermissionDto.md)
  - [UpdatePermissionsDto](doc//UpdatePermissionsDto.md)
  - [UpdateProfileDto](doc//UpdateProfileDto.md)
- - [UploadCredentials](doc//UploadCredentials.md)
  - [UserData](doc//UserData.md)
  - [UserDataListResultDto](doc//UserDataListResultDto.md)
  - [UserLoginInfo](doc//UserLoginInfo.md)
  - [UserStorageDto](doc//UserStorageDto.md)
  - [UserStorageItemDto](doc//UserStorageItemDto.md)
+ - [VerifyPasswordResetTokenInput](doc//VerifyPasswordResetTokenInput.md)
  - [WindowsTimeZone](doc//WindowsTimeZone.md)
 
 
 ## Documentation For Authorization
 
-
-## oauth2
-
-- **Type**: OAuth
-- **Flow**: accessCode
-- **Authorization URL**: http://localhost:44342/connect/authorize
-- **Scopes**: 
- - **Doggy**: Doggy API
+ All endpoints do not require authorization.
 
 
 ## Author

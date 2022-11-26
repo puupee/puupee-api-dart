@@ -16,6 +16,56 @@ class FeaturesApi {
 
   final ApiClient apiClient;
 
+  /// Performs an HTTP 'DELETE /api/feature-management/features' operation and returns the [Response].
+  /// Parameters:
+  ///
+  /// * [String] providerName:
+  ///
+  /// * [String] providerKey:
+  Future<Response> apiFeatureManagementFeaturesDeleteWithHttpInfo({ String? providerName, String? providerKey, }) async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/feature-management/features';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    if (providerName != null) {
+      queryParams.addAll(_queryParams('', 'providerName', providerName));
+    }
+    if (providerKey != null) {
+      queryParams.addAll(_queryParams('', 'providerKey', providerKey));
+    }
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'DELETE',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Parameters:
+  ///
+  /// * [String] providerName:
+  ///
+  /// * [String] providerKey:
+  Future<void> apiFeatureManagementFeaturesDelete({ String? providerName, String? providerKey, }) async {
+    final response = await apiFeatureManagementFeaturesDeleteWithHttpInfo( providerName: providerName, providerKey: providerKey, );
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+  }
+
   /// Performs an HTTP 'GET /api/feature-management/features' operation and returns the [Response].
   /// Parameters:
   ///

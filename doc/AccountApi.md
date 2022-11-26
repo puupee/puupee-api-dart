@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**apiAccountRegisterPost**](AccountApi.md#apiaccountregisterpost) | **POST** /api/account/register | 
 [**apiAccountResetPasswordPost**](AccountApi.md#apiaccountresetpasswordpost) | **POST** /api/account/reset-password | 
 [**apiAccountSendPasswordResetCodePost**](AccountApi.md#apiaccountsendpasswordresetcodepost) | **POST** /api/account/send-password-reset-code | 
+[**apiAccountVerifyPasswordResetTokenPost**](AccountApi.md#apiaccountverifypasswordresettokenpost) | **POST** /api/account/verify-password-reset-token | 
 
 
 # **apiAccountRegisterPost**
@@ -22,8 +23,6 @@ Method | HTTP request | Description
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = AccountApi();
 final registerDto = RegisterDto(); // RegisterDto | 
@@ -48,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -65,8 +64,6 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = AccountApi();
 final resetPasswordDto = ResetPasswordDto(); // ResetPasswordDto | 
@@ -90,7 +87,7 @@ void (empty response body)
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -107,8 +104,6 @@ void (empty response body)
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = AccountApi();
 final sendPasswordResetCodeDto = SendPasswordResetCodeDto(); // SendPasswordResetCodeDto | 
@@ -132,7 +127,48 @@ void (empty response body)
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **apiAccountVerifyPasswordResetTokenPost**
+> bool apiAccountVerifyPasswordResetTokenPost(verifyPasswordResetTokenInput)
+
+
+
+### Example
+```dart
+import 'package:puupee_api/api.dart';
+
+final api_instance = AccountApi();
+final verifyPasswordResetTokenInput = VerifyPasswordResetTokenInput(); // VerifyPasswordResetTokenInput | 
+
+try {
+    final result = api_instance.apiAccountVerifyPasswordResetTokenPost(verifyPasswordResetTokenInput);
+    print(result);
+} catch (e) {
+    print('Exception when calling AccountApi->apiAccountVerifyPasswordResetTokenPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **verifyPasswordResetTokenInput** | [**VerifyPasswordResetTokenInput**](VerifyPasswordResetTokenInput.md)|  | [optional] 
+
+### Return type
+
+**bool**
+
+### Authorization
+
+No authorization required
 
 ### HTTP request headers
 

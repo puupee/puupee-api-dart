@@ -17,7 +17,7 @@ void main() {
   // final instance = AbpApplicationConfigurationApi();
 
   group('tests for AbpApplicationConfigurationApi', () {
-    //Future<ApplicationConfigurationDto> apiAbpApplicationConfigurationGet() async
+    //Future<ApplicationConfigurationDto> apiAbpApplicationConfigurationGet({ bool includeLocalizationResources }) async
     test('test apiAbpApplicationConfigurationGet', () async {
       // TODO
     });

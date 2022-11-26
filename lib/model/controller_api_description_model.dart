@@ -16,6 +16,7 @@ class ControllerApiDescriptionModel {
     this.controllerName,
     this.controllerGroupName,
     this.isRemoteService,
+    this.isIntegrationService,
     this.apiVersion,
     this.type,
     this.interfaces = const [],
@@ -34,6 +35,14 @@ class ControllerApiDescriptionModel {
   ///
   bool? isRemoteService;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  bool? isIntegrationService;
+
   String? apiVersion;
 
   String? type;
@@ -47,6 +56,7 @@ class ControllerApiDescriptionModel {
      other.controllerName == controllerName &&
      other.controllerGroupName == controllerGroupName &&
      other.isRemoteService == isRemoteService &&
+     other.isIntegrationService == isIntegrationService &&
      other.apiVersion == apiVersion &&
      other.type == type &&
      other.interfaces == interfaces &&
@@ -58,13 +68,14 @@ class ControllerApiDescriptionModel {
     (controllerName == null ? 0 : controllerName!.hashCode) +
     (controllerGroupName == null ? 0 : controllerGroupName!.hashCode) +
     (isRemoteService == null ? 0 : isRemoteService!.hashCode) +
+    (isIntegrationService == null ? 0 : isIntegrationService!.hashCode) +
     (apiVersion == null ? 0 : apiVersion!.hashCode) +
     (type == null ? 0 : type!.hashCode) +
     (interfaces == null ? 0 : interfaces!.hashCode) +
     (actions == null ? 0 : actions!.hashCode);
 
   @override
-  String toString() => 'ControllerApiDescriptionModel[controllerName=$controllerName, controllerGroupName=$controllerGroupName, isRemoteService=$isRemoteService, apiVersion=$apiVersion, type=$type, interfaces=$interfaces, actions=$actions]';
+  String toString() => 'ControllerApiDescriptionModel[controllerName=$controllerName, controllerGroupName=$controllerGroupName, isRemoteService=$isRemoteService, isIntegrationService=$isIntegrationService, apiVersion=$apiVersion, type=$type, interfaces=$interfaces, actions=$actions]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -82,6 +93,11 @@ class ControllerApiDescriptionModel {
       json[r'isRemoteService'] = this.isRemoteService;
     } else {
       json[r'isRemoteService'] = null;
+    }
+    if (this.isIntegrationService != null) {
+      json[r'isIntegrationService'] = this.isIntegrationService;
+    } else {
+      json[r'isIntegrationService'] = null;
     }
     if (this.apiVersion != null) {
       json[r'apiVersion'] = this.apiVersion;
@@ -128,6 +144,7 @@ class ControllerApiDescriptionModel {
         controllerName: mapValueOfType<String>(json, r'controllerName'),
         controllerGroupName: mapValueOfType<String>(json, r'controllerGroupName'),
         isRemoteService: mapValueOfType<bool>(json, r'isRemoteService'),
+        isIntegrationService: mapValueOfType<bool>(json, r'isIntegrationService'),
         apiVersion: mapValueOfType<String>(json, r'apiVersion'),
         type: mapValueOfType<String>(json, r'type'),
         interfaces: ControllerInterfaceApiDescriptionModel.listFromJson(json[r'interfaces']) ?? const [],

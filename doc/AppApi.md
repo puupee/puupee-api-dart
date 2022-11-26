@@ -10,12 +10,12 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**apiAppAppByNameGet**](AppApi.md#apiappappbynameget) | **GET** /api/app/app/by-name | 
-[**apiAppAppFileOrCredentialsGet**](AppApi.md#apiappappfileorcredentialsget) | **GET** /api/app/app/file-or-credentials | 
 [**apiAppAppGet**](AppApi.md#apiappappget) | **GET** /api/app/app | 
 [**apiAppAppIdDelete**](AppApi.md#apiappappiddelete) | **DELETE** /api/app/app/{id} | 
 [**apiAppAppIdGet**](AppApi.md#apiappappidget) | **GET** /api/app/app/{id} | 
 [**apiAppAppIdPut**](AppApi.md#apiappappidput) | **PUT** /api/app/app/{id} | 
 [**apiAppAppPost**](AppApi.md#apiappapppost) | **POST** /api/app/app | 
+[**apiAppAppStorageObjectOrCredentialsGet**](AppApi.md#apiappappstorageobjectorcredentialsget) | **GET** /api/app/app/storage-object-or-credentials | 
 
 
 # **apiAppAppByNameGet**
@@ -26,8 +26,6 @@ Method | HTTP request | Description
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = AppApi();
 final name = name_example; // String | 
@@ -52,52 +50,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **apiAppAppFileOrCredentialsGet**
-> FileOrCredentialsDto apiAppAppFileOrCredentialsGet(rapidCode, key)
-
-
-
-### Example
-```dart
-import 'package:puupee_api/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api_instance = AppApi();
-final rapidCode = rapidCode_example; // String | 
-final key = key_example; // String | 
-
-try {
-    final result = api_instance.apiAppAppFileOrCredentialsGet(rapidCode, key);
-    print(result);
-} catch (e) {
-    print('Exception when calling AppApi->apiAppAppFileOrCredentialsGet: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **rapidCode** | **String**|  | [optional] 
- **key** | **String**|  | [optional] 
-
-### Return type
-
-[**FileOrCredentialsDto**](FileOrCredentialsDto.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -114,8 +67,6 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = AppApi();
 final creatorId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
@@ -146,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -163,8 +114,6 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = AppApi();
 final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
@@ -188,7 +137,7 @@ void (empty response body)
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -205,8 +154,6 @@ void (empty response body)
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = AppApi();
 final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
@@ -231,7 +178,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -248,8 +195,6 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = AppApi();
 final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
@@ -276,7 +221,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -293,8 +238,6 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = AppApi();
 final createOrUpdateAppDto = CreateOrUpdateAppDto(); // CreateOrUpdateAppDto | 
@@ -319,11 +262,54 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **apiAppAppStorageObjectOrCredentialsGet**
+> StorageObjectOrCredentialsDto apiAppAppStorageObjectOrCredentialsGet(rapidCode, key)
+
+
+
+### Example
+```dart
+import 'package:puupee_api/api.dart';
+
+final api_instance = AppApi();
+final rapidCode = rapidCode_example; // String | 
+final key = key_example; // String | 
+
+try {
+    final result = api_instance.apiAppAppStorageObjectOrCredentialsGet(rapidCode, key);
+    print(result);
+} catch (e) {
+    print('Exception when calling AppApi->apiAppAppStorageObjectOrCredentialsGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **rapidCode** | **String**|  | [optional] 
+ **key** | **String**|  | [optional] 
+
+### Return type
+
+[**StorageObjectOrCredentialsDto**](StorageObjectOrCredentialsDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -193,10 +193,6 @@ class ApiClient {
           return AppReleaseDto.fromJson(value);
         case 'AppReleaseDtoPagedResultDto':
           return AppReleaseDtoPagedResultDto.fromJson(value);
-        case 'AppTheme':
-          return AppTheme.fromJson(value);
-        case 'AppThemeMode':
-          return AppThemeModeTypeTransformer().decode(value);
         case 'AppUserScoreDto':
           return AppUserScoreDto.fromJson(value);
         case 'ApplicationApiDescriptionModel':
@@ -207,8 +203,14 @@ class ApiClient {
           return ApplicationConfigurationDto.fromJson(value);
         case 'ApplicationFeatureConfigurationDto':
           return ApplicationFeatureConfigurationDto.fromJson(value);
+        case 'ApplicationGlobalFeatureConfigurationDto':
+          return ApplicationGlobalFeatureConfigurationDto.fromJson(value);
         case 'ApplicationLocalizationConfigurationDto':
           return ApplicationLocalizationConfigurationDto.fromJson(value);
+        case 'ApplicationLocalizationDto':
+          return ApplicationLocalizationDto.fromJson(value);
+        case 'ApplicationLocalizationResourceDto':
+          return ApplicationLocalizationResourceDto.fromJson(value);
         case 'ApplicationSettingConfigurationDto':
           return ApplicationSettingConfigurationDto.fromJson(value);
         case 'BooleanKeyValue':
@@ -227,14 +229,10 @@ class ApiClient {
           return CreateOrUpdateAppDto.fromJson(value);
         case 'CreateOrUpdateAppReleaseDto':
           return CreateOrUpdateAppReleaseDto.fromJson(value);
-        case 'CreatePushNotificationDto':
-          return CreatePushNotificationDto.fromJson(value);
         case 'CreateUpdateAppUserScoreDto':
           return CreateUpdateAppUserScoreDto.fromJson(value);
-        case 'CreateUpdateItemDto':
-          return CreateUpdateItemDto.fromJson(value);
-        case 'CreateUpdateNotificationDto':
-          return CreateUpdateNotificationDto.fromJson(value);
+        case 'CreateUpdatePuupeeDto':
+          return CreateUpdatePuupeeDto.fromJson(value);
         case 'CurrentCultureDto':
           return CurrentCultureDto.fromJson(value);
         case 'CurrentTenantDto':
@@ -293,10 +291,6 @@ class ApiClient {
           return FeatureGroupDto.fromJson(value);
         case 'FeatureProviderDto':
           return FeatureProviderDto.fromJson(value);
-        case 'FileDto':
-          return FileDto.fromJson(value);
-        case 'FileOrCredentialsDto':
-          return FileOrCredentialsDto.fromJson(value);
         case 'FindTenantResultDto':
           return FindTenantResultDto.fromJson(value);
         case 'GetFeatureListResultDto':
@@ -333,18 +327,14 @@ class ApiClient {
           return Int32KeyValue.fromJson(value);
         case 'Int32SetKeyValueDto':
           return Int32SetKeyValueDto.fromJson(value);
-        case 'ItemDto':
-          return ItemDto.fromJson(value);
-        case 'ItemDtoPagedResultDto':
-          return ItemDtoPagedResultDto.fromJson(value);
+        case 'InterfaceMethodApiDescriptionModel':
+          return InterfaceMethodApiDescriptionModel.fromJson(value);
         case 'LanguageInfo':
           return LanguageInfo.fromJson(value);
         case 'LocalizableStringDto':
           return LocalizableStringDto.fromJson(value);
         case 'LoginResultType':
           return LoginResultTypeTypeTransformer().decode(value);
-        case 'MemberDto':
-          return MemberDto.fromJson(value);
         case 'MethodParameterApiDescriptionModel':
           return MethodParameterApiDescriptionModel.fromJson(value);
         case 'ModuleApiDescriptionModel':
@@ -355,16 +345,6 @@ class ApiClient {
           return MultiTenancyInfoDto.fromJson(value);
         case 'NameValue':
           return NameValue.fromJson(value);
-        case 'NoteSpecDto':
-          return NoteSpecDto.fromJson(value);
-        case 'NotificationDto':
-          return NotificationDto.fromJson(value);
-        case 'NotificationDtoPagedResultDto':
-          return NotificationDtoPagedResultDto.fromJson(value);
-        case 'NotificationInfoDto':
-          return NotificationInfoDto.fromJson(value);
-        case 'NotificationInfoDtoPagedResultDto':
-          return NotificationInfoDtoPagedResultDto.fromJson(value);
         case 'ObjectExtensionsDto':
           return ObjectExtensionsDto.fromJson(value);
         case 'ParameterApiDescriptionModel':
@@ -379,6 +359,12 @@ class ApiClient {
           return PropertyApiDescriptionModel.fromJson(value);
         case 'ProviderInfoDto':
           return ProviderInfoDto.fromJson(value);
+        case 'PuupeeChangedEto':
+          return PuupeeChangedEto.fromJson(value);
+        case 'PuupeeDto':
+          return PuupeeDto.fromJson(value);
+        case 'PuupeeDtoPagedResultDto':
+          return PuupeeDtoPagedResultDto.fromJson(value);
         case 'RefreshDeviceStatusDto':
           return RefreshDeviceStatusDto.fromJson(value);
         case 'RegisterDto':
@@ -395,22 +381,24 @@ class ApiClient {
           return ReturnValueApiDescriptionModel.fromJson(value);
         case 'SendPasswordResetCodeDto':
           return SendPasswordResetCodeDto.fromJson(value);
-        case 'SendSmsCodeDto':
-          return SendSmsCodeDto.fromJson(value);
-        case 'SettingsDto':
-          return SettingsDto.fromJson(value);
+        case 'SendTestEmailInput':
+          return SendTestEmailInput.fromJson(value);
+        case 'SendVerificationCodeDto':
+          return SendVerificationCodeDto.fromJson(value);
         case 'SimpleDataDto':
           return SimpleDataDto.fromJson(value);
         case 'SimpleDataDtoPagedResultDto':
           return SimpleDataDtoPagedResultDto.fromJson(value);
-        case 'SpecialItemDto':
-          return SpecialItemDto.fromJson(value);
+        case 'StorageObjectCredentials':
+          return StorageObjectCredentials.fromJson(value);
+        case 'StorageObjectDto':
+          return StorageObjectDto.fromJson(value);
+        case 'StorageObjectOrCredentialsDto':
+          return StorageObjectOrCredentialsDto.fromJson(value);
         case 'StringKeyValue':
           return StringKeyValue.fromJson(value);
         case 'StringSetKeyValueDto':
           return StringSetKeyValueDto.fromJson(value);
-        case 'SyncItemChangedEto':
-          return SyncItemChangedEto.fromJson(value);
         case 'SyncStateDto':
           return SyncStateDto.fromJson(value);
         case 'TenantCreateDto':
@@ -425,10 +413,6 @@ class ApiClient {
           return TimeZone.fromJson(value);
         case 'TimingDto':
           return TimingDto.fromJson(value);
-        case 'TodoOrderBy':
-          return TodoOrderByTypeTransformer().decode(value);
-        case 'TodoSettingsDto':
-          return TodoSettingsDto.fromJson(value);
         case 'TypeApiDescriptionModel':
           return TypeApiDescriptionModel.fromJson(value);
         case 'UpdateEmailSettingsDto':
@@ -443,8 +427,6 @@ class ApiClient {
           return UpdatePermissionsDto.fromJson(value);
         case 'UpdateProfileDto':
           return UpdateProfileDto.fromJson(value);
-        case 'UploadCredentials':
-          return UploadCredentials.fromJson(value);
         case 'UserData':
           return UserData.fromJson(value);
         case 'UserDataListResultDto':
@@ -455,6 +437,8 @@ class ApiClient {
           return UserStorageDto.fromJson(value);
         case 'UserStorageItemDto':
           return UserStorageItemDto.fromJson(value);
+        case 'VerifyPasswordResetTokenInput':
+          return VerifyPasswordResetTokenInput.fromJson(value);
         case 'WindowsTimeZone':
           return WindowsTimeZone.fromJson(value);
         default:

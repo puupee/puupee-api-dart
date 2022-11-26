@@ -14,6 +14,7 @@ class ApplicationLocalizationConfigurationDto {
   /// Returns a new [ApplicationLocalizationConfigurationDto] instance.
   ApplicationLocalizationConfigurationDto({
     this.values = const {},
+    this.resources = const {},
     this.languages = const [],
     this.currentCulture,
     this.defaultResourceName,
@@ -22,6 +23,8 @@ class ApplicationLocalizationConfigurationDto {
   });
 
   Map<String, Map<String, String>>? values;
+
+  Map<String, ApplicationLocalizationResourceDto>? resources;
 
   List<LanguageInfo>? languages;
 
@@ -42,6 +45,7 @@ class ApplicationLocalizationConfigurationDto {
   @override
   bool operator ==(Object other) => identical(this, other) || other is ApplicationLocalizationConfigurationDto &&
      other.values == values &&
+     other.resources == resources &&
      other.languages == languages &&
      other.currentCulture == currentCulture &&
      other.defaultResourceName == defaultResourceName &&
@@ -52,6 +56,7 @@ class ApplicationLocalizationConfigurationDto {
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (values == null ? 0 : values!.hashCode) +
+    (resources == null ? 0 : resources!.hashCode) +
     (languages == null ? 0 : languages!.hashCode) +
     (currentCulture == null ? 0 : currentCulture!.hashCode) +
     (defaultResourceName == null ? 0 : defaultResourceName!.hashCode) +
@@ -59,7 +64,7 @@ class ApplicationLocalizationConfigurationDto {
     (languageFilesMap == null ? 0 : languageFilesMap!.hashCode);
 
   @override
-  String toString() => 'ApplicationLocalizationConfigurationDto[values=$values, languages=$languages, currentCulture=$currentCulture, defaultResourceName=$defaultResourceName, languagesMap=$languagesMap, languageFilesMap=$languageFilesMap]';
+  String toString() => 'ApplicationLocalizationConfigurationDto[values=$values, resources=$resources, languages=$languages, currentCulture=$currentCulture, defaultResourceName=$defaultResourceName, languagesMap=$languagesMap, languageFilesMap=$languageFilesMap]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -67,6 +72,11 @@ class ApplicationLocalizationConfigurationDto {
       json[r'values'] = this.values;
     } else {
       json[r'values'] = null;
+    }
+    if (this.resources != null) {
+      json[r'resources'] = this.resources;
+    } else {
+      json[r'resources'] = null;
     }
     if (this.languages != null) {
       json[r'languages'] = this.languages;
@@ -116,6 +126,7 @@ class ApplicationLocalizationConfigurationDto {
 
       return ApplicationLocalizationConfigurationDto(
         values: mapCastOfType<String, Map<String, String>>(json, r'values') ?? const {},
+        resources: ApplicationLocalizationResourceDto.mapFromJson(json[r'resources']) ?? const {},
         languages: LanguageInfo.listFromJson(json[r'languages']) ?? const [],
         currentCulture: CurrentCultureDto.fromJson(json[r'currentCulture']),
         defaultResourceName: mapValueOfType<String>(json, r'defaultResourceName'),

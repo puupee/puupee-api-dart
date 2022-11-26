@@ -18,11 +18,13 @@ class ApplicationConfigurationDto {
     this.setting,
     this.currentUser,
     this.features,
+    this.globalFeatures,
     this.multiTenancy,
     this.currentTenant,
     this.timing,
     this.clock,
     this.objectExtensions,
+    this.extraProperties = const {},
   });
 
   ///
@@ -71,6 +73,14 @@ class ApplicationConfigurationDto {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
+  ApplicationGlobalFeatureConfigurationDto? globalFeatures;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   MultiTenancyInfoDto? multiTenancy;
 
   ///
@@ -105,6 +115,8 @@ class ApplicationConfigurationDto {
   ///
   ObjectExtensionsDto? objectExtensions;
 
+  Map<String, Object>? extraProperties;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is ApplicationConfigurationDto &&
      other.localization == localization &&
@@ -112,11 +124,13 @@ class ApplicationConfigurationDto {
      other.setting == setting &&
      other.currentUser == currentUser &&
      other.features == features &&
+     other.globalFeatures == globalFeatures &&
      other.multiTenancy == multiTenancy &&
      other.currentTenant == currentTenant &&
      other.timing == timing &&
      other.clock == clock &&
-     other.objectExtensions == objectExtensions;
+     other.objectExtensions == objectExtensions &&
+     other.extraProperties == extraProperties;
 
   @override
   int get hashCode =>
@@ -126,14 +140,16 @@ class ApplicationConfigurationDto {
     (setting == null ? 0 : setting!.hashCode) +
     (currentUser == null ? 0 : currentUser!.hashCode) +
     (features == null ? 0 : features!.hashCode) +
+    (globalFeatures == null ? 0 : globalFeatures!.hashCode) +
     (multiTenancy == null ? 0 : multiTenancy!.hashCode) +
     (currentTenant == null ? 0 : currentTenant!.hashCode) +
     (timing == null ? 0 : timing!.hashCode) +
     (clock == null ? 0 : clock!.hashCode) +
-    (objectExtensions == null ? 0 : objectExtensions!.hashCode);
+    (objectExtensions == null ? 0 : objectExtensions!.hashCode) +
+    (extraProperties == null ? 0 : extraProperties!.hashCode);
 
   @override
-  String toString() => 'ApplicationConfigurationDto[localization=$localization, auth=$auth, setting=$setting, currentUser=$currentUser, features=$features, multiTenancy=$multiTenancy, currentTenant=$currentTenant, timing=$timing, clock=$clock, objectExtensions=$objectExtensions]';
+  String toString() => 'ApplicationConfigurationDto[localization=$localization, auth=$auth, setting=$setting, currentUser=$currentUser, features=$features, globalFeatures=$globalFeatures, multiTenancy=$multiTenancy, currentTenant=$currentTenant, timing=$timing, clock=$clock, objectExtensions=$objectExtensions, extraProperties=$extraProperties]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -162,6 +178,11 @@ class ApplicationConfigurationDto {
     } else {
       json[r'features'] = null;
     }
+    if (this.globalFeatures != null) {
+      json[r'globalFeatures'] = this.globalFeatures;
+    } else {
+      json[r'globalFeatures'] = null;
+    }
     if (this.multiTenancy != null) {
       json[r'multiTenancy'] = this.multiTenancy;
     } else {
@@ -186,6 +207,11 @@ class ApplicationConfigurationDto {
       json[r'objectExtensions'] = this.objectExtensions;
     } else {
       json[r'objectExtensions'] = null;
+    }
+    if (this.extraProperties != null) {
+      json[r'extraProperties'] = this.extraProperties;
+    } else {
+      json[r'extraProperties'] = null;
     }
     return json;
   }
@@ -214,11 +240,13 @@ class ApplicationConfigurationDto {
         setting: ApplicationSettingConfigurationDto.fromJson(json[r'setting']),
         currentUser: CurrentUserDto.fromJson(json[r'currentUser']),
         features: ApplicationFeatureConfigurationDto.fromJson(json[r'features']),
+        globalFeatures: ApplicationGlobalFeatureConfigurationDto.fromJson(json[r'globalFeatures']),
         multiTenancy: MultiTenancyInfoDto.fromJson(json[r'multiTenancy']),
         currentTenant: CurrentTenantDto.fromJson(json[r'currentTenant']),
         timing: TimingDto.fromJson(json[r'timing']),
         clock: ClockDto.fromJson(json[r'clock']),
         objectExtensions: ObjectExtensionsDto.fromJson(json[r'objectExtensions']),
+        extraProperties: mapCastOfType<String, Object>(json, r'extraProperties') ?? const {},
       );
     }
     return null;

@@ -31,6 +31,11 @@ void main() {
       // TODO
     });
 
+    // bool isIntegrationService
+    test('to test the property `isIntegrationService`', () async {
+      // TODO
+    });
+
     // String apiVersion
     test('to test the property `apiVersion`', () async {
       // TODO

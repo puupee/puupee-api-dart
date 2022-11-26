@@ -27,5 +27,10 @@ void main() {
       // TODO
     });
 
+    //Future apiSettingManagementEmailingSendTestEmailPost({ SendTestEmailInput sendTestEmailInput }) async
+    test('test apiSettingManagementEmailingSendTestEmailPost', () async {
+      // TODO
+    });
+
   });
 }

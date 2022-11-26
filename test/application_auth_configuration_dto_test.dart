@@ -16,11 +16,6 @@ void main() {
   // final instance = ApplicationAuthConfigurationDto();
 
   group('test ApplicationAuthConfigurationDto', () {
-    // Map<String, bool> policies (default value: const {})
-    test('to test the property `policies`', () async {
-      // TODO
-    });
-
     // Map<String, bool> grantedPolicies (default value: const {})
     test('to test the property `grantedPolicies`', () async {
       // TODO

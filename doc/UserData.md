@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **userName** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **surname** | **String** |  | [optional] 
+**isActive** | **bool** |  | [optional] 
 **email** | **String** |  | [optional] 
 **emailConfirmed** | **bool** |  | [optional] 
 **phoneNumber** | **String** |  | [optional] 

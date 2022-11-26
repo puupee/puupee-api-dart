@@ -22,8 +22,8 @@ void main() {
       // TODO
     });
 
-    //Future<SyncItemChangedEto> apiAppSyncStateItemChangedEtoPost() async
-    test('test apiAppSyncStateItemChangedEtoPost', () async {
+    //Future<PuupeeChangedEto> apiAppSyncStatePuupeeChangedEtoPost() async
+    test('test apiAppSyncStatePuupeeChangedEtoPost', () async {
       // TODO
     });
 

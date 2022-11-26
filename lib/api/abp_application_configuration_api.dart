@@ -17,7 +17,10 @@ class AbpApplicationConfigurationApi {
   final ApiClient apiClient;
 
   /// Performs an HTTP 'GET /api/abp/application-configuration' operation and returns the [Response].
-  Future<Response> apiAbpApplicationConfigurationGetWithHttpInfo() async {
+  /// Parameters:
+  ///
+  /// * [bool] includeLocalizationResources:
+  Future<Response> apiAbpApplicationConfigurationGetWithHttpInfo({ bool? includeLocalizationResources, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/abp/application-configuration';
 
@@ -27,6 +30,10 @@ class AbpApplicationConfigurationApi {
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
+
+    if (includeLocalizationResources != null) {
+      queryParams.addAll(_queryParams('', 'IncludeLocalizationResources', includeLocalizationResources));
+    }
 
     const contentTypes = <String>[];
 
@@ -42,8 +49,11 @@ class AbpApplicationConfigurationApi {
     );
   }
 
-  Future<ApplicationConfigurationDto?> apiAbpApplicationConfigurationGet() async {
-    final response = await apiAbpApplicationConfigurationGetWithHttpInfo();
+  /// Parameters:
+  ///
+  /// * [bool] includeLocalizationResources:
+  Future<ApplicationConfigurationDto?> apiAbpApplicationConfigurationGet({ bool? includeLocalizationResources, }) async {
+    final response = await apiAbpApplicationConfigurationGetWithHttpInfo( includeLocalizationResources: includeLocalizationResources, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

@@ -26,6 +26,16 @@ void main() {
       // TODO
     });
 
+    // String displayNameKey
+    test('to test the property `displayNameKey`', () async {
+      // TODO
+    });
+
+    // String displayNameResource
+    test('to test the property `displayNameResource`', () async {
+      // TODO
+    });
+
     // List<PermissionGrantInfoDto> permissions (default value: const [])
     test('to test the property `permissions`', () async {
       // TODO

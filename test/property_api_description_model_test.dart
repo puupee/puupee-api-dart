@@ -41,6 +41,31 @@ void main() {
       // TODO
     });
 
+    // int minLength
+    test('to test the property `minLength`', () async {
+      // TODO
+    });
+
+    // int maxLength
+    test('to test the property `maxLength`', () async {
+      // TODO
+    });
+
+    // String minimum
+    test('to test the property `minimum`', () async {
+      // TODO
+    });
+
+    // String maximum
+    test('to test the property `maximum`', () async {
+      // TODO
+    });
+
+    // String regex
+    test('to test the property `regex`', () async {
+      // TODO
+    });
+
 
   });
 

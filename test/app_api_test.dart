@@ -22,11 +22,6 @@ void main() {
       // TODO
     });
 
-    //Future<FileOrCredentialsDto> apiAppAppFileOrCredentialsGet({ String rapidCode, String key }) async
-    test('test apiAppAppFileOrCredentialsGet', () async {
-      // TODO
-    });
-
     //Future<AppDtoPagedResultDto> apiAppAppGet({ String creatorId, String sorting, int skipCount, int maxResultCount }) async
     test('test apiAppAppGet', () async {
       // TODO
@@ -49,6 +44,11 @@ void main() {
 
     //Future<AppDto> apiAppAppPost({ CreateOrUpdateAppDto createOrUpdateAppDto }) async
     test('test apiAppAppPost', () async {
+      // TODO
+    });
+
+    //Future<StorageObjectOrCredentialsDto> apiAppAppStorageObjectOrCredentialsGet({ String rapidCode, String key }) async
+    test('test apiAppAppStorageObjectOrCredentialsGet', () async {
       // TODO
     });
 

@@ -32,5 +32,10 @@ void main() {
       // TODO
     });
 
+    //Future<bool> apiAccountVerifyPasswordResetTokenPost({ VerifyPasswordResetTokenInput verifyPasswordResetTokenInput }) async
+    test('test apiAccountVerifyPasswordResetTokenPost', () async {
+      // TODO
+    });
+
   });
 }

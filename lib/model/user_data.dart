@@ -18,6 +18,7 @@ class UserData {
     this.userName,
     this.name,
     this.surname,
+    this.isActive,
     this.email,
     this.emailConfirmed,
     this.phoneNumber,
@@ -39,6 +40,14 @@ class UserData {
   String? name;
 
   String? surname;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  bool? isActive;
 
   String? email;
 
@@ -67,6 +76,7 @@ class UserData {
      other.userName == userName &&
      other.name == name &&
      other.surname == surname &&
+     other.isActive == isActive &&
      other.email == email &&
      other.emailConfirmed == emailConfirmed &&
      other.phoneNumber == phoneNumber &&
@@ -80,13 +90,14 @@ class UserData {
     (userName == null ? 0 : userName!.hashCode) +
     (name == null ? 0 : name!.hashCode) +
     (surname == null ? 0 : surname!.hashCode) +
+    (isActive == null ? 0 : isActive!.hashCode) +
     (email == null ? 0 : email!.hashCode) +
     (emailConfirmed == null ? 0 : emailConfirmed!.hashCode) +
     (phoneNumber == null ? 0 : phoneNumber!.hashCode) +
     (phoneNumberConfirmed == null ? 0 : phoneNumberConfirmed!.hashCode);
 
   @override
-  String toString() => 'UserData[id=$id, tenantId=$tenantId, userName=$userName, name=$name, surname=$surname, email=$email, emailConfirmed=$emailConfirmed, phoneNumber=$phoneNumber, phoneNumberConfirmed=$phoneNumberConfirmed]';
+  String toString() => 'UserData[id=$id, tenantId=$tenantId, userName=$userName, name=$name, surname=$surname, isActive=$isActive, email=$email, emailConfirmed=$emailConfirmed, phoneNumber=$phoneNumber, phoneNumberConfirmed=$phoneNumberConfirmed]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -114,6 +125,11 @@ class UserData {
       json[r'surname'] = this.surname;
     } else {
       json[r'surname'] = null;
+    }
+    if (this.isActive != null) {
+      json[r'isActive'] = this.isActive;
+    } else {
+      json[r'isActive'] = null;
     }
     if (this.email != null) {
       json[r'email'] = this.email;
@@ -162,6 +178,7 @@ class UserData {
         userName: mapValueOfType<String>(json, r'userName'),
         name: mapValueOfType<String>(json, r'name'),
         surname: mapValueOfType<String>(json, r'surname'),
+        isActive: mapValueOfType<bool>(json, r'isActive'),
         email: mapValueOfType<String>(json, r'email'),
         emailConfirmed: mapValueOfType<bool>(json, r'emailConfirmed'),
         phoneNumber: mapValueOfType<String>(json, r'phoneNumber'),
