@@ -115,7 +115,7 @@ class ApplicationLocalizationConfigurationDto {
       }());
 
       return ApplicationLocalizationConfigurationDto(
-        values: mapCastOfType<String, dynamic>(json, r'values') ?? const {},
+        values: mapCastOfType<String, Map<String, String>>(json, r'values') ?? const {},
         languages: LanguageInfo.listFromJson(json[r'languages']) ?? const [],
         currentCulture: CurrentCultureDto.fromJson(json[r'currentCulture']),
         defaultResourceName: mapValueOfType<String>(json, r'defaultResourceName'),

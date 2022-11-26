@@ -120,7 +120,7 @@ class TypeApiDescriptionModel {
         enumNames: json[r'enumNames'] is List
             ? (json[r'enumNames'] as List).cast<String>()
             : const [],
-        enumValues: Object.listFromJson(json[r'enumValues']) ?? const [],
+        enumValues: json[r'enumValues'] is List ? (json[r'enumValues'] as List).cast<String>() : const [],
         genericArguments: json[r'genericArguments'] is List
             ? (json[r'genericArguments'] as List).cast<String>()
             : const [],
