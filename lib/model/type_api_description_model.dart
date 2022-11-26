@@ -1,34 +1,39 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class TypeApiDescriptionModel {
   /// Returns a new [TypeApiDescriptionModel] instance.
   TypeApiDescriptionModel({
     this.baseType,
     this.isEnum,
-    this.enumNames,
-    this.enumValues,
-    this.genericArguments,
-    this.properties,
+    this.enumNames = const [],
+    this.enumValues = const [],
+    this.genericArguments = const [],
+    this.properties = const [],
   });
-
 
   String? baseType;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? isEnum;
 
   List<String>? enumNames;
 
-  List<Map<String, dynamic>>? enumValues;
+  List<Object>? enumValues;
 
   List<String>? genericArguments;
 
@@ -45,35 +50,48 @@ class TypeApiDescriptionModel {
 
   @override
   int get hashCode =>
-    baseType.hashCode +
-    isEnum.hashCode +
-    enumNames.hashCode +
-    enumValues.hashCode +
-    genericArguments.hashCode +
-    properties.hashCode;
+    // ignore: unnecessary_parenthesis
+    (baseType == null ? 0 : baseType!.hashCode) +
+    (isEnum == null ? 0 : isEnum!.hashCode) +
+    (enumNames == null ? 0 : enumNames!.hashCode) +
+    (enumValues == null ? 0 : enumValues!.hashCode) +
+    (genericArguments == null ? 0 : genericArguments!.hashCode) +
+    (properties == null ? 0 : properties!.hashCode);
 
   @override
   String toString() => 'TypeApiDescriptionModel[baseType=$baseType, isEnum=$isEnum, enumNames=$enumNames, enumValues=$enumValues, genericArguments=$genericArguments, properties=$properties]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (baseType != null) {
-      json[r'baseType'] = baseType;
+    if (this.baseType != null) {
+      json[r'baseType'] = this.baseType;
+    } else {
+      json[r'baseType'] = null;
     }
-    if (isEnum != null) {
-      json[r'isEnum'] = isEnum;
+    if (this.isEnum != null) {
+      json[r'isEnum'] = this.isEnum;
+    } else {
+      json[r'isEnum'] = null;
     }
-    if (enumNames != null) {
-      json[r'enumNames'] = enumNames;
+    if (this.enumNames != null) {
+      json[r'enumNames'] = this.enumNames;
+    } else {
+      json[r'enumNames'] = null;
     }
-    if (enumValues != null) {
-      json[r'enumValues'] = enumValues;
+    if (this.enumValues != null) {
+      json[r'enumValues'] = this.enumValues;
+    } else {
+      json[r'enumValues'] = null;
     }
-    if (genericArguments != null) {
-      json[r'genericArguments'] = genericArguments;
+    if (this.genericArguments != null) {
+      json[r'genericArguments'] = this.genericArguments;
+    } else {
+      json[r'genericArguments'] = null;
     }
-    if (properties != null) {
-      json[r'properties'] = properties;
+    if (this.properties != null) {
+      json[r'properties'] = this.properties;
+    } else {
+      json[r'properties'] = null;
     }
     return json;
   }
@@ -81,48 +99,81 @@ class TypeApiDescriptionModel {
   /// Returns a new [TypeApiDescriptionModel] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static TypeApiDescriptionModel fromJson(Map<String, dynamic> json) => TypeApiDescriptionModel(
-        baseType: json[r'baseType'] == null ? null : json[r'baseType'] as String?,
-        isEnum: json[r'isEnum'] == null ? null : json[r'isEnum'] as bool?,
-        enumNames: json[r'enumNames'] is List
-          ? (json[r'enumNames'] as List).cast<String>()
-          : [],
-        enumValues: (json[r'enumValues'] as List).cast<Map<String, dynamic>>(),
-        genericArguments: json[r'genericArguments'] is List
-          ? (json[r'genericArguments'] as List).cast<String>()
-          : [],
-        properties: json[r'properties'] == null ? null : PropertyApiDescriptionModel.listFromJson(json[r'properties']),
-    );
+  static TypeApiDescriptionModel? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<TypeApiDescriptionModel> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<TypeApiDescriptionModel>((i) => TypeApiDescriptionModel.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <TypeApiDescriptionModel>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "TypeApiDescriptionModel[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "TypeApiDescriptionModel[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return TypeApiDescriptionModel(
+        baseType: mapValueOfType<String>(json, r'baseType'),
+        isEnum: mapValueOfType<bool>(json, r'isEnum'),
+        enumNames: json[r'enumNames'] is List
+            ? (json[r'enumNames'] as List).cast<String>()
+            : const [],
+        enumValues: Object.listFromJson(json[r'enumValues']) ?? const [],
+        genericArguments: json[r'genericArguments'] is List
+            ? (json[r'genericArguments'] as List).cast<String>()
+            : const [],
+        properties: PropertyApiDescriptionModel.listFromJson(json[r'properties']) ?? const [],
+      );
+    }
+    return null;
+  }
+
+  static List<TypeApiDescriptionModel>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <TypeApiDescriptionModel>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = TypeApiDescriptionModel.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, TypeApiDescriptionModel> mapFromJson(dynamic json) {
     final map = <String, TypeApiDescriptionModel>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = TypeApiDescriptionModel.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = TypeApiDescriptionModel.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of TypeApiDescriptionModel-objects as value to a dart map
-  static Map<String, List<TypeApiDescriptionModel>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<TypeApiDescriptionModel>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<TypeApiDescriptionModel>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = TypeApiDescriptionModel.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = TypeApiDescriptionModel.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

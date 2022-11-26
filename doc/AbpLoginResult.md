@@ -1,8 +1,8 @@
-# doggy_api.model.AbpLoginResult
+# puupee_api.model.AbpLoginResult
 
 ## Load the model package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 ## Properties

@@ -1,23 +1,22 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class ModuleApiDescriptionModel {
   /// Returns a new [ModuleApiDescriptionModel] instance.
   ModuleApiDescriptionModel({
     this.rootPath,
     this.remoteServiceName,
-    this.controllers,
+    this.controllers = const {},
   });
-
 
   String? rootPath;
 
@@ -33,23 +32,30 @@ class ModuleApiDescriptionModel {
 
   @override
   int get hashCode =>
-    rootPath.hashCode +
-    remoteServiceName.hashCode +
-    controllers.hashCode;
+    // ignore: unnecessary_parenthesis
+    (rootPath == null ? 0 : rootPath!.hashCode) +
+    (remoteServiceName == null ? 0 : remoteServiceName!.hashCode) +
+    (controllers == null ? 0 : controllers!.hashCode);
 
   @override
   String toString() => 'ModuleApiDescriptionModel[rootPath=$rootPath, remoteServiceName=$remoteServiceName, controllers=$controllers]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (rootPath != null) {
-      json[r'rootPath'] = rootPath;
+    if (this.rootPath != null) {
+      json[r'rootPath'] = this.rootPath;
+    } else {
+      json[r'rootPath'] = null;
     }
-    if (remoteServiceName != null) {
-      json[r'remoteServiceName'] = remoteServiceName;
+    if (this.remoteServiceName != null) {
+      json[r'remoteServiceName'] = this.remoteServiceName;
+    } else {
+      json[r'remoteServiceName'] = null;
     }
-    if (controllers != null) {
-      json[r'controllers'] = controllers;
+    if (this.controllers != null) {
+      json[r'controllers'] = this.controllers;
+    } else {
+      json[r'controllers'] = null;
     }
     return json;
   }
@@ -57,41 +63,74 @@ class ModuleApiDescriptionModel {
   /// Returns a new [ModuleApiDescriptionModel] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static ModuleApiDescriptionModel fromJson(Map<String, dynamic> json) => ModuleApiDescriptionModel(
-        rootPath: json[r'rootPath'] == null ? null : json[r'rootPath'] as String?,
-        remoteServiceName: json[r'remoteServiceName'] == null ? null : json[r'remoteServiceName'] as String?,
-        controllers: json[r'controllers'] == null ? null : json[r'controllers'] as Map<String, ControllerApiDescriptionModel>?,
-    );
+  static ModuleApiDescriptionModel? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<ModuleApiDescriptionModel> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<ModuleApiDescriptionModel>((i) => ModuleApiDescriptionModel.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <ModuleApiDescriptionModel>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "ModuleApiDescriptionModel[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "ModuleApiDescriptionModel[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return ModuleApiDescriptionModel(
+        rootPath: mapValueOfType<String>(json, r'rootPath'),
+        remoteServiceName: mapValueOfType<String>(json, r'remoteServiceName'),
+        controllers: ControllerApiDescriptionModel.mapFromJson(json[r'controllers']) ?? const {},
+      );
+    }
+    return null;
+  }
+
+  static List<ModuleApiDescriptionModel>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <ModuleApiDescriptionModel>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = ModuleApiDescriptionModel.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, ModuleApiDescriptionModel> mapFromJson(dynamic json) {
     final map = <String, ModuleApiDescriptionModel>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = ModuleApiDescriptionModel.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = ModuleApiDescriptionModel.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of ModuleApiDescriptionModel-objects as value to a dart map
-  static Map<String, List<ModuleApiDescriptionModel>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<ModuleApiDescriptionModel>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<ModuleApiDescriptionModel>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = ModuleApiDescriptionModel.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = ModuleApiDescriptionModel.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

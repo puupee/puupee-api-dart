@@ -1,14 +1,14 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 
 class FileApi {
@@ -34,13 +34,12 @@ class FileApi {
     final formParams = <String, String>{};
 
     if (rapidCode != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'rapidCode', rapidCode));
+      queryParams.addAll(_queryParams('', 'rapidCode', rapidCode));
     }
     if (key != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'key', key));
+      queryParams.addAll(_queryParams('', 'key', key));
     }
 
-    const authNames = <String>['oauth2'];
     const contentTypes = <String>[];
 
 
@@ -51,8 +50,7 @@ class FileApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
@@ -69,9 +67,11 @@ class FileApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'FileOrCredentialsDto',) as FileOrCredentialsDto;
-        }
+    
+    }
+    return null;
   }
 
   /// Performs an HTTP 'GET /api/app/file/my' operation and returns the [Response].
@@ -90,10 +90,9 @@ class FileApi {
     final formParams = <String, String>{};
 
     if (key != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'key', key));
+      queryParams.addAll(_queryParams('', 'key', key));
     }
 
-    const authNames = <String>['oauth2'];
     const contentTypes = <String>[];
 
 
@@ -104,25 +103,18 @@ class FileApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
   /// Parameters:
   ///
   /// * [String] key:
-  Future<Map<String, dynamic>?> apiAppFileMyGet({ String? key, }) async {
+  Future<void> apiAppFileMyGet({ String? key, }) async {
     final response = await apiAppFileMyGetWithHttpInfo( key: key, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Map<String, dynamic>',) as Map<String, dynamic>;
-        }
   }
 
   /// Performs an HTTP 'POST /api/app/file/pre-sign-url' operation and returns the [Response].
@@ -141,10 +133,9 @@ class FileApi {
     final formParams = <String, String>{};
 
     if (key != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'key', key));
+      queryParams.addAll(_queryParams('', 'key', key));
     }
 
-    const authNames = <String>['oauth2'];
     const contentTypes = <String>[];
 
 
@@ -155,8 +146,7 @@ class FileApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
@@ -171,9 +161,11 @@ class FileApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'String',) as String;
-        }
+    
+    }
+    return null;
   }
 
   /// Performs an HTTP 'GET /api/app/file/thumb' operation and returns the [Response].
@@ -192,10 +184,9 @@ class FileApi {
     final formParams = <String, String>{};
 
     if (key != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'key', key));
+      queryParams.addAll(_queryParams('', 'key', key));
     }
 
-    const authNames = <String>['oauth2'];
     const contentTypes = <String>[];
 
 
@@ -206,24 +197,17 @@ class FileApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
   /// Parameters:
   ///
   /// * [String] key:
-  Future<Map<String, dynamic>?> apiAppFileThumbGet({ String? key, }) async {
+  Future<void> apiAppFileThumbGet({ String? key, }) async {
     final response = await apiAppFileThumbGetWithHttpInfo( key: key, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Map<String, dynamic>',) as Map<String, dynamic>;
-        }
   }
 }

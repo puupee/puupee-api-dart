@@ -1,19 +1,19 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class IdentityUserCreateDto {
   /// Returns a new [IdentityUserCreateDto] instance.
   IdentityUserCreateDto({
-    this.extraProperties,
+    this.extraProperties = const {},
     required this.userName,
     this.name,
     this.surname,
@@ -21,30 +21,41 @@ class IdentityUserCreateDto {
     this.phoneNumber,
     this.isActive,
     this.lockoutEnabled,
-    this.roleNames,
+    this.roleNames = const [],
     required this.password,
   });
 
+  Map<String, Object>? extraProperties;
 
-  Map<String, dynamic>? extraProperties;
-
-  String? userName;
+  String userName;
 
   String? name;
 
   String? surname;
 
-  String? email;
+  String email;
 
   String? phoneNumber;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? isActive;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? lockoutEnabled;
 
   List<String>? roleNames;
 
-  String? password;
+  String password;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is IdentityUserCreateDto &&
@@ -61,96 +72,147 @@ class IdentityUserCreateDto {
 
   @override
   int get hashCode =>
-    extraProperties.hashCode +
-    userName.hashCode +
-    name.hashCode +
-    surname.hashCode +
-    email.hashCode +
-    phoneNumber.hashCode +
-    isActive.hashCode +
-    lockoutEnabled.hashCode +
-    roleNames.hashCode +
-    password.hashCode;
+    // ignore: unnecessary_parenthesis
+    (extraProperties == null ? 0 : extraProperties!.hashCode) +
+    (userName.hashCode) +
+    (name == null ? 0 : name!.hashCode) +
+    (surname == null ? 0 : surname!.hashCode) +
+    (email.hashCode) +
+    (phoneNumber == null ? 0 : phoneNumber!.hashCode) +
+    (isActive == null ? 0 : isActive!.hashCode) +
+    (lockoutEnabled == null ? 0 : lockoutEnabled!.hashCode) +
+    (roleNames == null ? 0 : roleNames!.hashCode) +
+    (password.hashCode);
 
   @override
   String toString() => 'IdentityUserCreateDto[extraProperties=$extraProperties, userName=$userName, name=$name, surname=$surname, email=$email, phoneNumber=$phoneNumber, isActive=$isActive, lockoutEnabled=$lockoutEnabled, roleNames=$roleNames, password=$password]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (extraProperties != null) {
-      json[r'extraProperties'] = extraProperties;
+    if (this.extraProperties != null) {
+      json[r'extraProperties'] = this.extraProperties;
+    } else {
+      json[r'extraProperties'] = null;
     }
-      json[r'userName'] = userName;
-    if (name != null) {
-      json[r'name'] = name;
+      json[r'userName'] = this.userName;
+    if (this.name != null) {
+      json[r'name'] = this.name;
+    } else {
+      json[r'name'] = null;
     }
-    if (surname != null) {
-      json[r'surname'] = surname;
+    if (this.surname != null) {
+      json[r'surname'] = this.surname;
+    } else {
+      json[r'surname'] = null;
     }
-      json[r'email'] = email;
-    if (phoneNumber != null) {
-      json[r'phoneNumber'] = phoneNumber;
+      json[r'email'] = this.email;
+    if (this.phoneNumber != null) {
+      json[r'phoneNumber'] = this.phoneNumber;
+    } else {
+      json[r'phoneNumber'] = null;
     }
-    if (isActive != null) {
-      json[r'isActive'] = isActive;
+    if (this.isActive != null) {
+      json[r'isActive'] = this.isActive;
+    } else {
+      json[r'isActive'] = null;
     }
-    if (lockoutEnabled != null) {
-      json[r'lockoutEnabled'] = lockoutEnabled;
+    if (this.lockoutEnabled != null) {
+      json[r'lockoutEnabled'] = this.lockoutEnabled;
+    } else {
+      json[r'lockoutEnabled'] = null;
     }
-    if (roleNames != null) {
-      json[r'roleNames'] = roleNames;
+    if (this.roleNames != null) {
+      json[r'roleNames'] = this.roleNames;
+    } else {
+      json[r'roleNames'] = null;
     }
-      json[r'password'] = password;
+      json[r'password'] = this.password;
     return json;
   }
 
   /// Returns a new [IdentityUserCreateDto] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static IdentityUserCreateDto fromJson(Map<String, dynamic> json) => IdentityUserCreateDto(
-        extraProperties: json[r'extraProperties'] == null ? null : json[r'extraProperties'] as Map<String, dynamic>?,
-        userName: json[r'userName'] == null ? null : json[r'userName'] as String?,
-        name: json[r'name'] == null ? null : json[r'name'] as String?,
-        surname: json[r'surname'] == null ? null : json[r'surname'] as String?,
-        email: json[r'email'] == null ? null : json[r'email'] as String?,
-        phoneNumber: json[r'phoneNumber'] == null ? null : json[r'phoneNumber'] as String?,
-        isActive: json[r'isActive'] == null ? null : json[r'isActive'] as bool?,
-        lockoutEnabled: json[r'lockoutEnabled'] == null ? null : json[r'lockoutEnabled'] as bool?,
-        roleNames: json[r'roleNames'] is List
-          ? (json[r'roleNames'] as List).cast<String>()
-          : [],
-        password: json[r'password'] == null ? null : json[r'password'] as String?,
-    );
+  static IdentityUserCreateDto? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<IdentityUserCreateDto> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<IdentityUserCreateDto>((i) => IdentityUserCreateDto.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <IdentityUserCreateDto>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "IdentityUserCreateDto[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "IdentityUserCreateDto[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return IdentityUserCreateDto(
+        extraProperties: mapCastOfType<String, Object>(json, r'extraProperties') ?? const {},
+        userName: mapValueOfType<String>(json, r'userName')!,
+        name: mapValueOfType<String>(json, r'name'),
+        surname: mapValueOfType<String>(json, r'surname'),
+        email: mapValueOfType<String>(json, r'email')!,
+        phoneNumber: mapValueOfType<String>(json, r'phoneNumber'),
+        isActive: mapValueOfType<bool>(json, r'isActive'),
+        lockoutEnabled: mapValueOfType<bool>(json, r'lockoutEnabled'),
+        roleNames: json[r'roleNames'] is List
+            ? (json[r'roleNames'] as List).cast<String>()
+            : const [],
+        password: mapValueOfType<String>(json, r'password')!,
+      );
+    }
+    return null;
+  }
+
+  static List<IdentityUserCreateDto>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <IdentityUserCreateDto>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = IdentityUserCreateDto.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, IdentityUserCreateDto> mapFromJson(dynamic json) {
     final map = <String, IdentityUserCreateDto>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = IdentityUserCreateDto.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = IdentityUserCreateDto.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of IdentityUserCreateDto-objects as value to a dart map
-  static Map<String, List<IdentityUserCreateDto>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<IdentityUserCreateDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<IdentityUserCreateDto>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = IdentityUserCreateDto.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = IdentityUserCreateDto.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+    'userName',
+    'email',
+    'password',
+  };
 }
 

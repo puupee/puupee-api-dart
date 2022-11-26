@@ -1,14 +1,14 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class CreateUpdateItemDto {
   /// Returns a new [CreateUpdateItemDto] instance.
@@ -56,13 +56,18 @@ class CreateUpdateItemDto {
     this.size,
   });
 
+  String id;
 
-  String? id;
-
-  String? name;
+  String name;
 
   String? title;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? isHidden;
 
   String? description;
@@ -93,12 +98,30 @@ class CreateUpdateItemDto {
 
   DateTime? fileUpdatedAt;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   int? syncVersion;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? isDeleted;
 
   DateTime? deletionTime;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   DateTime? creationTime;
 
   DateTime? lastModificationTime;
@@ -115,14 +138,32 @@ class CreateUpdateItemDto {
 
   String? notifyTimingUnit;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   int? notifyTimingValue;
 
   String? repeat;
 
   DateTime? repeatOffAt;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   int? repeatOffTimes;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? isDone;
 
   DateTime? doneAt;
@@ -137,6 +178,12 @@ class CreateUpdateItemDto {
 
   String? url;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   int? size;
 
   @override
@@ -185,171 +232,250 @@ class CreateUpdateItemDto {
 
   @override
   int get hashCode =>
-    id.hashCode +
-    name.hashCode +
-    title.hashCode +
-    isHidden.hashCode +
-    description.hashCode +
-    password.hashCode +
-    parentId.hashCode +
-    key.hashCode +
-    md5.hashCode +
-    sliceMd5.hashCode +
-    rapidCode.hashCode +
-    contentType.hashCode +
-    type.hashCode +
-    displayStyle.hashCode +
-    extension_.hashCode +
-    storageClass.hashCode +
-    fileCreatedAt.hashCode +
-    fileUpdatedAt.hashCode +
-    syncVersion.hashCode +
-    isDeleted.hashCode +
-    deletionTime.hashCode +
-    creationTime.hashCode +
-    lastModificationTime.hashCode +
-    priority.hashCode +
-    startAt.hashCode +
-    endAt.hashCode +
-    notifyAt.hashCode +
-    notifyTimingType.hashCode +
-    notifyTimingUnit.hashCode +
-    notifyTimingValue.hashCode +
-    repeat.hashCode +
-    repeatOffAt.hashCode +
-    repeatOffTimes.hashCode +
-    isDone.hashCode +
-    doneAt.hashCode +
-    creatorId.hashCode +
-    lastModifierId.hashCode +
-    deleterId.hashCode +
-    tagging.hashCode +
-    url.hashCode +
-    size.hashCode;
+    // ignore: unnecessary_parenthesis
+    (id.hashCode) +
+    (name.hashCode) +
+    (title == null ? 0 : title!.hashCode) +
+    (isHidden == null ? 0 : isHidden!.hashCode) +
+    (description == null ? 0 : description!.hashCode) +
+    (password == null ? 0 : password!.hashCode) +
+    (parentId == null ? 0 : parentId!.hashCode) +
+    (key == null ? 0 : key!.hashCode) +
+    (md5 == null ? 0 : md5!.hashCode) +
+    (sliceMd5 == null ? 0 : sliceMd5!.hashCode) +
+    (rapidCode == null ? 0 : rapidCode!.hashCode) +
+    (contentType == null ? 0 : contentType!.hashCode) +
+    (type == null ? 0 : type!.hashCode) +
+    (displayStyle == null ? 0 : displayStyle!.hashCode) +
+    (extension_ == null ? 0 : extension_!.hashCode) +
+    (storageClass == null ? 0 : storageClass!.hashCode) +
+    (fileCreatedAt == null ? 0 : fileCreatedAt!.hashCode) +
+    (fileUpdatedAt == null ? 0 : fileUpdatedAt!.hashCode) +
+    (syncVersion == null ? 0 : syncVersion!.hashCode) +
+    (isDeleted == null ? 0 : isDeleted!.hashCode) +
+    (deletionTime == null ? 0 : deletionTime!.hashCode) +
+    (creationTime == null ? 0 : creationTime!.hashCode) +
+    (lastModificationTime == null ? 0 : lastModificationTime!.hashCode) +
+    (priority == null ? 0 : priority!.hashCode) +
+    (startAt == null ? 0 : startAt!.hashCode) +
+    (endAt == null ? 0 : endAt!.hashCode) +
+    (notifyAt == null ? 0 : notifyAt!.hashCode) +
+    (notifyTimingType == null ? 0 : notifyTimingType!.hashCode) +
+    (notifyTimingUnit == null ? 0 : notifyTimingUnit!.hashCode) +
+    (notifyTimingValue == null ? 0 : notifyTimingValue!.hashCode) +
+    (repeat == null ? 0 : repeat!.hashCode) +
+    (repeatOffAt == null ? 0 : repeatOffAt!.hashCode) +
+    (repeatOffTimes == null ? 0 : repeatOffTimes!.hashCode) +
+    (isDone == null ? 0 : isDone!.hashCode) +
+    (doneAt == null ? 0 : doneAt!.hashCode) +
+    (creatorId == null ? 0 : creatorId!.hashCode) +
+    (lastModifierId == null ? 0 : lastModifierId!.hashCode) +
+    (deleterId == null ? 0 : deleterId!.hashCode) +
+    (tagging == null ? 0 : tagging!.hashCode) +
+    (url == null ? 0 : url!.hashCode) +
+    (size == null ? 0 : size!.hashCode);
 
   @override
   String toString() => 'CreateUpdateItemDto[id=$id, name=$name, title=$title, isHidden=$isHidden, description=$description, password=$password, parentId=$parentId, key=$key, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, syncVersion=$syncVersion, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime, priority=$priority, startAt=$startAt, endAt=$endAt, notifyAt=$notifyAt, notifyTimingType=$notifyTimingType, notifyTimingUnit=$notifyTimingUnit, notifyTimingValue=$notifyTimingValue, repeat=$repeat, repeatOffAt=$repeatOffAt, repeatOffTimes=$repeatOffTimes, isDone=$isDone, doneAt=$doneAt, creatorId=$creatorId, lastModifierId=$lastModifierId, deleterId=$deleterId, tagging=$tagging, url=$url, size=$size]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-      json[r'id'] = id;
-      json[r'name'] = name;
-    if (title != null) {
-      json[r'title'] = title;
+      json[r'id'] = this.id;
+      json[r'name'] = this.name;
+    if (this.title != null) {
+      json[r'title'] = this.title;
+    } else {
+      json[r'title'] = null;
     }
-    if (isHidden != null) {
-      json[r'isHidden'] = isHidden;
+    if (this.isHidden != null) {
+      json[r'isHidden'] = this.isHidden;
+    } else {
+      json[r'isHidden'] = null;
     }
-    if (description != null) {
-      json[r'description'] = description;
+    if (this.description != null) {
+      json[r'description'] = this.description;
+    } else {
+      json[r'description'] = null;
     }
-    if (password != null) {
-      json[r'password'] = password;
+    if (this.password != null) {
+      json[r'password'] = this.password;
+    } else {
+      json[r'password'] = null;
     }
-    if (parentId != null) {
-      json[r'parentId'] = parentId;
+    if (this.parentId != null) {
+      json[r'parentId'] = this.parentId;
+    } else {
+      json[r'parentId'] = null;
     }
-    if (key != null) {
-      json[r'key'] = key;
+    if (this.key != null) {
+      json[r'key'] = this.key;
+    } else {
+      json[r'key'] = null;
     }
-    if (md5 != null) {
-      json[r'md5'] = md5;
+    if (this.md5 != null) {
+      json[r'md5'] = this.md5;
+    } else {
+      json[r'md5'] = null;
     }
-    if (sliceMd5 != null) {
-      json[r'sliceMd5'] = sliceMd5;
+    if (this.sliceMd5 != null) {
+      json[r'sliceMd5'] = this.sliceMd5;
+    } else {
+      json[r'sliceMd5'] = null;
     }
-    if (rapidCode != null) {
-      json[r'rapidCode'] = rapidCode;
+    if (this.rapidCode != null) {
+      json[r'rapidCode'] = this.rapidCode;
+    } else {
+      json[r'rapidCode'] = null;
     }
-    if (contentType != null) {
-      json[r'contentType'] = contentType;
+    if (this.contentType != null) {
+      json[r'contentType'] = this.contentType;
+    } else {
+      json[r'contentType'] = null;
     }
-    if (type != null) {
-      json[r'type'] = type;
+    if (this.type != null) {
+      json[r'type'] = this.type;
+    } else {
+      json[r'type'] = null;
     }
-    if (displayStyle != null) {
-      json[r'displayStyle'] = displayStyle;
+    if (this.displayStyle != null) {
+      json[r'displayStyle'] = this.displayStyle;
+    } else {
+      json[r'displayStyle'] = null;
     }
-    if (extension_ != null) {
-      json[r'extension'] = extension_;
+    if (this.extension_ != null) {
+      json[r'extension'] = this.extension_;
+    } else {
+      json[r'extension'] = null;
     }
-    if (storageClass != null) {
-      json[r'storageClass'] = storageClass;
+    if (this.storageClass != null) {
+      json[r'storageClass'] = this.storageClass;
+    } else {
+      json[r'storageClass'] = null;
     }
-    if (fileCreatedAt != null) {
-      json[r'fileCreatedAt'] = fileCreatedAt!.toUtc().toIso8601String();
+    if (this.fileCreatedAt != null) {
+      json[r'fileCreatedAt'] = this.fileCreatedAt!.toUtc().toIso8601String();
+    } else {
+      json[r'fileCreatedAt'] = null;
     }
-    if (fileUpdatedAt != null) {
-      json[r'fileUpdatedAt'] = fileUpdatedAt!.toUtc().toIso8601String();
+    if (this.fileUpdatedAt != null) {
+      json[r'fileUpdatedAt'] = this.fileUpdatedAt!.toUtc().toIso8601String();
+    } else {
+      json[r'fileUpdatedAt'] = null;
     }
-    if (syncVersion != null) {
-      json[r'syncVersion'] = syncVersion;
+    if (this.syncVersion != null) {
+      json[r'syncVersion'] = this.syncVersion;
+    } else {
+      json[r'syncVersion'] = null;
     }
-    if (isDeleted != null) {
-      json[r'isDeleted'] = isDeleted;
+    if (this.isDeleted != null) {
+      json[r'isDeleted'] = this.isDeleted;
+    } else {
+      json[r'isDeleted'] = null;
     }
-    if (deletionTime != null) {
-      json[r'deletionTime'] = deletionTime!.toUtc().toIso8601String();
+    if (this.deletionTime != null) {
+      json[r'deletionTime'] = this.deletionTime!.toUtc().toIso8601String();
+    } else {
+      json[r'deletionTime'] = null;
     }
-    if (creationTime != null) {
-      json[r'creationTime'] = creationTime!.toUtc().toIso8601String();
+    if (this.creationTime != null) {
+      json[r'creationTime'] = this.creationTime!.toUtc().toIso8601String();
+    } else {
+      json[r'creationTime'] = null;
     }
-    if (lastModificationTime != null) {
-      json[r'lastModificationTime'] = lastModificationTime!.toUtc().toIso8601String();
+    if (this.lastModificationTime != null) {
+      json[r'lastModificationTime'] = this.lastModificationTime!.toUtc().toIso8601String();
+    } else {
+      json[r'lastModificationTime'] = null;
     }
-    if (priority != null) {
-      json[r'priority'] = priority;
+    if (this.priority != null) {
+      json[r'priority'] = this.priority;
+    } else {
+      json[r'priority'] = null;
     }
-    if (startAt != null) {
-      json[r'startAt'] = startAt!.toUtc().toIso8601String();
+    if (this.startAt != null) {
+      json[r'startAt'] = this.startAt!.toUtc().toIso8601String();
+    } else {
+      json[r'startAt'] = null;
     }
-    if (endAt != null) {
-      json[r'endAt'] = endAt!.toUtc().toIso8601String();
+    if (this.endAt != null) {
+      json[r'endAt'] = this.endAt!.toUtc().toIso8601String();
+    } else {
+      json[r'endAt'] = null;
     }
-    if (notifyAt != null) {
-      json[r'notifyAt'] = notifyAt!.toUtc().toIso8601String();
+    if (this.notifyAt != null) {
+      json[r'notifyAt'] = this.notifyAt!.toUtc().toIso8601String();
+    } else {
+      json[r'notifyAt'] = null;
     }
-    if (notifyTimingType != null) {
-      json[r'notifyTimingType'] = notifyTimingType;
+    if (this.notifyTimingType != null) {
+      json[r'notifyTimingType'] = this.notifyTimingType;
+    } else {
+      json[r'notifyTimingType'] = null;
     }
-    if (notifyTimingUnit != null) {
-      json[r'notifyTimingUnit'] = notifyTimingUnit;
+    if (this.notifyTimingUnit != null) {
+      json[r'notifyTimingUnit'] = this.notifyTimingUnit;
+    } else {
+      json[r'notifyTimingUnit'] = null;
     }
-    if (notifyTimingValue != null) {
-      json[r'notifyTimingValue'] = notifyTimingValue;
+    if (this.notifyTimingValue != null) {
+      json[r'notifyTimingValue'] = this.notifyTimingValue;
+    } else {
+      json[r'notifyTimingValue'] = null;
     }
-    if (repeat != null) {
-      json[r'repeat'] = repeat;
+    if (this.repeat != null) {
+      json[r'repeat'] = this.repeat;
+    } else {
+      json[r'repeat'] = null;
     }
-    if (repeatOffAt != null) {
-      json[r'repeatOffAt'] = repeatOffAt!.toUtc().toIso8601String();
+    if (this.repeatOffAt != null) {
+      json[r'repeatOffAt'] = this.repeatOffAt!.toUtc().toIso8601String();
+    } else {
+      json[r'repeatOffAt'] = null;
     }
-    if (repeatOffTimes != null) {
-      json[r'repeatOffTimes'] = repeatOffTimes;
+    if (this.repeatOffTimes != null) {
+      json[r'repeatOffTimes'] = this.repeatOffTimes;
+    } else {
+      json[r'repeatOffTimes'] = null;
     }
-    if (isDone != null) {
-      json[r'isDone'] = isDone;
+    if (this.isDone != null) {
+      json[r'isDone'] = this.isDone;
+    } else {
+      json[r'isDone'] = null;
     }
-    if (doneAt != null) {
-      json[r'doneAt'] = doneAt!.toUtc().toIso8601String();
+    if (this.doneAt != null) {
+      json[r'doneAt'] = this.doneAt!.toUtc().toIso8601String();
+    } else {
+      json[r'doneAt'] = null;
     }
-    if (creatorId != null) {
-      json[r'creatorId'] = creatorId;
+    if (this.creatorId != null) {
+      json[r'creatorId'] = this.creatorId;
+    } else {
+      json[r'creatorId'] = null;
     }
-    if (lastModifierId != null) {
-      json[r'lastModifierId'] = lastModifierId;
+    if (this.lastModifierId != null) {
+      json[r'lastModifierId'] = this.lastModifierId;
+    } else {
+      json[r'lastModifierId'] = null;
     }
-    if (deleterId != null) {
-      json[r'deleterId'] = deleterId;
+    if (this.deleterId != null) {
+      json[r'deleterId'] = this.deleterId;
+    } else {
+      json[r'deleterId'] = null;
     }
-    if (tagging != null) {
-      json[r'tagging'] = tagging;
+    if (this.tagging != null) {
+      json[r'tagging'] = this.tagging;
+    } else {
+      json[r'tagging'] = null;
     }
-    if (url != null) {
-      json[r'url'] = url;
+    if (this.url != null) {
+      json[r'url'] = this.url;
+    } else {
+      json[r'url'] = null;
     }
-    if (size != null) {
-      json[r'size'] = size;
+    if (this.size != null) {
+      json[r'size'] = this.size;
+    } else {
+      json[r'size'] = null;
     }
     return json;
   }
@@ -357,79 +483,114 @@ class CreateUpdateItemDto {
   /// Returns a new [CreateUpdateItemDto] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static CreateUpdateItemDto fromJson(Map<String, dynamic> json) => CreateUpdateItemDto(
-        id: json[r'id'] == null ? null : json[r'id'] as String?,
-        name: json[r'name'] == null ? null : json[r'name'] as String?,
-        title: json[r'title'] == null ? null : json[r'title'] as String?,
-        isHidden: json[r'isHidden'] == null ? null : json[r'isHidden'] as bool?,
-        description: json[r'description'] == null ? null : json[r'description'] as String?,
-        password: json[r'password'] == null ? null : json[r'password'] as String?,
-        parentId: json[r'parentId'] == null ? null : json[r'parentId'] as String?,
-        key: json[r'key'] == null ? null : json[r'key'] as String?,
-        md5: json[r'md5'] == null ? null : json[r'md5'] as String?,
-        sliceMd5: json[r'sliceMd5'] == null ? null : json[r'sliceMd5'] as String?,
-        rapidCode: json[r'rapidCode'] == null ? null : json[r'rapidCode'] as String?,
-        contentType: json[r'contentType'] == null ? null : json[r'contentType'] as String?,
-        type: json[r'type'] == null ? null : json[r'type'] as String?,
-        displayStyle: json[r'displayStyle'] == null ? null : json[r'displayStyle'] as String?,
-        extension_: json[r'extension'] == null ? null : json[r'extension'] as String?,
-        storageClass: json[r'storageClass'] == null ? null : json[r'storageClass'] as String?,
-        fileCreatedAt: json[r'fileCreatedAt'] == null ? null : mapDateTime(json, r'fileCreatedAt', ''),
-        fileUpdatedAt: json[r'fileUpdatedAt'] == null ? null : mapDateTime(json, r'fileUpdatedAt', ''),
-        syncVersion: json[r'syncVersion'] == null ? null : json[r'syncVersion'] as int?,
-        isDeleted: json[r'isDeleted'] == null ? null : json[r'isDeleted'] as bool?,
-        deletionTime: json[r'deletionTime'] == null ? null : mapDateTime(json, r'deletionTime', ''),
-        creationTime: json[r'creationTime'] == null ? null : mapDateTime(json, r'creationTime', ''),
-        lastModificationTime: json[r'lastModificationTime'] == null ? null : mapDateTime(json, r'lastModificationTime', ''),
-        priority: json[r'priority'] == null ? null : json[r'priority'] as int?,
-        startAt: json[r'startAt'] == null ? null : mapDateTime(json, r'startAt', ''),
-        endAt: json[r'endAt'] == null ? null : mapDateTime(json, r'endAt', ''),
-        notifyAt: json[r'notifyAt'] == null ? null : mapDateTime(json, r'notifyAt', ''),
-        notifyTimingType: json[r'notifyTimingType'] == null ? null : json[r'notifyTimingType'] as String?,
-        notifyTimingUnit: json[r'notifyTimingUnit'] == null ? null : json[r'notifyTimingUnit'] as String?,
-        notifyTimingValue: json[r'notifyTimingValue'] == null ? null : json[r'notifyTimingValue'] as int?,
-        repeat: json[r'repeat'] == null ? null : json[r'repeat'] as String?,
-        repeatOffAt: json[r'repeatOffAt'] == null ? null : mapDateTime(json, r'repeatOffAt', ''),
-        repeatOffTimes: json[r'repeatOffTimes'] == null ? null : json[r'repeatOffTimes'] as int?,
-        isDone: json[r'isDone'] == null ? null : json[r'isDone'] as bool?,
-        doneAt: json[r'doneAt'] == null ? null : mapDateTime(json, r'doneAt', ''),
-        creatorId: json[r'creatorId'] == null ? null : json[r'creatorId'] as String?,
-        lastModifierId: json[r'lastModifierId'] == null ? null : json[r'lastModifierId'] as String?,
-        deleterId: json[r'deleterId'] == null ? null : json[r'deleterId'] as String?,
-        tagging: json[r'tagging'] == null ? null : json[r'tagging'] as String?,
-        url: json[r'url'] == null ? null : json[r'url'] as String?,
-        size: json[r'size'] == null ? null : json[r'size'] as int?,
-    );
+  static CreateUpdateItemDto? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<CreateUpdateItemDto> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<CreateUpdateItemDto>((i) => CreateUpdateItemDto.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <CreateUpdateItemDto>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "CreateUpdateItemDto[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "CreateUpdateItemDto[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return CreateUpdateItemDto(
+        id: mapValueOfType<String>(json, r'id')!,
+        name: mapValueOfType<String>(json, r'name')!,
+        title: mapValueOfType<String>(json, r'title'),
+        isHidden: mapValueOfType<bool>(json, r'isHidden'),
+        description: mapValueOfType<String>(json, r'description'),
+        password: mapValueOfType<String>(json, r'password'),
+        parentId: mapValueOfType<String>(json, r'parentId'),
+        key: mapValueOfType<String>(json, r'key'),
+        md5: mapValueOfType<String>(json, r'md5'),
+        sliceMd5: mapValueOfType<String>(json, r'sliceMd5'),
+        rapidCode: mapValueOfType<String>(json, r'rapidCode'),
+        contentType: mapValueOfType<String>(json, r'contentType'),
+        type: mapValueOfType<String>(json, r'type'),
+        displayStyle: mapValueOfType<String>(json, r'displayStyle'),
+        extension_: mapValueOfType<String>(json, r'extension'),
+        storageClass: mapValueOfType<String>(json, r'storageClass'),
+        fileCreatedAt: mapDateTime(json, r'fileCreatedAt', ''),
+        fileUpdatedAt: mapDateTime(json, r'fileUpdatedAt', ''),
+        syncVersion: mapValueOfType<int>(json, r'syncVersion'),
+        isDeleted: mapValueOfType<bool>(json, r'isDeleted'),
+        deletionTime: mapDateTime(json, r'deletionTime', ''),
+        creationTime: mapDateTime(json, r'creationTime', ''),
+        lastModificationTime: mapDateTime(json, r'lastModificationTime', ''),
+        priority: mapValueOfType<int>(json, r'priority'),
+        startAt: mapDateTime(json, r'startAt', ''),
+        endAt: mapDateTime(json, r'endAt', ''),
+        notifyAt: mapDateTime(json, r'notifyAt', ''),
+        notifyTimingType: mapValueOfType<String>(json, r'notifyTimingType'),
+        notifyTimingUnit: mapValueOfType<String>(json, r'notifyTimingUnit'),
+        notifyTimingValue: mapValueOfType<int>(json, r'notifyTimingValue'),
+        repeat: mapValueOfType<String>(json, r'repeat'),
+        repeatOffAt: mapDateTime(json, r'repeatOffAt', ''),
+        repeatOffTimes: mapValueOfType<int>(json, r'repeatOffTimes'),
+        isDone: mapValueOfType<bool>(json, r'isDone'),
+        doneAt: mapDateTime(json, r'doneAt', ''),
+        creatorId: mapValueOfType<String>(json, r'creatorId'),
+        lastModifierId: mapValueOfType<String>(json, r'lastModifierId'),
+        deleterId: mapValueOfType<String>(json, r'deleterId'),
+        tagging: mapValueOfType<String>(json, r'tagging'),
+        url: mapValueOfType<String>(json, r'url'),
+        size: mapValueOfType<int>(json, r'size'),
+      );
+    }
+    return null;
+  }
+
+  static List<CreateUpdateItemDto>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <CreateUpdateItemDto>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = CreateUpdateItemDto.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, CreateUpdateItemDto> mapFromJson(dynamic json) {
     final map = <String, CreateUpdateItemDto>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = CreateUpdateItemDto.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = CreateUpdateItemDto.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of CreateUpdateItemDto-objects as value to a dart map
-  static Map<String, List<CreateUpdateItemDto>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<CreateUpdateItemDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<CreateUpdateItemDto>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = CreateUpdateItemDto.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = CreateUpdateItemDto.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+    'id',
+    'name',
+  };
 }
 

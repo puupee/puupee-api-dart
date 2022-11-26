@@ -1,14 +1,14 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class CurrentCultureDto {
   /// Returns a new [CurrentCultureDto] instance.
@@ -24,7 +24,6 @@ class CurrentCultureDto {
     this.dateTimeFormat,
   });
 
-
   String? displayName;
 
   String? englishName;
@@ -33,6 +32,12 @@ class CurrentCultureDto {
 
   String? twoLetterIsoLanguageName;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? isRightToLeft;
 
   String? cultureName;
@@ -41,6 +46,12 @@ class CurrentCultureDto {
 
   String? nativeName;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   DateTimeFormatDto? dateTimeFormat;
 
   @override
@@ -57,47 +68,66 @@ class CurrentCultureDto {
 
   @override
   int get hashCode =>
-    displayName.hashCode +
-    englishName.hashCode +
-    threeLetterIsoLanguageName.hashCode +
-    twoLetterIsoLanguageName.hashCode +
-    isRightToLeft.hashCode +
-    cultureName.hashCode +
-    name.hashCode +
-    nativeName.hashCode +
-    dateTimeFormat.hashCode;
+    // ignore: unnecessary_parenthesis
+    (displayName == null ? 0 : displayName!.hashCode) +
+    (englishName == null ? 0 : englishName!.hashCode) +
+    (threeLetterIsoLanguageName == null ? 0 : threeLetterIsoLanguageName!.hashCode) +
+    (twoLetterIsoLanguageName == null ? 0 : twoLetterIsoLanguageName!.hashCode) +
+    (isRightToLeft == null ? 0 : isRightToLeft!.hashCode) +
+    (cultureName == null ? 0 : cultureName!.hashCode) +
+    (name == null ? 0 : name!.hashCode) +
+    (nativeName == null ? 0 : nativeName!.hashCode) +
+    (dateTimeFormat == null ? 0 : dateTimeFormat!.hashCode);
 
   @override
   String toString() => 'CurrentCultureDto[displayName=$displayName, englishName=$englishName, threeLetterIsoLanguageName=$threeLetterIsoLanguageName, twoLetterIsoLanguageName=$twoLetterIsoLanguageName, isRightToLeft=$isRightToLeft, cultureName=$cultureName, name=$name, nativeName=$nativeName, dateTimeFormat=$dateTimeFormat]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (displayName != null) {
-      json[r'displayName'] = displayName;
+    if (this.displayName != null) {
+      json[r'displayName'] = this.displayName;
+    } else {
+      json[r'displayName'] = null;
     }
-    if (englishName != null) {
-      json[r'englishName'] = englishName;
+    if (this.englishName != null) {
+      json[r'englishName'] = this.englishName;
+    } else {
+      json[r'englishName'] = null;
     }
-    if (threeLetterIsoLanguageName != null) {
-      json[r'threeLetterIsoLanguageName'] = threeLetterIsoLanguageName;
+    if (this.threeLetterIsoLanguageName != null) {
+      json[r'threeLetterIsoLanguageName'] = this.threeLetterIsoLanguageName;
+    } else {
+      json[r'threeLetterIsoLanguageName'] = null;
     }
-    if (twoLetterIsoLanguageName != null) {
-      json[r'twoLetterIsoLanguageName'] = twoLetterIsoLanguageName;
+    if (this.twoLetterIsoLanguageName != null) {
+      json[r'twoLetterIsoLanguageName'] = this.twoLetterIsoLanguageName;
+    } else {
+      json[r'twoLetterIsoLanguageName'] = null;
     }
-    if (isRightToLeft != null) {
-      json[r'isRightToLeft'] = isRightToLeft;
+    if (this.isRightToLeft != null) {
+      json[r'isRightToLeft'] = this.isRightToLeft;
+    } else {
+      json[r'isRightToLeft'] = null;
     }
-    if (cultureName != null) {
-      json[r'cultureName'] = cultureName;
+    if (this.cultureName != null) {
+      json[r'cultureName'] = this.cultureName;
+    } else {
+      json[r'cultureName'] = null;
     }
-    if (name != null) {
-      json[r'name'] = name;
+    if (this.name != null) {
+      json[r'name'] = this.name;
+    } else {
+      json[r'name'] = null;
     }
-    if (nativeName != null) {
-      json[r'nativeName'] = nativeName;
+    if (this.nativeName != null) {
+      json[r'nativeName'] = this.nativeName;
+    } else {
+      json[r'nativeName'] = null;
     }
-    if (dateTimeFormat != null) {
-      json[r'dateTimeFormat'] = dateTimeFormat;
+    if (this.dateTimeFormat != null) {
+      json[r'dateTimeFormat'] = this.dateTimeFormat;
+    } else {
+      json[r'dateTimeFormat'] = null;
     }
     return json;
   }
@@ -105,47 +135,80 @@ class CurrentCultureDto {
   /// Returns a new [CurrentCultureDto] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static CurrentCultureDto fromJson(Map<String, dynamic> json) => CurrentCultureDto(
-        displayName: json[r'displayName'] == null ? null : json[r'displayName'] as String?,
-        englishName: json[r'englishName'] == null ? null : json[r'englishName'] as String?,
-        threeLetterIsoLanguageName: json[r'threeLetterIsoLanguageName'] == null ? null : json[r'threeLetterIsoLanguageName'] as String?,
-        twoLetterIsoLanguageName: json[r'twoLetterIsoLanguageName'] == null ? null : json[r'twoLetterIsoLanguageName'] as String?,
-        isRightToLeft: json[r'isRightToLeft'] == null ? null : json[r'isRightToLeft'] as bool?,
-        cultureName: json[r'cultureName'] == null ? null : json[r'cultureName'] as String?,
-        name: json[r'name'] == null ? null : json[r'name'] as String?,
-        nativeName: json[r'nativeName'] == null ? null : json[r'nativeName'] as String?,
-        dateTimeFormat: json[r'dateTimeFormat'] == null ? null : DateTimeFormatDto.fromJson(json[r'dateTimeFormat']),
-    );
+  static CurrentCultureDto? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<CurrentCultureDto> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<CurrentCultureDto>((i) => CurrentCultureDto.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <CurrentCultureDto>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "CurrentCultureDto[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "CurrentCultureDto[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return CurrentCultureDto(
+        displayName: mapValueOfType<String>(json, r'displayName'),
+        englishName: mapValueOfType<String>(json, r'englishName'),
+        threeLetterIsoLanguageName: mapValueOfType<String>(json, r'threeLetterIsoLanguageName'),
+        twoLetterIsoLanguageName: mapValueOfType<String>(json, r'twoLetterIsoLanguageName'),
+        isRightToLeft: mapValueOfType<bool>(json, r'isRightToLeft'),
+        cultureName: mapValueOfType<String>(json, r'cultureName'),
+        name: mapValueOfType<String>(json, r'name'),
+        nativeName: mapValueOfType<String>(json, r'nativeName'),
+        dateTimeFormat: DateTimeFormatDto.fromJson(json[r'dateTimeFormat']),
+      );
+    }
+    return null;
+  }
+
+  static List<CurrentCultureDto>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <CurrentCultureDto>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = CurrentCultureDto.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, CurrentCultureDto> mapFromJson(dynamic json) {
     final map = <String, CurrentCultureDto>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = CurrentCultureDto.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = CurrentCultureDto.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of CurrentCultureDto-objects as value to a dart map
-  static Map<String, List<CurrentCultureDto>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<CurrentCultureDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<CurrentCultureDto>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = CurrentCultureDto.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = CurrentCultureDto.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

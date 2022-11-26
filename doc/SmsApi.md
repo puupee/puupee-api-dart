@@ -1,8 +1,8 @@
-# doggy_api.api.SmsApi
+# puupee_api.api.SmsApi
 
 ## Load the API package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -14,13 +14,13 @@ Method | HTTP request | Description
 
 
 # **apiAppSmsSendChangePhoneCodePost**
-> Map<String, dynamic> apiAppSmsSendChangePhoneCodePost(sendSmsCodeDto)
+> apiAppSmsSendChangePhoneCodePost(sendSmsCodeDto)
 
 
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -28,8 +28,7 @@ final api_instance = SmsApi();
 final sendSmsCodeDto = SendSmsCodeDto(); // SendSmsCodeDto | 
 
 try {
-    final result = api_instance.apiAppSmsSendChangePhoneCodePost(sendSmsCodeDto);
-    print(result);
+    api_instance.apiAppSmsSendChangePhoneCodePost(sendSmsCodeDto);
 } catch (e) {
     print('Exception when calling SmsApi->apiAppSmsSendChangePhoneCodePost: $e\n');
 }
@@ -43,7 +42,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Map<String, dynamic>**
+void (empty response body)
 
 ### Authorization
 
@@ -51,19 +50,19 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/_*+json
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppSmsSendLoginCodePost**
-> Map<String, dynamic> apiAppSmsSendLoginCodePost(sendSmsCodeDto)
+> apiAppSmsSendLoginCodePost(sendSmsCodeDto)
 
 
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -71,8 +70,7 @@ final api_instance = SmsApi();
 final sendSmsCodeDto = SendSmsCodeDto(); // SendSmsCodeDto | 
 
 try {
-    final result = api_instance.apiAppSmsSendLoginCodePost(sendSmsCodeDto);
-    print(result);
+    api_instance.apiAppSmsSendLoginCodePost(sendSmsCodeDto);
 } catch (e) {
     print('Exception when calling SmsApi->apiAppSmsSendLoginCodePost: $e\n');
 }
@@ -86,7 +84,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Map<String, dynamic>**
+void (empty response body)
 
 ### Authorization
 
@@ -94,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/_*+json
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

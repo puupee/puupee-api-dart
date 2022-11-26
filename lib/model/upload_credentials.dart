@@ -1,14 +1,14 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class UploadCredentials {
   /// Returns a new [UploadCredentials] instance.
@@ -25,7 +25,6 @@ class UploadCredentials {
     this.expiredTime,
     this.appId,
   });
-
 
   String? storageClass;
 
@@ -45,6 +44,12 @@ class UploadCredentials {
 
   String? expiration;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   int? expiredTime;
 
   String? appId;
@@ -65,55 +70,78 @@ class UploadCredentials {
 
   @override
   int get hashCode =>
-    storageClass.hashCode +
-    endPoint.hashCode +
-    protocal.hashCode +
-    bucketName.hashCode +
-    regionId.hashCode +
-    securityToken.hashCode +
-    accessKeyId.hashCode +
-    accessKeySecret.hashCode +
-    expiration.hashCode +
-    expiredTime.hashCode +
-    appId.hashCode;
+    // ignore: unnecessary_parenthesis
+    (storageClass == null ? 0 : storageClass!.hashCode) +
+    (endPoint == null ? 0 : endPoint!.hashCode) +
+    (protocal == null ? 0 : protocal!.hashCode) +
+    (bucketName == null ? 0 : bucketName!.hashCode) +
+    (regionId == null ? 0 : regionId!.hashCode) +
+    (securityToken == null ? 0 : securityToken!.hashCode) +
+    (accessKeyId == null ? 0 : accessKeyId!.hashCode) +
+    (accessKeySecret == null ? 0 : accessKeySecret!.hashCode) +
+    (expiration == null ? 0 : expiration!.hashCode) +
+    (expiredTime == null ? 0 : expiredTime!.hashCode) +
+    (appId == null ? 0 : appId!.hashCode);
 
   @override
   String toString() => 'UploadCredentials[storageClass=$storageClass, endPoint=$endPoint, protocal=$protocal, bucketName=$bucketName, regionId=$regionId, securityToken=$securityToken, accessKeyId=$accessKeyId, accessKeySecret=$accessKeySecret, expiration=$expiration, expiredTime=$expiredTime, appId=$appId]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (storageClass != null) {
-      json[r'storageClass'] = storageClass;
+    if (this.storageClass != null) {
+      json[r'storageClass'] = this.storageClass;
+    } else {
+      json[r'storageClass'] = null;
     }
-    if (endPoint != null) {
-      json[r'endPoint'] = endPoint;
+    if (this.endPoint != null) {
+      json[r'endPoint'] = this.endPoint;
+    } else {
+      json[r'endPoint'] = null;
     }
-    if (protocal != null) {
-      json[r'protocal'] = protocal;
+    if (this.protocal != null) {
+      json[r'protocal'] = this.protocal;
+    } else {
+      json[r'protocal'] = null;
     }
-    if (bucketName != null) {
-      json[r'bucketName'] = bucketName;
+    if (this.bucketName != null) {
+      json[r'bucketName'] = this.bucketName;
+    } else {
+      json[r'bucketName'] = null;
     }
-    if (regionId != null) {
-      json[r'regionId'] = regionId;
+    if (this.regionId != null) {
+      json[r'regionId'] = this.regionId;
+    } else {
+      json[r'regionId'] = null;
     }
-    if (securityToken != null) {
-      json[r'securityToken'] = securityToken;
+    if (this.securityToken != null) {
+      json[r'securityToken'] = this.securityToken;
+    } else {
+      json[r'securityToken'] = null;
     }
-    if (accessKeyId != null) {
-      json[r'accessKeyId'] = accessKeyId;
+    if (this.accessKeyId != null) {
+      json[r'accessKeyId'] = this.accessKeyId;
+    } else {
+      json[r'accessKeyId'] = null;
     }
-    if (accessKeySecret != null) {
-      json[r'accessKeySecret'] = accessKeySecret;
+    if (this.accessKeySecret != null) {
+      json[r'accessKeySecret'] = this.accessKeySecret;
+    } else {
+      json[r'accessKeySecret'] = null;
     }
-    if (expiration != null) {
-      json[r'expiration'] = expiration;
+    if (this.expiration != null) {
+      json[r'expiration'] = this.expiration;
+    } else {
+      json[r'expiration'] = null;
     }
-    if (expiredTime != null) {
-      json[r'expiredTime'] = expiredTime;
+    if (this.expiredTime != null) {
+      json[r'expiredTime'] = this.expiredTime;
+    } else {
+      json[r'expiredTime'] = null;
     }
-    if (appId != null) {
-      json[r'appId'] = appId;
+    if (this.appId != null) {
+      json[r'appId'] = this.appId;
+    } else {
+      json[r'appId'] = null;
     }
     return json;
   }
@@ -121,49 +149,82 @@ class UploadCredentials {
   /// Returns a new [UploadCredentials] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static UploadCredentials fromJson(Map<String, dynamic> json) => UploadCredentials(
-        storageClass: json[r'storageClass'] == null ? null : json[r'storageClass'] as String?,
-        endPoint: json[r'endPoint'] == null ? null : json[r'endPoint'] as String?,
-        protocal: json[r'protocal'] == null ? null : json[r'protocal'] as String?,
-        bucketName: json[r'bucketName'] == null ? null : json[r'bucketName'] as String?,
-        regionId: json[r'regionId'] == null ? null : json[r'regionId'] as String?,
-        securityToken: json[r'securityToken'] == null ? null : json[r'securityToken'] as String?,
-        accessKeyId: json[r'accessKeyId'] == null ? null : json[r'accessKeyId'] as String?,
-        accessKeySecret: json[r'accessKeySecret'] == null ? null : json[r'accessKeySecret'] as String?,
-        expiration: json[r'expiration'] == null ? null : json[r'expiration'] as String?,
-        expiredTime: json[r'expiredTime'] == null ? null : json[r'expiredTime'] as int?,
-        appId: json[r'appId'] == null ? null : json[r'appId'] as String?,
-    );
+  static UploadCredentials? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<UploadCredentials> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<UploadCredentials>((i) => UploadCredentials.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <UploadCredentials>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "UploadCredentials[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "UploadCredentials[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return UploadCredentials(
+        storageClass: mapValueOfType<String>(json, r'storageClass'),
+        endPoint: mapValueOfType<String>(json, r'endPoint'),
+        protocal: mapValueOfType<String>(json, r'protocal'),
+        bucketName: mapValueOfType<String>(json, r'bucketName'),
+        regionId: mapValueOfType<String>(json, r'regionId'),
+        securityToken: mapValueOfType<String>(json, r'securityToken'),
+        accessKeyId: mapValueOfType<String>(json, r'accessKeyId'),
+        accessKeySecret: mapValueOfType<String>(json, r'accessKeySecret'),
+        expiration: mapValueOfType<String>(json, r'expiration'),
+        expiredTime: mapValueOfType<int>(json, r'expiredTime'),
+        appId: mapValueOfType<String>(json, r'appId'),
+      );
+    }
+    return null;
+  }
+
+  static List<UploadCredentials>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <UploadCredentials>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = UploadCredentials.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, UploadCredentials> mapFromJson(dynamic json) {
     final map = <String, UploadCredentials>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = UploadCredentials.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = UploadCredentials.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of UploadCredentials-objects as value to a dart map
-  static Map<String, List<UploadCredentials>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<UploadCredentials>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<UploadCredentials>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = UploadCredentials.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = UploadCredentials.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

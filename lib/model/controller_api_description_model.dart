@@ -1,14 +1,14 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class ControllerApiDescriptionModel {
   /// Returns a new [ControllerApiDescriptionModel] instance.
@@ -18,15 +18,20 @@ class ControllerApiDescriptionModel {
     this.isRemoteService,
     this.apiVersion,
     this.type,
-    this.interfaces,
-    this.actions,
+    this.interfaces = const [],
+    this.actions = const {},
   });
-
 
   String? controllerName;
 
   String? controllerGroupName;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? isRemoteService;
 
   String? apiVersion;
@@ -49,39 +54,54 @@ class ControllerApiDescriptionModel {
 
   @override
   int get hashCode =>
-    controllerName.hashCode +
-    controllerGroupName.hashCode +
-    isRemoteService.hashCode +
-    apiVersion.hashCode +
-    type.hashCode +
-    interfaces.hashCode +
-    actions.hashCode;
+    // ignore: unnecessary_parenthesis
+    (controllerName == null ? 0 : controllerName!.hashCode) +
+    (controllerGroupName == null ? 0 : controllerGroupName!.hashCode) +
+    (isRemoteService == null ? 0 : isRemoteService!.hashCode) +
+    (apiVersion == null ? 0 : apiVersion!.hashCode) +
+    (type == null ? 0 : type!.hashCode) +
+    (interfaces == null ? 0 : interfaces!.hashCode) +
+    (actions == null ? 0 : actions!.hashCode);
 
   @override
   String toString() => 'ControllerApiDescriptionModel[controllerName=$controllerName, controllerGroupName=$controllerGroupName, isRemoteService=$isRemoteService, apiVersion=$apiVersion, type=$type, interfaces=$interfaces, actions=$actions]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (controllerName != null) {
-      json[r'controllerName'] = controllerName;
+    if (this.controllerName != null) {
+      json[r'controllerName'] = this.controllerName;
+    } else {
+      json[r'controllerName'] = null;
     }
-    if (controllerGroupName != null) {
-      json[r'controllerGroupName'] = controllerGroupName;
+    if (this.controllerGroupName != null) {
+      json[r'controllerGroupName'] = this.controllerGroupName;
+    } else {
+      json[r'controllerGroupName'] = null;
     }
-    if (isRemoteService != null) {
-      json[r'isRemoteService'] = isRemoteService;
+    if (this.isRemoteService != null) {
+      json[r'isRemoteService'] = this.isRemoteService;
+    } else {
+      json[r'isRemoteService'] = null;
     }
-    if (apiVersion != null) {
-      json[r'apiVersion'] = apiVersion;
+    if (this.apiVersion != null) {
+      json[r'apiVersion'] = this.apiVersion;
+    } else {
+      json[r'apiVersion'] = null;
     }
-    if (type != null) {
-      json[r'type'] = type;
+    if (this.type != null) {
+      json[r'type'] = this.type;
+    } else {
+      json[r'type'] = null;
     }
-    if (interfaces != null) {
-      json[r'interfaces'] = interfaces;
+    if (this.interfaces != null) {
+      json[r'interfaces'] = this.interfaces;
+    } else {
+      json[r'interfaces'] = null;
     }
-    if (actions != null) {
-      json[r'actions'] = actions;
+    if (this.actions != null) {
+      json[r'actions'] = this.actions;
+    } else {
+      json[r'actions'] = null;
     }
     return json;
   }
@@ -89,45 +109,78 @@ class ControllerApiDescriptionModel {
   /// Returns a new [ControllerApiDescriptionModel] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static ControllerApiDescriptionModel fromJson(Map<String, dynamic> json) => ControllerApiDescriptionModel(
-        controllerName: json[r'controllerName'] == null ? null : json[r'controllerName'] as String?,
-        controllerGroupName: json[r'controllerGroupName'] == null ? null : json[r'controllerGroupName'] as String?,
-        isRemoteService: json[r'isRemoteService'] == null ? null : json[r'isRemoteService'] as bool?,
-        apiVersion: json[r'apiVersion'] == null ? null : json[r'apiVersion'] as String?,
-        type: json[r'type'] == null ? null : json[r'type'] as String?,
-        interfaces: json[r'interfaces'] == null ? null : ControllerInterfaceApiDescriptionModel.listFromJson(json[r'interfaces']),
-        actions: json[r'actions'] == null ? null : json[r'actions'] as Map<String, ActionApiDescriptionModel>?,
-    );
+  static ControllerApiDescriptionModel? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<ControllerApiDescriptionModel> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<ControllerApiDescriptionModel>((i) => ControllerApiDescriptionModel.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <ControllerApiDescriptionModel>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "ControllerApiDescriptionModel[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "ControllerApiDescriptionModel[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return ControllerApiDescriptionModel(
+        controllerName: mapValueOfType<String>(json, r'controllerName'),
+        controllerGroupName: mapValueOfType<String>(json, r'controllerGroupName'),
+        isRemoteService: mapValueOfType<bool>(json, r'isRemoteService'),
+        apiVersion: mapValueOfType<String>(json, r'apiVersion'),
+        type: mapValueOfType<String>(json, r'type'),
+        interfaces: ControllerInterfaceApiDescriptionModel.listFromJson(json[r'interfaces']) ?? const [],
+        actions: ActionApiDescriptionModel.mapFromJson(json[r'actions']) ?? const {},
+      );
+    }
+    return null;
+  }
+
+  static List<ControllerApiDescriptionModel>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <ControllerApiDescriptionModel>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = ControllerApiDescriptionModel.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, ControllerApiDescriptionModel> mapFromJson(dynamic json) {
     final map = <String, ControllerApiDescriptionModel>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = ControllerApiDescriptionModel.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = ControllerApiDescriptionModel.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of ControllerApiDescriptionModel-objects as value to a dart map
-  static Map<String, List<ControllerApiDescriptionModel>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<ControllerApiDescriptionModel>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<ControllerApiDescriptionModel>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = ControllerApiDescriptionModel.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = ControllerApiDescriptionModel.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

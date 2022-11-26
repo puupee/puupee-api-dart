@@ -1,8 +1,8 @@
-# doggy_api.model.CreateUpdateAppUserScoreDto
+# puupee_api.model.CreateUpdateAppUserScoreDto
 
 ## Load the model package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 ## Properties

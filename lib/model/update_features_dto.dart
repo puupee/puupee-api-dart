@@ -1,21 +1,20 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class UpdateFeaturesDto {
   /// Returns a new [UpdateFeaturesDto] instance.
   UpdateFeaturesDto({
-    this.features,
+    this.features = const [],
   });
-
 
   List<UpdateFeatureDto>? features;
 
@@ -25,15 +24,18 @@ class UpdateFeaturesDto {
 
   @override
   int get hashCode =>
-    features.hashCode;
+    // ignore: unnecessary_parenthesis
+    (features == null ? 0 : features!.hashCode);
 
   @override
   String toString() => 'UpdateFeaturesDto[features=$features]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (features != null) {
-      json[r'features'] = features;
+    if (this.features != null) {
+      json[r'features'] = this.features;
+    } else {
+      json[r'features'] = null;
     }
     return json;
   }
@@ -41,39 +43,72 @@ class UpdateFeaturesDto {
   /// Returns a new [UpdateFeaturesDto] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static UpdateFeaturesDto fromJson(Map<String, dynamic> json) => UpdateFeaturesDto(
-        features: json[r'features'] == null ? null : UpdateFeatureDto.listFromJson(json[r'features']),
-    );
+  static UpdateFeaturesDto? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<UpdateFeaturesDto> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<UpdateFeaturesDto>((i) => UpdateFeaturesDto.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <UpdateFeaturesDto>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "UpdateFeaturesDto[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "UpdateFeaturesDto[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return UpdateFeaturesDto(
+        features: UpdateFeatureDto.listFromJson(json[r'features']) ?? const [],
+      );
+    }
+    return null;
+  }
+
+  static List<UpdateFeaturesDto>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <UpdateFeaturesDto>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = UpdateFeaturesDto.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, UpdateFeaturesDto> mapFromJson(dynamic json) {
     final map = <String, UpdateFeaturesDto>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = UpdateFeaturesDto.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = UpdateFeaturesDto.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of UpdateFeaturesDto-objects as value to a dart map
-  static Map<String, List<UpdateFeaturesDto>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<UpdateFeaturesDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<UpdateFeaturesDto>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = UpdateFeaturesDto.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = UpdateFeaturesDto.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

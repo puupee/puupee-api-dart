@@ -2,15 +2,15 @@
 # AUTO-GENERATED FILE, DO NOT MODIFY!
 #
 
-name: 'doggy_api'
+name: 'puupee_api'
 version: '1.0.0'
-description: 'api for Mr Doggy app service.'
-homepage: 'https://github.com/mr-doggy/doggy-sdk-flutter'
+description: 'Api for puupee app service.'
+homepage: 'https://github.com/puupee/puupee-api-dart'
 environment:
-  sdk: '>=2.14.0 <3.0.0'
+  sdk: '>=2.12.0 <3.0.0'
 dependencies:
   http: '>=0.13.0 <0.14.0'
   intl: '^0.17.0'
-
+  meta: '^1.1.8'
 dev_dependencies:
-
+  test: '>=1.16.0 <1.18.0'

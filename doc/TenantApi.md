@@ -1,8 +1,8 @@
-# doggy_api.api.TenantApi
+# puupee_api.api.TenantApi
 
 ## Load the API package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -69,13 +69,13 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiMultiTenancyTenantsIdDefaultConnectionStringDelete**
-> Map<String, dynamic> apiMultiTenancyTenantsIdDefaultConnectionStringDelete(id)
+> apiMultiTenancyTenantsIdDefaultConnectionStringDelete(id)
 
 
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -83,8 +83,7 @@ final api_instance = TenantApi();
 final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final result = api_instance.apiMultiTenancyTenantsIdDefaultConnectionStringDelete(id);
-    print(result);
+    api_instance.apiMultiTenancyTenantsIdDefaultConnectionStringDelete(id);
 } catch (e) {
     print('Exception when calling TenantApi->apiMultiTenancyTenantsIdDefaultConnectionStringDelete: $e\n');
 }
@@ -98,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Map<String, dynamic>**
+void (empty response body)
 
 ### Authorization
 
@@ -118,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -155,13 +154,13 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiMultiTenancyTenantsIdDefaultConnectionStringPut**
-> Map<String, dynamic> apiMultiTenancyTenantsIdDefaultConnectionStringPut(id, defaultConnectionString)
+> apiMultiTenancyTenantsIdDefaultConnectionStringPut(id, defaultConnectionString)
 
 
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -170,8 +169,7 @@ final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 final defaultConnectionString = defaultConnectionString_example; // String | 
 
 try {
-    final result = api_instance.apiMultiTenancyTenantsIdDefaultConnectionStringPut(id, defaultConnectionString);
-    print(result);
+    api_instance.apiMultiTenancyTenantsIdDefaultConnectionStringPut(id, defaultConnectionString);
 } catch (e) {
     print('Exception when calling TenantApi->apiMultiTenancyTenantsIdDefaultConnectionStringPut: $e\n');
 }
@@ -186,7 +184,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Map<String, dynamic>**
+void (empty response body)
 
 ### Authorization
 
@@ -200,13 +198,13 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiMultiTenancyTenantsIdDelete**
-> Map<String, dynamic> apiMultiTenancyTenantsIdDelete(id)
+> apiMultiTenancyTenantsIdDelete(id)
 
 
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -214,8 +212,7 @@ final api_instance = TenantApi();
 final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final result = api_instance.apiMultiTenancyTenantsIdDelete(id);
-    print(result);
+    api_instance.apiMultiTenancyTenantsIdDelete(id);
 } catch (e) {
     print('Exception when calling TenantApi->apiMultiTenancyTenantsIdDelete: $e\n');
 }
@@ -229,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Map<String, dynamic>**
+void (empty response body)
 
 ### Authorization
 
@@ -249,7 +246,7 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -292,7 +289,7 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -325,7 +322,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/_*+json
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -337,7 +334,7 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -368,7 +365,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/_*+json
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

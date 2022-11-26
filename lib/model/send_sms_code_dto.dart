@@ -1,21 +1,20 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class SendSmsCodeDto {
   /// Returns a new [SendSmsCodeDto] instance.
   SendSmsCodeDto({
     this.phoneNumber,
   });
-
 
   String? phoneNumber;
 
@@ -25,15 +24,18 @@ class SendSmsCodeDto {
 
   @override
   int get hashCode =>
-    phoneNumber.hashCode;
+    // ignore: unnecessary_parenthesis
+    (phoneNumber == null ? 0 : phoneNumber!.hashCode);
 
   @override
   String toString() => 'SendSmsCodeDto[phoneNumber=$phoneNumber]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (phoneNumber != null) {
-      json[r'phoneNumber'] = phoneNumber;
+    if (this.phoneNumber != null) {
+      json[r'phoneNumber'] = this.phoneNumber;
+    } else {
+      json[r'phoneNumber'] = null;
     }
     return json;
   }
@@ -41,39 +43,72 @@ class SendSmsCodeDto {
   /// Returns a new [SendSmsCodeDto] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static SendSmsCodeDto fromJson(Map<String, dynamic> json) => SendSmsCodeDto(
-        phoneNumber: json[r'phoneNumber'] == null ? null : json[r'phoneNumber'] as String?,
-    );
+  static SendSmsCodeDto? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<SendSmsCodeDto> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<SendSmsCodeDto>((i) => SendSmsCodeDto.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <SendSmsCodeDto>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "SendSmsCodeDto[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "SendSmsCodeDto[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return SendSmsCodeDto(
+        phoneNumber: mapValueOfType<String>(json, r'phoneNumber'),
+      );
+    }
+    return null;
+  }
+
+  static List<SendSmsCodeDto>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <SendSmsCodeDto>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = SendSmsCodeDto.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, SendSmsCodeDto> mapFromJson(dynamic json) {
     final map = <String, SendSmsCodeDto>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = SendSmsCodeDto.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = SendSmsCodeDto.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of SendSmsCodeDto-objects as value to a dart map
-  static Map<String, List<SendSmsCodeDto>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<SendSmsCodeDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<SendSmsCodeDto>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = SendSmsCodeDto.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = SendSmsCodeDto.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

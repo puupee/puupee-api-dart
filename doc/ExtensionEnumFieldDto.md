@@ -1,15 +1,15 @@
-# doggy_api.model.ExtensionEnumFieldDto
+# puupee_api.model.ExtensionEnumFieldDto
 
 ## Load the model package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | [optional] 
-**value** | **Map<String, dynamic>** |  | [optional] 
+**value** | [**Object**](.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

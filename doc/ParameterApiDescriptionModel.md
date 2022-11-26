@@ -1,8 +1,8 @@
-# doggy_api.model.ParameterApiDescriptionModel
+# puupee_api.model.ParameterApiDescriptionModel
 
 ## Load the model package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 ## Properties
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **type** | **String** |  | [optional] 
 **typeSimple** | **String** |  | [optional] 
 **isOptional** | **bool** |  | [optional] 
-**defaultValue** | **Map<String, dynamic>** |  | [optional] 
+**defaultValue** | [**Object**](.md) |  | [optional] 
 **constraintTypes** | **List<String>** |  | [optional] [default to const []]
 **bindingSourceId** | **String** |  | [optional] 
 **descriptorName** | **String** |  | [optional] 

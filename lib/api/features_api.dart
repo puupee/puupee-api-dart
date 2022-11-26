@@ -1,14 +1,14 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 
 class FeaturesApi {
@@ -34,13 +34,12 @@ class FeaturesApi {
     final formParams = <String, String>{};
 
     if (providerName != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'providerName', providerName));
+      queryParams.addAll(_queryParams('', 'providerName', providerName));
     }
     if (providerKey != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'providerKey', providerKey));
+      queryParams.addAll(_queryParams('', 'providerKey', providerKey));
     }
 
-    const authNames = <String>['oauth2'];
     const contentTypes = <String>[];
 
 
@@ -51,8 +50,7 @@ class FeaturesApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
@@ -69,9 +67,11 @@ class FeaturesApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'GetFeatureListResultDto',) as GetFeatureListResultDto;
-        }
+    
+    }
+    return null;
   }
 
   /// Performs an HTTP 'PUT /api/feature-management/features' operation and returns the [Response].
@@ -94,14 +94,13 @@ class FeaturesApi {
     final formParams = <String, String>{};
 
     if (providerName != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'providerName', providerName));
+      queryParams.addAll(_queryParams('', 'providerName', providerName));
     }
     if (providerKey != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'providerKey', providerKey));
+      queryParams.addAll(_queryParams('', 'providerKey', providerKey));
     }
 
-    const authNames = <String>['oauth2'];
-    const contentTypes = <String>['application/json', 'text/json', 'application/_*+json'];
+    const contentTypes = <String>['application/json', 'text/json', 'application/*+json'];
 
 
     return apiClient.invokeAPI(
@@ -111,8 +110,7 @@ class FeaturesApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
@@ -123,16 +121,10 @@ class FeaturesApi {
   /// * [String] providerKey:
   ///
   /// * [UpdateFeaturesDto] updateFeaturesDto:
-  Future<Map<String, dynamic>?> apiFeatureManagementFeaturesPut({ String? providerName, String? providerKey, UpdateFeaturesDto? updateFeaturesDto, }) async {
+  Future<void> apiFeatureManagementFeaturesPut({ String? providerName, String? providerKey, UpdateFeaturesDto? updateFeaturesDto, }) async {
     final response = await apiFeatureManagementFeaturesPutWithHttpInfo( providerName: providerName, providerKey: providerKey, updateFeaturesDto: updateFeaturesDto, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Map<String, dynamic>',) as Map<String, dynamic>;
-        }
   }
 }

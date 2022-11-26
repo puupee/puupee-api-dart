@@ -1,8 +1,8 @@
-# doggy_api.model.NotificationInfoDtoPagedResultDto
+# puupee_api.model.NotificationInfoDtoPagedResultDto
 
 ## Load the model package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 ## Properties

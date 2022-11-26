@@ -1,14 +1,14 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 
 class TenantApi {
@@ -38,19 +38,18 @@ class TenantApi {
     final formParams = <String, String>{};
 
     if (filter != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'Filter', filter));
+      queryParams.addAll(_queryParams('', 'Filter', filter));
     }
     if (sorting != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'Sorting', sorting));
+      queryParams.addAll(_queryParams('', 'Sorting', sorting));
     }
     if (skipCount != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'SkipCount', skipCount));
+      queryParams.addAll(_queryParams('', 'SkipCount', skipCount));
     }
     if (maxResultCount != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'MaxResultCount', maxResultCount));
+      queryParams.addAll(_queryParams('', 'MaxResultCount', maxResultCount));
     }
 
-    const authNames = <String>['oauth2'];
     const contentTypes = <String>[];
 
 
@@ -61,8 +60,7 @@ class TenantApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
@@ -83,9 +81,11 @@ class TenantApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'TenantDtoPagedResultDto',) as TenantDtoPagedResultDto;
-        }
+    
+    }
+    return null;
   }
 
   /// Performs an HTTP 'DELETE /api/multi-tenancy/tenants/{id}/default-connection-string' operation and returns the [Response].
@@ -104,7 +104,6 @@ class TenantApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['oauth2'];
     const contentTypes = <String>[];
 
 
@@ -115,25 +114,18 @@ class TenantApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
   /// Parameters:
   ///
   /// * [String] id (required):
-  Future<Map<String, dynamic>?> apiMultiTenancyTenantsIdDefaultConnectionStringDelete(String id,) async {
+  Future<void> apiMultiTenancyTenantsIdDefaultConnectionStringDelete(String id,) async {
     final response = await apiMultiTenancyTenantsIdDefaultConnectionStringDeleteWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Map<String, dynamic>',) as Map<String, dynamic>;
-        }
   }
 
   /// Performs an HTTP 'GET /api/multi-tenancy/tenants/{id}/default-connection-string' operation and returns the [Response].
@@ -152,7 +144,6 @@ class TenantApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['oauth2'];
     const contentTypes = <String>[];
 
 
@@ -163,8 +154,7 @@ class TenantApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
@@ -179,9 +169,11 @@ class TenantApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'String',) as String;
-        }
+    
+    }
+    return null;
   }
 
   /// Performs an HTTP 'PUT /api/multi-tenancy/tenants/{id}/default-connection-string' operation and returns the [Response].
@@ -203,10 +195,9 @@ class TenantApi {
     final formParams = <String, String>{};
 
     if (defaultConnectionString != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'defaultConnectionString', defaultConnectionString));
+      queryParams.addAll(_queryParams('', 'defaultConnectionString', defaultConnectionString));
     }
 
-    const authNames = <String>['oauth2'];
     const contentTypes = <String>[];
 
 
@@ -217,8 +208,7 @@ class TenantApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
@@ -227,17 +217,11 @@ class TenantApi {
   /// * [String] id (required):
   ///
   /// * [String] defaultConnectionString:
-  Future<Map<String, dynamic>?> apiMultiTenancyTenantsIdDefaultConnectionStringPut(String id, { String? defaultConnectionString, }) async {
+  Future<void> apiMultiTenancyTenantsIdDefaultConnectionStringPut(String id, { String? defaultConnectionString, }) async {
     final response = await apiMultiTenancyTenantsIdDefaultConnectionStringPutWithHttpInfo(id,  defaultConnectionString: defaultConnectionString, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Map<String, dynamic>',) as Map<String, dynamic>;
-        }
   }
 
   /// Performs an HTTP 'DELETE /api/multi-tenancy/tenants/{id}' operation and returns the [Response].
@@ -256,7 +240,6 @@ class TenantApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['oauth2'];
     const contentTypes = <String>[];
 
 
@@ -267,25 +250,18 @@ class TenantApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
   /// Parameters:
   ///
   /// * [String] id (required):
-  Future<Map<String, dynamic>?> apiMultiTenancyTenantsIdDelete(String id,) async {
+  Future<void> apiMultiTenancyTenantsIdDelete(String id,) async {
     final response = await apiMultiTenancyTenantsIdDeleteWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Map<String, dynamic>',) as Map<String, dynamic>;
-        }
   }
 
   /// Performs an HTTP 'GET /api/multi-tenancy/tenants/{id}' operation and returns the [Response].
@@ -304,7 +280,6 @@ class TenantApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['oauth2'];
     const contentTypes = <String>[];
 
 
@@ -315,8 +290,7 @@ class TenantApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
@@ -331,9 +305,11 @@ class TenantApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'TenantDto',) as TenantDto;
-        }
+    
+    }
+    return null;
   }
 
   /// Performs an HTTP 'PUT /api/multi-tenancy/tenants/{id}' operation and returns the [Response].
@@ -354,8 +330,7 @@ class TenantApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['oauth2'];
-    const contentTypes = <String>['application/json', 'text/json', 'application/_*+json'];
+    const contentTypes = <String>['application/json', 'text/json', 'application/*+json'];
 
 
     return apiClient.invokeAPI(
@@ -365,8 +340,7 @@ class TenantApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
@@ -383,9 +357,11 @@ class TenantApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'TenantDto',) as TenantDto;
-        }
+    
+    }
+    return null;
   }
 
   /// Performs an HTTP 'POST /api/multi-tenancy/tenants' operation and returns the [Response].
@@ -403,8 +379,7 @@ class TenantApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['oauth2'];
-    const contentTypes = <String>['application/json', 'text/json', 'application/_*+json'];
+    const contentTypes = <String>['application/json', 'text/json', 'application/*+json'];
 
 
     return apiClient.invokeAPI(
@@ -414,8 +389,7 @@ class TenantApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
@@ -430,8 +404,10 @@ class TenantApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'TenantDto',) as TenantDto;
-        }
+    
+    }
+    return null;
   }
 }

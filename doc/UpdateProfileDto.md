@@ -1,14 +1,14 @@
-# doggy_api.model.UpdateProfileDto
+# puupee_api.model.UpdateProfileDto
 
 ## Load the model package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**extraProperties** | **Map<String, dynamic>** |  | [optional] [readonly] [default to const {}]
+**extraProperties** | [**Map<String, Object>**](Object.md) |  | [optional] [readonly] [default to const {}]
 **userName** | **String** |  | [optional] 
 **email** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 

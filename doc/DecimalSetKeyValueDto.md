@@ -1,8 +1,8 @@
-# doggy_api.model.DecimalSetKeyValueDto
+# puupee_api.model.DecimalSetKeyValueDto
 
 ## Load the model package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 ## Properties

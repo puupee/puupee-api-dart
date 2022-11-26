@@ -1,14 +1,14 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class DeviceDto {
   /// Returns a new [DeviceDto] instance.
@@ -28,9 +28,20 @@ class DeviceDto {
     this.systemVersion,
   });
 
-
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? id;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   DateTime? creationTime;
 
   String? creatorId;
@@ -39,6 +50,12 @@ class DeviceDto {
 
   String? lastModifierId;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? isDeleted;
 
   String? deleterId;
@@ -73,63 +90,90 @@ class DeviceDto {
 
   @override
   int get hashCode =>
-    id.hashCode +
-    creationTime.hashCode +
-    creatorId.hashCode +
-    lastModificationTime.hashCode +
-    lastModifierId.hashCode +
-    isDeleted.hashCode +
-    deleterId.hashCode +
-    deletionTime.hashCode +
-    token.hashCode +
-    name.hashCode +
-    type.hashCode +
-    brand.hashCode +
-    systemVersion.hashCode;
+    // ignore: unnecessary_parenthesis
+    (id == null ? 0 : id!.hashCode) +
+    (creationTime == null ? 0 : creationTime!.hashCode) +
+    (creatorId == null ? 0 : creatorId!.hashCode) +
+    (lastModificationTime == null ? 0 : lastModificationTime!.hashCode) +
+    (lastModifierId == null ? 0 : lastModifierId!.hashCode) +
+    (isDeleted == null ? 0 : isDeleted!.hashCode) +
+    (deleterId == null ? 0 : deleterId!.hashCode) +
+    (deletionTime == null ? 0 : deletionTime!.hashCode) +
+    (token == null ? 0 : token!.hashCode) +
+    (name == null ? 0 : name!.hashCode) +
+    (type == null ? 0 : type!.hashCode) +
+    (brand == null ? 0 : brand!.hashCode) +
+    (systemVersion == null ? 0 : systemVersion!.hashCode);
 
   @override
   String toString() => 'DeviceDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, token=$token, name=$name, type=$type, brand=$brand, systemVersion=$systemVersion]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (id != null) {
-      json[r'id'] = id;
+    if (this.id != null) {
+      json[r'id'] = this.id;
+    } else {
+      json[r'id'] = null;
     }
-    if (creationTime != null) {
-      json[r'creationTime'] = creationTime!.toUtc().toIso8601String();
+    if (this.creationTime != null) {
+      json[r'creationTime'] = this.creationTime!.toUtc().toIso8601String();
+    } else {
+      json[r'creationTime'] = null;
     }
-    if (creatorId != null) {
-      json[r'creatorId'] = creatorId;
+    if (this.creatorId != null) {
+      json[r'creatorId'] = this.creatorId;
+    } else {
+      json[r'creatorId'] = null;
     }
-    if (lastModificationTime != null) {
-      json[r'lastModificationTime'] = lastModificationTime!.toUtc().toIso8601String();
+    if (this.lastModificationTime != null) {
+      json[r'lastModificationTime'] = this.lastModificationTime!.toUtc().toIso8601String();
+    } else {
+      json[r'lastModificationTime'] = null;
     }
-    if (lastModifierId != null) {
-      json[r'lastModifierId'] = lastModifierId;
+    if (this.lastModifierId != null) {
+      json[r'lastModifierId'] = this.lastModifierId;
+    } else {
+      json[r'lastModifierId'] = null;
     }
-    if (isDeleted != null) {
-      json[r'isDeleted'] = isDeleted;
+    if (this.isDeleted != null) {
+      json[r'isDeleted'] = this.isDeleted;
+    } else {
+      json[r'isDeleted'] = null;
     }
-    if (deleterId != null) {
-      json[r'deleterId'] = deleterId;
+    if (this.deleterId != null) {
+      json[r'deleterId'] = this.deleterId;
+    } else {
+      json[r'deleterId'] = null;
     }
-    if (deletionTime != null) {
-      json[r'deletionTime'] = deletionTime!.toUtc().toIso8601String();
+    if (this.deletionTime != null) {
+      json[r'deletionTime'] = this.deletionTime!.toUtc().toIso8601String();
+    } else {
+      json[r'deletionTime'] = null;
     }
-    if (token != null) {
-      json[r'token'] = token;
+    if (this.token != null) {
+      json[r'token'] = this.token;
+    } else {
+      json[r'token'] = null;
     }
-    if (name != null) {
-      json[r'name'] = name;
+    if (this.name != null) {
+      json[r'name'] = this.name;
+    } else {
+      json[r'name'] = null;
     }
-    if (type != null) {
-      json[r'type'] = type;
+    if (this.type != null) {
+      json[r'type'] = this.type;
+    } else {
+      json[r'type'] = null;
     }
-    if (brand != null) {
-      json[r'brand'] = brand;
+    if (this.brand != null) {
+      json[r'brand'] = this.brand;
+    } else {
+      json[r'brand'] = null;
     }
-    if (systemVersion != null) {
-      json[r'systemVersion'] = systemVersion;
+    if (this.systemVersion != null) {
+      json[r'systemVersion'] = this.systemVersion;
+    } else {
+      json[r'systemVersion'] = null;
     }
     return json;
   }
@@ -137,51 +181,84 @@ class DeviceDto {
   /// Returns a new [DeviceDto] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static DeviceDto fromJson(Map<String, dynamic> json) => DeviceDto(
-        id: json[r'id'] == null ? null : json[r'id'] as String?,
-        creationTime: json[r'creationTime'] == null ? null : mapDateTime(json, r'creationTime', ''),
-        creatorId: json[r'creatorId'] == null ? null : json[r'creatorId'] as String?,
-        lastModificationTime: json[r'lastModificationTime'] == null ? null : mapDateTime(json, r'lastModificationTime', ''),
-        lastModifierId: json[r'lastModifierId'] == null ? null : json[r'lastModifierId'] as String?,
-        isDeleted: json[r'isDeleted'] == null ? null : json[r'isDeleted'] as bool?,
-        deleterId: json[r'deleterId'] == null ? null : json[r'deleterId'] as String?,
-        deletionTime: json[r'deletionTime'] == null ? null : mapDateTime(json, r'deletionTime', ''),
-        token: json[r'token'] == null ? null : json[r'token'] as String?,
-        name: json[r'name'] == null ? null : json[r'name'] as String?,
-        type: json[r'type'] == null ? null : json[r'type'] as String?,
-        brand: json[r'brand'] == null ? null : json[r'brand'] as String?,
-        systemVersion: json[r'systemVersion'] == null ? null : json[r'systemVersion'] as String?,
-    );
+  static DeviceDto? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<DeviceDto> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<DeviceDto>((i) => DeviceDto.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <DeviceDto>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "DeviceDto[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "DeviceDto[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return DeviceDto(
+        id: mapValueOfType<String>(json, r'id'),
+        creationTime: mapDateTime(json, r'creationTime', ''),
+        creatorId: mapValueOfType<String>(json, r'creatorId'),
+        lastModificationTime: mapDateTime(json, r'lastModificationTime', ''),
+        lastModifierId: mapValueOfType<String>(json, r'lastModifierId'),
+        isDeleted: mapValueOfType<bool>(json, r'isDeleted'),
+        deleterId: mapValueOfType<String>(json, r'deleterId'),
+        deletionTime: mapDateTime(json, r'deletionTime', ''),
+        token: mapValueOfType<String>(json, r'token'),
+        name: mapValueOfType<String>(json, r'name'),
+        type: mapValueOfType<String>(json, r'type'),
+        brand: mapValueOfType<String>(json, r'brand'),
+        systemVersion: mapValueOfType<String>(json, r'systemVersion'),
+      );
+    }
+    return null;
+  }
+
+  static List<DeviceDto>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <DeviceDto>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = DeviceDto.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, DeviceDto> mapFromJson(dynamic json) {
     final map = <String, DeviceDto>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = DeviceDto.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = DeviceDto.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of DeviceDto-objects as value to a dart map
-  static Map<String, List<DeviceDto>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<DeviceDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<DeviceDto>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = DeviceDto.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = DeviceDto.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

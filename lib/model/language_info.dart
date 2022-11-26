@@ -1,14 +1,14 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class LanguageInfo {
   /// Returns a new [LanguageInfo] instance.
@@ -18,7 +18,6 @@ class LanguageInfo {
     this.displayName,
     this.flagIcon,
   });
-
 
   String? cultureName;
 
@@ -37,27 +36,36 @@ class LanguageInfo {
 
   @override
   int get hashCode =>
-    cultureName.hashCode +
-    uiCultureName.hashCode +
-    displayName.hashCode +
-    flagIcon.hashCode;
+    // ignore: unnecessary_parenthesis
+    (cultureName == null ? 0 : cultureName!.hashCode) +
+    (uiCultureName == null ? 0 : uiCultureName!.hashCode) +
+    (displayName == null ? 0 : displayName!.hashCode) +
+    (flagIcon == null ? 0 : flagIcon!.hashCode);
 
   @override
   String toString() => 'LanguageInfo[cultureName=$cultureName, uiCultureName=$uiCultureName, displayName=$displayName, flagIcon=$flagIcon]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (cultureName != null) {
-      json[r'cultureName'] = cultureName;
+    if (this.cultureName != null) {
+      json[r'cultureName'] = this.cultureName;
+    } else {
+      json[r'cultureName'] = null;
     }
-    if (uiCultureName != null) {
-      json[r'uiCultureName'] = uiCultureName;
+    if (this.uiCultureName != null) {
+      json[r'uiCultureName'] = this.uiCultureName;
+    } else {
+      json[r'uiCultureName'] = null;
     }
-    if (displayName != null) {
-      json[r'displayName'] = displayName;
+    if (this.displayName != null) {
+      json[r'displayName'] = this.displayName;
+    } else {
+      json[r'displayName'] = null;
     }
-    if (flagIcon != null) {
-      json[r'flagIcon'] = flagIcon;
+    if (this.flagIcon != null) {
+      json[r'flagIcon'] = this.flagIcon;
+    } else {
+      json[r'flagIcon'] = null;
     }
     return json;
   }
@@ -65,42 +73,75 @@ class LanguageInfo {
   /// Returns a new [LanguageInfo] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static LanguageInfo fromJson(Map<String, dynamic> json) => LanguageInfo(
-        cultureName: json[r'cultureName'] == null ? null : json[r'cultureName'] as String?,
-        uiCultureName: json[r'uiCultureName'] == null ? null : json[r'uiCultureName'] as String?,
-        displayName: json[r'displayName'] == null ? null : json[r'displayName'] as String?,
-        flagIcon: json[r'flagIcon'] == null ? null : json[r'flagIcon'] as String?,
-    );
+  static LanguageInfo? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<LanguageInfo> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<LanguageInfo>((i) => LanguageInfo.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <LanguageInfo>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "LanguageInfo[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "LanguageInfo[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return LanguageInfo(
+        cultureName: mapValueOfType<String>(json, r'cultureName'),
+        uiCultureName: mapValueOfType<String>(json, r'uiCultureName'),
+        displayName: mapValueOfType<String>(json, r'displayName'),
+        flagIcon: mapValueOfType<String>(json, r'flagIcon'),
+      );
+    }
+    return null;
+  }
+
+  static List<LanguageInfo>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <LanguageInfo>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = LanguageInfo.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, LanguageInfo> mapFromJson(dynamic json) {
     final map = <String, LanguageInfo>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = LanguageInfo.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = LanguageInfo.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of LanguageInfo-objects as value to a dart map
-  static Map<String, List<LanguageInfo>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<LanguageInfo>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<LanguageInfo>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = LanguageInfo.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = LanguageInfo.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

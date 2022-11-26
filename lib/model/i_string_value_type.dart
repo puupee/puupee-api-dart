@@ -1,28 +1,33 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class IStringValueType {
   /// Returns a new [IStringValueType] instance.
   IStringValueType({
     this.name,
-    this.properties,
+    this.properties = const {},
     this.validator,
   });
 
-
   String? name;
 
-  Map<String, dynamic>? properties;
+  Map<String, Object>? properties;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   IValueValidator? validator;
 
   @override
@@ -33,23 +38,30 @@ class IStringValueType {
 
   @override
   int get hashCode =>
-    name.hashCode +
-    properties.hashCode +
-    validator.hashCode;
+    // ignore: unnecessary_parenthesis
+    (name == null ? 0 : name!.hashCode) +
+    (properties == null ? 0 : properties!.hashCode) +
+    (validator == null ? 0 : validator!.hashCode);
 
   @override
   String toString() => 'IStringValueType[name=$name, properties=$properties, validator=$validator]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (name != null) {
-      json[r'name'] = name;
+    if (this.name != null) {
+      json[r'name'] = this.name;
+    } else {
+      json[r'name'] = null;
     }
-    if (properties != null) {
-      json[r'properties'] = properties;
+    if (this.properties != null) {
+      json[r'properties'] = this.properties;
+    } else {
+      json[r'properties'] = null;
     }
-    if (validator != null) {
-      json[r'validator'] = validator;
+    if (this.validator != null) {
+      json[r'validator'] = this.validator;
+    } else {
+      json[r'validator'] = null;
     }
     return json;
   }
@@ -57,41 +69,74 @@ class IStringValueType {
   /// Returns a new [IStringValueType] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static IStringValueType fromJson(Map<String, dynamic> json) => IStringValueType(
-        name: json[r'name'] == null ? null : json[r'name'] as String?,
-        properties: json[r'properties'] == null ? null : json[r'properties'] as Map<String, dynamic>?,
-        validator: json[r'validator'] == null ? null : IValueValidator.fromJson(json[r'validator']),
-    );
+  static IStringValueType? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<IStringValueType> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<IStringValueType>((i) => IStringValueType.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <IStringValueType>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "IStringValueType[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "IStringValueType[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return IStringValueType(
+        name: mapValueOfType<String>(json, r'name'),
+        properties: mapCastOfType<String, Object>(json, r'properties') ?? const {},
+        validator: IValueValidator.fromJson(json[r'validator']),
+      );
+    }
+    return null;
+  }
+
+  static List<IStringValueType>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <IStringValueType>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = IStringValueType.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, IStringValueType> mapFromJson(dynamic json) {
     final map = <String, IStringValueType>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = IStringValueType.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = IStringValueType.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of IStringValueType-objects as value to a dart map
-  static Map<String, List<IStringValueType>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<IStringValueType>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<IStringValueType>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = IStringValueType.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = IStringValueType.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

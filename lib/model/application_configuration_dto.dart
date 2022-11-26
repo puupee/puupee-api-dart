@@ -1,14 +1,14 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class ApplicationConfigurationDto {
   /// Returns a new [ApplicationConfigurationDto] instance.
@@ -25,25 +25,84 @@ class ApplicationConfigurationDto {
     this.objectExtensions,
   });
 
-
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   ApplicationLocalizationConfigurationDto? localization;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   ApplicationAuthConfigurationDto? auth;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   ApplicationSettingConfigurationDto? setting;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   CurrentUserDto? currentUser;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   ApplicationFeatureConfigurationDto? features;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   MultiTenancyInfoDto? multiTenancy;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   CurrentTenantDto? currentTenant;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   TimingDto? timing;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   ClockDto? clock;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   ObjectExtensionsDto? objectExtensions;
 
   @override
@@ -61,51 +120,72 @@ class ApplicationConfigurationDto {
 
   @override
   int get hashCode =>
-    localization.hashCode +
-    auth.hashCode +
-    setting.hashCode +
-    currentUser.hashCode +
-    features.hashCode +
-    multiTenancy.hashCode +
-    currentTenant.hashCode +
-    timing.hashCode +
-    clock.hashCode +
-    objectExtensions.hashCode;
+    // ignore: unnecessary_parenthesis
+    (localization == null ? 0 : localization!.hashCode) +
+    (auth == null ? 0 : auth!.hashCode) +
+    (setting == null ? 0 : setting!.hashCode) +
+    (currentUser == null ? 0 : currentUser!.hashCode) +
+    (features == null ? 0 : features!.hashCode) +
+    (multiTenancy == null ? 0 : multiTenancy!.hashCode) +
+    (currentTenant == null ? 0 : currentTenant!.hashCode) +
+    (timing == null ? 0 : timing!.hashCode) +
+    (clock == null ? 0 : clock!.hashCode) +
+    (objectExtensions == null ? 0 : objectExtensions!.hashCode);
 
   @override
   String toString() => 'ApplicationConfigurationDto[localization=$localization, auth=$auth, setting=$setting, currentUser=$currentUser, features=$features, multiTenancy=$multiTenancy, currentTenant=$currentTenant, timing=$timing, clock=$clock, objectExtensions=$objectExtensions]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (localization != null) {
-      json[r'localization'] = localization;
+    if (this.localization != null) {
+      json[r'localization'] = this.localization;
+    } else {
+      json[r'localization'] = null;
     }
-    if (auth != null) {
-      json[r'auth'] = auth;
+    if (this.auth != null) {
+      json[r'auth'] = this.auth;
+    } else {
+      json[r'auth'] = null;
     }
-    if (setting != null) {
-      json[r'setting'] = setting;
+    if (this.setting != null) {
+      json[r'setting'] = this.setting;
+    } else {
+      json[r'setting'] = null;
     }
-    if (currentUser != null) {
-      json[r'currentUser'] = currentUser;
+    if (this.currentUser != null) {
+      json[r'currentUser'] = this.currentUser;
+    } else {
+      json[r'currentUser'] = null;
     }
-    if (features != null) {
-      json[r'features'] = features;
+    if (this.features != null) {
+      json[r'features'] = this.features;
+    } else {
+      json[r'features'] = null;
     }
-    if (multiTenancy != null) {
-      json[r'multiTenancy'] = multiTenancy;
+    if (this.multiTenancy != null) {
+      json[r'multiTenancy'] = this.multiTenancy;
+    } else {
+      json[r'multiTenancy'] = null;
     }
-    if (currentTenant != null) {
-      json[r'currentTenant'] = currentTenant;
+    if (this.currentTenant != null) {
+      json[r'currentTenant'] = this.currentTenant;
+    } else {
+      json[r'currentTenant'] = null;
     }
-    if (timing != null) {
-      json[r'timing'] = timing;
+    if (this.timing != null) {
+      json[r'timing'] = this.timing;
+    } else {
+      json[r'timing'] = null;
     }
-    if (clock != null) {
-      json[r'clock'] = clock;
+    if (this.clock != null) {
+      json[r'clock'] = this.clock;
+    } else {
+      json[r'clock'] = null;
     }
-    if (objectExtensions != null) {
-      json[r'objectExtensions'] = objectExtensions;
+    if (this.objectExtensions != null) {
+      json[r'objectExtensions'] = this.objectExtensions;
+    } else {
+      json[r'objectExtensions'] = null;
     }
     return json;
   }
@@ -113,48 +193,81 @@ class ApplicationConfigurationDto {
   /// Returns a new [ApplicationConfigurationDto] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static ApplicationConfigurationDto fromJson(Map<String, dynamic> json) => ApplicationConfigurationDto(
-        localization: json[r'localization'] == null ? null : ApplicationLocalizationConfigurationDto.fromJson(json[r'localization']),
-        auth: json[r'auth'] == null ? null : ApplicationAuthConfigurationDto.fromJson(json[r'auth']),
-        setting: json[r'setting'] == null ? null : ApplicationSettingConfigurationDto.fromJson(json[r'setting']),
-        currentUser: json[r'currentUser'] == null ? null : CurrentUserDto.fromJson(json[r'currentUser']),
-        features: json[r'features'] == null ? null : ApplicationFeatureConfigurationDto.fromJson(json[r'features']),
-        multiTenancy: json[r'multiTenancy'] == null ? null : MultiTenancyInfoDto.fromJson(json[r'multiTenancy']),
-        currentTenant: json[r'currentTenant'] == null ? null : CurrentTenantDto.fromJson(json[r'currentTenant']),
-        timing: json[r'timing'] == null ? null : TimingDto.fromJson(json[r'timing']),
-        clock: json[r'clock'] == null ? null : ClockDto.fromJson(json[r'clock']),
-        objectExtensions: json[r'objectExtensions'] == null ? null : ObjectExtensionsDto.fromJson(json[r'objectExtensions']),
-    );
+  static ApplicationConfigurationDto? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<ApplicationConfigurationDto> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<ApplicationConfigurationDto>((i) => ApplicationConfigurationDto.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <ApplicationConfigurationDto>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "ApplicationConfigurationDto[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "ApplicationConfigurationDto[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return ApplicationConfigurationDto(
+        localization: ApplicationLocalizationConfigurationDto.fromJson(json[r'localization']),
+        auth: ApplicationAuthConfigurationDto.fromJson(json[r'auth']),
+        setting: ApplicationSettingConfigurationDto.fromJson(json[r'setting']),
+        currentUser: CurrentUserDto.fromJson(json[r'currentUser']),
+        features: ApplicationFeatureConfigurationDto.fromJson(json[r'features']),
+        multiTenancy: MultiTenancyInfoDto.fromJson(json[r'multiTenancy']),
+        currentTenant: CurrentTenantDto.fromJson(json[r'currentTenant']),
+        timing: TimingDto.fromJson(json[r'timing']),
+        clock: ClockDto.fromJson(json[r'clock']),
+        objectExtensions: ObjectExtensionsDto.fromJson(json[r'objectExtensions']),
+      );
+    }
+    return null;
+  }
+
+  static List<ApplicationConfigurationDto>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <ApplicationConfigurationDto>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = ApplicationConfigurationDto.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, ApplicationConfigurationDto> mapFromJson(dynamic json) {
     final map = <String, ApplicationConfigurationDto>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = ApplicationConfigurationDto.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = ApplicationConfigurationDto.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of ApplicationConfigurationDto-objects as value to a dart map
-  static Map<String, List<ApplicationConfigurationDto>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<ApplicationConfigurationDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<ApplicationConfigurationDto>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = ApplicationConfigurationDto.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = ApplicationConfigurationDto.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

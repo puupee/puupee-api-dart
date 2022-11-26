@@ -1,30 +1,41 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class SimpleDataDto {
   /// Returns a new [SimpleDataDto] instance.
   SimpleDataDto({
-    this.extraProperties,
+    this.extraProperties = const {},
     this.id,
     this.creationTime,
     this.creatorId,
     this.collection,
   });
 
+  Map<String, Object>? extraProperties;
 
-  Map<String, dynamic>? extraProperties;
-
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? id;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   DateTime? creationTime;
 
   String? creatorId;
@@ -41,31 +52,42 @@ class SimpleDataDto {
 
   @override
   int get hashCode =>
-    extraProperties.hashCode +
-    id.hashCode +
-    creationTime.hashCode +
-    creatorId.hashCode +
-    collection.hashCode;
+    // ignore: unnecessary_parenthesis
+    (extraProperties == null ? 0 : extraProperties!.hashCode) +
+    (id == null ? 0 : id!.hashCode) +
+    (creationTime == null ? 0 : creationTime!.hashCode) +
+    (creatorId == null ? 0 : creatorId!.hashCode) +
+    (collection == null ? 0 : collection!.hashCode);
 
   @override
   String toString() => 'SimpleDataDto[extraProperties=$extraProperties, id=$id, creationTime=$creationTime, creatorId=$creatorId, collection=$collection]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (extraProperties != null) {
-      json[r'extraProperties'] = extraProperties;
+    if (this.extraProperties != null) {
+      json[r'extraProperties'] = this.extraProperties;
+    } else {
+      json[r'extraProperties'] = null;
     }
-    if (id != null) {
-      json[r'id'] = id;
+    if (this.id != null) {
+      json[r'id'] = this.id;
+    } else {
+      json[r'id'] = null;
     }
-    if (creationTime != null) {
-      json[r'creationTime'] = creationTime!.toUtc().toIso8601String();
+    if (this.creationTime != null) {
+      json[r'creationTime'] = this.creationTime!.toUtc().toIso8601String();
+    } else {
+      json[r'creationTime'] = null;
     }
-    if (creatorId != null) {
-      json[r'creatorId'] = creatorId;
+    if (this.creatorId != null) {
+      json[r'creatorId'] = this.creatorId;
+    } else {
+      json[r'creatorId'] = null;
     }
-    if (collection != null) {
-      json[r'collection'] = collection;
+    if (this.collection != null) {
+      json[r'collection'] = this.collection;
+    } else {
+      json[r'collection'] = null;
     }
     return json;
   }
@@ -73,43 +95,76 @@ class SimpleDataDto {
   /// Returns a new [SimpleDataDto] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static SimpleDataDto fromJson(Map<String, dynamic> json) => SimpleDataDto(
-        extraProperties: json[r'extraProperties'] == null ? null : json[r'extraProperties'] as Map<String, dynamic>?,
-        id: json[r'id'] == null ? null : json[r'id'] as String?,
-        creationTime: json[r'creationTime'] == null ? null : mapDateTime(json, r'creationTime', ''),
-        creatorId: json[r'creatorId'] == null ? null : json[r'creatorId'] as String?,
-        collection: json[r'collection'] == null ? null : json[r'collection'] as String?,
-    );
+  static SimpleDataDto? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<SimpleDataDto> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<SimpleDataDto>((i) => SimpleDataDto.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <SimpleDataDto>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "SimpleDataDto[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "SimpleDataDto[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return SimpleDataDto(
+        extraProperties: mapCastOfType<String, Object>(json, r'extraProperties') ?? const {},
+        id: mapValueOfType<String>(json, r'id'),
+        creationTime: mapDateTime(json, r'creationTime', ''),
+        creatorId: mapValueOfType<String>(json, r'creatorId'),
+        collection: mapValueOfType<String>(json, r'collection'),
+      );
+    }
+    return null;
+  }
+
+  static List<SimpleDataDto>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <SimpleDataDto>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = SimpleDataDto.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, SimpleDataDto> mapFromJson(dynamic json) {
     final map = <String, SimpleDataDto>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = SimpleDataDto.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = SimpleDataDto.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of SimpleDataDto-objects as value to a dart map
-  static Map<String, List<SimpleDataDto>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<SimpleDataDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<SimpleDataDto>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = SimpleDataDto.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = SimpleDataDto.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

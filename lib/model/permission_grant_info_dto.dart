@@ -1,14 +1,14 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class PermissionGrantInfoDto {
   /// Returns a new [PermissionGrantInfoDto] instance.
@@ -17,10 +17,9 @@ class PermissionGrantInfoDto {
     this.displayName,
     this.parentName,
     this.isGranted,
-    this.allowedProviders,
-    this.grantedProviders,
+    this.allowedProviders = const [],
+    this.grantedProviders = const [],
   });
-
 
   String? name;
 
@@ -28,6 +27,12 @@ class PermissionGrantInfoDto {
 
   String? parentName;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? isGranted;
 
   List<String>? allowedProviders;
@@ -45,35 +50,48 @@ class PermissionGrantInfoDto {
 
   @override
   int get hashCode =>
-    name.hashCode +
-    displayName.hashCode +
-    parentName.hashCode +
-    isGranted.hashCode +
-    allowedProviders.hashCode +
-    grantedProviders.hashCode;
+    // ignore: unnecessary_parenthesis
+    (name == null ? 0 : name!.hashCode) +
+    (displayName == null ? 0 : displayName!.hashCode) +
+    (parentName == null ? 0 : parentName!.hashCode) +
+    (isGranted == null ? 0 : isGranted!.hashCode) +
+    (allowedProviders == null ? 0 : allowedProviders!.hashCode) +
+    (grantedProviders == null ? 0 : grantedProviders!.hashCode);
 
   @override
   String toString() => 'PermissionGrantInfoDto[name=$name, displayName=$displayName, parentName=$parentName, isGranted=$isGranted, allowedProviders=$allowedProviders, grantedProviders=$grantedProviders]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (name != null) {
-      json[r'name'] = name;
+    if (this.name != null) {
+      json[r'name'] = this.name;
+    } else {
+      json[r'name'] = null;
     }
-    if (displayName != null) {
-      json[r'displayName'] = displayName;
+    if (this.displayName != null) {
+      json[r'displayName'] = this.displayName;
+    } else {
+      json[r'displayName'] = null;
     }
-    if (parentName != null) {
-      json[r'parentName'] = parentName;
+    if (this.parentName != null) {
+      json[r'parentName'] = this.parentName;
+    } else {
+      json[r'parentName'] = null;
     }
-    if (isGranted != null) {
-      json[r'isGranted'] = isGranted;
+    if (this.isGranted != null) {
+      json[r'isGranted'] = this.isGranted;
+    } else {
+      json[r'isGranted'] = null;
     }
-    if (allowedProviders != null) {
-      json[r'allowedProviders'] = allowedProviders;
+    if (this.allowedProviders != null) {
+      json[r'allowedProviders'] = this.allowedProviders;
+    } else {
+      json[r'allowedProviders'] = null;
     }
-    if (grantedProviders != null) {
-      json[r'grantedProviders'] = grantedProviders;
+    if (this.grantedProviders != null) {
+      json[r'grantedProviders'] = this.grantedProviders;
+    } else {
+      json[r'grantedProviders'] = null;
     }
     return json;
   }
@@ -81,46 +99,79 @@ class PermissionGrantInfoDto {
   /// Returns a new [PermissionGrantInfoDto] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static PermissionGrantInfoDto fromJson(Map<String, dynamic> json) => PermissionGrantInfoDto(
-        name: json[r'name'] == null ? null : json[r'name'] as String?,
-        displayName: json[r'displayName'] == null ? null : json[r'displayName'] as String?,
-        parentName: json[r'parentName'] == null ? null : json[r'parentName'] as String?,
-        isGranted: json[r'isGranted'] == null ? null : json[r'isGranted'] as bool?,
-        allowedProviders: json[r'allowedProviders'] is List
-          ? (json[r'allowedProviders'] as List).cast<String>()
-          : [],
-        grantedProviders: json[r'grantedProviders'] == null ? null : ProviderInfoDto.listFromJson(json[r'grantedProviders']),
-    );
+  static PermissionGrantInfoDto? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<PermissionGrantInfoDto> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<PermissionGrantInfoDto>((i) => PermissionGrantInfoDto.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <PermissionGrantInfoDto>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "PermissionGrantInfoDto[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "PermissionGrantInfoDto[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return PermissionGrantInfoDto(
+        name: mapValueOfType<String>(json, r'name'),
+        displayName: mapValueOfType<String>(json, r'displayName'),
+        parentName: mapValueOfType<String>(json, r'parentName'),
+        isGranted: mapValueOfType<bool>(json, r'isGranted'),
+        allowedProviders: json[r'allowedProviders'] is List
+            ? (json[r'allowedProviders'] as List).cast<String>()
+            : const [],
+        grantedProviders: ProviderInfoDto.listFromJson(json[r'grantedProviders']) ?? const [],
+      );
+    }
+    return null;
+  }
+
+  static List<PermissionGrantInfoDto>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <PermissionGrantInfoDto>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = PermissionGrantInfoDto.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, PermissionGrantInfoDto> mapFromJson(dynamic json) {
     final map = <String, PermissionGrantInfoDto>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = PermissionGrantInfoDto.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = PermissionGrantInfoDto.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of PermissionGrantInfoDto-objects as value to a dart map
-  static Map<String, List<PermissionGrantInfoDto>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<PermissionGrantInfoDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<PermissionGrantInfoDto>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = PermissionGrantInfoDto.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = PermissionGrantInfoDto.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

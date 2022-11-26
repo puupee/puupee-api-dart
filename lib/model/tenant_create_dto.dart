@@ -1,32 +1,31 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class TenantCreateDto {
   /// Returns a new [TenantCreateDto] instance.
   TenantCreateDto({
-    this.extraProperties,
+    this.extraProperties = const {},
     required this.name,
     required this.adminEmailAddress,
     required this.adminPassword,
   });
 
+  Map<String, Object>? extraProperties;
 
-  Map<String, dynamic>? extraProperties;
+  String name;
 
-  String? name;
+  String adminEmailAddress;
 
-  String? adminEmailAddress;
-
-  String? adminPassword;
+  String adminPassword;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is TenantCreateDto &&
@@ -37,64 +36,103 @@ class TenantCreateDto {
 
   @override
   int get hashCode =>
-    extraProperties.hashCode +
-    name.hashCode +
-    adminEmailAddress.hashCode +
-    adminPassword.hashCode;
+    // ignore: unnecessary_parenthesis
+    (extraProperties == null ? 0 : extraProperties!.hashCode) +
+    (name.hashCode) +
+    (adminEmailAddress.hashCode) +
+    (adminPassword.hashCode);
 
   @override
   String toString() => 'TenantCreateDto[extraProperties=$extraProperties, name=$name, adminEmailAddress=$adminEmailAddress, adminPassword=$adminPassword]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (extraProperties != null) {
-      json[r'extraProperties'] = extraProperties;
+    if (this.extraProperties != null) {
+      json[r'extraProperties'] = this.extraProperties;
+    } else {
+      json[r'extraProperties'] = null;
     }
-      json[r'name'] = name;
-      json[r'adminEmailAddress'] = adminEmailAddress;
-      json[r'adminPassword'] = adminPassword;
+      json[r'name'] = this.name;
+      json[r'adminEmailAddress'] = this.adminEmailAddress;
+      json[r'adminPassword'] = this.adminPassword;
     return json;
   }
 
   /// Returns a new [TenantCreateDto] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static TenantCreateDto fromJson(Map<String, dynamic> json) => TenantCreateDto(
-        extraProperties: json[r'extraProperties'] == null ? null : json[r'extraProperties'] as Map<String, dynamic>?,
-        name: json[r'name'] == null ? null : json[r'name'] as String?,
-        adminEmailAddress: json[r'adminEmailAddress'] == null ? null : json[r'adminEmailAddress'] as String?,
-        adminPassword: json[r'adminPassword'] == null ? null : json[r'adminPassword'] as String?,
-    );
+  static TenantCreateDto? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<TenantCreateDto> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<TenantCreateDto>((i) => TenantCreateDto.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <TenantCreateDto>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "TenantCreateDto[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "TenantCreateDto[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return TenantCreateDto(
+        extraProperties: mapCastOfType<String, Object>(json, r'extraProperties') ?? const {},
+        name: mapValueOfType<String>(json, r'name')!,
+        adminEmailAddress: mapValueOfType<String>(json, r'adminEmailAddress')!,
+        adminPassword: mapValueOfType<String>(json, r'adminPassword')!,
+      );
+    }
+    return null;
+  }
+
+  static List<TenantCreateDto>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <TenantCreateDto>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = TenantCreateDto.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, TenantCreateDto> mapFromJson(dynamic json) {
     final map = <String, TenantCreateDto>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = TenantCreateDto.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = TenantCreateDto.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of TenantCreateDto-objects as value to a dart map
-  static Map<String, List<TenantCreateDto>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<TenantCreateDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<TenantCreateDto>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = TenantCreateDto.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = TenantCreateDto.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+    'name',
+    'adminEmailAddress',
+    'adminPassword',
+  };
 }
 

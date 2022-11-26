@@ -1,8 +1,8 @@
-# doggy_api.model.ExtensionPropertyDto
+# puupee_api.model.ExtensionPropertyDto
 
 ## Load the model package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 ## Properties
@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **api** | [**ExtensionPropertyApiDto**](ExtensionPropertyApiDto.md) |  | [optional] 
 **ui** | [**ExtensionPropertyUiDto**](ExtensionPropertyUiDto.md) |  | [optional] 
 **attributes** | [**List<ExtensionPropertyAttributeDto>**](ExtensionPropertyAttributeDto.md) |  | [optional] [default to const []]
-**configuration** | **Map<String, dynamic>** |  | [optional] [default to const {}]
-**defaultValue** | **Map<String, dynamic>** |  | [optional] 
+**configuration** | [**Map<String, Object>**](Object.md) |  | [optional] [default to const {}]
+**defaultValue** | [**Object**](.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

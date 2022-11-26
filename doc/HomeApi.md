@@ -1,8 +1,8 @@
-# doggy_api.api.HomeApi
+# puupee_api.api.HomeApi
 
 ## Load the API package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -13,21 +13,20 @@ Method | HTTP request | Description
 
 
 # **healthzGet**
-> Map<String, dynamic> healthzGet()
+> healthzGet()
 
 
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = HomeApi();
 
 try {
-    final result = api_instance.healthzGet();
-    print(result);
+    api_instance.healthzGet();
 } catch (e) {
     print('Exception when calling HomeApi->healthzGet: $e\n');
 }
@@ -38,7 +37,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-**Map<String, dynamic>**
+void (empty response body)
 
 ### Authorization
 

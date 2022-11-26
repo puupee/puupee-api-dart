@@ -1,8 +1,8 @@
-# doggy_api.model.FileOrCredentialsDto
+# puupee_api.model.FileOrCredentialsDto
 
 ## Load the model package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 ## Properties

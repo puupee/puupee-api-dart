@@ -1,8 +1,8 @@
-# doggy_api.api.AbpTenantApi
+# puupee_api.api.AbpTenantApi
 
 ## Load the API package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 

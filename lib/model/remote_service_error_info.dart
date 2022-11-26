@@ -1,14 +1,14 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class RemoteServiceErrorInfo {
   /// Returns a new [RemoteServiceErrorInfo] instance.
@@ -16,10 +16,9 @@ class RemoteServiceErrorInfo {
     this.code,
     this.message,
     this.details,
-    this.data,
-    this.validationErrors,
+    this.data = const {},
+    this.validationErrors = const [],
   });
-
 
   String? code;
 
@@ -27,7 +26,7 @@ class RemoteServiceErrorInfo {
 
   String? details;
 
-  Map<String, dynamic>? data;
+  Map<String, Object>? data;
 
   List<RemoteServiceValidationErrorInfo>? validationErrors;
 
@@ -41,31 +40,42 @@ class RemoteServiceErrorInfo {
 
   @override
   int get hashCode =>
-    code.hashCode +
-    message.hashCode +
-    details.hashCode +
-    data.hashCode +
-    validationErrors.hashCode;
+    // ignore: unnecessary_parenthesis
+    (code == null ? 0 : code!.hashCode) +
+    (message == null ? 0 : message!.hashCode) +
+    (details == null ? 0 : details!.hashCode) +
+    (data == null ? 0 : data!.hashCode) +
+    (validationErrors == null ? 0 : validationErrors!.hashCode);
 
   @override
   String toString() => 'RemoteServiceErrorInfo[code=$code, message=$message, details=$details, data=$data, validationErrors=$validationErrors]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (code != null) {
-      json[r'code'] = code;
+    if (this.code != null) {
+      json[r'code'] = this.code;
+    } else {
+      json[r'code'] = null;
     }
-    if (message != null) {
-      json[r'message'] = message;
+    if (this.message != null) {
+      json[r'message'] = this.message;
+    } else {
+      json[r'message'] = null;
     }
-    if (details != null) {
-      json[r'details'] = details;
+    if (this.details != null) {
+      json[r'details'] = this.details;
+    } else {
+      json[r'details'] = null;
     }
-    if (data != null) {
-      json[r'data'] = data;
+    if (this.data != null) {
+      json[r'data'] = this.data;
+    } else {
+      json[r'data'] = null;
     }
-    if (validationErrors != null) {
-      json[r'validationErrors'] = validationErrors;
+    if (this.validationErrors != null) {
+      json[r'validationErrors'] = this.validationErrors;
+    } else {
+      json[r'validationErrors'] = null;
     }
     return json;
   }
@@ -73,43 +83,76 @@ class RemoteServiceErrorInfo {
   /// Returns a new [RemoteServiceErrorInfo] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static RemoteServiceErrorInfo fromJson(Map<String, dynamic> json) => RemoteServiceErrorInfo(
-        code: json[r'code'] == null ? null : json[r'code'] as String?,
-        message: json[r'message'] == null ? null : json[r'message'] as String?,
-        details: json[r'details'] == null ? null : json[r'details'] as String?,
-        data: json[r'data'] == null ? null : json[r'data'] as Map<String, dynamic>?,
-        validationErrors: json[r'validationErrors'] == null ? null : RemoteServiceValidationErrorInfo.listFromJson(json[r'validationErrors']),
-    );
+  static RemoteServiceErrorInfo? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<RemoteServiceErrorInfo> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<RemoteServiceErrorInfo>((i) => RemoteServiceErrorInfo.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <RemoteServiceErrorInfo>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "RemoteServiceErrorInfo[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "RemoteServiceErrorInfo[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return RemoteServiceErrorInfo(
+        code: mapValueOfType<String>(json, r'code'),
+        message: mapValueOfType<String>(json, r'message'),
+        details: mapValueOfType<String>(json, r'details'),
+        data: mapCastOfType<String, Object>(json, r'data') ?? const {},
+        validationErrors: RemoteServiceValidationErrorInfo.listFromJson(json[r'validationErrors']) ?? const [],
+      );
+    }
+    return null;
+  }
+
+  static List<RemoteServiceErrorInfo>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <RemoteServiceErrorInfo>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = RemoteServiceErrorInfo.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, RemoteServiceErrorInfo> mapFromJson(dynamic json) {
     final map = <String, RemoteServiceErrorInfo>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = RemoteServiceErrorInfo.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = RemoteServiceErrorInfo.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of RemoteServiceErrorInfo-objects as value to a dart map
-  static Map<String, List<RemoteServiceErrorInfo>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<RemoteServiceErrorInfo>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<RemoteServiceErrorInfo>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = RemoteServiceErrorInfo.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = RemoteServiceErrorInfo.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

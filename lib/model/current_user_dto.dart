@@ -1,14 +1,14 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class CurrentUserDto {
   /// Returns a new [CurrentUserDto] instance.
@@ -27,10 +27,15 @@ class CurrentUserDto {
     this.emailVerified,
     this.phoneNumber,
     this.phoneNumberVerified,
-    this.roles,
+    this.roles = const [],
   });
 
-
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? isAuthenticated;
 
   String? id;
@@ -53,10 +58,22 @@ class CurrentUserDto {
 
   String? email;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? emailVerified;
 
   String? phoneNumber;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? phoneNumberVerified;
 
   List<String>? roles;
@@ -81,71 +98,102 @@ class CurrentUserDto {
 
   @override
   int get hashCode =>
-    isAuthenticated.hashCode +
-    id.hashCode +
-    tenantId.hashCode +
-    impersonatorUserId.hashCode +
-    impersonatorTenantId.hashCode +
-    impersonatorUserName.hashCode +
-    impersonatorTenantName.hashCode +
-    userName.hashCode +
-    name.hashCode +
-    surName.hashCode +
-    email.hashCode +
-    emailVerified.hashCode +
-    phoneNumber.hashCode +
-    phoneNumberVerified.hashCode +
-    roles.hashCode;
+    // ignore: unnecessary_parenthesis
+    (isAuthenticated == null ? 0 : isAuthenticated!.hashCode) +
+    (id == null ? 0 : id!.hashCode) +
+    (tenantId == null ? 0 : tenantId!.hashCode) +
+    (impersonatorUserId == null ? 0 : impersonatorUserId!.hashCode) +
+    (impersonatorTenantId == null ? 0 : impersonatorTenantId!.hashCode) +
+    (impersonatorUserName == null ? 0 : impersonatorUserName!.hashCode) +
+    (impersonatorTenantName == null ? 0 : impersonatorTenantName!.hashCode) +
+    (userName == null ? 0 : userName!.hashCode) +
+    (name == null ? 0 : name!.hashCode) +
+    (surName == null ? 0 : surName!.hashCode) +
+    (email == null ? 0 : email!.hashCode) +
+    (emailVerified == null ? 0 : emailVerified!.hashCode) +
+    (phoneNumber == null ? 0 : phoneNumber!.hashCode) +
+    (phoneNumberVerified == null ? 0 : phoneNumberVerified!.hashCode) +
+    (roles == null ? 0 : roles!.hashCode);
 
   @override
   String toString() => 'CurrentUserDto[isAuthenticated=$isAuthenticated, id=$id, tenantId=$tenantId, impersonatorUserId=$impersonatorUserId, impersonatorTenantId=$impersonatorTenantId, impersonatorUserName=$impersonatorUserName, impersonatorTenantName=$impersonatorTenantName, userName=$userName, name=$name, surName=$surName, email=$email, emailVerified=$emailVerified, phoneNumber=$phoneNumber, phoneNumberVerified=$phoneNumberVerified, roles=$roles]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (isAuthenticated != null) {
-      json[r'isAuthenticated'] = isAuthenticated;
+    if (this.isAuthenticated != null) {
+      json[r'isAuthenticated'] = this.isAuthenticated;
+    } else {
+      json[r'isAuthenticated'] = null;
     }
-    if (id != null) {
-      json[r'id'] = id;
+    if (this.id != null) {
+      json[r'id'] = this.id;
+    } else {
+      json[r'id'] = null;
     }
-    if (tenantId != null) {
-      json[r'tenantId'] = tenantId;
+    if (this.tenantId != null) {
+      json[r'tenantId'] = this.tenantId;
+    } else {
+      json[r'tenantId'] = null;
     }
-    if (impersonatorUserId != null) {
-      json[r'impersonatorUserId'] = impersonatorUserId;
+    if (this.impersonatorUserId != null) {
+      json[r'impersonatorUserId'] = this.impersonatorUserId;
+    } else {
+      json[r'impersonatorUserId'] = null;
     }
-    if (impersonatorTenantId != null) {
-      json[r'impersonatorTenantId'] = impersonatorTenantId;
+    if (this.impersonatorTenantId != null) {
+      json[r'impersonatorTenantId'] = this.impersonatorTenantId;
+    } else {
+      json[r'impersonatorTenantId'] = null;
     }
-    if (impersonatorUserName != null) {
-      json[r'impersonatorUserName'] = impersonatorUserName;
+    if (this.impersonatorUserName != null) {
+      json[r'impersonatorUserName'] = this.impersonatorUserName;
+    } else {
+      json[r'impersonatorUserName'] = null;
     }
-    if (impersonatorTenantName != null) {
-      json[r'impersonatorTenantName'] = impersonatorTenantName;
+    if (this.impersonatorTenantName != null) {
+      json[r'impersonatorTenantName'] = this.impersonatorTenantName;
+    } else {
+      json[r'impersonatorTenantName'] = null;
     }
-    if (userName != null) {
-      json[r'userName'] = userName;
+    if (this.userName != null) {
+      json[r'userName'] = this.userName;
+    } else {
+      json[r'userName'] = null;
     }
-    if (name != null) {
-      json[r'name'] = name;
+    if (this.name != null) {
+      json[r'name'] = this.name;
+    } else {
+      json[r'name'] = null;
     }
-    if (surName != null) {
-      json[r'surName'] = surName;
+    if (this.surName != null) {
+      json[r'surName'] = this.surName;
+    } else {
+      json[r'surName'] = null;
     }
-    if (email != null) {
-      json[r'email'] = email;
+    if (this.email != null) {
+      json[r'email'] = this.email;
+    } else {
+      json[r'email'] = null;
     }
-    if (emailVerified != null) {
-      json[r'emailVerified'] = emailVerified;
+    if (this.emailVerified != null) {
+      json[r'emailVerified'] = this.emailVerified;
+    } else {
+      json[r'emailVerified'] = null;
     }
-    if (phoneNumber != null) {
-      json[r'phoneNumber'] = phoneNumber;
+    if (this.phoneNumber != null) {
+      json[r'phoneNumber'] = this.phoneNumber;
+    } else {
+      json[r'phoneNumber'] = null;
     }
-    if (phoneNumberVerified != null) {
-      json[r'phoneNumberVerified'] = phoneNumberVerified;
+    if (this.phoneNumberVerified != null) {
+      json[r'phoneNumberVerified'] = this.phoneNumberVerified;
+    } else {
+      json[r'phoneNumberVerified'] = null;
     }
-    if (roles != null) {
-      json[r'roles'] = roles;
+    if (this.roles != null) {
+      json[r'roles'] = this.roles;
+    } else {
+      json[r'roles'] = null;
     }
     return json;
   }
@@ -153,55 +201,88 @@ class CurrentUserDto {
   /// Returns a new [CurrentUserDto] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static CurrentUserDto fromJson(Map<String, dynamic> json) => CurrentUserDto(
-        isAuthenticated: json[r'isAuthenticated'] == null ? null : json[r'isAuthenticated'] as bool?,
-        id: json[r'id'] == null ? null : json[r'id'] as String?,
-        tenantId: json[r'tenantId'] == null ? null : json[r'tenantId'] as String?,
-        impersonatorUserId: json[r'impersonatorUserId'] == null ? null : json[r'impersonatorUserId'] as String?,
-        impersonatorTenantId: json[r'impersonatorTenantId'] == null ? null : json[r'impersonatorTenantId'] as String?,
-        impersonatorUserName: json[r'impersonatorUserName'] == null ? null : json[r'impersonatorUserName'] as String?,
-        impersonatorTenantName: json[r'impersonatorTenantName'] == null ? null : json[r'impersonatorTenantName'] as String?,
-        userName: json[r'userName'] == null ? null : json[r'userName'] as String?,
-        name: json[r'name'] == null ? null : json[r'name'] as String?,
-        surName: json[r'surName'] == null ? null : json[r'surName'] as String?,
-        email: json[r'email'] == null ? null : json[r'email'] as String?,
-        emailVerified: json[r'emailVerified'] == null ? null : json[r'emailVerified'] as bool?,
-        phoneNumber: json[r'phoneNumber'] == null ? null : json[r'phoneNumber'] as String?,
-        phoneNumberVerified: json[r'phoneNumberVerified'] == null ? null : json[r'phoneNumberVerified'] as bool?,
-        roles: json[r'roles'] is List
-          ? (json[r'roles'] as List).cast<String>()
-          : [],
-    );
+  static CurrentUserDto? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<CurrentUserDto> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<CurrentUserDto>((i) => CurrentUserDto.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <CurrentUserDto>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "CurrentUserDto[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "CurrentUserDto[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return CurrentUserDto(
+        isAuthenticated: mapValueOfType<bool>(json, r'isAuthenticated'),
+        id: mapValueOfType<String>(json, r'id'),
+        tenantId: mapValueOfType<String>(json, r'tenantId'),
+        impersonatorUserId: mapValueOfType<String>(json, r'impersonatorUserId'),
+        impersonatorTenantId: mapValueOfType<String>(json, r'impersonatorTenantId'),
+        impersonatorUserName: mapValueOfType<String>(json, r'impersonatorUserName'),
+        impersonatorTenantName: mapValueOfType<String>(json, r'impersonatorTenantName'),
+        userName: mapValueOfType<String>(json, r'userName'),
+        name: mapValueOfType<String>(json, r'name'),
+        surName: mapValueOfType<String>(json, r'surName'),
+        email: mapValueOfType<String>(json, r'email'),
+        emailVerified: mapValueOfType<bool>(json, r'emailVerified'),
+        phoneNumber: mapValueOfType<String>(json, r'phoneNumber'),
+        phoneNumberVerified: mapValueOfType<bool>(json, r'phoneNumberVerified'),
+        roles: json[r'roles'] is List
+            ? (json[r'roles'] as List).cast<String>()
+            : const [],
+      );
+    }
+    return null;
+  }
+
+  static List<CurrentUserDto>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <CurrentUserDto>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = CurrentUserDto.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, CurrentUserDto> mapFromJson(dynamic json) {
     final map = <String, CurrentUserDto>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = CurrentUserDto.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = CurrentUserDto.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of CurrentUserDto-objects as value to a dart map
-  static Map<String, List<CurrentUserDto>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<CurrentUserDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<CurrentUserDto>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = CurrentUserDto.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = CurrentUserDto.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

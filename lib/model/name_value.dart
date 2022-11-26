@@ -1,14 +1,14 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class NameValue {
   /// Returns a new [NameValue] instance.
@@ -16,7 +16,6 @@ class NameValue {
     this.name,
     this.value,
   });
-
 
   String? name;
 
@@ -29,19 +28,24 @@ class NameValue {
 
   @override
   int get hashCode =>
-    name.hashCode +
-    value.hashCode;
+    // ignore: unnecessary_parenthesis
+    (name == null ? 0 : name!.hashCode) +
+    (value == null ? 0 : value!.hashCode);
 
   @override
   String toString() => 'NameValue[name=$name, value=$value]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (name != null) {
-      json[r'name'] = name;
+    if (this.name != null) {
+      json[r'name'] = this.name;
+    } else {
+      json[r'name'] = null;
     }
-    if (value != null) {
-      json[r'value'] = value;
+    if (this.value != null) {
+      json[r'value'] = this.value;
+    } else {
+      json[r'value'] = null;
     }
     return json;
   }
@@ -49,40 +53,73 @@ class NameValue {
   /// Returns a new [NameValue] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static NameValue fromJson(Map<String, dynamic> json) => NameValue(
-        name: json[r'name'] == null ? null : json[r'name'] as String?,
-        value: json[r'value'] == null ? null : json[r'value'] as String?,
-    );
+  static NameValue? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<NameValue> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<NameValue>((i) => NameValue.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <NameValue>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "NameValue[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "NameValue[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return NameValue(
+        name: mapValueOfType<String>(json, r'name'),
+        value: mapValueOfType<String>(json, r'value'),
+      );
+    }
+    return null;
+  }
+
+  static List<NameValue>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <NameValue>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = NameValue.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, NameValue> mapFromJson(dynamic json) {
     final map = <String, NameValue>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = NameValue.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = NameValue.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of NameValue-objects as value to a dart map
-  static Map<String, List<NameValue>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<NameValue>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<NameValue>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = NameValue.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = NameValue.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

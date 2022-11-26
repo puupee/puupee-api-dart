@@ -1,8 +1,8 @@
-# doggy_api.model.UserStorageDto
+# puupee_api.model.UserStorageDto
 
 ## Load the model package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 ## Properties

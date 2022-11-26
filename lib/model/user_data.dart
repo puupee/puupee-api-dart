@@ -1,14 +1,14 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class UserData {
   /// Returns a new [UserData] instance.
@@ -24,7 +24,12 @@ class UserData {
     this.phoneNumberConfirmed,
   });
 
-
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? id;
 
   String? tenantId;
@@ -37,10 +42,22 @@ class UserData {
 
   String? email;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? emailConfirmed;
 
   String? phoneNumber;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? phoneNumberConfirmed;
 
   @override
@@ -57,47 +74,66 @@ class UserData {
 
   @override
   int get hashCode =>
-    id.hashCode +
-    tenantId.hashCode +
-    userName.hashCode +
-    name.hashCode +
-    surname.hashCode +
-    email.hashCode +
-    emailConfirmed.hashCode +
-    phoneNumber.hashCode +
-    phoneNumberConfirmed.hashCode;
+    // ignore: unnecessary_parenthesis
+    (id == null ? 0 : id!.hashCode) +
+    (tenantId == null ? 0 : tenantId!.hashCode) +
+    (userName == null ? 0 : userName!.hashCode) +
+    (name == null ? 0 : name!.hashCode) +
+    (surname == null ? 0 : surname!.hashCode) +
+    (email == null ? 0 : email!.hashCode) +
+    (emailConfirmed == null ? 0 : emailConfirmed!.hashCode) +
+    (phoneNumber == null ? 0 : phoneNumber!.hashCode) +
+    (phoneNumberConfirmed == null ? 0 : phoneNumberConfirmed!.hashCode);
 
   @override
   String toString() => 'UserData[id=$id, tenantId=$tenantId, userName=$userName, name=$name, surname=$surname, email=$email, emailConfirmed=$emailConfirmed, phoneNumber=$phoneNumber, phoneNumberConfirmed=$phoneNumberConfirmed]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (id != null) {
-      json[r'id'] = id;
+    if (this.id != null) {
+      json[r'id'] = this.id;
+    } else {
+      json[r'id'] = null;
     }
-    if (tenantId != null) {
-      json[r'tenantId'] = tenantId;
+    if (this.tenantId != null) {
+      json[r'tenantId'] = this.tenantId;
+    } else {
+      json[r'tenantId'] = null;
     }
-    if (userName != null) {
-      json[r'userName'] = userName;
+    if (this.userName != null) {
+      json[r'userName'] = this.userName;
+    } else {
+      json[r'userName'] = null;
     }
-    if (name != null) {
-      json[r'name'] = name;
+    if (this.name != null) {
+      json[r'name'] = this.name;
+    } else {
+      json[r'name'] = null;
     }
-    if (surname != null) {
-      json[r'surname'] = surname;
+    if (this.surname != null) {
+      json[r'surname'] = this.surname;
+    } else {
+      json[r'surname'] = null;
     }
-    if (email != null) {
-      json[r'email'] = email;
+    if (this.email != null) {
+      json[r'email'] = this.email;
+    } else {
+      json[r'email'] = null;
     }
-    if (emailConfirmed != null) {
-      json[r'emailConfirmed'] = emailConfirmed;
+    if (this.emailConfirmed != null) {
+      json[r'emailConfirmed'] = this.emailConfirmed;
+    } else {
+      json[r'emailConfirmed'] = null;
     }
-    if (phoneNumber != null) {
-      json[r'phoneNumber'] = phoneNumber;
+    if (this.phoneNumber != null) {
+      json[r'phoneNumber'] = this.phoneNumber;
+    } else {
+      json[r'phoneNumber'] = null;
     }
-    if (phoneNumberConfirmed != null) {
-      json[r'phoneNumberConfirmed'] = phoneNumberConfirmed;
+    if (this.phoneNumberConfirmed != null) {
+      json[r'phoneNumberConfirmed'] = this.phoneNumberConfirmed;
+    } else {
+      json[r'phoneNumberConfirmed'] = null;
     }
     return json;
   }
@@ -105,47 +141,80 @@ class UserData {
   /// Returns a new [UserData] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static UserData fromJson(Map<String, dynamic> json) => UserData(
-        id: json[r'id'] == null ? null : json[r'id'] as String?,
-        tenantId: json[r'tenantId'] == null ? null : json[r'tenantId'] as String?,
-        userName: json[r'userName'] == null ? null : json[r'userName'] as String?,
-        name: json[r'name'] == null ? null : json[r'name'] as String?,
-        surname: json[r'surname'] == null ? null : json[r'surname'] as String?,
-        email: json[r'email'] == null ? null : json[r'email'] as String?,
-        emailConfirmed: json[r'emailConfirmed'] == null ? null : json[r'emailConfirmed'] as bool?,
-        phoneNumber: json[r'phoneNumber'] == null ? null : json[r'phoneNumber'] as String?,
-        phoneNumberConfirmed: json[r'phoneNumberConfirmed'] == null ? null : json[r'phoneNumberConfirmed'] as bool?,
-    );
+  static UserData? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<UserData> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<UserData>((i) => UserData.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <UserData>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "UserData[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "UserData[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return UserData(
+        id: mapValueOfType<String>(json, r'id'),
+        tenantId: mapValueOfType<String>(json, r'tenantId'),
+        userName: mapValueOfType<String>(json, r'userName'),
+        name: mapValueOfType<String>(json, r'name'),
+        surname: mapValueOfType<String>(json, r'surname'),
+        email: mapValueOfType<String>(json, r'email'),
+        emailConfirmed: mapValueOfType<bool>(json, r'emailConfirmed'),
+        phoneNumber: mapValueOfType<String>(json, r'phoneNumber'),
+        phoneNumberConfirmed: mapValueOfType<bool>(json, r'phoneNumberConfirmed'),
+      );
+    }
+    return null;
+  }
+
+  static List<UserData>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <UserData>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = UserData.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, UserData> mapFromJson(dynamic json) {
     final map = <String, UserData>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = UserData.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = UserData.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of UserData-objects as value to a dart map
-  static Map<String, List<UserData>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<UserData>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<UserData>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = UserData.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = UserData.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

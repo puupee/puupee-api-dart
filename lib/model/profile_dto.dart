@@ -1,19 +1,19 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class ProfileDto {
   /// Returns a new [ProfileDto] instance.
   ProfileDto({
-    this.extraProperties,
+    this.extraProperties = const {},
     this.userName,
     this.email,
     this.name,
@@ -24,8 +24,7 @@ class ProfileDto {
     this.concurrencyStamp,
   });
 
-
-  Map<String, dynamic>? extraProperties;
+  Map<String, Object>? extraProperties;
 
   String? userName;
 
@@ -37,8 +36,20 @@ class ProfileDto {
 
   String? phoneNumber;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? isExternal;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? hasPassword;
 
   String? concurrencyStamp;
@@ -57,47 +68,66 @@ class ProfileDto {
 
   @override
   int get hashCode =>
-    extraProperties.hashCode +
-    userName.hashCode +
-    email.hashCode +
-    name.hashCode +
-    surname.hashCode +
-    phoneNumber.hashCode +
-    isExternal.hashCode +
-    hasPassword.hashCode +
-    concurrencyStamp.hashCode;
+    // ignore: unnecessary_parenthesis
+    (extraProperties == null ? 0 : extraProperties!.hashCode) +
+    (userName == null ? 0 : userName!.hashCode) +
+    (email == null ? 0 : email!.hashCode) +
+    (name == null ? 0 : name!.hashCode) +
+    (surname == null ? 0 : surname!.hashCode) +
+    (phoneNumber == null ? 0 : phoneNumber!.hashCode) +
+    (isExternal == null ? 0 : isExternal!.hashCode) +
+    (hasPassword == null ? 0 : hasPassword!.hashCode) +
+    (concurrencyStamp == null ? 0 : concurrencyStamp!.hashCode);
 
   @override
   String toString() => 'ProfileDto[extraProperties=$extraProperties, userName=$userName, email=$email, name=$name, surname=$surname, phoneNumber=$phoneNumber, isExternal=$isExternal, hasPassword=$hasPassword, concurrencyStamp=$concurrencyStamp]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (extraProperties != null) {
-      json[r'extraProperties'] = extraProperties;
+    if (this.extraProperties != null) {
+      json[r'extraProperties'] = this.extraProperties;
+    } else {
+      json[r'extraProperties'] = null;
     }
-    if (userName != null) {
-      json[r'userName'] = userName;
+    if (this.userName != null) {
+      json[r'userName'] = this.userName;
+    } else {
+      json[r'userName'] = null;
     }
-    if (email != null) {
-      json[r'email'] = email;
+    if (this.email != null) {
+      json[r'email'] = this.email;
+    } else {
+      json[r'email'] = null;
     }
-    if (name != null) {
-      json[r'name'] = name;
+    if (this.name != null) {
+      json[r'name'] = this.name;
+    } else {
+      json[r'name'] = null;
     }
-    if (surname != null) {
-      json[r'surname'] = surname;
+    if (this.surname != null) {
+      json[r'surname'] = this.surname;
+    } else {
+      json[r'surname'] = null;
     }
-    if (phoneNumber != null) {
-      json[r'phoneNumber'] = phoneNumber;
+    if (this.phoneNumber != null) {
+      json[r'phoneNumber'] = this.phoneNumber;
+    } else {
+      json[r'phoneNumber'] = null;
     }
-    if (isExternal != null) {
-      json[r'isExternal'] = isExternal;
+    if (this.isExternal != null) {
+      json[r'isExternal'] = this.isExternal;
+    } else {
+      json[r'isExternal'] = null;
     }
-    if (hasPassword != null) {
-      json[r'hasPassword'] = hasPassword;
+    if (this.hasPassword != null) {
+      json[r'hasPassword'] = this.hasPassword;
+    } else {
+      json[r'hasPassword'] = null;
     }
-    if (concurrencyStamp != null) {
-      json[r'concurrencyStamp'] = concurrencyStamp;
+    if (this.concurrencyStamp != null) {
+      json[r'concurrencyStamp'] = this.concurrencyStamp;
+    } else {
+      json[r'concurrencyStamp'] = null;
     }
     return json;
   }
@@ -105,47 +135,80 @@ class ProfileDto {
   /// Returns a new [ProfileDto] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static ProfileDto fromJson(Map<String, dynamic> json) => ProfileDto(
-        extraProperties: json[r'extraProperties'] == null ? null : json[r'extraProperties'] as Map<String, dynamic>?,
-        userName: json[r'userName'] == null ? null : json[r'userName'] as String?,
-        email: json[r'email'] == null ? null : json[r'email'] as String?,
-        name: json[r'name'] == null ? null : json[r'name'] as String?,
-        surname: json[r'surname'] == null ? null : json[r'surname'] as String?,
-        phoneNumber: json[r'phoneNumber'] == null ? null : json[r'phoneNumber'] as String?,
-        isExternal: json[r'isExternal'] == null ? null : json[r'isExternal'] as bool?,
-        hasPassword: json[r'hasPassword'] == null ? null : json[r'hasPassword'] as bool?,
-        concurrencyStamp: json[r'concurrencyStamp'] == null ? null : json[r'concurrencyStamp'] as String?,
-    );
+  static ProfileDto? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<ProfileDto> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<ProfileDto>((i) => ProfileDto.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <ProfileDto>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "ProfileDto[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "ProfileDto[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return ProfileDto(
+        extraProperties: mapCastOfType<String, Object>(json, r'extraProperties') ?? const {},
+        userName: mapValueOfType<String>(json, r'userName'),
+        email: mapValueOfType<String>(json, r'email'),
+        name: mapValueOfType<String>(json, r'name'),
+        surname: mapValueOfType<String>(json, r'surname'),
+        phoneNumber: mapValueOfType<String>(json, r'phoneNumber'),
+        isExternal: mapValueOfType<bool>(json, r'isExternal'),
+        hasPassword: mapValueOfType<bool>(json, r'hasPassword'),
+        concurrencyStamp: mapValueOfType<String>(json, r'concurrencyStamp'),
+      );
+    }
+    return null;
+  }
+
+  static List<ProfileDto>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <ProfileDto>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = ProfileDto.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, ProfileDto> mapFromJson(dynamic json) {
     final map = <String, ProfileDto>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = ProfileDto.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = ProfileDto.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of ProfileDto-objects as value to a dart map
-  static Map<String, List<ProfileDto>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<ProfileDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<ProfileDto>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = ProfileDto.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = ProfileDto.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

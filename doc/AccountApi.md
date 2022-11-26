@@ -1,8 +1,8 @@
-# doggy_api.api.AccountApi
+# puupee_api.api.AccountApi
 
 ## Load the API package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -21,7 +21,7 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -52,19 +52,19 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/_*+json
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAccountResetPasswordPost**
-> Map<String, dynamic> apiAccountResetPasswordPost(resetPasswordDto)
+> apiAccountResetPasswordPost(resetPasswordDto)
 
 
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -72,8 +72,7 @@ final api_instance = AccountApi();
 final resetPasswordDto = ResetPasswordDto(); // ResetPasswordDto | 
 
 try {
-    final result = api_instance.apiAccountResetPasswordPost(resetPasswordDto);
-    print(result);
+    api_instance.apiAccountResetPasswordPost(resetPasswordDto);
 } catch (e) {
     print('Exception when calling AccountApi->apiAccountResetPasswordPost: $e\n');
 }
@@ -87,7 +86,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Map<String, dynamic>**
+void (empty response body)
 
 ### Authorization
 
@@ -95,19 +94,19 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/_*+json
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAccountSendPasswordResetCodePost**
-> Map<String, dynamic> apiAccountSendPasswordResetCodePost(sendPasswordResetCodeDto)
+> apiAccountSendPasswordResetCodePost(sendPasswordResetCodeDto)
 
 
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -115,8 +114,7 @@ final api_instance = AccountApi();
 final sendPasswordResetCodeDto = SendPasswordResetCodeDto(); // SendPasswordResetCodeDto | 
 
 try {
-    final result = api_instance.apiAccountSendPasswordResetCodePost(sendPasswordResetCodeDto);
-    print(result);
+    api_instance.apiAccountSendPasswordResetCodePost(sendPasswordResetCodeDto);
 } catch (e) {
     print('Exception when calling AccountApi->apiAccountSendPasswordResetCodePost: $e\n');
 }
@@ -130,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Map<String, dynamic>**
+void (empty response body)
 
 ### Authorization
 
@@ -138,7 +136,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/_*+json
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

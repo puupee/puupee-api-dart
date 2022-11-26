@@ -1,19 +1,19 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class IdentityRoleDto {
   /// Returns a new [IdentityRoleDto] instance.
   IdentityRoleDto({
-    this.extraProperties,
+    this.extraProperties = const {},
     this.id,
     this.name,
     this.isDefault,
@@ -22,17 +22,40 @@ class IdentityRoleDto {
     this.concurrencyStamp,
   });
 
+  Map<String, Object>? extraProperties;
 
-  Map<String, dynamic>? extraProperties;
-
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? id;
 
   String? name;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? isDefault;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? isStatic;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? isPublic;
 
   String? concurrencyStamp;
@@ -49,39 +72,54 @@ class IdentityRoleDto {
 
   @override
   int get hashCode =>
-    extraProperties.hashCode +
-    id.hashCode +
-    name.hashCode +
-    isDefault.hashCode +
-    isStatic.hashCode +
-    isPublic.hashCode +
-    concurrencyStamp.hashCode;
+    // ignore: unnecessary_parenthesis
+    (extraProperties == null ? 0 : extraProperties!.hashCode) +
+    (id == null ? 0 : id!.hashCode) +
+    (name == null ? 0 : name!.hashCode) +
+    (isDefault == null ? 0 : isDefault!.hashCode) +
+    (isStatic == null ? 0 : isStatic!.hashCode) +
+    (isPublic == null ? 0 : isPublic!.hashCode) +
+    (concurrencyStamp == null ? 0 : concurrencyStamp!.hashCode);
 
   @override
   String toString() => 'IdentityRoleDto[extraProperties=$extraProperties, id=$id, name=$name, isDefault=$isDefault, isStatic=$isStatic, isPublic=$isPublic, concurrencyStamp=$concurrencyStamp]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (extraProperties != null) {
-      json[r'extraProperties'] = extraProperties;
+    if (this.extraProperties != null) {
+      json[r'extraProperties'] = this.extraProperties;
+    } else {
+      json[r'extraProperties'] = null;
     }
-    if (id != null) {
-      json[r'id'] = id;
+    if (this.id != null) {
+      json[r'id'] = this.id;
+    } else {
+      json[r'id'] = null;
     }
-    if (name != null) {
-      json[r'name'] = name;
+    if (this.name != null) {
+      json[r'name'] = this.name;
+    } else {
+      json[r'name'] = null;
     }
-    if (isDefault != null) {
-      json[r'isDefault'] = isDefault;
+    if (this.isDefault != null) {
+      json[r'isDefault'] = this.isDefault;
+    } else {
+      json[r'isDefault'] = null;
     }
-    if (isStatic != null) {
-      json[r'isStatic'] = isStatic;
+    if (this.isStatic != null) {
+      json[r'isStatic'] = this.isStatic;
+    } else {
+      json[r'isStatic'] = null;
     }
-    if (isPublic != null) {
-      json[r'isPublic'] = isPublic;
+    if (this.isPublic != null) {
+      json[r'isPublic'] = this.isPublic;
+    } else {
+      json[r'isPublic'] = null;
     }
-    if (concurrencyStamp != null) {
-      json[r'concurrencyStamp'] = concurrencyStamp;
+    if (this.concurrencyStamp != null) {
+      json[r'concurrencyStamp'] = this.concurrencyStamp;
+    } else {
+      json[r'concurrencyStamp'] = null;
     }
     return json;
   }
@@ -89,45 +127,78 @@ class IdentityRoleDto {
   /// Returns a new [IdentityRoleDto] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static IdentityRoleDto fromJson(Map<String, dynamic> json) => IdentityRoleDto(
-        extraProperties: json[r'extraProperties'] == null ? null : json[r'extraProperties'] as Map<String, dynamic>?,
-        id: json[r'id'] == null ? null : json[r'id'] as String?,
-        name: json[r'name'] == null ? null : json[r'name'] as String?,
-        isDefault: json[r'isDefault'] == null ? null : json[r'isDefault'] as bool?,
-        isStatic: json[r'isStatic'] == null ? null : json[r'isStatic'] as bool?,
-        isPublic: json[r'isPublic'] == null ? null : json[r'isPublic'] as bool?,
-        concurrencyStamp: json[r'concurrencyStamp'] == null ? null : json[r'concurrencyStamp'] as String?,
-    );
+  static IdentityRoleDto? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<IdentityRoleDto> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<IdentityRoleDto>((i) => IdentityRoleDto.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <IdentityRoleDto>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "IdentityRoleDto[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "IdentityRoleDto[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return IdentityRoleDto(
+        extraProperties: mapCastOfType<String, Object>(json, r'extraProperties') ?? const {},
+        id: mapValueOfType<String>(json, r'id'),
+        name: mapValueOfType<String>(json, r'name'),
+        isDefault: mapValueOfType<bool>(json, r'isDefault'),
+        isStatic: mapValueOfType<bool>(json, r'isStatic'),
+        isPublic: mapValueOfType<bool>(json, r'isPublic'),
+        concurrencyStamp: mapValueOfType<String>(json, r'concurrencyStamp'),
+      );
+    }
+    return null;
+  }
+
+  static List<IdentityRoleDto>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <IdentityRoleDto>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = IdentityRoleDto.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, IdentityRoleDto> mapFromJson(dynamic json) {
     final map = <String, IdentityRoleDto>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = IdentityRoleDto.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = IdentityRoleDto.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of IdentityRoleDto-objects as value to a dart map
-  static Map<String, List<IdentityRoleDto>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<IdentityRoleDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<IdentityRoleDto>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = IdentityRoleDto.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = IdentityRoleDto.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

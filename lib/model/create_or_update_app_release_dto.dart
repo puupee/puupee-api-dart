@@ -1,14 +1,14 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class CreateOrUpdateAppReleaseDto {
   /// Returns a new [CreateOrUpdateAppReleaseDto] instance.
@@ -29,7 +29,6 @@ class CreateOrUpdateAppReleaseDto {
     this.environment,
   });
 
-
   String? version;
 
   String? notes;
@@ -48,10 +47,28 @@ class CreateOrUpdateAppReleaseDto {
 
   String? productType;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? isForceUpdate;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? appId;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? isEnabled;
 
   String? channel;
@@ -77,67 +94,96 @@ class CreateOrUpdateAppReleaseDto {
 
   @override
   int get hashCode =>
-    version.hashCode +
-    notes.hashCode +
-    platform.hashCode +
-    key.hashCode +
-    rapidCode.hashCode +
-    size.hashCode +
-    md5.hashCode +
-    sliceMd5.hashCode +
-    productType.hashCode +
-    isForceUpdate.hashCode +
-    appId.hashCode +
-    isEnabled.hashCode +
-    channel.hashCode +
-    environment.hashCode;
+    // ignore: unnecessary_parenthesis
+    (version == null ? 0 : version!.hashCode) +
+    (notes == null ? 0 : notes!.hashCode) +
+    (platform == null ? 0 : platform!.hashCode) +
+    (key == null ? 0 : key!.hashCode) +
+    (rapidCode == null ? 0 : rapidCode!.hashCode) +
+    (size == null ? 0 : size!.hashCode) +
+    (md5 == null ? 0 : md5!.hashCode) +
+    (sliceMd5 == null ? 0 : sliceMd5!.hashCode) +
+    (productType == null ? 0 : productType!.hashCode) +
+    (isForceUpdate == null ? 0 : isForceUpdate!.hashCode) +
+    (appId == null ? 0 : appId!.hashCode) +
+    (isEnabled == null ? 0 : isEnabled!.hashCode) +
+    (channel == null ? 0 : channel!.hashCode) +
+    (environment == null ? 0 : environment!.hashCode);
 
   @override
   String toString() => 'CreateOrUpdateAppReleaseDto[version=$version, notes=$notes, platform=$platform, key=$key, rapidCode=$rapidCode, size=$size, md5=$md5, sliceMd5=$sliceMd5, productType=$productType, isForceUpdate=$isForceUpdate, appId=$appId, isEnabled=$isEnabled, channel=$channel, environment=$environment]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (version != null) {
-      json[r'version'] = version;
+    if (this.version != null) {
+      json[r'version'] = this.version;
+    } else {
+      json[r'version'] = null;
     }
-    if (notes != null) {
-      json[r'notes'] = notes;
+    if (this.notes != null) {
+      json[r'notes'] = this.notes;
+    } else {
+      json[r'notes'] = null;
     }
-    if (platform != null) {
-      json[r'platform'] = platform;
+    if (this.platform != null) {
+      json[r'platform'] = this.platform;
+    } else {
+      json[r'platform'] = null;
     }
-    if (key != null) {
-      json[r'key'] = key;
+    if (this.key != null) {
+      json[r'key'] = this.key;
+    } else {
+      json[r'key'] = null;
     }
-    if (rapidCode != null) {
-      json[r'rapidCode'] = rapidCode;
+    if (this.rapidCode != null) {
+      json[r'rapidCode'] = this.rapidCode;
+    } else {
+      json[r'rapidCode'] = null;
     }
-    if (size != null) {
-      json[r'size'] = size;
+    if (this.size != null) {
+      json[r'size'] = this.size;
+    } else {
+      json[r'size'] = null;
     }
-    if (md5 != null) {
-      json[r'md5'] = md5;
+    if (this.md5 != null) {
+      json[r'md5'] = this.md5;
+    } else {
+      json[r'md5'] = null;
     }
-    if (sliceMd5 != null) {
-      json[r'sliceMd5'] = sliceMd5;
+    if (this.sliceMd5 != null) {
+      json[r'sliceMd5'] = this.sliceMd5;
+    } else {
+      json[r'sliceMd5'] = null;
     }
-    if (productType != null) {
-      json[r'productType'] = productType;
+    if (this.productType != null) {
+      json[r'productType'] = this.productType;
+    } else {
+      json[r'productType'] = null;
     }
-    if (isForceUpdate != null) {
-      json[r'isForceUpdate'] = isForceUpdate;
+    if (this.isForceUpdate != null) {
+      json[r'isForceUpdate'] = this.isForceUpdate;
+    } else {
+      json[r'isForceUpdate'] = null;
     }
-    if (appId != null) {
-      json[r'appId'] = appId;
+    if (this.appId != null) {
+      json[r'appId'] = this.appId;
+    } else {
+      json[r'appId'] = null;
     }
-    if (isEnabled != null) {
-      json[r'isEnabled'] = isEnabled;
+    if (this.isEnabled != null) {
+      json[r'isEnabled'] = this.isEnabled;
+    } else {
+      json[r'isEnabled'] = null;
     }
-    if (channel != null) {
-      json[r'channel'] = channel;
+    if (this.channel != null) {
+      json[r'channel'] = this.channel;
+    } else {
+      json[r'channel'] = null;
     }
-    if (environment != null) {
-      json[r'environment'] = environment;
+    if (this.environment != null) {
+      json[r'environment'] = this.environment;
+    } else {
+      json[r'environment'] = null;
     }
     return json;
   }
@@ -145,52 +191,85 @@ class CreateOrUpdateAppReleaseDto {
   /// Returns a new [CreateOrUpdateAppReleaseDto] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static CreateOrUpdateAppReleaseDto fromJson(Map<String, dynamic> json) => CreateOrUpdateAppReleaseDto(
-        version: json[r'version'] == null ? null : json[r'version'] as String?,
-        notes: json[r'notes'] == null ? null : json[r'notes'] as String?,
-        platform: json[r'platform'] == null ? null : json[r'platform'] as String?,
-        key: json[r'key'] == null ? null : json[r'key'] as String?,
-        rapidCode: json[r'rapidCode'] == null ? null : json[r'rapidCode'] as String?,
-        size: json[r'size'] == null ? null : json[r'size'] as int?,
-        md5: json[r'md5'] == null ? null : json[r'md5'] as String?,
-        sliceMd5: json[r'sliceMd5'] == null ? null : json[r'sliceMd5'] as String?,
-        productType: json[r'productType'] == null ? null : json[r'productType'] as String?,
-        isForceUpdate: json[r'isForceUpdate'] == null ? null : json[r'isForceUpdate'] as bool?,
-        appId: json[r'appId'] == null ? null : json[r'appId'] as String?,
-        isEnabled: json[r'isEnabled'] == null ? null : json[r'isEnabled'] as bool?,
-        channel: json[r'channel'] == null ? null : json[r'channel'] as String?,
-        environment: json[r'environment'] == null ? null : json[r'environment'] as String?,
-    );
+  static CreateOrUpdateAppReleaseDto? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<CreateOrUpdateAppReleaseDto> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<CreateOrUpdateAppReleaseDto>((i) => CreateOrUpdateAppReleaseDto.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <CreateOrUpdateAppReleaseDto>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "CreateOrUpdateAppReleaseDto[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "CreateOrUpdateAppReleaseDto[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return CreateOrUpdateAppReleaseDto(
+        version: mapValueOfType<String>(json, r'version'),
+        notes: mapValueOfType<String>(json, r'notes'),
+        platform: mapValueOfType<String>(json, r'platform'),
+        key: mapValueOfType<String>(json, r'key'),
+        rapidCode: mapValueOfType<String>(json, r'rapidCode'),
+        size: mapValueOfType<int>(json, r'size'),
+        md5: mapValueOfType<String>(json, r'md5'),
+        sliceMd5: mapValueOfType<String>(json, r'sliceMd5'),
+        productType: mapValueOfType<String>(json, r'productType'),
+        isForceUpdate: mapValueOfType<bool>(json, r'isForceUpdate'),
+        appId: mapValueOfType<String>(json, r'appId'),
+        isEnabled: mapValueOfType<bool>(json, r'isEnabled'),
+        channel: mapValueOfType<String>(json, r'channel'),
+        environment: mapValueOfType<String>(json, r'environment'),
+      );
+    }
+    return null;
+  }
+
+  static List<CreateOrUpdateAppReleaseDto>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <CreateOrUpdateAppReleaseDto>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = CreateOrUpdateAppReleaseDto.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, CreateOrUpdateAppReleaseDto> mapFromJson(dynamic json) {
     final map = <String, CreateOrUpdateAppReleaseDto>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = CreateOrUpdateAppReleaseDto.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = CreateOrUpdateAppReleaseDto.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of CreateOrUpdateAppReleaseDto-objects as value to a dart map
-  static Map<String, List<CreateOrUpdateAppReleaseDto>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<CreateOrUpdateAppReleaseDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<CreateOrUpdateAppReleaseDto>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = CreateOrUpdateAppReleaseDto.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = CreateOrUpdateAppReleaseDto.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

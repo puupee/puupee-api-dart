@@ -1,8 +1,8 @@
-# doggy_api.model.DoubleKeyValue
+# puupee_api.model.DoubleKeyValue
 
 ## Load the model package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 ## Properties

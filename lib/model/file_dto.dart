@@ -1,14 +1,14 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class FileDto {
   /// Returns a new [FileDto] instance.
@@ -37,9 +37,20 @@ class FileDto {
     this.password,
   });
 
-
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? id;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   DateTime? creationTime;
 
   String? creatorId;
@@ -48,6 +59,12 @@ class FileDto {
 
   String? lastModifierId;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? isDeleted;
 
   String? deleterId;
@@ -60,6 +77,12 @@ class FileDto {
 
   String? url;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   int? size;
 
   String? md5;
@@ -78,6 +101,12 @@ class FileDto {
 
   DateTime? fileUpdatedAt;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   int? syncVersion;
 
   String? password;
@@ -109,99 +138,144 @@ class FileDto {
 
   @override
   int get hashCode =>
-    id.hashCode +
-    creationTime.hashCode +
-    creatorId.hashCode +
-    lastModificationTime.hashCode +
-    lastModifierId.hashCode +
-    isDeleted.hashCode +
-    deleterId.hashCode +
-    deletionTime.hashCode +
-    name.hashCode +
-    key.hashCode +
-    url.hashCode +
-    size.hashCode +
-    md5.hashCode +
-    sliceMd5.hashCode +
-    rapidCode.hashCode +
-    contentType.hashCode +
-    extension_.hashCode +
-    storageClass.hashCode +
-    fileCreatedAt.hashCode +
-    fileUpdatedAt.hashCode +
-    syncVersion.hashCode +
-    password.hashCode;
+    // ignore: unnecessary_parenthesis
+    (id == null ? 0 : id!.hashCode) +
+    (creationTime == null ? 0 : creationTime!.hashCode) +
+    (creatorId == null ? 0 : creatorId!.hashCode) +
+    (lastModificationTime == null ? 0 : lastModificationTime!.hashCode) +
+    (lastModifierId == null ? 0 : lastModifierId!.hashCode) +
+    (isDeleted == null ? 0 : isDeleted!.hashCode) +
+    (deleterId == null ? 0 : deleterId!.hashCode) +
+    (deletionTime == null ? 0 : deletionTime!.hashCode) +
+    (name == null ? 0 : name!.hashCode) +
+    (key == null ? 0 : key!.hashCode) +
+    (url == null ? 0 : url!.hashCode) +
+    (size == null ? 0 : size!.hashCode) +
+    (md5 == null ? 0 : md5!.hashCode) +
+    (sliceMd5 == null ? 0 : sliceMd5!.hashCode) +
+    (rapidCode == null ? 0 : rapidCode!.hashCode) +
+    (contentType == null ? 0 : contentType!.hashCode) +
+    (extension_ == null ? 0 : extension_!.hashCode) +
+    (storageClass == null ? 0 : storageClass!.hashCode) +
+    (fileCreatedAt == null ? 0 : fileCreatedAt!.hashCode) +
+    (fileUpdatedAt == null ? 0 : fileUpdatedAt!.hashCode) +
+    (syncVersion == null ? 0 : syncVersion!.hashCode) +
+    (password == null ? 0 : password!.hashCode);
 
   @override
   String toString() => 'FileDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, key=$key, url=$url, size=$size, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, extension_=$extension_, storageClass=$storageClass, fileCreatedAt=$fileCreatedAt, fileUpdatedAt=$fileUpdatedAt, syncVersion=$syncVersion, password=$password]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (id != null) {
-      json[r'id'] = id;
+    if (this.id != null) {
+      json[r'id'] = this.id;
+    } else {
+      json[r'id'] = null;
     }
-    if (creationTime != null) {
-      json[r'creationTime'] = creationTime!.toUtc().toIso8601String();
+    if (this.creationTime != null) {
+      json[r'creationTime'] = this.creationTime!.toUtc().toIso8601String();
+    } else {
+      json[r'creationTime'] = null;
     }
-    if (creatorId != null) {
-      json[r'creatorId'] = creatorId;
+    if (this.creatorId != null) {
+      json[r'creatorId'] = this.creatorId;
+    } else {
+      json[r'creatorId'] = null;
     }
-    if (lastModificationTime != null) {
-      json[r'lastModificationTime'] = lastModificationTime!.toUtc().toIso8601String();
+    if (this.lastModificationTime != null) {
+      json[r'lastModificationTime'] = this.lastModificationTime!.toUtc().toIso8601String();
+    } else {
+      json[r'lastModificationTime'] = null;
     }
-    if (lastModifierId != null) {
-      json[r'lastModifierId'] = lastModifierId;
+    if (this.lastModifierId != null) {
+      json[r'lastModifierId'] = this.lastModifierId;
+    } else {
+      json[r'lastModifierId'] = null;
     }
-    if (isDeleted != null) {
-      json[r'isDeleted'] = isDeleted;
+    if (this.isDeleted != null) {
+      json[r'isDeleted'] = this.isDeleted;
+    } else {
+      json[r'isDeleted'] = null;
     }
-    if (deleterId != null) {
-      json[r'deleterId'] = deleterId;
+    if (this.deleterId != null) {
+      json[r'deleterId'] = this.deleterId;
+    } else {
+      json[r'deleterId'] = null;
     }
-    if (deletionTime != null) {
-      json[r'deletionTime'] = deletionTime!.toUtc().toIso8601String();
+    if (this.deletionTime != null) {
+      json[r'deletionTime'] = this.deletionTime!.toUtc().toIso8601String();
+    } else {
+      json[r'deletionTime'] = null;
     }
-    if (name != null) {
-      json[r'name'] = name;
+    if (this.name != null) {
+      json[r'name'] = this.name;
+    } else {
+      json[r'name'] = null;
     }
-    if (key != null) {
-      json[r'key'] = key;
+    if (this.key != null) {
+      json[r'key'] = this.key;
+    } else {
+      json[r'key'] = null;
     }
-    if (url != null) {
-      json[r'url'] = url;
+    if (this.url != null) {
+      json[r'url'] = this.url;
+    } else {
+      json[r'url'] = null;
     }
-    if (size != null) {
-      json[r'size'] = size;
+    if (this.size != null) {
+      json[r'size'] = this.size;
+    } else {
+      json[r'size'] = null;
     }
-    if (md5 != null) {
-      json[r'md5'] = md5;
+    if (this.md5 != null) {
+      json[r'md5'] = this.md5;
+    } else {
+      json[r'md5'] = null;
     }
-    if (sliceMd5 != null) {
-      json[r'sliceMd5'] = sliceMd5;
+    if (this.sliceMd5 != null) {
+      json[r'sliceMd5'] = this.sliceMd5;
+    } else {
+      json[r'sliceMd5'] = null;
     }
-    if (rapidCode != null) {
-      json[r'rapidCode'] = rapidCode;
+    if (this.rapidCode != null) {
+      json[r'rapidCode'] = this.rapidCode;
+    } else {
+      json[r'rapidCode'] = null;
     }
-    if (contentType != null) {
-      json[r'contentType'] = contentType;
+    if (this.contentType != null) {
+      json[r'contentType'] = this.contentType;
+    } else {
+      json[r'contentType'] = null;
     }
-    if (extension_ != null) {
-      json[r'extension'] = extension_;
+    if (this.extension_ != null) {
+      json[r'extension'] = this.extension_;
+    } else {
+      json[r'extension'] = null;
     }
-    if (storageClass != null) {
-      json[r'storageClass'] = storageClass;
+    if (this.storageClass != null) {
+      json[r'storageClass'] = this.storageClass;
+    } else {
+      json[r'storageClass'] = null;
     }
-    if (fileCreatedAt != null) {
-      json[r'fileCreatedAt'] = fileCreatedAt!.toUtc().toIso8601String();
+    if (this.fileCreatedAt != null) {
+      json[r'fileCreatedAt'] = this.fileCreatedAt!.toUtc().toIso8601String();
+    } else {
+      json[r'fileCreatedAt'] = null;
     }
-    if (fileUpdatedAt != null) {
-      json[r'fileUpdatedAt'] = fileUpdatedAt!.toUtc().toIso8601String();
+    if (this.fileUpdatedAt != null) {
+      json[r'fileUpdatedAt'] = this.fileUpdatedAt!.toUtc().toIso8601String();
+    } else {
+      json[r'fileUpdatedAt'] = null;
     }
-    if (syncVersion != null) {
-      json[r'syncVersion'] = syncVersion;
+    if (this.syncVersion != null) {
+      json[r'syncVersion'] = this.syncVersion;
+    } else {
+      json[r'syncVersion'] = null;
     }
-    if (password != null) {
-      json[r'password'] = password;
+    if (this.password != null) {
+      json[r'password'] = this.password;
+    } else {
+      json[r'password'] = null;
     }
     return json;
   }
@@ -209,60 +283,93 @@ class FileDto {
   /// Returns a new [FileDto] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static FileDto fromJson(Map<String, dynamic> json) => FileDto(
-        id: json[r'id'] == null ? null : json[r'id'] as String?,
-        creationTime: json[r'creationTime'] == null ? null : mapDateTime(json, r'creationTime', ''),
-        creatorId: json[r'creatorId'] == null ? null : json[r'creatorId'] as String?,
-        lastModificationTime: json[r'lastModificationTime'] == null ? null : mapDateTime(json, r'lastModificationTime', ''),
-        lastModifierId: json[r'lastModifierId'] == null ? null : json[r'lastModifierId'] as String?,
-        isDeleted: json[r'isDeleted'] == null ? null : json[r'isDeleted'] as bool?,
-        deleterId: json[r'deleterId'] == null ? null : json[r'deleterId'] as String?,
-        deletionTime: json[r'deletionTime'] == null ? null : mapDateTime(json, r'deletionTime', ''),
-        name: json[r'name'] == null ? null : json[r'name'] as String?,
-        key: json[r'key'] == null ? null : json[r'key'] as String?,
-        url: json[r'url'] == null ? null : json[r'url'] as String?,
-        size: json[r'size'] == null ? null : json[r'size'] as int?,
-        md5: json[r'md5'] == null ? null : json[r'md5'] as String?,
-        sliceMd5: json[r'sliceMd5'] == null ? null : json[r'sliceMd5'] as String?,
-        rapidCode: json[r'rapidCode'] == null ? null : json[r'rapidCode'] as String?,
-        contentType: json[r'contentType'] == null ? null : json[r'contentType'] as String?,
-        extension_: json[r'extension'] == null ? null : json[r'extension'] as String?,
-        storageClass: json[r'storageClass'] == null ? null : json[r'storageClass'] as String?,
-        fileCreatedAt: json[r'fileCreatedAt'] == null ? null : mapDateTime(json, r'fileCreatedAt', ''),
-        fileUpdatedAt: json[r'fileUpdatedAt'] == null ? null : mapDateTime(json, r'fileUpdatedAt', ''),
-        syncVersion: json[r'syncVersion'] == null ? null : json[r'syncVersion'] as int?,
-        password: json[r'password'] == null ? null : json[r'password'] as String?,
-    );
+  static FileDto? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<FileDto> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<FileDto>((i) => FileDto.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <FileDto>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "FileDto[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "FileDto[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return FileDto(
+        id: mapValueOfType<String>(json, r'id'),
+        creationTime: mapDateTime(json, r'creationTime', ''),
+        creatorId: mapValueOfType<String>(json, r'creatorId'),
+        lastModificationTime: mapDateTime(json, r'lastModificationTime', ''),
+        lastModifierId: mapValueOfType<String>(json, r'lastModifierId'),
+        isDeleted: mapValueOfType<bool>(json, r'isDeleted'),
+        deleterId: mapValueOfType<String>(json, r'deleterId'),
+        deletionTime: mapDateTime(json, r'deletionTime', ''),
+        name: mapValueOfType<String>(json, r'name'),
+        key: mapValueOfType<String>(json, r'key'),
+        url: mapValueOfType<String>(json, r'url'),
+        size: mapValueOfType<int>(json, r'size'),
+        md5: mapValueOfType<String>(json, r'md5'),
+        sliceMd5: mapValueOfType<String>(json, r'sliceMd5'),
+        rapidCode: mapValueOfType<String>(json, r'rapidCode'),
+        contentType: mapValueOfType<String>(json, r'contentType'),
+        extension_: mapValueOfType<String>(json, r'extension'),
+        storageClass: mapValueOfType<String>(json, r'storageClass'),
+        fileCreatedAt: mapDateTime(json, r'fileCreatedAt', ''),
+        fileUpdatedAt: mapDateTime(json, r'fileUpdatedAt', ''),
+        syncVersion: mapValueOfType<int>(json, r'syncVersion'),
+        password: mapValueOfType<String>(json, r'password'),
+      );
+    }
+    return null;
+  }
+
+  static List<FileDto>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <FileDto>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = FileDto.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, FileDto> mapFromJson(dynamic json) {
     final map = <String, FileDto>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = FileDto.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = FileDto.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of FileDto-objects as value to a dart map
-  static Map<String, List<FileDto>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<FileDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<FileDto>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = FileDto.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = FileDto.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

@@ -1,8 +1,8 @@
-# doggy_api.api.KeyValueApi
+# puupee_api.api.KeyValueApi
 
 ## Load the API package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -30,7 +30,7 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -202,7 +202,7 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -239,13 +239,13 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppKeyValueSetBoolPost**
-> Map<String, dynamic> apiAppKeyValueSetBoolPost(key, booleanSetKeyValueDto)
+> apiAppKeyValueSetBoolPost(key, booleanSetKeyValueDto)
 
 
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -254,8 +254,7 @@ final key = key_example; // String |
 final booleanSetKeyValueDto = BooleanSetKeyValueDto(); // BooleanSetKeyValueDto | 
 
 try {
-    final result = api_instance.apiAppKeyValueSetBoolPost(key, booleanSetKeyValueDto);
-    print(result);
+    api_instance.apiAppKeyValueSetBoolPost(key, booleanSetKeyValueDto);
 } catch (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueSetBoolPost: $e\n');
 }
@@ -270,7 +269,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Map<String, dynamic>**
+void (empty response body)
 
 ### Authorization
 
@@ -278,19 +277,19 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/_*+json
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppKeyValueSetDateTimePost**
-> Map<String, dynamic> apiAppKeyValueSetDateTimePost(key, dateTimeSetKeyValueDto)
+> apiAppKeyValueSetDateTimePost(key, dateTimeSetKeyValueDto)
 
 
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -299,8 +298,7 @@ final key = key_example; // String |
 final dateTimeSetKeyValueDto = DateTimeSetKeyValueDto(); // DateTimeSetKeyValueDto | 
 
 try {
-    final result = api_instance.apiAppKeyValueSetDateTimePost(key, dateTimeSetKeyValueDto);
-    print(result);
+    api_instance.apiAppKeyValueSetDateTimePost(key, dateTimeSetKeyValueDto);
 } catch (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueSetDateTimePost: $e\n');
 }
@@ -315,7 +313,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Map<String, dynamic>**
+void (empty response body)
 
 ### Authorization
 
@@ -323,19 +321,19 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/_*+json
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppKeyValueSetDecimalPost**
-> Map<String, dynamic> apiAppKeyValueSetDecimalPost(key, decimalSetKeyValueDto)
+> apiAppKeyValueSetDecimalPost(key, decimalSetKeyValueDto)
 
 
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -344,8 +342,7 @@ final key = key_example; // String |
 final decimalSetKeyValueDto = DecimalSetKeyValueDto(); // DecimalSetKeyValueDto | 
 
 try {
-    final result = api_instance.apiAppKeyValueSetDecimalPost(key, decimalSetKeyValueDto);
-    print(result);
+    api_instance.apiAppKeyValueSetDecimalPost(key, decimalSetKeyValueDto);
 } catch (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueSetDecimalPost: $e\n');
 }
@@ -360,7 +357,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Map<String, dynamic>**
+void (empty response body)
 
 ### Authorization
 
@@ -368,19 +365,19 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/_*+json
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppKeyValueSetDoublePost**
-> Map<String, dynamic> apiAppKeyValueSetDoublePost(key, doubleSetKeyValueDto)
+> apiAppKeyValueSetDoublePost(key, doubleSetKeyValueDto)
 
 
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -389,8 +386,7 @@ final key = key_example; // String |
 final doubleSetKeyValueDto = DoubleSetKeyValueDto(); // DoubleSetKeyValueDto | 
 
 try {
-    final result = api_instance.apiAppKeyValueSetDoublePost(key, doubleSetKeyValueDto);
-    print(result);
+    api_instance.apiAppKeyValueSetDoublePost(key, doubleSetKeyValueDto);
 } catch (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueSetDoublePost: $e\n');
 }
@@ -405,7 +401,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Map<String, dynamic>**
+void (empty response body)
 
 ### Authorization
 
@@ -413,19 +409,19 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/_*+json
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppKeyValueSetIntPost**
-> Map<String, dynamic> apiAppKeyValueSetIntPost(key, int32SetKeyValueDto)
+> apiAppKeyValueSetIntPost(key, int32SetKeyValueDto)
 
 
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -434,8 +430,7 @@ final key = key_example; // String |
 final int32SetKeyValueDto = Int32SetKeyValueDto(); // Int32SetKeyValueDto | 
 
 try {
-    final result = api_instance.apiAppKeyValueSetIntPost(key, int32SetKeyValueDto);
-    print(result);
+    api_instance.apiAppKeyValueSetIntPost(key, int32SetKeyValueDto);
 } catch (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueSetIntPost: $e\n');
 }
@@ -450,7 +445,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Map<String, dynamic>**
+void (empty response body)
 
 ### Authorization
 
@@ -458,19 +453,19 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/_*+json
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppKeyValueSetStringPost**
-> Map<String, dynamic> apiAppKeyValueSetStringPost(key, stringSetKeyValueDto)
+> apiAppKeyValueSetStringPost(key, stringSetKeyValueDto)
 
 
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -479,8 +474,7 @@ final key = key_example; // String |
 final stringSetKeyValueDto = StringSetKeyValueDto(); // StringSetKeyValueDto | 
 
 try {
-    final result = api_instance.apiAppKeyValueSetStringPost(key, stringSetKeyValueDto);
-    print(result);
+    api_instance.apiAppKeyValueSetStringPost(key, stringSetKeyValueDto);
 } catch (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueSetStringPost: $e\n');
 }
@@ -495,7 +489,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Map<String, dynamic>**
+void (empty response body)
 
 ### Authorization
 
@@ -503,7 +497,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/_*+json
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -515,7 +509,7 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 

@@ -1,14 +1,14 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 
 class MemberApi {
@@ -32,10 +32,9 @@ class MemberApi {
     final formParams = <String, String>{};
 
     if (creatorId != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'creatorId', creatorId));
+      queryParams.addAll(_queryParams('', 'creatorId', creatorId));
     }
 
-    const authNames = <String>['oauth2'];
     const contentTypes = <String>[];
 
 
@@ -46,8 +45,7 @@ class MemberApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
@@ -62,8 +60,10 @@ class MemberApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'MemberDto',) as MemberDto;
-        }
+    
+    }
+    return null;
   }
 }

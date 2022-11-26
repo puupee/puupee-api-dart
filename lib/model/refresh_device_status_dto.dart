@@ -1,14 +1,14 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class RefreshDeviceStatusDto {
   /// Returns a new [RefreshDeviceStatusDto] instance.
@@ -16,7 +16,6 @@ class RefreshDeviceStatusDto {
     this.id,
     this.status,
   });
-
 
   String? id;
 
@@ -29,19 +28,24 @@ class RefreshDeviceStatusDto {
 
   @override
   int get hashCode =>
-    id.hashCode +
-    status.hashCode;
+    // ignore: unnecessary_parenthesis
+    (id == null ? 0 : id!.hashCode) +
+    (status == null ? 0 : status!.hashCode);
 
   @override
   String toString() => 'RefreshDeviceStatusDto[id=$id, status=$status]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (id != null) {
-      json[r'id'] = id;
+    if (this.id != null) {
+      json[r'id'] = this.id;
+    } else {
+      json[r'id'] = null;
     }
-    if (status != null) {
-      json[r'status'] = status;
+    if (this.status != null) {
+      json[r'status'] = this.status;
+    } else {
+      json[r'status'] = null;
     }
     return json;
   }
@@ -49,40 +53,73 @@ class RefreshDeviceStatusDto {
   /// Returns a new [RefreshDeviceStatusDto] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static RefreshDeviceStatusDto fromJson(Map<String, dynamic> json) => RefreshDeviceStatusDto(
-        id: json[r'id'] == null ? null : json[r'id'] as String?,
-        status: json[r'status'] == null ? null : json[r'status'] as String?,
-    );
+  static RefreshDeviceStatusDto? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<RefreshDeviceStatusDto> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<RefreshDeviceStatusDto>((i) => RefreshDeviceStatusDto.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <RefreshDeviceStatusDto>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "RefreshDeviceStatusDto[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "RefreshDeviceStatusDto[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return RefreshDeviceStatusDto(
+        id: mapValueOfType<String>(json, r'id'),
+        status: mapValueOfType<String>(json, r'status'),
+      );
+    }
+    return null;
+  }
+
+  static List<RefreshDeviceStatusDto>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <RefreshDeviceStatusDto>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = RefreshDeviceStatusDto.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, RefreshDeviceStatusDto> mapFromJson(dynamic json) {
     final map = <String, RefreshDeviceStatusDto>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = RefreshDeviceStatusDto.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = RefreshDeviceStatusDto.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of RefreshDeviceStatusDto-objects as value to a dart map
-  static Map<String, List<RefreshDeviceStatusDto>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<RefreshDeviceStatusDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<RefreshDeviceStatusDto>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = RefreshDeviceStatusDto.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = RefreshDeviceStatusDto.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

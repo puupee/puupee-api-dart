@@ -1,21 +1,20 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class UpdatePermissionsDto {
   /// Returns a new [UpdatePermissionsDto] instance.
   UpdatePermissionsDto({
-    this.permissions,
+    this.permissions = const [],
   });
-
 
   List<UpdatePermissionDto>? permissions;
 
@@ -25,15 +24,18 @@ class UpdatePermissionsDto {
 
   @override
   int get hashCode =>
-    permissions.hashCode;
+    // ignore: unnecessary_parenthesis
+    (permissions == null ? 0 : permissions!.hashCode);
 
   @override
   String toString() => 'UpdatePermissionsDto[permissions=$permissions]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (permissions != null) {
-      json[r'permissions'] = permissions;
+    if (this.permissions != null) {
+      json[r'permissions'] = this.permissions;
+    } else {
+      json[r'permissions'] = null;
     }
     return json;
   }
@@ -41,39 +43,72 @@ class UpdatePermissionsDto {
   /// Returns a new [UpdatePermissionsDto] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static UpdatePermissionsDto fromJson(Map<String, dynamic> json) => UpdatePermissionsDto(
-        permissions: json[r'permissions'] == null ? null : UpdatePermissionDto.listFromJson(json[r'permissions']),
-    );
+  static UpdatePermissionsDto? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<UpdatePermissionsDto> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<UpdatePermissionsDto>((i) => UpdatePermissionsDto.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <UpdatePermissionsDto>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "UpdatePermissionsDto[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "UpdatePermissionsDto[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return UpdatePermissionsDto(
+        permissions: UpdatePermissionDto.listFromJson(json[r'permissions']) ?? const [],
+      );
+    }
+    return null;
+  }
+
+  static List<UpdatePermissionsDto>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <UpdatePermissionsDto>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = UpdatePermissionsDto.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, UpdatePermissionsDto> mapFromJson(dynamic json) {
     final map = <String, UpdatePermissionsDto>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = UpdatePermissionsDto.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = UpdatePermissionsDto.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of UpdatePermissionsDto-objects as value to a dart map
-  static Map<String, List<UpdatePermissionsDto>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<UpdatePermissionsDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<UpdatePermissionsDto>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = UpdatePermissionsDto.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = UpdatePermissionsDto.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

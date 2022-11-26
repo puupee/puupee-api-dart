@@ -1,8 +1,8 @@
-# doggy_api.model.IanaTimeZone
+# puupee_api.model.IanaTimeZone
 
 ## Load the model package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 ## Properties

@@ -1,8 +1,8 @@
-# doggy_api.api.FileApi
+# puupee_api.api.FileApi
 
 ## Load the API package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -22,7 +22,7 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -61,13 +61,13 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppFileMyGet**
-> Map<String, dynamic> apiAppFileMyGet(key)
+> apiAppFileMyGet(key)
 
 
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -75,8 +75,7 @@ final api_instance = FileApi();
 final key = key_example; // String | 
 
 try {
-    final result = api_instance.apiAppFileMyGet(key);
-    print(result);
+    api_instance.apiAppFileMyGet(key);
 } catch (e) {
     print('Exception when calling FileApi->apiAppFileMyGet: $e\n');
 }
@@ -90,7 +89,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Map<String, dynamic>**
+void (empty response body)
 
 ### Authorization
 
@@ -110,7 +109,7 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -147,13 +146,13 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppFileThumbGet**
-> Map<String, dynamic> apiAppFileThumbGet(key)
+> apiAppFileThumbGet(key)
 
 
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -161,8 +160,7 @@ final api_instance = FileApi();
 final key = key_example; // String | 
 
 try {
-    final result = api_instance.apiAppFileThumbGet(key);
-    print(result);
+    api_instance.apiAppFileThumbGet(key);
 } catch (e) {
     print('Exception when calling FileApi->apiAppFileThumbGet: $e\n');
 }
@@ -176,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Map<String, dynamic>**
+void (empty response body)
 
 ### Authorization
 

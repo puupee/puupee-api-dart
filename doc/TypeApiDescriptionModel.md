@@ -1,8 +1,8 @@
-# doggy_api.model.TypeApiDescriptionModel
+# puupee_api.model.TypeApiDescriptionModel
 
 ## Load the model package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 ## Properties
@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **baseType** | **String** |  | [optional] 
 **isEnum** | **bool** |  | [optional] 
 **enumNames** | **List<String>** |  | [optional] [default to const []]
-**enumValues** | **List<Map<String, dynamic>>** |  | [optional] [default to const []]
+**enumValues** | [**List<Object>**](Object.md) |  | [optional] [default to const []]
 **genericArguments** | **List<String>** |  | [optional] [default to const []]
 **properties** | [**List<PropertyApiDescriptionModel>**](PropertyApiDescriptionModel.md) |  | [optional] [default to const []]
 

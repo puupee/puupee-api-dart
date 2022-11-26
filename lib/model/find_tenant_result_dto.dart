@@ -1,14 +1,14 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class FindTenantResultDto {
   /// Returns a new [FindTenantResultDto] instance.
@@ -19,13 +19,24 @@ class FindTenantResultDto {
     this.isActive,
   });
 
-
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? success;
 
   String? tenantId;
 
   String? name;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? isActive;
 
   @override
@@ -37,27 +48,36 @@ class FindTenantResultDto {
 
   @override
   int get hashCode =>
-    success.hashCode +
-    tenantId.hashCode +
-    name.hashCode +
-    isActive.hashCode;
+    // ignore: unnecessary_parenthesis
+    (success == null ? 0 : success!.hashCode) +
+    (tenantId == null ? 0 : tenantId!.hashCode) +
+    (name == null ? 0 : name!.hashCode) +
+    (isActive == null ? 0 : isActive!.hashCode);
 
   @override
   String toString() => 'FindTenantResultDto[success=$success, tenantId=$tenantId, name=$name, isActive=$isActive]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (success != null) {
-      json[r'success'] = success;
+    if (this.success != null) {
+      json[r'success'] = this.success;
+    } else {
+      json[r'success'] = null;
     }
-    if (tenantId != null) {
-      json[r'tenantId'] = tenantId;
+    if (this.tenantId != null) {
+      json[r'tenantId'] = this.tenantId;
+    } else {
+      json[r'tenantId'] = null;
     }
-    if (name != null) {
-      json[r'name'] = name;
+    if (this.name != null) {
+      json[r'name'] = this.name;
+    } else {
+      json[r'name'] = null;
     }
-    if (isActive != null) {
-      json[r'isActive'] = isActive;
+    if (this.isActive != null) {
+      json[r'isActive'] = this.isActive;
+    } else {
+      json[r'isActive'] = null;
     }
     return json;
   }
@@ -65,42 +85,75 @@ class FindTenantResultDto {
   /// Returns a new [FindTenantResultDto] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static FindTenantResultDto fromJson(Map<String, dynamic> json) => FindTenantResultDto(
-        success: json[r'success'] == null ? null : json[r'success'] as bool?,
-        tenantId: json[r'tenantId'] == null ? null : json[r'tenantId'] as String?,
-        name: json[r'name'] == null ? null : json[r'name'] as String?,
-        isActive: json[r'isActive'] == null ? null : json[r'isActive'] as bool?,
-    );
+  static FindTenantResultDto? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<FindTenantResultDto> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<FindTenantResultDto>((i) => FindTenantResultDto.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <FindTenantResultDto>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "FindTenantResultDto[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "FindTenantResultDto[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return FindTenantResultDto(
+        success: mapValueOfType<bool>(json, r'success'),
+        tenantId: mapValueOfType<String>(json, r'tenantId'),
+        name: mapValueOfType<String>(json, r'name'),
+        isActive: mapValueOfType<bool>(json, r'isActive'),
+      );
+    }
+    return null;
+  }
+
+  static List<FindTenantResultDto>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <FindTenantResultDto>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = FindTenantResultDto.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, FindTenantResultDto> mapFromJson(dynamic json) {
     final map = <String, FindTenantResultDto>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = FindTenantResultDto.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = FindTenantResultDto.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of FindTenantResultDto-objects as value to a dart map
-  static Map<String, List<FindTenantResultDto>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<FindTenantResultDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<FindTenantResultDto>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = FindTenantResultDto.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = FindTenantResultDto.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

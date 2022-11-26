@@ -1,8 +1,8 @@
-# doggy_api.api.NotificationApi
+# puupee_api.api.NotificationApi
 
 ## Load the API package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -20,13 +20,13 @@ Method | HTTP request | Description
 
 
 # **apiAppNotificationBarkApiKeyMessageGet**
-> Map<String, dynamic> apiAppNotificationBarkApiKeyMessageGet(apiKey, message, automaticallyCopy, copy, url, isArchive, group, icon, name, value)
+> apiAppNotificationBarkApiKeyMessageGet(apiKey, message, automaticallyCopy, copy, url, isArchive, group, icon, name, value)
 
 
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -43,8 +43,7 @@ final name = name_example; // String |
 final value = value_example; // String | 
 
 try {
-    final result = api_instance.apiAppNotificationBarkApiKeyMessageGet(apiKey, message, automaticallyCopy, copy, url, isArchive, group, icon, name, value);
-    print(result);
+    api_instance.apiAppNotificationBarkApiKeyMessageGet(apiKey, message, automaticallyCopy, copy, url, isArchive, group, icon, name, value);
 } catch (e) {
     print('Exception when calling NotificationApi->apiAppNotificationBarkApiKeyMessageGet: $e\n');
 }
@@ -67,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Map<String, dynamic>**
+void (empty response body)
 
 ### Authorization
 
@@ -87,7 +86,7 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -128,13 +127,13 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppNotificationPushPost**
-> Map<String, dynamic> apiAppNotificationPushPost(createPushNotificationDto)
+> apiAppNotificationPushPost(createPushNotificationDto)
 
 
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -142,8 +141,7 @@ final api_instance = NotificationApi();
 final createPushNotificationDto = CreatePushNotificationDto(); // CreatePushNotificationDto | 
 
 try {
-    final result = api_instance.apiAppNotificationPushPost(createPushNotificationDto);
-    print(result);
+    api_instance.apiAppNotificationPushPost(createPushNotificationDto);
 } catch (e) {
     print('Exception when calling NotificationApi->apiAppNotificationPushPost: $e\n');
 }
@@ -157,7 +155,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Map<String, dynamic>**
+void (empty response body)
 
 ### Authorization
 
@@ -165,7 +163,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/_*+json
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -177,7 +175,7 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -218,13 +216,13 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiNotificationServiceNotificationIdDelete**
-> Map<String, dynamic> apiNotificationServiceNotificationIdDelete(id)
+> apiNotificationServiceNotificationIdDelete(id)
 
 
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -232,8 +230,7 @@ final api_instance = NotificationApi();
 final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final result = api_instance.apiNotificationServiceNotificationIdDelete(id);
-    print(result);
+    api_instance.apiNotificationServiceNotificationIdDelete(id);
 } catch (e) {
     print('Exception when calling NotificationApi->apiNotificationServiceNotificationIdDelete: $e\n');
 }
@@ -247,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Map<String, dynamic>**
+void (empty response body)
 
 ### Authorization
 
@@ -267,7 +264,7 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -310,7 +307,7 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -343,7 +340,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/_*+json
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -355,7 +352,7 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -386,7 +383,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/_*+json
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

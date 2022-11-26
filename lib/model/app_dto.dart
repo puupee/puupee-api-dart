@@ -1,14 +1,14 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class AppDto {
   /// Returns a new [AppDto] instance.
@@ -32,9 +32,20 @@ class AppDto {
     this.latestRelease,
   });
 
-
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? id;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   DateTime? creationTime;
 
   String? creatorId;
@@ -43,6 +54,12 @@ class AppDto {
 
   String? lastModifierId;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? isDeleted;
 
   String? deleterId;
@@ -65,6 +82,12 @@ class AppDto {
 
   String? gitRepositoryType;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   AppReleaseDto? latestRelease;
 
   @override
@@ -89,79 +112,114 @@ class AppDto {
 
   @override
   int get hashCode =>
-    id.hashCode +
-    creationTime.hashCode +
-    creatorId.hashCode +
-    lastModificationTime.hashCode +
-    lastModifierId.hashCode +
-    isDeleted.hashCode +
-    deleterId.hashCode +
-    deletionTime.hashCode +
-    name.hashCode +
-    displayName.hashCode +
-    fromework.hashCode +
-    appType.hashCode +
-    description.hashCode +
-    icon.hashCode +
-    gitRepository.hashCode +
-    gitRepositoryType.hashCode +
-    latestRelease.hashCode;
+    // ignore: unnecessary_parenthesis
+    (id == null ? 0 : id!.hashCode) +
+    (creationTime == null ? 0 : creationTime!.hashCode) +
+    (creatorId == null ? 0 : creatorId!.hashCode) +
+    (lastModificationTime == null ? 0 : lastModificationTime!.hashCode) +
+    (lastModifierId == null ? 0 : lastModifierId!.hashCode) +
+    (isDeleted == null ? 0 : isDeleted!.hashCode) +
+    (deleterId == null ? 0 : deleterId!.hashCode) +
+    (deletionTime == null ? 0 : deletionTime!.hashCode) +
+    (name == null ? 0 : name!.hashCode) +
+    (displayName == null ? 0 : displayName!.hashCode) +
+    (fromework == null ? 0 : fromework!.hashCode) +
+    (appType == null ? 0 : appType!.hashCode) +
+    (description == null ? 0 : description!.hashCode) +
+    (icon == null ? 0 : icon!.hashCode) +
+    (gitRepository == null ? 0 : gitRepository!.hashCode) +
+    (gitRepositoryType == null ? 0 : gitRepositoryType!.hashCode) +
+    (latestRelease == null ? 0 : latestRelease!.hashCode);
 
   @override
   String toString() => 'AppDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, displayName=$displayName, fromework=$fromework, appType=$appType, description=$description, icon=$icon, gitRepository=$gitRepository, gitRepositoryType=$gitRepositoryType, latestRelease=$latestRelease]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (id != null) {
-      json[r'id'] = id;
+    if (this.id != null) {
+      json[r'id'] = this.id;
+    } else {
+      json[r'id'] = null;
     }
-    if (creationTime != null) {
-      json[r'creationTime'] = creationTime!.toUtc().toIso8601String();
+    if (this.creationTime != null) {
+      json[r'creationTime'] = this.creationTime!.toUtc().toIso8601String();
+    } else {
+      json[r'creationTime'] = null;
     }
-    if (creatorId != null) {
-      json[r'creatorId'] = creatorId;
+    if (this.creatorId != null) {
+      json[r'creatorId'] = this.creatorId;
+    } else {
+      json[r'creatorId'] = null;
     }
-    if (lastModificationTime != null) {
-      json[r'lastModificationTime'] = lastModificationTime!.toUtc().toIso8601String();
+    if (this.lastModificationTime != null) {
+      json[r'lastModificationTime'] = this.lastModificationTime!.toUtc().toIso8601String();
+    } else {
+      json[r'lastModificationTime'] = null;
     }
-    if (lastModifierId != null) {
-      json[r'lastModifierId'] = lastModifierId;
+    if (this.lastModifierId != null) {
+      json[r'lastModifierId'] = this.lastModifierId;
+    } else {
+      json[r'lastModifierId'] = null;
     }
-    if (isDeleted != null) {
-      json[r'isDeleted'] = isDeleted;
+    if (this.isDeleted != null) {
+      json[r'isDeleted'] = this.isDeleted;
+    } else {
+      json[r'isDeleted'] = null;
     }
-    if (deleterId != null) {
-      json[r'deleterId'] = deleterId;
+    if (this.deleterId != null) {
+      json[r'deleterId'] = this.deleterId;
+    } else {
+      json[r'deleterId'] = null;
     }
-    if (deletionTime != null) {
-      json[r'deletionTime'] = deletionTime!.toUtc().toIso8601String();
+    if (this.deletionTime != null) {
+      json[r'deletionTime'] = this.deletionTime!.toUtc().toIso8601String();
+    } else {
+      json[r'deletionTime'] = null;
     }
-    if (name != null) {
-      json[r'name'] = name;
+    if (this.name != null) {
+      json[r'name'] = this.name;
+    } else {
+      json[r'name'] = null;
     }
-    if (displayName != null) {
-      json[r'displayName'] = displayName;
+    if (this.displayName != null) {
+      json[r'displayName'] = this.displayName;
+    } else {
+      json[r'displayName'] = null;
     }
-    if (fromework != null) {
-      json[r'fromework'] = fromework;
+    if (this.fromework != null) {
+      json[r'fromework'] = this.fromework;
+    } else {
+      json[r'fromework'] = null;
     }
-    if (appType != null) {
-      json[r'appType'] = appType;
+    if (this.appType != null) {
+      json[r'appType'] = this.appType;
+    } else {
+      json[r'appType'] = null;
     }
-    if (description != null) {
-      json[r'description'] = description;
+    if (this.description != null) {
+      json[r'description'] = this.description;
+    } else {
+      json[r'description'] = null;
     }
-    if (icon != null) {
-      json[r'icon'] = icon;
+    if (this.icon != null) {
+      json[r'icon'] = this.icon;
+    } else {
+      json[r'icon'] = null;
     }
-    if (gitRepository != null) {
-      json[r'gitRepository'] = gitRepository;
+    if (this.gitRepository != null) {
+      json[r'gitRepository'] = this.gitRepository;
+    } else {
+      json[r'gitRepository'] = null;
     }
-    if (gitRepositoryType != null) {
-      json[r'gitRepositoryType'] = gitRepositoryType;
+    if (this.gitRepositoryType != null) {
+      json[r'gitRepositoryType'] = this.gitRepositoryType;
+    } else {
+      json[r'gitRepositoryType'] = null;
     }
-    if (latestRelease != null) {
-      json[r'latestRelease'] = latestRelease;
+    if (this.latestRelease != null) {
+      json[r'latestRelease'] = this.latestRelease;
+    } else {
+      json[r'latestRelease'] = null;
     }
     return json;
   }
@@ -169,55 +227,88 @@ class AppDto {
   /// Returns a new [AppDto] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static AppDto fromJson(Map<String, dynamic> json) => AppDto(
-        id: json[r'id'] == null ? null : json[r'id'] as String?,
-        creationTime: json[r'creationTime'] == null ? null : mapDateTime(json, r'creationTime', ''),
-        creatorId: json[r'creatorId'] == null ? null : json[r'creatorId'] as String?,
-        lastModificationTime: json[r'lastModificationTime'] == null ? null : mapDateTime(json, r'lastModificationTime', ''),
-        lastModifierId: json[r'lastModifierId'] == null ? null : json[r'lastModifierId'] as String?,
-        isDeleted: json[r'isDeleted'] == null ? null : json[r'isDeleted'] as bool?,
-        deleterId: json[r'deleterId'] == null ? null : json[r'deleterId'] as String?,
-        deletionTime: json[r'deletionTime'] == null ? null : mapDateTime(json, r'deletionTime', ''),
-        name: json[r'name'] == null ? null : json[r'name'] as String?,
-        displayName: json[r'displayName'] == null ? null : json[r'displayName'] as String?,
-        fromework: json[r'fromework'] == null ? null : json[r'fromework'] as String?,
-        appType: json[r'appType'] == null ? null : json[r'appType'] as String?,
-        description: json[r'description'] == null ? null : json[r'description'] as String?,
-        icon: json[r'icon'] == null ? null : json[r'icon'] as String?,
-        gitRepository: json[r'gitRepository'] == null ? null : json[r'gitRepository'] as String?,
-        gitRepositoryType: json[r'gitRepositoryType'] == null ? null : json[r'gitRepositoryType'] as String?,
-        latestRelease: json[r'latestRelease'] == null ? null : AppReleaseDto.fromJson(json[r'latestRelease']),
-    );
+  static AppDto? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<AppDto> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<AppDto>((i) => AppDto.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <AppDto>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "AppDto[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "AppDto[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return AppDto(
+        id: mapValueOfType<String>(json, r'id'),
+        creationTime: mapDateTime(json, r'creationTime', ''),
+        creatorId: mapValueOfType<String>(json, r'creatorId'),
+        lastModificationTime: mapDateTime(json, r'lastModificationTime', ''),
+        lastModifierId: mapValueOfType<String>(json, r'lastModifierId'),
+        isDeleted: mapValueOfType<bool>(json, r'isDeleted'),
+        deleterId: mapValueOfType<String>(json, r'deleterId'),
+        deletionTime: mapDateTime(json, r'deletionTime', ''),
+        name: mapValueOfType<String>(json, r'name'),
+        displayName: mapValueOfType<String>(json, r'displayName'),
+        fromework: mapValueOfType<String>(json, r'fromework'),
+        appType: mapValueOfType<String>(json, r'appType'),
+        description: mapValueOfType<String>(json, r'description'),
+        icon: mapValueOfType<String>(json, r'icon'),
+        gitRepository: mapValueOfType<String>(json, r'gitRepository'),
+        gitRepositoryType: mapValueOfType<String>(json, r'gitRepositoryType'),
+        latestRelease: AppReleaseDto.fromJson(json[r'latestRelease']),
+      );
+    }
+    return null;
+  }
+
+  static List<AppDto>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <AppDto>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = AppDto.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, AppDto> mapFromJson(dynamic json) {
     final map = <String, AppDto>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = AppDto.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = AppDto.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of AppDto-objects as value to a dart map
-  static Map<String, List<AppDto>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<AppDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<AppDto>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = AppDto.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = AppDto.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

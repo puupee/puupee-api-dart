@@ -1,14 +1,14 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class ActionApiDescriptionModel {
   /// Returns a new [ActionApiDescriptionModel] instance.
@@ -17,14 +17,13 @@ class ActionApiDescriptionModel {
     this.name,
     this.httpMethod,
     this.url,
-    this.supportedVersions,
-    this.parametersOnMethod,
-    this.parameters,
+    this.supportedVersions = const [],
+    this.parametersOnMethod = const [],
+    this.parameters = const [],
     this.returnValue,
     this.allowAnonymous,
     this.implementFrom,
   });
-
 
   String? uniqueName;
 
@@ -40,6 +39,12 @@ class ActionApiDescriptionModel {
 
   List<ParameterApiDescriptionModel>? parameters;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   ReturnValueApiDescriptionModel? returnValue;
 
   bool? allowAnonymous;
@@ -61,51 +66,72 @@ class ActionApiDescriptionModel {
 
   @override
   int get hashCode =>
-    uniqueName.hashCode +
-    name.hashCode +
-    httpMethod.hashCode +
-    url.hashCode +
-    supportedVersions.hashCode +
-    parametersOnMethod.hashCode +
-    parameters.hashCode +
-    returnValue.hashCode +
-    allowAnonymous.hashCode +
-    implementFrom.hashCode;
+    // ignore: unnecessary_parenthesis
+    (uniqueName == null ? 0 : uniqueName!.hashCode) +
+    (name == null ? 0 : name!.hashCode) +
+    (httpMethod == null ? 0 : httpMethod!.hashCode) +
+    (url == null ? 0 : url!.hashCode) +
+    (supportedVersions == null ? 0 : supportedVersions!.hashCode) +
+    (parametersOnMethod == null ? 0 : parametersOnMethod!.hashCode) +
+    (parameters == null ? 0 : parameters!.hashCode) +
+    (returnValue == null ? 0 : returnValue!.hashCode) +
+    (allowAnonymous == null ? 0 : allowAnonymous!.hashCode) +
+    (implementFrom == null ? 0 : implementFrom!.hashCode);
 
   @override
   String toString() => 'ActionApiDescriptionModel[uniqueName=$uniqueName, name=$name, httpMethod=$httpMethod, url=$url, supportedVersions=$supportedVersions, parametersOnMethod=$parametersOnMethod, parameters=$parameters, returnValue=$returnValue, allowAnonymous=$allowAnonymous, implementFrom=$implementFrom]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (uniqueName != null) {
-      json[r'uniqueName'] = uniqueName;
+    if (this.uniqueName != null) {
+      json[r'uniqueName'] = this.uniqueName;
+    } else {
+      json[r'uniqueName'] = null;
     }
-    if (name != null) {
-      json[r'name'] = name;
+    if (this.name != null) {
+      json[r'name'] = this.name;
+    } else {
+      json[r'name'] = null;
     }
-    if (httpMethod != null) {
-      json[r'httpMethod'] = httpMethod;
+    if (this.httpMethod != null) {
+      json[r'httpMethod'] = this.httpMethod;
+    } else {
+      json[r'httpMethod'] = null;
     }
-    if (url != null) {
-      json[r'url'] = url;
+    if (this.url != null) {
+      json[r'url'] = this.url;
+    } else {
+      json[r'url'] = null;
     }
-    if (supportedVersions != null) {
-      json[r'supportedVersions'] = supportedVersions;
+    if (this.supportedVersions != null) {
+      json[r'supportedVersions'] = this.supportedVersions;
+    } else {
+      json[r'supportedVersions'] = null;
     }
-    if (parametersOnMethod != null) {
-      json[r'parametersOnMethod'] = parametersOnMethod;
+    if (this.parametersOnMethod != null) {
+      json[r'parametersOnMethod'] = this.parametersOnMethod;
+    } else {
+      json[r'parametersOnMethod'] = null;
     }
-    if (parameters != null) {
-      json[r'parameters'] = parameters;
+    if (this.parameters != null) {
+      json[r'parameters'] = this.parameters;
+    } else {
+      json[r'parameters'] = null;
     }
-    if (returnValue != null) {
-      json[r'returnValue'] = returnValue;
+    if (this.returnValue != null) {
+      json[r'returnValue'] = this.returnValue;
+    } else {
+      json[r'returnValue'] = null;
     }
-    if (allowAnonymous != null) {
-      json[r'allowAnonymous'] = allowAnonymous;
+    if (this.allowAnonymous != null) {
+      json[r'allowAnonymous'] = this.allowAnonymous;
+    } else {
+      json[r'allowAnonymous'] = null;
     }
-    if (implementFrom != null) {
-      json[r'implementFrom'] = implementFrom;
+    if (this.implementFrom != null) {
+      json[r'implementFrom'] = this.implementFrom;
+    } else {
+      json[r'implementFrom'] = null;
     }
     return json;
   }
@@ -113,50 +139,83 @@ class ActionApiDescriptionModel {
   /// Returns a new [ActionApiDescriptionModel] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static ActionApiDescriptionModel fromJson(Map<String, dynamic> json) => ActionApiDescriptionModel(
-        uniqueName: json[r'uniqueName'] == null ? null : json[r'uniqueName'] as String?,
-        name: json[r'name'] == null ? null : json[r'name'] as String?,
-        httpMethod: json[r'httpMethod'] == null ? null : json[r'httpMethod'] as String?,
-        url: json[r'url'] == null ? null : json[r'url'] as String?,
-        supportedVersions: json[r'supportedVersions'] is List
-          ? (json[r'supportedVersions'] as List).cast<String>()
-          : [],
-        parametersOnMethod: json[r'parametersOnMethod'] == null ? null : MethodParameterApiDescriptionModel.listFromJson(json[r'parametersOnMethod']),
-        parameters: json[r'parameters'] == null ? null : ParameterApiDescriptionModel.listFromJson(json[r'parameters']),
-        returnValue: json[r'returnValue'] == null ? null : ReturnValueApiDescriptionModel.fromJson(json[r'returnValue']),
-        allowAnonymous: json[r'allowAnonymous'] == null ? null : json[r'allowAnonymous'] as bool?,
-        implementFrom: json[r'implementFrom'] == null ? null : json[r'implementFrom'] as String?,
-    );
+  static ActionApiDescriptionModel? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<ActionApiDescriptionModel> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<ActionApiDescriptionModel>((i) => ActionApiDescriptionModel.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <ActionApiDescriptionModel>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "ActionApiDescriptionModel[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "ActionApiDescriptionModel[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return ActionApiDescriptionModel(
+        uniqueName: mapValueOfType<String>(json, r'uniqueName'),
+        name: mapValueOfType<String>(json, r'name'),
+        httpMethod: mapValueOfType<String>(json, r'httpMethod'),
+        url: mapValueOfType<String>(json, r'url'),
+        supportedVersions: json[r'supportedVersions'] is List
+            ? (json[r'supportedVersions'] as List).cast<String>()
+            : const [],
+        parametersOnMethod: MethodParameterApiDescriptionModel.listFromJson(json[r'parametersOnMethod']) ?? const [],
+        parameters: ParameterApiDescriptionModel.listFromJson(json[r'parameters']) ?? const [],
+        returnValue: ReturnValueApiDescriptionModel.fromJson(json[r'returnValue']),
+        allowAnonymous: mapValueOfType<bool>(json, r'allowAnonymous'),
+        implementFrom: mapValueOfType<String>(json, r'implementFrom'),
+      );
+    }
+    return null;
+  }
+
+  static List<ActionApiDescriptionModel>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <ActionApiDescriptionModel>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = ActionApiDescriptionModel.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, ActionApiDescriptionModel> mapFromJson(dynamic json) {
     final map = <String, ActionApiDescriptionModel>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = ActionApiDescriptionModel.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = ActionApiDescriptionModel.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of ActionApiDescriptionModel-objects as value to a dart map
-  static Map<String, List<ActionApiDescriptionModel>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<ActionApiDescriptionModel>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<ActionApiDescriptionModel>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = ActionApiDescriptionModel.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = ActionApiDescriptionModel.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

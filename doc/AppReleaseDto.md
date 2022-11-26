@@ -1,8 +1,8 @@
-# doggy_api.model.AppReleaseDto
+# puupee_api.model.AppReleaseDto
 
 ## Load the model package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 ## Properties

@@ -1,8 +1,8 @@
-# doggy_api.api.PermissionsApi
+# puupee_api.api.PermissionsApi
 
 ## Load the API package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -59,13 +59,13 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiPermissionManagementPermissionsPut**
-> Map<String, dynamic> apiPermissionManagementPermissionsPut(providerName, providerKey, updatePermissionsDto)
+> apiPermissionManagementPermissionsPut(providerName, providerKey, updatePermissionsDto)
 
 
 
 ### Example
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
@@ -75,8 +75,7 @@ final providerKey = providerKey_example; // String |
 final updatePermissionsDto = UpdatePermissionsDto(); // UpdatePermissionsDto | 
 
 try {
-    final result = api_instance.apiPermissionManagementPermissionsPut(providerName, providerKey, updatePermissionsDto);
-    print(result);
+    api_instance.apiPermissionManagementPermissionsPut(providerName, providerKey, updatePermissionsDto);
 } catch (e) {
     print('Exception when calling PermissionsApi->apiPermissionManagementPermissionsPut: $e\n');
 }
@@ -92,7 +91,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Map<String, dynamic>**
+void (empty response body)
 
 ### Authorization
 
@@ -100,7 +99,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/_*+json
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

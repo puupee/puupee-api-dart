@@ -1,8 +1,8 @@
-# doggy_api.model.WindowsTimeZone
+# puupee_api.model.WindowsTimeZone
 
 ## Load the model package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 ## Properties

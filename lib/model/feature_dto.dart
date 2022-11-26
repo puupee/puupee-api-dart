@@ -1,14 +1,14 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class FeatureDto {
   /// Returns a new [FeatureDto] instance.
@@ -23,19 +23,36 @@ class FeatureDto {
     this.parentName,
   });
 
-
   String? name;
 
   String? displayName;
 
   String? value;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   FeatureProviderDto? provider;
 
   String? description;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   IStringValueType? valueType;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   int? depth;
 
   String? parentName;
@@ -53,43 +70,60 @@ class FeatureDto {
 
   @override
   int get hashCode =>
-    name.hashCode +
-    displayName.hashCode +
-    value.hashCode +
-    provider.hashCode +
-    description.hashCode +
-    valueType.hashCode +
-    depth.hashCode +
-    parentName.hashCode;
+    // ignore: unnecessary_parenthesis
+    (name == null ? 0 : name!.hashCode) +
+    (displayName == null ? 0 : displayName!.hashCode) +
+    (value == null ? 0 : value!.hashCode) +
+    (provider == null ? 0 : provider!.hashCode) +
+    (description == null ? 0 : description!.hashCode) +
+    (valueType == null ? 0 : valueType!.hashCode) +
+    (depth == null ? 0 : depth!.hashCode) +
+    (parentName == null ? 0 : parentName!.hashCode);
 
   @override
   String toString() => 'FeatureDto[name=$name, displayName=$displayName, value=$value, provider=$provider, description=$description, valueType=$valueType, depth=$depth, parentName=$parentName]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (name != null) {
-      json[r'name'] = name;
+    if (this.name != null) {
+      json[r'name'] = this.name;
+    } else {
+      json[r'name'] = null;
     }
-    if (displayName != null) {
-      json[r'displayName'] = displayName;
+    if (this.displayName != null) {
+      json[r'displayName'] = this.displayName;
+    } else {
+      json[r'displayName'] = null;
     }
-    if (value != null) {
-      json[r'value'] = value;
+    if (this.value != null) {
+      json[r'value'] = this.value;
+    } else {
+      json[r'value'] = null;
     }
-    if (provider != null) {
-      json[r'provider'] = provider;
+    if (this.provider != null) {
+      json[r'provider'] = this.provider;
+    } else {
+      json[r'provider'] = null;
     }
-    if (description != null) {
-      json[r'description'] = description;
+    if (this.description != null) {
+      json[r'description'] = this.description;
+    } else {
+      json[r'description'] = null;
     }
-    if (valueType != null) {
-      json[r'valueType'] = valueType;
+    if (this.valueType != null) {
+      json[r'valueType'] = this.valueType;
+    } else {
+      json[r'valueType'] = null;
     }
-    if (depth != null) {
-      json[r'depth'] = depth;
+    if (this.depth != null) {
+      json[r'depth'] = this.depth;
+    } else {
+      json[r'depth'] = null;
     }
-    if (parentName != null) {
-      json[r'parentName'] = parentName;
+    if (this.parentName != null) {
+      json[r'parentName'] = this.parentName;
+    } else {
+      json[r'parentName'] = null;
     }
     return json;
   }
@@ -97,46 +131,79 @@ class FeatureDto {
   /// Returns a new [FeatureDto] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static FeatureDto fromJson(Map<String, dynamic> json) => FeatureDto(
-        name: json[r'name'] == null ? null : json[r'name'] as String?,
-        displayName: json[r'displayName'] == null ? null : json[r'displayName'] as String?,
-        value: json[r'value'] == null ? null : json[r'value'] as String?,
-        provider: json[r'provider'] == null ? null : FeatureProviderDto.fromJson(json[r'provider']),
-        description: json[r'description'] == null ? null : json[r'description'] as String?,
-        valueType: json[r'valueType'] == null ? null : IStringValueType.fromJson(json[r'valueType']),
-        depth: json[r'depth'] == null ? null : json[r'depth'] as int?,
-        parentName: json[r'parentName'] == null ? null : json[r'parentName'] as String?,
-    );
+  static FeatureDto? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<FeatureDto> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<FeatureDto>((i) => FeatureDto.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <FeatureDto>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "FeatureDto[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "FeatureDto[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return FeatureDto(
+        name: mapValueOfType<String>(json, r'name'),
+        displayName: mapValueOfType<String>(json, r'displayName'),
+        value: mapValueOfType<String>(json, r'value'),
+        provider: FeatureProviderDto.fromJson(json[r'provider']),
+        description: mapValueOfType<String>(json, r'description'),
+        valueType: IStringValueType.fromJson(json[r'valueType']),
+        depth: mapValueOfType<int>(json, r'depth'),
+        parentName: mapValueOfType<String>(json, r'parentName'),
+      );
+    }
+    return null;
+  }
+
+  static List<FeatureDto>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <FeatureDto>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = FeatureDto.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, FeatureDto> mapFromJson(dynamic json) {
     final map = <String, FeatureDto>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = FeatureDto.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = FeatureDto.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of FeatureDto-objects as value to a dart map
-  static Map<String, List<FeatureDto>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<FeatureDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<FeatureDto>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = FeatureDto.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = FeatureDto.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

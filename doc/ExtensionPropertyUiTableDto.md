@@ -1,8 +1,8 @@
-# doggy_api.model.ExtensionPropertyUiTableDto
+# puupee_api.model.ExtensionPropertyUiTableDto
 
 ## Load the model package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 ## Properties

@@ -1,14 +1,14 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 class CreateUpdateNotificationDto {
   /// Returns a new [CreateUpdateNotificationDto] instance.
@@ -22,9 +22,20 @@ class CreateUpdateNotificationDto {
     this.retryNotificationId,
   });
 
-
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? userId;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? notificationInfoId;
 
   String? notificationMethod;
@@ -49,39 +60,54 @@ class CreateUpdateNotificationDto {
 
   @override
   int get hashCode =>
-    userId.hashCode +
-    notificationInfoId.hashCode +
-    notificationMethod.hashCode +
-    success.hashCode +
-    completionTime.hashCode +
-    failureReason.hashCode +
-    retryNotificationId.hashCode;
+    // ignore: unnecessary_parenthesis
+    (userId == null ? 0 : userId!.hashCode) +
+    (notificationInfoId == null ? 0 : notificationInfoId!.hashCode) +
+    (notificationMethod == null ? 0 : notificationMethod!.hashCode) +
+    (success == null ? 0 : success!.hashCode) +
+    (completionTime == null ? 0 : completionTime!.hashCode) +
+    (failureReason == null ? 0 : failureReason!.hashCode) +
+    (retryNotificationId == null ? 0 : retryNotificationId!.hashCode);
 
   @override
   String toString() => 'CreateUpdateNotificationDto[userId=$userId, notificationInfoId=$notificationInfoId, notificationMethod=$notificationMethod, success=$success, completionTime=$completionTime, failureReason=$failureReason, retryNotificationId=$retryNotificationId]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (userId != null) {
-      json[r'userId'] = userId;
+    if (this.userId != null) {
+      json[r'userId'] = this.userId;
+    } else {
+      json[r'userId'] = null;
     }
-    if (notificationInfoId != null) {
-      json[r'notificationInfoId'] = notificationInfoId;
+    if (this.notificationInfoId != null) {
+      json[r'notificationInfoId'] = this.notificationInfoId;
+    } else {
+      json[r'notificationInfoId'] = null;
     }
-    if (notificationMethod != null) {
-      json[r'notificationMethod'] = notificationMethod;
+    if (this.notificationMethod != null) {
+      json[r'notificationMethod'] = this.notificationMethod;
+    } else {
+      json[r'notificationMethod'] = null;
     }
-    if (success != null) {
-      json[r'success'] = success;
+    if (this.success != null) {
+      json[r'success'] = this.success;
+    } else {
+      json[r'success'] = null;
     }
-    if (completionTime != null) {
-      json[r'completionTime'] = completionTime!.toUtc().toIso8601String();
+    if (this.completionTime != null) {
+      json[r'completionTime'] = this.completionTime!.toUtc().toIso8601String();
+    } else {
+      json[r'completionTime'] = null;
     }
-    if (failureReason != null) {
-      json[r'failureReason'] = failureReason;
+    if (this.failureReason != null) {
+      json[r'failureReason'] = this.failureReason;
+    } else {
+      json[r'failureReason'] = null;
     }
-    if (retryNotificationId != null) {
-      json[r'retryNotificationId'] = retryNotificationId;
+    if (this.retryNotificationId != null) {
+      json[r'retryNotificationId'] = this.retryNotificationId;
+    } else {
+      json[r'retryNotificationId'] = null;
     }
     return json;
   }
@@ -89,45 +115,78 @@ class CreateUpdateNotificationDto {
   /// Returns a new [CreateUpdateNotificationDto] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static CreateUpdateNotificationDto fromJson(Map<String, dynamic> json) => CreateUpdateNotificationDto(
-        userId: json[r'userId'] == null ? null : json[r'userId'] as String?,
-        notificationInfoId: json[r'notificationInfoId'] == null ? null : json[r'notificationInfoId'] as String?,
-        notificationMethod: json[r'notificationMethod'] == null ? null : json[r'notificationMethod'] as String?,
-        success: json[r'success'] == null ? null : json[r'success'] as bool?,
-        completionTime: json[r'completionTime'] == null ? null : mapDateTime(json, r'completionTime', ''),
-        failureReason: json[r'failureReason'] == null ? null : json[r'failureReason'] as String?,
-        retryNotificationId: json[r'retryNotificationId'] == null ? null : json[r'retryNotificationId'] as String?,
-    );
+  static CreateUpdateNotificationDto? fromJson(dynamic value) {
+    if (value is Map) {
+      final json = value.cast<String, dynamic>();
 
-  static List<CreateUpdateNotificationDto> listFromJson(List json, {bool? growable,}) =>
-    json.isNotEmpty
-      ? json.map<CreateUpdateNotificationDto>((i) => CreateUpdateNotificationDto.fromJson(i as Map<String, dynamic>)).toList(growable: true == growable)
-      : <CreateUpdateNotificationDto>[];
+      // Ensure that the map contains the required keys.
+      // Note 1: the values aren't checked for validity beyond being non-null.
+      // Note 2: this code is stripped in release mode!
+      assert(() {
+        requiredKeys.forEach((key) {
+          assert(json.containsKey(key), 'Required key "CreateUpdateNotificationDto[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "CreateUpdateNotificationDto[$key]" has a null value in JSON.');
+        });
+        return true;
+      }());
+
+      return CreateUpdateNotificationDto(
+        userId: mapValueOfType<String>(json, r'userId'),
+        notificationInfoId: mapValueOfType<String>(json, r'notificationInfoId'),
+        notificationMethod: mapValueOfType<String>(json, r'notificationMethod'),
+        success: mapValueOfType<bool>(json, r'success'),
+        completionTime: mapDateTime(json, r'completionTime', ''),
+        failureReason: mapValueOfType<String>(json, r'failureReason'),
+        retryNotificationId: mapValueOfType<String>(json, r'retryNotificationId'),
+      );
+    }
+    return null;
+  }
+
+  static List<CreateUpdateNotificationDto>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <CreateUpdateNotificationDto>[];
+    if (json is List && json.isNotEmpty) {
+      for (final row in json) {
+        final value = CreateUpdateNotificationDto.fromJson(row);
+        if (value != null) {
+          result.add(value);
+        }
+      }
+    }
+    return result.toList(growable: growable);
+  }
 
   static Map<String, CreateUpdateNotificationDto> mapFromJson(dynamic json) {
     final map = <String, CreateUpdateNotificationDto>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) => map[key] = CreateUpdateNotificationDto.fromJson(value));
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = CreateUpdateNotificationDto.fromJson(entry.value);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
 
   // maps a json object with a list of CreateUpdateNotificationDto-objects as value to a dart map
-  static Map<String, List<CreateUpdateNotificationDto>> mapListFromJson(dynamic json, {bool? growable,}) {
+  static Map<String, List<CreateUpdateNotificationDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
     final map = <String, List<CreateUpdateNotificationDto>>{};
     if (json is Map && json.isNotEmpty) {
-      json
-        .cast<String, dynamic>()
-        .forEach((key, dynamic value) {
-          map[key] = CreateUpdateNotificationDto.listFromJson(
-            value,
-            growable: growable,
-          );
-        });
+      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
+      for (final entry in json.entries) {
+        final value = CreateUpdateNotificationDto.listFromJson(entry.value, growable: growable,);
+        if (value != null) {
+          map[entry.key] = value;
+        }
+      }
     }
     return map;
   }
+
+  /// The list of required keys that must be present in a JSON.
+  static const requiredKeys = <String>{
+  };
 }
 

@@ -1,8 +1,8 @@
-# doggy_api.model.FeatureProviderDto
+# puupee_api.model.FeatureProviderDto
 
 ## Load the model package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 ## Properties

@@ -1,8 +1,8 @@
-# doggy_api.model.ActionApiDescriptionModel
+# puupee_api.model.ActionApiDescriptionModel
 
 ## Load the model package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 ## Properties

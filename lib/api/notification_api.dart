@@ -1,14 +1,14 @@
 //
 // AUTO-GENERATED FILE, DO NOT MODIFY!
 //
-// @dart=2.14
+// @dart=2.12
 
 // ignore_for_file: unused_element, unused_import
 // ignore_for_file: always_put_required_named_parameters_first
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-part of doggy_api;
+part of puupee_api;
 
 
 class NotificationApi {
@@ -52,31 +52,30 @@ class NotificationApi {
     final formParams = <String, String>{};
 
     if (automaticallyCopy != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'automaticallyCopy', automaticallyCopy));
+      queryParams.addAll(_queryParams('', 'automaticallyCopy', automaticallyCopy));
     }
     if (copy != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'copy', copy));
+      queryParams.addAll(_queryParams('', 'copy', copy));
     }
     if (url != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'url', url));
+      queryParams.addAll(_queryParams('', 'url', url));
     }
     if (isArchive != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'isArchive', isArchive));
+      queryParams.addAll(_queryParams('', 'isArchive', isArchive));
     }
     if (group != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'group', group));
+      queryParams.addAll(_queryParams('', 'group', group));
     }
     if (icon != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'icon', icon));
+      queryParams.addAll(_queryParams('', 'icon', icon));
     }
     if (name != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'Name', name));
+      queryParams.addAll(_queryParams('', 'Name', name));
     }
     if (value != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'Value', value));
+      queryParams.addAll(_queryParams('', 'Value', value));
     }
 
-    const authNames = <String>['oauth2'];
     const contentTypes = <String>[];
 
 
@@ -87,8 +86,7 @@ class NotificationApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
@@ -113,17 +111,11 @@ class NotificationApi {
   /// * [String] name:
   ///
   /// * [String] value:
-  Future<Map<String, dynamic>?> apiAppNotificationBarkApiKeyMessageGet(String apiKey, String message, { int? automaticallyCopy, String? copy, String? url, String? isArchive, String? group, String? icon, String? name, String? value, }) async {
+  Future<void> apiAppNotificationBarkApiKeyMessageGet(String apiKey, String message, { int? automaticallyCopy, String? copy, String? url, String? isArchive, String? group, String? icon, String? name, String? value, }) async {
     final response = await apiAppNotificationBarkApiKeyMessageGetWithHttpInfo(apiKey, message,  automaticallyCopy: automaticallyCopy, copy: copy, url: url, isArchive: isArchive, group: group, icon: icon, name: name, value: value, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Map<String, dynamic>',) as Map<String, dynamic>;
-        }
   }
 
   /// Performs an HTTP 'GET /api/app/notification' operation and returns the [Response].
@@ -146,16 +138,15 @@ class NotificationApi {
     final formParams = <String, String>{};
 
     if (sorting != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'Sorting', sorting));
+      queryParams.addAll(_queryParams('', 'Sorting', sorting));
     }
     if (skipCount != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'SkipCount', skipCount));
+      queryParams.addAll(_queryParams('', 'SkipCount', skipCount));
     }
     if (maxResultCount != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'MaxResultCount', maxResultCount));
+      queryParams.addAll(_queryParams('', 'MaxResultCount', maxResultCount));
     }
 
-    const authNames = <String>['oauth2'];
     const contentTypes = <String>[];
 
 
@@ -166,8 +157,7 @@ class NotificationApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
@@ -186,9 +176,11 @@ class NotificationApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'NotificationInfoDtoPagedResultDto',) as NotificationInfoDtoPagedResultDto;
-        }
+    
+    }
+    return null;
   }
 
   /// Performs an HTTP 'POST /api/app/notification/push' operation and returns the [Response].
@@ -206,8 +198,7 @@ class NotificationApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['oauth2'];
-    const contentTypes = <String>['application/json', 'text/json', 'application/_*+json'];
+    const contentTypes = <String>['application/json', 'text/json', 'application/*+json'];
 
 
     return apiClient.invokeAPI(
@@ -217,25 +208,18 @@ class NotificationApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
   /// Parameters:
   ///
   /// * [CreatePushNotificationDto] createPushNotificationDto:
-  Future<Map<String, dynamic>?> apiAppNotificationPushPost({ CreatePushNotificationDto? createPushNotificationDto, }) async {
+  Future<void> apiAppNotificationPushPost({ CreatePushNotificationDto? createPushNotificationDto, }) async {
     final response = await apiAppNotificationPushPostWithHttpInfo( createPushNotificationDto: createPushNotificationDto, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Map<String, dynamic>',) as Map<String, dynamic>;
-        }
   }
 
   /// Performs an HTTP 'GET /api/notification-service/notification' operation and returns the [Response].
@@ -258,16 +242,15 @@ class NotificationApi {
     final formParams = <String, String>{};
 
     if (sorting != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'Sorting', sorting));
+      queryParams.addAll(_queryParams('', 'Sorting', sorting));
     }
     if (skipCount != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'SkipCount', skipCount));
+      queryParams.addAll(_queryParams('', 'SkipCount', skipCount));
     }
     if (maxResultCount != null) {
-      queryParams.addAll(_convertParametersForCollectionFormat('', 'MaxResultCount', maxResultCount));
+      queryParams.addAll(_queryParams('', 'MaxResultCount', maxResultCount));
     }
 
-    const authNames = <String>['oauth2'];
     const contentTypes = <String>[];
 
 
@@ -278,8 +261,7 @@ class NotificationApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
@@ -298,9 +280,11 @@ class NotificationApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'NotificationDtoPagedResultDto',) as NotificationDtoPagedResultDto;
-        }
+    
+    }
+    return null;
   }
 
   /// Performs an HTTP 'DELETE /api/notification-service/notification/{id}' operation and returns the [Response].
@@ -319,7 +303,6 @@ class NotificationApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['oauth2'];
     const contentTypes = <String>[];
 
 
@@ -330,25 +313,18 @@ class NotificationApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
   /// Parameters:
   ///
   /// * [String] id (required):
-  Future<Map<String, dynamic>?> apiNotificationServiceNotificationIdDelete(String id,) async {
+  Future<void> apiNotificationServiceNotificationIdDelete(String id,) async {
     final response = await apiNotificationServiceNotificationIdDeleteWithHttpInfo(id,);
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
-    // When a remote server returns no body with a status of 204, we shall not decode it.
-    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
-    // FormatException when trying to decode an empty string.
-    if (response.statusCode != HttpStatus.noContent) {
-      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'Map<String, dynamic>',) as Map<String, dynamic>;
-        }
   }
 
   /// Performs an HTTP 'GET /api/notification-service/notification/{id}' operation and returns the [Response].
@@ -367,7 +343,6 @@ class NotificationApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['oauth2'];
     const contentTypes = <String>[];
 
 
@@ -378,8 +353,7 @@ class NotificationApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
@@ -394,9 +368,11 @@ class NotificationApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'NotificationDto',) as NotificationDto;
-        }
+    
+    }
+    return null;
   }
 
   /// Performs an HTTP 'PUT /api/notification-service/notification/{id}' operation and returns the [Response].
@@ -417,8 +393,7 @@ class NotificationApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['oauth2'];
-    const contentTypes = <String>['application/json', 'text/json', 'application/_*+json'];
+    const contentTypes = <String>['application/json', 'text/json', 'application/*+json'];
 
 
     return apiClient.invokeAPI(
@@ -428,8 +403,7 @@ class NotificationApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
@@ -446,9 +420,11 @@ class NotificationApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'NotificationDto',) as NotificationDto;
-        }
+    
+    }
+    return null;
   }
 
   /// Performs an HTTP 'POST /api/notification-service/notification' operation and returns the [Response].
@@ -466,8 +442,7 @@ class NotificationApi {
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
 
-    const authNames = <String>['oauth2'];
-    const contentTypes = <String>['application/json', 'text/json', 'application/_*+json'];
+    const contentTypes = <String>['application/json', 'text/json', 'application/*+json'];
 
 
     return apiClient.invokeAPI(
@@ -477,8 +452,7 @@ class NotificationApi {
       postBody,
       headerParams,
       formParams,
-      contentTypes.isEmpty ? null : contentTypes[0],
-      authNames,
+      contentTypes.isEmpty ? null : contentTypes.first,
     );
   }
 
@@ -493,8 +467,10 @@ class NotificationApi {
     // When a remote server returns no body with a status of 204, we shall not decode it.
     // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
     // FormatException when trying to decode an empty string.
-    if (response.statusCode != HttpStatus.noContent) {
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
       return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'NotificationDto',) as NotificationDto;
-        }
+    
+    }
+    return null;
   }
 }

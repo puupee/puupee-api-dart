@@ -1,8 +1,8 @@
-# doggy_api.model.MultiTenancyInfoDto
+# puupee_api.model.MultiTenancyInfoDto
 
 ## Load the model package
 ```dart
-import 'package:doggy_api/api.dart';
+import 'package:puupee_api/api.dart';
 ```
 
 ## Properties
