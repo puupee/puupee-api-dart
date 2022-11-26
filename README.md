@@ -117,6 +117,8 @@ Class | Method | HTTP request | Description
 *RoleApi* | [**apiIdentityRolesIdGet**](doc//RoleApi.md#apiidentityrolesidget) | **GET** /api/identity/roles/{id} | 
 *RoleApi* | [**apiIdentityRolesIdPut**](doc//RoleApi.md#apiidentityrolesidput) | **PUT** /api/identity/roles/{id} | 
 *RoleApi* | [**apiIdentityRolesPost**](doc//RoleApi.md#apiidentityrolespost) | **POST** /api/identity/roles | 
+*SettingsApi* | [**apiAppSettingsGet**](doc//SettingsApi.md#apiappsettingsget) | **GET** /api/app/settings | 
+*SettingsApi* | [**apiAppSettingsSetPost**](doc//SettingsApi.md#apiappsettingssetpost) | **POST** /api/app/settings/set | 
 *SimpleDataApi* | [**apiAppSimpleDataGet**](doc//SimpleDataApi.md#apiappsimpledataget) | **GET** /api/app/simple-data | 
 *SimpleDataApi* | [**apiAppSimpleDataIdDelete**](doc//SimpleDataApi.md#apiappsimpledataiddelete) | **DELETE** /api/app/simple-data/{id} | 
 *SimpleDataApi* | [**apiAppSimpleDataIdGet**](doc//SimpleDataApi.md#apiappsimpledataidget) | **GET** /api/app/simple-data/{id} | 
@@ -159,6 +161,8 @@ Class | Method | HTTP request | Description
  - [AppDtoPagedResultDto](doc//AppDtoPagedResultDto.md)
  - [AppReleaseDto](doc//AppReleaseDto.md)
  - [AppReleaseDtoPagedResultDto](doc//AppReleaseDtoPagedResultDto.md)
+ - [AppTheme](doc//AppTheme.md)
+ - [AppThemeMode](doc//AppThemeMode.md)
  - [AppUserScoreDto](doc//AppUserScoreDto.md)
  - [ApplicationApiDescriptionModel](doc//ApplicationApiDescriptionModel.md)
  - [ApplicationAuthConfigurationDto](doc//ApplicationAuthConfigurationDto.md)
@@ -255,6 +259,7 @@ Class | Method | HTTP request | Description
  - [SendPasswordResetCodeDto](doc//SendPasswordResetCodeDto.md)
  - [SendTestEmailInput](doc//SendTestEmailInput.md)
  - [SendVerificationCodeDto](doc//SendVerificationCodeDto.md)
+ - [SettingsDto](doc//SettingsDto.md)
  - [SimpleDataDto](doc//SimpleDataDto.md)
  - [SimpleDataDtoPagedResultDto](doc//SimpleDataDtoPagedResultDto.md)
  - [StorageObjectCredentials](doc//StorageObjectCredentials.md)
@@ -269,6 +274,8 @@ Class | Method | HTTP request | Description
  - [TenantUpdateDto](doc//TenantUpdateDto.md)
  - [TimeZone](doc//TimeZone.md)
  - [TimingDto](doc//TimingDto.md)
+ - [TodoOrderBy](doc//TodoOrderBy.md)
+ - [TodoSettingsDto](doc//TodoSettingsDto.md)
  - [TypeApiDescriptionModel](doc//TypeApiDescriptionModel.md)
  - [UpdateEmailSettingsDto](doc//UpdateEmailSettingsDto.md)
  - [UpdateFeatureDto](doc//UpdateFeatureDto.md)

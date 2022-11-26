@@ -55,8 +55,14 @@ String parameterToString(dynamic value) {
   if (value is DateTime) {
     return value.toUtc().toIso8601String();
   }
+  if (value is AppThemeMode) {
+    return AppThemeModeTypeTransformer().encode(value).toString();
+  }
   if (value is LoginResultType) {
     return LoginResultTypeTypeTransformer().encode(value).toString();
+  }
+  if (value is TodoOrderBy) {
+    return TodoOrderByTypeTransformer().encode(value).toString();
   }
   return value.toString();
 }

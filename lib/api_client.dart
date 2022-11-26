@@ -193,6 +193,10 @@ class ApiClient {
           return AppReleaseDto.fromJson(value);
         case 'AppReleaseDtoPagedResultDto':
           return AppReleaseDtoPagedResultDto.fromJson(value);
+        case 'AppTheme':
+          return AppTheme.fromJson(value);
+        case 'AppThemeMode':
+          return AppThemeModeTypeTransformer().decode(value);
         case 'AppUserScoreDto':
           return AppUserScoreDto.fromJson(value);
         case 'ApplicationApiDescriptionModel':
@@ -385,6 +389,8 @@ class ApiClient {
           return SendTestEmailInput.fromJson(value);
         case 'SendVerificationCodeDto':
           return SendVerificationCodeDto.fromJson(value);
+        case 'SettingsDto':
+          return SettingsDto.fromJson(value);
         case 'SimpleDataDto':
           return SimpleDataDto.fromJson(value);
         case 'SimpleDataDtoPagedResultDto':
@@ -413,6 +419,10 @@ class ApiClient {
           return TimeZone.fromJson(value);
         case 'TimingDto':
           return TimingDto.fromJson(value);
+        case 'TodoOrderBy':
+          return TodoOrderByTypeTransformer().decode(value);
+        case 'TodoSettingsDto':
+          return TodoSettingsDto.fromJson(value);
         case 'TypeApiDescriptionModel':
           return TypeApiDescriptionModel.fromJson(value);
         case 'UpdateEmailSettingsDto':
