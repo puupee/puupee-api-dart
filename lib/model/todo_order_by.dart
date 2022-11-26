@@ -16,36 +16,36 @@ class TodoOrderBy {
   const TodoOrderBy._(this.value);
 
   /// The underlying value of this enum member.
-  final int value;
+  final String value;
 
   @override
-  String toString() => value.toString();
+  String toString() => value;
 
-  int toJson() => value;
+  String toJson() => value;
 
-  static const number0 = TodoOrderBy._(0);
-  static const number1 = TodoOrderBy._(1);
-  static const number2 = TodoOrderBy._(2);
-  static const number3 = TodoOrderBy._(3);
-  static const number4 = TodoOrderBy._(4);
-  static const number5 = TodoOrderBy._(5);
-  static const number6 = TodoOrderBy._(6);
-  static const number7 = TodoOrderBy._(7);
-  static const number8 = TodoOrderBy._(8);
-  static const number9 = TodoOrderBy._(9);
+  static const creationTime = TodoOrderBy._(r'CreationTime');
+  static const creationTimeDesc = TodoOrderBy._(r'CreationTimeDesc');
+  static const lastModificationTime = TodoOrderBy._(r'LastModificationTime');
+  static const lastModificationTimeDesc = TodoOrderBy._(r'LastModificationTimeDesc');
+  static const title = TodoOrderBy._(r'Title');
+  static const titleDesc = TodoOrderBy._(r'TitleDesc');
+  static const priority = TodoOrderBy._(r'Priority');
+  static const priorityDesc = TodoOrderBy._(r'PriorityDesc');
+  static const tag = TodoOrderBy._(r'Tag');
+  static const tagDesc = TodoOrderBy._(r'TagDesc');
 
   /// List of all possible values in this [enum][TodoOrderBy].
   static const values = <TodoOrderBy>[
-    number0,
-    number1,
-    number2,
-    number3,
-    number4,
-    number5,
-    number6,
-    number7,
-    number8,
-    number9,
+    creationTime,
+    creationTimeDesc,
+    lastModificationTime,
+    lastModificationTimeDesc,
+    title,
+    titleDesc,
+    priority,
+    priorityDesc,
+    tag,
+    tagDesc,
   ];
 
   static TodoOrderBy? fromJson(dynamic value) => TodoOrderByTypeTransformer().decode(value);
@@ -64,14 +64,14 @@ class TodoOrderBy {
   }
 }
 
-/// Transformation class that can [encode] an instance of [TodoOrderBy] to int,
+/// Transformation class that can [encode] an instance of [TodoOrderBy] to String,
 /// and [decode] dynamic data back to [TodoOrderBy].
 class TodoOrderByTypeTransformer {
   factory TodoOrderByTypeTransformer() => _instance ??= const TodoOrderByTypeTransformer._();
 
   const TodoOrderByTypeTransformer._();
 
-  int encode(TodoOrderBy data) => data.value;
+  String encode(TodoOrderBy data) => data.value;
 
   /// Decodes a [dynamic value][data] to a TodoOrderBy.
   ///
@@ -84,16 +84,16 @@ class TodoOrderByTypeTransformer {
   TodoOrderBy? decode(dynamic data, {bool allowNull = true}) {
     if (data != null) {
       switch (data) {
-        case 0: return TodoOrderBy.number0;
-        case 1: return TodoOrderBy.number1;
-        case 2: return TodoOrderBy.number2;
-        case 3: return TodoOrderBy.number3;
-        case 4: return TodoOrderBy.number4;
-        case 5: return TodoOrderBy.number5;
-        case 6: return TodoOrderBy.number6;
-        case 7: return TodoOrderBy.number7;
-        case 8: return TodoOrderBy.number8;
-        case 9: return TodoOrderBy.number9;
+        case r'CreationTime': return TodoOrderBy.creationTime;
+        case r'CreationTimeDesc': return TodoOrderBy.creationTimeDesc;
+        case r'LastModificationTime': return TodoOrderBy.lastModificationTime;
+        case r'LastModificationTimeDesc': return TodoOrderBy.lastModificationTimeDesc;
+        case r'Title': return TodoOrderBy.title;
+        case r'TitleDesc': return TodoOrderBy.titleDesc;
+        case r'Priority': return TodoOrderBy.priority;
+        case r'PriorityDesc': return TodoOrderBy.priorityDesc;
+        case r'Tag': return TodoOrderBy.tag;
+        case r'TagDesc': return TodoOrderBy.tagDesc;
         default:
           if (!allowNull) {
             throw ArgumentError('Unknown enum value to decode: $data');

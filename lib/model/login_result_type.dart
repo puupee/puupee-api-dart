@@ -16,26 +16,26 @@ class LoginResultType {
   const LoginResultType._(this.value);
 
   /// The underlying value of this enum member.
-  final int value;
+  final String value;
 
   @override
-  String toString() => value.toString();
+  String toString() => value;
 
-  int toJson() => value;
+  String toJson() => value;
 
-  static const number1 = LoginResultType._(1);
-  static const number2 = LoginResultType._(2);
-  static const number3 = LoginResultType._(3);
-  static const number4 = LoginResultType._(4);
-  static const number5 = LoginResultType._(5);
+  static const success = LoginResultType._(r'Success');
+  static const invalidUserNameOrPassword = LoginResultType._(r'InvalidUserNameOrPassword');
+  static const notAllowed = LoginResultType._(r'NotAllowed');
+  static const lockedOut = LoginResultType._(r'LockedOut');
+  static const requiresTwoFactor = LoginResultType._(r'RequiresTwoFactor');
 
   /// List of all possible values in this [enum][LoginResultType].
   static const values = <LoginResultType>[
-    number1,
-    number2,
-    number3,
-    number4,
-    number5,
+    success,
+    invalidUserNameOrPassword,
+    notAllowed,
+    lockedOut,
+    requiresTwoFactor,
   ];
 
   static LoginResultType? fromJson(dynamic value) => LoginResultTypeTypeTransformer().decode(value);
@@ -54,14 +54,14 @@ class LoginResultType {
   }
 }
 
-/// Transformation class that can [encode] an instance of [LoginResultType] to int,
+/// Transformation class that can [encode] an instance of [LoginResultType] to String,
 /// and [decode] dynamic data back to [LoginResultType].
 class LoginResultTypeTypeTransformer {
   factory LoginResultTypeTypeTransformer() => _instance ??= const LoginResultTypeTypeTransformer._();
 
   const LoginResultTypeTypeTransformer._();
 
-  int encode(LoginResultType data) => data.value;
+  String encode(LoginResultType data) => data.value;
 
   /// Decodes a [dynamic value][data] to a LoginResultType.
   ///
@@ -74,11 +74,11 @@ class LoginResultTypeTypeTransformer {
   LoginResultType? decode(dynamic data, {bool allowNull = true}) {
     if (data != null) {
       switch (data) {
-        case 1: return LoginResultType.number1;
-        case 2: return LoginResultType.number2;
-        case 3: return LoginResultType.number3;
-        case 4: return LoginResultType.number4;
-        case 5: return LoginResultType.number5;
+        case r'Success': return LoginResultType.success;
+        case r'InvalidUserNameOrPassword': return LoginResultType.invalidUserNameOrPassword;
+        case r'NotAllowed': return LoginResultType.notAllowed;
+        case r'LockedOut': return LoginResultType.lockedOut;
+        case r'RequiresTwoFactor': return LoginResultType.requiresTwoFactor;
         default:
           if (!allowNull) {
             throw ArgumentError('Unknown enum value to decode: $data');

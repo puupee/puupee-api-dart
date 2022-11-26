@@ -16,22 +16,22 @@ class AppThemeMode {
   const AppThemeMode._(this.value);
 
   /// The underlying value of this enum member.
-  final int value;
+  final String value;
 
   @override
-  String toString() => value.toString();
+  String toString() => value;
 
-  int toJson() => value;
+  String toJson() => value;
 
-  static const number0 = AppThemeMode._(0);
-  static const number1 = AppThemeMode._(1);
-  static const number2 = AppThemeMode._(2);
+  static const system = AppThemeMode._(r'System');
+  static const light = AppThemeMode._(r'Light');
+  static const dark = AppThemeMode._(r'Dark');
 
   /// List of all possible values in this [enum][AppThemeMode].
   static const values = <AppThemeMode>[
-    number0,
-    number1,
-    number2,
+    system,
+    light,
+    dark,
   ];
 
   static AppThemeMode? fromJson(dynamic value) => AppThemeModeTypeTransformer().decode(value);
@@ -50,14 +50,14 @@ class AppThemeMode {
   }
 }
 
-/// Transformation class that can [encode] an instance of [AppThemeMode] to int,
+/// Transformation class that can [encode] an instance of [AppThemeMode] to String,
 /// and [decode] dynamic data back to [AppThemeMode].
 class AppThemeModeTypeTransformer {
   factory AppThemeModeTypeTransformer() => _instance ??= const AppThemeModeTypeTransformer._();
 
   const AppThemeModeTypeTransformer._();
 
-  int encode(AppThemeMode data) => data.value;
+  String encode(AppThemeMode data) => data.value;
 
   /// Decodes a [dynamic value][data] to a AppThemeMode.
   ///
@@ -70,9 +70,9 @@ class AppThemeModeTypeTransformer {
   AppThemeMode? decode(dynamic data, {bool allowNull = true}) {
     if (data != null) {
       switch (data) {
-        case 0: return AppThemeMode.number0;
-        case 1: return AppThemeMode.number1;
-        case 2: return AppThemeMode.number2;
+        case r'System': return AppThemeMode.system;
+        case r'Light': return AppThemeMode.light;
+        case r'Dark': return AppThemeMode.dark;
         default:
           if (!allowNull) {
             throw ArgumentError('Unknown enum value to decode: $data');
