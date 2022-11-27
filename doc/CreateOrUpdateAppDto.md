@@ -8,6 +8,7 @@ import 'package:puupee_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**appId** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **displayName** | **String** |  | [optional] 
 **framework** | **String** |  | [optional] 

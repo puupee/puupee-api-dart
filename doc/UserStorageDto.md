@@ -8,6 +8,8 @@ import 'package:puupee_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**name** | **String** |  | [optional] 
+**displayName** | **String** |  | [optional] 
 **maxSize** | **int** |  | [optional] 
 **currentSize** | **int** |  | [optional] 
 **totalCount** | **int** |  | [optional] 

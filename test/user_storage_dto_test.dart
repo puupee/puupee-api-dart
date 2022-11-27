@@ -16,6 +16,16 @@ void main() {
   // final instance = UserStorageDto();
 
   group('test UserStorageDto', () {
+    // String name
+    test('to test the property `name`', () async {
+      // TODO
+    });
+
+    // String displayName
+    test('to test the property `displayName`', () async {
+      // TODO
+    });
+
     // int maxSize
     test('to test the property `maxSize`', () async {
       // TODO

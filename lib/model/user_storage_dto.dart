@@ -13,11 +13,17 @@ part of puupee_api;
 class UserStorageDto {
   /// Returns a new [UserStorageDto] instance.
   UserStorageDto({
+    this.name,
+    this.displayName,
     this.maxSize,
     this.currentSize,
     this.totalCount,
     this.items = const [],
   });
+
+  String? name;
+
+  String? displayName;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -47,6 +53,8 @@ class UserStorageDto {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is UserStorageDto &&
+     other.name == name &&
+     other.displayName == displayName &&
      other.maxSize == maxSize &&
      other.currentSize == currentSize &&
      other.totalCount == totalCount &&
@@ -55,16 +63,28 @@ class UserStorageDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
+    (name == null ? 0 : name!.hashCode) +
+    (displayName == null ? 0 : displayName!.hashCode) +
     (maxSize == null ? 0 : maxSize!.hashCode) +
     (currentSize == null ? 0 : currentSize!.hashCode) +
     (totalCount == null ? 0 : totalCount!.hashCode) +
     (items == null ? 0 : items!.hashCode);
 
   @override
-  String toString() => 'UserStorageDto[maxSize=$maxSize, currentSize=$currentSize, totalCount=$totalCount, items=$items]';
+  String toString() => 'UserStorageDto[name=$name, displayName=$displayName, maxSize=$maxSize, currentSize=$currentSize, totalCount=$totalCount, items=$items]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
+    if (this.name != null) {
+      json[r'name'] = this.name;
+    } else {
+      json[r'name'] = null;
+    }
+    if (this.displayName != null) {
+      json[r'displayName'] = this.displayName;
+    } else {
+      json[r'displayName'] = null;
+    }
     if (this.maxSize != null) {
       json[r'maxSize'] = this.maxSize;
     } else {
@@ -107,6 +127,8 @@ class UserStorageDto {
       }());
 
       return UserStorageDto(
+        name: mapValueOfType<String>(json, r'name'),
+        displayName: mapValueOfType<String>(json, r'displayName'),
         maxSize: mapValueOfType<int>(json, r'maxSize'),
         currentSize: mapValueOfType<int>(json, r'currentSize'),
         totalCount: mapValueOfType<int>(json, r'totalCount'),

@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **isDeleted** | **bool** |  | [optional] 
 **deleterId** | **String** |  | [optional] 
 **deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
+**appId** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **displayName** | **String** |  | [optional] 
 **fromework** | **String** |  | [optional] 
