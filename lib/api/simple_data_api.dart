@@ -179,13 +179,13 @@ class SimpleDataApi {
   /// Performs an HTTP 'POST /api/app/simple-data/save' operation and returns the [Response].
   /// Parameters:
   ///
-  /// * [SimpleDataDto] simpleDataDto:
-  Future<Response> apiAppSimpleDataSavePostWithHttpInfo({ SimpleDataDto? simpleDataDto, }) async {
+  /// * [SimpleDataDto] body:
+  Future<Response> apiAppSimpleDataSavePostWithHttpInfo({ SimpleDataDto? body, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/app/simple-data/save';
 
     // ignore: prefer_final_locals
-    Object? postBody = simpleDataDto;
+    Object? postBody = body;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
@@ -207,9 +207,9 @@ class SimpleDataApi {
 
   /// Parameters:
   ///
-  /// * [SimpleDataDto] simpleDataDto:
-  Future<SimpleDataDto?> apiAppSimpleDataSavePost({ SimpleDataDto? simpleDataDto, }) async {
-    final response = await apiAppSimpleDataSavePostWithHttpInfo( simpleDataDto: simpleDataDto, );
+  /// * [SimpleDataDto] body:
+  Future<SimpleDataDto?> apiAppSimpleDataSavePost({ SimpleDataDto? body, }) async {
+    final response = await apiAppSimpleDataSavePostWithHttpInfo( body: body, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

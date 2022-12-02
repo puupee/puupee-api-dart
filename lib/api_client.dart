@@ -217,6 +217,8 @@ class ApiClient {
           return ApplicationLocalizationResourceDto.fromJson(value);
         case 'ApplicationSettingConfigurationDto':
           return ApplicationSettingConfigurationDto.fromJson(value);
+        case 'BindDeviceDto':
+          return BindDeviceDto.fromJson(value);
         case 'BooleanKeyValue':
           return BooleanKeyValue.fromJson(value);
         case 'BooleanSetKeyValueDto':

@@ -25,16 +25,34 @@ class IdentityUserCreateDto {
     required this.password,
   });
 
-  Map<String, Object>? extraProperties;
+  Map<String, Object> extraProperties;
 
   String userName;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? name;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? surname;
 
   String email;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? phoneNumber;
 
   ///
@@ -53,7 +71,7 @@ class IdentityUserCreateDto {
   ///
   bool? lockoutEnabled;
 
-  List<String>? roleNames;
+  List<String> roleNames;
 
   String password;
 
@@ -73,7 +91,7 @@ class IdentityUserCreateDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (extraProperties == null ? 0 : extraProperties!.hashCode) +
+    (extraProperties.hashCode) +
     (userName.hashCode) +
     (name == null ? 0 : name!.hashCode) +
     (surname == null ? 0 : surname!.hashCode) +
@@ -81,7 +99,7 @@ class IdentityUserCreateDto {
     (phoneNumber == null ? 0 : phoneNumber!.hashCode) +
     (isActive == null ? 0 : isActive!.hashCode) +
     (lockoutEnabled == null ? 0 : lockoutEnabled!.hashCode) +
-    (roleNames == null ? 0 : roleNames!.hashCode) +
+    (roleNames.hashCode) +
     (password.hashCode);
 
   @override
@@ -89,11 +107,7 @@ class IdentityUserCreateDto {
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.extraProperties != null) {
       json[r'extraProperties'] = this.extraProperties;
-    } else {
-      json[r'extraProperties'] = null;
-    }
       json[r'userName'] = this.userName;
     if (this.name != null) {
       json[r'name'] = this.name;
@@ -121,11 +135,7 @@ class IdentityUserCreateDto {
     } else {
       json[r'lockoutEnabled'] = null;
     }
-    if (this.roleNames != null) {
       json[r'roleNames'] = this.roleNames;
-    } else {
-      json[r'roleNames'] = null;
-    }
       json[r'password'] = this.password;
     return json;
   }

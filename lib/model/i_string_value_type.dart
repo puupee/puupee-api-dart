@@ -18,9 +18,15 @@ class IStringValueType {
     this.validator,
   });
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? name;
 
-  Map<String, Object>? properties;
+  Map<String, Object> properties;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -40,7 +46,7 @@ class IStringValueType {
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (name == null ? 0 : name!.hashCode) +
-    (properties == null ? 0 : properties!.hashCode) +
+    (properties.hashCode) +
     (validator == null ? 0 : validator!.hashCode);
 
   @override
@@ -53,11 +59,7 @@ class IStringValueType {
     } else {
       json[r'name'] = null;
     }
-    if (this.properties != null) {
       json[r'properties'] = this.properties;
-    } else {
-      json[r'properties'] = null;
-    }
     if (this.validator != null) {
       json[r'validator'] = this.validator;
     } else {

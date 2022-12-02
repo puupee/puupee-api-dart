@@ -25,14 +25,44 @@ class ParameterApiDescriptionModel {
     this.descriptorName,
   });
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? nameOnMethod;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? name;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? jsonName;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? type;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? typeSimple;
 
   ///
@@ -43,12 +73,30 @@ class ParameterApiDescriptionModel {
   ///
   bool? isOptional;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   Object? defaultValue;
 
-  List<String>? constraintTypes;
+  List<String> constraintTypes;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? bindingSourceId;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? descriptorName;
 
   @override
@@ -74,7 +122,7 @@ class ParameterApiDescriptionModel {
     (typeSimple == null ? 0 : typeSimple!.hashCode) +
     (isOptional == null ? 0 : isOptional!.hashCode) +
     (defaultValue == null ? 0 : defaultValue!.hashCode) +
-    (constraintTypes == null ? 0 : constraintTypes!.hashCode) +
+    (constraintTypes.hashCode) +
     (bindingSourceId == null ? 0 : bindingSourceId!.hashCode) +
     (descriptorName == null ? 0 : descriptorName!.hashCode);
 
@@ -118,11 +166,7 @@ class ParameterApiDescriptionModel {
     } else {
       json[r'defaultValue'] = null;
     }
-    if (this.constraintTypes != null) {
       json[r'constraintTypes'] = this.constraintTypes;
-    } else {
-      json[r'constraintTypes'] = null;
-    }
     if (this.bindingSourceId != null) {
       json[r'bindingSourceId'] = this.bindingSourceId;
     } else {

@@ -17,9 +17,15 @@ class GetPermissionListResultDto {
     this.groups = const [],
   });
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? entityDisplayName;
 
-  List<PermissionGroupDto>? groups;
+  List<PermissionGroupDto> groups;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetPermissionListResultDto &&
@@ -30,7 +36,7 @@ class GetPermissionListResultDto {
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (entityDisplayName == null ? 0 : entityDisplayName!.hashCode) +
-    (groups == null ? 0 : groups!.hashCode);
+    (groups.hashCode);
 
   @override
   String toString() => 'GetPermissionListResultDto[entityDisplayName=$entityDisplayName, groups=$groups]';
@@ -42,11 +48,7 @@ class GetPermissionListResultDto {
     } else {
       json[r'entityDisplayName'] = null;
     }
-    if (this.groups != null) {
       json[r'groups'] = this.groups;
-    } else {
-      json[r'groups'] = null;
-    }
     return json;
   }
 

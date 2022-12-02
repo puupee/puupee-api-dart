@@ -31,6 +31,8 @@ Method | HTTP request | Description
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = KeyValueApi();
 final key = key_example; // String | 
@@ -55,7 +57,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -72,6 +74,8 @@ No authorization required
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = KeyValueApi();
 final key = key_example; // String | 
@@ -96,7 +100,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -113,6 +117,8 @@ No authorization required
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = KeyValueApi();
 final key = key_example; // String | 
@@ -137,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -154,6 +160,8 @@ No authorization required
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = KeyValueApi();
 final key = key_example; // String | 
@@ -178,7 +186,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -195,6 +203,8 @@ No authorization required
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = KeyValueApi();
 final key = key_example; // String | 
@@ -219,7 +229,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -229,20 +239,22 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppKeyValueSetBoolPost**
-> apiAppKeyValueSetBoolPost(key, booleanSetKeyValueDto)
+> apiAppKeyValueSetBoolPost(key, body)
 
 
 
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = KeyValueApi();
 final key = key_example; // String | 
-final booleanSetKeyValueDto = BooleanSetKeyValueDto(); // BooleanSetKeyValueDto | 
+final body = BooleanSetKeyValueDto(); // BooleanSetKeyValueDto | 
 
 try {
-    api_instance.apiAppKeyValueSetBoolPost(key, booleanSetKeyValueDto);
+    api_instance.apiAppKeyValueSetBoolPost(key, body);
 } catch (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueSetBoolPost: $e\n');
 }
@@ -253,7 +265,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**|  | [optional] 
- **booleanSetKeyValueDto** | [**BooleanSetKeyValueDto**](BooleanSetKeyValueDto.md)|  | [optional] 
+ **body** | [**BooleanSetKeyValueDto**](BooleanSetKeyValueDto.md)|  | [optional] 
 
 ### Return type
 
@@ -261,7 +273,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -271,20 +283,22 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppKeyValueSetDateTimePost**
-> apiAppKeyValueSetDateTimePost(key, dateTimeSetKeyValueDto)
+> apiAppKeyValueSetDateTimePost(key, body)
 
 
 
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = KeyValueApi();
 final key = key_example; // String | 
-final dateTimeSetKeyValueDto = DateTimeSetKeyValueDto(); // DateTimeSetKeyValueDto | 
+final body = DateTimeSetKeyValueDto(); // DateTimeSetKeyValueDto | 
 
 try {
-    api_instance.apiAppKeyValueSetDateTimePost(key, dateTimeSetKeyValueDto);
+    api_instance.apiAppKeyValueSetDateTimePost(key, body);
 } catch (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueSetDateTimePost: $e\n');
 }
@@ -295,7 +309,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**|  | [optional] 
- **dateTimeSetKeyValueDto** | [**DateTimeSetKeyValueDto**](DateTimeSetKeyValueDto.md)|  | [optional] 
+ **body** | [**DateTimeSetKeyValueDto**](DateTimeSetKeyValueDto.md)|  | [optional] 
 
 ### Return type
 
@@ -303,7 +317,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -313,20 +327,22 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppKeyValueSetDecimalPost**
-> apiAppKeyValueSetDecimalPost(key, decimalSetKeyValueDto)
+> apiAppKeyValueSetDecimalPost(key, body)
 
 
 
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = KeyValueApi();
 final key = key_example; // String | 
-final decimalSetKeyValueDto = DecimalSetKeyValueDto(); // DecimalSetKeyValueDto | 
+final body = DecimalSetKeyValueDto(); // DecimalSetKeyValueDto | 
 
 try {
-    api_instance.apiAppKeyValueSetDecimalPost(key, decimalSetKeyValueDto);
+    api_instance.apiAppKeyValueSetDecimalPost(key, body);
 } catch (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueSetDecimalPost: $e\n');
 }
@@ -337,7 +353,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**|  | [optional] 
- **decimalSetKeyValueDto** | [**DecimalSetKeyValueDto**](DecimalSetKeyValueDto.md)|  | [optional] 
+ **body** | [**DecimalSetKeyValueDto**](DecimalSetKeyValueDto.md)|  | [optional] 
 
 ### Return type
 
@@ -345,7 +361,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -355,20 +371,22 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppKeyValueSetDoublePost**
-> apiAppKeyValueSetDoublePost(key, doubleSetKeyValueDto)
+> apiAppKeyValueSetDoublePost(key, body)
 
 
 
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = KeyValueApi();
 final key = key_example; // String | 
-final doubleSetKeyValueDto = DoubleSetKeyValueDto(); // DoubleSetKeyValueDto | 
+final body = DoubleSetKeyValueDto(); // DoubleSetKeyValueDto | 
 
 try {
-    api_instance.apiAppKeyValueSetDoublePost(key, doubleSetKeyValueDto);
+    api_instance.apiAppKeyValueSetDoublePost(key, body);
 } catch (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueSetDoublePost: $e\n');
 }
@@ -379,7 +397,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**|  | [optional] 
- **doubleSetKeyValueDto** | [**DoubleSetKeyValueDto**](DoubleSetKeyValueDto.md)|  | [optional] 
+ **body** | [**DoubleSetKeyValueDto**](DoubleSetKeyValueDto.md)|  | [optional] 
 
 ### Return type
 
@@ -387,7 +405,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -397,20 +415,22 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppKeyValueSetIntPost**
-> apiAppKeyValueSetIntPost(key, int32SetKeyValueDto)
+> apiAppKeyValueSetIntPost(key, body)
 
 
 
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = KeyValueApi();
 final key = key_example; // String | 
-final int32SetKeyValueDto = Int32SetKeyValueDto(); // Int32SetKeyValueDto | 
+final body = Int32SetKeyValueDto(); // Int32SetKeyValueDto | 
 
 try {
-    api_instance.apiAppKeyValueSetIntPost(key, int32SetKeyValueDto);
+    api_instance.apiAppKeyValueSetIntPost(key, body);
 } catch (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueSetIntPost: $e\n');
 }
@@ -421,7 +441,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**|  | [optional] 
- **int32SetKeyValueDto** | [**Int32SetKeyValueDto**](Int32SetKeyValueDto.md)|  | [optional] 
+ **body** | [**Int32SetKeyValueDto**](Int32SetKeyValueDto.md)|  | [optional] 
 
 ### Return type
 
@@ -429,7 +449,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -439,20 +459,22 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppKeyValueSetStringPost**
-> apiAppKeyValueSetStringPost(key, stringSetKeyValueDto)
+> apiAppKeyValueSetStringPost(key, body)
 
 
 
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = KeyValueApi();
 final key = key_example; // String | 
-final stringSetKeyValueDto = StringSetKeyValueDto(); // StringSetKeyValueDto | 
+final body = StringSetKeyValueDto(); // StringSetKeyValueDto | 
 
 try {
-    api_instance.apiAppKeyValueSetStringPost(key, stringSetKeyValueDto);
+    api_instance.apiAppKeyValueSetStringPost(key, body);
 } catch (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueSetStringPost: $e\n');
 }
@@ -463,7 +485,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**|  | [optional] 
- **stringSetKeyValueDto** | [**StringSetKeyValueDto**](StringSetKeyValueDto.md)|  | [optional] 
+ **body** | [**StringSetKeyValueDto**](StringSetKeyValueDto.md)|  | [optional] 
 
 ### Return type
 
@@ -471,7 +493,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -488,6 +510,8 @@ No authorization required
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = KeyValueApi();
 final key = key_example; // String | 
@@ -512,7 +536,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 

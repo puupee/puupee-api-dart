@@ -20,15 +20,33 @@ class RemoteServiceErrorInfo {
     this.validationErrors = const [],
   });
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? code;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? message;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? details;
 
-  Map<String, Object>? data;
+  Map<String, Object> data;
 
-  List<RemoteServiceValidationErrorInfo>? validationErrors;
+  List<RemoteServiceValidationErrorInfo> validationErrors;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is RemoteServiceErrorInfo &&
@@ -44,8 +62,8 @@ class RemoteServiceErrorInfo {
     (code == null ? 0 : code!.hashCode) +
     (message == null ? 0 : message!.hashCode) +
     (details == null ? 0 : details!.hashCode) +
-    (data == null ? 0 : data!.hashCode) +
-    (validationErrors == null ? 0 : validationErrors!.hashCode);
+    (data.hashCode) +
+    (validationErrors.hashCode);
 
   @override
   String toString() => 'RemoteServiceErrorInfo[code=$code, message=$message, details=$details, data=$data, validationErrors=$validationErrors]';
@@ -67,16 +85,8 @@ class RemoteServiceErrorInfo {
     } else {
       json[r'details'] = null;
     }
-    if (this.data != null) {
       json[r'data'] = this.data;
-    } else {
-      json[r'data'] = null;
-    }
-    if (this.validationErrors != null) {
       json[r'validationErrors'] = this.validationErrors;
-    } else {
-      json[r'validationErrors'] = null;
-    }
     return json;
   }
 

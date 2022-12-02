@@ -17,7 +17,7 @@ void main() {
   // final instance = VerificationApi();
 
   group('tests for VerificationApi', () {
-    //Future apiAppVerificationSendCodePost({ SendVerificationCodeDto sendVerificationCodeDto }) async
+    //Future apiAppVerificationSendCodePost({ SendVerificationCodeDto body }) async
     test('test apiAppVerificationSendCodePost', () async {
       // TODO
     });

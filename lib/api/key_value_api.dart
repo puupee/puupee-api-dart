@@ -276,13 +276,13 @@ class KeyValueApi {
   ///
   /// * [String] key:
   ///
-  /// * [BooleanSetKeyValueDto] booleanSetKeyValueDto:
-  Future<Response> apiAppKeyValueSetBoolPostWithHttpInfo({ String? key, BooleanSetKeyValueDto? booleanSetKeyValueDto, }) async {
+  /// * [BooleanSetKeyValueDto] body:
+  Future<Response> apiAppKeyValueSetBoolPostWithHttpInfo({ String? key, BooleanSetKeyValueDto? body, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/app/key-value/set-bool';
 
     // ignore: prefer_final_locals
-    Object? postBody = booleanSetKeyValueDto;
+    Object? postBody = body;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
@@ -310,9 +310,9 @@ class KeyValueApi {
   ///
   /// * [String] key:
   ///
-  /// * [BooleanSetKeyValueDto] booleanSetKeyValueDto:
-  Future<void> apiAppKeyValueSetBoolPost({ String? key, BooleanSetKeyValueDto? booleanSetKeyValueDto, }) async {
-    final response = await apiAppKeyValueSetBoolPostWithHttpInfo( key: key, booleanSetKeyValueDto: booleanSetKeyValueDto, );
+  /// * [BooleanSetKeyValueDto] body:
+  Future<void> apiAppKeyValueSetBoolPost({ String? key, BooleanSetKeyValueDto? body, }) async {
+    final response = await apiAppKeyValueSetBoolPostWithHttpInfo( key: key, body: body, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -323,13 +323,13 @@ class KeyValueApi {
   ///
   /// * [String] key:
   ///
-  /// * [DateTimeSetKeyValueDto] dateTimeSetKeyValueDto:
-  Future<Response> apiAppKeyValueSetDateTimePostWithHttpInfo({ String? key, DateTimeSetKeyValueDto? dateTimeSetKeyValueDto, }) async {
+  /// * [DateTimeSetKeyValueDto] body:
+  Future<Response> apiAppKeyValueSetDateTimePostWithHttpInfo({ String? key, DateTimeSetKeyValueDto? body, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/app/key-value/set-date-time';
 
     // ignore: prefer_final_locals
-    Object? postBody = dateTimeSetKeyValueDto;
+    Object? postBody = body;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
@@ -357,9 +357,9 @@ class KeyValueApi {
   ///
   /// * [String] key:
   ///
-  /// * [DateTimeSetKeyValueDto] dateTimeSetKeyValueDto:
-  Future<void> apiAppKeyValueSetDateTimePost({ String? key, DateTimeSetKeyValueDto? dateTimeSetKeyValueDto, }) async {
-    final response = await apiAppKeyValueSetDateTimePostWithHttpInfo( key: key, dateTimeSetKeyValueDto: dateTimeSetKeyValueDto, );
+  /// * [DateTimeSetKeyValueDto] body:
+  Future<void> apiAppKeyValueSetDateTimePost({ String? key, DateTimeSetKeyValueDto? body, }) async {
+    final response = await apiAppKeyValueSetDateTimePostWithHttpInfo( key: key, body: body, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -370,13 +370,13 @@ class KeyValueApi {
   ///
   /// * [String] key:
   ///
-  /// * [DecimalSetKeyValueDto] decimalSetKeyValueDto:
-  Future<Response> apiAppKeyValueSetDecimalPostWithHttpInfo({ String? key, DecimalSetKeyValueDto? decimalSetKeyValueDto, }) async {
+  /// * [DecimalSetKeyValueDto] body:
+  Future<Response> apiAppKeyValueSetDecimalPostWithHttpInfo({ String? key, DecimalSetKeyValueDto? body, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/app/key-value/set-decimal';
 
     // ignore: prefer_final_locals
-    Object? postBody = decimalSetKeyValueDto;
+    Object? postBody = body;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
@@ -404,9 +404,9 @@ class KeyValueApi {
   ///
   /// * [String] key:
   ///
-  /// * [DecimalSetKeyValueDto] decimalSetKeyValueDto:
-  Future<void> apiAppKeyValueSetDecimalPost({ String? key, DecimalSetKeyValueDto? decimalSetKeyValueDto, }) async {
-    final response = await apiAppKeyValueSetDecimalPostWithHttpInfo( key: key, decimalSetKeyValueDto: decimalSetKeyValueDto, );
+  /// * [DecimalSetKeyValueDto] body:
+  Future<void> apiAppKeyValueSetDecimalPost({ String? key, DecimalSetKeyValueDto? body, }) async {
+    final response = await apiAppKeyValueSetDecimalPostWithHttpInfo( key: key, body: body, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -417,13 +417,13 @@ class KeyValueApi {
   ///
   /// * [String] key:
   ///
-  /// * [DoubleSetKeyValueDto] doubleSetKeyValueDto:
-  Future<Response> apiAppKeyValueSetDoublePostWithHttpInfo({ String? key, DoubleSetKeyValueDto? doubleSetKeyValueDto, }) async {
+  /// * [DoubleSetKeyValueDto] body:
+  Future<Response> apiAppKeyValueSetDoublePostWithHttpInfo({ String? key, DoubleSetKeyValueDto? body, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/app/key-value/set-double';
 
     // ignore: prefer_final_locals
-    Object? postBody = doubleSetKeyValueDto;
+    Object? postBody = body;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
@@ -451,9 +451,9 @@ class KeyValueApi {
   ///
   /// * [String] key:
   ///
-  /// * [DoubleSetKeyValueDto] doubleSetKeyValueDto:
-  Future<void> apiAppKeyValueSetDoublePost({ String? key, DoubleSetKeyValueDto? doubleSetKeyValueDto, }) async {
-    final response = await apiAppKeyValueSetDoublePostWithHttpInfo( key: key, doubleSetKeyValueDto: doubleSetKeyValueDto, );
+  /// * [DoubleSetKeyValueDto] body:
+  Future<void> apiAppKeyValueSetDoublePost({ String? key, DoubleSetKeyValueDto? body, }) async {
+    final response = await apiAppKeyValueSetDoublePostWithHttpInfo( key: key, body: body, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -464,13 +464,13 @@ class KeyValueApi {
   ///
   /// * [String] key:
   ///
-  /// * [Int32SetKeyValueDto] int32SetKeyValueDto:
-  Future<Response> apiAppKeyValueSetIntPostWithHttpInfo({ String? key, Int32SetKeyValueDto? int32SetKeyValueDto, }) async {
+  /// * [Int32SetKeyValueDto] body:
+  Future<Response> apiAppKeyValueSetIntPostWithHttpInfo({ String? key, Int32SetKeyValueDto? body, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/app/key-value/set-int';
 
     // ignore: prefer_final_locals
-    Object? postBody = int32SetKeyValueDto;
+    Object? postBody = body;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
@@ -498,9 +498,9 @@ class KeyValueApi {
   ///
   /// * [String] key:
   ///
-  /// * [Int32SetKeyValueDto] int32SetKeyValueDto:
-  Future<void> apiAppKeyValueSetIntPost({ String? key, Int32SetKeyValueDto? int32SetKeyValueDto, }) async {
-    final response = await apiAppKeyValueSetIntPostWithHttpInfo( key: key, int32SetKeyValueDto: int32SetKeyValueDto, );
+  /// * [Int32SetKeyValueDto] body:
+  Future<void> apiAppKeyValueSetIntPost({ String? key, Int32SetKeyValueDto? body, }) async {
+    final response = await apiAppKeyValueSetIntPostWithHttpInfo( key: key, body: body, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -511,13 +511,13 @@ class KeyValueApi {
   ///
   /// * [String] key:
   ///
-  /// * [StringSetKeyValueDto] stringSetKeyValueDto:
-  Future<Response> apiAppKeyValueSetStringPostWithHttpInfo({ String? key, StringSetKeyValueDto? stringSetKeyValueDto, }) async {
+  /// * [StringSetKeyValueDto] body:
+  Future<Response> apiAppKeyValueSetStringPostWithHttpInfo({ String? key, StringSetKeyValueDto? body, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/app/key-value/set-string';
 
     // ignore: prefer_final_locals
-    Object? postBody = stringSetKeyValueDto;
+    Object? postBody = body;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
@@ -545,9 +545,9 @@ class KeyValueApi {
   ///
   /// * [String] key:
   ///
-  /// * [StringSetKeyValueDto] stringSetKeyValueDto:
-  Future<void> apiAppKeyValueSetStringPost({ String? key, StringSetKeyValueDto? stringSetKeyValueDto, }) async {
-    final response = await apiAppKeyValueSetStringPostWithHttpInfo( key: key, stringSetKeyValueDto: stringSetKeyValueDto, );
+  /// * [StringSetKeyValueDto] body:
+  Future<void> apiAppKeyValueSetStringPost({ String? key, StringSetKeyValueDto? body, }) async {
+    final response = await apiAppKeyValueSetStringPostWithHttpInfo( key: key, body: body, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

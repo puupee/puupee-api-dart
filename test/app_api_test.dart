@@ -37,12 +37,12 @@ void main() {
       // TODO
     });
 
-    //Future<AppDto> apiAppAppIdPut(String id, { CreateOrUpdateAppDto createOrUpdateAppDto }) async
+    //Future<AppDto> apiAppAppIdPut(String id, { CreateOrUpdateAppDto body }) async
     test('test apiAppAppIdPut', () async {
       // TODO
     });
 
-    //Future<AppDto> apiAppAppPost({ CreateOrUpdateAppDto createOrUpdateAppDto }) async
+    //Future<AppDto> apiAppAppPost({ CreateOrUpdateAppDto body }) async
     test('test apiAppAppPost', () async {
       // TODO
     });

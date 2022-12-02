@@ -22,11 +22,11 @@ class ApplicationLocalizationConfigurationDto {
     this.languageFilesMap = const {},
   });
 
-  Map<String, Map<String, String>>? values;
+  Map<String, Map<String, String>> values;
 
-  Map<String, ApplicationLocalizationResourceDto>? resources;
+  Map<String, ApplicationLocalizationResourceDto> resources;
 
-  List<LanguageInfo>? languages;
+  List<LanguageInfo> languages;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -36,11 +36,17 @@ class ApplicationLocalizationConfigurationDto {
   ///
   CurrentCultureDto? currentCulture;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? defaultResourceName;
 
-  Map<String, List<NameValue>>? languagesMap;
+  Map<String, List<NameValue>> languagesMap;
 
-  Map<String, List<NameValue>>? languageFilesMap;
+  Map<String, List<NameValue>> languageFilesMap;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ApplicationLocalizationConfigurationDto &&
@@ -55,34 +61,22 @@ class ApplicationLocalizationConfigurationDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (values == null ? 0 : values!.hashCode) +
-    (resources == null ? 0 : resources!.hashCode) +
-    (languages == null ? 0 : languages!.hashCode) +
+    (values.hashCode) +
+    (resources.hashCode) +
+    (languages.hashCode) +
     (currentCulture == null ? 0 : currentCulture!.hashCode) +
     (defaultResourceName == null ? 0 : defaultResourceName!.hashCode) +
-    (languagesMap == null ? 0 : languagesMap!.hashCode) +
-    (languageFilesMap == null ? 0 : languageFilesMap!.hashCode);
+    (languagesMap.hashCode) +
+    (languageFilesMap.hashCode);
 
   @override
   String toString() => 'ApplicationLocalizationConfigurationDto[values=$values, resources=$resources, languages=$languages, currentCulture=$currentCulture, defaultResourceName=$defaultResourceName, languagesMap=$languagesMap, languageFilesMap=$languageFilesMap]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.values != null) {
       json[r'values'] = this.values;
-    } else {
-      json[r'values'] = null;
-    }
-    if (this.resources != null) {
       json[r'resources'] = this.resources;
-    } else {
-      json[r'resources'] = null;
-    }
-    if (this.languages != null) {
       json[r'languages'] = this.languages;
-    } else {
-      json[r'languages'] = null;
-    }
     if (this.currentCulture != null) {
       json[r'currentCulture'] = this.currentCulture;
     } else {
@@ -93,16 +87,8 @@ class ApplicationLocalizationConfigurationDto {
     } else {
       json[r'defaultResourceName'] = null;
     }
-    if (this.languagesMap != null) {
       json[r'languagesMap'] = this.languagesMap;
-    } else {
-      json[r'languagesMap'] = null;
-    }
-    if (this.languageFilesMap != null) {
       json[r'languageFilesMap'] = this.languageFilesMap;
-    } else {
-      json[r'languageFilesMap'] = null;
-    }
     return json;
   }
 

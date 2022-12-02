@@ -20,15 +20,39 @@ class PermissionGroupDto {
     this.permissions = const [],
   });
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? name;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? displayName;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? displayNameKey;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? displayNameResource;
 
-  List<PermissionGrantInfoDto>? permissions;
+  List<PermissionGrantInfoDto> permissions;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is PermissionGroupDto &&
@@ -45,7 +69,7 @@ class PermissionGroupDto {
     (displayName == null ? 0 : displayName!.hashCode) +
     (displayNameKey == null ? 0 : displayNameKey!.hashCode) +
     (displayNameResource == null ? 0 : displayNameResource!.hashCode) +
-    (permissions == null ? 0 : permissions!.hashCode);
+    (permissions.hashCode);
 
   @override
   String toString() => 'PermissionGroupDto[name=$name, displayName=$displayName, displayNameKey=$displayNameKey, displayNameResource=$displayNameResource, permissions=$permissions]';
@@ -72,11 +96,7 @@ class PermissionGroupDto {
     } else {
       json[r'displayNameResource'] = null;
     }
-    if (this.permissions != null) {
       json[r'permissions'] = this.permissions;
-    } else {
-      json[r'permissions'] = null;
-    }
     return json;
   }
 

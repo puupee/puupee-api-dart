@@ -17,17 +17,22 @@ void main() {
   // final instance = DeviceApi();
 
   group('tests for DeviceApi', () {
+    //Future apiAppDeviceBindPost({ BindDeviceDto body }) async
+    test('test apiAppDeviceBindPost', () async {
+      // TODO
+    });
+
+    //Future apiAppDeviceDelete({ String token }) async
+    test('test apiAppDeviceDelete', () async {
+      // TODO
+    });
+
     //Future<DeviceDtoPagedResultDto> apiAppDeviceGet({ String sorting, int skipCount, int maxResultCount }) async
     test('test apiAppDeviceGet', () async {
       // TODO
     });
 
-    //Future apiAppDeviceIdDelete(String id) async
-    test('test apiAppDeviceIdDelete', () async {
-      // TODO
-    });
-
-    //Future apiAppDeviceRefreshPost({ RefreshDeviceStatusDto refreshDeviceStatusDto }) async
+    //Future apiAppDeviceRefreshPost({ RefreshDeviceStatusDto body }) async
     test('test apiAppDeviceRefreshPost', () async {
       // TODO
     });

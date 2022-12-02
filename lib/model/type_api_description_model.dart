@@ -21,6 +21,12 @@ class TypeApiDescriptionModel {
     this.properties = const [],
   });
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? baseType;
 
   ///
@@ -31,13 +37,13 @@ class TypeApiDescriptionModel {
   ///
   bool? isEnum;
 
-  List<String>? enumNames;
+  List<String> enumNames;
 
-  List<Object>? enumValues;
+  List<Object> enumValues;
 
-  List<String>? genericArguments;
+  List<String> genericArguments;
 
-  List<PropertyApiDescriptionModel>? properties;
+  List<PropertyApiDescriptionModel> properties;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is TypeApiDescriptionModel &&
@@ -53,10 +59,10 @@ class TypeApiDescriptionModel {
     // ignore: unnecessary_parenthesis
     (baseType == null ? 0 : baseType!.hashCode) +
     (isEnum == null ? 0 : isEnum!.hashCode) +
-    (enumNames == null ? 0 : enumNames!.hashCode) +
-    (enumValues == null ? 0 : enumValues!.hashCode) +
-    (genericArguments == null ? 0 : genericArguments!.hashCode) +
-    (properties == null ? 0 : properties!.hashCode);
+    (enumNames.hashCode) +
+    (enumValues.hashCode) +
+    (genericArguments.hashCode) +
+    (properties.hashCode);
 
   @override
   String toString() => 'TypeApiDescriptionModel[baseType=$baseType, isEnum=$isEnum, enumNames=$enumNames, enumValues=$enumValues, genericArguments=$genericArguments, properties=$properties]';
@@ -73,26 +79,10 @@ class TypeApiDescriptionModel {
     } else {
       json[r'isEnum'] = null;
     }
-    if (this.enumNames != null) {
       json[r'enumNames'] = this.enumNames;
-    } else {
-      json[r'enumNames'] = null;
-    }
-    if (this.enumValues != null) {
       json[r'enumValues'] = this.enumValues;
-    } else {
-      json[r'enumValues'] = null;
-    }
-    if (this.genericArguments != null) {
       json[r'genericArguments'] = this.genericArguments;
-    } else {
-      json[r'genericArguments'] = null;
-    }
-    if (this.properties != null) {
       json[r'properties'] = this.properties;
-    } else {
-      json[r'properties'] = null;
-    }
     return json;
   }
 

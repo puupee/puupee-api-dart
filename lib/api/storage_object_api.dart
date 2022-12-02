@@ -16,6 +16,49 @@ class StorageObjectApi {
 
   final ApiClient apiClient;
 
+  /// Performs an HTTP 'GET /api/app/storage-object/file' operation and returns the [Response].
+  /// Parameters:
+  ///
+  /// * [String] key:
+  Future<Response> apiAppStorageObjectFileGetWithHttpInfo({ String? key, }) async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/app/storage-object/file';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    if (key != null) {
+      queryParams.addAll(_queryParams('', 'key', key));
+    }
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Parameters:
+  ///
+  /// * [String] key:
+  Future<void> apiAppStorageObjectFileGet({ String? key, }) async {
+    final response = await apiAppStorageObjectFileGetWithHttpInfo( key: key, );
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+  }
+
   /// Performs an HTTP 'GET /api/app/storage-object/file-or-credentials' operation and returns the [Response].
   /// Parameters:
   ///
@@ -123,5 +166,48 @@ class StorageObjectApi {
     
     }
     return null;
+  }
+
+  /// Performs an HTTP 'GET /api/app/storage-object/thumb' operation and returns the [Response].
+  /// Parameters:
+  ///
+  /// * [String] key:
+  Future<Response> apiAppStorageObjectThumbGetWithHttpInfo({ String? key, }) async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/app/storage-object/thumb';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    if (key != null) {
+      queryParams.addAll(_queryParams('', 'key', key));
+    }
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Parameters:
+  ///
+  /// * [String] key:
+  Future<void> apiAppStorageObjectThumbGet({ String? key, }) async {
+    final response = await apiAppStorageObjectThumbGetWithHttpInfo( key: key, );
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
   }
 }

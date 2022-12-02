@@ -17,9 +17,15 @@ class ExtensionPropertyAttributeDto {
     this.config = const {},
   });
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? typeSimple;
 
-  Map<String, Object>? config;
+  Map<String, Object> config;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ExtensionPropertyAttributeDto &&
@@ -30,7 +36,7 @@ class ExtensionPropertyAttributeDto {
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (typeSimple == null ? 0 : typeSimple!.hashCode) +
-    (config == null ? 0 : config!.hashCode);
+    (config.hashCode);
 
   @override
   String toString() => 'ExtensionPropertyAttributeDto[typeSimple=$typeSimple, config=$config]';
@@ -42,11 +48,7 @@ class ExtensionPropertyAttributeDto {
     } else {
       json[r'typeSimple'] = null;
     }
-    if (this.config != null) {
       json[r'config'] = this.config;
-    } else {
-      json[r'config'] = null;
-    }
     return json;
   }
 

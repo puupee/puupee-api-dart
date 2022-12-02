@@ -16,7 +16,7 @@ class ApplicationAuthConfigurationDto {
     this.grantedPolicies = const {},
   });
 
-  Map<String, bool>? grantedPolicies;
+  Map<String, bool> grantedPolicies;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ApplicationAuthConfigurationDto &&
@@ -25,18 +25,14 @@ class ApplicationAuthConfigurationDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (grantedPolicies == null ? 0 : grantedPolicies!.hashCode);
+    (grantedPolicies.hashCode);
 
   @override
   String toString() => 'ApplicationAuthConfigurationDto[grantedPolicies=$grantedPolicies]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.grantedPolicies != null) {
       json[r'grantedPolicies'] = this.grantedPolicies;
-    } else {
-      json[r'grantedPolicies'] = null;
-    }
     return json;
   }
 

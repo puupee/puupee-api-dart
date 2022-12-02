@@ -11,11 +11,11 @@
 import 'package:puupee_api/api.dart';
 import 'package:test/test.dart';
 
-// tests for DeviceDto
+// tests for BindDeviceDto
 void main() {
-  // final instance = DeviceDto();
+  // final instance = BindDeviceDto();
 
-  group('test DeviceDto', () {
+  group('test BindDeviceDto', () {
     // String id
     test('to test the property `id`', () async {
       // TODO
@@ -66,8 +66,8 @@ void main() {
       // TODO
     });
 
-    // String platform
-    test('to test the property `platform`', () async {
+    // String type
+    test('to test the property `type`', () async {
       // TODO
     });
 

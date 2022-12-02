@@ -21,10 +21,28 @@ class PermissionGrantInfoDto {
     this.grantedProviders = const [],
   });
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? name;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? displayName;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? parentName;
 
   ///
@@ -35,9 +53,9 @@ class PermissionGrantInfoDto {
   ///
   bool? isGranted;
 
-  List<String>? allowedProviders;
+  List<String> allowedProviders;
 
-  List<ProviderInfoDto>? grantedProviders;
+  List<ProviderInfoDto> grantedProviders;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is PermissionGrantInfoDto &&
@@ -55,8 +73,8 @@ class PermissionGrantInfoDto {
     (displayName == null ? 0 : displayName!.hashCode) +
     (parentName == null ? 0 : parentName!.hashCode) +
     (isGranted == null ? 0 : isGranted!.hashCode) +
-    (allowedProviders == null ? 0 : allowedProviders!.hashCode) +
-    (grantedProviders == null ? 0 : grantedProviders!.hashCode);
+    (allowedProviders.hashCode) +
+    (grantedProviders.hashCode);
 
   @override
   String toString() => 'PermissionGrantInfoDto[name=$name, displayName=$displayName, parentName=$parentName, isGranted=$isGranted, allowedProviders=$allowedProviders, grantedProviders=$grantedProviders]';
@@ -83,16 +101,8 @@ class PermissionGrantInfoDto {
     } else {
       json[r'isGranted'] = null;
     }
-    if (this.allowedProviders != null) {
       json[r'allowedProviders'] = this.allowedProviders;
-    } else {
-      json[r'allowedProviders'] = null;
-    }
-    if (this.grantedProviders != null) {
       json[r'grantedProviders'] = this.grantedProviders;
-    } else {
-      json[r'grantedProviders'] = null;
-    }
     return json;
   }
 

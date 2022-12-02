@@ -20,7 +20,7 @@ class IdentityRoleUpdateDto {
     this.concurrencyStamp,
   });
 
-  Map<String, Object>? extraProperties;
+  Map<String, Object> extraProperties;
 
   String name;
 
@@ -40,6 +40,12 @@ class IdentityRoleUpdateDto {
   ///
   bool? isPublic;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? concurrencyStamp;
 
   @override
@@ -53,7 +59,7 @@ class IdentityRoleUpdateDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (extraProperties == null ? 0 : extraProperties!.hashCode) +
+    (extraProperties.hashCode) +
     (name.hashCode) +
     (isDefault == null ? 0 : isDefault!.hashCode) +
     (isPublic == null ? 0 : isPublic!.hashCode) +
@@ -64,11 +70,7 @@ class IdentityRoleUpdateDto {
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.extraProperties != null) {
       json[r'extraProperties'] = this.extraProperties;
-    } else {
-      json[r'extraProperties'] = null;
-    }
       json[r'name'] = this.name;
     if (this.isDefault != null) {
       json[r'isDefault'] = this.isDefault;

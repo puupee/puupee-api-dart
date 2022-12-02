@@ -16,7 +16,7 @@ class GetFeatureListResultDto {
     this.groups = const [],
   });
 
-  List<FeatureGroupDto>? groups;
+  List<FeatureGroupDto> groups;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is GetFeatureListResultDto &&
@@ -25,18 +25,14 @@ class GetFeatureListResultDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (groups == null ? 0 : groups!.hashCode);
+    (groups.hashCode);
 
   @override
   String toString() => 'GetFeatureListResultDto[groups=$groups]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.groups != null) {
       json[r'groups'] = this.groups;
-    } else {
-      json[r'groups'] = null;
-    }
     return json;
   }
 

@@ -16,7 +16,7 @@ class UserDataListResultDto {
     this.items = const [],
   });
 
-  List<UserData>? items;
+  List<UserData> items;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is UserDataListResultDto &&
@@ -25,18 +25,14 @@ class UserDataListResultDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (items == null ? 0 : items!.hashCode);
+    (items.hashCode);
 
   @override
   String toString() => 'UserDataListResultDto[items=$items]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.items != null) {
       json[r'items'] = this.items;
-    } else {
-      json[r'items'] = null;
-    }
     return json;
   }
 

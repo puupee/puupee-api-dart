@@ -23,8 +23,20 @@ class ExtensionPropertyDto {
     this.defaultValue,
   });
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? type;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? typeSimple;
 
   ///
@@ -51,10 +63,16 @@ class ExtensionPropertyDto {
   ///
   ExtensionPropertyUiDto? ui;
 
-  List<ExtensionPropertyAttributeDto>? attributes;
+  List<ExtensionPropertyAttributeDto> attributes;
 
-  Map<String, Object>? configuration;
+  Map<String, Object> configuration;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   Object? defaultValue;
 
   @override
@@ -76,8 +94,8 @@ class ExtensionPropertyDto {
     (displayName == null ? 0 : displayName!.hashCode) +
     (api == null ? 0 : api!.hashCode) +
     (ui == null ? 0 : ui!.hashCode) +
-    (attributes == null ? 0 : attributes!.hashCode) +
-    (configuration == null ? 0 : configuration!.hashCode) +
+    (attributes.hashCode) +
+    (configuration.hashCode) +
     (defaultValue == null ? 0 : defaultValue!.hashCode);
 
   @override
@@ -110,16 +128,8 @@ class ExtensionPropertyDto {
     } else {
       json[r'ui'] = null;
     }
-    if (this.attributes != null) {
       json[r'attributes'] = this.attributes;
-    } else {
-      json[r'attributes'] = null;
-    }
-    if (this.configuration != null) {
       json[r'configuration'] = this.configuration;
-    } else {
-      json[r'configuration'] = null;
-    }
     if (this.defaultValue != null) {
       json[r'defaultValue'] = this.defaultValue;
     } else {

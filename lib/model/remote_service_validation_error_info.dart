@@ -17,9 +17,15 @@ class RemoteServiceValidationErrorInfo {
     this.members = const [],
   });
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? message;
 
-  List<String>? members;
+  List<String> members;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is RemoteServiceValidationErrorInfo &&
@@ -30,7 +36,7 @@ class RemoteServiceValidationErrorInfo {
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (message == null ? 0 : message!.hashCode) +
-    (members == null ? 0 : members!.hashCode);
+    (members.hashCode);
 
   @override
   String toString() => 'RemoteServiceValidationErrorInfo[message=$message, members=$members]';
@@ -42,11 +48,7 @@ class RemoteServiceValidationErrorInfo {
     } else {
       json[r'message'] = null;
     }
-    if (this.members != null) {
       json[r'members'] = this.members;
-    } else {
-      json[r'members'] = null;
-    }
     return json;
   }
 

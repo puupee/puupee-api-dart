@@ -36,7 +36,7 @@ class IdentityUserDto {
     this.concurrencyStamp,
   });
 
-  Map<String, Object>? extraProperties;
+  Map<String, Object> extraProperties;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -54,10 +54,28 @@ class IdentityUserDto {
   ///
   DateTime? creationTime;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? creatorId;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   DateTime? lastModificationTime;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? lastModifierId;
 
   ///
@@ -68,18 +86,60 @@ class IdentityUserDto {
   ///
   bool? isDeleted;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? deleterId;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   DateTime? deletionTime;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? tenantId;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? userName;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? name;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? surname;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? email;
 
   ///
@@ -90,6 +150,12 @@ class IdentityUserDto {
   ///
   bool? emailConfirmed;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? phoneNumber;
 
   ///
@@ -116,8 +182,20 @@ class IdentityUserDto {
   ///
   bool? lockoutEnabled;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   DateTime? lockoutEnd;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? concurrencyStamp;
 
   @override
@@ -147,7 +225,7 @@ class IdentityUserDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (extraProperties == null ? 0 : extraProperties!.hashCode) +
+    (extraProperties.hashCode) +
     (id == null ? 0 : id!.hashCode) +
     (creationTime == null ? 0 : creationTime!.hashCode) +
     (creatorId == null ? 0 : creatorId!.hashCode) +
@@ -174,11 +252,7 @@ class IdentityUserDto {
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.extraProperties != null) {
       json[r'extraProperties'] = this.extraProperties;
-    } else {
-      json[r'extraProperties'] = null;
-    }
     if (this.id != null) {
       json[r'id'] = this.id;
     } else {

@@ -19,7 +19,7 @@ class IdentityRoleCreateDto {
     this.isPublic,
   });
 
-  Map<String, Object>? extraProperties;
+  Map<String, Object> extraProperties;
 
   String name;
 
@@ -49,7 +49,7 @@ class IdentityRoleCreateDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (extraProperties == null ? 0 : extraProperties!.hashCode) +
+    (extraProperties.hashCode) +
     (name.hashCode) +
     (isDefault == null ? 0 : isDefault!.hashCode) +
     (isPublic == null ? 0 : isPublic!.hashCode);
@@ -59,11 +59,7 @@ class IdentityRoleCreateDto {
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.extraProperties != null) {
       json[r'extraProperties'] = this.extraProperties;
-    } else {
-      json[r'extraProperties'] = null;
-    }
       json[r'name'] = this.name;
     if (this.isDefault != null) {
       json[r'isDefault'] = this.isDefault;

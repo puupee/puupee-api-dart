@@ -18,11 +18,23 @@ class ModuleApiDescriptionModel {
     this.controllers = const {},
   });
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? rootPath;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? remoteServiceName;
 
-  Map<String, ControllerApiDescriptionModel>? controllers;
+  Map<String, ControllerApiDescriptionModel> controllers;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ModuleApiDescriptionModel &&
@@ -35,7 +47,7 @@ class ModuleApiDescriptionModel {
     // ignore: unnecessary_parenthesis
     (rootPath == null ? 0 : rootPath!.hashCode) +
     (remoteServiceName == null ? 0 : remoteServiceName!.hashCode) +
-    (controllers == null ? 0 : controllers!.hashCode);
+    (controllers.hashCode);
 
   @override
   String toString() => 'ModuleApiDescriptionModel[rootPath=$rootPath, remoteServiceName=$remoteServiceName, controllers=$controllers]';
@@ -52,11 +64,7 @@ class ModuleApiDescriptionModel {
     } else {
       json[r'remoteServiceName'] = null;
     }
-    if (this.controllers != null) {
       json[r'controllers'] = this.controllers;
-    } else {
-      json[r'controllers'] = null;
-    }
     return json;
   }
 

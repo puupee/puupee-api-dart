@@ -17,7 +17,7 @@ class AppDtoPagedResultDto {
     this.totalCount,
   });
 
-  List<AppDto>? items;
+  List<AppDto> items;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -35,7 +35,7 @@ class AppDtoPagedResultDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (items == null ? 0 : items!.hashCode) +
+    (items.hashCode) +
     (totalCount == null ? 0 : totalCount!.hashCode);
 
   @override
@@ -43,11 +43,7 @@ class AppDtoPagedResultDto {
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.items != null) {
       json[r'items'] = this.items;
-    } else {
-      json[r'items'] = null;
-    }
     if (this.totalCount != null) {
       json[r'totalCount'] = this.totalCount;
     } else {

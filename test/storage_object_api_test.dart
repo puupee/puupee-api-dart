@@ -17,6 +17,11 @@ void main() {
   // final instance = StorageObjectApi();
 
   group('tests for StorageObjectApi', () {
+    //Future apiAppStorageObjectFileGet({ String key }) async
+    test('test apiAppStorageObjectFileGet', () async {
+      // TODO
+    });
+
     //Future<StorageObjectOrCredentialsDto> apiAppStorageObjectFileOrCredentialsGet({ String rapidCode, String key }) async
     test('test apiAppStorageObjectFileOrCredentialsGet', () async {
       // TODO
@@ -24,6 +29,11 @@ void main() {
 
     //Future<String> apiAppStorageObjectPreSignUrlPost({ String key }) async
     test('test apiAppStorageObjectPreSignUrlPost', () async {
+      // TODO
+    });
+
+    //Future apiAppStorageObjectThumbGet({ String key }) async
+    test('test apiAppStorageObjectThumbGet', () async {
       // TODO
     });
 

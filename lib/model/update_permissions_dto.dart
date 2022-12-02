@@ -16,7 +16,7 @@ class UpdatePermissionsDto {
     this.permissions = const [],
   });
 
-  List<UpdatePermissionDto>? permissions;
+  List<UpdatePermissionDto> permissions;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is UpdatePermissionsDto &&
@@ -25,18 +25,14 @@ class UpdatePermissionsDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (permissions == null ? 0 : permissions!.hashCode);
+    (permissions.hashCode);
 
   @override
   String toString() => 'UpdatePermissionsDto[permissions=$permissions]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.permissions != null) {
       json[r'permissions'] = this.permissions;
-    } else {
-      json[r'permissions'] = null;
-    }
     return json;
   }
 

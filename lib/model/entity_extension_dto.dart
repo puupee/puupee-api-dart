@@ -17,9 +17,9 @@ class EntityExtensionDto {
     this.configuration = const {},
   });
 
-  Map<String, ExtensionPropertyDto>? properties;
+  Map<String, ExtensionPropertyDto> properties;
 
-  Map<String, Object>? configuration;
+  Map<String, Object> configuration;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is EntityExtensionDto &&
@@ -29,24 +29,16 @@ class EntityExtensionDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (properties == null ? 0 : properties!.hashCode) +
-    (configuration == null ? 0 : configuration!.hashCode);
+    (properties.hashCode) +
+    (configuration.hashCode);
 
   @override
   String toString() => 'EntityExtensionDto[properties=$properties, configuration=$configuration]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.properties != null) {
       json[r'properties'] = this.properties;
-    } else {
-      json[r'properties'] = null;
-    }
-    if (this.configuration != null) {
       json[r'configuration'] = this.configuration;
-    } else {
-      json[r'configuration'] = null;
-    }
     return json;
   }
 

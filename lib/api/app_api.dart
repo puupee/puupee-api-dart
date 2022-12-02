@@ -232,14 +232,14 @@ class AppApi {
   ///
   /// * [String] id (required):
   ///
-  /// * [CreateOrUpdateAppDto] createOrUpdateAppDto:
-  Future<Response> apiAppAppIdPutWithHttpInfo(String id, { CreateOrUpdateAppDto? createOrUpdateAppDto, }) async {
+  /// * [CreateOrUpdateAppDto] body:
+  Future<Response> apiAppAppIdPutWithHttpInfo(String id, { CreateOrUpdateAppDto? body, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/app/app/{id}'
       .replaceAll('{id}', id);
 
     // ignore: prefer_final_locals
-    Object? postBody = createOrUpdateAppDto;
+    Object? postBody = body;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
@@ -263,9 +263,9 @@ class AppApi {
   ///
   /// * [String] id (required):
   ///
-  /// * [CreateOrUpdateAppDto] createOrUpdateAppDto:
-  Future<AppDto?> apiAppAppIdPut(String id, { CreateOrUpdateAppDto? createOrUpdateAppDto, }) async {
-    final response = await apiAppAppIdPutWithHttpInfo(id,  createOrUpdateAppDto: createOrUpdateAppDto, );
+  /// * [CreateOrUpdateAppDto] body:
+  Future<AppDto?> apiAppAppIdPut(String id, { CreateOrUpdateAppDto? body, }) async {
+    final response = await apiAppAppIdPutWithHttpInfo(id,  body: body, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -282,13 +282,13 @@ class AppApi {
   /// Performs an HTTP 'POST /api/app/app' operation and returns the [Response].
   /// Parameters:
   ///
-  /// * [CreateOrUpdateAppDto] createOrUpdateAppDto:
-  Future<Response> apiAppAppPostWithHttpInfo({ CreateOrUpdateAppDto? createOrUpdateAppDto, }) async {
+  /// * [CreateOrUpdateAppDto] body:
+  Future<Response> apiAppAppPostWithHttpInfo({ CreateOrUpdateAppDto? body, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/app/app';
 
     // ignore: prefer_final_locals
-    Object? postBody = createOrUpdateAppDto;
+    Object? postBody = body;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
@@ -310,9 +310,9 @@ class AppApi {
 
   /// Parameters:
   ///
-  /// * [CreateOrUpdateAppDto] createOrUpdateAppDto:
-  Future<AppDto?> apiAppAppPost({ CreateOrUpdateAppDto? createOrUpdateAppDto, }) async {
-    final response = await apiAppAppPostWithHttpInfo( createOrUpdateAppDto: createOrUpdateAppDto, );
+  /// * [CreateOrUpdateAppDto] body:
+  Future<AppDto?> apiAppAppPost({ CreateOrUpdateAppDto? body, }) async {
+    final response = await apiAppAppPostWithHttpInfo( body: body, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

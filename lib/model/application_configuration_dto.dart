@@ -115,7 +115,7 @@ class ApplicationConfigurationDto {
   ///
   ObjectExtensionsDto? objectExtensions;
 
-  Map<String, Object>? extraProperties;
+  Map<String, Object> extraProperties;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ApplicationConfigurationDto &&
@@ -146,7 +146,7 @@ class ApplicationConfigurationDto {
     (timing == null ? 0 : timing!.hashCode) +
     (clock == null ? 0 : clock!.hashCode) +
     (objectExtensions == null ? 0 : objectExtensions!.hashCode) +
-    (extraProperties == null ? 0 : extraProperties!.hashCode);
+    (extraProperties.hashCode);
 
   @override
   String toString() => 'ApplicationConfigurationDto[localization=$localization, auth=$auth, setting=$setting, currentUser=$currentUser, features=$features, globalFeatures=$globalFeatures, multiTenancy=$multiTenancy, currentTenant=$currentTenant, timing=$timing, clock=$clock, objectExtensions=$objectExtensions, extraProperties=$extraProperties]';
@@ -208,11 +208,7 @@ class ApplicationConfigurationDto {
     } else {
       json[r'objectExtensions'] = null;
     }
-    if (this.extraProperties != null) {
       json[r'extraProperties'] = this.extraProperties;
-    } else {
-      json[r'extraProperties'] = null;
-    }
     return json;
   }
 

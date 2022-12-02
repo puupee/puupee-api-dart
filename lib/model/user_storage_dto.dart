@@ -21,8 +21,20 @@ class UserStorageDto {
     this.items = const [],
   });
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? name;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? displayName;
 
   ///
@@ -49,7 +61,7 @@ class UserStorageDto {
   ///
   int? totalCount;
 
-  List<UserStorageItemDto>? items;
+  List<UserStorageItemDto> items;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is UserStorageDto &&
@@ -68,7 +80,7 @@ class UserStorageDto {
     (maxSize == null ? 0 : maxSize!.hashCode) +
     (currentSize == null ? 0 : currentSize!.hashCode) +
     (totalCount == null ? 0 : totalCount!.hashCode) +
-    (items == null ? 0 : items!.hashCode);
+    (items.hashCode);
 
   @override
   String toString() => 'UserStorageDto[name=$name, displayName=$displayName, maxSize=$maxSize, currentSize=$currentSize, totalCount=$totalCount, items=$items]';
@@ -100,11 +112,7 @@ class UserStorageDto {
     } else {
       json[r'totalCount'] = null;
     }
-    if (this.items != null) {
       json[r'items'] = this.items;
-    } else {
-      json[r'items'] = null;
-    }
     return json;
   }
 

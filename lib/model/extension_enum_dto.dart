@@ -17,8 +17,14 @@ class ExtensionEnumDto {
     this.localizationResource,
   });
 
-  List<ExtensionEnumFieldDto>? fields;
+  List<ExtensionEnumFieldDto> fields;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? localizationResource;
 
   @override
@@ -29,7 +35,7 @@ class ExtensionEnumDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (fields == null ? 0 : fields!.hashCode) +
+    (fields.hashCode) +
     (localizationResource == null ? 0 : localizationResource!.hashCode);
 
   @override
@@ -37,11 +43,7 @@ class ExtensionEnumDto {
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.fields != null) {
       json[r'fields'] = this.fields;
-    } else {
-      json[r'fields'] = null;
-    }
     if (this.localizationResource != null) {
       json[r'localizationResource'] = this.localizationResource;
     } else {

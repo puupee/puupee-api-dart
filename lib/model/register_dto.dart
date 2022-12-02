@@ -20,7 +20,7 @@ class RegisterDto {
     required this.appName,
   });
 
-  Map<String, Object>? extraProperties;
+  Map<String, Object> extraProperties;
 
   String userName;
 
@@ -41,7 +41,7 @@ class RegisterDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (extraProperties == null ? 0 : extraProperties!.hashCode) +
+    (extraProperties.hashCode) +
     (userName.hashCode) +
     (emailAddress.hashCode) +
     (password.hashCode) +
@@ -52,11 +52,7 @@ class RegisterDto {
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.extraProperties != null) {
       json[r'extraProperties'] = this.extraProperties;
-    } else {
-      json[r'extraProperties'] = null;
-    }
       json[r'userName'] = this.userName;
       json[r'emailAddress'] = this.emailAddress;
       json[r'password'] = this.password;

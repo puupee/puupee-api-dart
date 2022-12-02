@@ -17,9 +17,15 @@ class IValueValidator {
     this.properties = const {},
   });
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? name;
 
-  Map<String, Object>? properties;
+  Map<String, Object> properties;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is IValueValidator &&
@@ -30,7 +36,7 @@ class IValueValidator {
   int get hashCode =>
     // ignore: unnecessary_parenthesis
     (name == null ? 0 : name!.hashCode) +
-    (properties == null ? 0 : properties!.hashCode);
+    (properties.hashCode);
 
   @override
   String toString() => 'IValueValidator[name=$name, properties=$properties]';
@@ -42,11 +48,7 @@ class IValueValidator {
     } else {
       json[r'name'] = null;
     }
-    if (this.properties != null) {
       json[r'properties'] = this.properties;
-    } else {
-      json[r'properties'] = null;
-    }
     return json;
   }
 

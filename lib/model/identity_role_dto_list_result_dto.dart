@@ -16,7 +16,7 @@ class IdentityRoleDtoListResultDto {
     this.items = const [],
   });
 
-  List<IdentityRoleDto>? items;
+  List<IdentityRoleDto> items;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is IdentityRoleDtoListResultDto &&
@@ -25,18 +25,14 @@ class IdentityRoleDtoListResultDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (items == null ? 0 : items!.hashCode);
+    (items.hashCode);
 
   @override
   String toString() => 'IdentityRoleDtoListResultDto[items=$items]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.items != null) {
       json[r'items'] = this.items;
-    } else {
-      json[r'items'] = null;
-    }
     return json;
   }
 

@@ -16,7 +16,7 @@ class UpdateFeaturesDto {
     this.features = const [],
   });
 
-  List<UpdateFeatureDto>? features;
+  List<UpdateFeatureDto> features;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is UpdateFeaturesDto &&
@@ -25,18 +25,14 @@ class UpdateFeaturesDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (features == null ? 0 : features!.hashCode);
+    (features.hashCode);
 
   @override
   String toString() => 'UpdateFeaturesDto[features=$features]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.features != null) {
       json[r'features'] = this.features;
-    } else {
-      json[r'features'] = null;
-    }
     return json;
   }
 

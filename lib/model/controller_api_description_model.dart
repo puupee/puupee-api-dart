@@ -23,8 +23,20 @@ class ControllerApiDescriptionModel {
     this.actions = const {},
   });
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? controllerName;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? controllerGroupName;
 
   ///
@@ -43,13 +55,25 @@ class ControllerApiDescriptionModel {
   ///
   bool? isIntegrationService;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? apiVersion;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? type;
 
-  List<ControllerInterfaceApiDescriptionModel>? interfaces;
+  List<ControllerInterfaceApiDescriptionModel> interfaces;
 
-  Map<String, ActionApiDescriptionModel>? actions;
+  Map<String, ActionApiDescriptionModel> actions;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ControllerApiDescriptionModel &&
@@ -71,8 +95,8 @@ class ControllerApiDescriptionModel {
     (isIntegrationService == null ? 0 : isIntegrationService!.hashCode) +
     (apiVersion == null ? 0 : apiVersion!.hashCode) +
     (type == null ? 0 : type!.hashCode) +
-    (interfaces == null ? 0 : interfaces!.hashCode) +
-    (actions == null ? 0 : actions!.hashCode);
+    (interfaces.hashCode) +
+    (actions.hashCode);
 
   @override
   String toString() => 'ControllerApiDescriptionModel[controllerName=$controllerName, controllerGroupName=$controllerGroupName, isRemoteService=$isRemoteService, isIntegrationService=$isIntegrationService, apiVersion=$apiVersion, type=$type, interfaces=$interfaces, actions=$actions]';
@@ -109,16 +133,8 @@ class ControllerApiDescriptionModel {
     } else {
       json[r'type'] = null;
     }
-    if (this.interfaces != null) {
       json[r'interfaces'] = this.interfaces;
-    } else {
-      json[r'interfaces'] = null;
-    }
-    if (this.actions != null) {
       json[r'actions'] = this.actions;
-    } else {
-      json[r'actions'] = null;
-    }
     return json;
   }
 

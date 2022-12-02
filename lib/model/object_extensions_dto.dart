@@ -17,9 +17,9 @@ class ObjectExtensionsDto {
     this.enums = const {},
   });
 
-  Map<String, ModuleExtensionDto>? modules;
+  Map<String, ModuleExtensionDto> modules;
 
-  Map<String, ExtensionEnumDto>? enums;
+  Map<String, ExtensionEnumDto> enums;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ObjectExtensionsDto &&
@@ -29,24 +29,16 @@ class ObjectExtensionsDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (modules == null ? 0 : modules!.hashCode) +
-    (enums == null ? 0 : enums!.hashCode);
+    (modules.hashCode) +
+    (enums.hashCode);
 
   @override
   String toString() => 'ObjectExtensionsDto[modules=$modules, enums=$enums]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.modules != null) {
       json[r'modules'] = this.modules;
-    } else {
-      json[r'modules'] = null;
-    }
-    if (this.enums != null) {
       json[r'enums'] = this.enums;
-    } else {
-      json[r'enums'] = null;
-    }
     return json;
   }
 

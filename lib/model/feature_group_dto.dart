@@ -18,11 +18,23 @@ class FeatureGroupDto {
     this.features = const [],
   });
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? name;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? displayName;
 
-  List<FeatureDto>? features;
+  List<FeatureDto> features;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is FeatureGroupDto &&
@@ -35,7 +47,7 @@ class FeatureGroupDto {
     // ignore: unnecessary_parenthesis
     (name == null ? 0 : name!.hashCode) +
     (displayName == null ? 0 : displayName!.hashCode) +
-    (features == null ? 0 : features!.hashCode);
+    (features.hashCode);
 
   @override
   String toString() => 'FeatureGroupDto[name=$name, displayName=$displayName, features=$features]';
@@ -52,11 +64,7 @@ class FeatureGroupDto {
     } else {
       json[r'displayName'] = null;
     }
-    if (this.features != null) {
       json[r'features'] = this.features;
-    } else {
-      json[r'features'] = null;
-    }
     return json;
   }
 

@@ -18,11 +18,23 @@ class ControllerInterfaceApiDescriptionModel {
     this.methods = const [],
   });
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? type;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? name;
 
-  List<InterfaceMethodApiDescriptionModel>? methods;
+  List<InterfaceMethodApiDescriptionModel> methods;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ControllerInterfaceApiDescriptionModel &&
@@ -35,7 +47,7 @@ class ControllerInterfaceApiDescriptionModel {
     // ignore: unnecessary_parenthesis
     (type == null ? 0 : type!.hashCode) +
     (name == null ? 0 : name!.hashCode) +
-    (methods == null ? 0 : methods!.hashCode);
+    (methods.hashCode);
 
   @override
   String toString() => 'ControllerInterfaceApiDescriptionModel[type=$type, name=$name, methods=$methods]';
@@ -52,11 +64,7 @@ class ControllerInterfaceApiDescriptionModel {
     } else {
       json[r'name'] = null;
     }
-    if (this.methods != null) {
       json[r'methods'] = this.methods;
-    } else {
-      json[r'methods'] = null;
-    }
     return json;
   }
 

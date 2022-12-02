@@ -16,7 +16,7 @@ class ApplicationGlobalFeatureConfigurationDto {
     this.enabledFeatures = const {},
   });
 
-  Set<String>? enabledFeatures;
+  Set<String> enabledFeatures;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ApplicationGlobalFeatureConfigurationDto &&
@@ -25,18 +25,14 @@ class ApplicationGlobalFeatureConfigurationDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (enabledFeatures == null ? 0 : enabledFeatures!.hashCode);
+    (enabledFeatures.hashCode);
 
   @override
   String toString() => 'ApplicationGlobalFeatureConfigurationDto[enabledFeatures=$enabledFeatures]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.enabledFeatures != null) {
       json[r'enabledFeatures'] = this.enabledFeatures;
-    } else {
-      json[r'enabledFeatures'] = null;
-    }
     return json;
   }
 

@@ -16,8 +16,8 @@ void main() {
   // final instance = RefreshDeviceStatusDto();
 
   group('test RefreshDeviceStatusDto', () {
-    // String id
-    test('to test the property `id`', () async {
+    // String token
+    test('to test the property `token`', () async {
       // TODO
     });
 

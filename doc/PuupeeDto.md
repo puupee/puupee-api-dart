@@ -19,6 +19,8 @@ Name | Type | Description | Notes
 **name** | **String** |  | [optional] 
 **title** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
+**text** | **String** |  | [optional] 
+**format** | **String** |  | [optional] 
 **password** | **String** |  | [optional] 
 **parentId** | **String** |  | [optional] 
 **key** | **String** |  | [optional] 
@@ -52,6 +54,7 @@ Name | Type | Description | Notes
 **syncVersion** | **int** |  | [optional] 
 **isHidden** | **bool** |  | [optional] 
 **tagging** | **String** |  | [optional] 
+**lastModifierDeviceToken** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

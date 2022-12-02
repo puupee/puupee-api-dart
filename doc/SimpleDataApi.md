@@ -23,6 +23,8 @@ Method | HTTP request | Description
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = SimpleDataApi();
 final collection = collection_example; // String | 
@@ -53,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -70,6 +72,8 @@ No authorization required
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = SimpleDataApi();
 final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
@@ -93,7 +97,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -110,6 +114,8 @@ No authorization required
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = SimpleDataApi();
 final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
@@ -134,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -144,19 +150,21 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppSimpleDataSavePost**
-> SimpleDataDto apiAppSimpleDataSavePost(simpleDataDto)
+> SimpleDataDto apiAppSimpleDataSavePost(body)
 
 
 
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = SimpleDataApi();
-final simpleDataDto = SimpleDataDto(); // SimpleDataDto | 
+final body = SimpleDataDto(); // SimpleDataDto | 
 
 try {
-    final result = api_instance.apiAppSimpleDataSavePost(simpleDataDto);
+    final result = api_instance.apiAppSimpleDataSavePost(body);
     print(result);
 } catch (e) {
     print('Exception when calling SimpleDataApi->apiAppSimpleDataSavePost: $e\n');
@@ -167,7 +175,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **simpleDataDto** | [**SimpleDataDto**](SimpleDataDto.md)|  | [optional] 
+ **body** | [**SimpleDataDto**](SimpleDataDto.md)|  | [optional] 
 
 ### Return type
 
@@ -175,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 

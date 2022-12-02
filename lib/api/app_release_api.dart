@@ -202,14 +202,14 @@ class AppReleaseApi {
   ///
   /// * [String] id (required):
   ///
-  /// * [CreateOrUpdateAppReleaseDto] createOrUpdateAppReleaseDto:
-  Future<Response> apiAppAppReleaseIdPutWithHttpInfo(String id, { CreateOrUpdateAppReleaseDto? createOrUpdateAppReleaseDto, }) async {
+  /// * [CreateOrUpdateAppReleaseDto] body:
+  Future<Response> apiAppAppReleaseIdPutWithHttpInfo(String id, { CreateOrUpdateAppReleaseDto? body, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/app/app-release/{id}'
       .replaceAll('{id}', id);
 
     // ignore: prefer_final_locals
-    Object? postBody = createOrUpdateAppReleaseDto;
+    Object? postBody = body;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
@@ -233,9 +233,9 @@ class AppReleaseApi {
   ///
   /// * [String] id (required):
   ///
-  /// * [CreateOrUpdateAppReleaseDto] createOrUpdateAppReleaseDto:
-  Future<AppReleaseDto?> apiAppAppReleaseIdPut(String id, { CreateOrUpdateAppReleaseDto? createOrUpdateAppReleaseDto, }) async {
-    final response = await apiAppAppReleaseIdPutWithHttpInfo(id,  createOrUpdateAppReleaseDto: createOrUpdateAppReleaseDto, );
+  /// * [CreateOrUpdateAppReleaseDto] body:
+  Future<AppReleaseDto?> apiAppAppReleaseIdPut(String id, { CreateOrUpdateAppReleaseDto? body, }) async {
+    final response = await apiAppAppReleaseIdPutWithHttpInfo(id,  body: body, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }
@@ -252,13 +252,13 @@ class AppReleaseApi {
   /// Performs an HTTP 'POST /api/app/app-release' operation and returns the [Response].
   /// Parameters:
   ///
-  /// * [CreateOrUpdateAppReleaseDto] createOrUpdateAppReleaseDto:
-  Future<Response> apiAppAppReleasePostWithHttpInfo({ CreateOrUpdateAppReleaseDto? createOrUpdateAppReleaseDto, }) async {
+  /// * [CreateOrUpdateAppReleaseDto] body:
+  Future<Response> apiAppAppReleasePostWithHttpInfo({ CreateOrUpdateAppReleaseDto? body, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/app/app-release';
 
     // ignore: prefer_final_locals
-    Object? postBody = createOrUpdateAppReleaseDto;
+    Object? postBody = body;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
@@ -280,9 +280,9 @@ class AppReleaseApi {
 
   /// Parameters:
   ///
-  /// * [CreateOrUpdateAppReleaseDto] createOrUpdateAppReleaseDto:
-  Future<AppReleaseDto?> apiAppAppReleasePost({ CreateOrUpdateAppReleaseDto? createOrUpdateAppReleaseDto, }) async {
-    final response = await apiAppAppReleasePostWithHttpInfo( createOrUpdateAppReleaseDto: createOrUpdateAppReleaseDto, );
+  /// * [CreateOrUpdateAppReleaseDto] body:
+  Future<AppReleaseDto?> apiAppAppReleasePost({ CreateOrUpdateAppReleaseDto? body, }) async {
+    final response = await apiAppAppReleasePostWithHttpInfo( body: body, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

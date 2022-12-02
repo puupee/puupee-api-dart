@@ -16,6 +16,88 @@ class DeviceApi {
 
   final ApiClient apiClient;
 
+  /// Performs an HTTP 'POST /api/app/device/bind' operation and returns the [Response].
+  /// Parameters:
+  ///
+  /// * [BindDeviceDto] body:
+  Future<Response> apiAppDeviceBindPostWithHttpInfo({ BindDeviceDto? body, }) async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/app/device/bind';
+
+    // ignore: prefer_final_locals
+    Object? postBody = body;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    const contentTypes = <String>['application/json', 'text/json', 'application/*+json'];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'POST',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Parameters:
+  ///
+  /// * [BindDeviceDto] body:
+  Future<void> apiAppDeviceBindPost({ BindDeviceDto? body, }) async {
+    final response = await apiAppDeviceBindPostWithHttpInfo( body: body, );
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+  }
+
+  /// Performs an HTTP 'DELETE /api/app/device' operation and returns the [Response].
+  /// Parameters:
+  ///
+  /// * [String] token:
+  Future<Response> apiAppDeviceDeleteWithHttpInfo({ String? token, }) async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/app/device';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    if (token != null) {
+      queryParams.addAll(_queryParams('', 'token', token));
+    }
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'DELETE',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Parameters:
+  ///
+  /// * [String] token:
+  Future<void> apiAppDeviceDelete({ String? token, }) async {
+    final response = await apiAppDeviceDeleteWithHttpInfo( token: token, );
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+  }
+
   /// Performs an HTTP 'GET /api/app/device' operation and returns the [Response].
   /// Parameters:
   ///
@@ -81,56 +163,16 @@ class DeviceApi {
     return null;
   }
 
-  /// Performs an HTTP 'DELETE /api/app/device/{id}' operation and returns the [Response].
-  /// Parameters:
-  ///
-  /// * [String] id (required):
-  Future<Response> apiAppDeviceIdDeleteWithHttpInfo(String id,) async {
-    // ignore: prefer_const_declarations
-    final path = r'/api/app/device/{id}'
-      .replaceAll('{id}', id);
-
-    // ignore: prefer_final_locals
-    Object? postBody;
-
-    final queryParams = <QueryParam>[];
-    final headerParams = <String, String>{};
-    final formParams = <String, String>{};
-
-    const contentTypes = <String>[];
-
-
-    return apiClient.invokeAPI(
-      path,
-      'DELETE',
-      queryParams,
-      postBody,
-      headerParams,
-      formParams,
-      contentTypes.isEmpty ? null : contentTypes.first,
-    );
-  }
-
-  /// Parameters:
-  ///
-  /// * [String] id (required):
-  Future<void> apiAppDeviceIdDelete(String id,) async {
-    final response = await apiAppDeviceIdDeleteWithHttpInfo(id,);
-    if (response.statusCode >= HttpStatus.badRequest) {
-      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
-    }
-  }
-
   /// Performs an HTTP 'POST /api/app/device/refresh' operation and returns the [Response].
   /// Parameters:
   ///
-  /// * [RefreshDeviceStatusDto] refreshDeviceStatusDto:
-  Future<Response> apiAppDeviceRefreshPostWithHttpInfo({ RefreshDeviceStatusDto? refreshDeviceStatusDto, }) async {
+  /// * [RefreshDeviceStatusDto] body:
+  Future<Response> apiAppDeviceRefreshPostWithHttpInfo({ RefreshDeviceStatusDto? body, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/app/device/refresh';
 
     // ignore: prefer_final_locals
-    Object? postBody = refreshDeviceStatusDto;
+    Object? postBody = body;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
@@ -152,9 +194,9 @@ class DeviceApi {
 
   /// Parameters:
   ///
-  /// * [RefreshDeviceStatusDto] refreshDeviceStatusDto:
-  Future<void> apiAppDeviceRefreshPost({ RefreshDeviceStatusDto? refreshDeviceStatusDto, }) async {
-    final response = await apiAppDeviceRefreshPostWithHttpInfo( refreshDeviceStatusDto: refreshDeviceStatusDto, );
+  /// * [RefreshDeviceStatusDto] body:
+  Future<void> apiAppDeviceRefreshPost({ RefreshDeviceStatusDto? body, }) async {
+    final response = await apiAppDeviceRefreshPostWithHttpInfo( body: body, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

@@ -60,13 +60,13 @@ class SettingsApi {
   /// Performs an HTTP 'POST /api/app/settings/set' operation and returns the [Response].
   /// Parameters:
   ///
-  /// * [SettingsDto] settingsDto:
-  Future<Response> apiAppSettingsSetPostWithHttpInfo({ SettingsDto? settingsDto, }) async {
+  /// * [SettingsDto] body:
+  Future<Response> apiAppSettingsSetPostWithHttpInfo({ SettingsDto? body, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/app/settings/set';
 
     // ignore: prefer_final_locals
-    Object? postBody = settingsDto;
+    Object? postBody = body;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
@@ -88,9 +88,9 @@ class SettingsApi {
 
   /// Parameters:
   ///
-  /// * [SettingsDto] settingsDto:
-  Future<void> apiAppSettingsSetPost({ SettingsDto? settingsDto, }) async {
-    final response = await apiAppSettingsSetPostWithHttpInfo( settingsDto: settingsDto, );
+  /// * [SettingsDto] body:
+  Future<void> apiAppSettingsSetPost({ SettingsDto? body, }) async {
+    final response = await apiAppSettingsSetPostWithHttpInfo( body: body, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

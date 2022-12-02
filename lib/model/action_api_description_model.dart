@@ -25,19 +25,43 @@ class ActionApiDescriptionModel {
     this.implementFrom,
   });
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? uniqueName;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? name;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? httpMethod;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? url;
 
-  List<String>? supportedVersions;
+  List<String> supportedVersions;
 
-  List<MethodParameterApiDescriptionModel>? parametersOnMethod;
+  List<MethodParameterApiDescriptionModel> parametersOnMethod;
 
-  List<ParameterApiDescriptionModel>? parameters;
+  List<ParameterApiDescriptionModel> parameters;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -47,8 +71,20 @@ class ActionApiDescriptionModel {
   ///
   ReturnValueApiDescriptionModel? returnValue;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   bool? allowAnonymous;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? implementFrom;
 
   @override
@@ -71,9 +107,9 @@ class ActionApiDescriptionModel {
     (name == null ? 0 : name!.hashCode) +
     (httpMethod == null ? 0 : httpMethod!.hashCode) +
     (url == null ? 0 : url!.hashCode) +
-    (supportedVersions == null ? 0 : supportedVersions!.hashCode) +
-    (parametersOnMethod == null ? 0 : parametersOnMethod!.hashCode) +
-    (parameters == null ? 0 : parameters!.hashCode) +
+    (supportedVersions.hashCode) +
+    (parametersOnMethod.hashCode) +
+    (parameters.hashCode) +
     (returnValue == null ? 0 : returnValue!.hashCode) +
     (allowAnonymous == null ? 0 : allowAnonymous!.hashCode) +
     (implementFrom == null ? 0 : implementFrom!.hashCode);
@@ -103,21 +139,9 @@ class ActionApiDescriptionModel {
     } else {
       json[r'url'] = null;
     }
-    if (this.supportedVersions != null) {
       json[r'supportedVersions'] = this.supportedVersions;
-    } else {
-      json[r'supportedVersions'] = null;
-    }
-    if (this.parametersOnMethod != null) {
       json[r'parametersOnMethod'] = this.parametersOnMethod;
-    } else {
-      json[r'parametersOnMethod'] = null;
-    }
-    if (this.parameters != null) {
       json[r'parameters'] = this.parameters;
-    } else {
-      json[r'parameters'] = null;
-    }
     if (this.returnValue != null) {
       json[r'returnValue'] = this.returnValue;
     } else {

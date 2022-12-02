@@ -18,6 +18,8 @@ class CreateUpdatePuupeeDto {
     this.title,
     this.isHidden,
     this.description,
+    this.text,
+    this.format,
     this.password,
     this.parentId,
     this.key,
@@ -54,12 +56,19 @@ class CreateUpdatePuupeeDto {
     this.tagging,
     this.url,
     this.size,
+    this.lastModifierDeviceToken,
   });
 
   String id;
 
   String name;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? title;
 
   ///
@@ -70,32 +79,132 @@ class CreateUpdatePuupeeDto {
   ///
   bool? isHidden;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? description;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? text;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? format;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? password;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? parentId;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? key;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? md5;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? sliceMd5;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? rapidCode;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? contentType;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? type;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? displayStyle;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? extension_;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? storageClass;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   DateTime? storageObjectCreatedAt;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   DateTime? storageObjectUpdatedAt;
 
   ///
@@ -114,6 +223,12 @@ class CreateUpdatePuupeeDto {
   ///
   bool? isDeleted;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   DateTime? deletionTime;
 
   ///
@@ -124,26 +239,92 @@ class CreateUpdatePuupeeDto {
   ///
   DateTime? creationTime;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   DateTime? lastModificationTime;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   int? priority;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   DateTime? startAt;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   DateTime? endAt;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   DateTime? notifyAt;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? notifyTimingType;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? notifyTimingUnit;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   int? notifyTimingValue;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? repeat;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   DateTime? repeatOffAt;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   int? repeatOffTimes;
 
   ///
@@ -154,16 +335,52 @@ class CreateUpdatePuupeeDto {
   ///
   bool? isDone;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   DateTime? doneAt;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? creatorId;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? lastModifierId;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? deleterId;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? tagging;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? url;
 
   ///
@@ -174,6 +391,14 @@ class CreateUpdatePuupeeDto {
   ///
   int? size;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? lastModifierDeviceToken;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateUpdatePuupeeDto &&
      other.id == id &&
@@ -181,6 +406,8 @@ class CreateUpdatePuupeeDto {
      other.title == title &&
      other.isHidden == isHidden &&
      other.description == description &&
+     other.text == text &&
+     other.format == format &&
      other.password == password &&
      other.parentId == parentId &&
      other.key == key &&
@@ -216,7 +443,8 @@ class CreateUpdatePuupeeDto {
      other.deleterId == deleterId &&
      other.tagging == tagging &&
      other.url == url &&
-     other.size == size;
+     other.size == size &&
+     other.lastModifierDeviceToken == lastModifierDeviceToken;
 
   @override
   int get hashCode =>
@@ -226,6 +454,8 @@ class CreateUpdatePuupeeDto {
     (title == null ? 0 : title!.hashCode) +
     (isHidden == null ? 0 : isHidden!.hashCode) +
     (description == null ? 0 : description!.hashCode) +
+    (text == null ? 0 : text!.hashCode) +
+    (format == null ? 0 : format!.hashCode) +
     (password == null ? 0 : password!.hashCode) +
     (parentId == null ? 0 : parentId!.hashCode) +
     (key == null ? 0 : key!.hashCode) +
@@ -261,10 +491,11 @@ class CreateUpdatePuupeeDto {
     (deleterId == null ? 0 : deleterId!.hashCode) +
     (tagging == null ? 0 : tagging!.hashCode) +
     (url == null ? 0 : url!.hashCode) +
-    (size == null ? 0 : size!.hashCode);
+    (size == null ? 0 : size!.hashCode) +
+    (lastModifierDeviceToken == null ? 0 : lastModifierDeviceToken!.hashCode);
 
   @override
-  String toString() => 'CreateUpdatePuupeeDto[id=$id, name=$name, title=$title, isHidden=$isHidden, description=$description, password=$password, parentId=$parentId, key=$key, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, storageObjectCreatedAt=$storageObjectCreatedAt, storageObjectUpdatedAt=$storageObjectUpdatedAt, syncVersion=$syncVersion, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime, priority=$priority, startAt=$startAt, endAt=$endAt, notifyAt=$notifyAt, notifyTimingType=$notifyTimingType, notifyTimingUnit=$notifyTimingUnit, notifyTimingValue=$notifyTimingValue, repeat=$repeat, repeatOffAt=$repeatOffAt, repeatOffTimes=$repeatOffTimes, isDone=$isDone, doneAt=$doneAt, creatorId=$creatorId, lastModifierId=$lastModifierId, deleterId=$deleterId, tagging=$tagging, url=$url, size=$size]';
+  String toString() => 'CreateUpdatePuupeeDto[id=$id, name=$name, title=$title, isHidden=$isHidden, description=$description, text=$text, format=$format, password=$password, parentId=$parentId, key=$key, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, storageObjectCreatedAt=$storageObjectCreatedAt, storageObjectUpdatedAt=$storageObjectUpdatedAt, syncVersion=$syncVersion, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime, priority=$priority, startAt=$startAt, endAt=$endAt, notifyAt=$notifyAt, notifyTimingType=$notifyTimingType, notifyTimingUnit=$notifyTimingUnit, notifyTimingValue=$notifyTimingValue, repeat=$repeat, repeatOffAt=$repeatOffAt, repeatOffTimes=$repeatOffTimes, isDone=$isDone, doneAt=$doneAt, creatorId=$creatorId, lastModifierId=$lastModifierId, deleterId=$deleterId, tagging=$tagging, url=$url, size=$size, lastModifierDeviceToken=$lastModifierDeviceToken]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -284,6 +515,16 @@ class CreateUpdatePuupeeDto {
       json[r'description'] = this.description;
     } else {
       json[r'description'] = null;
+    }
+    if (this.text != null) {
+      json[r'text'] = this.text;
+    } else {
+      json[r'text'] = null;
+    }
+    if (this.format != null) {
+      json[r'format'] = this.format;
+    } else {
+      json[r'format'] = null;
     }
     if (this.password != null) {
       json[r'password'] = this.password;
@@ -465,6 +706,11 @@ class CreateUpdatePuupeeDto {
     } else {
       json[r'size'] = null;
     }
+    if (this.lastModifierDeviceToken != null) {
+      json[r'lastModifierDeviceToken'] = this.lastModifierDeviceToken;
+    } else {
+      json[r'lastModifierDeviceToken'] = null;
+    }
     return json;
   }
 
@@ -492,6 +738,8 @@ class CreateUpdatePuupeeDto {
         title: mapValueOfType<String>(json, r'title'),
         isHidden: mapValueOfType<bool>(json, r'isHidden'),
         description: mapValueOfType<String>(json, r'description'),
+        text: mapValueOfType<String>(json, r'text'),
+        format: mapValueOfType<String>(json, r'format'),
         password: mapValueOfType<String>(json, r'password'),
         parentId: mapValueOfType<String>(json, r'parentId'),
         key: mapValueOfType<String>(json, r'key'),
@@ -528,6 +776,7 @@ class CreateUpdatePuupeeDto {
         tagging: mapValueOfType<String>(json, r'tagging'),
         url: mapValueOfType<String>(json, r'url'),
         size: mapValueOfType<int>(json, r'size'),
+        lastModifierDeviceToken: mapValueOfType<String>(json, r'lastModifierDeviceToken'),
       );
     }
     return null;

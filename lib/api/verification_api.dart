@@ -19,13 +19,13 @@ class VerificationApi {
   /// Performs an HTTP 'POST /api/app/verification/send-code' operation and returns the [Response].
   /// Parameters:
   ///
-  /// * [SendVerificationCodeDto] sendVerificationCodeDto:
-  Future<Response> apiAppVerificationSendCodePostWithHttpInfo({ SendVerificationCodeDto? sendVerificationCodeDto, }) async {
+  /// * [SendVerificationCodeDto] body:
+  Future<Response> apiAppVerificationSendCodePostWithHttpInfo({ SendVerificationCodeDto? body, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/app/verification/send-code';
 
     // ignore: prefer_final_locals
-    Object? postBody = sendVerificationCodeDto;
+    Object? postBody = body;
 
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
@@ -47,9 +47,9 @@ class VerificationApi {
 
   /// Parameters:
   ///
-  /// * [SendVerificationCodeDto] sendVerificationCodeDto:
-  Future<void> apiAppVerificationSendCodePost({ SendVerificationCodeDto? sendVerificationCodeDto, }) async {
-    final response = await apiAppVerificationSendCodePostWithHttpInfo( sendVerificationCodeDto: sendVerificationCodeDto, );
+  /// * [SendVerificationCodeDto] body:
+  Future<void> apiAppVerificationSendCodePost({ SendVerificationCodeDto? body, }) async {
+    final response = await apiAppVerificationSendCodePostWithHttpInfo( body: body, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

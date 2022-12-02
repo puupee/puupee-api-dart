@@ -13,34 +13,46 @@ part of puupee_api;
 class RefreshDeviceStatusDto {
   /// Returns a new [RefreshDeviceStatusDto] instance.
   RefreshDeviceStatusDto({
-    this.id,
+    this.token,
     this.status,
   });
 
-  String? id;
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? token;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
   String? status;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is RefreshDeviceStatusDto &&
-     other.id == id &&
+     other.token == token &&
      other.status == status;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (id == null ? 0 : id!.hashCode) +
+    (token == null ? 0 : token!.hashCode) +
     (status == null ? 0 : status!.hashCode);
 
   @override
-  String toString() => 'RefreshDeviceStatusDto[id=$id, status=$status]';
+  String toString() => 'RefreshDeviceStatusDto[token=$token, status=$status]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.id != null) {
-      json[r'id'] = this.id;
+    if (this.token != null) {
+      json[r'token'] = this.token;
     } else {
-      json[r'id'] = null;
+      json[r'token'] = null;
     }
     if (this.status != null) {
       json[r'status'] = this.status;
@@ -69,7 +81,7 @@ class RefreshDeviceStatusDto {
       }());
 
       return RefreshDeviceStatusDto(
-        id: mapValueOfType<String>(json, r'id'),
+        token: mapValueOfType<String>(json, r'token'),
         status: mapValueOfType<String>(json, r'status'),
       );
     }

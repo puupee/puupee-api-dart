@@ -10,33 +10,23 @@
 
 part of puupee_api;
 
-class CurrentUserDto {
-  /// Returns a new [CurrentUserDto] instance.
-  CurrentUserDto({
-    this.isAuthenticated,
+class BindDeviceDto {
+  /// Returns a new [BindDeviceDto] instance.
+  BindDeviceDto({
     this.id,
-    this.tenantId,
-    this.impersonatorUserId,
-    this.impersonatorTenantId,
-    this.impersonatorUserName,
-    this.impersonatorTenantName,
-    this.userName,
+    this.creationTime,
+    this.creatorId,
+    this.lastModificationTime,
+    this.lastModifierId,
+    this.isDeleted,
+    this.deleterId,
+    this.deletionTime,
+    this.token,
     this.name,
-    this.surName,
-    this.email,
-    this.emailVerified,
-    this.phoneNumber,
-    this.phoneNumberVerified,
-    this.roles = const [],
+    this.type,
+    this.brand,
+    this.systemVersion,
   });
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  bool? isAuthenticated;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -52,7 +42,7 @@ class CurrentUserDto {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  String? tenantId;
+  DateTime? creationTime;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -60,7 +50,7 @@ class CurrentUserDto {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  String? impersonatorUserId;
+  String? creatorId;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -68,7 +58,7 @@ class CurrentUserDto {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  String? impersonatorTenantId;
+  DateTime? lastModificationTime;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -76,7 +66,7 @@ class CurrentUserDto {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  String? impersonatorUserName;
+  String? lastModifierId;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -84,7 +74,7 @@ class CurrentUserDto {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  String? impersonatorTenantName;
+  bool? isDeleted;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -92,7 +82,23 @@ class CurrentUserDto {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  String? userName;
+  String? deleterId;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  DateTime? deletionTime;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? token;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -108,7 +114,7 @@ class CurrentUserDto {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  String? surName;
+  String? type;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -116,7 +122,7 @@ class CurrentUserDto {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  String? email;
+  String? brand;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -124,146 +130,118 @@ class CurrentUserDto {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  bool? emailVerified;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? phoneNumber;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  bool? phoneNumberVerified;
-
-  List<String> roles;
+  String? systemVersion;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is CurrentUserDto &&
-     other.isAuthenticated == isAuthenticated &&
+  bool operator ==(Object other) => identical(this, other) || other is BindDeviceDto &&
      other.id == id &&
-     other.tenantId == tenantId &&
-     other.impersonatorUserId == impersonatorUserId &&
-     other.impersonatorTenantId == impersonatorTenantId &&
-     other.impersonatorUserName == impersonatorUserName &&
-     other.impersonatorTenantName == impersonatorTenantName &&
-     other.userName == userName &&
+     other.creationTime == creationTime &&
+     other.creatorId == creatorId &&
+     other.lastModificationTime == lastModificationTime &&
+     other.lastModifierId == lastModifierId &&
+     other.isDeleted == isDeleted &&
+     other.deleterId == deleterId &&
+     other.deletionTime == deletionTime &&
+     other.token == token &&
      other.name == name &&
-     other.surName == surName &&
-     other.email == email &&
-     other.emailVerified == emailVerified &&
-     other.phoneNumber == phoneNumber &&
-     other.phoneNumberVerified == phoneNumberVerified &&
-     other.roles == roles;
+     other.type == type &&
+     other.brand == brand &&
+     other.systemVersion == systemVersion;
 
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (isAuthenticated == null ? 0 : isAuthenticated!.hashCode) +
     (id == null ? 0 : id!.hashCode) +
-    (tenantId == null ? 0 : tenantId!.hashCode) +
-    (impersonatorUserId == null ? 0 : impersonatorUserId!.hashCode) +
-    (impersonatorTenantId == null ? 0 : impersonatorTenantId!.hashCode) +
-    (impersonatorUserName == null ? 0 : impersonatorUserName!.hashCode) +
-    (impersonatorTenantName == null ? 0 : impersonatorTenantName!.hashCode) +
-    (userName == null ? 0 : userName!.hashCode) +
+    (creationTime == null ? 0 : creationTime!.hashCode) +
+    (creatorId == null ? 0 : creatorId!.hashCode) +
+    (lastModificationTime == null ? 0 : lastModificationTime!.hashCode) +
+    (lastModifierId == null ? 0 : lastModifierId!.hashCode) +
+    (isDeleted == null ? 0 : isDeleted!.hashCode) +
+    (deleterId == null ? 0 : deleterId!.hashCode) +
+    (deletionTime == null ? 0 : deletionTime!.hashCode) +
+    (token == null ? 0 : token!.hashCode) +
     (name == null ? 0 : name!.hashCode) +
-    (surName == null ? 0 : surName!.hashCode) +
-    (email == null ? 0 : email!.hashCode) +
-    (emailVerified == null ? 0 : emailVerified!.hashCode) +
-    (phoneNumber == null ? 0 : phoneNumber!.hashCode) +
-    (phoneNumberVerified == null ? 0 : phoneNumberVerified!.hashCode) +
-    (roles.hashCode);
+    (type == null ? 0 : type!.hashCode) +
+    (brand == null ? 0 : brand!.hashCode) +
+    (systemVersion == null ? 0 : systemVersion!.hashCode);
 
   @override
-  String toString() => 'CurrentUserDto[isAuthenticated=$isAuthenticated, id=$id, tenantId=$tenantId, impersonatorUserId=$impersonatorUserId, impersonatorTenantId=$impersonatorTenantId, impersonatorUserName=$impersonatorUserName, impersonatorTenantName=$impersonatorTenantName, userName=$userName, name=$name, surName=$surName, email=$email, emailVerified=$emailVerified, phoneNumber=$phoneNumber, phoneNumberVerified=$phoneNumberVerified, roles=$roles]';
+  String toString() => 'BindDeviceDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, token=$token, name=$name, type=$type, brand=$brand, systemVersion=$systemVersion]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.isAuthenticated != null) {
-      json[r'isAuthenticated'] = this.isAuthenticated;
-    } else {
-      json[r'isAuthenticated'] = null;
-    }
     if (this.id != null) {
       json[r'id'] = this.id;
     } else {
       json[r'id'] = null;
     }
-    if (this.tenantId != null) {
-      json[r'tenantId'] = this.tenantId;
+    if (this.creationTime != null) {
+      json[r'creationTime'] = this.creationTime!.toUtc().toIso8601String();
     } else {
-      json[r'tenantId'] = null;
+      json[r'creationTime'] = null;
     }
-    if (this.impersonatorUserId != null) {
-      json[r'impersonatorUserId'] = this.impersonatorUserId;
+    if (this.creatorId != null) {
+      json[r'creatorId'] = this.creatorId;
     } else {
-      json[r'impersonatorUserId'] = null;
+      json[r'creatorId'] = null;
     }
-    if (this.impersonatorTenantId != null) {
-      json[r'impersonatorTenantId'] = this.impersonatorTenantId;
+    if (this.lastModificationTime != null) {
+      json[r'lastModificationTime'] = this.lastModificationTime!.toUtc().toIso8601String();
     } else {
-      json[r'impersonatorTenantId'] = null;
+      json[r'lastModificationTime'] = null;
     }
-    if (this.impersonatorUserName != null) {
-      json[r'impersonatorUserName'] = this.impersonatorUserName;
+    if (this.lastModifierId != null) {
+      json[r'lastModifierId'] = this.lastModifierId;
     } else {
-      json[r'impersonatorUserName'] = null;
+      json[r'lastModifierId'] = null;
     }
-    if (this.impersonatorTenantName != null) {
-      json[r'impersonatorTenantName'] = this.impersonatorTenantName;
+    if (this.isDeleted != null) {
+      json[r'isDeleted'] = this.isDeleted;
     } else {
-      json[r'impersonatorTenantName'] = null;
+      json[r'isDeleted'] = null;
     }
-    if (this.userName != null) {
-      json[r'userName'] = this.userName;
+    if (this.deleterId != null) {
+      json[r'deleterId'] = this.deleterId;
     } else {
-      json[r'userName'] = null;
+      json[r'deleterId'] = null;
+    }
+    if (this.deletionTime != null) {
+      json[r'deletionTime'] = this.deletionTime!.toUtc().toIso8601String();
+    } else {
+      json[r'deletionTime'] = null;
+    }
+    if (this.token != null) {
+      json[r'token'] = this.token;
+    } else {
+      json[r'token'] = null;
     }
     if (this.name != null) {
       json[r'name'] = this.name;
     } else {
       json[r'name'] = null;
     }
-    if (this.surName != null) {
-      json[r'surName'] = this.surName;
+    if (this.type != null) {
+      json[r'type'] = this.type;
     } else {
-      json[r'surName'] = null;
+      json[r'type'] = null;
     }
-    if (this.email != null) {
-      json[r'email'] = this.email;
+    if (this.brand != null) {
+      json[r'brand'] = this.brand;
     } else {
-      json[r'email'] = null;
+      json[r'brand'] = null;
     }
-    if (this.emailVerified != null) {
-      json[r'emailVerified'] = this.emailVerified;
+    if (this.systemVersion != null) {
+      json[r'systemVersion'] = this.systemVersion;
     } else {
-      json[r'emailVerified'] = null;
+      json[r'systemVersion'] = null;
     }
-    if (this.phoneNumber != null) {
-      json[r'phoneNumber'] = this.phoneNumber;
-    } else {
-      json[r'phoneNumber'] = null;
-    }
-    if (this.phoneNumberVerified != null) {
-      json[r'phoneNumberVerified'] = this.phoneNumberVerified;
-    } else {
-      json[r'phoneNumberVerified'] = null;
-    }
-      json[r'roles'] = this.roles;
     return json;
   }
 
-  /// Returns a new [CurrentUserDto] instance and imports its values from
+  /// Returns a new [BindDeviceDto] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static CurrentUserDto? fromJson(dynamic value) {
+  static BindDeviceDto? fromJson(dynamic value) {
     if (value is Map) {
       final json = value.cast<String, dynamic>();
 
@@ -272,40 +250,36 @@ class CurrentUserDto {
       // Note 2: this code is stripped in release mode!
       assert(() {
         requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "CurrentUserDto[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "CurrentUserDto[$key]" has a null value in JSON.');
+          assert(json.containsKey(key), 'Required key "BindDeviceDto[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "BindDeviceDto[$key]" has a null value in JSON.');
         });
         return true;
       }());
 
-      return CurrentUserDto(
-        isAuthenticated: mapValueOfType<bool>(json, r'isAuthenticated'),
+      return BindDeviceDto(
         id: mapValueOfType<String>(json, r'id'),
-        tenantId: mapValueOfType<String>(json, r'tenantId'),
-        impersonatorUserId: mapValueOfType<String>(json, r'impersonatorUserId'),
-        impersonatorTenantId: mapValueOfType<String>(json, r'impersonatorTenantId'),
-        impersonatorUserName: mapValueOfType<String>(json, r'impersonatorUserName'),
-        impersonatorTenantName: mapValueOfType<String>(json, r'impersonatorTenantName'),
-        userName: mapValueOfType<String>(json, r'userName'),
+        creationTime: mapDateTime(json, r'creationTime', ''),
+        creatorId: mapValueOfType<String>(json, r'creatorId'),
+        lastModificationTime: mapDateTime(json, r'lastModificationTime', ''),
+        lastModifierId: mapValueOfType<String>(json, r'lastModifierId'),
+        isDeleted: mapValueOfType<bool>(json, r'isDeleted'),
+        deleterId: mapValueOfType<String>(json, r'deleterId'),
+        deletionTime: mapDateTime(json, r'deletionTime', ''),
+        token: mapValueOfType<String>(json, r'token'),
         name: mapValueOfType<String>(json, r'name'),
-        surName: mapValueOfType<String>(json, r'surName'),
-        email: mapValueOfType<String>(json, r'email'),
-        emailVerified: mapValueOfType<bool>(json, r'emailVerified'),
-        phoneNumber: mapValueOfType<String>(json, r'phoneNumber'),
-        phoneNumberVerified: mapValueOfType<bool>(json, r'phoneNumberVerified'),
-        roles: json[r'roles'] is List
-            ? (json[r'roles'] as List).cast<String>()
-            : const [],
+        type: mapValueOfType<String>(json, r'type'),
+        brand: mapValueOfType<String>(json, r'brand'),
+        systemVersion: mapValueOfType<String>(json, r'systemVersion'),
       );
     }
     return null;
   }
 
-  static List<CurrentUserDto>? listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <CurrentUserDto>[];
+  static List<BindDeviceDto>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <BindDeviceDto>[];
     if (json is List && json.isNotEmpty) {
       for (final row in json) {
-        final value = CurrentUserDto.fromJson(row);
+        final value = BindDeviceDto.fromJson(row);
         if (value != null) {
           result.add(value);
         }
@@ -314,12 +288,12 @@ class CurrentUserDto {
     return result.toList(growable: growable);
   }
 
-  static Map<String, CurrentUserDto> mapFromJson(dynamic json) {
-    final map = <String, CurrentUserDto>{};
+  static Map<String, BindDeviceDto> mapFromJson(dynamic json) {
+    final map = <String, BindDeviceDto>{};
     if (json is Map && json.isNotEmpty) {
       json = json.cast<String, dynamic>(); // ignore: parameter_assignments
       for (final entry in json.entries) {
-        final value = CurrentUserDto.fromJson(entry.value);
+        final value = BindDeviceDto.fromJson(entry.value);
         if (value != null) {
           map[entry.key] = value;
         }
@@ -328,13 +302,13 @@ class CurrentUserDto {
     return map;
   }
 
-  // maps a json object with a list of CurrentUserDto-objects as value to a dart map
-  static Map<String, List<CurrentUserDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<CurrentUserDto>>{};
+  // maps a json object with a list of BindDeviceDto-objects as value to a dart map
+  static Map<String, List<BindDeviceDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
+    final map = <String, List<BindDeviceDto>>{};
     if (json is Map && json.isNotEmpty) {
       json = json.cast<String, dynamic>(); // ignore: parameter_assignments
       for (final entry in json.entries) {
-        final value = CurrentUserDto.listFromJson(entry.value, growable: growable,);
+        final value = BindDeviceDto.listFromJson(entry.value, growable: growable,);
         if (value != null) {
           map[entry.key] = value;
         }

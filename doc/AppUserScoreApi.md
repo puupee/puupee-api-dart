@@ -13,19 +13,21 @@ Method | HTTP request | Description
 
 
 # **apiAppAppUserScorePost**
-> AppUserScoreDto apiAppAppUserScorePost(createUpdateAppUserScoreDto)
+> AppUserScoreDto apiAppAppUserScorePost(body)
 
 
 
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = AppUserScoreApi();
-final createUpdateAppUserScoreDto = CreateUpdateAppUserScoreDto(); // CreateUpdateAppUserScoreDto | 
+final body = CreateUpdateAppUserScoreDto(); // CreateUpdateAppUserScoreDto | 
 
 try {
-    final result = api_instance.apiAppAppUserScorePost(createUpdateAppUserScoreDto);
+    final result = api_instance.apiAppAppUserScorePost(body);
     print(result);
 } catch (e) {
     print('Exception when calling AppUserScoreApi->apiAppAppUserScorePost: $e\n');
@@ -36,7 +38,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createUpdateAppUserScoreDto** | [**CreateUpdateAppUserScoreDto**](CreateUpdateAppUserScoreDto.md)|  | [optional] 
+ **body** | [**CreateUpdateAppUserScoreDto**](CreateUpdateAppUserScoreDto.md)|  | [optional] 
 
 ### Return type
 
@@ -44,7 +46,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 

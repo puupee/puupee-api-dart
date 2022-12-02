@@ -1,4 +1,4 @@
-# puupee_api.model.DeviceDto
+# puupee_api.model.BindDeviceDto
 
 ## Load the model package
 ```dart
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
 **token** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
-**platform** | **String** |  | [optional] 
+**type** | **String** |  | [optional] 
 **brand** | **String** |  | [optional] 
 **systemVersion** | **String** |  | [optional] 
 

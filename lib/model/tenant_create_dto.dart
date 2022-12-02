@@ -19,7 +19,7 @@ class TenantCreateDto {
     required this.adminPassword,
   });
 
-  Map<String, Object>? extraProperties;
+  Map<String, Object> extraProperties;
 
   String name;
 
@@ -37,7 +37,7 @@ class TenantCreateDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (extraProperties == null ? 0 : extraProperties!.hashCode) +
+    (extraProperties.hashCode) +
     (name.hashCode) +
     (adminEmailAddress.hashCode) +
     (adminPassword.hashCode);
@@ -47,11 +47,7 @@ class TenantCreateDto {
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.extraProperties != null) {
       json[r'extraProperties'] = this.extraProperties;
-    } else {
-      json[r'extraProperties'] = null;
-    }
       json[r'name'] = this.name;
       json[r'adminEmailAddress'] = this.adminEmailAddress;
       json[r'adminPassword'] = this.adminPassword;

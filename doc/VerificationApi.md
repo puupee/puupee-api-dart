@@ -13,19 +13,21 @@ Method | HTTP request | Description
 
 
 # **apiAppVerificationSendCodePost**
-> apiAppVerificationSendCodePost(sendVerificationCodeDto)
+> apiAppVerificationSendCodePost(body)
 
 
 
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = VerificationApi();
-final sendVerificationCodeDto = SendVerificationCodeDto(); // SendVerificationCodeDto | 
+final body = SendVerificationCodeDto(); // SendVerificationCodeDto | 
 
 try {
-    api_instance.apiAppVerificationSendCodePost(sendVerificationCodeDto);
+    api_instance.apiAppVerificationSendCodePost(body);
 } catch (e) {
     print('Exception when calling VerificationApi->apiAppVerificationSendCodePost: $e\n');
 }
@@ -35,7 +37,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sendVerificationCodeDto** | [**SendVerificationCodeDto**](SendVerificationCodeDto.md)|  | [optional] 
+ **body** | [**SendVerificationCodeDto**](SendVerificationCodeDto.md)|  | [optional] 
 
 ### Return type
 
@@ -43,7 +45,7 @@ void (empty response body)
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 

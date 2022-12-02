@@ -21,6 +21,8 @@ Method | HTTP request | Description
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = PuupeeApi();
 final afterVersion = 789; // int | 
@@ -49,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 
@@ -59,19 +61,21 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppPuupeePushPost**
-> PuupeeDto apiAppPuupeePushPost(createUpdatePuupeeDto)
+> PuupeeDto apiAppPuupeePushPost(body)
 
 
 
 ### Example
 ```dart
 import 'package:puupee_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = PuupeeApi();
-final createUpdatePuupeeDto = CreateUpdatePuupeeDto(); // CreateUpdatePuupeeDto | 
+final body = CreateUpdatePuupeeDto(); // CreateUpdatePuupeeDto | 
 
 try {
-    final result = api_instance.apiAppPuupeePushPost(createUpdatePuupeeDto);
+    final result = api_instance.apiAppPuupeePushPost(body);
     print(result);
 } catch (e) {
     print('Exception when calling PuupeeApi->apiAppPuupeePushPost: $e\n');
@@ -82,7 +86,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createUpdatePuupeeDto** | [**CreateUpdatePuupeeDto**](CreateUpdatePuupeeDto.md)|  | [optional] 
+ **body** | [**CreateUpdatePuupeeDto**](CreateUpdatePuupeeDto.md)|  | [optional] 
 
 ### Return type
 
@@ -90,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[oauth2](../README.md#oauth2)
 
 ### HTTP request headers
 

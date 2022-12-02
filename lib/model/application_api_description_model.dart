@@ -17,9 +17,9 @@ class ApplicationApiDescriptionModel {
     this.types = const {},
   });
 
-  Map<String, ModuleApiDescriptionModel>? modules;
+  Map<String, ModuleApiDescriptionModel> modules;
 
-  Map<String, TypeApiDescriptionModel>? types;
+  Map<String, TypeApiDescriptionModel> types;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ApplicationApiDescriptionModel &&
@@ -29,24 +29,16 @@ class ApplicationApiDescriptionModel {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (modules == null ? 0 : modules!.hashCode) +
-    (types == null ? 0 : types!.hashCode);
+    (modules.hashCode) +
+    (types.hashCode);
 
   @override
   String toString() => 'ApplicationApiDescriptionModel[modules=$modules, types=$types]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.modules != null) {
       json[r'modules'] = this.modules;
-    } else {
-      json[r'modules'] = null;
-    }
-    if (this.types != null) {
       json[r'types'] = this.types;
-    } else {
-      json[r'types'] = null;
-    }
     return json;
   }
 

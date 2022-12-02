@@ -17,9 +17,9 @@ class ApplicationLocalizationResourceDto {
     this.baseResources = const [],
   });
 
-  Map<String, String>? texts;
+  Map<String, String> texts;
 
-  List<String>? baseResources;
+  List<String> baseResources;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ApplicationLocalizationResourceDto &&
@@ -29,24 +29,16 @@ class ApplicationLocalizationResourceDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (texts == null ? 0 : texts!.hashCode) +
-    (baseResources == null ? 0 : baseResources!.hashCode);
+    (texts.hashCode) +
+    (baseResources.hashCode);
 
   @override
   String toString() => 'ApplicationLocalizationResourceDto[texts=$texts, baseResources=$baseResources]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.texts != null) {
       json[r'texts'] = this.texts;
-    } else {
-      json[r'texts'] = null;
-    }
-    if (this.baseResources != null) {
       json[r'baseResources'] = this.baseResources;
-    } else {
-      json[r'baseResources'] = null;
-    }
     return json;
   }
 

@@ -16,7 +16,7 @@ class ApplicationSettingConfigurationDto {
     this.values = const {},
   });
 
-  Map<String, String>? values;
+  Map<String, String> values;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is ApplicationSettingConfigurationDto &&
@@ -25,18 +25,14 @@ class ApplicationSettingConfigurationDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (values == null ? 0 : values!.hashCode);
+    (values.hashCode);
 
   @override
   String toString() => 'ApplicationSettingConfigurationDto[values=$values]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.values != null) {
       json[r'values'] = this.values;
-    } else {
-      json[r'values'] = null;
-    }
     return json;
   }
 

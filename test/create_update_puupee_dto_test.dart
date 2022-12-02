@@ -41,6 +41,16 @@ void main() {
       // TODO
     });
 
+    // String text
+    test('to test the property `text`', () async {
+      // TODO
+    });
+
+    // String format
+    test('to test the property `format`', () async {
+      // TODO
+    });
+
     // String password
     test('to test the property `password`', () async {
       // TODO
@@ -218,6 +228,11 @@ void main() {
 
     // int size
     test('to test the property `size`', () async {
+      // TODO
+    });
+
+    // String lastModifierDeviceToken
+    test('to test the property `lastModifierDeviceToken`', () async {
       // TODO
     });
 
