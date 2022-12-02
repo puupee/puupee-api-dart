@@ -42,14 +42,14 @@ import 'package:puupee_api/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = AppApi();
-final name = name_example; // String | 
+final api_instance = AbpApiDefinitionApi();
+final includeTypes = true; // bool | 
 
 try {
-    final result = api_instance.apiAppAppByNameGet(name);
+    final result = api_instance.apiAbpApiDefinitionGet(includeTypes);
     print(result);
 } catch (e) {
-    print('Exception when calling AppApi->apiAppAppByNameGet: $e\n');
+    print('Exception when calling AbpApiDefinitionApi->apiAbpApiDefinitionGet: $e\n');
 }
 
 ```
@@ -60,6 +60,15 @@ All URIs are relative to *http://localhost*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AbpApiDefinitionApi* | [**apiAbpApiDefinitionGet**](doc//AbpApiDefinitionApi.md#apiabpapidefinitionget) | **GET** /api/abp/api-definition | 
+*AbpApplicationConfigurationApi* | [**apiAbpApplicationConfigurationGet**](doc//AbpApplicationConfigurationApi.md#apiabpapplicationconfigurationget) | **GET** /api/abp/application-configuration | 
+*AbpApplicationLocalizationApi* | [**apiAbpApplicationLocalizationGet**](doc//AbpApplicationLocalizationApi.md#apiabpapplicationlocalizationget) | **GET** /api/abp/application-localization | 
+*AbpTenantApi* | [**apiAbpMultiTenancyTenantsByIdIdGet**](doc//AbpTenantApi.md#apiabpmultitenancytenantsbyididget) | **GET** /api/abp/multi-tenancy/tenants/by-id/{id} | 
+*AbpTenantApi* | [**apiAbpMultiTenancyTenantsByNameNameGet**](doc//AbpTenantApi.md#apiabpmultitenancytenantsbynamenameget) | **GET** /api/abp/multi-tenancy/tenants/by-name/{name} | 
+*AccountApi* | [**apiAccountRegisterPost**](doc//AccountApi.md#apiaccountregisterpost) | **POST** /api/account/register | 
+*AccountApi* | [**apiAccountResetPasswordPost**](doc//AccountApi.md#apiaccountresetpasswordpost) | **POST** /api/account/reset-password | 
+*AccountApi* | [**apiAccountSendPasswordResetCodePost**](doc//AccountApi.md#apiaccountsendpasswordresetcodepost) | **POST** /api/account/send-password-reset-code | 
+*AccountApi* | [**apiAccountVerifyPasswordResetTokenPost**](doc//AccountApi.md#apiaccountverifypasswordresettokenpost) | **POST** /api/account/verify-password-reset-token | 
 *AppApi* | [**apiAppAppByNameGet**](doc//AppApi.md#apiappappbynameget) | **GET** /api/app/app/by-name | 
 *AppApi* | [**apiAppAppGet**](doc//AppApi.md#apiappappget) | **GET** /api/app/app | 
 *AppApi* | [**apiAppAppIdDelete**](doc//AppApi.md#apiappappiddelete) | **DELETE** /api/app/app/{id} | 
@@ -77,6 +86,12 @@ Class | Method | HTTP request | Description
 *DeviceApi* | [**apiAppDeviceDelete**](doc//DeviceApi.md#apiappdevicedelete) | **DELETE** /api/app/device | 
 *DeviceApi* | [**apiAppDeviceGet**](doc//DeviceApi.md#apiappdeviceget) | **GET** /api/app/device | 
 *DeviceApi* | [**apiAppDeviceRefreshPost**](doc//DeviceApi.md#apiappdevicerefreshpost) | **POST** /api/app/device/refresh | 
+*EmailSettingsApi* | [**apiSettingManagementEmailingGet**](doc//EmailSettingsApi.md#apisettingmanagementemailingget) | **GET** /api/setting-management/emailing | 
+*EmailSettingsApi* | [**apiSettingManagementEmailingPost**](doc//EmailSettingsApi.md#apisettingmanagementemailingpost) | **POST** /api/setting-management/emailing | 
+*EmailSettingsApi* | [**apiSettingManagementEmailingSendTestEmailPost**](doc//EmailSettingsApi.md#apisettingmanagementemailingsendtestemailpost) | **POST** /api/setting-management/emailing/send-test-email | 
+*FeaturesApi* | [**apiFeatureManagementFeaturesDelete**](doc//FeaturesApi.md#apifeaturemanagementfeaturesdelete) | **DELETE** /api/feature-management/features | 
+*FeaturesApi* | [**apiFeatureManagementFeaturesGet**](doc//FeaturesApi.md#apifeaturemanagementfeaturesget) | **GET** /api/feature-management/features | 
+*FeaturesApi* | [**apiFeatureManagementFeaturesPut**](doc//FeaturesApi.md#apifeaturemanagementfeaturesput) | **PUT** /api/feature-management/features | 
 *KeyValueApi* | [**apiAppKeyValueBoolGet**](doc//KeyValueApi.md#apiappkeyvalueboolget) | **GET** /api/app/key-value/bool | 
 *KeyValueApi* | [**apiAppKeyValueDateTimeGet**](doc//KeyValueApi.md#apiappkeyvaluedatetimeget) | **GET** /api/app/key-value/date-time | 
 *KeyValueApi* | [**apiAppKeyValueDecimalGet**](doc//KeyValueApi.md#apiappkeyvaluedecimalget) | **GET** /api/app/key-value/decimal | 
@@ -89,8 +104,22 @@ Class | Method | HTTP request | Description
 *KeyValueApi* | [**apiAppKeyValueSetIntPost**](doc//KeyValueApi.md#apiappkeyvaluesetintpost) | **POST** /api/app/key-value/set-int | 
 *KeyValueApi* | [**apiAppKeyValueSetStringPost**](doc//KeyValueApi.md#apiappkeyvaluesetstringpost) | **POST** /api/app/key-value/set-string | 
 *KeyValueApi* | [**apiAppKeyValueStringGet**](doc//KeyValueApi.md#apiappkeyvaluestringget) | **GET** /api/app/key-value/string | 
+*LoginApi* | [**apiAccountCheckPasswordPost**](doc//LoginApi.md#apiaccountcheckpasswordpost) | **POST** /api/account/check-password | 
+*LoginApi* | [**apiAccountLoginPost**](doc//LoginApi.md#apiaccountloginpost) | **POST** /api/account/login | 
+*LoginApi* | [**apiAccountLogoutGet**](doc//LoginApi.md#apiaccountlogoutget) | **GET** /api/account/logout | 
+*PermissionsApi* | [**apiPermissionManagementPermissionsGet**](doc//PermissionsApi.md#apipermissionmanagementpermissionsget) | **GET** /api/permission-management/permissions | 
+*PermissionsApi* | [**apiPermissionManagementPermissionsPut**](doc//PermissionsApi.md#apipermissionmanagementpermissionsput) | **PUT** /api/permission-management/permissions | 
+*ProfileApi* | [**apiAccountMyProfileChangePasswordPost**](doc//ProfileApi.md#apiaccountmyprofilechangepasswordpost) | **POST** /api/account/my-profile/change-password | 
+*ProfileApi* | [**apiAccountMyProfileGet**](doc//ProfileApi.md#apiaccountmyprofileget) | **GET** /api/account/my-profile | 
+*ProfileApi* | [**apiAccountMyProfilePut**](doc//ProfileApi.md#apiaccountmyprofileput) | **PUT** /api/account/my-profile | 
 *PuupeeApi* | [**apiAppPuupeePullGet**](doc//PuupeeApi.md#apiapppuupeepullget) | **GET** /api/app/puupee/pull | 
 *PuupeeApi* | [**apiAppPuupeePushPost**](doc//PuupeeApi.md#apiapppuupeepushpost) | **POST** /api/app/puupee/push | 
+*RoleApi* | [**apiIdentityRolesAllGet**](doc//RoleApi.md#apiidentityrolesallget) | **GET** /api/identity/roles/all | 
+*RoleApi* | [**apiIdentityRolesGet**](doc//RoleApi.md#apiidentityrolesget) | **GET** /api/identity/roles | 
+*RoleApi* | [**apiIdentityRolesIdDelete**](doc//RoleApi.md#apiidentityrolesiddelete) | **DELETE** /api/identity/roles/{id} | 
+*RoleApi* | [**apiIdentityRolesIdGet**](doc//RoleApi.md#apiidentityrolesidget) | **GET** /api/identity/roles/{id} | 
+*RoleApi* | [**apiIdentityRolesIdPut**](doc//RoleApi.md#apiidentityrolesidput) | **PUT** /api/identity/roles/{id} | 
+*RoleApi* | [**apiIdentityRolesPost**](doc//RoleApi.md#apiidentityrolespost) | **POST** /api/identity/roles | 
 *SettingsApi* | [**apiAppSettingsGet**](doc//SettingsApi.md#apiappsettingsget) | **GET** /api/app/settings | 
 *SettingsApi* | [**apiAppSettingsSetPost**](doc//SettingsApi.md#apiappsettingssetpost) | **POST** /api/app/settings/set | 
 *SimpleDataApi* | [**apiAppSimpleDataGet**](doc//SimpleDataApi.md#apiappsimpledataget) | **GET** /api/app/simple-data | 
@@ -103,6 +132,28 @@ Class | Method | HTTP request | Description
 *StorageObjectApi* | [**apiAppStorageObjectThumbGet**](doc//StorageObjectApi.md#apiappstorageobjectthumbget) | **GET** /api/app/storage-object/thumb | 
 *SyncStateApi* | [**apiAppSyncStateGet**](doc//SyncStateApi.md#apiappsyncstateget) | **GET** /api/app/sync-state | 
 *SyncStateApi* | [**apiAppSyncStatePuupeeChangedEtoPost**](doc//SyncStateApi.md#apiappsyncstatepuupeechangedetopost) | **POST** /api/app/sync-state/puupee-changed-eto | 
+*TenantApi* | [**apiMultiTenancyTenantsGet**](doc//TenantApi.md#apimultitenancytenantsget) | **GET** /api/multi-tenancy/tenants | 
+*TenantApi* | [**apiMultiTenancyTenantsIdDefaultConnectionStringDelete**](doc//TenantApi.md#apimultitenancytenantsiddefaultconnectionstringdelete) | **DELETE** /api/multi-tenancy/tenants/{id}/default-connection-string | 
+*TenantApi* | [**apiMultiTenancyTenantsIdDefaultConnectionStringGet**](doc//TenantApi.md#apimultitenancytenantsiddefaultconnectionstringget) | **GET** /api/multi-tenancy/tenants/{id}/default-connection-string | 
+*TenantApi* | [**apiMultiTenancyTenantsIdDefaultConnectionStringPut**](doc//TenantApi.md#apimultitenancytenantsiddefaultconnectionstringput) | **PUT** /api/multi-tenancy/tenants/{id}/default-connection-string | 
+*TenantApi* | [**apiMultiTenancyTenantsIdDelete**](doc//TenantApi.md#apimultitenancytenantsiddelete) | **DELETE** /api/multi-tenancy/tenants/{id} | 
+*TenantApi* | [**apiMultiTenancyTenantsIdGet**](doc//TenantApi.md#apimultitenancytenantsidget) | **GET** /api/multi-tenancy/tenants/{id} | 
+*TenantApi* | [**apiMultiTenancyTenantsIdPut**](doc//TenantApi.md#apimultitenancytenantsidput) | **PUT** /api/multi-tenancy/tenants/{id} | 
+*TenantApi* | [**apiMultiTenancyTenantsPost**](doc//TenantApi.md#apimultitenancytenantspost) | **POST** /api/multi-tenancy/tenants | 
+*UserApi* | [**apiIdentityUsersAssignableRolesGet**](doc//UserApi.md#apiidentityusersassignablerolesget) | **GET** /api/identity/users/assignable-roles | 
+*UserApi* | [**apiIdentityUsersByEmailEmailGet**](doc//UserApi.md#apiidentityusersbyemailemailget) | **GET** /api/identity/users/by-email/{email} | 
+*UserApi* | [**apiIdentityUsersByUsernameUserNameGet**](doc//UserApi.md#apiidentityusersbyusernameusernameget) | **GET** /api/identity/users/by-username/{userName} | 
+*UserApi* | [**apiIdentityUsersGet**](doc//UserApi.md#apiidentityusersget) | **GET** /api/identity/users | 
+*UserApi* | [**apiIdentityUsersIdDelete**](doc//UserApi.md#apiidentityusersiddelete) | **DELETE** /api/identity/users/{id} | 
+*UserApi* | [**apiIdentityUsersIdGet**](doc//UserApi.md#apiidentityusersidget) | **GET** /api/identity/users/{id} | 
+*UserApi* | [**apiIdentityUsersIdPut**](doc//UserApi.md#apiidentityusersidput) | **PUT** /api/identity/users/{id} | 
+*UserApi* | [**apiIdentityUsersIdRolesGet**](doc//UserApi.md#apiidentityusersidrolesget) | **GET** /api/identity/users/{id}/roles | 
+*UserApi* | [**apiIdentityUsersIdRolesPut**](doc//UserApi.md#apiidentityusersidrolesput) | **PUT** /api/identity/users/{id}/roles | 
+*UserApi* | [**apiIdentityUsersPost**](doc//UserApi.md#apiidentityuserspost) | **POST** /api/identity/users | 
+*UserLookupApi* | [**apiIdentityUsersLookupByUsernameUserNameGet**](doc//UserLookupApi.md#apiidentityuserslookupbyusernameusernameget) | **GET** /api/identity/users/lookup/by-username/{userName} | 
+*UserLookupApi* | [**apiIdentityUsersLookupCountGet**](doc//UserLookupApi.md#apiidentityuserslookupcountget) | **GET** /api/identity/users/lookup/count | 
+*UserLookupApi* | [**apiIdentityUsersLookupIdGet**](doc//UserLookupApi.md#apiidentityuserslookupidget) | **GET** /api/identity/users/lookup/{id} | 
+*UserLookupApi* | [**apiIdentityUsersLookupSearchGet**](doc//UserLookupApi.md#apiidentityuserslookupsearchget) | **GET** /api/identity/users/lookup/search | 
 *UserStorageApi* | [**apiAppUserStorageGet**](doc//UserStorageApi.md#apiappuserstorageget) | **GET** /api/app/user-storage | 
 *VerificationApi* | [**apiAppVerificationSendCodePost**](doc//VerificationApi.md#apiappverificationsendcodepost) | **POST** /api/app/verification/send-code | 
 
