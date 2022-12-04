@@ -236,6 +236,11 @@ void main() {
       // TODO
     });
 
+    // String lastModifierDevice
+    test('to test the property `lastModifierDevice`', () async {
+      // TODO
+    });
+
 
   });
 

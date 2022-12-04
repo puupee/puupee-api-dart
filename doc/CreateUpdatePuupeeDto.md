@@ -52,6 +52,7 @@ Name | Type | Description | Notes
 **url** | **String** |  | [optional] 
 **size** | **int** |  | [optional] 
 **lastModifierDeviceToken** | **String** |  | [optional] 
+**lastModifierDevice** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

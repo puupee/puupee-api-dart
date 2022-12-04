@@ -8,14 +8,6 @@ import 'package:puupee_api/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | [optional] 
-**creationTime** | [**DateTime**](DateTime.md) |  | [optional] 
-**creatorId** | **String** |  | [optional] 
-**lastModificationTime** | [**DateTime**](DateTime.md) |  | [optional] 
-**lastModifierId** | **String** |  | [optional] 
-**isDeleted** | **bool** |  | [optional] 
-**deleterId** | **String** |  | [optional] 
-**deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
 **token** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **type** | **String** |  | [optional] 

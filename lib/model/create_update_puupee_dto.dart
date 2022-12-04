@@ -57,6 +57,7 @@ class CreateUpdatePuupeeDto {
     this.url,
     this.size,
     this.lastModifierDeviceToken,
+    this.lastModifierDevice,
   });
 
   String id;
@@ -399,6 +400,14 @@ class CreateUpdatePuupeeDto {
   ///
   String? lastModifierDeviceToken;
 
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? lastModifierDevice;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateUpdatePuupeeDto &&
      other.id == id &&
@@ -444,7 +453,8 @@ class CreateUpdatePuupeeDto {
      other.tagging == tagging &&
      other.url == url &&
      other.size == size &&
-     other.lastModifierDeviceToken == lastModifierDeviceToken;
+     other.lastModifierDeviceToken == lastModifierDeviceToken &&
+     other.lastModifierDevice == lastModifierDevice;
 
   @override
   int get hashCode =>
@@ -492,10 +502,11 @@ class CreateUpdatePuupeeDto {
     (tagging == null ? 0 : tagging!.hashCode) +
     (url == null ? 0 : url!.hashCode) +
     (size == null ? 0 : size!.hashCode) +
-    (lastModifierDeviceToken == null ? 0 : lastModifierDeviceToken!.hashCode);
+    (lastModifierDeviceToken == null ? 0 : lastModifierDeviceToken!.hashCode) +
+    (lastModifierDevice == null ? 0 : lastModifierDevice!.hashCode);
 
   @override
-  String toString() => 'CreateUpdatePuupeeDto[id=$id, name=$name, title=$title, isHidden=$isHidden, description=$description, text=$text, format=$format, password=$password, parentId=$parentId, key=$key, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, storageObjectCreatedAt=$storageObjectCreatedAt, storageObjectUpdatedAt=$storageObjectUpdatedAt, syncVersion=$syncVersion, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime, priority=$priority, startAt=$startAt, endAt=$endAt, notifyAt=$notifyAt, notifyTimingType=$notifyTimingType, notifyTimingUnit=$notifyTimingUnit, notifyTimingValue=$notifyTimingValue, repeat=$repeat, repeatOffAt=$repeatOffAt, repeatOffTimes=$repeatOffTimes, isDone=$isDone, doneAt=$doneAt, creatorId=$creatorId, lastModifierId=$lastModifierId, deleterId=$deleterId, tagging=$tagging, url=$url, size=$size, lastModifierDeviceToken=$lastModifierDeviceToken]';
+  String toString() => 'CreateUpdatePuupeeDto[id=$id, name=$name, title=$title, isHidden=$isHidden, description=$description, text=$text, format=$format, password=$password, parentId=$parentId, key=$key, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, storageObjectCreatedAt=$storageObjectCreatedAt, storageObjectUpdatedAt=$storageObjectUpdatedAt, syncVersion=$syncVersion, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime, priority=$priority, startAt=$startAt, endAt=$endAt, notifyAt=$notifyAt, notifyTimingType=$notifyTimingType, notifyTimingUnit=$notifyTimingUnit, notifyTimingValue=$notifyTimingValue, repeat=$repeat, repeatOffAt=$repeatOffAt, repeatOffTimes=$repeatOffTimes, isDone=$isDone, doneAt=$doneAt, creatorId=$creatorId, lastModifierId=$lastModifierId, deleterId=$deleterId, tagging=$tagging, url=$url, size=$size, lastModifierDeviceToken=$lastModifierDeviceToken, lastModifierDevice=$lastModifierDevice]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -711,6 +722,11 @@ class CreateUpdatePuupeeDto {
     } else {
       json[r'lastModifierDeviceToken'] = null;
     }
+    if (this.lastModifierDevice != null) {
+      json[r'lastModifierDevice'] = this.lastModifierDevice;
+    } else {
+      json[r'lastModifierDevice'] = null;
+    }
     return json;
   }
 
@@ -777,6 +793,7 @@ class CreateUpdatePuupeeDto {
         url: mapValueOfType<String>(json, r'url'),
         size: mapValueOfType<int>(json, r'size'),
         lastModifierDeviceToken: mapValueOfType<String>(json, r'lastModifierDeviceToken'),
+        lastModifierDevice: mapValueOfType<String>(json, r'lastModifierDevice'),
       );
     }
     return null;

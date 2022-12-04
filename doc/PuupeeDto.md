@@ -55,6 +55,7 @@ Name | Type | Description | Notes
 **isHidden** | **bool** |  | [optional] 
 **tagging** | **String** |  | [optional] 
 **lastModifierDeviceToken** | **String** |  | [optional] 
+**lastModifierDevice** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

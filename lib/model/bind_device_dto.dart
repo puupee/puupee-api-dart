@@ -13,84 +13,12 @@ part of puupee_api;
 class BindDeviceDto {
   /// Returns a new [BindDeviceDto] instance.
   BindDeviceDto({
-    this.id,
-    this.creationTime,
-    this.creatorId,
-    this.lastModificationTime,
-    this.lastModifierId,
-    this.isDeleted,
-    this.deleterId,
-    this.deletionTime,
     this.token,
     this.name,
     this.type,
     this.brand,
     this.systemVersion,
   });
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? id;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  DateTime? creationTime;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? creatorId;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  DateTime? lastModificationTime;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? lastModifierId;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  bool? isDeleted;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? deleterId;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  DateTime? deletionTime;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -134,14 +62,6 @@ class BindDeviceDto {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is BindDeviceDto &&
-     other.id == id &&
-     other.creationTime == creationTime &&
-     other.creatorId == creatorId &&
-     other.lastModificationTime == lastModificationTime &&
-     other.lastModifierId == lastModifierId &&
-     other.isDeleted == isDeleted &&
-     other.deleterId == deleterId &&
-     other.deletionTime == deletionTime &&
      other.token == token &&
      other.name == name &&
      other.type == type &&
@@ -151,14 +71,6 @@ class BindDeviceDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (id == null ? 0 : id!.hashCode) +
-    (creationTime == null ? 0 : creationTime!.hashCode) +
-    (creatorId == null ? 0 : creatorId!.hashCode) +
-    (lastModificationTime == null ? 0 : lastModificationTime!.hashCode) +
-    (lastModifierId == null ? 0 : lastModifierId!.hashCode) +
-    (isDeleted == null ? 0 : isDeleted!.hashCode) +
-    (deleterId == null ? 0 : deleterId!.hashCode) +
-    (deletionTime == null ? 0 : deletionTime!.hashCode) +
     (token == null ? 0 : token!.hashCode) +
     (name == null ? 0 : name!.hashCode) +
     (type == null ? 0 : type!.hashCode) +
@@ -166,50 +78,10 @@ class BindDeviceDto {
     (systemVersion == null ? 0 : systemVersion!.hashCode);
 
   @override
-  String toString() => 'BindDeviceDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, token=$token, name=$name, type=$type, brand=$brand, systemVersion=$systemVersion]';
+  String toString() => 'BindDeviceDto[token=$token, name=$name, type=$type, brand=$brand, systemVersion=$systemVersion]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.id != null) {
-      json[r'id'] = this.id;
-    } else {
-      json[r'id'] = null;
-    }
-    if (this.creationTime != null) {
-      json[r'creationTime'] = this.creationTime!.toUtc().toIso8601String();
-    } else {
-      json[r'creationTime'] = null;
-    }
-    if (this.creatorId != null) {
-      json[r'creatorId'] = this.creatorId;
-    } else {
-      json[r'creatorId'] = null;
-    }
-    if (this.lastModificationTime != null) {
-      json[r'lastModificationTime'] = this.lastModificationTime!.toUtc().toIso8601String();
-    } else {
-      json[r'lastModificationTime'] = null;
-    }
-    if (this.lastModifierId != null) {
-      json[r'lastModifierId'] = this.lastModifierId;
-    } else {
-      json[r'lastModifierId'] = null;
-    }
-    if (this.isDeleted != null) {
-      json[r'isDeleted'] = this.isDeleted;
-    } else {
-      json[r'isDeleted'] = null;
-    }
-    if (this.deleterId != null) {
-      json[r'deleterId'] = this.deleterId;
-    } else {
-      json[r'deleterId'] = null;
-    }
-    if (this.deletionTime != null) {
-      json[r'deletionTime'] = this.deletionTime!.toUtc().toIso8601String();
-    } else {
-      json[r'deletionTime'] = null;
-    }
     if (this.token != null) {
       json[r'token'] = this.token;
     } else {
@@ -257,14 +129,6 @@ class BindDeviceDto {
       }());
 
       return BindDeviceDto(
-        id: mapValueOfType<String>(json, r'id'),
-        creationTime: mapDateTime(json, r'creationTime', ''),
-        creatorId: mapValueOfType<String>(json, r'creatorId'),
-        lastModificationTime: mapDateTime(json, r'lastModificationTime', ''),
-        lastModifierId: mapValueOfType<String>(json, r'lastModifierId'),
-        isDeleted: mapValueOfType<bool>(json, r'isDeleted'),
-        deleterId: mapValueOfType<String>(json, r'deleterId'),
-        deletionTime: mapDateTime(json, r'deletionTime', ''),
         token: mapValueOfType<String>(json, r'token'),
         name: mapValueOfType<String>(json, r'name'),
         type: mapValueOfType<String>(json, r'type'),
