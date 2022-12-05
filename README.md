@@ -140,6 +140,7 @@ Class | Method | HTTP request | Description
 *TenantApi* | [**apiMultiTenancyTenantsIdGet**](doc//TenantApi.md#apimultitenancytenantsidget) | **GET** /api/multi-tenancy/tenants/{id} | 
 *TenantApi* | [**apiMultiTenancyTenantsIdPut**](doc//TenantApi.md#apimultitenancytenantsidput) | **PUT** /api/multi-tenancy/tenants/{id} | 
 *TenantApi* | [**apiMultiTenancyTenantsPost**](doc//TenantApi.md#apimultitenancytenantspost) | **POST** /api/multi-tenancy/tenants | 
+*TestApi* | [**apiTestDatetimeGet**](doc//TestApi.md#apitestdatetimeget) | **GET** /api/Test/datetime | 
 *UserApi* | [**apiIdentityUsersAssignableRolesGet**](doc//UserApi.md#apiidentityusersassignablerolesget) | **GET** /api/identity/users/assignable-roles | 
 *UserApi* | [**apiIdentityUsersByEmailEmailGet**](doc//UserApi.md#apiidentityusersbyemailemailget) | **GET** /api/identity/users/by-email/{email} | 
 *UserApi* | [**apiIdentityUsersByUsernameUserNameGet**](doc//UserApi.md#apiidentityusersbyusernameusernameget) | **GET** /api/identity/users/by-username/{userName} | 
@@ -278,6 +279,7 @@ Class | Method | HTTP request | Description
  - [TenantDto](doc//TenantDto.md)
  - [TenantDtoPagedResultDto](doc//TenantDtoPagedResultDto.md)
  - [TenantUpdateDto](doc//TenantUpdateDto.md)
+ - [TestDateTime](doc//TestDateTime.md)
  - [TimeZone](doc//TimeZone.md)
  - [TimingDto](doc//TimingDto.md)
  - [TodoOrderBy](doc//TodoOrderBy.md)

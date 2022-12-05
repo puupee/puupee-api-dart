@@ -13,7 +13,6 @@ part of puupee_api;
 class CreateOrUpdateAppDto {
   /// Returns a new [CreateOrUpdateAppDto] instance.
   CreateOrUpdateAppDto({
-    this.appId,
     this.name,
     this.displayName,
     this.framework,
@@ -23,14 +22,6 @@ class CreateOrUpdateAppDto {
     this.gitRepository,
     this.gitRepositoryType,
   });
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? appId;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -98,7 +89,6 @@ class CreateOrUpdateAppDto {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateOrUpdateAppDto &&
-     other.appId == appId &&
      other.name == name &&
      other.displayName == displayName &&
      other.framework == framework &&
@@ -111,7 +101,6 @@ class CreateOrUpdateAppDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (appId == null ? 0 : appId!.hashCode) +
     (name == null ? 0 : name!.hashCode) +
     (displayName == null ? 0 : displayName!.hashCode) +
     (framework == null ? 0 : framework!.hashCode) +
@@ -122,15 +111,10 @@ class CreateOrUpdateAppDto {
     (gitRepositoryType == null ? 0 : gitRepositoryType!.hashCode);
 
   @override
-  String toString() => 'CreateOrUpdateAppDto[appId=$appId, name=$name, displayName=$displayName, framework=$framework, appType=$appType, description=$description, icon=$icon, gitRepository=$gitRepository, gitRepositoryType=$gitRepositoryType]';
+  String toString() => 'CreateOrUpdateAppDto[name=$name, displayName=$displayName, framework=$framework, appType=$appType, description=$description, icon=$icon, gitRepository=$gitRepository, gitRepositoryType=$gitRepositoryType]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.appId != null) {
-      json[r'appId'] = this.appId;
-    } else {
-      json[r'appId'] = null;
-    }
     if (this.name != null) {
       json[r'name'] = this.name;
     } else {
@@ -193,7 +177,6 @@ class CreateOrUpdateAppDto {
       }());
 
       return CreateOrUpdateAppDto(
-        appId: mapValueOfType<String>(json, r'appId'),
         name: mapValueOfType<String>(json, r'name'),
         displayName: mapValueOfType<String>(json, r'displayName'),
         framework: mapValueOfType<String>(json, r'framework'),

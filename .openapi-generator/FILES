@@ -142,6 +142,8 @@ doc/TenantCreateDto.md
 doc/TenantDto.md
 doc/TenantDtoPagedResultDto.md
 doc/TenantUpdateDto.md
+doc/TestApi.md
+doc/TestDateTime.md
 doc/TimeZone.md
 doc/TimingDto.md
 doc/TodoOrderBy.md
@@ -188,6 +190,7 @@ lib/api/simple_data_api.dart
 lib/api/storage_object_api.dart
 lib/api/sync_state_api.dart
 lib/api/tenant_api.dart
+lib/api/test_api.dart
 lib/api/user_api.dart
 lib/api/user_lookup_api.dart
 lib/api/user_storage_api.dart
@@ -318,6 +321,7 @@ lib/model/tenant_create_dto.dart
 lib/model/tenant_dto.dart
 lib/model/tenant_dto_paged_result_dto.dart
 lib/model/tenant_update_dto.dart
+lib/model/test_date_time.dart
 lib/model/time_zone.dart
 lib/model/timing_dto.dart
 lib/model/todo_order_by.dart
@@ -477,6 +481,8 @@ test/tenant_create_dto_test.dart
 test/tenant_dto_paged_result_dto_test.dart
 test/tenant_dto_test.dart
 test/tenant_update_dto_test.dart
+test/test_api_test.dart
+test/test_date_time_test.dart
 test/time_zone_test.dart
 test/timing_dto_test.dart
 test/todo_order_by_test.dart

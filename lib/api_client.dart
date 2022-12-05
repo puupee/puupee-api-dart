@@ -417,6 +417,8 @@ class ApiClient {
           return TenantDtoPagedResultDto.fromJson(value);
         case 'TenantUpdateDto':
           return TenantUpdateDto.fromJson(value);
+        case 'TestDateTime':
+          return TestDateTime.fromJson(value);
         case 'TimeZone':
           return TimeZone.fromJson(value);
         case 'TimingDto':
