@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **gitRepository** | **String** |  | [optional] 
 **gitRepositoryType** | **String** |  | [optional] 
 **latestReleases** | [**List<AppReleaseDto>**](AppReleaseDto.md) |  | [optional] [default to const []]
+**creator** | [**IdentityUserDto**](IdentityUserDto.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
