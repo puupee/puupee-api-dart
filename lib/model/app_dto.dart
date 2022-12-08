@@ -23,7 +23,7 @@ class AppDto {
     this.deletionTime,
     this.name,
     this.displayName,
-    this.fromework,
+    this.framework,
     this.appType,
     this.description,
     this.icon,
@@ -121,7 +121,7 @@ class AppDto {
   /// source code must fall back to having a nullable type.
   /// Consider adding a "default:" property in the specification file to hide this note.
   ///
-  String? fromework;
+  String? framework;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -189,7 +189,7 @@ class AppDto {
      other.deletionTime == deletionTime &&
      other.name == name &&
      other.displayName == displayName &&
-     other.fromework == fromework &&
+     other.framework == framework &&
      other.appType == appType &&
      other.description == description &&
      other.icon == icon &&
@@ -213,7 +213,7 @@ class AppDto {
     (deletionTime == null ? 0 : deletionTime!.hashCode) +
     (name == null ? 0 : name!.hashCode) +
     (displayName == null ? 0 : displayName!.hashCode) +
-    (fromework == null ? 0 : fromework!.hashCode) +
+    (framework == null ? 0 : framework!.hashCode) +
     (appType == null ? 0 : appType!.hashCode) +
     (description == null ? 0 : description!.hashCode) +
     (icon == null ? 0 : icon!.hashCode) +
@@ -225,7 +225,7 @@ class AppDto {
     (sdks.hashCode);
 
   @override
-  String toString() => 'AppDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, displayName=$displayName, fromework=$fromework, appType=$appType, description=$description, icon=$icon, gitRepository=$gitRepository, gitRepositoryType=$gitRepositoryType, latestReleases=$latestReleases, creator=$creator, features=$features, sdks=$sdks]';
+  String toString() => 'AppDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, displayName=$displayName, framework=$framework, appType=$appType, description=$description, icon=$icon, gitRepository=$gitRepository, gitRepositoryType=$gitRepositoryType, latestReleases=$latestReleases, creator=$creator, features=$features, sdks=$sdks]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -279,10 +279,10 @@ class AppDto {
     } else {
       json[r'displayName'] = null;
     }
-    if (this.fromework != null) {
-      json[r'fromework'] = this.fromework;
+    if (this.framework != null) {
+      json[r'framework'] = this.framework;
     } else {
-      json[r'fromework'] = null;
+      json[r'framework'] = null;
     }
     if (this.appType != null) {
       json[r'appType'] = this.appType;
@@ -349,7 +349,7 @@ class AppDto {
         deletionTime: mapDateTime(json, r'deletionTime', ''),
         name: mapValueOfType<String>(json, r'name'),
         displayName: mapValueOfType<String>(json, r'displayName'),
-        fromework: mapValueOfType<String>(json, r'fromework'),
+        framework: mapValueOfType<String>(json, r'framework'),
         appType: mapValueOfType<String>(json, r'appType'),
         description: mapValueOfType<String>(json, r'description'),
         icon: mapValueOfType<String>(json, r'icon'),

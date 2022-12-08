@@ -66,8 +66,8 @@ void main() {
       // TODO
     });
 
-    // String fromework
-    test('to test the property `fromework`', () async {
+    // String framework
+    test('to test the property `framework`', () async {
       // TODO
     });
 
