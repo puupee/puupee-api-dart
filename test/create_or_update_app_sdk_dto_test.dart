@@ -56,6 +56,11 @@ void main() {
       // TODO
     });
 
+    // String appId
+    test('to test the property `appId`', () async {
+      // TODO
+    });
+
 
   });
 
