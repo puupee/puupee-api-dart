@@ -27,13 +27,13 @@ void main() {
       // TODO
     });
 
-    //Future<AppSdkDto> apiAppAppSdkPost({ CreateOrUpdateAppSdkDto body }) async
-    test('test apiAppAppSdkPost', () async {
+    //Future<AppSdkDto> apiAppAppSdkIdPut(String id, { CreateOrUpdateAppSdkDto body }) async
+    test('test apiAppAppSdkIdPut', () async {
       // TODO
     });
 
-    //Future<AppSdkDto> apiAppAppSdkPut({ CreateOrUpdateAppSdkDto body }) async
-    test('test apiAppAppSdkPut', () async {
+    //Future<AppSdkDto> apiAppAppSdkPost({ CreateOrUpdateAppSdkDto body }) async
+    test('test apiAppAppSdkPost', () async {
       // TODO
     });
 

@@ -27,13 +27,13 @@ void main() {
       // TODO
     });
 
-    //Future<AppFeatureDto> apiAppAppFeaturePost({ CreateOrUpdateAppFeatureDto body }) async
-    test('test apiAppAppFeaturePost', () async {
+    //Future<AppFeatureDto> apiAppAppFeatureIdPut(String id, { CreateOrUpdateAppFeatureDto body }) async
+    test('test apiAppAppFeatureIdPut', () async {
       // TODO
     });
 
-    //Future<AppFeatureDto> apiAppAppFeaturePut({ CreateOrUpdateAppFeatureDto body }) async
-    test('test apiAppAppFeaturePut', () async {
+    //Future<AppFeatureDto> apiAppAppFeaturePost({ CreateOrUpdateAppFeatureDto body }) async
+    test('test apiAppAppFeaturePost', () async {
       // TODO
     });
 
