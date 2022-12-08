@@ -16,6 +16,21 @@ void main() {
   // final instance = CreateOrUpdateAppSdkDto();
 
   group('test CreateOrUpdateAppSdkDto', () {
+    // String id
+    test('to test the property `id`', () async {
+      // TODO
+    });
+
+    // DateTime creationTime
+    test('to test the property `creationTime`', () async {
+      // TODO
+    });
+
+    // String creatorId
+    test('to test the property `creatorId`', () async {
+      // TODO
+    });
+
     // String name
     test('to test the property `name`', () async {
       // TODO

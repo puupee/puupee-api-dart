@@ -16,6 +16,21 @@ void main() {
   // final instance = CreateOrUpdateAppUserScoreDto();
 
   group('test CreateOrUpdateAppUserScoreDto', () {
+    // String id
+    test('to test the property `id`', () async {
+      // TODO
+    });
+
+    // DateTime creationTime
+    test('to test the property `creationTime`', () async {
+      // TODO
+    });
+
+    // String creatorId
+    test('to test the property `creatorId`', () async {
+      // TODO
+    });
+
     // String appId
     test('to test the property `appId`', () async {
       // TODO

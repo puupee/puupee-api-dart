@@ -13,12 +13,39 @@ part of puupee_api;
 class CreateOrUpdateAppFeatureDto {
   /// Returns a new [CreateOrUpdateAppFeatureDto] instance.
   CreateOrUpdateAppFeatureDto({
+    this.id,
+    this.creationTime,
+    this.creatorId,
     this.name,
     this.displayName,
     this.description,
     this.details,
     this.screenshotKeys,
   });
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? id;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  DateTime? creationTime;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? creatorId;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -62,6 +89,9 @@ class CreateOrUpdateAppFeatureDto {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateOrUpdateAppFeatureDto &&
+     other.id == id &&
+     other.creationTime == creationTime &&
+     other.creatorId == creatorId &&
      other.name == name &&
      other.displayName == displayName &&
      other.description == description &&
@@ -71,6 +101,9 @@ class CreateOrUpdateAppFeatureDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
+    (id == null ? 0 : id!.hashCode) +
+    (creationTime == null ? 0 : creationTime!.hashCode) +
+    (creatorId == null ? 0 : creatorId!.hashCode) +
     (name == null ? 0 : name!.hashCode) +
     (displayName == null ? 0 : displayName!.hashCode) +
     (description == null ? 0 : description!.hashCode) +
@@ -78,10 +111,25 @@ class CreateOrUpdateAppFeatureDto {
     (screenshotKeys == null ? 0 : screenshotKeys!.hashCode);
 
   @override
-  String toString() => 'CreateOrUpdateAppFeatureDto[name=$name, displayName=$displayName, description=$description, details=$details, screenshotKeys=$screenshotKeys]';
+  String toString() => 'CreateOrUpdateAppFeatureDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, name=$name, displayName=$displayName, description=$description, details=$details, screenshotKeys=$screenshotKeys]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
+    if (this.id != null) {
+      json[r'id'] = this.id;
+    } else {
+      json[r'id'] = null;
+    }
+    if (this.creationTime != null) {
+      json[r'creationTime'] = this.creationTime!.toUtc().toIso8601String();
+    } else {
+      json[r'creationTime'] = null;
+    }
+    if (this.creatorId != null) {
+      json[r'creatorId'] = this.creatorId;
+    } else {
+      json[r'creatorId'] = null;
+    }
     if (this.name != null) {
       json[r'name'] = this.name;
     } else {
@@ -129,6 +177,9 @@ class CreateOrUpdateAppFeatureDto {
       }());
 
       return CreateOrUpdateAppFeatureDto(
+        id: mapValueOfType<String>(json, r'id'),
+        creationTime: mapDateTime(json, r'creationTime', ''),
+        creatorId: mapValueOfType<String>(json, r'creatorId'),
         name: mapValueOfType<String>(json, r'name'),
         displayName: mapValueOfType<String>(json, r'displayName'),
         description: mapValueOfType<String>(json, r'description'),

@@ -13,12 +13,39 @@ part of puupee_api;
 class CreateOrUpdateAppSdkDto {
   /// Returns a new [CreateOrUpdateAppSdkDto] instance.
   CreateOrUpdateAppSdkDto({
+    this.id,
+    this.creationTime,
+    this.creatorId,
     this.name,
     this.description,
     this.privacy,
     this.privacyUrl,
     this.homePage,
   });
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? id;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  DateTime? creationTime;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? creatorId;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -62,6 +89,9 @@ class CreateOrUpdateAppSdkDto {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateOrUpdateAppSdkDto &&
+     other.id == id &&
+     other.creationTime == creationTime &&
+     other.creatorId == creatorId &&
      other.name == name &&
      other.description == description &&
      other.privacy == privacy &&
@@ -71,6 +101,9 @@ class CreateOrUpdateAppSdkDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
+    (id == null ? 0 : id!.hashCode) +
+    (creationTime == null ? 0 : creationTime!.hashCode) +
+    (creatorId == null ? 0 : creatorId!.hashCode) +
     (name == null ? 0 : name!.hashCode) +
     (description == null ? 0 : description!.hashCode) +
     (privacy == null ? 0 : privacy!.hashCode) +
@@ -78,10 +111,25 @@ class CreateOrUpdateAppSdkDto {
     (homePage == null ? 0 : homePage!.hashCode);
 
   @override
-  String toString() => 'CreateOrUpdateAppSdkDto[name=$name, description=$description, privacy=$privacy, privacyUrl=$privacyUrl, homePage=$homePage]';
+  String toString() => 'CreateOrUpdateAppSdkDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, name=$name, description=$description, privacy=$privacy, privacyUrl=$privacyUrl, homePage=$homePage]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
+    if (this.id != null) {
+      json[r'id'] = this.id;
+    } else {
+      json[r'id'] = null;
+    }
+    if (this.creationTime != null) {
+      json[r'creationTime'] = this.creationTime!.toUtc().toIso8601String();
+    } else {
+      json[r'creationTime'] = null;
+    }
+    if (this.creatorId != null) {
+      json[r'creatorId'] = this.creatorId;
+    } else {
+      json[r'creatorId'] = null;
+    }
     if (this.name != null) {
       json[r'name'] = this.name;
     } else {
@@ -129,6 +177,9 @@ class CreateOrUpdateAppSdkDto {
       }());
 
       return CreateOrUpdateAppSdkDto(
+        id: mapValueOfType<String>(json, r'id'),
+        creationTime: mapDateTime(json, r'creationTime', ''),
+        creatorId: mapValueOfType<String>(json, r'creatorId'),
         name: mapValueOfType<String>(json, r'name'),
         description: mapValueOfType<String>(json, r'description'),
         privacy: mapValueOfType<String>(json, r'privacy'),

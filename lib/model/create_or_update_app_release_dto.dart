@@ -13,6 +13,9 @@ part of puupee_api;
 class CreateOrUpdateAppReleaseDto {
   /// Returns a new [CreateOrUpdateAppReleaseDto] instance.
   CreateOrUpdateAppReleaseDto({
+    this.id,
+    this.creationTime,
+    this.creatorId,
     this.version,
     this.notes,
     this.platform,
@@ -28,6 +31,30 @@ class CreateOrUpdateAppReleaseDto {
     this.channel,
     this.environment,
   });
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? id;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  DateTime? creationTime;
+
+  ///
+  /// Please note: This property should have been non-nullable! Since the specification file
+  /// does not include a default value (using the "default:" property), however, the generated
+  /// source code must fall back to having a nullable type.
+  /// Consider adding a "default:" property in the specification file to hide this note.
+  ///
+  String? creatorId;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -143,6 +170,9 @@ class CreateOrUpdateAppReleaseDto {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateOrUpdateAppReleaseDto &&
+     other.id == id &&
+     other.creationTime == creationTime &&
+     other.creatorId == creatorId &&
      other.version == version &&
      other.notes == notes &&
      other.platform == platform &&
@@ -161,6 +191,9 @@ class CreateOrUpdateAppReleaseDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
+    (id == null ? 0 : id!.hashCode) +
+    (creationTime == null ? 0 : creationTime!.hashCode) +
+    (creatorId == null ? 0 : creatorId!.hashCode) +
     (version == null ? 0 : version!.hashCode) +
     (notes == null ? 0 : notes!.hashCode) +
     (platform == null ? 0 : platform!.hashCode) +
@@ -177,10 +210,25 @@ class CreateOrUpdateAppReleaseDto {
     (environment == null ? 0 : environment!.hashCode);
 
   @override
-  String toString() => 'CreateOrUpdateAppReleaseDto[version=$version, notes=$notes, platform=$platform, key=$key, rapidCode=$rapidCode, size=$size, md5=$md5, sliceMd5=$sliceMd5, productType=$productType, isForceUpdate=$isForceUpdate, appId=$appId, isEnabled=$isEnabled, channel=$channel, environment=$environment]';
+  String toString() => 'CreateOrUpdateAppReleaseDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, version=$version, notes=$notes, platform=$platform, key=$key, rapidCode=$rapidCode, size=$size, md5=$md5, sliceMd5=$sliceMd5, productType=$productType, isForceUpdate=$isForceUpdate, appId=$appId, isEnabled=$isEnabled, channel=$channel, environment=$environment]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
+    if (this.id != null) {
+      json[r'id'] = this.id;
+    } else {
+      json[r'id'] = null;
+    }
+    if (this.creationTime != null) {
+      json[r'creationTime'] = this.creationTime!.toUtc().toIso8601String();
+    } else {
+      json[r'creationTime'] = null;
+    }
+    if (this.creatorId != null) {
+      json[r'creatorId'] = this.creatorId;
+    } else {
+      json[r'creatorId'] = null;
+    }
     if (this.version != null) {
       json[r'version'] = this.version;
     } else {
@@ -273,6 +321,9 @@ class CreateOrUpdateAppReleaseDto {
       }());
 
       return CreateOrUpdateAppReleaseDto(
+        id: mapValueOfType<String>(json, r'id'),
+        creationTime: mapDateTime(json, r'creationTime', ''),
+        creatorId: mapValueOfType<String>(json, r'creatorId'),
         version: mapValueOfType<String>(json, r'version'),
         notes: mapValueOfType<String>(json, r'notes'),
         platform: mapValueOfType<String>(json, r'platform'),
