@@ -10,9 +10,9 @@
 
 part of puupee_api;
 
-class CreateUpdateAppUserScoreDto {
-  /// Returns a new [CreateUpdateAppUserScoreDto] instance.
-  CreateUpdateAppUserScoreDto({
+class CreateOrUpdateAppUserScoreDto {
+  /// Returns a new [CreateOrUpdateAppUserScoreDto] instance.
+  CreateOrUpdateAppUserScoreDto({
     this.appId,
     this.score,
     this.comment,
@@ -43,7 +43,7 @@ class CreateUpdateAppUserScoreDto {
   String? comment;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is CreateUpdateAppUserScoreDto &&
+  bool operator ==(Object other) => identical(this, other) || other is CreateOrUpdateAppUserScoreDto &&
      other.appId == appId &&
      other.score == score &&
      other.comment == comment;
@@ -56,7 +56,7 @@ class CreateUpdateAppUserScoreDto {
     (comment == null ? 0 : comment!.hashCode);
 
   @override
-  String toString() => 'CreateUpdateAppUserScoreDto[appId=$appId, score=$score, comment=$comment]';
+  String toString() => 'CreateOrUpdateAppUserScoreDto[appId=$appId, score=$score, comment=$comment]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -78,10 +78,10 @@ class CreateUpdateAppUserScoreDto {
     return json;
   }
 
-  /// Returns a new [CreateUpdateAppUserScoreDto] instance and imports its values from
+  /// Returns a new [CreateOrUpdateAppUserScoreDto] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static CreateUpdateAppUserScoreDto? fromJson(dynamic value) {
+  static CreateOrUpdateAppUserScoreDto? fromJson(dynamic value) {
     if (value is Map) {
       final json = value.cast<String, dynamic>();
 
@@ -90,13 +90,13 @@ class CreateUpdateAppUserScoreDto {
       // Note 2: this code is stripped in release mode!
       assert(() {
         requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "CreateUpdateAppUserScoreDto[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "CreateUpdateAppUserScoreDto[$key]" has a null value in JSON.');
+          assert(json.containsKey(key), 'Required key "CreateOrUpdateAppUserScoreDto[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "CreateOrUpdateAppUserScoreDto[$key]" has a null value in JSON.');
         });
         return true;
       }());
 
-      return CreateUpdateAppUserScoreDto(
+      return CreateOrUpdateAppUserScoreDto(
         appId: mapValueOfType<String>(json, r'appId'),
         score: mapValueOfType<int>(json, r'score'),
         comment: mapValueOfType<String>(json, r'comment'),
@@ -105,11 +105,11 @@ class CreateUpdateAppUserScoreDto {
     return null;
   }
 
-  static List<CreateUpdateAppUserScoreDto>? listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <CreateUpdateAppUserScoreDto>[];
+  static List<CreateOrUpdateAppUserScoreDto>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <CreateOrUpdateAppUserScoreDto>[];
     if (json is List && json.isNotEmpty) {
       for (final row in json) {
-        final value = CreateUpdateAppUserScoreDto.fromJson(row);
+        final value = CreateOrUpdateAppUserScoreDto.fromJson(row);
         if (value != null) {
           result.add(value);
         }
@@ -118,12 +118,12 @@ class CreateUpdateAppUserScoreDto {
     return result.toList(growable: growable);
   }
 
-  static Map<String, CreateUpdateAppUserScoreDto> mapFromJson(dynamic json) {
-    final map = <String, CreateUpdateAppUserScoreDto>{};
+  static Map<String, CreateOrUpdateAppUserScoreDto> mapFromJson(dynamic json) {
+    final map = <String, CreateOrUpdateAppUserScoreDto>{};
     if (json is Map && json.isNotEmpty) {
       json = json.cast<String, dynamic>(); // ignore: parameter_assignments
       for (final entry in json.entries) {
-        final value = CreateUpdateAppUserScoreDto.fromJson(entry.value);
+        final value = CreateOrUpdateAppUserScoreDto.fromJson(entry.value);
         if (value != null) {
           map[entry.key] = value;
         }
@@ -132,13 +132,13 @@ class CreateUpdateAppUserScoreDto {
     return map;
   }
 
-  // maps a json object with a list of CreateUpdateAppUserScoreDto-objects as value to a dart map
-  static Map<String, List<CreateUpdateAppUserScoreDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<CreateUpdateAppUserScoreDto>>{};
+  // maps a json object with a list of CreateOrUpdateAppUserScoreDto-objects as value to a dart map
+  static Map<String, List<CreateOrUpdateAppUserScoreDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
+    final map = <String, List<CreateOrUpdateAppUserScoreDto>>{};
     if (json is Map && json.isNotEmpty) {
       json = json.cast<String, dynamic>(); // ignore: parameter_assignments
       for (final entry in json.entries) {
-        final value = CreateUpdateAppUserScoreDto.listFromJson(entry.value, growable: growable,);
+        final value = CreateOrUpdateAppUserScoreDto.listFromJson(entry.value, growable: growable,);
         if (value != null) {
           map[entry.key] = value;
         }

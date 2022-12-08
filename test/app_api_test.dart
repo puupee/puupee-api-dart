@@ -17,6 +17,11 @@ void main() {
   // final instance = AppApi();
 
   group('tests for AppApi', () {
+    //Future<AppDtoPagedResultDto> apiAppAppByDeveloperGet({ String developerAccount }) async
+    test('test apiAppAppByDeveloperGet', () async {
+      // TODO
+    });
+
     //Future<AppDto> apiAppAppByNameGet({ String name }) async
     test('test apiAppAppByNameGet', () async {
       // TODO

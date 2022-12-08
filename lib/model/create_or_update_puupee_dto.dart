@@ -10,9 +10,9 @@
 
 part of puupee_api;
 
-class CreateUpdatePuupeeDto {
-  /// Returns a new [CreateUpdatePuupeeDto] instance.
-  CreateUpdatePuupeeDto({
+class CreateOrUpdatePuupeeDto {
+  /// Returns a new [CreateOrUpdatePuupeeDto] instance.
+  CreateOrUpdatePuupeeDto({
     required this.id,
     required this.name,
     this.title,
@@ -409,7 +409,7 @@ class CreateUpdatePuupeeDto {
   String? lastModifierDevice;
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is CreateUpdatePuupeeDto &&
+  bool operator ==(Object other) => identical(this, other) || other is CreateOrUpdatePuupeeDto &&
      other.id == id &&
      other.name == name &&
      other.title == title &&
@@ -506,7 +506,7 @@ class CreateUpdatePuupeeDto {
     (lastModifierDevice == null ? 0 : lastModifierDevice!.hashCode);
 
   @override
-  String toString() => 'CreateUpdatePuupeeDto[id=$id, name=$name, title=$title, isHidden=$isHidden, description=$description, text=$text, format=$format, password=$password, parentId=$parentId, key=$key, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, storageObjectCreatedAt=$storageObjectCreatedAt, storageObjectUpdatedAt=$storageObjectUpdatedAt, syncVersion=$syncVersion, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime, priority=$priority, startAt=$startAt, endAt=$endAt, notifyAt=$notifyAt, notifyTimingType=$notifyTimingType, notifyTimingUnit=$notifyTimingUnit, notifyTimingValue=$notifyTimingValue, repeat=$repeat, repeatOffAt=$repeatOffAt, repeatOffTimes=$repeatOffTimes, isDone=$isDone, doneAt=$doneAt, creatorId=$creatorId, lastModifierId=$lastModifierId, deleterId=$deleterId, tagging=$tagging, url=$url, size=$size, lastModifierDeviceToken=$lastModifierDeviceToken, lastModifierDevice=$lastModifierDevice]';
+  String toString() => 'CreateOrUpdatePuupeeDto[id=$id, name=$name, title=$title, isHidden=$isHidden, description=$description, text=$text, format=$format, password=$password, parentId=$parentId, key=$key, md5=$md5, sliceMd5=$sliceMd5, rapidCode=$rapidCode, contentType=$contentType, type=$type, displayStyle=$displayStyle, extension_=$extension_, storageClass=$storageClass, storageObjectCreatedAt=$storageObjectCreatedAt, storageObjectUpdatedAt=$storageObjectUpdatedAt, syncVersion=$syncVersion, isDeleted=$isDeleted, deletionTime=$deletionTime, creationTime=$creationTime, lastModificationTime=$lastModificationTime, priority=$priority, startAt=$startAt, endAt=$endAt, notifyAt=$notifyAt, notifyTimingType=$notifyTimingType, notifyTimingUnit=$notifyTimingUnit, notifyTimingValue=$notifyTimingValue, repeat=$repeat, repeatOffAt=$repeatOffAt, repeatOffTimes=$repeatOffTimes, isDone=$isDone, doneAt=$doneAt, creatorId=$creatorId, lastModifierId=$lastModifierId, deleterId=$deleterId, tagging=$tagging, url=$url, size=$size, lastModifierDeviceToken=$lastModifierDeviceToken, lastModifierDevice=$lastModifierDevice]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -730,10 +730,10 @@ class CreateUpdatePuupeeDto {
     return json;
   }
 
-  /// Returns a new [CreateUpdatePuupeeDto] instance and imports its values from
+  /// Returns a new [CreateOrUpdatePuupeeDto] instance and imports its values from
   /// [value] if it's a [Map], null otherwise.
   // ignore: prefer_constructors_over_static_methods
-  static CreateUpdatePuupeeDto? fromJson(dynamic value) {
+  static CreateOrUpdatePuupeeDto? fromJson(dynamic value) {
     if (value is Map) {
       final json = value.cast<String, dynamic>();
 
@@ -742,13 +742,13 @@ class CreateUpdatePuupeeDto {
       // Note 2: this code is stripped in release mode!
       assert(() {
         requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "CreateUpdatePuupeeDto[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "CreateUpdatePuupeeDto[$key]" has a null value in JSON.');
+          assert(json.containsKey(key), 'Required key "CreateOrUpdatePuupeeDto[$key]" is missing from JSON.');
+          assert(json[key] != null, 'Required key "CreateOrUpdatePuupeeDto[$key]" has a null value in JSON.');
         });
         return true;
       }());
 
-      return CreateUpdatePuupeeDto(
+      return CreateOrUpdatePuupeeDto(
         id: mapValueOfType<String>(json, r'id')!,
         name: mapValueOfType<String>(json, r'name')!,
         title: mapValueOfType<String>(json, r'title'),
@@ -799,11 +799,11 @@ class CreateUpdatePuupeeDto {
     return null;
   }
 
-  static List<CreateUpdatePuupeeDto>? listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <CreateUpdatePuupeeDto>[];
+  static List<CreateOrUpdatePuupeeDto>? listFromJson(dynamic json, {bool growable = false,}) {
+    final result = <CreateOrUpdatePuupeeDto>[];
     if (json is List && json.isNotEmpty) {
       for (final row in json) {
-        final value = CreateUpdatePuupeeDto.fromJson(row);
+        final value = CreateOrUpdatePuupeeDto.fromJson(row);
         if (value != null) {
           result.add(value);
         }
@@ -812,12 +812,12 @@ class CreateUpdatePuupeeDto {
     return result.toList(growable: growable);
   }
 
-  static Map<String, CreateUpdatePuupeeDto> mapFromJson(dynamic json) {
-    final map = <String, CreateUpdatePuupeeDto>{};
+  static Map<String, CreateOrUpdatePuupeeDto> mapFromJson(dynamic json) {
+    final map = <String, CreateOrUpdatePuupeeDto>{};
     if (json is Map && json.isNotEmpty) {
       json = json.cast<String, dynamic>(); // ignore: parameter_assignments
       for (final entry in json.entries) {
-        final value = CreateUpdatePuupeeDto.fromJson(entry.value);
+        final value = CreateOrUpdatePuupeeDto.fromJson(entry.value);
         if (value != null) {
           map[entry.key] = value;
         }
@@ -826,13 +826,13 @@ class CreateUpdatePuupeeDto {
     return map;
   }
 
-  // maps a json object with a list of CreateUpdatePuupeeDto-objects as value to a dart map
-  static Map<String, List<CreateUpdatePuupeeDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<CreateUpdatePuupeeDto>>{};
+  // maps a json object with a list of CreateOrUpdatePuupeeDto-objects as value to a dart map
+  static Map<String, List<CreateOrUpdatePuupeeDto>> mapListFromJson(dynamic json, {bool growable = false,}) {
+    final map = <String, List<CreateOrUpdatePuupeeDto>>{};
     if (json is Map && json.isNotEmpty) {
       json = json.cast<String, dynamic>(); // ignore: parameter_assignments
       for (final entry in json.entries) {
-        final value = CreateUpdatePuupeeDto.listFromJson(entry.value, growable: growable,);
+        final value = CreateOrUpdatePuupeeDto.listFromJson(entry.value, growable: growable,);
         if (value != null) {
           map[entry.key] = value;
         }

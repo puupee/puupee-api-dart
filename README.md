@@ -69,6 +69,7 @@ Class | Method | HTTP request | Description
 *AccountApi* | [**apiAccountResetPasswordPost**](doc//AccountApi.md#apiaccountresetpasswordpost) | **POST** /api/account/reset-password | 
 *AccountApi* | [**apiAccountSendPasswordResetCodePost**](doc//AccountApi.md#apiaccountsendpasswordresetcodepost) | **POST** /api/account/send-password-reset-code | 
 *AccountApi* | [**apiAccountVerifyPasswordResetTokenPost**](doc//AccountApi.md#apiaccountverifypasswordresettokenpost) | **POST** /api/account/verify-password-reset-token | 
+*AppApi* | [**apiAppAppByDeveloperGet**](doc//AppApi.md#apiappappbydeveloperget) | **GET** /api/app/app/by-developer | 
 *AppApi* | [**apiAppAppByNameGet**](doc//AppApi.md#apiappappbynameget) | **GET** /api/app/app/by-name | 
 *AppApi* | [**apiAppAppGet**](doc//AppApi.md#apiappappget) | **GET** /api/app/app | 
 *AppApi* | [**apiAppAppIdDelete**](doc//AppApi.md#apiappappiddelete) | **DELETE** /api/app/app/{id} | 
@@ -76,11 +77,19 @@ Class | Method | HTTP request | Description
 *AppApi* | [**apiAppAppIdPut**](doc//AppApi.md#apiappappidput) | **PUT** /api/app/app/{id} | 
 *AppApi* | [**apiAppAppPost**](doc//AppApi.md#apiappapppost) | **POST** /api/app/app | 
 *AppApi* | [**apiAppAppStorageObjectOrCredentialsGet**](doc//AppApi.md#apiappappstorageobjectorcredentialsget) | **GET** /api/app/app/storage-object-or-credentials | 
+*AppFeatureApi* | [**apiAppAppFeatureGet**](doc//AppFeatureApi.md#apiappappfeatureget) | **GET** /api/app/app-feature | 
+*AppFeatureApi* | [**apiAppAppFeatureIdDelete**](doc//AppFeatureApi.md#apiappappfeatureiddelete) | **DELETE** /api/app/app-feature/{id} | 
+*AppFeatureApi* | [**apiAppAppFeaturePost**](doc//AppFeatureApi.md#apiappappfeaturepost) | **POST** /api/app/app-feature | 
+*AppFeatureApi* | [**apiAppAppFeaturePut**](doc//AppFeatureApi.md#apiappappfeatureput) | **PUT** /api/app/app-feature | 
 *AppReleaseApi* | [**apiAppAppReleaseGet**](doc//AppReleaseApi.md#apiappappreleaseget) | **GET** /api/app/app-release | 
 *AppReleaseApi* | [**apiAppAppReleaseIdDelete**](doc//AppReleaseApi.md#apiappappreleaseiddelete) | **DELETE** /api/app/app-release/{id} | 
 *AppReleaseApi* | [**apiAppAppReleaseIdGet**](doc//AppReleaseApi.md#apiappappreleaseidget) | **GET** /api/app/app-release/{id} | 
 *AppReleaseApi* | [**apiAppAppReleaseIdPut**](doc//AppReleaseApi.md#apiappappreleaseidput) | **PUT** /api/app/app-release/{id} | 
 *AppReleaseApi* | [**apiAppAppReleasePost**](doc//AppReleaseApi.md#apiappappreleasepost) | **POST** /api/app/app-release | 
+*AppSdkApi* | [**apiAppAppSdkGet**](doc//AppSdkApi.md#apiappappsdkget) | **GET** /api/app/app-sdk | 
+*AppSdkApi* | [**apiAppAppSdkIdDelete**](doc//AppSdkApi.md#apiappappsdkiddelete) | **DELETE** /api/app/app-sdk/{id} | 
+*AppSdkApi* | [**apiAppAppSdkPost**](doc//AppSdkApi.md#apiappappsdkpost) | **POST** /api/app/app-sdk | 
+*AppSdkApi* | [**apiAppAppSdkPut**](doc//AppSdkApi.md#apiappappsdkput) | **PUT** /api/app/app-sdk | 
 *AppUserScoreApi* | [**apiAppAppUserScorePost**](doc//AppUserScoreApi.md#apiappappuserscorepost) | **POST** /api/app/app-user-score | 
 *DeviceApi* | [**apiAppDeviceBindPost**](doc//DeviceApi.md#apiappdevicebindpost) | **POST** /api/app/device/bind | 
 *DeviceApi* | [**apiAppDeviceDelete**](doc//DeviceApi.md#apiappdevicedelete) | **DELETE** /api/app/device | 
@@ -165,8 +174,10 @@ Class | Method | HTTP request | Description
  - [ActionApiDescriptionModel](doc//ActionApiDescriptionModel.md)
  - [AppDto](doc//AppDto.md)
  - [AppDtoPagedResultDto](doc//AppDtoPagedResultDto.md)
+ - [AppFeatureDto](doc//AppFeatureDto.md)
  - [AppReleaseDto](doc//AppReleaseDto.md)
  - [AppReleaseDtoPagedResultDto](doc//AppReleaseDtoPagedResultDto.md)
+ - [AppSdkDto](doc//AppSdkDto.md)
  - [AppTheme](doc//AppTheme.md)
  - [AppThemeMode](doc//AppThemeMode.md)
  - [AppUserScoreDto](doc//AppUserScoreDto.md)
@@ -187,9 +198,11 @@ Class | Method | HTTP request | Description
  - [ControllerApiDescriptionModel](doc//ControllerApiDescriptionModel.md)
  - [ControllerInterfaceApiDescriptionModel](doc//ControllerInterfaceApiDescriptionModel.md)
  - [CreateOrUpdateAppDto](doc//CreateOrUpdateAppDto.md)
+ - [CreateOrUpdateAppFeatureDto](doc//CreateOrUpdateAppFeatureDto.md)
  - [CreateOrUpdateAppReleaseDto](doc//CreateOrUpdateAppReleaseDto.md)
- - [CreateUpdateAppUserScoreDto](doc//CreateUpdateAppUserScoreDto.md)
- - [CreateUpdatePuupeeDto](doc//CreateUpdatePuupeeDto.md)
+ - [CreateOrUpdateAppSdkDto](doc//CreateOrUpdateAppSdkDto.md)
+ - [CreateOrUpdateAppUserScoreDto](doc//CreateOrUpdateAppUserScoreDto.md)
+ - [CreateOrUpdatePuupeeDto](doc//CreateOrUpdatePuupeeDto.md)
  - [CurrentCultureDto](doc//CurrentCultureDto.md)
  - [CurrentTenantDto](doc//CurrentTenantDto.md)
  - [CurrentUserDto](doc//CurrentUserDto.md)

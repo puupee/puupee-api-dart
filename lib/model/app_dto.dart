@@ -29,7 +29,7 @@ class AppDto {
     this.icon,
     this.gitRepository,
     this.gitRepositoryType,
-    this.latestRelease,
+    this.latestReleases = const [],
   });
 
   ///
@@ -160,13 +160,7 @@ class AppDto {
   ///
   String? gitRepositoryType;
 
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  AppReleaseDto? latestRelease;
+  List<AppReleaseDto> latestReleases;
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is AppDto &&
@@ -186,7 +180,7 @@ class AppDto {
      other.icon == icon &&
      other.gitRepository == gitRepository &&
      other.gitRepositoryType == gitRepositoryType &&
-     other.latestRelease == latestRelease;
+     other.latestReleases == latestReleases;
 
   @override
   int get hashCode =>
@@ -207,10 +201,10 @@ class AppDto {
     (icon == null ? 0 : icon!.hashCode) +
     (gitRepository == null ? 0 : gitRepository!.hashCode) +
     (gitRepositoryType == null ? 0 : gitRepositoryType!.hashCode) +
-    (latestRelease == null ? 0 : latestRelease!.hashCode);
+    (latestReleases.hashCode);
 
   @override
-  String toString() => 'AppDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, displayName=$displayName, fromework=$fromework, appType=$appType, description=$description, icon=$icon, gitRepository=$gitRepository, gitRepositoryType=$gitRepositoryType, latestRelease=$latestRelease]';
+  String toString() => 'AppDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, displayName=$displayName, fromework=$fromework, appType=$appType, description=$description, icon=$icon, gitRepository=$gitRepository, gitRepositoryType=$gitRepositoryType, latestReleases=$latestReleases]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -294,11 +288,7 @@ class AppDto {
     } else {
       json[r'gitRepositoryType'] = null;
     }
-    if (this.latestRelease != null) {
-      json[r'latestRelease'] = this.latestRelease;
-    } else {
-      json[r'latestRelease'] = null;
-    }
+      json[r'latestReleases'] = this.latestReleases;
     return json;
   }
 
@@ -337,7 +327,7 @@ class AppDto {
         icon: mapValueOfType<String>(json, r'icon'),
         gitRepository: mapValueOfType<String>(json, r'gitRepository'),
         gitRepositoryType: mapValueOfType<String>(json, r'gitRepositoryType'),
-        latestRelease: AppReleaseDto.fromJson(json[r'latestRelease']),
+        latestReleases: AppReleaseDto.listFromJson(json[r'latestReleases']) ?? const [],
       );
     }
     return null;

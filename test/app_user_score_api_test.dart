@@ -17,7 +17,7 @@ void main() {
   // final instance = AppUserScoreApi();
 
   group('tests for AppUserScoreApi', () {
-    //Future<AppUserScoreDto> apiAppAppUserScorePost({ CreateUpdateAppUserScoreDto body }) async
+    //Future<AppUserScoreDto> apiAppAppUserScorePost({ CreateOrUpdateAppUserScoreDto body }) async
     test('test apiAppAppUserScorePost', () async {
       // TODO
     });

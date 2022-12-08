@@ -96,8 +96,8 @@ void main() {
       // TODO
     });
 
-    // AppReleaseDto latestRelease
-    test('to test the property `latestRelease`', () async {
+    // List<AppReleaseDto> latestReleases (default value: const [])
+    test('to test the property `latestReleases`', () async {
       // TODO
     });
 

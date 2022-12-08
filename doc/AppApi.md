@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**apiAppAppByDeveloperGet**](AppApi.md#apiappappbydeveloperget) | **GET** /api/app/app/by-developer | 
 [**apiAppAppByNameGet**](AppApi.md#apiappappbynameget) | **GET** /api/app/app/by-name | 
 [**apiAppAppGet**](AppApi.md#apiappappget) | **GET** /api/app/app | 
 [**apiAppAppIdDelete**](AppApi.md#apiappappiddelete) | **DELETE** /api/app/app/{id} | 
@@ -17,6 +18,49 @@ Method | HTTP request | Description
 [**apiAppAppPost**](AppApi.md#apiappapppost) | **POST** /api/app/app | 
 [**apiAppAppStorageObjectOrCredentialsGet**](AppApi.md#apiappappstorageobjectorcredentialsget) | **GET** /api/app/app/storage-object-or-credentials | 
 
+
+# **apiAppAppByDeveloperGet**
+> AppDtoPagedResultDto apiAppAppByDeveloperGet(developerAccount)
+
+
+
+### Example
+```dart
+import 'package:puupee_api/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api_instance = AppApi();
+final developerAccount = developerAccount_example; // String | 
+
+try {
+    final result = api_instance.apiAppAppByDeveloperGet(developerAccount);
+    print(result);
+} catch (e) {
+    print('Exception when calling AppApi->apiAppAppByDeveloperGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **developerAccount** | **String**|  | [optional] 
+
+### Return type
+
+[**AppDtoPagedResultDto**](AppDtoPagedResultDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppAppByNameGet**
 > AppDto apiAppAppByNameGet(name)

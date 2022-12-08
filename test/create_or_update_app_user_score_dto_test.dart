@@ -11,11 +11,11 @@
 import 'package:puupee_api/api.dart';
 import 'package:test/test.dart';
 
-// tests for CreateUpdateAppUserScoreDto
+// tests for CreateOrUpdateAppUserScoreDto
 void main() {
-  // final instance = CreateUpdateAppUserScoreDto();
+  // final instance = CreateOrUpdateAppUserScoreDto();
 
-  group('test CreateUpdateAppUserScoreDto', () {
+  group('test CreateOrUpdateAppUserScoreDto', () {
     // String appId
     test('to test the property `appId`', () async {
       // TODO

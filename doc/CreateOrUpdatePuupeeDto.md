@@ -1,4 +1,4 @@
-# puupee_api.model.CreateUpdatePuupeeDto
+# puupee_api.model.CreateOrUpdatePuupeeDto
 
 ## Load the model package
 ```dart

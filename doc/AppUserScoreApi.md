@@ -24,7 +24,7 @@ import 'package:puupee_api/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = AppUserScoreApi();
-final body = CreateUpdateAppUserScoreDto(); // CreateUpdateAppUserScoreDto | 
+final body = CreateOrUpdateAppUserScoreDto(); // CreateOrUpdateAppUserScoreDto | 
 
 try {
     final result = api_instance.apiAppAppUserScorePost(body);
@@ -38,7 +38,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateUpdateAppUserScoreDto**](CreateUpdateAppUserScoreDto.md)|  | [optional] 
+ **body** | [**CreateOrUpdateAppUserScoreDto**](CreateOrUpdateAppUserScoreDto.md)|  | [optional] 
 
 ### Return type
 

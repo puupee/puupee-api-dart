@@ -16,6 +16,57 @@ class AppApi {
 
   final ApiClient apiClient;
 
+  /// Performs an HTTP 'GET /api/app/app/by-developer' operation and returns the [Response].
+  /// Parameters:
+  ///
+  /// * [String] developerAccount:
+  Future<Response> apiAppAppByDeveloperGetWithHttpInfo({ String? developerAccount, }) async {
+    // ignore: prefer_const_declarations
+    final path = r'/api/app/app/by-developer';
+
+    // ignore: prefer_final_locals
+    Object? postBody;
+
+    final queryParams = <QueryParam>[];
+    final headerParams = <String, String>{};
+    final formParams = <String, String>{};
+
+    if (developerAccount != null) {
+      queryParams.addAll(_queryParams('', 'developerAccount', developerAccount));
+    }
+
+    const contentTypes = <String>[];
+
+
+    return apiClient.invokeAPI(
+      path,
+      'GET',
+      queryParams,
+      postBody,
+      headerParams,
+      formParams,
+      contentTypes.isEmpty ? null : contentTypes.first,
+    );
+  }
+
+  /// Parameters:
+  ///
+  /// * [String] developerAccount:
+  Future<AppDtoPagedResultDto?> apiAppAppByDeveloperGet({ String? developerAccount, }) async {
+    final response = await apiAppAppByDeveloperGetWithHttpInfo( developerAccount: developerAccount, );
+    if (response.statusCode >= HttpStatus.badRequest) {
+      throw ApiException(response.statusCode, await _decodeBodyBytes(response));
+    }
+    // When a remote server returns no body with a status of 204, we shall not decode it.
+    // At the time of writing this, `dart:convert` will throw an "Unexpected end of input"
+    // FormatException when trying to decode an empty string.
+    if (response.body.isNotEmpty && response.statusCode != HttpStatus.noContent) {
+      return await apiClient.deserializeAsync(await _decodeBodyBytes(response), 'AppDtoPagedResultDto',) as AppDtoPagedResultDto;
+    
+    }
+    return null;
+  }
+
   /// Performs an HTTP 'GET /api/app/app/by-name' operation and returns the [Response].
   /// Parameters:
   ///

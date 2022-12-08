@@ -189,10 +189,14 @@ class ApiClient {
           return AppDto.fromJson(value);
         case 'AppDtoPagedResultDto':
           return AppDtoPagedResultDto.fromJson(value);
+        case 'AppFeatureDto':
+          return AppFeatureDto.fromJson(value);
         case 'AppReleaseDto':
           return AppReleaseDto.fromJson(value);
         case 'AppReleaseDtoPagedResultDto':
           return AppReleaseDtoPagedResultDto.fromJson(value);
+        case 'AppSdkDto':
+          return AppSdkDto.fromJson(value);
         case 'AppTheme':
           return AppTheme.fromJson(value);
         case 'AppThemeMode':
@@ -233,12 +237,16 @@ class ApiClient {
           return ControllerInterfaceApiDescriptionModel.fromJson(value);
         case 'CreateOrUpdateAppDto':
           return CreateOrUpdateAppDto.fromJson(value);
+        case 'CreateOrUpdateAppFeatureDto':
+          return CreateOrUpdateAppFeatureDto.fromJson(value);
         case 'CreateOrUpdateAppReleaseDto':
           return CreateOrUpdateAppReleaseDto.fromJson(value);
-        case 'CreateUpdateAppUserScoreDto':
-          return CreateUpdateAppUserScoreDto.fromJson(value);
-        case 'CreateUpdatePuupeeDto':
-          return CreateUpdatePuupeeDto.fromJson(value);
+        case 'CreateOrUpdateAppSdkDto':
+          return CreateOrUpdateAppSdkDto.fromJson(value);
+        case 'CreateOrUpdateAppUserScoreDto':
+          return CreateOrUpdateAppUserScoreDto.fromJson(value);
+        case 'CreateOrUpdatePuupeeDto':
+          return CreateOrUpdatePuupeeDto.fromJson(value);
         case 'CurrentCultureDto':
           return CurrentCultureDto.fromJson(value);
         case 'CurrentTenantDto':

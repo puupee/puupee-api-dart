@@ -11,11 +11,11 @@
 import 'package:puupee_api/api.dart';
 import 'package:test/test.dart';
 
-// tests for CreateUpdatePuupeeDto
+// tests for CreateOrUpdatePuupeeDto
 void main() {
-  // final instance = CreateUpdatePuupeeDto();
+  // final instance = CreateOrUpdatePuupeeDto();
 
-  group('test CreateUpdatePuupeeDto', () {
+  group('test CreateOrUpdatePuupeeDto', () {
     // String id
     test('to test the property `id`', () async {
       // TODO

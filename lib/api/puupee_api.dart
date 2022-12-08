@@ -84,8 +84,8 @@ class PuupeeApi {
   /// Performs an HTTP 'POST /api/app/puupee/push' operation and returns the [Response].
   /// Parameters:
   ///
-  /// * [CreateUpdatePuupeeDto] body:
-  Future<Response> apiAppPuupeePushPostWithHttpInfo({ CreateUpdatePuupeeDto? body, }) async {
+  /// * [CreateOrUpdatePuupeeDto] body:
+  Future<Response> apiAppPuupeePushPostWithHttpInfo({ CreateOrUpdatePuupeeDto? body, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/app/puupee/push';
 
@@ -112,8 +112,8 @@ class PuupeeApi {
 
   /// Parameters:
   ///
-  /// * [CreateUpdatePuupeeDto] body:
-  Future<PuupeeDto?> apiAppPuupeePushPost({ CreateUpdatePuupeeDto? body, }) async {
+  /// * [CreateOrUpdatePuupeeDto] body:
+  Future<PuupeeDto?> apiAppPuupeePushPost({ CreateOrUpdatePuupeeDto? body, }) async {
     final response = await apiAppPuupeePushPostWithHttpInfo( body: body, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));

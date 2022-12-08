@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **icon** | **String** |  | [optional] 
 **gitRepository** | **String** |  | [optional] 
 **gitRepositoryType** | **String** |  | [optional] 
-**latestRelease** | [**AppReleaseDto**](AppReleaseDto.md) |  | [optional] 
+**latestReleases** | [**List<AppReleaseDto>**](AppReleaseDto.md) |  | [optional] [default to const []]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

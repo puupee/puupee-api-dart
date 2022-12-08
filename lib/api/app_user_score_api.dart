@@ -19,8 +19,8 @@ class AppUserScoreApi {
   /// Performs an HTTP 'POST /api/app/app-user-score' operation and returns the [Response].
   /// Parameters:
   ///
-  /// * [CreateUpdateAppUserScoreDto] body:
-  Future<Response> apiAppAppUserScorePostWithHttpInfo({ CreateUpdateAppUserScoreDto? body, }) async {
+  /// * [CreateOrUpdateAppUserScoreDto] body:
+  Future<Response> apiAppAppUserScorePostWithHttpInfo({ CreateOrUpdateAppUserScoreDto? body, }) async {
     // ignore: prefer_const_declarations
     final path = r'/api/app/app-user-score';
 
@@ -47,8 +47,8 @@ class AppUserScoreApi {
 
   /// Parameters:
   ///
-  /// * [CreateUpdateAppUserScoreDto] body:
-  Future<AppUserScoreDto?> apiAppAppUserScorePost({ CreateUpdateAppUserScoreDto? body, }) async {
+  /// * [CreateOrUpdateAppUserScoreDto] body:
+  Future<AppUserScoreDto?> apiAppAppUserScorePost({ CreateOrUpdateAppUserScoreDto? body, }) async {
     final response = await apiAppAppUserScorePostWithHttpInfo( body: body, );
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
