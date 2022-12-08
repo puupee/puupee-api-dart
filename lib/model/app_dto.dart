@@ -31,6 +31,8 @@ class AppDto {
     this.gitRepositoryType,
     this.latestReleases = const [],
     this.creator,
+    this.features = const [],
+    this.sdks = const [],
   });
 
   ///
@@ -171,6 +173,10 @@ class AppDto {
   ///
   IdentityUserDto? creator;
 
+  List<AppFeatureDto> features;
+
+  List<AppSdkDto> sdks;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is AppDto &&
      other.id == id &&
@@ -190,7 +196,9 @@ class AppDto {
      other.gitRepository == gitRepository &&
      other.gitRepositoryType == gitRepositoryType &&
      other.latestReleases == latestReleases &&
-     other.creator == creator;
+     other.creator == creator &&
+     other.features == features &&
+     other.sdks == sdks;
 
   @override
   int get hashCode =>
@@ -212,10 +220,12 @@ class AppDto {
     (gitRepository == null ? 0 : gitRepository!.hashCode) +
     (gitRepositoryType == null ? 0 : gitRepositoryType!.hashCode) +
     (latestReleases.hashCode) +
-    (creator == null ? 0 : creator!.hashCode);
+    (creator == null ? 0 : creator!.hashCode) +
+    (features.hashCode) +
+    (sdks.hashCode);
 
   @override
-  String toString() => 'AppDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, displayName=$displayName, fromework=$fromework, appType=$appType, description=$description, icon=$icon, gitRepository=$gitRepository, gitRepositoryType=$gitRepositoryType, latestReleases=$latestReleases, creator=$creator]';
+  String toString() => 'AppDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, lastModificationTime=$lastModificationTime, lastModifierId=$lastModifierId, isDeleted=$isDeleted, deleterId=$deleterId, deletionTime=$deletionTime, name=$name, displayName=$displayName, fromework=$fromework, appType=$appType, description=$description, icon=$icon, gitRepository=$gitRepository, gitRepositoryType=$gitRepositoryType, latestReleases=$latestReleases, creator=$creator, features=$features, sdks=$sdks]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -305,6 +315,8 @@ class AppDto {
     } else {
       json[r'creator'] = null;
     }
+      json[r'features'] = this.features;
+      json[r'sdks'] = this.sdks;
     return json;
   }
 
@@ -345,6 +357,8 @@ class AppDto {
         gitRepositoryType: mapValueOfType<String>(json, r'gitRepositoryType'),
         latestReleases: AppReleaseDto.listFromJson(json[r'latestReleases']) ?? const [],
         creator: IdentityUserDto.fromJson(json[r'creator']),
+        features: AppFeatureDto.listFromJson(json[r'features']) ?? const [],
+        sdks: AppSdkDto.listFromJson(json[r'sdks']) ?? const [],
       );
     }
     return null;
