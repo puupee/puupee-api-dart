@@ -16,21 +16,6 @@ void main() {
   // final instance = CreateOrUpdateAppReleaseDto();
 
   group('test CreateOrUpdateAppReleaseDto', () {
-    // String id
-    test('to test the property `id`', () async {
-      // TODO
-    });
-
-    // DateTime creationTime
-    test('to test the property `creationTime`', () async {
-      // TODO
-    });
-
-    // String creatorId
-    test('to test the property `creatorId`', () async {
-      // TODO
-    });
-
     // String version
     test('to test the property `version`', () async {
       // TODO

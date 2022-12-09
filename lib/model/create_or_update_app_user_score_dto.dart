@@ -13,37 +13,10 @@ part of puupee_api;
 class CreateOrUpdateAppUserScoreDto {
   /// Returns a new [CreateOrUpdateAppUserScoreDto] instance.
   CreateOrUpdateAppUserScoreDto({
-    this.id,
-    this.creationTime,
-    this.creatorId,
     this.appId,
     this.score,
     this.comment,
   });
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? id;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  DateTime? creationTime;
-
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? creatorId;
 
   ///
   /// Please note: This property should have been non-nullable! Since the specification file
@@ -71,9 +44,6 @@ class CreateOrUpdateAppUserScoreDto {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateOrUpdateAppUserScoreDto &&
-     other.id == id &&
-     other.creationTime == creationTime &&
-     other.creatorId == creatorId &&
      other.appId == appId &&
      other.score == score &&
      other.comment == comment;
@@ -81,33 +51,15 @@ class CreateOrUpdateAppUserScoreDto {
   @override
   int get hashCode =>
     // ignore: unnecessary_parenthesis
-    (id == null ? 0 : id!.hashCode) +
-    (creationTime == null ? 0 : creationTime!.hashCode) +
-    (creatorId == null ? 0 : creatorId!.hashCode) +
     (appId == null ? 0 : appId!.hashCode) +
     (score == null ? 0 : score!.hashCode) +
     (comment == null ? 0 : comment!.hashCode);
 
   @override
-  String toString() => 'CreateOrUpdateAppUserScoreDto[id=$id, creationTime=$creationTime, creatorId=$creatorId, appId=$appId, score=$score, comment=$comment]';
+  String toString() => 'CreateOrUpdateAppUserScoreDto[appId=$appId, score=$score, comment=$comment]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
-    if (this.id != null) {
-      json[r'id'] = this.id;
-    } else {
-      json[r'id'] = null;
-    }
-    if (this.creationTime != null) {
-      json[r'creationTime'] = this.creationTime!.toUtc().toIso8601String();
-    } else {
-      json[r'creationTime'] = null;
-    }
-    if (this.creatorId != null) {
-      json[r'creatorId'] = this.creatorId;
-    } else {
-      json[r'creatorId'] = null;
-    }
     if (this.appId != null) {
       json[r'appId'] = this.appId;
     } else {
@@ -145,9 +97,6 @@ class CreateOrUpdateAppUserScoreDto {
       }());
 
       return CreateOrUpdateAppUserScoreDto(
-        id: mapValueOfType<String>(json, r'id'),
-        creationTime: mapDateTime(json, r'creationTime', ''),
-        creatorId: mapValueOfType<String>(json, r'creatorId'),
         appId: mapValueOfType<String>(json, r'appId'),
         score: mapValueOfType<int>(json, r'score'),
         comment: mapValueOfType<String>(json, r'comment'),
