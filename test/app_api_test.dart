@@ -52,8 +52,8 @@ void main() {
       // TODO
     });
 
-    //Future<StorageObjectOrCredentialsDto> apiAppAppStorageObjectOrCredentialsGet({ String rapidCode, String key }) async
-    test('test apiAppAppStorageObjectOrCredentialsGet', () async {
+    //Future<StorageObjectCredentials> apiAppAppUploadCredentialsGet({ String key }) async
+    test('test apiAppAppUploadCredentialsGet', () async {
       // TODO
     });
 

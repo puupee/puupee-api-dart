@@ -16,7 +16,7 @@ Method | HTTP request | Description
 [**apiAppAppIdGet**](AppApi.md#apiappappidget) | **GET** /api/app/app/{id} | 
 [**apiAppAppIdPut**](AppApi.md#apiappappidput) | **PUT** /api/app/app/{id} | 
 [**apiAppAppPost**](AppApi.md#apiappapppost) | **POST** /api/app/app | 
-[**apiAppAppStorageObjectOrCredentialsGet**](AppApi.md#apiappappstorageobjectorcredentialsget) | **GET** /api/app/app/storage-object-or-credentials | 
+[**apiAppAppUploadCredentialsGet**](AppApi.md#apiappappuploadcredentialsget) | **GET** /api/app/app/upload-credentials | 
 
 
 # **apiAppAppByDeveloperGet**
@@ -327,8 +327,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppAppStorageObjectOrCredentialsGet**
-> StorageObjectOrCredentialsDto apiAppAppStorageObjectOrCredentialsGet(rapidCode, key)
+# **apiAppAppUploadCredentialsGet**
+> StorageObjectCredentials apiAppAppUploadCredentialsGet(key)
 
 
 
@@ -339,14 +339,13 @@ import 'package:puupee_api/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api_instance = AppApi();
-final rapidCode = rapidCode_example; // String | 
 final key = key_example; // String | 
 
 try {
-    final result = api_instance.apiAppAppStorageObjectOrCredentialsGet(rapidCode, key);
+    final result = api_instance.apiAppAppUploadCredentialsGet(key);
     print(result);
 } catch (e) {
-    print('Exception when calling AppApi->apiAppAppStorageObjectOrCredentialsGet: $e\n');
+    print('Exception when calling AppApi->apiAppAppUploadCredentialsGet: $e\n');
 }
 ```
 
@@ -354,12 +353,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **rapidCode** | **String**|  | [optional] 
  **key** | **String**|  | [optional] 
 
 ### Return type
 
-[**StorageObjectOrCredentialsDto**](StorageObjectOrCredentialsDto.md)
+[**StorageObjectCredentials**](StorageObjectCredentials.md)
 
 ### Authorization
 

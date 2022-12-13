@@ -76,7 +76,7 @@ Class | Method | HTTP request | Description
 *AppApi* | [**apiAppAppIdGet**](doc//AppApi.md#apiappappidget) | **GET** /api/app/app/{id} | 
 *AppApi* | [**apiAppAppIdPut**](doc//AppApi.md#apiappappidput) | **PUT** /api/app/app/{id} | 
 *AppApi* | [**apiAppAppPost**](doc//AppApi.md#apiappapppost) | **POST** /api/app/app | 
-*AppApi* | [**apiAppAppStorageObjectOrCredentialsGet**](doc//AppApi.md#apiappappstorageobjectorcredentialsget) | **GET** /api/app/app/storage-object-or-credentials | 
+*AppApi* | [**apiAppAppUploadCredentialsGet**](doc//AppApi.md#apiappappuploadcredentialsget) | **GET** /api/app/app/upload-credentials | 
 *AppFeatureApi* | [**apiAppAppFeatureGet**](doc//AppFeatureApi.md#apiappappfeatureget) | **GET** /api/app/app-feature | 
 *AppFeatureApi* | [**apiAppAppFeatureIdDelete**](doc//AppFeatureApi.md#apiappappfeatureiddelete) | **DELETE** /api/app/app-feature/{id} | 
 *AppFeatureApi* | [**apiAppAppFeatureIdPut**](doc//AppFeatureApi.md#apiappappfeatureidput) | **PUT** /api/app/app-feature/{id} | 
