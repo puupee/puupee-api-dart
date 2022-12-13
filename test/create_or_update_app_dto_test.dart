@@ -56,6 +56,16 @@ void main() {
       // TODO
     });
 
+    // List<AppFeatureDto> features (default value: const [])
+    test('to test the property `features`', () async {
+      // TODO
+    });
+
+    // List<AppSdkDto> sdks (default value: const [])
+    test('to test the property `sdks`', () async {
+      // TODO
+    });
+
 
   });
 

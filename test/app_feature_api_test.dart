@@ -17,7 +17,7 @@ void main() {
   // final instance = AppFeatureApi();
 
   group('tests for AppFeatureApi', () {
-    //Future<List<AppFeatureDto>> apiAppAppFeatureGet({ String appId }) async
+    //Future<List<AppFeatureDto>> apiAppAppFeatureGet() async
     test('test apiAppAppFeatureGet', () async {
       // TODO
     });

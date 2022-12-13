@@ -21,6 +21,8 @@ class CreateOrUpdateAppDto {
     this.icon,
     this.gitRepository,
     this.gitRepositoryType,
+    this.features = const [],
+    this.sdks = const [],
   });
 
   ///
@@ -87,6 +89,10 @@ class CreateOrUpdateAppDto {
   ///
   String? gitRepositoryType;
 
+  List<AppFeatureDto> features;
+
+  List<AppSdkDto> sdks;
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateOrUpdateAppDto &&
      other.name == name &&
@@ -96,7 +102,9 @@ class CreateOrUpdateAppDto {
      other.description == description &&
      other.icon == icon &&
      other.gitRepository == gitRepository &&
-     other.gitRepositoryType == gitRepositoryType;
+     other.gitRepositoryType == gitRepositoryType &&
+     other.features == features &&
+     other.sdks == sdks;
 
   @override
   int get hashCode =>
@@ -108,10 +116,12 @@ class CreateOrUpdateAppDto {
     (description == null ? 0 : description!.hashCode) +
     (icon == null ? 0 : icon!.hashCode) +
     (gitRepository == null ? 0 : gitRepository!.hashCode) +
-    (gitRepositoryType == null ? 0 : gitRepositoryType!.hashCode);
+    (gitRepositoryType == null ? 0 : gitRepositoryType!.hashCode) +
+    (features.hashCode) +
+    (sdks.hashCode);
 
   @override
-  String toString() => 'CreateOrUpdateAppDto[name=$name, displayName=$displayName, framework=$framework, appType=$appType, description=$description, icon=$icon, gitRepository=$gitRepository, gitRepositoryType=$gitRepositoryType]';
+  String toString() => 'CreateOrUpdateAppDto[name=$name, displayName=$displayName, framework=$framework, appType=$appType, description=$description, icon=$icon, gitRepository=$gitRepository, gitRepositoryType=$gitRepositoryType, features=$features, sdks=$sdks]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -155,6 +165,8 @@ class CreateOrUpdateAppDto {
     } else {
       json[r'gitRepositoryType'] = null;
     }
+      json[r'features'] = this.features;
+      json[r'sdks'] = this.sdks;
     return json;
   }
 
@@ -185,6 +197,8 @@ class CreateOrUpdateAppDto {
         icon: mapValueOfType<String>(json, r'icon'),
         gitRepository: mapValueOfType<String>(json, r'gitRepository'),
         gitRepositoryType: mapValueOfType<String>(json, r'gitRepositoryType'),
+        features: AppFeatureDto.listFromJson(json[r'features']) ?? const [],
+        sdks: AppSdkDto.listFromJson(json[r'sdks']) ?? const [],
       );
     }
     return null;

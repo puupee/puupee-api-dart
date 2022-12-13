@@ -16,6 +16,8 @@ Name | Type | Description | Notes
 **icon** | **String** |  | [optional] 
 **gitRepository** | **String** |  | [optional] 
 **gitRepositoryType** | **String** |  | [optional] 
+**features** | [**List<AppFeatureDto>**](AppFeatureDto.md) |  | [optional] [default to const []]
+**sdks** | [**List<AppSdkDto>**](AppSdkDto.md) |  | [optional] [default to const []]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

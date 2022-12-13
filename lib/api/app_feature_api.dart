@@ -17,10 +17,7 @@ class AppFeatureApi {
   final ApiClient apiClient;
 
   /// Performs an HTTP 'GET /api/app/app-feature' operation and returns the [Response].
-  /// Parameters:
-  ///
-  /// * [String] appId:
-  Future<Response> apiAppAppFeatureGetWithHttpInfo({ String? appId, }) async {
+  Future<Response> apiAppAppFeatureGetWithHttpInfo() async {
     // ignore: prefer_const_declarations
     final path = r'/api/app/app-feature';
 
@@ -30,10 +27,6 @@ class AppFeatureApi {
     final queryParams = <QueryParam>[];
     final headerParams = <String, String>{};
     final formParams = <String, String>{};
-
-    if (appId != null) {
-      queryParams.addAll(_queryParams('', 'appId', appId));
-    }
 
     const contentTypes = <String>[];
 
@@ -49,11 +42,8 @@ class AppFeatureApi {
     );
   }
 
-  /// Parameters:
-  ///
-  /// * [String] appId:
-  Future<List<AppFeatureDto>?> apiAppAppFeatureGet({ String? appId, }) async {
-    final response = await apiAppAppFeatureGetWithHttpInfo( appId: appId, );
+  Future<List<AppFeatureDto>?> apiAppAppFeatureGet() async {
+    final response = await apiAppAppFeatureGetWithHttpInfo();
     if (response.statusCode >= HttpStatus.badRequest) {
       throw ApiException(response.statusCode, await _decodeBodyBytes(response));
     }

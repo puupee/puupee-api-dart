@@ -18,7 +18,6 @@ class CreateOrUpdateAppFeatureDto {
     this.description,
     this.details,
     this.screenshotKeys,
-    this.appId,
   });
 
   ///
@@ -61,22 +60,13 @@ class CreateOrUpdateAppFeatureDto {
   ///
   String? screenshotKeys;
 
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? appId;
-
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateOrUpdateAppFeatureDto &&
      other.name == name &&
      other.displayName == displayName &&
      other.description == description &&
      other.details == details &&
-     other.screenshotKeys == screenshotKeys &&
-     other.appId == appId;
+     other.screenshotKeys == screenshotKeys;
 
   @override
   int get hashCode =>
@@ -85,11 +75,10 @@ class CreateOrUpdateAppFeatureDto {
     (displayName == null ? 0 : displayName!.hashCode) +
     (description == null ? 0 : description!.hashCode) +
     (details == null ? 0 : details!.hashCode) +
-    (screenshotKeys == null ? 0 : screenshotKeys!.hashCode) +
-    (appId == null ? 0 : appId!.hashCode);
+    (screenshotKeys == null ? 0 : screenshotKeys!.hashCode);
 
   @override
-  String toString() => 'CreateOrUpdateAppFeatureDto[name=$name, displayName=$displayName, description=$description, details=$details, screenshotKeys=$screenshotKeys, appId=$appId]';
+  String toString() => 'CreateOrUpdateAppFeatureDto[name=$name, displayName=$displayName, description=$description, details=$details, screenshotKeys=$screenshotKeys]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -118,11 +107,6 @@ class CreateOrUpdateAppFeatureDto {
     } else {
       json[r'screenshotKeys'] = null;
     }
-    if (this.appId != null) {
-      json[r'appId'] = this.appId;
-    } else {
-      json[r'appId'] = null;
-    }
     return json;
   }
 
@@ -150,7 +134,6 @@ class CreateOrUpdateAppFeatureDto {
         description: mapValueOfType<String>(json, r'description'),
         details: mapValueOfType<String>(json, r'details'),
         screenshotKeys: mapValueOfType<String>(json, r'screenshotKeys'),
-        appId: mapValueOfType<String>(json, r'appId'),
       );
     }
     return null;

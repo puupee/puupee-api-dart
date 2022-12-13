@@ -18,7 +18,6 @@ class CreateOrUpdateAppSdkDto {
     this.privacy,
     this.privacyUrl,
     this.homePage,
-    this.appId,
   });
 
   ///
@@ -61,22 +60,13 @@ class CreateOrUpdateAppSdkDto {
   ///
   String? homePage;
 
-  ///
-  /// Please note: This property should have been non-nullable! Since the specification file
-  /// does not include a default value (using the "default:" property), however, the generated
-  /// source code must fall back to having a nullable type.
-  /// Consider adding a "default:" property in the specification file to hide this note.
-  ///
-  String? appId;
-
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateOrUpdateAppSdkDto &&
      other.name == name &&
      other.description == description &&
      other.privacy == privacy &&
      other.privacyUrl == privacyUrl &&
-     other.homePage == homePage &&
-     other.appId == appId;
+     other.homePage == homePage;
 
   @override
   int get hashCode =>
@@ -85,11 +75,10 @@ class CreateOrUpdateAppSdkDto {
     (description == null ? 0 : description!.hashCode) +
     (privacy == null ? 0 : privacy!.hashCode) +
     (privacyUrl == null ? 0 : privacyUrl!.hashCode) +
-    (homePage == null ? 0 : homePage!.hashCode) +
-    (appId == null ? 0 : appId!.hashCode);
+    (homePage == null ? 0 : homePage!.hashCode);
 
   @override
-  String toString() => 'CreateOrUpdateAppSdkDto[name=$name, description=$description, privacy=$privacy, privacyUrl=$privacyUrl, homePage=$homePage, appId=$appId]';
+  String toString() => 'CreateOrUpdateAppSdkDto[name=$name, description=$description, privacy=$privacy, privacyUrl=$privacyUrl, homePage=$homePage]';
 
   Map<String, dynamic> toJson() {
     final json = <String, dynamic>{};
@@ -118,11 +107,6 @@ class CreateOrUpdateAppSdkDto {
     } else {
       json[r'homePage'] = null;
     }
-    if (this.appId != null) {
-      json[r'appId'] = this.appId;
-    } else {
-      json[r'appId'] = null;
-    }
     return json;
   }
 
@@ -150,7 +134,6 @@ class CreateOrUpdateAppSdkDto {
         privacy: mapValueOfType<String>(json, r'privacy'),
         privacyUrl: mapValueOfType<String>(json, r'privacyUrl'),
         homePage: mapValueOfType<String>(json, r'homePage'),
-        appId: mapValueOfType<String>(json, r'appId'),
       );
     }
     return null;
