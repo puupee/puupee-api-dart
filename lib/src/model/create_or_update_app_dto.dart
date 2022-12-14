@@ -49,7 +49,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final String? name;
+  String? name;
 
 
 
@@ -61,7 +61,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final String? displayName;
+  String? displayName;
 
 
 
@@ -73,7 +73,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final String? framework;
+  String? framework;
 
 
 
@@ -85,7 +85,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final String? appType;
+  String? appType;
 
 
 
@@ -97,7 +97,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final String? description;
+  String? description;
 
 
 
@@ -109,7 +109,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final String? icon;
+  String? icon;
 
 
 
@@ -121,7 +121,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final String? gitRepository;
+  String? gitRepository;
 
 
 
@@ -133,7 +133,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final String? gitRepositoryType;
+  String? gitRepositoryType;
 
 
 
@@ -145,7 +145,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final List<AppFeatureDto>? features;
+  List<AppFeatureDto>? features;
 
 
 
@@ -157,7 +157,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final List<AppSdkDto>? sdks;
+  List<AppSdkDto>? sdks;
 
 
 

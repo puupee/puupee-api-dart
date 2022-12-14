@@ -31,7 +31,7 @@ class ProviderInfoDto {
   )
 
 
-  final String? providerName;
+  String? providerName;
 
 
 
@@ -43,7 +43,7 @@ class ProviderInfoDto {
   )
 
 
-  final String? providerKey;
+  String? providerKey;
 
 
 

@@ -31,7 +31,7 @@ class SyncStateDto {
   )
 
 
-  final DateTime? lastSyncAt;
+  DateTime? lastSyncAt;
 
 
 
@@ -43,7 +43,7 @@ class SyncStateDto {
   )
 
 
-  final int? version;
+  int? version;
 
 
 

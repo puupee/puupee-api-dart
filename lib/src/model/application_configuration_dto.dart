@@ -62,7 +62,7 @@ class ApplicationConfigurationDto {
   )
 
 
-  final ApplicationLocalizationConfigurationDto? localization;
+  ApplicationLocalizationConfigurationDto? localization;
 
 
 
@@ -74,7 +74,7 @@ class ApplicationConfigurationDto {
   )
 
 
-  final ApplicationAuthConfigurationDto? auth;
+  ApplicationAuthConfigurationDto? auth;
 
 
 
@@ -86,7 +86,7 @@ class ApplicationConfigurationDto {
   )
 
 
-  final ApplicationSettingConfigurationDto? setting;
+  ApplicationSettingConfigurationDto? setting;
 
 
 
@@ -98,7 +98,7 @@ class ApplicationConfigurationDto {
   )
 
 
-  final CurrentUserDto? currentUser;
+  CurrentUserDto? currentUser;
 
 
 
@@ -110,7 +110,7 @@ class ApplicationConfigurationDto {
   )
 
 
-  final ApplicationFeatureConfigurationDto? features;
+  ApplicationFeatureConfigurationDto? features;
 
 
 
@@ -122,7 +122,7 @@ class ApplicationConfigurationDto {
   )
 
 
-  final ApplicationGlobalFeatureConfigurationDto? globalFeatures;
+  ApplicationGlobalFeatureConfigurationDto? globalFeatures;
 
 
 
@@ -134,7 +134,7 @@ class ApplicationConfigurationDto {
   )
 
 
-  final MultiTenancyInfoDto? multiTenancy;
+  MultiTenancyInfoDto? multiTenancy;
 
 
 
@@ -146,7 +146,7 @@ class ApplicationConfigurationDto {
   )
 
 
-  final CurrentTenantDto? currentTenant;
+  CurrentTenantDto? currentTenant;
 
 
 
@@ -158,7 +158,7 @@ class ApplicationConfigurationDto {
   )
 
 
-  final TimingDto? timing;
+  TimingDto? timing;
 
 
 
@@ -170,7 +170,7 @@ class ApplicationConfigurationDto {
   )
 
 
-  final ClockDto? clock;
+  ClockDto? clock;
 
 
 
@@ -182,7 +182,7 @@ class ApplicationConfigurationDto {
   )
 
 
-  final ObjectExtensionsDto? objectExtensions;
+  ObjectExtensionsDto? objectExtensions;
 
 
 
@@ -194,7 +194,7 @@ class ApplicationConfigurationDto {
   )
 
 
-  final Map<String, Object>? extraProperties;
+  Map<String, Object>? extraProperties;
 
 
 

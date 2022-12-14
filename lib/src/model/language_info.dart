@@ -35,7 +35,7 @@ class LanguageInfo {
   )
 
 
-  final String? cultureName;
+  String? cultureName;
 
 
 
@@ -47,7 +47,7 @@ class LanguageInfo {
   )
 
 
-  final String? uiCultureName;
+  String? uiCultureName;
 
 
 
@@ -59,7 +59,7 @@ class LanguageInfo {
   )
 
 
-  final String? displayName;
+  String? displayName;
 
 
 
@@ -71,7 +71,7 @@ class LanguageInfo {
   )
 
 
-  final String? flagIcon;
+  String? flagIcon;
 
 
 

@@ -32,7 +32,7 @@ class AppReleaseDtoPagedResultDto {
   )
 
 
-  final List<AppReleaseDto>? items;
+  List<AppReleaseDto>? items;
 
 
 
@@ -44,7 +44,7 @@ class AppReleaseDtoPagedResultDto {
   )
 
 
-  final int? totalCount;
+  int? totalCount;
 
 
 

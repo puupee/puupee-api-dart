@@ -40,7 +40,7 @@ class UserStorageDto {
   )
 
 
-  final String? name;
+  String? name;
 
 
 
@@ -52,7 +52,7 @@ class UserStorageDto {
   )
 
 
-  final String? displayName;
+  String? displayName;
 
 
 
@@ -64,7 +64,7 @@ class UserStorageDto {
   )
 
 
-  final int? maxSize;
+  int? maxSize;
 
 
 
@@ -76,7 +76,7 @@ class UserStorageDto {
   )
 
 
-  final int? currentSize;
+  int? currentSize;
 
 
 
@@ -88,7 +88,7 @@ class UserStorageDto {
   )
 
 
-  final int? totalCount;
+  int? totalCount;
 
 
 
@@ -100,7 +100,7 @@ class UserStorageDto {
   )
 
 
-  final List<UserStorageItemDto>? items;
+  List<UserStorageItemDto>? items;
 
 
 

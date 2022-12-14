@@ -33,7 +33,7 @@ class SendVerificationCodeDto {
   )
 
 
-  final String? codeSender;
+  String? codeSender;
 
 
 
@@ -45,7 +45,7 @@ class SendVerificationCodeDto {
   )
 
 
-  final String? account;
+  String? account;
 
 
 
@@ -57,7 +57,7 @@ class SendVerificationCodeDto {
   )
 
 
-  final String? purpose;
+  String? purpose;
 
 
 

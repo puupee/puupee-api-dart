@@ -39,7 +39,7 @@ class MethodParameterApiDescriptionModel {
   )
 
 
-  final String? name;
+  String? name;
 
 
 
@@ -51,7 +51,7 @@ class MethodParameterApiDescriptionModel {
   )
 
 
-  final String? typeAsString;
+  String? typeAsString;
 
 
 
@@ -63,7 +63,7 @@ class MethodParameterApiDescriptionModel {
   )
 
 
-  final String? type;
+  String? type;
 
 
 
@@ -75,7 +75,7 @@ class MethodParameterApiDescriptionModel {
   )
 
 
-  final String? typeSimple;
+  String? typeSimple;
 
 
 
@@ -87,7 +87,7 @@ class MethodParameterApiDescriptionModel {
   )
 
 
-  final bool? isOptional;
+  bool? isOptional;
 
 
 
@@ -99,7 +99,7 @@ class MethodParameterApiDescriptionModel {
   )
 
 
-  final Object? defaultValue;
+  Object? defaultValue;
 
 
 

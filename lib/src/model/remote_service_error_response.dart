@@ -30,7 +30,7 @@ class RemoteServiceErrorResponse {
   )
 
 
-  final RemoteServiceErrorInfo? error;
+  RemoteServiceErrorInfo? error;
 
 
 

@@ -47,7 +47,7 @@ class IdentityUserCreateDto {
   )
 
 
-  final Map<String, Object>? extraProperties;
+  Map<String, Object>? extraProperties;
 
 
 
@@ -59,7 +59,7 @@ class IdentityUserCreateDto {
   )
 
 
-  final String userName;
+  String userName;
 
 
 
@@ -71,7 +71,7 @@ class IdentityUserCreateDto {
   )
 
 
-  final String? name;
+  String? name;
 
 
 
@@ -83,7 +83,7 @@ class IdentityUserCreateDto {
   )
 
 
-  final String? surname;
+  String? surname;
 
 
 
@@ -95,7 +95,7 @@ class IdentityUserCreateDto {
   )
 
 
-  final String email;
+  String email;
 
 
 
@@ -107,7 +107,7 @@ class IdentityUserCreateDto {
   )
 
 
-  final String? phoneNumber;
+  String? phoneNumber;
 
 
 
@@ -119,7 +119,7 @@ class IdentityUserCreateDto {
   )
 
 
-  final bool? isActive;
+  bool? isActive;
 
 
 
@@ -131,7 +131,7 @@ class IdentityUserCreateDto {
   )
 
 
-  final bool? lockoutEnabled;
+  bool? lockoutEnabled;
 
 
 
@@ -143,7 +143,7 @@ class IdentityUserCreateDto {
   )
 
 
-  final List<String>? roleNames;
+  List<String>? roleNames;
 
 
 
@@ -155,7 +155,7 @@ class IdentityUserCreateDto {
   )
 
 
-  final String password;
+  String password;
 
 
 

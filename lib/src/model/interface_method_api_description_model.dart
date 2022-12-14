@@ -35,7 +35,7 @@ class InterfaceMethodApiDescriptionModel {
   )
 
 
-  final String? name;
+  String? name;
 
 
 
@@ -47,7 +47,7 @@ class InterfaceMethodApiDescriptionModel {
   )
 
 
-  final List<MethodParameterApiDescriptionModel>? parametersOnMethod;
+  List<MethodParameterApiDescriptionModel>? parametersOnMethod;
 
 
 
@@ -59,7 +59,7 @@ class InterfaceMethodApiDescriptionModel {
   )
 
 
-  final ReturnValueApiDescriptionModel? returnValue;
+  ReturnValueApiDescriptionModel? returnValue;
 
 
 

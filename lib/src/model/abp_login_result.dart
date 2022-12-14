@@ -32,7 +32,7 @@ class AbpLoginResult {
   )
 
 
-  final LoginResultType? result;
+  LoginResultType? result;
 
 
 
@@ -44,7 +44,7 @@ class AbpLoginResult {
   )
 
 
-  final String? description;
+  String? description;
 
 
 

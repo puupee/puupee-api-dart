@@ -33,7 +33,7 @@ class CurrentTenantDto {
   )
 
 
-  final String? id;
+  String? id;
 
 
 
@@ -45,7 +45,7 @@ class CurrentTenantDto {
   )
 
 
-  final String? name;
+  String? name;
 
 
 
@@ -57,7 +57,7 @@ class CurrentTenantDto {
   )
 
 
-  final bool? isAvailable;
+  bool? isAvailable;
 
 
 

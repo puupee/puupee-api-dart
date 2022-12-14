@@ -29,7 +29,7 @@ class ApplicationAuthConfigurationDto {
   )
 
 
-  final Map<String, bool>? grantedPolicies;
+  Map<String, bool>? grantedPolicies;
 
 
 

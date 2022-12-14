@@ -29,7 +29,7 @@ class ExtensionPropertyApiUpdateDto {
   )
 
 
-  final bool? isAvailable;
+  bool? isAvailable;
 
 
 

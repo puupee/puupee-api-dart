@@ -35,7 +35,7 @@ class SettingsDto {
   )
 
 
-  final AppTheme? appTheme;
+  AppTheme? appTheme;
 
 
 
@@ -47,7 +47,7 @@ class SettingsDto {
   )
 
 
-  final String? language;
+  String? language;
 
 
 
@@ -59,7 +59,7 @@ class SettingsDto {
   )
 
 
-  final TodoSettingsDto? todoSettings;
+  TodoSettingsDto? todoSettings;
 
 
 

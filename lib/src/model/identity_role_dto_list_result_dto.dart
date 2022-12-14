@@ -30,7 +30,7 @@ class IdentityRoleDtoListResultDto {
   )
 
 
-  final List<IdentityRoleDto>? items;
+  List<IdentityRoleDto>? items;
 
 
 

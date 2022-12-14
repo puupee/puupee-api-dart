@@ -33,7 +33,7 @@ class StorageObjectOrCredentialsDto {
   )
 
 
-  final StorageObjectDto? storageObject;
+  StorageObjectDto? storageObject;
 
 
 
@@ -45,7 +45,7 @@ class StorageObjectOrCredentialsDto {
   )
 
 
-  final StorageObjectCredentials? credentials;
+  StorageObjectCredentials? credentials;
 
 
 

@@ -31,7 +31,7 @@ class DateTimeSetKeyValueDto {
   )
 
 
-  final DateTime? value;
+  DateTime? value;
 
 
 
@@ -43,7 +43,7 @@ class DateTimeSetKeyValueDto {
   )
 
 
-  final double? durationSeconds;
+  double? durationSeconds;
 
 
 

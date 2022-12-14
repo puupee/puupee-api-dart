@@ -37,7 +37,7 @@ class ExtensionPropertyUiLookupDto {
   )
 
 
-  final String? url;
+  String? url;
 
 
 
@@ -49,7 +49,7 @@ class ExtensionPropertyUiLookupDto {
   )
 
 
-  final String? resultListPropertyName;
+  String? resultListPropertyName;
 
 
 
@@ -61,7 +61,7 @@ class ExtensionPropertyUiLookupDto {
   )
 
 
-  final String? displayPropertyName;
+  String? displayPropertyName;
 
 
 
@@ -73,7 +73,7 @@ class ExtensionPropertyUiLookupDto {
   )
 
 
-  final String? valuePropertyName;
+  String? valuePropertyName;
 
 
 
@@ -85,7 +85,7 @@ class ExtensionPropertyUiLookupDto {
   )
 
 
-  final String? filterParamName;
+  String? filterParamName;
 
 
 

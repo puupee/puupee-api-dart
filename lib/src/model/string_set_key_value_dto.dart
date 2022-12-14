@@ -31,7 +31,7 @@ class StringSetKeyValueDto {
   )
 
 
-  final String? value;
+  String? value;
 
 
 
@@ -43,7 +43,7 @@ class StringSetKeyValueDto {
   )
 
 
-  final double? durationSeconds;
+  double? durationSeconds;
 
 
 

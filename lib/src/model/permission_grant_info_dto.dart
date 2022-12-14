@@ -40,7 +40,7 @@ class PermissionGrantInfoDto {
   )
 
 
-  final String? name;
+  String? name;
 
 
 
@@ -52,7 +52,7 @@ class PermissionGrantInfoDto {
   )
 
 
-  final String? displayName;
+  String? displayName;
 
 
 
@@ -64,7 +64,7 @@ class PermissionGrantInfoDto {
   )
 
 
-  final String? parentName;
+  String? parentName;
 
 
 
@@ -76,7 +76,7 @@ class PermissionGrantInfoDto {
   )
 
 
-  final bool? isGranted;
+  bool? isGranted;
 
 
 
@@ -88,7 +88,7 @@ class PermissionGrantInfoDto {
   )
 
 
-  final List<String>? allowedProviders;
+  List<String>? allowedProviders;
 
 
 
@@ -100,7 +100,7 @@ class PermissionGrantInfoDto {
   )
 
 
-  final List<ProviderInfoDto>? grantedProviders;
+  List<ProviderInfoDto>? grantedProviders;
 
 
 

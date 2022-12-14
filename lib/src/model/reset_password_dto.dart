@@ -33,7 +33,7 @@ class ResetPasswordDto {
   )
 
 
-  final String? userId;
+  String? userId;
 
 
 
@@ -45,7 +45,7 @@ class ResetPasswordDto {
   )
 
 
-  final String resetToken;
+  String resetToken;
 
 
 
@@ -57,7 +57,7 @@ class ResetPasswordDto {
   )
 
 
-  final String password;
+  String password;
 
 
 

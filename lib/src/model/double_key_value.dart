@@ -35,7 +35,7 @@ class DoubleKeyValue {
   )
 
 
-  final double? value;
+  double? value;
 
 
 
@@ -47,7 +47,7 @@ class DoubleKeyValue {
   )
 
 
-  final double? durationSeconds;
+  double? durationSeconds;
 
 
 
@@ -59,7 +59,7 @@ class DoubleKeyValue {
   )
 
 
-  final DateTime? expiredAt;
+  DateTime? expiredAt;
 
 
 
@@ -71,7 +71,7 @@ class DoubleKeyValue {
   )
 
 
-  final DateTime? createdAt;
+  DateTime? createdAt;
 
 
 

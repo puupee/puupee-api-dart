@@ -38,7 +38,7 @@ class RemoteServiceErrorInfo {
   )
 
 
-  final String? code;
+  String? code;
 
 
 
@@ -50,7 +50,7 @@ class RemoteServiceErrorInfo {
   )
 
 
-  final String? message;
+  String? message;
 
 
 
@@ -62,7 +62,7 @@ class RemoteServiceErrorInfo {
   )
 
 
-  final String? details;
+  String? details;
 
 
 
@@ -74,7 +74,7 @@ class RemoteServiceErrorInfo {
   )
 
 
-  final Map<String, Object>? data;
+  Map<String, Object>? data;
 
 
 
@@ -86,7 +86,7 @@ class RemoteServiceErrorInfo {
   )
 
 
-  final List<RemoteServiceValidationErrorInfo>? validationErrors;
+  List<RemoteServiceValidationErrorInfo>? validationErrors;
 
 
 

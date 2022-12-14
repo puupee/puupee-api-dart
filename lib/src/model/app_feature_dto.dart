@@ -53,7 +53,7 @@ class AppFeatureDto {
   )
 
 
-  final String? id;
+  String? id;
 
 
 
@@ -65,7 +65,7 @@ class AppFeatureDto {
   )
 
 
-  final DateTime? creationTime;
+  DateTime? creationTime;
 
 
 
@@ -77,7 +77,7 @@ class AppFeatureDto {
   )
 
 
-  final String? creatorId;
+  String? creatorId;
 
 
 
@@ -89,7 +89,7 @@ class AppFeatureDto {
   )
 
 
-  final DateTime? lastModificationTime;
+  DateTime? lastModificationTime;
 
 
 
@@ -101,7 +101,7 @@ class AppFeatureDto {
   )
 
 
-  final String? lastModifierId;
+  String? lastModifierId;
 
 
 
@@ -113,7 +113,7 @@ class AppFeatureDto {
   )
 
 
-  final bool? isDeleted;
+  bool? isDeleted;
 
 
 
@@ -125,7 +125,7 @@ class AppFeatureDto {
   )
 
 
-  final String? deleterId;
+  String? deleterId;
 
 
 
@@ -137,7 +137,7 @@ class AppFeatureDto {
   )
 
 
-  final DateTime? deletionTime;
+  DateTime? deletionTime;
 
 
 
@@ -149,7 +149,7 @@ class AppFeatureDto {
   )
 
 
-  final String? name;
+  String? name;
 
 
 
@@ -161,7 +161,7 @@ class AppFeatureDto {
   )
 
 
-  final String? displayName;
+  String? displayName;
 
 
 
@@ -173,7 +173,7 @@ class AppFeatureDto {
   )
 
 
-  final String? description;
+  String? description;
 
 
 
@@ -185,7 +185,7 @@ class AppFeatureDto {
   )
 
 
-  final String? details;
+  String? details;
 
 
 
@@ -197,7 +197,7 @@ class AppFeatureDto {
   )
 
 
-  final String? screenshotKeys;
+  String? screenshotKeys;
 
 
 

@@ -32,7 +32,7 @@ class TestDateTime {
   )
 
 
-  final DateTime? createdAt;
+  DateTime? createdAt;
 
 
 
@@ -44,7 +44,7 @@ class TestDateTime {
   )
 
 
-  final PuupeeDto? puupee;
+  PuupeeDto? puupee;
 
 
 

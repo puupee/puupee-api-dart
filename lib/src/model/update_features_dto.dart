@@ -30,7 +30,7 @@ class UpdateFeaturesDto {
   )
 
 
-  final List<UpdateFeatureDto>? features;
+  List<UpdateFeatureDto>? features;
 
 
 

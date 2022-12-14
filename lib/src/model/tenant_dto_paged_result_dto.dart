@@ -32,7 +32,7 @@ class TenantDtoPagedResultDto {
   )
 
 
-  final List<TenantDto>? items;
+  List<TenantDto>? items;
 
 
 
@@ -44,7 +44,7 @@ class TenantDtoPagedResultDto {
   )
 
 
-  final int? totalCount;
+  int? totalCount;
 
 
 

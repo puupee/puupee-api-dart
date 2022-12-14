@@ -47,7 +47,7 @@ class ExtensionPropertyDto {
   )
 
 
-  final String? type;
+  String? type;
 
 
 
@@ -59,7 +59,7 @@ class ExtensionPropertyDto {
   )
 
 
-  final String? typeSimple;
+  String? typeSimple;
 
 
 
@@ -71,7 +71,7 @@ class ExtensionPropertyDto {
   )
 
 
-  final LocalizableStringDto? displayName;
+  LocalizableStringDto? displayName;
 
 
 
@@ -83,7 +83,7 @@ class ExtensionPropertyDto {
   )
 
 
-  final ExtensionPropertyApiDto? api;
+  ExtensionPropertyApiDto? api;
 
 
 
@@ -95,7 +95,7 @@ class ExtensionPropertyDto {
   )
 
 
-  final ExtensionPropertyUiDto? ui;
+  ExtensionPropertyUiDto? ui;
 
 
 
@@ -107,7 +107,7 @@ class ExtensionPropertyDto {
   )
 
 
-  final List<ExtensionPropertyAttributeDto>? attributes;
+  List<ExtensionPropertyAttributeDto>? attributes;
 
 
 
@@ -119,7 +119,7 @@ class ExtensionPropertyDto {
   )
 
 
-  final Map<String, Object>? configuration;
+  Map<String, Object>? configuration;
 
 
 
@@ -131,7 +131,7 @@ class ExtensionPropertyDto {
   )
 
 
-  final Object? defaultValue;
+  Object? defaultValue;
 
 
 

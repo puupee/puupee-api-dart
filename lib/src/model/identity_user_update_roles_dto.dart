@@ -29,7 +29,7 @@ class IdentityUserUpdateRolesDto {
   )
 
 
-  final List<String> roleNames;
+  List<String> roleNames;
 
 
 

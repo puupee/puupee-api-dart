@@ -37,7 +37,7 @@ class BindDeviceDto {
   )
 
 
-  final String? token;
+  String? token;
 
 
 
@@ -49,7 +49,7 @@ class BindDeviceDto {
   )
 
 
-  final String? name;
+  String? name;
 
 
 
@@ -61,7 +61,7 @@ class BindDeviceDto {
   )
 
 
-  final String? type;
+  String? type;
 
 
 
@@ -73,7 +73,7 @@ class BindDeviceDto {
   )
 
 
-  final String? brand;
+  String? brand;
 
 
 
@@ -85,7 +85,7 @@ class BindDeviceDto {
   )
 
 
-  final String? systemVersion;
+  String? systemVersion;
 
 
 

@@ -45,7 +45,7 @@ class UpdateEmailSettingsDto {
   )
 
 
-  final String? smtpHost;
+  String? smtpHost;
 
 
 
@@ -59,7 +59,7 @@ class UpdateEmailSettingsDto {
   )
 
 
-  final int? smtpPort;
+  int? smtpPort;
 
 
 
@@ -71,7 +71,7 @@ class UpdateEmailSettingsDto {
   )
 
 
-  final String? smtpUserName;
+  String? smtpUserName;
 
 
 
@@ -83,7 +83,7 @@ class UpdateEmailSettingsDto {
   )
 
 
-  final String? smtpPassword;
+  String? smtpPassword;
 
 
 
@@ -95,7 +95,7 @@ class UpdateEmailSettingsDto {
   )
 
 
-  final String? smtpDomain;
+  String? smtpDomain;
 
 
 
@@ -107,7 +107,7 @@ class UpdateEmailSettingsDto {
   )
 
 
-  final bool? smtpEnableSsl;
+  bool? smtpEnableSsl;
 
 
 
@@ -119,7 +119,7 @@ class UpdateEmailSettingsDto {
   )
 
 
-  final bool? smtpUseDefaultCredentials;
+  bool? smtpUseDefaultCredentials;
 
 
 
@@ -131,7 +131,7 @@ class UpdateEmailSettingsDto {
   )
 
 
-  final String defaultFromAddress;
+  String defaultFromAddress;
 
 
 
@@ -143,7 +143,7 @@ class UpdateEmailSettingsDto {
   )
 
 
-  final String defaultFromDisplayName;
+  String defaultFromDisplayName;
 
 
 

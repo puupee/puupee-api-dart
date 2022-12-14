@@ -29,7 +29,7 @@ class ExtensionPropertyUiTableDto {
   )
 
 
-  final bool? isVisible;
+  bool? isVisible;
 
 
 

@@ -31,7 +31,7 @@ class ExtensionPropertyAttributeDto {
   )
 
 
-  final String? typeSimple;
+  String? typeSimple;
 
 
 
@@ -43,7 +43,7 @@ class ExtensionPropertyAttributeDto {
   )
 
 
-  final Map<String, Object>? config;
+  Map<String, Object>? config;
 
 
 

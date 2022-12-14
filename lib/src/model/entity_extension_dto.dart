@@ -32,7 +32,7 @@ class EntityExtensionDto {
   )
 
 
-  final Map<String, ExtensionPropertyDto>? properties;
+  Map<String, ExtensionPropertyDto>? properties;
 
 
 
@@ -44,7 +44,7 @@ class EntityExtensionDto {
   )
 
 
-  final Map<String, Object>? configuration;
+  Map<String, Object>? configuration;
 
 
 

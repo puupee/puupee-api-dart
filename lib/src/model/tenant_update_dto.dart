@@ -33,7 +33,7 @@ class TenantUpdateDto {
   )
 
 
-  final Map<String, Object>? extraProperties;
+  Map<String, Object>? extraProperties;
 
 
 
@@ -45,7 +45,7 @@ class TenantUpdateDto {
   )
 
 
-  final String name;
+  String name;
 
 
 
@@ -57,7 +57,7 @@ class TenantUpdateDto {
   )
 
 
-  final String? concurrencyStamp;
+  String? concurrencyStamp;
 
 
 

@@ -31,7 +31,7 @@ class ChangePasswordInput {
   )
 
 
-  final String? currentPassword;
+  String? currentPassword;
 
 
 
@@ -43,7 +43,7 @@ class ChangePasswordInput {
   )
 
 
-  final String newPassword;
+  String newPassword;
 
 
 

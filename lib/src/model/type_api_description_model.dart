@@ -40,7 +40,7 @@ class TypeApiDescriptionModel {
   )
 
 
-  final String? baseType;
+  String? baseType;
 
 
 
@@ -52,7 +52,7 @@ class TypeApiDescriptionModel {
   )
 
 
-  final bool? isEnum;
+  bool? isEnum;
 
 
 
@@ -64,7 +64,7 @@ class TypeApiDescriptionModel {
   )
 
 
-  final List<String>? enumNames;
+  List<String>? enumNames;
 
 
 
@@ -76,7 +76,7 @@ class TypeApiDescriptionModel {
   )
 
 
-  final List<Object>? enumValues;
+  List<Object>? enumValues;
 
 
 
@@ -88,7 +88,7 @@ class TypeApiDescriptionModel {
   )
 
 
-  final List<String>? genericArguments;
+  List<String>? genericArguments;
 
 
 
@@ -100,7 +100,7 @@ class TypeApiDescriptionModel {
   )
 
 
-  final List<PropertyApiDescriptionModel>? properties;
+  List<PropertyApiDescriptionModel>? properties;
 
 
 
