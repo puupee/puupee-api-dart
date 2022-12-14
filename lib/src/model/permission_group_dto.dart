@@ -3,180 +3,117 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
 import 'package:puupee_api_client/src/model/permission_grant_info_dto.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'permission_group_dto.g.dart';
 
-/// PermissionGroupDto
-///
-/// Properties:
-/// * [name] 
-/// * [displayName] 
-/// * [displayNameKey] 
-/// * [displayNameResource] 
-/// * [permissions] 
-@BuiltValue()
-abstract class PermissionGroupDto implements Built<PermissionGroupDto, PermissionGroupDtoBuilder> {
-  @BuiltValueField(wireName: r'name')
-  String? get name;
 
-  @BuiltValueField(wireName: r'displayName')
-  String? get displayName;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class PermissionGroupDto {
+  /// Returns a new [PermissionGroupDto] instance.
+  PermissionGroupDto({
 
-  @BuiltValueField(wireName: r'displayNameKey')
-  String? get displayNameKey;
+     this.name,
 
-  @BuiltValueField(wireName: r'displayNameResource')
-  String? get displayNameResource;
+     this.displayName,
 
-  @BuiltValueField(wireName: r'permissions')
-  BuiltList<PermissionGrantInfoDto>? get permissions;
+     this.displayNameKey,
 
-  PermissionGroupDto._();
+     this.displayNameResource,
 
-  factory PermissionGroupDto([void updates(PermissionGroupDtoBuilder b)]) = _$PermissionGroupDto;
+     this.permissions,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(PermissionGroupDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'name',
+    required: false,
+    includeIfNull: false
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<PermissionGroupDto> get serializer => _$PermissionGroupDtoSerializer();
-}
 
-class _$PermissionGroupDtoSerializer implements PrimitiveSerializer<PermissionGroupDto> {
-  @override
-  final Iterable<Type> types = const [PermissionGroupDto, _$PermissionGroupDto];
+  final String? name;
 
-  @override
-  final String wireName = r'PermissionGroupDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    PermissionGroupDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.name != null) {
-      yield r'name';
-      yield serializers.serialize(
-        object.name,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.displayName != null) {
-      yield r'displayName';
-      yield serializers.serialize(
-        object.displayName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.displayNameKey != null) {
-      yield r'displayNameKey';
-      yield serializers.serialize(
-        object.displayNameKey,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.displayNameResource != null) {
-      yield r'displayNameResource';
-      yield serializers.serialize(
-        object.displayNameResource,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.permissions != null) {
-      yield r'permissions';
-      yield serializers.serialize(
-        object.permissions,
-        specifiedType: const FullType(BuiltList, [FullType(PermissionGrantInfoDto)]),
-      );
-    }
-  }
+
+  @JsonKey(
+    
+    name: r'displayName',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? displayName;
+
+
+
+  @JsonKey(
+    
+    name: r'displayNameKey',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? displayNameKey;
+
+
+
+  @JsonKey(
+    
+    name: r'displayNameResource',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? displayNameResource;
+
+
+
+  @JsonKey(
+    
+    name: r'permissions',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final List<PermissionGrantInfoDto>? permissions;
+
+
 
   @override
-  Object serialize(
-    Serializers serializers,
-    PermissionGroupDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
-
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required PermissionGroupDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'displayName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.displayName = valueDes;
-          break;
-        case r'displayNameKey':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.displayNameKey = valueDes;
-          break;
-        case r'displayNameResource':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.displayNameResource = valueDes;
-          break;
-        case r'permissions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(PermissionGrantInfoDto)]),
-          ) as BuiltList<PermissionGrantInfoDto>;
-          result.permissions.replace(valueDes);
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  bool operator ==(Object other) => identical(this, other) || other is PermissionGroupDto &&
+     other.name == name &&
+     other.displayName == displayName &&
+     other.displayNameKey == displayNameKey &&
+     other.displayNameResource == displayNameResource &&
+     other.permissions == permissions;
 
   @override
-  PermissionGroupDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = PermissionGroupDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  int get hashCode =>
+    name.hashCode +
+    displayName.hashCode +
+    displayNameKey.hashCode +
+    displayNameResource.hashCode +
+    permissions.hashCode;
+
+  factory PermissionGroupDto.fromJson(Map<String, dynamic> json) => _$PermissionGroupDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$PermissionGroupDtoToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

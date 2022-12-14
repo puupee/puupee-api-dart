@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for SettingsDto
 void main() {
-  final instance = SettingsDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final SettingsDto? instance = /* SettingsDto(...) */ null;
+  // TODO add properties to the entity
 
   group(SettingsDto, () {
     // AppTheme appTheme

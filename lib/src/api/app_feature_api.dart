@@ -4,10 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
 import 'package:puupee_api_client/src/model/app_feature_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_feature_dto.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
@@ -16,9 +17,7 @@ class AppFeatureApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const AppFeatureApi(this._dio, this._serializers);
+  const AppFeatureApi(this._dio);
 
   /// apiAppAppFeatureGet
   /// 
@@ -31,9 +30,9 @@ class AppFeatureApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<AppFeatureDto>] as data
+  /// Returns a [Future] containing a [Response] with a [List<AppFeatureDto>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BuiltList<AppFeatureDto>>> apiAppAppFeatureGet({ 
+  Future<Response<List<AppFeatureDto>>> apiAppAppFeatureGet({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -67,15 +66,10 @@ class AppFeatureApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<AppFeatureDto> _responseData;
+    List<AppFeatureDto> _responseData;
 
     try {
-      const _responseType = FullType(BuiltList, [FullType(AppFeatureDto)]);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as BuiltList<AppFeatureDto>;
-
+_responseData = deserialize<List<AppFeatureDto>, AppFeatureDto>(_response.data!, 'List<AppFeatureDto>', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -85,7 +79,7 @@ class AppFeatureApi {
       )..stackTrace = stackTrace;
     }
 
-    return Response<BuiltList<AppFeatureDto>>(
+    return Response<List<AppFeatureDto>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -196,9 +190,7 @@ class AppFeatureApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CreateOrUpdateAppFeatureDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -222,12 +214,7 @@ class AppFeatureApi {
     AppFeatureDto _responseData;
 
     try {
-      const _responseType = FullType(AppFeatureDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as AppFeatureDto;
-
+_responseData = deserialize<AppFeatureDto, AppFeatureDto>(_response.data!, 'AppFeatureDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -294,9 +281,7 @@ class AppFeatureApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CreateOrUpdateAppFeatureDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -320,12 +305,7 @@ class AppFeatureApi {
     AppFeatureDto _responseData;
 
     try {
-      const _responseType = FullType(AppFeatureDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as AppFeatureDto;
-
+_responseData = deserialize<AppFeatureDto, AppFeatureDto>(_response.data!, 'AppFeatureDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

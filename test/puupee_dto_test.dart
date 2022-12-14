@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for PuupeeDto
 void main() {
-  final instance = PuupeeDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final PuupeeDto? instance = /* PuupeeDto(...) */ null;
+  // TODO add properties to the entity
 
   group(PuupeeDto, () {
     // String id

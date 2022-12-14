@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for DateTimeKeyValue
 void main() {
-  final instance = DateTimeKeyValueBuilder();
-  // TODO add properties to the builder and call build()
+  final DateTimeKeyValue? instance = /* DateTimeKeyValue(...) */ null;
+  // TODO add properties to the entity
 
   group(DateTimeKeyValue, () {
     // DateTime value

@@ -4,124 +4,68 @@
 
 // ignore_for_file: unused_element
 import 'package:puupee_api_client/src/model/puupee_dto.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'puupee_changed_eto.g.dart';
 
-/// PuupeeChangedEto
-///
-/// Properties:
-/// * [data] 
-/// * [userId] 
-@BuiltValue()
-abstract class PuupeeChangedEto implements Built<PuupeeChangedEto, PuupeeChangedEtoBuilder> {
-  @BuiltValueField(wireName: r'data')
-  PuupeeDto? get data;
 
-  @BuiltValueField(wireName: r'userId')
-  String? get userId;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class PuupeeChangedEto {
+  /// Returns a new [PuupeeChangedEto] instance.
+  PuupeeChangedEto({
 
-  PuupeeChangedEto._();
+     this.data,
 
-  factory PuupeeChangedEto([void updates(PuupeeChangedEtoBuilder b)]) = _$PuupeeChangedEto;
+     this.userId,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(PuupeeChangedEtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'data',
+    required: false,
+    includeIfNull: false
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<PuupeeChangedEto> get serializer => _$PuupeeChangedEtoSerializer();
-}
 
-class _$PuupeeChangedEtoSerializer implements PrimitiveSerializer<PuupeeChangedEto> {
-  @override
-  final Iterable<Type> types = const [PuupeeChangedEto, _$PuupeeChangedEto];
+  final PuupeeDto? data;
 
-  @override
-  final String wireName = r'PuupeeChangedEto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    PuupeeChangedEto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.data != null) {
-      yield r'data';
-      yield serializers.serialize(
-        object.data,
-        specifiedType: const FullType(PuupeeDto),
-      );
-    }
-    if (object.userId != null) {
-      yield r'userId';
-      yield serializers.serialize(
-        object.userId,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
+
+  @JsonKey(
+    
+    name: r'userId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? userId;
+
+
 
   @override
-  Object serialize(
-    Serializers serializers,
-    PuupeeChangedEto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
-
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required PuupeeChangedEtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'data':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PuupeeDto),
-          ) as PuupeeDto;
-          result.data.replace(valueDes);
-          break;
-        case r'userId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.userId = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  bool operator ==(Object other) => identical(this, other) || other is PuupeeChangedEto &&
+     other.data == data &&
+     other.userId == userId;
 
   @override
-  PuupeeChangedEto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = PuupeeChangedEtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  int get hashCode =>
+    data.hashCode +
+    userId.hashCode;
+
+  factory PuupeeChangedEto.fromJson(Map<String, dynamic> json) => _$PuupeeChangedEtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$PuupeeChangedEtoToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for DoubleKeyValue
 void main() {
-  final instance = DoubleKeyValueBuilder();
-  // TODO add properties to the builder and call build()
+  final DoubleKeyValue? instance = /* DoubleKeyValue(...) */ null;
+  // TODO add properties to the entity
 
   group(DoubleKeyValue, () {
     // double value

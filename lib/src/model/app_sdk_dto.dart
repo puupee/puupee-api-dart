@@ -3,322 +3,244 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'app_sdk_dto.g.dart';
 
-/// AppSdkDto
-///
-/// Properties:
-/// * [id] 
-/// * [creationTime] 
-/// * [creatorId] 
-/// * [lastModificationTime] 
-/// * [lastModifierId] 
-/// * [isDeleted] 
-/// * [deleterId] 
-/// * [deletionTime] 
-/// * [name] 
-/// * [description] 
-/// * [privacy] 
-/// * [privacyUrl] 
-/// * [homePage] 
-@BuiltValue()
-abstract class AppSdkDto implements Built<AppSdkDto, AppSdkDtoBuilder> {
-  @BuiltValueField(wireName: r'id')
-  String? get id;
 
-  @BuiltValueField(wireName: r'creationTime')
-  DateTime? get creationTime;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class AppSdkDto {
+  /// Returns a new [AppSdkDto] instance.
+  AppSdkDto({
 
-  @BuiltValueField(wireName: r'creatorId')
-  String? get creatorId;
+     this.id,
 
-  @BuiltValueField(wireName: r'lastModificationTime')
-  DateTime? get lastModificationTime;
+     this.creationTime,
 
-  @BuiltValueField(wireName: r'lastModifierId')
-  String? get lastModifierId;
+     this.creatorId,
 
-  @BuiltValueField(wireName: r'isDeleted')
-  bool? get isDeleted;
+     this.lastModificationTime,
 
-  @BuiltValueField(wireName: r'deleterId')
-  String? get deleterId;
+     this.lastModifierId,
 
-  @BuiltValueField(wireName: r'deletionTime')
-  DateTime? get deletionTime;
+     this.isDeleted,
 
-  @BuiltValueField(wireName: r'name')
-  String? get name;
+     this.deleterId,
 
-  @BuiltValueField(wireName: r'description')
-  String? get description;
+     this.deletionTime,
 
-  @BuiltValueField(wireName: r'privacy')
-  String? get privacy;
+     this.name,
 
-  @BuiltValueField(wireName: r'privacyUrl')
-  String? get privacyUrl;
+     this.description,
 
-  @BuiltValueField(wireName: r'homePage')
-  String? get homePage;
+     this.privacy,
 
-  AppSdkDto._();
+     this.privacyUrl,
 
-  factory AppSdkDto([void updates(AppSdkDtoBuilder b)]) = _$AppSdkDto;
+     this.homePage,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AppSdkDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'id',
+    required: false,
+    includeIfNull: false
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<AppSdkDto> get serializer => _$AppSdkDtoSerializer();
-}
 
-class _$AppSdkDtoSerializer implements PrimitiveSerializer<AppSdkDto> {
-  @override
-  final Iterable<Type> types = const [AppSdkDto, _$AppSdkDto];
+  final String? id;
 
-  @override
-  final String wireName = r'AppSdkDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    AppSdkDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.creationTime != null) {
-      yield r'creationTime';
-      yield serializers.serialize(
-        object.creationTime,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.creatorId != null) {
-      yield r'creatorId';
-      yield serializers.serialize(
-        object.creatorId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.lastModificationTime != null) {
-      yield r'lastModificationTime';
-      yield serializers.serialize(
-        object.lastModificationTime,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.lastModifierId != null) {
-      yield r'lastModifierId';
-      yield serializers.serialize(
-        object.lastModifierId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.isDeleted != null) {
-      yield r'isDeleted';
-      yield serializers.serialize(
-        object.isDeleted,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.deleterId != null) {
-      yield r'deleterId';
-      yield serializers.serialize(
-        object.deleterId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.deletionTime != null) {
-      yield r'deletionTime';
-      yield serializers.serialize(
-        object.deletionTime,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.name != null) {
-      yield r'name';
-      yield serializers.serialize(
-        object.name,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.privacy != null) {
-      yield r'privacy';
-      yield serializers.serialize(
-        object.privacy,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.privacyUrl != null) {
-      yield r'privacyUrl';
-      yield serializers.serialize(
-        object.privacyUrl,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.homePage != null) {
-      yield r'homePage';
-      yield serializers.serialize(
-        object.homePage,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    AppSdkDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'creationTime',
+    required: false,
+    includeIfNull: false
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required AppSdkDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
-        case r'creationTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.creationTime = valueDes;
-          break;
-        case r'creatorId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.creatorId = valueDes;
-          break;
-        case r'lastModificationTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.lastModificationTime = valueDes;
-          break;
-        case r'lastModifierId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.lastModifierId = valueDes;
-          break;
-        case r'isDeleted':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isDeleted = valueDes;
-          break;
-        case r'deleterId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.deleterId = valueDes;
-          break;
-        case r'deletionTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.deletionTime = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
-        case r'privacy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.privacy = valueDes;
-          break;
-        case r'privacyUrl':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.privacyUrl = valueDes;
-          break;
-        case r'homePage':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.homePage = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final DateTime? creationTime;
+
+
+
+  @JsonKey(
+    
+    name: r'creatorId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? creatorId;
+
+
+
+  @JsonKey(
+    
+    name: r'lastModificationTime',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final DateTime? lastModificationTime;
+
+
+
+  @JsonKey(
+    
+    name: r'lastModifierId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? lastModifierId;
+
+
+
+  @JsonKey(
+    
+    name: r'isDeleted',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final bool? isDeleted;
+
+
+
+  @JsonKey(
+    
+    name: r'deleterId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? deleterId;
+
+
+
+  @JsonKey(
+    
+    name: r'deletionTime',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final DateTime? deletionTime;
+
+
+
+  @JsonKey(
+    
+    name: r'name',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? name;
+
+
+
+  @JsonKey(
+    
+    name: r'description',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? description;
+
+
+
+  @JsonKey(
+    
+    name: r'privacy',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? privacy;
+
+
+
+  @JsonKey(
+    
+    name: r'privacyUrl',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? privacyUrl;
+
+
+
+  @JsonKey(
+    
+    name: r'homePage',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? homePage;
+
+
 
   @override
-  AppSdkDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = AppSdkDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  bool operator ==(Object other) => identical(this, other) || other is AppSdkDto &&
+     other.id == id &&
+     other.creationTime == creationTime &&
+     other.creatorId == creatorId &&
+     other.lastModificationTime == lastModificationTime &&
+     other.lastModifierId == lastModifierId &&
+     other.isDeleted == isDeleted &&
+     other.deleterId == deleterId &&
+     other.deletionTime == deletionTime &&
+     other.name == name &&
+     other.description == description &&
+     other.privacy == privacy &&
+     other.privacyUrl == privacyUrl &&
+     other.homePage == homePage;
+
+  @override
+  int get hashCode =>
+    id.hashCode +
+    creationTime.hashCode +
+    creatorId.hashCode +
+    lastModificationTime.hashCode +
+    lastModifierId.hashCode +
+    isDeleted.hashCode +
+    deleterId.hashCode +
+    deletionTime.hashCode +
+    name.hashCode +
+    description.hashCode +
+    privacy.hashCode +
+    privacyUrl.hashCode +
+    homePage.hashCode;
+
+  factory AppSdkDto.fromJson(Map<String, dynamic> json) => _$AppSdkDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AppSdkDtoToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

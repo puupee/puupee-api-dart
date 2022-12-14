@@ -4,7 +4,9 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:puupee_api_client/src/model/puupee_changed_eto.dart';
@@ -15,9 +17,7 @@ class SyncStateApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const SyncStateApi(this._dio, this._serializers);
+  const SyncStateApi(this._dio);
 
   /// apiAppSyncStateGet
   /// 
@@ -69,12 +69,7 @@ class SyncStateApi {
     SyncStateDto _responseData;
 
     try {
-      const _responseType = FullType(SyncStateDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as SyncStateDto;
-
+_responseData = deserialize<SyncStateDto, SyncStateDto>(_response.data!, 'SyncStateDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -146,12 +141,7 @@ class SyncStateApi {
     PuupeeChangedEto _responseData;
 
     try {
-      const _responseType = FullType(PuupeeChangedEto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as PuupeeChangedEto;
-
+_responseData = deserialize<PuupeeChangedEto, PuupeeChangedEto>(_response.data!, 'PuupeeChangedEto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

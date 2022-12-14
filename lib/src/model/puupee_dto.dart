@@ -4,952 +4,804 @@
 
 // ignore_for_file: unused_element
 import 'package:puupee_api_client/src/model/storage_object_dto.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'puupee_dto.g.dart';
 
-/// PuupeeDto
-///
-/// Properties:
-/// * [id] 
-/// * [creationTime] 
-/// * [creatorId] 
-/// * [lastModificationTime] 
-/// * [lastModifierId] 
-/// * [isDeleted] 
-/// * [deleterId] 
-/// * [deletionTime] 
-/// * [name] 
-/// * [title] 
-/// * [description] 
-/// * [text] 
-/// * [format] 
-/// * [password] 
-/// * [parentId] 
-/// * [key] 
-/// * [url] 
-/// * [size] 
-/// * [md5] 
-/// * [sliceMd5] 
-/// * [rapidCode] 
-/// * [contentType] 
-/// * [type] 
-/// * [displayStyle] 
-/// * [extension_] 
-/// * [storageClass] 
-/// * [storageObjectCreatedAt] 
-/// * [storageObjectUpdatedAt] 
-/// * [storageObjectId] 
-/// * [storageObject] 
-/// * [thumb] 
-/// * [priority] 
-/// * [doneAt] 
-/// * [isDone] 
-/// * [startAt] 
-/// * [endAt] 
-/// * [notifyAt] 
-/// * [notifyTimingType] 
-/// * [notifyTimingUnit] 
-/// * [notifyTimingValue] 
-/// * [repeat] 
-/// * [repeatOffAt] 
-/// * [repeatOffTimes] 
-/// * [syncVersion] 
-/// * [isHidden] 
-/// * [tagging] 
-/// * [lastModifierDeviceToken] 
-/// * [lastModifierDevice] 
-@BuiltValue()
-abstract class PuupeeDto implements Built<PuupeeDto, PuupeeDtoBuilder> {
-  @BuiltValueField(wireName: r'id')
-  String? get id;
 
-  @BuiltValueField(wireName: r'creationTime')
-  DateTime? get creationTime;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class PuupeeDto {
+  /// Returns a new [PuupeeDto] instance.
+  PuupeeDto({
 
-  @BuiltValueField(wireName: r'creatorId')
-  String? get creatorId;
+     this.id,
 
-  @BuiltValueField(wireName: r'lastModificationTime')
-  DateTime? get lastModificationTime;
+     this.creationTime,
 
-  @BuiltValueField(wireName: r'lastModifierId')
-  String? get lastModifierId;
+     this.creatorId,
 
-  @BuiltValueField(wireName: r'isDeleted')
-  bool? get isDeleted;
+     this.lastModificationTime,
 
-  @BuiltValueField(wireName: r'deleterId')
-  String? get deleterId;
+     this.lastModifierId,
 
-  @BuiltValueField(wireName: r'deletionTime')
-  DateTime? get deletionTime;
+     this.isDeleted,
 
-  @BuiltValueField(wireName: r'name')
-  String? get name;
+     this.deleterId,
 
-  @BuiltValueField(wireName: r'title')
-  String? get title;
+     this.deletionTime,
 
-  @BuiltValueField(wireName: r'description')
-  String? get description;
+     this.name,
 
-  @BuiltValueField(wireName: r'text')
-  String? get text;
+     this.title,
 
-  @BuiltValueField(wireName: r'format')
-  String? get format;
+     this.description,
 
-  @BuiltValueField(wireName: r'password')
-  String? get password;
+     this.text,
 
-  @BuiltValueField(wireName: r'parentId')
-  String? get parentId;
+     this.format,
 
-  @BuiltValueField(wireName: r'key')
-  String? get key;
+     this.password,
 
-  @BuiltValueField(wireName: r'url')
-  String? get url;
+     this.parentId,
 
-  @BuiltValueField(wireName: r'size')
-  int? get size;
+     this.key,
 
-  @BuiltValueField(wireName: r'md5')
-  String? get md5;
+     this.url,
 
-  @BuiltValueField(wireName: r'sliceMd5')
-  String? get sliceMd5;
+     this.size,
 
-  @BuiltValueField(wireName: r'rapidCode')
-  String? get rapidCode;
+     this.md5,
 
-  @BuiltValueField(wireName: r'contentType')
-  String? get contentType;
+     this.sliceMd5,
 
-  @BuiltValueField(wireName: r'type')
-  String? get type;
+     this.rapidCode,
 
-  @BuiltValueField(wireName: r'displayStyle')
-  String? get displayStyle;
+     this.contentType,
 
-  @BuiltValueField(wireName: r'extension')
-  String? get extension_;
+     this.type,
 
-  @BuiltValueField(wireName: r'storageClass')
-  String? get storageClass;
+     this.displayStyle,
 
-  @BuiltValueField(wireName: r'storageObjectCreatedAt')
-  DateTime? get storageObjectCreatedAt;
+     this.extension_,
 
-  @BuiltValueField(wireName: r'storageObjectUpdatedAt')
-  DateTime? get storageObjectUpdatedAt;
+     this.storageClass,
 
-  @BuiltValueField(wireName: r'storageObjectId')
-  String? get storageObjectId;
+     this.storageObjectCreatedAt,
 
-  @BuiltValueField(wireName: r'storageObject')
-  StorageObjectDto? get storageObject;
+     this.storageObjectUpdatedAt,
 
-  @BuiltValueField(wireName: r'thumb')
-  StorageObjectDto? get thumb;
+     this.storageObjectId,
 
-  @BuiltValueField(wireName: r'priority')
-  int? get priority;
+     this.storageObject,
 
-  @BuiltValueField(wireName: r'doneAt')
-  DateTime? get doneAt;
+     this.thumb,
 
-  @BuiltValueField(wireName: r'isDone')
-  bool? get isDone;
+     this.priority,
 
-  @BuiltValueField(wireName: r'startAt')
-  DateTime? get startAt;
+     this.doneAt,
 
-  @BuiltValueField(wireName: r'endAt')
-  DateTime? get endAt;
+     this.isDone,
 
-  @BuiltValueField(wireName: r'notifyAt')
-  DateTime? get notifyAt;
+     this.startAt,
 
-  @BuiltValueField(wireName: r'notifyTimingType')
-  String? get notifyTimingType;
+     this.endAt,
 
-  @BuiltValueField(wireName: r'notifyTimingUnit')
-  String? get notifyTimingUnit;
+     this.notifyAt,
 
-  @BuiltValueField(wireName: r'notifyTimingValue')
-  int? get notifyTimingValue;
+     this.notifyTimingType,
 
-  @BuiltValueField(wireName: r'repeat')
-  String? get repeat;
+     this.notifyTimingUnit,
 
-  @BuiltValueField(wireName: r'repeatOffAt')
-  DateTime? get repeatOffAt;
+     this.notifyTimingValue,
 
-  @BuiltValueField(wireName: r'repeatOffTimes')
-  int? get repeatOffTimes;
+     this.repeat,
 
-  @BuiltValueField(wireName: r'syncVersion')
-  int? get syncVersion;
+     this.repeatOffAt,
 
-  @BuiltValueField(wireName: r'isHidden')
-  bool? get isHidden;
+     this.repeatOffTimes,
 
-  @BuiltValueField(wireName: r'tagging')
-  String? get tagging;
+     this.syncVersion,
 
-  @BuiltValueField(wireName: r'lastModifierDeviceToken')
-  String? get lastModifierDeviceToken;
+     this.isHidden,
 
-  @BuiltValueField(wireName: r'lastModifierDevice')
-  String? get lastModifierDevice;
+     this.tagging,
 
-  PuupeeDto._();
+     this.lastModifierDeviceToken,
 
-  factory PuupeeDto([void updates(PuupeeDtoBuilder b)]) = _$PuupeeDto;
+     this.lastModifierDevice,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(PuupeeDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'id',
+    required: false,
+    includeIfNull: false
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<PuupeeDto> get serializer => _$PuupeeDtoSerializer();
-}
 
-class _$PuupeeDtoSerializer implements PrimitiveSerializer<PuupeeDto> {
-  @override
-  final Iterable<Type> types = const [PuupeeDto, _$PuupeeDto];
+  final String? id;
 
-  @override
-  final String wireName = r'PuupeeDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    PuupeeDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.creationTime != null) {
-      yield r'creationTime';
-      yield serializers.serialize(
-        object.creationTime,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.creatorId != null) {
-      yield r'creatorId';
-      yield serializers.serialize(
-        object.creatorId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.lastModificationTime != null) {
-      yield r'lastModificationTime';
-      yield serializers.serialize(
-        object.lastModificationTime,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.lastModifierId != null) {
-      yield r'lastModifierId';
-      yield serializers.serialize(
-        object.lastModifierId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.isDeleted != null) {
-      yield r'isDeleted';
-      yield serializers.serialize(
-        object.isDeleted,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.deleterId != null) {
-      yield r'deleterId';
-      yield serializers.serialize(
-        object.deleterId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.deletionTime != null) {
-      yield r'deletionTime';
-      yield serializers.serialize(
-        object.deletionTime,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.name != null) {
-      yield r'name';
-      yield serializers.serialize(
-        object.name,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.title != null) {
-      yield r'title';
-      yield serializers.serialize(
-        object.title,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.text != null) {
-      yield r'text';
-      yield serializers.serialize(
-        object.text,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.format != null) {
-      yield r'format';
-      yield serializers.serialize(
-        object.format,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.password != null) {
-      yield r'password';
-      yield serializers.serialize(
-        object.password,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.parentId != null) {
-      yield r'parentId';
-      yield serializers.serialize(
-        object.parentId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.key != null) {
-      yield r'key';
-      yield serializers.serialize(
-        object.key,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.url != null) {
-      yield r'url';
-      yield serializers.serialize(
-        object.url,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.size != null) {
-      yield r'size';
-      yield serializers.serialize(
-        object.size,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.md5 != null) {
-      yield r'md5';
-      yield serializers.serialize(
-        object.md5,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.sliceMd5 != null) {
-      yield r'sliceMd5';
-      yield serializers.serialize(
-        object.sliceMd5,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.rapidCode != null) {
-      yield r'rapidCode';
-      yield serializers.serialize(
-        object.rapidCode,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.contentType != null) {
-      yield r'contentType';
-      yield serializers.serialize(
-        object.contentType,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.type != null) {
-      yield r'type';
-      yield serializers.serialize(
-        object.type,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.displayStyle != null) {
-      yield r'displayStyle';
-      yield serializers.serialize(
-        object.displayStyle,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.extension_ != null) {
-      yield r'extension';
-      yield serializers.serialize(
-        object.extension_,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.storageClass != null) {
-      yield r'storageClass';
-      yield serializers.serialize(
-        object.storageClass,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.storageObjectCreatedAt != null) {
-      yield r'storageObjectCreatedAt';
-      yield serializers.serialize(
-        object.storageObjectCreatedAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.storageObjectUpdatedAt != null) {
-      yield r'storageObjectUpdatedAt';
-      yield serializers.serialize(
-        object.storageObjectUpdatedAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.storageObjectId != null) {
-      yield r'storageObjectId';
-      yield serializers.serialize(
-        object.storageObjectId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.storageObject != null) {
-      yield r'storageObject';
-      yield serializers.serialize(
-        object.storageObject,
-        specifiedType: const FullType(StorageObjectDto),
-      );
-    }
-    if (object.thumb != null) {
-      yield r'thumb';
-      yield serializers.serialize(
-        object.thumb,
-        specifiedType: const FullType(StorageObjectDto),
-      );
-    }
-    if (object.priority != null) {
-      yield r'priority';
-      yield serializers.serialize(
-        object.priority,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.doneAt != null) {
-      yield r'doneAt';
-      yield serializers.serialize(
-        object.doneAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.isDone != null) {
-      yield r'isDone';
-      yield serializers.serialize(
-        object.isDone,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.startAt != null) {
-      yield r'startAt';
-      yield serializers.serialize(
-        object.startAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.endAt != null) {
-      yield r'endAt';
-      yield serializers.serialize(
-        object.endAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.notifyAt != null) {
-      yield r'notifyAt';
-      yield serializers.serialize(
-        object.notifyAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.notifyTimingType != null) {
-      yield r'notifyTimingType';
-      yield serializers.serialize(
-        object.notifyTimingType,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.notifyTimingUnit != null) {
-      yield r'notifyTimingUnit';
-      yield serializers.serialize(
-        object.notifyTimingUnit,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.notifyTimingValue != null) {
-      yield r'notifyTimingValue';
-      yield serializers.serialize(
-        object.notifyTimingValue,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.repeat != null) {
-      yield r'repeat';
-      yield serializers.serialize(
-        object.repeat,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.repeatOffAt != null) {
-      yield r'repeatOffAt';
-      yield serializers.serialize(
-        object.repeatOffAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.repeatOffTimes != null) {
-      yield r'repeatOffTimes';
-      yield serializers.serialize(
-        object.repeatOffTimes,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.syncVersion != null) {
-      yield r'syncVersion';
-      yield serializers.serialize(
-        object.syncVersion,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.isHidden != null) {
-      yield r'isHidden';
-      yield serializers.serialize(
-        object.isHidden,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.tagging != null) {
-      yield r'tagging';
-      yield serializers.serialize(
-        object.tagging,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.lastModifierDeviceToken != null) {
-      yield r'lastModifierDeviceToken';
-      yield serializers.serialize(
-        object.lastModifierDeviceToken,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.lastModifierDevice != null) {
-      yield r'lastModifierDevice';
-      yield serializers.serialize(
-        object.lastModifierDevice,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    PuupeeDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'creationTime',
+    required: false,
+    includeIfNull: false
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required PuupeeDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
-        case r'creationTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.creationTime = valueDes;
-          break;
-        case r'creatorId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.creatorId = valueDes;
-          break;
-        case r'lastModificationTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.lastModificationTime = valueDes;
-          break;
-        case r'lastModifierId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.lastModifierId = valueDes;
-          break;
-        case r'isDeleted':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isDeleted = valueDes;
-          break;
-        case r'deleterId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.deleterId = valueDes;
-          break;
-        case r'deletionTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.deletionTime = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.title = valueDes;
-          break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
-        case r'text':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.text = valueDes;
-          break;
-        case r'format':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.format = valueDes;
-          break;
-        case r'password':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.password = valueDes;
-          break;
-        case r'parentId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.parentId = valueDes;
-          break;
-        case r'key':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.key = valueDes;
-          break;
-        case r'url':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.url = valueDes;
-          break;
-        case r'size':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.size = valueDes;
-          break;
-        case r'md5':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.md5 = valueDes;
-          break;
-        case r'sliceMd5':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.sliceMd5 = valueDes;
-          break;
-        case r'rapidCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.rapidCode = valueDes;
-          break;
-        case r'contentType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.contentType = valueDes;
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.type = valueDes;
-          break;
-        case r'displayStyle':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.displayStyle = valueDes;
-          break;
-        case r'extension':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.extension_ = valueDes;
-          break;
-        case r'storageClass':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.storageClass = valueDes;
-          break;
-        case r'storageObjectCreatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.storageObjectCreatedAt = valueDes;
-          break;
-        case r'storageObjectUpdatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.storageObjectUpdatedAt = valueDes;
-          break;
-        case r'storageObjectId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.storageObjectId = valueDes;
-          break;
-        case r'storageObject':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(StorageObjectDto),
-          ) as StorageObjectDto;
-          result.storageObject.replace(valueDes);
-          break;
-        case r'thumb':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(StorageObjectDto),
-          ) as StorageObjectDto;
-          result.thumb.replace(valueDes);
-          break;
-        case r'priority':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.priority = valueDes;
-          break;
-        case r'doneAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.doneAt = valueDes;
-          break;
-        case r'isDone':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isDone = valueDes;
-          break;
-        case r'startAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.startAt = valueDes;
-          break;
-        case r'endAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.endAt = valueDes;
-          break;
-        case r'notifyAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.notifyAt = valueDes;
-          break;
-        case r'notifyTimingType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.notifyTimingType = valueDes;
-          break;
-        case r'notifyTimingUnit':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.notifyTimingUnit = valueDes;
-          break;
-        case r'notifyTimingValue':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.notifyTimingValue = valueDes;
-          break;
-        case r'repeat':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.repeat = valueDes;
-          break;
-        case r'repeatOffAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.repeatOffAt = valueDes;
-          break;
-        case r'repeatOffTimes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.repeatOffTimes = valueDes;
-          break;
-        case r'syncVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.syncVersion = valueDes;
-          break;
-        case r'isHidden':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isHidden = valueDes;
-          break;
-        case r'tagging':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.tagging = valueDes;
-          break;
-        case r'lastModifierDeviceToken':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.lastModifierDeviceToken = valueDes;
-          break;
-        case r'lastModifierDevice':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.lastModifierDevice = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final DateTime? creationTime;
+
+
+
+  @JsonKey(
+    
+    name: r'creatorId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? creatorId;
+
+
+
+  @JsonKey(
+    
+    name: r'lastModificationTime',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final DateTime? lastModificationTime;
+
+
+
+  @JsonKey(
+    
+    name: r'lastModifierId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? lastModifierId;
+
+
+
+  @JsonKey(
+    
+    name: r'isDeleted',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final bool? isDeleted;
+
+
+
+  @JsonKey(
+    
+    name: r'deleterId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? deleterId;
+
+
+
+  @JsonKey(
+    
+    name: r'deletionTime',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final DateTime? deletionTime;
+
+
+
+  @JsonKey(
+    
+    name: r'name',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? name;
+
+
+
+  @JsonKey(
+    
+    name: r'title',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? title;
+
+
+
+  @JsonKey(
+    
+    name: r'description',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? description;
+
+
+
+  @JsonKey(
+    
+    name: r'text',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? text;
+
+
+
+  @JsonKey(
+    
+    name: r'format',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? format;
+
+
+
+  @JsonKey(
+    
+    name: r'password',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? password;
+
+
+
+  @JsonKey(
+    
+    name: r'parentId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? parentId;
+
+
+
+  @JsonKey(
+    
+    name: r'key',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? key;
+
+
+
+  @JsonKey(
+    
+    name: r'url',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? url;
+
+
+
+  @JsonKey(
+    
+    name: r'size',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final int? size;
+
+
+
+  @JsonKey(
+    
+    name: r'md5',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? md5;
+
+
+
+  @JsonKey(
+    
+    name: r'sliceMd5',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? sliceMd5;
+
+
+
+  @JsonKey(
+    
+    name: r'rapidCode',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? rapidCode;
+
+
+
+  @JsonKey(
+    
+    name: r'contentType',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? contentType;
+
+
+
+  @JsonKey(
+    
+    name: r'type',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? type;
+
+
+
+  @JsonKey(
+    
+    name: r'displayStyle',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? displayStyle;
+
+
+
+  @JsonKey(
+    
+    name: r'extension',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? extension_;
+
+
+
+  @JsonKey(
+    
+    name: r'storageClass',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? storageClass;
+
+
+
+  @JsonKey(
+    
+    name: r'storageObjectCreatedAt',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final DateTime? storageObjectCreatedAt;
+
+
+
+  @JsonKey(
+    
+    name: r'storageObjectUpdatedAt',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final DateTime? storageObjectUpdatedAt;
+
+
+
+  @JsonKey(
+    
+    name: r'storageObjectId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? storageObjectId;
+
+
+
+  @JsonKey(
+    
+    name: r'storageObject',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final StorageObjectDto? storageObject;
+
+
+
+  @JsonKey(
+    
+    name: r'thumb',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final StorageObjectDto? thumb;
+
+
+
+  @JsonKey(
+    
+    name: r'priority',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final int? priority;
+
+
+
+  @JsonKey(
+    
+    name: r'doneAt',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final DateTime? doneAt;
+
+
+
+  @JsonKey(
+    
+    name: r'isDone',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final bool? isDone;
+
+
+
+  @JsonKey(
+    
+    name: r'startAt',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final DateTime? startAt;
+
+
+
+  @JsonKey(
+    
+    name: r'endAt',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final DateTime? endAt;
+
+
+
+  @JsonKey(
+    
+    name: r'notifyAt',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final DateTime? notifyAt;
+
+
+
+  @JsonKey(
+    
+    name: r'notifyTimingType',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? notifyTimingType;
+
+
+
+  @JsonKey(
+    
+    name: r'notifyTimingUnit',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? notifyTimingUnit;
+
+
+
+  @JsonKey(
+    
+    name: r'notifyTimingValue',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final int? notifyTimingValue;
+
+
+
+  @JsonKey(
+    
+    name: r'repeat',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? repeat;
+
+
+
+  @JsonKey(
+    
+    name: r'repeatOffAt',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final DateTime? repeatOffAt;
+
+
+
+  @JsonKey(
+    
+    name: r'repeatOffTimes',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final int? repeatOffTimes;
+
+
+
+  @JsonKey(
+    
+    name: r'syncVersion',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final int? syncVersion;
+
+
+
+  @JsonKey(
+    
+    name: r'isHidden',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final bool? isHidden;
+
+
+
+  @JsonKey(
+    
+    name: r'tagging',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? tagging;
+
+
+
+  @JsonKey(
+    
+    name: r'lastModifierDeviceToken',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? lastModifierDeviceToken;
+
+
+
+  @JsonKey(
+    
+    name: r'lastModifierDevice',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? lastModifierDevice;
+
+
 
   @override
-  PuupeeDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = PuupeeDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  bool operator ==(Object other) => identical(this, other) || other is PuupeeDto &&
+     other.id == id &&
+     other.creationTime == creationTime &&
+     other.creatorId == creatorId &&
+     other.lastModificationTime == lastModificationTime &&
+     other.lastModifierId == lastModifierId &&
+     other.isDeleted == isDeleted &&
+     other.deleterId == deleterId &&
+     other.deletionTime == deletionTime &&
+     other.name == name &&
+     other.title == title &&
+     other.description == description &&
+     other.text == text &&
+     other.format == format &&
+     other.password == password &&
+     other.parentId == parentId &&
+     other.key == key &&
+     other.url == url &&
+     other.size == size &&
+     other.md5 == md5 &&
+     other.sliceMd5 == sliceMd5 &&
+     other.rapidCode == rapidCode &&
+     other.contentType == contentType &&
+     other.type == type &&
+     other.displayStyle == displayStyle &&
+     other.extension_ == extension_ &&
+     other.storageClass == storageClass &&
+     other.storageObjectCreatedAt == storageObjectCreatedAt &&
+     other.storageObjectUpdatedAt == storageObjectUpdatedAt &&
+     other.storageObjectId == storageObjectId &&
+     other.storageObject == storageObject &&
+     other.thumb == thumb &&
+     other.priority == priority &&
+     other.doneAt == doneAt &&
+     other.isDone == isDone &&
+     other.startAt == startAt &&
+     other.endAt == endAt &&
+     other.notifyAt == notifyAt &&
+     other.notifyTimingType == notifyTimingType &&
+     other.notifyTimingUnit == notifyTimingUnit &&
+     other.notifyTimingValue == notifyTimingValue &&
+     other.repeat == repeat &&
+     other.repeatOffAt == repeatOffAt &&
+     other.repeatOffTimes == repeatOffTimes &&
+     other.syncVersion == syncVersion &&
+     other.isHidden == isHidden &&
+     other.tagging == tagging &&
+     other.lastModifierDeviceToken == lastModifierDeviceToken &&
+     other.lastModifierDevice == lastModifierDevice;
+
+  @override
+  int get hashCode =>
+    id.hashCode +
+    creationTime.hashCode +
+    creatorId.hashCode +
+    lastModificationTime.hashCode +
+    lastModifierId.hashCode +
+    isDeleted.hashCode +
+    deleterId.hashCode +
+    deletionTime.hashCode +
+    name.hashCode +
+    title.hashCode +
+    description.hashCode +
+    text.hashCode +
+    format.hashCode +
+    password.hashCode +
+    parentId.hashCode +
+    key.hashCode +
+    url.hashCode +
+    size.hashCode +
+    md5.hashCode +
+    sliceMd5.hashCode +
+    rapidCode.hashCode +
+    contentType.hashCode +
+    type.hashCode +
+    displayStyle.hashCode +
+    extension_.hashCode +
+    storageClass.hashCode +
+    storageObjectCreatedAt.hashCode +
+    storageObjectUpdatedAt.hashCode +
+    storageObjectId.hashCode +
+    storageObject.hashCode +
+    thumb.hashCode +
+    priority.hashCode +
+    doneAt.hashCode +
+    isDone.hashCode +
+    startAt.hashCode +
+    endAt.hashCode +
+    notifyAt.hashCode +
+    notifyTimingType.hashCode +
+    notifyTimingUnit.hashCode +
+    notifyTimingValue.hashCode +
+    repeat.hashCode +
+    repeatOffAt.hashCode +
+    repeatOffTimes.hashCode +
+    syncVersion.hashCode +
+    isHidden.hashCode +
+    tagging.hashCode +
+    lastModifierDeviceToken.hashCode +
+    lastModifierDevice.hashCode;
+
+  factory PuupeeDto.fromJson(Map<String, dynamic> json) => _$PuupeeDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$PuupeeDtoToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

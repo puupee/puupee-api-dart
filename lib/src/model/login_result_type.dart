@@ -3,38 +3,18 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
-part 'login_result_type.g.dart';
 
-class LoginResultType extends EnumClass {
-
-  @BuiltValueEnumConst(wireName: r'Success')
-  static const LoginResultType success = _$success;
-  @BuiltValueEnumConst(wireName: r'InvalidUserNameOrPassword')
-  static const LoginResultType invalidUserNameOrPassword = _$invalidUserNameOrPassword;
-  @BuiltValueEnumConst(wireName: r'NotAllowed')
-  static const LoginResultType notAllowed = _$notAllowed;
-  @BuiltValueEnumConst(wireName: r'LockedOut')
-  static const LoginResultType lockedOut = _$lockedOut;
-  @BuiltValueEnumConst(wireName: r'RequiresTwoFactor')
-  static const LoginResultType requiresTwoFactor = _$requiresTwoFactor;
-
-  static Serializer<LoginResultType> get serializer => _$loginResultTypeSerializer;
-
-  const LoginResultType._(String name): super(name);
-
-  static BuiltSet<LoginResultType> get values => _$values;
-  static LoginResultType valueOf(String name) => _$valueOf(name);
+enum LoginResultType {
+  @JsonValue(r'Success')
+  success,
+  @JsonValue(r'InvalidUserNameOrPassword')
+  invalidUserNameOrPassword,
+  @JsonValue(r'NotAllowed')
+  notAllowed,
+  @JsonValue(r'LockedOut')
+  lockedOut,
+  @JsonValue(r'RequiresTwoFactor')
+  requiresTwoFactor,
 }
-
-/// Optionally, enum_class can generate a mixin to go with your enum for use
-/// with Angular. It exposes your enum constants as getters. So, if you mix it
-/// in to your Dart component class, the values become available to the
-/// corresponding Angular template.
-///
-/// Trigger mixin generation by writing a line like this one next to your enum.
-abstract class LoginResultTypeMixin = Object with _$LoginResultTypeMixin;
-

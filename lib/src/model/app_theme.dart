@@ -4,125 +4,68 @@
 
 // ignore_for_file: unused_element
 import 'package:puupee_api_client/src/model/app_theme_mode.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'app_theme.g.dart';
 
-/// AppTheme
-///
-/// Properties:
-/// * [sourceColor] 
-/// * [themeMode] 
-@BuiltValue()
-abstract class AppTheme implements Built<AppTheme, AppThemeBuilder> {
-  @BuiltValueField(wireName: r'sourceColor')
-  String? get sourceColor;
 
-  @BuiltValueField(wireName: r'themeMode')
-  AppThemeMode? get themeMode;
-  // enum themeModeEnum {  System,  Light,  Dark,  };
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class AppTheme {
+  /// Returns a new [AppTheme] instance.
+  AppTheme({
 
-  AppTheme._();
+     this.sourceColor,
 
-  factory AppTheme([void updates(AppThemeBuilder b)]) = _$AppTheme;
+     this.themeMode,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AppThemeBuilder b) => b;
+  @JsonKey(
+    
+    name: r'sourceColor',
+    required: false,
+    includeIfNull: false
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<AppTheme> get serializer => _$AppThemeSerializer();
-}
 
-class _$AppThemeSerializer implements PrimitiveSerializer<AppTheme> {
-  @override
-  final Iterable<Type> types = const [AppTheme, _$AppTheme];
+  final String? sourceColor;
 
-  @override
-  final String wireName = r'AppTheme';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    AppTheme object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.sourceColor != null) {
-      yield r'sourceColor';
-      yield serializers.serialize(
-        object.sourceColor,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.themeMode != null) {
-      yield r'themeMode';
-      yield serializers.serialize(
-        object.themeMode,
-        specifiedType: const FullType(AppThemeMode),
-      );
-    }
-  }
+
+  @JsonKey(
+    
+    name: r'themeMode',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final AppThemeMode? themeMode;
+
+
 
   @override
-  Object serialize(
-    Serializers serializers,
-    AppTheme object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
-
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required AppThemeBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'sourceColor':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.sourceColor = valueDes;
-          break;
-        case r'themeMode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AppThemeMode),
-          ) as AppThemeMode;
-          result.themeMode = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  bool operator ==(Object other) => identical(this, other) || other is AppTheme &&
+     other.sourceColor == sourceColor &&
+     other.themeMode == themeMode;
 
   @override
-  AppTheme deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = AppThemeBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  int get hashCode =>
+    sourceColor.hashCode +
+    themeMode.hashCode;
+
+  factory AppTheme.fromJson(Map<String, dynamic> json) => _$AppThemeFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AppThemeToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

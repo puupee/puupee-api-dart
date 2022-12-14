@@ -3,160 +3,100 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'int32_key_value.g.dart';
 
-/// Int32KeyValue
-///
-/// Properties:
-/// * [value] 
-/// * [durationSeconds] 
-/// * [expiredAt] 
-/// * [createdAt] 
-@BuiltValue()
-abstract class Int32KeyValue implements Built<Int32KeyValue, Int32KeyValueBuilder> {
-  @BuiltValueField(wireName: r'value')
-  int? get value;
 
-  @BuiltValueField(wireName: r'durationSeconds')
-  double? get durationSeconds;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class Int32KeyValue {
+  /// Returns a new [Int32KeyValue] instance.
+  Int32KeyValue({
 
-  @BuiltValueField(wireName: r'expiredAt')
-  DateTime? get expiredAt;
+     this.value,
 
-  @BuiltValueField(wireName: r'createdAt')
-  DateTime? get createdAt;
+     this.durationSeconds,
 
-  Int32KeyValue._();
+     this.expiredAt,
 
-  factory Int32KeyValue([void updates(Int32KeyValueBuilder b)]) = _$Int32KeyValue;
+     this.createdAt,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(Int32KeyValueBuilder b) => b;
+  @JsonKey(
+    
+    name: r'value',
+    required: false,
+    includeIfNull: false
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<Int32KeyValue> get serializer => _$Int32KeyValueSerializer();
-}
 
-class _$Int32KeyValueSerializer implements PrimitiveSerializer<Int32KeyValue> {
-  @override
-  final Iterable<Type> types = const [Int32KeyValue, _$Int32KeyValue];
+  final int? value;
 
-  @override
-  final String wireName = r'Int32KeyValue';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    Int32KeyValue object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.value != null) {
-      yield r'value';
-      yield serializers.serialize(
-        object.value,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.durationSeconds != null) {
-      yield r'durationSeconds';
-      yield serializers.serialize(
-        object.durationSeconds,
-        specifiedType: const FullType(double),
-      );
-    }
-    if (object.expiredAt != null) {
-      yield r'expiredAt';
-      yield serializers.serialize(
-        object.expiredAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.createdAt != null) {
-      yield r'createdAt';
-      yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-  }
+
+  @JsonKey(
+    
+    name: r'durationSeconds',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final double? durationSeconds;
+
+
+
+  @JsonKey(
+    
+    name: r'expiredAt',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final DateTime? expiredAt;
+
+
+
+  @JsonKey(
+    
+    name: r'createdAt',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final DateTime? createdAt;
+
+
 
   @override
-  Object serialize(
-    Serializers serializers,
-    Int32KeyValue object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
-
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required Int32KeyValueBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.value = valueDes;
-          break;
-        case r'durationSeconds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(double),
-          ) as double;
-          result.durationSeconds = valueDes;
-          break;
-        case r'expiredAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.expiredAt = valueDes;
-          break;
-        case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdAt = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  bool operator ==(Object other) => identical(this, other) || other is Int32KeyValue &&
+     other.value == value &&
+     other.durationSeconds == durationSeconds &&
+     other.expiredAt == expiredAt &&
+     other.createdAt == createdAt;
 
   @override
-  Int32KeyValue deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = Int32KeyValueBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  int get hashCode =>
+    value.hashCode +
+    durationSeconds.hashCode +
+    expiredAt.hashCode +
+    createdAt.hashCode;
+
+  factory Int32KeyValue.fromJson(Map<String, dynamic> json) => _$Int32KeyValueFromJson(json);
+
+  Map<String, dynamic> toJson() => _$Int32KeyValueToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

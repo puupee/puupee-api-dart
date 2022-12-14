@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for TodoSettingsDto
 void main() {
-  final instance = TodoSettingsDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final TodoSettingsDto? instance = /* TodoSettingsDto(...) */ null;
+  // TODO add properties to the entity
 
   group(TodoSettingsDto, () {
     // bool showCompleted

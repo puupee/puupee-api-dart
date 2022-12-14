@@ -3,106 +3,40 @@
 part of 'application_localization_dto.dart';
 
 // **************************************************************************
-// BuiltValueGenerator
+// JsonSerializableGenerator
 // **************************************************************************
 
-class _$ApplicationLocalizationDto extends ApplicationLocalizationDto {
-  @override
-  final BuiltMap<String, ApplicationLocalizationResourceDto>? resources;
+ApplicationLocalizationDto _$ApplicationLocalizationDtoFromJson(
+        Map<String, dynamic> json) =>
+    $checkedCreate(
+      'ApplicationLocalizationDto',
+      json,
+      ($checkedConvert) {
+        final val = ApplicationLocalizationDto(
+          resources: $checkedConvert(
+              'resources',
+              (v) => (v as Map<String, dynamic>?)?.map(
+                    (k, e) => MapEntry(
+                        k,
+                        ApplicationLocalizationResourceDto.fromJson(
+                            e as Map<String, dynamic>)),
+                  )),
+        );
+        return val;
+      },
+    );
 
-  factory _$ApplicationLocalizationDto(
-          [void Function(ApplicationLocalizationDtoBuilder)? updates]) =>
-      (new ApplicationLocalizationDtoBuilder()..update(updates))._build();
+Map<String, dynamic> _$ApplicationLocalizationDtoToJson(
+    ApplicationLocalizationDto instance) {
+  final val = <String, dynamic>{};
 
-  _$ApplicationLocalizationDto._({this.resources}) : super._();
-
-  @override
-  ApplicationLocalizationDto rebuild(
-          void Function(ApplicationLocalizationDtoBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  ApplicationLocalizationDtoBuilder toBuilder() =>
-      new ApplicationLocalizationDtoBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is ApplicationLocalizationDto && resources == other.resources;
-  }
-
-  @override
-  int get hashCode {
-    return $jf($jc(0, resources.hashCode));
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'ApplicationLocalizationDto')
-          ..add('resources', resources))
-        .toString();
-  }
-}
-
-class ApplicationLocalizationDtoBuilder
-    implements
-        Builder<ApplicationLocalizationDto, ApplicationLocalizationDtoBuilder> {
-  _$ApplicationLocalizationDto? _$v;
-
-  MapBuilder<String, ApplicationLocalizationResourceDto>? _resources;
-  MapBuilder<String, ApplicationLocalizationResourceDto> get resources =>
-      _$this._resources ??=
-          new MapBuilder<String, ApplicationLocalizationResourceDto>();
-  set resources(
-          MapBuilder<String, ApplicationLocalizationResourceDto>? resources) =>
-      _$this._resources = resources;
-
-  ApplicationLocalizationDtoBuilder() {
-    ApplicationLocalizationDto._defaults(this);
-  }
-
-  ApplicationLocalizationDtoBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _resources = $v.resources?.toBuilder();
-      _$v = null;
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
     }
-    return this;
   }
 
-  @override
-  void replace(ApplicationLocalizationDto other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$ApplicationLocalizationDto;
-  }
-
-  @override
-  void update(void Function(ApplicationLocalizationDtoBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  ApplicationLocalizationDto build() => _build();
-
-  _$ApplicationLocalizationDto _build() {
-    _$ApplicationLocalizationDto _$result;
-    try {
-      _$result = _$v ??
-          new _$ApplicationLocalizationDto._(resources: _resources?.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'resources';
-        _resources?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'ApplicationLocalizationDto', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
+  writeNotNull(
+      'resources', instance.resources?.map((k, e) => MapEntry(k, e.toJson())));
+  return val;
 }
-
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

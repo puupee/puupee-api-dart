@@ -4,7 +4,9 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:puupee_api_client/src/model/abp_login_result.dart';
@@ -15,9 +17,7 @@ class LoginApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const LoginApi(this._dio, this._serializers);
+  const LoginApi(this._dio);
 
   /// apiAccountCheckPasswordPost
   /// 
@@ -64,9 +64,7 @@ class LoginApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(UserLoginInfo);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -90,12 +88,7 @@ class LoginApi {
     AbpLoginResult _responseData;
 
     try {
-      const _responseType = FullType(AbpLoginResult);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as AbpLoginResult;
-
+_responseData = deserialize<AbpLoginResult, AbpLoginResult>(_response.data!, 'AbpLoginResult', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -162,9 +155,7 @@ class LoginApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(UserLoginInfo);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -188,12 +179,7 @@ class LoginApi {
     AbpLoginResult _responseData;
 
     try {
-      const _responseType = FullType(AbpLoginResult);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as AbpLoginResult;
-
+_responseData = deserialize<AbpLoginResult, AbpLoginResult>(_response.data!, 'AbpLoginResult', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

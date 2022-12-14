@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for UserStorageDto
 void main() {
-  final instance = UserStorageDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final UserStorageDto? instance = /* UserStorageDto(...) */ null;
+  // TODO add properties to the entity
 
   group(UserStorageDto, () {
     // String name
@@ -32,7 +32,7 @@ void main() {
       // TODO
     });
 
-    // BuiltList<UserStorageItemDto> items
+    // List<UserStorageItemDto> items
     test('to test the property `items`', () async {
       // TODO
     });

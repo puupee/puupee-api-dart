@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for Int32SetKeyValueDto
 void main() {
-  final instance = Int32SetKeyValueDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final Int32SetKeyValueDto? instance = /* Int32SetKeyValueDto(...) */ null;
+  // TODO add properties to the entity
 
   group(Int32SetKeyValueDto, () {
     // int value

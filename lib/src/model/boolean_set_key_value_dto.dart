@@ -3,124 +3,68 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'boolean_set_key_value_dto.g.dart';
 
-/// BooleanSetKeyValueDto
-///
-/// Properties:
-/// * [value] 
-/// * [durationSeconds] 
-@BuiltValue()
-abstract class BooleanSetKeyValueDto implements Built<BooleanSetKeyValueDto, BooleanSetKeyValueDtoBuilder> {
-  @BuiltValueField(wireName: r'value')
-  bool? get value;
 
-  @BuiltValueField(wireName: r'durationSeconds')
-  double? get durationSeconds;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class BooleanSetKeyValueDto {
+  /// Returns a new [BooleanSetKeyValueDto] instance.
+  BooleanSetKeyValueDto({
 
-  BooleanSetKeyValueDto._();
+     this.value,
 
-  factory BooleanSetKeyValueDto([void updates(BooleanSetKeyValueDtoBuilder b)]) = _$BooleanSetKeyValueDto;
+     this.durationSeconds,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(BooleanSetKeyValueDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'value',
+    required: false,
+    includeIfNull: false
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<BooleanSetKeyValueDto> get serializer => _$BooleanSetKeyValueDtoSerializer();
-}
 
-class _$BooleanSetKeyValueDtoSerializer implements PrimitiveSerializer<BooleanSetKeyValueDto> {
-  @override
-  final Iterable<Type> types = const [BooleanSetKeyValueDto, _$BooleanSetKeyValueDto];
+  final bool? value;
 
-  @override
-  final String wireName = r'BooleanSetKeyValueDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    BooleanSetKeyValueDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.value != null) {
-      yield r'value';
-      yield serializers.serialize(
-        object.value,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.durationSeconds != null) {
-      yield r'durationSeconds';
-      yield serializers.serialize(
-        object.durationSeconds,
-        specifiedType: const FullType(double),
-      );
-    }
-  }
+
+  @JsonKey(
+    
+    name: r'durationSeconds',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final double? durationSeconds;
+
+
 
   @override
-  Object serialize(
-    Serializers serializers,
-    BooleanSetKeyValueDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
-
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required BooleanSetKeyValueDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.value = valueDes;
-          break;
-        case r'durationSeconds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(double),
-          ) as double;
-          result.durationSeconds = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  bool operator ==(Object other) => identical(this, other) || other is BooleanSetKeyValueDto &&
+     other.value == value &&
+     other.durationSeconds == durationSeconds;
 
   @override
-  BooleanSetKeyValueDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = BooleanSetKeyValueDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  int get hashCode =>
+    value.hashCode +
+    durationSeconds.hashCode;
+
+  factory BooleanSetKeyValueDto.fromJson(Map<String, dynamic> json) => _$BooleanSetKeyValueDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$BooleanSetKeyValueDtoToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

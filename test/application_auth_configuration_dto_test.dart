@@ -3,11 +3,11 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for ApplicationAuthConfigurationDto
 void main() {
-  final instance = ApplicationAuthConfigurationDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final ApplicationAuthConfigurationDto? instance = /* ApplicationAuthConfigurationDto(...) */ null;
+  // TODO add properties to the entity
 
   group(ApplicationAuthConfigurationDto, () {
-    // BuiltMap<String, bool> grantedPolicies
+    // Map<String, bool> grantedPolicies
     test('to test the property `grantedPolicies`', () async {
       // TODO
     });

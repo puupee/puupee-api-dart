@@ -3,178 +3,116 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'bind_device_dto.g.dart';
 
-/// BindDeviceDto
-///
-/// Properties:
-/// * [token] 
-/// * [name] 
-/// * [type] 
-/// * [brand] 
-/// * [systemVersion] 
-@BuiltValue()
-abstract class BindDeviceDto implements Built<BindDeviceDto, BindDeviceDtoBuilder> {
-  @BuiltValueField(wireName: r'token')
-  String? get token;
 
-  @BuiltValueField(wireName: r'name')
-  String? get name;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class BindDeviceDto {
+  /// Returns a new [BindDeviceDto] instance.
+  BindDeviceDto({
 
-  @BuiltValueField(wireName: r'type')
-  String? get type;
+     this.token,
 
-  @BuiltValueField(wireName: r'brand')
-  String? get brand;
+     this.name,
 
-  @BuiltValueField(wireName: r'systemVersion')
-  String? get systemVersion;
+     this.type,
 
-  BindDeviceDto._();
+     this.brand,
 
-  factory BindDeviceDto([void updates(BindDeviceDtoBuilder b)]) = _$BindDeviceDto;
+     this.systemVersion,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(BindDeviceDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'token',
+    required: false,
+    includeIfNull: false
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<BindDeviceDto> get serializer => _$BindDeviceDtoSerializer();
-}
 
-class _$BindDeviceDtoSerializer implements PrimitiveSerializer<BindDeviceDto> {
-  @override
-  final Iterable<Type> types = const [BindDeviceDto, _$BindDeviceDto];
+  final String? token;
 
-  @override
-  final String wireName = r'BindDeviceDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    BindDeviceDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.token != null) {
-      yield r'token';
-      yield serializers.serialize(
-        object.token,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.name != null) {
-      yield r'name';
-      yield serializers.serialize(
-        object.name,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.type != null) {
-      yield r'type';
-      yield serializers.serialize(
-        object.type,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.brand != null) {
-      yield r'brand';
-      yield serializers.serialize(
-        object.brand,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.systemVersion != null) {
-      yield r'systemVersion';
-      yield serializers.serialize(
-        object.systemVersion,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
+
+  @JsonKey(
+    
+    name: r'name',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? name;
+
+
+
+  @JsonKey(
+    
+    name: r'type',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? type;
+
+
+
+  @JsonKey(
+    
+    name: r'brand',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? brand;
+
+
+
+  @JsonKey(
+    
+    name: r'systemVersion',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? systemVersion;
+
+
 
   @override
-  Object serialize(
-    Serializers serializers,
-    BindDeviceDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
-
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required BindDeviceDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'token':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.token = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.type = valueDes;
-          break;
-        case r'brand':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.brand = valueDes;
-          break;
-        case r'systemVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.systemVersion = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  bool operator ==(Object other) => identical(this, other) || other is BindDeviceDto &&
+     other.token == token &&
+     other.name == name &&
+     other.type == type &&
+     other.brand == brand &&
+     other.systemVersion == systemVersion;
 
   @override
-  BindDeviceDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = BindDeviceDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  int get hashCode =>
+    token.hashCode +
+    name.hashCode +
+    type.hashCode +
+    brand.hashCode +
+    systemVersion.hashCode;
+
+  factory BindDeviceDto.fromJson(Map<String, dynamic> json) => _$BindDeviceDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$BindDeviceDtoToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **apiAppAppFeatureGet**
-> BuiltList<AppFeatureDto> apiAppAppFeatureGet()
+> List<AppFeatureDto> apiAppAppFeatureGet()
 
 
 
@@ -41,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;AppFeatureDto&gt;**](AppFeatureDto.md)
+[**List&lt;AppFeatureDto&gt;**](AppFeatureDto.md)
 
 ### Authorization
 

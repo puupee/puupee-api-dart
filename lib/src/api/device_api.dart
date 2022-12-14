@@ -4,10 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/bind_device_dto.dart';
 import 'package:puupee_api_client/src/model/device_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/refresh_device_status_dto.dart';
@@ -17,9 +18,7 @@ class DeviceApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const DeviceApi(this._dio, this._serializers);
+  const DeviceApi(this._dio);
 
   /// apiAppDeviceBindPost
   /// 
@@ -66,9 +65,7 @@ class DeviceApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(BindDeviceDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -134,7 +131,7 @@ class DeviceApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (token != null) r'token': encodeQueryParameter(_serializers, token, const FullType(String)),
+      if (token != null) r'token': token,
     };
 
     final _response = await _dio.request<Object>(
@@ -195,9 +192,9 @@ class DeviceApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (sorting != null) r'Sorting': encodeQueryParameter(_serializers, sorting, const FullType(String)),
-      if (skipCount != null) r'SkipCount': encodeQueryParameter(_serializers, skipCount, const FullType(int)),
-      if (maxResultCount != null) r'MaxResultCount': encodeQueryParameter(_serializers, maxResultCount, const FullType(int)),
+      if (sorting != null) r'Sorting': sorting,
+      if (skipCount != null) r'SkipCount': skipCount,
+      if (maxResultCount != null) r'MaxResultCount': maxResultCount,
     };
 
     final _response = await _dio.request<Object>(
@@ -212,12 +209,7 @@ class DeviceApi {
     DeviceDtoPagedResultDto _responseData;
 
     try {
-      const _responseType = FullType(DeviceDtoPagedResultDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as DeviceDtoPagedResultDto;
-
+_responseData = deserialize<DeviceDtoPagedResultDto, DeviceDtoPagedResultDto>(_response.data!, 'DeviceDtoPagedResultDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -284,9 +276,7 @@ class DeviceApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(RefreshDeviceStatusDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

@@ -3,11 +3,11 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for IdentityRoleUpdateDto
 void main() {
-  final instance = IdentityRoleUpdateDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final IdentityRoleUpdateDto? instance = /* IdentityRoleUpdateDto(...) */ null;
+  // TODO add properties to the entity
 
   group(IdentityRoleUpdateDto, () {
-    // BuiltMap<String, JsonObject> extraProperties
+    // Map<String, Object> extraProperties
     test('to test the property `extraProperties`', () async {
       // TODO
     });

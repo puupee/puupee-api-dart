@@ -4,143 +4,84 @@
 
 // ignore_for_file: unused_element
 import 'package:puupee_api_client/src/model/todo_order_by.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'todo_settings_dto.g.dart';
 
-/// TodoSettingsDto
-///
-/// Properties:
-/// * [showCompleted] 
-/// * [showDetails] 
-/// * [orderBy] 
-@BuiltValue()
-abstract class TodoSettingsDto implements Built<TodoSettingsDto, TodoSettingsDtoBuilder> {
-  @BuiltValueField(wireName: r'showCompleted')
-  bool? get showCompleted;
 
-  @BuiltValueField(wireName: r'showDetails')
-  bool? get showDetails;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class TodoSettingsDto {
+  /// Returns a new [TodoSettingsDto] instance.
+  TodoSettingsDto({
 
-  @BuiltValueField(wireName: r'orderBy')
-  TodoOrderBy? get orderBy;
-  // enum orderByEnum {  CreationTime,  CreationTimeDesc,  LastModificationTime,  LastModificationTimeDesc,  Title,  TitleDesc,  Priority,  PriorityDesc,  Tag,  TagDesc,  };
+     this.showCompleted,
 
-  TodoSettingsDto._();
+     this.showDetails,
 
-  factory TodoSettingsDto([void updates(TodoSettingsDtoBuilder b)]) = _$TodoSettingsDto;
+     this.orderBy,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(TodoSettingsDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'showCompleted',
+    required: false,
+    includeIfNull: false
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<TodoSettingsDto> get serializer => _$TodoSettingsDtoSerializer();
-}
 
-class _$TodoSettingsDtoSerializer implements PrimitiveSerializer<TodoSettingsDto> {
-  @override
-  final Iterable<Type> types = const [TodoSettingsDto, _$TodoSettingsDto];
+  final bool? showCompleted;
 
-  @override
-  final String wireName = r'TodoSettingsDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    TodoSettingsDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.showCompleted != null) {
-      yield r'showCompleted';
-      yield serializers.serialize(
-        object.showCompleted,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.showDetails != null) {
-      yield r'showDetails';
-      yield serializers.serialize(
-        object.showDetails,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.orderBy != null) {
-      yield r'orderBy';
-      yield serializers.serialize(
-        object.orderBy,
-        specifiedType: const FullType(TodoOrderBy),
-      );
-    }
-  }
+
+  @JsonKey(
+    
+    name: r'showDetails',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final bool? showDetails;
+
+
+
+  @JsonKey(
+    
+    name: r'orderBy',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final TodoOrderBy? orderBy;
+
+
 
   @override
-  Object serialize(
-    Serializers serializers,
-    TodoSettingsDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
-
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required TodoSettingsDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'showCompleted':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.showCompleted = valueDes;
-          break;
-        case r'showDetails':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.showDetails = valueDes;
-          break;
-        case r'orderBy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TodoOrderBy),
-          ) as TodoOrderBy;
-          result.orderBy = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  bool operator ==(Object other) => identical(this, other) || other is TodoSettingsDto &&
+     other.showCompleted == showCompleted &&
+     other.showDetails == showDetails &&
+     other.orderBy == orderBy;
 
   @override
-  TodoSettingsDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = TodoSettingsDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  int get hashCode =>
+    showCompleted.hashCode +
+    showDetails.hashCode +
+    orderBy.hashCode;
+
+  factory TodoSettingsDto.fromJson(Map<String, dynamic> json) => _$TodoSettingsDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$TodoSettingsDtoToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

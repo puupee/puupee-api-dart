@@ -3,16 +3,16 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for ModuleExtensionDto
 void main() {
-  final instance = ModuleExtensionDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final ModuleExtensionDto? instance = /* ModuleExtensionDto(...) */ null;
+  // TODO add properties to the entity
 
   group(ModuleExtensionDto, () {
-    // BuiltMap<String, EntityExtensionDto> entities
+    // Map<String, EntityExtensionDto> entities
     test('to test the property `entities`', () async {
       // TODO
     });
 
-    // BuiltMap<String, JsonObject> configuration
+    // Map<String, Object> configuration
     test('to test the property `configuration`', () async {
       // TODO
     });

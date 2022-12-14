@@ -4,124 +4,68 @@
 
 // ignore_for_file: unused_element
 import 'package:puupee_api_client/src/model/puupee_dto.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'test_date_time.g.dart';
 
-/// TestDateTime
-///
-/// Properties:
-/// * [createdAt] 
-/// * [puupee] 
-@BuiltValue()
-abstract class TestDateTime implements Built<TestDateTime, TestDateTimeBuilder> {
-  @BuiltValueField(wireName: r'createdAt')
-  DateTime? get createdAt;
 
-  @BuiltValueField(wireName: r'puupee')
-  PuupeeDto? get puupee;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class TestDateTime {
+  /// Returns a new [TestDateTime] instance.
+  TestDateTime({
 
-  TestDateTime._();
+     this.createdAt,
 
-  factory TestDateTime([void updates(TestDateTimeBuilder b)]) = _$TestDateTime;
+     this.puupee,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(TestDateTimeBuilder b) => b;
+  @JsonKey(
+    
+    name: r'createdAt',
+    required: false,
+    includeIfNull: false
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<TestDateTime> get serializer => _$TestDateTimeSerializer();
-}
 
-class _$TestDateTimeSerializer implements PrimitiveSerializer<TestDateTime> {
-  @override
-  final Iterable<Type> types = const [TestDateTime, _$TestDateTime];
+  final DateTime? createdAt;
 
-  @override
-  final String wireName = r'TestDateTime';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    TestDateTime object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.createdAt != null) {
-      yield r'createdAt';
-      yield serializers.serialize(
-        object.createdAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.puupee != null) {
-      yield r'puupee';
-      yield serializers.serialize(
-        object.puupee,
-        specifiedType: const FullType(PuupeeDto),
-      );
-    }
-  }
+
+  @JsonKey(
+    
+    name: r'puupee',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final PuupeeDto? puupee;
+
+
 
   @override
-  Object serialize(
-    Serializers serializers,
-    TestDateTime object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
-
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required TestDateTimeBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'createdAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.createdAt = valueDes;
-          break;
-        case r'puupee':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(PuupeeDto),
-          ) as PuupeeDto;
-          result.puupee.replace(valueDes);
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  bool operator ==(Object other) => identical(this, other) || other is TestDateTime &&
+     other.createdAt == createdAt &&
+     other.puupee == puupee;
 
   @override
-  TestDateTime deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = TestDateTimeBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  int get hashCode =>
+    createdAt.hashCode +
+    puupee.hashCode;
+
+  factory TestDateTime.fromJson(Map<String, dynamic> json) => _$TestDateTimeFromJson(json);
+
+  Map<String, dynamic> toJson() => _$TestDateTimeToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

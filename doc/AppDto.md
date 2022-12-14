@@ -24,10 +24,10 @@ Name | Type | Description | Notes
 **icon** | **String** |  | [optional] 
 **gitRepository** | **String** |  | [optional] 
 **gitRepositoryType** | **String** |  | [optional] 
-**latestReleases** | [**BuiltList&lt;AppReleaseDto&gt;**](AppReleaseDto.md) |  | [optional] 
+**latestReleases** | [**List&lt;AppReleaseDto&gt;**](AppReleaseDto.md) |  | [optional] 
 **creator** | [**IdentityUserDto**](IdentityUserDto.md) |  | [optional] 
-**features** | [**BuiltList&lt;AppFeatureDto&gt;**](AppFeatureDto.md) |  | [optional] 
-**sdks** | [**BuiltList&lt;AppSdkDto&gt;**](AppSdkDto.md) |  | [optional] 
+**features** | [**List&lt;AppFeatureDto&gt;**](AppFeatureDto.md) |  | [optional] 
+**sdks** | [**List&lt;AppSdkDto&gt;**](AppSdkDto.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

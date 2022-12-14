@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for IStringValueType
 void main() {
-  final instance = IStringValueTypeBuilder();
-  // TODO add properties to the builder and call build()
+  final IStringValueType? instance = /* IStringValueType(...) */ null;
+  // TODO add properties to the entity
 
   group(IStringValueType, () {
     // String name
@@ -12,7 +12,7 @@ void main() {
       // TODO
     });
 
-    // BuiltMap<String, JsonObject> properties
+    // Map<String, Object> properties
     test('to test the property `properties`', () async {
       // TODO
     });

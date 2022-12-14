@@ -5,142 +5,84 @@
 // ignore_for_file: unused_element
 import 'package:puupee_api_client/src/model/app_theme.dart';
 import 'package:puupee_api_client/src/model/todo_settings_dto.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'settings_dto.g.dart';
 
-/// SettingsDto
-///
-/// Properties:
-/// * [appTheme] 
-/// * [language] 
-/// * [todoSettings] 
-@BuiltValue()
-abstract class SettingsDto implements Built<SettingsDto, SettingsDtoBuilder> {
-  @BuiltValueField(wireName: r'appTheme')
-  AppTheme? get appTheme;
 
-  @BuiltValueField(wireName: r'language')
-  String? get language;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class SettingsDto {
+  /// Returns a new [SettingsDto] instance.
+  SettingsDto({
 
-  @BuiltValueField(wireName: r'todoSettings')
-  TodoSettingsDto? get todoSettings;
+     this.appTheme,
 
-  SettingsDto._();
+     this.language,
 
-  factory SettingsDto([void updates(SettingsDtoBuilder b)]) = _$SettingsDto;
+     this.todoSettings,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(SettingsDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'appTheme',
+    required: false,
+    includeIfNull: false
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<SettingsDto> get serializer => _$SettingsDtoSerializer();
-}
 
-class _$SettingsDtoSerializer implements PrimitiveSerializer<SettingsDto> {
-  @override
-  final Iterable<Type> types = const [SettingsDto, _$SettingsDto];
+  final AppTheme? appTheme;
 
-  @override
-  final String wireName = r'SettingsDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    SettingsDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.appTheme != null) {
-      yield r'appTheme';
-      yield serializers.serialize(
-        object.appTheme,
-        specifiedType: const FullType(AppTheme),
-      );
-    }
-    if (object.language != null) {
-      yield r'language';
-      yield serializers.serialize(
-        object.language,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.todoSettings != null) {
-      yield r'todoSettings';
-      yield serializers.serialize(
-        object.todoSettings,
-        specifiedType: const FullType(TodoSettingsDto),
-      );
-    }
-  }
+
+  @JsonKey(
+    
+    name: r'language',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? language;
+
+
+
+  @JsonKey(
+    
+    name: r'todoSettings',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final TodoSettingsDto? todoSettings;
+
+
 
   @override
-  Object serialize(
-    Serializers serializers,
-    SettingsDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
-
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required SettingsDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'appTheme':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(AppTheme),
-          ) as AppTheme;
-          result.appTheme.replace(valueDes);
-          break;
-        case r'language':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.language = valueDes;
-          break;
-        case r'todoSettings':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TodoSettingsDto),
-          ) as TodoSettingsDto;
-          result.todoSettings.replace(valueDes);
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  bool operator ==(Object other) => identical(this, other) || other is SettingsDto &&
+     other.appTheme == appTheme &&
+     other.language == language &&
+     other.todoSettings == todoSettings;
 
   @override
-  SettingsDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = SettingsDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  int get hashCode =>
+    appTheme.hashCode +
+    language.hashCode +
+    todoSettings.hashCode;
+
+  factory SettingsDto.fromJson(Map<String, dynamic> json) => _$SettingsDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$SettingsDtoToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

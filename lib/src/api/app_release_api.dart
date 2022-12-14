@@ -4,10 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/app_release_dto.dart';
 import 'package:puupee_api_client/src/model/app_release_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_release_dto.dart';
@@ -17,9 +18,7 @@ class AppReleaseApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const AppReleaseApi(this._dio, this._serializers);
+  const AppReleaseApi(this._dio);
 
   /// apiAppAppReleaseGet
   /// 
@@ -75,13 +74,13 @@ class AppReleaseApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (appId != null) r'AppId': encodeQueryParameter(_serializers, appId, const FullType(String)),
-      if (environment != null) r'Environment': encodeQueryParameter(_serializers, environment, const FullType(String)),
-      if (platformPeriodName != null) r'Platform.Name': encodeQueryParameter(_serializers, platformPeriodName, const FullType(String)),
-      if (platformPeriodValue != null) r'Platform.Value': encodeQueryParameter(_serializers, platformPeriodValue, const FullType(String)),
-      if (sorting != null) r'Sorting': encodeQueryParameter(_serializers, sorting, const FullType(String)),
-      if (skipCount != null) r'SkipCount': encodeQueryParameter(_serializers, skipCount, const FullType(int)),
-      if (maxResultCount != null) r'MaxResultCount': encodeQueryParameter(_serializers, maxResultCount, const FullType(int)),
+      if (appId != null) r'AppId': appId,
+      if (environment != null) r'Environment': environment,
+      if (platformPeriodName != null) r'Platform.Name': platformPeriodName,
+      if (platformPeriodValue != null) r'Platform.Value': platformPeriodValue,
+      if (sorting != null) r'Sorting': sorting,
+      if (skipCount != null) r'SkipCount': skipCount,
+      if (maxResultCount != null) r'MaxResultCount': maxResultCount,
     };
 
     final _response = await _dio.request<Object>(
@@ -96,12 +95,7 @@ class AppReleaseApi {
     AppReleaseDtoPagedResultDto _responseData;
 
     try {
-      const _responseType = FullType(AppReleaseDtoPagedResultDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as AppReleaseDtoPagedResultDto;
-
+_responseData = deserialize<AppReleaseDtoPagedResultDto, AppReleaseDtoPagedResultDto>(_response.data!, 'AppReleaseDtoPagedResultDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -227,12 +221,7 @@ class AppReleaseApi {
     AppReleaseDto _responseData;
 
     try {
-      const _responseType = FullType(AppReleaseDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as AppReleaseDto;
-
+_responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppReleaseDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -301,9 +290,7 @@ class AppReleaseApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CreateOrUpdateAppReleaseDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -327,12 +314,7 @@ class AppReleaseApi {
     AppReleaseDto _responseData;
 
     try {
-      const _responseType = FullType(AppReleaseDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as AppReleaseDto;
-
+_responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppReleaseDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -399,9 +381,7 @@ class AppReleaseApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CreateOrUpdateAppReleaseDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -425,12 +405,7 @@ class AppReleaseApi {
     AppReleaseDto _responseData;
 
     try {
-      const _responseType = FullType(AppReleaseDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as AppReleaseDto;
-
+_responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppReleaseDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

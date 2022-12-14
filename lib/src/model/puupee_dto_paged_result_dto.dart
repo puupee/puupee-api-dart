@@ -3,126 +3,69 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
 import 'package:puupee_api_client/src/model/puupee_dto.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'puupee_dto_paged_result_dto.g.dart';
 
-/// PuupeeDtoPagedResultDto
-///
-/// Properties:
-/// * [items] 
-/// * [totalCount] 
-@BuiltValue()
-abstract class PuupeeDtoPagedResultDto implements Built<PuupeeDtoPagedResultDto, PuupeeDtoPagedResultDtoBuilder> {
-  @BuiltValueField(wireName: r'items')
-  BuiltList<PuupeeDto>? get items;
 
-  @BuiltValueField(wireName: r'totalCount')
-  int? get totalCount;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class PuupeeDtoPagedResultDto {
+  /// Returns a new [PuupeeDtoPagedResultDto] instance.
+  PuupeeDtoPagedResultDto({
 
-  PuupeeDtoPagedResultDto._();
+     this.items,
 
-  factory PuupeeDtoPagedResultDto([void updates(PuupeeDtoPagedResultDtoBuilder b)]) = _$PuupeeDtoPagedResultDto;
+     this.totalCount,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(PuupeeDtoPagedResultDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'items',
+    required: false,
+    includeIfNull: false
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<PuupeeDtoPagedResultDto> get serializer => _$PuupeeDtoPagedResultDtoSerializer();
-}
 
-class _$PuupeeDtoPagedResultDtoSerializer implements PrimitiveSerializer<PuupeeDtoPagedResultDto> {
-  @override
-  final Iterable<Type> types = const [PuupeeDtoPagedResultDto, _$PuupeeDtoPagedResultDto];
+  final List<PuupeeDto>? items;
 
-  @override
-  final String wireName = r'PuupeeDtoPagedResultDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    PuupeeDtoPagedResultDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.items != null) {
-      yield r'items';
-      yield serializers.serialize(
-        object.items,
-        specifiedType: const FullType(BuiltList, [FullType(PuupeeDto)]),
-      );
-    }
-    if (object.totalCount != null) {
-      yield r'totalCount';
-      yield serializers.serialize(
-        object.totalCount,
-        specifiedType: const FullType(int),
-      );
-    }
-  }
+
+  @JsonKey(
+    
+    name: r'totalCount',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final int? totalCount;
+
+
 
   @override
-  Object serialize(
-    Serializers serializers,
-    PuupeeDtoPagedResultDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
-
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required PuupeeDtoPagedResultDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(PuupeeDto)]),
-          ) as BuiltList<PuupeeDto>;
-          result.items.replace(valueDes);
-          break;
-        case r'totalCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.totalCount = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  bool operator ==(Object other) => identical(this, other) || other is PuupeeDtoPagedResultDto &&
+     other.items == items &&
+     other.totalCount == totalCount;
 
   @override
-  PuupeeDtoPagedResultDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = PuupeeDtoPagedResultDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  int get hashCode =>
+    items.hashCode +
+    totalCount.hashCode;
+
+  factory PuupeeDtoPagedResultDto.fromJson(Map<String, dynamic> json) => _$PuupeeDtoPagedResultDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$PuupeeDtoPagedResultDtoToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

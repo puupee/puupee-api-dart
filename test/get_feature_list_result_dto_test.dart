@@ -3,11 +3,11 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for GetFeatureListResultDto
 void main() {
-  final instance = GetFeatureListResultDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final GetFeatureListResultDto? instance = /* GetFeatureListResultDto(...) */ null;
+  // TODO add properties to the entity
 
   group(GetFeatureListResultDto, () {
-    // BuiltList<FeatureGroupDto> groups
+    // List<FeatureGroupDto> groups
     test('to test the property `groups`', () async {
       // TODO
     });

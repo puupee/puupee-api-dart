@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for DateTimeFormatDto
 void main() {
-  final instance = DateTimeFormatDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final DateTimeFormatDto? instance = /* DateTimeFormatDto(...) */ null;
+  // TODO add properties to the entity
 
   group(DateTimeFormatDto, () {
     // String calendarAlgorithmType

@@ -4,143 +4,84 @@
 
 // ignore_for_file: unused_element
 import 'package:puupee_api_client/src/model/feature_dto.dart';
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'feature_group_dto.g.dart';
 
-/// FeatureGroupDto
-///
-/// Properties:
-/// * [name] 
-/// * [displayName] 
-/// * [features] 
-@BuiltValue()
-abstract class FeatureGroupDto implements Built<FeatureGroupDto, FeatureGroupDtoBuilder> {
-  @BuiltValueField(wireName: r'name')
-  String? get name;
 
-  @BuiltValueField(wireName: r'displayName')
-  String? get displayName;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class FeatureGroupDto {
+  /// Returns a new [FeatureGroupDto] instance.
+  FeatureGroupDto({
 
-  @BuiltValueField(wireName: r'features')
-  BuiltList<FeatureDto>? get features;
+     this.name,
 
-  FeatureGroupDto._();
+     this.displayName,
 
-  factory FeatureGroupDto([void updates(FeatureGroupDtoBuilder b)]) = _$FeatureGroupDto;
+     this.features,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(FeatureGroupDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'name',
+    required: false,
+    includeIfNull: false
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<FeatureGroupDto> get serializer => _$FeatureGroupDtoSerializer();
-}
 
-class _$FeatureGroupDtoSerializer implements PrimitiveSerializer<FeatureGroupDto> {
-  @override
-  final Iterable<Type> types = const [FeatureGroupDto, _$FeatureGroupDto];
+  final String? name;
 
-  @override
-  final String wireName = r'FeatureGroupDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    FeatureGroupDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.name != null) {
-      yield r'name';
-      yield serializers.serialize(
-        object.name,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.displayName != null) {
-      yield r'displayName';
-      yield serializers.serialize(
-        object.displayName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.features != null) {
-      yield r'features';
-      yield serializers.serialize(
-        object.features,
-        specifiedType: const FullType(BuiltList, [FullType(FeatureDto)]),
-      );
-    }
-  }
+
+  @JsonKey(
+    
+    name: r'displayName',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? displayName;
+
+
+
+  @JsonKey(
+    
+    name: r'features',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final List<FeatureDto>? features;
+
+
 
   @override
-  Object serialize(
-    Serializers serializers,
-    FeatureGroupDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
-
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required FeatureGroupDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'displayName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.displayName = valueDes;
-          break;
-        case r'features':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(FeatureDto)]),
-          ) as BuiltList<FeatureDto>;
-          result.features.replace(valueDes);
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  bool operator ==(Object other) => identical(this, other) || other is FeatureGroupDto &&
+     other.name == name &&
+     other.displayName == displayName &&
+     other.features == features;
 
   @override
-  FeatureGroupDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = FeatureGroupDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  int get hashCode =>
+    name.hashCode +
+    displayName.hashCode +
+    features.hashCode;
+
+  factory FeatureGroupDto.fromJson(Map<String, dynamic> json) => _$FeatureGroupDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$FeatureGroupDtoToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

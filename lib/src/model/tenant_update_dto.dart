@@ -3,142 +3,84 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/json_object.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'tenant_update_dto.g.dart';
 
-/// TenantUpdateDto
-///
-/// Properties:
-/// * [extraProperties] 
-/// * [name] 
-/// * [concurrencyStamp] 
-@BuiltValue()
-abstract class TenantUpdateDto implements Built<TenantUpdateDto, TenantUpdateDtoBuilder> {
-  @BuiltValueField(wireName: r'extraProperties')
-  BuiltMap<String, JsonObject>? get extraProperties;
 
-  @BuiltValueField(wireName: r'name')
-  String get name;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class TenantUpdateDto {
+  /// Returns a new [TenantUpdateDto] instance.
+  TenantUpdateDto({
 
-  @BuiltValueField(wireName: r'concurrencyStamp')
-  String? get concurrencyStamp;
+     this.extraProperties,
 
-  TenantUpdateDto._();
+    required  this.name,
 
-  factory TenantUpdateDto([void updates(TenantUpdateDtoBuilder b)]) = _$TenantUpdateDto;
+     this.concurrencyStamp,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(TenantUpdateDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'extraProperties',
+    required: false,
+    includeIfNull: false
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<TenantUpdateDto> get serializer => _$TenantUpdateDtoSerializer();
-}
 
-class _$TenantUpdateDtoSerializer implements PrimitiveSerializer<TenantUpdateDto> {
-  @override
-  final Iterable<Type> types = const [TenantUpdateDto, _$TenantUpdateDto];
+  final Map<String, Object>? extraProperties;
 
-  @override
-  final String wireName = r'TenantUpdateDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    TenantUpdateDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.extraProperties != null) {
-      yield r'extraProperties';
-      yield serializers.serialize(
-        object.extraProperties,
-        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
-      );
-    }
-    yield r'name';
-    yield serializers.serialize(
-      object.name,
-      specifiedType: const FullType(String),
-    );
-    if (object.concurrencyStamp != null) {
-      yield r'concurrencyStamp';
-      yield serializers.serialize(
-        object.concurrencyStamp,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
+
+  @JsonKey(
+    
+    name: r'name',
+    required: true,
+    includeIfNull: false
+  )
+
+
+  final String name;
+
+
+
+  @JsonKey(
+    
+    name: r'concurrencyStamp',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? concurrencyStamp;
+
+
 
   @override
-  Object serialize(
-    Serializers serializers,
-    TenantUpdateDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
-
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required TenantUpdateDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'extraProperties':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
-          ) as BuiltMap<String, JsonObject>;
-          result.extraProperties.replace(valueDes);
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'concurrencyStamp':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.concurrencyStamp = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  bool operator ==(Object other) => identical(this, other) || other is TenantUpdateDto &&
+     other.extraProperties == extraProperties &&
+     other.name == name &&
+     other.concurrencyStamp == concurrencyStamp;
 
   @override
-  TenantUpdateDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = TenantUpdateDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  int get hashCode =>
+    extraProperties.hashCode +
+    name.hashCode +
+    concurrencyStamp.hashCode;
+
+  factory TenantUpdateDto.fromJson(Map<String, dynamic> json) => _$TenantUpdateDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$TenantUpdateDtoToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

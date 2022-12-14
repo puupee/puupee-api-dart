@@ -3,142 +3,84 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'send_verification_code_dto.g.dart';
 
-/// SendVerificationCodeDto
-///
-/// Properties:
-/// * [codeSender] 
-/// * [account] 
-/// * [purpose] 
-@BuiltValue()
-abstract class SendVerificationCodeDto implements Built<SendVerificationCodeDto, SendVerificationCodeDtoBuilder> {
-  @BuiltValueField(wireName: r'codeSender')
-  String? get codeSender;
 
-  @BuiltValueField(wireName: r'account')
-  String? get account;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class SendVerificationCodeDto {
+  /// Returns a new [SendVerificationCodeDto] instance.
+  SendVerificationCodeDto({
 
-  @BuiltValueField(wireName: r'purpose')
-  String? get purpose;
+     this.codeSender,
 
-  SendVerificationCodeDto._();
+     this.account,
 
-  factory SendVerificationCodeDto([void updates(SendVerificationCodeDtoBuilder b)]) = _$SendVerificationCodeDto;
+     this.purpose,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(SendVerificationCodeDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'codeSender',
+    required: false,
+    includeIfNull: false
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<SendVerificationCodeDto> get serializer => _$SendVerificationCodeDtoSerializer();
-}
 
-class _$SendVerificationCodeDtoSerializer implements PrimitiveSerializer<SendVerificationCodeDto> {
-  @override
-  final Iterable<Type> types = const [SendVerificationCodeDto, _$SendVerificationCodeDto];
+  final String? codeSender;
 
-  @override
-  final String wireName = r'SendVerificationCodeDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    SendVerificationCodeDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.codeSender != null) {
-      yield r'codeSender';
-      yield serializers.serialize(
-        object.codeSender,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.account != null) {
-      yield r'account';
-      yield serializers.serialize(
-        object.account,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.purpose != null) {
-      yield r'purpose';
-      yield serializers.serialize(
-        object.purpose,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
+
+  @JsonKey(
+    
+    name: r'account',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? account;
+
+
+
+  @JsonKey(
+    
+    name: r'purpose',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? purpose;
+
+
 
   @override
-  Object serialize(
-    Serializers serializers,
-    SendVerificationCodeDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
-
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required SendVerificationCodeDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'codeSender':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.codeSender = valueDes;
-          break;
-        case r'account':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.account = valueDes;
-          break;
-        case r'purpose':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.purpose = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  bool operator ==(Object other) => identical(this, other) || other is SendVerificationCodeDto &&
+     other.codeSender == codeSender &&
+     other.account == account &&
+     other.purpose == purpose;
 
   @override
-  SendVerificationCodeDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = SendVerificationCodeDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  int get hashCode =>
+    codeSender.hashCode +
+    account.hashCode +
+    purpose.hashCode;
+
+  factory SendVerificationCodeDto.fromJson(Map<String, dynamic> json) => _$SendVerificationCodeDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$SendVerificationCodeDtoToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

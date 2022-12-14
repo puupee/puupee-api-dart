@@ -4,250 +4,180 @@
 
 // ignore_for_file: unused_element
 import 'package:puupee_api_client/src/model/date_time_format_dto.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'current_culture_dto.g.dart';
 
-/// CurrentCultureDto
-///
-/// Properties:
-/// * [displayName] 
-/// * [englishName] 
-/// * [threeLetterIsoLanguageName] 
-/// * [twoLetterIsoLanguageName] 
-/// * [isRightToLeft] 
-/// * [cultureName] 
-/// * [name] 
-/// * [nativeName] 
-/// * [dateTimeFormat] 
-@BuiltValue()
-abstract class CurrentCultureDto implements Built<CurrentCultureDto, CurrentCultureDtoBuilder> {
-  @BuiltValueField(wireName: r'displayName')
-  String? get displayName;
 
-  @BuiltValueField(wireName: r'englishName')
-  String? get englishName;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class CurrentCultureDto {
+  /// Returns a new [CurrentCultureDto] instance.
+  CurrentCultureDto({
 
-  @BuiltValueField(wireName: r'threeLetterIsoLanguageName')
-  String? get threeLetterIsoLanguageName;
+     this.displayName,
 
-  @BuiltValueField(wireName: r'twoLetterIsoLanguageName')
-  String? get twoLetterIsoLanguageName;
+     this.englishName,
 
-  @BuiltValueField(wireName: r'isRightToLeft')
-  bool? get isRightToLeft;
+     this.threeLetterIsoLanguageName,
 
-  @BuiltValueField(wireName: r'cultureName')
-  String? get cultureName;
+     this.twoLetterIsoLanguageName,
 
-  @BuiltValueField(wireName: r'name')
-  String? get name;
+     this.isRightToLeft,
 
-  @BuiltValueField(wireName: r'nativeName')
-  String? get nativeName;
+     this.cultureName,
 
-  @BuiltValueField(wireName: r'dateTimeFormat')
-  DateTimeFormatDto? get dateTimeFormat;
+     this.name,
 
-  CurrentCultureDto._();
+     this.nativeName,
 
-  factory CurrentCultureDto([void updates(CurrentCultureDtoBuilder b)]) = _$CurrentCultureDto;
+     this.dateTimeFormat,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CurrentCultureDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'displayName',
+    required: false,
+    includeIfNull: false
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<CurrentCultureDto> get serializer => _$CurrentCultureDtoSerializer();
-}
 
-class _$CurrentCultureDtoSerializer implements PrimitiveSerializer<CurrentCultureDto> {
-  @override
-  final Iterable<Type> types = const [CurrentCultureDto, _$CurrentCultureDto];
+  final String? displayName;
 
-  @override
-  final String wireName = r'CurrentCultureDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    CurrentCultureDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.displayName != null) {
-      yield r'displayName';
-      yield serializers.serialize(
-        object.displayName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.englishName != null) {
-      yield r'englishName';
-      yield serializers.serialize(
-        object.englishName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.threeLetterIsoLanguageName != null) {
-      yield r'threeLetterIsoLanguageName';
-      yield serializers.serialize(
-        object.threeLetterIsoLanguageName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.twoLetterIsoLanguageName != null) {
-      yield r'twoLetterIsoLanguageName';
-      yield serializers.serialize(
-        object.twoLetterIsoLanguageName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.isRightToLeft != null) {
-      yield r'isRightToLeft';
-      yield serializers.serialize(
-        object.isRightToLeft,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.cultureName != null) {
-      yield r'cultureName';
-      yield serializers.serialize(
-        object.cultureName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.name != null) {
-      yield r'name';
-      yield serializers.serialize(
-        object.name,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.nativeName != null) {
-      yield r'nativeName';
-      yield serializers.serialize(
-        object.nativeName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.dateTimeFormat != null) {
-      yield r'dateTimeFormat';
-      yield serializers.serialize(
-        object.dateTimeFormat,
-        specifiedType: const FullType(DateTimeFormatDto),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    CurrentCultureDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'englishName',
+    required: false,
+    includeIfNull: false
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required CurrentCultureDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'displayName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.displayName = valueDes;
-          break;
-        case r'englishName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.englishName = valueDes;
-          break;
-        case r'threeLetterIsoLanguageName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.threeLetterIsoLanguageName = valueDes;
-          break;
-        case r'twoLetterIsoLanguageName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.twoLetterIsoLanguageName = valueDes;
-          break;
-        case r'isRightToLeft':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isRightToLeft = valueDes;
-          break;
-        case r'cultureName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.cultureName = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'nativeName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.nativeName = valueDes;
-          break;
-        case r'dateTimeFormat':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTimeFormatDto),
-          ) as DateTimeFormatDto;
-          result.dateTimeFormat.replace(valueDes);
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final String? englishName;
+
+
+
+  @JsonKey(
+    
+    name: r'threeLetterIsoLanguageName',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? threeLetterIsoLanguageName;
+
+
+
+  @JsonKey(
+    
+    name: r'twoLetterIsoLanguageName',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? twoLetterIsoLanguageName;
+
+
+
+  @JsonKey(
+    
+    name: r'isRightToLeft',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final bool? isRightToLeft;
+
+
+
+  @JsonKey(
+    
+    name: r'cultureName',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? cultureName;
+
+
+
+  @JsonKey(
+    
+    name: r'name',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? name;
+
+
+
+  @JsonKey(
+    
+    name: r'nativeName',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? nativeName;
+
+
+
+  @JsonKey(
+    
+    name: r'dateTimeFormat',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final DateTimeFormatDto? dateTimeFormat;
+
+
 
   @override
-  CurrentCultureDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = CurrentCultureDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  bool operator ==(Object other) => identical(this, other) || other is CurrentCultureDto &&
+     other.displayName == displayName &&
+     other.englishName == englishName &&
+     other.threeLetterIsoLanguageName == threeLetterIsoLanguageName &&
+     other.twoLetterIsoLanguageName == twoLetterIsoLanguageName &&
+     other.isRightToLeft == isRightToLeft &&
+     other.cultureName == cultureName &&
+     other.name == name &&
+     other.nativeName == nativeName &&
+     other.dateTimeFormat == dateTimeFormat;
+
+  @override
+  int get hashCode =>
+    displayName.hashCode +
+    englishName.hashCode +
+    threeLetterIsoLanguageName.hashCode +
+    twoLetterIsoLanguageName.hashCode +
+    isRightToLeft.hashCode +
+    cultureName.hashCode +
+    name.hashCode +
+    nativeName.hashCode +
+    dateTimeFormat.hashCode;
+
+  factory CurrentCultureDto.fromJson(Map<String, dynamic> json) => _$CurrentCultureDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$CurrentCultureDtoToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

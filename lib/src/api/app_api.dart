@@ -4,10 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/app_dto.dart';
 import 'package:puupee_api_client/src/model/app_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_dto.dart';
@@ -18,9 +19,7 @@ class AppApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const AppApi(this._dio, this._serializers);
+  const AppApi(this._dio);
 
   /// apiAppAppByDeveloperGet
   /// 
@@ -64,7 +63,7 @@ class AppApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (developerAccount != null) r'developerAccount': encodeQueryParameter(_serializers, developerAccount, const FullType(String)),
+      if (developerAccount != null) r'developerAccount': developerAccount,
     };
 
     final _response = await _dio.request<Object>(
@@ -79,12 +78,7 @@ class AppApi {
     AppDtoPagedResultDto _responseData;
 
     try {
-      const _responseType = FullType(AppDtoPagedResultDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as AppDtoPagedResultDto;
-
+_responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_response.data!, 'AppDtoPagedResultDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -148,7 +142,7 @@ class AppApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (name != null) r'name': encodeQueryParameter(_serializers, name, const FullType(String)),
+      if (name != null) r'name': name,
     };
 
     final _response = await _dio.request<Object>(
@@ -163,12 +157,7 @@ class AppApi {
     AppDto _responseData;
 
     try {
-      const _responseType = FullType(AppDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as AppDto;
-
+_responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -238,10 +227,10 @@ class AppApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (creatorId != null) r'CreatorId': encodeQueryParameter(_serializers, creatorId, const FullType(String)),
-      if (sorting != null) r'Sorting': encodeQueryParameter(_serializers, sorting, const FullType(String)),
-      if (skipCount != null) r'SkipCount': encodeQueryParameter(_serializers, skipCount, const FullType(int)),
-      if (maxResultCount != null) r'MaxResultCount': encodeQueryParameter(_serializers, maxResultCount, const FullType(int)),
+      if (creatorId != null) r'CreatorId': creatorId,
+      if (sorting != null) r'Sorting': sorting,
+      if (skipCount != null) r'SkipCount': skipCount,
+      if (maxResultCount != null) r'MaxResultCount': maxResultCount,
     };
 
     final _response = await _dio.request<Object>(
@@ -256,12 +245,7 @@ class AppApi {
     AppDtoPagedResultDto _responseData;
 
     try {
-      const _responseType = FullType(AppDtoPagedResultDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as AppDtoPagedResultDto;
-
+_responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_response.data!, 'AppDtoPagedResultDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -387,12 +371,7 @@ class AppApi {
     AppDto _responseData;
 
     try {
-      const _responseType = FullType(AppDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as AppDto;
-
+_responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -461,9 +440,7 @@ class AppApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CreateOrUpdateAppDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -487,12 +464,7 @@ class AppApi {
     AppDto _responseData;
 
     try {
-      const _responseType = FullType(AppDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as AppDto;
-
+_responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -559,9 +531,7 @@ class AppApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CreateOrUpdateAppDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -585,12 +555,7 @@ class AppApi {
     AppDto _responseData;
 
     try {
-      const _responseType = FullType(AppDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as AppDto;
-
+_responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -654,7 +619,7 @@ class AppApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (key != null) r'key': encodeQueryParameter(_serializers, key, const FullType(String)),
+      if (key != null) r'key': key,
     };
 
     final _response = await _dio.request<Object>(
@@ -669,12 +634,7 @@ class AppApi {
     StorageObjectCredentials _responseData;
 
     try {
-      const _responseType = FullType(StorageObjectCredentials);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as StorageObjectCredentials;
-
+_responseData = deserialize<StorageObjectCredentials, StorageObjectCredentials>(_response.data!, 'StorageObjectCredentials', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

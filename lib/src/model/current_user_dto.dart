@@ -3,359 +3,276 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'current_user_dto.g.dart';
 
-/// CurrentUserDto
-///
-/// Properties:
-/// * [isAuthenticated] 
-/// * [id] 
-/// * [tenantId] 
-/// * [impersonatorUserId] 
-/// * [impersonatorTenantId] 
-/// * [impersonatorUserName] 
-/// * [impersonatorTenantName] 
-/// * [userName] 
-/// * [name] 
-/// * [surName] 
-/// * [email] 
-/// * [emailVerified] 
-/// * [phoneNumber] 
-/// * [phoneNumberVerified] 
-/// * [roles] 
-@BuiltValue()
-abstract class CurrentUserDto implements Built<CurrentUserDto, CurrentUserDtoBuilder> {
-  @BuiltValueField(wireName: r'isAuthenticated')
-  bool? get isAuthenticated;
 
-  @BuiltValueField(wireName: r'id')
-  String? get id;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class CurrentUserDto {
+  /// Returns a new [CurrentUserDto] instance.
+  CurrentUserDto({
 
-  @BuiltValueField(wireName: r'tenantId')
-  String? get tenantId;
+     this.isAuthenticated,
 
-  @BuiltValueField(wireName: r'impersonatorUserId')
-  String? get impersonatorUserId;
+     this.id,
 
-  @BuiltValueField(wireName: r'impersonatorTenantId')
-  String? get impersonatorTenantId;
+     this.tenantId,
 
-  @BuiltValueField(wireName: r'impersonatorUserName')
-  String? get impersonatorUserName;
+     this.impersonatorUserId,
 
-  @BuiltValueField(wireName: r'impersonatorTenantName')
-  String? get impersonatorTenantName;
+     this.impersonatorTenantId,
 
-  @BuiltValueField(wireName: r'userName')
-  String? get userName;
+     this.impersonatorUserName,
 
-  @BuiltValueField(wireName: r'name')
-  String? get name;
+     this.impersonatorTenantName,
 
-  @BuiltValueField(wireName: r'surName')
-  String? get surName;
+     this.userName,
 
-  @BuiltValueField(wireName: r'email')
-  String? get email;
+     this.name,
 
-  @BuiltValueField(wireName: r'emailVerified')
-  bool? get emailVerified;
+     this.surName,
 
-  @BuiltValueField(wireName: r'phoneNumber')
-  String? get phoneNumber;
+     this.email,
 
-  @BuiltValueField(wireName: r'phoneNumberVerified')
-  bool? get phoneNumberVerified;
+     this.emailVerified,
 
-  @BuiltValueField(wireName: r'roles')
-  BuiltList<String>? get roles;
+     this.phoneNumber,
 
-  CurrentUserDto._();
+     this.phoneNumberVerified,
 
-  factory CurrentUserDto([void updates(CurrentUserDtoBuilder b)]) = _$CurrentUserDto;
+     this.roles,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CurrentUserDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'isAuthenticated',
+    required: false,
+    includeIfNull: false
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<CurrentUserDto> get serializer => _$CurrentUserDtoSerializer();
-}
 
-class _$CurrentUserDtoSerializer implements PrimitiveSerializer<CurrentUserDto> {
-  @override
-  final Iterable<Type> types = const [CurrentUserDto, _$CurrentUserDto];
+  final bool? isAuthenticated;
 
-  @override
-  final String wireName = r'CurrentUserDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    CurrentUserDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.isAuthenticated != null) {
-      yield r'isAuthenticated';
-      yield serializers.serialize(
-        object.isAuthenticated,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.tenantId != null) {
-      yield r'tenantId';
-      yield serializers.serialize(
-        object.tenantId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.impersonatorUserId != null) {
-      yield r'impersonatorUserId';
-      yield serializers.serialize(
-        object.impersonatorUserId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.impersonatorTenantId != null) {
-      yield r'impersonatorTenantId';
-      yield serializers.serialize(
-        object.impersonatorTenantId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.impersonatorUserName != null) {
-      yield r'impersonatorUserName';
-      yield serializers.serialize(
-        object.impersonatorUserName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.impersonatorTenantName != null) {
-      yield r'impersonatorTenantName';
-      yield serializers.serialize(
-        object.impersonatorTenantName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.userName != null) {
-      yield r'userName';
-      yield serializers.serialize(
-        object.userName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.name != null) {
-      yield r'name';
-      yield serializers.serialize(
-        object.name,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.surName != null) {
-      yield r'surName';
-      yield serializers.serialize(
-        object.surName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.email != null) {
-      yield r'email';
-      yield serializers.serialize(
-        object.email,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.emailVerified != null) {
-      yield r'emailVerified';
-      yield serializers.serialize(
-        object.emailVerified,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.phoneNumber != null) {
-      yield r'phoneNumber';
-      yield serializers.serialize(
-        object.phoneNumber,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.phoneNumberVerified != null) {
-      yield r'phoneNumberVerified';
-      yield serializers.serialize(
-        object.phoneNumberVerified,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.roles != null) {
-      yield r'roles';
-      yield serializers.serialize(
-        object.roles,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    CurrentUserDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'id',
+    required: false,
+    includeIfNull: false
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required CurrentUserDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'isAuthenticated':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isAuthenticated = valueDes;
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
-        case r'tenantId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.tenantId = valueDes;
-          break;
-        case r'impersonatorUserId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.impersonatorUserId = valueDes;
-          break;
-        case r'impersonatorTenantId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.impersonatorTenantId = valueDes;
-          break;
-        case r'impersonatorUserName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.impersonatorUserName = valueDes;
-          break;
-        case r'impersonatorTenantName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.impersonatorTenantName = valueDes;
-          break;
-        case r'userName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.userName = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'surName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.surName = valueDes;
-          break;
-        case r'email':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.email = valueDes;
-          break;
-        case r'emailVerified':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.emailVerified = valueDes;
-          break;
-        case r'phoneNumber':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.phoneNumber = valueDes;
-          break;
-        case r'phoneNumberVerified':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.phoneNumberVerified = valueDes;
-          break;
-        case r'roles':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.roles.replace(valueDes);
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final String? id;
+
+
+
+  @JsonKey(
+    
+    name: r'tenantId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? tenantId;
+
+
+
+  @JsonKey(
+    
+    name: r'impersonatorUserId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? impersonatorUserId;
+
+
+
+  @JsonKey(
+    
+    name: r'impersonatorTenantId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? impersonatorTenantId;
+
+
+
+  @JsonKey(
+    
+    name: r'impersonatorUserName',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? impersonatorUserName;
+
+
+
+  @JsonKey(
+    
+    name: r'impersonatorTenantName',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? impersonatorTenantName;
+
+
+
+  @JsonKey(
+    
+    name: r'userName',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? userName;
+
+
+
+  @JsonKey(
+    
+    name: r'name',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? name;
+
+
+
+  @JsonKey(
+    
+    name: r'surName',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? surName;
+
+
+
+  @JsonKey(
+    
+    name: r'email',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? email;
+
+
+
+  @JsonKey(
+    
+    name: r'emailVerified',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final bool? emailVerified;
+
+
+
+  @JsonKey(
+    
+    name: r'phoneNumber',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? phoneNumber;
+
+
+
+  @JsonKey(
+    
+    name: r'phoneNumberVerified',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final bool? phoneNumberVerified;
+
+
+
+  @JsonKey(
+    
+    name: r'roles',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final List<String>? roles;
+
+
 
   @override
-  CurrentUserDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = CurrentUserDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  bool operator ==(Object other) => identical(this, other) || other is CurrentUserDto &&
+     other.isAuthenticated == isAuthenticated &&
+     other.id == id &&
+     other.tenantId == tenantId &&
+     other.impersonatorUserId == impersonatorUserId &&
+     other.impersonatorTenantId == impersonatorTenantId &&
+     other.impersonatorUserName == impersonatorUserName &&
+     other.impersonatorTenantName == impersonatorTenantName &&
+     other.userName == userName &&
+     other.name == name &&
+     other.surName == surName &&
+     other.email == email &&
+     other.emailVerified == emailVerified &&
+     other.phoneNumber == phoneNumber &&
+     other.phoneNumberVerified == phoneNumberVerified &&
+     other.roles == roles;
+
+  @override
+  int get hashCode =>
+    isAuthenticated.hashCode +
+    id.hashCode +
+    tenantId.hashCode +
+    impersonatorUserId.hashCode +
+    impersonatorTenantId.hashCode +
+    impersonatorUserName.hashCode +
+    impersonatorTenantName.hashCode +
+    userName.hashCode +
+    name.hashCode +
+    surName.hashCode +
+    email.hashCode +
+    emailVerified.hashCode +
+    phoneNumber.hashCode +
+    phoneNumberVerified.hashCode +
+    roles.hashCode;
+
+  factory CurrentUserDto.fromJson(Map<String, dynamic> json) => _$CurrentUserDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$CurrentUserDtoToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

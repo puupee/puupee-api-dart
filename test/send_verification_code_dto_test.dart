@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for SendVerificationCodeDto
 void main() {
-  final instance = SendVerificationCodeDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final SendVerificationCodeDto? instance = /* SendVerificationCodeDto(...) */ null;
+  // TODO add properties to the entity
 
   group(SendVerificationCodeDto, () {
     // String codeSender

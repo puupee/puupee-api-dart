@@ -3,11 +3,11 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for IdentityUserCreateDto
 void main() {
-  final instance = IdentityUserCreateDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final IdentityUserCreateDto? instance = /* IdentityUserCreateDto(...) */ null;
+  // TODO add properties to the entity
 
   group(IdentityUserCreateDto, () {
-    // BuiltMap<String, JsonObject> extraProperties
+    // Map<String, Object> extraProperties
     test('to test the property `extraProperties`', () async {
       // TODO
     });
@@ -47,7 +47,7 @@ void main() {
       // TODO
     });
 
-    // BuiltList<String> roleNames
+    // List<String> roleNames
     test('to test the property `roleNames`', () async {
       // TODO
     });

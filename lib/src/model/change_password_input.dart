@@ -3,122 +3,68 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'change_password_input.g.dart';
 
-/// ChangePasswordInput
-///
-/// Properties:
-/// * [currentPassword] 
-/// * [newPassword] 
-@BuiltValue()
-abstract class ChangePasswordInput implements Built<ChangePasswordInput, ChangePasswordInputBuilder> {
-  @BuiltValueField(wireName: r'currentPassword')
-  String? get currentPassword;
 
-  @BuiltValueField(wireName: r'newPassword')
-  String get newPassword;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class ChangePasswordInput {
+  /// Returns a new [ChangePasswordInput] instance.
+  ChangePasswordInput({
 
-  ChangePasswordInput._();
+     this.currentPassword,
 
-  factory ChangePasswordInput([void updates(ChangePasswordInputBuilder b)]) = _$ChangePasswordInput;
+    required  this.newPassword,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ChangePasswordInputBuilder b) => b;
+  @JsonKey(
+    
+    name: r'currentPassword',
+    required: false,
+    includeIfNull: false
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ChangePasswordInput> get serializer => _$ChangePasswordInputSerializer();
-}
 
-class _$ChangePasswordInputSerializer implements PrimitiveSerializer<ChangePasswordInput> {
-  @override
-  final Iterable<Type> types = const [ChangePasswordInput, _$ChangePasswordInput];
+  final String? currentPassword;
 
-  @override
-  final String wireName = r'ChangePasswordInput';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    ChangePasswordInput object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.currentPassword != null) {
-      yield r'currentPassword';
-      yield serializers.serialize(
-        object.currentPassword,
-        specifiedType: const FullType(String),
-      );
-    }
-    yield r'newPassword';
-    yield serializers.serialize(
-      object.newPassword,
-      specifiedType: const FullType(String),
-    );
-  }
+
+  @JsonKey(
+    
+    name: r'newPassword',
+    required: true,
+    includeIfNull: false
+  )
+
+
+  final String newPassword;
+
+
 
   @override
-  Object serialize(
-    Serializers serializers,
-    ChangePasswordInput object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
-
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required ChangePasswordInputBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'currentPassword':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.currentPassword = valueDes;
-          break;
-        case r'newPassword':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.newPassword = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  bool operator ==(Object other) => identical(this, other) || other is ChangePasswordInput &&
+     other.currentPassword == currentPassword &&
+     other.newPassword == newPassword;
 
   @override
-  ChangePasswordInput deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ChangePasswordInputBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  int get hashCode =>
+    currentPassword.hashCode +
+    newPassword.hashCode;
+
+  factory ChangePasswordInput.fromJson(Map<String, dynamic> json) => _$ChangePasswordInputFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ChangePasswordInputToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

@@ -4,10 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 import 'package:puupee_api_client/src/model/user_data.dart';
 import 'package:puupee_api_client/src/model/user_data_list_result_dto.dart';
@@ -16,9 +17,7 @@ class UserLookupApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const UserLookupApi(this._dio, this._serializers);
+  const UserLookupApi(this._dio);
 
   /// apiIdentityUsersLookupByUsernameUserNameGet
   /// 
@@ -72,12 +71,7 @@ class UserLookupApi {
     UserData _responseData;
 
     try {
-      const _responseType = FullType(UserData);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as UserData;
-
+_responseData = deserialize<UserData, UserData>(_response.data!, 'UserData', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -141,7 +135,7 @@ class UserLookupApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (filter != null) r'Filter': encodeQueryParameter(_serializers, filter, const FullType(String)),
+      if (filter != null) r'Filter': filter,
     };
 
     final _response = await _dio.request<Object>(
@@ -156,8 +150,7 @@ class UserLookupApi {
     int _responseData;
 
     try {
-      _responseData = _response.data as int;
-
+_responseData = deserialize<int, int>(_response.data!, 'int', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -231,12 +224,7 @@ class UserLookupApi {
     UserData _responseData;
 
     try {
-      const _responseType = FullType(UserData);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as UserData;
-
+_responseData = deserialize<UserData, UserData>(_response.data!, 'UserData', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -306,10 +294,10 @@ class UserLookupApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (filter != null) r'Filter': encodeQueryParameter(_serializers, filter, const FullType(String)),
-      if (sorting != null) r'Sorting': encodeQueryParameter(_serializers, sorting, const FullType(String)),
-      if (skipCount != null) r'SkipCount': encodeQueryParameter(_serializers, skipCount, const FullType(int)),
-      if (maxResultCount != null) r'MaxResultCount': encodeQueryParameter(_serializers, maxResultCount, const FullType(int)),
+      if (filter != null) r'Filter': filter,
+      if (sorting != null) r'Sorting': sorting,
+      if (skipCount != null) r'SkipCount': skipCount,
+      if (maxResultCount != null) r'MaxResultCount': maxResultCount,
     };
 
     final _response = await _dio.request<Object>(
@@ -324,12 +312,7 @@ class UserLookupApi {
     UserDataListResultDto _responseData;
 
     try {
-      const _responseType = FullType(UserDataListResultDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as UserDataListResultDto;
-
+_responseData = deserialize<UserDataListResultDto, UserDataListResultDto>(_response.data!, 'UserDataListResultDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

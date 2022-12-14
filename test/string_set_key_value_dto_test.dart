@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for StringSetKeyValueDto
 void main() {
-  final instance = StringSetKeyValueDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final StringSetKeyValueDto? instance = /* StringSetKeyValueDto(...) */ null;
+  // TODO add properties to the entity
 
   group(StringSetKeyValueDto, () {
     // String value

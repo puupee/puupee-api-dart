@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for SyncStateDto
 void main() {
-  final instance = SyncStateDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final SyncStateDto? instance = /* SyncStateDto(...) */ null;
+  // TODO add properties to the entity
 
   group(SyncStateDto, () {
     // DateTime lastSyncAt

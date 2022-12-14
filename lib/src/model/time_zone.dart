@@ -5,124 +5,68 @@
 // ignore_for_file: unused_element
 import 'package:puupee_api_client/src/model/iana_time_zone.dart';
 import 'package:puupee_api_client/src/model/windows_time_zone.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'time_zone.g.dart';
 
-/// TimeZone
-///
-/// Properties:
-/// * [iana] 
-/// * [windows] 
-@BuiltValue()
-abstract class TimeZone implements Built<TimeZone, TimeZoneBuilder> {
-  @BuiltValueField(wireName: r'iana')
-  IanaTimeZone? get iana;
 
-  @BuiltValueField(wireName: r'windows')
-  WindowsTimeZone? get windows;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class TimeZone {
+  /// Returns a new [TimeZone] instance.
+  TimeZone({
 
-  TimeZone._();
+     this.iana,
 
-  factory TimeZone([void updates(TimeZoneBuilder b)]) = _$TimeZone;
+     this.windows,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(TimeZoneBuilder b) => b;
+  @JsonKey(
+    
+    name: r'iana',
+    required: false,
+    includeIfNull: false
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<TimeZone> get serializer => _$TimeZoneSerializer();
-}
 
-class _$TimeZoneSerializer implements PrimitiveSerializer<TimeZone> {
-  @override
-  final Iterable<Type> types = const [TimeZone, _$TimeZone];
+  final IanaTimeZone? iana;
 
-  @override
-  final String wireName = r'TimeZone';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    TimeZone object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.iana != null) {
-      yield r'iana';
-      yield serializers.serialize(
-        object.iana,
-        specifiedType: const FullType(IanaTimeZone),
-      );
-    }
-    if (object.windows != null) {
-      yield r'windows';
-      yield serializers.serialize(
-        object.windows,
-        specifiedType: const FullType(WindowsTimeZone),
-      );
-    }
-  }
+
+  @JsonKey(
+    
+    name: r'windows',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final WindowsTimeZone? windows;
+
+
 
   @override
-  Object serialize(
-    Serializers serializers,
-    TimeZone object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
-
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required TimeZoneBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'iana':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IanaTimeZone),
-          ) as IanaTimeZone;
-          result.iana.replace(valueDes);
-          break;
-        case r'windows':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(WindowsTimeZone),
-          ) as WindowsTimeZone;
-          result.windows.replace(valueDes);
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  bool operator ==(Object other) => identical(this, other) || other is TimeZone &&
+     other.iana == iana &&
+     other.windows == windows;
 
   @override
-  TimeZone deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = TimeZoneBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  int get hashCode =>
+    iana.hashCode +
+    windows.hashCode;
+
+  factory TimeZone.fromJson(Map<String, dynamic> json) => _$TimeZoneFromJson(json);
+
+  Map<String, dynamic> toJson() => _$TimeZoneToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

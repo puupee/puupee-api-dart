@@ -4,7 +4,9 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:puupee_api_client/src/model/change_password_input.dart';
@@ -16,9 +18,7 @@ class ProfileApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const ProfileApi(this._dio, this._serializers);
+  const ProfileApi(this._dio);
 
   /// apiAccountMyProfileChangePasswordPost
   /// 
@@ -65,9 +65,7 @@ class ProfileApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ChangePasswordInput);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -141,12 +139,7 @@ class ProfileApi {
     ProfileDto _responseData;
 
     try {
-      const _responseType = FullType(ProfileDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as ProfileDto;
-
+_responseData = deserialize<ProfileDto, ProfileDto>(_response.data!, 'ProfileDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -213,9 +206,7 @@ class ProfileApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(UpdateProfileDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -239,12 +230,7 @@ class ProfileApi {
     ProfileDto _responseData;
 
     try {
-      const _responseType = FullType(ProfileDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as ProfileDto;
-
+_responseData = deserialize<ProfileDto, ProfileDto>(_response.data!, 'ProfileDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

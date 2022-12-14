@@ -3,158 +3,46 @@
 part of 'permission_group_dto.dart';
 
 // **************************************************************************
-// BuiltValueGenerator
+// JsonSerializableGenerator
 // **************************************************************************
 
-class _$PermissionGroupDto extends PermissionGroupDto {
-  @override
-  final String? name;
-  @override
-  final String? displayName;
-  @override
-  final String? displayNameKey;
-  @override
-  final String? displayNameResource;
-  @override
-  final BuiltList<PermissionGrantInfoDto>? permissions;
+PermissionGroupDto _$PermissionGroupDtoFromJson(Map<String, dynamic> json) =>
+    $checkedCreate(
+      'PermissionGroupDto',
+      json,
+      ($checkedConvert) {
+        final val = PermissionGroupDto(
+          name: $checkedConvert('name', (v) => v as String?),
+          displayName: $checkedConvert('displayName', (v) => v as String?),
+          displayNameKey:
+              $checkedConvert('displayNameKey', (v) => v as String?),
+          displayNameResource:
+              $checkedConvert('displayNameResource', (v) => v as String?),
+          permissions: $checkedConvert(
+              'permissions',
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) => PermissionGrantInfoDto.fromJson(
+                      e as Map<String, dynamic>))
+                  .toList()),
+        );
+        return val;
+      },
+    );
 
-  factory _$PermissionGroupDto(
-          [void Function(PermissionGroupDtoBuilder)? updates]) =>
-      (new PermissionGroupDtoBuilder()..update(updates))._build();
+Map<String, dynamic> _$PermissionGroupDtoToJson(PermissionGroupDto instance) {
+  final val = <String, dynamic>{};
 
-  _$PermissionGroupDto._(
-      {this.name,
-      this.displayName,
-      this.displayNameKey,
-      this.displayNameResource,
-      this.permissions})
-      : super._();
-
-  @override
-  PermissionGroupDto rebuild(
-          void Function(PermissionGroupDtoBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  PermissionGroupDtoBuilder toBuilder() =>
-      new PermissionGroupDtoBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is PermissionGroupDto &&
-        name == other.name &&
-        displayName == other.displayName &&
-        displayNameKey == other.displayNameKey &&
-        displayNameResource == other.displayNameResource &&
-        permissions == other.permissions;
-  }
-
-  @override
-  int get hashCode {
-    return $jf($jc(
-        $jc(
-            $jc($jc($jc(0, name.hashCode), displayName.hashCode),
-                displayNameKey.hashCode),
-            displayNameResource.hashCode),
-        permissions.hashCode));
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'PermissionGroupDto')
-          ..add('name', name)
-          ..add('displayName', displayName)
-          ..add('displayNameKey', displayNameKey)
-          ..add('displayNameResource', displayNameResource)
-          ..add('permissions', permissions))
-        .toString();
-  }
-}
-
-class PermissionGroupDtoBuilder
-    implements Builder<PermissionGroupDto, PermissionGroupDtoBuilder> {
-  _$PermissionGroupDto? _$v;
-
-  String? _name;
-  String? get name => _$this._name;
-  set name(String? name) => _$this._name = name;
-
-  String? _displayName;
-  String? get displayName => _$this._displayName;
-  set displayName(String? displayName) => _$this._displayName = displayName;
-
-  String? _displayNameKey;
-  String? get displayNameKey => _$this._displayNameKey;
-  set displayNameKey(String? displayNameKey) =>
-      _$this._displayNameKey = displayNameKey;
-
-  String? _displayNameResource;
-  String? get displayNameResource => _$this._displayNameResource;
-  set displayNameResource(String? displayNameResource) =>
-      _$this._displayNameResource = displayNameResource;
-
-  ListBuilder<PermissionGrantInfoDto>? _permissions;
-  ListBuilder<PermissionGrantInfoDto> get permissions =>
-      _$this._permissions ??= new ListBuilder<PermissionGrantInfoDto>();
-  set permissions(ListBuilder<PermissionGrantInfoDto>? permissions) =>
-      _$this._permissions = permissions;
-
-  PermissionGroupDtoBuilder() {
-    PermissionGroupDto._defaults(this);
-  }
-
-  PermissionGroupDtoBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _name = $v.name;
-      _displayName = $v.displayName;
-      _displayNameKey = $v.displayNameKey;
-      _displayNameResource = $v.displayNameResource;
-      _permissions = $v.permissions?.toBuilder();
-      _$v = null;
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
     }
-    return this;
   }
 
-  @override
-  void replace(PermissionGroupDto other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$PermissionGroupDto;
-  }
-
-  @override
-  void update(void Function(PermissionGroupDtoBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  PermissionGroupDto build() => _build();
-
-  _$PermissionGroupDto _build() {
-    _$PermissionGroupDto _$result;
-    try {
-      _$result = _$v ??
-          new _$PermissionGroupDto._(
-              name: name,
-              displayName: displayName,
-              displayNameKey: displayNameKey,
-              displayNameResource: displayNameResource,
-              permissions: _permissions?.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'permissions';
-        _permissions?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'PermissionGroupDto', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
+  writeNotNull('name', instance.name);
+  writeNotNull('displayName', instance.displayName);
+  writeNotNull('displayNameKey', instance.displayNameKey);
+  writeNotNull('displayNameResource', instance.displayNameResource);
+  writeNotNull(
+      'permissions', instance.permissions?.map((e) => e.toJson()).toList());
+  return val;
 }
-
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas

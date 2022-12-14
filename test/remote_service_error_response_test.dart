@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for RemoteServiceErrorResponse
 void main() {
-  final instance = RemoteServiceErrorResponseBuilder();
-  // TODO add properties to the builder and call build()
+  final RemoteServiceErrorResponse? instance = /* RemoteServiceErrorResponse(...) */ null;
+  // TODO add properties to the entity
 
   group(RemoteServiceErrorResponse, () {
     // RemoteServiceErrorInfo error

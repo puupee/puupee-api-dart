@@ -3,126 +3,69 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
 import 'package:puupee_api_client/src/model/permission_group_dto.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'get_permission_list_result_dto.g.dart';
 
-/// GetPermissionListResultDto
-///
-/// Properties:
-/// * [entityDisplayName] 
-/// * [groups] 
-@BuiltValue()
-abstract class GetPermissionListResultDto implements Built<GetPermissionListResultDto, GetPermissionListResultDtoBuilder> {
-  @BuiltValueField(wireName: r'entityDisplayName')
-  String? get entityDisplayName;
 
-  @BuiltValueField(wireName: r'groups')
-  BuiltList<PermissionGroupDto>? get groups;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class GetPermissionListResultDto {
+  /// Returns a new [GetPermissionListResultDto] instance.
+  GetPermissionListResultDto({
 
-  GetPermissionListResultDto._();
+     this.entityDisplayName,
 
-  factory GetPermissionListResultDto([void updates(GetPermissionListResultDtoBuilder b)]) = _$GetPermissionListResultDto;
+     this.groups,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(GetPermissionListResultDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'entityDisplayName',
+    required: false,
+    includeIfNull: false
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<GetPermissionListResultDto> get serializer => _$GetPermissionListResultDtoSerializer();
-}
 
-class _$GetPermissionListResultDtoSerializer implements PrimitiveSerializer<GetPermissionListResultDto> {
-  @override
-  final Iterable<Type> types = const [GetPermissionListResultDto, _$GetPermissionListResultDto];
+  final String? entityDisplayName;
 
-  @override
-  final String wireName = r'GetPermissionListResultDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    GetPermissionListResultDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.entityDisplayName != null) {
-      yield r'entityDisplayName';
-      yield serializers.serialize(
-        object.entityDisplayName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.groups != null) {
-      yield r'groups';
-      yield serializers.serialize(
-        object.groups,
-        specifiedType: const FullType(BuiltList, [FullType(PermissionGroupDto)]),
-      );
-    }
-  }
+
+  @JsonKey(
+    
+    name: r'groups',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final List<PermissionGroupDto>? groups;
+
+
 
   @override
-  Object serialize(
-    Serializers serializers,
-    GetPermissionListResultDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
-
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required GetPermissionListResultDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'entityDisplayName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.entityDisplayName = valueDes;
-          break;
-        case r'groups':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(PermissionGroupDto)]),
-          ) as BuiltList<PermissionGroupDto>;
-          result.groups.replace(valueDes);
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  bool operator ==(Object other) => identical(this, other) || other is GetPermissionListResultDto &&
+     other.entityDisplayName == entityDisplayName &&
+     other.groups == groups;
 
   @override
-  GetPermissionListResultDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = GetPermissionListResultDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  int get hashCode =>
+    entityDisplayName.hashCode +
+    groups.hashCode;
+
+  factory GetPermissionListResultDto.fromJson(Map<String, dynamic> json) => _$GetPermissionListResultDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$GetPermissionListResultDtoToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

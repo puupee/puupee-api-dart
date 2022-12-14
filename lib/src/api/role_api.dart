@@ -4,10 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/identity_role_create_dto.dart';
 import 'package:puupee_api_client/src/model/identity_role_dto.dart';
 import 'package:puupee_api_client/src/model/identity_role_dto_list_result_dto.dart';
@@ -19,9 +20,7 @@ class RoleApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const RoleApi(this._dio, this._serializers);
+  const RoleApi(this._dio);
 
   /// apiIdentityRolesAllGet
   /// 
@@ -73,12 +72,7 @@ class RoleApi {
     IdentityRoleDtoListResultDto _responseData;
 
     try {
-      const _responseType = FullType(IdentityRoleDtoListResultDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as IdentityRoleDtoListResultDto;
-
+_responseData = deserialize<IdentityRoleDtoListResultDto, IdentityRoleDtoListResultDto>(_response.data!, 'IdentityRoleDtoListResultDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -148,10 +142,10 @@ class RoleApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (filter != null) r'Filter': encodeQueryParameter(_serializers, filter, const FullType(String)),
-      if (sorting != null) r'Sorting': encodeQueryParameter(_serializers, sorting, const FullType(String)),
-      if (skipCount != null) r'SkipCount': encodeQueryParameter(_serializers, skipCount, const FullType(int)),
-      if (maxResultCount != null) r'MaxResultCount': encodeQueryParameter(_serializers, maxResultCount, const FullType(int)),
+      if (filter != null) r'Filter': filter,
+      if (sorting != null) r'Sorting': sorting,
+      if (skipCount != null) r'SkipCount': skipCount,
+      if (maxResultCount != null) r'MaxResultCount': maxResultCount,
     };
 
     final _response = await _dio.request<Object>(
@@ -166,12 +160,7 @@ class RoleApi {
     IdentityRoleDtoPagedResultDto _responseData;
 
     try {
-      const _responseType = FullType(IdentityRoleDtoPagedResultDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as IdentityRoleDtoPagedResultDto;
-
+_responseData = deserialize<IdentityRoleDtoPagedResultDto, IdentityRoleDtoPagedResultDto>(_response.data!, 'IdentityRoleDtoPagedResultDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -297,12 +286,7 @@ class RoleApi {
     IdentityRoleDto _responseData;
 
     try {
-      const _responseType = FullType(IdentityRoleDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as IdentityRoleDto;
-
+_responseData = deserialize<IdentityRoleDto, IdentityRoleDto>(_response.data!, 'IdentityRoleDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -371,9 +355,7 @@ class RoleApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(IdentityRoleUpdateDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -397,12 +379,7 @@ class RoleApi {
     IdentityRoleDto _responseData;
 
     try {
-      const _responseType = FullType(IdentityRoleDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as IdentityRoleDto;
-
+_responseData = deserialize<IdentityRoleDto, IdentityRoleDto>(_response.data!, 'IdentityRoleDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -469,9 +446,7 @@ class RoleApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(IdentityRoleCreateDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -495,12 +470,7 @@ class RoleApi {
     IdentityRoleDto _responseData;
 
     try {
-      const _responseType = FullType(IdentityRoleDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as IdentityRoleDto;
-
+_responseData = deserialize<IdentityRoleDto, IdentityRoleDto>(_response.data!, 'IdentityRoleDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

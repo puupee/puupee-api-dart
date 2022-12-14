@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for ActionApiDescriptionModel
 void main() {
-  final instance = ActionApiDescriptionModelBuilder();
-  // TODO add properties to the builder and call build()
+  final ActionApiDescriptionModel? instance = /* ActionApiDescriptionModel(...) */ null;
+  // TODO add properties to the entity
 
   group(ActionApiDescriptionModel, () {
     // String uniqueName
@@ -27,17 +27,17 @@ void main() {
       // TODO
     });
 
-    // BuiltList<String> supportedVersions
+    // List<String> supportedVersions
     test('to test the property `supportedVersions`', () async {
       // TODO
     });
 
-    // BuiltList<MethodParameterApiDescriptionModel> parametersOnMethod
+    // List<MethodParameterApiDescriptionModel> parametersOnMethod
     test('to test the property `parametersOnMethod`', () async {
       // TODO
     });
 
-    // BuiltList<ParameterApiDescriptionModel> parameters
+    // List<ParameterApiDescriptionModel> parameters
     test('to test the property `parameters`', () async {
       // TODO
     });

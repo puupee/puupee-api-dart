@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for AppFeatureDto
 void main() {
-  final instance = AppFeatureDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final AppFeatureDto? instance = /* AppFeatureDto(...) */ null;
+  // TODO add properties to the entity
 
   group(AppFeatureDto, () {
     // String id

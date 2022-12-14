@@ -3,11 +3,11 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for ApplicationFeatureConfigurationDto
 void main() {
-  final instance = ApplicationFeatureConfigurationDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final ApplicationFeatureConfigurationDto? instance = /* ApplicationFeatureConfigurationDto(...) */ null;
+  // TODO add properties to the entity
 
   group(ApplicationFeatureConfigurationDto, () {
-    // BuiltMap<String, String> values
+    // Map<String, String> values
     test('to test the property `values`', () async {
       // TODO
     });

@@ -4,10 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 import 'package:puupee_api_client/src/model/storage_object_or_credentials_dto.dart';
 
@@ -15,9 +16,7 @@ class StorageObjectApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const StorageObjectApi(this._dio, this._serializers);
+  const StorageObjectApi(this._dio);
 
   /// apiAppStorageObjectFileGet
   /// 
@@ -61,7 +60,7 @@ class StorageObjectApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (key != null) r'key': encodeQueryParameter(_serializers, key, const FullType(String)),
+      if (key != null) r'key': key,
     };
 
     final _response = await _dio.request<Object>(
@@ -120,8 +119,8 @@ class StorageObjectApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (rapidCode != null) r'rapidCode': encodeQueryParameter(_serializers, rapidCode, const FullType(String)),
-      if (key != null) r'key': encodeQueryParameter(_serializers, key, const FullType(String)),
+      if (rapidCode != null) r'rapidCode': rapidCode,
+      if (key != null) r'key': key,
     };
 
     final _response = await _dio.request<Object>(
@@ -136,12 +135,7 @@ class StorageObjectApi {
     StorageObjectOrCredentialsDto _responseData;
 
     try {
-      const _responseType = FullType(StorageObjectOrCredentialsDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as StorageObjectOrCredentialsDto;
-
+_responseData = deserialize<StorageObjectOrCredentialsDto, StorageObjectOrCredentialsDto>(_response.data!, 'StorageObjectOrCredentialsDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -205,7 +199,7 @@ class StorageObjectApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (key != null) r'key': encodeQueryParameter(_serializers, key, const FullType(String)),
+      if (key != null) r'key': key,
     };
 
     final _response = await _dio.request<Object>(
@@ -220,8 +214,7 @@ class StorageObjectApi {
     String _responseData;
 
     try {
-      _responseData = _response.data as String;
-
+_responseData = deserialize<String, String>(_response.data!, 'String', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -285,7 +278,7 @@ class StorageObjectApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (key != null) r'key': encodeQueryParameter(_serializers, key, const FullType(String)),
+      if (key != null) r'key': key,
     };
 
     final _response = await _dio.request<Object>(

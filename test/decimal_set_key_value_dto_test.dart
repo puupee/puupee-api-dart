@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for DecimalSetKeyValueDto
 void main() {
-  final instance = DecimalSetKeyValueDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final DecimalSetKeyValueDto? instance = /* DecimalSetKeyValueDto(...) */ null;
+  // TODO add properties to the entity
 
   group(DecimalSetKeyValueDto, () {
     // double value

@@ -3,160 +3,100 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'find_tenant_result_dto.g.dart';
 
-/// FindTenantResultDto
-///
-/// Properties:
-/// * [success] 
-/// * [tenantId] 
-/// * [name] 
-/// * [isActive] 
-@BuiltValue()
-abstract class FindTenantResultDto implements Built<FindTenantResultDto, FindTenantResultDtoBuilder> {
-  @BuiltValueField(wireName: r'success')
-  bool? get success;
 
-  @BuiltValueField(wireName: r'tenantId')
-  String? get tenantId;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class FindTenantResultDto {
+  /// Returns a new [FindTenantResultDto] instance.
+  FindTenantResultDto({
 
-  @BuiltValueField(wireName: r'name')
-  String? get name;
+     this.success,
 
-  @BuiltValueField(wireName: r'isActive')
-  bool? get isActive;
+     this.tenantId,
 
-  FindTenantResultDto._();
+     this.name,
 
-  factory FindTenantResultDto([void updates(FindTenantResultDtoBuilder b)]) = _$FindTenantResultDto;
+     this.isActive,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(FindTenantResultDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'success',
+    required: false,
+    includeIfNull: false
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<FindTenantResultDto> get serializer => _$FindTenantResultDtoSerializer();
-}
 
-class _$FindTenantResultDtoSerializer implements PrimitiveSerializer<FindTenantResultDto> {
-  @override
-  final Iterable<Type> types = const [FindTenantResultDto, _$FindTenantResultDto];
+  final bool? success;
 
-  @override
-  final String wireName = r'FindTenantResultDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    FindTenantResultDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.success != null) {
-      yield r'success';
-      yield serializers.serialize(
-        object.success,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.tenantId != null) {
-      yield r'tenantId';
-      yield serializers.serialize(
-        object.tenantId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.name != null) {
-      yield r'name';
-      yield serializers.serialize(
-        object.name,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.isActive != null) {
-      yield r'isActive';
-      yield serializers.serialize(
-        object.isActive,
-        specifiedType: const FullType(bool),
-      );
-    }
-  }
+
+  @JsonKey(
+    
+    name: r'tenantId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? tenantId;
+
+
+
+  @JsonKey(
+    
+    name: r'name',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? name;
+
+
+
+  @JsonKey(
+    
+    name: r'isActive',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final bool? isActive;
+
+
 
   @override
-  Object serialize(
-    Serializers serializers,
-    FindTenantResultDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
-
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required FindTenantResultDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'success':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.success = valueDes;
-          break;
-        case r'tenantId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.tenantId = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'isActive':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isActive = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  bool operator ==(Object other) => identical(this, other) || other is FindTenantResultDto &&
+     other.success == success &&
+     other.tenantId == tenantId &&
+     other.name == name &&
+     other.isActive == isActive;
 
   @override
-  FindTenantResultDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = FindTenantResultDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  int get hashCode =>
+    success.hashCode +
+    tenantId.hashCode +
+    name.hashCode +
+    isActive.hashCode;
+
+  factory FindTenantResultDto.fromJson(Map<String, dynamic> json) => _$FindTenantResultDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$FindTenantResultDtoToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

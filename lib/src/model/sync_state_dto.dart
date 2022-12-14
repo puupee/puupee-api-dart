@@ -3,124 +3,68 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'sync_state_dto.g.dart';
 
-/// SyncStateDto
-///
-/// Properties:
-/// * [lastSyncAt] 
-/// * [version] 
-@BuiltValue()
-abstract class SyncStateDto implements Built<SyncStateDto, SyncStateDtoBuilder> {
-  @BuiltValueField(wireName: r'lastSyncAt')
-  DateTime? get lastSyncAt;
 
-  @BuiltValueField(wireName: r'version')
-  int? get version;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class SyncStateDto {
+  /// Returns a new [SyncStateDto] instance.
+  SyncStateDto({
 
-  SyncStateDto._();
+     this.lastSyncAt,
 
-  factory SyncStateDto([void updates(SyncStateDtoBuilder b)]) = _$SyncStateDto;
+     this.version,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(SyncStateDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'lastSyncAt',
+    required: false,
+    includeIfNull: false
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<SyncStateDto> get serializer => _$SyncStateDtoSerializer();
-}
 
-class _$SyncStateDtoSerializer implements PrimitiveSerializer<SyncStateDto> {
-  @override
-  final Iterable<Type> types = const [SyncStateDto, _$SyncStateDto];
+  final DateTime? lastSyncAt;
 
-  @override
-  final String wireName = r'SyncStateDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    SyncStateDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.lastSyncAt != null) {
-      yield r'lastSyncAt';
-      yield serializers.serialize(
-        object.lastSyncAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.version != null) {
-      yield r'version';
-      yield serializers.serialize(
-        object.version,
-        specifiedType: const FullType(int),
-      );
-    }
-  }
+
+  @JsonKey(
+    
+    name: r'version',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final int? version;
+
+
 
   @override
-  Object serialize(
-    Serializers serializers,
-    SyncStateDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
-
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required SyncStateDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'lastSyncAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.lastSyncAt = valueDes;
-          break;
-        case r'version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.version = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  bool operator ==(Object other) => identical(this, other) || other is SyncStateDto &&
+     other.lastSyncAt == lastSyncAt &&
+     other.version == version;
 
   @override
-  SyncStateDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = SyncStateDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  int get hashCode =>
+    lastSyncAt.hashCode +
+    version.hashCode;
+
+  factory SyncStateDto.fromJson(Map<String, dynamic> json) => _$SyncStateDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$SyncStateDtoToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

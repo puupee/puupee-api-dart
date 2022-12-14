@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for SendTestEmailInput
 void main() {
-  final instance = SendTestEmailInputBuilder();
-  // TODO add properties to the builder and call build()
+  final SendTestEmailInput? instance = /* SendTestEmailInput(...) */ null;
+  // TODO add properties to the entity
 
   group(SendTestEmailInput, () {
     // String senderEmailAddress

@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for BooleanKeyValue
 void main() {
-  final instance = BooleanKeyValueBuilder();
-  // TODO add properties to the builder and call build()
+  final BooleanKeyValue? instance = /* BooleanKeyValue(...) */ null;
+  // TODO add properties to the entity
 
   group(BooleanKeyValue, () {
     // bool value

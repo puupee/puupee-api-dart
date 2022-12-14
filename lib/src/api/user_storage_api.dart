@@ -4,7 +4,9 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
@@ -14,9 +16,7 @@ class UserStorageApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const UserStorageApi(this._dio, this._serializers);
+  const UserStorageApi(this._dio);
 
   /// apiAppUserStorageGet
   /// 
@@ -68,12 +68,7 @@ class UserStorageApi {
     UserStorageDto _responseData;
 
     try {
-      const _responseType = FullType(UserStorageDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as UserStorageDto;
-
+_responseData = deserialize<UserStorageDto, UserStorageDto>(_response.data!, 'UserStorageDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

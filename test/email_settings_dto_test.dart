@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for EmailSettingsDto
 void main() {
-  final instance = EmailSettingsDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final EmailSettingsDto? instance = /* EmailSettingsDto(...) */ null;
+  // TODO add properties to the entity
 
   group(EmailSettingsDto, () {
     // String smtpHost

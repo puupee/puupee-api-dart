@@ -4,10 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/get_permission_list_result_dto.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 import 'package:puupee_api_client/src/model/update_permissions_dto.dart';
@@ -16,9 +17,7 @@ class PermissionsApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const PermissionsApi(this._dio, this._serializers);
+  const PermissionsApi(this._dio);
 
   /// apiPermissionManagementPermissionsGet
   /// 
@@ -64,8 +63,8 @@ class PermissionsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (providerName != null) r'providerName': encodeQueryParameter(_serializers, providerName, const FullType(String)),
-      if (providerKey != null) r'providerKey': encodeQueryParameter(_serializers, providerKey, const FullType(String)),
+      if (providerName != null) r'providerName': providerName,
+      if (providerKey != null) r'providerKey': providerKey,
     };
 
     final _response = await _dio.request<Object>(
@@ -80,12 +79,7 @@ class PermissionsApi {
     GetPermissionListResultDto _responseData;
 
     try {
-      const _responseType = FullType(GetPermissionListResultDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as GetPermissionListResultDto;
-
+_responseData = deserialize<GetPermissionListResultDto, GetPermissionListResultDto>(_response.data!, 'GetPermissionListResultDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -154,16 +148,14 @@ class PermissionsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (providerName != null) r'providerName': encodeQueryParameter(_serializers, providerName, const FullType(String)),
-      if (providerKey != null) r'providerKey': encodeQueryParameter(_serializers, providerKey, const FullType(String)),
+      if (providerName != null) r'providerName': providerName,
+      if (providerKey != null) r'providerKey': providerKey,
     };
 
     dynamic _bodyData;
 
     try {
-      const _type = FullType(UpdatePermissionsDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

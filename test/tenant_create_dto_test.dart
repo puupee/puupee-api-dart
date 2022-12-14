@@ -3,11 +3,11 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for TenantCreateDto
 void main() {
-  final instance = TenantCreateDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final TenantCreateDto? instance = /* TenantCreateDto(...) */ null;
+  // TODO add properties to the entity
 
   group(TenantCreateDto, () {
-    // BuiltMap<String, JsonObject> extraProperties
+    // Map<String, Object> extraProperties
     test('to test the property `extraProperties`', () async {
       // TODO
     });

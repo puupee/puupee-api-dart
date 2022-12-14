@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for AbpLoginResult
 void main() {
-  final instance = AbpLoginResultBuilder();
-  // TODO add properties to the builder and call build()
+  final AbpLoginResult? instance = /* AbpLoginResult(...) */ null;
+  // TODO add properties to the entity
 
   group(AbpLoginResult, () {
     // LoginResultType result

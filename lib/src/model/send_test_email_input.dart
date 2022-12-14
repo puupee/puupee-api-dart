@@ -3,154 +3,100 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'send_test_email_input.g.dart';
 
-/// SendTestEmailInput
-///
-/// Properties:
-/// * [senderEmailAddress] 
-/// * [targetEmailAddress] 
-/// * [subject] 
-/// * [body] 
-@BuiltValue()
-abstract class SendTestEmailInput implements Built<SendTestEmailInput, SendTestEmailInputBuilder> {
-  @BuiltValueField(wireName: r'senderEmailAddress')
-  String get senderEmailAddress;
 
-  @BuiltValueField(wireName: r'targetEmailAddress')
-  String get targetEmailAddress;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class SendTestEmailInput {
+  /// Returns a new [SendTestEmailInput] instance.
+  SendTestEmailInput({
 
-  @BuiltValueField(wireName: r'subject')
-  String get subject;
+    required  this.senderEmailAddress,
 
-  @BuiltValueField(wireName: r'body')
-  String? get body;
+    required  this.targetEmailAddress,
 
-  SendTestEmailInput._();
+    required  this.subject,
 
-  factory SendTestEmailInput([void updates(SendTestEmailInputBuilder b)]) = _$SendTestEmailInput;
+     this.body,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(SendTestEmailInputBuilder b) => b;
+  @JsonKey(
+    
+    name: r'senderEmailAddress',
+    required: true,
+    includeIfNull: false
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<SendTestEmailInput> get serializer => _$SendTestEmailInputSerializer();
-}
 
-class _$SendTestEmailInputSerializer implements PrimitiveSerializer<SendTestEmailInput> {
-  @override
-  final Iterable<Type> types = const [SendTestEmailInput, _$SendTestEmailInput];
+  final String senderEmailAddress;
 
-  @override
-  final String wireName = r'SendTestEmailInput';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    SendTestEmailInput object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    yield r'senderEmailAddress';
-    yield serializers.serialize(
-      object.senderEmailAddress,
-      specifiedType: const FullType(String),
-    );
-    yield r'targetEmailAddress';
-    yield serializers.serialize(
-      object.targetEmailAddress,
-      specifiedType: const FullType(String),
-    );
-    yield r'subject';
-    yield serializers.serialize(
-      object.subject,
-      specifiedType: const FullType(String),
-    );
-    if (object.body != null) {
-      yield r'body';
-      yield serializers.serialize(
-        object.body,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    SendTestEmailInput object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'targetEmailAddress',
+    required: true,
+    includeIfNull: false
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required SendTestEmailInputBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'senderEmailAddress':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.senderEmailAddress = valueDes;
-          break;
-        case r'targetEmailAddress':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.targetEmailAddress = valueDes;
-          break;
-        case r'subject':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.subject = valueDes;
-          break;
-        case r'body':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.body = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  final String targetEmailAddress;
+
+
+
+  @JsonKey(
+    
+    name: r'subject',
+    required: true,
+    includeIfNull: false
+  )
+
+
+  final String subject;
+
+
+
+  @JsonKey(
+    
+    name: r'body',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? body;
+
+
 
   @override
-  SendTestEmailInput deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = SendTestEmailInputBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  bool operator ==(Object other) => identical(this, other) || other is SendTestEmailInput &&
+     other.senderEmailAddress == senderEmailAddress &&
+     other.targetEmailAddress == targetEmailAddress &&
+     other.subject == subject &&
+     other.body == body;
+
+  @override
+  int get hashCode =>
+    senderEmailAddress.hashCode +
+    targetEmailAddress.hashCode +
+    subject.hashCode +
+    body.hashCode;
+
+  factory SendTestEmailInput.fromJson(Map<String, dynamic> json) => _$SendTestEmailInputFromJson(json);
+
+  Map<String, dynamic> toJson() => _$SendTestEmailInputToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

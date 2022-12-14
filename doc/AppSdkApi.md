@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **apiAppAppSdkGet**
-> BuiltList<AppSdkDto> apiAppAppSdkGet()
+> List<AppSdkDto> apiAppAppSdkGet()
 
 
 
@@ -41,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;AppSdkDto&gt;**](AppSdkDto.md)
+[**List&lt;AppSdkDto&gt;**](AppSdkDto.md)
 
 ### Authorization
 

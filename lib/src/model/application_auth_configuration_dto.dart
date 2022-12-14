@@ -3,107 +3,52 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'application_auth_configuration_dto.g.dart';
 
-/// ApplicationAuthConfigurationDto
-///
-/// Properties:
-/// * [grantedPolicies] 
-@BuiltValue()
-abstract class ApplicationAuthConfigurationDto implements Built<ApplicationAuthConfigurationDto, ApplicationAuthConfigurationDtoBuilder> {
-  @BuiltValueField(wireName: r'grantedPolicies')
-  BuiltMap<String, bool>? get grantedPolicies;
 
-  ApplicationAuthConfigurationDto._();
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class ApplicationAuthConfigurationDto {
+  /// Returns a new [ApplicationAuthConfigurationDto] instance.
+  ApplicationAuthConfigurationDto({
 
-  factory ApplicationAuthConfigurationDto([void updates(ApplicationAuthConfigurationDtoBuilder b)]) = _$ApplicationAuthConfigurationDto;
+     this.grantedPolicies,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ApplicationAuthConfigurationDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'grantedPolicies',
+    required: false,
+    includeIfNull: false
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ApplicationAuthConfigurationDto> get serializer => _$ApplicationAuthConfigurationDtoSerializer();
-}
 
-class _$ApplicationAuthConfigurationDtoSerializer implements PrimitiveSerializer<ApplicationAuthConfigurationDto> {
-  @override
-  final Iterable<Type> types = const [ApplicationAuthConfigurationDto, _$ApplicationAuthConfigurationDto];
+  final Map<String, bool>? grantedPolicies;
 
-  @override
-  final String wireName = r'ApplicationAuthConfigurationDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    ApplicationAuthConfigurationDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.grantedPolicies != null) {
-      yield r'grantedPolicies';
-      yield serializers.serialize(
-        object.grantedPolicies,
-        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(bool)]),
-      );
-    }
-  }
 
   @override
-  Object serialize(
-    Serializers serializers,
-    ApplicationAuthConfigurationDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
-
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required ApplicationAuthConfigurationDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'grantedPolicies':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(bool)]),
-          ) as BuiltMap<String, bool>;
-          result.grantedPolicies.replace(valueDes);
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  bool operator ==(Object other) => identical(this, other) || other is ApplicationAuthConfigurationDto &&
+     other.grantedPolicies == grantedPolicies;
 
   @override
-  ApplicationAuthConfigurationDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ApplicationAuthConfigurationDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  int get hashCode =>
+    grantedPolicies.hashCode;
+
+  factory ApplicationAuthConfigurationDto.fromJson(Map<String, dynamic> json) => _$ApplicationAuthConfigurationDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ApplicationAuthConfigurationDtoToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for TestDateTime
 void main() {
-  final instance = TestDateTimeBuilder();
-  // TODO add properties to the builder and call build()
+  final TestDateTime? instance = /* TestDateTime(...) */ null;
+  // TODO add properties to the entity
 
   group(TestDateTime, () {
     // DateTime createdAt

@@ -4,7 +4,9 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:puupee_api_client/src/model/app_user_score_dto.dart';
@@ -15,9 +17,7 @@ class AppUserScoreApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const AppUserScoreApi(this._dio, this._serializers);
+  const AppUserScoreApi(this._dio);
 
   /// apiAppAppUserScorePost
   /// 
@@ -64,9 +64,7 @@ class AppUserScoreApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CreateOrUpdateAppUserScoreDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -90,12 +88,7 @@ class AppUserScoreApi {
     AppUserScoreDto _responseData;
 
     try {
-      const _responseType = FullType(AppUserScoreDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as AppUserScoreDto;
-
+_responseData = deserialize<AppUserScoreDto, AppUserScoreDto>(_response.data!, 'AppUserScoreDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

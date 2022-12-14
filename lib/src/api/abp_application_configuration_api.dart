@@ -4,10 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/application_configuration_dto.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 
@@ -15,9 +16,7 @@ class AbpApplicationConfigurationApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const AbpApplicationConfigurationApi(this._dio, this._serializers);
+  const AbpApplicationConfigurationApi(this._dio);
 
   /// apiAbpApplicationConfigurationGet
   /// 
@@ -61,7 +60,7 @@ class AbpApplicationConfigurationApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (includeLocalizationResources != null) r'IncludeLocalizationResources': encodeQueryParameter(_serializers, includeLocalizationResources, const FullType(bool)),
+      if (includeLocalizationResources != null) r'IncludeLocalizationResources': includeLocalizationResources,
     };
 
     final _response = await _dio.request<Object>(
@@ -76,12 +75,7 @@ class AbpApplicationConfigurationApi {
     ApplicationConfigurationDto _responseData;
 
     try {
-      const _responseType = FullType(ApplicationConfigurationDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as ApplicationConfigurationDto;
-
+_responseData = deserialize<ApplicationConfigurationDto, ApplicationConfigurationDto>(_response.data!, 'ApplicationConfigurationDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

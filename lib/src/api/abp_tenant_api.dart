@@ -4,7 +4,9 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:puupee_api_client/src/model/find_tenant_result_dto.dart';
@@ -14,9 +16,7 @@ class AbpTenantApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const AbpTenantApi(this._dio, this._serializers);
+  const AbpTenantApi(this._dio);
 
   /// apiAbpMultiTenancyTenantsByIdIdGet
   /// 
@@ -70,12 +70,7 @@ class AbpTenantApi {
     FindTenantResultDto _responseData;
 
     try {
-      const _responseType = FullType(FindTenantResultDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as FindTenantResultDto;
-
+_responseData = deserialize<FindTenantResultDto, FindTenantResultDto>(_response.data!, 'FindTenantResultDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -149,12 +144,7 @@ class AbpTenantApi {
     FindTenantResultDto _responseData;
 
     try {
-      const _responseType = FullType(FindTenantResultDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as FindTenantResultDto;
-
+_responseData = deserialize<FindTenantResultDto, FindTenantResultDto>(_response.data!, 'FindTenantResultDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

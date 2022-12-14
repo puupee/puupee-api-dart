@@ -4,10 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 import 'package:puupee_api_client/src/model/tenant_create_dto.dart';
 import 'package:puupee_api_client/src/model/tenant_dto.dart';
@@ -18,9 +19,7 @@ class TenantApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const TenantApi(this._dio, this._serializers);
+  const TenantApi(this._dio);
 
   /// apiMultiTenancyTenantsGet
   /// 
@@ -70,10 +69,10 @@ class TenantApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (filter != null) r'Filter': encodeQueryParameter(_serializers, filter, const FullType(String)),
-      if (sorting != null) r'Sorting': encodeQueryParameter(_serializers, sorting, const FullType(String)),
-      if (skipCount != null) r'SkipCount': encodeQueryParameter(_serializers, skipCount, const FullType(int)),
-      if (maxResultCount != null) r'MaxResultCount': encodeQueryParameter(_serializers, maxResultCount, const FullType(int)),
+      if (filter != null) r'Filter': filter,
+      if (sorting != null) r'Sorting': sorting,
+      if (skipCount != null) r'SkipCount': skipCount,
+      if (maxResultCount != null) r'MaxResultCount': maxResultCount,
     };
 
     final _response = await _dio.request<Object>(
@@ -88,12 +87,7 @@ class TenantApi {
     TenantDtoPagedResultDto _responseData;
 
     try {
-      const _responseType = FullType(TenantDtoPagedResultDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as TenantDtoPagedResultDto;
-
+_responseData = deserialize<TenantDtoPagedResultDto, TenantDtoPagedResultDto>(_response.data!, 'TenantDtoPagedResultDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -219,8 +213,7 @@ class TenantApi {
     String _responseData;
 
     try {
-      _responseData = _response.data as String;
-
+_responseData = deserialize<String, String>(_response.data!, 'String', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -286,7 +279,7 @@ class TenantApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (defaultConnectionString != null) r'defaultConnectionString': encodeQueryParameter(_serializers, defaultConnectionString, const FullType(String)),
+      if (defaultConnectionString != null) r'defaultConnectionString': defaultConnectionString,
     };
 
     final _response = await _dio.request<Object>(
@@ -405,12 +398,7 @@ class TenantApi {
     TenantDto _responseData;
 
     try {
-      const _responseType = FullType(TenantDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as TenantDto;
-
+_responseData = deserialize<TenantDto, TenantDto>(_response.data!, 'TenantDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -479,9 +467,7 @@ class TenantApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(TenantUpdateDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -505,12 +491,7 @@ class TenantApi {
     TenantDto _responseData;
 
     try {
-      const _responseType = FullType(TenantDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as TenantDto;
-
+_responseData = deserialize<TenantDto, TenantDto>(_response.data!, 'TenantDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -577,9 +558,7 @@ class TenantApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(TenantCreateDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -603,12 +582,7 @@ class TenantApi {
     TenantDto _responseData;
 
     try {
-      const _responseType = FullType(TenantDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as TenantDto;
-
+_responseData = deserialize<TenantDto, TenantDto>(_response.data!, 'TenantDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

@@ -3,124 +3,68 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'date_time_set_key_value_dto.g.dart';
 
-/// DateTimeSetKeyValueDto
-///
-/// Properties:
-/// * [value] 
-/// * [durationSeconds] 
-@BuiltValue()
-abstract class DateTimeSetKeyValueDto implements Built<DateTimeSetKeyValueDto, DateTimeSetKeyValueDtoBuilder> {
-  @BuiltValueField(wireName: r'value')
-  DateTime? get value;
 
-  @BuiltValueField(wireName: r'durationSeconds')
-  double? get durationSeconds;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class DateTimeSetKeyValueDto {
+  /// Returns a new [DateTimeSetKeyValueDto] instance.
+  DateTimeSetKeyValueDto({
 
-  DateTimeSetKeyValueDto._();
+     this.value,
 
-  factory DateTimeSetKeyValueDto([void updates(DateTimeSetKeyValueDtoBuilder b)]) = _$DateTimeSetKeyValueDto;
+     this.durationSeconds,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(DateTimeSetKeyValueDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'value',
+    required: false,
+    includeIfNull: false
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<DateTimeSetKeyValueDto> get serializer => _$DateTimeSetKeyValueDtoSerializer();
-}
 
-class _$DateTimeSetKeyValueDtoSerializer implements PrimitiveSerializer<DateTimeSetKeyValueDto> {
-  @override
-  final Iterable<Type> types = const [DateTimeSetKeyValueDto, _$DateTimeSetKeyValueDto];
+  final DateTime? value;
 
-  @override
-  final String wireName = r'DateTimeSetKeyValueDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    DateTimeSetKeyValueDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.value != null) {
-      yield r'value';
-      yield serializers.serialize(
-        object.value,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.durationSeconds != null) {
-      yield r'durationSeconds';
-      yield serializers.serialize(
-        object.durationSeconds,
-        specifiedType: const FullType(double),
-      );
-    }
-  }
+
+  @JsonKey(
+    
+    name: r'durationSeconds',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final double? durationSeconds;
+
+
 
   @override
-  Object serialize(
-    Serializers serializers,
-    DateTimeSetKeyValueDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
-
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required DateTimeSetKeyValueDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.value = valueDes;
-          break;
-        case r'durationSeconds':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(double),
-          ) as double;
-          result.durationSeconds = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+  bool operator ==(Object other) => identical(this, other) || other is DateTimeSetKeyValueDto &&
+     other.value == value &&
+     other.durationSeconds == durationSeconds;
 
   @override
-  DateTimeSetKeyValueDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = DateTimeSetKeyValueDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  int get hashCode =>
+    value.hashCode +
+    durationSeconds.hashCode;
+
+  factory DateTimeSetKeyValueDto.fromJson(Map<String, dynamic> json) => _$DateTimeSetKeyValueDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$DateTimeSetKeyValueDtoToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

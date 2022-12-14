@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **timing** | [**TimingDto**](TimingDto.md) |  | [optional] 
 **clock** | [**ClockDto**](ClockDto.md) |  | [optional] 
 **objectExtensions** | [**ObjectExtensionsDto**](ObjectExtensionsDto.md) |  | [optional] 
-**extraProperties** | [**BuiltMap&lt;String, JsonObject&gt;**](JsonObject.md) |  | [optional] 
+**extraProperties** | **Map&lt;String, Object&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

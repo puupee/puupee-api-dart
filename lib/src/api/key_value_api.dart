@@ -4,10 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/boolean_key_value.dart';
 import 'package:puupee_api_client/src/model/boolean_set_key_value_dto.dart';
 import 'package:puupee_api_client/src/model/date_time_key_value.dart';
@@ -26,9 +27,7 @@ class KeyValueApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const KeyValueApi(this._dio, this._serializers);
+  const KeyValueApi(this._dio);
 
   /// apiAppKeyValueBoolGet
   /// 
@@ -72,7 +71,7 @@ class KeyValueApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (key != null) r'key': encodeQueryParameter(_serializers, key, const FullType(String)),
+      if (key != null) r'key': key,
     };
 
     final _response = await _dio.request<Object>(
@@ -87,12 +86,7 @@ class KeyValueApi {
     BooleanKeyValue _responseData;
 
     try {
-      const _responseType = FullType(BooleanKeyValue);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as BooleanKeyValue;
-
+_responseData = deserialize<BooleanKeyValue, BooleanKeyValue>(_response.data!, 'BooleanKeyValue', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -156,7 +150,7 @@ class KeyValueApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (key != null) r'key': encodeQueryParameter(_serializers, key, const FullType(String)),
+      if (key != null) r'key': key,
     };
 
     final _response = await _dio.request<Object>(
@@ -171,12 +165,7 @@ class KeyValueApi {
     DateTimeKeyValue _responseData;
 
     try {
-      const _responseType = FullType(DateTimeKeyValue);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as DateTimeKeyValue;
-
+_responseData = deserialize<DateTimeKeyValue, DateTimeKeyValue>(_response.data!, 'DateTimeKeyValue', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -240,7 +229,7 @@ class KeyValueApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (key != null) r'key': encodeQueryParameter(_serializers, key, const FullType(String)),
+      if (key != null) r'key': key,
     };
 
     final _response = await _dio.request<Object>(
@@ -255,12 +244,7 @@ class KeyValueApi {
     DecimalKeyValue _responseData;
 
     try {
-      const _responseType = FullType(DecimalKeyValue);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as DecimalKeyValue;
-
+_responseData = deserialize<DecimalKeyValue, DecimalKeyValue>(_response.data!, 'DecimalKeyValue', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -324,7 +308,7 @@ class KeyValueApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (key != null) r'key': encodeQueryParameter(_serializers, key, const FullType(String)),
+      if (key != null) r'key': key,
     };
 
     final _response = await _dio.request<Object>(
@@ -339,12 +323,7 @@ class KeyValueApi {
     DoubleKeyValue _responseData;
 
     try {
-      const _responseType = FullType(DoubleKeyValue);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as DoubleKeyValue;
-
+_responseData = deserialize<DoubleKeyValue, DoubleKeyValue>(_response.data!, 'DoubleKeyValue', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -408,7 +387,7 @@ class KeyValueApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (key != null) r'key': encodeQueryParameter(_serializers, key, const FullType(String)),
+      if (key != null) r'key': key,
     };
 
     final _response = await _dio.request<Object>(
@@ -423,12 +402,7 @@ class KeyValueApi {
     Int32KeyValue _responseData;
 
     try {
-      const _responseType = FullType(Int32KeyValue);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as Int32KeyValue;
-
+_responseData = deserialize<Int32KeyValue, Int32KeyValue>(_response.data!, 'Int32KeyValue', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -495,15 +469,13 @@ class KeyValueApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (key != null) r'key': encodeQueryParameter(_serializers, key, const FullType(String)),
+      if (key != null) r'key': key,
     };
 
     dynamic _bodyData;
 
     try {
-      const _type = FullType(BooleanSetKeyValueDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -574,15 +546,13 @@ class KeyValueApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (key != null) r'key': encodeQueryParameter(_serializers, key, const FullType(String)),
+      if (key != null) r'key': key,
     };
 
     dynamic _bodyData;
 
     try {
-      const _type = FullType(DateTimeSetKeyValueDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -653,15 +623,13 @@ class KeyValueApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (key != null) r'key': encodeQueryParameter(_serializers, key, const FullType(String)),
+      if (key != null) r'key': key,
     };
 
     dynamic _bodyData;
 
     try {
-      const _type = FullType(DecimalSetKeyValueDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -732,15 +700,13 @@ class KeyValueApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (key != null) r'key': encodeQueryParameter(_serializers, key, const FullType(String)),
+      if (key != null) r'key': key,
     };
 
     dynamic _bodyData;
 
     try {
-      const _type = FullType(DoubleSetKeyValueDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -811,15 +777,13 @@ class KeyValueApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (key != null) r'key': encodeQueryParameter(_serializers, key, const FullType(String)),
+      if (key != null) r'key': key,
     };
 
     dynamic _bodyData;
 
     try {
-      const _type = FullType(Int32SetKeyValueDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -890,15 +854,13 @@ class KeyValueApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (key != null) r'key': encodeQueryParameter(_serializers, key, const FullType(String)),
+      if (key != null) r'key': key,
     };
 
     dynamic _bodyData;
 
     try {
-      const _type = FullType(StringSetKeyValueDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -966,7 +928,7 @@ class KeyValueApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (key != null) r'key': encodeQueryParameter(_serializers, key, const FullType(String)),
+      if (key != null) r'key': key,
     };
 
     final _response = await _dio.request<Object>(
@@ -981,12 +943,7 @@ class KeyValueApi {
     StringKeyValue _responseData;
 
     try {
-      const _responseType = FullType(StringKeyValue);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as StringKeyValue;
-
+_responseData = deserialize<StringKeyValue, StringKeyValue>(_response.data!, 'StringKeyValue', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

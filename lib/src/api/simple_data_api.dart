@@ -4,10 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 import 'package:puupee_api_client/src/model/simple_data_dto.dart';
 import 'package:puupee_api_client/src/model/simple_data_dto_paged_result_dto.dart';
@@ -16,9 +17,7 @@ class SimpleDataApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const SimpleDataApi(this._dio, this._serializers);
+  const SimpleDataApi(this._dio);
 
   /// apiAppSimpleDataGet
   /// 
@@ -68,10 +67,10 @@ class SimpleDataApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (collection != null) r'Collection': encodeQueryParameter(_serializers, collection, const FullType(String)),
-      if (sorting != null) r'Sorting': encodeQueryParameter(_serializers, sorting, const FullType(String)),
-      if (skipCount != null) r'SkipCount': encodeQueryParameter(_serializers, skipCount, const FullType(int)),
-      if (maxResultCount != null) r'MaxResultCount': encodeQueryParameter(_serializers, maxResultCount, const FullType(int)),
+      if (collection != null) r'Collection': collection,
+      if (sorting != null) r'Sorting': sorting,
+      if (skipCount != null) r'SkipCount': skipCount,
+      if (maxResultCount != null) r'MaxResultCount': maxResultCount,
     };
 
     final _response = await _dio.request<Object>(
@@ -86,12 +85,7 @@ class SimpleDataApi {
     SimpleDataDtoPagedResultDto _responseData;
 
     try {
-      const _responseType = FullType(SimpleDataDtoPagedResultDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as SimpleDataDtoPagedResultDto;
-
+_responseData = deserialize<SimpleDataDtoPagedResultDto, SimpleDataDtoPagedResultDto>(_response.data!, 'SimpleDataDtoPagedResultDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -217,12 +211,7 @@ class SimpleDataApi {
     SimpleDataDto _responseData;
 
     try {
-      const _responseType = FullType(SimpleDataDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as SimpleDataDto;
-
+_responseData = deserialize<SimpleDataDto, SimpleDataDto>(_response.data!, 'SimpleDataDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -289,9 +278,7 @@ class SimpleDataApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(SimpleDataDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -315,12 +302,7 @@ class SimpleDataApi {
     SimpleDataDto _responseData;
 
     try {
-      const _responseType = FullType(SimpleDataDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as SimpleDataDto;
-
+_responseData = deserialize<SimpleDataDto, SimpleDataDto>(_response.data!, 'SimpleDataDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

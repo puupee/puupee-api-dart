@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for TimingDto
 void main() {
-  final instance = TimingDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final TimingDto? instance = /* TimingDto(...) */ null;
+  // TODO add properties to the entity
 
   group(TimingDto, () {
     // TimeZone timeZone

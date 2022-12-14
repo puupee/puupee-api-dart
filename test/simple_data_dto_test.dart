@@ -3,11 +3,11 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for SimpleDataDto
 void main() {
-  final instance = SimpleDataDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final SimpleDataDto? instance = /* SimpleDataDto(...) */ null;
+  // TODO add properties to the entity
 
   group(SimpleDataDto, () {
-    // BuiltMap<String, JsonObject> extraProperties
+    // Map<String, Object> extraProperties
     test('to test the property `extraProperties`', () async {
       // TODO
     });

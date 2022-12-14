@@ -4,10 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/create_or_update_puupee_dto.dart';
 import 'package:puupee_api_client/src/model/puupee_dto.dart';
 import 'package:puupee_api_client/src/model/puupee_dto_paged_result_dto.dart';
@@ -17,9 +18,7 @@ class PuupeeApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const PuupeeApi(this._dio, this._serializers);
+  const PuupeeApi(this._dio);
 
   /// apiAppPuupeePullGet
   /// 
@@ -67,9 +66,9 @@ class PuupeeApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (afterVersion != null) r'afterVersion': encodeQueryParameter(_serializers, afterVersion, const FullType(int)),
-      if (skipCount != null) r'skipCount': encodeQueryParameter(_serializers, skipCount, const FullType(int)),
-      if (maxResultCount != null) r'maxResultCount': encodeQueryParameter(_serializers, maxResultCount, const FullType(int)),
+      if (afterVersion != null) r'afterVersion': afterVersion,
+      if (skipCount != null) r'skipCount': skipCount,
+      if (maxResultCount != null) r'maxResultCount': maxResultCount,
     };
 
     final _response = await _dio.request<Object>(
@@ -84,12 +83,7 @@ class PuupeeApi {
     PuupeeDtoPagedResultDto _responseData;
 
     try {
-      const _responseType = FullType(PuupeeDtoPagedResultDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as PuupeeDtoPagedResultDto;
-
+_responseData = deserialize<PuupeeDtoPagedResultDto, PuupeeDtoPagedResultDto>(_response.data!, 'PuupeeDtoPagedResultDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -156,9 +150,7 @@ class PuupeeApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CreateOrUpdatePuupeeDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -182,12 +174,7 @@ class PuupeeApi {
     PuupeeDto _responseData;
 
     try {
-      const _responseType = FullType(PuupeeDto);
-      _responseData = _serializers.deserialize(
-        _response.data!,
-        specifiedType: _responseType,
-      ) as PuupeeDto;
-
+_responseData = deserialize<PuupeeDto, PuupeeDto>(_response.data!, 'PuupeeDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,

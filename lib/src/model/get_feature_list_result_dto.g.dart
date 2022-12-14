@@ -3,103 +3,37 @@
 part of 'get_feature_list_result_dto.dart';
 
 // **************************************************************************
-// BuiltValueGenerator
+// JsonSerializableGenerator
 // **************************************************************************
 
-class _$GetFeatureListResultDto extends GetFeatureListResultDto {
-  @override
-  final BuiltList<FeatureGroupDto>? groups;
+GetFeatureListResultDto _$GetFeatureListResultDtoFromJson(
+        Map<String, dynamic> json) =>
+    $checkedCreate(
+      'GetFeatureListResultDto',
+      json,
+      ($checkedConvert) {
+        final val = GetFeatureListResultDto(
+          groups: $checkedConvert(
+              'groups',
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) =>
+                      FeatureGroupDto.fromJson(e as Map<String, dynamic>))
+                  .toList()),
+        );
+        return val;
+      },
+    );
 
-  factory _$GetFeatureListResultDto(
-          [void Function(GetFeatureListResultDtoBuilder)? updates]) =>
-      (new GetFeatureListResultDtoBuilder()..update(updates))._build();
+Map<String, dynamic> _$GetFeatureListResultDtoToJson(
+    GetFeatureListResultDto instance) {
+  final val = <String, dynamic>{};
 
-  _$GetFeatureListResultDto._({this.groups}) : super._();
-
-  @override
-  GetFeatureListResultDto rebuild(
-          void Function(GetFeatureListResultDtoBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  GetFeatureListResultDtoBuilder toBuilder() =>
-      new GetFeatureListResultDtoBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is GetFeatureListResultDto && groups == other.groups;
-  }
-
-  @override
-  int get hashCode {
-    return $jf($jc(0, groups.hashCode));
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'GetFeatureListResultDto')
-          ..add('groups', groups))
-        .toString();
-  }
-}
-
-class GetFeatureListResultDtoBuilder
-    implements
-        Builder<GetFeatureListResultDto, GetFeatureListResultDtoBuilder> {
-  _$GetFeatureListResultDto? _$v;
-
-  ListBuilder<FeatureGroupDto>? _groups;
-  ListBuilder<FeatureGroupDto> get groups =>
-      _$this._groups ??= new ListBuilder<FeatureGroupDto>();
-  set groups(ListBuilder<FeatureGroupDto>? groups) => _$this._groups = groups;
-
-  GetFeatureListResultDtoBuilder() {
-    GetFeatureListResultDto._defaults(this);
-  }
-
-  GetFeatureListResultDtoBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _groups = $v.groups?.toBuilder();
-      _$v = null;
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
     }
-    return this;
   }
 
-  @override
-  void replace(GetFeatureListResultDto other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$GetFeatureListResultDto;
-  }
-
-  @override
-  void update(void Function(GetFeatureListResultDtoBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  GetFeatureListResultDto build() => _build();
-
-  _$GetFeatureListResultDto _build() {
-    _$GetFeatureListResultDto _$result;
-    try {
-      _$result =
-          _$v ?? new _$GetFeatureListResultDto._(groups: _groups?.build());
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'groups';
-        _groups?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'GetFeatureListResultDto', _$failedField, e.toString());
-      }
-      rethrow;
-    }
-    replace(_$result);
-    return _$result;
-  }
+  writeNotNull('groups', instance.groups?.map((e) => e.toJson()).toList());
+  return val;
 }
-
-// ignore_for_file: always_put_control_body_on_new_line,always_specify_types,annotate_overrides,avoid_annotating_with_dynamic,avoid_as,avoid_catches_without_on_clauses,avoid_returning_this,deprecated_member_use_from_same_package,lines_longer_than_80_chars,no_leading_underscores_for_local_identifiers,omit_local_variable_types,prefer_expression_function_bodies,sort_constructors_first,test_types_in_equals,unnecessary_const,unnecessary_new,unnecessary_lambdas
