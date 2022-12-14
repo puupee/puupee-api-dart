@@ -1,8 +1,8 @@
-# puupee_api.api.TenantApi
+# puupee_api_client.api.TenantApi
 
 ## Load the API package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -26,20 +26,20 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = TenantApi();
-final filter = filter_example; // String | 
-final sorting = sorting_example; // String | 
-final skipCount = 56; // int | 
-final maxResultCount = 56; // int | 
+final api = PuupeeApiClient().getTenantApi();
+final String filter = filter_example; // String | 
+final String sorting = sorting_example; // String | 
+final int skipCount = 56; // int | 
+final int maxResultCount = 56; // int | 
 
 try {
-    final result = api_instance.apiMultiTenancyTenantsGet(filter, sorting, skipCount, maxResultCount);
-    print(result);
-} catch (e) {
+    final response = api.apiMultiTenancyTenantsGet(filter, sorting, skipCount, maxResultCount);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling TenantApi->apiMultiTenancyTenantsGet: $e\n');
 }
 ```
@@ -75,16 +75,16 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = TenantApi();
-final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final api = PuupeeApiClient().getTenantApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    api_instance.apiMultiTenancyTenantsIdDefaultConnectionStringDelete(id);
-} catch (e) {
+    api.apiMultiTenancyTenantsIdDefaultConnectionStringDelete(id);
+} catch on DioError (e) {
     print('Exception when calling TenantApi->apiMultiTenancyTenantsIdDefaultConnectionStringDelete: $e\n');
 }
 ```
@@ -117,17 +117,17 @@ void (empty response body)
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = TenantApi();
-final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final api = PuupeeApiClient().getTenantApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final result = api_instance.apiMultiTenancyTenantsIdDefaultConnectionStringGet(id);
-    print(result);
-} catch (e) {
+    final response = api.apiMultiTenancyTenantsIdDefaultConnectionStringGet(id);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling TenantApi->apiMultiTenancyTenantsIdDefaultConnectionStringGet: $e\n');
 }
 ```
@@ -160,17 +160,17 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = TenantApi();
-final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final defaultConnectionString = defaultConnectionString_example; // String | 
+final api = PuupeeApiClient().getTenantApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final String defaultConnectionString = defaultConnectionString_example; // String | 
 
 try {
-    api_instance.apiMultiTenancyTenantsIdDefaultConnectionStringPut(id, defaultConnectionString);
-} catch (e) {
+    api.apiMultiTenancyTenantsIdDefaultConnectionStringPut(id, defaultConnectionString);
+} catch on DioError (e) {
     print('Exception when calling TenantApi->apiMultiTenancyTenantsIdDefaultConnectionStringPut: $e\n');
 }
 ```
@@ -204,16 +204,16 @@ void (empty response body)
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = TenantApi();
-final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final api = PuupeeApiClient().getTenantApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    api_instance.apiMultiTenancyTenantsIdDelete(id);
-} catch (e) {
+    api.apiMultiTenancyTenantsIdDelete(id);
+} catch on DioError (e) {
     print('Exception when calling TenantApi->apiMultiTenancyTenantsIdDelete: $e\n');
 }
 ```
@@ -246,17 +246,17 @@ void (empty response body)
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = TenantApi();
-final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final api = PuupeeApiClient().getTenantApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final result = api_instance.apiMultiTenancyTenantsIdGet(id);
-    print(result);
-} catch (e) {
+    final response = api.apiMultiTenancyTenantsIdGet(id);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling TenantApi->apiMultiTenancyTenantsIdGet: $e\n');
 }
 ```
@@ -289,18 +289,18 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = TenantApi();
-final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final body = TenantUpdateDto(); // TenantUpdateDto | 
+final api = PuupeeApiClient().getTenantApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final TenantUpdateDto body = ; // TenantUpdateDto | 
 
 try {
-    final result = api_instance.apiMultiTenancyTenantsIdPut(id, body);
-    print(result);
-} catch (e) {
+    final response = api.apiMultiTenancyTenantsIdPut(id, body);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling TenantApi->apiMultiTenancyTenantsIdPut: $e\n');
 }
 ```
@@ -334,17 +334,17 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = TenantApi();
-final body = TenantCreateDto(); // TenantCreateDto | 
+final api = PuupeeApiClient().getTenantApi();
+final TenantCreateDto body = ; // TenantCreateDto | 
 
 try {
-    final result = api_instance.apiMultiTenancyTenantsPost(body);
-    print(result);
-} catch (e) {
+    final response = api.apiMultiTenancyTenantsPost(body);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling TenantApi->apiMultiTenancyTenantsPost: $e\n');
 }
 ```

@@ -1,15 +1,15 @@
-# puupee_api.model.ObjectExtensionsDto
+# puupee_api_client.model.ObjectExtensionsDto
 
 ## Load the model package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**modules** | [**Map<String, ModuleExtensionDto>**](ModuleExtensionDto.md) |  | [optional] [default to const {}]
-**enums** | [**Map<String, ExtensionEnumDto>**](ExtensionEnumDto.md) |  | [optional] [default to const {}]
+**modules** | [**BuiltMap&lt;String, ModuleExtensionDto&gt;**](ModuleExtensionDto.md) |  | [optional] 
+**enums** | [**BuiltMap&lt;String, ExtensionEnumDto&gt;**](ExtensionEnumDto.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

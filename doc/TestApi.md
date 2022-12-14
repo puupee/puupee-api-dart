@@ -1,8 +1,8 @@
-# puupee_api.api.TestApi
+# puupee_api_client.api.TestApi
 
 ## Load the API package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -19,16 +19,16 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = TestApi();
+final api = PuupeeApiClient().getTestApi();
 
 try {
-    final result = api_instance.apiTestDatetimeGet();
-    print(result);
-} catch (e) {
+    final response = api.apiTestDatetimeGet();
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling TestApi->apiTestDatetimeGet: $e\n');
 }
 ```

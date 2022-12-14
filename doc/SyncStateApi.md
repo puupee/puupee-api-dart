@@ -1,8 +1,8 @@
-# puupee_api.api.SyncStateApi
+# puupee_api_client.api.SyncStateApi
 
 ## Load the API package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -20,16 +20,16 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = SyncStateApi();
+final api = PuupeeApiClient().getSyncStateApi();
 
 try {
-    final result = api_instance.apiAppSyncStateGet();
-    print(result);
-} catch (e) {
+    final response = api.apiAppSyncStateGet();
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling SyncStateApi->apiAppSyncStateGet: $e\n');
 }
 ```
@@ -59,16 +59,16 @@ This endpoint does not need any parameter.
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = SyncStateApi();
+final api = PuupeeApiClient().getSyncStateApi();
 
 try {
-    final result = api_instance.apiAppSyncStatePuupeeChangedEtoPost();
-    print(result);
-} catch (e) {
+    final response = api.apiAppSyncStatePuupeeChangedEtoPost();
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling SyncStateApi->apiAppSyncStatePuupeeChangedEtoPost: $e\n');
 }
 ```

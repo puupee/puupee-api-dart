@@ -1,14 +1,14 @@
-# puupee_api.model.UpdateFeaturesDto
+# puupee_api_client.model.UpdateFeaturesDto
 
 ## Load the model package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**features** | [**List<UpdateFeatureDto>**](UpdateFeatureDto.md) |  | [optional] [default to const []]
+**features** | [**BuiltList&lt;UpdateFeatureDto&gt;**](UpdateFeatureDto.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -1,8 +1,8 @@
-# puupee_api.model.DecimalKeyValue
+# puupee_api_client.model.DecimalKeyValue
 
 ## Load the model package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 ## Properties

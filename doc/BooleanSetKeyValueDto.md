@@ -1,8 +1,8 @@
-# puupee_api.model.BooleanSetKeyValueDto
+# puupee_api_client.model.BooleanSetKeyValueDto
 
 ## Load the model package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 ## Properties

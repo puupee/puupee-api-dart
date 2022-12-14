@@ -1,8 +1,8 @@
-# puupee_api.model.WindowsTimeZone
+# puupee_api_client.model.WindowsTimeZone
 
 ## Load the model package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 ## Properties

@@ -1,8 +1,8 @@
-# puupee_api.api.AbpApplicationLocalizationApi
+# puupee_api_client.api.AbpApplicationLocalizationApi
 
 ## Load the API package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -19,18 +19,18 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = AbpApplicationLocalizationApi();
-final cultureName = cultureName_example; // String | 
-final onlyDynamics = true; // bool | 
+final api = PuupeeApiClient().getAbpApplicationLocalizationApi();
+final String cultureName = cultureName_example; // String | 
+final bool onlyDynamics = true; // bool | 
 
 try {
-    final result = api_instance.apiAbpApplicationLocalizationGet(cultureName, onlyDynamics);
-    print(result);
-} catch (e) {
+    final response = api.apiAbpApplicationLocalizationGet(cultureName, onlyDynamics);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling AbpApplicationLocalizationApi->apiAbpApplicationLocalizationGet: $e\n');
 }
 ```

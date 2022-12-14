@@ -1,21 +1,12 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.12
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:puupee_api/api.dart';
 import 'package:test/test.dart';
+import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for RemoteServiceErrorInfo
 void main() {
-  // final instance = RemoteServiceErrorInfo();
+  final instance = RemoteServiceErrorInfoBuilder();
+  // TODO add properties to the builder and call build()
 
-  group('test RemoteServiceErrorInfo', () {
+  group(RemoteServiceErrorInfo, () {
     // String code
     test('to test the property `code`', () async {
       // TODO
@@ -31,17 +22,15 @@ void main() {
       // TODO
     });
 
-    // Map<String, Object> data (default value: const {})
+    // BuiltMap<String, JsonObject> data
     test('to test the property `data`', () async {
       // TODO
     });
 
-    // List<RemoteServiceValidationErrorInfo> validationErrors (default value: const [])
+    // BuiltList<RemoteServiceValidationErrorInfo> validationErrors
     test('to test the property `validationErrors`', () async {
       // TODO
     });
 
-
   });
-
 }

@@ -1,22 +1,12 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.12
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:puupee_api/api.dart';
 import 'package:test/test.dart';
+import 'package:puupee_api_client/puupee_api_client.dart';
 
 
 /// tests for KeyValueApi
 void main() {
-  // final instance = KeyValueApi();
+  final instance = PuupeeApiClient().getKeyValueApi();
 
-  group('tests for KeyValueApi', () {
+  group(KeyValueApi, () {
     //Future<BooleanKeyValue> apiAppKeyValueBoolGet({ String key }) async
     test('test apiAppKeyValueBoolGet', () async {
       // TODO

@@ -1,8 +1,8 @@
-# puupee_api.api.AppFeatureApi
+# puupee_api_client.api.AppFeatureApi
 
 ## Load the API package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -16,22 +16,22 @@ Method | HTTP request | Description
 
 
 # **apiAppAppFeatureGet**
-> List<AppFeatureDto> apiAppAppFeatureGet()
+> BuiltList<AppFeatureDto> apiAppAppFeatureGet()
 
 
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = AppFeatureApi();
+final api = PuupeeApiClient().getAppFeatureApi();
 
 try {
-    final result = api_instance.apiAppAppFeatureGet();
-    print(result);
-} catch (e) {
+    final response = api.apiAppAppFeatureGet();
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling AppFeatureApi->apiAppAppFeatureGet: $e\n');
 }
 ```
@@ -41,7 +41,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List<AppFeatureDto>**](AppFeatureDto.md)
+[**BuiltList&lt;AppFeatureDto&gt;**](AppFeatureDto.md)
 
 ### Authorization
 
@@ -61,16 +61,16 @@ This endpoint does not need any parameter.
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = AppFeatureApi();
-final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final api = PuupeeApiClient().getAppFeatureApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    api_instance.apiAppAppFeatureIdDelete(id);
-} catch (e) {
+    api.apiAppAppFeatureIdDelete(id);
+} catch on DioError (e) {
     print('Exception when calling AppFeatureApi->apiAppAppFeatureIdDelete: $e\n');
 }
 ```
@@ -103,18 +103,18 @@ void (empty response body)
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = AppFeatureApi();
-final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final body = CreateOrUpdateAppFeatureDto(); // CreateOrUpdateAppFeatureDto | 
+final api = PuupeeApiClient().getAppFeatureApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final CreateOrUpdateAppFeatureDto body = ; // CreateOrUpdateAppFeatureDto | 
 
 try {
-    final result = api_instance.apiAppAppFeatureIdPut(id, body);
-    print(result);
-} catch (e) {
+    final response = api.apiAppAppFeatureIdPut(id, body);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling AppFeatureApi->apiAppAppFeatureIdPut: $e\n');
 }
 ```
@@ -148,17 +148,17 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = AppFeatureApi();
-final body = CreateOrUpdateAppFeatureDto(); // CreateOrUpdateAppFeatureDto | 
+final api = PuupeeApiClient().getAppFeatureApi();
+final CreateOrUpdateAppFeatureDto body = ; // CreateOrUpdateAppFeatureDto | 
 
 try {
-    final result = api_instance.apiAppAppFeaturePost(body);
-    print(result);
-} catch (e) {
+    final response = api.apiAppAppFeaturePost(body);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling AppFeatureApi->apiAppAppFeaturePost: $e\n');
 }
 ```

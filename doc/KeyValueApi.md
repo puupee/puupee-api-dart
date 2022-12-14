@@ -1,8 +1,8 @@
-# puupee_api.api.KeyValueApi
+# puupee_api_client.api.KeyValueApi
 
 ## Load the API package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -30,17 +30,17 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = KeyValueApi();
-final key = key_example; // String | 
+final api = PuupeeApiClient().getKeyValueApi();
+final String key = key_example; // String | 
 
 try {
-    final result = api_instance.apiAppKeyValueBoolGet(key);
-    print(result);
-} catch (e) {
+    final response = api.apiAppKeyValueBoolGet(key);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueBoolGet: $e\n');
 }
 ```
@@ -73,17 +73,17 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = KeyValueApi();
-final key = key_example; // String | 
+final api = PuupeeApiClient().getKeyValueApi();
+final String key = key_example; // String | 
 
 try {
-    final result = api_instance.apiAppKeyValueDateTimeGet(key);
-    print(result);
-} catch (e) {
+    final response = api.apiAppKeyValueDateTimeGet(key);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueDateTimeGet: $e\n');
 }
 ```
@@ -116,17 +116,17 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = KeyValueApi();
-final key = key_example; // String | 
+final api = PuupeeApiClient().getKeyValueApi();
+final String key = key_example; // String | 
 
 try {
-    final result = api_instance.apiAppKeyValueDecimalGet(key);
-    print(result);
-} catch (e) {
+    final response = api.apiAppKeyValueDecimalGet(key);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueDecimalGet: $e\n');
 }
 ```
@@ -159,17 +159,17 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = KeyValueApi();
-final key = key_example; // String | 
+final api = PuupeeApiClient().getKeyValueApi();
+final String key = key_example; // String | 
 
 try {
-    final result = api_instance.apiAppKeyValueDoubleGet(key);
-    print(result);
-} catch (e) {
+    final response = api.apiAppKeyValueDoubleGet(key);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueDoubleGet: $e\n');
 }
 ```
@@ -202,17 +202,17 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = KeyValueApi();
-final key = key_example; // String | 
+final api = PuupeeApiClient().getKeyValueApi();
+final String key = key_example; // String | 
 
 try {
-    final result = api_instance.apiAppKeyValueIntGet(key);
-    print(result);
-} catch (e) {
+    final response = api.apiAppKeyValueIntGet(key);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueIntGet: $e\n');
 }
 ```
@@ -245,17 +245,17 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = KeyValueApi();
-final key = key_example; // String | 
-final body = BooleanSetKeyValueDto(); // BooleanSetKeyValueDto | 
+final api = PuupeeApiClient().getKeyValueApi();
+final String key = key_example; // String | 
+final BooleanSetKeyValueDto body = ; // BooleanSetKeyValueDto | 
 
 try {
-    api_instance.apiAppKeyValueSetBoolPost(key, body);
-} catch (e) {
+    api.apiAppKeyValueSetBoolPost(key, body);
+} catch on DioError (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueSetBoolPost: $e\n');
 }
 ```
@@ -289,17 +289,17 @@ void (empty response body)
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = KeyValueApi();
-final key = key_example; // String | 
-final body = DateTimeSetKeyValueDto(); // DateTimeSetKeyValueDto | 
+final api = PuupeeApiClient().getKeyValueApi();
+final String key = key_example; // String | 
+final DateTimeSetKeyValueDto body = ; // DateTimeSetKeyValueDto | 
 
 try {
-    api_instance.apiAppKeyValueSetDateTimePost(key, body);
-} catch (e) {
+    api.apiAppKeyValueSetDateTimePost(key, body);
+} catch on DioError (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueSetDateTimePost: $e\n');
 }
 ```
@@ -333,17 +333,17 @@ void (empty response body)
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = KeyValueApi();
-final key = key_example; // String | 
-final body = DecimalSetKeyValueDto(); // DecimalSetKeyValueDto | 
+final api = PuupeeApiClient().getKeyValueApi();
+final String key = key_example; // String | 
+final DecimalSetKeyValueDto body = ; // DecimalSetKeyValueDto | 
 
 try {
-    api_instance.apiAppKeyValueSetDecimalPost(key, body);
-} catch (e) {
+    api.apiAppKeyValueSetDecimalPost(key, body);
+} catch on DioError (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueSetDecimalPost: $e\n');
 }
 ```
@@ -377,17 +377,17 @@ void (empty response body)
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = KeyValueApi();
-final key = key_example; // String | 
-final body = DoubleSetKeyValueDto(); // DoubleSetKeyValueDto | 
+final api = PuupeeApiClient().getKeyValueApi();
+final String key = key_example; // String | 
+final DoubleSetKeyValueDto body = ; // DoubleSetKeyValueDto | 
 
 try {
-    api_instance.apiAppKeyValueSetDoublePost(key, body);
-} catch (e) {
+    api.apiAppKeyValueSetDoublePost(key, body);
+} catch on DioError (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueSetDoublePost: $e\n');
 }
 ```
@@ -421,17 +421,17 @@ void (empty response body)
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = KeyValueApi();
-final key = key_example; // String | 
-final body = Int32SetKeyValueDto(); // Int32SetKeyValueDto | 
+final api = PuupeeApiClient().getKeyValueApi();
+final String key = key_example; // String | 
+final Int32SetKeyValueDto body = ; // Int32SetKeyValueDto | 
 
 try {
-    api_instance.apiAppKeyValueSetIntPost(key, body);
-} catch (e) {
+    api.apiAppKeyValueSetIntPost(key, body);
+} catch on DioError (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueSetIntPost: $e\n');
 }
 ```
@@ -465,17 +465,17 @@ void (empty response body)
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = KeyValueApi();
-final key = key_example; // String | 
-final body = StringSetKeyValueDto(); // StringSetKeyValueDto | 
+final api = PuupeeApiClient().getKeyValueApi();
+final String key = key_example; // String | 
+final StringSetKeyValueDto body = ; // StringSetKeyValueDto | 
 
 try {
-    api_instance.apiAppKeyValueSetStringPost(key, body);
-} catch (e) {
+    api.apiAppKeyValueSetStringPost(key, body);
+} catch on DioError (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueSetStringPost: $e\n');
 }
 ```
@@ -509,17 +509,17 @@ void (empty response body)
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = KeyValueApi();
-final key = key_example; // String | 
+final api = PuupeeApiClient().getKeyValueApi();
+final String key = key_example; // String | 
 
 try {
-    final result = api_instance.apiAppKeyValueStringGet(key);
-    print(result);
-} catch (e) {
+    final response = api.apiAppKeyValueStringGet(key);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueStringGet: $e\n');
 }
 ```

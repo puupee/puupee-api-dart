@@ -1,8 +1,8 @@
-# puupee_api.model.CreateOrUpdateAppUserScoreDto
+# puupee_api_client.model.CreateOrUpdateAppUserScoreDto
 
 ## Load the model package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 ## Properties

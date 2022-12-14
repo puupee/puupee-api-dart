@@ -1,8 +1,8 @@
-# puupee_api.model.ControllerInterfaceApiDescriptionModel
+# puupee_api_client.model.ControllerInterfaceApiDescriptionModel
 
 ## Load the model package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 ## Properties
@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
-**methods** | [**List<InterfaceMethodApiDescriptionModel>**](InterfaceMethodApiDescriptionModel.md) |  | [optional] [default to const []]
+**methods** | [**BuiltList&lt;InterfaceMethodApiDescriptionModel&gt;**](InterfaceMethodApiDescriptionModel.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

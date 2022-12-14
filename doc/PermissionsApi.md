@@ -1,8 +1,8 @@
-# puupee_api.api.PermissionsApi
+# puupee_api_client.api.PermissionsApi
 
 ## Load the API package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -20,18 +20,18 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = PermissionsApi();
-final providerName = providerName_example; // String | 
-final providerKey = providerKey_example; // String | 
+final api = PuupeeApiClient().getPermissionsApi();
+final String providerName = providerName_example; // String | 
+final String providerKey = providerKey_example; // String | 
 
 try {
-    final result = api_instance.apiPermissionManagementPermissionsGet(providerName, providerKey);
-    print(result);
-} catch (e) {
+    final response = api.apiPermissionManagementPermissionsGet(providerName, providerKey);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling PermissionsApi->apiPermissionManagementPermissionsGet: $e\n');
 }
 ```
@@ -65,18 +65,18 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = PermissionsApi();
-final providerName = providerName_example; // String | 
-final providerKey = providerKey_example; // String | 
-final body = UpdatePermissionsDto(); // UpdatePermissionsDto | 
+final api = PuupeeApiClient().getPermissionsApi();
+final String providerName = providerName_example; // String | 
+final String providerKey = providerKey_example; // String | 
+final UpdatePermissionsDto body = ; // UpdatePermissionsDto | 
 
 try {
-    api_instance.apiPermissionManagementPermissionsPut(providerName, providerKey, body);
-} catch (e) {
+    api.apiPermissionManagementPermissionsPut(providerName, providerKey, body);
+} catch on DioError (e) {
     print('Exception when calling PermissionsApi->apiPermissionManagementPermissionsPut: $e\n');
 }
 ```

@@ -1,21 +1,12 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.12
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:puupee_api/api.dart';
 import 'package:test/test.dart';
+import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for PermissionGroupDto
 void main() {
-  // final instance = PermissionGroupDto();
+  final instance = PermissionGroupDtoBuilder();
+  // TODO add properties to the builder and call build()
 
-  group('test PermissionGroupDto', () {
+  group(PermissionGroupDto, () {
     // String name
     test('to test the property `name`', () async {
       // TODO
@@ -36,12 +27,10 @@ void main() {
       // TODO
     });
 
-    // List<PermissionGrantInfoDto> permissions (default value: const [])
+    // BuiltList<PermissionGrantInfoDto> permissions
     test('to test the property `permissions`', () async {
       // TODO
     });
 
-
   });
-
 }

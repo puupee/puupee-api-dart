@@ -1,8 +1,8 @@
-# puupee_api.model.ActionApiDescriptionModel
+# puupee_api_client.model.ActionApiDescriptionModel
 
 ## Load the model package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 ## Properties
@@ -12,9 +12,9 @@ Name | Type | Description | Notes
 **name** | **String** |  | [optional] 
 **httpMethod** | **String** |  | [optional] 
 **url** | **String** |  | [optional] 
-**supportedVersions** | **List<String>** |  | [optional] [default to const []]
-**parametersOnMethod** | [**List<MethodParameterApiDescriptionModel>**](MethodParameterApiDescriptionModel.md) |  | [optional] [default to const []]
-**parameters** | [**List<ParameterApiDescriptionModel>**](ParameterApiDescriptionModel.md) |  | [optional] [default to const []]
+**supportedVersions** | **BuiltList&lt;String&gt;** |  | [optional] 
+**parametersOnMethod** | [**BuiltList&lt;MethodParameterApiDescriptionModel&gt;**](MethodParameterApiDescriptionModel.md) |  | [optional] 
+**parameters** | [**BuiltList&lt;ParameterApiDescriptionModel&gt;**](ParameterApiDescriptionModel.md) |  | [optional] 
 **returnValue** | [**ReturnValueApiDescriptionModel**](ReturnValueApiDescriptionModel.md) |  | [optional] 
 **allowAnonymous** | **bool** |  | [optional] 
 **implementFrom** | **String** |  | [optional] 

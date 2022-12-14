@@ -1,8 +1,8 @@
-# puupee_api.api.SimpleDataApi
+# puupee_api_client.api.SimpleDataApi
 
 ## Load the API package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -22,20 +22,20 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = SimpleDataApi();
-final collection = collection_example; // String | 
-final sorting = sorting_example; // String | 
-final skipCount = 56; // int | 
-final maxResultCount = 56; // int | 
+final api = PuupeeApiClient().getSimpleDataApi();
+final String collection = collection_example; // String | 
+final String sorting = sorting_example; // String | 
+final int skipCount = 56; // int | 
+final int maxResultCount = 56; // int | 
 
 try {
-    final result = api_instance.apiAppSimpleDataGet(collection, sorting, skipCount, maxResultCount);
-    print(result);
-} catch (e) {
+    final response = api.apiAppSimpleDataGet(collection, sorting, skipCount, maxResultCount);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling SimpleDataApi->apiAppSimpleDataGet: $e\n');
 }
 ```
@@ -71,16 +71,16 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = SimpleDataApi();
-final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final api = PuupeeApiClient().getSimpleDataApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    api_instance.apiAppSimpleDataIdDelete(id);
-} catch (e) {
+    api.apiAppSimpleDataIdDelete(id);
+} catch on DioError (e) {
     print('Exception when calling SimpleDataApi->apiAppSimpleDataIdDelete: $e\n');
 }
 ```
@@ -113,17 +113,17 @@ void (empty response body)
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = SimpleDataApi();
-final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final api = PuupeeApiClient().getSimpleDataApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final result = api_instance.apiAppSimpleDataIdGet(id);
-    print(result);
-} catch (e) {
+    final response = api.apiAppSimpleDataIdGet(id);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling SimpleDataApi->apiAppSimpleDataIdGet: $e\n');
 }
 ```
@@ -156,17 +156,17 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = SimpleDataApi();
-final body = SimpleDataDto(); // SimpleDataDto | 
+final api = PuupeeApiClient().getSimpleDataApi();
+final SimpleDataDto body = ; // SimpleDataDto | 
 
 try {
-    final result = api_instance.apiAppSimpleDataSavePost(body);
-    print(result);
-} catch (e) {
+    final response = api.apiAppSimpleDataSavePost(body);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling SimpleDataApi->apiAppSimpleDataSavePost: $e\n');
 }
 ```

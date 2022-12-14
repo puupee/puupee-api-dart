@@ -1,8 +1,8 @@
-# puupee_api.api.AccountApi
+# puupee_api_client.api.AccountApi
 
 ## Load the API package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -22,17 +22,17 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = AccountApi();
-final body = RegisterDto(); // RegisterDto | 
+final api = PuupeeApiClient().getAccountApi();
+final RegisterDto body = ; // RegisterDto | 
 
 try {
-    final result = api_instance.apiAccountRegisterPost(body);
-    print(result);
-} catch (e) {
+    final response = api.apiAccountRegisterPost(body);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling AccountApi->apiAccountRegisterPost: $e\n');
 }
 ```
@@ -65,16 +65,16 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = AccountApi();
-final body = ResetPasswordDto(); // ResetPasswordDto | 
+final api = PuupeeApiClient().getAccountApi();
+final ResetPasswordDto body = ; // ResetPasswordDto | 
 
 try {
-    api_instance.apiAccountResetPasswordPost(body);
-} catch (e) {
+    api.apiAccountResetPasswordPost(body);
+} catch on DioError (e) {
     print('Exception when calling AccountApi->apiAccountResetPasswordPost: $e\n');
 }
 ```
@@ -107,16 +107,16 @@ void (empty response body)
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = AccountApi();
-final body = SendPasswordResetCodeDto(); // SendPasswordResetCodeDto | 
+final api = PuupeeApiClient().getAccountApi();
+final SendPasswordResetCodeDto body = ; // SendPasswordResetCodeDto | 
 
 try {
-    api_instance.apiAccountSendPasswordResetCodePost(body);
-} catch (e) {
+    api.apiAccountSendPasswordResetCodePost(body);
+} catch on DioError (e) {
     print('Exception when calling AccountApi->apiAccountSendPasswordResetCodePost: $e\n');
 }
 ```
@@ -149,17 +149,17 @@ void (empty response body)
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = AccountApi();
-final body = VerifyPasswordResetTokenInput(); // VerifyPasswordResetTokenInput | 
+final api = PuupeeApiClient().getAccountApi();
+final VerifyPasswordResetTokenInput body = ; // VerifyPasswordResetTokenInput | 
 
 try {
-    final result = api_instance.apiAccountVerifyPasswordResetTokenPost(body);
-    print(result);
-} catch (e) {
+    final response = api.apiAccountVerifyPasswordResetTokenPost(body);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling AccountApi->apiAccountVerifyPasswordResetTokenPost: $e\n');
 }
 ```

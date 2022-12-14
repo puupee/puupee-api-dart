@@ -1,8 +1,8 @@
-# puupee_api.api.LoginApi
+# puupee_api_client.api.LoginApi
 
 ## Load the API package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -21,17 +21,17 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = LoginApi();
-final body = UserLoginInfo(); // UserLoginInfo | 
+final api = PuupeeApiClient().getLoginApi();
+final UserLoginInfo body = ; // UserLoginInfo | 
 
 try {
-    final result = api_instance.apiAccountCheckPasswordPost(body);
-    print(result);
-} catch (e) {
+    final response = api.apiAccountCheckPasswordPost(body);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling LoginApi->apiAccountCheckPasswordPost: $e\n');
 }
 ```
@@ -64,17 +64,17 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = LoginApi();
-final body = UserLoginInfo(); // UserLoginInfo | 
+final api = PuupeeApiClient().getLoginApi();
+final UserLoginInfo body = ; // UserLoginInfo | 
 
 try {
-    final result = api_instance.apiAccountLoginPost(body);
-    print(result);
-} catch (e) {
+    final response = api.apiAccountLoginPost(body);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling LoginApi->apiAccountLoginPost: $e\n');
 }
 ```
@@ -107,15 +107,15 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = LoginApi();
+final api = PuupeeApiClient().getLoginApi();
 
 try {
-    api_instance.apiAccountLogoutGet();
-} catch (e) {
+    api.apiAccountLogoutGet();
+} catch on DioError (e) {
     print('Exception when calling LoginApi->apiAccountLogoutGet: $e\n');
 }
 ```

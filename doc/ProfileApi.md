@@ -1,8 +1,8 @@
-# puupee_api.api.ProfileApi
+# puupee_api_client.api.ProfileApi
 
 ## Load the API package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -21,16 +21,16 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = ProfileApi();
-final body = ChangePasswordInput(); // ChangePasswordInput | 
+final api = PuupeeApiClient().getProfileApi();
+final ChangePasswordInput body = ; // ChangePasswordInput | 
 
 try {
-    api_instance.apiAccountMyProfileChangePasswordPost(body);
-} catch (e) {
+    api.apiAccountMyProfileChangePasswordPost(body);
+} catch on DioError (e) {
     print('Exception when calling ProfileApi->apiAccountMyProfileChangePasswordPost: $e\n');
 }
 ```
@@ -63,16 +63,16 @@ void (empty response body)
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = ProfileApi();
+final api = PuupeeApiClient().getProfileApi();
 
 try {
-    final result = api_instance.apiAccountMyProfileGet();
-    print(result);
-} catch (e) {
+    final response = api.apiAccountMyProfileGet();
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling ProfileApi->apiAccountMyProfileGet: $e\n');
 }
 ```
@@ -102,17 +102,17 @@ This endpoint does not need any parameter.
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = ProfileApi();
-final body = UpdateProfileDto(); // UpdateProfileDto | 
+final api = PuupeeApiClient().getProfileApi();
+final UpdateProfileDto body = ; // UpdateProfileDto | 
 
 try {
-    final result = api_instance.apiAccountMyProfilePut(body);
-    print(result);
-} catch (e) {
+    final response = api.apiAccountMyProfilePut(body);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling ProfileApi->apiAccountMyProfilePut: $e\n');
 }
 ```

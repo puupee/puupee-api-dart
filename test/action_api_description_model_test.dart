@@ -1,21 +1,12 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.12
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:puupee_api/api.dart';
 import 'package:test/test.dart';
+import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for ActionApiDescriptionModel
 void main() {
-  // final instance = ActionApiDescriptionModel();
+  final instance = ActionApiDescriptionModelBuilder();
+  // TODO add properties to the builder and call build()
 
-  group('test ActionApiDescriptionModel', () {
+  group(ActionApiDescriptionModel, () {
     // String uniqueName
     test('to test the property `uniqueName`', () async {
       // TODO
@@ -36,17 +27,17 @@ void main() {
       // TODO
     });
 
-    // List<String> supportedVersions (default value: const [])
+    // BuiltList<String> supportedVersions
     test('to test the property `supportedVersions`', () async {
       // TODO
     });
 
-    // List<MethodParameterApiDescriptionModel> parametersOnMethod (default value: const [])
+    // BuiltList<MethodParameterApiDescriptionModel> parametersOnMethod
     test('to test the property `parametersOnMethod`', () async {
       // TODO
     });
 
-    // List<ParameterApiDescriptionModel> parameters (default value: const [])
+    // BuiltList<ParameterApiDescriptionModel> parameters
     test('to test the property `parameters`', () async {
       // TODO
     });
@@ -66,7 +57,5 @@ void main() {
       // TODO
     });
 
-
   });
-
 }

@@ -1,8 +1,8 @@
-# puupee_api.api.SettingsApi
+# puupee_api_client.api.SettingsApi
 
 ## Load the API package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -20,16 +20,16 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = SettingsApi();
+final api = PuupeeApiClient().getSettingsApi();
 
 try {
-    final result = api_instance.apiAppSettingsGet();
-    print(result);
-} catch (e) {
+    final response = api.apiAppSettingsGet();
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling SettingsApi->apiAppSettingsGet: $e\n');
 }
 ```
@@ -59,16 +59,16 @@ This endpoint does not need any parameter.
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = SettingsApi();
-final body = SettingsDto(); // SettingsDto | 
+final api = PuupeeApiClient().getSettingsApi();
+final SettingsDto body = ; // SettingsDto | 
 
 try {
-    api_instance.apiAppSettingsSetPost(body);
-} catch (e) {
+    api.apiAppSettingsSetPost(body);
+} catch on DioError (e) {
     print('Exception when calling SettingsApi->apiAppSettingsSetPost: $e\n');
 }
 ```

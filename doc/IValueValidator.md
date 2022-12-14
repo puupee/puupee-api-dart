@@ -1,15 +1,15 @@
-# puupee_api.model.IValueValidator
+# puupee_api_client.model.IValueValidator
 
 ## Load the model package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** |  | [optional] [readonly] 
-**properties** | [**Map<String, Object>**](Object.md) |  | [optional] [readonly] [default to const {}]
+**name** | **String** |  | [optional] 
+**properties** | [**BuiltMap&lt;String, JsonObject&gt;**](JsonObject.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

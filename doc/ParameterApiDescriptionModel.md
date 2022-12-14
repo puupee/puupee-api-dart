@@ -1,8 +1,8 @@
-# puupee_api.model.ParameterApiDescriptionModel
+# puupee_api_client.model.ParameterApiDescriptionModel
 
 ## Load the model package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 ## Properties
@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **type** | **String** |  | [optional] 
 **typeSimple** | **String** |  | [optional] 
 **isOptional** | **bool** |  | [optional] 
-**defaultValue** | [**Object**](.md) |  | [optional] 
-**constraintTypes** | **List<String>** |  | [optional] [default to const []]
+**defaultValue** | [**JsonObject**](.md) |  | [optional] 
+**constraintTypes** | **BuiltList&lt;String&gt;** |  | [optional] 
 **bindingSourceId** | **String** |  | [optional] 
 **descriptorName** | **String** |  | [optional] 
 

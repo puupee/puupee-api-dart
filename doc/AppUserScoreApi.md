@@ -1,8 +1,8 @@
-# puupee_api.api.AppUserScoreApi
+# puupee_api_client.api.AppUserScoreApi
 
 ## Load the API package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -19,17 +19,17 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = AppUserScoreApi();
-final body = CreateOrUpdateAppUserScoreDto(); // CreateOrUpdateAppUserScoreDto | 
+final api = PuupeeApiClient().getAppUserScoreApi();
+final CreateOrUpdateAppUserScoreDto body = ; // CreateOrUpdateAppUserScoreDto | 
 
 try {
-    final result = api_instance.apiAppAppUserScorePost(body);
-    print(result);
-} catch (e) {
+    final response = api.apiAppAppUserScorePost(body);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling AppUserScoreApi->apiAppAppUserScorePost: $e\n');
 }
 ```

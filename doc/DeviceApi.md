@@ -1,8 +1,8 @@
-# puupee_api.api.DeviceApi
+# puupee_api_client.api.DeviceApi
 
 ## Load the API package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -22,16 +22,16 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = DeviceApi();
-final body = BindDeviceDto(); // BindDeviceDto | 
+final api = PuupeeApiClient().getDeviceApi();
+final BindDeviceDto body = ; // BindDeviceDto | 
 
 try {
-    api_instance.apiAppDeviceBindPost(body);
-} catch (e) {
+    api.apiAppDeviceBindPost(body);
+} catch on DioError (e) {
     print('Exception when calling DeviceApi->apiAppDeviceBindPost: $e\n');
 }
 ```
@@ -64,16 +64,16 @@ void (empty response body)
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = DeviceApi();
-final token = token_example; // String | 
+final api = PuupeeApiClient().getDeviceApi();
+final String token = token_example; // String | 
 
 try {
-    api_instance.apiAppDeviceDelete(token);
-} catch (e) {
+    api.apiAppDeviceDelete(token);
+} catch on DioError (e) {
     print('Exception when calling DeviceApi->apiAppDeviceDelete: $e\n');
 }
 ```
@@ -106,19 +106,19 @@ void (empty response body)
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = DeviceApi();
-final sorting = sorting_example; // String | 
-final skipCount = 56; // int | 
-final maxResultCount = 56; // int | 
+final api = PuupeeApiClient().getDeviceApi();
+final String sorting = sorting_example; // String | 
+final int skipCount = 56; // int | 
+final int maxResultCount = 56; // int | 
 
 try {
-    final result = api_instance.apiAppDeviceGet(sorting, skipCount, maxResultCount);
-    print(result);
-} catch (e) {
+    final response = api.apiAppDeviceGet(sorting, skipCount, maxResultCount);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling DeviceApi->apiAppDeviceGet: $e\n');
 }
 ```
@@ -153,16 +153,16 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = DeviceApi();
-final body = RefreshDeviceStatusDto(); // RefreshDeviceStatusDto | 
+final api = PuupeeApiClient().getDeviceApi();
+final RefreshDeviceStatusDto body = ; // RefreshDeviceStatusDto | 
 
 try {
-    api_instance.apiAppDeviceRefreshPost(body);
-} catch (e) {
+    api.apiAppDeviceRefreshPost(body);
+} catch on DioError (e) {
     print('Exception when calling DeviceApi->apiAppDeviceRefreshPost: $e\n');
 }
 ```

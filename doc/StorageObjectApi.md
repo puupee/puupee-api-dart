@@ -1,8 +1,8 @@
-# puupee_api.api.StorageObjectApi
+# puupee_api_client.api.StorageObjectApi
 
 ## Load the API package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -22,16 +22,16 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = StorageObjectApi();
-final key = key_example; // String | 
+final api = PuupeeApiClient().getStorageObjectApi();
+final String key = key_example; // String | 
 
 try {
-    api_instance.apiAppStorageObjectFileGet(key);
-} catch (e) {
+    api.apiAppStorageObjectFileGet(key);
+} catch on DioError (e) {
     print('Exception when calling StorageObjectApi->apiAppStorageObjectFileGet: $e\n');
 }
 ```
@@ -64,18 +64,18 @@ void (empty response body)
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = StorageObjectApi();
-final rapidCode = rapidCode_example; // String | 
-final key = key_example; // String | 
+final api = PuupeeApiClient().getStorageObjectApi();
+final String rapidCode = rapidCode_example; // String | 
+final String key = key_example; // String | 
 
 try {
-    final result = api_instance.apiAppStorageObjectFileOrCredentialsGet(rapidCode, key);
-    print(result);
-} catch (e) {
+    final response = api.apiAppStorageObjectFileOrCredentialsGet(rapidCode, key);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling StorageObjectApi->apiAppStorageObjectFileOrCredentialsGet: $e\n');
 }
 ```
@@ -109,17 +109,17 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = StorageObjectApi();
-final key = key_example; // String | 
+final api = PuupeeApiClient().getStorageObjectApi();
+final String key = key_example; // String | 
 
 try {
-    final result = api_instance.apiAppStorageObjectPreSignUrlPost(key);
-    print(result);
-} catch (e) {
+    final response = api.apiAppStorageObjectPreSignUrlPost(key);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling StorageObjectApi->apiAppStorageObjectPreSignUrlPost: $e\n');
 }
 ```
@@ -152,16 +152,16 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = StorageObjectApi();
-final key = key_example; // String | 
+final api = PuupeeApiClient().getStorageObjectApi();
+final String key = key_example; // String | 
 
 try {
-    api_instance.apiAppStorageObjectThumbGet(key);
-} catch (e) {
+    api.apiAppStorageObjectThumbGet(key);
+} catch on DioError (e) {
     print('Exception when calling StorageObjectApi->apiAppStorageObjectThumbGet: $e\n');
 }
 ```

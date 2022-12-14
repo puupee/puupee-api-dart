@@ -1,21 +1,12 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.12
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:puupee_api/api.dart';
 import 'package:test/test.dart';
+import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for CreateOrUpdateAppDto
 void main() {
-  // final instance = CreateOrUpdateAppDto();
+  final instance = CreateOrUpdateAppDtoBuilder();
+  // TODO add properties to the builder and call build()
 
-  group('test CreateOrUpdateAppDto', () {
+  group(CreateOrUpdateAppDto, () {
     // String name
     test('to test the property `name`', () async {
       // TODO
@@ -56,17 +47,15 @@ void main() {
       // TODO
     });
 
-    // List<AppFeatureDto> features (default value: const [])
+    // BuiltList<AppFeatureDto> features
     test('to test the property `features`', () async {
       // TODO
     });
 
-    // List<AppSdkDto> sdks (default value: const [])
+    // BuiltList<AppSdkDto> sdks
     test('to test the property `sdks`', () async {
       // TODO
     });
 
-
   });
-
 }

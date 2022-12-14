@@ -1,8 +1,8 @@
-# puupee_api.model.AppDto
+# puupee_api_client.model.AppDto
 
 ## Load the model package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 ## Properties
@@ -24,10 +24,10 @@ Name | Type | Description | Notes
 **icon** | **String** |  | [optional] 
 **gitRepository** | **String** |  | [optional] 
 **gitRepositoryType** | **String** |  | [optional] 
-**latestReleases** | [**List<AppReleaseDto>**](AppReleaseDto.md) |  | [optional] [default to const []]
+**latestReleases** | [**BuiltList&lt;AppReleaseDto&gt;**](AppReleaseDto.md) |  | [optional] 
 **creator** | [**IdentityUserDto**](IdentityUserDto.md) |  | [optional] 
-**features** | [**List<AppFeatureDto>**](AppFeatureDto.md) |  | [optional] [default to const []]
-**sdks** | [**List<AppSdkDto>**](AppSdkDto.md) |  | [optional] [default to const []]
+**features** | [**BuiltList&lt;AppFeatureDto&gt;**](AppFeatureDto.md) |  | [optional] 
+**sdks** | [**BuiltList&lt;AppSdkDto&gt;**](AppSdkDto.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

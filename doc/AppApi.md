@@ -1,8 +1,8 @@
-# puupee_api.api.AppApi
+# puupee_api_client.api.AppApi
 
 ## Load the API package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -26,17 +26,17 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = AppApi();
-final developerAccount = developerAccount_example; // String | 
+final api = PuupeeApiClient().getAppApi();
+final String developerAccount = developerAccount_example; // String | 
 
 try {
-    final result = api_instance.apiAppAppByDeveloperGet(developerAccount);
-    print(result);
-} catch (e) {
+    final response = api.apiAppAppByDeveloperGet(developerAccount);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling AppApi->apiAppAppByDeveloperGet: $e\n');
 }
 ```
@@ -69,17 +69,17 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = AppApi();
-final name = name_example; // String | 
+final api = PuupeeApiClient().getAppApi();
+final String name = name_example; // String | 
 
 try {
-    final result = api_instance.apiAppAppByNameGet(name);
-    print(result);
-} catch (e) {
+    final response = api.apiAppAppByNameGet(name);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling AppApi->apiAppAppByNameGet: $e\n');
 }
 ```
@@ -112,20 +112,20 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = AppApi();
-final creatorId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final sorting = sorting_example; // String | 
-final skipCount = 56; // int | 
-final maxResultCount = 56; // int | 
+final api = PuupeeApiClient().getAppApi();
+final String creatorId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final String sorting = sorting_example; // String | 
+final int skipCount = 56; // int | 
+final int maxResultCount = 56; // int | 
 
 try {
-    final result = api_instance.apiAppAppGet(creatorId, sorting, skipCount, maxResultCount);
-    print(result);
-} catch (e) {
+    final response = api.apiAppAppGet(creatorId, sorting, skipCount, maxResultCount);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling AppApi->apiAppAppGet: $e\n');
 }
 ```
@@ -161,16 +161,16 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = AppApi();
-final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final api = PuupeeApiClient().getAppApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    api_instance.apiAppAppIdDelete(id);
-} catch (e) {
+    api.apiAppAppIdDelete(id);
+} catch on DioError (e) {
     print('Exception when calling AppApi->apiAppAppIdDelete: $e\n');
 }
 ```
@@ -203,17 +203,17 @@ void (empty response body)
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = AppApi();
-final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final api = PuupeeApiClient().getAppApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final result = api_instance.apiAppAppIdGet(id);
-    print(result);
-} catch (e) {
+    final response = api.apiAppAppIdGet(id);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling AppApi->apiAppAppIdGet: $e\n');
 }
 ```
@@ -246,18 +246,18 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = AppApi();
-final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final body = CreateOrUpdateAppDto(); // CreateOrUpdateAppDto | 
+final api = PuupeeApiClient().getAppApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final CreateOrUpdateAppDto body = ; // CreateOrUpdateAppDto | 
 
 try {
-    final result = api_instance.apiAppAppIdPut(id, body);
-    print(result);
-} catch (e) {
+    final response = api.apiAppAppIdPut(id, body);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling AppApi->apiAppAppIdPut: $e\n');
 }
 ```
@@ -291,17 +291,17 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = AppApi();
-final body = CreateOrUpdateAppDto(); // CreateOrUpdateAppDto | 
+final api = PuupeeApiClient().getAppApi();
+final CreateOrUpdateAppDto body = ; // CreateOrUpdateAppDto | 
 
 try {
-    final result = api_instance.apiAppAppPost(body);
-    print(result);
-} catch (e) {
+    final response = api.apiAppAppPost(body);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling AppApi->apiAppAppPost: $e\n');
 }
 ```
@@ -334,17 +334,17 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = AppApi();
-final key = key_example; // String | 
+final api = PuupeeApiClient().getAppApi();
+final String key = key_example; // String | 
 
 try {
-    final result = api_instance.apiAppAppUploadCredentialsGet(key);
-    print(result);
-} catch (e) {
+    final response = api.apiAppAppUploadCredentialsGet(key);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling AppApi->apiAppAppUploadCredentialsGet: $e\n');
 }
 ```

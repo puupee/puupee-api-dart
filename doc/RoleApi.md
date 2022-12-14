@@ -1,8 +1,8 @@
-# puupee_api.api.RoleApi
+# puupee_api_client.api.RoleApi
 
 ## Load the API package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -24,16 +24,16 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = RoleApi();
+final api = PuupeeApiClient().getRoleApi();
 
 try {
-    final result = api_instance.apiIdentityRolesAllGet();
-    print(result);
-} catch (e) {
+    final response = api.apiIdentityRolesAllGet();
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling RoleApi->apiIdentityRolesAllGet: $e\n');
 }
 ```
@@ -63,20 +63,20 @@ This endpoint does not need any parameter.
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = RoleApi();
-final filter = filter_example; // String | 
-final sorting = sorting_example; // String | 
-final skipCount = 56; // int | 
-final maxResultCount = 56; // int | 
+final api = PuupeeApiClient().getRoleApi();
+final String filter = filter_example; // String | 
+final String sorting = sorting_example; // String | 
+final int skipCount = 56; // int | 
+final int maxResultCount = 56; // int | 
 
 try {
-    final result = api_instance.apiIdentityRolesGet(filter, sorting, skipCount, maxResultCount);
-    print(result);
-} catch (e) {
+    final response = api.apiIdentityRolesGet(filter, sorting, skipCount, maxResultCount);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling RoleApi->apiIdentityRolesGet: $e\n');
 }
 ```
@@ -112,16 +112,16 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = RoleApi();
-final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final api = PuupeeApiClient().getRoleApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    api_instance.apiIdentityRolesIdDelete(id);
-} catch (e) {
+    api.apiIdentityRolesIdDelete(id);
+} catch on DioError (e) {
     print('Exception when calling RoleApi->apiIdentityRolesIdDelete: $e\n');
 }
 ```
@@ -154,17 +154,17 @@ void (empty response body)
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = RoleApi();
-final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final api = PuupeeApiClient().getRoleApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final result = api_instance.apiIdentityRolesIdGet(id);
-    print(result);
-} catch (e) {
+    final response = api.apiIdentityRolesIdGet(id);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling RoleApi->apiIdentityRolesIdGet: $e\n');
 }
 ```
@@ -197,18 +197,18 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = RoleApi();
-final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final body = IdentityRoleUpdateDto(); // IdentityRoleUpdateDto | 
+final api = PuupeeApiClient().getRoleApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final IdentityRoleUpdateDto body = ; // IdentityRoleUpdateDto | 
 
 try {
-    final result = api_instance.apiIdentityRolesIdPut(id, body);
-    print(result);
-} catch (e) {
+    final response = api.apiIdentityRolesIdPut(id, body);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling RoleApi->apiIdentityRolesIdPut: $e\n');
 }
 ```
@@ -242,17 +242,17 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = RoleApi();
-final body = IdentityRoleCreateDto(); // IdentityRoleCreateDto | 
+final api = PuupeeApiClient().getRoleApi();
+final IdentityRoleCreateDto body = ; // IdentityRoleCreateDto | 
 
 try {
-    final result = api_instance.apiIdentityRolesPost(body);
-    print(result);
-} catch (e) {
+    final response = api.apiIdentityRolesPost(body);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling RoleApi->apiIdentityRolesPost: $e\n');
 }
 ```

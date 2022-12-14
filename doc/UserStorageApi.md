@@ -1,8 +1,8 @@
-# puupee_api.api.UserStorageApi
+# puupee_api_client.api.UserStorageApi
 
 ## Load the API package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -19,16 +19,16 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = UserStorageApi();
+final api = PuupeeApiClient().getUserStorageApi();
 
 try {
-    final result = api_instance.apiAppUserStorageGet();
-    print(result);
-} catch (e) {
+    final response = api.apiAppUserStorageGet();
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling UserStorageApi->apiAppUserStorageGet: $e\n');
 }
 ```

@@ -1,8 +1,8 @@
-# puupee_api.api.PuupeeApi
+# puupee_api_client.api.PuupeeApi
 
 ## Load the API package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -20,19 +20,19 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = PuupeeApi();
-final afterVersion = 789; // int | 
-final skipCount = 56; // int | 
-final maxResultCount = 56; // int | 
+final api = PuupeeApiClient().getPuupeeApi();
+final int afterVersion = 789; // int | 
+final int skipCount = 56; // int | 
+final int maxResultCount = 56; // int | 
 
 try {
-    final result = api_instance.apiAppPuupeePullGet(afterVersion, skipCount, maxResultCount);
-    print(result);
-} catch (e) {
+    final response = api.apiAppPuupeePullGet(afterVersion, skipCount, maxResultCount);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling PuupeeApi->apiAppPuupeePullGet: $e\n');
 }
 ```
@@ -67,17 +67,17 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = PuupeeApi();
-final body = CreateOrUpdatePuupeeDto(); // CreateOrUpdatePuupeeDto | 
+final api = PuupeeApiClient().getPuupeeApi();
+final CreateOrUpdatePuupeeDto body = ; // CreateOrUpdatePuupeeDto | 
 
 try {
-    final result = api_instance.apiAppPuupeePushPost(body);
-    print(result);
-} catch (e) {
+    final response = api.apiAppPuupeePushPost(body);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling PuupeeApi->apiAppPuupeePushPost: $e\n');
 }
 ```

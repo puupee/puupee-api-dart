@@ -1,14 +1,14 @@
-# puupee_api.model.TenantCreateDto
+# puupee_api_client.model.TenantCreateDto
 
 ## Load the model package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**extraProperties** | [**Map<String, Object>**](Object.md) |  | [optional] [readonly] [default to const {}]
+**extraProperties** | [**BuiltMap&lt;String, JsonObject&gt;**](JsonObject.md) |  | [optional] 
 **name** | **String** |  | 
 **adminEmailAddress** | **String** |  | 
 **adminPassword** | **String** |  | 

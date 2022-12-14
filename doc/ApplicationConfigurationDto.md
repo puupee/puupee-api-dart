@@ -1,8 +1,8 @@
-# puupee_api.model.ApplicationConfigurationDto
+# puupee_api_client.model.ApplicationConfigurationDto
 
 ## Load the model package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 ## Properties
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **timing** | [**TimingDto**](TimingDto.md) |  | [optional] 
 **clock** | [**ClockDto**](ClockDto.md) |  | [optional] 
 **objectExtensions** | [**ObjectExtensionsDto**](ObjectExtensionsDto.md) |  | [optional] 
-**extraProperties** | [**Map<String, Object>**](Object.md) |  | [optional] [default to const {}]
+**extraProperties** | [**BuiltMap&lt;String, JsonObject&gt;**](JsonObject.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

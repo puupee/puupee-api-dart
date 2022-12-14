@@ -1,15 +1,15 @@
-# puupee_api.model.ExtensionPropertyAttributeDto
+# puupee_api_client.model.ExtensionPropertyAttributeDto
 
 ## Load the model package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **typeSimple** | **String** |  | [optional] 
-**config** | [**Map<String, Object>**](Object.md) |  | [optional] [default to const {}]
+**config** | [**BuiltMap&lt;String, JsonObject&gt;**](JsonObject.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

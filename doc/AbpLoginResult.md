@@ -1,15 +1,15 @@
-# puupee_api.model.AbpLoginResult
+# puupee_api_client.model.AbpLoginResult
 
 ## Load the model package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **result** | [**LoginResultType**](LoginResultType.md) |  | [optional] 
-**description** | **String** |  | [optional] [readonly] 
+**description** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

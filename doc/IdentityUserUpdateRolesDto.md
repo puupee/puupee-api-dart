@@ -1,14 +1,14 @@
-# puupee_api.model.IdentityUserUpdateRolesDto
+# puupee_api_client.model.IdentityUserUpdateRolesDto
 
 ## Load the model package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**roleNames** | **List<String>** |  | [default to const []]
+**roleNames** | **BuiltList&lt;String&gt;** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

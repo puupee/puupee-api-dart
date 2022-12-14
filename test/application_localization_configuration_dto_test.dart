@@ -1,32 +1,23 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.12
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:puupee_api/api.dart';
 import 'package:test/test.dart';
+import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for ApplicationLocalizationConfigurationDto
 void main() {
-  // final instance = ApplicationLocalizationConfigurationDto();
+  final instance = ApplicationLocalizationConfigurationDtoBuilder();
+  // TODO add properties to the builder and call build()
 
-  group('test ApplicationLocalizationConfigurationDto', () {
-    // Map<String, Map<String, String>> values (default value: const {})
+  group(ApplicationLocalizationConfigurationDto, () {
+    // BuiltMap<String, BuiltMap<String, String>> values
     test('to test the property `values`', () async {
       // TODO
     });
 
-    // Map<String, ApplicationLocalizationResourceDto> resources (default value: const {})
+    // BuiltMap<String, ApplicationLocalizationResourceDto> resources
     test('to test the property `resources`', () async {
       // TODO
     });
 
-    // List<LanguageInfo> languages (default value: const [])
+    // BuiltList<LanguageInfo> languages
     test('to test the property `languages`', () async {
       // TODO
     });
@@ -41,17 +32,15 @@ void main() {
       // TODO
     });
 
-    // Map<String, List<NameValue>> languagesMap (default value: const {})
+    // BuiltMap<String, BuiltList<NameValue>> languagesMap
     test('to test the property `languagesMap`', () async {
       // TODO
     });
 
-    // Map<String, List<NameValue>> languageFilesMap (default value: const {})
+    // BuiltMap<String, BuiltList<NameValue>> languageFilesMap
     test('to test the property `languageFilesMap`', () async {
       // TODO
     });
 
-
   });
-
 }

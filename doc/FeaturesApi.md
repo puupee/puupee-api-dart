@@ -1,8 +1,8 @@
-# puupee_api.api.FeaturesApi
+# puupee_api_client.api.FeaturesApi
 
 ## Load the API package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -21,17 +21,17 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = FeaturesApi();
-final providerName = providerName_example; // String | 
-final providerKey = providerKey_example; // String | 
+final api = PuupeeApiClient().getFeaturesApi();
+final String providerName = providerName_example; // String | 
+final String providerKey = providerKey_example; // String | 
 
 try {
-    api_instance.apiFeatureManagementFeaturesDelete(providerName, providerKey);
-} catch (e) {
+    api.apiFeatureManagementFeaturesDelete(providerName, providerKey);
+} catch on DioError (e) {
     print('Exception when calling FeaturesApi->apiFeatureManagementFeaturesDelete: $e\n');
 }
 ```
@@ -65,18 +65,18 @@ void (empty response body)
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = FeaturesApi();
-final providerName = providerName_example; // String | 
-final providerKey = providerKey_example; // String | 
+final api = PuupeeApiClient().getFeaturesApi();
+final String providerName = providerName_example; // String | 
+final String providerKey = providerKey_example; // String | 
 
 try {
-    final result = api_instance.apiFeatureManagementFeaturesGet(providerName, providerKey);
-    print(result);
-} catch (e) {
+    final response = api.apiFeatureManagementFeaturesGet(providerName, providerKey);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling FeaturesApi->apiFeatureManagementFeaturesGet: $e\n');
 }
 ```
@@ -110,18 +110,18 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = FeaturesApi();
-final providerName = providerName_example; // String | 
-final providerKey = providerKey_example; // String | 
-final body = UpdateFeaturesDto(); // UpdateFeaturesDto | 
+final api = PuupeeApiClient().getFeaturesApi();
+final String providerName = providerName_example; // String | 
+final String providerKey = providerKey_example; // String | 
+final UpdateFeaturesDto body = ; // UpdateFeaturesDto | 
 
 try {
-    api_instance.apiFeatureManagementFeaturesPut(providerName, providerKey, body);
-} catch (e) {
+    api.apiFeatureManagementFeaturesPut(providerName, providerKey, body);
+} catch on DioError (e) {
     print('Exception when calling FeaturesApi->apiFeatureManagementFeaturesPut: $e\n');
 }
 ```

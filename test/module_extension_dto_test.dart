@@ -1,32 +1,21 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.12
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
-import 'package:puupee_api/api.dart';
 import 'package:test/test.dart';
+import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for ModuleExtensionDto
 void main() {
-  // final instance = ModuleExtensionDto();
+  final instance = ModuleExtensionDtoBuilder();
+  // TODO add properties to the builder and call build()
 
-  group('test ModuleExtensionDto', () {
-    // Map<String, EntityExtensionDto> entities (default value: const {})
+  group(ModuleExtensionDto, () {
+    // BuiltMap<String, EntityExtensionDto> entities
     test('to test the property `entities`', () async {
       // TODO
     });
 
-    // Map<String, Object> configuration (default value: const {})
+    // BuiltMap<String, JsonObject> configuration
     test('to test the property `configuration`', () async {
       // TODO
     });
 
-
   });
-
 }

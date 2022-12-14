@@ -1,8 +1,8 @@
-# puupee_api.api.AbpApplicationConfigurationApi
+# puupee_api_client.api.AbpApplicationConfigurationApi
 
 ## Load the API package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -19,17 +19,17 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = AbpApplicationConfigurationApi();
-final includeLocalizationResources = true; // bool | 
+final api = PuupeeApiClient().getAbpApplicationConfigurationApi();
+final bool includeLocalizationResources = true; // bool | 
 
 try {
-    final result = api_instance.apiAbpApplicationConfigurationGet(includeLocalizationResources);
-    print(result);
-} catch (e) {
+    final response = api.apiAbpApplicationConfigurationGet(includeLocalizationResources);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling AbpApplicationConfigurationApi->apiAbpApplicationConfigurationGet: $e\n');
 }
 ```

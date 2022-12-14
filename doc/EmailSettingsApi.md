@@ -1,8 +1,8 @@
-# puupee_api.api.EmailSettingsApi
+# puupee_api_client.api.EmailSettingsApi
 
 ## Load the API package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -21,16 +21,16 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = EmailSettingsApi();
+final api = PuupeeApiClient().getEmailSettingsApi();
 
 try {
-    final result = api_instance.apiSettingManagementEmailingGet();
-    print(result);
-} catch (e) {
+    final response = api.apiSettingManagementEmailingGet();
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling EmailSettingsApi->apiSettingManagementEmailingGet: $e\n');
 }
 ```
@@ -60,16 +60,16 @@ This endpoint does not need any parameter.
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = EmailSettingsApi();
-final body = UpdateEmailSettingsDto(); // UpdateEmailSettingsDto | 
+final api = PuupeeApiClient().getEmailSettingsApi();
+final UpdateEmailSettingsDto body = ; // UpdateEmailSettingsDto | 
 
 try {
-    api_instance.apiSettingManagementEmailingPost(body);
-} catch (e) {
+    api.apiSettingManagementEmailingPost(body);
+} catch on DioError (e) {
     print('Exception when calling EmailSettingsApi->apiSettingManagementEmailingPost: $e\n');
 }
 ```
@@ -102,16 +102,16 @@ void (empty response body)
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = EmailSettingsApi();
-final body = SendTestEmailInput(); // SendTestEmailInput | 
+final api = PuupeeApiClient().getEmailSettingsApi();
+final SendTestEmailInput body = ; // SendTestEmailInput | 
 
 try {
-    api_instance.apiSettingManagementEmailingSendTestEmailPost(body);
-} catch (e) {
+    api.apiSettingManagementEmailingSendTestEmailPost(body);
+} catch on DioError (e) {
     print('Exception when calling EmailSettingsApi->apiSettingManagementEmailingSendTestEmailPost: $e\n');
 }
 ```

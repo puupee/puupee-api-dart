@@ -1,8 +1,8 @@
-# puupee_api.model.ExtensionPropertyApiDto
+# puupee_api_client.model.ExtensionPropertyApiDto
 
 ## Load the model package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 ## Properties

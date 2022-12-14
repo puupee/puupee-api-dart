@@ -1,8 +1,8 @@
-# puupee_api.api.AppReleaseApi
+# puupee_api_client.api.AppReleaseApi
 
 ## Load the API package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 All URIs are relative to *http://localhost*
@@ -23,23 +23,23 @@ Method | HTTP request | Description
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = AppReleaseApi();
-final appId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final environment = environment_example; // String | 
-final platformPeriodName = platformPeriodName_example; // String | 
-final platformPeriodValue = platformPeriodValue_example; // String | 
-final sorting = sorting_example; // String | 
-final skipCount = 56; // int | 
-final maxResultCount = 56; // int | 
+final api = PuupeeApiClient().getAppReleaseApi();
+final String appId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final String environment = environment_example; // String | 
+final String platformPeriodName = platformPeriodName_example; // String | 
+final String platformPeriodValue = platformPeriodValue_example; // String | 
+final String sorting = sorting_example; // String | 
+final int skipCount = 56; // int | 
+final int maxResultCount = 56; // int | 
 
 try {
-    final result = api_instance.apiAppAppReleaseGet(appId, environment, platformPeriodName, platformPeriodValue, sorting, skipCount, maxResultCount);
-    print(result);
-} catch (e) {
+    final response = api.apiAppAppReleaseGet(appId, environment, platformPeriodName, platformPeriodValue, sorting, skipCount, maxResultCount);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling AppReleaseApi->apiAppAppReleaseGet: $e\n');
 }
 ```
@@ -78,16 +78,16 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = AppReleaseApi();
-final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final api = PuupeeApiClient().getAppReleaseApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    api_instance.apiAppAppReleaseIdDelete(id);
-} catch (e) {
+    api.apiAppAppReleaseIdDelete(id);
+} catch on DioError (e) {
     print('Exception when calling AppReleaseApi->apiAppAppReleaseIdDelete: $e\n');
 }
 ```
@@ -120,17 +120,17 @@ void (empty response body)
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = AppReleaseApi();
-final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final api = PuupeeApiClient().getAppReleaseApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final result = api_instance.apiAppAppReleaseIdGet(id);
-    print(result);
-} catch (e) {
+    final response = api.apiAppAppReleaseIdGet(id);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling AppReleaseApi->apiAppAppReleaseIdGet: $e\n');
 }
 ```
@@ -163,18 +163,18 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = AppReleaseApi();
-final id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final body = CreateOrUpdateAppReleaseDto(); // CreateOrUpdateAppReleaseDto | 
+final api = PuupeeApiClient().getAppReleaseApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final CreateOrUpdateAppReleaseDto body = ; // CreateOrUpdateAppReleaseDto | 
 
 try {
-    final result = api_instance.apiAppAppReleaseIdPut(id, body);
-    print(result);
-} catch (e) {
+    final response = api.apiAppAppReleaseIdPut(id, body);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling AppReleaseApi->apiAppAppReleaseIdPut: $e\n');
 }
 ```
@@ -208,17 +208,17 @@ Name | Type | Description  | Notes
 
 ### Example
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api_instance = AppReleaseApi();
-final body = CreateOrUpdateAppReleaseDto(); // CreateOrUpdateAppReleaseDto | 
+final api = PuupeeApiClient().getAppReleaseApi();
+final CreateOrUpdateAppReleaseDto body = ; // CreateOrUpdateAppReleaseDto | 
 
 try {
-    final result = api_instance.apiAppAppReleasePost(body);
-    print(result);
-} catch (e) {
+    final response = api.apiAppAppReleasePost(body);
+    print(response);
+} catch on DioError (e) {
     print('Exception when calling AppReleaseApi->apiAppAppReleasePost: $e\n');
 }
 ```

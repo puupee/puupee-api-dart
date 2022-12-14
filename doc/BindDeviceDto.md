@@ -1,8 +1,8 @@
-# puupee_api.model.BindDeviceDto
+# puupee_api_client.model.BindDeviceDto
 
 ## Load the model package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 ## Properties

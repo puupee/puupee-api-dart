@@ -1,20 +1,20 @@
-# puupee_api.model.ApplicationLocalizationConfigurationDto
+# puupee_api_client.model.ApplicationLocalizationConfigurationDto
 
 ## Load the model package
 ```dart
-import 'package:puupee_api/api.dart';
+import 'package:puupee_api_client/api.dart';
 ```
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**values** | [**Map<String, Map<String, String>>**](Map.md) |  | [optional] [default to const {}]
-**resources** | [**Map<String, ApplicationLocalizationResourceDto>**](ApplicationLocalizationResourceDto.md) |  | [optional] [default to const {}]
-**languages** | [**List<LanguageInfo>**](LanguageInfo.md) |  | [optional] [default to const []]
+**values** | [**BuiltMap&lt;String, BuiltMap&lt;String, String&gt;&gt;**](BuiltMap.md) |  | [optional] 
+**resources** | [**BuiltMap&lt;String, ApplicationLocalizationResourceDto&gt;**](ApplicationLocalizationResourceDto.md) |  | [optional] 
+**languages** | [**BuiltList&lt;LanguageInfo&gt;**](LanguageInfo.md) |  | [optional] 
 **currentCulture** | [**CurrentCultureDto**](CurrentCultureDto.md) |  | [optional] 
 **defaultResourceName** | **String** |  | [optional] 
-**languagesMap** | [**Map<String, List<NameValue>>**](List.md) |  | [optional] [default to const {}]
-**languageFilesMap** | [**Map<String, List<NameValue>>**](List.md) |  | [optional] [default to const {}]
+**languagesMap** | [**BuiltMap&lt;String, BuiltList&lt;NameValue&gt;&gt;**](BuiltList.md) |  | [optional] 
+**languageFilesMap** | [**BuiltMap&lt;String, BuiltList&lt;NameValue&gt;&gt;**](BuiltList.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
