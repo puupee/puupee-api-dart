@@ -24,6 +24,9 @@ DeviceDto _$DeviceDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
           deletionTime: $checkedConvert('deletionTime',
               (v) => v == null ? null : DateTime.parse(v as String)),
           token: $checkedConvert('token', (v) => v as String?),
+          tpnsToken: $checkedConvert('tpnsToken', (v) => v as String?),
+          isPhysicalDevice:
+              $checkedConvert('isPhysicalDevice', (v) => v as bool?),
           name: $checkedConvert('name', (v) => v as String?),
           platform: $checkedConvert('platform', (v) => v as String?),
           brand: $checkedConvert('brand', (v) => v as String?),
@@ -52,6 +55,8 @@ Map<String, dynamic> _$DeviceDtoToJson(DeviceDto instance) {
   writeNotNull('deleterId', instance.deleterId);
   writeNotNull('deletionTime', instance.deletionTime?.toIso8601String());
   writeNotNull('token', instance.token);
+  writeNotNull('tpnsToken', instance.tpnsToken);
+  writeNotNull('isPhysicalDevice', instance.isPhysicalDevice);
   writeNotNull('name', instance.name);
   writeNotNull('platform', instance.platform);
   writeNotNull('brand', instance.brand);

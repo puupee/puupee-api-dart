@@ -9,6 +9,8 @@ import 'package:puupee_api_client/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **token** | **String** |  | [optional] 
+**tpnsToken** | **String** |  | [optional] 
+**isPhysicalDevice** | **bool** |  | [optional] 
 **name** | **String** |  | [optional] 
 **type** | **String** |  | [optional] 
 **brand** | **String** |  | [optional] 

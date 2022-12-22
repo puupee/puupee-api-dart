@@ -36,6 +36,10 @@ class DeviceDto {
 
      this.token,
 
+     this.tpnsToken,
+
+     this.isPhysicalDevice,
+
      this.name,
 
      this.platform,
@@ -155,6 +159,30 @@ class DeviceDto {
 
   @JsonKey(
     
+    name: r'tpnsToken',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? tpnsToken;
+
+
+
+  @JsonKey(
+    
+    name: r'isPhysicalDevice',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  bool? isPhysicalDevice;
+
+
+
+  @JsonKey(
+    
     name: r'name',
     required: false,
     includeIfNull: false
@@ -212,6 +240,8 @@ class DeviceDto {
      other.deleterId == deleterId &&
      other.deletionTime == deletionTime &&
      other.token == token &&
+     other.tpnsToken == tpnsToken &&
+     other.isPhysicalDevice == isPhysicalDevice &&
      other.name == name &&
      other.platform == platform &&
      other.brand == brand &&
@@ -228,6 +258,8 @@ class DeviceDto {
     deleterId.hashCode +
     deletionTime.hashCode +
     token.hashCode +
+    tpnsToken.hashCode +
+    isPhysicalDevice.hashCode +
     name.hashCode +
     platform.hashCode +
     brand.hashCode +

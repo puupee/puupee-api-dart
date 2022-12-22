@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **deleterId** | **String** |  | [optional] 
 **deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
 **token** | **String** |  | [optional] 
+**tpnsToken** | **String** |  | [optional] 
+**isPhysicalDevice** | **bool** |  | [optional] 
 **name** | **String** |  | [optional] 
 **platform** | **String** |  | [optional] 
 **brand** | **String** |  | [optional] 

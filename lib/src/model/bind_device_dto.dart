@@ -20,6 +20,10 @@ class BindDeviceDto {
 
      this.token,
 
+     this.tpnsToken,
+
+     this.isPhysicalDevice,
+
      this.name,
 
      this.type,
@@ -38,6 +42,30 @@ class BindDeviceDto {
 
 
   String? token;
+
+
+
+  @JsonKey(
+    
+    name: r'tpnsToken',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? tpnsToken;
+
+
+
+  @JsonKey(
+    
+    name: r'isPhysicalDevice',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  bool? isPhysicalDevice;
 
 
 
@@ -92,6 +120,8 @@ class BindDeviceDto {
   @override
   bool operator ==(Object other) => identical(this, other) || other is BindDeviceDto &&
      other.token == token &&
+     other.tpnsToken == tpnsToken &&
+     other.isPhysicalDevice == isPhysicalDevice &&
      other.name == name &&
      other.type == type &&
      other.brand == brand &&
@@ -100,6 +130,8 @@ class BindDeviceDto {
   @override
   int get hashCode =>
     token.hashCode +
+    tpnsToken.hashCode +
+    isPhysicalDevice.hashCode +
     name.hashCode +
     type.hashCode +
     brand.hashCode +
