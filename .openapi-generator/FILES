@@ -14,6 +14,11 @@ doc/AppDto.md
 doc/AppDtoPagedResultDto.md
 doc/AppFeatureApi.md
 doc/AppFeatureDto.md
+doc/AppPricingApi.md
+doc/AppPricingDto.md
+doc/AppPricingDtoPagedResultDto.md
+doc/AppPricingItemApi.md
+doc/AppPricingItemDto.md
 doc/AppReleaseApi.md
 doc/AppReleaseDto.md
 doc/AppReleaseDtoPagedResultDto.md
@@ -41,6 +46,8 @@ doc/ControllerApiDescriptionModel.md
 doc/ControllerInterfaceApiDescriptionModel.md
 doc/CreateOrUpdateAppDto.md
 doc/CreateOrUpdateAppFeatureDto.md
+doc/CreateOrUpdateAppPricingDto.md
+doc/CreateOrUpdateAppPricingItemDto.md
 doc/CreateOrUpdateAppReleaseDto.md
 doc/CreateOrUpdateAppSdkDto.md
 doc/CreateOrUpdateAppUserScoreDto.md
@@ -181,6 +188,8 @@ lib/src/api/abp_tenant_api.dart
 lib/src/api/account_api.dart
 lib/src/api/app_api.dart
 lib/src/api/app_feature_api.dart
+lib/src/api/app_pricing_api.dart
+lib/src/api/app_pricing_item_api.dart
 lib/src/api/app_release_api.dart
 lib/src/api/app_sdk_api.dart
 lib/src/api/app_user_score_api.dart
@@ -214,6 +223,9 @@ lib/src/model/action_api_description_model.dart
 lib/src/model/app_dto.dart
 lib/src/model/app_dto_paged_result_dto.dart
 lib/src/model/app_feature_dto.dart
+lib/src/model/app_pricing_dto.dart
+lib/src/model/app_pricing_dto_paged_result_dto.dart
+lib/src/model/app_pricing_item_dto.dart
 lib/src/model/app_release_dto.dart
 lib/src/model/app_release_dto_paged_result_dto.dart
 lib/src/model/app_sdk_dto.dart
@@ -238,6 +250,8 @@ lib/src/model/controller_api_description_model.dart
 lib/src/model/controller_interface_api_description_model.dart
 lib/src/model/create_or_update_app_dto.dart
 lib/src/model/create_or_update_app_feature_dto.dart
+lib/src/model/create_or_update_app_pricing_dto.dart
+lib/src/model/create_or_update_app_pricing_item_dto.dart
 lib/src/model/create_or_update_app_release_dto.dart
 lib/src/model/create_or_update_app_sdk_dto.dart
 lib/src/model/create_or_update_app_user_score_dto.dart
@@ -363,6 +377,11 @@ test/app_dto_paged_result_dto_test.dart
 test/app_dto_test.dart
 test/app_feature_api_test.dart
 test/app_feature_dto_test.dart
+test/app_pricing_api_test.dart
+test/app_pricing_dto_paged_result_dto_test.dart
+test/app_pricing_dto_test.dart
+test/app_pricing_item_api_test.dart
+test/app_pricing_item_dto_test.dart
 test/app_release_api_test.dart
 test/app_release_dto_paged_result_dto_test.dart
 test/app_release_dto_test.dart
@@ -390,6 +409,8 @@ test/controller_api_description_model_test.dart
 test/controller_interface_api_description_model_test.dart
 test/create_or_update_app_dto_test.dart
 test/create_or_update_app_feature_dto_test.dart
+test/create_or_update_app_pricing_dto_test.dart
+test/create_or_update_app_pricing_item_dto_test.dart
 test/create_or_update_app_release_dto_test.dart
 test/create_or_update_app_sdk_dto_test.dart
 test/create_or_update_app_user_score_dto_test.dart

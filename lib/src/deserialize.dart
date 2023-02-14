@@ -3,6 +3,9 @@ import 'package:puupee_api_client/src/model/action_api_description_model.dart';
 import 'package:puupee_api_client/src/model/app_dto.dart';
 import 'package:puupee_api_client/src/model/app_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/app_feature_dto.dart';
+import 'package:puupee_api_client/src/model/app_pricing_dto.dart';
+import 'package:puupee_api_client/src/model/app_pricing_dto_paged_result_dto.dart';
+import 'package:puupee_api_client/src/model/app_pricing_item_dto.dart';
 import 'package:puupee_api_client/src/model/app_release_dto.dart';
 import 'package:puupee_api_client/src/model/app_release_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/app_sdk_dto.dart';
@@ -26,6 +29,8 @@ import 'package:puupee_api_client/src/model/controller_api_description_model.dar
 import 'package:puupee_api_client/src/model/controller_interface_api_description_model.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_feature_dto.dart';
+import 'package:puupee_api_client/src/model/create_or_update_app_pricing_dto.dart';
+import 'package:puupee_api_client/src/model/create_or_update_app_pricing_item_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_release_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_sdk_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_user_score_dto.dart';
@@ -165,6 +170,12 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return AppDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppFeatureDto':
           return AppFeatureDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppPricingDto':
+          return AppPricingDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppPricingDtoPagedResultDto':
+          return AppPricingDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppPricingItemDto':
+          return AppPricingItemDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppReleaseDto':
           return AppReleaseDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppReleaseDtoPagedResultDto':
@@ -214,6 +225,10 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return CreateOrUpdateAppDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateOrUpdateAppFeatureDto':
           return CreateOrUpdateAppFeatureDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'CreateOrUpdateAppPricingDto':
+          return CreateOrUpdateAppPricingDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'CreateOrUpdateAppPricingItemDto':
+          return CreateOrUpdateAppPricingItemDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateOrUpdateAppReleaseDto':
           return CreateOrUpdateAppReleaseDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateOrUpdateAppSdkDto':

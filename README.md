@@ -85,6 +85,17 @@ Class | Method | HTTP request | Description
 [*AppFeatureApi*](doc/AppFeatureApi.md) | [**apiAppAppFeatureIdDelete**](doc/AppFeatureApi.md#apiappappfeatureiddelete) | **DELETE** /api/app/app-feature/{id} | 
 [*AppFeatureApi*](doc/AppFeatureApi.md) | [**apiAppAppFeatureIdPut**](doc/AppFeatureApi.md#apiappappfeatureidput) | **PUT** /api/app/app-feature/{id} | 
 [*AppFeatureApi*](doc/AppFeatureApi.md) | [**apiAppAppFeaturePost**](doc/AppFeatureApi.md#apiappappfeaturepost) | **POST** /api/app/app-feature | 
+[*AppPricingApi*](doc/AppPricingApi.md) | [**apiAppAppPricingByAppIdAppIdGet**](doc/AppPricingApi.md#apiappapppricingbyappidappidget) | **GET** /api/app/app-pricing/by-app-id/{appId} | 
+[*AppPricingApi*](doc/AppPricingApi.md) | [**apiAppAppPricingGet**](doc/AppPricingApi.md#apiappapppricingget) | **GET** /api/app/app-pricing | 
+[*AppPricingApi*](doc/AppPricingApi.md) | [**apiAppAppPricingIdDelete**](doc/AppPricingApi.md#apiappapppricingiddelete) | **DELETE** /api/app/app-pricing/{id} | 
+[*AppPricingApi*](doc/AppPricingApi.md) | [**apiAppAppPricingIdGet**](doc/AppPricingApi.md#apiappapppricingidget) | **GET** /api/app/app-pricing/{id} | 
+[*AppPricingApi*](doc/AppPricingApi.md) | [**apiAppAppPricingIdPut**](doc/AppPricingApi.md#apiappapppricingidput) | **PUT** /api/app/app-pricing/{id} | 
+[*AppPricingApi*](doc/AppPricingApi.md) | [**apiAppAppPricingPost**](doc/AppPricingApi.md#apiappapppricingpost) | **POST** /api/app/app-pricing | 
+[*AppPricingItemApi*](doc/AppPricingItemApi.md) | [**apiAppAppPricingItemGet**](doc/AppPricingItemApi.md#apiappapppricingitemget) | **GET** /api/app/app-pricing-item | 
+[*AppPricingItemApi*](doc/AppPricingItemApi.md) | [**apiAppAppPricingItemIdDelete**](doc/AppPricingItemApi.md#apiappapppricingitemiddelete) | **DELETE** /api/app/app-pricing-item/{id} | 
+[*AppPricingItemApi*](doc/AppPricingItemApi.md) | [**apiAppAppPricingItemIdGet**](doc/AppPricingItemApi.md#apiappapppricingitemidget) | **GET** /api/app/app-pricing-item/{id} | 
+[*AppPricingItemApi*](doc/AppPricingItemApi.md) | [**apiAppAppPricingItemIdPut**](doc/AppPricingItemApi.md#apiappapppricingitemidput) | **PUT** /api/app/app-pricing-item/{id} | 
+[*AppPricingItemApi*](doc/AppPricingItemApi.md) | [**apiAppAppPricingItemPost**](doc/AppPricingItemApi.md#apiappapppricingitempost) | **POST** /api/app/app-pricing-item | 
 [*AppReleaseApi*](doc/AppReleaseApi.md) | [**apiAppAppReleaseGet**](doc/AppReleaseApi.md#apiappappreleaseget) | **GET** /api/app/app-release | 
 [*AppReleaseApi*](doc/AppReleaseApi.md) | [**apiAppAppReleaseIdDelete**](doc/AppReleaseApi.md#apiappappreleaseiddelete) | **DELETE** /api/app/app-release/{id} | 
 [*AppReleaseApi*](doc/AppReleaseApi.md) | [**apiAppAppReleaseIdGet**](doc/AppReleaseApi.md#apiappappreleaseidget) | **GET** /api/app/app-release/{id} | 
@@ -179,6 +190,9 @@ Class | Method | HTTP request | Description
  - [AppDto](doc/AppDto.md)
  - [AppDtoPagedResultDto](doc/AppDtoPagedResultDto.md)
  - [AppFeatureDto](doc/AppFeatureDto.md)
+ - [AppPricingDto](doc/AppPricingDto.md)
+ - [AppPricingDtoPagedResultDto](doc/AppPricingDtoPagedResultDto.md)
+ - [AppPricingItemDto](doc/AppPricingItemDto.md)
  - [AppReleaseDto](doc/AppReleaseDto.md)
  - [AppReleaseDtoPagedResultDto](doc/AppReleaseDtoPagedResultDto.md)
  - [AppSdkDto](doc/AppSdkDto.md)
@@ -203,6 +217,8 @@ Class | Method | HTTP request | Description
  - [ControllerInterfaceApiDescriptionModel](doc/ControllerInterfaceApiDescriptionModel.md)
  - [CreateOrUpdateAppDto](doc/CreateOrUpdateAppDto.md)
  - [CreateOrUpdateAppFeatureDto](doc/CreateOrUpdateAppFeatureDto.md)
+ - [CreateOrUpdateAppPricingDto](doc/CreateOrUpdateAppPricingDto.md)
+ - [CreateOrUpdateAppPricingItemDto](doc/CreateOrUpdateAppPricingItemDto.md)
  - [CreateOrUpdateAppReleaseDto](doc/CreateOrUpdateAppReleaseDto.md)
  - [CreateOrUpdateAppSdkDto](doc/CreateOrUpdateAppSdkDto.md)
  - [CreateOrUpdateAppUserScoreDto](doc/CreateOrUpdateAppUserScoreDto.md)

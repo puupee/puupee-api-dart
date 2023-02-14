@@ -22,6 +22,11 @@ void main() {
       // TODO
     });
 
+    // String twoLetterISOLanguageName
+    test('to test the property `twoLetterISOLanguageName`', () async {
+      // TODO
+    });
+
     // String flagIcon
     test('to test the property `flagIcon`', () async {
       // TODO

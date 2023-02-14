@@ -24,6 +24,8 @@ class LanguageInfo {
 
      this.displayName,
 
+     this.twoLetterISOLanguageName,
+
      this.flagIcon,
   });
 
@@ -65,6 +67,18 @@ class LanguageInfo {
 
   @JsonKey(
     
+    name: r'twoLetterISOLanguageName',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? twoLetterISOLanguageName;
+
+
+
+  @JsonKey(
+    
     name: r'flagIcon',
     required: false,
     includeIfNull: false
@@ -80,6 +94,7 @@ class LanguageInfo {
      other.cultureName == cultureName &&
      other.uiCultureName == uiCultureName &&
      other.displayName == displayName &&
+     other.twoLetterISOLanguageName == twoLetterISOLanguageName &&
      other.flagIcon == flagIcon;
 
   @override
@@ -87,6 +102,7 @@ class LanguageInfo {
     cultureName.hashCode +
     uiCultureName.hashCode +
     displayName.hashCode +
+    twoLetterISOLanguageName.hashCode +
     flagIcon.hashCode;
 
   factory LanguageInfo.fromJson(Map<String, dynamic> json) => _$LanguageInfoFromJson(json);
