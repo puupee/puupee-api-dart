@@ -32,6 +32,11 @@ void main() {
       // TODO
     });
 
+    // int singleFileMaxSize
+    test('to test the property `singleFileMaxSize`', () async {
+      // TODO
+    });
+
     // List<UserStorageItemDto> items
     test('to test the property `items`', () async {
       // TODO

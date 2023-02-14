@@ -29,6 +29,8 @@ class UserStorageDto {
 
      this.totalCount,
 
+     this.singleFileMaxSize,
+
      this.items,
   });
 
@@ -94,6 +96,18 @@ class UserStorageDto {
 
   @JsonKey(
     
+    name: r'singleFileMaxSize',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  int? singleFileMaxSize;
+
+
+
+  @JsonKey(
+    
     name: r'items',
     required: false,
     includeIfNull: false
@@ -111,6 +125,7 @@ class UserStorageDto {
      other.maxSize == maxSize &&
      other.currentSize == currentSize &&
      other.totalCount == totalCount &&
+     other.singleFileMaxSize == singleFileMaxSize &&
      other.items == items;
 
   @override
@@ -120,6 +135,7 @@ class UserStorageDto {
     maxSize.hashCode +
     currentSize.hashCode +
     totalCount.hashCode +
+    singleFileMaxSize.hashCode +
     items.hashCode;
 
   factory UserStorageDto.fromJson(Map<String, dynamic> json) => _$UserStorageDtoFromJson(json);
