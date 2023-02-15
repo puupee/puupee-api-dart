@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **appType** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
 **icon** | **String** |  | [optional] 
+**sortIndex** | **int** |  | [optional] 
 **gitRepository** | **String** |  | [optional] 
 **gitRepositoryType** | **String** |  | [optional] 
 **features** | [**List&lt;AppFeatureDto&gt;**](AppFeatureDto.md) |  | [optional] 

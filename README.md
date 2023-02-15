@@ -154,6 +154,7 @@ Class | Method | HTTP request | Description
 [*StorageObjectApi*](doc/StorageObjectApi.md) | [**apiAppStorageObjectFileOrCredentialsGet**](doc/StorageObjectApi.md#apiappstorageobjectfileorcredentialsget) | **GET** /api/app/storage-object/file-or-credentials | 
 [*StorageObjectApi*](doc/StorageObjectApi.md) | [**apiAppStorageObjectPreSignUrlPost**](doc/StorageObjectApi.md#apiappstorageobjectpresignurlpost) | **POST** /api/app/storage-object/pre-sign-url | 
 [*StorageObjectApi*](doc/StorageObjectApi.md) | [**apiAppStorageObjectThumbGet**](doc/StorageObjectApi.md#apiappstorageobjectthumbget) | **GET** /api/app/storage-object/thumb | 
+[*SubscriptionApi*](doc/SubscriptionApi.md) | [**apiAppSubscriptionVerifyApplePost**](doc/SubscriptionApi.md#apiappsubscriptionverifyapplepost) | **POST** /api/app/subscription/verify-apple | 
 [*SyncStateApi*](doc/SyncStateApi.md) | [**apiAppSyncStateGet**](doc/SyncStateApi.md#apiappsyncstateget) | **GET** /api/app/sync-state | 
 [*SyncStateApi*](doc/SyncStateApi.md) | [**apiAppSyncStatePuupeeChangedEtoPost**](doc/SyncStateApi.md#apiappsyncstatepuupeechangedetopost) | **POST** /api/app/sync-state/puupee-changed-eto | 
 [*TenantApi*](doc/TenantApi.md) | [**apiMultiTenancyTenantsGet**](doc/TenantApi.md#apimultitenancytenantsget) | **GET** /api/multi-tenancy/tenants | 

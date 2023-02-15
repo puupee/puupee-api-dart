@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **appType** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
 **icon** | **String** |  | [optional] 
+**sortIndex** | **int** |  | [optional] 
 **gitRepository** | **String** |  | [optional] 
 **gitRepositoryType** | **String** |  | [optional] 
 **latestReleases** | [**List&lt;AppReleaseDto&gt;**](AppReleaseDto.md) |  | [optional] 

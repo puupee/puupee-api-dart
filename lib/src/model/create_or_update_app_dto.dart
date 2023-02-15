@@ -32,6 +32,8 @@ class CreateOrUpdateAppDto {
 
      this.icon,
 
+     this.sortIndex,
+
      this.gitRepository,
 
      this.gitRepositoryType,
@@ -115,6 +117,18 @@ class CreateOrUpdateAppDto {
 
   @JsonKey(
     
+    name: r'sortIndex',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  int? sortIndex;
+
+
+
+  @JsonKey(
+    
     name: r'gitRepository',
     required: false,
     includeIfNull: false
@@ -169,6 +183,7 @@ class CreateOrUpdateAppDto {
      other.appType == appType &&
      other.description == description &&
      other.icon == icon &&
+     other.sortIndex == sortIndex &&
      other.gitRepository == gitRepository &&
      other.gitRepositoryType == gitRepositoryType &&
      other.features == features &&
@@ -182,6 +197,7 @@ class CreateOrUpdateAppDto {
     appType.hashCode +
     description.hashCode +
     icon.hashCode +
+    sortIndex.hashCode +
     gitRepository.hashCode +
     gitRepositoryType.hashCode +
     features.hashCode +

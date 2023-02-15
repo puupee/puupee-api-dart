@@ -50,6 +50,8 @@ class AppDto {
 
      this.icon,
 
+     this.sortIndex,
+
      this.gitRepository,
 
      this.gitRepositoryType,
@@ -233,6 +235,18 @@ class AppDto {
 
   @JsonKey(
     
+    name: r'sortIndex',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  int? sortIndex;
+
+
+
+  @JsonKey(
+    
     name: r'gitRepository',
     required: false,
     includeIfNull: false
@@ -319,6 +333,7 @@ class AppDto {
      other.appType == appType &&
      other.description == description &&
      other.icon == icon &&
+     other.sortIndex == sortIndex &&
      other.gitRepository == gitRepository &&
      other.gitRepositoryType == gitRepositoryType &&
      other.latestReleases == latestReleases &&
@@ -342,6 +357,7 @@ class AppDto {
     appType.hashCode +
     description.hashCode +
     icon.hashCode +
+    sortIndex.hashCode +
     gitRepository.hashCode +
     gitRepositoryType.hashCode +
     latestReleases.hashCode +

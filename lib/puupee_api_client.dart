@@ -32,6 +32,7 @@ export 'package:puupee_api_client/src/api/role_api.dart';
 export 'package:puupee_api_client/src/api/settings_api.dart';
 export 'package:puupee_api_client/src/api/simple_data_api.dart';
 export 'package:puupee_api_client/src/api/storage_object_api.dart';
+export 'package:puupee_api_client/src/api/subscription_api.dart';
 export 'package:puupee_api_client/src/api/sync_state_api.dart';
 export 'package:puupee_api_client/src/api/tenant_api.dart';
 export 'package:puupee_api_client/src/api/test_api.dart';

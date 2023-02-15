@@ -148,6 +148,7 @@ doc/StorageObjectDto.md
 doc/StorageObjectOrCredentialsDto.md
 doc/StringKeyValue.md
 doc/StringSetKeyValueDto.md
+doc/SubscriptionApi.md
 doc/SyncStateApi.md
 doc/SyncStateDto.md
 doc/TenantApi.md
@@ -205,6 +206,7 @@ lib/src/api/role_api.dart
 lib/src/api/settings_api.dart
 lib/src/api/simple_data_api.dart
 lib/src/api/storage_object_api.dart
+lib/src/api/subscription_api.dart
 lib/src/api/sync_state_api.dart
 lib/src/api/tenant_api.dart
 lib/src/api/test_api.dart
@@ -511,6 +513,7 @@ test/storage_object_dto_test.dart
 test/storage_object_or_credentials_dto_test.dart
 test/string_key_value_test.dart
 test/string_set_key_value_dto_test.dart
+test/subscription_api_test.dart
 test/sync_state_api_test.dart
 test/sync_state_dto_test.dart
 test/tenant_api_test.dart

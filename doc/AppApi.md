@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **apiAppAppByDeveloperGet**
-> AppDtoPagedResultDto apiAppAppByDeveloperGet(developerAccount)
+> AppDtoPagedResultDto apiAppAppByDeveloperGet(developerAccount, isEnabled)
 
 
 
@@ -32,9 +32,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getAppApi();
 final String developerAccount = developerAccount_example; // String | 
+final bool isEnabled = true; // bool | 
 
 try {
-    final response = api.apiAppAppByDeveloperGet(developerAccount);
+    final response = api.apiAppAppByDeveloperGet(developerAccount, isEnabled);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AppApi->apiAppAppByDeveloperGet: $e\n');
@@ -46,6 +47,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **developerAccount** | **String**|  | [optional] 
+ **isEnabled** | **bool**|  | [optional] [default to true]
 
 ### Return type
 

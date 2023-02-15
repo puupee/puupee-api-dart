@@ -19,6 +19,7 @@ CreateOrUpdateAppDto _$CreateOrUpdateAppDtoFromJson(
           appType: $checkedConvert('appType', (v) => v as String?),
           description: $checkedConvert('description', (v) => v as String?),
           icon: $checkedConvert('icon', (v) => v as String?),
+          sortIndex: $checkedConvert('sortIndex', (v) => v as int?),
           gitRepository: $checkedConvert('gitRepository', (v) => v as String?),
           gitRepositoryType:
               $checkedConvert('gitRepositoryType', (v) => v as String?),
@@ -54,6 +55,7 @@ Map<String, dynamic> _$CreateOrUpdateAppDtoToJson(
   writeNotNull('appType', instance.appType);
   writeNotNull('description', instance.description);
   writeNotNull('icon', instance.icon);
+  writeNotNull('sortIndex', instance.sortIndex);
   writeNotNull('gitRepository', instance.gitRepository);
   writeNotNull('gitRepositoryType', instance.gitRepositoryType);
   writeNotNull('features', instance.features?.map((e) => e.toJson()).toList());

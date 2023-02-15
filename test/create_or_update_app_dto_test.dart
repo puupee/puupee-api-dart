@@ -37,6 +37,11 @@ void main() {
       // TODO
     });
 
+    // int sortIndex
+    test('to test the property `sortIndex`', () async {
+      // TODO
+    });
+
     // String gitRepository
     test('to test the property `gitRepository`', () async {
       // TODO

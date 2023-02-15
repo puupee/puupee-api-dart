@@ -31,6 +31,7 @@ import 'package:puupee_api_client/src/api/role_api.dart';
 import 'package:puupee_api_client/src/api/settings_api.dart';
 import 'package:puupee_api_client/src/api/simple_data_api.dart';
 import 'package:puupee_api_client/src/api/storage_object_api.dart';
+import 'package:puupee_api_client/src/api/subscription_api.dart';
 import 'package:puupee_api_client/src/api/sync_state_api.dart';
 import 'package:puupee_api_client/src/api/tenant_api.dart';
 import 'package:puupee_api_client/src/api/test_api.dart';
@@ -232,6 +233,12 @@ class PuupeeApiClient {
   /// by doing that all interceptors will not be executed
   StorageObjectApi getStorageObjectApi() {
     return StorageObjectApi(dio);
+  }
+
+  /// Get SubscriptionApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  SubscriptionApi getSubscriptionApi() {
+    return SubscriptionApi(dio);
   }
 
   /// Get SyncStateApi instance, base route and serializer can be overridden by a given but be careful,
