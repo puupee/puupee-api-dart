@@ -7,7 +7,7 @@ void main() {
   final instance = PuupeeApiClient().getAppApi();
 
   group(AppApi, () {
-    //Future<AppDtoPagedResultDto> apiAppAppByDeveloperGet({ String developerAccount, bool isEnabled }) async
+    //Future<AppDtoPagedResultDto> apiAppAppByDeveloperGet({ String developerAccount }) async
     test('test apiAppAppByDeveloperGet', () async {
       // TODO
     });
