@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**apiAppAppReleaseIdDelete**](AppReleaseApi.md#apiappappreleaseiddelete) | **DELETE** /api/app/app-release/{id} | 
 [**apiAppAppReleaseIdGet**](AppReleaseApi.md#apiappappreleaseidget) | **GET** /api/app/app-release/{id} | 
 [**apiAppAppReleaseIdPut**](AppReleaseApi.md#apiappappreleaseidput) | **PUT** /api/app/app-release/{id} | 
+[**apiAppAppReleaseLatestGet**](AppReleaseApi.md#apiappappreleaselatestget) | **GET** /api/app/app-release/latest | 
 [**apiAppAppReleasePost**](AppReleaseApi.md#apiappappreleasepost) | **POST** /api/app/app-release | 
 
 
@@ -197,6 +198,57 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **apiAppAppReleaseLatestGet**
+> AppReleaseDto apiAppAppReleaseLatestGet(appName, name, value, name2, value2)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getAppReleaseApi();
+final String appName = appName_example; // String | 
+final String name = name_example; // String | 
+final String value = value_example; // String | 
+final String name2 = name_example; // String | 
+final String value2 = value_example; // String | 
+
+try {
+    final response = api.apiAppAppReleaseLatestGet(appName, name, value, name2, value2);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AppReleaseApi->apiAppAppReleaseLatestGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **appName** | **String**|  | [optional] 
+ **name** | **String**|  | [optional] 
+ **value** | **String**|  | [optional] 
+ **name2** | **String**|  | [optional] 
+ **value2** | **String**|  | [optional] 
+
+### Return type
+
+[**AppReleaseDto**](AppReleaseDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -336,6 +336,97 @@ _responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppR
     );
   }
 
+  /// apiAppAppReleaseLatestGet
+  /// 
+  ///
+  /// Parameters:
+  /// * [appName] 
+  /// * [name] 
+  /// * [value] 
+  /// * [name2] 
+  /// * [value2] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [AppReleaseDto] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<AppReleaseDto>> apiAppAppReleaseLatestGet({ 
+    String? appName,
+    String? name,
+    String? value,
+    String? name2,
+    String? value2,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/app/app-release/latest';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'oauth2',
+            'name': 'oauth2',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      if (appName != null) r'appName': appName,
+      if (name != null) r'Name': name,
+      if (value != null) r'Value': value,
+      if (name2 != null) r'Name': name2,
+      if (value2 != null) r'Value': value2,
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    AppReleaseDto _responseData;
+
+    try {
+_responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppReleaseDto', growable: true);
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<AppReleaseDto>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
   /// apiAppAppReleasePost
   /// 
   ///

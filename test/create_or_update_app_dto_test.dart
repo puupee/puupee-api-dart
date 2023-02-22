@@ -37,6 +37,11 @@ void main() {
       // TODO
     });
 
+    // String homePage
+    test('to test the property `homePage`', () async {
+      // TODO
+    });
+
     // int sortIndex
     test('to test the property `sortIndex`', () async {
       // TODO

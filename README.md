@@ -100,6 +100,7 @@ Class | Method | HTTP request | Description
 [*AppReleaseApi*](doc/AppReleaseApi.md) | [**apiAppAppReleaseIdDelete**](doc/AppReleaseApi.md#apiappappreleaseiddelete) | **DELETE** /api/app/app-release/{id} | 
 [*AppReleaseApi*](doc/AppReleaseApi.md) | [**apiAppAppReleaseIdGet**](doc/AppReleaseApi.md#apiappappreleaseidget) | **GET** /api/app/app-release/{id} | 
 [*AppReleaseApi*](doc/AppReleaseApi.md) | [**apiAppAppReleaseIdPut**](doc/AppReleaseApi.md#apiappappreleaseidput) | **PUT** /api/app/app-release/{id} | 
+[*AppReleaseApi*](doc/AppReleaseApi.md) | [**apiAppAppReleaseLatestGet**](doc/AppReleaseApi.md#apiappappreleaselatestget) | **GET** /api/app/app-release/latest | 
 [*AppReleaseApi*](doc/AppReleaseApi.md) | [**apiAppAppReleasePost**](doc/AppReleaseApi.md#apiappappreleasepost) | **POST** /api/app/app-release | 
 [*AppSdkApi*](doc/AppSdkApi.md) | [**apiAppAppSdkGet**](doc/AppSdkApi.md#apiappappsdkget) | **GET** /api/app/app-sdk | 
 [*AppSdkApi*](doc/AppSdkApi.md) | [**apiAppAppSdkIdDelete**](doc/AppSdkApi.md#apiappappsdkiddelete) | **DELETE** /api/app/app-sdk/{id} | 

@@ -27,6 +27,11 @@ void main() {
       // TODO
     });
 
+    //Future<AppReleaseDto> apiAppAppReleaseLatestGet({ String appName, String name, String value, String name2, String value2 }) async
+    test('test apiAppAppReleaseLatestGet', () async {
+      // TODO
+    });
+
     //Future<AppReleaseDto> apiAppAppReleasePost({ CreateOrUpdateAppReleaseDto body }) async
     test('test apiAppAppReleasePost', () async {
       // TODO
