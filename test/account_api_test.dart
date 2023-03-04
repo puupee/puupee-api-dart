@@ -27,5 +27,10 @@ void main() {
       // TODO
     });
 
+    //Future apiAppAccountDelete() async
+    test('test apiAppAccountDelete', () async {
+      // TODO
+    });
+
   });
 }

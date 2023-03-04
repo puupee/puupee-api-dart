@@ -73,6 +73,7 @@ Class | Method | HTTP request | Description
 [*AccountApi*](doc/AccountApi.md) | [**apiAccountResetPasswordPost**](doc/AccountApi.md#apiaccountresetpasswordpost) | **POST** /api/account/reset-password | 
 [*AccountApi*](doc/AccountApi.md) | [**apiAccountSendPasswordResetCodePost**](doc/AccountApi.md#apiaccountsendpasswordresetcodepost) | **POST** /api/account/send-password-reset-code | 
 [*AccountApi*](doc/AccountApi.md) | [**apiAccountVerifyPasswordResetTokenPost**](doc/AccountApi.md#apiaccountverifypasswordresettokenpost) | **POST** /api/account/verify-password-reset-token | 
+[*AccountApi*](doc/AccountApi.md) | [**apiAppAccountDelete**](doc/AccountApi.md#apiappaccountdelete) | **DELETE** /api/app/account | 
 [*AppApi*](doc/AppApi.md) | [**apiAppAppByDeveloperGet**](doc/AppApi.md#apiappappbydeveloperget) | **GET** /api/app/app/by-developer | 
 [*AppApi*](doc/AppApi.md) | [**apiAppAppByNameGet**](doc/AppApi.md#apiappappbynameget) | **GET** /api/app/app/by-name | 
 [*AppApi*](doc/AppApi.md) | [**apiAppAppGet**](doc/AppApi.md#apiappappget) | **GET** /api/app/app | 
