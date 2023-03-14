@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppAppReleaseLatestGet**
-> AppReleaseDto apiAppAppReleaseLatestGet(appName, platformPeriodName, platformPeriodValue, productTypePeriodName, productTypePeriodValue)
+> AppReleaseDto apiAppAppReleaseLatestGet(appName, platform, productType)
 
 
 
@@ -215,13 +215,11 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getAppReleaseApi();
 final String appName = appName_example; // String | 
-final String platformPeriodName = platformPeriodName_example; // String | 
-final String platformPeriodValue = platformPeriodValue_example; // String | 
-final String productTypePeriodName = productTypePeriodName_example; // String | 
-final String productTypePeriodValue = productTypePeriodValue_example; // String | 
+final String platform = platform_example; // String | 
+final String productType = productType_example; // String | 
 
 try {
-    final response = api.apiAppAppReleaseLatestGet(appName, platformPeriodName, platformPeriodValue, productTypePeriodName, productTypePeriodValue);
+    final response = api.apiAppAppReleaseLatestGet(appName, platform, productType);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AppReleaseApi->apiAppAppReleaseLatestGet: $e\n');
@@ -233,10 +231,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **appName** | **String**|  | [optional] 
- **platformPeriodName** | **String**|  | [optional] 
- **platformPeriodValue** | **String**|  | [optional] 
- **productTypePeriodName** | **String**|  | [optional] 
- **productTypePeriodValue** | **String**|  | [optional] 
+ **platform** | **String**|  | [optional] 
+ **productType** | **String**|  | [optional] 
 
 ### Return type
 

@@ -341,10 +341,8 @@ _responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppR
   ///
   /// Parameters:
   /// * [appName] 
-  /// * [platformPeriodName] 
-  /// * [platformPeriodValue] 
-  /// * [productTypePeriodName] 
-  /// * [productTypePeriodValue] 
+  /// * [platform] 
+  /// * [productType] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -356,10 +354,8 @@ _responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppR
   /// Throws [DioError] if API call or serialization fails
   Future<Response<AppReleaseDto>> apiAppAppReleaseLatestGet({ 
     String? appName,
-    String? platformPeriodName,
-    String? platformPeriodValue,
-    String? productTypePeriodName,
-    String? productTypePeriodValue,
+    String? platform,
+    String? productType,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -387,10 +383,8 @@ _responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppR
 
     final _queryParameters = <String, dynamic>{
       if (appName != null) r'AppName': appName,
-      if (platformPeriodName != null) r'Platform.Name': platformPeriodName,
-      if (platformPeriodValue != null) r'Platform.Value': platformPeriodValue,
-      if (productTypePeriodName != null) r'ProductType.Name': productTypePeriodName,
-      if (productTypePeriodValue != null) r'ProductType.Value': productTypePeriodValue,
+      if (platform != null) r'Platform': platform,
+      if (productType != null) r'ProductType': productType,
     };
 
     final _response = await _dio.request<Object>(
