@@ -27,7 +27,7 @@ void main() {
       // TODO
     });
 
-    //Future<AppReleaseDto> apiAppAppReleaseLatestGet({ String appName, String name, String value, String name2, String value2 }) async
+    //Future<AppReleaseDto> apiAppAppReleaseLatestGet({ String appName, String platformPeriodName, String platformPeriodValue, String productTypePeriodName, String productTypePeriodValue }) async
     test('test apiAppAppReleaseLatestGet', () async {
       // TODO
     });

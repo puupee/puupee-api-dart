@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **deleterId** | **String** |  | [optional] 
 **deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
 **version** | **String** |  | [optional] 
+**versionName** | **String** |  | [optional] 
+**versionCode** | **int** |  | [optional] 
 **notes** | **String** |  | [optional] 
 **platform** | **String** |  | [optional] 
 **key** | **String** |  | [optional] 

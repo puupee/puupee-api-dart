@@ -20,6 +20,10 @@ class CreateOrUpdateAppReleaseDto {
 
      this.version,
 
+     this.versionName,
+
+     this.versionCode,
+
      this.notes,
 
      this.platform,
@@ -56,6 +60,30 @@ class CreateOrUpdateAppReleaseDto {
 
 
   String? version;
+
+
+
+  @JsonKey(
+    
+    name: r'versionName',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? versionName;
+
+
+
+  @JsonKey(
+    
+    name: r'versionCode',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  int? versionCode;
 
 
 
@@ -218,6 +246,8 @@ class CreateOrUpdateAppReleaseDto {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateOrUpdateAppReleaseDto &&
      other.version == version &&
+     other.versionName == versionName &&
+     other.versionCode == versionCode &&
      other.notes == notes &&
      other.platform == platform &&
      other.key == key &&
@@ -235,6 +265,8 @@ class CreateOrUpdateAppReleaseDto {
   @override
   int get hashCode =>
     version.hashCode +
+    versionName.hashCode +
+    versionCode.hashCode +
     notes.hashCode +
     platform.hashCode +
     key.hashCode +

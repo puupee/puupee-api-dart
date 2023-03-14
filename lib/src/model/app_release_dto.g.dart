@@ -25,6 +25,8 @@ AppReleaseDto _$AppReleaseDtoFromJson(Map<String, dynamic> json) =>
           deletionTime: $checkedConvert('deletionTime',
               (v) => v == null ? null : DateTime.parse(v as String)),
           version: $checkedConvert('version', (v) => v as String?),
+          versionName: $checkedConvert('versionName', (v) => v as String?),
+          versionCode: $checkedConvert('versionCode', (v) => v as int?),
           notes: $checkedConvert('notes', (v) => v as String?),
           platform: $checkedConvert('platform', (v) => v as String?),
           key: $checkedConvert('key', (v) => v as String?),
@@ -63,6 +65,8 @@ Map<String, dynamic> _$AppReleaseDtoToJson(AppReleaseDto instance) {
   writeNotNull('deleterId', instance.deleterId);
   writeNotNull('deletionTime', instance.deletionTime?.toIso8601String());
   writeNotNull('version', instance.version);
+  writeNotNull('versionName', instance.versionName);
+  writeNotNull('versionCode', instance.versionCode);
   writeNotNull('notes', instance.notes);
   writeNotNull('platform', instance.platform);
   writeNotNull('key', instance.key);

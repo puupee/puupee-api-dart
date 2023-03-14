@@ -36,6 +36,10 @@ class AppReleaseDto {
 
      this.version,
 
+     this.versionName,
+
+     this.versionCode,
+
      this.notes,
 
      this.platform,
@@ -170,6 +174,30 @@ class AppReleaseDto {
 
 
   String? version;
+
+
+
+  @JsonKey(
+    
+    name: r'versionName',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? versionName;
+
+
+
+  @JsonKey(
+    
+    name: r'versionCode',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  int? versionCode;
 
 
 
@@ -352,6 +380,8 @@ class AppReleaseDto {
      other.deleterId == deleterId &&
      other.deletionTime == deletionTime &&
      other.version == version &&
+     other.versionName == versionName &&
+     other.versionCode == versionCode &&
      other.notes == notes &&
      other.platform == platform &&
      other.key == key &&
@@ -378,6 +408,8 @@ class AppReleaseDto {
     deleterId.hashCode +
     deletionTime.hashCode +
     version.hashCode +
+    versionName.hashCode +
+    versionCode.hashCode +
     notes.hashCode +
     platform.hashCode +
     key.hashCode +

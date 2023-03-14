@@ -12,6 +12,16 @@ void main() {
       // TODO
     });
 
+    // String versionName
+    test('to test the property `versionName`', () async {
+      // TODO
+    });
+
+    // int versionCode
+    test('to test the property `versionCode`', () async {
+      // TODO
+    });
+
     // String notes
     test('to test the property `notes`', () async {
       // TODO

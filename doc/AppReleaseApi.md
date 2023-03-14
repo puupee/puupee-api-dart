@@ -203,7 +203,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppAppReleaseLatestGet**
-> AppReleaseDto apiAppAppReleaseLatestGet(appName, name, value, name2, value2)
+> AppReleaseDto apiAppAppReleaseLatestGet(appName, platformPeriodName, platformPeriodValue, productTypePeriodName, productTypePeriodValue)
 
 
 
@@ -215,13 +215,13 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getAppReleaseApi();
 final String appName = appName_example; // String | 
-final String name = name_example; // String | 
-final String value = value_example; // String | 
-final String name2 = name_example; // String | 
-final String value2 = value_example; // String | 
+final String platformPeriodName = platformPeriodName_example; // String | 
+final String platformPeriodValue = platformPeriodValue_example; // String | 
+final String productTypePeriodName = productTypePeriodName_example; // String | 
+final String productTypePeriodValue = productTypePeriodValue_example; // String | 
 
 try {
-    final response = api.apiAppAppReleaseLatestGet(appName, name, value, name2, value2);
+    final response = api.apiAppAppReleaseLatestGet(appName, platformPeriodName, platformPeriodValue, productTypePeriodName, productTypePeriodValue);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AppReleaseApi->apiAppAppReleaseLatestGet: $e\n');
@@ -233,10 +233,10 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **appName** | **String**|  | [optional] 
- **name** | **String**|  | [optional] 
- **value** | **String**|  | [optional] 
- **name2** | **String**|  | [optional] 
- **value2** | **String**|  | [optional] 
+ **platformPeriodName** | **String**|  | [optional] 
+ **platformPeriodValue** | **String**|  | [optional] 
+ **productTypePeriodName** | **String**|  | [optional] 
+ **productTypePeriodValue** | **String**|  | [optional] 
 
 ### Return type
 
