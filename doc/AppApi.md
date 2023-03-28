@@ -9,6 +9,7 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**apiAppAppByDeveloperAllGet**](AppApi.md#apiappappbydeveloperallget) | **GET** /api/app/app/by-developer-all | 
 [**apiAppAppByDeveloperGet**](AppApi.md#apiappappbydeveloperget) | **GET** /api/app/app/by-developer | 
 [**apiAppAppByNameGet**](AppApi.md#apiappappbynameget) | **GET** /api/app/app/by-name | 
 [**apiAppAppGet**](AppApi.md#apiappappget) | **GET** /api/app/app | 
@@ -18,6 +19,49 @@ Method | HTTP request | Description
 [**apiAppAppPost**](AppApi.md#apiappapppost) | **POST** /api/app/app | 
 [**apiAppAppUploadCredentialsGet**](AppApi.md#apiappappuploadcredentialsget) | **GET** /api/app/app/upload-credentials | 
 
+
+# **apiAppAppByDeveloperAllGet**
+> AppDtoPagedResultDto apiAppAppByDeveloperAllGet(developerAccount)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getAppApi();
+final String developerAccount = developerAccount_example; // String | 
+
+try {
+    final response = api.apiAppAppByDeveloperAllGet(developerAccount);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AppApi->apiAppAppByDeveloperAllGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **developerAccount** | **String**|  | [optional] 
+
+### Return type
+
+[**AppDtoPagedResultDto**](AppDtoPagedResultDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppAppByDeveloperGet**
 > AppDtoPagedResultDto apiAppAppByDeveloperGet(developerAccount)

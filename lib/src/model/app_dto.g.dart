@@ -34,6 +34,8 @@ AppDto _$AppDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
           gitRepository: $checkedConvert('gitRepository', (v) => v as String?),
           gitRepositoryType:
               $checkedConvert('gitRepositoryType', (v) => v as String?),
+          isEnabled: $checkedConvert('isEnabled', (v) => v as bool?),
+          isPublished: $checkedConvert('isPublished', (v) => v as bool?),
           latestReleases: $checkedConvert(
               'latestReleases',
               (v) => (v as List<dynamic>?)
@@ -89,6 +91,8 @@ Map<String, dynamic> _$AppDtoToJson(AppDto instance) {
   writeNotNull('sortIndex', instance.sortIndex);
   writeNotNull('gitRepository', instance.gitRepository);
   writeNotNull('gitRepositoryType', instance.gitRepositoryType);
+  writeNotNull('isEnabled', instance.isEnabled);
+  writeNotNull('isPublished', instance.isPublished);
   writeNotNull('latestReleases',
       instance.latestReleases?.map((e) => e.toJson()).toList());
   writeNotNull('creator', instance.creator?.toJson());

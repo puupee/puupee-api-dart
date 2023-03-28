@@ -27,6 +27,7 @@ PuupeeDto _$PuupeeDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
           title: $checkedConvert('title', (v) => v as String?),
           description: $checkedConvert('description', (v) => v as String?),
           text: $checkedConvert('text', (v) => v as String?),
+          content: $checkedConvert('content', (v) => v as String?),
           format: $checkedConvert('format', (v) => v as String?),
           password: $checkedConvert('password', (v) => v as String?),
           parentId: $checkedConvert('parentId', (v) => v as String?),
@@ -84,6 +85,7 @@ PuupeeDto _$PuupeeDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
               $checkedConvert('lastModifierDeviceToken', (v) => v as String?),
           lastModifierDevice:
               $checkedConvert('lastModifierDevice', (v) => v as String?),
+          app: $checkedConvert('app', (v) => v as String?),
         );
         return val;
       },
@@ -112,6 +114,7 @@ Map<String, dynamic> _$PuupeeDtoToJson(PuupeeDto instance) {
   writeNotNull('title', instance.title);
   writeNotNull('description', instance.description);
   writeNotNull('text', instance.text);
+  writeNotNull('content', instance.content);
   writeNotNull('format', instance.format);
   writeNotNull('password', instance.password);
   writeNotNull('parentId', instance.parentId);
@@ -150,5 +153,6 @@ Map<String, dynamic> _$PuupeeDtoToJson(PuupeeDto instance) {
   writeNotNull('tagging', instance.tagging);
   writeNotNull('lastModifierDeviceToken', instance.lastModifierDeviceToken);
   writeNotNull('lastModifierDevice', instance.lastModifierDevice);
+  writeNotNull('app', instance.app);
   return val;
 }

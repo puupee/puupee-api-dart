@@ -37,6 +37,11 @@ void main() {
       // TODO
     });
 
+    // String content
+    test('to test the property `content`', () async {
+      // TODO
+    });
+
     // String format
     test('to test the property `format`', () async {
       // TODO
@@ -229,6 +234,11 @@ void main() {
 
     // String lastModifierDevice
     test('to test the property `lastModifierDevice`', () async {
+      // TODO
+    });
+
+    // String app
+    test('to test the property `app`', () async {
       // TODO
     });
 

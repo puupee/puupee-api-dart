@@ -1,5 +1,5 @@
 name: puupee_api_client
-version: 1.0.0
+version: 1.0.0+2
 description: Api for puupee app service.
 homepage: https://github.com/puupee/puupee-api-dart
 

@@ -30,6 +30,8 @@ class CreateOrUpdatePuupeeDto {
 
      this.text,
 
+     this.content,
+
      this.format,
 
      this.password,
@@ -107,6 +109,8 @@ class CreateOrUpdatePuupeeDto {
      this.lastModifierDeviceToken,
 
      this.lastModifierDevice,
+
+     this.app,
   });
 
   @JsonKey(
@@ -178,6 +182,18 @@ class CreateOrUpdatePuupeeDto {
 
 
   String? text;
+
+
+
+  @JsonKey(
+    
+    name: r'content',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? content;
 
 
 
@@ -649,6 +665,18 @@ class CreateOrUpdatePuupeeDto {
 
 
 
+  @JsonKey(
+    
+    name: r'app',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? app;
+
+
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateOrUpdatePuupeeDto &&
      other.id == id &&
@@ -657,6 +685,7 @@ class CreateOrUpdatePuupeeDto {
      other.isHidden == isHidden &&
      other.description == description &&
      other.text == text &&
+     other.content == content &&
      other.format == format &&
      other.password == password &&
      other.parentId == parentId &&
@@ -695,7 +724,8 @@ class CreateOrUpdatePuupeeDto {
      other.url == url &&
      other.size == size &&
      other.lastModifierDeviceToken == lastModifierDeviceToken &&
-     other.lastModifierDevice == lastModifierDevice;
+     other.lastModifierDevice == lastModifierDevice &&
+     other.app == app;
 
   @override
   int get hashCode =>
@@ -705,6 +735,7 @@ class CreateOrUpdatePuupeeDto {
     isHidden.hashCode +
     description.hashCode +
     text.hashCode +
+    content.hashCode +
     format.hashCode +
     password.hashCode +
     parentId.hashCode +
@@ -743,7 +774,8 @@ class CreateOrUpdatePuupeeDto {
     url.hashCode +
     size.hashCode +
     lastModifierDeviceToken.hashCode +
-    lastModifierDevice.hashCode;
+    lastModifierDevice.hashCode +
+    app.hashCode;
 
   factory CreateOrUpdatePuupeeDto.fromJson(Map<String, dynamic> json) => _$CreateOrUpdatePuupeeDtoFromJson(json);
 

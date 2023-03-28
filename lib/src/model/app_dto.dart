@@ -58,6 +58,10 @@ class AppDto {
 
      this.gitRepositoryType,
 
+     this.isEnabled,
+
+     this.isPublished,
+
      this.latestReleases,
 
      this.creator,
@@ -285,6 +289,30 @@ class AppDto {
 
   @JsonKey(
     
+    name: r'isEnabled',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  bool? isEnabled;
+
+
+
+  @JsonKey(
+    
+    name: r'isPublished',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  bool? isPublished;
+
+
+
+  @JsonKey(
+    
     name: r'latestReleases',
     required: false,
     includeIfNull: false
@@ -351,6 +379,8 @@ class AppDto {
      other.sortIndex == sortIndex &&
      other.gitRepository == gitRepository &&
      other.gitRepositoryType == gitRepositoryType &&
+     other.isEnabled == isEnabled &&
+     other.isPublished == isPublished &&
      other.latestReleases == latestReleases &&
      other.creator == creator &&
      other.features == features &&
@@ -376,6 +406,8 @@ class AppDto {
     sortIndex.hashCode +
     gitRepository.hashCode +
     gitRepositoryType.hashCode +
+    isEnabled.hashCode +
+    isPublished.hashCode +
     latestReleases.hashCode +
     creator.hashCode +
     features.hashCode +

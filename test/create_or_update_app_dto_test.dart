@@ -57,6 +57,16 @@ void main() {
       // TODO
     });
 
+    // bool isEnabled
+    test('to test the property `isEnabled`', () async {
+      // TODO
+    });
+
+    // bool isPublished
+    test('to test the property `isPublished`', () async {
+      // TODO
+    });
+
     // List<AppFeatureDto> features
     test('to test the property `features`', () async {
       // TODO

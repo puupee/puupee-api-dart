@@ -18,6 +18,8 @@ Name | Type | Description | Notes
 **sortIndex** | **int** |  | [optional] 
 **gitRepository** | **String** |  | [optional] 
 **gitRepositoryType** | **String** |  | [optional] 
+**isEnabled** | **bool** |  | [optional] 
+**isPublished** | **bool** |  | [optional] 
 **features** | [**List&lt;AppFeatureDto&gt;**](AppFeatureDto.md) |  | [optional] 
 **sdks** | [**List&lt;AppSdkDto&gt;**](AppSdkDto.md) |  | [optional] 
 

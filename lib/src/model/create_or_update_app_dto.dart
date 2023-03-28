@@ -40,6 +40,10 @@ class CreateOrUpdateAppDto {
 
      this.gitRepositoryType,
 
+     this.isEnabled,
+
+     this.isPublished,
+
      this.features,
 
      this.sdks,
@@ -167,6 +171,30 @@ class CreateOrUpdateAppDto {
 
   @JsonKey(
     
+    name: r'isEnabled',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  bool? isEnabled;
+
+
+
+  @JsonKey(
+    
+    name: r'isPublished',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  bool? isPublished;
+
+
+
+  @JsonKey(
+    
     name: r'features',
     required: false,
     includeIfNull: false
@@ -201,6 +229,8 @@ class CreateOrUpdateAppDto {
      other.sortIndex == sortIndex &&
      other.gitRepository == gitRepository &&
      other.gitRepositoryType == gitRepositoryType &&
+     other.isEnabled == isEnabled &&
+     other.isPublished == isPublished &&
      other.features == features &&
      other.sdks == sdks;
 
@@ -216,6 +246,8 @@ class CreateOrUpdateAppDto {
     sortIndex.hashCode +
     gitRepository.hashCode +
     gitRepositoryType.hashCode +
+    isEnabled.hashCode +
+    isPublished.hashCode +
     features.hashCode +
     sdks.hashCode;
 

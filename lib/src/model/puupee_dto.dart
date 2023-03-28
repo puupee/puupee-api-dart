@@ -43,6 +43,8 @@ class PuupeeDto {
 
      this.text,
 
+     this.content,
+
      this.format,
 
      this.password,
@@ -114,6 +116,8 @@ class PuupeeDto {
      this.lastModifierDeviceToken,
 
      this.lastModifierDevice,
+
+     this.app,
   });
 
   @JsonKey(
@@ -257,6 +261,18 @@ class PuupeeDto {
 
 
   String? text;
+
+
+
+  @JsonKey(
+    
+    name: r'content',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? content;
 
 
 
@@ -692,6 +708,18 @@ class PuupeeDto {
 
 
 
+  @JsonKey(
+    
+    name: r'app',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? app;
+
+
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is PuupeeDto &&
      other.id == id &&
@@ -706,6 +734,7 @@ class PuupeeDto {
      other.title == title &&
      other.description == description &&
      other.text == text &&
+     other.content == content &&
      other.format == format &&
      other.password == password &&
      other.parentId == parentId &&
@@ -741,7 +770,8 @@ class PuupeeDto {
      other.isHidden == isHidden &&
      other.tagging == tagging &&
      other.lastModifierDeviceToken == lastModifierDeviceToken &&
-     other.lastModifierDevice == lastModifierDevice;
+     other.lastModifierDevice == lastModifierDevice &&
+     other.app == app;
 
   @override
   int get hashCode =>
@@ -757,6 +787,7 @@ class PuupeeDto {
     title.hashCode +
     description.hashCode +
     text.hashCode +
+    content.hashCode +
     format.hashCode +
     password.hashCode +
     parentId.hashCode +
@@ -792,7 +823,8 @@ class PuupeeDto {
     isHidden.hashCode +
     tagging.hashCode +
     lastModifierDeviceToken.hashCode +
-    lastModifierDevice.hashCode;
+    lastModifierDevice.hashCode +
+    app.hashCode;
 
   factory PuupeeDto.fromJson(Map<String, dynamic> json) => _$PuupeeDtoFromJson(json);
 

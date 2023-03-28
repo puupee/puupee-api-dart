@@ -26,6 +26,8 @@ Name | Type | Description | Notes
 **sortIndex** | **int** |  | [optional] 
 **gitRepository** | **String** |  | [optional] 
 **gitRepositoryType** | **String** |  | [optional] 
+**isEnabled** | **bool** |  | [optional] 
+**isPublished** | **bool** |  | [optional] 
 **latestReleases** | [**List&lt;AppReleaseDto&gt;**](AppReleaseDto.md) |  | [optional] 
 **creator** | [**IdentityUserDto**](IdentityUserDto.md) |  | [optional] 
 **features** | [**List&lt;AppFeatureDto&gt;**](AppFeatureDto.md) |  | [optional] 
