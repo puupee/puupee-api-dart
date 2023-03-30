@@ -44,6 +44,7 @@ Name | Type | Description | Notes
 **repeat** | **String** |  | [optional] 
 **repeatOffAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **repeatOffTimes** | **int** |  | [optional] 
+**repetitions** | **int** |  | [optional] 
 **isDone** | **bool** |  | [optional] 
 **doneAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **creatorId** | **String** |  | [optional] 
@@ -55,6 +56,8 @@ Name | Type | Description | Notes
 **lastModifierDeviceToken** | **String** |  | [optional] 
 **lastModifierDevice** | **String** |  | [optional] 
 **app** | **String** |  | [optional] 
+**pushToUser** | **bool** |  | [optional] 
+**sortIndex** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

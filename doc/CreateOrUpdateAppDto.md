@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **isPublished** | **bool** |  | [optional] 
 **features** | [**List&lt;AppFeatureDto&gt;**](AppFeatureDto.md) |  | [optional] 
 **sdks** | [**List&lt;AppSdkDto&gt;**](AppSdkDto.md) |  | [optional] 
+**openClient** | [**CreateOpenIddictApplicationDto**](CreateOpenIddictApplicationDto.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

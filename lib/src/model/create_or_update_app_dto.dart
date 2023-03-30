@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:puupee_api_client/src/model/app_sdk_dto.dart';
 import 'package:puupee_api_client/src/model/app_feature_dto.dart';
+import 'package:puupee_api_client/src/model/create_open_iddict_application_dto.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_or_update_app_dto.g.dart';
@@ -47,6 +48,8 @@ class CreateOrUpdateAppDto {
      this.features,
 
      this.sdks,
+
+     this.openClient,
   });
 
   @JsonKey(
@@ -217,6 +220,18 @@ class CreateOrUpdateAppDto {
 
 
 
+  @JsonKey(
+    
+    name: r'openClient',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  CreateOpenIddictApplicationDto? openClient;
+
+
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateOrUpdateAppDto &&
      other.name == name &&
@@ -232,7 +247,8 @@ class CreateOrUpdateAppDto {
      other.isEnabled == isEnabled &&
      other.isPublished == isPublished &&
      other.features == features &&
-     other.sdks == sdks;
+     other.sdks == sdks &&
+     other.openClient == openClient;
 
   @override
   int get hashCode =>
@@ -249,7 +265,8 @@ class CreateOrUpdateAppDto {
     isEnabled.hashCode +
     isPublished.hashCode +
     features.hashCode +
-    sdks.hashCode;
+    sdks.hashCode +
+    openClient.hashCode;
 
   factory CreateOrUpdateAppDto.fromJson(Map<String, dynamic> json) => _$CreateOrUpdateAppDtoFromJson(json);
 

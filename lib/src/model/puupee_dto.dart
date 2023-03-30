@@ -107,6 +107,8 @@ class PuupeeDto {
 
      this.repeatOffTimes,
 
+     this.repetitions,
+
      this.syncVersion,
 
      this.isHidden,
@@ -118,6 +120,8 @@ class PuupeeDto {
      this.lastModifierDevice,
 
      this.app,
+
+     this.sortIndex,
   });
 
   @JsonKey(
@@ -650,6 +654,18 @@ class PuupeeDto {
 
   @JsonKey(
     
+    name: r'repetitions',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  int? repetitions;
+
+
+
+  @JsonKey(
+    
     name: r'syncVersion',
     required: false,
     includeIfNull: false
@@ -720,6 +736,18 @@ class PuupeeDto {
 
 
 
+  @JsonKey(
+    
+    name: r'sortIndex',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  int? sortIndex;
+
+
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is PuupeeDto &&
      other.id == id &&
@@ -766,12 +794,14 @@ class PuupeeDto {
      other.repeat == repeat &&
      other.repeatOffAt == repeatOffAt &&
      other.repeatOffTimes == repeatOffTimes &&
+     other.repetitions == repetitions &&
      other.syncVersion == syncVersion &&
      other.isHidden == isHidden &&
      other.tagging == tagging &&
      other.lastModifierDeviceToken == lastModifierDeviceToken &&
      other.lastModifierDevice == lastModifierDevice &&
-     other.app == app;
+     other.app == app &&
+     other.sortIndex == sortIndex;
 
   @override
   int get hashCode =>
@@ -819,12 +849,14 @@ class PuupeeDto {
     repeat.hashCode +
     repeatOffAt.hashCode +
     repeatOffTimes.hashCode +
+    repetitions.hashCode +
     syncVersion.hashCode +
     isHidden.hashCode +
     tagging.hashCode +
     lastModifierDeviceToken.hashCode +
     lastModifierDevice.hashCode +
-    app.hashCode;
+    app.hashCode +
+    sortIndex.hashCode;
 
   factory PuupeeDto.fromJson(Map<String, dynamic> json) => _$PuupeeDtoFromJson(json);
 

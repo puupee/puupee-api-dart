@@ -27,6 +27,8 @@ import 'package:puupee_api_client/src/model/change_password_input.dart';
 import 'package:puupee_api_client/src/model/clock_dto.dart';
 import 'package:puupee_api_client/src/model/controller_api_description_model.dart';
 import 'package:puupee_api_client/src/model/controller_interface_api_description_model.dart';
+import 'package:puupee_api_client/src/model/create_message_template_release_dto.dart';
+import 'package:puupee_api_client/src/model/create_open_iddict_application_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_feature_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_pricing_dto.dart';
@@ -34,7 +36,9 @@ import 'package:puupee_api_client/src/model/create_or_update_app_pricing_item_dt
 import 'package:puupee_api_client/src/model/create_or_update_app_release_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_sdk_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_user_score_dto.dart';
+import 'package:puupee_api_client/src/model/create_or_update_message_template_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_puupee_dto.dart';
+import 'package:puupee_api_client/src/model/create_push_notification_dto.dart';
 import 'package:puupee_api_client/src/model/current_culture_dto.dart';
 import 'package:puupee_api_client/src/model/current_tenant_dto.dart';
 import 'package:puupee_api_client/src/model/current_user_dto.dart';
@@ -85,11 +89,18 @@ import 'package:puupee_api_client/src/model/int32_set_key_value_dto.dart';
 import 'package:puupee_api_client/src/model/interface_method_api_description_model.dart';
 import 'package:puupee_api_client/src/model/language_info.dart';
 import 'package:puupee_api_client/src/model/localizable_string_dto.dart';
+import 'package:puupee_api_client/src/model/message_publish_dto.dart';
+import 'package:puupee_api_client/src/model/message_recall_dto.dart';
+import 'package:puupee_api_client/src/model/message_subscribe_dto.dart';
+import 'package:puupee_api_client/src/model/message_template_dto.dart';
+import 'package:puupee_api_client/src/model/message_unsubscribe_dto.dart';
 import 'package:puupee_api_client/src/model/method_parameter_api_description_model.dart';
 import 'package:puupee_api_client/src/model/module_api_description_model.dart';
 import 'package:puupee_api_client/src/model/module_extension_dto.dart';
 import 'package:puupee_api_client/src/model/multi_tenancy_info_dto.dart';
 import 'package:puupee_api_client/src/model/name_value.dart';
+import 'package:puupee_api_client/src/model/notification_info_dto.dart';
+import 'package:puupee_api_client/src/model/notification_info_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/object_extensions_dto.dart';
 import 'package:puupee_api_client/src/model/parameter_api_description_model.dart';
 import 'package:puupee_api_client/src/model/permission_grant_info_dto.dart';
@@ -221,6 +232,10 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return ControllerApiDescriptionModel.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ControllerInterfaceApiDescriptionModel':
           return ControllerInterfaceApiDescriptionModel.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'CreateMessageTemplateReleaseDto':
+          return CreateMessageTemplateReleaseDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'CreateOpenIddictApplicationDto':
+          return CreateOpenIddictApplicationDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateOrUpdateAppDto':
           return CreateOrUpdateAppDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateOrUpdateAppFeatureDto':
@@ -235,8 +250,12 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return CreateOrUpdateAppSdkDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateOrUpdateAppUserScoreDto':
           return CreateOrUpdateAppUserScoreDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'CreateOrUpdateMessageTemplateDto':
+          return CreateOrUpdateMessageTemplateDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateOrUpdatePuupeeDto':
           return CreateOrUpdatePuupeeDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'CreatePushNotificationDto':
+          return CreatePushNotificationDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CurrentCultureDto':
           return CurrentCultureDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CurrentTenantDto':
@@ -340,6 +359,16 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
         case 'LoginResultType':
           
           
+        case 'MessagePublishDto':
+          return MessagePublishDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'MessageRecallDto':
+          return MessageRecallDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'MessageSubscribeDto':
+          return MessageSubscribeDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'MessageTemplateDto':
+          return MessageTemplateDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'MessageUnsubscribeDto':
+          return MessageUnsubscribeDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'MethodParameterApiDescriptionModel':
           return MethodParameterApiDescriptionModel.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ModuleApiDescriptionModel':
@@ -350,6 +379,10 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return MultiTenancyInfoDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'NameValue':
           return NameValue.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'NotificationInfoDto':
+          return NotificationInfoDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'NotificationInfoDtoPagedResultDto':
+          return NotificationInfoDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ObjectExtensionsDto':
           return ObjectExtensionsDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ParameterApiDescriptionModel':

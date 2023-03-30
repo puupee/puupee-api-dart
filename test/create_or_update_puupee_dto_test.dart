@@ -187,6 +187,11 @@ void main() {
       // TODO
     });
 
+    // int repetitions
+    test('to test the property `repetitions`', () async {
+      // TODO
+    });
+
     // bool isDone
     test('to test the property `isDone`', () async {
       // TODO
@@ -239,6 +244,16 @@ void main() {
 
     // String app
     test('to test the property `app`', () async {
+      // TODO
+    });
+
+    // bool pushToUser
+    test('to test the property `pushToUser`', () async {
+      // TODO
+    });
+
+    // int sortIndex
+    test('to test the property `sortIndex`', () async {
       // TODO
     });
 

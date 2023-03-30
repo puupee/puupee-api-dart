@@ -24,6 +24,10 @@ import 'package:puupee_api_client/src/api/email_settings_api.dart';
 import 'package:puupee_api_client/src/api/features_api.dart';
 import 'package:puupee_api_client/src/api/key_value_api.dart';
 import 'package:puupee_api_client/src/api/login_api.dart';
+import 'package:puupee_api_client/src/api/message_api.dart';
+import 'package:puupee_api_client/src/api/message_template_api.dart';
+import 'package:puupee_api_client/src/api/message_template_release_api.dart';
+import 'package:puupee_api_client/src/api/notification_api.dart';
 import 'package:puupee_api_client/src/api/permissions_api.dart';
 import 'package:puupee_api_client/src/api/profile_api.dart';
 import 'package:puupee_api_client/src/api/puupee_api.dart';
@@ -191,6 +195,30 @@ class PuupeeApiClient {
   /// by doing that all interceptors will not be executed
   LoginApi getLoginApi() {
     return LoginApi(dio);
+  }
+
+  /// Get MessageApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  MessageApi getMessageApi() {
+    return MessageApi(dio);
+  }
+
+  /// Get MessageTemplateApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  MessageTemplateApi getMessageTemplateApi() {
+    return MessageTemplateApi(dio);
+  }
+
+  /// Get MessageTemplateReleaseApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  MessageTemplateReleaseApi getMessageTemplateReleaseApi() {
+    return MessageTemplateReleaseApi(dio);
+  }
+
+  /// Get NotificationApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  NotificationApi getNotificationApi() {
+    return NotificationApi(dio);
   }
 
   /// Get PermissionsApi instance, base route and serializer can be overridden by a given but be careful,

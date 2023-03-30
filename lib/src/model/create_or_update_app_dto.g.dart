@@ -37,6 +37,12 @@ CreateOrUpdateAppDto _$CreateOrUpdateAppDtoFromJson(
               (v) => (v as List<dynamic>?)
                   ?.map((e) => AppSdkDto.fromJson(e as Map<String, dynamic>))
                   .toList()),
+          openClient: $checkedConvert(
+              'openClient',
+              (v) => v == null
+                  ? null
+                  : CreateOpenIddictApplicationDto.fromJson(
+                      v as Map<String, dynamic>)),
         );
         return val;
       },
@@ -66,5 +72,6 @@ Map<String, dynamic> _$CreateOrUpdateAppDtoToJson(
   writeNotNull('isPublished', instance.isPublished);
   writeNotNull('features', instance.features?.map((e) => e.toJson()).toList());
   writeNotNull('sdks', instance.sdks?.map((e) => e.toJson()).toList());
+  writeNotNull('openClient', instance.openClient?.toJson());
   return val;
 }

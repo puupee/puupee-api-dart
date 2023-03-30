@@ -52,12 +52,14 @@ Name | Type | Description | Notes
 **repeat** | **String** |  | [optional] 
 **repeatOffAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **repeatOffTimes** | **int** |  | [optional] 
+**repetitions** | **int** |  | [optional] 
 **syncVersion** | **int** |  | [optional] 
 **isHidden** | **bool** |  | [optional] 
 **tagging** | **String** |  | [optional] 
 **lastModifierDeviceToken** | **String** |  | [optional] 
 **lastModifierDevice** | **String** |  | [optional] 
 **app** | **String** |  | [optional] 
+**sortIndex** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

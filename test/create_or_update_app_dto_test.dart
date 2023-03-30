@@ -77,5 +77,10 @@ void main() {
       // TODO
     });
 
+    // CreateOpenIddictApplicationDto openClient
+    test('to test the property `openClient`', () async {
+      // TODO
+    });
+
   });
 }

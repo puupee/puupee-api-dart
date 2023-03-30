@@ -90,6 +90,8 @@ class CreateOrUpdatePuupeeDto {
 
      this.repeatOffTimes,
 
+     this.repetitions,
+
      this.isDone,
 
      this.doneAt,
@@ -111,6 +113,10 @@ class CreateOrUpdatePuupeeDto {
      this.lastModifierDevice,
 
      this.app,
+
+     this.pushToUser,
+
+     this.sortIndex,
   });
 
   @JsonKey(
@@ -547,6 +553,18 @@ class CreateOrUpdatePuupeeDto {
 
   @JsonKey(
     
+    name: r'repetitions',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  int? repetitions;
+
+
+
+  @JsonKey(
+    
     name: r'isDone',
     required: false,
     includeIfNull: false
@@ -677,6 +695,30 @@ class CreateOrUpdatePuupeeDto {
 
 
 
+  @JsonKey(
+    
+    name: r'pushToUser',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  bool? pushToUser;
+
+
+
+  @JsonKey(
+    
+    name: r'sortIndex',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  int? sortIndex;
+
+
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateOrUpdatePuupeeDto &&
      other.id == id &&
@@ -715,6 +757,7 @@ class CreateOrUpdatePuupeeDto {
      other.repeat == repeat &&
      other.repeatOffAt == repeatOffAt &&
      other.repeatOffTimes == repeatOffTimes &&
+     other.repetitions == repetitions &&
      other.isDone == isDone &&
      other.doneAt == doneAt &&
      other.creatorId == creatorId &&
@@ -725,7 +768,9 @@ class CreateOrUpdatePuupeeDto {
      other.size == size &&
      other.lastModifierDeviceToken == lastModifierDeviceToken &&
      other.lastModifierDevice == lastModifierDevice &&
-     other.app == app;
+     other.app == app &&
+     other.pushToUser == pushToUser &&
+     other.sortIndex == sortIndex;
 
   @override
   int get hashCode =>
@@ -765,6 +810,7 @@ class CreateOrUpdatePuupeeDto {
     repeat.hashCode +
     repeatOffAt.hashCode +
     repeatOffTimes.hashCode +
+    repetitions.hashCode +
     isDone.hashCode +
     doneAt.hashCode +
     creatorId.hashCode +
@@ -775,7 +821,9 @@ class CreateOrUpdatePuupeeDto {
     size.hashCode +
     lastModifierDeviceToken.hashCode +
     lastModifierDevice.hashCode +
-    app.hashCode;
+    app.hashCode +
+    pushToUser.hashCode +
+    sortIndex.hashCode;
 
   factory CreateOrUpdatePuupeeDto.fromJson(Map<String, dynamic> json) => _$CreateOrUpdatePuupeeDtoFromJson(json);
 

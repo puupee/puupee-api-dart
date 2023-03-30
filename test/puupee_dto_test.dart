@@ -227,6 +227,11 @@ void main() {
       // TODO
     });
 
+    // int repetitions
+    test('to test the property `repetitions`', () async {
+      // TODO
+    });
+
     // int syncVersion
     test('to test the property `syncVersion`', () async {
       // TODO
@@ -254,6 +259,11 @@ void main() {
 
     // String app
     test('to test the property `app`', () async {
+      // TODO
+    });
+
+    // int sortIndex
+    test('to test the property `sortIndex`', () async {
       // TODO
     });
 

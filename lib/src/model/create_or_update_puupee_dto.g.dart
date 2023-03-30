@@ -65,6 +65,7 @@ CreateOrUpdatePuupeeDto _$CreateOrUpdatePuupeeDtoFromJson(
           repeatOffAt: $checkedConvert('repeatOffAt',
               (v) => v == null ? null : DateTime.parse(v as String)),
           repeatOffTimes: $checkedConvert('repeatOffTimes', (v) => v as int?),
+          repetitions: $checkedConvert('repetitions', (v) => v as int?),
           isDone: $checkedConvert('isDone', (v) => v as bool?),
           doneAt: $checkedConvert(
               'doneAt', (v) => v == null ? null : DateTime.parse(v as String)),
@@ -80,6 +81,8 @@ CreateOrUpdatePuupeeDto _$CreateOrUpdatePuupeeDtoFromJson(
           lastModifierDevice:
               $checkedConvert('lastModifierDevice', (v) => v as String?),
           app: $checkedConvert('app', (v) => v as String?),
+          pushToUser: $checkedConvert('pushToUser', (v) => v as bool?),
+          sortIndex: $checkedConvert('sortIndex', (v) => v as int?),
         );
         return val;
       },
@@ -136,6 +139,7 @@ Map<String, dynamic> _$CreateOrUpdatePuupeeDtoToJson(
   writeNotNull('repeat', instance.repeat);
   writeNotNull('repeatOffAt', instance.repeatOffAt?.toIso8601String());
   writeNotNull('repeatOffTimes', instance.repeatOffTimes);
+  writeNotNull('repetitions', instance.repetitions);
   writeNotNull('isDone', instance.isDone);
   writeNotNull('doneAt', instance.doneAt?.toIso8601String());
   writeNotNull('creatorId', instance.creatorId);
@@ -147,5 +151,7 @@ Map<String, dynamic> _$CreateOrUpdatePuupeeDtoToJson(
   writeNotNull('lastModifierDeviceToken', instance.lastModifierDeviceToken);
   writeNotNull('lastModifierDevice', instance.lastModifierDevice);
   writeNotNull('app', instance.app);
+  writeNotNull('pushToUser', instance.pushToUser);
+  writeNotNull('sortIndex', instance.sortIndex);
   return val;
 }

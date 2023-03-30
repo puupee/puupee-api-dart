@@ -78,6 +78,7 @@ PuupeeDto _$PuupeeDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
           repeatOffAt: $checkedConvert('repeatOffAt',
               (v) => v == null ? null : DateTime.parse(v as String)),
           repeatOffTimes: $checkedConvert('repeatOffTimes', (v) => v as int?),
+          repetitions: $checkedConvert('repetitions', (v) => v as int?),
           syncVersion: $checkedConvert('syncVersion', (v) => v as int?),
           isHidden: $checkedConvert('isHidden', (v) => v as bool?),
           tagging: $checkedConvert('tagging', (v) => v as String?),
@@ -86,6 +87,7 @@ PuupeeDto _$PuupeeDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
           lastModifierDevice:
               $checkedConvert('lastModifierDevice', (v) => v as String?),
           app: $checkedConvert('app', (v) => v as String?),
+          sortIndex: $checkedConvert('sortIndex', (v) => v as int?),
         );
         return val;
       },
@@ -148,11 +150,13 @@ Map<String, dynamic> _$PuupeeDtoToJson(PuupeeDto instance) {
   writeNotNull('repeat', instance.repeat);
   writeNotNull('repeatOffAt', instance.repeatOffAt?.toIso8601String());
   writeNotNull('repeatOffTimes', instance.repeatOffTimes);
+  writeNotNull('repetitions', instance.repetitions);
   writeNotNull('syncVersion', instance.syncVersion);
   writeNotNull('isHidden', instance.isHidden);
   writeNotNull('tagging', instance.tagging);
   writeNotNull('lastModifierDeviceToken', instance.lastModifierDeviceToken);
   writeNotNull('lastModifierDevice', instance.lastModifierDevice);
   writeNotNull('app', instance.app);
+  writeNotNull('sortIndex', instance.sortIndex);
   return val;
 }
