@@ -7,16 +7,6 @@ void main() {
   // TODO add properties to the entity
 
   group(CreateMessageTemplateReleaseDto, () {
-    // String templateName
-    test('to test the property `templateName`', () async {
-      // TODO
-    });
-
-    // int version
-    test('to test the property `version`', () async {
-      // TODO
-    });
-
     // String content
     test('to test the property `content`', () async {
       // TODO

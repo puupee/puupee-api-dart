@@ -13,8 +13,6 @@ CreateMessageTemplateReleaseDto _$CreateMessageTemplateReleaseDtoFromJson(
       json,
       ($checkedConvert) {
         final val = CreateMessageTemplateReleaseDto(
-          templateName: $checkedConvert('templateName', (v) => v as String?),
-          version: $checkedConvert('version', (v) => v as int?),
           content: $checkedConvert('content', (v) => v as String?),
           templateId: $checkedConvert('templateId', (v) => v as String?),
         );
@@ -32,8 +30,6 @@ Map<String, dynamic> _$CreateMessageTemplateReleaseDtoToJson(
     }
   }
 
-  writeNotNull('templateName', instance.templateName);
-  writeNotNull('version', instance.version);
   writeNotNull('content', instance.content);
   writeNotNull('templateId', instance.templateId);
   return val;

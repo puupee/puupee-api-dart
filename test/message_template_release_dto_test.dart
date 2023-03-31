@@ -1,12 +1,12 @@
 import 'package:test/test.dart';
 import 'package:puupee_api_client/puupee_api_client.dart';
 
-// tests for MessageTemplateDto
+// tests for MessageTemplateReleaseDto
 void main() {
-  final MessageTemplateDto? instance = /* MessageTemplateDto(...) */ null;
+  final MessageTemplateReleaseDto? instance = /* MessageTemplateReleaseDto(...) */ null;
   // TODO add properties to the entity
 
-  group(MessageTemplateDto, () {
+  group(MessageTemplateReleaseDto, () {
     // String id
     test('to test the property `id`', () async {
       // TODO
@@ -47,18 +47,23 @@ void main() {
       // TODO
     });
 
-    // String name
-    test('to test the property `name`', () async {
+    // String templateName
+    test('to test the property `templateName`', () async {
       // TODO
     });
 
-    // String description
-    test('to test the property `description`', () async {
+    // int version
+    test('to test the property `version`', () async {
       // TODO
     });
 
-    // int latestVersion
-    test('to test the property `latestVersion`', () async {
+    // String content
+    test('to test the property `content`', () async {
+      // TODO
+    });
+
+    // String templateId
+    test('to test the property `templateId`', () async {
       // TODO
     });
 

@@ -85,7 +85,7 @@ class MessagePublishDto {
   )
 
 
-  Object? data;
+  Map<String, Object>? data;
 
 
 

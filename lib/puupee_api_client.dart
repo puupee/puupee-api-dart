@@ -142,6 +142,7 @@ export 'package:puupee_api_client/src/model/message_publish_dto.dart';
 export 'package:puupee_api_client/src/model/message_recall_dto.dart';
 export 'package:puupee_api_client/src/model/message_subscribe_dto.dart';
 export 'package:puupee_api_client/src/model/message_template_dto.dart';
+export 'package:puupee_api_client/src/model/message_template_release_dto.dart';
 export 'package:puupee_api_client/src/model/message_unsubscribe_dto.dart';
 export 'package:puupee_api_client/src/model/method_parameter_api_description_model.dart';
 export 'package:puupee_api_client/src/model/module_api_description_model.dart';

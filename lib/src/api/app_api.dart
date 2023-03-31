@@ -656,6 +656,100 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
     );
   }
 
+  /// apiAppAppPublicListGet
+  /// 
+  ///
+  /// Parameters:
+  /// * [typePeriodName] 
+  /// * [typePeriodValue] 
+  /// * [searchKey] 
+  /// * [sorting] 
+  /// * [skipCount] 
+  /// * [maxResultCount] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [AppDtoPagedResultDto] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<AppDtoPagedResultDto>> apiAppAppPublicListGet({ 
+    String? typePeriodName,
+    String? typePeriodValue,
+    String? searchKey,
+    String? sorting,
+    int? skipCount,
+    int? maxResultCount,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/app/app/public-list';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'oauth2',
+            'name': 'oauth2',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      if (typePeriodName != null) r'Type.Name': typePeriodName,
+      if (typePeriodValue != null) r'Type.Value': typePeriodValue,
+      if (searchKey != null) r'SearchKey': searchKey,
+      if (sorting != null) r'Sorting': sorting,
+      if (skipCount != null) r'SkipCount': skipCount,
+      if (maxResultCount != null) r'MaxResultCount': maxResultCount,
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    AppDtoPagedResultDto _responseData;
+
+    try {
+_responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_response.data!, 'AppDtoPagedResultDto', growable: true);
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<AppDtoPagedResultDto>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
   /// apiAppAppUploadCredentialsGet
   /// 
   ///

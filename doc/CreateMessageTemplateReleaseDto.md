@@ -8,8 +8,6 @@ import 'package:puupee_api_client/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**templateName** | **String** |  | [optional] 
-**version** | **int** |  | [optional] 
 **content** | **String** |  | [optional] 
 **templateId** | **String** |  | [optional] 
 

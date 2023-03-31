@@ -82,6 +82,7 @@ Class | Method | HTTP request | Description
 [*AppApi*](doc/AppApi.md) | [**apiAppAppIdGet**](doc/AppApi.md#apiappappidget) | **GET** /api/app/app/{id} | 
 [*AppApi*](doc/AppApi.md) | [**apiAppAppIdPut**](doc/AppApi.md#apiappappidput) | **PUT** /api/app/app/{id} | 
 [*AppApi*](doc/AppApi.md) | [**apiAppAppPost**](doc/AppApi.md#apiappapppost) | **POST** /api/app/app | 
+[*AppApi*](doc/AppApi.md) | [**apiAppAppPublicListGet**](doc/AppApi.md#apiappapppubliclistget) | **GET** /api/app/app/public-list | 
 [*AppApi*](doc/AppApi.md) | [**apiAppAppUploadCredentialsGet**](doc/AppApi.md#apiappappuploadcredentialsget) | **GET** /api/app/app/upload-credentials | 
 [*AppFeatureApi*](doc/AppFeatureApi.md) | [**apiAppAppFeatureGet**](doc/AppFeatureApi.md#apiappappfeatureget) | **GET** /api/app/app-feature | 
 [*AppFeatureApi*](doc/AppFeatureApi.md) | [**apiAppAppFeatureIdDelete**](doc/AppFeatureApi.md#apiappappfeatureiddelete) | **DELETE** /api/app/app-feature/{id} | 
@@ -301,6 +302,7 @@ Class | Method | HTTP request | Description
  - [MessageRecallDto](doc/MessageRecallDto.md)
  - [MessageSubscribeDto](doc/MessageSubscribeDto.md)
  - [MessageTemplateDto](doc/MessageTemplateDto.md)
+ - [MessageTemplateReleaseDto](doc/MessageTemplateReleaseDto.md)
  - [MessageUnsubscribeDto](doc/MessageUnsubscribeDto.md)
  - [MethodParameterApiDescriptionModel](doc/MethodParameterApiDescriptionModel.md)
  - [ModuleApiDescriptionModel](doc/ModuleApiDescriptionModel.md)

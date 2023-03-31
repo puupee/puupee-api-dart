@@ -47,6 +47,11 @@ void main() {
       // TODO
     });
 
+    //Future<AppDtoPagedResultDto> apiAppAppPublicListGet({ String typePeriodName, String typePeriodValue, String searchKey, String sorting, int skipCount, int maxResultCount }) async
+    test('test apiAppAppPublicListGet', () async {
+      // TODO
+    });
+
     //Future<StorageObjectCredentials> apiAppAppUploadCredentialsGet({ String key }) async
     test('test apiAppAppUploadCredentialsGet', () async {
       // TODO

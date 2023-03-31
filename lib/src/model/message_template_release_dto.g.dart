@@ -1,17 +1,18 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'message_template_dto.dart';
+part of 'message_template_release_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-MessageTemplateDto _$MessageTemplateDtoFromJson(Map<String, dynamic> json) =>
+MessageTemplateReleaseDto _$MessageTemplateReleaseDtoFromJson(
+        Map<String, dynamic> json) =>
     $checkedCreate(
-      'MessageTemplateDto',
+      'MessageTemplateReleaseDto',
       json,
       ($checkedConvert) {
-        final val = MessageTemplateDto(
+        final val = MessageTemplateReleaseDto(
           id: $checkedConvert('id', (v) => v as String?),
           creationTime: $checkedConvert('creationTime',
               (v) => v == null ? null : DateTime.parse(v as String)),
@@ -24,15 +25,17 @@ MessageTemplateDto _$MessageTemplateDtoFromJson(Map<String, dynamic> json) =>
           deleterId: $checkedConvert('deleterId', (v) => v as String?),
           deletionTime: $checkedConvert('deletionTime',
               (v) => v == null ? null : DateTime.parse(v as String)),
-          name: $checkedConvert('name', (v) => v as String?),
-          description: $checkedConvert('description', (v) => v as String?),
-          latestVersion: $checkedConvert('latestVersion', (v) => v as int?),
+          templateName: $checkedConvert('templateName', (v) => v as String?),
+          version: $checkedConvert('version', (v) => v as int?),
+          content: $checkedConvert('content', (v) => v as String?),
+          templateId: $checkedConvert('templateId', (v) => v as String?),
         );
         return val;
       },
     );
 
-Map<String, dynamic> _$MessageTemplateDtoToJson(MessageTemplateDto instance) {
+Map<String, dynamic> _$MessageTemplateReleaseDtoToJson(
+    MessageTemplateReleaseDto instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -50,8 +53,9 @@ Map<String, dynamic> _$MessageTemplateDtoToJson(MessageTemplateDto instance) {
   writeNotNull('isDeleted', instance.isDeleted);
   writeNotNull('deleterId', instance.deleterId);
   writeNotNull('deletionTime', instance.deletionTime?.toIso8601String());
-  writeNotNull('name', instance.name);
-  writeNotNull('description', instance.description);
-  writeNotNull('latestVersion', instance.latestVersion);
+  writeNotNull('templateName', instance.templateName);
+  writeNotNull('version', instance.version);
+  writeNotNull('content', instance.content);
+  writeNotNull('templateId', instance.templateId);
   return val;
 }

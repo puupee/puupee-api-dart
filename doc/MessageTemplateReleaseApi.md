@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **apiAppMessageTemplateReleaseGet**
-> List<Object> apiAppMessageTemplateReleaseGet(templateId)
+> List<MessageTemplateReleaseDto> apiAppMessageTemplateReleaseGet(templateId)
 
 
 
@@ -44,7 +44,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**List&lt;Object&gt;**
+[**List&lt;MessageTemplateReleaseDto&gt;**](MessageTemplateReleaseDto.md)
 
 ### Authorization
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppMessageTemplateReleaseIdGet**
-> Object apiAppMessageTemplateReleaseIdGet(id)
+> MessageTemplateReleaseDto apiAppMessageTemplateReleaseIdGet(id)
 
 
 
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**MessageTemplateReleaseDto**](MessageTemplateReleaseDto.md)
 
 ### Authorization
 
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppMessageTemplateReleasePost**
-> Object apiAppMessageTemplateReleasePost(body)
+> MessageTemplateReleaseDto apiAppMessageTemplateReleasePost(body)
 
 
 
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**MessageTemplateReleaseDto**](MessageTemplateReleaseDto.md)
 
 ### Authorization
 

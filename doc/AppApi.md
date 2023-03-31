@@ -17,6 +17,7 @@ Method | HTTP request | Description
 [**apiAppAppIdGet**](AppApi.md#apiappappidget) | **GET** /api/app/app/{id} | 
 [**apiAppAppIdPut**](AppApi.md#apiappappidput) | **PUT** /api/app/app/{id} | 
 [**apiAppAppPost**](AppApi.md#apiappapppost) | **POST** /api/app/app | 
+[**apiAppAppPublicListGet**](AppApi.md#apiappapppubliclistget) | **GET** /api/app/app/public-list | 
 [**apiAppAppUploadCredentialsGet**](AppApi.md#apiappappuploadcredentialsget) | **GET** /api/app/app/upload-credentials | 
 
 
@@ -367,6 +368,59 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **apiAppAppPublicListGet**
+> AppDtoPagedResultDto apiAppAppPublicListGet(typePeriodName, typePeriodValue, searchKey, sorting, skipCount, maxResultCount)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getAppApi();
+final String typePeriodName = typePeriodName_example; // String | 
+final String typePeriodValue = typePeriodValue_example; // String | 
+final String searchKey = searchKey_example; // String | 
+final String sorting = sorting_example; // String | 
+final int skipCount = 56; // int | 
+final int maxResultCount = 56; // int | 
+
+try {
+    final response = api.apiAppAppPublicListGet(typePeriodName, typePeriodValue, searchKey, sorting, skipCount, maxResultCount);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AppApi->apiAppAppPublicListGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **typePeriodName** | **String**|  | [optional] 
+ **typePeriodValue** | **String**|  | [optional] 
+ **searchKey** | **String**|  | [optional] 
+ **sorting** | **String**|  | [optional] 
+ **skipCount** | **int**|  | [optional] 
+ **maxResultCount** | **int**|  | [optional] 
+
+### Return type
+
+[**AppDtoPagedResultDto**](AppDtoPagedResultDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

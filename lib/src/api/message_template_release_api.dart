@@ -10,6 +10,7 @@ import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:puupee_api_client/src/model/create_message_template_release_dto.dart';
+import 'package:puupee_api_client/src/model/message_template_release_dto.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 
 class MessageTemplateReleaseApi {
@@ -30,9 +31,9 @@ class MessageTemplateReleaseApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [List<Object>] as data
+  /// Returns a [Future] containing a [Response] with a [List<MessageTemplateReleaseDto>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<List<Object>>> apiAppMessageTemplateReleaseGet({ 
+  Future<Response<List<MessageTemplateReleaseDto>>> apiAppMessageTemplateReleaseGet({ 
     String? templateId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -72,10 +73,10 @@ class MessageTemplateReleaseApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<Object> _responseData;
+    List<MessageTemplateReleaseDto> _responseData;
 
     try {
-_responseData = deserialize<List<Object>, Object>(_response.data!, 'List<Object>', growable: true);
+_responseData = deserialize<List<MessageTemplateReleaseDto>, MessageTemplateReleaseDto>(_response.data!, 'List<MessageTemplateReleaseDto>', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -85,7 +86,7 @@ _responseData = deserialize<List<Object>, Object>(_response.data!, 'List<Object>
       )..stackTrace = stackTrace;
     }
 
-    return Response<List<Object>>(
+    return Response<List<MessageTemplateReleaseDto>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -109,9 +110,9 @@ _responseData = deserialize<List<Object>, Object>(_response.data!, 'List<Object>
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Object] as data
+  /// Returns a [Future] containing a [Response] with a [MessageTemplateReleaseDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<Object>> apiAppMessageTemplateReleaseIdGet({ 
+  Future<Response<MessageTemplateReleaseDto>> apiAppMessageTemplateReleaseIdGet({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -146,10 +147,10 @@ _responseData = deserialize<List<Object>, Object>(_response.data!, 'List<Object>
       onReceiveProgress: onReceiveProgress,
     );
 
-    Object _responseData;
+    MessageTemplateReleaseDto _responseData;
 
     try {
-_responseData = deserialize<Object, Object>(_response.data!, 'Object', growable: true);
+_responseData = deserialize<MessageTemplateReleaseDto, MessageTemplateReleaseDto>(_response.data!, 'MessageTemplateReleaseDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -159,7 +160,7 @@ _responseData = deserialize<Object, Object>(_response.data!, 'Object', growable:
       )..stackTrace = stackTrace;
     }
 
-    return Response<Object>(
+    return Response<MessageTemplateReleaseDto>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -183,9 +184,9 @@ _responseData = deserialize<Object, Object>(_response.data!, 'Object', growable:
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Object] as data
+  /// Returns a [Future] containing a [Response] with a [MessageTemplateReleaseDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<Object>> apiAppMessageTemplateReleasePost({ 
+  Future<Response<MessageTemplateReleaseDto>> apiAppMessageTemplateReleasePost({ 
     CreateMessageTemplateReleaseDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -237,10 +238,10 @@ _bodyData=jsonEncode(body);
       onReceiveProgress: onReceiveProgress,
     );
 
-    Object _responseData;
+    MessageTemplateReleaseDto _responseData;
 
     try {
-_responseData = deserialize<Object, Object>(_response.data!, 'Object', growable: true);
+_responseData = deserialize<MessageTemplateReleaseDto, MessageTemplateReleaseDto>(_response.data!, 'MessageTemplateReleaseDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -250,7 +251,7 @@ _responseData = deserialize<Object, Object>(_response.data!, 'Object', growable:
       )..stackTrace = stackTrace;
     }
 
-    return Response<Object>(
+    return Response<MessageTemplateReleaseDto>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

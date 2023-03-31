@@ -5,7 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:json_annotation/json_annotation.dart';
 
-part 'message_template_dto.g.dart';
+part 'message_template_release_dto.g.dart';
 
 
 @JsonSerializable(
@@ -14,9 +14,9 @@ part 'message_template_dto.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class MessageTemplateDto {
-  /// Returns a new [MessageTemplateDto] instance.
-  MessageTemplateDto({
+class MessageTemplateReleaseDto {
+  /// Returns a new [MessageTemplateReleaseDto] instance.
+  MessageTemplateReleaseDto({
 
      this.id,
 
@@ -34,11 +34,13 @@ class MessageTemplateDto {
 
      this.deletionTime,
 
-     this.name,
+     this.templateName,
 
-     this.description,
+     this.version,
 
-     this.latestVersion,
+     this.content,
+
+     this.templateId,
   });
 
   @JsonKey(
@@ -139,42 +141,54 @@ class MessageTemplateDto {
 
   @JsonKey(
     
-    name: r'name',
+    name: r'templateName',
     required: false,
     includeIfNull: false
   )
 
 
-  String? name;
+  String? templateName;
 
 
 
   @JsonKey(
     
-    name: r'description',
+    name: r'version',
     required: false,
     includeIfNull: false
   )
 
 
-  String? description;
+  int? version;
 
 
 
   @JsonKey(
     
-    name: r'latestVersion',
+    name: r'content',
     required: false,
     includeIfNull: false
   )
 
 
-  int? latestVersion;
+  String? content;
+
+
+
+  @JsonKey(
+    
+    name: r'templateId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? templateId;
 
 
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is MessageTemplateDto &&
+  bool operator ==(Object other) => identical(this, other) || other is MessageTemplateReleaseDto &&
      other.id == id &&
      other.creationTime == creationTime &&
      other.creatorId == creatorId &&
@@ -183,9 +197,10 @@ class MessageTemplateDto {
      other.isDeleted == isDeleted &&
      other.deleterId == deleterId &&
      other.deletionTime == deletionTime &&
-     other.name == name &&
-     other.description == description &&
-     other.latestVersion == latestVersion;
+     other.templateName == templateName &&
+     other.version == version &&
+     other.content == content &&
+     other.templateId == templateId;
 
   @override
   int get hashCode =>
@@ -197,13 +212,14 @@ class MessageTemplateDto {
     isDeleted.hashCode +
     deleterId.hashCode +
     deletionTime.hashCode +
-    name.hashCode +
-    description.hashCode +
-    latestVersion.hashCode;
+    templateName.hashCode +
+    version.hashCode +
+    content.hashCode +
+    templateId.hashCode;
 
-  factory MessageTemplateDto.fromJson(Map<String, dynamic> json) => _$MessageTemplateDtoFromJson(json);
+  factory MessageTemplateReleaseDto.fromJson(Map<String, dynamic> json) => _$MessageTemplateReleaseDtoFromJson(json);
 
-  Map<String, dynamic> toJson() => _$MessageTemplateDtoToJson(this);
+  Map<String, dynamic> toJson() => _$MessageTemplateReleaseDtoToJson(this);
 
   @override
   String toString() {

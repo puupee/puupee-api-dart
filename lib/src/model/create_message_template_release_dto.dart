@@ -18,38 +18,10 @@ class CreateMessageTemplateReleaseDto {
   /// Returns a new [CreateMessageTemplateReleaseDto] instance.
   CreateMessageTemplateReleaseDto({
 
-     this.templateName,
-
-     this.version,
-
      this.content,
 
      this.templateId,
   });
-
-  @JsonKey(
-    
-    name: r'templateName',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? templateName;
-
-
-
-  @JsonKey(
-    
-    name: r'version',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  int? version;
-
-
 
   @JsonKey(
     
@@ -77,15 +49,11 @@ class CreateMessageTemplateReleaseDto {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateMessageTemplateReleaseDto &&
-     other.templateName == templateName &&
-     other.version == version &&
      other.content == content &&
      other.templateId == templateId;
 
   @override
   int get hashCode =>
-    templateName.hashCode +
-    version.hashCode +
     content.hashCode +
     templateId.hashCode;
 

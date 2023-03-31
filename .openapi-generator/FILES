@@ -119,6 +119,7 @@ doc/MessageSubscribeDto.md
 doc/MessageTemplateApi.md
 doc/MessageTemplateDto.md
 doc/MessageTemplateReleaseApi.md
+doc/MessageTemplateReleaseDto.md
 doc/MessageUnsubscribeDto.md
 doc/MethodParameterApiDescriptionModel.md
 doc/ModuleApiDescriptionModel.md
@@ -336,6 +337,7 @@ lib/src/model/message_publish_dto.dart
 lib/src/model/message_recall_dto.dart
 lib/src/model/message_subscribe_dto.dart
 lib/src/model/message_template_dto.dart
+lib/src/model/message_template_release_dto.dart
 lib/src/model/message_unsubscribe_dto.dart
 lib/src/model/method_parameter_api_description_model.dart
 lib/src/model/module_api_description_model.dart
@@ -514,6 +516,7 @@ test/message_subscribe_dto_test.dart
 test/message_template_api_test.dart
 test/message_template_dto_test.dart
 test/message_template_release_api_test.dart
+test/message_template_release_dto_test.dart
 test/message_unsubscribe_dto_test.dart
 test/method_parameter_api_description_model_test.dart
 test/module_api_description_model_test.dart

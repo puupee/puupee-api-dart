@@ -27,7 +27,7 @@ void main() {
       // TODO
     });
 
-    // Object data
+    // Map<String, Object> data
     test('to test the property `data`', () async {
       // TODO
     });

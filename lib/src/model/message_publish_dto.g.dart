@@ -16,7 +16,11 @@ MessagePublishDto _$MessagePublishDtoFromJson(Map<String, dynamic> json) =>
           description: $checkedConvert('description', (v) => v as String?),
           appId: $checkedConvert('appId', (v) => v as String?),
           template: $checkedConvert('template', (v) => v as String?),
-          data: $checkedConvert('data', (v) => v),
+          data: $checkedConvert(
+              'data',
+              (v) => (v as Map<String, dynamic>?)?.map(
+                    (k, e) => MapEntry(k, e as Object),
+                  )),
         );
         return val;
       },

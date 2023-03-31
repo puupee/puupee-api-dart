@@ -1,4 +1,4 @@
-# puupee_api_client.model.MessageTemplateDto
+# puupee_api_client.model.MessageTemplateReleaseDto
 
 ## Load the model package
 ```dart
@@ -16,9 +16,10 @@ Name | Type | Description | Notes
 **isDeleted** | **bool** |  | [optional] 
 **deleterId** | **String** |  | [optional] 
 **deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
-**name** | **String** |  | [optional] 
-**description** | **String** |  | [optional] 
-**latestVersion** | **int** |  | [optional] 
+**templateName** | **String** |  | [optional] 
+**version** | **int** |  | [optional] 
+**content** | **String** |  | [optional] 
+**templateId** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
