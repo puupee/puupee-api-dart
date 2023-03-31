@@ -17,7 +17,7 @@ Method | HTTP request | Description
 [**apiAppAppIdGet**](AppApi.md#apiappappidget) | **GET** /api/app/app/{id} | 
 [**apiAppAppIdPut**](AppApi.md#apiappappidput) | **PUT** /api/app/app/{id} | 
 [**apiAppAppPost**](AppApi.md#apiappapppost) | **POST** /api/app/app | 
-[**apiAppAppPublicListGet**](AppApi.md#apiappapppubliclistget) | **GET** /api/app/app/public-list | 
+[**apiAppAppPublicGet**](AppApi.md#apiappapppublicget) | **GET** /api/app/app/public | 
 [**apiAppAppUploadCredentialsGet**](AppApi.md#apiappappuploadcredentialsget) | **GET** /api/app/app/upload-credentials | 
 
 
@@ -372,8 +372,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppAppPublicListGet**
-> AppDtoPagedResultDto apiAppAppPublicListGet(typePeriodName, typePeriodValue, searchKey, sorting, skipCount, maxResultCount)
+# **apiAppAppPublicGet**
+> AppDtoPagedResultDto apiAppAppPublicGet(type, searchKey, sorting, skipCount, maxResultCount)
 
 
 
@@ -384,18 +384,17 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppApi();
-final String typePeriodName = typePeriodName_example; // String | 
-final String typePeriodValue = typePeriodValue_example; // String | 
+final String type = type_example; // String | 
 final String searchKey = searchKey_example; // String | 
 final String sorting = sorting_example; // String | 
 final int skipCount = 56; // int | 
 final int maxResultCount = 56; // int | 
 
 try {
-    final response = api.apiAppAppPublicListGet(typePeriodName, typePeriodValue, searchKey, sorting, skipCount, maxResultCount);
+    final response = api.apiAppAppPublicGet(type, searchKey, sorting, skipCount, maxResultCount);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling AppApi->apiAppAppPublicListGet: $e\n');
+    print('Exception when calling AppApi->apiAppAppPublicGet: $e\n');
 }
 ```
 
@@ -403,8 +402,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **typePeriodName** | **String**|  | [optional] 
- **typePeriodValue** | **String**|  | [optional] 
+ **type** | **String**|  | [optional] 
  **searchKey** | **String**|  | [optional] 
  **sorting** | **String**|  | [optional] 
  **skipCount** | **int**|  | [optional] 

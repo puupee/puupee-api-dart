@@ -656,12 +656,11 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
     );
   }
 
-  /// apiAppAppPublicListGet
+  /// apiAppAppPublicGet
   /// 
   ///
   /// Parameters:
-  /// * [typePeriodName] 
-  /// * [typePeriodValue] 
+  /// * [type] 
   /// * [searchKey] 
   /// * [sorting] 
   /// * [skipCount] 
@@ -675,9 +674,8 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
   ///
   /// Returns a [Future] containing a [Response] with a [AppDtoPagedResultDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<AppDtoPagedResultDto>> apiAppAppPublicListGet({ 
-    String? typePeriodName,
-    String? typePeriodValue,
+  Future<Response<AppDtoPagedResultDto>> apiAppAppPublicGet({ 
+    String? type,
     String? searchKey,
     String? sorting,
     int? skipCount,
@@ -689,7 +687,7 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/app/app/public-list';
+    final _path = r'/api/app/app/public';
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -708,8 +706,7 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
     );
 
     final _queryParameters = <String, dynamic>{
-      if (typePeriodName != null) r'Type.Name': typePeriodName,
-      if (typePeriodValue != null) r'Type.Value': typePeriodValue,
+      if (type != null) r'Type': type,
       if (searchKey != null) r'SearchKey': searchKey,
       if (sorting != null) r'Sorting': sorting,
       if (skipCount != null) r'SkipCount': skipCount,
