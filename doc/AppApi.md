@@ -373,7 +373,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppAppPublicGet**
-> AppDtoPagedResultDto apiAppAppPublicGet(type, searchKey, sorting, skipCount, maxResultCount)
+> PublicAppDtoPagedResultDto apiAppAppPublicGet(type, searchKey, sorting, skipCount, maxResultCount)
 
 
 
@@ -410,7 +410,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AppDtoPagedResultDto**](AppDtoPagedResultDto.md)
+[**PublicAppDtoPagedResultDto**](PublicAppDtoPagedResultDto.md)
 
 ### Authorization
 

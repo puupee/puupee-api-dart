@@ -47,7 +47,7 @@ void main() {
       // TODO
     });
 
-    //Future<AppDtoPagedResultDto> apiAppAppPublicGet({ String type, String searchKey, String sorting, int skipCount, int maxResultCount }) async
+    //Future<PublicAppDtoPagedResultDto> apiAppAppPublicGet({ String type, String searchKey, String sorting, int skipCount, int maxResultCount }) async
     test('test apiAppAppPublicGet', () async {
       // TODO
     });

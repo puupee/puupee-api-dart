@@ -12,6 +12,7 @@ import 'package:dio/dio.dart';
 import 'package:puupee_api_client/src/model/app_dto.dart';
 import 'package:puupee_api_client/src/model/app_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_dto.dart';
+import 'package:puupee_api_client/src/model/public_app_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 import 'package:puupee_api_client/src/model/storage_object_credentials.dart';
 
@@ -672,9 +673,9 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [AppDtoPagedResultDto] as data
+  /// Returns a [Future] containing a [Response] with a [PublicAppDtoPagedResultDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<AppDtoPagedResultDto>> apiAppAppPublicGet({ 
+  Future<Response<PublicAppDtoPagedResultDto>> apiAppAppPublicGet({ 
     String? type,
     String? searchKey,
     String? sorting,
@@ -722,10 +723,10 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
       onReceiveProgress: onReceiveProgress,
     );
 
-    AppDtoPagedResultDto _responseData;
+    PublicAppDtoPagedResultDto _responseData;
 
     try {
-_responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_response.data!, 'AppDtoPagedResultDto', growable: true);
+_responseData = deserialize<PublicAppDtoPagedResultDto, PublicAppDtoPagedResultDto>(_response.data!, 'PublicAppDtoPagedResultDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -735,7 +736,7 @@ _responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_respons
       )..stackTrace = stackTrace;
     }
 
-    return Response<AppDtoPagedResultDto>(
+    return Response<PublicAppDtoPagedResultDto>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

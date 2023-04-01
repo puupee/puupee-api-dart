@@ -318,6 +318,8 @@ Class | Method | HTTP request | Description
  - [ProfileDto](doc/ProfileDto.md)
  - [PropertyApiDescriptionModel](doc/PropertyApiDescriptionModel.md)
  - [ProviderInfoDto](doc/ProviderInfoDto.md)
+ - [PublicAppDto](doc/PublicAppDto.md)
+ - [PublicAppDtoPagedResultDto](doc/PublicAppDtoPagedResultDto.md)
  - [PuupeeChangedEto](doc/PuupeeChangedEto.md)
  - [PuupeeDto](doc/PuupeeDto.md)
  - [PuupeeDtoPagedResultDto](doc/PuupeeDtoPagedResultDto.md)

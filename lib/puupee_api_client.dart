@@ -158,6 +158,8 @@ export 'package:puupee_api_client/src/model/permission_group_dto.dart';
 export 'package:puupee_api_client/src/model/profile_dto.dart';
 export 'package:puupee_api_client/src/model/property_api_description_model.dart';
 export 'package:puupee_api_client/src/model/provider_info_dto.dart';
+export 'package:puupee_api_client/src/model/public_app_dto.dart';
+export 'package:puupee_api_client/src/model/public_app_dto_paged_result_dto.dart';
 export 'package:puupee_api_client/src/model/puupee_changed_eto.dart';
 export 'package:puupee_api_client/src/model/puupee_dto.dart';
 export 'package:puupee_api_client/src/model/puupee_dto_paged_result_dto.dart';
