@@ -37,6 +37,11 @@ void main() {
       // TODO
     });
 
+    //Future<PublicAppDto> apiAppAppIdPublicGet(String id) async
+    test('test apiAppAppIdPublicGet', () async {
+      // TODO
+    });
+
     //Future<AppDto> apiAppAppIdPut(String id, { CreateOrUpdateAppDto body }) async
     test('test apiAppAppIdPut', () async {
       // TODO
