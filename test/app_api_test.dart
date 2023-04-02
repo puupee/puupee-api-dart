@@ -52,13 +52,13 @@ void main() {
       // TODO
     });
 
-    //Future<AppWithUserDtoPagedResultDto> apiAppAppPublicGet({ String type, String searchKey, String sorting, int skipCount, int maxResultCount }) async
-    test('test apiAppAppPublicGet', () async {
+    //Future<StorageObjectCredentials> apiAppAppUploadCredentialsGet({ String key }) async
+    test('test apiAppAppUploadCredentialsGet', () async {
       // TODO
     });
 
-    //Future<StorageObjectCredentials> apiAppAppUploadCredentialsGet({ String key }) async
-    test('test apiAppAppUploadCredentialsGet', () async {
+    //Future<AppWithUserDtoPagedResultDto> apiAppAppWithUserGet({ String type, String searchKey, String sorting, int skipCount, int maxResultCount }) async
+    test('test apiAppAppWithUserGet', () async {
       // TODO
     });
 

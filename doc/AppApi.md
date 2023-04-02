@@ -18,8 +18,8 @@ Method | HTTP request | Description
 [**apiAppAppIdPut**](AppApi.md#apiappappidput) | **PUT** /api/app/app/{id} | 
 [**apiAppAppIdWithUserGet**](AppApi.md#apiappappidwithuserget) | **GET** /api/app/app/{id}/with-user | 
 [**apiAppAppPost**](AppApi.md#apiappapppost) | **POST** /api/app/app | 
-[**apiAppAppPublicGet**](AppApi.md#apiappapppublicget) | **GET** /api/app/app/public | 
 [**apiAppAppUploadCredentialsGet**](AppApi.md#apiappappuploadcredentialsget) | **GET** /api/app/app/upload-credentials | 
+[**apiAppAppWithUserGet**](AppApi.md#apiappappwithuserget) | **GET** /api/app/app/with-user | 
 
 
 # **apiAppAppByDeveloperAllGet**
@@ -416,57 +416,6 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppAppPublicGet**
-> AppWithUserDtoPagedResultDto apiAppAppPublicGet(type, searchKey, sorting, skipCount, maxResultCount)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getAppApi();
-final String type = type_example; // String | 
-final String searchKey = searchKey_example; // String | 
-final String sorting = sorting_example; // String | 
-final int skipCount = 56; // int | 
-final int maxResultCount = 56; // int | 
-
-try {
-    final response = api.apiAppAppPublicGet(type, searchKey, sorting, skipCount, maxResultCount);
-    print(response);
-} catch on DioError (e) {
-    print('Exception when calling AppApi->apiAppAppPublicGet: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **type** | **String**|  | [optional] 
- **searchKey** | **String**|  | [optional] 
- **sorting** | **String**|  | [optional] 
- **skipCount** | **int**|  | [optional] 
- **maxResultCount** | **int**|  | [optional] 
-
-### Return type
-
-[**AppWithUserDtoPagedResultDto**](AppWithUserDtoPagedResultDto.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
 # **apiAppAppUploadCredentialsGet**
 > StorageObjectCredentials apiAppAppUploadCredentialsGet(key)
 
@@ -498,6 +447,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**StorageObjectCredentials**](StorageObjectCredentials.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **apiAppAppWithUserGet**
+> AppWithUserDtoPagedResultDto apiAppAppWithUserGet(type, searchKey, sorting, skipCount, maxResultCount)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getAppApi();
+final String type = type_example; // String | 
+final String searchKey = searchKey_example; // String | 
+final String sorting = sorting_example; // String | 
+final int skipCount = 56; // int | 
+final int maxResultCount = 56; // int | 
+
+try {
+    final response = api.apiAppAppWithUserGet(type, searchKey, sorting, skipCount, maxResultCount);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AppApi->apiAppAppWithUserGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **type** | **String**|  | [optional] 
+ **searchKey** | **String**|  | [optional] 
+ **sorting** | **String**|  | [optional] 
+ **skipCount** | **int**|  | [optional] 
+ **maxResultCount** | **int**|  | [optional] 
+
+### Return type
+
+[**AppWithUserDtoPagedResultDto**](AppWithUserDtoPagedResultDto.md)
 
 ### Authorization
 
