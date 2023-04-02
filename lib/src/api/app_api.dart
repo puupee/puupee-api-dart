@@ -11,9 +11,9 @@ import 'package:dio/dio.dart';
 
 import 'package:puupee_api_client/src/model/app_dto.dart';
 import 'package:puupee_api_client/src/model/app_dto_paged_result_dto.dart';
+import 'package:puupee_api_client/src/model/app_with_user_dto.dart';
+import 'package:puupee_api_client/src/model/app_with_user_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_dto.dart';
-import 'package:puupee_api_client/src/model/public_app_dto.dart';
-import 'package:puupee_api_client/src/model/public_app_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 import 'package:puupee_api_client/src/model/storage_object_credentials.dart';
 
@@ -579,9 +579,9 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [PublicAppDto] as data
+  /// Returns a [Future] containing a [Response] with a [AppWithUserDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<PublicAppDto>> apiAppAppIdWithUserGet({ 
+  Future<Response<AppWithUserDto>> apiAppAppIdWithUserGet({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -616,10 +616,10 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
       onReceiveProgress: onReceiveProgress,
     );
 
-    PublicAppDto _responseData;
+    AppWithUserDto _responseData;
 
     try {
-_responseData = deserialize<PublicAppDto, PublicAppDto>(_response.data!, 'PublicAppDto', growable: true);
+_responseData = deserialize<AppWithUserDto, AppWithUserDto>(_response.data!, 'AppWithUserDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -629,7 +629,7 @@ _responseData = deserialize<PublicAppDto, PublicAppDto>(_response.data!, 'Public
       )..stackTrace = stackTrace;
     }
 
-    return Response<PublicAppDto>(
+    return Response<AppWithUserDto>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -748,9 +748,9 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [PublicAppDtoPagedResultDto] as data
+  /// Returns a [Future] containing a [Response] with a [AppWithUserDtoPagedResultDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<PublicAppDtoPagedResultDto>> apiAppAppPublicGet({ 
+  Future<Response<AppWithUserDtoPagedResultDto>> apiAppAppPublicGet({ 
     String? type,
     String? searchKey,
     String? sorting,
@@ -798,10 +798,10 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
       onReceiveProgress: onReceiveProgress,
     );
 
-    PublicAppDtoPagedResultDto _responseData;
+    AppWithUserDtoPagedResultDto _responseData;
 
     try {
-_responseData = deserialize<PublicAppDtoPagedResultDto, PublicAppDtoPagedResultDto>(_response.data!, 'PublicAppDtoPagedResultDto', growable: true);
+_responseData = deserialize<AppWithUserDtoPagedResultDto, AppWithUserDtoPagedResultDto>(_response.data!, 'AppWithUserDtoPagedResultDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -811,7 +811,7 @@ _responseData = deserialize<PublicAppDtoPagedResultDto, PublicAppDtoPagedResultD
       )..stackTrace = stackTrace;
     }
 
-    return Response<PublicAppDtoPagedResultDto>(
+    return Response<AppWithUserDtoPagedResultDto>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

@@ -1,22 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'public_app_dto_paged_result_dto.dart';
+part of 'app_with_user_dto_paged_result_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-PublicAppDtoPagedResultDto _$PublicAppDtoPagedResultDtoFromJson(
+AppWithUserDtoPagedResultDto _$AppWithUserDtoPagedResultDtoFromJson(
         Map<String, dynamic> json) =>
     $checkedCreate(
-      'PublicAppDtoPagedResultDto',
+      'AppWithUserDtoPagedResultDto',
       json,
       ($checkedConvert) {
-        final val = PublicAppDtoPagedResultDto(
+        final val = AppWithUserDtoPagedResultDto(
           items: $checkedConvert(
               'items',
               (v) => (v as List<dynamic>?)
-                  ?.map((e) => PublicAppDto.fromJson(e as Map<String, dynamic>))
+                  ?.map(
+                      (e) => AppWithUserDto.fromJson(e as Map<String, dynamic>))
                   .toList()),
           totalCount: $checkedConvert('totalCount', (v) => v as int?),
         );
@@ -24,8 +25,8 @@ PublicAppDtoPagedResultDto _$PublicAppDtoPagedResultDtoFromJson(
       },
     );
 
-Map<String, dynamic> _$PublicAppDtoPagedResultDtoToJson(
-    PublicAppDtoPagedResultDto instance) {
+Map<String, dynamic> _$AppWithUserDtoPagedResultDtoToJson(
+    AppWithUserDtoPagedResultDto instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {

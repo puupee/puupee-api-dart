@@ -11,6 +11,8 @@ import 'package:puupee_api_client/src/model/app_release_dto_paged_result_dto.dar
 import 'package:puupee_api_client/src/model/app_sdk_dto.dart';
 import 'package:puupee_api_client/src/model/app_theme.dart';
 import 'package:puupee_api_client/src/model/app_user_score_dto.dart';
+import 'package:puupee_api_client/src/model/app_with_user_dto.dart';
+import 'package:puupee_api_client/src/model/app_with_user_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/application_api_description_model.dart';
 import 'package:puupee_api_client/src/model/application_auth_configuration_dto.dart';
 import 'package:puupee_api_client/src/model/application_configuration_dto.dart';
@@ -109,8 +111,6 @@ import 'package:puupee_api_client/src/model/permission_group_dto.dart';
 import 'package:puupee_api_client/src/model/profile_dto.dart';
 import 'package:puupee_api_client/src/model/property_api_description_model.dart';
 import 'package:puupee_api_client/src/model/provider_info_dto.dart';
-import 'package:puupee_api_client/src/model/public_app_dto.dart';
-import 'package:puupee_api_client/src/model/public_app_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/puupee_changed_eto.dart';
 import 'package:puupee_api_client/src/model/puupee_dto.dart';
 import 'package:puupee_api_client/src/model/puupee_dto_paged_result_dto.dart';
@@ -203,6 +203,10 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           
         case 'AppUserScoreDto':
           return AppUserScoreDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppWithUserDto':
+          return AppWithUserDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppWithUserDtoPagedResultDto':
+          return AppWithUserDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ApplicationApiDescriptionModel':
           return ApplicationApiDescriptionModel.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ApplicationAuthConfigurationDto':
@@ -402,10 +406,6 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return PropertyApiDescriptionModel.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ProviderInfoDto':
           return ProviderInfoDto.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'PublicAppDto':
-          return PublicAppDto.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'PublicAppDtoPagedResultDto':
-          return PublicAppDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'PuupeeChangedEto':
           return PuupeeChangedEto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'PuupeeDto':

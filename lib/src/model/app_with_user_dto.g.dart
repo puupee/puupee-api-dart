@@ -1,17 +1,17 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'public_app_dto.dart';
+part of 'app_with_user_dto.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-PublicAppDto _$PublicAppDtoFromJson(Map<String, dynamic> json) =>
+AppWithUserDto _$AppWithUserDtoFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      'PublicAppDto',
+      'AppWithUserDto',
       json,
       ($checkedConvert) {
-        final val = PublicAppDto(
+        final val = AppWithUserDto(
           id: $checkedConvert('id', (v) => v as String?),
           creationTime: $checkedConvert('creationTime',
               (v) => v == null ? null : DateTime.parse(v as String)),
@@ -69,7 +69,7 @@ PublicAppDto _$PublicAppDtoFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$PublicAppDtoToJson(PublicAppDto instance) {
+Map<String, dynamic> _$AppWithUserDtoToJson(AppWithUserDto instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {

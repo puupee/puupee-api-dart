@@ -1,4 +1,4 @@
-# puupee_api_client.model.PublicAppDto
+# puupee_api_client.model.AppWithUserDto
 
 ## Load the model package
 ```dart

@@ -1,12 +1,12 @@
 import 'package:test/test.dart';
 import 'package:puupee_api_client/puupee_api_client.dart';
 
-// tests for PublicAppDto
+// tests for AppWithUserDto
 void main() {
-  final PublicAppDto? instance = /* PublicAppDto(...) */ null;
+  final AppWithUserDto? instance = /* AppWithUserDto(...) */ null;
   // TODO add properties to the entity
 
-  group(PublicAppDto, () {
+  group(AppWithUserDto, () {
     // String id
     test('to test the property `id`', () async {
       // TODO

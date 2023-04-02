@@ -28,6 +28,8 @@ doc/AppTheme.md
 doc/AppThemeMode.md
 doc/AppUserScoreApi.md
 doc/AppUserScoreDto.md
+doc/AppWithUserDto.md
+doc/AppWithUserDtoPagedResultDto.md
 doc/ApplicationApiDescriptionModel.md
 doc/ApplicationAuthConfigurationDto.md
 doc/ApplicationConfigurationDto.md
@@ -138,8 +140,6 @@ doc/ProfileApi.md
 doc/ProfileDto.md
 doc/PropertyApiDescriptionModel.md
 doc/ProviderInfoDto.md
-doc/PublicAppDto.md
-doc/PublicAppDtoPagedResultDto.md
 doc/PuupeeApi.md
 doc/PuupeeChangedEto.md
 doc/PuupeeDto.md
@@ -256,6 +256,8 @@ lib/src/model/app_sdk_dto.dart
 lib/src/model/app_theme.dart
 lib/src/model/app_theme_mode.dart
 lib/src/model/app_user_score_dto.dart
+lib/src/model/app_with_user_dto.dart
+lib/src/model/app_with_user_dto_paged_result_dto.dart
 lib/src/model/application_api_description_model.dart
 lib/src/model/application_auth_configuration_dto.dart
 lib/src/model/application_configuration_dto.dart
@@ -355,8 +357,6 @@ lib/src/model/permission_group_dto.dart
 lib/src/model/profile_dto.dart
 lib/src/model/property_api_description_model.dart
 lib/src/model/provider_info_dto.dart
-lib/src/model/public_app_dto.dart
-lib/src/model/public_app_dto_paged_result_dto.dart
 lib/src/model/puupee_changed_eto.dart
 lib/src/model/puupee_dto.dart
 lib/src/model/puupee_dto_paged_result_dto.dart
@@ -429,6 +429,8 @@ test/app_theme_mode_test.dart
 test/app_theme_test.dart
 test/app_user_score_api_test.dart
 test/app_user_score_dto_test.dart
+test/app_with_user_dto_paged_result_dto_test.dart
+test/app_with_user_dto_test.dart
 test/application_api_description_model_test.dart
 test/application_auth_configuration_dto_test.dart
 test/application_configuration_dto_test.dart
@@ -539,8 +541,6 @@ test/profile_api_test.dart
 test/profile_dto_test.dart
 test/property_api_description_model_test.dart
 test/provider_info_dto_test.dart
-test/public_app_dto_paged_result_dto_test.dart
-test/public_app_dto_test.dart
 test/puupee_api_test.dart
 test/puupee_changed_eto_test.dart
 test/puupee_dto_paged_result_dto_test.dart

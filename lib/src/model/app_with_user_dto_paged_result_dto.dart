@@ -3,10 +3,10 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:puupee_api_client/src/model/public_app_dto.dart';
+import 'package:puupee_api_client/src/model/app_with_user_dto.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'public_app_dto_paged_result_dto.g.dart';
+part 'app_with_user_dto_paged_result_dto.g.dart';
 
 
 @JsonSerializable(
@@ -15,9 +15,9 @@ part 'public_app_dto_paged_result_dto.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class PublicAppDtoPagedResultDto {
-  /// Returns a new [PublicAppDtoPagedResultDto] instance.
-  PublicAppDtoPagedResultDto({
+class AppWithUserDtoPagedResultDto {
+  /// Returns a new [AppWithUserDtoPagedResultDto] instance.
+  AppWithUserDtoPagedResultDto({
 
      this.items,
 
@@ -32,7 +32,7 @@ class PublicAppDtoPagedResultDto {
   )
 
 
-  List<PublicAppDto>? items;
+  List<AppWithUserDto>? items;
 
 
 
@@ -49,7 +49,7 @@ class PublicAppDtoPagedResultDto {
 
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is PublicAppDtoPagedResultDto &&
+  bool operator ==(Object other) => identical(this, other) || other is AppWithUserDtoPagedResultDto &&
      other.items == items &&
      other.totalCount == totalCount;
 
@@ -58,9 +58,9 @@ class PublicAppDtoPagedResultDto {
     items.hashCode +
     totalCount.hashCode;
 
-  factory PublicAppDtoPagedResultDto.fromJson(Map<String, dynamic> json) => _$PublicAppDtoPagedResultDtoFromJson(json);
+  factory AppWithUserDtoPagedResultDto.fromJson(Map<String, dynamic> json) => _$AppWithUserDtoPagedResultDtoFromJson(json);
 
-  Map<String, dynamic> toJson() => _$PublicAppDtoPagedResultDtoToJson(this);
+  Map<String, dynamic> toJson() => _$AppWithUserDtoPagedResultDtoToJson(this);
 
   @override
   String toString() {

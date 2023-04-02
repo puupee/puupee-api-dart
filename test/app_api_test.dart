@@ -42,7 +42,7 @@ void main() {
       // TODO
     });
 
-    //Future<PublicAppDto> apiAppAppIdWithUserGet(String id) async
+    //Future<AppWithUserDto> apiAppAppIdWithUserGet(String id) async
     test('test apiAppAppIdWithUserGet', () async {
       // TODO
     });
@@ -52,7 +52,7 @@ void main() {
       // TODO
     });
 
-    //Future<PublicAppDtoPagedResultDto> apiAppAppPublicGet({ String type, String searchKey, String sorting, int skipCount, int maxResultCount }) async
+    //Future<AppWithUserDtoPagedResultDto> apiAppAppPublicGet({ String type, String searchKey, String sorting, int skipCount, int maxResultCount }) async
     test('test apiAppAppPublicGet', () async {
       // TODO
     });

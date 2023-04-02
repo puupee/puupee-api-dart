@@ -9,7 +9,7 @@ import 'package:puupee_api_client/src/model/identity_user_dto.dart';
 import 'package:puupee_api_client/src/model/app_release_dto.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'public_app_dto.g.dart';
+part 'app_with_user_dto.g.dart';
 
 
 @JsonSerializable(
@@ -18,9 +18,9 @@ part 'public_app_dto.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class PublicAppDto {
-  /// Returns a new [PublicAppDto] instance.
-  PublicAppDto({
+class AppWithUserDto {
+  /// Returns a new [AppWithUserDto] instance.
+  AppWithUserDto({
 
      this.id,
 
@@ -416,7 +416,7 @@ class PublicAppDto {
 
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is PublicAppDto &&
+  bool operator ==(Object other) => identical(this, other) || other is AppWithUserDto &&
      other.id == id &&
      other.creationTime == creationTime &&
      other.creatorId == creatorId &&
@@ -477,9 +477,9 @@ class PublicAppDto {
     sdks.hashCode +
     subscribed.hashCode;
 
-  factory PublicAppDto.fromJson(Map<String, dynamic> json) => _$PublicAppDtoFromJson(json);
+  factory AppWithUserDto.fromJson(Map<String, dynamic> json) => _$AppWithUserDtoFromJson(json);
 
-  Map<String, dynamic> toJson() => _$PublicAppDtoToJson(this);
+  Map<String, dynamic> toJson() => _$AppWithUserDtoToJson(this);
 
   @override
   String toString() {

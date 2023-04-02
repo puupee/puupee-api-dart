@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppAppIdWithUserGet**
-> PublicAppDto apiAppAppIdWithUserGet(id)
+> AppWithUserDto apiAppAppIdWithUserGet(id)
 
 
 
@@ -360,7 +360,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PublicAppDto**](PublicAppDto.md)
+[**AppWithUserDto**](AppWithUserDto.md)
 
 ### Authorization
 
@@ -417,7 +417,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppAppPublicGet**
-> PublicAppDtoPagedResultDto apiAppAppPublicGet(type, searchKey, sorting, skipCount, maxResultCount)
+> AppWithUserDtoPagedResultDto apiAppAppPublicGet(type, searchKey, sorting, skipCount, maxResultCount)
 
 
 
@@ -454,7 +454,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PublicAppDtoPagedResultDto**](PublicAppDtoPagedResultDto.md)
+[**AppWithUserDtoPagedResultDto**](AppWithUserDtoPagedResultDto.md)
 
 ### Authorization
 
