@@ -80,8 +80,8 @@ Class | Method | HTTP request | Description
 [*AppApi*](doc/AppApi.md) | [**apiAppAppGet**](doc/AppApi.md#apiappappget) | **GET** /api/app/app | 
 [*AppApi*](doc/AppApi.md) | [**apiAppAppIdDelete**](doc/AppApi.md#apiappappiddelete) | **DELETE** /api/app/app/{id} | 
 [*AppApi*](doc/AppApi.md) | [**apiAppAppIdGet**](doc/AppApi.md#apiappappidget) | **GET** /api/app/app/{id} | 
-[*AppApi*](doc/AppApi.md) | [**apiAppAppIdPublicGet**](doc/AppApi.md#apiappappidpublicget) | **GET** /api/app/app/{id}/public | 
 [*AppApi*](doc/AppApi.md) | [**apiAppAppIdPut**](doc/AppApi.md#apiappappidput) | **PUT** /api/app/app/{id} | 
+[*AppApi*](doc/AppApi.md) | [**apiAppAppIdWithUserGet**](doc/AppApi.md#apiappappidwithuserget) | **GET** /api/app/app/{id}/with-user | 
 [*AppApi*](doc/AppApi.md) | [**apiAppAppPost**](doc/AppApi.md#apiappapppost) | **POST** /api/app/app | 
 [*AppApi*](doc/AppApi.md) | [**apiAppAppPublicGet**](doc/AppApi.md#apiappapppublicget) | **GET** /api/app/app/public | 
 [*AppApi*](doc/AppApi.md) | [**apiAppAppUploadCredentialsGet**](doc/AppApi.md#apiappappuploadcredentialsget) | **GET** /api/app/app/upload-credentials | 
