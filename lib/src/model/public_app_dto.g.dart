@@ -37,6 +37,10 @@ PublicAppDto _$PublicAppDtoFromJson(Map<String, dynamic> json) =>
               $checkedConvert('gitRepositoryType', (v) => v as String?),
           isEnabled: $checkedConvert('isEnabled', (v) => v as bool?),
           isPublished: $checkedConvert('isPublished', (v) => v as bool?),
+          webhookUrl: $checkedConvert('webhookUrl', (v) => v as String?),
+          businessDomain:
+              $checkedConvert('businessDomain', (v) => v as String?),
+          businessUrl: $checkedConvert('businessUrl', (v) => v as String?),
           latestReleases: $checkedConvert(
               'latestReleases',
               (v) => (v as List<dynamic>?)
@@ -95,6 +99,9 @@ Map<String, dynamic> _$PublicAppDtoToJson(PublicAppDto instance) {
   writeNotNull('gitRepositoryType', instance.gitRepositoryType);
   writeNotNull('isEnabled', instance.isEnabled);
   writeNotNull('isPublished', instance.isPublished);
+  writeNotNull('webhookUrl', instance.webhookUrl);
+  writeNotNull('businessDomain', instance.businessDomain);
+  writeNotNull('businessUrl', instance.businessUrl);
   writeNotNull('latestReleases',
       instance.latestReleases?.map((e) => e.toJson()).toList());
   writeNotNull('creator', instance.creator?.toJson());

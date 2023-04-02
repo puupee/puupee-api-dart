@@ -25,6 +25,10 @@ CreateOrUpdateAppDto _$CreateOrUpdateAppDtoFromJson(
           gitRepositoryType:
               $checkedConvert('gitRepositoryType', (v) => v as String?),
           isEnabled: $checkedConvert('isEnabled', (v) => v as bool?),
+          webhookUrl: $checkedConvert('webhookUrl', (v) => v as String?),
+          businessDomain:
+              $checkedConvert('businessDomain', (v) => v as String?),
+          businessUrl: $checkedConvert('businessUrl', (v) => v as String?),
           isPublished: $checkedConvert('isPublished', (v) => v as bool?),
           features: $checkedConvert(
               'features',
@@ -69,6 +73,9 @@ Map<String, dynamic> _$CreateOrUpdateAppDtoToJson(
   writeNotNull('gitRepository', instance.gitRepository);
   writeNotNull('gitRepositoryType', instance.gitRepositoryType);
   writeNotNull('isEnabled', instance.isEnabled);
+  writeNotNull('webhookUrl', instance.webhookUrl);
+  writeNotNull('businessDomain', instance.businessDomain);
+  writeNotNull('businessUrl', instance.businessUrl);
   writeNotNull('isPublished', instance.isPublished);
   writeNotNull('features', instance.features?.map((e) => e.toJson()).toList());
   writeNotNull('sdks', instance.sdks?.map((e) => e.toJson()).toList());

@@ -107,6 +107,21 @@ void main() {
       // TODO
     });
 
+    // String webhookUrl
+    test('to test the property `webhookUrl`', () async {
+      // TODO
+    });
+
+    // String businessDomain
+    test('to test the property `businessDomain`', () async {
+      // TODO
+    });
+
+    // String businessUrl
+    test('to test the property `businessUrl`', () async {
+      // TODO
+    });
+
     // List<AppReleaseDto> latestReleases
     test('to test the property `latestReleases`', () async {
       // TODO

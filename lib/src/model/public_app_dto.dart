@@ -62,6 +62,12 @@ class PublicAppDto {
 
      this.isPublished,
 
+     this.webhookUrl,
+
+     this.businessDomain,
+
+     this.businessUrl,
+
      this.latestReleases,
 
      this.creator,
@@ -315,6 +321,42 @@ class PublicAppDto {
 
   @JsonKey(
     
+    name: r'webhookUrl',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? webhookUrl;
+
+
+
+  @JsonKey(
+    
+    name: r'businessDomain',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? businessDomain;
+
+
+
+  @JsonKey(
+    
+    name: r'businessUrl',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? businessUrl;
+
+
+
+  @JsonKey(
+    
     name: r'latestReleases',
     required: false,
     includeIfNull: false
@@ -395,6 +437,9 @@ class PublicAppDto {
      other.gitRepositoryType == gitRepositoryType &&
      other.isEnabled == isEnabled &&
      other.isPublished == isPublished &&
+     other.webhookUrl == webhookUrl &&
+     other.businessDomain == businessDomain &&
+     other.businessUrl == businessUrl &&
      other.latestReleases == latestReleases &&
      other.creator == creator &&
      other.features == features &&
@@ -423,6 +468,9 @@ class PublicAppDto {
     gitRepositoryType.hashCode +
     isEnabled.hashCode +
     isPublished.hashCode +
+    webhookUrl.hashCode +
+    businessDomain.hashCode +
+    businessUrl.hashCode +
     latestReleases.hashCode +
     creator.hashCode +
     features.hashCode +

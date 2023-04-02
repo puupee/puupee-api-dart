@@ -43,6 +43,12 @@ class CreateOrUpdateAppDto {
 
      this.isEnabled,
 
+     this.webhookUrl,
+
+     this.businessDomain,
+
+     this.businessUrl,
+
      this.isPublished,
 
      this.features,
@@ -186,6 +192,42 @@ class CreateOrUpdateAppDto {
 
   @JsonKey(
     
+    name: r'webhookUrl',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? webhookUrl;
+
+
+
+  @JsonKey(
+    
+    name: r'businessDomain',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? businessDomain;
+
+
+
+  @JsonKey(
+    
+    name: r'businessUrl',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? businessUrl;
+
+
+
+  @JsonKey(
+    
     name: r'isPublished',
     required: false,
     includeIfNull: false
@@ -245,6 +287,9 @@ class CreateOrUpdateAppDto {
      other.gitRepository == gitRepository &&
      other.gitRepositoryType == gitRepositoryType &&
      other.isEnabled == isEnabled &&
+     other.webhookUrl == webhookUrl &&
+     other.businessDomain == businessDomain &&
+     other.businessUrl == businessUrl &&
      other.isPublished == isPublished &&
      other.features == features &&
      other.sdks == sdks &&
@@ -263,6 +308,9 @@ class CreateOrUpdateAppDto {
     gitRepository.hashCode +
     gitRepositoryType.hashCode +
     isEnabled.hashCode +
+    webhookUrl.hashCode +
+    businessDomain.hashCode +
+    businessUrl.hashCode +
     isPublished.hashCode +
     features.hashCode +
     sdks.hashCode +
