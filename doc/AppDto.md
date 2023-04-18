@@ -31,6 +31,7 @@ Name | Type | Description | Notes
 **webhookUrl** | **String** |  | [optional] 
 **businessDomain** | **String** |  | [optional] 
 **businessUrl** | **String** |  | [optional] 
+**subscriptionEnabled** | **bool** |  | [optional] 
 **latestReleases** | [**List&lt;AppReleaseDto&gt;**](AppReleaseDto.md) |  | [optional] 
 **creator** | [**IdentityUserDto**](IdentityUserDto.md) |  | [optional] 
 **features** | [**List&lt;AppFeatureDto&gt;**](AppFeatureDto.md) |  | [optional] 

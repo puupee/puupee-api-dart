@@ -40,6 +40,8 @@ AppDto _$AppDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
           businessDomain:
               $checkedConvert('businessDomain', (v) => v as String?),
           businessUrl: $checkedConvert('businessUrl', (v) => v as String?),
+          subscriptionEnabled:
+              $checkedConvert('subscriptionEnabled', (v) => v as bool?),
           latestReleases: $checkedConvert(
               'latestReleases',
               (v) => (v as List<dynamic>?)
@@ -100,6 +102,7 @@ Map<String, dynamic> _$AppDtoToJson(AppDto instance) {
   writeNotNull('webhookUrl', instance.webhookUrl);
   writeNotNull('businessDomain', instance.businessDomain);
   writeNotNull('businessUrl', instance.businessUrl);
+  writeNotNull('subscriptionEnabled', instance.subscriptionEnabled);
   writeNotNull('latestReleases',
       instance.latestReleases?.map((e) => e.toJson()).toList());
   writeNotNull('creator', instance.creator?.toJson());

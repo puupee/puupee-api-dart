@@ -102,85 +102,6 @@ _responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_respons
     );
   }
 
-  /// apiAppAppByDeveloperGet
-  /// 
-  ///
-  /// Parameters:
-  /// * [developerAccount] 
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [AppDtoPagedResultDto] as data
-  /// Throws [DioError] if API call or serialization fails
-  Future<Response<AppDtoPagedResultDto>> apiAppAppByDeveloperGet({ 
-    String? developerAccount,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/app/app/by-developer';
-    final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _queryParameters = <String, dynamic>{
-      if (developerAccount != null) r'developerAccount': developerAccount,
-    };
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    AppDtoPagedResultDto _responseData;
-
-    try {
-_responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_response.data!, 'AppDtoPagedResultDto', growable: true);
-    } catch (error, stackTrace) {
-      throw DioError(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioErrorType.other,
-        error: error,
-      )..stackTrace = stackTrace;
-    }
-
-    return Response<AppDtoPagedResultDto>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
   /// apiAppAppByNameGet
   /// 
   ///
@@ -721,6 +642,91 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
     }
 
     return Response<AppDto>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// apiAppAppPublicGet
+  /// 
+  ///
+  /// Parameters:
+  /// * [type] 
+  /// * [developerAccount] 
+  /// * [currentAppName] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [AppDtoPagedResultDto] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<AppDtoPagedResultDto>> apiAppAppPublicGet({ 
+    String? type,
+    String? developerAccount,
+    String? currentAppName,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/app/app/public';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'oauth2',
+            'name': 'oauth2',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      if (type != null) r'Type': type,
+      if (developerAccount != null) r'DeveloperAccount': developerAccount,
+      if (currentAppName != null) r'CurrentAppName': currentAppName,
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    AppDtoPagedResultDto _responseData;
+
+    try {
+_responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_response.data!, 'AppDtoPagedResultDto', growable: true);
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.other,
+        error: error,
+      )..stackTrace = stackTrace;
+    }
+
+    return Response<AppDtoPagedResultDto>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

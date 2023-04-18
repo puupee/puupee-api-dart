@@ -75,7 +75,6 @@ Class | Method | HTTP request | Description
 [*AccountApi*](doc/AccountApi.md) | [**apiAccountVerifyPasswordResetTokenPost**](doc/AccountApi.md#apiaccountverifypasswordresettokenpost) | **POST** /api/account/verify-password-reset-token | 
 [*AccountApi*](doc/AccountApi.md) | [**apiAppAccountDelete**](doc/AccountApi.md#apiappaccountdelete) | **DELETE** /api/app/account | 
 [*AppApi*](doc/AppApi.md) | [**apiAppAppByDeveloperAllGet**](doc/AppApi.md#apiappappbydeveloperallget) | **GET** /api/app/app/by-developer-all | 
-[*AppApi*](doc/AppApi.md) | [**apiAppAppByDeveloperGet**](doc/AppApi.md#apiappappbydeveloperget) | **GET** /api/app/app/by-developer | 
 [*AppApi*](doc/AppApi.md) | [**apiAppAppByNameGet**](doc/AppApi.md#apiappappbynameget) | **GET** /api/app/app/by-name | 
 [*AppApi*](doc/AppApi.md) | [**apiAppAppGet**](doc/AppApi.md#apiappappget) | **GET** /api/app/app | 
 [*AppApi*](doc/AppApi.md) | [**apiAppAppIdDelete**](doc/AppApi.md#apiappappiddelete) | **DELETE** /api/app/app/{id} | 
@@ -83,6 +82,7 @@ Class | Method | HTTP request | Description
 [*AppApi*](doc/AppApi.md) | [**apiAppAppIdPut**](doc/AppApi.md#apiappappidput) | **PUT** /api/app/app/{id} | 
 [*AppApi*](doc/AppApi.md) | [**apiAppAppIdWithUserGet**](doc/AppApi.md#apiappappidwithuserget) | **GET** /api/app/app/{id}/with-user | 
 [*AppApi*](doc/AppApi.md) | [**apiAppAppPost**](doc/AppApi.md#apiappapppost) | **POST** /api/app/app | 
+[*AppApi*](doc/AppApi.md) | [**apiAppAppPublicGet**](doc/AppApi.md#apiappapppublicget) | **GET** /api/app/app/public | 
 [*AppApi*](doc/AppApi.md) | [**apiAppAppUploadCredentialsGet**](doc/AppApi.md#apiappappuploadcredentialsget) | **GET** /api/app/app/upload-credentials | 
 [*AppApi*](doc/AppApi.md) | [**apiAppAppWithUserGet**](doc/AppApi.md#apiappappwithuserget) | **GET** /api/app/app/with-user | 
 [*AppFeatureApi*](doc/AppFeatureApi.md) | [**apiAppAppFeatureGet**](doc/AppFeatureApi.md#apiappappfeatureget) | **GET** /api/app/app-feature | 
@@ -174,7 +174,7 @@ Class | Method | HTTP request | Description
 [*StorageObjectApi*](doc/StorageObjectApi.md) | [**apiAppStorageObjectFileOrCredentialsGet**](doc/StorageObjectApi.md#apiappstorageobjectfileorcredentialsget) | **GET** /api/app/storage-object/file-or-credentials | 
 [*StorageObjectApi*](doc/StorageObjectApi.md) | [**apiAppStorageObjectPreSignUrlPost**](doc/StorageObjectApi.md#apiappstorageobjectpresignurlpost) | **POST** /api/app/storage-object/pre-sign-url | 
 [*StorageObjectApi*](doc/StorageObjectApi.md) | [**apiAppStorageObjectThumbGet**](doc/StorageObjectApi.md#apiappstorageobjectthumbget) | **GET** /api/app/storage-object/thumb | 
-[*SubscriptionApi*](doc/SubscriptionApi.md) | [**apiAppSubscriptionVerifyApplePost**](doc/SubscriptionApi.md#apiappsubscriptionverifyapplepost) | **POST** /api/app/subscription/verify-apple | 
+[*SubscriptionApi*](doc/SubscriptionApi.md) | [**apiAppSubscriptionAppleNotificationsPost**](doc/SubscriptionApi.md#apiappsubscriptionapplenotificationspost) | **POST** /api/app/subscription/apple-notifications | 
 [*SyncStateApi*](doc/SyncStateApi.md) | [**apiAppSyncStateGet**](doc/SyncStateApi.md#apiappsyncstateget) | **GET** /api/app/sync-state | 
 [*SyncStateApi*](doc/SyncStateApi.md) | [**apiAppSyncStatePuupeeChangedEtoPost**](doc/SyncStateApi.md#apiappsyncstatepuupeechangedetopost) | **POST** /api/app/sync-state/puupee-changed-eto | 
 [*TenantApi*](doc/TenantApi.md) | [**apiMultiTenancyTenantsGet**](doc/TenantApi.md#apimultitenancytenantsget) | **GET** /api/multi-tenancy/tenants | 
@@ -206,6 +206,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
+ - [ANV2](doc/ANV2.md)
  - [AbpLoginResult](doc/AbpLoginResult.md)
  - [ActionApiDescriptionModel](doc/ActionApiDescriptionModel.md)
  - [AppDto](doc/AppDto.md)

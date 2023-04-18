@@ -7,8 +7,8 @@ void main() {
   final instance = PuupeeApiClient().getSubscriptionApi();
 
   group(SubscriptionApi, () {
-    //Future apiAppSubscriptionVerifyApplePost({ Object body }) async
-    test('test apiAppSubscriptionVerifyApplePost', () async {
+    //Future apiAppSubscriptionAppleNotificationsPost({ ANV2 body }) async
+    test('test apiAppSubscriptionAppleNotificationsPost', () async {
       // TODO
     });
 

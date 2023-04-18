@@ -9,11 +9,11 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiAppSubscriptionVerifyApplePost**](SubscriptionApi.md#apiappsubscriptionverifyapplepost) | **POST** /api/app/subscription/verify-apple | 
+[**apiAppSubscriptionAppleNotificationsPost**](SubscriptionApi.md#apiappsubscriptionapplenotificationspost) | **POST** /api/app/subscription/apple-notifications | 
 
 
-# **apiAppSubscriptionVerifyApplePost**
-> apiAppSubscriptionVerifyApplePost(body)
+# **apiAppSubscriptionAppleNotificationsPost**
+> apiAppSubscriptionAppleNotificationsPost(body)
 
 
 
@@ -24,12 +24,12 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getSubscriptionApi();
-final Object body = Object; // Object | 
+final ANV2 body = ; // ANV2 | 
 
 try {
-    api.apiAppSubscriptionVerifyApplePost(body);
+    api.apiAppSubscriptionAppleNotificationsPost(body);
 } catch on DioError (e) {
-    print('Exception when calling SubscriptionApi->apiAppSubscriptionVerifyApplePost: $e\n');
+    print('Exception when calling SubscriptionApi->apiAppSubscriptionAppleNotificationsPost: $e\n');
 }
 ```
 
@@ -37,7 +37,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **Object**|  | [optional] 
+ **body** | [**ANV2**](ANV2.md)|  | [optional] 
 
 ### Return type
 

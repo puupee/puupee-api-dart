@@ -2,6 +2,7 @@
 README.md
 analysis_options.yaml
 build.yaml
+doc/ANV2.md
 doc/AbpApiDefinitionApi.md
 doc/AbpApplicationConfigurationApi.md
 doc/AbpApplicationLocalizationApi.md
@@ -244,6 +245,7 @@ lib/src/auth/oauth.dart
 lib/src/deserialize.dart
 lib/src/model/abp_login_result.dart
 lib/src/model/action_api_description_model.dart
+lib/src/model/anv2.dart
 lib/src/model/app_dto.dart
 lib/src/model/app_dto_paged_result_dto.dart
 lib/src/model/app_feature_dto.dart
@@ -410,6 +412,7 @@ test/abp_login_result_test.dart
 test/abp_tenant_api_test.dart
 test/account_api_test.dart
 test/action_api_description_model_test.dart
+test/anv2_test.dart
 test/app_api_test.dart
 test/app_dto_paged_result_dto_test.dart
 test/app_dto_test.dart

@@ -12,11 +12,6 @@ void main() {
       // TODO
     });
 
-    //Future<AppDtoPagedResultDto> apiAppAppByDeveloperGet({ String developerAccount }) async
-    test('test apiAppAppByDeveloperGet', () async {
-      // TODO
-    });
-
     //Future<AppDto> apiAppAppByNameGet({ String name }) async
     test('test apiAppAppByNameGet', () async {
       // TODO
@@ -49,6 +44,11 @@ void main() {
 
     //Future<AppDto> apiAppAppPost({ CreateOrUpdateAppDto body }) async
     test('test apiAppAppPost', () async {
+      // TODO
+    });
+
+    //Future<AppDtoPagedResultDto> apiAppAppPublicGet({ String type, String developerAccount, String currentAppName }) async
+    test('test apiAppAppPublicGet', () async {
       // TODO
     });
 

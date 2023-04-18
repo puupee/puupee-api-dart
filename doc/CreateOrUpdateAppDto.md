@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **webhookUrl** | **String** |  | [optional] 
 **businessDomain** | **String** |  | [optional] 
 **businessUrl** | **String** |  | [optional] 
+**subscriptionEnabled** | **bool** |  | [optional] 
 **isPublished** | **bool** |  | [optional] 
 **features** | [**List&lt;AppFeatureDto&gt;**](AppFeatureDto.md) |  | [optional] 
 **sdks** | [**List&lt;AppSdkDto&gt;**](AppSdkDto.md) |  | [optional] 

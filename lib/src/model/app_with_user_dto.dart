@@ -68,6 +68,8 @@ class AppWithUserDto {
 
      this.businessUrl,
 
+     this.subscriptionEnabled,
+
      this.latestReleases,
 
      this.creator,
@@ -357,6 +359,18 @@ class AppWithUserDto {
 
   @JsonKey(
     
+    name: r'subscriptionEnabled',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  bool? subscriptionEnabled;
+
+
+
+  @JsonKey(
+    
     name: r'latestReleases',
     required: false,
     includeIfNull: false
@@ -440,6 +454,7 @@ class AppWithUserDto {
      other.webhookUrl == webhookUrl &&
      other.businessDomain == businessDomain &&
      other.businessUrl == businessUrl &&
+     other.subscriptionEnabled == subscriptionEnabled &&
      other.latestReleases == latestReleases &&
      other.creator == creator &&
      other.features == features &&
@@ -471,6 +486,7 @@ class AppWithUserDto {
     webhookUrl.hashCode +
     businessDomain.hashCode +
     businessUrl.hashCode +
+    subscriptionEnabled.hashCode +
     latestReleases.hashCode +
     creator.hashCode +
     features.hashCode +

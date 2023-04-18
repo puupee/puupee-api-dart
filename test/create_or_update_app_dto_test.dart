@@ -77,6 +77,11 @@ void main() {
       // TODO
     });
 
+    // bool subscriptionEnabled
+    test('to test the property `subscriptionEnabled`', () async {
+      // TODO
+    });
+
     // bool isPublished
     test('to test the property `isPublished`', () async {
       // TODO

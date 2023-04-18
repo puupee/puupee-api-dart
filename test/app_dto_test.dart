@@ -122,6 +122,11 @@ void main() {
       // TODO
     });
 
+    // bool subscriptionEnabled
+    test('to test the property `subscriptionEnabled`', () async {
+      // TODO
+    });
+
     // List<AppReleaseDto> latestReleases
     test('to test the property `latestReleases`', () async {
       // TODO

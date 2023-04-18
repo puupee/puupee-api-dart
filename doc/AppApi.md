@@ -10,7 +10,6 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**apiAppAppByDeveloperAllGet**](AppApi.md#apiappappbydeveloperallget) | **GET** /api/app/app/by-developer-all | 
-[**apiAppAppByDeveloperGet**](AppApi.md#apiappappbydeveloperget) | **GET** /api/app/app/by-developer | 
 [**apiAppAppByNameGet**](AppApi.md#apiappappbynameget) | **GET** /api/app/app/by-name | 
 [**apiAppAppGet**](AppApi.md#apiappappget) | **GET** /api/app/app | 
 [**apiAppAppIdDelete**](AppApi.md#apiappappiddelete) | **DELETE** /api/app/app/{id} | 
@@ -18,6 +17,7 @@ Method | HTTP request | Description
 [**apiAppAppIdPut**](AppApi.md#apiappappidput) | **PUT** /api/app/app/{id} | 
 [**apiAppAppIdWithUserGet**](AppApi.md#apiappappidwithuserget) | **GET** /api/app/app/{id}/with-user | 
 [**apiAppAppPost**](AppApi.md#apiappapppost) | **POST** /api/app/app | 
+[**apiAppAppPublicGet**](AppApi.md#apiappapppublicget) | **GET** /api/app/app/public | 
 [**apiAppAppUploadCredentialsGet**](AppApi.md#apiappappuploadcredentialsget) | **GET** /api/app/app/upload-credentials | 
 [**apiAppAppWithUserGet**](AppApi.md#apiappappwithuserget) | **GET** /api/app/app/with-user | 
 
@@ -41,49 +41,6 @@ try {
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AppApi->apiAppAppByDeveloperAllGet: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **developerAccount** | **String**|  | [optional] 
-
-### Return type
-
-[**AppDtoPagedResultDto**](AppDtoPagedResultDto.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **apiAppAppByDeveloperGet**
-> AppDtoPagedResultDto apiAppAppByDeveloperGet(developerAccount)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getAppApi();
-final String developerAccount = developerAccount_example; // String | 
-
-try {
-    final response = api.apiAppAppByDeveloperGet(developerAccount);
-    print(response);
-} catch on DioError (e) {
-    print('Exception when calling AppApi->apiAppAppByDeveloperGet: $e\n');
 }
 ```
 
@@ -412,6 +369,53 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **apiAppAppPublicGet**
+> AppDtoPagedResultDto apiAppAppPublicGet(type, developerAccount, currentAppName)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getAppApi();
+final String type = type_example; // String | 
+final String developerAccount = developerAccount_example; // String | 
+final String currentAppName = currentAppName_example; // String | 
+
+try {
+    final response = api.apiAppAppPublicGet(type, developerAccount, currentAppName);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AppApi->apiAppAppPublicGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **type** | **String**|  | [optional] 
+ **developerAccount** | **String**|  | [optional] 
+ **currentAppName** | **String**|  | [optional] 
+
+### Return type
+
+[**AppDtoPagedResultDto**](AppDtoPagedResultDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

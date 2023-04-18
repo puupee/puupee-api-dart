@@ -49,6 +49,8 @@ class CreateOrUpdateAppDto {
 
      this.businessUrl,
 
+     this.subscriptionEnabled,
+
      this.isPublished,
 
      this.features,
@@ -228,6 +230,18 @@ class CreateOrUpdateAppDto {
 
   @JsonKey(
     
+    name: r'subscriptionEnabled',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  bool? subscriptionEnabled;
+
+
+
+  @JsonKey(
+    
     name: r'isPublished',
     required: false,
     includeIfNull: false
@@ -290,6 +304,7 @@ class CreateOrUpdateAppDto {
      other.webhookUrl == webhookUrl &&
      other.businessDomain == businessDomain &&
      other.businessUrl == businessUrl &&
+     other.subscriptionEnabled == subscriptionEnabled &&
      other.isPublished == isPublished &&
      other.features == features &&
      other.sdks == sdks &&
@@ -311,6 +326,7 @@ class CreateOrUpdateAppDto {
     webhookUrl.hashCode +
     businessDomain.hashCode +
     businessUrl.hashCode +
+    subscriptionEnabled.hashCode +
     isPublished.hashCode +
     features.hashCode +
     sdks.hashCode +

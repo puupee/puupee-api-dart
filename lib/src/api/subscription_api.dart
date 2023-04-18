@@ -9,6 +9,7 @@ import 'dart:convert';
 import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
+import 'package:puupee_api_client/src/model/anv2.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 
 class SubscriptionApi {
@@ -17,7 +18,7 @@ class SubscriptionApi {
 
   const SubscriptionApi(this._dio);
 
-  /// apiAppSubscriptionVerifyApplePost
+  /// apiAppSubscriptionAppleNotificationsPost
   /// 
   ///
   /// Parameters:
@@ -31,8 +32,8 @@ class SubscriptionApi {
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> apiAppSubscriptionVerifyApplePost({ 
-    Object? body,
+  Future<Response<void>> apiAppSubscriptionAppleNotificationsPost({ 
+    ANV2? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -40,7 +41,7 @@ class SubscriptionApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/app/subscription/verify-apple';
+    final _path = r'/api/app/subscription/apple-notifications';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{

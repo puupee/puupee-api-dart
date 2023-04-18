@@ -29,6 +29,8 @@ CreateOrUpdateAppDto _$CreateOrUpdateAppDtoFromJson(
           businessDomain:
               $checkedConvert('businessDomain', (v) => v as String?),
           businessUrl: $checkedConvert('businessUrl', (v) => v as String?),
+          subscriptionEnabled:
+              $checkedConvert('subscriptionEnabled', (v) => v as bool?),
           isPublished: $checkedConvert('isPublished', (v) => v as bool?),
           features: $checkedConvert(
               'features',
@@ -76,6 +78,7 @@ Map<String, dynamic> _$CreateOrUpdateAppDtoToJson(
   writeNotNull('webhookUrl', instance.webhookUrl);
   writeNotNull('businessDomain', instance.businessDomain);
   writeNotNull('businessUrl', instance.businessUrl);
+  writeNotNull('subscriptionEnabled', instance.subscriptionEnabled);
   writeNotNull('isPublished', instance.isPublished);
   writeNotNull('features', instance.features?.map((e) => e.toJson()).toList());
   writeNotNull('sdks', instance.sdks?.map((e) => e.toJson()).toList());
