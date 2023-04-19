@@ -17,10 +17,5 @@ void main() {
       // TODO
     });
 
-    // String creatorId
-    test('to test the property `creatorId`', () async {
-      // TODO
-    });
-
   });
 }

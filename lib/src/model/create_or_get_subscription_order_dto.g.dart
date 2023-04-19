@@ -15,7 +15,6 @@ CreateOrGetSubscriptionOrderDto _$CreateOrGetSubscriptionOrderDtoFromJson(
         final val = CreateOrGetSubscriptionOrderDto(
           appId: $checkedConvert('appId', (v) => v as String?),
           pricingId: $checkedConvert('pricingId', (v) => v as String?),
-          creatorId: $checkedConvert('creatorId', (v) => v as String?),
         );
         return val;
       },
@@ -33,6 +32,5 @@ Map<String, dynamic> _$CreateOrGetSubscriptionOrderDtoToJson(
 
   writeNotNull('appId', instance.appId);
   writeNotNull('pricingId', instance.pricingId);
-  writeNotNull('creatorId', instance.creatorId);
   return val;
 }

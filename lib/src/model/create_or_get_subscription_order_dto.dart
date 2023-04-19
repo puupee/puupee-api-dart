@@ -21,8 +21,6 @@ class CreateOrGetSubscriptionOrderDto {
      this.appId,
 
      this.pricingId,
-
-     this.creatorId,
   });
 
   @JsonKey(
@@ -49,29 +47,15 @@ class CreateOrGetSubscriptionOrderDto {
 
 
 
-  @JsonKey(
-    
-    name: r'creatorId',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? creatorId;
-
-
-
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateOrGetSubscriptionOrderDto &&
      other.appId == appId &&
-     other.pricingId == pricingId &&
-     other.creatorId == creatorId;
+     other.pricingId == pricingId;
 
   @override
   int get hashCode =>
     appId.hashCode +
-    pricingId.hashCode +
-    creatorId.hashCode;
+    pricingId.hashCode;
 
   factory CreateOrGetSubscriptionOrderDto.fromJson(Map<String, dynamic> json) => _$CreateOrGetSubscriptionOrderDtoFromJson(json);
 
