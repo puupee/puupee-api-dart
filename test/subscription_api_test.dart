@@ -12,5 +12,15 @@ void main() {
       // TODO
     });
 
+    //Future<Object> apiAppSubscriptionOrderPost({ CreateOrGetSubscriptionOrderDto body }) async
+    test('test apiAppSubscriptionOrderPost', () async {
+      // TODO
+    });
+
+    //Future<VerifyReceiptResult> apiAppSubscriptionVerifyReceiptPost({ VerifyReceiptDto body }) async
+    test('test apiAppSubscriptionVerifyReceiptPost', () async {
+      // TODO
+    });
+
   });
 }

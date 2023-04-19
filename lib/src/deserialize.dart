@@ -32,6 +32,7 @@ import 'package:puupee_api_client/src/model/controller_api_description_model.dar
 import 'package:puupee_api_client/src/model/controller_interface_api_description_model.dart';
 import 'package:puupee_api_client/src/model/create_message_template_release_dto.dart';
 import 'package:puupee_api_client/src/model/create_open_iddict_application_dto.dart';
+import 'package:puupee_api_client/src/model/create_or_get_subscription_order_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_feature_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_pricing_dto.dart';
@@ -155,6 +156,8 @@ import 'package:puupee_api_client/src/model/user_login_info.dart';
 import 'package:puupee_api_client/src/model/user_storage_dto.dart';
 import 'package:puupee_api_client/src/model/user_storage_item_dto.dart';
 import 'package:puupee_api_client/src/model/verify_password_reset_token_input.dart';
+import 'package:puupee_api_client/src/model/verify_receipt_dto.dart';
+import 'package:puupee_api_client/src/model/verify_receipt_result.dart';
 import 'package:puupee_api_client/src/model/windows_time_zone.dart';
 
 final _regList = RegExp(r'^List<(.*)>$');
@@ -246,6 +249,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return CreateMessageTemplateReleaseDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateOpenIddictApplicationDto':
           return CreateOpenIddictApplicationDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'CreateOrGetSubscriptionOrderDto':
+          return CreateOrGetSubscriptionOrderDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateOrUpdateAppDto':
           return CreateOrUpdateAppDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateOrUpdateAppFeatureDto':
@@ -498,6 +503,10 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return UserStorageItemDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'VerifyPasswordResetTokenInput':
           return VerifyPasswordResetTokenInput.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'VerifyReceiptDto':
+          return VerifyReceiptDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'VerifyReceiptResult':
+          return VerifyReceiptResult.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'WindowsTimeZone':
           return WindowsTimeZone.fromJson(value as Map<String, dynamic>) as ReturnType;
         default:

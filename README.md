@@ -175,6 +175,8 @@ Class | Method | HTTP request | Description
 [*StorageObjectApi*](doc/StorageObjectApi.md) | [**apiAppStorageObjectPreSignUrlPost**](doc/StorageObjectApi.md#apiappstorageobjectpresignurlpost) | **POST** /api/app/storage-object/pre-sign-url | 
 [*StorageObjectApi*](doc/StorageObjectApi.md) | [**apiAppStorageObjectThumbGet**](doc/StorageObjectApi.md#apiappstorageobjectthumbget) | **GET** /api/app/storage-object/thumb | 
 [*SubscriptionApi*](doc/SubscriptionApi.md) | [**apiAppSubscriptionAppleNotificationsPost**](doc/SubscriptionApi.md#apiappsubscriptionapplenotificationspost) | **POST** /api/app/subscription/apple-notifications | 
+[*SubscriptionApi*](doc/SubscriptionApi.md) | [**apiAppSubscriptionOrderPost**](doc/SubscriptionApi.md#apiappsubscriptionorderpost) | **POST** /api/app/subscription/order | 
+[*SubscriptionApi*](doc/SubscriptionApi.md) | [**apiAppSubscriptionVerifyReceiptPost**](doc/SubscriptionApi.md#apiappsubscriptionverifyreceiptpost) | **POST** /api/app/subscription/verify-receipt | 
 [*SyncStateApi*](doc/SyncStateApi.md) | [**apiAppSyncStateGet**](doc/SyncStateApi.md#apiappsyncstateget) | **GET** /api/app/sync-state | 
 [*SyncStateApi*](doc/SyncStateApi.md) | [**apiAppSyncStatePuupeeChangedEtoPost**](doc/SyncStateApi.md#apiappsyncstatepuupeechangedetopost) | **POST** /api/app/sync-state/puupee-changed-eto | 
 [*TenantApi*](doc/TenantApi.md) | [**apiMultiTenancyTenantsGet**](doc/TenantApi.md#apimultitenancytenantsget) | **GET** /api/multi-tenancy/tenants | 
@@ -241,6 +243,7 @@ Class | Method | HTTP request | Description
  - [ControllerInterfaceApiDescriptionModel](doc/ControllerInterfaceApiDescriptionModel.md)
  - [CreateMessageTemplateReleaseDto](doc/CreateMessageTemplateReleaseDto.md)
  - [CreateOpenIddictApplicationDto](doc/CreateOpenIddictApplicationDto.md)
+ - [CreateOrGetSubscriptionOrderDto](doc/CreateOrGetSubscriptionOrderDto.md)
  - [CreateOrUpdateAppDto](doc/CreateOrUpdateAppDto.md)
  - [CreateOrUpdateAppFeatureDto](doc/CreateOrUpdateAppFeatureDto.md)
  - [CreateOrUpdateAppPricingDto](doc/CreateOrUpdateAppPricingDto.md)
@@ -366,6 +369,8 @@ Class | Method | HTTP request | Description
  - [UserStorageDto](doc/UserStorageDto.md)
  - [UserStorageItemDto](doc/UserStorageItemDto.md)
  - [VerifyPasswordResetTokenInput](doc/VerifyPasswordResetTokenInput.md)
+ - [VerifyReceiptDto](doc/VerifyReceiptDto.md)
+ - [VerifyReceiptResult](doc/VerifyReceiptResult.md)
  - [WindowsTimeZone](doc/WindowsTimeZone.md)
 
 

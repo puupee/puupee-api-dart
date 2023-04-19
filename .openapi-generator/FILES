@@ -49,6 +49,7 @@ doc/ControllerApiDescriptionModel.md
 doc/ControllerInterfaceApiDescriptionModel.md
 doc/CreateMessageTemplateReleaseDto.md
 doc/CreateOpenIddictApplicationDto.md
+doc/CreateOrGetSubscriptionOrderDto.md
 doc/CreateOrUpdateAppDto.md
 doc/CreateOrUpdateAppFeatureDto.md
 doc/CreateOrUpdateAppPricingDto.md
@@ -198,6 +199,8 @@ doc/UserStorageDto.md
 doc/UserStorageItemDto.md
 doc/VerificationApi.md
 doc/VerifyPasswordResetTokenInput.md
+doc/VerifyReceiptDto.md
+doc/VerifyReceiptResult.md
 doc/WindowsTimeZone.md
 lib/puupee_api_client.dart
 lib/src/api.dart
@@ -278,6 +281,7 @@ lib/src/model/controller_api_description_model.dart
 lib/src/model/controller_interface_api_description_model.dart
 lib/src/model/create_message_template_release_dto.dart
 lib/src/model/create_open_iddict_application_dto.dart
+lib/src/model/create_or_get_subscription_order_dto.dart
 lib/src/model/create_or_update_app_dto.dart
 lib/src/model/create_or_update_app_feature_dto.dart
 lib/src/model/create_or_update_app_pricing_dto.dart
@@ -403,6 +407,8 @@ lib/src/model/user_login_info.dart
 lib/src/model/user_storage_dto.dart
 lib/src/model/user_storage_item_dto.dart
 lib/src/model/verify_password_reset_token_input.dart
+lib/src/model/verify_receipt_dto.dart
+lib/src/model/verify_receipt_result.dart
 lib/src/model/windows_time_zone.dart
 pubspec.yaml
 test/abp_api_definition_api_test.dart
@@ -452,6 +458,7 @@ test/controller_api_description_model_test.dart
 test/controller_interface_api_description_model_test.dart
 test/create_message_template_release_dto_test.dart
 test/create_open_iddict_application_dto_test.dart
+test/create_or_get_subscription_order_dto_test.dart
 test/create_or_update_app_dto_test.dart
 test/create_or_update_app_feature_dto_test.dart
 test/create_or_update_app_pricing_dto_test.dart
@@ -601,4 +608,6 @@ test/user_storage_dto_test.dart
 test/user_storage_item_dto_test.dart
 test/verification_api_test.dart
 test/verify_password_reset_token_input_test.dart
+test/verify_receipt_dto_test.dart
+test/verify_receipt_result_test.dart
 test/windows_time_zone_test.dart

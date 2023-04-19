@@ -80,6 +80,7 @@ export 'package:puupee_api_client/src/model/controller_api_description_model.dar
 export 'package:puupee_api_client/src/model/controller_interface_api_description_model.dart';
 export 'package:puupee_api_client/src/model/create_message_template_release_dto.dart';
 export 'package:puupee_api_client/src/model/create_open_iddict_application_dto.dart';
+export 'package:puupee_api_client/src/model/create_or_get_subscription_order_dto.dart';
 export 'package:puupee_api_client/src/model/create_or_update_app_dto.dart';
 export 'package:puupee_api_client/src/model/create_or_update_app_feature_dto.dart';
 export 'package:puupee_api_client/src/model/create_or_update_app_pricing_dto.dart';
@@ -205,4 +206,6 @@ export 'package:puupee_api_client/src/model/user_login_info.dart';
 export 'package:puupee_api_client/src/model/user_storage_dto.dart';
 export 'package:puupee_api_client/src/model/user_storage_item_dto.dart';
 export 'package:puupee_api_client/src/model/verify_password_reset_token_input.dart';
+export 'package:puupee_api_client/src/model/verify_receipt_dto.dart';
+export 'package:puupee_api_client/src/model/verify_receipt_result.dart';
 export 'package:puupee_api_client/src/model/windows_time_zone.dart';
