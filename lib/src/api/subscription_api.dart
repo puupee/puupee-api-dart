@@ -12,6 +12,7 @@ import 'package:dio/dio.dart';
 import 'package:puupee_api_client/src/model/anv2.dart';
 import 'package:puupee_api_client/src/model/create_or_get_subscription_order_dto.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
+import 'package:puupee_api_client/src/model/subscription_order_dto.dart';
 import 'package:puupee_api_client/src/model/verify_receipt_dto.dart';
 import 'package:puupee_api_client/src/model/verify_receipt_result.dart';
 
@@ -102,9 +103,9 @@ _bodyData=jsonEncode(body);
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [Object] as data
+  /// Returns a [Future] containing a [Response] with a [SubscriptionOrderDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<Object>> apiAppSubscriptionOrderPost({ 
+  Future<Response<SubscriptionOrderDto>> apiAppSubscriptionOrderPost({ 
     CreateOrGetSubscriptionOrderDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -156,10 +157,10 @@ _bodyData=jsonEncode(body);
       onReceiveProgress: onReceiveProgress,
     );
 
-    Object _responseData;
+    SubscriptionOrderDto _responseData;
 
     try {
-_responseData = deserialize<Object, Object>(_response.data!, 'Object', growable: true);
+_responseData = deserialize<SubscriptionOrderDto, SubscriptionOrderDto>(_response.data!, 'SubscriptionOrderDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -169,7 +170,7 @@ _responseData = deserialize<Object, Object>(_response.data!, 'Object', growable:
       )..stackTrace = stackTrace;
     }
 
-    return Response<Object>(
+    return Response<SubscriptionOrderDto>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

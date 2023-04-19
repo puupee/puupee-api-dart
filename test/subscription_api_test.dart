@@ -12,7 +12,7 @@ void main() {
       // TODO
     });
 
-    //Future<Object> apiAppSubscriptionOrderPost({ CreateOrGetSubscriptionOrderDto body }) async
+    //Future<SubscriptionOrderDto> apiAppSubscriptionOrderPost({ CreateOrGetSubscriptionOrderDto body }) async
     test('test apiAppSubscriptionOrderPost', () async {
       // TODO
     });

@@ -1,0 +1,232 @@
+//
+// AUTO-GENERATED FILE, DO NOT MODIFY!
+//
+
+// ignore_for_file: unused_element
+import 'package:puupee_api_client/src/model/subscription_order_status.dart';
+import 'package:puupee_api_client/src/model/subscription_order_type.dart';
+import 'package:json_annotation/json_annotation.dart';
+
+part 'subscription_order_dto.g.dart';
+
+
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class SubscriptionOrderDto {
+  /// Returns a new [SubscriptionOrderDto] instance.
+  SubscriptionOrderDto({
+
+     this.id,
+
+     this.creationTime,
+
+     this.creatorId,
+
+     this.lastModificationTime,
+
+     this.lastModifierId,
+
+     this.isDeleted,
+
+     this.deleterId,
+
+     this.deletionTime,
+
+     this.type,
+
+     this.status,
+
+     this.appId,
+
+     this.pricingId,
+  });
+
+  @JsonKey(
+    
+    name: r'id',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? id;
+
+
+
+  @JsonKey(
+    
+    name: r'creationTime',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  DateTime? creationTime;
+
+
+
+  @JsonKey(
+    
+    name: r'creatorId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? creatorId;
+
+
+
+  @JsonKey(
+    
+    name: r'lastModificationTime',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  DateTime? lastModificationTime;
+
+
+
+  @JsonKey(
+    
+    name: r'lastModifierId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? lastModifierId;
+
+
+
+  @JsonKey(
+    
+    name: r'isDeleted',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  bool? isDeleted;
+
+
+
+  @JsonKey(
+    
+    name: r'deleterId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? deleterId;
+
+
+
+  @JsonKey(
+    
+    name: r'deletionTime',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  DateTime? deletionTime;
+
+
+
+  @JsonKey(
+    
+    name: r'type',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  SubscriptionOrderType? type;
+
+
+
+  @JsonKey(
+    
+    name: r'status',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  SubscriptionOrderStatus? status;
+
+
+
+  @JsonKey(
+    
+    name: r'appId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? appId;
+
+
+
+  @JsonKey(
+    
+    name: r'pricingId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? pricingId;
+
+
+
+  @override
+  bool operator ==(Object other) => identical(this, other) || other is SubscriptionOrderDto &&
+     other.id == id &&
+     other.creationTime == creationTime &&
+     other.creatorId == creatorId &&
+     other.lastModificationTime == lastModificationTime &&
+     other.lastModifierId == lastModifierId &&
+     other.isDeleted == isDeleted &&
+     other.deleterId == deleterId &&
+     other.deletionTime == deletionTime &&
+     other.type == type &&
+     other.status == status &&
+     other.appId == appId &&
+     other.pricingId == pricingId;
+
+  @override
+  int get hashCode =>
+    id.hashCode +
+    creationTime.hashCode +
+    creatorId.hashCode +
+    lastModificationTime.hashCode +
+    lastModifierId.hashCode +
+    isDeleted.hashCode +
+    deleterId.hashCode +
+    deletionTime.hashCode +
+    type.hashCode +
+    status.hashCode +
+    appId.hashCode +
+    pricingId.hashCode;
+
+  factory SubscriptionOrderDto.fromJson(Map<String, dynamic> json) => _$SubscriptionOrderDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$SubscriptionOrderDtoToJson(this);
+
+  @override
+  String toString() {
+    return toJson().toString();
+  }
+
+}
+

@@ -57,7 +57,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppSubscriptionOrderPost**
-> Object apiAppSubscriptionOrderPost(body)
+> SubscriptionOrderDto apiAppSubscriptionOrderPost(body)
 
 
 
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**Object**
+[**SubscriptionOrderDto**](SubscriptionOrderDto.md)
 
 ### Authorization
 
