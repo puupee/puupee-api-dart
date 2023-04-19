@@ -52,8 +52,13 @@ void main() {
       // TODO
     });
 
-    // String productId
-    test('to test the property `productId`', () async {
+    // String monthProductId
+    test('to test the property `monthProductId`', () async {
+      // TODO
+    });
+
+    // String yearProductId
+    test('to test the property `yearProductId`', () async {
       // TODO
     });
 

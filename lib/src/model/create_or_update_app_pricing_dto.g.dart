@@ -14,7 +14,9 @@ CreateOrUpdateAppPricingDto _$CreateOrUpdateAppPricingDtoFromJson(
       ($checkedConvert) {
         final val = CreateOrUpdateAppPricingDto(
           naming: $checkedConvert('naming', (v) => v as String?),
-          productId: $checkedConvert('productId', (v) => v as String?),
+          monthProductId:
+              $checkedConvert('monthProductId', (v) => v as String?),
+          yearProductId: $checkedConvert('yearProductId', (v) => v as String?),
           description: $checkedConvert('description', (v) => v as String?),
           appId: $checkedConvert('appId', (v) => v as String?),
           monthPrice:
@@ -59,7 +61,8 @@ Map<String, dynamic> _$CreateOrUpdateAppPricingDtoToJson(
   }
 
   writeNotNull('naming', instance.naming);
-  writeNotNull('productId', instance.productId);
+  writeNotNull('monthProductId', instance.monthProductId);
+  writeNotNull('yearProductId', instance.yearProductId);
   writeNotNull('description', instance.description);
   writeNotNull('appId', instance.appId);
   writeNotNull('monthPrice', instance.monthPrice);

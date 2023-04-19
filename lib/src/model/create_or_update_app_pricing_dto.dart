@@ -21,7 +21,9 @@ class CreateOrUpdateAppPricingDto {
 
      this.naming,
 
-     this.productId,
+     this.monthProductId,
+
+     this.yearProductId,
 
      this.description,
 
@@ -64,13 +66,25 @@ class CreateOrUpdateAppPricingDto {
 
   @JsonKey(
     
-    name: r'productId',
+    name: r'monthProductId',
     required: false,
     includeIfNull: false
   )
 
 
-  String? productId;
+  String? monthProductId;
+
+
+
+  @JsonKey(
+    
+    name: r'yearProductId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? yearProductId;
 
 
 
@@ -233,7 +247,8 @@ class CreateOrUpdateAppPricingDto {
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateOrUpdateAppPricingDto &&
      other.naming == naming &&
-     other.productId == productId &&
+     other.monthProductId == monthProductId &&
+     other.yearProductId == yearProductId &&
      other.description == description &&
      other.appId == appId &&
      other.monthPrice == monthPrice &&
@@ -251,7 +266,8 @@ class CreateOrUpdateAppPricingDto {
   @override
   int get hashCode =>
     naming.hashCode +
-    productId.hashCode +
+    monthProductId.hashCode +
+    yearProductId.hashCode +
     description.hashCode +
     appId.hashCode +
     monthPrice.hashCode +

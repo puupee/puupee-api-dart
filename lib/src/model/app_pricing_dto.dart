@@ -37,7 +37,9 @@ class AppPricingDto {
 
      this.naming,
 
-     this.productId,
+     this.monthProductId,
+
+     this.yearProductId,
 
      this.description,
 
@@ -176,13 +178,25 @@ class AppPricingDto {
 
   @JsonKey(
     
-    name: r'productId',
+    name: r'monthProductId',
     required: false,
     includeIfNull: false
   )
 
 
-  String? productId;
+  String? monthProductId;
+
+
+
+  @JsonKey(
+    
+    name: r'yearProductId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? yearProductId;
 
 
 
@@ -353,7 +367,8 @@ class AppPricingDto {
      other.deleterId == deleterId &&
      other.deletionTime == deletionTime &&
      other.naming == naming &&
-     other.productId == productId &&
+     other.monthProductId == monthProductId &&
+     other.yearProductId == yearProductId &&
      other.description == description &&
      other.appId == appId &&
      other.monthPrice == monthPrice &&
@@ -379,7 +394,8 @@ class AppPricingDto {
     deleterId.hashCode +
     deletionTime.hashCode +
     naming.hashCode +
-    productId.hashCode +
+    monthProductId.hashCode +
+    yearProductId.hashCode +
     description.hashCode +
     appId.hashCode +
     monthPrice.hashCode +
