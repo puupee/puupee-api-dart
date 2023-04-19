@@ -175,6 +175,7 @@ Class | Method | HTTP request | Description
 [*StorageObjectApi*](doc/StorageObjectApi.md) | [**apiAppStorageObjectPreSignUrlPost**](doc/StorageObjectApi.md#apiappstorageobjectpresignurlpost) | **POST** /api/app/storage-object/pre-sign-url | 
 [*StorageObjectApi*](doc/StorageObjectApi.md) | [**apiAppStorageObjectThumbGet**](doc/StorageObjectApi.md#apiappstorageobjectthumbget) | **GET** /api/app/storage-object/thumb | 
 [*SubscriptionApi*](doc/SubscriptionApi.md) | [**apiAppSubscriptionAppleNotificationsPost**](doc/SubscriptionApi.md#apiappsubscriptionapplenotificationspost) | **POST** /api/app/subscription/apple-notifications | 
+[*SubscriptionApi*](doc/SubscriptionApi.md) | [**apiAppSubscriptionGet**](doc/SubscriptionApi.md#apiappsubscriptionget) | **GET** /api/app/subscription | 
 [*SubscriptionApi*](doc/SubscriptionApi.md) | [**apiAppSubscriptionOrderPost**](doc/SubscriptionApi.md#apiappsubscriptionorderpost) | **POST** /api/app/subscription/order | 
 [*SubscriptionApi*](doc/SubscriptionApi.md) | [**apiAppSubscriptionVerifyReceiptPost**](doc/SubscriptionApi.md#apiappsubscriptionverifyreceiptpost) | **POST** /api/app/subscription/verify-receipt | 
 [*SyncStateApi*](doc/SyncStateApi.md) | [**apiAppSyncStateGet**](doc/SyncStateApi.md#apiappsyncstateget) | **GET** /api/app/sync-state | 
@@ -346,6 +347,7 @@ Class | Method | HTTP request | Description
  - [StorageObjectOrCredentialsDto](doc/StorageObjectOrCredentialsDto.md)
  - [StringKeyValue](doc/StringKeyValue.md)
  - [StringSetKeyValueDto](doc/StringSetKeyValueDto.md)
+ - [SubscriptionDto](doc/SubscriptionDto.md)
  - [SubscriptionOrderDto](doc/SubscriptionOrderDto.md)
  - [SubscriptionOrderStatus](doc/SubscriptionOrderStatus.md)
  - [SubscriptionOrderType](doc/SubscriptionOrderType.md)

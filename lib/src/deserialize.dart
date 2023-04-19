@@ -134,6 +134,7 @@ import 'package:puupee_api_client/src/model/storage_object_dto.dart';
 import 'package:puupee_api_client/src/model/storage_object_or_credentials_dto.dart';
 import 'package:puupee_api_client/src/model/string_key_value.dart';
 import 'package:puupee_api_client/src/model/string_set_key_value_dto.dart';
+import 'package:puupee_api_client/src/model/subscription_dto.dart';
 import 'package:puupee_api_client/src/model/subscription_order_dto.dart';
 import 'package:puupee_api_client/src/model/subscription_order_status.dart';
 import 'package:puupee_api_client/src/model/subscription_order_type.dart';
@@ -459,6 +460,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return StringKeyValue.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'StringSetKeyValueDto':
           return StringSetKeyValueDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'SubscriptionDto':
+          return SubscriptionDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'SubscriptionOrderDto':
           return SubscriptionOrderDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'SubscriptionOrderStatus':

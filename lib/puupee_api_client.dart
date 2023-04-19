@@ -183,6 +183,7 @@ export 'package:puupee_api_client/src/model/storage_object_dto.dart';
 export 'package:puupee_api_client/src/model/storage_object_or_credentials_dto.dart';
 export 'package:puupee_api_client/src/model/string_key_value.dart';
 export 'package:puupee_api_client/src/model/string_set_key_value_dto.dart';
+export 'package:puupee_api_client/src/model/subscription_dto.dart';
 export 'package:puupee_api_client/src/model/subscription_order_dto.dart';
 export 'package:puupee_api_client/src/model/subscription_order_status.dart';
 export 'package:puupee_api_client/src/model/subscription_order_type.dart';

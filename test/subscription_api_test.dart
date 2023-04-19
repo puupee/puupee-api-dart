@@ -12,6 +12,11 @@ void main() {
       // TODO
     });
 
+    //Future<SubscriptionDto> apiAppSubscriptionGet({ String appId }) async
+    test('test apiAppSubscriptionGet', () async {
+      // TODO
+    });
+
     //Future<SubscriptionOrderDto> apiAppSubscriptionOrderPost({ CreateOrGetSubscriptionOrderDto body }) async
     test('test apiAppSubscriptionOrderPost', () async {
       // TODO
