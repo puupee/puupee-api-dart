@@ -9,6 +9,7 @@ import 'package:puupee_api_client/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **naming** | **String** |  | [optional] 
+**productId** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
 **appId** | **String** |  | [optional] 
 **monthPrice** | **double** |  | [optional] 

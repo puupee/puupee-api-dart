@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **deleterId** | **String** |  | [optional] 
 **deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
 **naming** | **String** |  | [optional] 
+**productId** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
 **appId** | **String** |  | [optional] 
 **monthPrice** | **double** |  | [optional] 

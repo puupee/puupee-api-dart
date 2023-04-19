@@ -52,6 +52,11 @@ void main() {
       // TODO
     });
 
+    // String productId
+    test('to test the property `productId`', () async {
+      // TODO
+    });
+
     // String description
     test('to test the property `description`', () async {
       // TODO
