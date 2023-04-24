@@ -31,7 +31,7 @@ class ApplicationLocalizationResourceDto {
   )
 
 
-  Map<String, String>? texts;
+  final Map<String, String>? texts;
 
 
 
@@ -43,7 +43,7 @@ class ApplicationLocalizationResourceDto {
   )
 
 
-  List<String>? baseResources;
+  final List<String>? baseResources;
 
 
 

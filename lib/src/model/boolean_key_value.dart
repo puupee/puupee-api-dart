@@ -35,7 +35,7 @@ class BooleanKeyValue {
   )
 
 
-  bool? value;
+  final bool? value;
 
 
 
@@ -47,7 +47,7 @@ class BooleanKeyValue {
   )
 
 
-  double? durationSeconds;
+  final double? durationSeconds;
 
 
 
@@ -59,7 +59,7 @@ class BooleanKeyValue {
   )
 
 
-  DateTime? expiredAt;
+  final DateTime? expiredAt;
 
 
 
@@ -71,7 +71,7 @@ class BooleanKeyValue {
   )
 
 
-  DateTime? createdAt;
+  final DateTime? createdAt;
 
 
 

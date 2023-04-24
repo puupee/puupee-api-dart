@@ -35,7 +35,7 @@ class DecimalKeyValue {
   )
 
 
-  double? value;
+  final double? value;
 
 
 
@@ -47,7 +47,7 @@ class DecimalKeyValue {
   )
 
 
-  double? durationSeconds;
+  final double? durationSeconds;
 
 
 
@@ -59,7 +59,7 @@ class DecimalKeyValue {
   )
 
 
-  DateTime? expiredAt;
+  final DateTime? expiredAt;
 
 
 
@@ -71,7 +71,7 @@ class DecimalKeyValue {
   )
 
 
-  DateTime? createdAt;
+  final DateTime? createdAt;
 
 
 

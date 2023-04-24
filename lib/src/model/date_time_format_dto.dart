@@ -41,7 +41,7 @@ class DateTimeFormatDto {
   )
 
 
-  String? calendarAlgorithmType;
+  final String? calendarAlgorithmType;
 
 
 
@@ -53,7 +53,7 @@ class DateTimeFormatDto {
   )
 
 
-  String? dateTimeFormatLong;
+  final String? dateTimeFormatLong;
 
 
 
@@ -65,7 +65,7 @@ class DateTimeFormatDto {
   )
 
 
-  String? shortDatePattern;
+  final String? shortDatePattern;
 
 
 
@@ -77,7 +77,7 @@ class DateTimeFormatDto {
   )
 
 
-  String? fullDateTimePattern;
+  final String? fullDateTimePattern;
 
 
 
@@ -89,7 +89,7 @@ class DateTimeFormatDto {
   )
 
 
-  String? dateSeparator;
+  final String? dateSeparator;
 
 
 
@@ -101,7 +101,7 @@ class DateTimeFormatDto {
   )
 
 
-  String? shortTimePattern;
+  final String? shortTimePattern;
 
 
 
@@ -113,7 +113,7 @@ class DateTimeFormatDto {
   )
 
 
-  String? longTimePattern;
+  final String? longTimePattern;
 
 
 

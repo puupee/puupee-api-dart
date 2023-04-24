@@ -33,7 +33,7 @@ class TimeZone {
   )
 
 
-  IanaTimeZone? iana;
+  final IanaTimeZone? iana;
 
 
 
@@ -45,7 +45,7 @@ class TimeZone {
   )
 
 
-  WindowsTimeZone? windows;
+  final WindowsTimeZone? windows;
 
 
 

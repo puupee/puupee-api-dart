@@ -35,7 +35,7 @@ class IdentityRoleCreateDto {
   )
 
 
-  Map<String, Object>? extraProperties;
+  final Map<String, Object>? extraProperties;
 
 
 
@@ -47,7 +47,7 @@ class IdentityRoleCreateDto {
   )
 
 
-  String name;
+  final String name;
 
 
 
@@ -59,7 +59,7 @@ class IdentityRoleCreateDto {
   )
 
 
-  bool? isDefault;
+  final bool? isDefault;
 
 
 
@@ -71,7 +71,7 @@ class IdentityRoleCreateDto {
   )
 
 
-  bool? isPublic;
+  final bool? isPublic;
 
 
 

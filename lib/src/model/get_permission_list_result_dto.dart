@@ -32,7 +32,7 @@ class GetPermissionListResultDto {
   )
 
 
-  String? entityDisplayName;
+  final String? entityDisplayName;
 
 
 
@@ -44,7 +44,7 @@ class GetPermissionListResultDto {
   )
 
 
-  List<PermissionGroupDto>? groups;
+  final List<PermissionGroupDto>? groups;
 
 
 

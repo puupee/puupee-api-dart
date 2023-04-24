@@ -41,7 +41,7 @@ class UpdateProfileDto {
   )
 
 
-  Map<String, Object>? extraProperties;
+  final Map<String, Object>? extraProperties;
 
 
 
@@ -53,7 +53,7 @@ class UpdateProfileDto {
   )
 
 
-  String? userName;
+  final String? userName;
 
 
 
@@ -65,7 +65,7 @@ class UpdateProfileDto {
   )
 
 
-  String? email;
+  final String? email;
 
 
 
@@ -77,7 +77,7 @@ class UpdateProfileDto {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -89,7 +89,7 @@ class UpdateProfileDto {
   )
 
 
-  String? surname;
+  final String? surname;
 
 
 
@@ -101,7 +101,7 @@ class UpdateProfileDto {
   )
 
 
-  String? phoneNumber;
+  final String? phoneNumber;
 
 
 
@@ -113,7 +113,7 @@ class UpdateProfileDto {
   )
 
 
-  String? concurrencyStamp;
+  final String? concurrencyStamp;
 
 
 

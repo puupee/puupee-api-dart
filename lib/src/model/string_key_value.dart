@@ -35,7 +35,7 @@ class StringKeyValue {
   )
 
 
-  String? value;
+  final String? value;
 
 
 
@@ -47,7 +47,7 @@ class StringKeyValue {
   )
 
 
-  double? durationSeconds;
+  final double? durationSeconds;
 
 
 
@@ -59,7 +59,7 @@ class StringKeyValue {
   )
 
 
-  DateTime? expiredAt;
+  final DateTime? expiredAt;
 
 
 
@@ -71,7 +71,7 @@ class StringKeyValue {
   )
 
 
-  DateTime? createdAt;
+  final DateTime? createdAt;
 
 
 

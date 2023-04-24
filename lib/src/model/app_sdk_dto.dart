@@ -53,7 +53,7 @@ class AppSdkDto {
   )
 
 
-  String? id;
+  final String? id;
 
 
 
@@ -65,7 +65,7 @@ class AppSdkDto {
   )
 
 
-  DateTime? creationTime;
+  final DateTime? creationTime;
 
 
 
@@ -77,7 +77,7 @@ class AppSdkDto {
   )
 
 
-  String? creatorId;
+  final String? creatorId;
 
 
 
@@ -89,7 +89,7 @@ class AppSdkDto {
   )
 
 
-  DateTime? lastModificationTime;
+  final DateTime? lastModificationTime;
 
 
 
@@ -101,7 +101,7 @@ class AppSdkDto {
   )
 
 
-  String? lastModifierId;
+  final String? lastModifierId;
 
 
 
@@ -113,7 +113,7 @@ class AppSdkDto {
   )
 
 
-  bool? isDeleted;
+  final bool? isDeleted;
 
 
 
@@ -125,7 +125,7 @@ class AppSdkDto {
   )
 
 
-  String? deleterId;
+  final String? deleterId;
 
 
 
@@ -137,7 +137,7 @@ class AppSdkDto {
   )
 
 
-  DateTime? deletionTime;
+  final DateTime? deletionTime;
 
 
 
@@ -149,7 +149,7 @@ class AppSdkDto {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -161,7 +161,7 @@ class AppSdkDto {
   )
 
 
-  String? description;
+  final String? description;
 
 
 
@@ -173,7 +173,7 @@ class AppSdkDto {
   )
 
 
-  String? privacy;
+  final String? privacy;
 
 
 
@@ -185,7 +185,7 @@ class AppSdkDto {
   )
 
 
-  String? privacyUrl;
+  final String? privacyUrl;
 
 
 
@@ -197,7 +197,7 @@ class AppSdkDto {
   )
 
 
-  String? homePage;
+  final String? homePage;
 
 
 

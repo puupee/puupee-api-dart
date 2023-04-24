@@ -71,7 +71,7 @@ class StorageObjectDto {
   )
 
 
-  String? id;
+  final String? id;
 
 
 
@@ -83,7 +83,7 @@ class StorageObjectDto {
   )
 
 
-  DateTime? creationTime;
+  final DateTime? creationTime;
 
 
 
@@ -95,7 +95,7 @@ class StorageObjectDto {
   )
 
 
-  String? creatorId;
+  final String? creatorId;
 
 
 
@@ -107,7 +107,7 @@ class StorageObjectDto {
   )
 
 
-  DateTime? lastModificationTime;
+  final DateTime? lastModificationTime;
 
 
 
@@ -119,7 +119,7 @@ class StorageObjectDto {
   )
 
 
-  String? lastModifierId;
+  final String? lastModifierId;
 
 
 
@@ -131,7 +131,7 @@ class StorageObjectDto {
   )
 
 
-  bool? isDeleted;
+  final bool? isDeleted;
 
 
 
@@ -143,7 +143,7 @@ class StorageObjectDto {
   )
 
 
-  String? deleterId;
+  final String? deleterId;
 
 
 
@@ -155,7 +155,7 @@ class StorageObjectDto {
   )
 
 
-  DateTime? deletionTime;
+  final DateTime? deletionTime;
 
 
 
@@ -167,7 +167,7 @@ class StorageObjectDto {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -179,7 +179,7 @@ class StorageObjectDto {
   )
 
 
-  String? key;
+  final String? key;
 
 
 
@@ -191,7 +191,7 @@ class StorageObjectDto {
   )
 
 
-  String? url;
+  final String? url;
 
 
 
@@ -203,7 +203,7 @@ class StorageObjectDto {
   )
 
 
-  int? size;
+  final int? size;
 
 
 
@@ -215,7 +215,7 @@ class StorageObjectDto {
   )
 
 
-  String? md5;
+  final String? md5;
 
 
 
@@ -227,7 +227,7 @@ class StorageObjectDto {
   )
 
 
-  String? sliceMd5;
+  final String? sliceMd5;
 
 
 
@@ -239,7 +239,7 @@ class StorageObjectDto {
   )
 
 
-  String? rapidCode;
+  final String? rapidCode;
 
 
 
@@ -251,7 +251,7 @@ class StorageObjectDto {
   )
 
 
-  String? contentType;
+  final String? contentType;
 
 
 
@@ -263,7 +263,7 @@ class StorageObjectDto {
   )
 
 
-  String? extension_;
+  final String? extension_;
 
 
 
@@ -275,7 +275,7 @@ class StorageObjectDto {
   )
 
 
-  String? storageClass;
+  final String? storageClass;
 
 
 
@@ -287,7 +287,7 @@ class StorageObjectDto {
   )
 
 
-  DateTime? storageObjectCreatedAt;
+  final DateTime? storageObjectCreatedAt;
 
 
 
@@ -299,7 +299,7 @@ class StorageObjectDto {
   )
 
 
-  DateTime? storageObjectUpdatedAt;
+  final DateTime? storageObjectUpdatedAt;
 
 
 
@@ -311,7 +311,7 @@ class StorageObjectDto {
   )
 
 
-  int? syncVersion;
+  final int? syncVersion;
 
 
 
@@ -323,7 +323,7 @@ class StorageObjectDto {
   )
 
 
-  String? password;
+  final String? password;
 
 
 

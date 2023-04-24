@@ -68,7 +68,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -80,7 +80,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  String? displayName;
+  final String? displayName;
 
 
 
@@ -92,7 +92,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  String? framework;
+  final String? framework;
 
 
 
@@ -104,7 +104,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  String? appType;
+  final String? appType;
 
 
 
@@ -116,7 +116,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  String? description;
+  final String? description;
 
 
 
@@ -128,7 +128,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  String? icon;
+  final String? icon;
 
 
 
@@ -140,7 +140,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  String? homePage;
+  final String? homePage;
 
 
 
@@ -152,7 +152,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  int? sortIndex;
+  final int? sortIndex;
 
 
 
@@ -164,7 +164,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  String? gitRepository;
+  final String? gitRepository;
 
 
 
@@ -176,7 +176,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  String? gitRepositoryType;
+  final String? gitRepositoryType;
 
 
 
@@ -188,7 +188,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  bool? isEnabled;
+  final bool? isEnabled;
 
 
 
@@ -200,7 +200,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  String? webhookUrl;
+  final String? webhookUrl;
 
 
 
@@ -212,7 +212,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  String? businessDomain;
+  final String? businessDomain;
 
 
 
@@ -224,7 +224,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  String? businessUrl;
+  final String? businessUrl;
 
 
 
@@ -236,7 +236,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  bool? subscriptionEnabled;
+  final bool? subscriptionEnabled;
 
 
 
@@ -248,7 +248,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  bool? isPublished;
+  final bool? isPublished;
 
 
 
@@ -260,7 +260,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  List<AppFeatureDto>? features;
+  final List<AppFeatureDto>? features;
 
 
 
@@ -272,7 +272,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  List<AppSdkDto>? sdks;
+  final List<AppSdkDto>? sdks;
 
 
 
@@ -284,7 +284,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  CreateOpenIddictApplicationDto? openClient;
+  final CreateOpenIddictApplicationDto? openClient;
 
 
 

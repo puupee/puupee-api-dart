@@ -31,7 +31,7 @@ class ReturnValueApiDescriptionModel {
   )
 
 
-  String? type;
+  final String? type;
 
 
 
@@ -43,7 +43,7 @@ class ReturnValueApiDescriptionModel {
   )
 
 
-  String? typeSimple;
+  final String? typeSimple;
 
 
 

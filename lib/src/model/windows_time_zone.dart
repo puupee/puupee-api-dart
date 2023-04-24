@@ -29,7 +29,7 @@ class WindowsTimeZone {
   )
 
 
-  String? timeZoneId;
+  final String? timeZoneId;
 
 
 

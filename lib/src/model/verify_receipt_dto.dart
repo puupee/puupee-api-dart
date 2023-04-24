@@ -31,7 +31,7 @@ class VerifyReceiptDto {
   )
 
 
-  String? orderId;
+  final String? orderId;
 
 
 
@@ -43,7 +43,7 @@ class VerifyReceiptDto {
   )
 
 
-  String? receiptData;
+  final String? receiptData;
 
 
 

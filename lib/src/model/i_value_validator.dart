@@ -31,7 +31,7 @@ class IValueValidator {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -43,7 +43,7 @@ class IValueValidator {
   )
 
 
-  Map<String, Object>? properties;
+  final Map<String, Object>? properties;
 
 
 

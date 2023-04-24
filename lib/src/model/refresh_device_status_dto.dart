@@ -31,7 +31,7 @@ class RefreshDeviceStatusDto {
   )
 
 
-  String? token;
+  final String? token;
 
 
 
@@ -43,7 +43,7 @@ class RefreshDeviceStatusDto {
   )
 
 
-  String? status;
+  final String? status;
 
 
 

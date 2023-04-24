@@ -49,7 +49,7 @@ class IdentityUserUpdateDto {
   )
 
 
-  Map<String, Object>? extraProperties;
+  final Map<String, Object>? extraProperties;
 
 
 
@@ -61,7 +61,7 @@ class IdentityUserUpdateDto {
   )
 
 
-  String userName;
+  final String userName;
 
 
 
@@ -73,7 +73,7 @@ class IdentityUserUpdateDto {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -85,7 +85,7 @@ class IdentityUserUpdateDto {
   )
 
 
-  String? surname;
+  final String? surname;
 
 
 
@@ -97,7 +97,7 @@ class IdentityUserUpdateDto {
   )
 
 
-  String email;
+  final String email;
 
 
 
@@ -109,7 +109,7 @@ class IdentityUserUpdateDto {
   )
 
 
-  String? phoneNumber;
+  final String? phoneNumber;
 
 
 
@@ -121,7 +121,7 @@ class IdentityUserUpdateDto {
   )
 
 
-  bool? isActive;
+  final bool? isActive;
 
 
 
@@ -133,7 +133,7 @@ class IdentityUserUpdateDto {
   )
 
 
-  bool? lockoutEnabled;
+  final bool? lockoutEnabled;
 
 
 
@@ -145,7 +145,7 @@ class IdentityUserUpdateDto {
   )
 
 
-  List<String>? roleNames;
+  final List<String>? roleNames;
 
 
 
@@ -157,7 +157,7 @@ class IdentityUserUpdateDto {
   )
 
 
-  String? password;
+  final String? password;
 
 
 
@@ -169,7 +169,7 @@ class IdentityUserUpdateDto {
   )
 
 
-  String? concurrencyStamp;
+  final String? concurrencyStamp;
 
 
 

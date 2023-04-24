@@ -35,7 +35,7 @@ class CreateOrUpdateAppPricingItemDto {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -47,7 +47,7 @@ class CreateOrUpdateAppPricingItemDto {
   )
 
 
-  String? display;
+  final String? display;
 
 
 
@@ -59,7 +59,7 @@ class CreateOrUpdateAppPricingItemDto {
   )
 
 
-  String? appId;
+  final String? appId;
 
 
 
@@ -71,7 +71,7 @@ class CreateOrUpdateAppPricingItemDto {
   )
 
 
-  bool? hasValue;
+  final bool? hasValue;
 
 
 

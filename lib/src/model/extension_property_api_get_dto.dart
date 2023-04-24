@@ -29,7 +29,7 @@ class ExtensionPropertyApiGetDto {
   )
 
 
-  bool? isAvailable;
+  final bool? isAvailable;
 
 
 

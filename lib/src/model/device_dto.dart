@@ -57,7 +57,7 @@ class DeviceDto {
   )
 
 
-  String? id;
+  final String? id;
 
 
 
@@ -69,7 +69,7 @@ class DeviceDto {
   )
 
 
-  DateTime? creationTime;
+  final DateTime? creationTime;
 
 
 
@@ -81,7 +81,7 @@ class DeviceDto {
   )
 
 
-  String? creatorId;
+  final String? creatorId;
 
 
 
@@ -93,7 +93,7 @@ class DeviceDto {
   )
 
 
-  DateTime? lastModificationTime;
+  final DateTime? lastModificationTime;
 
 
 
@@ -105,7 +105,7 @@ class DeviceDto {
   )
 
 
-  String? lastModifierId;
+  final String? lastModifierId;
 
 
 
@@ -117,7 +117,7 @@ class DeviceDto {
   )
 
 
-  bool? isDeleted;
+  final bool? isDeleted;
 
 
 
@@ -129,7 +129,7 @@ class DeviceDto {
   )
 
 
-  String? deleterId;
+  final String? deleterId;
 
 
 
@@ -141,7 +141,7 @@ class DeviceDto {
   )
 
 
-  DateTime? deletionTime;
+  final DateTime? deletionTime;
 
 
 
@@ -153,7 +153,7 @@ class DeviceDto {
   )
 
 
-  String? token;
+  final String? token;
 
 
 
@@ -165,7 +165,7 @@ class DeviceDto {
   )
 
 
-  String? tpnsToken;
+  final String? tpnsToken;
 
 
 
@@ -177,7 +177,7 @@ class DeviceDto {
   )
 
 
-  bool? isPhysicalDevice;
+  final bool? isPhysicalDevice;
 
 
 
@@ -189,7 +189,7 @@ class DeviceDto {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -201,7 +201,7 @@ class DeviceDto {
   )
 
 
-  String? platform;
+  final String? platform;
 
 
 
@@ -213,7 +213,7 @@ class DeviceDto {
   )
 
 
-  String? brand;
+  final String? brand;
 
 
 
@@ -225,7 +225,7 @@ class DeviceDto {
   )
 
 
-  String? systemVersion;
+  final String? systemVersion;
 
 
 

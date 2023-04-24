@@ -29,7 +29,7 @@ class IanaTimeZone {
   )
 
 
-  String? timeZoneName;
+  final String? timeZoneName;
 
 
 

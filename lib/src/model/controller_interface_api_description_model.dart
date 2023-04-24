@@ -34,7 +34,7 @@ class ControllerInterfaceApiDescriptionModel {
   )
 
 
-  String? type;
+  final String? type;
 
 
 
@@ -46,7 +46,7 @@ class ControllerInterfaceApiDescriptionModel {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -58,7 +58,7 @@ class ControllerInterfaceApiDescriptionModel {
   )
 
 
-  List<InterfaceMethodApiDescriptionModel>? methods;
+  final List<InterfaceMethodApiDescriptionModel>? methods;
 
 
 

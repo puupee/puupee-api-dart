@@ -31,7 +31,7 @@ class Int32SetKeyValueDto {
   )
 
 
-  int? value;
+  final int? value;
 
 
 
@@ -43,7 +43,7 @@ class Int32SetKeyValueDto {
   )
 
 
-  double? durationSeconds;
+  final double? durationSeconds;
 
 
 

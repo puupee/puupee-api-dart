@@ -33,7 +33,7 @@ class UserLoginInfo {
   )
 
 
-  String userNameOrEmailAddress;
+  final String userNameOrEmailAddress;
 
 
 
@@ -45,7 +45,7 @@ class UserLoginInfo {
   )
 
 
-  String password;
+  final String password;
 
 
 
@@ -57,7 +57,7 @@ class UserLoginInfo {
   )
 
 
-  bool? rememberMe;
+  final bool? rememberMe;
 
 
 

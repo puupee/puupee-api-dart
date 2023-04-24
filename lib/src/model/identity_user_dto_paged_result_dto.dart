@@ -32,7 +32,7 @@ class IdentityUserDtoPagedResultDto {
   )
 
 
-  List<IdentityUserDto>? items;
+  final List<IdentityUserDto>? items;
 
 
 
@@ -44,7 +44,7 @@ class IdentityUserDtoPagedResultDto {
   )
 
 
-  int? totalCount;
+  final int? totalCount;
 
 
 

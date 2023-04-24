@@ -33,7 +33,7 @@ class VerifyReceiptResult {
   )
 
 
-  bool? ok;
+  final bool? ok;
 
 
 
@@ -45,7 +45,7 @@ class VerifyReceiptResult {
   )
 
 
-  String? statusCode;
+  final String? statusCode;
 
 
 
@@ -57,7 +57,7 @@ class VerifyReceiptResult {
   )
 
 
-  String? message;
+  final String? message;
 
 
 

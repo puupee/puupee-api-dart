@@ -36,7 +36,7 @@ class ExtensionPropertyApiDto {
   )
 
 
-  ExtensionPropertyApiGetDto? onGet;
+  final ExtensionPropertyApiGetDto? onGet;
 
 
 
@@ -48,7 +48,7 @@ class ExtensionPropertyApiDto {
   )
 
 
-  ExtensionPropertyApiCreateDto? onCreate;
+  final ExtensionPropertyApiCreateDto? onCreate;
 
 
 
@@ -60,7 +60,7 @@ class ExtensionPropertyApiDto {
   )
 
 
-  ExtensionPropertyApiUpdateDto? onUpdate;
+  final ExtensionPropertyApiUpdateDto? onUpdate;
 
 
 

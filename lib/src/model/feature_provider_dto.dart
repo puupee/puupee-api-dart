@@ -31,7 +31,7 @@ class FeatureProviderDto {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -43,7 +43,7 @@ class FeatureProviderDto {
   )
 
 
-  String? key;
+  final String? key;
 
 
 

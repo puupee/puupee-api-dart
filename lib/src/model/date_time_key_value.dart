@@ -35,7 +35,7 @@ class DateTimeKeyValue {
   )
 
 
-  DateTime? value;
+  final DateTime? value;
 
 
 
@@ -47,7 +47,7 @@ class DateTimeKeyValue {
   )
 
 
-  double? durationSeconds;
+  final double? durationSeconds;
 
 
 
@@ -59,7 +59,7 @@ class DateTimeKeyValue {
   )
 
 
-  DateTime? expiredAt;
+  final DateTime? expiredAt;
 
 
 
@@ -71,7 +71,7 @@ class DateTimeKeyValue {
   )
 
 
-  DateTime? createdAt;
+  final DateTime? createdAt;
 
 
 

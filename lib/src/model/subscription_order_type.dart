@@ -31,7 +31,7 @@ class SubscriptionOrderType {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -43,7 +43,7 @@ class SubscriptionOrderType {
   )
 
 
-  String? value;
+  final String? value;
 
 
 

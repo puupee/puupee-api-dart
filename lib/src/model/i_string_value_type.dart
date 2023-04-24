@@ -34,7 +34,7 @@ class IStringValueType {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -46,7 +46,7 @@ class IStringValueType {
   )
 
 
-  Map<String, Object>? properties;
+  final Map<String, Object>? properties;
 
 
 
@@ -58,7 +58,7 @@ class IStringValueType {
   )
 
 
-  IValueValidator? validator;
+  final IValueValidator? validator;
 
 
 

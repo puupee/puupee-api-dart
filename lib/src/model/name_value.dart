@@ -31,7 +31,7 @@ class NameValue {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -43,7 +43,7 @@ class NameValue {
   )
 
 
-  String? value;
+  final String? value;
 
 
 

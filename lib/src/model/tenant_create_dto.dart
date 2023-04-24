@@ -35,7 +35,7 @@ class TenantCreateDto {
   )
 
 
-  Map<String, Object>? extraProperties;
+  final Map<String, Object>? extraProperties;
 
 
 
@@ -47,7 +47,7 @@ class TenantCreateDto {
   )
 
 
-  String name;
+  final String name;
 
 
 
@@ -59,7 +59,7 @@ class TenantCreateDto {
   )
 
 
-  String adminEmailAddress;
+  final String adminEmailAddress;
 
 
 
@@ -71,7 +71,7 @@ class TenantCreateDto {
   )
 
 
-  String adminPassword;
+  final String adminPassword;
 
 
 

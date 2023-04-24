@@ -35,7 +35,7 @@ class UserStorageItemDto {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -47,7 +47,7 @@ class UserStorageItemDto {
   )
 
 
-  String? title;
+  final String? title;
 
 
 
@@ -59,7 +59,7 @@ class UserStorageItemDto {
   )
 
 
-  int? count;
+  final int? count;
 
 
 
@@ -71,7 +71,7 @@ class UserStorageItemDto {
   )
 
 
-  int? size;
+  final int? size;
 
 
 

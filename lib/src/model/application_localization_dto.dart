@@ -30,7 +30,7 @@ class ApplicationLocalizationDto {
   )
 
 
-  Map<String, ApplicationLocalizationResourceDto>? resources;
+  final Map<String, ApplicationLocalizationResourceDto>? resources;
 
 
 

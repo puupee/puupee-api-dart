@@ -29,7 +29,7 @@ class ExtensionPropertyUiFormDto {
   )
 
 
-  bool? isVisible;
+  final bool? isVisible;
 
 
 

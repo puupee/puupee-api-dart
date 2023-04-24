@@ -77,7 +77,7 @@ class AppReleaseDto {
   )
 
 
-  String? id;
+  final String? id;
 
 
 
@@ -89,7 +89,7 @@ class AppReleaseDto {
   )
 
 
-  DateTime? creationTime;
+  final DateTime? creationTime;
 
 
 
@@ -101,7 +101,7 @@ class AppReleaseDto {
   )
 
 
-  String? creatorId;
+  final String? creatorId;
 
 
 
@@ -113,7 +113,7 @@ class AppReleaseDto {
   )
 
 
-  DateTime? lastModificationTime;
+  final DateTime? lastModificationTime;
 
 
 
@@ -125,7 +125,7 @@ class AppReleaseDto {
   )
 
 
-  String? lastModifierId;
+  final String? lastModifierId;
 
 
 
@@ -137,7 +137,7 @@ class AppReleaseDto {
   )
 
 
-  bool? isDeleted;
+  final bool? isDeleted;
 
 
 
@@ -149,7 +149,7 @@ class AppReleaseDto {
   )
 
 
-  String? deleterId;
+  final String? deleterId;
 
 
 
@@ -161,7 +161,7 @@ class AppReleaseDto {
   )
 
 
-  DateTime? deletionTime;
+  final DateTime? deletionTime;
 
 
 
@@ -173,7 +173,7 @@ class AppReleaseDto {
   )
 
 
-  String? version;
+  final String? version;
 
 
 
@@ -185,7 +185,7 @@ class AppReleaseDto {
   )
 
 
-  String? versionName;
+  final String? versionName;
 
 
 
@@ -197,7 +197,7 @@ class AppReleaseDto {
   )
 
 
-  int? versionCode;
+  final int? versionCode;
 
 
 
@@ -209,7 +209,7 @@ class AppReleaseDto {
   )
 
 
-  String? notes;
+  final String? notes;
 
 
 
@@ -221,7 +221,7 @@ class AppReleaseDto {
   )
 
 
-  String? platform;
+  final String? platform;
 
 
 
@@ -233,7 +233,7 @@ class AppReleaseDto {
   )
 
 
-  String? key;
+  final String? key;
 
 
 
@@ -245,7 +245,7 @@ class AppReleaseDto {
   )
 
 
-  String? rapidCode;
+  final String? rapidCode;
 
 
 
@@ -257,7 +257,7 @@ class AppReleaseDto {
   )
 
 
-  int? size;
+  final int? size;
 
 
 
@@ -269,7 +269,7 @@ class AppReleaseDto {
   )
 
 
-  String? md5;
+  final String? md5;
 
 
 
@@ -281,7 +281,7 @@ class AppReleaseDto {
   )
 
 
-  String? sliceMd5;
+  final String? sliceMd5;
 
 
 
@@ -293,7 +293,7 @@ class AppReleaseDto {
   )
 
 
-  String? downloadUrl;
+  final String? downloadUrl;
 
 
 
@@ -305,7 +305,7 @@ class AppReleaseDto {
   )
 
 
-  String? productType;
+  final String? productType;
 
 
 
@@ -317,7 +317,7 @@ class AppReleaseDto {
   )
 
 
-  bool? isForceUpdate;
+  final bool? isForceUpdate;
 
 
 
@@ -329,7 +329,7 @@ class AppReleaseDto {
   )
 
 
-  String? appId;
+  final String? appId;
 
 
 
@@ -341,7 +341,7 @@ class AppReleaseDto {
   )
 
 
-  bool? isEnabled;
+  final bool? isEnabled;
 
 
 
@@ -353,7 +353,7 @@ class AppReleaseDto {
   )
 
 
-  String? channel;
+  final String? channel;
 
 
 
@@ -365,7 +365,7 @@ class AppReleaseDto {
   )
 
 
-  String? environment;
+  final String? environment;
 
 
 

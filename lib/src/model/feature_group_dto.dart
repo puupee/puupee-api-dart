@@ -34,7 +34,7 @@ class FeatureGroupDto {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -46,7 +46,7 @@ class FeatureGroupDto {
   )
 
 
-  String? displayName;
+  final String? displayName;
 
 
 
@@ -58,7 +58,7 @@ class FeatureGroupDto {
   )
 
 
-  List<FeatureDto>? features;
+  final List<FeatureDto>? features;
 
 
 

@@ -33,7 +33,7 @@ class ApplicationApiDescriptionModel {
   )
 
 
-  Map<String, ModuleApiDescriptionModel>? modules;
+  final Map<String, ModuleApiDescriptionModel>? modules;
 
 
 
@@ -45,7 +45,7 @@ class ApplicationApiDescriptionModel {
   )
 
 
-  Map<String, TypeApiDescriptionModel>? types;
+  final Map<String, TypeApiDescriptionModel>? types;
 
 
 

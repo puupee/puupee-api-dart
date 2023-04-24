@@ -37,7 +37,7 @@ class RegisterDto {
   )
 
 
-  Map<String, Object>? extraProperties;
+  final Map<String, Object>? extraProperties;
 
 
 
@@ -49,7 +49,7 @@ class RegisterDto {
   )
 
 
-  String userName;
+  final String userName;
 
 
 
@@ -61,7 +61,7 @@ class RegisterDto {
   )
 
 
-  String emailAddress;
+  final String emailAddress;
 
 
 
@@ -73,7 +73,7 @@ class RegisterDto {
   )
 
 
-  String password;
+  final String password;
 
 
 
@@ -85,7 +85,7 @@ class RegisterDto {
   )
 
 
-  String appName;
+  final String appName;
 
 
 

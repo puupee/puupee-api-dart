@@ -32,7 +32,7 @@ class ExtensionEnumDto {
   )
 
 
-  List<ExtensionEnumFieldDto>? fields;
+  final List<ExtensionEnumFieldDto>? fields;
 
 
 
@@ -44,7 +44,7 @@ class ExtensionEnumDto {
   )
 
 
-  String? localizationResource;
+  final String? localizationResource;
 
 
 

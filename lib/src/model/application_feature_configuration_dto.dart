@@ -29,7 +29,7 @@ class ApplicationFeatureConfigurationDto {
   )
 
 
-  Map<String, String>? values;
+  final Map<String, String>? values;
 
 
 

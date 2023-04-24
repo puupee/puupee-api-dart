@@ -49,7 +49,7 @@ class AppUserScoreDto {
   )
 
 
-  String? id;
+  final String? id;
 
 
 
@@ -61,7 +61,7 @@ class AppUserScoreDto {
   )
 
 
-  DateTime? creationTime;
+  final DateTime? creationTime;
 
 
 
@@ -73,7 +73,7 @@ class AppUserScoreDto {
   )
 
 
-  String? creatorId;
+  final String? creatorId;
 
 
 
@@ -85,7 +85,7 @@ class AppUserScoreDto {
   )
 
 
-  DateTime? lastModificationTime;
+  final DateTime? lastModificationTime;
 
 
 
@@ -97,7 +97,7 @@ class AppUserScoreDto {
   )
 
 
-  String? lastModifierId;
+  final String? lastModifierId;
 
 
 
@@ -109,7 +109,7 @@ class AppUserScoreDto {
   )
 
 
-  bool? isDeleted;
+  final bool? isDeleted;
 
 
 
@@ -121,7 +121,7 @@ class AppUserScoreDto {
   )
 
 
-  String? deleterId;
+  final String? deleterId;
 
 
 
@@ -133,7 +133,7 @@ class AppUserScoreDto {
   )
 
 
-  DateTime? deletionTime;
+  final DateTime? deletionTime;
 
 
 
@@ -145,7 +145,7 @@ class AppUserScoreDto {
   )
 
 
-  String? appId;
+  final String? appId;
 
 
 
@@ -157,7 +157,7 @@ class AppUserScoreDto {
   )
 
 
-  int? score;
+  final int? score;
 
 
 
@@ -169,7 +169,7 @@ class AppUserScoreDto {
   )
 
 
-  String? comment;
+  final String? comment;
 
 
 

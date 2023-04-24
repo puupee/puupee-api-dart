@@ -34,7 +34,7 @@ class ModuleApiDescriptionModel {
   )
 
 
-  String? rootPath;
+  final String? rootPath;
 
 
 
@@ -46,7 +46,7 @@ class ModuleApiDescriptionModel {
   )
 
 
-  String? remoteServiceName;
+  final String? remoteServiceName;
 
 
 
@@ -58,7 +58,7 @@ class ModuleApiDescriptionModel {
   )
 
 
-  Map<String, ControllerApiDescriptionModel>? controllers;
+  final Map<String, ControllerApiDescriptionModel>? controllers;
 
 
 

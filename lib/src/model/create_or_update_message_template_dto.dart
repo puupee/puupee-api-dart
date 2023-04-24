@@ -31,7 +31,7 @@ class CreateOrUpdateMessageTemplateDto {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -43,7 +43,7 @@ class CreateOrUpdateMessageTemplateDto {
   )
 
 
-  String? description;
+  final String? description;
 
 
 

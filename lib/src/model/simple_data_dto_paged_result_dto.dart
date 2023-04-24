@@ -32,7 +32,7 @@ class SimpleDataDtoPagedResultDto {
   )
 
 
-  List<SimpleDataDto>? items;
+  final List<SimpleDataDto>? items;
 
 
 
@@ -44,7 +44,7 @@ class SimpleDataDtoPagedResultDto {
   )
 
 
-  int? totalCount;
+  final int? totalCount;
 
 
 

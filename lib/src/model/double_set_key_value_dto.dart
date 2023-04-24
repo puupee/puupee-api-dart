@@ -31,7 +31,7 @@ class DoubleSetKeyValueDto {
   )
 
 
-  double? value;
+  final double? value;
 
 
 
@@ -43,7 +43,7 @@ class DoubleSetKeyValueDto {
   )
 
 
-  double? durationSeconds;
+  final double? durationSeconds;
 
 
 

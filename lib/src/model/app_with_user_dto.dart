@@ -89,7 +89,7 @@ class AppWithUserDto {
   )
 
 
-  String? id;
+  final String? id;
 
 
 
@@ -101,7 +101,7 @@ class AppWithUserDto {
   )
 
 
-  DateTime? creationTime;
+  final DateTime? creationTime;
 
 
 
@@ -113,7 +113,7 @@ class AppWithUserDto {
   )
 
 
-  String? creatorId;
+  final String? creatorId;
 
 
 
@@ -125,7 +125,7 @@ class AppWithUserDto {
   )
 
 
-  DateTime? lastModificationTime;
+  final DateTime? lastModificationTime;
 
 
 
@@ -137,7 +137,7 @@ class AppWithUserDto {
   )
 
 
-  String? lastModifierId;
+  final String? lastModifierId;
 
 
 
@@ -149,7 +149,7 @@ class AppWithUserDto {
   )
 
 
-  bool? isDeleted;
+  final bool? isDeleted;
 
 
 
@@ -161,7 +161,7 @@ class AppWithUserDto {
   )
 
 
-  String? deleterId;
+  final String? deleterId;
 
 
 
@@ -173,7 +173,7 @@ class AppWithUserDto {
   )
 
 
-  DateTime? deletionTime;
+  final DateTime? deletionTime;
 
 
 
@@ -185,7 +185,7 @@ class AppWithUserDto {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -197,7 +197,7 @@ class AppWithUserDto {
   )
 
 
-  String? displayName;
+  final String? displayName;
 
 
 
@@ -209,7 +209,7 @@ class AppWithUserDto {
   )
 
 
-  String? framework;
+  final String? framework;
 
 
 
@@ -221,7 +221,7 @@ class AppWithUserDto {
   )
 
 
-  String? appType;
+  final String? appType;
 
 
 
@@ -233,7 +233,7 @@ class AppWithUserDto {
   )
 
 
-  String? description;
+  final String? description;
 
 
 
@@ -245,7 +245,7 @@ class AppWithUserDto {
   )
 
 
-  String? icon;
+  final String? icon;
 
 
 
@@ -257,7 +257,7 @@ class AppWithUserDto {
   )
 
 
-  String? homePage;
+  final String? homePage;
 
 
 
@@ -269,7 +269,7 @@ class AppWithUserDto {
   )
 
 
-  int? sortIndex;
+  final int? sortIndex;
 
 
 
@@ -281,7 +281,7 @@ class AppWithUserDto {
   )
 
 
-  String? gitRepository;
+  final String? gitRepository;
 
 
 
@@ -293,7 +293,7 @@ class AppWithUserDto {
   )
 
 
-  String? gitRepositoryType;
+  final String? gitRepositoryType;
 
 
 
@@ -305,7 +305,7 @@ class AppWithUserDto {
   )
 
 
-  bool? isEnabled;
+  final bool? isEnabled;
 
 
 
@@ -317,7 +317,7 @@ class AppWithUserDto {
   )
 
 
-  bool? isPublished;
+  final bool? isPublished;
 
 
 
@@ -329,7 +329,7 @@ class AppWithUserDto {
   )
 
 
-  String? webhookUrl;
+  final String? webhookUrl;
 
 
 
@@ -341,7 +341,7 @@ class AppWithUserDto {
   )
 
 
-  String? businessDomain;
+  final String? businessDomain;
 
 
 
@@ -353,7 +353,7 @@ class AppWithUserDto {
   )
 
 
-  String? businessUrl;
+  final String? businessUrl;
 
 
 
@@ -365,7 +365,7 @@ class AppWithUserDto {
   )
 
 
-  bool? subscriptionEnabled;
+  final bool? subscriptionEnabled;
 
 
 
@@ -377,7 +377,7 @@ class AppWithUserDto {
   )
 
 
-  List<AppReleaseDto>? latestReleases;
+  final List<AppReleaseDto>? latestReleases;
 
 
 
@@ -389,7 +389,7 @@ class AppWithUserDto {
   )
 
 
-  IdentityUserDto? creator;
+  final IdentityUserDto? creator;
 
 
 
@@ -401,7 +401,7 @@ class AppWithUserDto {
   )
 
 
-  List<AppFeatureDto>? features;
+  final List<AppFeatureDto>? features;
 
 
 
@@ -413,7 +413,7 @@ class AppWithUserDto {
   )
 
 
-  List<AppSdkDto>? sdks;
+  final List<AppSdkDto>? sdks;
 
 
 
@@ -425,7 +425,7 @@ class AppWithUserDto {
   )
 
 
-  bool? subscribed;
+  final bool? subscribed;
 
 
 

@@ -59,7 +59,7 @@ class CreateOrUpdateAppReleaseDto {
   )
 
 
-  String? version;
+  final String? version;
 
 
 
@@ -71,7 +71,7 @@ class CreateOrUpdateAppReleaseDto {
   )
 
 
-  String? versionName;
+  final String? versionName;
 
 
 
@@ -83,7 +83,7 @@ class CreateOrUpdateAppReleaseDto {
   )
 
 
-  int? versionCode;
+  final int? versionCode;
 
 
 
@@ -95,7 +95,7 @@ class CreateOrUpdateAppReleaseDto {
   )
 
 
-  String? notes;
+  final String? notes;
 
 
 
@@ -107,7 +107,7 @@ class CreateOrUpdateAppReleaseDto {
   )
 
 
-  String? platform;
+  final String? platform;
 
 
 
@@ -119,7 +119,7 @@ class CreateOrUpdateAppReleaseDto {
   )
 
 
-  String? key;
+  final String? key;
 
 
 
@@ -131,7 +131,7 @@ class CreateOrUpdateAppReleaseDto {
   )
 
 
-  String? rapidCode;
+  final String? rapidCode;
 
 
 
@@ -143,7 +143,7 @@ class CreateOrUpdateAppReleaseDto {
   )
 
 
-  int? size;
+  final int? size;
 
 
 
@@ -155,7 +155,7 @@ class CreateOrUpdateAppReleaseDto {
   )
 
 
-  String? md5;
+  final String? md5;
 
 
 
@@ -167,7 +167,7 @@ class CreateOrUpdateAppReleaseDto {
   )
 
 
-  String? sliceMd5;
+  final String? sliceMd5;
 
 
 
@@ -179,7 +179,7 @@ class CreateOrUpdateAppReleaseDto {
   )
 
 
-  String? productType;
+  final String? productType;
 
 
 
@@ -191,7 +191,7 @@ class CreateOrUpdateAppReleaseDto {
   )
 
 
-  bool? isForceUpdate;
+  final bool? isForceUpdate;
 
 
 
@@ -203,7 +203,7 @@ class CreateOrUpdateAppReleaseDto {
   )
 
 
-  String? appId;
+  final String? appId;
 
 
 
@@ -215,7 +215,7 @@ class CreateOrUpdateAppReleaseDto {
   )
 
 
-  bool? isEnabled;
+  final bool? isEnabled;
 
 
 
@@ -227,7 +227,7 @@ class CreateOrUpdateAppReleaseDto {
   )
 
 
-  String? channel;
+  final String? channel;
 
 
 
@@ -239,7 +239,7 @@ class CreateOrUpdateAppReleaseDto {
   )
 
 
-  String? environment;
+  final String? environment;
 
 
 

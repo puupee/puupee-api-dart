@@ -49,7 +49,7 @@ class StorageObjectCredentials {
   )
 
 
-  String? storageClass;
+  final String? storageClass;
 
 
 
@@ -61,7 +61,7 @@ class StorageObjectCredentials {
   )
 
 
-  String? endPoint;
+  final String? endPoint;
 
 
 
@@ -73,7 +73,7 @@ class StorageObjectCredentials {
   )
 
 
-  String? protocal;
+  final String? protocal;
 
 
 
@@ -85,7 +85,7 @@ class StorageObjectCredentials {
   )
 
 
-  String? bucketName;
+  final String? bucketName;
 
 
 
@@ -97,7 +97,7 @@ class StorageObjectCredentials {
   )
 
 
-  String? regionId;
+  final String? regionId;
 
 
 
@@ -109,7 +109,7 @@ class StorageObjectCredentials {
   )
 
 
-  String? securityToken;
+  final String? securityToken;
 
 
 
@@ -121,7 +121,7 @@ class StorageObjectCredentials {
   )
 
 
-  String? accessKeyId;
+  final String? accessKeyId;
 
 
 
@@ -133,7 +133,7 @@ class StorageObjectCredentials {
   )
 
 
-  String? accessKeySecret;
+  final String? accessKeySecret;
 
 
 
@@ -145,7 +145,7 @@ class StorageObjectCredentials {
   )
 
 
-  String? expiration;
+  final String? expiration;
 
 
 
@@ -157,7 +157,7 @@ class StorageObjectCredentials {
   )
 
 
-  int? expiredTime;
+  final int? expiredTime;
 
 
 
@@ -169,7 +169,7 @@ class StorageObjectCredentials {
   )
 
 
-  String? appId;
+  final String? appId;
 
 
 

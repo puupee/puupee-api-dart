@@ -29,7 +29,7 @@ class MultiTenancyInfoDto {
   )
 
 
-  bool? isEnabled;
+  final bool? isEnabled;
 
 
 

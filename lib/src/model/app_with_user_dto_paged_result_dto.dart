@@ -32,7 +32,7 @@ class AppWithUserDtoPagedResultDto {
   )
 
 
-  List<AppWithUserDto>? items;
+  final List<AppWithUserDto>? items;
 
 
 
@@ -44,7 +44,7 @@ class AppWithUserDtoPagedResultDto {
   )
 
 
-  int? totalCount;
+  final int? totalCount;
 
 
 

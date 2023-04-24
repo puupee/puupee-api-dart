@@ -51,7 +51,7 @@ class MessageTemplateReleaseDto {
   )
 
 
-  String? id;
+  final String? id;
 
 
 
@@ -63,7 +63,7 @@ class MessageTemplateReleaseDto {
   )
 
 
-  DateTime? creationTime;
+  final DateTime? creationTime;
 
 
 
@@ -75,7 +75,7 @@ class MessageTemplateReleaseDto {
   )
 
 
-  String? creatorId;
+  final String? creatorId;
 
 
 
@@ -87,7 +87,7 @@ class MessageTemplateReleaseDto {
   )
 
 
-  DateTime? lastModificationTime;
+  final DateTime? lastModificationTime;
 
 
 
@@ -99,7 +99,7 @@ class MessageTemplateReleaseDto {
   )
 
 
-  String? lastModifierId;
+  final String? lastModifierId;
 
 
 
@@ -111,7 +111,7 @@ class MessageTemplateReleaseDto {
   )
 
 
-  bool? isDeleted;
+  final bool? isDeleted;
 
 
 
@@ -123,7 +123,7 @@ class MessageTemplateReleaseDto {
   )
 
 
-  String? deleterId;
+  final String? deleterId;
 
 
 
@@ -135,7 +135,7 @@ class MessageTemplateReleaseDto {
   )
 
 
-  DateTime? deletionTime;
+  final DateTime? deletionTime;
 
 
 
@@ -147,7 +147,7 @@ class MessageTemplateReleaseDto {
   )
 
 
-  String? templateName;
+  final String? templateName;
 
 
 
@@ -159,7 +159,7 @@ class MessageTemplateReleaseDto {
   )
 
 
-  int? version;
+  final int? version;
 
 
 
@@ -171,7 +171,7 @@ class MessageTemplateReleaseDto {
   )
 
 
-  String? content;
+  final String? content;
 
 
 
@@ -183,7 +183,7 @@ class MessageTemplateReleaseDto {
   )
 
 
-  String? templateId;
+  final String? templateId;
 
 
 

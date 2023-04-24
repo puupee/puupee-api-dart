@@ -35,7 +35,7 @@ class SendPasswordResetCodeDto {
   )
 
 
-  String email;
+  final String email;
 
 
 
@@ -47,7 +47,7 @@ class SendPasswordResetCodeDto {
   )
 
 
-  String appName;
+  final String appName;
 
 
 
@@ -59,7 +59,7 @@ class SendPasswordResetCodeDto {
   )
 
 
-  String? returnUrl;
+  final String? returnUrl;
 
 
 
@@ -71,7 +71,7 @@ class SendPasswordResetCodeDto {
   )
 
 
-  String? returnUrlHash;
+  final String? returnUrlHash;
 
 
 

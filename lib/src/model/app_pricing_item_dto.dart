@@ -55,7 +55,7 @@ class AppPricingItemDto {
   )
 
 
-  String? id;
+  final String? id;
 
 
 
@@ -67,7 +67,7 @@ class AppPricingItemDto {
   )
 
 
-  DateTime? creationTime;
+  final DateTime? creationTime;
 
 
 
@@ -79,7 +79,7 @@ class AppPricingItemDto {
   )
 
 
-  String? creatorId;
+  final String? creatorId;
 
 
 
@@ -91,7 +91,7 @@ class AppPricingItemDto {
   )
 
 
-  DateTime? lastModificationTime;
+  final DateTime? lastModificationTime;
 
 
 
@@ -103,7 +103,7 @@ class AppPricingItemDto {
   )
 
 
-  String? lastModifierId;
+  final String? lastModifierId;
 
 
 
@@ -115,7 +115,7 @@ class AppPricingItemDto {
   )
 
 
-  bool? isDeleted;
+  final bool? isDeleted;
 
 
 
@@ -127,7 +127,7 @@ class AppPricingItemDto {
   )
 
 
-  String? deleterId;
+  final String? deleterId;
 
 
 
@@ -139,7 +139,7 @@ class AppPricingItemDto {
   )
 
 
-  DateTime? deletionTime;
+  final DateTime? deletionTime;
 
 
 
@@ -151,7 +151,7 @@ class AppPricingItemDto {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -163,7 +163,7 @@ class AppPricingItemDto {
   )
 
 
-  String? display;
+  final String? display;
 
 
 
@@ -175,7 +175,7 @@ class AppPricingItemDto {
   )
 
 
-  List<String>? values;
+  final List<String>? values;
 
 
 
@@ -187,7 +187,7 @@ class AppPricingItemDto {
   )
 
 
-  String? appId;
+  final String? appId;
 
 
 
@@ -199,7 +199,7 @@ class AppPricingItemDto {
   )
 
 
-  bool? isAvailable;
+  final bool? isAvailable;
 
 
 
@@ -211,7 +211,7 @@ class AppPricingItemDto {
   )
 
 
-  bool? hasValue;
+  final bool? hasValue;
 
 
 

@@ -50,7 +50,7 @@ class ActionApiDescriptionModel {
   )
 
 
-  String? uniqueName;
+  final String? uniqueName;
 
 
 
@@ -62,7 +62,7 @@ class ActionApiDescriptionModel {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -74,7 +74,7 @@ class ActionApiDescriptionModel {
   )
 
 
-  String? httpMethod;
+  final String? httpMethod;
 
 
 
@@ -86,7 +86,7 @@ class ActionApiDescriptionModel {
   )
 
 
-  String? url;
+  final String? url;
 
 
 
@@ -98,7 +98,7 @@ class ActionApiDescriptionModel {
   )
 
 
-  List<String>? supportedVersions;
+  final List<String>? supportedVersions;
 
 
 
@@ -110,7 +110,7 @@ class ActionApiDescriptionModel {
   )
 
 
-  List<MethodParameterApiDescriptionModel>? parametersOnMethod;
+  final List<MethodParameterApiDescriptionModel>? parametersOnMethod;
 
 
 
@@ -122,7 +122,7 @@ class ActionApiDescriptionModel {
   )
 
 
-  List<ParameterApiDescriptionModel>? parameters;
+  final List<ParameterApiDescriptionModel>? parameters;
 
 
 
@@ -134,7 +134,7 @@ class ActionApiDescriptionModel {
   )
 
 
-  ReturnValueApiDescriptionModel? returnValue;
+  final ReturnValueApiDescriptionModel? returnValue;
 
 
 
@@ -146,7 +146,7 @@ class ActionApiDescriptionModel {
   )
 
 
-  bool? allowAnonymous;
+  final bool? allowAnonymous;
 
 
 
@@ -158,7 +158,7 @@ class ActionApiDescriptionModel {
   )
 
 
-  String? implementFrom;
+  final String? implementFrom;
 
 
 

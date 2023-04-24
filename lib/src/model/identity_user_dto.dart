@@ -69,7 +69,7 @@ class IdentityUserDto {
   )
 
 
-  Map<String, Object>? extraProperties;
+  final Map<String, Object>? extraProperties;
 
 
 
@@ -81,7 +81,7 @@ class IdentityUserDto {
   )
 
 
-  String? id;
+  final String? id;
 
 
 
@@ -93,7 +93,7 @@ class IdentityUserDto {
   )
 
 
-  DateTime? creationTime;
+  final DateTime? creationTime;
 
 
 
@@ -105,7 +105,7 @@ class IdentityUserDto {
   )
 
 
-  String? creatorId;
+  final String? creatorId;
 
 
 
@@ -117,7 +117,7 @@ class IdentityUserDto {
   )
 
 
-  DateTime? lastModificationTime;
+  final DateTime? lastModificationTime;
 
 
 
@@ -129,7 +129,7 @@ class IdentityUserDto {
   )
 
 
-  String? lastModifierId;
+  final String? lastModifierId;
 
 
 
@@ -141,7 +141,7 @@ class IdentityUserDto {
   )
 
 
-  bool? isDeleted;
+  final bool? isDeleted;
 
 
 
@@ -153,7 +153,7 @@ class IdentityUserDto {
   )
 
 
-  String? deleterId;
+  final String? deleterId;
 
 
 
@@ -165,7 +165,7 @@ class IdentityUserDto {
   )
 
 
-  DateTime? deletionTime;
+  final DateTime? deletionTime;
 
 
 
@@ -177,7 +177,7 @@ class IdentityUserDto {
   )
 
 
-  String? tenantId;
+  final String? tenantId;
 
 
 
@@ -189,7 +189,7 @@ class IdentityUserDto {
   )
 
 
-  String? userName;
+  final String? userName;
 
 
 
@@ -201,7 +201,7 @@ class IdentityUserDto {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -213,7 +213,7 @@ class IdentityUserDto {
   )
 
 
-  String? surname;
+  final String? surname;
 
 
 
@@ -225,7 +225,7 @@ class IdentityUserDto {
   )
 
 
-  String? email;
+  final String? email;
 
 
 
@@ -237,7 +237,7 @@ class IdentityUserDto {
   )
 
 
-  bool? emailConfirmed;
+  final bool? emailConfirmed;
 
 
 
@@ -249,7 +249,7 @@ class IdentityUserDto {
   )
 
 
-  String? phoneNumber;
+  final String? phoneNumber;
 
 
 
@@ -261,7 +261,7 @@ class IdentityUserDto {
   )
 
 
-  bool? phoneNumberConfirmed;
+  final bool? phoneNumberConfirmed;
 
 
 
@@ -273,7 +273,7 @@ class IdentityUserDto {
   )
 
 
-  bool? isActive;
+  final bool? isActive;
 
 
 
@@ -285,7 +285,7 @@ class IdentityUserDto {
   )
 
 
-  bool? lockoutEnabled;
+  final bool? lockoutEnabled;
 
 
 
@@ -297,7 +297,7 @@ class IdentityUserDto {
   )
 
 
-  DateTime? lockoutEnd;
+  final DateTime? lockoutEnd;
 
 
 
@@ -309,7 +309,7 @@ class IdentityUserDto {
   )
 
 
-  String? concurrencyStamp;
+  final String? concurrencyStamp;
 
 
 

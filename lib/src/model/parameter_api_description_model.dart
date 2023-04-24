@@ -47,7 +47,7 @@ class ParameterApiDescriptionModel {
   )
 
 
-  String? nameOnMethod;
+  final String? nameOnMethod;
 
 
 
@@ -59,7 +59,7 @@ class ParameterApiDescriptionModel {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -71,7 +71,7 @@ class ParameterApiDescriptionModel {
   )
 
 
-  String? jsonName;
+  final String? jsonName;
 
 
 
@@ -83,7 +83,7 @@ class ParameterApiDescriptionModel {
   )
 
 
-  String? type;
+  final String? type;
 
 
 
@@ -95,7 +95,7 @@ class ParameterApiDescriptionModel {
   )
 
 
-  String? typeSimple;
+  final String? typeSimple;
 
 
 
@@ -107,7 +107,7 @@ class ParameterApiDescriptionModel {
   )
 
 
-  bool? isOptional;
+  final bool? isOptional;
 
 
 
@@ -119,7 +119,7 @@ class ParameterApiDescriptionModel {
   )
 
 
-  Object? defaultValue;
+  final Object? defaultValue;
 
 
 
@@ -131,7 +131,7 @@ class ParameterApiDescriptionModel {
   )
 
 
-  List<String>? constraintTypes;
+  final List<String>? constraintTypes;
 
 
 
@@ -143,7 +143,7 @@ class ParameterApiDescriptionModel {
   )
 
 
-  String? bindingSourceId;
+  final String? bindingSourceId;
 
 
 
@@ -155,7 +155,7 @@ class ParameterApiDescriptionModel {
   )
 
 
-  String? descriptorName;
+  final String? descriptorName;
 
 
 

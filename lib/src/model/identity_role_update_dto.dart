@@ -37,7 +37,7 @@ class IdentityRoleUpdateDto {
   )
 
 
-  Map<String, Object>? extraProperties;
+  final Map<String, Object>? extraProperties;
 
 
 
@@ -49,7 +49,7 @@ class IdentityRoleUpdateDto {
   )
 
 
-  String name;
+  final String name;
 
 
 
@@ -61,7 +61,7 @@ class IdentityRoleUpdateDto {
   )
 
 
-  bool? isDefault;
+  final bool? isDefault;
 
 
 
@@ -73,7 +73,7 @@ class IdentityRoleUpdateDto {
   )
 
 
-  bool? isPublic;
+  final bool? isPublic;
 
 
 
@@ -85,7 +85,7 @@ class IdentityRoleUpdateDto {
   )
 
 
-  String? concurrencyStamp;
+  final String? concurrencyStamp;
 
 
 

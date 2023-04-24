@@ -32,7 +32,7 @@ class AppPricingDtoPagedResultDto {
   )
 
 
-  List<AppPricingDto>? items;
+  final List<AppPricingDto>? items;
 
 
 
@@ -44,7 +44,7 @@ class AppPricingDtoPagedResultDto {
   )
 
 
-  int? totalCount;
+  final int? totalCount;
 
 
 

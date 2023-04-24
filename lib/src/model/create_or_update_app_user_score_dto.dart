@@ -33,7 +33,7 @@ class CreateOrUpdateAppUserScoreDto {
   )
 
 
-  String? appId;
+  final String? appId;
 
 
 
@@ -45,7 +45,7 @@ class CreateOrUpdateAppUserScoreDto {
   )
 
 
-  int? score;
+  final int? score;
 
 
 
@@ -57,7 +57,7 @@ class CreateOrUpdateAppUserScoreDto {
   )
 
 
-  String? comment;
+  final String? comment;
 
 
 

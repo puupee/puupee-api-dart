@@ -31,7 +31,7 @@ class ExtensionEnumFieldDto {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -43,7 +43,7 @@ class ExtensionEnumFieldDto {
   )
 
 
-  Object? value;
+  final Object? value;
 
 
 

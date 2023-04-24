@@ -31,7 +31,7 @@ class BooleanSetKeyValueDto {
   )
 
 
-  bool? value;
+  final bool? value;
 
 
 
@@ -43,7 +43,7 @@ class BooleanSetKeyValueDto {
   )
 
 
-  double? durationSeconds;
+  final double? durationSeconds;
 
 
 

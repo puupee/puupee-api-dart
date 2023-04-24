@@ -31,7 +31,7 @@ class DecimalSetKeyValueDto {
   )
 
 
-  double? value;
+  final double? value;
 
 
 
@@ -43,7 +43,7 @@ class DecimalSetKeyValueDto {
   )
 
 
-  double? durationSeconds;
+  final double? durationSeconds;
 
 
 

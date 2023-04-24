@@ -32,7 +32,7 @@ class AppTheme {
   )
 
 
-  String? sourceColor;
+  final String? sourceColor;
 
 
 
@@ -44,7 +44,7 @@ class AppTheme {
   )
 
 
-  AppThemeMode? themeMode;
+  final AppThemeMode? themeMode;
 
 
 

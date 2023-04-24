@@ -31,7 +31,7 @@ class CreateOrGetSubscriptionOrderDto {
   )
 
 
-  String? appId;
+  final String? appId;
 
 
 
@@ -43,7 +43,7 @@ class CreateOrGetSubscriptionOrderDto {
   )
 
 
-  String? pricingId;
+  final String? pricingId;
 
 
 

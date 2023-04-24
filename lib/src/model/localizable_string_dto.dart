@@ -31,7 +31,7 @@ class LocalizableStringDto {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -43,7 +43,7 @@ class LocalizableStringDto {
   )
 
 
-  String? resource;
+  final String? resource;
 
 
 

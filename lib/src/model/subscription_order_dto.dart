@@ -53,7 +53,7 @@ class SubscriptionOrderDto {
   )
 
 
-  String? id;
+  final String? id;
 
 
 
@@ -65,7 +65,7 @@ class SubscriptionOrderDto {
   )
 
 
-  DateTime? creationTime;
+  final DateTime? creationTime;
 
 
 
@@ -77,7 +77,7 @@ class SubscriptionOrderDto {
   )
 
 
-  String? creatorId;
+  final String? creatorId;
 
 
 
@@ -89,7 +89,7 @@ class SubscriptionOrderDto {
   )
 
 
-  DateTime? lastModificationTime;
+  final DateTime? lastModificationTime;
 
 
 
@@ -101,7 +101,7 @@ class SubscriptionOrderDto {
   )
 
 
-  String? lastModifierId;
+  final String? lastModifierId;
 
 
 
@@ -113,7 +113,7 @@ class SubscriptionOrderDto {
   )
 
 
-  bool? isDeleted;
+  final bool? isDeleted;
 
 
 
@@ -125,7 +125,7 @@ class SubscriptionOrderDto {
   )
 
 
-  String? deleterId;
+  final String? deleterId;
 
 
 
@@ -137,7 +137,7 @@ class SubscriptionOrderDto {
   )
 
 
-  DateTime? deletionTime;
+  final DateTime? deletionTime;
 
 
 
@@ -149,7 +149,7 @@ class SubscriptionOrderDto {
   )
 
 
-  SubscriptionOrderType? type;
+  final SubscriptionOrderType? type;
 
 
 
@@ -161,7 +161,7 @@ class SubscriptionOrderDto {
   )
 
 
-  SubscriptionOrderStatus? status;
+  final SubscriptionOrderStatus? status;
 
 
 
@@ -173,7 +173,7 @@ class SubscriptionOrderDto {
   )
 
 
-  String? appId;
+  final String? appId;
 
 
 
@@ -185,7 +185,7 @@ class SubscriptionOrderDto {
   )
 
 
-  String? pricingId;
+  final String? pricingId;
 
 
 

@@ -60,7 +60,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  String? naming;
+  final String? naming;
 
 
 
@@ -72,7 +72,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  String? monthProductId;
+  final String? monthProductId;
 
 
 
@@ -84,7 +84,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  String? yearProductId;
+  final String? yearProductId;
 
 
 
@@ -96,7 +96,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  String? description;
+  final String? description;
 
 
 
@@ -108,7 +108,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  String? appId;
+  final String? appId;
 
 
 
@@ -120,7 +120,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  double? monthPrice;
+  final double? monthPrice;
 
 
 
@@ -132,7 +132,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  double? monthDiscount;
+  final double? monthDiscount;
 
 
 
@@ -144,7 +144,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  double? monthDiscountPrice;
+  final double? monthDiscountPrice;
 
 
 
@@ -156,7 +156,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  DateTime? monthDiscountStartAt;
+  final DateTime? monthDiscountStartAt;
 
 
 
@@ -168,7 +168,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  DateTime? monthDiscountEndAt;
+  final DateTime? monthDiscountEndAt;
 
 
 
@@ -180,7 +180,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  double? yearPrice;
+  final double? yearPrice;
 
 
 
@@ -192,7 +192,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  double? yearDiscount;
+  final double? yearDiscount;
 
 
 
@@ -204,7 +204,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  double? yearDiscountPrice;
+  final double? yearDiscountPrice;
 
 
 
@@ -216,7 +216,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  DateTime? yearDiscountStartAt;
+  final DateTime? yearDiscountStartAt;
 
 
 
@@ -228,7 +228,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  DateTime? yearDiscountEndAt;
+  final DateTime? yearDiscountEndAt;
 
 
 
@@ -240,7 +240,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  List<AppPricingItemDto>? items;
+  final List<AppPricingItemDto>? items;
 
 
 

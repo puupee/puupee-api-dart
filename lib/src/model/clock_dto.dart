@@ -29,7 +29,7 @@ class ClockDto {
   )
 
 
-  String? kind;
+  final String? kind;
 
 
 

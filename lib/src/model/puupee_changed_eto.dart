@@ -32,7 +32,7 @@ class PuupeeChangedEto {
   )
 
 
-  PuupeeDto? data;
+  final PuupeeDto? data;
 
 
 
@@ -44,7 +44,7 @@ class PuupeeChangedEto {
   )
 
 
-  String? userId;
+  final String? userId;
 
 
 

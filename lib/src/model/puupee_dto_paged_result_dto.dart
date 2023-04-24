@@ -32,7 +32,7 @@ class PuupeeDtoPagedResultDto {
   )
 
 
-  List<PuupeeDto>? items;
+  final List<PuupeeDto>? items;
 
 
 
@@ -44,7 +44,7 @@ class PuupeeDtoPagedResultDto {
   )
 
 
-  int? totalCount;
+  final int? totalCount;
 
 
 

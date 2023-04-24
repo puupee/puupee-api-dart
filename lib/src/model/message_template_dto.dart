@@ -49,7 +49,7 @@ class MessageTemplateDto {
   )
 
 
-  String? id;
+  final String? id;
 
 
 
@@ -61,7 +61,7 @@ class MessageTemplateDto {
   )
 
 
-  DateTime? creationTime;
+  final DateTime? creationTime;
 
 
 
@@ -73,7 +73,7 @@ class MessageTemplateDto {
   )
 
 
-  String? creatorId;
+  final String? creatorId;
 
 
 
@@ -85,7 +85,7 @@ class MessageTemplateDto {
   )
 
 
-  DateTime? lastModificationTime;
+  final DateTime? lastModificationTime;
 
 
 
@@ -97,7 +97,7 @@ class MessageTemplateDto {
   )
 
 
-  String? lastModifierId;
+  final String? lastModifierId;
 
 
 
@@ -109,7 +109,7 @@ class MessageTemplateDto {
   )
 
 
-  bool? isDeleted;
+  final bool? isDeleted;
 
 
 
@@ -121,7 +121,7 @@ class MessageTemplateDto {
   )
 
 
-  String? deleterId;
+  final String? deleterId;
 
 
 
@@ -133,7 +133,7 @@ class MessageTemplateDto {
   )
 
 
-  DateTime? deletionTime;
+  final DateTime? deletionTime;
 
 
 
@@ -145,7 +145,7 @@ class MessageTemplateDto {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -157,7 +157,7 @@ class MessageTemplateDto {
   )
 
 
-  String? description;
+  final String? description;
 
 
 
@@ -169,7 +169,7 @@ class MessageTemplateDto {
   )
 
 
-  int? latestVersion;
+  final int? latestVersion;
 
 
 

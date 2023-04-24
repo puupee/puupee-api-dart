@@ -41,7 +41,7 @@ class IdentityRoleDto {
   )
 
 
-  Map<String, Object>? extraProperties;
+  final Map<String, Object>? extraProperties;
 
 
 
@@ -53,7 +53,7 @@ class IdentityRoleDto {
   )
 
 
-  String? id;
+  final String? id;
 
 
 
@@ -65,7 +65,7 @@ class IdentityRoleDto {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -77,7 +77,7 @@ class IdentityRoleDto {
   )
 
 
-  bool? isDefault;
+  final bool? isDefault;
 
 
 
@@ -89,7 +89,7 @@ class IdentityRoleDto {
   )
 
 
-  bool? isStatic;
+  final bool? isStatic;
 
 
 
@@ -101,7 +101,7 @@ class IdentityRoleDto {
   )
 
 
-  bool? isPublic;
+  final bool? isPublic;
 
 
 
@@ -113,7 +113,7 @@ class IdentityRoleDto {
   )
 
 
-  String? concurrencyStamp;
+  final String? concurrencyStamp;
 
 
 

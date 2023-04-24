@@ -132,7 +132,7 @@ class PuupeeDto {
   )
 
 
-  String? id;
+  final String? id;
 
 
 
@@ -144,7 +144,7 @@ class PuupeeDto {
   )
 
 
-  DateTime? creationTime;
+  final DateTime? creationTime;
 
 
 
@@ -156,7 +156,7 @@ class PuupeeDto {
   )
 
 
-  String? creatorId;
+  final String? creatorId;
 
 
 
@@ -168,7 +168,7 @@ class PuupeeDto {
   )
 
 
-  DateTime? lastModificationTime;
+  final DateTime? lastModificationTime;
 
 
 
@@ -180,7 +180,7 @@ class PuupeeDto {
   )
 
 
-  String? lastModifierId;
+  final String? lastModifierId;
 
 
 
@@ -192,7 +192,7 @@ class PuupeeDto {
   )
 
 
-  bool? isDeleted;
+  final bool? isDeleted;
 
 
 
@@ -204,7 +204,7 @@ class PuupeeDto {
   )
 
 
-  String? deleterId;
+  final String? deleterId;
 
 
 
@@ -216,7 +216,7 @@ class PuupeeDto {
   )
 
 
-  DateTime? deletionTime;
+  final DateTime? deletionTime;
 
 
 
@@ -228,7 +228,7 @@ class PuupeeDto {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -240,7 +240,7 @@ class PuupeeDto {
   )
 
 
-  String? title;
+  final String? title;
 
 
 
@@ -252,7 +252,7 @@ class PuupeeDto {
   )
 
 
-  String? description;
+  final String? description;
 
 
 
@@ -264,7 +264,7 @@ class PuupeeDto {
   )
 
 
-  String? text;
+  final String? text;
 
 
 
@@ -276,7 +276,7 @@ class PuupeeDto {
   )
 
 
-  String? content;
+  final String? content;
 
 
 
@@ -288,7 +288,7 @@ class PuupeeDto {
   )
 
 
-  String? format;
+  final String? format;
 
 
 
@@ -300,7 +300,7 @@ class PuupeeDto {
   )
 
 
-  String? password;
+  final String? password;
 
 
 
@@ -312,7 +312,7 @@ class PuupeeDto {
   )
 
 
-  String? parentId;
+  final String? parentId;
 
 
 
@@ -324,7 +324,7 @@ class PuupeeDto {
   )
 
 
-  String? key;
+  final String? key;
 
 
 
@@ -336,7 +336,7 @@ class PuupeeDto {
   )
 
 
-  String? url;
+  final String? url;
 
 
 
@@ -348,7 +348,7 @@ class PuupeeDto {
   )
 
 
-  int? size;
+  final int? size;
 
 
 
@@ -360,7 +360,7 @@ class PuupeeDto {
   )
 
 
-  String? md5;
+  final String? md5;
 
 
 
@@ -372,7 +372,7 @@ class PuupeeDto {
   )
 
 
-  String? sliceMd5;
+  final String? sliceMd5;
 
 
 
@@ -384,7 +384,7 @@ class PuupeeDto {
   )
 
 
-  String? rapidCode;
+  final String? rapidCode;
 
 
 
@@ -396,7 +396,7 @@ class PuupeeDto {
   )
 
 
-  String? contentType;
+  final String? contentType;
 
 
 
@@ -408,7 +408,7 @@ class PuupeeDto {
   )
 
 
-  String? type;
+  final String? type;
 
 
 
@@ -420,7 +420,7 @@ class PuupeeDto {
   )
 
 
-  String? displayStyle;
+  final String? displayStyle;
 
 
 
@@ -432,7 +432,7 @@ class PuupeeDto {
   )
 
 
-  String? extension_;
+  final String? extension_;
 
 
 
@@ -444,7 +444,7 @@ class PuupeeDto {
   )
 
 
-  String? storageClass;
+  final String? storageClass;
 
 
 
@@ -456,7 +456,7 @@ class PuupeeDto {
   )
 
 
-  DateTime? storageObjectCreatedAt;
+  final DateTime? storageObjectCreatedAt;
 
 
 
@@ -468,7 +468,7 @@ class PuupeeDto {
   )
 
 
-  DateTime? storageObjectUpdatedAt;
+  final DateTime? storageObjectUpdatedAt;
 
 
 
@@ -480,7 +480,7 @@ class PuupeeDto {
   )
 
 
-  String? storageObjectId;
+  final String? storageObjectId;
 
 
 
@@ -492,7 +492,7 @@ class PuupeeDto {
   )
 
 
-  StorageObjectDto? storageObject;
+  final StorageObjectDto? storageObject;
 
 
 
@@ -504,7 +504,7 @@ class PuupeeDto {
   )
 
 
-  StorageObjectDto? thumb;
+  final StorageObjectDto? thumb;
 
 
 
@@ -516,7 +516,7 @@ class PuupeeDto {
   )
 
 
-  int? priority;
+  final int? priority;
 
 
 
@@ -528,7 +528,7 @@ class PuupeeDto {
   )
 
 
-  DateTime? doneAt;
+  final DateTime? doneAt;
 
 
 
@@ -540,7 +540,7 @@ class PuupeeDto {
   )
 
 
-  bool? isDone;
+  final bool? isDone;
 
 
 
@@ -552,7 +552,7 @@ class PuupeeDto {
   )
 
 
-  DateTime? startAt;
+  final DateTime? startAt;
 
 
 
@@ -564,7 +564,7 @@ class PuupeeDto {
   )
 
 
-  DateTime? endAt;
+  final DateTime? endAt;
 
 
 
@@ -576,7 +576,7 @@ class PuupeeDto {
   )
 
 
-  DateTime? notifyAt;
+  final DateTime? notifyAt;
 
 
 
@@ -588,7 +588,7 @@ class PuupeeDto {
   )
 
 
-  String? notifyTimingType;
+  final String? notifyTimingType;
 
 
 
@@ -600,7 +600,7 @@ class PuupeeDto {
   )
 
 
-  String? notifyTimingUnit;
+  final String? notifyTimingUnit;
 
 
 
@@ -612,7 +612,7 @@ class PuupeeDto {
   )
 
 
-  int? notifyTimingValue;
+  final int? notifyTimingValue;
 
 
 
@@ -624,7 +624,7 @@ class PuupeeDto {
   )
 
 
-  String? repeat;
+  final String? repeat;
 
 
 
@@ -636,7 +636,7 @@ class PuupeeDto {
   )
 
 
-  DateTime? repeatOffAt;
+  final DateTime? repeatOffAt;
 
 
 
@@ -648,7 +648,7 @@ class PuupeeDto {
   )
 
 
-  int? repeatOffTimes;
+  final int? repeatOffTimes;
 
 
 
@@ -660,7 +660,7 @@ class PuupeeDto {
   )
 
 
-  int? repetitions;
+  final int? repetitions;
 
 
 
@@ -672,7 +672,7 @@ class PuupeeDto {
   )
 
 
-  int? syncVersion;
+  final int? syncVersion;
 
 
 
@@ -684,7 +684,7 @@ class PuupeeDto {
   )
 
 
-  bool? isHidden;
+  final bool? isHidden;
 
 
 
@@ -696,7 +696,7 @@ class PuupeeDto {
   )
 
 
-  String? tagging;
+  final String? tagging;
 
 
 
@@ -708,7 +708,7 @@ class PuupeeDto {
   )
 
 
-  String? lastModifierDeviceToken;
+  final String? lastModifierDeviceToken;
 
 
 
@@ -720,7 +720,7 @@ class PuupeeDto {
   )
 
 
-  String? lastModifierDevice;
+  final String? lastModifierDevice;
 
 
 
@@ -732,7 +732,7 @@ class PuupeeDto {
   )
 
 
-  String? app;
+  final String? app;
 
 
 
@@ -744,7 +744,7 @@ class PuupeeDto {
   )
 
 
-  int? sortIndex;
+  final int? sortIndex;
 
 
 

@@ -33,7 +33,7 @@ class ObjectExtensionsDto {
   )
 
 
-  Map<String, ModuleExtensionDto>? modules;
+  final Map<String, ModuleExtensionDto>? modules;
 
 
 
@@ -45,7 +45,7 @@ class ObjectExtensionsDto {
   )
 
 
-  Map<String, ExtensionEnumDto>? enums;
+  final Map<String, ExtensionEnumDto>? enums;
 
 
 

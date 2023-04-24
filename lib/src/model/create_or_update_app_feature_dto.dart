@@ -37,7 +37,7 @@ class CreateOrUpdateAppFeatureDto {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -49,7 +49,7 @@ class CreateOrUpdateAppFeatureDto {
   )
 
 
-  String? displayName;
+  final String? displayName;
 
 
 
@@ -61,7 +61,7 @@ class CreateOrUpdateAppFeatureDto {
   )
 
 
-  String? description;
+  final String? description;
 
 
 
@@ -73,7 +73,7 @@ class CreateOrUpdateAppFeatureDto {
   )
 
 
-  String? details;
+  final String? details;
 
 
 
@@ -85,7 +85,7 @@ class CreateOrUpdateAppFeatureDto {
   )
 
 
-  String? screenshotKeys;
+  final String? screenshotKeys;
 
 
 

@@ -29,7 +29,7 @@ class ANV2 {
   )
 
 
-  String? signedPayload;
+  final String? signedPayload;
 
 
 

@@ -35,7 +35,7 @@ class FindTenantResultDto {
   )
 
 
-  bool? success;
+  final bool? success;
 
 
 
@@ -47,7 +47,7 @@ class FindTenantResultDto {
   )
 
 
-  String? tenantId;
+  final String? tenantId;
 
 
 
@@ -59,7 +59,7 @@ class FindTenantResultDto {
   )
 
 
-  String? name;
+  final String? name;
 
 
 
@@ -71,7 +71,7 @@ class FindTenantResultDto {
   )
 
 
-  bool? isActive;
+  final bool? isActive;
 
 
 

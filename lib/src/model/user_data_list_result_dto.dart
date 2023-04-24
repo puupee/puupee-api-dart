@@ -30,7 +30,7 @@ class UserDataListResultDto {
   )
 
 
-  List<UserData>? items;
+  final List<UserData>? items;
 
 
 

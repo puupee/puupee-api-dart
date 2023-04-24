@@ -32,7 +32,7 @@ class DeviceDtoPagedResultDto {
   )
 
 
-  List<DeviceDto>? items;
+  final List<DeviceDto>? items;
 
 
 
@@ -44,7 +44,7 @@ class DeviceDtoPagedResultDto {
   )
 
 
-  int? totalCount;
+  final int? totalCount;
 
 
 
