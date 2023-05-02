@@ -51,6 +51,8 @@ class CreateOrUpdateAppDto {
 
      this.subscriptionEnabled,
 
+     this.subscriptionPlatforms,
+
      this.isPublished,
 
      this.features,
@@ -242,6 +244,18 @@ class CreateOrUpdateAppDto {
 
   @JsonKey(
     
+    name: r'subscriptionPlatforms',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? subscriptionPlatforms;
+
+
+
+  @JsonKey(
+    
     name: r'isPublished',
     required: false,
     includeIfNull: false
@@ -305,6 +319,7 @@ class CreateOrUpdateAppDto {
      other.businessDomain == businessDomain &&
      other.businessUrl == businessUrl &&
      other.subscriptionEnabled == subscriptionEnabled &&
+     other.subscriptionPlatforms == subscriptionPlatforms &&
      other.isPublished == isPublished &&
      other.features == features &&
      other.sdks == sdks &&
@@ -327,6 +342,7 @@ class CreateOrUpdateAppDto {
     businessDomain.hashCode +
     businessUrl.hashCode +
     subscriptionEnabled.hashCode +
+    subscriptionPlatforms.hashCode +
     isPublished.hashCode +
     features.hashCode +
     sdks.hashCode +

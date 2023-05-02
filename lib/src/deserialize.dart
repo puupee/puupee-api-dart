@@ -14,6 +14,7 @@ import 'package:puupee_api_client/src/model/app_theme.dart';
 import 'package:puupee_api_client/src/model/app_user_score_dto.dart';
 import 'package:puupee_api_client/src/model/app_with_user_dto.dart';
 import 'package:puupee_api_client/src/model/app_with_user_dto_paged_result_dto.dart';
+import 'package:puupee_api_client/src/model/apple_verify_receipt_result.dart';
 import 'package:puupee_api_client/src/model/application_api_description_model.dart';
 import 'package:puupee_api_client/src/model/application_auth_configuration_dto.dart';
 import 'package:puupee_api_client/src/model/application_configuration_dto.dart';
@@ -88,10 +89,12 @@ import 'package:puupee_api_client/src/model/identity_user_dto.dart';
 import 'package:puupee_api_client/src/model/identity_user_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/identity_user_update_dto.dart';
 import 'package:puupee_api_client/src/model/identity_user_update_roles_dto.dart';
+import 'package:puupee_api_client/src/model/in_app.dart';
 import 'package:puupee_api_client/src/model/int32_key_value.dart';
 import 'package:puupee_api_client/src/model/int32_set_key_value_dto.dart';
 import 'package:puupee_api_client/src/model/interface_method_api_description_model.dart';
 import 'package:puupee_api_client/src/model/language_info.dart';
+import 'package:puupee_api_client/src/model/latest_receipt_info.dart';
 import 'package:puupee_api_client/src/model/localizable_string_dto.dart';
 import 'package:puupee_api_client/src/model/message_publish_dto.dart';
 import 'package:puupee_api_client/src/model/message_recall_dto.dart';
@@ -108,6 +111,7 @@ import 'package:puupee_api_client/src/model/notification_info_dto.dart';
 import 'package:puupee_api_client/src/model/notification_info_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/object_extensions_dto.dart';
 import 'package:puupee_api_client/src/model/parameter_api_description_model.dart';
+import 'package:puupee_api_client/src/model/pending_renewal_info.dart';
 import 'package:puupee_api_client/src/model/permission_grant_info_dto.dart';
 import 'package:puupee_api_client/src/model/permission_group_dto.dart';
 import 'package:puupee_api_client/src/model/profile_dto.dart';
@@ -116,6 +120,7 @@ import 'package:puupee_api_client/src/model/provider_info_dto.dart';
 import 'package:puupee_api_client/src/model/puupee_changed_eto.dart';
 import 'package:puupee_api_client/src/model/puupee_dto.dart';
 import 'package:puupee_api_client/src/model/puupee_dto_paged_result_dto.dart';
+import 'package:puupee_api_client/src/model/receipt.dart';
 import 'package:puupee_api_client/src/model/refresh_device_status_dto.dart';
 import 'package:puupee_api_client/src/model/register_dto.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_info.dart';
@@ -217,6 +222,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return AppWithUserDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppWithUserDtoPagedResultDto':
           return AppWithUserDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppleVerifyReceiptResult':
+          return AppleVerifyReceiptResult.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ApplicationApiDescriptionModel':
           return ApplicationApiDescriptionModel.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ApplicationAuthConfigurationDto':
@@ -365,6 +372,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return IdentityUserUpdateDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'IdentityUserUpdateRolesDto':
           return IdentityUserUpdateRolesDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'InApp':
+          return InApp.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'Int32KeyValue':
           return Int32KeyValue.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'Int32SetKeyValueDto':
@@ -373,6 +382,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return InterfaceMethodApiDescriptionModel.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'LanguageInfo':
           return LanguageInfo.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'LatestReceiptInfo':
+          return LatestReceiptInfo.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'LocalizableStringDto':
           return LocalizableStringDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'LoginResultType':
@@ -408,6 +419,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return ObjectExtensionsDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ParameterApiDescriptionModel':
           return ParameterApiDescriptionModel.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'PendingRenewalInfo':
+          return PendingRenewalInfo.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'PermissionGrantInfoDto':
           return PermissionGrantInfoDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'PermissionGroupDto':
@@ -424,6 +437,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return PuupeeDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'PuupeeDtoPagedResultDto':
           return PuupeeDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'Receipt':
+          return Receipt.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'RefreshDeviceStatusDto':
           return RefreshDeviceStatusDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'RegisterDto':

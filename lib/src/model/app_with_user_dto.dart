@@ -70,6 +70,8 @@ class AppWithUserDto {
 
      this.subscriptionEnabled,
 
+     this.subscriptionPlatforms,
+
      this.latestReleases,
 
      this.creator,
@@ -371,6 +373,18 @@ class AppWithUserDto {
 
   @JsonKey(
     
+    name: r'subscriptionPlatforms',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? subscriptionPlatforms;
+
+
+
+  @JsonKey(
+    
     name: r'latestReleases',
     required: false,
     includeIfNull: false
@@ -455,6 +469,7 @@ class AppWithUserDto {
      other.businessDomain == businessDomain &&
      other.businessUrl == businessUrl &&
      other.subscriptionEnabled == subscriptionEnabled &&
+     other.subscriptionPlatforms == subscriptionPlatforms &&
      other.latestReleases == latestReleases &&
      other.creator == creator &&
      other.features == features &&
@@ -487,6 +502,7 @@ class AppWithUserDto {
     businessDomain.hashCode +
     businessUrl.hashCode +
     subscriptionEnabled.hashCode +
+    subscriptionPlatforms.hashCode +
     latestReleases.hashCode +
     creator.hashCode +
     features.hashCode +

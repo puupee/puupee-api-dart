@@ -22,5 +22,10 @@ void main() {
       // TODO
     });
 
+    // AppleVerifyReceiptResult appleVerifyReceiptResult
+    test('to test the property `appleVerifyReceiptResult`', () async {
+      // TODO
+    });
+
   });
 }

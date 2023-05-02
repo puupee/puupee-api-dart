@@ -82,6 +82,11 @@ void main() {
       // TODO
     });
 
+    // String subscriptionPlatforms
+    test('to test the property `subscriptionPlatforms`', () async {
+      // TODO
+    });
+
     // bool isPublished
     test('to test the property `isPublished`', () async {
       // TODO

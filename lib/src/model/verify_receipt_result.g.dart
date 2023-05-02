@@ -15,6 +15,12 @@ VerifyReceiptResult _$VerifyReceiptResultFromJson(Map<String, dynamic> json) =>
           ok: $checkedConvert('ok', (v) => v as bool?),
           statusCode: $checkedConvert('statusCode', (v) => v as String?),
           message: $checkedConvert('message', (v) => v as String?),
+          appleVerifyReceiptResult: $checkedConvert(
+              'appleVerifyReceiptResult',
+              (v) => v == null
+                  ? null
+                  : AppleVerifyReceiptResult.fromJson(
+                      v as Map<String, dynamic>)),
         );
         return val;
       },
@@ -32,5 +38,7 @@ Map<String, dynamic> _$VerifyReceiptResultToJson(VerifyReceiptResult instance) {
   writeNotNull('ok', instance.ok);
   writeNotNull('statusCode', instance.statusCode);
   writeNotNull('message', instance.message);
+  writeNotNull(
+      'appleVerifyReceiptResult', instance.appleVerifyReceiptResult?.toJson());
   return val;
 }

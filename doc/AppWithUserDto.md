@@ -32,6 +32,7 @@ Name | Type | Description | Notes
 **businessDomain** | **String** |  | [optional] 
 **businessUrl** | **String** |  | [optional] 
 **subscriptionEnabled** | **bool** |  | [optional] 
+**subscriptionPlatforms** | **String** |  | [optional] 
 **latestReleases** | [**List&lt;AppReleaseDto&gt;**](AppReleaseDto.md) |  | [optional] 
 **creator** | [**IdentityUserDto**](IdentityUserDto.md) |  | [optional] 
 **features** | [**List&lt;AppFeatureDto&gt;**](AppFeatureDto.md) |  | [optional] 

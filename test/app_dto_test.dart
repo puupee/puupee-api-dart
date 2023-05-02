@@ -127,6 +127,11 @@ void main() {
       // TODO
     });
 
+    // String subscriptionPlatforms
+    test('to test the property `subscriptionPlatforms`', () async {
+      // TODO
+    });
+
     // List<AppReleaseDto> latestReleases
     test('to test the property `latestReleases`', () async {
       // TODO

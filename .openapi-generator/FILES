@@ -31,6 +31,7 @@ doc/AppUserScoreApi.md
 doc/AppUserScoreDto.md
 doc/AppWithUserDto.md
 doc/AppWithUserDtoPagedResultDto.md
+doc/AppleVerifyReceiptResult.md
 doc/ApplicationApiDescriptionModel.md
 doc/ApplicationAuthConfigurationDto.md
 doc/ApplicationConfigurationDto.md
@@ -108,11 +109,13 @@ doc/IdentityUserDto.md
 doc/IdentityUserDtoPagedResultDto.md
 doc/IdentityUserUpdateDto.md
 doc/IdentityUserUpdateRolesDto.md
+doc/InApp.md
 doc/Int32KeyValue.md
 doc/Int32SetKeyValueDto.md
 doc/InterfaceMethodApiDescriptionModel.md
 doc/KeyValueApi.md
 doc/LanguageInfo.md
+doc/LatestReceiptInfo.md
 doc/LocalizableStringDto.md
 doc/LoginApi.md
 doc/LoginResultType.md
@@ -135,6 +138,7 @@ doc/NotificationInfoDto.md
 doc/NotificationInfoDtoPagedResultDto.md
 doc/ObjectExtensionsDto.md
 doc/ParameterApiDescriptionModel.md
+doc/PendingRenewalInfo.md
 doc/PermissionGrantInfoDto.md
 doc/PermissionGroupDto.md
 doc/PermissionsApi.md
@@ -146,6 +150,7 @@ doc/PuupeeApi.md
 doc/PuupeeChangedEto.md
 doc/PuupeeDto.md
 doc/PuupeeDtoPagedResultDto.md
+doc/Receipt.md
 doc/RefreshDeviceStatusDto.md
 doc/RegisterDto.md
 doc/RemoteServiceErrorInfo.md
@@ -267,6 +272,7 @@ lib/src/model/app_theme_mode.dart
 lib/src/model/app_user_score_dto.dart
 lib/src/model/app_with_user_dto.dart
 lib/src/model/app_with_user_dto_paged_result_dto.dart
+lib/src/model/apple_verify_receipt_result.dart
 lib/src/model/application_api_description_model.dart
 lib/src/model/application_auth_configuration_dto.dart
 lib/src/model/application_configuration_dto.dart
@@ -341,10 +347,12 @@ lib/src/model/identity_user_dto.dart
 lib/src/model/identity_user_dto_paged_result_dto.dart
 lib/src/model/identity_user_update_dto.dart
 lib/src/model/identity_user_update_roles_dto.dart
+lib/src/model/in_app.dart
 lib/src/model/int32_key_value.dart
 lib/src/model/int32_set_key_value_dto.dart
 lib/src/model/interface_method_api_description_model.dart
 lib/src/model/language_info.dart
+lib/src/model/latest_receipt_info.dart
 lib/src/model/localizable_string_dto.dart
 lib/src/model/login_result_type.dart
 lib/src/model/message_publish_dto.dart
@@ -362,6 +370,7 @@ lib/src/model/notification_info_dto.dart
 lib/src/model/notification_info_dto_paged_result_dto.dart
 lib/src/model/object_extensions_dto.dart
 lib/src/model/parameter_api_description_model.dart
+lib/src/model/pending_renewal_info.dart
 lib/src/model/permission_grant_info_dto.dart
 lib/src/model/permission_group_dto.dart
 lib/src/model/profile_dto.dart
@@ -370,6 +379,7 @@ lib/src/model/provider_info_dto.dart
 lib/src/model/puupee_changed_eto.dart
 lib/src/model/puupee_dto.dart
 lib/src/model/puupee_dto_paged_result_dto.dart
+lib/src/model/receipt.dart
 lib/src/model/refresh_device_status_dto.dart
 lib/src/model/register_dto.dart
 lib/src/model/remote_service_error_info.dart
@@ -448,6 +458,7 @@ test/app_user_score_api_test.dart
 test/app_user_score_dto_test.dart
 test/app_with_user_dto_paged_result_dto_test.dart
 test/app_with_user_dto_test.dart
+test/apple_verify_receipt_result_test.dart
 test/application_api_description_model_test.dart
 test/application_auth_configuration_dto_test.dart
 test/application_configuration_dto_test.dart
@@ -525,11 +536,13 @@ test/identity_user_dto_paged_result_dto_test.dart
 test/identity_user_dto_test.dart
 test/identity_user_update_dto_test.dart
 test/identity_user_update_roles_dto_test.dart
+test/in_app_test.dart
 test/int32_key_value_test.dart
 test/int32_set_key_value_dto_test.dart
 test/interface_method_api_description_model_test.dart
 test/key_value_api_test.dart
 test/language_info_test.dart
+test/latest_receipt_info_test.dart
 test/localizable_string_dto_test.dart
 test/login_api_test.dart
 test/login_result_type_test.dart
@@ -552,6 +565,7 @@ test/notification_info_dto_paged_result_dto_test.dart
 test/notification_info_dto_test.dart
 test/object_extensions_dto_test.dart
 test/parameter_api_description_model_test.dart
+test/pending_renewal_info_test.dart
 test/permission_grant_info_dto_test.dart
 test/permission_group_dto_test.dart
 test/permissions_api_test.dart
@@ -563,6 +577,7 @@ test/puupee_api_test.dart
 test/puupee_changed_eto_test.dart
 test/puupee_dto_paged_result_dto_test.dart
 test/puupee_dto_test.dart
+test/receipt_test.dart
 test/refresh_device_status_dto_test.dart
 test/register_dto_test.dart
 test/remote_service_error_info_test.dart
