@@ -24,6 +24,7 @@ class PuupeeApi {
   /// 
   ///
   /// Parameters:
+  /// * [appName] 
   /// * [afterVersion] 
   /// * [skipCount] 
   /// * [maxResultCount] 
@@ -37,6 +38,7 @@ class PuupeeApi {
   /// Returns a [Future] containing a [Response] with a [PuupeeDtoPagedResultDto] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<PuupeeDtoPagedResultDto>> apiAppPuupeePullGet({ 
+    String? appName,
     int? afterVersion,
     int? skipCount,
     int? maxResultCount,
@@ -66,6 +68,7 @@ class PuupeeApi {
     );
 
     final _queryParameters = <String, dynamic>{
+      if (appName != null) r'appName': appName,
       if (afterVersion != null) r'afterVersion': afterVersion,
       if (skipCount != null) r'skipCount': skipCount,
       if (maxResultCount != null) r'maxResultCount': maxResultCount,

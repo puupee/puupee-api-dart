@@ -242,8 +242,8 @@ void main() {
       // TODO
     });
 
-    // String app
-    test('to test the property `app`', () async {
+    // String appName
+    test('to test the property `appName`', () async {
       // TODO
     });
 

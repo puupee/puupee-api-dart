@@ -80,7 +80,7 @@ CreateOrUpdatePuupeeDto _$CreateOrUpdatePuupeeDtoFromJson(
               $checkedConvert('lastModifierDeviceToken', (v) => v as String?),
           lastModifierDevice:
               $checkedConvert('lastModifierDevice', (v) => v as String?),
-          app: $checkedConvert('app', (v) => v as String?),
+          appName: $checkedConvert('appName', (v) => v as String?),
           pushToUser: $checkedConvert('pushToUser', (v) => v as bool?),
           sortIndex: $checkedConvert('sortIndex', (v) => v as int?),
         );
@@ -150,7 +150,7 @@ Map<String, dynamic> _$CreateOrUpdatePuupeeDtoToJson(
   writeNotNull('size', instance.size);
   writeNotNull('lastModifierDeviceToken', instance.lastModifierDeviceToken);
   writeNotNull('lastModifierDevice', instance.lastModifierDevice);
-  writeNotNull('app', instance.app);
+  writeNotNull('appName', instance.appName);
   writeNotNull('pushToUser', instance.pushToUser);
   writeNotNull('sortIndex', instance.sortIndex);
   return val;

@@ -119,7 +119,7 @@ class PuupeeDto {
 
      this.lastModifierDevice,
 
-     this.app,
+     this.appName,
 
      this.sortIndex,
   });
@@ -726,13 +726,13 @@ class PuupeeDto {
 
   @JsonKey(
     
-    name: r'app',
+    name: r'appName',
     required: false,
     includeIfNull: false
   )
 
 
-  final String? app;
+  final String? appName;
 
 
 
@@ -800,7 +800,7 @@ class PuupeeDto {
      other.tagging == tagging &&
      other.lastModifierDeviceToken == lastModifierDeviceToken &&
      other.lastModifierDevice == lastModifierDevice &&
-     other.app == app &&
+     other.appName == appName &&
      other.sortIndex == sortIndex;
 
   @override
@@ -855,7 +855,7 @@ class PuupeeDto {
     tagging.hashCode +
     lastModifierDeviceToken.hashCode +
     lastModifierDevice.hashCode +
-    app.hashCode +
+    appName.hashCode +
     sortIndex.hashCode;
 
   factory PuupeeDto.fromJson(Map<String, dynamic> json) => _$PuupeeDtoFromJson(json);

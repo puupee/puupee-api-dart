@@ -112,7 +112,7 @@ class CreateOrUpdatePuupeeDto {
 
      this.lastModifierDevice,
 
-     this.app,
+     this.appName,
 
      this.pushToUser,
 
@@ -685,13 +685,13 @@ class CreateOrUpdatePuupeeDto {
 
   @JsonKey(
     
-    name: r'app',
+    name: r'appName',
     required: false,
     includeIfNull: false
   )
 
 
-  final String? app;
+  final String? appName;
 
 
 
@@ -768,7 +768,7 @@ class CreateOrUpdatePuupeeDto {
      other.size == size &&
      other.lastModifierDeviceToken == lastModifierDeviceToken &&
      other.lastModifierDevice == lastModifierDevice &&
-     other.app == app &&
+     other.appName == appName &&
      other.pushToUser == pushToUser &&
      other.sortIndex == sortIndex;
 
@@ -821,7 +821,7 @@ class CreateOrUpdatePuupeeDto {
     size.hashCode +
     lastModifierDeviceToken.hashCode +
     lastModifierDevice.hashCode +
-    app.hashCode +
+    appName.hashCode +
     pushToUser.hashCode +
     sortIndex.hashCode;
 

@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **apiAppPuupeePullGet**
-> PuupeeDtoPagedResultDto apiAppPuupeePullGet(afterVersion, skipCount, maxResultCount)
+> PuupeeDtoPagedResultDto apiAppPuupeePullGet(appName, afterVersion, skipCount, maxResultCount)
 
 
 
@@ -25,12 +25,13 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getPuupeeApi();
+final String appName = appName_example; // String | 
 final int afterVersion = 789; // int | 
 final int skipCount = 56; // int | 
 final int maxResultCount = 56; // int | 
 
 try {
-    final response = api.apiAppPuupeePullGet(afterVersion, skipCount, maxResultCount);
+    final response = api.apiAppPuupeePullGet(appName, afterVersion, skipCount, maxResultCount);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling PuupeeApi->apiAppPuupeePullGet: $e\n');
@@ -41,6 +42,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **appName** | **String**|  | [optional] 
  **afterVersion** | **int**|  | [optional] 
  **skipCount** | **int**|  | [optional] 
  **maxResultCount** | **int**|  | [optional] 

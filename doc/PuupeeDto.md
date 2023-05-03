@@ -58,7 +58,7 @@ Name | Type | Description | Notes
 **tagging** | **String** |  | [optional] 
 **lastModifierDeviceToken** | **String** |  | [optional] 
 **lastModifierDevice** | **String** |  | [optional] 
-**app** | **String** |  | [optional] 
+**appName** | **String** |  | [optional] 
 **sortIndex** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

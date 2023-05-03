@@ -55,7 +55,7 @@ Name | Type | Description | Notes
 **size** | **int** |  | [optional] 
 **lastModifierDeviceToken** | **String** |  | [optional] 
 **lastModifierDevice** | **String** |  | [optional] 
-**app** | **String** |  | [optional] 
+**appName** | **String** |  | [optional] 
 **pushToUser** | **bool** |  | [optional] 
 **sortIndex** | **int** |  | [optional] 
 
