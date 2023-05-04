@@ -27,8 +27,8 @@ void main() {
       // TODO
     });
 
-    // String type
-    test('to test the property `type`', () async {
+    // String platform
+    test('to test the property `platform`', () async {
       // TODO
     });
 

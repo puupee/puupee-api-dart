@@ -27,7 +27,7 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getSubscriptionApi();
-final ANV2 body = ; // ANV2 | 
+final Anv2 body = ; // Anv2 | 
 
 try {
     api.apiAppSubscriptionAppleNotificationsPost(body);
@@ -40,7 +40,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ANV2**](ANV2.md)|  | [optional] 
+ **body** | [**Anv2**](Anv2.md)|  | [optional] 
 
 ### Return type
 

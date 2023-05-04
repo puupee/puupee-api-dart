@@ -26,7 +26,7 @@ class BindDeviceDto {
 
      this.name,
 
-     this.type,
+     this.platform,
 
      this.brand,
 
@@ -83,13 +83,13 @@ class BindDeviceDto {
 
   @JsonKey(
     
-    name: r'type',
+    name: r'platform',
     required: false,
     includeIfNull: false
   )
 
 
-  final String? type;
+  final String? platform;
 
 
 
@@ -123,7 +123,7 @@ class BindDeviceDto {
      other.tpnsToken == tpnsToken &&
      other.isPhysicalDevice == isPhysicalDevice &&
      other.name == name &&
-     other.type == type &&
+     other.platform == platform &&
      other.brand == brand &&
      other.systemVersion == systemVersion;
 
@@ -133,7 +133,7 @@ class BindDeviceDto {
     tpnsToken.hashCode +
     isPhysicalDevice.hashCode +
     name.hashCode +
-    type.hashCode +
+    platform.hashCode +
     brand.hashCode +
     systemVersion.hashCode;
 

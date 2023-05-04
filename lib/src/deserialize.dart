@@ -1,6 +1,6 @@
-import 'package:puupee_api_client/src/model/anv2.dart';
 import 'package:puupee_api_client/src/model/abp_login_result.dart';
 import 'package:puupee_api_client/src/model/action_api_description_model.dart';
+import 'package:puupee_api_client/src/model/anv2.dart';
 import 'package:puupee_api_client/src/model/app_dto.dart';
 import 'package:puupee_api_client/src/model/app_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/app_feature_dto.dart';
@@ -187,12 +187,12 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return (valueString == 'true' || valueString == '1') as ReturnType;
         case 'double':
           return (value is double ? value : double.parse('$value')) as ReturnType;
-        case 'ANV2':
-          return ANV2.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AbpLoginResult':
           return AbpLoginResult.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ActionApiDescriptionModel':
           return ActionApiDescriptionModel.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'Anv2':
+          return Anv2.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppDto':
           return AppDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppDtoPagedResultDto':

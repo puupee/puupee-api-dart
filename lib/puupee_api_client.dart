@@ -45,9 +45,9 @@ export 'package:puupee_api_client/src/api/user_lookup_api.dart';
 export 'package:puupee_api_client/src/api/user_storage_api.dart';
 export 'package:puupee_api_client/src/api/verification_api.dart';
 
-export 'package:puupee_api_client/src/model/anv2.dart';
 export 'package:puupee_api_client/src/model/abp_login_result.dart';
 export 'package:puupee_api_client/src/model/action_api_description_model.dart';
+export 'package:puupee_api_client/src/model/anv2.dart';
 export 'package:puupee_api_client/src/model/app_dto.dart';
 export 'package:puupee_api_client/src/model/app_dto_paged_result_dto.dart';
 export 'package:puupee_api_client/src/model/app_feature_dto.dart';

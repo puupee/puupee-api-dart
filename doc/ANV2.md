@@ -1,4 +1,4 @@
-# puupee_api_client.model.ANV2
+# puupee_api_client.model.Anv2
 
 ## Load the model package
 ```dart

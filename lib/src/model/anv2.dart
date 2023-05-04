@@ -14,9 +14,9 @@ part 'anv2.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class ANV2 {
-  /// Returns a new [ANV2] instance.
-  ANV2({
+class Anv2 {
+  /// Returns a new [Anv2] instance.
+  Anv2({
 
      this.signedPayload,
   });
@@ -34,16 +34,16 @@ class ANV2 {
 
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is ANV2 &&
+  bool operator ==(Object other) => identical(this, other) || other is Anv2 &&
      other.signedPayload == signedPayload;
 
   @override
   int get hashCode =>
     signedPayload.hashCode;
 
-  factory ANV2.fromJson(Map<String, dynamic> json) => _$ANV2FromJson(json);
+  factory Anv2.fromJson(Map<String, dynamic> json) => _$Anv2FromJson(json);
 
-  Map<String, dynamic> toJson() => _$ANV2ToJson(this);
+  Map<String, dynamic> toJson() => _$Anv2ToJson(this);
 
   @override
   String toString() {

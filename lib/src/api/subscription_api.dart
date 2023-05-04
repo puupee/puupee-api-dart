@@ -38,7 +38,7 @@ class SubscriptionApi {
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiAppSubscriptionAppleNotificationsPost({ 
-    ANV2? body,
+    Anv2? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,

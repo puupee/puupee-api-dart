@@ -17,7 +17,7 @@ BindDeviceDto _$BindDeviceDtoFromJson(Map<String, dynamic> json) =>
           isPhysicalDevice:
               $checkedConvert('isPhysicalDevice', (v) => v as bool?),
           name: $checkedConvert('name', (v) => v as String?),
-          type: $checkedConvert('type', (v) => v as String?),
+          platform: $checkedConvert('platform', (v) => v as String?),
           brand: $checkedConvert('brand', (v) => v as String?),
           systemVersion: $checkedConvert('systemVersion', (v) => v as String?),
         );
@@ -38,7 +38,7 @@ Map<String, dynamic> _$BindDeviceDtoToJson(BindDeviceDto instance) {
   writeNotNull('tpnsToken', instance.tpnsToken);
   writeNotNull('isPhysicalDevice', instance.isPhysicalDevice);
   writeNotNull('name', instance.name);
-  writeNotNull('type', instance.type);
+  writeNotNull('platform', instance.platform);
   writeNotNull('brand', instance.brand);
   writeNotNull('systemVersion', instance.systemVersion);
   return val;
