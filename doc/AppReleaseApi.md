@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **apiAppAppReleaseGet**
-> AppReleaseDtoPagedResultDto apiAppAppReleaseGet(appId, environment, platformPeriodName, platformPeriodValue, sorting, skipCount, maxResultCount)
+> AppReleaseDtoPagedResultDto apiAppAppReleaseGet(appId, environmentPeriodName, environmentPeriodValue, platformPeriodName, platformPeriodValue, sorting, skipCount, maxResultCount)
 
 
 
@@ -30,7 +30,8 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getAppReleaseApi();
 final String appId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final String environment = environment_example; // String | 
+final String environmentPeriodName = environmentPeriodName_example; // String | 
+final String environmentPeriodValue = environmentPeriodValue_example; // String | 
 final String platformPeriodName = platformPeriodName_example; // String | 
 final String platformPeriodValue = platformPeriodValue_example; // String | 
 final String sorting = sorting_example; // String | 
@@ -38,7 +39,7 @@ final int skipCount = 56; // int |
 final int maxResultCount = 56; // int | 
 
 try {
-    final response = api.apiAppAppReleaseGet(appId, environment, platformPeriodName, platformPeriodValue, sorting, skipCount, maxResultCount);
+    final response = api.apiAppAppReleaseGet(appId, environmentPeriodName, environmentPeriodValue, platformPeriodName, platformPeriodValue, sorting, skipCount, maxResultCount);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AppReleaseApi->apiAppAppReleaseGet: $e\n');
@@ -50,7 +51,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **appId** | **String**|  | [optional] 
- **environment** | **String**|  | [optional] 
+ **environmentPeriodName** | **String**|  | [optional] 
+ **environmentPeriodValue** | **String**|  | [optional] 
  **platformPeriodName** | **String**|  | [optional] 
  **platformPeriodValue** | **String**|  | [optional] 
  **sorting** | **String**|  | [optional] 
@@ -203,7 +205,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppAppReleaseLatestGet**
-> AppReleaseDto apiAppAppReleaseLatestGet(appName, platform, productType)
+> AppReleaseDto apiAppAppReleaseLatestGet(appName, platform, productType, environmentPeriodName, environmentPeriodValue)
 
 
 
@@ -217,9 +219,11 @@ final api = PuupeeApiClient().getAppReleaseApi();
 final String appName = appName_example; // String | 
 final String platform = platform_example; // String | 
 final String productType = productType_example; // String | 
+final String environmentPeriodName = environmentPeriodName_example; // String | 
+final String environmentPeriodValue = environmentPeriodValue_example; // String | 
 
 try {
-    final response = api.apiAppAppReleaseLatestGet(appName, platform, productType);
+    final response = api.apiAppAppReleaseLatestGet(appName, platform, productType, environmentPeriodName, environmentPeriodValue);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AppReleaseApi->apiAppAppReleaseLatestGet: $e\n');
@@ -233,6 +237,8 @@ Name | Type | Description  | Notes
  **appName** | **String**|  | [optional] 
  **platform** | **String**|  | [optional] 
  **productType** | **String**|  | [optional] 
+ **environmentPeriodName** | **String**|  | [optional] 
+ **environmentPeriodValue** | **String**|  | [optional] 
 
 ### Return type
 

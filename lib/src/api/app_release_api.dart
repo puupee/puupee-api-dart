@@ -25,7 +25,8 @@ class AppReleaseApi {
   ///
   /// Parameters:
   /// * [appId] 
-  /// * [environment] 
+  /// * [environmentPeriodName] 
+  /// * [environmentPeriodValue] 
   /// * [platformPeriodName] 
   /// * [platformPeriodValue] 
   /// * [sorting] 
@@ -42,7 +43,8 @@ class AppReleaseApi {
   /// Throws [DioError] if API call or serialization fails
   Future<Response<AppReleaseDtoPagedResultDto>> apiAppAppReleaseGet({ 
     String? appId,
-    String? environment,
+    String? environmentPeriodName,
+    String? environmentPeriodValue,
     String? platformPeriodName,
     String? platformPeriodValue,
     String? sorting,
@@ -75,7 +77,8 @@ class AppReleaseApi {
 
     final _queryParameters = <String, dynamic>{
       if (appId != null) r'AppId': appId,
-      if (environment != null) r'Environment': environment,
+      if (environmentPeriodName != null) r'Environment.Name': environmentPeriodName,
+      if (environmentPeriodValue != null) r'Environment.Value': environmentPeriodValue,
       if (platformPeriodName != null) r'Platform.Name': platformPeriodName,
       if (platformPeriodValue != null) r'Platform.Value': platformPeriodValue,
       if (sorting != null) r'Sorting': sorting,
@@ -343,6 +346,8 @@ _responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppR
   /// * [appName] 
   /// * [platform] 
   /// * [productType] 
+  /// * [environmentPeriodName] 
+  /// * [environmentPeriodValue] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -356,6 +361,8 @@ _responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppR
     String? appName,
     String? platform,
     String? productType,
+    String? environmentPeriodName,
+    String? environmentPeriodValue,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -385,6 +392,8 @@ _responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppR
       if (appName != null) r'AppName': appName,
       if (platform != null) r'Platform': platform,
       if (productType != null) r'ProductType': productType,
+      if (environmentPeriodName != null) r'Environment.Name': environmentPeriodName,
+      if (environmentPeriodValue != null) r'Environment.Value': environmentPeriodValue,
     };
 
     final _response = await _dio.request<Object>(
