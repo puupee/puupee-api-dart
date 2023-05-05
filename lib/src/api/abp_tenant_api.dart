@@ -75,9 +75,10 @@ _responseData = deserialize<FindTenantResultDto, FindTenantResultDto>(_response.
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<FindTenantResultDto>(
@@ -149,9 +150,10 @@ _responseData = deserialize<FindTenantResultDto, FindTenantResultDto>(_response.
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<FindTenantResultDto>(

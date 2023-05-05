@@ -73,9 +73,10 @@ _responseData = deserialize<UserStorageDto, UserStorageDto>(_response.data!, 'Us
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<UserStorageDto>(

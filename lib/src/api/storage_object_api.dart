@@ -140,9 +140,10 @@ _responseData = deserialize<StorageObjectOrCredentialsDto, StorageObjectOrCreden
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<StorageObjectOrCredentialsDto>(
@@ -219,9 +220,10 @@ _responseData = deserialize<String, String>(_response.data!, 'String', growable:
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<String>(

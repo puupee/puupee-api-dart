@@ -76,9 +76,10 @@ _responseData = deserialize<UserData, UserData>(_response.data!, 'UserData', gro
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<UserData>(
@@ -155,9 +156,10 @@ _responseData = deserialize<int, int>(_response.data!, 'int', growable: true);
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<int>(
@@ -229,9 +231,10 @@ _responseData = deserialize<UserData, UserData>(_response.data!, 'UserData', gro
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<UserData>(
@@ -317,9 +320,10 @@ _responseData = deserialize<UserDataListResultDto, UserDataListResultDto>(_respo
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<UserDataListResultDto>(

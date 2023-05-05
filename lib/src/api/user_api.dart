@@ -78,9 +78,10 @@ _responseData = deserialize<IdentityRoleDtoListResultDto, IdentityRoleDtoListRes
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<IdentityRoleDtoListResultDto>(
@@ -152,9 +153,10 @@ _responseData = deserialize<IdentityUserDto, IdentityUserDto>(_response.data!, '
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<IdentityUserDto>(
@@ -226,9 +228,10 @@ _responseData = deserialize<IdentityUserDto, IdentityUserDto>(_response.data!, '
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<IdentityUserDto>(
@@ -314,9 +317,10 @@ _responseData = deserialize<IdentityUserDtoPagedResultDto, IdentityUserDtoPagedR
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<IdentityUserDtoPagedResultDto>(
@@ -440,9 +444,10 @@ _responseData = deserialize<IdentityUserDto, IdentityUserDto>(_response.data!, '
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<IdentityUserDto>(
@@ -511,9 +516,10 @@ _bodyData=jsonEncode(body);
           _dio.options,
           _path,
         ),
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     final _response = await _dio.request<Object>(
@@ -533,9 +539,10 @@ _responseData = deserialize<IdentityUserDto, IdentityUserDto>(_response.data!, '
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<IdentityUserDto>(
@@ -607,9 +614,10 @@ _responseData = deserialize<IdentityRoleDtoListResultDto, IdentityRoleDtoListRes
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<IdentityRoleDtoListResultDto>(
@@ -678,9 +686,10 @@ _bodyData=jsonEncode(body);
           _dio.options,
           _path,
         ),
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     final _response = await _dio.request<Object>(
@@ -747,9 +756,10 @@ _bodyData=jsonEncode(body);
           _dio.options,
           _path,
         ),
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     final _response = await _dio.request<Object>(
@@ -769,9 +779,10 @@ _responseData = deserialize<IdentityUserDto, IdentityUserDto>(_response.data!, '
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<IdentityUserDto>(

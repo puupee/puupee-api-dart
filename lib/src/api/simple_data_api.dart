@@ -90,9 +90,10 @@ _responseData = deserialize<SimpleDataDtoPagedResultDto, SimpleDataDtoPagedResul
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<SimpleDataDtoPagedResultDto>(
@@ -216,9 +217,10 @@ _responseData = deserialize<SimpleDataDto, SimpleDataDto>(_response.data!, 'Simp
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<SimpleDataDto>(
@@ -285,9 +287,10 @@ _bodyData=jsonEncode(body);
           _dio.options,
           _path,
         ),
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     final _response = await _dio.request<Object>(
@@ -307,9 +310,10 @@ _responseData = deserialize<SimpleDataDto, SimpleDataDto>(_response.data!, 'Simp
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<SimpleDataDto>(

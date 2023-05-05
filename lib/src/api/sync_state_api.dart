@@ -74,9 +74,10 @@ _responseData = deserialize<SyncStateDto, SyncStateDto>(_response.data!, 'SyncSt
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<SyncStateDto>(
@@ -146,9 +147,10 @@ _responseData = deserialize<PuupeeChangedEto, PuupeeChangedEto>(_response.data!,
       throw DioError(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.other,
+        type: DioErrorType.unknown,
         error: error,
-      )..stackTrace = stackTrace;
+        stackTrace: stackTrace,
+      );
     }
 
     return Response<PuupeeChangedEto>(
