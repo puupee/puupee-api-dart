@@ -65,6 +65,8 @@ class AppPricingDto {
 
      this.yearDiscountEndAt,
 
+     this.sortIndex,
+
      this.items,
   });
 
@@ -346,6 +348,18 @@ class AppPricingDto {
 
   @JsonKey(
     
+    name: r'sortIndex',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final int? sortIndex;
+
+
+
+  @JsonKey(
+    
     name: r'items',
     required: false,
     includeIfNull: false
@@ -381,6 +395,7 @@ class AppPricingDto {
      other.yearDiscountPrice == yearDiscountPrice &&
      other.yearDiscountStartAt == yearDiscountStartAt &&
      other.yearDiscountEndAt == yearDiscountEndAt &&
+     other.sortIndex == sortIndex &&
      other.items == items;
 
   @override
@@ -408,6 +423,7 @@ class AppPricingDto {
     yearDiscountPrice.hashCode +
     yearDiscountStartAt.hashCode +
     yearDiscountEndAt.hashCode +
+    sortIndex.hashCode +
     items.hashCode;
 
   factory AppPricingDto.fromJson(Map<String, dynamic> json) => _$AppPricingDtoFromJson(json);

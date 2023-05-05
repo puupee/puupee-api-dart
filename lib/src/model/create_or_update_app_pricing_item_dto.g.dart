@@ -16,7 +16,9 @@ CreateOrUpdateAppPricingItemDto _$CreateOrUpdateAppPricingItemDtoFromJson(
           name: $checkedConvert('name', (v) => v as String?),
           display: $checkedConvert('display', (v) => v as String?),
           appId: $checkedConvert('appId', (v) => v as String?),
+          isAvailable: $checkedConvert('isAvailable', (v) => v as bool?),
           hasValue: $checkedConvert('hasValue', (v) => v as bool?),
+          sortIndex: $checkedConvert('sortIndex', (v) => v as int?),
         );
         return val;
       },
@@ -35,6 +37,8 @@ Map<String, dynamic> _$CreateOrUpdateAppPricingItemDtoToJson(
   writeNotNull('name', instance.name);
   writeNotNull('display', instance.display);
   writeNotNull('appId', instance.appId);
+  writeNotNull('isAvailable', instance.isAvailable);
   writeNotNull('hasValue', instance.hasValue);
+  writeNotNull('sortIndex', instance.sortIndex);
   return val;
 }

@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:puupee_api_client/src/model/app_pricing_item_dto.dart';
+import 'package:puupee_api_client/src/model/create_or_update_app_pricing_item_dto.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_or_update_app_pricing_dto.g.dart';
@@ -48,6 +48,8 @@ class CreateOrUpdateAppPricingDto {
      this.yearDiscountStartAt,
 
      this.yearDiscountEndAt,
+
+     this.sortIndex,
 
      this.items,
   });
@@ -234,13 +236,25 @@ class CreateOrUpdateAppPricingDto {
 
   @JsonKey(
     
+    name: r'sortIndex',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final int? sortIndex;
+
+
+
+  @JsonKey(
+    
     name: r'items',
     required: false,
     includeIfNull: false
   )
 
 
-  final List<AppPricingItemDto>? items;
+  final List<CreateOrUpdateAppPricingItemDto>? items;
 
 
 
@@ -261,6 +275,7 @@ class CreateOrUpdateAppPricingDto {
      other.yearDiscountPrice == yearDiscountPrice &&
      other.yearDiscountStartAt == yearDiscountStartAt &&
      other.yearDiscountEndAt == yearDiscountEndAt &&
+     other.sortIndex == sortIndex &&
      other.items == items;
 
   @override
@@ -280,6 +295,7 @@ class CreateOrUpdateAppPricingDto {
     yearDiscountPrice.hashCode +
     yearDiscountStartAt.hashCode +
     yearDiscountEndAt.hashCode +
+    sortIndex.hashCode +
     items.hashCode;
 
   factory CreateOrUpdateAppPricingDto.fromJson(Map<String, dynamic> json) => _$CreateOrUpdateAppPricingDtoFromJson(json);

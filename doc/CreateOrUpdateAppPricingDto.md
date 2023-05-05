@@ -23,7 +23,8 @@ Name | Type | Description | Notes
 **yearDiscountPrice** | **double** |  | [optional] 
 **yearDiscountStartAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **yearDiscountEndAt** | [**DateTime**](DateTime.md) |  | [optional] 
-**items** | [**List&lt;AppPricingItemDto&gt;**](AppPricingItemDto.md) |  | [optional] 
+**sortIndex** | **int** |  | [optional] 
+**items** | [**List&lt;CreateOrUpdateAppPricingItemDto&gt;**](CreateOrUpdateAppPricingItemDto.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

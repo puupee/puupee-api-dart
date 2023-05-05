@@ -122,6 +122,11 @@ void main() {
       // TODO
     });
 
+    // int sortIndex
+    test('to test the property `sortIndex`', () async {
+      // TODO
+    });
+
     // List<AppPricingItemDto> items
     test('to test the property `items`', () async {
       // TODO

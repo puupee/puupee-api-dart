@@ -77,5 +77,10 @@ void main() {
       // TODO
     });
 
+    // int sortIndex
+    test('to test the property `sortIndex`', () async {
+      // TODO
+    });
+
   });
 }

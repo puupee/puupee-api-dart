@@ -39,11 +39,12 @@ CreateOrUpdateAppPricingDto _$CreateOrUpdateAppPricingDtoFromJson(
               (v) => v == null ? null : DateTime.parse(v as String)),
           yearDiscountEndAt: $checkedConvert('yearDiscountEndAt',
               (v) => v == null ? null : DateTime.parse(v as String)),
+          sortIndex: $checkedConvert('sortIndex', (v) => v as int?),
           items: $checkedConvert(
               'items',
               (v) => (v as List<dynamic>?)
-                  ?.map((e) =>
-                      AppPricingItemDto.fromJson(e as Map<String, dynamic>))
+                  ?.map((e) => CreateOrUpdateAppPricingItemDto.fromJson(
+                      e as Map<String, dynamic>))
                   .toList()),
         );
         return val;
@@ -79,6 +80,7 @@ Map<String, dynamic> _$CreateOrUpdateAppPricingDtoToJson(
       'yearDiscountStartAt', instance.yearDiscountStartAt?.toIso8601String());
   writeNotNull(
       'yearDiscountEndAt', instance.yearDiscountEndAt?.toIso8601String());
+  writeNotNull('sortIndex', instance.sortIndex);
   writeNotNull('items', instance.items?.map((e) => e.toJson()).toList());
   return val;
 }

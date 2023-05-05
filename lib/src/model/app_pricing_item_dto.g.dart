@@ -31,6 +31,7 @@ AppPricingItemDto _$AppPricingItemDtoFromJson(Map<String, dynamic> json) =>
           appId: $checkedConvert('appId', (v) => v as String?),
           isAvailable: $checkedConvert('isAvailable', (v) => v as bool?),
           hasValue: $checkedConvert('hasValue', (v) => v as bool?),
+          sortIndex: $checkedConvert('sortIndex', (v) => v as int?),
         );
         return val;
       },
@@ -60,5 +61,6 @@ Map<String, dynamic> _$AppPricingItemDtoToJson(AppPricingItemDto instance) {
   writeNotNull('appId', instance.appId);
   writeNotNull('isAvailable', instance.isAvailable);
   writeNotNull('hasValue', instance.hasValue);
+  writeNotNull('sortIndex', instance.sortIndex);
   return val;
 }

@@ -24,7 +24,11 @@ class CreateOrUpdateAppPricingItemDto {
 
      this.appId,
 
+     this.isAvailable,
+
      this.hasValue,
+
+     this.sortIndex,
   });
 
   @JsonKey(
@@ -65,6 +69,18 @@ class CreateOrUpdateAppPricingItemDto {
 
   @JsonKey(
     
+    name: r'isAvailable',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final bool? isAvailable;
+
+
+
+  @JsonKey(
+    
     name: r'hasValue',
     required: false,
     includeIfNull: false
@@ -75,19 +91,35 @@ class CreateOrUpdateAppPricingItemDto {
 
 
 
+  @JsonKey(
+    
+    name: r'sortIndex',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final int? sortIndex;
+
+
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateOrUpdateAppPricingItemDto &&
      other.name == name &&
      other.display == display &&
      other.appId == appId &&
-     other.hasValue == hasValue;
+     other.isAvailable == isAvailable &&
+     other.hasValue == hasValue &&
+     other.sortIndex == sortIndex;
 
   @override
   int get hashCode =>
     name.hashCode +
     display.hashCode +
     appId.hashCode +
-    hasValue.hashCode;
+    isAvailable.hashCode +
+    hasValue.hashCode +
+    sortIndex.hashCode;
 
   factory CreateOrUpdateAppPricingItemDto.fromJson(Map<String, dynamic> json) => _$CreateOrUpdateAppPricingItemDtoFromJson(json);
 

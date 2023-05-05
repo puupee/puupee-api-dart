@@ -22,8 +22,18 @@ void main() {
       // TODO
     });
 
+    // bool isAvailable
+    test('to test the property `isAvailable`', () async {
+      // TODO
+    });
+
     // bool hasValue
     test('to test the property `hasValue`', () async {
+      // TODO
+    });
+
+    // int sortIndex
+    test('to test the property `sortIndex`', () async {
       // TODO
     });
 
