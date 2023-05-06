@@ -25,6 +25,8 @@ AppPricingItemDto _$AppPricingItemDtoFromJson(Map<String, dynamic> json) =>
           deletionTime: $checkedConvert('deletionTime',
               (v) => v == null ? null : DateTime.parse(v as String)),
           name: $checkedConvert('name', (v) => v as String?),
+          description: $checkedConvert('description', (v) => v as String?),
+          linkUrl: $checkedConvert('linkUrl', (v) => v as String?),
           display: $checkedConvert('display', (v) => v as String?),
           values: $checkedConvert('values',
               (v) => (v as List<dynamic>?)?.map((e) => e as String).toList()),
@@ -56,6 +58,8 @@ Map<String, dynamic> _$AppPricingItemDtoToJson(AppPricingItemDto instance) {
   writeNotNull('deleterId', instance.deleterId);
   writeNotNull('deletionTime', instance.deletionTime?.toIso8601String());
   writeNotNull('name', instance.name);
+  writeNotNull('description', instance.description);
+  writeNotNull('linkUrl', instance.linkUrl);
   writeNotNull('display', instance.display);
   writeNotNull('values', instance.values);
   writeNotNull('appId', instance.appId);

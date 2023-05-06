@@ -12,6 +12,16 @@ void main() {
       // TODO
     });
 
+    // String description
+    test('to test the property `description`', () async {
+      // TODO
+    });
+
+    // String linkUrl
+    test('to test the property `linkUrl`', () async {
+      // TODO
+    });
+
     // String display
     test('to test the property `display`', () async {
       // TODO

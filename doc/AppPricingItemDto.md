@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **deleterId** | **String** |  | [optional] 
 **deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
 **name** | **String** |  | [optional] 
+**description** | **String** |  | [optional] 
+**linkUrl** | **String** |  | [optional] 
 **display** | **String** |  | [optional] 
 **values** | **List&lt;String&gt;** |  | [optional] 
 **appId** | **String** |  | [optional] 
