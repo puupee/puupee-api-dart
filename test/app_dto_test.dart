@@ -132,6 +132,11 @@ void main() {
       // TODO
     });
 
+    // String specJsonSchema
+    test('to test the property `specJsonSchema`', () async {
+      // TODO
+    });
+
     // List<AppReleaseDto> latestReleases
     test('to test the property `latestReleases`', () async {
       // TODO

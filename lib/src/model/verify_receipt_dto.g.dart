@@ -11,6 +11,15 @@ VerifyReceiptDto _$VerifyReceiptDtoFromJson(Map<String, dynamic> json) =>
       'VerifyReceiptDto',
       json,
       ($checkedConvert) {
+        $checkKeys(
+          json,
+          requiredKeys: const [
+            'orderId',
+            'receiptData',
+            'platform',
+            'deviceToken'
+          ],
+        );
         final val = VerifyReceiptDto(
           id: $checkedConvert('id', (v) => v as String?),
           creationTime: $checkedConvert('creationTime',
@@ -24,10 +33,10 @@ VerifyReceiptDto _$VerifyReceiptDtoFromJson(Map<String, dynamic> json) =>
           deleterId: $checkedConvert('deleterId', (v) => v as String?),
           deletionTime: $checkedConvert('deletionTime',
               (v) => v == null ? null : DateTime.parse(v as String)),
-          orderId: $checkedConvert('orderId', (v) => v as String?),
-          receiptData: $checkedConvert('receiptData', (v) => v as String?),
-          platform: $checkedConvert('platform', (v) => v as String?),
-          deviceToken: $checkedConvert('deviceToken', (v) => v as String?),
+          orderId: $checkedConvert('orderId', (v) => v as String),
+          receiptData: $checkedConvert('receiptData', (v) => v as String),
+          platform: $checkedConvert('platform', (v) => v as String),
+          deviceToken: $checkedConvert('deviceToken', (v) => v as String),
         );
         return val;
       },
@@ -51,9 +60,9 @@ Map<String, dynamic> _$VerifyReceiptDtoToJson(VerifyReceiptDto instance) {
   writeNotNull('isDeleted', instance.isDeleted);
   writeNotNull('deleterId', instance.deleterId);
   writeNotNull('deletionTime', instance.deletionTime?.toIso8601String());
-  writeNotNull('orderId', instance.orderId);
-  writeNotNull('receiptData', instance.receiptData);
-  writeNotNull('platform', instance.platform);
-  writeNotNull('deviceToken', instance.deviceToken);
+  val['orderId'] = instance.orderId;
+  val['receiptData'] = instance.receiptData;
+  val['platform'] = instance.platform;
+  val['deviceToken'] = instance.deviceToken;
   return val;
 }

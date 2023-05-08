@@ -16,10 +16,10 @@ Name | Type | Description | Notes
 **isDeleted** | **bool** |  | [optional] 
 **deleterId** | **String** |  | [optional] 
 **deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
-**orderId** | **String** |  | [optional] 
-**receiptData** | **String** |  | [optional] 
-**platform** | **String** |  | [optional] 
-**deviceToken** | **String** |  | [optional] 
+**orderId** | **String** |  | 
+**receiptData** | **String** |  | 
+**platform** | **String** |  | 
+**deviceToken** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

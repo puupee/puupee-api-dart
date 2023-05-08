@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:puupee_api_client/src/model/pending_renewal_info.dart';
 import 'package:puupee_api_client/src/model/receipt.dart';
+import 'package:puupee_api_client/src/model/apple_verify_recceipt_status.dart';
 import 'package:puupee_api_client/src/model/latest_receipt_info.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -68,7 +69,7 @@ class AppleVerifyReceiptResult {
   )
 
 
-  final int? status;
+  final AppleVerifyRecceiptStatus? status;
 
 
 

@@ -33,6 +33,8 @@ CreateOrUpdateAppDto _$CreateOrUpdateAppDtoFromJson(
               $checkedConvert('subscriptionEnabled', (v) => v as bool?),
           subscriptionPlatforms:
               $checkedConvert('subscriptionPlatforms', (v) => v as String?),
+          specJsonSchema:
+              $checkedConvert('specJsonSchema', (v) => v as String?),
           isPublished: $checkedConvert('isPublished', (v) => v as bool?),
           features: $checkedConvert(
               'features',
@@ -82,6 +84,7 @@ Map<String, dynamic> _$CreateOrUpdateAppDtoToJson(
   writeNotNull('businessUrl', instance.businessUrl);
   writeNotNull('subscriptionEnabled', instance.subscriptionEnabled);
   writeNotNull('subscriptionPlatforms', instance.subscriptionPlatforms);
+  writeNotNull('specJsonSchema', instance.specJsonSchema);
   writeNotNull('isPublished', instance.isPublished);
   writeNotNull('features', instance.features?.map((e) => e.toJson()).toList());
   writeNotNull('sdks', instance.sdks?.map((e) => e.toJson()).toList());

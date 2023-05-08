@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:puupee_api_client/src/model/subscription_order_type.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_or_get_subscription_order_dto.g.dart';
@@ -37,6 +38,10 @@ class CreateOrGetSubscriptionOrderDto {
      this.appId,
 
      this.pricingId,
+
+     this.type,
+
+     this.productId,
   });
 
   @JsonKey(
@@ -159,6 +164,30 @@ class CreateOrGetSubscriptionOrderDto {
 
 
 
+  @JsonKey(
+    
+    name: r'type',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final SubscriptionOrderType? type;
+
+
+
+  @JsonKey(
+    
+    name: r'productId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? productId;
+
+
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateOrGetSubscriptionOrderDto &&
      other.id == id &&
@@ -170,7 +199,9 @@ class CreateOrGetSubscriptionOrderDto {
      other.deleterId == deleterId &&
      other.deletionTime == deletionTime &&
      other.appId == appId &&
-     other.pricingId == pricingId;
+     other.pricingId == pricingId &&
+     other.type == type &&
+     other.productId == productId;
 
   @override
   int get hashCode =>
@@ -183,7 +214,9 @@ class CreateOrGetSubscriptionOrderDto {
     deleterId.hashCode +
     deletionTime.hashCode +
     appId.hashCode +
-    pricingId.hashCode;
+    pricingId.hashCode +
+    type.hashCode +
+    productId.hashCode;
 
   factory CreateOrGetSubscriptionOrderDto.fromJson(Map<String, dynamic> json) => _$CreateOrGetSubscriptionOrderDtoFromJson(json);
 

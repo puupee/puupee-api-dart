@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **businessUrl** | **String** |  | [optional] 
 **subscriptionEnabled** | **bool** |  | [optional] 
 **subscriptionPlatforms** | **String** |  | [optional] 
+**specJsonSchema** | **String** |  | [optional] 
 **latestReleases** | [**List&lt;AppReleaseDto&gt;**](AppReleaseDto.md) |  | [optional] 
 **creator** | [**IdentityUserDto**](IdentityUserDto.md) |  | [optional] 
 **features** | [**List&lt;AppFeatureDto&gt;**](AppFeatureDto.md) |  | [optional] 

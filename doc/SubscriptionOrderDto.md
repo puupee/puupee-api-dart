@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **status** | [**SubscriptionOrderStatus**](SubscriptionOrderStatus.md) |  | [optional] 
 **appId** | **String** |  | [optional] 
 **pricingId** | **String** |  | [optional] 
+**productId** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

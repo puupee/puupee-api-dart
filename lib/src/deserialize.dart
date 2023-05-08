@@ -1,6 +1,5 @@
 import 'package:puupee_api_client/src/model/abp_login_result.dart';
 import 'package:puupee_api_client/src/model/action_api_description_model.dart';
-import 'package:puupee_api_client/src/model/anv2.dart';
 import 'package:puupee_api_client/src/model/app_dto.dart';
 import 'package:puupee_api_client/src/model/app_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/app_feature_dto.dart';
@@ -9,11 +8,17 @@ import 'package:puupee_api_client/src/model/app_pricing_dto_paged_result_dto.dar
 import 'package:puupee_api_client/src/model/app_pricing_item_dto.dart';
 import 'package:puupee_api_client/src/model/app_release_dto.dart';
 import 'package:puupee_api_client/src/model/app_release_dto_paged_result_dto.dart';
+import 'package:puupee_api_client/src/model/app_run_dto.dart';
+import 'package:puupee_api_client/src/model/app_run_record_dto.dart';
+import 'package:puupee_api_client/src/model/app_run_record_update_dto.dart';
+import 'package:puupee_api_client/src/model/app_run_status.dart';
 import 'package:puupee_api_client/src/model/app_sdk_dto.dart';
 import 'package:puupee_api_client/src/model/app_theme.dart';
 import 'package:puupee_api_client/src/model/app_user_score_dto.dart';
 import 'package:puupee_api_client/src/model/app_with_user_dto.dart';
 import 'package:puupee_api_client/src/model/app_with_user_dto_paged_result_dto.dart';
+import 'package:puupee_api_client/src/model/apple_notificaion_dto.dart';
+import 'package:puupee_api_client/src/model/apple_verify_recceipt_status.dart';
 import 'package:puupee_api_client/src/model/apple_verify_receipt_result.dart';
 import 'package:puupee_api_client/src/model/application_api_description_model.dart';
 import 'package:puupee_api_client/src/model/application_auth_configuration_dto.dart';
@@ -84,9 +89,15 @@ import 'package:puupee_api_client/src/model/identity_role_dto.dart';
 import 'package:puupee_api_client/src/model/identity_role_dto_list_result_dto.dart';
 import 'package:puupee_api_client/src/model/identity_role_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/identity_role_update_dto.dart';
+import 'package:puupee_api_client/src/model/identity_user.dart';
+import 'package:puupee_api_client/src/model/identity_user_claim.dart';
 import 'package:puupee_api_client/src/model/identity_user_create_dto.dart';
 import 'package:puupee_api_client/src/model/identity_user_dto.dart';
 import 'package:puupee_api_client/src/model/identity_user_dto_paged_result_dto.dart';
+import 'package:puupee_api_client/src/model/identity_user_login.dart';
+import 'package:puupee_api_client/src/model/identity_user_organization_unit.dart';
+import 'package:puupee_api_client/src/model/identity_user_role.dart';
+import 'package:puupee_api_client/src/model/identity_user_token.dart';
 import 'package:puupee_api_client/src/model/identity_user_update_dto.dart';
 import 'package:puupee_api_client/src/model/identity_user_update_roles_dto.dart';
 import 'package:puupee_api_client/src/model/in_app.dart';
@@ -191,8 +202,6 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return AbpLoginResult.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ActionApiDescriptionModel':
           return ActionApiDescriptionModel.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'Anv2':
-          return Anv2.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppDto':
           return AppDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppDtoPagedResultDto':
@@ -209,6 +218,14 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return AppReleaseDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppReleaseDtoPagedResultDto':
           return AppReleaseDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppRunDto':
+          return AppRunDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppRunRecordDto':
+          return AppRunRecordDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppRunRecordUpdateDto':
+          return AppRunRecordUpdateDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppRunStatus':
+          return AppRunStatus.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppSdkDto':
           return AppSdkDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppTheme':
@@ -222,6 +239,10 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return AppWithUserDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppWithUserDtoPagedResultDto':
           return AppWithUserDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppleNotificaionDto':
+          return AppleNotificaionDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppleVerifyRecceiptStatus':
+          return AppleVerifyRecceiptStatus.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppleVerifyReceiptResult':
           return AppleVerifyReceiptResult.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ApplicationApiDescriptionModel':
@@ -362,12 +383,24 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return IdentityRoleDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'IdentityRoleUpdateDto':
           return IdentityRoleUpdateDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'IdentityUser':
+          return IdentityUser.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'IdentityUserClaim':
+          return IdentityUserClaim.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'IdentityUserCreateDto':
           return IdentityUserCreateDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'IdentityUserDto':
           return IdentityUserDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'IdentityUserDtoPagedResultDto':
           return IdentityUserDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'IdentityUserLogin':
+          return IdentityUserLogin.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'IdentityUserOrganizationUnit':
+          return IdentityUserOrganizationUnit.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'IdentityUserRole':
+          return IdentityUserRole.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'IdentityUserToken':
+          return IdentityUserToken.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'IdentityUserUpdateDto':
           return IdentityUserUpdateDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'IdentityUserUpdateRolesDto':

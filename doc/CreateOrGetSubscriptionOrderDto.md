@@ -18,6 +18,8 @@ Name | Type | Description | Notes
 **deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
 **appId** | **String** |  | [optional] 
 **pricingId** | **String** |  | [optional] 
+**type** | [**SubscriptionOrderType**](SubscriptionOrderType.md) |  | [optional] 
+**productId** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

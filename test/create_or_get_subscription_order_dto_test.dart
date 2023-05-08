@@ -57,5 +57,15 @@ void main() {
       // TODO
     });
 
+    // SubscriptionOrderType type
+    test('to test the property `type`', () async {
+      // TODO
+    });
+
+    // String productId
+    test('to test the property `productId`', () async {
+      // TODO
+    });
+
   });
 }

@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **lockoutEnabled** | **bool** |  | [optional] 
 **lockoutEnd** | [**DateTime**](DateTime.md) |  | [optional] 
 **concurrencyStamp** | **String** |  | [optional] 
+**entityVersion** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

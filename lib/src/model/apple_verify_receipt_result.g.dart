@@ -15,7 +15,12 @@ AppleVerifyReceiptResult _$AppleVerifyReceiptResultFromJson(
         final val = AppleVerifyReceiptResult(
           environment: $checkedConvert('environment', (v) => v as String?),
           isRetryable: $checkedConvert('is_retryable', (v) => v as bool?),
-          status: $checkedConvert('status', (v) => v as int?),
+          status: $checkedConvert(
+              'status',
+              (v) => v == null
+                  ? null
+                  : AppleVerifyRecceiptStatus.fromJson(
+                      v as Map<String, dynamic>)),
           latestReceiptInfo: $checkedConvert(
               'latest_receipt_info',
               (v) => (v as List<dynamic>?)
@@ -57,7 +62,7 @@ Map<String, dynamic> _$AppleVerifyReceiptResultToJson(
 
   writeNotNull('environment', instance.environment);
   writeNotNull('is_retryable', instance.isRetryable);
-  writeNotNull('status', instance.status);
+  writeNotNull('status', instance.status?.toJson());
   writeNotNull('latest_receipt_info',
       instance.latestReceiptInfo?.map((e) => e.toJson()).toList());
   writeNotNull('latest_receipt', instance.latestReceipt);

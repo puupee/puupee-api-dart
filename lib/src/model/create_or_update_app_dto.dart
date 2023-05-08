@@ -53,6 +53,8 @@ class CreateOrUpdateAppDto {
 
      this.subscriptionPlatforms,
 
+     this.specJsonSchema,
+
      this.isPublished,
 
      this.features,
@@ -256,6 +258,18 @@ class CreateOrUpdateAppDto {
 
   @JsonKey(
     
+    name: r'specJsonSchema',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? specJsonSchema;
+
+
+
+  @JsonKey(
+    
     name: r'isPublished',
     required: false,
     includeIfNull: false
@@ -320,6 +334,7 @@ class CreateOrUpdateAppDto {
      other.businessUrl == businessUrl &&
      other.subscriptionEnabled == subscriptionEnabled &&
      other.subscriptionPlatforms == subscriptionPlatforms &&
+     other.specJsonSchema == specJsonSchema &&
      other.isPublished == isPublished &&
      other.features == features &&
      other.sdks == sdks &&
@@ -343,6 +358,7 @@ class CreateOrUpdateAppDto {
     businessUrl.hashCode +
     subscriptionEnabled.hashCode +
     subscriptionPlatforms.hashCode +
+    specJsonSchema.hashCode +
     isPublished.hashCode +
     features.hashCode +
     sdks.hashCode +

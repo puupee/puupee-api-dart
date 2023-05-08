@@ -59,6 +59,8 @@ class IdentityUserDto {
      this.lockoutEnd,
 
      this.concurrencyStamp,
+
+     this.entityVersion,
   });
 
   @JsonKey(
@@ -313,6 +315,18 @@ class IdentityUserDto {
 
 
 
+  @JsonKey(
+    
+    name: r'entityVersion',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final int? entityVersion;
+
+
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is IdentityUserDto &&
      other.extraProperties == extraProperties &&
@@ -335,7 +349,8 @@ class IdentityUserDto {
      other.isActive == isActive &&
      other.lockoutEnabled == lockoutEnabled &&
      other.lockoutEnd == lockoutEnd &&
-     other.concurrencyStamp == concurrencyStamp;
+     other.concurrencyStamp == concurrencyStamp &&
+     other.entityVersion == entityVersion;
 
   @override
   int get hashCode =>
@@ -359,7 +374,8 @@ class IdentityUserDto {
     isActive.hashCode +
     lockoutEnabled.hashCode +
     lockoutEnd.hashCode +
-    concurrencyStamp.hashCode;
+    concurrencyStamp.hashCode +
+    entityVersion.hashCode;
 
   factory IdentityUserDto.fromJson(Map<String, dynamic> json) => _$IdentityUserDtoFromJson(json);
 

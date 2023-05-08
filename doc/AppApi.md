@@ -15,9 +15,11 @@ Method | HTTP request | Description
 [**apiAppAppIdDelete**](AppApi.md#apiappappiddelete) | **DELETE** /api/app/app/{id} | 
 [**apiAppAppIdGet**](AppApi.md#apiappappidget) | **GET** /api/app/app/{id} | 
 [**apiAppAppIdPut**](AppApi.md#apiappappidput) | **PUT** /api/app/app/{id} | 
+[**apiAppAppIdRunStatePut**](AppApi.md#apiappappidrunstateput) | **PUT** /api/app/app/{id}/run-state | 
 [**apiAppAppIdWithUserGet**](AppApi.md#apiappappidwithuserget) | **GET** /api/app/app/{id}/with-user | 
 [**apiAppAppPost**](AppApi.md#apiappapppost) | **POST** /api/app/app | 
 [**apiAppAppPublicGet**](AppApi.md#apiappapppublicget) | **GET** /api/app/app/public | 
+[**apiAppAppRunPost**](AppApi.md#apiappapprunpost) | **POST** /api/app/app/run | 
 [**apiAppAppUploadCredentialsGet**](AppApi.md#apiappappuploadcredentialsget) | **GET** /api/app/app/upload-credentials | 
 [**apiAppAppWithUserGet**](AppApi.md#apiappappwithuserget) | **GET** /api/app/app/with-user | 
 
@@ -287,6 +289,51 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **apiAppAppIdRunStatePut**
+> AppRunRecordDto apiAppAppIdRunStatePut(id, body)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getAppApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final AppRunRecordUpdateDto body = ; // AppRunRecordUpdateDto | 
+
+try {
+    final response = api.apiAppAppIdRunStatePut(id, body);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AppApi->apiAppAppIdRunStatePut: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+ **body** | [**AppRunRecordUpdateDto**](AppRunRecordUpdateDto.md)|  | [optional] 
+
+### Return type
+
+[**AppRunRecordDto**](AppRunRecordDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **apiAppAppIdWithUserGet**
 > AppWithUserDto apiAppAppIdWithUserGet(id)
 
@@ -416,6 +463,49 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **apiAppAppRunPost**
+> AppRunRecordDto apiAppAppRunPost(body)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getAppApi();
+final AppRunDto body = ; // AppRunDto | 
+
+try {
+    final response = api.apiAppAppRunPost(body);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AppApi->apiAppAppRunPost: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**AppRunDto**](AppRunDto.md)|  | [optional] 
+
+### Return type
+
+[**AppRunRecordDto**](AppRunRecordDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

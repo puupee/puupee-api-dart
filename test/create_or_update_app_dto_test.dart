@@ -87,6 +87,11 @@ void main() {
       // TODO
     });
 
+    // String specJsonSchema
+    test('to test the property `specJsonSchema`', () async {
+      // TODO
+    });
+
     // bool isPublished
     test('to test the property `isPublished`', () async {
       // TODO

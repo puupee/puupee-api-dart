@@ -9,7 +9,7 @@ import 'dart:convert';
 import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:puupee_api_client/src/model/anv2.dart';
+import 'package:puupee_api_client/src/model/apple_notificaion_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_get_subscription_order_dto.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 import 'package:puupee_api_client/src/model/subscription_dto.dart';
@@ -38,7 +38,7 @@ class SubscriptionApi {
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiAppSubscriptionAppleNotificationsPost({ 
-    Anv2? body,
+    AppleNotificaionDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,

@@ -72,6 +72,8 @@ class AppDto {
 
      this.subscriptionPlatforms,
 
+     this.specJsonSchema,
+
      this.latestReleases,
 
      this.creator,
@@ -383,6 +385,18 @@ class AppDto {
 
   @JsonKey(
     
+    name: r'specJsonSchema',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? specJsonSchema;
+
+
+
+  @JsonKey(
+    
     name: r'latestReleases',
     required: false,
     includeIfNull: false
@@ -456,6 +470,7 @@ class AppDto {
      other.businessUrl == businessUrl &&
      other.subscriptionEnabled == subscriptionEnabled &&
      other.subscriptionPlatforms == subscriptionPlatforms &&
+     other.specJsonSchema == specJsonSchema &&
      other.latestReleases == latestReleases &&
      other.creator == creator &&
      other.features == features &&
@@ -488,6 +503,7 @@ class AppDto {
     businessUrl.hashCode +
     subscriptionEnabled.hashCode +
     subscriptionPlatforms.hashCode +
+    specJsonSchema.hashCode +
     latestReleases.hashCode +
     creator.hashCode +
     features.hashCode +

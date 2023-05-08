@@ -38,6 +38,7 @@ SubscriptionOrderDto _$SubscriptionOrderDtoFromJson(
                       v as Map<String, dynamic>)),
           appId: $checkedConvert('appId', (v) => v as String?),
           pricingId: $checkedConvert('pricingId', (v) => v as String?),
+          productId: $checkedConvert('productId', (v) => v as String?),
         );
         return val;
       },
@@ -66,5 +67,6 @@ Map<String, dynamic> _$SubscriptionOrderDtoToJson(
   writeNotNull('status', instance.status?.toJson());
   writeNotNull('appId', instance.appId);
   writeNotNull('pricingId', instance.pricingId);
+  writeNotNull('productId', instance.productId);
   return val;
 }

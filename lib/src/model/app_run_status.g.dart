@@ -1,23 +1,25 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'anv2.dart';
+part of 'app_run_status.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Anv2 _$Anv2FromJson(Map<String, dynamic> json) => $checkedCreate(
-      'Anv2',
+AppRunStatus _$AppRunStatusFromJson(Map<String, dynamic> json) =>
+    $checkedCreate(
+      'AppRunStatus',
       json,
       ($checkedConvert) {
-        final val = Anv2(
-          signedPayload: $checkedConvert('signedPayload', (v) => v as String?),
+        final val = AppRunStatus(
+          name: $checkedConvert('name', (v) => v as String?),
+          value: $checkedConvert('value', (v) => v as String?),
         );
         return val;
       },
     );
 
-Map<String, dynamic> _$Anv2ToJson(Anv2 instance) {
+Map<String, dynamic> _$AppRunStatusToJson(AppRunStatus instance) {
   final val = <String, dynamic>{};
 
   void writeNotNull(String key, dynamic value) {
@@ -26,6 +28,7 @@ Map<String, dynamic> _$Anv2ToJson(Anv2 instance) {
     }
   }
 
-  writeNotNull('signedPayload', instance.signedPayload);
+  writeNotNull('name', instance.name);
+  writeNotNull('value', instance.value);
   return val;
 }

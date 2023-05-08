@@ -44,6 +44,7 @@ IdentityUserDto _$IdentityUserDtoFromJson(Map<String, dynamic> json) =>
               (v) => v == null ? null : DateTime.parse(v as String)),
           concurrencyStamp:
               $checkedConvert('concurrencyStamp', (v) => v as String?),
+          entityVersion: $checkedConvert('entityVersion', (v) => v as int?),
         );
         return val;
       },
@@ -80,5 +81,6 @@ Map<String, dynamic> _$IdentityUserDtoToJson(IdentityUserDto instance) {
   writeNotNull('lockoutEnabled', instance.lockoutEnabled);
   writeNotNull('lockoutEnd', instance.lockoutEnd?.toIso8601String());
   writeNotNull('concurrencyStamp', instance.concurrencyStamp);
+  writeNotNull('entityVersion', instance.entityVersion);
   return val;
 }

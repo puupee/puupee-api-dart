@@ -37,6 +37,11 @@ void main() {
       // TODO
     });
 
+    //Future<AppRunRecordDto> apiAppAppIdRunStatePut(String id, { AppRunRecordUpdateDto body }) async
+    test('test apiAppAppIdRunStatePut', () async {
+      // TODO
+    });
+
     //Future<AppWithUserDto> apiAppAppIdWithUserGet(String id) async
     test('test apiAppAppIdWithUserGet', () async {
       // TODO
@@ -49,6 +54,11 @@ void main() {
 
     //Future<AppDtoPagedResultDto> apiAppAppPublicGet({ String type, String developerAccount, String currentAppName }) async
     test('test apiAppAppPublicGet', () async {
+      // TODO
+    });
+
+    //Future<AppRunRecordDto> apiAppAppRunPost({ AppRunDto body }) async
+    test('test apiAppAppRunPost', () async {
       // TODO
     });
 

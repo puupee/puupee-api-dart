@@ -112,5 +112,10 @@ void main() {
       // TODO
     });
 
+    // int entityVersion
+    test('to test the property `entityVersion`', () async {
+      // TODO
+    });
+
   });
 }

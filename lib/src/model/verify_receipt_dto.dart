@@ -34,13 +34,13 @@ class VerifyReceiptDto {
 
      this.deletionTime,
 
-     this.orderId,
+    required  this.orderId,
 
-     this.receiptData,
+    required  this.receiptData,
 
-     this.platform,
+    required  this.platform,
 
-     this.deviceToken,
+    required  this.deviceToken,
   });
 
   @JsonKey(
@@ -142,48 +142,48 @@ class VerifyReceiptDto {
   @JsonKey(
     
     name: r'orderId',
-    required: false,
+    required: true,
     includeIfNull: false
   )
 
 
-  final String? orderId;
+  final String orderId;
 
 
 
   @JsonKey(
     
     name: r'receiptData',
-    required: false,
+    required: true,
     includeIfNull: false
   )
 
 
-  final String? receiptData;
+  final String receiptData;
 
 
 
   @JsonKey(
     
     name: r'platform',
-    required: false,
+    required: true,
     includeIfNull: false
   )
 
 
-  final String? platform;
+  final String platform;
 
 
 
   @JsonKey(
     
     name: r'deviceToken',
-    required: false,
+    required: true,
     includeIfNull: false
   )
 
 
-  final String? deviceToken;
+  final String deviceToken;
 
 
 

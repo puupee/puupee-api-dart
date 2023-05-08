@@ -17,7 +17,7 @@ void main() {
       // TODO
     });
 
-    // int status
+    // AppleVerifyRecceiptStatus status
     test('to test the property `status`', () async {
       // TODO
     });
