@@ -47,7 +47,7 @@ void main() {
       // TODO
     });
 
-    // AppRunStatus status
+    // String status
     test('to test the property `status`', () async {
       // TODO
     });
@@ -69,6 +69,16 @@ void main() {
 
     // String output
     test('to test the property `output`', () async {
+      // TODO
+    });
+
+    // String workerId
+    test('to test the property `workerId`', () async {
+      // TODO
+    });
+
+    // String workerName
+    test('to test the property `workerName`', () async {
       // TODO
     });
 

@@ -77,18 +77,28 @@ void main() {
       // TODO
     });
 
-    // bool subscriptionEnabled
-    test('to test the property `subscriptionEnabled`', () async {
-      // TODO
-    });
-
     // String subscriptionPlatforms
     test('to test the property `subscriptionPlatforms`', () async {
       // TODO
     });
 
+    // String freePlatforms
+    test('to test the property `freePlatforms`', () async {
+      // TODO
+    });
+
     // String specJsonSchema
     test('to test the property `specJsonSchema`', () async {
+      // TODO
+    });
+
+    // int defaultStorageSize
+    test('to test the property `defaultStorageSize`', () async {
+      // TODO
+    });
+
+    // int defaultSingleFileMaxSize
+    test('to test the property `defaultSingleFileMaxSize`', () async {
       // TODO
     });
 

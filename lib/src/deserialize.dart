@@ -11,7 +11,6 @@ import 'package:puupee_api_client/src/model/app_release_dto_paged_result_dto.dar
 import 'package:puupee_api_client/src/model/app_run_dto.dart';
 import 'package:puupee_api_client/src/model/app_run_record_dto.dart';
 import 'package:puupee_api_client/src/model/app_run_record_update_dto.dart';
-import 'package:puupee_api_client/src/model/app_run_status.dart';
 import 'package:puupee_api_client/src/model/app_sdk_dto.dart';
 import 'package:puupee_api_client/src/model/app_theme.dart';
 import 'package:puupee_api_client/src/model/app_user_score_dto.dart';
@@ -224,8 +223,6 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return AppRunRecordDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppRunRecordUpdateDto':
           return AppRunRecordUpdateDto.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'AppRunStatus':
-          return AppRunStatus.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppSdkDto':
           return AppSdkDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppTheme':

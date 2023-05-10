@@ -171,7 +171,7 @@ class AppRunDto {
   )
 
 
-  final Map<String, Object>? args;
+  final Object? args;
 
 
 
@@ -183,7 +183,7 @@ class AppRunDto {
   )
 
 
-  final Map<String, Object>? envs;
+  final Object? envs;
 
 
 

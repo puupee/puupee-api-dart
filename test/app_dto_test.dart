@@ -122,13 +122,13 @@ void main() {
       // TODO
     });
 
-    // bool subscriptionEnabled
-    test('to test the property `subscriptionEnabled`', () async {
+    // String subscriptionPlatforms
+    test('to test the property `subscriptionPlatforms`', () async {
       // TODO
     });
 
-    // String subscriptionPlatforms
-    test('to test the property `subscriptionPlatforms`', () async {
+    // String freePlatforms
+    test('to test the property `freePlatforms`', () async {
       // TODO
     });
 

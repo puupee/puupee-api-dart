@@ -25,7 +25,6 @@ doc/AppReleaseDtoPagedResultDto.md
 doc/AppRunDto.md
 doc/AppRunRecordDto.md
 doc/AppRunRecordUpdateDto.md
-doc/AppRunStatus.md
 doc/AppSdkApi.md
 doc/AppSdkDto.md
 doc/AppTheme.md
@@ -279,7 +278,6 @@ lib/src/model/app_release_dto_paged_result_dto.dart
 lib/src/model/app_run_dto.dart
 lib/src/model/app_run_record_dto.dart
 lib/src/model/app_run_record_update_dto.dart
-lib/src/model/app_run_status.dart
 lib/src/model/app_sdk_dto.dart
 lib/src/model/app_theme.dart
 lib/src/model/app_theme_mode.dart
@@ -474,7 +472,6 @@ test/app_release_dto_test.dart
 test/app_run_dto_test.dart
 test/app_run_record_dto_test.dart
 test/app_run_record_update_dto_test.dart
-test/app_run_status_test.dart
 test/app_sdk_api_test.dart
 test/app_sdk_dto_test.dart
 test/app_theme_mode_test.dart

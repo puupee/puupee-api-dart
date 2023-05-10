@@ -23,7 +23,7 @@ class UserStorageDto {
 
      this.displayName,
 
-     this.maxSize,
+     this.size,
 
      this.currentSize,
 
@@ -60,13 +60,13 @@ class UserStorageDto {
 
   @JsonKey(
     
-    name: r'maxSize',
+    name: r'size',
     required: false,
     includeIfNull: false
   )
 
 
-  final int? maxSize;
+  final int? size;
 
 
 
@@ -122,7 +122,7 @@ class UserStorageDto {
   bool operator ==(Object other) => identical(this, other) || other is UserStorageDto &&
      other.name == name &&
      other.displayName == displayName &&
-     other.maxSize == maxSize &&
+     other.size == size &&
      other.currentSize == currentSize &&
      other.totalCount == totalCount &&
      other.singleFileMaxSize == singleFileMaxSize &&
@@ -132,7 +132,7 @@ class UserStorageDto {
   int get hashCode =>
     name.hashCode +
     displayName.hashCode +
-    maxSize.hashCode +
+    size.hashCode +
     currentSize.hashCode +
     totalCount.hashCode +
     singleFileMaxSize.hashCode +

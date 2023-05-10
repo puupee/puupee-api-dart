@@ -25,16 +25,8 @@ AppRunDto _$AppRunDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
               (v) => v == null ? null : DateTime.parse(v as String)),
           appId: $checkedConvert('appId', (v) => v as String?),
           appName: $checkedConvert('appName', (v) => v as String?),
-          args: $checkedConvert(
-              'args',
-              (v) => (v as Map<String, dynamic>?)?.map(
-                    (k, e) => MapEntry(k, e as Object),
-                  )),
-          envs: $checkedConvert(
-              'envs',
-              (v) => (v as Map<String, dynamic>?)?.map(
-                    (k, e) => MapEntry(k, e as Object),
-                  )),
+          args: $checkedConvert('args', (v) => v),
+          envs: $checkedConvert('envs', (v) => v),
         );
         return val;
       },

@@ -29,12 +29,15 @@ CreateOrUpdateAppDto _$CreateOrUpdateAppDtoFromJson(
           businessDomain:
               $checkedConvert('businessDomain', (v) => v as String?),
           businessUrl: $checkedConvert('businessUrl', (v) => v as String?),
-          subscriptionEnabled:
-              $checkedConvert('subscriptionEnabled', (v) => v as bool?),
           subscriptionPlatforms:
               $checkedConvert('subscriptionPlatforms', (v) => v as String?),
+          freePlatforms: $checkedConvert('freePlatforms', (v) => v as String?),
           specJsonSchema:
               $checkedConvert('specJsonSchema', (v) => v as String?),
+          defaultStorageSize:
+              $checkedConvert('defaultStorageSize', (v) => v as int?),
+          defaultSingleFileMaxSize:
+              $checkedConvert('defaultSingleFileMaxSize', (v) => v as int?),
           isPublished: $checkedConvert('isPublished', (v) => v as bool?),
           features: $checkedConvert(
               'features',
@@ -82,9 +85,11 @@ Map<String, dynamic> _$CreateOrUpdateAppDtoToJson(
   writeNotNull('webhookUrl', instance.webhookUrl);
   writeNotNull('businessDomain', instance.businessDomain);
   writeNotNull('businessUrl', instance.businessUrl);
-  writeNotNull('subscriptionEnabled', instance.subscriptionEnabled);
   writeNotNull('subscriptionPlatforms', instance.subscriptionPlatforms);
+  writeNotNull('freePlatforms', instance.freePlatforms);
   writeNotNull('specJsonSchema', instance.specJsonSchema);
+  writeNotNull('defaultStorageSize', instance.defaultStorageSize);
+  writeNotNull('defaultSingleFileMaxSize', instance.defaultSingleFileMaxSize);
   writeNotNull('isPublished', instance.isPublished);
   writeNotNull('features', instance.features?.map((e) => e.toJson()).toList());
   writeNotNull('sdks', instance.sdks?.map((e) => e.toJson()).toList());

@@ -57,12 +57,12 @@ void main() {
       // TODO
     });
 
-    // Map<String, Object> args
+    // Object args
     test('to test the property `args`', () async {
       // TODO
     });
 
-    // Map<String, Object> envs
+    // Object envs
     test('to test the property `envs`', () async {
       // TODO
     });

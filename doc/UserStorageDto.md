@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | [optional] 
 **displayName** | **String** |  | [optional] 
-**maxSize** | **int** |  | [optional] 
+**size** | **int** |  | [optional] 
 **currentSize** | **int** |  | [optional] 
 **totalCount** | **int** |  | [optional] 
 **singleFileMaxSize** | **int** |  | [optional] 

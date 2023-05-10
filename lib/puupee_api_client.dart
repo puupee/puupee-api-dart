@@ -58,7 +58,6 @@ export 'package:puupee_api_client/src/model/app_release_dto_paged_result_dto.dar
 export 'package:puupee_api_client/src/model/app_run_dto.dart';
 export 'package:puupee_api_client/src/model/app_run_record_dto.dart';
 export 'package:puupee_api_client/src/model/app_run_record_update_dto.dart';
-export 'package:puupee_api_client/src/model/app_run_status.dart';
 export 'package:puupee_api_client/src/model/app_sdk_dto.dart';
 export 'package:puupee_api_client/src/model/app_theme.dart';
 export 'package:puupee_api_client/src/model/app_theme_mode.dart';

@@ -49,11 +49,15 @@ class CreateOrUpdateAppDto {
 
      this.businessUrl,
 
-     this.subscriptionEnabled,
-
      this.subscriptionPlatforms,
 
+     this.freePlatforms,
+
      this.specJsonSchema,
+
+     this.defaultStorageSize,
+
+     this.defaultSingleFileMaxSize,
 
      this.isPublished,
 
@@ -234,18 +238,6 @@ class CreateOrUpdateAppDto {
 
   @JsonKey(
     
-    name: r'subscriptionEnabled',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  final bool? subscriptionEnabled;
-
-
-
-  @JsonKey(
-    
     name: r'subscriptionPlatforms',
     required: false,
     includeIfNull: false
@@ -258,6 +250,18 @@ class CreateOrUpdateAppDto {
 
   @JsonKey(
     
+    name: r'freePlatforms',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? freePlatforms;
+
+
+
+  @JsonKey(
+    
     name: r'specJsonSchema',
     required: false,
     includeIfNull: false
@@ -265,6 +269,30 @@ class CreateOrUpdateAppDto {
 
 
   final String? specJsonSchema;
+
+
+
+  @JsonKey(
+    
+    name: r'defaultStorageSize',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final int? defaultStorageSize;
+
+
+
+  @JsonKey(
+    
+    name: r'defaultSingleFileMaxSize',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final int? defaultSingleFileMaxSize;
 
 
 
@@ -332,9 +360,11 @@ class CreateOrUpdateAppDto {
      other.webhookUrl == webhookUrl &&
      other.businessDomain == businessDomain &&
      other.businessUrl == businessUrl &&
-     other.subscriptionEnabled == subscriptionEnabled &&
      other.subscriptionPlatforms == subscriptionPlatforms &&
+     other.freePlatforms == freePlatforms &&
      other.specJsonSchema == specJsonSchema &&
+     other.defaultStorageSize == defaultStorageSize &&
+     other.defaultSingleFileMaxSize == defaultSingleFileMaxSize &&
      other.isPublished == isPublished &&
      other.features == features &&
      other.sdks == sdks &&
@@ -356,9 +386,11 @@ class CreateOrUpdateAppDto {
     webhookUrl.hashCode +
     businessDomain.hashCode +
     businessUrl.hashCode +
-    subscriptionEnabled.hashCode +
     subscriptionPlatforms.hashCode +
+    freePlatforms.hashCode +
     specJsonSchema.hashCode +
+    defaultStorageSize.hashCode +
+    defaultSingleFileMaxSize.hashCode +
     isPublished.hashCode +
     features.hashCode +
     sdks.hashCode +

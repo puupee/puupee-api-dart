@@ -16,11 +16,13 @@ Name | Type | Description | Notes
 **isDeleted** | **bool** |  | [optional] 
 **deleterId** | **String** |  | [optional] 
 **deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
-**status** | [**AppRunStatus**](AppRunStatus.md) |  | [optional] 
+**status** | **String** |  | 
 **result** | **String** |  | [optional] 
 **error** | **String** |  | [optional] 
 **finishAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **output** | **String** |  | [optional] 
+**workerId** | **String** |  | 
+**workerName** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:puupee_api_client/src/model/app_run_status.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'app_run_record_dto.g.dart';
@@ -52,6 +51,10 @@ class AppRunRecordDto {
      this.finishAt,
 
      this.output,
+
+     this.workerId,
+
+     this.workerName,
   });
 
   @JsonKey(
@@ -182,7 +185,7 @@ class AppRunRecordDto {
   )
 
 
-  final Map<String, Object>? args;
+  final Object? args;
 
 
 
@@ -194,7 +197,7 @@ class AppRunRecordDto {
   )
 
 
-  final Map<String, Object>? envs;
+  final Object? envs;
 
 
 
@@ -206,7 +209,7 @@ class AppRunRecordDto {
   )
 
 
-  final AppRunStatus? status;
+  final String? status;
 
 
 
@@ -258,6 +261,30 @@ class AppRunRecordDto {
 
 
 
+  @JsonKey(
+    
+    name: r'workerId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? workerId;
+
+
+
+  @JsonKey(
+    
+    name: r'workerName',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? workerName;
+
+
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is AppRunRecordDto &&
      other.id == id &&
@@ -276,7 +303,9 @@ class AppRunRecordDto {
      other.result == result &&
      other.error == error &&
      other.finishAt == finishAt &&
-     other.output == output;
+     other.output == output &&
+     other.workerId == workerId &&
+     other.workerName == workerName;
 
   @override
   int get hashCode =>
@@ -296,7 +325,9 @@ class AppRunRecordDto {
     result.hashCode +
     error.hashCode +
     finishAt.hashCode +
-    output.hashCode;
+    output.hashCode +
+    workerId.hashCode +
+    workerName.hashCode;
 
   factory AppRunRecordDto.fromJson(Map<String, dynamic> json) => _$AppRunRecordDtoFromJson(json);
 

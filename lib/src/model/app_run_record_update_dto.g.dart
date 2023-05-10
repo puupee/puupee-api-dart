@@ -12,6 +12,10 @@ AppRunRecordUpdateDto _$AppRunRecordUpdateDtoFromJson(
       'AppRunRecordUpdateDto',
       json,
       ($checkedConvert) {
+        $checkKeys(
+          json,
+          requiredKeys: const ['status', 'workerId', 'workerName'],
+        );
         final val = AppRunRecordUpdateDto(
           id: $checkedConvert('id', (v) => v as String?),
           creationTime: $checkedConvert('creationTime',
@@ -25,16 +29,14 @@ AppRunRecordUpdateDto _$AppRunRecordUpdateDtoFromJson(
           deleterId: $checkedConvert('deleterId', (v) => v as String?),
           deletionTime: $checkedConvert('deletionTime',
               (v) => v == null ? null : DateTime.parse(v as String)),
-          status: $checkedConvert(
-              'status',
-              (v) => v == null
-                  ? null
-                  : AppRunStatus.fromJson(v as Map<String, dynamic>)),
+          status: $checkedConvert('status', (v) => v as String),
           result: $checkedConvert('result', (v) => v as String?),
           error: $checkedConvert('error', (v) => v as String?),
           finishAt: $checkedConvert('finishAt',
               (v) => v == null ? null : DateTime.parse(v as String)),
           output: $checkedConvert('output', (v) => v as String?),
+          workerId: $checkedConvert('workerId', (v) => v as String),
+          workerName: $checkedConvert('workerName', (v) => v as String),
         );
         return val;
       },
@@ -59,10 +61,12 @@ Map<String, dynamic> _$AppRunRecordUpdateDtoToJson(
   writeNotNull('isDeleted', instance.isDeleted);
   writeNotNull('deleterId', instance.deleterId);
   writeNotNull('deletionTime', instance.deletionTime?.toIso8601String());
-  writeNotNull('status', instance.status?.toJson());
+  val['status'] = instance.status;
   writeNotNull('result', instance.result);
   writeNotNull('error', instance.error);
   writeNotNull('finishAt', instance.finishAt?.toIso8601String());
   writeNotNull('output', instance.output);
+  val['workerId'] = instance.workerId;
+  val['workerName'] = instance.workerName;
   return val;
 }

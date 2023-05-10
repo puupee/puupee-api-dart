@@ -68,9 +68,9 @@ class AppDto {
 
      this.businessUrl,
 
-     this.subscriptionEnabled,
-
      this.subscriptionPlatforms,
+
+     this.freePlatforms,
 
      this.specJsonSchema,
 
@@ -361,18 +361,6 @@ class AppDto {
 
   @JsonKey(
     
-    name: r'subscriptionEnabled',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  final bool? subscriptionEnabled;
-
-
-
-  @JsonKey(
-    
     name: r'subscriptionPlatforms',
     required: false,
     includeIfNull: false
@@ -380,6 +368,18 @@ class AppDto {
 
 
   final String? subscriptionPlatforms;
+
+
+
+  @JsonKey(
+    
+    name: r'freePlatforms',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  final String? freePlatforms;
 
 
 
@@ -468,8 +468,8 @@ class AppDto {
      other.webhookUrl == webhookUrl &&
      other.businessDomain == businessDomain &&
      other.businessUrl == businessUrl &&
-     other.subscriptionEnabled == subscriptionEnabled &&
      other.subscriptionPlatforms == subscriptionPlatforms &&
+     other.freePlatforms == freePlatforms &&
      other.specJsonSchema == specJsonSchema &&
      other.latestReleases == latestReleases &&
      other.creator == creator &&
@@ -501,8 +501,8 @@ class AppDto {
     webhookUrl.hashCode +
     businessDomain.hashCode +
     businessUrl.hashCode +
-    subscriptionEnabled.hashCode +
     subscriptionPlatforms.hashCode +
+    freePlatforms.hashCode +
     specJsonSchema.hashCode +
     latestReleases.hashCode +
     creator.hashCode +

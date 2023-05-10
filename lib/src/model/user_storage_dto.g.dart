@@ -14,7 +14,7 @@ UserStorageDto _$UserStorageDtoFromJson(Map<String, dynamic> json) =>
         final val = UserStorageDto(
           name: $checkedConvert('name', (v) => v as String?),
           displayName: $checkedConvert('displayName', (v) => v as String?),
-          maxSize: $checkedConvert('maxSize', (v) => v as int?),
+          size: $checkedConvert('size', (v) => v as int?),
           currentSize: $checkedConvert('currentSize', (v) => v as int?),
           totalCount: $checkedConvert('totalCount', (v) => v as int?),
           singleFileMaxSize:
@@ -41,7 +41,7 @@ Map<String, dynamic> _$UserStorageDtoToJson(UserStorageDto instance) {
 
   writeNotNull('name', instance.name);
   writeNotNull('displayName', instance.displayName);
-  writeNotNull('maxSize', instance.maxSize);
+  writeNotNull('size', instance.size);
   writeNotNull('currentSize', instance.currentSize);
   writeNotNull('totalCount', instance.totalCount);
   writeNotNull('singleFileMaxSize', instance.singleFileMaxSize);

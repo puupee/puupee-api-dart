@@ -41,10 +41,9 @@ AppWithUserDto _$AppWithUserDtoFromJson(Map<String, dynamic> json) =>
           businessDomain:
               $checkedConvert('businessDomain', (v) => v as String?),
           businessUrl: $checkedConvert('businessUrl', (v) => v as String?),
-          subscriptionEnabled:
-              $checkedConvert('subscriptionEnabled', (v) => v as bool?),
           subscriptionPlatforms:
               $checkedConvert('subscriptionPlatforms', (v) => v as String?),
+          freePlatforms: $checkedConvert('freePlatforms', (v) => v as String?),
           specJsonSchema:
               $checkedConvert('specJsonSchema', (v) => v as String?),
           latestReleases: $checkedConvert(
@@ -108,8 +107,8 @@ Map<String, dynamic> _$AppWithUserDtoToJson(AppWithUserDto instance) {
   writeNotNull('webhookUrl', instance.webhookUrl);
   writeNotNull('businessDomain', instance.businessDomain);
   writeNotNull('businessUrl', instance.businessUrl);
-  writeNotNull('subscriptionEnabled', instance.subscriptionEnabled);
   writeNotNull('subscriptionPlatforms', instance.subscriptionPlatforms);
+  writeNotNull('freePlatforms', instance.freePlatforms);
   writeNotNull('specJsonSchema', instance.specJsonSchema);
   writeNotNull('latestReleases',
       instance.latestReleases?.map((e) => e.toJson()).toList());

@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:puupee_api_client/src/model/app_run_status.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'app_run_record_update_dto.g.dart';
@@ -35,7 +34,7 @@ class AppRunRecordUpdateDto {
 
      this.deletionTime,
 
-     this.status,
+    required  this.status,
 
      this.result,
 
@@ -44,6 +43,10 @@ class AppRunRecordUpdateDto {
      this.finishAt,
 
      this.output,
+
+    required  this.workerId,
+
+    required  this.workerName,
   });
 
   @JsonKey(
@@ -145,12 +148,12 @@ class AppRunRecordUpdateDto {
   @JsonKey(
     
     name: r'status',
-    required: false,
+    required: true,
     includeIfNull: false
   )
 
 
-  final AppRunStatus? status;
+  final String status;
 
 
 
@@ -202,6 +205,30 @@ class AppRunRecordUpdateDto {
 
 
 
+  @JsonKey(
+    
+    name: r'workerId',
+    required: true,
+    includeIfNull: false
+  )
+
+
+  final String workerId;
+
+
+
+  @JsonKey(
+    
+    name: r'workerName',
+    required: true,
+    includeIfNull: false
+  )
+
+
+  final String workerName;
+
+
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is AppRunRecordUpdateDto &&
      other.id == id &&
@@ -216,7 +243,9 @@ class AppRunRecordUpdateDto {
      other.result == result &&
      other.error == error &&
      other.finishAt == finishAt &&
-     other.output == output;
+     other.output == output &&
+     other.workerId == workerId &&
+     other.workerName == workerName;
 
   @override
   int get hashCode =>
@@ -232,7 +261,9 @@ class AppRunRecordUpdateDto {
     result.hashCode +
     error.hashCode +
     finishAt.hashCode +
-    output.hashCode;
+    output.hashCode +
+    workerId.hashCode +
+    workerName.hashCode;
 
   factory AppRunRecordUpdateDto.fromJson(Map<String, dynamic> json) => _$AppRunRecordUpdateDtoFromJson(json);
 

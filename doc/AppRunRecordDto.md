@@ -18,13 +18,15 @@ Name | Type | Description | Notes
 **deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
 **appId** | **String** |  | [optional] 
 **appName** | **String** |  | [optional] 
-**args** | **Map&lt;String, Object&gt;** |  | [optional] 
-**envs** | **Map&lt;String, Object&gt;** |  | [optional] 
-**status** | [**AppRunStatus**](AppRunStatus.md) |  | [optional] 
+**args** | **Object** |  | [optional] 
+**envs** | **Object** |  | [optional] 
+**status** | **String** |  | [optional] 
 **result** | **String** |  | [optional] 
 **error** | **String** |  | [optional] 
 **finishAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **output** | **String** |  | [optional] 
+**workerId** | **String** |  | [optional] 
+**workerName** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

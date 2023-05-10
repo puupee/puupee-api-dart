@@ -26,26 +26,16 @@ AppRunRecordDto _$AppRunRecordDtoFromJson(Map<String, dynamic> json) =>
               (v) => v == null ? null : DateTime.parse(v as String)),
           appId: $checkedConvert('appId', (v) => v as String?),
           appName: $checkedConvert('appName', (v) => v as String?),
-          args: $checkedConvert(
-              'args',
-              (v) => (v as Map<String, dynamic>?)?.map(
-                    (k, e) => MapEntry(k, e as Object),
-                  )),
-          envs: $checkedConvert(
-              'envs',
-              (v) => (v as Map<String, dynamic>?)?.map(
-                    (k, e) => MapEntry(k, e as Object),
-                  )),
-          status: $checkedConvert(
-              'status',
-              (v) => v == null
-                  ? null
-                  : AppRunStatus.fromJson(v as Map<String, dynamic>)),
+          args: $checkedConvert('args', (v) => v),
+          envs: $checkedConvert('envs', (v) => v),
+          status: $checkedConvert('status', (v) => v as String?),
           result: $checkedConvert('result', (v) => v as String?),
           error: $checkedConvert('error', (v) => v as String?),
           finishAt: $checkedConvert('finishAt',
               (v) => v == null ? null : DateTime.parse(v as String)),
           output: $checkedConvert('output', (v) => v as String?),
+          workerId: $checkedConvert('workerId', (v) => v as String?),
+          workerName: $checkedConvert('workerName', (v) => v as String?),
         );
         return val;
       },
@@ -73,10 +63,12 @@ Map<String, dynamic> _$AppRunRecordDtoToJson(AppRunRecordDto instance) {
   writeNotNull('appName', instance.appName);
   writeNotNull('args', instance.args);
   writeNotNull('envs', instance.envs);
-  writeNotNull('status', instance.status?.toJson());
+  writeNotNull('status', instance.status);
   writeNotNull('result', instance.result);
   writeNotNull('error', instance.error);
   writeNotNull('finishAt', instance.finishAt?.toIso8601String());
   writeNotNull('output', instance.output);
+  writeNotNull('workerId', instance.workerId);
+  writeNotNull('workerName', instance.workerName);
   return val;
 }

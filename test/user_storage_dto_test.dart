@@ -17,8 +17,8 @@ void main() {
       // TODO
     });
 
-    // int maxSize
-    test('to test the property `maxSize`', () async {
+    // int size
+    test('to test the property `size`', () async {
       // TODO
     });
 
