@@ -31,7 +31,7 @@ class RemoteServiceValidationErrorInfo {
   )
 
 
-  final String? message;
+  String? message;
 
 
 
@@ -43,7 +43,7 @@ class RemoteServiceValidationErrorInfo {
   )
 
 
-  final List<String>? members;
+  List<String>? members;
 
 
 

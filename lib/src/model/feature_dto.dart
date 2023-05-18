@@ -45,7 +45,7 @@ class FeatureDto {
   )
 
 
-  final String? name;
+  String? name;
 
 
 
@@ -57,7 +57,7 @@ class FeatureDto {
   )
 
 
-  final String? displayName;
+  String? displayName;
 
 
 
@@ -69,7 +69,7 @@ class FeatureDto {
   )
 
 
-  final String? value;
+  String? value;
 
 
 
@@ -81,7 +81,7 @@ class FeatureDto {
   )
 
 
-  final FeatureProviderDto? provider;
+  FeatureProviderDto? provider;
 
 
 
@@ -93,7 +93,7 @@ class FeatureDto {
   )
 
 
-  final String? description;
+  String? description;
 
 
 
@@ -105,7 +105,7 @@ class FeatureDto {
   )
 
 
-  final IStringValueType? valueType;
+  IStringValueType? valueType;
 
 
 
@@ -117,7 +117,7 @@ class FeatureDto {
   )
 
 
-  final int? depth;
+  int? depth;
 
 
 
@@ -129,7 +129,7 @@ class FeatureDto {
   )
 
 
-  final String? parentName;
+  String? parentName;
 
 
 

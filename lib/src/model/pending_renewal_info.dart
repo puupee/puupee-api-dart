@@ -47,7 +47,7 @@ class PendingRenewalInfo {
   )
 
 
-  final String? autoRenewProductId;
+  String? autoRenewProductId;
 
 
 
@@ -59,7 +59,7 @@ class PendingRenewalInfo {
   )
 
 
-  final String? autoRenewStatus;
+  String? autoRenewStatus;
 
 
 
@@ -71,7 +71,7 @@ class PendingRenewalInfo {
   )
 
 
-  final String? isInBillingRetryPeriod;
+  String? isInBillingRetryPeriod;
 
 
 
@@ -83,7 +83,7 @@ class PendingRenewalInfo {
   )
 
 
-  final String? originalTransactionId;
+  String? originalTransactionId;
 
 
 
@@ -95,7 +95,7 @@ class PendingRenewalInfo {
   )
 
 
-  final String? productId;
+  String? productId;
 
 
 
@@ -107,7 +107,7 @@ class PendingRenewalInfo {
   )
 
 
-  final String? expirationIntent;
+  String? expirationIntent;
 
 
 
@@ -119,7 +119,7 @@ class PendingRenewalInfo {
   )
 
 
-  final String? priceConsentStatus;
+  String? priceConsentStatus;
 
 
 
@@ -131,7 +131,7 @@ class PendingRenewalInfo {
   )
 
 
-  final String? gracePeriodExpiresDate;
+  String? gracePeriodExpiresDate;
 
 
 
@@ -143,7 +143,7 @@ class PendingRenewalInfo {
   )
 
 
-  final String? gracePeriodExpiresDateMs;
+  String? gracePeriodExpiresDateMs;
 
 
 
@@ -155,7 +155,7 @@ class PendingRenewalInfo {
   )
 
 
-  final String? gracePeriodExpiresDatePst;
+  String? gracePeriodExpiresDatePst;
 
 
 

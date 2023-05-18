@@ -33,7 +33,7 @@ class CreateUpdateMessageSourceRouteSubDto {
   )
 
 
-  final String? routeId;
+  String? routeId;
 
 
 
@@ -45,7 +45,7 @@ class CreateUpdateMessageSourceRouteSubDto {
   )
 
 
-  final String? path;
+  String? path;
 
 
 
@@ -57,7 +57,7 @@ class CreateUpdateMessageSourceRouteSubDto {
   )
 
 
-  final Object? values;
+  Object? values;
 
 
 

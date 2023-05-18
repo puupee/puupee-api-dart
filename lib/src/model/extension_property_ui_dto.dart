@@ -38,7 +38,7 @@ class ExtensionPropertyUiDto {
   )
 
 
-  final ExtensionPropertyUiTableDto? onTable;
+  ExtensionPropertyUiTableDto? onTable;
 
 
 
@@ -50,7 +50,7 @@ class ExtensionPropertyUiDto {
   )
 
 
-  final ExtensionPropertyUiFormDto? onCreateForm;
+  ExtensionPropertyUiFormDto? onCreateForm;
 
 
 
@@ -62,7 +62,7 @@ class ExtensionPropertyUiDto {
   )
 
 
-  final ExtensionPropertyUiFormDto? onEditForm;
+  ExtensionPropertyUiFormDto? onEditForm;
 
 
 
@@ -74,7 +74,7 @@ class ExtensionPropertyUiDto {
   )
 
 
-  final ExtensionPropertyUiLookupDto? lookup;
+  ExtensionPropertyUiLookupDto? lookup;
 
 
 

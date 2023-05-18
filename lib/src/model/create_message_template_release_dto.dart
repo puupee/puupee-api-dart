@@ -31,7 +31,7 @@ class CreateMessageTemplateReleaseDto {
   )
 
 
-  final String? content;
+  String? content;
 
 
 
@@ -43,7 +43,7 @@ class CreateMessageTemplateReleaseDto {
   )
 
 
-  final String? templateId;
+  String? templateId;
 
 
 

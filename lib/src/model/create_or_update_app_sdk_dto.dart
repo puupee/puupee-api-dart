@@ -37,7 +37,7 @@ class CreateOrUpdateAppSdkDto {
   )
 
 
-  final String? name;
+  String? name;
 
 
 
@@ -49,7 +49,7 @@ class CreateOrUpdateAppSdkDto {
   )
 
 
-  final String? description;
+  String? description;
 
 
 
@@ -61,7 +61,7 @@ class CreateOrUpdateAppSdkDto {
   )
 
 
-  final String? privacy;
+  String? privacy;
 
 
 
@@ -73,7 +73,7 @@ class CreateOrUpdateAppSdkDto {
   )
 
 
-  final String? privacyUrl;
+  String? privacyUrl;
 
 
 
@@ -85,7 +85,7 @@ class CreateOrUpdateAppSdkDto {
   )
 
 
-  final String? homePage;
+  String? homePage;
 
 
 

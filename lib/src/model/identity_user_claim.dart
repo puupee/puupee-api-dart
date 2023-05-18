@@ -37,7 +37,7 @@ class IdentityUserClaim {
   )
 
 
-  final String? id;
+  String? id;
 
 
 
@@ -49,7 +49,7 @@ class IdentityUserClaim {
   )
 
 
-  final String? tenantId;
+  String? tenantId;
 
 
 
@@ -61,7 +61,7 @@ class IdentityUserClaim {
   )
 
 
-  final String? claimType;
+  String? claimType;
 
 
 
@@ -73,7 +73,7 @@ class IdentityUserClaim {
   )
 
 
-  final String? claimValue;
+  String? claimValue;
 
 
 
@@ -85,7 +85,7 @@ class IdentityUserClaim {
   )
 
 
-  final String? userId;
+  String? userId;
 
 
 

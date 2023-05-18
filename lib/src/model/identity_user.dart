@@ -104,7 +104,7 @@ class IdentityUser {
   )
 
 
-  final String? id;
+  String? id;
 
 
 
@@ -116,7 +116,7 @@ class IdentityUser {
   )
 
 
-  final Map<String, Object>? extraProperties;
+  Map<String, Object>? extraProperties;
 
 
 
@@ -128,7 +128,7 @@ class IdentityUser {
   )
 
 
-  final String? concurrencyStamp;
+  String? concurrencyStamp;
 
 
 
@@ -140,7 +140,7 @@ class IdentityUser {
   )
 
 
-  final DateTime? creationTime;
+  DateTime? creationTime;
 
 
 
@@ -152,7 +152,7 @@ class IdentityUser {
   )
 
 
-  final String? creatorId;
+  String? creatorId;
 
 
 
@@ -164,7 +164,7 @@ class IdentityUser {
   )
 
 
-  final DateTime? lastModificationTime;
+  DateTime? lastModificationTime;
 
 
 
@@ -176,7 +176,7 @@ class IdentityUser {
   )
 
 
-  final String? lastModifierId;
+  String? lastModifierId;
 
 
 
@@ -188,7 +188,7 @@ class IdentityUser {
   )
 
 
-  final bool? isDeleted;
+  bool? isDeleted;
 
 
 
@@ -200,7 +200,7 @@ class IdentityUser {
   )
 
 
-  final String? deleterId;
+  String? deleterId;
 
 
 
@@ -212,7 +212,7 @@ class IdentityUser {
   )
 
 
-  final DateTime? deletionTime;
+  DateTime? deletionTime;
 
 
 
@@ -224,7 +224,7 @@ class IdentityUser {
   )
 
 
-  final String? tenantId;
+  String? tenantId;
 
 
 
@@ -236,7 +236,7 @@ class IdentityUser {
   )
 
 
-  final String? userName;
+  String? userName;
 
 
 
@@ -248,7 +248,7 @@ class IdentityUser {
   )
 
 
-  final String? normalizedUserName;
+  String? normalizedUserName;
 
 
 
@@ -260,7 +260,7 @@ class IdentityUser {
   )
 
 
-  final String? name;
+  String? name;
 
 
 
@@ -272,7 +272,7 @@ class IdentityUser {
   )
 
 
-  final String? surname;
+  String? surname;
 
 
 
@@ -284,7 +284,7 @@ class IdentityUser {
   )
 
 
-  final String? email;
+  String? email;
 
 
 
@@ -296,7 +296,7 @@ class IdentityUser {
   )
 
 
-  final String? normalizedEmail;
+  String? normalizedEmail;
 
 
 
@@ -308,7 +308,7 @@ class IdentityUser {
   )
 
 
-  final bool? emailConfirmed;
+  bool? emailConfirmed;
 
 
 
@@ -320,7 +320,7 @@ class IdentityUser {
   )
 
 
-  final String? passwordHash;
+  String? passwordHash;
 
 
 
@@ -332,7 +332,7 @@ class IdentityUser {
   )
 
 
-  final String? securityStamp;
+  String? securityStamp;
 
 
 
@@ -344,7 +344,7 @@ class IdentityUser {
   )
 
 
-  final bool? isExternal;
+  bool? isExternal;
 
 
 
@@ -356,7 +356,7 @@ class IdentityUser {
   )
 
 
-  final String? phoneNumber;
+  String? phoneNumber;
 
 
 
@@ -368,7 +368,7 @@ class IdentityUser {
   )
 
 
-  final bool? phoneNumberConfirmed;
+  bool? phoneNumberConfirmed;
 
 
 
@@ -380,7 +380,7 @@ class IdentityUser {
   )
 
 
-  final bool? isActive;
+  bool? isActive;
 
 
 
@@ -392,7 +392,7 @@ class IdentityUser {
   )
 
 
-  final bool? twoFactorEnabled;
+  bool? twoFactorEnabled;
 
 
 
@@ -404,7 +404,7 @@ class IdentityUser {
   )
 
 
-  final DateTime? lockoutEnd;
+  DateTime? lockoutEnd;
 
 
 
@@ -416,7 +416,7 @@ class IdentityUser {
   )
 
 
-  final bool? lockoutEnabled;
+  bool? lockoutEnabled;
 
 
 
@@ -428,7 +428,7 @@ class IdentityUser {
   )
 
 
-  final int? accessFailedCount;
+  int? accessFailedCount;
 
 
 
@@ -440,7 +440,7 @@ class IdentityUser {
   )
 
 
-  final bool? shouldChangePasswordOnNextLogin;
+  bool? shouldChangePasswordOnNextLogin;
 
 
 
@@ -452,7 +452,7 @@ class IdentityUser {
   )
 
 
-  final int? entityVersion;
+  int? entityVersion;
 
 
 
@@ -464,7 +464,7 @@ class IdentityUser {
   )
 
 
-  final DateTime? lastPasswordChangeTime;
+  DateTime? lastPasswordChangeTime;
 
 
 
@@ -476,7 +476,7 @@ class IdentityUser {
   )
 
 
-  final List<IdentityUserRole>? roles;
+  List<IdentityUserRole>? roles;
 
 
 
@@ -488,7 +488,7 @@ class IdentityUser {
   )
 
 
-  final List<IdentityUserClaim>? claims;
+  List<IdentityUserClaim>? claims;
 
 
 
@@ -500,7 +500,7 @@ class IdentityUser {
   )
 
 
-  final List<IdentityUserLogin>? logins;
+  List<IdentityUserLogin>? logins;
 
 
 
@@ -512,7 +512,7 @@ class IdentityUser {
   )
 
 
-  final List<IdentityUserToken>? tokens;
+  List<IdentityUserToken>? tokens;
 
 
 
@@ -524,7 +524,7 @@ class IdentityUser {
   )
 
 
-  final List<IdentityUserOrganizationUnit>? organizationUnits;
+  List<IdentityUserOrganizationUnit>? organizationUnits;
 
 
 

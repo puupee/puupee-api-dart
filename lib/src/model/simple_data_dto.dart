@@ -37,7 +37,7 @@ class SimpleDataDto {
   )
 
 
-  final Map<String, Object>? extraProperties;
+  Map<String, Object>? extraProperties;
 
 
 
@@ -49,7 +49,7 @@ class SimpleDataDto {
   )
 
 
-  final String? id;
+  String? id;
 
 
 
@@ -61,7 +61,7 @@ class SimpleDataDto {
   )
 
 
-  final DateTime? creationTime;
+  DateTime? creationTime;
 
 
 
@@ -73,7 +73,7 @@ class SimpleDataDto {
   )
 
 
-  final String? creatorId;
+  String? creatorId;
 
 
 
@@ -85,7 +85,7 @@ class SimpleDataDto {
   )
 
 
-  final String? collection;
+  String? collection;
 
 
 

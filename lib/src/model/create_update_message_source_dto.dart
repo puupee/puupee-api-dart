@@ -38,7 +38,7 @@ class CreateUpdateMessageSourceDto {
   )
 
 
-  final String? name;
+  String? name;
 
 
 
@@ -50,7 +50,7 @@ class CreateUpdateMessageSourceDto {
   )
 
 
-  final String? description;
+  String? description;
 
 
 
@@ -62,7 +62,7 @@ class CreateUpdateMessageSourceDto {
   )
 
 
-  final bool? isPublished;
+  bool? isPublished;
 
 
 
@@ -74,7 +74,7 @@ class CreateUpdateMessageSourceDto {
   )
 
 
-  final String? iconUrl;
+  String? iconUrl;
 
 
 
@@ -86,7 +86,7 @@ class CreateUpdateMessageSourceDto {
   )
 
 
-  final List<CreateUpdateMessageSourceRouteSubDto>? routes;
+  List<CreateUpdateMessageSourceRouteSubDto>? routes;
 
 
 

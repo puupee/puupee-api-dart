@@ -59,7 +59,7 @@ class InApp {
   )
 
 
-  final String? quantity;
+  String? quantity;
 
 
 
@@ -71,7 +71,7 @@ class InApp {
   )
 
 
-  final String? productId;
+  String? productId;
 
 
 
@@ -83,7 +83,7 @@ class InApp {
   )
 
 
-  final String? transactionId;
+  String? transactionId;
 
 
 
@@ -95,7 +95,7 @@ class InApp {
   )
 
 
-  final String? originalTransactionId;
+  String? originalTransactionId;
 
 
 
@@ -107,7 +107,7 @@ class InApp {
   )
 
 
-  final String? purchaseDate;
+  String? purchaseDate;
 
 
 
@@ -119,7 +119,7 @@ class InApp {
   )
 
 
-  final String? purchaseDateMs;
+  String? purchaseDateMs;
 
 
 
@@ -131,7 +131,7 @@ class InApp {
   )
 
 
-  final String? purchaseDatePst;
+  String? purchaseDatePst;
 
 
 
@@ -143,7 +143,7 @@ class InApp {
   )
 
 
-  final String? originalPurchaseDate;
+  String? originalPurchaseDate;
 
 
 
@@ -155,7 +155,7 @@ class InApp {
   )
 
 
-  final String? originalPurchaseDateMs;
+  String? originalPurchaseDateMs;
 
 
 
@@ -167,7 +167,7 @@ class InApp {
   )
 
 
-  final String? originalPurchaseDatePst;
+  String? originalPurchaseDatePst;
 
 
 
@@ -179,7 +179,7 @@ class InApp {
   )
 
 
-  final String? expiresDate;
+  String? expiresDate;
 
 
 
@@ -191,7 +191,7 @@ class InApp {
   )
 
 
-  final String? expiresDateMs;
+  String? expiresDateMs;
 
 
 
@@ -203,7 +203,7 @@ class InApp {
   )
 
 
-  final String? expiresDatePst;
+  String? expiresDatePst;
 
 
 
@@ -215,7 +215,7 @@ class InApp {
   )
 
 
-  final String? webOrderLineItemId;
+  String? webOrderLineItemId;
 
 
 
@@ -227,7 +227,7 @@ class InApp {
   )
 
 
-  final String? isTrialPeriod;
+  String? isTrialPeriod;
 
 
 
@@ -239,7 +239,7 @@ class InApp {
   )
 
 
-  final String? isInIntroOfferPeriod;
+  String? isInIntroOfferPeriod;
 
 
 

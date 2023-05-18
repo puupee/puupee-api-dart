@@ -71,7 +71,7 @@ class VerifyReceiptResult {
   )
 
 
-  final String? id;
+  String? id;
 
 
 
@@ -83,7 +83,7 @@ class VerifyReceiptResult {
   )
 
 
-  final DateTime? creationTime;
+  DateTime? creationTime;
 
 
 
@@ -95,7 +95,7 @@ class VerifyReceiptResult {
   )
 
 
-  final String? creatorId;
+  String? creatorId;
 
 
 
@@ -107,7 +107,7 @@ class VerifyReceiptResult {
   )
 
 
-  final DateTime? lastModificationTime;
+  DateTime? lastModificationTime;
 
 
 
@@ -119,7 +119,7 @@ class VerifyReceiptResult {
   )
 
 
-  final String? lastModifierId;
+  String? lastModifierId;
 
 
 
@@ -131,7 +131,7 @@ class VerifyReceiptResult {
   )
 
 
-  final bool? isDeleted;
+  bool? isDeleted;
 
 
 
@@ -143,7 +143,7 @@ class VerifyReceiptResult {
   )
 
 
-  final String? deleterId;
+  String? deleterId;
 
 
 
@@ -155,7 +155,7 @@ class VerifyReceiptResult {
   )
 
 
-  final DateTime? deletionTime;
+  DateTime? deletionTime;
 
 
 
@@ -167,7 +167,7 @@ class VerifyReceiptResult {
   )
 
 
-  final IdentityUser? deleter;
+  IdentityUser? deleter;
 
 
 
@@ -179,7 +179,7 @@ class VerifyReceiptResult {
   )
 
 
-  final IdentityUser? creator;
+  IdentityUser? creator;
 
 
 
@@ -191,7 +191,7 @@ class VerifyReceiptResult {
   )
 
 
-  final IdentityUser? lastModifier;
+  IdentityUser? lastModifier;
 
 
 
@@ -203,7 +203,7 @@ class VerifyReceiptResult {
   )
 
 
-  final String? orderId;
+  String? orderId;
 
 
 
@@ -215,7 +215,7 @@ class VerifyReceiptResult {
   )
 
 
-  final String? receiptData;
+  String? receiptData;
 
 
 
@@ -227,7 +227,7 @@ class VerifyReceiptResult {
   )
 
 
-  final String? platform;
+  String? platform;
 
 
 
@@ -239,7 +239,7 @@ class VerifyReceiptResult {
   )
 
 
-  final String? deviceToken;
+  String? deviceToken;
 
 
 
@@ -251,7 +251,7 @@ class VerifyReceiptResult {
   )
 
 
-  final bool? ok;
+  bool? ok;
 
 
 
@@ -263,7 +263,7 @@ class VerifyReceiptResult {
   )
 
 
-  final String? statusCode;
+  String? statusCode;
 
 
 
@@ -275,7 +275,7 @@ class VerifyReceiptResult {
   )
 
 
-  final String? message;
+  String? message;
 
 
 
@@ -287,7 +287,7 @@ class VerifyReceiptResult {
   )
 
 
-  final String? resultData;
+  String? resultData;
 
 
 
@@ -299,7 +299,7 @@ class VerifyReceiptResult {
   )
 
 
-  final String? recordId;
+  String? recordId;
 
 
 
@@ -311,7 +311,7 @@ class VerifyReceiptResult {
   )
 
 
-  final AppleVerifyReceiptResult? appleVerifyReceiptResult;
+  AppleVerifyReceiptResult? appleVerifyReceiptResult;
 
 
 

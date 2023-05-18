@@ -51,7 +51,7 @@ class AppRunDto {
   )
 
 
-  final String? id;
+  String? id;
 
 
 
@@ -63,7 +63,7 @@ class AppRunDto {
   )
 
 
-  final DateTime? creationTime;
+  DateTime? creationTime;
 
 
 
@@ -75,7 +75,7 @@ class AppRunDto {
   )
 
 
-  final String? creatorId;
+  String? creatorId;
 
 
 
@@ -87,7 +87,7 @@ class AppRunDto {
   )
 
 
-  final DateTime? lastModificationTime;
+  DateTime? lastModificationTime;
 
 
 
@@ -99,7 +99,7 @@ class AppRunDto {
   )
 
 
-  final String? lastModifierId;
+  String? lastModifierId;
 
 
 
@@ -111,7 +111,7 @@ class AppRunDto {
   )
 
 
-  final bool? isDeleted;
+  bool? isDeleted;
 
 
 
@@ -123,7 +123,7 @@ class AppRunDto {
   )
 
 
-  final String? deleterId;
+  String? deleterId;
 
 
 
@@ -135,7 +135,7 @@ class AppRunDto {
   )
 
 
-  final DateTime? deletionTime;
+  DateTime? deletionTime;
 
 
 
@@ -147,7 +147,7 @@ class AppRunDto {
   )
 
 
-  final String? appId;
+  String? appId;
 
 
 
@@ -159,7 +159,7 @@ class AppRunDto {
   )
 
 
-  final String? appName;
+  String? appName;
 
 
 
@@ -171,7 +171,7 @@ class AppRunDto {
   )
 
 
-  final Object? args;
+  Object? args;
 
 
 
@@ -183,7 +183,7 @@ class AppRunDto {
   )
 
 
-  final Object? envs;
+  Object? envs;
 
 
 

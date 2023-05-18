@@ -37,7 +37,7 @@ class MessagePublishDto {
   )
 
 
-  final String? title;
+  String? title;
 
 
 
@@ -49,7 +49,7 @@ class MessagePublishDto {
   )
 
 
-  final String? description;
+  String? description;
 
 
 
@@ -61,7 +61,7 @@ class MessagePublishDto {
   )
 
 
-  final String? appId;
+  String? appId;
 
 
 
@@ -73,7 +73,7 @@ class MessagePublishDto {
   )
 
 
-  final String? template;
+  String? template;
 
 
 
@@ -85,7 +85,7 @@ class MessagePublishDto {
   )
 
 
-  final Map<String, Object>? data;
+  Map<String, Object>? data;
 
 
 

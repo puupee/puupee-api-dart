@@ -29,7 +29,7 @@ class CreateAvatarDto {
   )
 
 
-  final String? key;
+  String? key;
 
 
 

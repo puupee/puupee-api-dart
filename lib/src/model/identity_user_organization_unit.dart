@@ -37,7 +37,7 @@ class IdentityUserOrganizationUnit {
   )
 
 
-  final DateTime? creationTime;
+  DateTime? creationTime;
 
 
 
@@ -49,7 +49,7 @@ class IdentityUserOrganizationUnit {
   )
 
 
-  final String? creatorId;
+  String? creatorId;
 
 
 
@@ -61,7 +61,7 @@ class IdentityUserOrganizationUnit {
   )
 
 
-  final String? tenantId;
+  String? tenantId;
 
 
 
@@ -73,7 +73,7 @@ class IdentityUserOrganizationUnit {
   )
 
 
-  final String? userId;
+  String? userId;
 
 
 
@@ -85,7 +85,7 @@ class IdentityUserOrganizationUnit {
   )
 
 
-  final String? organizationUnitId;
+  String? organizationUnitId;
 
 
 

@@ -38,7 +38,7 @@ class PermissionGroupDto {
   )
 
 
-  final String? name;
+  String? name;
 
 
 
@@ -50,7 +50,7 @@ class PermissionGroupDto {
   )
 
 
-  final String? displayName;
+  String? displayName;
 
 
 
@@ -62,7 +62,7 @@ class PermissionGroupDto {
   )
 
 
-  final String? displayNameKey;
+  String? displayNameKey;
 
 
 
@@ -74,7 +74,7 @@ class PermissionGroupDto {
   )
 
 
-  final String? displayNameResource;
+  String? displayNameResource;
 
 
 
@@ -86,7 +86,7 @@ class PermissionGroupDto {
   )
 
 
-  final List<PermissionGrantInfoDto>? permissions;
+  List<PermissionGrantInfoDto>? permissions;
 
 
 

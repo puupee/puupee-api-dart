@@ -43,7 +43,7 @@ class CreateOrUpdateAppPricingItemDto {
   )
 
 
-  final String? name;
+  String? name;
 
 
 
@@ -55,7 +55,7 @@ class CreateOrUpdateAppPricingItemDto {
   )
 
 
-  final String? description;
+  String? description;
 
 
 
@@ -67,7 +67,7 @@ class CreateOrUpdateAppPricingItemDto {
   )
 
 
-  final String? linkUrl;
+  String? linkUrl;
 
 
 
@@ -79,7 +79,7 @@ class CreateOrUpdateAppPricingItemDto {
   )
 
 
-  final String? display;
+  String? display;
 
 
 
@@ -91,7 +91,7 @@ class CreateOrUpdateAppPricingItemDto {
   )
 
 
-  final String? appId;
+  String? appId;
 
 
 
@@ -103,7 +103,7 @@ class CreateOrUpdateAppPricingItemDto {
   )
 
 
-  final bool? isAvailable;
+  bool? isAvailable;
 
 
 
@@ -115,7 +115,7 @@ class CreateOrUpdateAppPricingItemDto {
   )
 
 
-  final bool? hasValue;
+  bool? hasValue;
 
 
 
@@ -127,7 +127,7 @@ class CreateOrUpdateAppPricingItemDto {
   )
 
 
-  final int? sortIndex;
+  int? sortIndex;
 
 
 

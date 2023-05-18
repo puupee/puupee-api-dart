@@ -64,7 +64,7 @@ class Receipt {
   )
 
 
-  final String? receiptType;
+  String? receiptType;
 
 
 
@@ -76,7 +76,7 @@ class Receipt {
   )
 
 
-  final int? adamId;
+  int? adamId;
 
 
 
@@ -88,7 +88,7 @@ class Receipt {
   )
 
 
-  final int? appItemId;
+  int? appItemId;
 
 
 
@@ -100,7 +100,7 @@ class Receipt {
   )
 
 
-  final String? bundleId;
+  String? bundleId;
 
 
 
@@ -112,7 +112,7 @@ class Receipt {
   )
 
 
-  final String? applicationVersion;
+  String? applicationVersion;
 
 
 
@@ -124,7 +124,7 @@ class Receipt {
   )
 
 
-  final int? downloadId;
+  int? downloadId;
 
 
 
@@ -136,7 +136,7 @@ class Receipt {
   )
 
 
-  final int? versionExternalIdentifier;
+  int? versionExternalIdentifier;
 
 
 
@@ -148,7 +148,7 @@ class Receipt {
   )
 
 
-  final String? receiptCreationDate;
+  String? receiptCreationDate;
 
 
 
@@ -160,7 +160,7 @@ class Receipt {
   )
 
 
-  final String? receiptCreationDateMs;
+  String? receiptCreationDateMs;
 
 
 
@@ -172,7 +172,7 @@ class Receipt {
   )
 
 
-  final String? receiptCreationDatePst;
+  String? receiptCreationDatePst;
 
 
 
@@ -184,7 +184,7 @@ class Receipt {
   )
 
 
-  final String? requestDate;
+  String? requestDate;
 
 
 
@@ -196,7 +196,7 @@ class Receipt {
   )
 
 
-  final String? requestDateMs;
+  String? requestDateMs;
 
 
 
@@ -208,7 +208,7 @@ class Receipt {
   )
 
 
-  final String? requestDatePst;
+  String? requestDatePst;
 
 
 
@@ -220,7 +220,7 @@ class Receipt {
   )
 
 
-  final String? originalPurchaseDate;
+  String? originalPurchaseDate;
 
 
 
@@ -232,7 +232,7 @@ class Receipt {
   )
 
 
-  final String? originalPurchaseDateMs;
+  String? originalPurchaseDateMs;
 
 
 
@@ -244,7 +244,7 @@ class Receipt {
   )
 
 
-  final String? originalPurchaseDatePst;
+  String? originalPurchaseDatePst;
 
 
 
@@ -256,7 +256,7 @@ class Receipt {
   )
 
 
-  final String? originalApplicationVersion;
+  String? originalApplicationVersion;
 
 
 
@@ -268,7 +268,7 @@ class Receipt {
   )
 
 
-  final List<InApp>? inApp;
+  List<InApp>? inApp;
 
 
 

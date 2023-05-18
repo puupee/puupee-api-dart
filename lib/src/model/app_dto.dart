@@ -91,7 +91,7 @@ class AppDto {
   )
 
 
-  final String? id;
+  String? id;
 
 
 
@@ -103,7 +103,7 @@ class AppDto {
   )
 
 
-  final DateTime? creationTime;
+  DateTime? creationTime;
 
 
 
@@ -115,7 +115,7 @@ class AppDto {
   )
 
 
-  final String? creatorId;
+  String? creatorId;
 
 
 
@@ -127,7 +127,7 @@ class AppDto {
   )
 
 
-  final DateTime? lastModificationTime;
+  DateTime? lastModificationTime;
 
 
 
@@ -139,7 +139,7 @@ class AppDto {
   )
 
 
-  final String? lastModifierId;
+  String? lastModifierId;
 
 
 
@@ -151,7 +151,7 @@ class AppDto {
   )
 
 
-  final bool? isDeleted;
+  bool? isDeleted;
 
 
 
@@ -163,7 +163,7 @@ class AppDto {
   )
 
 
-  final String? deleterId;
+  String? deleterId;
 
 
 
@@ -175,7 +175,7 @@ class AppDto {
   )
 
 
-  final DateTime? deletionTime;
+  DateTime? deletionTime;
 
 
 
@@ -187,7 +187,7 @@ class AppDto {
   )
 
 
-  final String? name;
+  String? name;
 
 
 
@@ -199,7 +199,7 @@ class AppDto {
   )
 
 
-  final String? displayName;
+  String? displayName;
 
 
 
@@ -211,7 +211,7 @@ class AppDto {
   )
 
 
-  final String? framework;
+  String? framework;
 
 
 
@@ -223,7 +223,7 @@ class AppDto {
   )
 
 
-  final String? appType;
+  String? appType;
 
 
 
@@ -235,7 +235,7 @@ class AppDto {
   )
 
 
-  final String? description;
+  String? description;
 
 
 
@@ -247,7 +247,7 @@ class AppDto {
   )
 
 
-  final String? icon;
+  String? icon;
 
 
 
@@ -259,7 +259,7 @@ class AppDto {
   )
 
 
-  final String? homePage;
+  String? homePage;
 
 
 
@@ -271,7 +271,7 @@ class AppDto {
   )
 
 
-  final int? sortIndex;
+  int? sortIndex;
 
 
 
@@ -283,7 +283,7 @@ class AppDto {
   )
 
 
-  final String? gitRepository;
+  String? gitRepository;
 
 
 
@@ -295,7 +295,7 @@ class AppDto {
   )
 
 
-  final String? gitRepositoryType;
+  String? gitRepositoryType;
 
 
 
@@ -307,7 +307,7 @@ class AppDto {
   )
 
 
-  final bool? isEnabled;
+  bool? isEnabled;
 
 
 
@@ -319,7 +319,7 @@ class AppDto {
   )
 
 
-  final bool? isPublished;
+  bool? isPublished;
 
 
 
@@ -331,7 +331,7 @@ class AppDto {
   )
 
 
-  final String? webhookUrl;
+  String? webhookUrl;
 
 
 
@@ -343,7 +343,7 @@ class AppDto {
   )
 
 
-  final String? businessDomain;
+  String? businessDomain;
 
 
 
@@ -355,7 +355,7 @@ class AppDto {
   )
 
 
-  final String? businessUrl;
+  String? businessUrl;
 
 
 
@@ -367,7 +367,7 @@ class AppDto {
   )
 
 
-  final String? subscriptionPlatforms;
+  String? subscriptionPlatforms;
 
 
 
@@ -379,7 +379,7 @@ class AppDto {
   )
 
 
-  final String? freePlatforms;
+  String? freePlatforms;
 
 
 
@@ -391,7 +391,7 @@ class AppDto {
   )
 
 
-  final String? specJsonSchema;
+  String? specJsonSchema;
 
 
 
@@ -403,7 +403,7 @@ class AppDto {
   )
 
 
-  final List<AppReleaseDto>? latestReleases;
+  List<AppReleaseDto>? latestReleases;
 
 
 
@@ -415,7 +415,7 @@ class AppDto {
   )
 
 
-  final IdentityUserDto? creator;
+  IdentityUserDto? creator;
 
 
 
@@ -427,7 +427,7 @@ class AppDto {
   )
 
 
-  final List<AppFeatureDto>? features;
+  List<AppFeatureDto>? features;
 
 
 
@@ -439,7 +439,7 @@ class AppDto {
   )
 
 
-  final List<AppSdkDto>? sdks;
+  List<AppSdkDto>? sdks;
 
 
 

@@ -31,7 +31,7 @@ class UpdatePermissionDto {
   )
 
 
-  final String? name;
+  String? name;
 
 
 
@@ -43,7 +43,7 @@ class UpdatePermissionDto {
   )
 
 
-  final bool? isGranted;
+  bool? isGranted;
 
 
 

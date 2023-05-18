@@ -33,7 +33,7 @@ class IdentityUserRole {
   )
 
 
-  final String? tenantId;
+  String? tenantId;
 
 
 
@@ -45,7 +45,7 @@ class IdentityUserRole {
   )
 
 
-  final String? userId;
+  String? userId;
 
 
 
@@ -57,7 +57,7 @@ class IdentityUserRole {
   )
 
 
-  final String? roleId;
+  String? roleId;
 
 
 

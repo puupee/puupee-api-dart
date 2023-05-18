@@ -62,7 +62,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  final String? naming;
+  String? naming;
 
 
 
@@ -74,7 +74,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  final String? monthProductId;
+  String? monthProductId;
 
 
 
@@ -86,7 +86,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  final String? yearProductId;
+  String? yearProductId;
 
 
 
@@ -98,7 +98,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  final String? description;
+  String? description;
 
 
 
@@ -110,7 +110,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  final String? appId;
+  String? appId;
 
 
 
@@ -122,7 +122,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  final double? monthPrice;
+  double? monthPrice;
 
 
 
@@ -134,7 +134,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  final double? monthDiscount;
+  double? monthDiscount;
 
 
 
@@ -146,7 +146,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  final double? monthDiscountPrice;
+  double? monthDiscountPrice;
 
 
 
@@ -158,7 +158,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  final DateTime? monthDiscountStartAt;
+  DateTime? monthDiscountStartAt;
 
 
 
@@ -170,7 +170,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  final DateTime? monthDiscountEndAt;
+  DateTime? monthDiscountEndAt;
 
 
 
@@ -182,7 +182,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  final double? yearPrice;
+  double? yearPrice;
 
 
 
@@ -194,7 +194,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  final double? yearDiscount;
+  double? yearDiscount;
 
 
 
@@ -206,7 +206,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  final double? yearDiscountPrice;
+  double? yearDiscountPrice;
 
 
 
@@ -218,7 +218,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  final DateTime? yearDiscountStartAt;
+  DateTime? yearDiscountStartAt;
 
 
 
@@ -230,7 +230,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  final DateTime? yearDiscountEndAt;
+  DateTime? yearDiscountEndAt;
 
 
 
@@ -242,7 +242,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  final int? sortIndex;
+  int? sortIndex;
 
 
 
@@ -254,7 +254,7 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  final List<CreateOrUpdateAppPricingItemDto>? items;
+  List<CreateOrUpdateAppPricingItemDto>? items;
 
 
 

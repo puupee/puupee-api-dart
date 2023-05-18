@@ -47,7 +47,7 @@ class UserData {
   )
 
 
-  final String? id;
+  String? id;
 
 
 
@@ -59,7 +59,7 @@ class UserData {
   )
 
 
-  final String? tenantId;
+  String? tenantId;
 
 
 
@@ -71,7 +71,7 @@ class UserData {
   )
 
 
-  final String? userName;
+  String? userName;
 
 
 
@@ -83,7 +83,7 @@ class UserData {
   )
 
 
-  final String? name;
+  String? name;
 
 
 
@@ -95,7 +95,7 @@ class UserData {
   )
 
 
-  final String? surname;
+  String? surname;
 
 
 
@@ -107,7 +107,7 @@ class UserData {
   )
 
 
-  final bool? isActive;
+  bool? isActive;
 
 
 
@@ -119,7 +119,7 @@ class UserData {
   )
 
 
-  final String? email;
+  String? email;
 
 
 
@@ -131,7 +131,7 @@ class UserData {
   )
 
 
-  final bool? emailConfirmed;
+  bool? emailConfirmed;
 
 
 
@@ -143,7 +143,7 @@ class UserData {
   )
 
 
-  final String? phoneNumber;
+  String? phoneNumber;
 
 
 
@@ -155,7 +155,7 @@ class UserData {
   )
 
 
-  final bool? phoneNumberConfirmed;
+  bool? phoneNumberConfirmed;
 
 
 

@@ -30,7 +30,7 @@ class GetFeatureListResultDto {
   )
 
 
-  final List<FeatureGroupDto>? groups;
+  List<FeatureGroupDto>? groups;
 
 
 

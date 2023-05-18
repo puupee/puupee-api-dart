@@ -46,7 +46,7 @@ class CurrentCultureDto {
   )
 
 
-  final String? displayName;
+  String? displayName;
 
 
 
@@ -58,7 +58,7 @@ class CurrentCultureDto {
   )
 
 
-  final String? englishName;
+  String? englishName;
 
 
 
@@ -70,7 +70,7 @@ class CurrentCultureDto {
   )
 
 
-  final String? threeLetterIsoLanguageName;
+  String? threeLetterIsoLanguageName;
 
 
 
@@ -82,7 +82,7 @@ class CurrentCultureDto {
   )
 
 
-  final String? twoLetterIsoLanguageName;
+  String? twoLetterIsoLanguageName;
 
 
 
@@ -94,7 +94,7 @@ class CurrentCultureDto {
   )
 
 
-  final bool? isRightToLeft;
+  bool? isRightToLeft;
 
 
 
@@ -106,7 +106,7 @@ class CurrentCultureDto {
   )
 
 
-  final String? cultureName;
+  String? cultureName;
 
 
 
@@ -118,7 +118,7 @@ class CurrentCultureDto {
   )
 
 
-  final String? name;
+  String? name;
 
 
 
@@ -130,7 +130,7 @@ class CurrentCultureDto {
   )
 
 
-  final String? nativeName;
+  String? nativeName;
 
 
 
@@ -142,7 +142,7 @@ class CurrentCultureDto {
   )
 
 
-  final DateTimeFormatDto? dateTimeFormat;
+  DateTimeFormatDto? dateTimeFormat;
 
 
 

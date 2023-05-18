@@ -32,7 +32,7 @@ class ModuleExtensionDto {
   )
 
 
-  final Map<String, EntityExtensionDto>? entities;
+  Map<String, EntityExtensionDto>? entities;
 
 
 
@@ -44,7 +44,7 @@ class ModuleExtensionDto {
   )
 
 
-  final Map<String, Object>? configuration;
+  Map<String, Object>? configuration;
 
 
 

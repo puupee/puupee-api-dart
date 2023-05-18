@@ -35,7 +35,7 @@ class SendTestEmailInput {
   )
 
 
-  final String senderEmailAddress;
+  String senderEmailAddress;
 
 
 
@@ -47,7 +47,7 @@ class SendTestEmailInput {
   )
 
 
-  final String targetEmailAddress;
+  String targetEmailAddress;
 
 
 
@@ -59,7 +59,7 @@ class SendTestEmailInput {
   )
 
 
-  final String subject;
+  String subject;
 
 
 
@@ -71,7 +71,7 @@ class SendTestEmailInput {
   )
 
 
-  final String? body;
+  String? body;
 
 
 

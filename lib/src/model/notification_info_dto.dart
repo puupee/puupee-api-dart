@@ -43,7 +43,7 @@ class NotificationInfoDto {
   )
 
 
-  final String? id;
+  String? id;
 
 
 
@@ -55,7 +55,7 @@ class NotificationInfoDto {
   )
 
 
-  final DateTime? creationTime;
+  DateTime? creationTime;
 
 
 
@@ -67,7 +67,7 @@ class NotificationInfoDto {
   )
 
 
-  final String? creatorId;
+  String? creatorId;
 
 
 
@@ -79,7 +79,7 @@ class NotificationInfoDto {
   )
 
 
-  final DateTime? lastModificationTime;
+  DateTime? lastModificationTime;
 
 
 
@@ -91,7 +91,7 @@ class NotificationInfoDto {
   )
 
 
-  final String? lastModifierId;
+  String? lastModifierId;
 
 
 
@@ -103,7 +103,7 @@ class NotificationInfoDto {
   )
 
 
-  final bool? isDeleted;
+  bool? isDeleted;
 
 
 
@@ -115,7 +115,7 @@ class NotificationInfoDto {
   )
 
 
-  final String? deleterId;
+  String? deleterId;
 
 
 
@@ -127,7 +127,7 @@ class NotificationInfoDto {
   )
 
 
-  final DateTime? deletionTime;
+  DateTime? deletionTime;
 
 
 

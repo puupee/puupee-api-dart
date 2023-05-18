@@ -38,7 +38,7 @@ class MessageSourceDto {
   )
 
 
-  final String? name;
+  String? name;
 
 
 
@@ -50,7 +50,7 @@ class MessageSourceDto {
   )
 
 
-  final String? description;
+  String? description;
 
 
 
@@ -62,7 +62,7 @@ class MessageSourceDto {
   )
 
 
-  final bool? isPublished;
+  bool? isPublished;
 
 
 
@@ -74,7 +74,7 @@ class MessageSourceDto {
   )
 
 
-  final String? iconUrl;
+  String? iconUrl;
 
 
 
@@ -86,7 +86,7 @@ class MessageSourceDto {
   )
 
 
-  final List<MessageSourceRouteSubDto>? routes;
+  List<MessageSourceRouteSubDto>? routes;
 
 
 

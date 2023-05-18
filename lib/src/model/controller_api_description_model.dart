@@ -45,7 +45,7 @@ class ControllerApiDescriptionModel {
   )
 
 
-  final String? controllerName;
+  String? controllerName;
 
 
 
@@ -57,7 +57,7 @@ class ControllerApiDescriptionModel {
   )
 
 
-  final String? controllerGroupName;
+  String? controllerGroupName;
 
 
 
@@ -69,7 +69,7 @@ class ControllerApiDescriptionModel {
   )
 
 
-  final bool? isRemoteService;
+  bool? isRemoteService;
 
 
 
@@ -81,7 +81,7 @@ class ControllerApiDescriptionModel {
   )
 
 
-  final bool? isIntegrationService;
+  bool? isIntegrationService;
 
 
 
@@ -93,7 +93,7 @@ class ControllerApiDescriptionModel {
   )
 
 
-  final String? apiVersion;
+  String? apiVersion;
 
 
 
@@ -105,7 +105,7 @@ class ControllerApiDescriptionModel {
   )
 
 
-  final String? type;
+  String? type;
 
 
 
@@ -117,7 +117,7 @@ class ControllerApiDescriptionModel {
   )
 
 
-  final List<ControllerInterfaceApiDescriptionModel>? interfaces;
+  List<ControllerInterfaceApiDescriptionModel>? interfaces;
 
 
 
@@ -129,7 +129,7 @@ class ControllerApiDescriptionModel {
   )
 
 
-  final Map<String, ActionApiDescriptionModel>? actions;
+  Map<String, ActionApiDescriptionModel>? actions;
 
 
 

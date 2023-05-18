@@ -29,7 +29,7 @@ class MessageUnsubscribeDto {
   )
 
 
-  final String? appId;
+  String? appId;
 
 
 

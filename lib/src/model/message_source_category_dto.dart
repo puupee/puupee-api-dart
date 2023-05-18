@@ -31,7 +31,7 @@ class MessageSourceCategoryDto {
   )
 
 
-  final String? id;
+  String? id;
 
 
 
@@ -43,7 +43,7 @@ class MessageSourceCategoryDto {
   )
 
 
-  final String? title;
+  String? title;
 
 
 

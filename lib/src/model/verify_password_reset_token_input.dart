@@ -31,7 +31,7 @@ class VerifyPasswordResetTokenInput {
   )
 
 
-  final String? userId;
+  String? userId;
 
 
 
@@ -43,7 +43,7 @@ class VerifyPasswordResetTokenInput {
   )
 
 
-  final String resetToken;
+  String resetToken;
 
 
 

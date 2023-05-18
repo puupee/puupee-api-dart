@@ -34,7 +34,7 @@ class TodoSettingsDto {
   )
 
 
-  final bool? showCompleted;
+  bool? showCompleted;
 
 
 
@@ -46,7 +46,7 @@ class TodoSettingsDto {
   )
 
 
-  final bool? showDetails;
+  bool? showDetails;
 
 
 
@@ -58,7 +58,7 @@ class TodoSettingsDto {
   )
 
 
-  final TodoOrderBy? orderBy;
+  TodoOrderBy? orderBy;
 
 
 

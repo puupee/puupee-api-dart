@@ -51,7 +51,7 @@ class CreateOpenIddictApplicationDto {
   )
 
 
-  final String? type;
+  String? type;
 
 
 
@@ -63,7 +63,7 @@ class CreateOpenIddictApplicationDto {
   )
 
 
-  final String? displayName;
+  String? displayName;
 
 
 
@@ -75,7 +75,7 @@ class CreateOpenIddictApplicationDto {
   )
 
 
-  final String? displayNames;
+  String? displayNames;
 
 
 
@@ -87,7 +87,7 @@ class CreateOpenIddictApplicationDto {
   )
 
 
-  final List<String>? permissions;
+  List<String>? permissions;
 
 
 
@@ -99,7 +99,7 @@ class CreateOpenIddictApplicationDto {
   )
 
 
-  final String? postLogoutRedirectUris;
+  String? postLogoutRedirectUris;
 
 
 
@@ -111,7 +111,7 @@ class CreateOpenIddictApplicationDto {
   )
 
 
-  final String? properties;
+  String? properties;
 
 
 
@@ -123,7 +123,7 @@ class CreateOpenIddictApplicationDto {
   )
 
 
-  final String? redirectUris;
+  String? redirectUris;
 
 
 
@@ -135,7 +135,7 @@ class CreateOpenIddictApplicationDto {
   )
 
 
-  final String? requirements;
+  String? requirements;
 
 
 
@@ -147,7 +147,7 @@ class CreateOpenIddictApplicationDto {
   )
 
 
-  final String? clientUri;
+  String? clientUri;
 
 
 
@@ -159,7 +159,7 @@ class CreateOpenIddictApplicationDto {
   )
 
 
-  final String? logoUri;
+  String? logoUri;
 
 
 
@@ -171,7 +171,7 @@ class CreateOpenIddictApplicationDto {
   )
 
 
-  final List<String>? grantTypes;
+  List<String>? grantTypes;
 
 
 
@@ -183,7 +183,7 @@ class CreateOpenIddictApplicationDto {
   )
 
 
-  final List<String>? scopes;
+  List<String>? scopes;
 
 
 

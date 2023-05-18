@@ -78,7 +78,7 @@ class AppPricingDto {
   )
 
 
-  final String? id;
+  String? id;
 
 
 
@@ -90,7 +90,7 @@ class AppPricingDto {
   )
 
 
-  final DateTime? creationTime;
+  DateTime? creationTime;
 
 
 
@@ -102,7 +102,7 @@ class AppPricingDto {
   )
 
 
-  final String? creatorId;
+  String? creatorId;
 
 
 
@@ -114,7 +114,7 @@ class AppPricingDto {
   )
 
 
-  final DateTime? lastModificationTime;
+  DateTime? lastModificationTime;
 
 
 
@@ -126,7 +126,7 @@ class AppPricingDto {
   )
 
 
-  final String? lastModifierId;
+  String? lastModifierId;
 
 
 
@@ -138,7 +138,7 @@ class AppPricingDto {
   )
 
 
-  final bool? isDeleted;
+  bool? isDeleted;
 
 
 
@@ -150,7 +150,7 @@ class AppPricingDto {
   )
 
 
-  final String? deleterId;
+  String? deleterId;
 
 
 
@@ -162,7 +162,7 @@ class AppPricingDto {
   )
 
 
-  final DateTime? deletionTime;
+  DateTime? deletionTime;
 
 
 
@@ -174,7 +174,7 @@ class AppPricingDto {
   )
 
 
-  final String? naming;
+  String? naming;
 
 
 
@@ -186,7 +186,7 @@ class AppPricingDto {
   )
 
 
-  final String? monthProductId;
+  String? monthProductId;
 
 
 
@@ -198,7 +198,7 @@ class AppPricingDto {
   )
 
 
-  final String? yearProductId;
+  String? yearProductId;
 
 
 
@@ -210,7 +210,7 @@ class AppPricingDto {
   )
 
 
-  final String? description;
+  String? description;
 
 
 
@@ -222,7 +222,7 @@ class AppPricingDto {
   )
 
 
-  final String? appId;
+  String? appId;
 
 
 
@@ -234,7 +234,7 @@ class AppPricingDto {
   )
 
 
-  final double? monthPrice;
+  double? monthPrice;
 
 
 
@@ -246,7 +246,7 @@ class AppPricingDto {
   )
 
 
-  final double? monthDiscount;
+  double? monthDiscount;
 
 
 
@@ -258,7 +258,7 @@ class AppPricingDto {
   )
 
 
-  final double? monthDiscountPrice;
+  double? monthDiscountPrice;
 
 
 
@@ -270,7 +270,7 @@ class AppPricingDto {
   )
 
 
-  final DateTime? monthDiscountStartAt;
+  DateTime? monthDiscountStartAt;
 
 
 
@@ -282,7 +282,7 @@ class AppPricingDto {
   )
 
 
-  final DateTime? monthDiscountEndAt;
+  DateTime? monthDiscountEndAt;
 
 
 
@@ -294,7 +294,7 @@ class AppPricingDto {
   )
 
 
-  final double? yearPrice;
+  double? yearPrice;
 
 
 
@@ -306,7 +306,7 @@ class AppPricingDto {
   )
 
 
-  final double? yearDiscount;
+  double? yearDiscount;
 
 
 
@@ -318,7 +318,7 @@ class AppPricingDto {
   )
 
 
-  final double? yearDiscountPrice;
+  double? yearDiscountPrice;
 
 
 
@@ -330,7 +330,7 @@ class AppPricingDto {
   )
 
 
-  final DateTime? yearDiscountStartAt;
+  DateTime? yearDiscountStartAt;
 
 
 
@@ -342,7 +342,7 @@ class AppPricingDto {
   )
 
 
-  final DateTime? yearDiscountEndAt;
+  DateTime? yearDiscountEndAt;
 
 
 
@@ -354,7 +354,7 @@ class AppPricingDto {
   )
 
 
-  final int? sortIndex;
+  int? sortIndex;
 
 
 
@@ -366,7 +366,7 @@ class AppPricingDto {
   )
 
 
-  final List<AppPricingItemDto>? items;
+  List<AppPricingItemDto>? items;
 
 
 

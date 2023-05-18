@@ -45,7 +45,7 @@ class ApplicationLocalizationConfigurationDto {
   )
 
 
-  final Map<String, Map<String, String>>? values;
+  Map<String, Map<String, String>>? values;
 
 
 
@@ -57,7 +57,7 @@ class ApplicationLocalizationConfigurationDto {
   )
 
 
-  final Map<String, ApplicationLocalizationResourceDto>? resources;
+  Map<String, ApplicationLocalizationResourceDto>? resources;
 
 
 
@@ -69,7 +69,7 @@ class ApplicationLocalizationConfigurationDto {
   )
 
 
-  final List<LanguageInfo>? languages;
+  List<LanguageInfo>? languages;
 
 
 
@@ -81,7 +81,7 @@ class ApplicationLocalizationConfigurationDto {
   )
 
 
-  final CurrentCultureDto? currentCulture;
+  CurrentCultureDto? currentCulture;
 
 
 
@@ -93,7 +93,7 @@ class ApplicationLocalizationConfigurationDto {
   )
 
 
-  final String? defaultResourceName;
+  String? defaultResourceName;
 
 
 
@@ -105,7 +105,7 @@ class ApplicationLocalizationConfigurationDto {
   )
 
 
-  final Map<String, List<NameValue>>? languagesMap;
+  Map<String, List<NameValue>>? languagesMap;
 
 
 
@@ -117,7 +117,7 @@ class ApplicationLocalizationConfigurationDto {
   )
 
 
-  final Map<String, List<NameValue>>? languageFilesMap;
+  Map<String, List<NameValue>>? languageFilesMap;
 
 
 

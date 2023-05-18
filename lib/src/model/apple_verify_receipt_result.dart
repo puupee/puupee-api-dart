@@ -45,7 +45,7 @@ class AppleVerifyReceiptResult {
   )
 
 
-  final String? environment;
+  String? environment;
 
 
 
@@ -57,7 +57,7 @@ class AppleVerifyReceiptResult {
   )
 
 
-  final bool? isRetryable;
+  bool? isRetryable;
 
 
 
@@ -69,7 +69,7 @@ class AppleVerifyReceiptResult {
   )
 
 
-  final AppleVerifyRecceiptStatus? status;
+  AppleVerifyRecceiptStatus? status;
 
 
 
@@ -81,7 +81,7 @@ class AppleVerifyReceiptResult {
   )
 
 
-  final List<LatestReceiptInfo>? latestReceiptInfo;
+  List<LatestReceiptInfo>? latestReceiptInfo;
 
 
 
@@ -93,7 +93,7 @@ class AppleVerifyReceiptResult {
   )
 
 
-  final String? latestReceipt;
+  String? latestReceipt;
 
 
 
@@ -105,7 +105,7 @@ class AppleVerifyReceiptResult {
   )
 
 
-  final List<PendingRenewalInfo>? pendingRenewalInfo;
+  List<PendingRenewalInfo>? pendingRenewalInfo;
 
 
 
@@ -117,7 +117,7 @@ class AppleVerifyReceiptResult {
   )
 
 
-  final Receipt? receipt;
+  Receipt? receipt;
 
 
 

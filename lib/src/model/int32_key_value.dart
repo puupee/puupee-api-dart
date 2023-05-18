@@ -35,7 +35,7 @@ class Int32KeyValue {
   )
 
 
-  final int? value;
+  int? value;
 
 
 
@@ -47,7 +47,7 @@ class Int32KeyValue {
   )
 
 
-  final double? durationSeconds;
+  double? durationSeconds;
 
 
 
@@ -59,7 +59,7 @@ class Int32KeyValue {
   )
 
 
-  final DateTime? expiredAt;
+  DateTime? expiredAt;
 
 
 
@@ -71,7 +71,7 @@ class Int32KeyValue {
   )
 
 
-  final DateTime? createdAt;
+  DateTime? createdAt;
 
 
 

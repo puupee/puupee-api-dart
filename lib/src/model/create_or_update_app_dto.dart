@@ -76,7 +76,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final String? name;
+  String? name;
 
 
 
@@ -88,7 +88,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final String? displayName;
+  String? displayName;
 
 
 
@@ -100,7 +100,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final String? framework;
+  String? framework;
 
 
 
@@ -112,7 +112,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final String? appType;
+  String? appType;
 
 
 
@@ -124,7 +124,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final String? description;
+  String? description;
 
 
 
@@ -136,7 +136,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final String? icon;
+  String? icon;
 
 
 
@@ -148,7 +148,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final String? homePage;
+  String? homePage;
 
 
 
@@ -160,7 +160,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final int? sortIndex;
+  int? sortIndex;
 
 
 
@@ -172,7 +172,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final String? gitRepository;
+  String? gitRepository;
 
 
 
@@ -184,7 +184,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final String? gitRepositoryType;
+  String? gitRepositoryType;
 
 
 
@@ -196,7 +196,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final bool? isEnabled;
+  bool? isEnabled;
 
 
 
@@ -208,7 +208,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final String? webhookUrl;
+  String? webhookUrl;
 
 
 
@@ -220,7 +220,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final String? businessDomain;
+  String? businessDomain;
 
 
 
@@ -232,7 +232,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final String? businessUrl;
+  String? businessUrl;
 
 
 
@@ -244,7 +244,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final String? subscriptionPlatforms;
+  String? subscriptionPlatforms;
 
 
 
@@ -256,7 +256,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final String? freePlatforms;
+  String? freePlatforms;
 
 
 
@@ -268,7 +268,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final String? specJsonSchema;
+  String? specJsonSchema;
 
 
 
@@ -280,7 +280,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final int? defaultStorageSize;
+  int? defaultStorageSize;
 
 
 
@@ -292,7 +292,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final int? defaultSingleFileMaxSize;
+  int? defaultSingleFileMaxSize;
 
 
 
@@ -304,7 +304,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final bool? isPublished;
+  bool? isPublished;
 
 
 
@@ -316,7 +316,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final List<AppFeatureDto>? features;
+  List<AppFeatureDto>? features;
 
 
 
@@ -328,7 +328,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final List<AppSdkDto>? sdks;
+  List<AppSdkDto>? sdks;
 
 
 
@@ -340,7 +340,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  final CreateOpenIddictApplicationDto? openClient;
+  CreateOpenIddictApplicationDto? openClient;
 
 
 

@@ -47,7 +47,7 @@ class PropertyApiDescriptionModel {
   )
 
 
-  final String? name;
+  String? name;
 
 
 
@@ -59,7 +59,7 @@ class PropertyApiDescriptionModel {
   )
 
 
-  final String? jsonName;
+  String? jsonName;
 
 
 
@@ -71,7 +71,7 @@ class PropertyApiDescriptionModel {
   )
 
 
-  final String? type;
+  String? type;
 
 
 
@@ -83,7 +83,7 @@ class PropertyApiDescriptionModel {
   )
 
 
-  final String? typeSimple;
+  String? typeSimple;
 
 
 
@@ -95,7 +95,7 @@ class PropertyApiDescriptionModel {
   )
 
 
-  final bool? isRequired;
+  bool? isRequired;
 
 
 
@@ -107,7 +107,7 @@ class PropertyApiDescriptionModel {
   )
 
 
-  final int? minLength;
+  int? minLength;
 
 
 
@@ -119,7 +119,7 @@ class PropertyApiDescriptionModel {
   )
 
 
-  final int? maxLength;
+  int? maxLength;
 
 
 
@@ -131,7 +131,7 @@ class PropertyApiDescriptionModel {
   )
 
 
-  final String? minimum;
+  String? minimum;
 
 
 
@@ -143,7 +143,7 @@ class PropertyApiDescriptionModel {
   )
 
 
-  final String? maximum;
+  String? maximum;
 
 
 
@@ -155,7 +155,7 @@ class PropertyApiDescriptionModel {
   )
 
 
-  final String? regex;
+  String? regex;
 
 
 

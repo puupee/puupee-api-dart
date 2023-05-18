@@ -32,7 +32,7 @@ class NotificationInfoDtoPagedResultDto {
   )
 
 
-  final List<NotificationInfoDto>? items;
+  List<NotificationInfoDto>? items;
 
 
 
@@ -44,7 +44,7 @@ class NotificationInfoDtoPagedResultDto {
   )
 
 
-  final int? totalCount;
+  int? totalCount;
 
 
 

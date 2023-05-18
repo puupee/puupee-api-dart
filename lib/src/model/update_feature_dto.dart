@@ -31,7 +31,7 @@ class UpdateFeatureDto {
   )
 
 
-  final String? name;
+  String? name;
 
 
 
@@ -43,7 +43,7 @@ class UpdateFeatureDto {
   )
 
 
-  final String? value;
+  String? value;
 
 
 

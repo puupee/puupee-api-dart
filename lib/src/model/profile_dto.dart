@@ -45,7 +45,7 @@ class ProfileDto {
   )
 
 
-  final Map<String, Object>? extraProperties;
+  Map<String, Object>? extraProperties;
 
 
 
@@ -57,7 +57,7 @@ class ProfileDto {
   )
 
 
-  final String? userName;
+  String? userName;
 
 
 
@@ -69,7 +69,7 @@ class ProfileDto {
   )
 
 
-  final String? email;
+  String? email;
 
 
 
@@ -81,7 +81,7 @@ class ProfileDto {
   )
 
 
-  final String? name;
+  String? name;
 
 
 
@@ -93,7 +93,7 @@ class ProfileDto {
   )
 
 
-  final String? surname;
+  String? surname;
 
 
 
@@ -105,7 +105,7 @@ class ProfileDto {
   )
 
 
-  final String? phoneNumber;
+  String? phoneNumber;
 
 
 
@@ -117,7 +117,7 @@ class ProfileDto {
   )
 
 
-  final bool? isExternal;
+  bool? isExternal;
 
 
 
@@ -129,7 +129,7 @@ class ProfileDto {
   )
 
 
-  final bool? hasPassword;
+  bool? hasPassword;
 
 
 
@@ -141,7 +141,7 @@ class ProfileDto {
   )
 
 
-  final String? concurrencyStamp;
+  String? concurrencyStamp;
 
 
 

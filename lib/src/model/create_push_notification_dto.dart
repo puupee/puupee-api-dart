@@ -37,7 +37,7 @@ class CreatePushNotificationDto {
   )
 
 
-  final String? title;
+  String? title;
 
 
 
@@ -49,7 +49,7 @@ class CreatePushNotificationDto {
   )
 
 
-  final String? description;
+  String? description;
 
 
 
@@ -61,7 +61,7 @@ class CreatePushNotificationDto {
   )
 
 
-  final String? puupeeId;
+  String? puupeeId;
 
 
 
@@ -73,7 +73,7 @@ class CreatePushNotificationDto {
   )
 
 
-  final String? creatorId;
+  String? creatorId;
 
 
 
@@ -85,7 +85,7 @@ class CreatePushNotificationDto {
   )
 
 
-  final String? app;
+  String? app;
 
 
 

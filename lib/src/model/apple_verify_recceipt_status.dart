@@ -31,7 +31,7 @@ class AppleVerifyRecceiptStatus {
   )
 
 
-  final String? name;
+  String? name;
 
 
 
@@ -43,7 +43,7 @@ class AppleVerifyRecceiptStatus {
   )
 
 
-  final int? value;
+  int? value;
 
 
 

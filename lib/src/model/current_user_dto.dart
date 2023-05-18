@@ -57,7 +57,7 @@ class CurrentUserDto {
   )
 
 
-  final bool? isAuthenticated;
+  bool? isAuthenticated;
 
 
 
@@ -69,7 +69,7 @@ class CurrentUserDto {
   )
 
 
-  final String? id;
+  String? id;
 
 
 
@@ -81,7 +81,7 @@ class CurrentUserDto {
   )
 
 
-  final String? tenantId;
+  String? tenantId;
 
 
 
@@ -93,7 +93,7 @@ class CurrentUserDto {
   )
 
 
-  final String? impersonatorUserId;
+  String? impersonatorUserId;
 
 
 
@@ -105,7 +105,7 @@ class CurrentUserDto {
   )
 
 
-  final String? impersonatorTenantId;
+  String? impersonatorTenantId;
 
 
 
@@ -117,7 +117,7 @@ class CurrentUserDto {
   )
 
 
-  final String? impersonatorUserName;
+  String? impersonatorUserName;
 
 
 
@@ -129,7 +129,7 @@ class CurrentUserDto {
   )
 
 
-  final String? impersonatorTenantName;
+  String? impersonatorTenantName;
 
 
 
@@ -141,7 +141,7 @@ class CurrentUserDto {
   )
 
 
-  final String? userName;
+  String? userName;
 
 
 
@@ -153,7 +153,7 @@ class CurrentUserDto {
   )
 
 
-  final String? name;
+  String? name;
 
 
 
@@ -165,7 +165,7 @@ class CurrentUserDto {
   )
 
 
-  final String? surName;
+  String? surName;
 
 
 
@@ -177,7 +177,7 @@ class CurrentUserDto {
   )
 
 
-  final String? email;
+  String? email;
 
 
 
@@ -189,7 +189,7 @@ class CurrentUserDto {
   )
 
 
-  final bool? emailVerified;
+  bool? emailVerified;
 
 
 
@@ -201,7 +201,7 @@ class CurrentUserDto {
   )
 
 
-  final String? phoneNumber;
+  String? phoneNumber;
 
 
 
@@ -213,7 +213,7 @@ class CurrentUserDto {
   )
 
 
-  final bool? phoneNumberVerified;
+  bool? phoneNumberVerified;
 
 
 
@@ -225,7 +225,7 @@ class CurrentUserDto {
   )
 
 
-  final List<String>? roles;
+  List<String>? roles;
 
 
 

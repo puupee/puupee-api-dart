@@ -29,7 +29,7 @@ class ApplicationGlobalFeatureConfigurationDto {
   )
 
 
-  final Set<String>? enabledFeatures;
+  Set<String>? enabledFeatures;
 
 
 

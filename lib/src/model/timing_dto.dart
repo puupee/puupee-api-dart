@@ -30,7 +30,7 @@ class TimingDto {
   )
 
 
-  final TimeZone? timeZone;
+  TimeZone? timeZone;
 
 
 

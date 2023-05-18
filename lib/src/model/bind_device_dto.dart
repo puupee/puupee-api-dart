@@ -41,7 +41,7 @@ class BindDeviceDto {
   )
 
 
-  final String? token;
+  String? token;
 
 
 
@@ -53,7 +53,7 @@ class BindDeviceDto {
   )
 
 
-  final String? tpnsToken;
+  String? tpnsToken;
 
 
 
@@ -65,7 +65,7 @@ class BindDeviceDto {
   )
 
 
-  final bool? isPhysicalDevice;
+  bool? isPhysicalDevice;
 
 
 
@@ -77,7 +77,7 @@ class BindDeviceDto {
   )
 
 
-  final String? name;
+  String? name;
 
 
 
@@ -89,7 +89,7 @@ class BindDeviceDto {
   )
 
 
-  final String? platform;
+  String? platform;
 
 
 
@@ -101,7 +101,7 @@ class BindDeviceDto {
   )
 
 
-  final String? brand;
+  String? brand;
 
 
 
@@ -113,7 +113,7 @@ class BindDeviceDto {
   )
 
 
-  final String? systemVersion;
+  String? systemVersion;
 
 
 

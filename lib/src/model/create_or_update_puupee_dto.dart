@@ -127,7 +127,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String id;
+  String id;
 
 
 
@@ -139,7 +139,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String name;
+  String name;
 
 
 
@@ -151,7 +151,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String? title;
+  String? title;
 
 
 
@@ -163,7 +163,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final bool? isHidden;
+  bool? isHidden;
 
 
 
@@ -175,7 +175,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String? description;
+  String? description;
 
 
 
@@ -187,7 +187,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String? text;
+  String? text;
 
 
 
@@ -199,7 +199,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String? content;
+  String? content;
 
 
 
@@ -211,7 +211,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String? format;
+  String? format;
 
 
 
@@ -223,7 +223,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String? password;
+  String? password;
 
 
 
@@ -235,7 +235,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String? parentId;
+  String? parentId;
 
 
 
@@ -247,7 +247,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String? key;
+  String? key;
 
 
 
@@ -259,7 +259,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String? md5;
+  String? md5;
 
 
 
@@ -271,7 +271,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String? sliceMd5;
+  String? sliceMd5;
 
 
 
@@ -283,7 +283,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String? rapidCode;
+  String? rapidCode;
 
 
 
@@ -295,7 +295,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String? contentType;
+  String? contentType;
 
 
 
@@ -307,7 +307,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String? type;
+  String? type;
 
 
 
@@ -319,7 +319,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String? displayStyle;
+  String? displayStyle;
 
 
 
@@ -331,7 +331,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String? extension_;
+  String? extension_;
 
 
 
@@ -343,7 +343,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String? storageClass;
+  String? storageClass;
 
 
 
@@ -355,7 +355,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final DateTime? storageObjectCreatedAt;
+  DateTime? storageObjectCreatedAt;
 
 
 
@@ -367,7 +367,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final DateTime? storageObjectUpdatedAt;
+  DateTime? storageObjectUpdatedAt;
 
 
 
@@ -379,7 +379,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final int? syncVersion;
+  int? syncVersion;
 
 
 
@@ -391,7 +391,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final bool? isDeleted;
+  bool? isDeleted;
 
 
 
@@ -403,7 +403,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final DateTime? deletionTime;
+  DateTime? deletionTime;
 
 
 
@@ -415,7 +415,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final DateTime? creationTime;
+  DateTime? creationTime;
 
 
 
@@ -427,7 +427,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final DateTime? lastModificationTime;
+  DateTime? lastModificationTime;
 
 
 
@@ -439,7 +439,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final int? priority;
+  int? priority;
 
 
 
@@ -451,7 +451,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final DateTime? startAt;
+  DateTime? startAt;
 
 
 
@@ -463,7 +463,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final DateTime? endAt;
+  DateTime? endAt;
 
 
 
@@ -475,7 +475,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final DateTime? notifyAt;
+  DateTime? notifyAt;
 
 
 
@@ -487,7 +487,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String? notifyTimingType;
+  String? notifyTimingType;
 
 
 
@@ -499,7 +499,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String? notifyTimingUnit;
+  String? notifyTimingUnit;
 
 
 
@@ -511,7 +511,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final int? notifyTimingValue;
+  int? notifyTimingValue;
 
 
 
@@ -523,7 +523,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String? repeat;
+  String? repeat;
 
 
 
@@ -535,7 +535,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final DateTime? repeatOffAt;
+  DateTime? repeatOffAt;
 
 
 
@@ -547,7 +547,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final int? repeatOffTimes;
+  int? repeatOffTimes;
 
 
 
@@ -559,7 +559,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final int? repetitions;
+  int? repetitions;
 
 
 
@@ -571,7 +571,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final bool? isDone;
+  bool? isDone;
 
 
 
@@ -583,7 +583,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final DateTime? doneAt;
+  DateTime? doneAt;
 
 
 
@@ -595,7 +595,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String? creatorId;
+  String? creatorId;
 
 
 
@@ -607,7 +607,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String? lastModifierId;
+  String? lastModifierId;
 
 
 
@@ -619,7 +619,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String? deleterId;
+  String? deleterId;
 
 
 
@@ -631,7 +631,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String? tagging;
+  String? tagging;
 
 
 
@@ -643,7 +643,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String? url;
+  String? url;
 
 
 
@@ -655,7 +655,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final int? size;
+  int? size;
 
 
 
@@ -667,7 +667,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String? lastModifierDeviceToken;
+  String? lastModifierDeviceToken;
 
 
 
@@ -679,7 +679,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String? lastModifierDevice;
+  String? lastModifierDevice;
 
 
 
@@ -691,7 +691,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final String? appName;
+  String? appName;
 
 
 
@@ -703,7 +703,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final bool? pushToUser;
+  bool? pushToUser;
 
 
 
@@ -715,7 +715,7 @@ class CreateOrUpdatePuupeeDto {
   )
 
 
-  final int? sortIndex;
+  int? sortIndex;
 
 
 

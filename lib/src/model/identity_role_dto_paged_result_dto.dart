@@ -32,7 +32,7 @@ class IdentityRoleDtoPagedResultDto {
   )
 
 
-  final List<IdentityRoleDto>? items;
+  List<IdentityRoleDto>? items;
 
 
 
@@ -44,7 +44,7 @@ class IdentityRoleDtoPagedResultDto {
   )
 
 
-  final int? totalCount;
+  int? totalCount;
 
 
 

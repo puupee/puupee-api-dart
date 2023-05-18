@@ -45,7 +45,7 @@ class AppleNotificaionDto {
   )
 
 
-  final String? id;
+  String? id;
 
 
 
@@ -57,7 +57,7 @@ class AppleNotificaionDto {
   )
 
 
-  final DateTime? creationTime;
+  DateTime? creationTime;
 
 
 
@@ -69,7 +69,7 @@ class AppleNotificaionDto {
   )
 
 
-  final String? creatorId;
+  String? creatorId;
 
 
 
@@ -81,7 +81,7 @@ class AppleNotificaionDto {
   )
 
 
-  final DateTime? lastModificationTime;
+  DateTime? lastModificationTime;
 
 
 
@@ -93,7 +93,7 @@ class AppleNotificaionDto {
   )
 
 
-  final String? lastModifierId;
+  String? lastModifierId;
 
 
 
@@ -105,7 +105,7 @@ class AppleNotificaionDto {
   )
 
 
-  final bool? isDeleted;
+  bool? isDeleted;
 
 
 
@@ -117,7 +117,7 @@ class AppleNotificaionDto {
   )
 
 
-  final String? deleterId;
+  String? deleterId;
 
 
 
@@ -129,7 +129,7 @@ class AppleNotificaionDto {
   )
 
 
-  final DateTime? deletionTime;
+  DateTime? deletionTime;
 
 
 
@@ -141,7 +141,7 @@ class AppleNotificaionDto {
   )
 
 
-  final String? signedPayload;
+  String? signedPayload;
 
 
 

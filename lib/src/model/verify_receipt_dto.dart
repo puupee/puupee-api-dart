@@ -51,7 +51,7 @@ class VerifyReceiptDto {
   )
 
 
-  final String? id;
+  String? id;
 
 
 
@@ -63,7 +63,7 @@ class VerifyReceiptDto {
   )
 
 
-  final DateTime? creationTime;
+  DateTime? creationTime;
 
 
 
@@ -75,7 +75,7 @@ class VerifyReceiptDto {
   )
 
 
-  final String? creatorId;
+  String? creatorId;
 
 
 
@@ -87,7 +87,7 @@ class VerifyReceiptDto {
   )
 
 
-  final DateTime? lastModificationTime;
+  DateTime? lastModificationTime;
 
 
 
@@ -99,7 +99,7 @@ class VerifyReceiptDto {
   )
 
 
-  final String? lastModifierId;
+  String? lastModifierId;
 
 
 
@@ -111,7 +111,7 @@ class VerifyReceiptDto {
   )
 
 
-  final bool? isDeleted;
+  bool? isDeleted;
 
 
 
@@ -123,7 +123,7 @@ class VerifyReceiptDto {
   )
 
 
-  final String? deleterId;
+  String? deleterId;
 
 
 
@@ -135,7 +135,7 @@ class VerifyReceiptDto {
   )
 
 
-  final DateTime? deletionTime;
+  DateTime? deletionTime;
 
 
 
@@ -147,7 +147,7 @@ class VerifyReceiptDto {
   )
 
 
-  final String orderId;
+  String orderId;
 
 
 
@@ -159,7 +159,7 @@ class VerifyReceiptDto {
   )
 
 
-  final String receiptData;
+  String receiptData;
 
 
 
@@ -171,7 +171,7 @@ class VerifyReceiptDto {
   )
 
 
-  final String platform;
+  String platform;
 
 
 
@@ -183,7 +183,7 @@ class VerifyReceiptDto {
   )
 
 
-  final String deviceToken;
+  String deviceToken;
 
 
 

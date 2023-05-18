@@ -30,7 +30,7 @@ class UpdatePermissionsDto {
   )
 
 
-  final List<UpdatePermissionDto>? permissions;
+  List<UpdatePermissionDto>? permissions;
 
 
 

@@ -47,7 +47,7 @@ class CreateUpdateMessageSourceRouteDto {
   )
 
 
-  final String? title;
+  String? title;
 
 
 
@@ -59,7 +59,7 @@ class CreateUpdateMessageSourceRouteDto {
   )
 
 
-  final String? description;
+  String? description;
 
 
 
@@ -71,7 +71,7 @@ class CreateUpdateMessageSourceRouteDto {
   )
 
 
-  final String? path;
+  String? path;
 
 
 
@@ -83,7 +83,7 @@ class CreateUpdateMessageSourceRouteDto {
   )
 
 
-  final String? sourceId;
+  String? sourceId;
 
 
 
@@ -95,7 +95,7 @@ class CreateUpdateMessageSourceRouteDto {
   )
 
 
-  final String? extra;
+  String? extra;
 
 
 
@@ -107,7 +107,7 @@ class CreateUpdateMessageSourceRouteDto {
   )
 
 
-  final bool? anticrawler;
+  bool? anticrawler;
 
 
 
@@ -119,7 +119,7 @@ class CreateUpdateMessageSourceRouteDto {
   )
 
 
-  final bool? radar;
+  bool? radar;
 
 
 
@@ -131,7 +131,7 @@ class CreateUpdateMessageSourceRouteDto {
   )
 
 
-  final bool? rssbud;
+  bool? rssbud;
 
 
 
@@ -143,7 +143,7 @@ class CreateUpdateMessageSourceRouteDto {
   )
 
 
-  final bool? isPublished;
+  bool? isPublished;
 
 
 
@@ -155,7 +155,7 @@ class CreateUpdateMessageSourceRouteDto {
   )
 
 
-  final String? iconUrl;
+  String? iconUrl;
 
 
 

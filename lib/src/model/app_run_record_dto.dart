@@ -65,7 +65,7 @@ class AppRunRecordDto {
   )
 
 
-  final String? id;
+  String? id;
 
 
 
@@ -77,7 +77,7 @@ class AppRunRecordDto {
   )
 
 
-  final DateTime? creationTime;
+  DateTime? creationTime;
 
 
 
@@ -89,7 +89,7 @@ class AppRunRecordDto {
   )
 
 
-  final String? creatorId;
+  String? creatorId;
 
 
 
@@ -101,7 +101,7 @@ class AppRunRecordDto {
   )
 
 
-  final DateTime? lastModificationTime;
+  DateTime? lastModificationTime;
 
 
 
@@ -113,7 +113,7 @@ class AppRunRecordDto {
   )
 
 
-  final String? lastModifierId;
+  String? lastModifierId;
 
 
 
@@ -125,7 +125,7 @@ class AppRunRecordDto {
   )
 
 
-  final bool? isDeleted;
+  bool? isDeleted;
 
 
 
@@ -137,7 +137,7 @@ class AppRunRecordDto {
   )
 
 
-  final String? deleterId;
+  String? deleterId;
 
 
 
@@ -149,7 +149,7 @@ class AppRunRecordDto {
   )
 
 
-  final DateTime? deletionTime;
+  DateTime? deletionTime;
 
 
 
@@ -161,7 +161,7 @@ class AppRunRecordDto {
   )
 
 
-  final String? appId;
+  String? appId;
 
 
 
@@ -173,7 +173,7 @@ class AppRunRecordDto {
   )
 
 
-  final String? appName;
+  String? appName;
 
 
 
@@ -185,7 +185,7 @@ class AppRunRecordDto {
   )
 
 
-  final Object? args;
+  Object? args;
 
 
 
@@ -197,7 +197,7 @@ class AppRunRecordDto {
   )
 
 
-  final Object? envs;
+  Object? envs;
 
 
 
@@ -209,7 +209,7 @@ class AppRunRecordDto {
   )
 
 
-  final String? status;
+  String? status;
 
 
 
@@ -221,7 +221,7 @@ class AppRunRecordDto {
   )
 
 
-  final String? result;
+  String? result;
 
 
 
@@ -233,7 +233,7 @@ class AppRunRecordDto {
   )
 
 
-  final String? error;
+  String? error;
 
 
 
@@ -245,7 +245,7 @@ class AppRunRecordDto {
   )
 
 
-  final DateTime? finishAt;
+  DateTime? finishAt;
 
 
 
@@ -257,7 +257,7 @@ class AppRunRecordDto {
   )
 
 
-  final String? output;
+  String? output;
 
 
 
@@ -269,7 +269,7 @@ class AppRunRecordDto {
   )
 
 
-  final String? workerId;
+  String? workerId;
 
 
 
@@ -281,7 +281,7 @@ class AppRunRecordDto {
   )
 
 
-  final String? workerName;
+  String? workerName;
 
 
 

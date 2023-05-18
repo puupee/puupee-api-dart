@@ -37,7 +37,7 @@ class IdentityUserLogin {
   )
 
 
-  final String? tenantId;
+  String? tenantId;
 
 
 
@@ -49,7 +49,7 @@ class IdentityUserLogin {
   )
 
 
-  final String? userId;
+  String? userId;
 
 
 
@@ -61,7 +61,7 @@ class IdentityUserLogin {
   )
 
 
-  final String? loginProvider;
+  String? loginProvider;
 
 
 
@@ -73,7 +73,7 @@ class IdentityUserLogin {
   )
 
 
-  final String? providerKey;
+  String? providerKey;
 
 
 
@@ -85,7 +85,7 @@ class IdentityUserLogin {
   )
 
 
-  final String? providerDisplayName;
+  String? providerDisplayName;
 
 
 

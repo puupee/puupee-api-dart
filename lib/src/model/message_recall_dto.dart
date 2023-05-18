@@ -29,7 +29,7 @@ class MessageRecallDto {
   )
 
 
-  final String? puupeeId;
+  String? puupeeId;
 
 
 
