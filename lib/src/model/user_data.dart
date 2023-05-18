@@ -175,14 +175,14 @@ class UserData {
   @override
   int get hashCode =>
     id.hashCode +
-    tenantId.hashCode +
-    userName.hashCode +
-    name.hashCode +
-    surname.hashCode +
+    (tenantId == null ? 0 : tenantId.hashCode) +
+    (userName == null ? 0 : userName.hashCode) +
+    (name == null ? 0 : name.hashCode) +
+    (surname == null ? 0 : surname.hashCode) +
     isActive.hashCode +
-    email.hashCode +
+    (email == null ? 0 : email.hashCode) +
     emailConfirmed.hashCode +
-    phoneNumber.hashCode +
+    (phoneNumber == null ? 0 : phoneNumber.hashCode) +
     phoneNumberConfirmed.hashCode;
 
   factory UserData.fromJson(Map<String, dynamic> json) => _$UserDataFromJson(json);

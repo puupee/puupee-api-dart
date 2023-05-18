@@ -100,11 +100,11 @@ class PermissionGroupDto {
 
   @override
   int get hashCode =>
-    name.hashCode +
-    displayName.hashCode +
-    displayNameKey.hashCode +
-    displayNameResource.hashCode +
-    permissions.hashCode;
+    (name == null ? 0 : name.hashCode) +
+    (displayName == null ? 0 : displayName.hashCode) +
+    (displayNameKey == null ? 0 : displayNameKey.hashCode) +
+    (displayNameResource == null ? 0 : displayNameResource.hashCode) +
+    (permissions == null ? 0 : permissions.hashCode);
 
   factory PermissionGroupDto.fromJson(Map<String, dynamic> json) => _$PermissionGroupDtoFromJson(json);
 

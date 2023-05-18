@@ -467,7 +467,7 @@ _responseData = deserialize<IdentityUserDto, IdentityUserDto>(_response.data!, '
   ///
   /// Parameters:
   /// * [id] 
-  /// * [body] 
+  /// * [identityUserUpdateDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -479,7 +479,7 @@ _responseData = deserialize<IdentityUserDto, IdentityUserDto>(_response.data!, '
   /// Throws [DioError] if API call or serialization fails
   Future<Response<IdentityUserDto>> apiIdentityUsersIdPut({ 
     required String id,
-    IdentityUserUpdateDto? body,
+    IdentityUserUpdateDto? identityUserUpdateDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -509,7 +509,7 @@ _responseData = deserialize<IdentityUserDto, IdentityUserDto>(_response.data!, '
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(identityUserUpdateDto);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -637,7 +637,7 @@ _responseData = deserialize<IdentityRoleDtoListResultDto, IdentityRoleDtoListRes
   ///
   /// Parameters:
   /// * [id] 
-  /// * [body] 
+  /// * [identityUserUpdateRolesDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -649,7 +649,7 @@ _responseData = deserialize<IdentityRoleDtoListResultDto, IdentityRoleDtoListRes
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiIdentityUsersIdRolesPut({ 
     required String id,
-    IdentityUserUpdateRolesDto? body,
+    IdentityUserUpdateRolesDto? identityUserUpdateRolesDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -679,7 +679,7 @@ _responseData = deserialize<IdentityRoleDtoListResultDto, IdentityRoleDtoListRes
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(identityUserUpdateRolesDto);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -708,7 +708,7 @@ _bodyData=jsonEncode(body);
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [identityUserCreateDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -719,7 +719,7 @@ _bodyData=jsonEncode(body);
   /// Returns a [Future] containing a [Response] with a [IdentityUserDto] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<IdentityUserDto>> apiIdentityUsersPost({ 
-    IdentityUserCreateDto? body,
+    IdentityUserCreateDto? identityUserCreateDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -749,7 +749,7 @@ _bodyData=jsonEncode(body);
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(identityUserCreateDto);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

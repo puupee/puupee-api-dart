@@ -17,12 +17,12 @@ void main() {
       // TODO
     });
 
-    //Future<AppSdkDto> apiAppAppSdkIdPut(String id, { CreateOrUpdateAppSdkDto body }) async
+    //Future<AppSdkDto> apiAppAppSdkIdPut(String id, { CreateOrUpdateAppSdkDto createOrUpdateAppSdkDto }) async
     test('test apiAppAppSdkIdPut', () async {
       // TODO
     });
 
-    //Future<AppSdkDto> apiAppAppSdkPost({ CreateOrUpdateAppSdkDto body }) async
+    //Future<AppSdkDto> apiAppAppSdkPost({ CreateOrUpdateAppSdkDto createOrUpdateAppSdkDto }) async
     test('test apiAppAppSdkPost', () async {
       // TODO
     });

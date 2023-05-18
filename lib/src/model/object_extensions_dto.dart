@@ -56,8 +56,8 @@ class ObjectExtensionsDto {
 
   @override
   int get hashCode =>
-    modules.hashCode +
-    enums.hashCode;
+    (modules == null ? 0 : modules.hashCode) +
+    (enums == null ? 0 : enums.hashCode);
 
   factory ObjectExtensionsDto.fromJson(Map<String, dynamic> json) => _$ObjectExtensionsDtoFromJson(json);
 

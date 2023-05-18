@@ -221,17 +221,17 @@ class AppSdkDto {
   int get hashCode =>
     id.hashCode +
     creationTime.hashCode +
-    creatorId.hashCode +
-    lastModificationTime.hashCode +
-    lastModifierId.hashCode +
+    (creatorId == null ? 0 : creatorId.hashCode) +
+    (lastModificationTime == null ? 0 : lastModificationTime.hashCode) +
+    (lastModifierId == null ? 0 : lastModifierId.hashCode) +
     isDeleted.hashCode +
-    deleterId.hashCode +
-    deletionTime.hashCode +
-    name.hashCode +
-    description.hashCode +
-    privacy.hashCode +
-    privacyUrl.hashCode +
-    homePage.hashCode;
+    (deleterId == null ? 0 : deleterId.hashCode) +
+    (deletionTime == null ? 0 : deletionTime.hashCode) +
+    (name == null ? 0 : name.hashCode) +
+    (description == null ? 0 : description.hashCode) +
+    (privacy == null ? 0 : privacy.hashCode) +
+    (privacyUrl == null ? 0 : privacyUrl.hashCode) +
+    (homePage == null ? 0 : homePage.hashCode);
 
   factory AppSdkDto.fromJson(Map<String, dynamic> json) => _$AppSdkDtoFromJson(json);
 

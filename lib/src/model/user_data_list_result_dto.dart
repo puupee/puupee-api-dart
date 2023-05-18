@@ -40,7 +40,7 @@ class UserDataListResultDto {
 
   @override
   int get hashCode =>
-    items.hashCode;
+    (items == null ? 0 : items.hashCode);
 
   factory UserDataListResultDto.fromJson(Map<String, dynamic> json) => _$UserDataListResultDtoFromJson(json);
 

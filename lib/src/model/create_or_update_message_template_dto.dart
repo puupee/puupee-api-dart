@@ -54,8 +54,8 @@ class CreateOrUpdateMessageTemplateDto {
 
   @override
   int get hashCode =>
-    name.hashCode +
-    description.hashCode;
+    (name == null ? 0 : name.hashCode) +
+    (description == null ? 0 : description.hashCode);
 
   factory CreateOrUpdateMessageTemplateDto.fromJson(Map<String, dynamic> json) => _$CreateOrUpdateMessageTemplateDtoFromJson(json);
 

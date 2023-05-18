@@ -70,9 +70,9 @@ class ModuleApiDescriptionModel {
 
   @override
   int get hashCode =>
-    rootPath.hashCode +
-    remoteServiceName.hashCode +
-    controllers.hashCode;
+    (rootPath == null ? 0 : rootPath.hashCode) +
+    (remoteServiceName == null ? 0 : remoteServiceName.hashCode) +
+    (controllers == null ? 0 : controllers.hashCode);
 
   factory ModuleApiDescriptionModel.fromJson(Map<String, dynamic> json) => _$ModuleApiDescriptionModelFromJson(json);
 

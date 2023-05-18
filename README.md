@@ -114,6 +114,8 @@ Class | Method | HTTP request | Description
 [*AppSdkApi*](doc/AppSdkApi.md) | [**apiAppAppSdkIdPut**](doc/AppSdkApi.md#apiappappsdkidput) | **PUT** /api/app/app-sdk/{id} | 
 [*AppSdkApi*](doc/AppSdkApi.md) | [**apiAppAppSdkPost**](doc/AppSdkApi.md#apiappappsdkpost) | **POST** /api/app/app-sdk | 
 [*AppUserScoreApi*](doc/AppUserScoreApi.md) | [**apiAppAppUserScorePost**](doc/AppUserScoreApi.md#apiappappuserscorepost) | **POST** /api/app/app-user-score | 
+[*AvatarApi*](doc/AvatarApi.md) | [**apiAppAvatarCredentialsGet**](doc/AvatarApi.md#apiappavatarcredentialsget) | **GET** /api/app/avatar/credentials | 
+[*AvatarApi*](doc/AvatarApi.md) | [**apiAppAvatarPost**](doc/AvatarApi.md#apiappavatarpost) | **POST** /api/app/avatar | 
 [*DeviceApi*](doc/DeviceApi.md) | [**apiAppDeviceBindPost**](doc/DeviceApi.md#apiappdevicebindpost) | **POST** /api/app/device/bind | 
 [*DeviceApi*](doc/DeviceApi.md) | [**apiAppDeviceDelete**](doc/DeviceApi.md#apiappdevicedelete) | **DELETE** /api/app/device | 
 [*DeviceApi*](doc/DeviceApi.md) | [**apiAppDeviceGet**](doc/DeviceApi.md#apiappdeviceget) | **GET** /api/app/device | 
@@ -143,6 +145,22 @@ Class | Method | HTTP request | Description
 [*MessageApi*](doc/MessageApi.md) | [**apiAppMessageRecallPost**](doc/MessageApi.md#apiappmessagerecallpost) | **POST** /api/app/message/recall | 
 [*MessageApi*](doc/MessageApi.md) | [**apiAppMessageSubscribePost**](doc/MessageApi.md#apiappmessagesubscribepost) | **POST** /api/app/message/subscribe | 
 [*MessageApi*](doc/MessageApi.md) | [**apiAppMessageUnsubscribePost**](doc/MessageApi.md#apiappmessageunsubscribepost) | **POST** /api/app/message/unsubscribe | 
+[*MessageSourceApi*](doc/MessageSourceApi.md) | [**apiAppMessageSourceIdDelete**](doc/MessageSourceApi.md#apiappmessagesourceiddelete) | **DELETE** /api/app/message-source/{id} | 
+[*MessageSourceApi*](doc/MessageSourceApi.md) | [**apiAppMessageSourceIdGet**](doc/MessageSourceApi.md#apiappmessagesourceidget) | **GET** /api/app/message-source/{id} | 
+[*MessageSourceApi*](doc/MessageSourceApi.md) | [**apiAppMessageSourceIdPut**](doc/MessageSourceApi.md#apiappmessagesourceidput) | **PUT** /api/app/message-source/{id} | 
+[*MessageSourceApi*](doc/MessageSourceApi.md) | [**apiAppMessageSourcePost**](doc/MessageSourceApi.md#apiappmessagesourcepost) | **POST** /api/app/message-source | 
+[*MessageSourceApi*](doc/MessageSourceApi.md) | [**apiAppMessageSourcePublishedListCategoryIdGet**](doc/MessageSourceApi.md#apiappmessagesourcepublishedlistcategoryidget) | **GET** /api/app/message-source/published-list/{categoryId} | 
+[*MessageSourceCategoryApi*](doc/MessageSourceCategoryApi.md) | [**apiAppMessageSourceCategoryGet**](doc/MessageSourceCategoryApi.md#apiappmessagesourcecategoryget) | **GET** /api/app/message-source-category | 
+[*MessageSourceRouteApi*](doc/MessageSourceRouteApi.md) | [**apiAppMessageSourceRouteIdDelete**](doc/MessageSourceRouteApi.md#apiappmessagesourcerouteiddelete) | **DELETE** /api/app/message-source-route/{id} | 
+[*MessageSourceRouteApi*](doc/MessageSourceRouteApi.md) | [**apiAppMessageSourceRouteIdGet**](doc/MessageSourceRouteApi.md#apiappmessagesourcerouteidget) | **GET** /api/app/message-source-route/{id} | 
+[*MessageSourceRouteApi*](doc/MessageSourceRouteApi.md) | [**apiAppMessageSourceRouteIdPut**](doc/MessageSourceRouteApi.md#apiappmessagesourcerouteidput) | **PUT** /api/app/message-source-route/{id} | 
+[*MessageSourceRouteApi*](doc/MessageSourceRouteApi.md) | [**apiAppMessageSourceRoutePost**](doc/MessageSourceRouteApi.md#apiappmessagesourceroutepost) | **POST** /api/app/message-source-route | 
+[*MessageSourceRouteApi*](doc/MessageSourceRouteApi.md) | [**apiAppMessageSourceRoutePublishedListSourceIdGet**](doc/MessageSourceRouteApi.md#apiappmessagesourceroutepublishedlistsourceidget) | **GET** /api/app/message-source-route/published-list/{sourceId} | 
+[*MessageSourceRouteSubApi*](doc/MessageSourceRouteSubApi.md) | [**apiAppMessageSourceRouteSubGet**](doc/MessageSourceRouteSubApi.md#apiappmessagesourceroutesubget) | **GET** /api/app/message-source-route-sub | 
+[*MessageSourceRouteSubApi*](doc/MessageSourceRouteSubApi.md) | [**apiAppMessageSourceRouteSubIdDelete**](doc/MessageSourceRouteSubApi.md#apiappmessagesourceroutesubiddelete) | **DELETE** /api/app/message-source-route-sub/{id} | 
+[*MessageSourceRouteSubApi*](doc/MessageSourceRouteSubApi.md) | [**apiAppMessageSourceRouteSubIdGet**](doc/MessageSourceRouteSubApi.md#apiappmessagesourceroutesubidget) | **GET** /api/app/message-source-route-sub/{id} | 
+[*MessageSourceRouteSubApi*](doc/MessageSourceRouteSubApi.md) | [**apiAppMessageSourceRouteSubIdPut**](doc/MessageSourceRouteSubApi.md#apiappmessagesourceroutesubidput) | **PUT** /api/app/message-source-route-sub/{id} | 
+[*MessageSourceRouteSubApi*](doc/MessageSourceRouteSubApi.md) | [**apiAppMessageSourceRouteSubPost**](doc/MessageSourceRouteSubApi.md#apiappmessagesourceroutesubpost) | **POST** /api/app/message-source-route-sub | 
 [*MessageTemplateApi*](doc/MessageTemplateApi.md) | [**apiAppMessageTemplateGet**](doc/MessageTemplateApi.md#apiappmessagetemplateget) | **GET** /api/app/message-template | 
 [*MessageTemplateApi*](doc/MessageTemplateApi.md) | [**apiAppMessageTemplateIdDelete**](doc/MessageTemplateApi.md#apiappmessagetemplateiddelete) | **DELETE** /api/app/message-template/{id} | 
 [*MessageTemplateApi*](doc/MessageTemplateApi.md) | [**apiAppMessageTemplateIdGet**](doc/MessageTemplateApi.md#apiappmessagetemplateidget) | **GET** /api/app/message-template/{id} | 
@@ -243,6 +261,7 @@ Class | Method | HTTP request | Description
  - [ApplicationLocalizationDto](doc/ApplicationLocalizationDto.md)
  - [ApplicationLocalizationResourceDto](doc/ApplicationLocalizationResourceDto.md)
  - [ApplicationSettingConfigurationDto](doc/ApplicationSettingConfigurationDto.md)
+ - [AvatarDto](doc/AvatarDto.md)
  - [BindDeviceDto](doc/BindDeviceDto.md)
  - [BooleanKeyValue](doc/BooleanKeyValue.md)
  - [BooleanSetKeyValueDto](doc/BooleanSetKeyValueDto.md)
@@ -250,6 +269,7 @@ Class | Method | HTTP request | Description
  - [ClockDto](doc/ClockDto.md)
  - [ControllerApiDescriptionModel](doc/ControllerApiDescriptionModel.md)
  - [ControllerInterfaceApiDescriptionModel](doc/ControllerInterfaceApiDescriptionModel.md)
+ - [CreateAvatarDto](doc/CreateAvatarDto.md)
  - [CreateMessageTemplateReleaseDto](doc/CreateMessageTemplateReleaseDto.md)
  - [CreateOpenIddictApplicationDto](doc/CreateOpenIddictApplicationDto.md)
  - [CreateOrGetSubscriptionOrderDto](doc/CreateOrGetSubscriptionOrderDto.md)
@@ -263,6 +283,9 @@ Class | Method | HTTP request | Description
  - [CreateOrUpdateMessageTemplateDto](doc/CreateOrUpdateMessageTemplateDto.md)
  - [CreateOrUpdatePuupeeDto](doc/CreateOrUpdatePuupeeDto.md)
  - [CreatePushNotificationDto](doc/CreatePushNotificationDto.md)
+ - [CreateUpdateMessageSourceDto](doc/CreateUpdateMessageSourceDto.md)
+ - [CreateUpdateMessageSourceRouteDto](doc/CreateUpdateMessageSourceRouteDto.md)
+ - [CreateUpdateMessageSourceRouteSubDto](doc/CreateUpdateMessageSourceRouteSubDto.md)
  - [CurrentCultureDto](doc/CurrentCultureDto.md)
  - [CurrentTenantDto](doc/CurrentTenantDto.md)
  - [CurrentUserDto](doc/CurrentUserDto.md)
@@ -324,6 +347,10 @@ Class | Method | HTTP request | Description
  - [LoginResultType](doc/LoginResultType.md)
  - [MessagePublishDto](doc/MessagePublishDto.md)
  - [MessageRecallDto](doc/MessageRecallDto.md)
+ - [MessageSourceCategoryDto](doc/MessageSourceCategoryDto.md)
+ - [MessageSourceDto](doc/MessageSourceDto.md)
+ - [MessageSourceRouteDto](doc/MessageSourceRouteDto.md)
+ - [MessageSourceRouteSubDto](doc/MessageSourceRouteSubDto.md)
  - [MessageSubscribeDto](doc/MessageSubscribeDto.md)
  - [MessageTemplateDto](doc/MessageTemplateDto.md)
  - [MessageTemplateReleaseDto](doc/MessageTemplateReleaseDto.md)

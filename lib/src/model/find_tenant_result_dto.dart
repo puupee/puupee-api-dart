@@ -85,8 +85,8 @@ class FindTenantResultDto {
   @override
   int get hashCode =>
     success.hashCode +
-    tenantId.hashCode +
-    name.hashCode +
+    (tenantId == null ? 0 : tenantId.hashCode) +
+    (name == null ? 0 : name.hashCode) +
     isActive.hashCode;
 
   factory FindTenantResultDto.fromJson(Map<String, dynamic> json) => _$FindTenantResultDtoFromJson(json);

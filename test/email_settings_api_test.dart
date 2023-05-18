@@ -12,12 +12,12 @@ void main() {
       // TODO
     });
 
-    //Future apiSettingManagementEmailingPost({ UpdateEmailSettingsDto body }) async
+    //Future apiSettingManagementEmailingPost({ UpdateEmailSettingsDto updateEmailSettingsDto }) async
     test('test apiSettingManagementEmailingPost', () async {
       // TODO
     });
 
-    //Future apiSettingManagementEmailingSendTestEmailPost({ SendTestEmailInput body }) async
+    //Future apiSettingManagementEmailingSendTestEmailPost({ SendTestEmailInput sendTestEmailInput }) async
     test('test apiSettingManagementEmailingSendTestEmailPost', () async {
       // TODO
     });

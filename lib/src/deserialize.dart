@@ -28,6 +28,7 @@ import 'package:puupee_api_client/src/model/application_localization_configurati
 import 'package:puupee_api_client/src/model/application_localization_dto.dart';
 import 'package:puupee_api_client/src/model/application_localization_resource_dto.dart';
 import 'package:puupee_api_client/src/model/application_setting_configuration_dto.dart';
+import 'package:puupee_api_client/src/model/avatar_dto.dart';
 import 'package:puupee_api_client/src/model/bind_device_dto.dart';
 import 'package:puupee_api_client/src/model/boolean_key_value.dart';
 import 'package:puupee_api_client/src/model/boolean_set_key_value_dto.dart';
@@ -35,6 +36,7 @@ import 'package:puupee_api_client/src/model/change_password_input.dart';
 import 'package:puupee_api_client/src/model/clock_dto.dart';
 import 'package:puupee_api_client/src/model/controller_api_description_model.dart';
 import 'package:puupee_api_client/src/model/controller_interface_api_description_model.dart';
+import 'package:puupee_api_client/src/model/create_avatar_dto.dart';
 import 'package:puupee_api_client/src/model/create_message_template_release_dto.dart';
 import 'package:puupee_api_client/src/model/create_open_iddict_application_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_get_subscription_order_dto.dart';
@@ -48,6 +50,9 @@ import 'package:puupee_api_client/src/model/create_or_update_app_user_score_dto.
 import 'package:puupee_api_client/src/model/create_or_update_message_template_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_puupee_dto.dart';
 import 'package:puupee_api_client/src/model/create_push_notification_dto.dart';
+import 'package:puupee_api_client/src/model/create_update_message_source_dto.dart';
+import 'package:puupee_api_client/src/model/create_update_message_source_route_dto.dart';
+import 'package:puupee_api_client/src/model/create_update_message_source_route_sub_dto.dart';
 import 'package:puupee_api_client/src/model/current_culture_dto.dart';
 import 'package:puupee_api_client/src/model/current_tenant_dto.dart';
 import 'package:puupee_api_client/src/model/current_user_dto.dart';
@@ -108,6 +113,10 @@ import 'package:puupee_api_client/src/model/latest_receipt_info.dart';
 import 'package:puupee_api_client/src/model/localizable_string_dto.dart';
 import 'package:puupee_api_client/src/model/message_publish_dto.dart';
 import 'package:puupee_api_client/src/model/message_recall_dto.dart';
+import 'package:puupee_api_client/src/model/message_source_category_dto.dart';
+import 'package:puupee_api_client/src/model/message_source_dto.dart';
+import 'package:puupee_api_client/src/model/message_source_route_dto.dart';
+import 'package:puupee_api_client/src/model/message_source_route_sub_dto.dart';
 import 'package:puupee_api_client/src/model/message_subscribe_dto.dart';
 import 'package:puupee_api_client/src/model/message_template_dto.dart';
 import 'package:puupee_api_client/src/model/message_template_release_dto.dart';
@@ -260,6 +269,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return ApplicationLocalizationResourceDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ApplicationSettingConfigurationDto':
           return ApplicationSettingConfigurationDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AvatarDto':
+          return AvatarDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'BindDeviceDto':
           return BindDeviceDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'BooleanKeyValue':
@@ -274,6 +285,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return ControllerApiDescriptionModel.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ControllerInterfaceApiDescriptionModel':
           return ControllerInterfaceApiDescriptionModel.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'CreateAvatarDto':
+          return CreateAvatarDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateMessageTemplateReleaseDto':
           return CreateMessageTemplateReleaseDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateOpenIddictApplicationDto':
@@ -300,6 +313,12 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return CreateOrUpdatePuupeeDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreatePushNotificationDto':
           return CreatePushNotificationDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'CreateUpdateMessageSourceDto':
+          return CreateUpdateMessageSourceDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'CreateUpdateMessageSourceRouteDto':
+          return CreateUpdateMessageSourceRouteDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'CreateUpdateMessageSourceRouteSubDto':
+          return CreateUpdateMessageSourceRouteSubDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CurrentCultureDto':
           return CurrentCultureDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CurrentTenantDto':
@@ -423,6 +442,14 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return MessagePublishDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'MessageRecallDto':
           return MessageRecallDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'MessageSourceCategoryDto':
+          return MessageSourceCategoryDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'MessageSourceDto':
+          return MessageSourceDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'MessageSourceRouteDto':
+          return MessageSourceRouteDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'MessageSourceRouteSubDto':
+          return MessageSourceRouteSubDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'MessageSubscribeDto':
           return MessageSubscribeDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'MessageTemplateDto':

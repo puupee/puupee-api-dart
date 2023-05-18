@@ -191,7 +191,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiIdentityRolesIdPut**
-> IdentityRoleDto apiIdentityRolesIdPut(id, body)
+> IdentityRoleDto apiIdentityRolesIdPut(id, identityRoleUpdateDto)
 
 
 
@@ -203,10 +203,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getRoleApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final IdentityRoleUpdateDto body = ; // IdentityRoleUpdateDto | 
+final IdentityRoleUpdateDto identityRoleUpdateDto = ; // IdentityRoleUpdateDto | 
 
 try {
-    final response = api.apiIdentityRolesIdPut(id, body);
+    final response = api.apiIdentityRolesIdPut(id, identityRoleUpdateDto);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling RoleApi->apiIdentityRolesIdPut: $e\n');
@@ -218,7 +218,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **body** | [**IdentityRoleUpdateDto**](IdentityRoleUpdateDto.md)|  | [optional] 
+ **identityRoleUpdateDto** | [**IdentityRoleUpdateDto**](IdentityRoleUpdateDto.md)|  | [optional] 
 
 ### Return type
 
@@ -236,7 +236,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiIdentityRolesPost**
-> IdentityRoleDto apiIdentityRolesPost(body)
+> IdentityRoleDto apiIdentityRolesPost(identityRoleCreateDto)
 
 
 
@@ -247,10 +247,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getRoleApi();
-final IdentityRoleCreateDto body = ; // IdentityRoleCreateDto | 
+final IdentityRoleCreateDto identityRoleCreateDto = ; // IdentityRoleCreateDto | 
 
 try {
-    final response = api.apiIdentityRolesPost(body);
+    final response = api.apiIdentityRolesPost(identityRoleCreateDto);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling RoleApi->apiIdentityRolesPost: $e\n');
@@ -261,7 +261,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**IdentityRoleCreateDto**](IdentityRoleCreateDto.md)|  | [optional] 
+ **identityRoleCreateDto** | [**IdentityRoleCreateDto**](IdentityRoleCreateDto.md)|  | [optional] 
 
 ### Return type
 

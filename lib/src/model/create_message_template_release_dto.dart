@@ -54,7 +54,7 @@ class CreateMessageTemplateReleaseDto {
 
   @override
   int get hashCode =>
-    content.hashCode +
+    (content == null ? 0 : content.hashCode) +
     templateId.hashCode;
 
   factory CreateMessageTemplateReleaseDto.fromJson(Map<String, dynamic> json) => _$CreateMessageTemplateReleaseDtoFromJson(json);

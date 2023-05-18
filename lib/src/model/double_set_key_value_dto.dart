@@ -55,7 +55,7 @@ class DoubleSetKeyValueDto {
   @override
   int get hashCode =>
     value.hashCode +
-    durationSeconds.hashCode;
+    (durationSeconds == null ? 0 : durationSeconds.hashCode);
 
   factory DoubleSetKeyValueDto.fromJson(Map<String, dynamic> json) => _$DoubleSetKeyValueDtoFromJson(json);
 

@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppAppByNameGet**
-> AppDto apiAppAppByNameGet(name)
+> AppDto apiAppAppByNameGet(name, env)
 
 
 
@@ -80,9 +80,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getAppApi();
 final String name = name_example; // String | 
+final String env = env_example; // String | 
 
 try {
-    final response = api.apiAppAppByNameGet(name);
+    final response = api.apiAppAppByNameGet(name, env);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AppApi->apiAppAppByNameGet: $e\n');
@@ -94,6 +95,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **String**|  | [optional] 
+ **env** | **String**|  | [optional] 
 
 ### Return type
 
@@ -202,7 +204,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppAppIdGet**
-> AppDto apiAppAppIdGet(id)
+> AppDto apiAppAppIdGet(id, env)
 
 
 
@@ -214,9 +216,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getAppApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final String env = env_example; // String | 
 
 try {
-    final response = api.apiAppAppIdGet(id);
+    final response = api.apiAppAppIdGet(id, env);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AppApi->apiAppAppIdGet: $e\n');
@@ -228,6 +231,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
+ **env** | **String**|  | [optional] 
 
 ### Return type
 
@@ -245,7 +249,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppAppIdPut**
-> AppDto apiAppAppIdPut(id, body)
+> AppDto apiAppAppIdPut(id, createOrUpdateAppDto)
 
 
 
@@ -257,10 +261,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getAppApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final CreateOrUpdateAppDto body = ; // CreateOrUpdateAppDto | 
+final CreateOrUpdateAppDto createOrUpdateAppDto = ; // CreateOrUpdateAppDto | 
 
 try {
-    final response = api.apiAppAppIdPut(id, body);
+    final response = api.apiAppAppIdPut(id, createOrUpdateAppDto);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AppApi->apiAppAppIdPut: $e\n');
@@ -272,7 +276,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **body** | [**CreateOrUpdateAppDto**](CreateOrUpdateAppDto.md)|  | [optional] 
+ **createOrUpdateAppDto** | [**CreateOrUpdateAppDto**](CreateOrUpdateAppDto.md)|  | [optional] 
 
 ### Return type
 
@@ -290,7 +294,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppAppIdRunStatePut**
-> AppRunRecordDto apiAppAppIdRunStatePut(id, body)
+> AppRunRecordDto apiAppAppIdRunStatePut(id, appRunRecordUpdateDto)
 
 
 
@@ -302,10 +306,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getAppApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final AppRunRecordUpdateDto body = ; // AppRunRecordUpdateDto | 
+final AppRunRecordUpdateDto appRunRecordUpdateDto = ; // AppRunRecordUpdateDto | 
 
 try {
-    final response = api.apiAppAppIdRunStatePut(id, body);
+    final response = api.apiAppAppIdRunStatePut(id, appRunRecordUpdateDto);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AppApi->apiAppAppIdRunStatePut: $e\n');
@@ -317,7 +321,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **body** | [**AppRunRecordUpdateDto**](AppRunRecordUpdateDto.md)|  | [optional] 
+ **appRunRecordUpdateDto** | [**AppRunRecordUpdateDto**](AppRunRecordUpdateDto.md)|  | [optional] 
 
 ### Return type
 
@@ -335,7 +339,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppAppIdWithUserGet**
-> AppWithUserDto apiAppAppIdWithUserGet(id)
+> AppWithUserDto apiAppAppIdWithUserGet(id, env)
 
 
 
@@ -347,9 +351,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getAppApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final String env = env_example; // String | 
 
 try {
-    final response = api.apiAppAppIdWithUserGet(id);
+    final response = api.apiAppAppIdWithUserGet(id, env);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AppApi->apiAppAppIdWithUserGet: $e\n');
@@ -361,6 +366,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
+ **env** | **String**|  | [optional] 
 
 ### Return type
 
@@ -378,7 +384,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppAppPost**
-> AppDto apiAppAppPost(body)
+> AppDto apiAppAppPost(createOrUpdateAppDto)
 
 
 
@@ -389,10 +395,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppApi();
-final CreateOrUpdateAppDto body = ; // CreateOrUpdateAppDto | 
+final CreateOrUpdateAppDto createOrUpdateAppDto = ; // CreateOrUpdateAppDto | 
 
 try {
-    final response = api.apiAppAppPost(body);
+    final response = api.apiAppAppPost(createOrUpdateAppDto);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AppApi->apiAppAppPost: $e\n');
@@ -403,7 +409,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateOrUpdateAppDto**](CreateOrUpdateAppDto.md)|  | [optional] 
+ **createOrUpdateAppDto** | [**CreateOrUpdateAppDto**](CreateOrUpdateAppDto.md)|  | [optional] 
 
 ### Return type
 
@@ -468,7 +474,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppAppRunPost**
-> AppRunRecordDto apiAppAppRunPost(body)
+> AppRunRecordDto apiAppAppRunPost(appRunDto)
 
 
 
@@ -479,10 +485,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppApi();
-final AppRunDto body = ; // AppRunDto | 
+final AppRunDto appRunDto = ; // AppRunDto | 
 
 try {
-    final response = api.apiAppAppRunPost(body);
+    final response = api.apiAppAppRunPost(appRunDto);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AppApi->apiAppAppRunPost: $e\n');
@@ -493,7 +499,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AppRunDto**](AppRunDto.md)|  | [optional] 
+ **appRunDto** | [**AppRunDto**](AppRunDto.md)|  | [optional] 
 
 ### Return type
 

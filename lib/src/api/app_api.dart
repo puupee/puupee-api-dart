@@ -111,6 +111,7 @@ _responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_respons
   ///
   /// Parameters:
   /// * [name] 
+  /// * [env] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -122,6 +123,7 @@ _responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_respons
   /// Throws [DioError] if API call or serialization fails
   Future<Response<AppDto>> apiAppAppByNameGet({ 
     String? name,
+    String? env,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -149,6 +151,7 @@ _responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_respons
 
     final _queryParameters = <String, dynamic>{
       if (name != null) r'name': name,
+      if (env != null) r'env': env,
     };
 
     final _response = await _dio.request<Object>(
@@ -332,6 +335,7 @@ _responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_respons
   ///
   /// Parameters:
   /// * [id] 
+  /// * [env] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -343,6 +347,7 @@ _responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_respons
   /// Throws [DioError] if API call or serialization fails
   Future<Response<AppDto>> apiAppAppIdGet({ 
     required String id,
+    String? env,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -368,9 +373,14 @@ _responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_respons
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (env != null) r'env': env,
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -407,7 +417,7 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
   ///
   /// Parameters:
   /// * [id] 
-  /// * [body] 
+  /// * [createOrUpdateAppDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -419,7 +429,7 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
   /// Throws [DioError] if API call or serialization fails
   Future<Response<AppDto>> apiAppAppIdPut({ 
     required String id,
-    CreateOrUpdateAppDto? body,
+    CreateOrUpdateAppDto? createOrUpdateAppDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -449,7 +459,7 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(createOrUpdateAppDto);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -502,7 +512,7 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
   ///
   /// Parameters:
   /// * [id] 
-  /// * [body] 
+  /// * [appRunRecordUpdateDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -514,7 +524,7 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
   /// Throws [DioError] if API call or serialization fails
   Future<Response<AppRunRecordDto>> apiAppAppIdRunStatePut({ 
     required String id,
-    AppRunRecordUpdateDto? body,
+    AppRunRecordUpdateDto? appRunRecordUpdateDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -544,7 +554,7 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(appRunRecordUpdateDto);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -597,6 +607,7 @@ _responseData = deserialize<AppRunRecordDto, AppRunRecordDto>(_response.data!, '
   ///
   /// Parameters:
   /// * [id] 
+  /// * [env] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -608,6 +619,7 @@ _responseData = deserialize<AppRunRecordDto, AppRunRecordDto>(_response.data!, '
   /// Throws [DioError] if API call or serialization fails
   Future<Response<AppWithUserDto>> apiAppAppIdWithUserGet({ 
     required String id,
+    String? env,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -633,9 +645,14 @@ _responseData = deserialize<AppRunRecordDto, AppRunRecordDto>(_response.data!, '
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (env != null) r'env': env,
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -671,7 +688,7 @@ _responseData = deserialize<AppWithUserDto, AppWithUserDto>(_response.data!, 'Ap
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [createOrUpdateAppDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -682,7 +699,7 @@ _responseData = deserialize<AppWithUserDto, AppWithUserDto>(_response.data!, 'Ap
   /// Returns a [Future] containing a [Response] with a [AppDto] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<AppDto>> apiAppAppPost({ 
-    CreateOrUpdateAppDto? body,
+    CreateOrUpdateAppDto? createOrUpdateAppDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -712,7 +729,7 @@ _responseData = deserialize<AppWithUserDto, AppWithUserDto>(_response.data!, 'Ap
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(createOrUpdateAppDto);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -850,7 +867,7 @@ _responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_respons
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [appRunDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -861,7 +878,7 @@ _responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_respons
   /// Returns a [Future] containing a [Response] with a [AppRunRecordDto] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<AppRunRecordDto>> apiAppAppRunPost({ 
-    AppRunDto? body,
+    AppRunDto? appRunDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -891,7 +908,7 @@ _responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_respons
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(appRunDto);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

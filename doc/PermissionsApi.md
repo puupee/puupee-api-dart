@@ -59,7 +59,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiPermissionManagementPermissionsPut**
-> apiPermissionManagementPermissionsPut(providerName, providerKey, body)
+> apiPermissionManagementPermissionsPut(providerName, providerKey, updatePermissionsDto)
 
 
 
@@ -72,10 +72,10 @@ import 'package:puupee_api_client/api.dart';
 final api = PuupeeApiClient().getPermissionsApi();
 final String providerName = providerName_example; // String | 
 final String providerKey = providerKey_example; // String | 
-final UpdatePermissionsDto body = ; // UpdatePermissionsDto | 
+final UpdatePermissionsDto updatePermissionsDto = ; // UpdatePermissionsDto | 
 
 try {
-    api.apiPermissionManagementPermissionsPut(providerName, providerKey, body);
+    api.apiPermissionManagementPermissionsPut(providerName, providerKey, updatePermissionsDto);
 } catch on DioError (e) {
     print('Exception when calling PermissionsApi->apiPermissionManagementPermissionsPut: $e\n');
 }
@@ -87,7 +87,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **providerName** | **String**|  | [optional] 
  **providerKey** | **String**|  | [optional] 
- **body** | [**UpdatePermissionsDto**](UpdatePermissionsDto.md)|  | [optional] 
+ **updatePermissionsDto** | [**UpdatePermissionsDto**](UpdatePermissionsDto.md)|  | [optional] 
 
 ### Return type
 

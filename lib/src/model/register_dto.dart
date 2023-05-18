@@ -99,7 +99,7 @@ class RegisterDto {
 
   @override
   int get hashCode =>
-    extraProperties.hashCode +
+    (extraProperties == null ? 0 : extraProperties.hashCode) +
     userName.hashCode +
     emailAddress.hashCode +
     password.hashCode +

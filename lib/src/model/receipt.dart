@@ -295,24 +295,24 @@ class Receipt {
 
   @override
   int get hashCode =>
-    receiptType.hashCode +
+    (receiptType == null ? 0 : receiptType.hashCode) +
     adamId.hashCode +
     appItemId.hashCode +
-    bundleId.hashCode +
-    applicationVersion.hashCode +
+    (bundleId == null ? 0 : bundleId.hashCode) +
+    (applicationVersion == null ? 0 : applicationVersion.hashCode) +
     downloadId.hashCode +
     versionExternalIdentifier.hashCode +
-    receiptCreationDate.hashCode +
-    receiptCreationDateMs.hashCode +
-    receiptCreationDatePst.hashCode +
-    requestDate.hashCode +
-    requestDateMs.hashCode +
-    requestDatePst.hashCode +
-    originalPurchaseDate.hashCode +
-    originalPurchaseDateMs.hashCode +
-    originalPurchaseDatePst.hashCode +
-    originalApplicationVersion.hashCode +
-    inApp.hashCode;
+    (receiptCreationDate == null ? 0 : receiptCreationDate.hashCode) +
+    (receiptCreationDateMs == null ? 0 : receiptCreationDateMs.hashCode) +
+    (receiptCreationDatePst == null ? 0 : receiptCreationDatePst.hashCode) +
+    (requestDate == null ? 0 : requestDate.hashCode) +
+    (requestDateMs == null ? 0 : requestDateMs.hashCode) +
+    (requestDatePst == null ? 0 : requestDatePst.hashCode) +
+    (originalPurchaseDate == null ? 0 : originalPurchaseDate.hashCode) +
+    (originalPurchaseDateMs == null ? 0 : originalPurchaseDateMs.hashCode) +
+    (originalPurchaseDatePst == null ? 0 : originalPurchaseDatePst.hashCode) +
+    (originalApplicationVersion == null ? 0 : originalApplicationVersion.hashCode) +
+    (inApp == null ? 0 : inApp.hashCode);
 
   factory Receipt.fromJson(Map<String, dynamic> json) => _$ReceiptFromJson(json);
 

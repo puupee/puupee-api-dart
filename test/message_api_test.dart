@@ -7,22 +7,22 @@ void main() {
   final instance = PuupeeApiClient().getMessageApi();
 
   group(MessageApi, () {
-    //Future apiAppMessagePublishPost({ MessagePublishDto body }) async
+    //Future apiAppMessagePublishPost({ MessagePublishDto messagePublishDto }) async
     test('test apiAppMessagePublishPost', () async {
       // TODO
     });
 
-    //Future apiAppMessageRecallPost({ MessageRecallDto body }) async
+    //Future apiAppMessageRecallPost({ MessageRecallDto messageRecallDto }) async
     test('test apiAppMessageRecallPost', () async {
       // TODO
     });
 
-    //Future apiAppMessageSubscribePost({ MessageSubscribeDto body }) async
+    //Future apiAppMessageSubscribePost({ MessageSubscribeDto messageSubscribeDto }) async
     test('test apiAppMessageSubscribePost', () async {
       // TODO
     });
 
-    //Future apiAppMessageUnsubscribePost({ MessageUnsubscribeDto body }) async
+    //Future apiAppMessageUnsubscribePost({ MessageUnsubscribeDto messageUnsubscribeDto }) async
     test('test apiAppMessageUnsubscribePost', () async {
       // TODO
     });

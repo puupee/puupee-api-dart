@@ -39,7 +39,7 @@ class ApplicationSettingConfigurationDto {
 
   @override
   int get hashCode =>
-    values.hashCode;
+    (values == null ? 0 : values.hashCode);
 
   factory ApplicationSettingConfigurationDto.fromJson(Map<String, dynamic> json) => _$ApplicationSettingConfigurationDtoFromJson(json);
 

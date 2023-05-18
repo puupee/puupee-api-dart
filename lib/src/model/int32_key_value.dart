@@ -85,9 +85,9 @@ class Int32KeyValue {
   @override
   int get hashCode =>
     value.hashCode +
-    durationSeconds.hashCode +
-    expiredAt.hashCode +
-    createdAt.hashCode;
+    (durationSeconds == null ? 0 : durationSeconds.hashCode) +
+    (expiredAt == null ? 0 : expiredAt.hashCode) +
+    (createdAt == null ? 0 : createdAt.hashCode);
 
   factory Int32KeyValue.fromJson(Map<String, dynamic> json) => _$Int32KeyValueFromJson(json);
 

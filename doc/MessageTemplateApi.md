@@ -141,7 +141,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppMessageTemplateIdPut**
-> MessageTemplateDto apiAppMessageTemplateIdPut(id, body)
+> MessageTemplateDto apiAppMessageTemplateIdPut(id, createOrUpdateMessageTemplateDto)
 
 
 
@@ -153,10 +153,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getMessageTemplateApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final CreateOrUpdateMessageTemplateDto body = ; // CreateOrUpdateMessageTemplateDto | 
+final CreateOrUpdateMessageTemplateDto createOrUpdateMessageTemplateDto = ; // CreateOrUpdateMessageTemplateDto | 
 
 try {
-    final response = api.apiAppMessageTemplateIdPut(id, body);
+    final response = api.apiAppMessageTemplateIdPut(id, createOrUpdateMessageTemplateDto);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling MessageTemplateApi->apiAppMessageTemplateIdPut: $e\n');
@@ -168,7 +168,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **body** | [**CreateOrUpdateMessageTemplateDto**](CreateOrUpdateMessageTemplateDto.md)|  | [optional] 
+ **createOrUpdateMessageTemplateDto** | [**CreateOrUpdateMessageTemplateDto**](CreateOrUpdateMessageTemplateDto.md)|  | [optional] 
 
 ### Return type
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppMessageTemplatePost**
-> MessageTemplateDto apiAppMessageTemplatePost(body)
+> MessageTemplateDto apiAppMessageTemplatePost(createOrUpdateMessageTemplateDto)
 
 
 
@@ -197,10 +197,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getMessageTemplateApi();
-final CreateOrUpdateMessageTemplateDto body = ; // CreateOrUpdateMessageTemplateDto | 
+final CreateOrUpdateMessageTemplateDto createOrUpdateMessageTemplateDto = ; // CreateOrUpdateMessageTemplateDto | 
 
 try {
-    final response = api.apiAppMessageTemplatePost(body);
+    final response = api.apiAppMessageTemplatePost(createOrUpdateMessageTemplateDto);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling MessageTemplateApi->apiAppMessageTemplatePost: $e\n');
@@ -211,7 +211,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateOrUpdateMessageTemplateDto**](CreateOrUpdateMessageTemplateDto.md)|  | [optional] 
+ **createOrUpdateMessageTemplateDto** | [**CreateOrUpdateMessageTemplateDto**](CreateOrUpdateMessageTemplateDto.md)|  | [optional] 
 
 ### Return type
 

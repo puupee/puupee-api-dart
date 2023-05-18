@@ -85,9 +85,9 @@ class DateTimeKeyValue {
   @override
   int get hashCode =>
     value.hashCode +
-    durationSeconds.hashCode +
-    expiredAt.hashCode +
-    createdAt.hashCode;
+    (durationSeconds == null ? 0 : durationSeconds.hashCode) +
+    (expiredAt == null ? 0 : expiredAt.hashCode) +
+    (createdAt == null ? 0 : createdAt.hashCode);
 
   factory DateTimeKeyValue.fromJson(Map<String, dynamic> json) => _$DateTimeKeyValueFromJson(json);
 

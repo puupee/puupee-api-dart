@@ -55,7 +55,7 @@ class Int32SetKeyValueDto {
   @override
   int get hashCode =>
     value.hashCode +
-    durationSeconds.hashCode;
+    (durationSeconds == null ? 0 : durationSeconds.hashCode);
 
   factory Int32SetKeyValueDto.fromJson(Map<String, dynamic> json) => _$Int32SetKeyValueDtoFromJson(json);
 

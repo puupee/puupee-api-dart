@@ -428,7 +428,7 @@ _responseData = deserialize<TenantDto, TenantDto>(_response.data!, 'TenantDto', 
   ///
   /// Parameters:
   /// * [id] 
-  /// * [body] 
+  /// * [tenantUpdateDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -440,7 +440,7 @@ _responseData = deserialize<TenantDto, TenantDto>(_response.data!, 'TenantDto', 
   /// Throws [DioError] if API call or serialization fails
   Future<Response<TenantDto>> apiMultiTenancyTenantsIdPut({ 
     required String id,
-    TenantUpdateDto? body,
+    TenantUpdateDto? tenantUpdateDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -470,7 +470,7 @@ _responseData = deserialize<TenantDto, TenantDto>(_response.data!, 'TenantDto', 
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(tenantUpdateDto);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -522,7 +522,7 @@ _responseData = deserialize<TenantDto, TenantDto>(_response.data!, 'TenantDto', 
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [tenantCreateDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -533,7 +533,7 @@ _responseData = deserialize<TenantDto, TenantDto>(_response.data!, 'TenantDto', 
   /// Returns a [Future] containing a [Response] with a [TenantDto] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<TenantDto>> apiMultiTenancyTenantsPost({ 
-    TenantCreateDto? body,
+    TenantCreateDto? tenantCreateDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -563,7 +563,7 @@ _responseData = deserialize<TenantDto, TenantDto>(_response.data!, 'TenantDto', 
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(tenantCreateDto);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

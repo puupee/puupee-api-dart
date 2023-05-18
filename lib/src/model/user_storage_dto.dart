@@ -130,13 +130,13 @@ class UserStorageDto {
 
   @override
   int get hashCode =>
-    name.hashCode +
-    displayName.hashCode +
+    (name == null ? 0 : name.hashCode) +
+    (displayName == null ? 0 : displayName.hashCode) +
     size.hashCode +
     currentSize.hashCode +
     totalCount.hashCode +
     singleFileMaxSize.hashCode +
-    items.hashCode;
+    (items == null ? 0 : items.hashCode);
 
   factory UserStorageDto.fromJson(Map<String, dynamic> json) => _$UserStorageDtoFromJson(json);
 

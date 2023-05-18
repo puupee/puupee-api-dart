@@ -129,13 +129,13 @@ class UpdateProfileDto {
 
   @override
   int get hashCode =>
-    extraProperties.hashCode +
-    userName.hashCode +
-    email.hashCode +
-    name.hashCode +
-    surname.hashCode +
-    phoneNumber.hashCode +
-    concurrencyStamp.hashCode;
+    (extraProperties == null ? 0 : extraProperties.hashCode) +
+    (userName == null ? 0 : userName.hashCode) +
+    (email == null ? 0 : email.hashCode) +
+    (name == null ? 0 : name.hashCode) +
+    (surname == null ? 0 : surname.hashCode) +
+    (phoneNumber == null ? 0 : phoneNumber.hashCode) +
+    (concurrencyStamp == null ? 0 : concurrencyStamp.hashCode);
 
   factory UpdateProfileDto.fromJson(Map<String, dynamic> json) => _$UpdateProfileDtoFromJson(json);
 

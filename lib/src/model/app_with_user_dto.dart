@@ -495,34 +495,34 @@ class AppWithUserDto {
   int get hashCode =>
     id.hashCode +
     creationTime.hashCode +
-    creatorId.hashCode +
-    lastModificationTime.hashCode +
-    lastModifierId.hashCode +
+    (creatorId == null ? 0 : creatorId.hashCode) +
+    (lastModificationTime == null ? 0 : lastModificationTime.hashCode) +
+    (lastModifierId == null ? 0 : lastModifierId.hashCode) +
     isDeleted.hashCode +
-    deleterId.hashCode +
-    deletionTime.hashCode +
-    name.hashCode +
-    displayName.hashCode +
-    framework.hashCode +
-    appType.hashCode +
-    description.hashCode +
-    icon.hashCode +
-    homePage.hashCode +
+    (deleterId == null ? 0 : deleterId.hashCode) +
+    (deletionTime == null ? 0 : deletionTime.hashCode) +
+    (name == null ? 0 : name.hashCode) +
+    (displayName == null ? 0 : displayName.hashCode) +
+    (framework == null ? 0 : framework.hashCode) +
+    (appType == null ? 0 : appType.hashCode) +
+    (description == null ? 0 : description.hashCode) +
+    (icon == null ? 0 : icon.hashCode) +
+    (homePage == null ? 0 : homePage.hashCode) +
     sortIndex.hashCode +
-    gitRepository.hashCode +
-    gitRepositoryType.hashCode +
+    (gitRepository == null ? 0 : gitRepository.hashCode) +
+    (gitRepositoryType == null ? 0 : gitRepositoryType.hashCode) +
     isEnabled.hashCode +
     isPublished.hashCode +
-    webhookUrl.hashCode +
-    businessDomain.hashCode +
-    businessUrl.hashCode +
-    subscriptionPlatforms.hashCode +
-    freePlatforms.hashCode +
-    specJsonSchema.hashCode +
-    latestReleases.hashCode +
+    (webhookUrl == null ? 0 : webhookUrl.hashCode) +
+    (businessDomain == null ? 0 : businessDomain.hashCode) +
+    (businessUrl == null ? 0 : businessUrl.hashCode) +
+    (subscriptionPlatforms == null ? 0 : subscriptionPlatforms.hashCode) +
+    (freePlatforms == null ? 0 : freePlatforms.hashCode) +
+    (specJsonSchema == null ? 0 : specJsonSchema.hashCode) +
+    (latestReleases == null ? 0 : latestReleases.hashCode) +
     creator.hashCode +
-    features.hashCode +
-    sdks.hashCode +
+    (features == null ? 0 : features.hashCode) +
+    (sdks == null ? 0 : sdks.hashCode) +
     subscribed.hashCode;
 
   factory AppWithUserDto.fromJson(Map<String, dynamic> json) => _$AppWithUserDtoFromJson(json);

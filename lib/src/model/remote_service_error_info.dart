@@ -100,11 +100,11 @@ class RemoteServiceErrorInfo {
 
   @override
   int get hashCode =>
-    code.hashCode +
-    message.hashCode +
-    details.hashCode +
-    data.hashCode +
-    validationErrors.hashCode;
+    (code == null ? 0 : code.hashCode) +
+    (message == null ? 0 : message.hashCode) +
+    (details == null ? 0 : details.hashCode) +
+    (data == null ? 0 : data.hashCode) +
+    (validationErrors == null ? 0 : validationErrors.hashCode);
 
   factory RemoteServiceErrorInfo.fromJson(Map<String, dynamic> json) => _$RemoteServiceErrorInfoFromJson(json);
 

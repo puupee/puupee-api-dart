@@ -84,7 +84,7 @@ class TenantCreateDto {
 
   @override
   int get hashCode =>
-    extraProperties.hashCode +
+    (extraProperties == null ? 0 : extraProperties.hashCode) +
     name.hashCode +
     adminEmailAddress.hashCode +
     adminPassword.hashCode;

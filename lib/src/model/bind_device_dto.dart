@@ -129,13 +129,13 @@ class BindDeviceDto {
 
   @override
   int get hashCode =>
-    token.hashCode +
-    tpnsToken.hashCode +
+    (token == null ? 0 : token.hashCode) +
+    (tpnsToken == null ? 0 : tpnsToken.hashCode) +
     isPhysicalDevice.hashCode +
-    name.hashCode +
-    platform.hashCode +
-    brand.hashCode +
-    systemVersion.hashCode;
+    (name == null ? 0 : name.hashCode) +
+    (platform == null ? 0 : platform.hashCode) +
+    (brand == null ? 0 : brand.hashCode) +
+    (systemVersion == null ? 0 : systemVersion.hashCode);
 
   factory BindDeviceDto.fromJson(Map<String, dynamic> json) => _$BindDeviceDtoFromJson(json);
 

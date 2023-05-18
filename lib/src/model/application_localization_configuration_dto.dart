@@ -133,13 +133,13 @@ class ApplicationLocalizationConfigurationDto {
 
   @override
   int get hashCode =>
-    values.hashCode +
-    resources.hashCode +
-    languages.hashCode +
+    (values == null ? 0 : values.hashCode) +
+    (resources == null ? 0 : resources.hashCode) +
+    (languages == null ? 0 : languages.hashCode) +
     currentCulture.hashCode +
-    defaultResourceName.hashCode +
-    languagesMap.hashCode +
-    languageFilesMap.hashCode;
+    (defaultResourceName == null ? 0 : defaultResourceName.hashCode) +
+    (languagesMap == null ? 0 : languagesMap.hashCode) +
+    (languageFilesMap == null ? 0 : languageFilesMap.hashCode);
 
   factory ApplicationLocalizationConfigurationDto.fromJson(Map<String, dynamic> json) => _$ApplicationLocalizationConfigurationDtoFromJson(json);
 

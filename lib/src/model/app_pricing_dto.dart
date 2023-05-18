@@ -402,29 +402,29 @@ class AppPricingDto {
   int get hashCode =>
     id.hashCode +
     creationTime.hashCode +
-    creatorId.hashCode +
-    lastModificationTime.hashCode +
-    lastModifierId.hashCode +
+    (creatorId == null ? 0 : creatorId.hashCode) +
+    (lastModificationTime == null ? 0 : lastModificationTime.hashCode) +
+    (lastModifierId == null ? 0 : lastModifierId.hashCode) +
     isDeleted.hashCode +
-    deleterId.hashCode +
-    deletionTime.hashCode +
-    naming.hashCode +
-    monthProductId.hashCode +
-    yearProductId.hashCode +
-    description.hashCode +
+    (deleterId == null ? 0 : deleterId.hashCode) +
+    (deletionTime == null ? 0 : deletionTime.hashCode) +
+    (naming == null ? 0 : naming.hashCode) +
+    (monthProductId == null ? 0 : monthProductId.hashCode) +
+    (yearProductId == null ? 0 : yearProductId.hashCode) +
+    (description == null ? 0 : description.hashCode) +
     appId.hashCode +
     monthPrice.hashCode +
-    monthDiscount.hashCode +
-    monthDiscountPrice.hashCode +
-    monthDiscountStartAt.hashCode +
-    monthDiscountEndAt.hashCode +
+    (monthDiscount == null ? 0 : monthDiscount.hashCode) +
+    (monthDiscountPrice == null ? 0 : monthDiscountPrice.hashCode) +
+    (monthDiscountStartAt == null ? 0 : monthDiscountStartAt.hashCode) +
+    (monthDiscountEndAt == null ? 0 : monthDiscountEndAt.hashCode) +
     yearPrice.hashCode +
-    yearDiscount.hashCode +
-    yearDiscountPrice.hashCode +
-    yearDiscountStartAt.hashCode +
-    yearDiscountEndAt.hashCode +
+    (yearDiscount == null ? 0 : yearDiscount.hashCode) +
+    (yearDiscountPrice == null ? 0 : yearDiscountPrice.hashCode) +
+    (yearDiscountStartAt == null ? 0 : yearDiscountStartAt.hashCode) +
+    (yearDiscountEndAt == null ? 0 : yearDiscountEndAt.hashCode) +
     sortIndex.hashCode +
-    items.hashCode;
+    (items == null ? 0 : items.hashCode);
 
   factory AppPricingDto.fromJson(Map<String, dynamic> json) => _$AppPricingDtoFromJson(json);
 

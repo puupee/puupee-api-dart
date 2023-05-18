@@ -70,8 +70,8 @@ class IStringValueType {
 
   @override
   int get hashCode =>
-    name.hashCode +
-    properties.hashCode +
+    (name == null ? 0 : name.hashCode) +
+    (properties == null ? 0 : properties.hashCode) +
     validator.hashCode;
 
   factory IStringValueType.fromJson(Map<String, dynamic> json) => _$IStringValueTypeFromJson(json);

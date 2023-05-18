@@ -72,7 +72,7 @@ class SettingsDto {
   @override
   int get hashCode =>
     appTheme.hashCode +
-    language.hashCode +
+    (language == null ? 0 : language.hashCode) +
     todoSettings.hashCode;
 
   factory SettingsDto.fromJson(Map<String, dynamic> json) => _$SettingsDtoFromJson(json);

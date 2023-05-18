@@ -115,12 +115,12 @@ class PermissionGrantInfoDto {
 
   @override
   int get hashCode =>
-    name.hashCode +
-    displayName.hashCode +
-    parentName.hashCode +
+    (name == null ? 0 : name.hashCode) +
+    (displayName == null ? 0 : displayName.hashCode) +
+    (parentName == null ? 0 : parentName.hashCode) +
     isGranted.hashCode +
-    allowedProviders.hashCode +
-    grantedProviders.hashCode;
+    (allowedProviders == null ? 0 : allowedProviders.hashCode) +
+    (grantedProviders == null ? 0 : grantedProviders.hashCode);
 
   factory PermissionGrantInfoDto.fromJson(Map<String, dynamic> json) => _$PermissionGrantInfoDtoFromJson(json);
 

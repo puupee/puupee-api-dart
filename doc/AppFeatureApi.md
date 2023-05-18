@@ -97,7 +97,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppAppFeatureIdPut**
-> AppFeatureDto apiAppAppFeatureIdPut(id, body)
+> AppFeatureDto apiAppAppFeatureIdPut(id, createOrUpdateAppFeatureDto)
 
 
 
@@ -109,10 +109,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getAppFeatureApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final CreateOrUpdateAppFeatureDto body = ; // CreateOrUpdateAppFeatureDto | 
+final CreateOrUpdateAppFeatureDto createOrUpdateAppFeatureDto = ; // CreateOrUpdateAppFeatureDto | 
 
 try {
-    final response = api.apiAppAppFeatureIdPut(id, body);
+    final response = api.apiAppAppFeatureIdPut(id, createOrUpdateAppFeatureDto);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AppFeatureApi->apiAppAppFeatureIdPut: $e\n');
@@ -124,7 +124,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **body** | [**CreateOrUpdateAppFeatureDto**](CreateOrUpdateAppFeatureDto.md)|  | [optional] 
+ **createOrUpdateAppFeatureDto** | [**CreateOrUpdateAppFeatureDto**](CreateOrUpdateAppFeatureDto.md)|  | [optional] 
 
 ### Return type
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppAppFeaturePost**
-> AppFeatureDto apiAppAppFeaturePost(body)
+> AppFeatureDto apiAppAppFeaturePost(createOrUpdateAppFeatureDto)
 
 
 
@@ -153,10 +153,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppFeatureApi();
-final CreateOrUpdateAppFeatureDto body = ; // CreateOrUpdateAppFeatureDto | 
+final CreateOrUpdateAppFeatureDto createOrUpdateAppFeatureDto = ; // CreateOrUpdateAppFeatureDto | 
 
 try {
-    final response = api.apiAppAppFeaturePost(body);
+    final response = api.apiAppAppFeaturePost(createOrUpdateAppFeatureDto);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AppFeatureApi->apiAppAppFeaturePost: $e\n');
@@ -167,7 +167,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateOrUpdateAppFeatureDto**](CreateOrUpdateAppFeatureDto.md)|  | [optional] 
+ **createOrUpdateAppFeatureDto** | [**CreateOrUpdateAppFeatureDto**](CreateOrUpdateAppFeatureDto.md)|  | [optional] 
 
 ### Return type
 

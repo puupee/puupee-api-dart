@@ -55,7 +55,7 @@ class PuupeeDtoPagedResultDto {
 
   @override
   int get hashCode =>
-    items.hashCode +
+    (items == null ? 0 : items.hashCode) +
     totalCount.hashCode;
 
   factory PuupeeDtoPagedResultDto.fromJson(Map<String, dynamic> json) => _$PuupeeDtoPagedResultDtoFromJson(json);

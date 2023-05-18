@@ -22,7 +22,7 @@ void main() {
       // TODO
     });
 
-    //Future<AppReleaseDto> apiAppAppReleaseIdPut(String id, { CreateOrUpdateAppReleaseDto body }) async
+    //Future<AppReleaseDto> apiAppAppReleaseIdPut(String id, { CreateOrUpdateAppReleaseDto createOrUpdateAppReleaseDto }) async
     test('test apiAppAppReleaseIdPut', () async {
       // TODO
     });
@@ -32,7 +32,7 @@ void main() {
       // TODO
     });
 
-    //Future<AppReleaseDto> apiAppAppReleasePost({ CreateOrUpdateAppReleaseDto body }) async
+    //Future<AppReleaseDto> apiAppAppReleasePost({ CreateOrUpdateAppReleaseDto createOrUpdateAppReleaseDto }) async
     test('test apiAppAppReleasePost', () async {
       // TODO
     });

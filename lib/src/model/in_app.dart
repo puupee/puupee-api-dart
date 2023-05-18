@@ -264,22 +264,22 @@ class InApp {
 
   @override
   int get hashCode =>
-    quantity.hashCode +
-    productId.hashCode +
-    transactionId.hashCode +
-    originalTransactionId.hashCode +
-    purchaseDate.hashCode +
-    purchaseDateMs.hashCode +
-    purchaseDatePst.hashCode +
-    originalPurchaseDate.hashCode +
-    originalPurchaseDateMs.hashCode +
-    originalPurchaseDatePst.hashCode +
-    expiresDate.hashCode +
-    expiresDateMs.hashCode +
-    expiresDatePst.hashCode +
-    webOrderLineItemId.hashCode +
-    isTrialPeriod.hashCode +
-    isInIntroOfferPeriod.hashCode;
+    (quantity == null ? 0 : quantity.hashCode) +
+    (productId == null ? 0 : productId.hashCode) +
+    (transactionId == null ? 0 : transactionId.hashCode) +
+    (originalTransactionId == null ? 0 : originalTransactionId.hashCode) +
+    (purchaseDate == null ? 0 : purchaseDate.hashCode) +
+    (purchaseDateMs == null ? 0 : purchaseDateMs.hashCode) +
+    (purchaseDatePst == null ? 0 : purchaseDatePst.hashCode) +
+    (originalPurchaseDate == null ? 0 : originalPurchaseDate.hashCode) +
+    (originalPurchaseDateMs == null ? 0 : originalPurchaseDateMs.hashCode) +
+    (originalPurchaseDatePst == null ? 0 : originalPurchaseDatePst.hashCode) +
+    (expiresDate == null ? 0 : expiresDate.hashCode) +
+    (expiresDateMs == null ? 0 : expiresDateMs.hashCode) +
+    (expiresDatePst == null ? 0 : expiresDatePst.hashCode) +
+    (webOrderLineItemId == null ? 0 : webOrderLineItemId.hashCode) +
+    (isTrialPeriod == null ? 0 : isTrialPeriod.hashCode) +
+    (isInIntroOfferPeriod == null ? 0 : isInIntroOfferPeriod.hashCode);
 
   factory InApp.fromJson(Map<String, dynamic> json) => _$InAppFromJson(json);
 

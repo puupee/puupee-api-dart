@@ -40,7 +40,7 @@ class IdentityRoleDtoListResultDto {
 
   @override
   int get hashCode =>
-    items.hashCode;
+    (items == null ? 0 : items.hashCode);
 
   factory IdentityRoleDtoListResultDto.fromJson(Map<String, dynamic> json) => _$IdentityRoleDtoListResultDtoFromJson(json);
 

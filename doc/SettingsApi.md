@@ -53,7 +53,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppSettingsSetPost**
-> apiAppSettingsSetPost(body)
+> apiAppSettingsSetPost(settingsDto)
 
 
 
@@ -64,10 +64,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getSettingsApi();
-final SettingsDto body = ; // SettingsDto | 
+final SettingsDto settingsDto = ; // SettingsDto | 
 
 try {
-    api.apiAppSettingsSetPost(body);
+    api.apiAppSettingsSetPost(settingsDto);
 } catch on DioError (e) {
     print('Exception when calling SettingsApi->apiAppSettingsSetPost: $e\n');
 }
@@ -77,7 +77,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SettingsDto**](SettingsDto.md)|  | [optional] 
+ **settingsDto** | [**SettingsDto**](SettingsDto.md)|  | [optional] 
 
 ### Return type
 

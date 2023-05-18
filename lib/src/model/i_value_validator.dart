@@ -54,8 +54,8 @@ class IValueValidator {
 
   @override
   int get hashCode =>
-    name.hashCode +
-    properties.hashCode;
+    (name == null ? 0 : name.hashCode) +
+    (properties == null ? 0 : properties.hashCode);
 
   factory IValueValidator.fromJson(Map<String, dynamic> json) => _$IValueValidatorFromJson(json);
 

@@ -55,7 +55,7 @@ class DecimalSetKeyValueDto {
   @override
   int get hashCode =>
     value.hashCode +
-    durationSeconds.hashCode;
+    (durationSeconds == null ? 0 : durationSeconds.hashCode);
 
   factory DecimalSetKeyValueDto.fromJson(Map<String, dynamic> json) => _$DecimalSetKeyValueDtoFromJson(json);
 

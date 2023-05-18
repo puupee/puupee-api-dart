@@ -191,7 +191,7 @@ _responseData = deserialize<NotificationInfoDtoPagedResultDto, NotificationInfoD
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [createPushNotificationDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -202,7 +202,7 @@ _responseData = deserialize<NotificationInfoDtoPagedResultDto, NotificationInfoD
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiAppNotificationPushPost({ 
-    CreatePushNotificationDto? body,
+    CreatePushNotificationDto? createPushNotificationDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -232,7 +232,7 @@ _responseData = deserialize<NotificationInfoDtoPagedResultDto, NotificationInfoD
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(createPushNotificationDto);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

@@ -12,7 +12,7 @@ void main() {
       // TODO
     });
 
-    //Future<PuupeeDto> apiAppPuupeePushPost({ CreateOrUpdatePuupeeDto body }) async
+    //Future<PuupeeDto> apiAppPuupeePushPost({ CreateOrUpdatePuupeeDto createOrUpdatePuupeeDto }) async
     test('test apiAppPuupeePushPost', () async {
       // TODO
     });

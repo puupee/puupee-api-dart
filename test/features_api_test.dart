@@ -17,7 +17,7 @@ void main() {
       // TODO
     });
 
-    //Future apiFeatureManagementFeaturesPut({ String providerName, String providerKey, UpdateFeaturesDto body }) async
+    //Future apiFeatureManagementFeaturesPut({ String providerName, String providerKey, UpdateFeaturesDto updateFeaturesDto }) async
     test('test apiFeatureManagementFeaturesPut', () async {
       // TODO
     });

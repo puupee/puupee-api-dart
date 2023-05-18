@@ -56,8 +56,8 @@ class ApplicationApiDescriptionModel {
 
   @override
   int get hashCode =>
-    modules.hashCode +
-    types.hashCode;
+    (modules == null ? 0 : modules.hashCode) +
+    (types == null ? 0 : types.hashCode);
 
   factory ApplicationApiDescriptionModel.fromJson(Map<String, dynamic> json) => _$ApplicationApiDescriptionModelFromJson(json);
 

@@ -264,22 +264,22 @@ class CreateOrUpdateAppReleaseDto {
 
   @override
   int get hashCode =>
-    version.hashCode +
-    versionName.hashCode +
+    (version == null ? 0 : version.hashCode) +
+    (versionName == null ? 0 : versionName.hashCode) +
     versionCode.hashCode +
-    notes.hashCode +
-    platform.hashCode +
-    key.hashCode +
-    rapidCode.hashCode +
-    size.hashCode +
-    md5.hashCode +
-    sliceMd5.hashCode +
-    productType.hashCode +
+    (notes == null ? 0 : notes.hashCode) +
+    (platform == null ? 0 : platform.hashCode) +
+    (key == null ? 0 : key.hashCode) +
+    (rapidCode == null ? 0 : rapidCode.hashCode) +
+    (size == null ? 0 : size.hashCode) +
+    (md5 == null ? 0 : md5.hashCode) +
+    (sliceMd5 == null ? 0 : sliceMd5.hashCode) +
+    (productType == null ? 0 : productType.hashCode) +
     isForceUpdate.hashCode +
     appId.hashCode +
     isEnabled.hashCode +
-    channel.hashCode +
-    environment.hashCode;
+    (channel == null ? 0 : channel.hashCode) +
+    (environment == null ? 0 : environment.hashCode);
 
   factory CreateOrUpdateAppReleaseDto.fromJson(Map<String, dynamic> json) => _$CreateOrUpdateAppReleaseDtoFromJson(json);
 

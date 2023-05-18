@@ -189,17 +189,17 @@ class IdentityUserUpdateDto {
 
   @override
   int get hashCode =>
-    extraProperties.hashCode +
+    (extraProperties == null ? 0 : extraProperties.hashCode) +
     userName.hashCode +
-    name.hashCode +
-    surname.hashCode +
+    (name == null ? 0 : name.hashCode) +
+    (surname == null ? 0 : surname.hashCode) +
     email.hashCode +
-    phoneNumber.hashCode +
+    (phoneNumber == null ? 0 : phoneNumber.hashCode) +
     isActive.hashCode +
     lockoutEnabled.hashCode +
-    roleNames.hashCode +
-    password.hashCode +
-    concurrencyStamp.hashCode;
+    (roleNames == null ? 0 : roleNames.hashCode) +
+    (password == null ? 0 : password.hashCode) +
+    (concurrencyStamp == null ? 0 : concurrencyStamp.hashCode);
 
   factory IdentityUserUpdateDto.fromJson(Map<String, dynamic> json) => _$IdentityUserUpdateDtoFromJson(json);
 

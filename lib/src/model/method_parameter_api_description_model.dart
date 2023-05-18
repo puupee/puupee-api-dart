@@ -114,12 +114,12 @@ class MethodParameterApiDescriptionModel {
 
   @override
   int get hashCode =>
-    name.hashCode +
-    typeAsString.hashCode +
-    type.hashCode +
-    typeSimple.hashCode +
+    (name == null ? 0 : name.hashCode) +
+    (typeAsString == null ? 0 : typeAsString.hashCode) +
+    (type == null ? 0 : type.hashCode) +
+    (typeSimple == null ? 0 : typeSimple.hashCode) +
     isOptional.hashCode +
-    defaultValue.hashCode;
+    (defaultValue == null ? 0 : defaultValue.hashCode);
 
   factory MethodParameterApiDescriptionModel.fromJson(Map<String, dynamic> json) => _$MethodParameterApiDescriptionModelFromJson(json);
 

@@ -12,7 +12,7 @@ void main() {
       // TODO
     });
 
-    //Future<AppDto> apiAppAppByNameGet({ String name }) async
+    //Future<AppDto> apiAppAppByNameGet({ String name, String env }) async
     test('test apiAppAppByNameGet', () async {
       // TODO
     });
@@ -27,27 +27,27 @@ void main() {
       // TODO
     });
 
-    //Future<AppDto> apiAppAppIdGet(String id) async
+    //Future<AppDto> apiAppAppIdGet(String id, { String env }) async
     test('test apiAppAppIdGet', () async {
       // TODO
     });
 
-    //Future<AppDto> apiAppAppIdPut(String id, { CreateOrUpdateAppDto body }) async
+    //Future<AppDto> apiAppAppIdPut(String id, { CreateOrUpdateAppDto createOrUpdateAppDto }) async
     test('test apiAppAppIdPut', () async {
       // TODO
     });
 
-    //Future<AppRunRecordDto> apiAppAppIdRunStatePut(String id, { AppRunRecordUpdateDto body }) async
+    //Future<AppRunRecordDto> apiAppAppIdRunStatePut(String id, { AppRunRecordUpdateDto appRunRecordUpdateDto }) async
     test('test apiAppAppIdRunStatePut', () async {
       // TODO
     });
 
-    //Future<AppWithUserDto> apiAppAppIdWithUserGet(String id) async
+    //Future<AppWithUserDto> apiAppAppIdWithUserGet(String id, { String env }) async
     test('test apiAppAppIdWithUserGet', () async {
       // TODO
     });
 
-    //Future<AppDto> apiAppAppPost({ CreateOrUpdateAppDto body }) async
+    //Future<AppDto> apiAppAppPost({ CreateOrUpdateAppDto createOrUpdateAppDto }) async
     test('test apiAppAppPost', () async {
       // TODO
     });
@@ -57,7 +57,7 @@ void main() {
       // TODO
     });
 
-    //Future<AppRunRecordDto> apiAppAppRunPost({ AppRunDto body }) async
+    //Future<AppRunRecordDto> apiAppAppRunPost({ AppRunDto appRunDto }) async
     test('test apiAppAppRunPost', () async {
       // TODO
     });

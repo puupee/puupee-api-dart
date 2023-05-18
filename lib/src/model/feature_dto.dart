@@ -146,14 +146,14 @@ class FeatureDto {
 
   @override
   int get hashCode =>
-    name.hashCode +
-    displayName.hashCode +
-    value.hashCode +
+    (name == null ? 0 : name.hashCode) +
+    (displayName == null ? 0 : displayName.hashCode) +
+    (value == null ? 0 : value.hashCode) +
     provider.hashCode +
-    description.hashCode +
+    (description == null ? 0 : description.hashCode) +
     valueType.hashCode +
     depth.hashCode +
-    parentName.hashCode;
+    (parentName == null ? 0 : parentName.hashCode);
 
   factory FeatureDto.fromJson(Map<String, dynamic> json) => _$FeatureDtoFromJson(json);
 

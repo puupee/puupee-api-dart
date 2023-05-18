@@ -95,7 +95,7 @@ _responseData = deserialize<SettingsDto, SettingsDto>(_response.data!, 'Settings
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [settingsDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -106,7 +106,7 @@ _responseData = deserialize<SettingsDto, SettingsDto>(_response.data!, 'Settings
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiAppSettingsSetPost({ 
-    SettingsDto? body,
+    SettingsDto? settingsDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -136,7 +136,7 @@ _responseData = deserialize<SettingsDto, SettingsDto>(_response.data!, 'Settings
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(settingsDto);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

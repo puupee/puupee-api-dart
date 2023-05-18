@@ -133,12 +133,12 @@ class AppleVerifyReceiptResult {
 
   @override
   int get hashCode =>
-    environment.hashCode +
+    (environment == null ? 0 : environment.hashCode) +
     isRetryable.hashCode +
     status.hashCode +
-    latestReceiptInfo.hashCode +
-    latestReceipt.hashCode +
-    pendingRenewalInfo.hashCode +
+    (latestReceiptInfo == null ? 0 : latestReceiptInfo.hashCode) +
+    (latestReceipt == null ? 0 : latestReceipt.hashCode) +
+    (pendingRenewalInfo == null ? 0 : pendingRenewalInfo.hashCode) +
     receipt.hashCode;
 
   factory AppleVerifyReceiptResult.fromJson(Map<String, dynamic> json) => _$AppleVerifyReceiptResultFromJson(json);

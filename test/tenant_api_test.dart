@@ -37,12 +37,12 @@ void main() {
       // TODO
     });
 
-    //Future<TenantDto> apiMultiTenancyTenantsIdPut(String id, { TenantUpdateDto body }) async
+    //Future<TenantDto> apiMultiTenancyTenantsIdPut(String id, { TenantUpdateDto tenantUpdateDto }) async
     test('test apiMultiTenancyTenantsIdPut', () async {
       // TODO
     });
 
-    //Future<TenantDto> apiMultiTenancyTenantsPost({ TenantCreateDto body }) async
+    //Future<TenantDto> apiMultiTenancyTenantsPost({ TenantCreateDto tenantCreateDto }) async
     test('test apiMultiTenancyTenantsPost', () async {
       // TODO
     });

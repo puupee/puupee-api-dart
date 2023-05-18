@@ -39,7 +39,7 @@ class ClockDto {
 
   @override
   int get hashCode =>
-    kind.hashCode;
+    (kind == null ? 0 : kind.hashCode);
 
   factory ClockDto.fromJson(Map<String, dynamic> json) => _$ClockDtoFromJson(json);
 

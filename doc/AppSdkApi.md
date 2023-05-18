@@ -97,7 +97,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppAppSdkIdPut**
-> AppSdkDto apiAppAppSdkIdPut(id, body)
+> AppSdkDto apiAppAppSdkIdPut(id, createOrUpdateAppSdkDto)
 
 
 
@@ -109,10 +109,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getAppSdkApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final CreateOrUpdateAppSdkDto body = ; // CreateOrUpdateAppSdkDto | 
+final CreateOrUpdateAppSdkDto createOrUpdateAppSdkDto = ; // CreateOrUpdateAppSdkDto | 
 
 try {
-    final response = api.apiAppAppSdkIdPut(id, body);
+    final response = api.apiAppAppSdkIdPut(id, createOrUpdateAppSdkDto);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AppSdkApi->apiAppAppSdkIdPut: $e\n');
@@ -124,7 +124,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **body** | [**CreateOrUpdateAppSdkDto**](CreateOrUpdateAppSdkDto.md)|  | [optional] 
+ **createOrUpdateAppSdkDto** | [**CreateOrUpdateAppSdkDto**](CreateOrUpdateAppSdkDto.md)|  | [optional] 
 
 ### Return type
 
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppAppSdkPost**
-> AppSdkDto apiAppAppSdkPost(body)
+> AppSdkDto apiAppAppSdkPost(createOrUpdateAppSdkDto)
 
 
 
@@ -153,10 +153,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppSdkApi();
-final CreateOrUpdateAppSdkDto body = ; // CreateOrUpdateAppSdkDto | 
+final CreateOrUpdateAppSdkDto createOrUpdateAppSdkDto = ; // CreateOrUpdateAppSdkDto | 
 
 try {
-    final response = api.apiAppAppSdkPost(body);
+    final response = api.apiAppAppSdkPost(createOrUpdateAppSdkDto);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AppSdkApi->apiAppAppSdkPost: $e\n');
@@ -167,7 +167,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateOrUpdateAppSdkDto**](CreateOrUpdateAppSdkDto.md)|  | [optional] 
+ **createOrUpdateAppSdkDto** | [**CreateOrUpdateAppSdkDto**](CreateOrUpdateAppSdkDto.md)|  | [optional] 
 
 ### Return type
 

@@ -22,7 +22,7 @@ class VerificationApi {
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [sendVerificationCodeDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -33,7 +33,7 @@ class VerificationApi {
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiAppVerificationSendCodePost({ 
-    SendVerificationCodeDto? body,
+    SendVerificationCodeDto? sendVerificationCodeDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -63,7 +63,7 @@ class VerificationApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(sendVerificationCodeDto);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

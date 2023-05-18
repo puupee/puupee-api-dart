@@ -19,12 +19,17 @@ import 'package:puupee_api_client/src/api/app_pricing_item_api.dart';
 import 'package:puupee_api_client/src/api/app_release_api.dart';
 import 'package:puupee_api_client/src/api/app_sdk_api.dart';
 import 'package:puupee_api_client/src/api/app_user_score_api.dart';
+import 'package:puupee_api_client/src/api/avatar_api.dart';
 import 'package:puupee_api_client/src/api/device_api.dart';
 import 'package:puupee_api_client/src/api/email_settings_api.dart';
 import 'package:puupee_api_client/src/api/features_api.dart';
 import 'package:puupee_api_client/src/api/key_value_api.dart';
 import 'package:puupee_api_client/src/api/login_api.dart';
 import 'package:puupee_api_client/src/api/message_api.dart';
+import 'package:puupee_api_client/src/api/message_source_api.dart';
+import 'package:puupee_api_client/src/api/message_source_category_api.dart';
+import 'package:puupee_api_client/src/api/message_source_route_api.dart';
+import 'package:puupee_api_client/src/api/message_source_route_sub_api.dart';
 import 'package:puupee_api_client/src/api/message_template_api.dart';
 import 'package:puupee_api_client/src/api/message_template_release_api.dart';
 import 'package:puupee_api_client/src/api/notification_api.dart';
@@ -167,6 +172,12 @@ class PuupeeApiClient {
     return AppUserScoreApi(dio);
   }
 
+  /// Get AvatarApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  AvatarApi getAvatarApi() {
+    return AvatarApi(dio);
+  }
+
   /// Get DeviceApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   DeviceApi getDeviceApi() {
@@ -201,6 +212,30 @@ class PuupeeApiClient {
   /// by doing that all interceptors will not be executed
   MessageApi getMessageApi() {
     return MessageApi(dio);
+  }
+
+  /// Get MessageSourceApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  MessageSourceApi getMessageSourceApi() {
+    return MessageSourceApi(dio);
+  }
+
+  /// Get MessageSourceCategoryApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  MessageSourceCategoryApi getMessageSourceCategoryApi() {
+    return MessageSourceCategoryApi(dio);
+  }
+
+  /// Get MessageSourceRouteApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  MessageSourceRouteApi getMessageSourceRouteApi() {
+    return MessageSourceRouteApi(dio);
+  }
+
+  /// Get MessageSourceRouteSubApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  MessageSourceRouteSubApi getMessageSourceRouteSubApi() {
+    return MessageSourceRouteSubApi(dio);
   }
 
   /// Get MessageTemplateApi instance, base route and serializer can be overridden by a given but be careful,

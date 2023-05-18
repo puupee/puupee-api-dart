@@ -150,7 +150,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppSimpleDataSavePost**
-> SimpleDataDto apiAppSimpleDataSavePost(body)
+> SimpleDataDto apiAppSimpleDataSavePost(simpleDataDto)
 
 
 
@@ -161,10 +161,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getSimpleDataApi();
-final SimpleDataDto body = ; // SimpleDataDto | 
+final SimpleDataDto simpleDataDto = ; // SimpleDataDto | 
 
 try {
-    final response = api.apiAppSimpleDataSavePost(body);
+    final response = api.apiAppSimpleDataSavePost(simpleDataDto);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling SimpleDataApi->apiAppSimpleDataSavePost: $e\n');
@@ -175,7 +175,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SimpleDataDto**](SimpleDataDto.md)|  | [optional] 
+ **simpleDataDto** | [**SimpleDataDto**](SimpleDataDto.md)|  | [optional] 
 
 ### Return type
 

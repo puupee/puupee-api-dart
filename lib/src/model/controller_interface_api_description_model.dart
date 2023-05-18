@@ -70,9 +70,9 @@ class ControllerInterfaceApiDescriptionModel {
 
   @override
   int get hashCode =>
-    type.hashCode +
-    name.hashCode +
-    methods.hashCode;
+    (type == null ? 0 : type.hashCode) +
+    (name == null ? 0 : name.hashCode) +
+    (methods == null ? 0 : methods.hashCode);
 
   factory ControllerInterfaceApiDescriptionModel.fromJson(Map<String, dynamic> json) => _$ControllerInterfaceApiDescriptionModelFromJson(json);
 

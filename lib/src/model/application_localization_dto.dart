@@ -40,7 +40,7 @@ class ApplicationLocalizationDto {
 
   @override
   int get hashCode =>
-    resources.hashCode;
+    (resources == null ? 0 : resources.hashCode);
 
   factory ApplicationLocalizationDto.fromJson(Map<String, dynamic> json) => _$ApplicationLocalizationDtoFromJson(json);
 

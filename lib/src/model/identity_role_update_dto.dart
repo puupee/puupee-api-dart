@@ -99,11 +99,11 @@ class IdentityRoleUpdateDto {
 
   @override
   int get hashCode =>
-    extraProperties.hashCode +
+    (extraProperties == null ? 0 : extraProperties.hashCode) +
     name.hashCode +
     isDefault.hashCode +
     isPublic.hashCode +
-    concurrencyStamp.hashCode;
+    (concurrencyStamp == null ? 0 : concurrencyStamp.hashCode);
 
   factory IdentityRoleUpdateDto.fromJson(Map<String, dynamic> json) => _$IdentityRoleUpdateDtoFromJson(json);
 

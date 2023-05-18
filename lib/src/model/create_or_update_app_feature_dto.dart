@@ -99,11 +99,11 @@ class CreateOrUpdateAppFeatureDto {
 
   @override
   int get hashCode =>
-    name.hashCode +
-    displayName.hashCode +
-    description.hashCode +
-    details.hashCode +
-    screenshotKeys.hashCode;
+    (name == null ? 0 : name.hashCode) +
+    (displayName == null ? 0 : displayName.hashCode) +
+    (description == null ? 0 : description.hashCode) +
+    (details == null ? 0 : details.hashCode) +
+    (screenshotKeys == null ? 0 : screenshotKeys.hashCode);
 
   factory CreateOrUpdateAppFeatureDto.fromJson(Map<String, dynamic> json) => _$CreateOrUpdateAppFeatureDtoFromJson(json);
 

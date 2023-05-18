@@ -55,8 +55,8 @@ class EntityExtensionDto {
 
   @override
   int get hashCode =>
-    properties.hashCode +
-    configuration.hashCode;
+    (properties == null ? 0 : properties.hashCode) +
+    (configuration == null ? 0 : configuration.hashCode);
 
   factory EntityExtensionDto.fromJson(Map<String, dynamic> json) => _$EntityExtensionDtoFromJson(json);
 

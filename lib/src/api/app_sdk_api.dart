@@ -149,7 +149,7 @@ _responseData = deserialize<List<AppSdkDto>, AppSdkDto>(_response.data!, 'List<A
   ///
   /// Parameters:
   /// * [id] 
-  /// * [body] 
+  /// * [createOrUpdateAppSdkDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -161,7 +161,7 @@ _responseData = deserialize<List<AppSdkDto>, AppSdkDto>(_response.data!, 'List<A
   /// Throws [DioError] if API call or serialization fails
   Future<Response<AppSdkDto>> apiAppAppSdkIdPut({ 
     required String id,
-    CreateOrUpdateAppSdkDto? body,
+    CreateOrUpdateAppSdkDto? createOrUpdateAppSdkDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -191,7 +191,7 @@ _responseData = deserialize<List<AppSdkDto>, AppSdkDto>(_response.data!, 'List<A
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(createOrUpdateAppSdkDto);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -243,7 +243,7 @@ _responseData = deserialize<AppSdkDto, AppSdkDto>(_response.data!, 'AppSdkDto', 
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [createOrUpdateAppSdkDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -254,7 +254,7 @@ _responseData = deserialize<AppSdkDto, AppSdkDto>(_response.data!, 'AppSdkDto', 
   /// Returns a [Future] containing a [Response] with a [AppSdkDto] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<AppSdkDto>> apiAppAppSdkPost({ 
-    CreateOrUpdateAppSdkDto? body,
+    CreateOrUpdateAppSdkDto? createOrUpdateAppSdkDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -284,7 +284,7 @@ _responseData = deserialize<AppSdkDto, AppSdkDto>(_response.data!, 'AppSdkDto', 
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(createOrUpdateAppSdkDto);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

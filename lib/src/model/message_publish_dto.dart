@@ -99,11 +99,11 @@ class MessagePublishDto {
 
   @override
   int get hashCode =>
-    title.hashCode +
-    description.hashCode +
+    (title == null ? 0 : title.hashCode) +
+    (description == null ? 0 : description.hashCode) +
     appId.hashCode +
-    template.hashCode +
-    data.hashCode;
+    (template == null ? 0 : template.hashCode) +
+    (data == null ? 0 : data.hashCode);
 
   factory MessagePublishDto.fromJson(Map<String, dynamic> json) => _$MessagePublishDtoFromJson(json);
 

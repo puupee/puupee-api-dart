@@ -84,10 +84,10 @@ class TenantDto {
 
   @override
   int get hashCode =>
-    extraProperties.hashCode +
+    (extraProperties == null ? 0 : extraProperties.hashCode) +
     id.hashCode +
-    name.hashCode +
-    concurrencyStamp.hashCode;
+    (name == null ? 0 : name.hashCode) +
+    (concurrencyStamp == null ? 0 : concurrencyStamp.hashCode);
 
   factory TenantDto.fromJson(Map<String, dynamic> json) => _$TenantDtoFromJson(json);
 

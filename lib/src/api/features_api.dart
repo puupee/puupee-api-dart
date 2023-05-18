@@ -168,7 +168,7 @@ _responseData = deserialize<GetFeatureListResultDto, GetFeatureListResultDto>(_r
   /// Parameters:
   /// * [providerName] 
   /// * [providerKey] 
-  /// * [body] 
+  /// * [updateFeaturesDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -181,7 +181,7 @@ _responseData = deserialize<GetFeatureListResultDto, GetFeatureListResultDto>(_r
   Future<Response<void>> apiFeatureManagementFeaturesPut({ 
     String? providerName,
     String? providerKey,
-    UpdateFeaturesDto? body,
+    UpdateFeaturesDto? updateFeaturesDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -216,7 +216,7 @@ _responseData = deserialize<GetFeatureListResultDto, GetFeatureListResultDto>(_r
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(updateFeaturesDto);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

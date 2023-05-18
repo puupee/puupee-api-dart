@@ -55,7 +55,7 @@ class AppTheme {
 
   @override
   int get hashCode =>
-    sourceColor.hashCode +
+    (sourceColor == null ? 0 : sourceColor.hashCode) +
     themeMode.hashCode;
 
   factory AppTheme.fromJson(Map<String, dynamic> json) => _$AppThemeFromJson(json);

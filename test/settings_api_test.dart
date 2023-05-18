@@ -12,7 +12,7 @@ void main() {
       // TODO
     });
 
-    //Future apiAppSettingsSetPost({ SettingsDto body }) async
+    //Future apiAppSettingsSetPost({ SettingsDto settingsDto }) async
     test('test apiAppSettingsSetPost', () async {
       // TODO
     });

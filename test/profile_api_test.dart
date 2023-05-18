@@ -7,7 +7,7 @@ void main() {
   final instance = PuupeeApiClient().getProfileApi();
 
   group(ProfileApi, () {
-    //Future apiAccountMyProfileChangePasswordPost({ ChangePasswordInput body }) async
+    //Future apiAccountMyProfileChangePasswordPost({ ChangePasswordInput changePasswordInput }) async
     test('test apiAccountMyProfileChangePasswordPost', () async {
       // TODO
     });
@@ -17,7 +17,7 @@ void main() {
       // TODO
     });
 
-    //Future<ProfileDto> apiAccountMyProfilePut({ UpdateProfileDto body }) async
+    //Future<ProfileDto> apiAccountMyProfilePut({ UpdateProfileDto updateProfileDto }) async
     test('test apiAccountMyProfilePut', () async {
       // TODO
     });

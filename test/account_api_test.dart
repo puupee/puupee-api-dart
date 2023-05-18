@@ -7,22 +7,22 @@ void main() {
   final instance = PuupeeApiClient().getAccountApi();
 
   group(AccountApi, () {
-    //Future<IdentityUserDto> apiAccountRegisterPost({ RegisterDto body }) async
+    //Future<IdentityUserDto> apiAccountRegisterPost({ RegisterDto registerDto }) async
     test('test apiAccountRegisterPost', () async {
       // TODO
     });
 
-    //Future apiAccountResetPasswordPost({ ResetPasswordDto body }) async
+    //Future apiAccountResetPasswordPost({ ResetPasswordDto resetPasswordDto }) async
     test('test apiAccountResetPasswordPost', () async {
       // TODO
     });
 
-    //Future apiAccountSendPasswordResetCodePost({ SendPasswordResetCodeDto body }) async
+    //Future apiAccountSendPasswordResetCodePost({ SendPasswordResetCodeDto sendPasswordResetCodeDto }) async
     test('test apiAccountSendPasswordResetCodePost', () async {
       // TODO
     });
 
-    //Future<bool> apiAccountVerifyPasswordResetTokenPost({ VerifyPasswordResetTokenInput body }) async
+    //Future<bool> apiAccountVerifyPasswordResetTokenPost({ VerifyPasswordResetTokenInput verifyPasswordResetTokenInput }) async
     test('test apiAccountVerifyPasswordResetTokenPost', () async {
       // TODO
     });

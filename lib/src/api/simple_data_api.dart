@@ -239,7 +239,7 @@ _responseData = deserialize<SimpleDataDto, SimpleDataDto>(_response.data!, 'Simp
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [simpleDataDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -250,7 +250,7 @@ _responseData = deserialize<SimpleDataDto, SimpleDataDto>(_response.data!, 'Simp
   /// Returns a [Future] containing a [Response] with a [SimpleDataDto] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<SimpleDataDto>> apiAppSimpleDataSavePost({ 
-    SimpleDataDto? body,
+    SimpleDataDto? simpleDataDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -280,7 +280,7 @@ _responseData = deserialize<SimpleDataDto, SimpleDataDto>(_response.data!, 'Simp
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(simpleDataDto);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

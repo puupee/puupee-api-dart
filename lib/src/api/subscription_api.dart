@@ -27,7 +27,7 @@ class SubscriptionApi {
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [appleNotificaionDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -38,7 +38,7 @@ class SubscriptionApi {
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiAppSubscriptionAppleNotificationsPost({ 
-    AppleNotificaionDto? body,
+    AppleNotificaionDto? appleNotificaionDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -68,7 +68,7 @@ class SubscriptionApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(appleNotificaionDto);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -177,7 +177,7 @@ _responseData = deserialize<SubscriptionDto, SubscriptionDto>(_response.data!, '
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [createOrGetSubscriptionOrderDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -188,7 +188,7 @@ _responseData = deserialize<SubscriptionDto, SubscriptionDto>(_response.data!, '
   /// Returns a [Future] containing a [Response] with a [SubscriptionOrderDto] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<SubscriptionOrderDto>> apiAppSubscriptionOrderPost({ 
-    CreateOrGetSubscriptionOrderDto? body,
+    CreateOrGetSubscriptionOrderDto? createOrGetSubscriptionOrderDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -218,7 +218,7 @@ _responseData = deserialize<SubscriptionDto, SubscriptionDto>(_response.data!, '
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(createOrGetSubscriptionOrderDto);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -270,7 +270,7 @@ _responseData = deserialize<SubscriptionOrderDto, SubscriptionOrderDto>(_respons
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [verifyReceiptDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -281,7 +281,7 @@ _responseData = deserialize<SubscriptionOrderDto, SubscriptionOrderDto>(_respons
   /// Returns a [Future] containing a [Response] with a [VerifyReceiptResult] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<VerifyReceiptResult>> apiAppSubscriptionVerifyReceiptPost({ 
-    VerifyReceiptDto? body,
+    VerifyReceiptDto? verifyReceiptDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -311,7 +311,7 @@ _responseData = deserialize<SubscriptionOrderDto, SubscriptionOrderDto>(_respons
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(verifyReceiptDto);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **apiAppVerificationSendCodePost**
-> apiAppVerificationSendCodePost(body)
+> apiAppVerificationSendCodePost(sendVerificationCodeDto)
 
 
 
@@ -24,10 +24,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getVerificationApi();
-final SendVerificationCodeDto body = ; // SendVerificationCodeDto | 
+final SendVerificationCodeDto sendVerificationCodeDto = ; // SendVerificationCodeDto | 
 
 try {
-    api.apiAppVerificationSendCodePost(body);
+    api.apiAppVerificationSendCodePost(sendVerificationCodeDto);
 } catch on DioError (e) {
     print('Exception when calling VerificationApi->apiAppVerificationSendCodePost: $e\n');
 }
@@ -37,7 +37,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SendVerificationCodeDto**](SendVerificationCodeDto.md)|  | [optional] 
+ **sendVerificationCodeDto** | [**SendVerificationCodeDto**](SendVerificationCodeDto.md)|  | [optional] 
 
 ### Return type
 

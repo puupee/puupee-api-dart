@@ -55,8 +55,8 @@ class GetPermissionListResultDto {
 
   @override
   int get hashCode =>
-    entityDisplayName.hashCode +
-    groups.hashCode;
+    (entityDisplayName == null ? 0 : entityDisplayName.hashCode) +
+    (groups == null ? 0 : groups.hashCode);
 
   factory GetPermissionListResultDto.fromJson(Map<String, dynamic> json) => _$GetPermissionListResultDtoFromJson(json);
 

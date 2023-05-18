@@ -99,11 +99,11 @@ class IdentityUserToken {
 
   @override
   int get hashCode =>
-    tenantId.hashCode +
+    (tenantId == null ? 0 : tenantId.hashCode) +
     userId.hashCode +
-    loginProvider.hashCode +
-    name.hashCode +
-    value.hashCode;
+    (loginProvider == null ? 0 : loginProvider.hashCode) +
+    (name == null ? 0 : name.hashCode) +
+    (value == null ? 0 : value.hashCode);
 
   factory IdentityUserToken.fromJson(Map<String, dynamic> json) => _$IdentityUserTokenFromJson(json);
 

@@ -54,8 +54,8 @@ class ExtensionPropertyAttributeDto {
 
   @override
   int get hashCode =>
-    typeSimple.hashCode +
-    config.hashCode;
+    (typeSimple == null ? 0 : typeSimple.hashCode) +
+    (config == null ? 0 : config.hashCode);
 
   factory ExtensionPropertyAttributeDto.fromJson(Map<String, dynamic> json) => _$ExtensionPropertyAttributeDtoFromJson(json);
 

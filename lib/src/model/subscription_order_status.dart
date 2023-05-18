@@ -54,8 +54,8 @@ class SubscriptionOrderStatus {
 
   @override
   int get hashCode =>
-    name.hashCode +
-    value.hashCode;
+    (name == null ? 0 : name.hashCode) +
+    (value == null ? 0 : value.hashCode);
 
   factory SubscriptionOrderStatus.fromJson(Map<String, dynamic> json) => _$SubscriptionOrderStatusFromJson(json);
 

@@ -69,9 +69,9 @@ class SendVerificationCodeDto {
 
   @override
   int get hashCode =>
-    codeSender.hashCode +
-    account.hashCode +
-    purpose.hashCode;
+    (codeSender == null ? 0 : codeSender.hashCode) +
+    (account == null ? 0 : account.hashCode) +
+    (purpose == null ? 0 : purpose.hashCode);
 
   factory SendVerificationCodeDto.fromJson(Map<String, dynamic> json) => _$SendVerificationCodeDtoFromJson(json);
 

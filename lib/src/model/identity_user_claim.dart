@@ -100,9 +100,9 @@ class IdentityUserClaim {
   @override
   int get hashCode =>
     id.hashCode +
-    tenantId.hashCode +
-    claimType.hashCode +
-    claimValue.hashCode +
+    (tenantId == null ? 0 : tenantId.hashCode) +
+    (claimType == null ? 0 : claimType.hashCode) +
+    (claimValue == null ? 0 : claimValue.hashCode) +
     userId.hashCode;
 
   factory IdentityUserClaim.fromJson(Map<String, dynamic> json) => _$IdentityUserClaimFromJson(json);
