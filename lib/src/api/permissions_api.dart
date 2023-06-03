@@ -106,9 +106,9 @@ _responseData = deserialize<GetPermissionListResultDto, GetPermissionListResultD
   /// 
   ///
   /// Parameters:
+  /// * [updatePermissionsDto] 
   /// * [providerName] 
   /// * [providerKey] 
-  /// * [updatePermissionsDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -119,9 +119,9 @@ _responseData = deserialize<GetPermissionListResultDto, GetPermissionListResultD
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiPermissionManagementPermissionsPut({ 
+    UpdatePermissionsDto? updatePermissionsDto,
     String? providerName,
     String? providerKey,
-    UpdatePermissionsDto? updatePermissionsDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,

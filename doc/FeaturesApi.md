@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiFeatureManagementFeaturesPut**
-> apiFeatureManagementFeaturesPut(providerName, providerKey, updateFeaturesDto)
+> apiFeatureManagementFeaturesPut(updateFeaturesDto, providerName, providerKey)
 
 
 
@@ -115,12 +115,12 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getFeaturesApi();
+final UpdateFeaturesDto updateFeaturesDto = ; // UpdateFeaturesDto | 
 final String providerName = providerName_example; // String | 
 final String providerKey = providerKey_example; // String | 
-final UpdateFeaturesDto updateFeaturesDto = ; // UpdateFeaturesDto | 
 
 try {
-    api.apiFeatureManagementFeaturesPut(providerName, providerKey, updateFeaturesDto);
+    api.apiFeatureManagementFeaturesPut(updateFeaturesDto, providerName, providerKey);
 } catch on DioError (e) {
     print('Exception when calling FeaturesApi->apiFeatureManagementFeaturesPut: $e\n');
 }
@@ -130,9 +130,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **updateFeaturesDto** | [**UpdateFeaturesDto**](UpdateFeaturesDto.md)|  | [optional] 
  **providerName** | **String**|  | [optional] 
  **providerKey** | **String**|  | [optional] 
- **updateFeaturesDto** | [**UpdateFeaturesDto**](UpdateFeaturesDto.md)|  | [optional] 
 
 ### Return type
 

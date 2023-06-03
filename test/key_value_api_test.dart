@@ -32,32 +32,32 @@ void main() {
       // TODO
     });
 
-    //Future apiAppKeyValueSetBoolPost({ String key, BooleanSetKeyValueDto booleanSetKeyValueDto }) async
+    //Future apiAppKeyValueSetBoolPost({ BooleanSetKeyValueDto booleanSetKeyValueDto, String key }) async
     test('test apiAppKeyValueSetBoolPost', () async {
       // TODO
     });
 
-    //Future apiAppKeyValueSetDateTimePost({ String key, DateTimeSetKeyValueDto dateTimeSetKeyValueDto }) async
+    //Future apiAppKeyValueSetDateTimePost({ DateTimeSetKeyValueDto dateTimeSetKeyValueDto, String key }) async
     test('test apiAppKeyValueSetDateTimePost', () async {
       // TODO
     });
 
-    //Future apiAppKeyValueSetDecimalPost({ String key, DecimalSetKeyValueDto decimalSetKeyValueDto }) async
+    //Future apiAppKeyValueSetDecimalPost({ DecimalSetKeyValueDto decimalSetKeyValueDto, String key }) async
     test('test apiAppKeyValueSetDecimalPost', () async {
       // TODO
     });
 
-    //Future apiAppKeyValueSetDoublePost({ String key, DoubleSetKeyValueDto doubleSetKeyValueDto }) async
+    //Future apiAppKeyValueSetDoublePost({ DoubleSetKeyValueDto doubleSetKeyValueDto, String key }) async
     test('test apiAppKeyValueSetDoublePost', () async {
       // TODO
     });
 
-    //Future apiAppKeyValueSetIntPost({ String key, Int32SetKeyValueDto int32SetKeyValueDto }) async
+    //Future apiAppKeyValueSetIntPost({ Int32SetKeyValueDto int32SetKeyValueDto, String key }) async
     test('test apiAppKeyValueSetIntPost', () async {
       // TODO
     });
 
-    //Future apiAppKeyValueSetStringPost({ String key, StringSetKeyValueDto stringSetKeyValueDto }) async
+    //Future apiAppKeyValueSetStringPost({ StringSetKeyValueDto stringSetKeyValueDto, String key }) async
     test('test apiAppKeyValueSetStringPost', () async {
       // TODO
     });

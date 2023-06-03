@@ -166,9 +166,9 @@ _responseData = deserialize<GetFeatureListResultDto, GetFeatureListResultDto>(_r
   /// 
   ///
   /// Parameters:
+  /// * [updateFeaturesDto] 
   /// * [providerName] 
   /// * [providerKey] 
-  /// * [updateFeaturesDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -179,9 +179,9 @@ _responseData = deserialize<GetFeatureListResultDto, GetFeatureListResultDto>(_r
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiFeatureManagementFeaturesPut({ 
+    UpdateFeaturesDto? updateFeaturesDto,
     String? providerName,
     String? providerKey,
-    UpdateFeaturesDto? updateFeaturesDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,

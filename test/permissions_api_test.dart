@@ -12,7 +12,7 @@ void main() {
       // TODO
     });
 
-    //Future apiPermissionManagementPermissionsPut({ String providerName, String providerKey, UpdatePermissionsDto updatePermissionsDto }) async
+    //Future apiPermissionManagementPermissionsPut({ UpdatePermissionsDto updatePermissionsDto, String providerName, String providerKey }) async
     test('test apiPermissionManagementPermissionsPut', () async {
       // TODO
     });
