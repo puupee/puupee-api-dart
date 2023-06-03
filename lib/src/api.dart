@@ -12,6 +12,7 @@ import 'package:puupee_api_client/src/api/abp_application_configuration_api.dart
 import 'package:puupee_api_client/src/api/abp_application_localization_api.dart';
 import 'package:puupee_api_client/src/api/abp_tenant_api.dart';
 import 'package:puupee_api_client/src/api/account_api.dart';
+import 'package:puupee_api_client/src/api/api_keys_api.dart';
 import 'package:puupee_api_client/src/api/app_api.dart';
 import 'package:puupee_api_client/src/api/app_feature_api.dart';
 import 'package:puupee_api_client/src/api/app_pricing_api.dart';
@@ -128,6 +129,12 @@ class PuupeeApiClient {
   /// by doing that all interceptors will not be executed
   AccountApi getAccountApi() {
     return AccountApi(dio);
+  }
+
+  /// Get ApiKeysApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  ApiKeysApi getApiKeysApi() {
+    return ApiKeysApi(dio);
   }
 
   /// Get AppApi instance, base route and serializer can be overridden by a given but be careful,

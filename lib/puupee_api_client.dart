@@ -13,6 +13,7 @@ export 'package:puupee_api_client/src/api/abp_application_configuration_api.dart
 export 'package:puupee_api_client/src/api/abp_application_localization_api.dart';
 export 'package:puupee_api_client/src/api/abp_tenant_api.dart';
 export 'package:puupee_api_client/src/api/account_api.dart';
+export 'package:puupee_api_client/src/api/api_keys_api.dart';
 export 'package:puupee_api_client/src/api/app_api.dart';
 export 'package:puupee_api_client/src/api/app_feature_api.dart';
 export 'package:puupee_api_client/src/api/app_pricing_api.dart';
@@ -52,6 +53,10 @@ export 'package:puupee_api_client/src/api/verification_api.dart';
 
 export 'package:puupee_api_client/src/model/abp_login_result.dart';
 export 'package:puupee_api_client/src/model/action_api_description_model.dart';
+export 'package:puupee_api_client/src/model/api_key_create_dto.dart';
+export 'package:puupee_api_client/src/model/api_key_dto.dart';
+export 'package:puupee_api_client/src/model/api_key_dto_paged_result_dto.dart';
+export 'package:puupee_api_client/src/model/api_key_update_dto.dart';
 export 'package:puupee_api_client/src/model/app_dto.dart';
 export 'package:puupee_api_client/src/model/app_dto_paged_result_dto.dart';
 export 'package:puupee_api_client/src/model/app_feature_dto.dart';
