@@ -27,12 +27,12 @@ void main() {
       // TODO
     });
 
-    //Future<IdentityRoleDto> apiIdentityRolesIdPut(String id, { IdentityRoleUpdateDto identityRoleUpdateDto }) async
+    //Future<IdentityRoleDto> apiIdentityRolesIdPut(String id, { IdentityRoleUpdateDto body }) async
     test('test apiIdentityRolesIdPut', () async {
       // TODO
     });
 
-    //Future<IdentityRoleDto> apiIdentityRolesPost({ IdentityRoleCreateDto identityRoleCreateDto }) async
+    //Future<IdentityRoleDto> apiIdentityRolesPost({ IdentityRoleCreateDto body }) async
     test('test apiIdentityRolesPost', () async {
       // TODO
     });

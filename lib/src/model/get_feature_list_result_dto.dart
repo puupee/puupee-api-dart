@@ -40,7 +40,7 @@ class GetFeatureListResultDto {
 
   @override
   int get hashCode =>
-    (groups == null ? 0 : groups.hashCode);
+    groups.hashCode;
 
   factory GetFeatureListResultDto.fromJson(Map<String, dynamic> json) => _$GetFeatureListResultDtoFromJson(json);
 

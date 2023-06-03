@@ -281,7 +281,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiIdentityUsersIdPut**
-> IdentityUserDto apiIdentityUsersIdPut(id, identityUserUpdateDto)
+> IdentityUserDto apiIdentityUsersIdPut(id, body)
 
 
 
@@ -293,10 +293,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getUserApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final IdentityUserUpdateDto identityUserUpdateDto = ; // IdentityUserUpdateDto | 
+final IdentityUserUpdateDto body = ; // IdentityUserUpdateDto | 
 
 try {
-    final response = api.apiIdentityUsersIdPut(id, identityUserUpdateDto);
+    final response = api.apiIdentityUsersIdPut(id, body);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling UserApi->apiIdentityUsersIdPut: $e\n');
@@ -308,7 +308,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **identityUserUpdateDto** | [**IdentityUserUpdateDto**](IdentityUserUpdateDto.md)|  | [optional] 
+ **body** | [**IdentityUserUpdateDto**](IdentityUserUpdateDto.md)|  | [optional] 
 
 ### Return type
 
@@ -369,7 +369,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiIdentityUsersIdRolesPut**
-> apiIdentityUsersIdRolesPut(id, identityUserUpdateRolesDto)
+> apiIdentityUsersIdRolesPut(id, body)
 
 
 
@@ -381,10 +381,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getUserApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final IdentityUserUpdateRolesDto identityUserUpdateRolesDto = ; // IdentityUserUpdateRolesDto | 
+final IdentityUserUpdateRolesDto body = ; // IdentityUserUpdateRolesDto | 
 
 try {
-    api.apiIdentityUsersIdRolesPut(id, identityUserUpdateRolesDto);
+    api.apiIdentityUsersIdRolesPut(id, body);
 } catch on DioError (e) {
     print('Exception when calling UserApi->apiIdentityUsersIdRolesPut: $e\n');
 }
@@ -395,7 +395,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **identityUserUpdateRolesDto** | [**IdentityUserUpdateRolesDto**](IdentityUserUpdateRolesDto.md)|  | [optional] 
+ **body** | [**IdentityUserUpdateRolesDto**](IdentityUserUpdateRolesDto.md)|  | [optional] 
 
 ### Return type
 
@@ -413,7 +413,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiIdentityUsersPost**
-> IdentityUserDto apiIdentityUsersPost(identityUserCreateDto)
+> IdentityUserDto apiIdentityUsersPost(body)
 
 
 
@@ -424,10 +424,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getUserApi();
-final IdentityUserCreateDto identityUserCreateDto = ; // IdentityUserCreateDto | 
+final IdentityUserCreateDto body = ; // IdentityUserCreateDto | 
 
 try {
-    final response = api.apiIdentityUsersPost(identityUserCreateDto);
+    final response = api.apiIdentityUsersPost(body);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling UserApi->apiIdentityUsersPost: $e\n');
@@ -438,7 +438,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **identityUserCreateDto** | [**IdentityUserCreateDto**](IdentityUserCreateDto.md)|  | [optional] 
+ **body** | [**IdentityUserCreateDto**](IdentityUserCreateDto.md)|  | [optional] 
 
 ### Return type
 

@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppAppPricingIdPut**
-> AppPricingDto apiAppAppPricingIdPut(id, createOrUpdateAppPricingDto)
+> AppPricingDto apiAppAppPricingIdPut(id, body)
 
 
 
@@ -205,10 +205,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getAppPricingApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final CreateOrUpdateAppPricingDto createOrUpdateAppPricingDto = ; // CreateOrUpdateAppPricingDto | 
+final CreateOrUpdateAppPricingDto body = ; // CreateOrUpdateAppPricingDto | 
 
 try {
-    final response = api.apiAppAppPricingIdPut(id, createOrUpdateAppPricingDto);
+    final response = api.apiAppAppPricingIdPut(id, body);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AppPricingApi->apiAppAppPricingIdPut: $e\n');
@@ -220,7 +220,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **createOrUpdateAppPricingDto** | [**CreateOrUpdateAppPricingDto**](CreateOrUpdateAppPricingDto.md)|  | [optional] 
+ **body** | [**CreateOrUpdateAppPricingDto**](CreateOrUpdateAppPricingDto.md)|  | [optional] 
 
 ### Return type
 
@@ -238,7 +238,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppAppPricingPost**
-> AppPricingDto apiAppAppPricingPost(createOrUpdateAppPricingDto)
+> AppPricingDto apiAppAppPricingPost(body)
 
 
 
@@ -249,10 +249,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppPricingApi();
-final CreateOrUpdateAppPricingDto createOrUpdateAppPricingDto = ; // CreateOrUpdateAppPricingDto | 
+final CreateOrUpdateAppPricingDto body = ; // CreateOrUpdateAppPricingDto | 
 
 try {
-    final response = api.apiAppAppPricingPost(createOrUpdateAppPricingDto);
+    final response = api.apiAppAppPricingPost(body);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AppPricingApi->apiAppAppPricingPost: $e\n');
@@ -263,7 +263,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createOrUpdateAppPricingDto** | [**CreateOrUpdateAppPricingDto**](CreateOrUpdateAppPricingDto.md)|  | [optional] 
+ **body** | [**CreateOrUpdateAppPricingDto**](CreateOrUpdateAppPricingDto.md)|  | [optional] 
 
 ### Return type
 

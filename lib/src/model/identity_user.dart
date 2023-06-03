@@ -570,41 +570,41 @@ class IdentityUser {
   @override
   int get hashCode =>
     id.hashCode +
-    (extraProperties == null ? 0 : extraProperties.hashCode) +
-    (concurrencyStamp == null ? 0 : concurrencyStamp.hashCode) +
+    extraProperties.hashCode +
+    concurrencyStamp.hashCode +
     creationTime.hashCode +
-    (creatorId == null ? 0 : creatorId.hashCode) +
-    (lastModificationTime == null ? 0 : lastModificationTime.hashCode) +
-    (lastModifierId == null ? 0 : lastModifierId.hashCode) +
+    creatorId.hashCode +
+    lastModificationTime.hashCode +
+    lastModifierId.hashCode +
     isDeleted.hashCode +
-    (deleterId == null ? 0 : deleterId.hashCode) +
-    (deletionTime == null ? 0 : deletionTime.hashCode) +
-    (tenantId == null ? 0 : tenantId.hashCode) +
-    (userName == null ? 0 : userName.hashCode) +
-    (normalizedUserName == null ? 0 : normalizedUserName.hashCode) +
-    (name == null ? 0 : name.hashCode) +
-    (surname == null ? 0 : surname.hashCode) +
-    (email == null ? 0 : email.hashCode) +
-    (normalizedEmail == null ? 0 : normalizedEmail.hashCode) +
+    deleterId.hashCode +
+    deletionTime.hashCode +
+    tenantId.hashCode +
+    userName.hashCode +
+    normalizedUserName.hashCode +
+    name.hashCode +
+    surname.hashCode +
+    email.hashCode +
+    normalizedEmail.hashCode +
     emailConfirmed.hashCode +
-    (passwordHash == null ? 0 : passwordHash.hashCode) +
-    (securityStamp == null ? 0 : securityStamp.hashCode) +
+    passwordHash.hashCode +
+    securityStamp.hashCode +
     isExternal.hashCode +
-    (phoneNumber == null ? 0 : phoneNumber.hashCode) +
+    phoneNumber.hashCode +
     phoneNumberConfirmed.hashCode +
     isActive.hashCode +
     twoFactorEnabled.hashCode +
-    (lockoutEnd == null ? 0 : lockoutEnd.hashCode) +
+    lockoutEnd.hashCode +
     lockoutEnabled.hashCode +
     accessFailedCount.hashCode +
     shouldChangePasswordOnNextLogin.hashCode +
     entityVersion.hashCode +
-    (lastPasswordChangeTime == null ? 0 : lastPasswordChangeTime.hashCode) +
-    (roles == null ? 0 : roles.hashCode) +
-    (claims == null ? 0 : claims.hashCode) +
-    (logins == null ? 0 : logins.hashCode) +
-    (tokens == null ? 0 : tokens.hashCode) +
-    (organizationUnits == null ? 0 : organizationUnits.hashCode);
+    lastPasswordChangeTime.hashCode +
+    roles.hashCode +
+    claims.hashCode +
+    logins.hashCode +
+    tokens.hashCode +
+    organizationUnits.hashCode;
 
   factory IdentityUser.fromJson(Map<String, dynamic> json) => _$IdentityUserFromJson(json);
 

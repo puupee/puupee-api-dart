@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **apiAccountMyProfileChangePasswordPost**
-> apiAccountMyProfileChangePasswordPost(changePasswordInput)
+> apiAccountMyProfileChangePasswordPost(body)
 
 
 
@@ -26,10 +26,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getProfileApi();
-final ChangePasswordInput changePasswordInput = ; // ChangePasswordInput | 
+final ChangePasswordInput body = ; // ChangePasswordInput | 
 
 try {
-    api.apiAccountMyProfileChangePasswordPost(changePasswordInput);
+    api.apiAccountMyProfileChangePasswordPost(body);
 } catch on DioError (e) {
     print('Exception when calling ProfileApi->apiAccountMyProfileChangePasswordPost: $e\n');
 }
@@ -39,7 +39,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **changePasswordInput** | [**ChangePasswordInput**](ChangePasswordInput.md)|  | [optional] 
+ **body** | [**ChangePasswordInput**](ChangePasswordInput.md)|  | [optional] 
 
 ### Return type
 
@@ -96,7 +96,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAccountMyProfilePut**
-> ProfileDto apiAccountMyProfilePut(updateProfileDto)
+> ProfileDto apiAccountMyProfilePut(body)
 
 
 
@@ -107,10 +107,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getProfileApi();
-final UpdateProfileDto updateProfileDto = ; // UpdateProfileDto | 
+final UpdateProfileDto body = ; // UpdateProfileDto | 
 
 try {
-    final response = api.apiAccountMyProfilePut(updateProfileDto);
+    final response = api.apiAccountMyProfilePut(body);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling ProfileApi->apiAccountMyProfilePut: $e\n');
@@ -121,7 +121,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **updateProfileDto** | [**UpdateProfileDto**](UpdateProfileDto.md)|  | [optional] 
+ **body** | [**UpdateProfileDto**](UpdateProfileDto.md)|  | [optional] 
 
 ### Return type
 

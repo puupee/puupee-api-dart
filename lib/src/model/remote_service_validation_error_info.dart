@@ -54,8 +54,8 @@ class RemoteServiceValidationErrorInfo {
 
   @override
   int get hashCode =>
-    (message == null ? 0 : message.hashCode) +
-    (members == null ? 0 : members.hashCode);
+    message.hashCode +
+    members.hashCode;
 
   factory RemoteServiceValidationErrorInfo.fromJson(Map<String, dynamic> json) => _$RemoteServiceValidationErrorInfoFromJson(json);
 

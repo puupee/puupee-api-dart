@@ -39,7 +39,7 @@ class ApplicationAuthConfigurationDto {
 
   @override
   int get hashCode =>
-    (grantedPolicies == null ? 0 : grantedPolicies.hashCode);
+    grantedPolicies.hashCode;
 
   factory ApplicationAuthConfigurationDto.fromJson(Map<String, dynamic> json) => _$ApplicationAuthConfigurationDtoFromJson(json);
 

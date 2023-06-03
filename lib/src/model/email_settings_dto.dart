@@ -159,15 +159,15 @@ class EmailSettingsDto {
 
   @override
   int get hashCode =>
-    (smtpHost == null ? 0 : smtpHost.hashCode) +
+    smtpHost.hashCode +
     smtpPort.hashCode +
-    (smtpUserName == null ? 0 : smtpUserName.hashCode) +
-    (smtpPassword == null ? 0 : smtpPassword.hashCode) +
-    (smtpDomain == null ? 0 : smtpDomain.hashCode) +
+    smtpUserName.hashCode +
+    smtpPassword.hashCode +
+    smtpDomain.hashCode +
     smtpEnableSsl.hashCode +
     smtpUseDefaultCredentials.hashCode +
-    (defaultFromAddress == null ? 0 : defaultFromAddress.hashCode) +
-    (defaultFromDisplayName == null ? 0 : defaultFromDisplayName.hashCode);
+    defaultFromAddress.hashCode +
+    defaultFromDisplayName.hashCode;
 
   factory EmailSettingsDto.fromJson(Map<String, dynamic> json) => _$EmailSettingsDtoFromJson(json);
 

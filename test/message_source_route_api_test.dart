@@ -17,12 +17,12 @@ void main() {
       // TODO
     });
 
-    //Future apiAppMessageSourceRouteIdPut(String id, { CreateUpdateMessageSourceRouteDto createUpdateMessageSourceRouteDto }) async
+    //Future apiAppMessageSourceRouteIdPut(String id, { CreateUpdateMessageSourceRouteDto body }) async
     test('test apiAppMessageSourceRouteIdPut', () async {
       // TODO
     });
 
-    //Future apiAppMessageSourceRoutePost({ CreateUpdateMessageSourceRouteDto createUpdateMessageSourceRouteDto }) async
+    //Future apiAppMessageSourceRoutePost({ CreateUpdateMessageSourceRouteDto body }) async
     test('test apiAppMessageSourceRoutePost', () async {
       // TODO
     });

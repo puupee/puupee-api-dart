@@ -206,15 +206,15 @@ class SubscriptionDto {
   int get hashCode =>
     id.hashCode +
     creationTime.hashCode +
-    (creatorId == null ? 0 : creatorId.hashCode) +
-    (lastModificationTime == null ? 0 : lastModificationTime.hashCode) +
-    (lastModifierId == null ? 0 : lastModifierId.hashCode) +
+    creatorId.hashCode +
+    lastModificationTime.hashCode +
+    lastModifierId.hashCode +
     isDeleted.hashCode +
-    (deleterId == null ? 0 : deleterId.hashCode) +
-    (deletionTime == null ? 0 : deletionTime.hashCode) +
-    (expireAt == null ? 0 : expireAt.hashCode) +
+    deleterId.hashCode +
+    deletionTime.hashCode +
+    expireAt.hashCode +
     appId.hashCode +
-    (priceNaming == null ? 0 : priceNaming.hashCode) +
+    priceNaming.hashCode +
     pricingId.hashCode;
 
   factory SubscriptionDto.fromJson(Map<String, dynamic> json) => _$SubscriptionDtoFromJson(json);

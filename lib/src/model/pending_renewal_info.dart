@@ -174,16 +174,16 @@ class PendingRenewalInfo {
 
   @override
   int get hashCode =>
-    (autoRenewProductId == null ? 0 : autoRenewProductId.hashCode) +
-    (autoRenewStatus == null ? 0 : autoRenewStatus.hashCode) +
-    (isInBillingRetryPeriod == null ? 0 : isInBillingRetryPeriod.hashCode) +
-    (originalTransactionId == null ? 0 : originalTransactionId.hashCode) +
-    (productId == null ? 0 : productId.hashCode) +
-    (expirationIntent == null ? 0 : expirationIntent.hashCode) +
-    (priceConsentStatus == null ? 0 : priceConsentStatus.hashCode) +
-    (gracePeriodExpiresDate == null ? 0 : gracePeriodExpiresDate.hashCode) +
-    (gracePeriodExpiresDateMs == null ? 0 : gracePeriodExpiresDateMs.hashCode) +
-    (gracePeriodExpiresDatePst == null ? 0 : gracePeriodExpiresDatePst.hashCode);
+    autoRenewProductId.hashCode +
+    autoRenewStatus.hashCode +
+    isInBillingRetryPeriod.hashCode +
+    originalTransactionId.hashCode +
+    productId.hashCode +
+    expirationIntent.hashCode +
+    priceConsentStatus.hashCode +
+    gracePeriodExpiresDate.hashCode +
+    gracePeriodExpiresDateMs.hashCode +
+    gracePeriodExpiresDatePst.hashCode;
 
   factory PendingRenewalInfo.fromJson(Map<String, dynamic> json) => _$PendingRenewalInfoFromJson(json);
 

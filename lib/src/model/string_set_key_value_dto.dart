@@ -54,8 +54,8 @@ class StringSetKeyValueDto {
 
   @override
   int get hashCode =>
-    (value == null ? 0 : value.hashCode) +
-    (durationSeconds == null ? 0 : durationSeconds.hashCode);
+    value.hashCode +
+    durationSeconds.hashCode;
 
   factory StringSetKeyValueDto.fromJson(Map<String, dynamic> json) => _$StringSetKeyValueDtoFromJson(json);
 

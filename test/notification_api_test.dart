@@ -17,7 +17,7 @@ void main() {
       // TODO
     });
 
-    //Future apiAppNotificationPushPost({ CreatePushNotificationDto createPushNotificationDto }) async
+    //Future apiAppNotificationPushPost({ CreatePushNotificationDto body }) async
     test('test apiAppNotificationPushPost', () async {
       // TODO
     });

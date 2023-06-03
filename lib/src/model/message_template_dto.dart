@@ -191,14 +191,14 @@ class MessageTemplateDto {
   int get hashCode =>
     id.hashCode +
     creationTime.hashCode +
-    (creatorId == null ? 0 : creatorId.hashCode) +
-    (lastModificationTime == null ? 0 : lastModificationTime.hashCode) +
-    (lastModifierId == null ? 0 : lastModifierId.hashCode) +
+    creatorId.hashCode +
+    lastModificationTime.hashCode +
+    lastModifierId.hashCode +
     isDeleted.hashCode +
-    (deleterId == null ? 0 : deleterId.hashCode) +
-    (deletionTime == null ? 0 : deletionTime.hashCode) +
-    (name == null ? 0 : name.hashCode) +
-    (description == null ? 0 : description.hashCode) +
+    deleterId.hashCode +
+    deletionTime.hashCode +
+    name.hashCode +
+    description.hashCode +
     latestVersion.hashCode;
 
   factory MessageTemplateDto.fromJson(Map<String, dynamic> json) => _$MessageTemplateDtoFromJson(json);

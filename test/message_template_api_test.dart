@@ -22,12 +22,12 @@ void main() {
       // TODO
     });
 
-    //Future<MessageTemplateDto> apiAppMessageTemplateIdPut(String id, { CreateOrUpdateMessageTemplateDto createOrUpdateMessageTemplateDto }) async
+    //Future<MessageTemplateDto> apiAppMessageTemplateIdPut(String id, { CreateOrUpdateMessageTemplateDto body }) async
     test('test apiAppMessageTemplateIdPut', () async {
       // TODO
     });
 
-    //Future<MessageTemplateDto> apiAppMessageTemplatePost({ CreateOrUpdateMessageTemplateDto createOrUpdateMessageTemplateDto }) async
+    //Future<MessageTemplateDto> apiAppMessageTemplatePost({ CreateOrUpdateMessageTemplateDto body }) async
     test('test apiAppMessageTemplatePost', () async {
       // TODO
     });

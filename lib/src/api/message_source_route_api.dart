@@ -151,7 +151,7 @@ _responseData = deserialize<MessageSourceRouteDto, MessageSourceRouteDto>(_respo
   ///
   /// Parameters:
   /// * [id] 
-  /// * [createUpdateMessageSourceRouteDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -163,7 +163,7 @@ _responseData = deserialize<MessageSourceRouteDto, MessageSourceRouteDto>(_respo
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiAppMessageSourceRouteIdPut({ 
     required String id,
-    CreateUpdateMessageSourceRouteDto? createUpdateMessageSourceRouteDto,
+    CreateUpdateMessageSourceRouteDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -193,7 +193,7 @@ _responseData = deserialize<MessageSourceRouteDto, MessageSourceRouteDto>(_respo
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(createUpdateMessageSourceRouteDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -222,7 +222,7 @@ _bodyData=jsonEncode(createUpdateMessageSourceRouteDto);
   /// 
   ///
   /// Parameters:
-  /// * [createUpdateMessageSourceRouteDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -233,7 +233,7 @@ _bodyData=jsonEncode(createUpdateMessageSourceRouteDto);
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiAppMessageSourceRoutePost({ 
-    CreateUpdateMessageSourceRouteDto? createUpdateMessageSourceRouteDto,
+    CreateUpdateMessageSourceRouteDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -263,7 +263,7 @@ _bodyData=jsonEncode(createUpdateMessageSourceRouteDto);
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(createUpdateMessageSourceRouteDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

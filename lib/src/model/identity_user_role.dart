@@ -69,7 +69,7 @@ class IdentityUserRole {
 
   @override
   int get hashCode =>
-    (tenantId == null ? 0 : tenantId.hashCode) +
+    tenantId.hashCode +
     userId.hashCode +
     roleId.hashCode;
 

@@ -23,7 +23,7 @@ class AppUserScoreApi {
   /// 
   ///
   /// Parameters:
-  /// * [createOrUpdateAppUserScoreDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -34,7 +34,7 @@ class AppUserScoreApi {
   /// Returns a [Future] containing a [Response] with a [AppUserScoreDto] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<AppUserScoreDto>> apiAppAppUserScorePost({ 
-    CreateOrUpdateAppUserScoreDto? createOrUpdateAppUserScoreDto,
+    CreateOrUpdateAppUserScoreDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -64,7 +64,7 @@ class AppUserScoreApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(createOrUpdateAppUserScoreDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

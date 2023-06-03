@@ -151,7 +151,7 @@ _responseData = deserialize<MessageSourceDto, MessageSourceDto>(_response.data!,
   ///
   /// Parameters:
   /// * [id] 
-  /// * [createUpdateMessageSourceDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -163,7 +163,7 @@ _responseData = deserialize<MessageSourceDto, MessageSourceDto>(_response.data!,
   /// Throws [DioError] if API call or serialization fails
   Future<Response<CreateUpdateMessageSourceDto>> apiAppMessageSourceIdPut({ 
     required String id,
-    CreateUpdateMessageSourceDto? createUpdateMessageSourceDto,
+    CreateUpdateMessageSourceDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -193,7 +193,7 @@ _responseData = deserialize<MessageSourceDto, MessageSourceDto>(_response.data!,
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(createUpdateMessageSourceDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -245,7 +245,7 @@ _responseData = deserialize<CreateUpdateMessageSourceDto, CreateUpdateMessageSou
   /// 
   ///
   /// Parameters:
-  /// * [createUpdateMessageSourceDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -256,7 +256,7 @@ _responseData = deserialize<CreateUpdateMessageSourceDto, CreateUpdateMessageSou
   /// Returns a [Future] containing a [Response] with a [CreateUpdateMessageSourceDto] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<CreateUpdateMessageSourceDto>> apiAppMessageSourcePost({ 
-    CreateUpdateMessageSourceDto? createUpdateMessageSourceDto,
+    CreateUpdateMessageSourceDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -286,7 +286,7 @@ _responseData = deserialize<CreateUpdateMessageSourceDto, CreateUpdateMessageSou
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(createUpdateMessageSourceDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

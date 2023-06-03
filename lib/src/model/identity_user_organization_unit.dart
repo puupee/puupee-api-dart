@@ -100,8 +100,8 @@ class IdentityUserOrganizationUnit {
   @override
   int get hashCode =>
     creationTime.hashCode +
-    (creatorId == null ? 0 : creatorId.hashCode) +
-    (tenantId == null ? 0 : tenantId.hashCode) +
+    creatorId.hashCode +
+    tenantId.hashCode +
     userId.hashCode +
     organizationUnitId.hashCode;
 

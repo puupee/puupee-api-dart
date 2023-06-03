@@ -22,7 +22,7 @@ void main() {
       // TODO
     });
 
-    //Future<SimpleDataDto> apiAppSimpleDataSavePost({ SimpleDataDto simpleDataDto }) async
+    //Future<SimpleDataDto> apiAppSimpleDataSavePost({ SimpleDataDto body }) async
     test('test apiAppSimpleDataSavePost', () async {
       // TODO
     });

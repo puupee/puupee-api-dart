@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **apiAppDeviceBindPost**
-> apiAppDeviceBindPost(bindDeviceDto)
+> apiAppDeviceBindPost(body)
 
 
 
@@ -27,10 +27,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getDeviceApi();
-final BindDeviceDto bindDeviceDto = ; // BindDeviceDto | 
+final BindDeviceDto body = ; // BindDeviceDto | 
 
 try {
-    api.apiAppDeviceBindPost(bindDeviceDto);
+    api.apiAppDeviceBindPost(body);
 } catch on DioError (e) {
     print('Exception when calling DeviceApi->apiAppDeviceBindPost: $e\n');
 }
@@ -40,7 +40,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bindDeviceDto** | [**BindDeviceDto**](BindDeviceDto.md)|  | [optional] 
+ **body** | [**BindDeviceDto**](BindDeviceDto.md)|  | [optional] 
 
 ### Return type
 
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppDeviceRefreshPost**
-> apiAppDeviceRefreshPost(refreshDeviceStatusDto)
+> apiAppDeviceRefreshPost(body)
 
 
 
@@ -158,10 +158,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getDeviceApi();
-final RefreshDeviceStatusDto refreshDeviceStatusDto = ; // RefreshDeviceStatusDto | 
+final RefreshDeviceStatusDto body = ; // RefreshDeviceStatusDto | 
 
 try {
-    api.apiAppDeviceRefreshPost(refreshDeviceStatusDto);
+    api.apiAppDeviceRefreshPost(body);
 } catch on DioError (e) {
     print('Exception when calling DeviceApi->apiAppDeviceRefreshPost: $e\n');
 }
@@ -171,7 +171,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **refreshDeviceStatusDto** | [**RefreshDeviceStatusDto**](RefreshDeviceStatusDto.md)|  | [optional] 
+ **body** | [**RefreshDeviceStatusDto**](RefreshDeviceStatusDto.md)|  | [optional] 
 
 ### Return type
 

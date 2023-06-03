@@ -54,7 +54,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiSettingManagementEmailingPost**
-> apiSettingManagementEmailingPost(updateEmailSettingsDto)
+> apiSettingManagementEmailingPost(body)
 
 
 
@@ -65,10 +65,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getEmailSettingsApi();
-final UpdateEmailSettingsDto updateEmailSettingsDto = ; // UpdateEmailSettingsDto | 
+final UpdateEmailSettingsDto body = ; // UpdateEmailSettingsDto | 
 
 try {
-    api.apiSettingManagementEmailingPost(updateEmailSettingsDto);
+    api.apiSettingManagementEmailingPost(body);
 } catch on DioError (e) {
     print('Exception when calling EmailSettingsApi->apiSettingManagementEmailingPost: $e\n');
 }
@@ -78,7 +78,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **updateEmailSettingsDto** | [**UpdateEmailSettingsDto**](UpdateEmailSettingsDto.md)|  | [optional] 
+ **body** | [**UpdateEmailSettingsDto**](UpdateEmailSettingsDto.md)|  | [optional] 
 
 ### Return type
 
@@ -96,7 +96,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiSettingManagementEmailingSendTestEmailPost**
-> apiSettingManagementEmailingSendTestEmailPost(sendTestEmailInput)
+> apiSettingManagementEmailingSendTestEmailPost(body)
 
 
 
@@ -107,10 +107,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getEmailSettingsApi();
-final SendTestEmailInput sendTestEmailInput = ; // SendTestEmailInput | 
+final SendTestEmailInput body = ; // SendTestEmailInput | 
 
 try {
-    api.apiSettingManagementEmailingSendTestEmailPost(sendTestEmailInput);
+    api.apiSettingManagementEmailingSendTestEmailPost(body);
 } catch on DioError (e) {
     print('Exception when calling EmailSettingsApi->apiSettingManagementEmailingSendTestEmailPost: $e\n');
 }
@@ -120,7 +120,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sendTestEmailInput** | [**SendTestEmailInput**](SendTestEmailInput.md)|  | [optional] 
+ **body** | [**SendTestEmailInput**](SendTestEmailInput.md)|  | [optional] 
 
 ### Return type
 

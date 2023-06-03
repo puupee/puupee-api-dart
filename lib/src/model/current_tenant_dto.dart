@@ -69,8 +69,8 @@ class CurrentTenantDto {
 
   @override
   int get hashCode =>
-    (id == null ? 0 : id.hashCode) +
-    (name == null ? 0 : name.hashCode) +
+    id.hashCode +
+    name.hashCode +
     isAvailable.hashCode;
 
   factory CurrentTenantDto.fromJson(Map<String, dynamic> json) => _$CurrentTenantDtoFromJson(json);

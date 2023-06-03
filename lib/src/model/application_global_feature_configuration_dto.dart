@@ -39,7 +39,7 @@ class ApplicationGlobalFeatureConfigurationDto {
 
   @override
   int get hashCode =>
-    (enabledFeatures == null ? 0 : enabledFeatures.hashCode);
+    enabledFeatures.hashCode;
 
   factory ApplicationGlobalFeatureConfigurationDto.fromJson(Map<String, dynamic> json) => _$ApplicationGlobalFeatureConfigurationDtoFromJson(json);
 

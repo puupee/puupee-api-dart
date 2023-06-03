@@ -433,7 +433,7 @@ _responseData = deserialize<Int32KeyValue, Int32KeyValue>(_response.data!, 'Int3
   /// 
   ///
   /// Parameters:
-  /// * [booleanSetKeyValueDto] 
+  /// * [body] 
   /// * [key] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -445,7 +445,7 @@ _responseData = deserialize<Int32KeyValue, Int32KeyValue>(_response.data!, 'Int3
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiAppKeyValueSetBoolPost({ 
-    BooleanSetKeyValueDto? booleanSetKeyValueDto,
+    BooleanSetKeyValueDto? body,
     String? key,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -480,7 +480,7 @@ _responseData = deserialize<Int32KeyValue, Int32KeyValue>(_response.data!, 'Int3
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(booleanSetKeyValueDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -511,7 +511,7 @@ _bodyData=jsonEncode(booleanSetKeyValueDto);
   /// 
   ///
   /// Parameters:
-  /// * [dateTimeSetKeyValueDto] 
+  /// * [body] 
   /// * [key] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -523,7 +523,7 @@ _bodyData=jsonEncode(booleanSetKeyValueDto);
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiAppKeyValueSetDateTimePost({ 
-    DateTimeSetKeyValueDto? dateTimeSetKeyValueDto,
+    DateTimeSetKeyValueDto? body,
     String? key,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -558,7 +558,7 @@ _bodyData=jsonEncode(booleanSetKeyValueDto);
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(dateTimeSetKeyValueDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -589,7 +589,7 @@ _bodyData=jsonEncode(dateTimeSetKeyValueDto);
   /// 
   ///
   /// Parameters:
-  /// * [decimalSetKeyValueDto] 
+  /// * [body] 
   /// * [key] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -601,7 +601,7 @@ _bodyData=jsonEncode(dateTimeSetKeyValueDto);
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiAppKeyValueSetDecimalPost({ 
-    DecimalSetKeyValueDto? decimalSetKeyValueDto,
+    DecimalSetKeyValueDto? body,
     String? key,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -636,7 +636,7 @@ _bodyData=jsonEncode(dateTimeSetKeyValueDto);
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(decimalSetKeyValueDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -667,7 +667,7 @@ _bodyData=jsonEncode(decimalSetKeyValueDto);
   /// 
   ///
   /// Parameters:
-  /// * [doubleSetKeyValueDto] 
+  /// * [body] 
   /// * [key] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -679,7 +679,7 @@ _bodyData=jsonEncode(decimalSetKeyValueDto);
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiAppKeyValueSetDoublePost({ 
-    DoubleSetKeyValueDto? doubleSetKeyValueDto,
+    DoubleSetKeyValueDto? body,
     String? key,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -714,7 +714,7 @@ _bodyData=jsonEncode(decimalSetKeyValueDto);
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(doubleSetKeyValueDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -745,7 +745,7 @@ _bodyData=jsonEncode(doubleSetKeyValueDto);
   /// 
   ///
   /// Parameters:
-  /// * [int32SetKeyValueDto] 
+  /// * [body] 
   /// * [key] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -757,7 +757,7 @@ _bodyData=jsonEncode(doubleSetKeyValueDto);
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiAppKeyValueSetIntPost({ 
-    Int32SetKeyValueDto? int32SetKeyValueDto,
+    Int32SetKeyValueDto? body,
     String? key,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -792,7 +792,7 @@ _bodyData=jsonEncode(doubleSetKeyValueDto);
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(int32SetKeyValueDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -823,7 +823,7 @@ _bodyData=jsonEncode(int32SetKeyValueDto);
   /// 
   ///
   /// Parameters:
-  /// * [stringSetKeyValueDto] 
+  /// * [body] 
   /// * [key] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -835,7 +835,7 @@ _bodyData=jsonEncode(int32SetKeyValueDto);
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiAppKeyValueSetStringPost({ 
-    StringSetKeyValueDto? stringSetKeyValueDto,
+    StringSetKeyValueDto? body,
     String? key,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -870,7 +870,7 @@ _bodyData=jsonEncode(int32SetKeyValueDto);
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(stringSetKeyValueDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

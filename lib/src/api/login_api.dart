@@ -23,7 +23,7 @@ class LoginApi {
   /// 
   ///
   /// Parameters:
-  /// * [userLoginInfo] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -34,7 +34,7 @@ class LoginApi {
   /// Returns a [Future] containing a [Response] with a [AbpLoginResult] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<AbpLoginResult>> apiAccountCheckPasswordPost({ 
-    UserLoginInfo? userLoginInfo,
+    UserLoginInfo? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -64,7 +64,7 @@ class LoginApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(userLoginInfo);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -116,7 +116,7 @@ _responseData = deserialize<AbpLoginResult, AbpLoginResult>(_response.data!, 'Ab
   /// 
   ///
   /// Parameters:
-  /// * [userLoginInfo] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -127,7 +127,7 @@ _responseData = deserialize<AbpLoginResult, AbpLoginResult>(_response.data!, 'Ab
   /// Returns a [Future] containing a [Response] with a [AbpLoginResult] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<AbpLoginResult>> apiAccountLoginPost({ 
-    UserLoginInfo? userLoginInfo,
+    UserLoginInfo? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -157,7 +157,7 @@ _responseData = deserialize<AbpLoginResult, AbpLoginResult>(_response.data!, 'Ab
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(userLoginInfo);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

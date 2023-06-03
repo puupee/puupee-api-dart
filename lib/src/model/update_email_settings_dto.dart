@@ -161,11 +161,11 @@ class UpdateEmailSettingsDto {
 
   @override
   int get hashCode =>
-    (smtpHost == null ? 0 : smtpHost.hashCode) +
+    smtpHost.hashCode +
     smtpPort.hashCode +
-    (smtpUserName == null ? 0 : smtpUserName.hashCode) +
-    (smtpPassword == null ? 0 : smtpPassword.hashCode) +
-    (smtpDomain == null ? 0 : smtpDomain.hashCode) +
+    smtpUserName.hashCode +
+    smtpPassword.hashCode +
+    smtpDomain.hashCode +
     smtpEnableSsl.hashCode +
     smtpUseDefaultCredentials.hashCode +
     defaultFromAddress.hashCode +

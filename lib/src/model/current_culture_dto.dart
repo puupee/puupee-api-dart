@@ -160,14 +160,14 @@ class CurrentCultureDto {
 
   @override
   int get hashCode =>
-    (displayName == null ? 0 : displayName.hashCode) +
-    (englishName == null ? 0 : englishName.hashCode) +
-    (threeLetterIsoLanguageName == null ? 0 : threeLetterIsoLanguageName.hashCode) +
-    (twoLetterIsoLanguageName == null ? 0 : twoLetterIsoLanguageName.hashCode) +
+    displayName.hashCode +
+    englishName.hashCode +
+    threeLetterIsoLanguageName.hashCode +
+    twoLetterIsoLanguageName.hashCode +
     isRightToLeft.hashCode +
-    (cultureName == null ? 0 : cultureName.hashCode) +
-    (name == null ? 0 : name.hashCode) +
-    (nativeName == null ? 0 : nativeName.hashCode) +
+    cultureName.hashCode +
+    name.hashCode +
+    nativeName.hashCode +
     dateTimeFormat.hashCode;
 
   factory CurrentCultureDto.fromJson(Map<String, dynamic> json) => _$CurrentCultureDtoFromJson(json);

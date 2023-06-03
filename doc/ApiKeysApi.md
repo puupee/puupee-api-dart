@@ -149,7 +149,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiApiKeysIdPut**
-> ApiKeyDto apiApiKeysIdPut(id, apiKeyUpdateDto)
+> ApiKeyDto apiApiKeysIdPut(id, body)
 
 
 
@@ -161,10 +161,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getApiKeysApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final ApiKeyUpdateDto apiKeyUpdateDto = ; // ApiKeyUpdateDto | 
+final ApiKeyUpdateDto body = ; // ApiKeyUpdateDto | 
 
 try {
-    final response = api.apiApiKeysIdPut(id, apiKeyUpdateDto);
+    final response = api.apiApiKeysIdPut(id, body);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling ApiKeysApi->apiApiKeysIdPut: $e\n');
@@ -176,7 +176,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **apiKeyUpdateDto** | [**ApiKeyUpdateDto**](ApiKeyUpdateDto.md)|  | [optional] 
+ **body** | [**ApiKeyUpdateDto**](ApiKeyUpdateDto.md)|  | [optional] 
 
 ### Return type
 
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiApiKeysPost**
-> ApiKeyDto apiApiKeysPost(apiKeyCreateDto)
+> ApiKeyDto apiApiKeysPost(body)
 
 
 
@@ -205,10 +205,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getApiKeysApi();
-final ApiKeyCreateDto apiKeyCreateDto = ; // ApiKeyCreateDto | 
+final ApiKeyCreateDto body = ; // ApiKeyCreateDto | 
 
 try {
-    final response = api.apiApiKeysPost(apiKeyCreateDto);
+    final response = api.apiApiKeysPost(body);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling ApiKeysApi->apiApiKeysPost: $e\n');
@@ -219,7 +219,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiKeyCreateDto** | [**ApiKeyCreateDto**](ApiKeyCreateDto.md)|  | [optional] 
+ **body** | [**ApiKeyCreateDto**](ApiKeyCreateDto.md)|  | [optional] 
 
 ### Return type
 

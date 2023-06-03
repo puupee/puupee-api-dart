@@ -84,7 +84,7 @@ class IdentityRoleCreateDto {
 
   @override
   int get hashCode =>
-    (extraProperties == null ? 0 : extraProperties.hashCode) +
+    extraProperties.hashCode +
     name.hashCode +
     isDefault.hashCode +
     isPublic.hashCode;

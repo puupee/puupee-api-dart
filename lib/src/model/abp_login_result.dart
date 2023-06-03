@@ -56,7 +56,7 @@ class AbpLoginResult {
   @override
   int get hashCode =>
     result.hashCode +
-    (description == null ? 0 : description.hashCode);
+    description.hashCode;
 
   factory AbpLoginResult.fromJson(Map<String, dynamic> json) => _$AbpLoginResultFromJson(json);
 

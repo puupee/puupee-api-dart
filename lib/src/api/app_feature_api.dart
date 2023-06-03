@@ -149,7 +149,7 @@ _responseData = deserialize<List<AppFeatureDto>, AppFeatureDto>(_response.data!,
   ///
   /// Parameters:
   /// * [id] 
-  /// * [createOrUpdateAppFeatureDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -161,7 +161,7 @@ _responseData = deserialize<List<AppFeatureDto>, AppFeatureDto>(_response.data!,
   /// Throws [DioError] if API call or serialization fails
   Future<Response<AppFeatureDto>> apiAppAppFeatureIdPut({ 
     required String id,
-    CreateOrUpdateAppFeatureDto? createOrUpdateAppFeatureDto,
+    CreateOrUpdateAppFeatureDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -191,7 +191,7 @@ _responseData = deserialize<List<AppFeatureDto>, AppFeatureDto>(_response.data!,
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(createOrUpdateAppFeatureDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -243,7 +243,7 @@ _responseData = deserialize<AppFeatureDto, AppFeatureDto>(_response.data!, 'AppF
   /// 
   ///
   /// Parameters:
-  /// * [createOrUpdateAppFeatureDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -254,7 +254,7 @@ _responseData = deserialize<AppFeatureDto, AppFeatureDto>(_response.data!, 'AppF
   /// Returns a [Future] containing a [Response] with a [AppFeatureDto] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<AppFeatureDto>> apiAppAppFeaturePost({ 
-    CreateOrUpdateAppFeatureDto? createOrUpdateAppFeatureDto,
+    CreateOrUpdateAppFeatureDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -284,7 +284,7 @@ _responseData = deserialize<AppFeatureDto, AppFeatureDto>(_response.data!, 'AppF
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(createOrUpdateAppFeatureDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

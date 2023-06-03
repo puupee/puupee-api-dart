@@ -54,7 +54,7 @@ class AppleVerifyRecceiptStatus {
 
   @override
   int get hashCode =>
-    (name == null ? 0 : name.hashCode) +
+    name.hashCode +
     value.hashCode;
 
   factory AppleVerifyRecceiptStatus.fromJson(Map<String, dynamic> json) => _$AppleVerifyRecceiptStatusFromJson(json);

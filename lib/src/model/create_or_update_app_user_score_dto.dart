@@ -69,9 +69,9 @@ class CreateOrUpdateAppUserScoreDto {
 
   @override
   int get hashCode =>
-    (appId == null ? 0 : appId.hashCode) +
+    appId.hashCode +
     score.hashCode +
-    (comment == null ? 0 : comment.hashCode);
+    comment.hashCode;
 
   factory CreateOrUpdateAppUserScoreDto.fromJson(Map<String, dynamic> json) => _$CreateOrUpdateAppUserScoreDtoFromJson(json);
 

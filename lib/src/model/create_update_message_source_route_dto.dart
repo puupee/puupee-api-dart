@@ -174,16 +174,16 @@ class CreateUpdateMessageSourceRouteDto {
 
   @override
   int get hashCode =>
-    (title == null ? 0 : title.hashCode) +
-    (description == null ? 0 : description.hashCode) +
-    (path == null ? 0 : path.hashCode) +
+    title.hashCode +
+    description.hashCode +
+    path.hashCode +
     sourceId.hashCode +
-    (extra == null ? 0 : extra.hashCode) +
+    extra.hashCode +
     anticrawler.hashCode +
     radar.hashCode +
     rssbud.hashCode +
     isPublished.hashCode +
-    (iconUrl == null ? 0 : iconUrl.hashCode);
+    iconUrl.hashCode;
 
   factory CreateUpdateMessageSourceRouteDto.fromJson(Map<String, dynamic> json) => _$CreateUpdateMessageSourceRouteDtoFromJson(json);
 

@@ -100,11 +100,11 @@ class MessageSourceDto {
 
   @override
   int get hashCode =>
-    (name == null ? 0 : name.hashCode) +
-    (description == null ? 0 : description.hashCode) +
+    name.hashCode +
+    description.hashCode +
     isPublished.hashCode +
-    (iconUrl == null ? 0 : iconUrl.hashCode) +
-    (routes == null ? 0 : routes.hashCode);
+    iconUrl.hashCode +
+    routes.hashCode;
 
   factory MessageSourceDto.fromJson(Map<String, dynamic> json) => _$MessageSourceDtoFromJson(json);
 

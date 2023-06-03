@@ -239,7 +239,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppKeyValueSetBoolPost**
-> apiAppKeyValueSetBoolPost(booleanSetKeyValueDto, key)
+> apiAppKeyValueSetBoolPost(body, key)
 
 
 
@@ -250,11 +250,11 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getKeyValueApi();
-final BooleanSetKeyValueDto booleanSetKeyValueDto = ; // BooleanSetKeyValueDto | 
+final BooleanSetKeyValueDto body = ; // BooleanSetKeyValueDto | 
 final String key = key_example; // String | 
 
 try {
-    api.apiAppKeyValueSetBoolPost(booleanSetKeyValueDto, key);
+    api.apiAppKeyValueSetBoolPost(body, key);
 } catch on DioError (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueSetBoolPost: $e\n');
 }
@@ -264,7 +264,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **booleanSetKeyValueDto** | [**BooleanSetKeyValueDto**](BooleanSetKeyValueDto.md)|  | [optional] 
+ **body** | [**BooleanSetKeyValueDto**](BooleanSetKeyValueDto.md)|  | [optional] 
  **key** | **String**|  | [optional] 
 
 ### Return type
@@ -283,7 +283,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppKeyValueSetDateTimePost**
-> apiAppKeyValueSetDateTimePost(dateTimeSetKeyValueDto, key)
+> apiAppKeyValueSetDateTimePost(body, key)
 
 
 
@@ -294,11 +294,11 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getKeyValueApi();
-final DateTimeSetKeyValueDto dateTimeSetKeyValueDto = ; // DateTimeSetKeyValueDto | 
+final DateTimeSetKeyValueDto body = ; // DateTimeSetKeyValueDto | 
 final String key = key_example; // String | 
 
 try {
-    api.apiAppKeyValueSetDateTimePost(dateTimeSetKeyValueDto, key);
+    api.apiAppKeyValueSetDateTimePost(body, key);
 } catch on DioError (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueSetDateTimePost: $e\n');
 }
@@ -308,7 +308,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **dateTimeSetKeyValueDto** | [**DateTimeSetKeyValueDto**](DateTimeSetKeyValueDto.md)|  | [optional] 
+ **body** | [**DateTimeSetKeyValueDto**](DateTimeSetKeyValueDto.md)|  | [optional] 
  **key** | **String**|  | [optional] 
 
 ### Return type
@@ -327,7 +327,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppKeyValueSetDecimalPost**
-> apiAppKeyValueSetDecimalPost(decimalSetKeyValueDto, key)
+> apiAppKeyValueSetDecimalPost(body, key)
 
 
 
@@ -338,11 +338,11 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getKeyValueApi();
-final DecimalSetKeyValueDto decimalSetKeyValueDto = ; // DecimalSetKeyValueDto | 
+final DecimalSetKeyValueDto body = ; // DecimalSetKeyValueDto | 
 final String key = key_example; // String | 
 
 try {
-    api.apiAppKeyValueSetDecimalPost(decimalSetKeyValueDto, key);
+    api.apiAppKeyValueSetDecimalPost(body, key);
 } catch on DioError (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueSetDecimalPost: $e\n');
 }
@@ -352,7 +352,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **decimalSetKeyValueDto** | [**DecimalSetKeyValueDto**](DecimalSetKeyValueDto.md)|  | [optional] 
+ **body** | [**DecimalSetKeyValueDto**](DecimalSetKeyValueDto.md)|  | [optional] 
  **key** | **String**|  | [optional] 
 
 ### Return type
@@ -371,7 +371,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppKeyValueSetDoublePost**
-> apiAppKeyValueSetDoublePost(doubleSetKeyValueDto, key)
+> apiAppKeyValueSetDoublePost(body, key)
 
 
 
@@ -382,11 +382,11 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getKeyValueApi();
-final DoubleSetKeyValueDto doubleSetKeyValueDto = ; // DoubleSetKeyValueDto | 
+final DoubleSetKeyValueDto body = ; // DoubleSetKeyValueDto | 
 final String key = key_example; // String | 
 
 try {
-    api.apiAppKeyValueSetDoublePost(doubleSetKeyValueDto, key);
+    api.apiAppKeyValueSetDoublePost(body, key);
 } catch on DioError (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueSetDoublePost: $e\n');
 }
@@ -396,7 +396,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **doubleSetKeyValueDto** | [**DoubleSetKeyValueDto**](DoubleSetKeyValueDto.md)|  | [optional] 
+ **body** | [**DoubleSetKeyValueDto**](DoubleSetKeyValueDto.md)|  | [optional] 
  **key** | **String**|  | [optional] 
 
 ### Return type
@@ -415,7 +415,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppKeyValueSetIntPost**
-> apiAppKeyValueSetIntPost(int32SetKeyValueDto, key)
+> apiAppKeyValueSetIntPost(body, key)
 
 
 
@@ -426,11 +426,11 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getKeyValueApi();
-final Int32SetKeyValueDto int32SetKeyValueDto = ; // Int32SetKeyValueDto | 
+final Int32SetKeyValueDto body = ; // Int32SetKeyValueDto | 
 final String key = key_example; // String | 
 
 try {
-    api.apiAppKeyValueSetIntPost(int32SetKeyValueDto, key);
+    api.apiAppKeyValueSetIntPost(body, key);
 } catch on DioError (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueSetIntPost: $e\n');
 }
@@ -440,7 +440,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **int32SetKeyValueDto** | [**Int32SetKeyValueDto**](Int32SetKeyValueDto.md)|  | [optional] 
+ **body** | [**Int32SetKeyValueDto**](Int32SetKeyValueDto.md)|  | [optional] 
  **key** | **String**|  | [optional] 
 
 ### Return type
@@ -459,7 +459,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppKeyValueSetStringPost**
-> apiAppKeyValueSetStringPost(stringSetKeyValueDto, key)
+> apiAppKeyValueSetStringPost(body, key)
 
 
 
@@ -470,11 +470,11 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getKeyValueApi();
-final StringSetKeyValueDto stringSetKeyValueDto = ; // StringSetKeyValueDto | 
+final StringSetKeyValueDto body = ; // StringSetKeyValueDto | 
 final String key = key_example; // String | 
 
 try {
-    api.apiAppKeyValueSetStringPost(stringSetKeyValueDto, key);
+    api.apiAppKeyValueSetStringPost(body, key);
 } catch on DioError (e) {
     print('Exception when calling KeyValueApi->apiAppKeyValueSetStringPost: $e\n');
 }
@@ -484,7 +484,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stringSetKeyValueDto** | [**StringSetKeyValueDto**](StringSetKeyValueDto.md)|  | [optional] 
+ **body** | [**StringSetKeyValueDto**](StringSetKeyValueDto.md)|  | [optional] 
  **key** | **String**|  | [optional] 
 
 ### Return type

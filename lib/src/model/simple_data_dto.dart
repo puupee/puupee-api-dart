@@ -99,11 +99,11 @@ class SimpleDataDto {
 
   @override
   int get hashCode =>
-    (extraProperties == null ? 0 : extraProperties.hashCode) +
+    extraProperties.hashCode +
     id.hashCode +
     creationTime.hashCode +
-    (creatorId == null ? 0 : creatorId.hashCode) +
-    (collection == null ? 0 : collection.hashCode);
+    creatorId.hashCode +
+    collection.hashCode;
 
   factory SimpleDataDto.fromJson(Map<String, dynamic> json) => _$SimpleDataDtoFromJson(json);
 

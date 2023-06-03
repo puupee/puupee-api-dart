@@ -106,7 +106,7 @@ _responseData = deserialize<GetPermissionListResultDto, GetPermissionListResultD
   /// 
   ///
   /// Parameters:
-  /// * [updatePermissionsDto] 
+  /// * [body] 
   /// * [providerName] 
   /// * [providerKey] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -119,7 +119,7 @@ _responseData = deserialize<GetPermissionListResultDto, GetPermissionListResultD
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiPermissionManagementPermissionsPut({ 
-    UpdatePermissionsDto? updatePermissionsDto,
+    UpdatePermissionsDto? body,
     String? providerName,
     String? providerKey,
     CancelToken? cancelToken,
@@ -156,7 +156,7 @@ _responseData = deserialize<GetPermissionListResultDto, GetPermissionListResultD
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(updatePermissionsDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

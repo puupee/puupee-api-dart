@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppPuupeePushPost**
-> PuupeeDto apiAppPuupeePushPost(createOrUpdatePuupeeDto)
+> PuupeeDto apiAppPuupeePushPost(body)
 
 
 
@@ -74,10 +74,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getPuupeeApi();
-final CreateOrUpdatePuupeeDto createOrUpdatePuupeeDto = ; // CreateOrUpdatePuupeeDto | 
+final CreateOrUpdatePuupeeDto body = ; // CreateOrUpdatePuupeeDto | 
 
 try {
-    final response = api.apiAppPuupeePushPost(createOrUpdatePuupeeDto);
+    final response = api.apiAppPuupeePushPost(body);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling PuupeeApi->apiAppPuupeePushPost: $e\n');
@@ -88,7 +88,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createOrUpdatePuupeeDto** | [**CreateOrUpdatePuupeeDto**](CreateOrUpdatePuupeeDto.md)|  | [optional] 
+ **body** | [**CreateOrUpdatePuupeeDto**](CreateOrUpdatePuupeeDto.md)|  | [optional] 
 
 ### Return type
 

@@ -57,7 +57,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppAvatarPost**
-> AvatarDto apiAppAvatarPost(createAvatarDto)
+> AvatarDto apiAppAvatarPost(body)
 
 
 
@@ -68,10 +68,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAvatarApi();
-final CreateAvatarDto createAvatarDto = ; // CreateAvatarDto | 
+final CreateAvatarDto body = ; // CreateAvatarDto | 
 
 try {
-    final response = api.apiAppAvatarPost(createAvatarDto);
+    final response = api.apiAppAvatarPost(body);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AvatarApi->apiAppAvatarPost: $e\n');
@@ -82,7 +82,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createAvatarDto** | [**CreateAvatarDto**](CreateAvatarDto.md)|  | [optional] 
+ **body** | [**CreateAvatarDto**](CreateAvatarDto.md)|  | [optional] 
 
 ### Return type
 

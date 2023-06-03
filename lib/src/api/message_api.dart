@@ -25,7 +25,7 @@ class MessageApi {
   /// 
   ///
   /// Parameters:
-  /// * [messagePublishDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -36,7 +36,7 @@ class MessageApi {
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiAppMessagePublishPost({ 
-    MessagePublishDto? messagePublishDto,
+    MessagePublishDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -66,7 +66,7 @@ class MessageApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(messagePublishDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -95,7 +95,7 @@ _bodyData=jsonEncode(messagePublishDto);
   /// 
   ///
   /// Parameters:
-  /// * [messageRecallDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -106,7 +106,7 @@ _bodyData=jsonEncode(messagePublishDto);
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiAppMessageRecallPost({ 
-    MessageRecallDto? messageRecallDto,
+    MessageRecallDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -136,7 +136,7 @@ _bodyData=jsonEncode(messagePublishDto);
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(messageRecallDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -165,7 +165,7 @@ _bodyData=jsonEncode(messageRecallDto);
   /// 
   ///
   /// Parameters:
-  /// * [messageSubscribeDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -176,7 +176,7 @@ _bodyData=jsonEncode(messageRecallDto);
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiAppMessageSubscribePost({ 
-    MessageSubscribeDto? messageSubscribeDto,
+    MessageSubscribeDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -206,7 +206,7 @@ _bodyData=jsonEncode(messageRecallDto);
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(messageSubscribeDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -235,7 +235,7 @@ _bodyData=jsonEncode(messageSubscribeDto);
   /// 
   ///
   /// Parameters:
-  /// * [messageUnsubscribeDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -246,7 +246,7 @@ _bodyData=jsonEncode(messageSubscribeDto);
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiAppMessageUnsubscribePost({ 
-    MessageUnsubscribeDto? messageUnsubscribeDto,
+    MessageUnsubscribeDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -276,7 +276,7 @@ _bodyData=jsonEncode(messageSubscribeDto);
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(messageUnsubscribeDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

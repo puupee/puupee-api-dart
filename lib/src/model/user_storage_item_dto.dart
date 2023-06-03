@@ -84,8 +84,8 @@ class UserStorageItemDto {
 
   @override
   int get hashCode =>
-    (name == null ? 0 : name.hashCode) +
-    (title == null ? 0 : title.hashCode) +
+    name.hashCode +
+    title.hashCode +
     count.hashCode +
     size.hashCode;
 

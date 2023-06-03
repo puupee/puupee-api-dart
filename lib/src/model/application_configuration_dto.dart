@@ -226,7 +226,7 @@ class ApplicationConfigurationDto {
     timing.hashCode +
     clock.hashCode +
     objectExtensions.hashCode +
-    (extraProperties == null ? 0 : extraProperties.hashCode);
+    extraProperties.hashCode;
 
   factory ApplicationConfigurationDto.fromJson(Map<String, dynamic> json) => _$ApplicationConfigurationDtoFromJson(json);
 

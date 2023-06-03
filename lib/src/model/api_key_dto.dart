@@ -100,10 +100,10 @@ class ApiKeyDto {
   @override
   int get hashCode =>
     id.hashCode +
-    (name == null ? 0 : name.hashCode) +
-    (key == null ? 0 : key.hashCode) +
+    name.hashCode +
+    key.hashCode +
     active.hashCode +
-    (expireAt == null ? 0 : expireAt.hashCode);
+    expireAt.hashCode;
 
   factory ApiKeyDto.fromJson(Map<String, dynamic> json) => _$ApiKeyDtoFromJson(json);
 

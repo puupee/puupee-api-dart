@@ -99,11 +99,11 @@ class ExtensionPropertyUiLookupDto {
 
   @override
   int get hashCode =>
-    (url == null ? 0 : url.hashCode) +
-    (resultListPropertyName == null ? 0 : resultListPropertyName.hashCode) +
-    (displayPropertyName == null ? 0 : displayPropertyName.hashCode) +
-    (valuePropertyName == null ? 0 : valuePropertyName.hashCode) +
-    (filterParamName == null ? 0 : filterParamName.hashCode);
+    url.hashCode +
+    resultListPropertyName.hashCode +
+    displayPropertyName.hashCode +
+    valuePropertyName.hashCode +
+    filterParamName.hashCode;
 
   factory ExtensionPropertyUiLookupDto.fromJson(Map<String, dynamic> json) => _$ExtensionPropertyUiLookupDtoFromJson(json);
 

@@ -39,7 +39,7 @@ class AvatarDto {
 
   @override
   int get hashCode =>
-    (key == null ? 0 : key.hashCode);
+    key.hashCode;
 
   factory AvatarDto.fromJson(Map<String, dynamic> json) => _$AvatarDtoFromJson(json);
 

@@ -87,7 +87,7 @@ class SendTestEmailInput {
     senderEmailAddress.hashCode +
     targetEmailAddress.hashCode +
     subject.hashCode +
-    (body == null ? 0 : body.hashCode);
+    body.hashCode;
 
   factory SendTestEmailInput.fromJson(Map<String, dynamic> json) => _$SendTestEmailInputFromJson(json);
 

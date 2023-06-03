@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **apiAppMessagePublishPost**
-> apiAppMessagePublishPost(messagePublishDto)
+> apiAppMessagePublishPost(body)
 
 
 
@@ -27,10 +27,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getMessageApi();
-final MessagePublishDto messagePublishDto = ; // MessagePublishDto | 
+final MessagePublishDto body = ; // MessagePublishDto | 
 
 try {
-    api.apiAppMessagePublishPost(messagePublishDto);
+    api.apiAppMessagePublishPost(body);
 } catch on DioError (e) {
     print('Exception when calling MessageApi->apiAppMessagePublishPost: $e\n');
 }
@@ -40,7 +40,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **messagePublishDto** | [**MessagePublishDto**](MessagePublishDto.md)|  | [optional] 
+ **body** | [**MessagePublishDto**](MessagePublishDto.md)|  | [optional] 
 
 ### Return type
 
@@ -58,7 +58,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppMessageRecallPost**
-> apiAppMessageRecallPost(messageRecallDto)
+> apiAppMessageRecallPost(body)
 
 
 
@@ -69,10 +69,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getMessageApi();
-final MessageRecallDto messageRecallDto = ; // MessageRecallDto | 
+final MessageRecallDto body = ; // MessageRecallDto | 
 
 try {
-    api.apiAppMessageRecallPost(messageRecallDto);
+    api.apiAppMessageRecallPost(body);
 } catch on DioError (e) {
     print('Exception when calling MessageApi->apiAppMessageRecallPost: $e\n');
 }
@@ -82,7 +82,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **messageRecallDto** | [**MessageRecallDto**](MessageRecallDto.md)|  | [optional] 
+ **body** | [**MessageRecallDto**](MessageRecallDto.md)|  | [optional] 
 
 ### Return type
 
@@ -100,7 +100,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppMessageSubscribePost**
-> apiAppMessageSubscribePost(messageSubscribeDto)
+> apiAppMessageSubscribePost(body)
 
 
 
@@ -111,10 +111,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getMessageApi();
-final MessageSubscribeDto messageSubscribeDto = ; // MessageSubscribeDto | 
+final MessageSubscribeDto body = ; // MessageSubscribeDto | 
 
 try {
-    api.apiAppMessageSubscribePost(messageSubscribeDto);
+    api.apiAppMessageSubscribePost(body);
 } catch on DioError (e) {
     print('Exception when calling MessageApi->apiAppMessageSubscribePost: $e\n');
 }
@@ -124,7 +124,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **messageSubscribeDto** | [**MessageSubscribeDto**](MessageSubscribeDto.md)|  | [optional] 
+ **body** | [**MessageSubscribeDto**](MessageSubscribeDto.md)|  | [optional] 
 
 ### Return type
 
@@ -142,7 +142,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppMessageUnsubscribePost**
-> apiAppMessageUnsubscribePost(messageUnsubscribeDto)
+> apiAppMessageUnsubscribePost(body)
 
 
 
@@ -153,10 +153,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getMessageApi();
-final MessageUnsubscribeDto messageUnsubscribeDto = ; // MessageUnsubscribeDto | 
+final MessageUnsubscribeDto body = ; // MessageUnsubscribeDto | 
 
 try {
-    api.apiAppMessageUnsubscribePost(messageUnsubscribeDto);
+    api.apiAppMessageUnsubscribePost(body);
 } catch on DioError (e) {
     print('Exception when calling MessageApi->apiAppMessageUnsubscribePost: $e\n');
 }
@@ -166,7 +166,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **messageUnsubscribeDto** | [**MessageUnsubscribeDto**](MessageUnsubscribeDto.md)|  | [optional] 
+ **body** | [**MessageUnsubscribeDto**](MessageUnsubscribeDto.md)|  | [optional] 
 
 ### Return type
 

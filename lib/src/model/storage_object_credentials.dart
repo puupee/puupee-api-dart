@@ -189,17 +189,17 @@ class StorageObjectCredentials {
 
   @override
   int get hashCode =>
-    (storageClass == null ? 0 : storageClass.hashCode) +
-    (endPoint == null ? 0 : endPoint.hashCode) +
-    (protocal == null ? 0 : protocal.hashCode) +
-    (bucketName == null ? 0 : bucketName.hashCode) +
-    (regionId == null ? 0 : regionId.hashCode) +
-    (securityToken == null ? 0 : securityToken.hashCode) +
-    (accessKeyId == null ? 0 : accessKeyId.hashCode) +
-    (accessKeySecret == null ? 0 : accessKeySecret.hashCode) +
-    (expiration == null ? 0 : expiration.hashCode) +
+    storageClass.hashCode +
+    endPoint.hashCode +
+    protocal.hashCode +
+    bucketName.hashCode +
+    regionId.hashCode +
+    securityToken.hashCode +
+    accessKeyId.hashCode +
+    accessKeySecret.hashCode +
+    expiration.hashCode +
     expiredTime.hashCode +
-    (appId == null ? 0 : appId.hashCode);
+    appId.hashCode;
 
   factory StorageObjectCredentials.fromJson(Map<String, dynamic> json) => _$StorageObjectCredentialsFromJson(json);
 

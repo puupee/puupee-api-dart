@@ -239,7 +239,7 @@ _responseData = deserialize<ApiKeyDto, ApiKeyDto>(_response.data!, 'ApiKeyDto', 
   ///
   /// Parameters:
   /// * [id] 
-  /// * [apiKeyUpdateDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -251,7 +251,7 @@ _responseData = deserialize<ApiKeyDto, ApiKeyDto>(_response.data!, 'ApiKeyDto', 
   /// Throws [DioError] if API call or serialization fails
   Future<Response<ApiKeyDto>> apiApiKeysIdPut({ 
     required String id,
-    ApiKeyUpdateDto? apiKeyUpdateDto,
+    ApiKeyUpdateDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -281,7 +281,7 @@ _responseData = deserialize<ApiKeyDto, ApiKeyDto>(_response.data!, 'ApiKeyDto', 
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(apiKeyUpdateDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -333,7 +333,7 @@ _responseData = deserialize<ApiKeyDto, ApiKeyDto>(_response.data!, 'ApiKeyDto', 
   /// 
   ///
   /// Parameters:
-  /// * [apiKeyCreateDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -344,7 +344,7 @@ _responseData = deserialize<ApiKeyDto, ApiKeyDto>(_response.data!, 'ApiKeyDto', 
   /// Returns a [Future] containing a [Response] with a [ApiKeyDto] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<ApiKeyDto>> apiApiKeysPost({ 
-    ApiKeyCreateDto? apiKeyCreateDto,
+    ApiKeyCreateDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -374,7 +374,7 @@ _responseData = deserialize<ApiKeyDto, ApiKeyDto>(_response.data!, 'ApiKeyDto', 
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(apiKeyCreateDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

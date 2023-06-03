@@ -224,7 +224,7 @@ _responseData = deserialize<MessageSourceRouteSubDto, MessageSourceRouteSubDto>(
   ///
   /// Parameters:
   /// * [id] 
-  /// * [createUpdateMessageSourceRouteSubDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -236,7 +236,7 @@ _responseData = deserialize<MessageSourceRouteSubDto, MessageSourceRouteSubDto>(
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiAppMessageSourceRouteSubIdPut({ 
     required String id,
-    CreateUpdateMessageSourceRouteSubDto? createUpdateMessageSourceRouteSubDto,
+    CreateUpdateMessageSourceRouteSubDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -266,7 +266,7 @@ _responseData = deserialize<MessageSourceRouteSubDto, MessageSourceRouteSubDto>(
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(createUpdateMessageSourceRouteSubDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -295,7 +295,7 @@ _bodyData=jsonEncode(createUpdateMessageSourceRouteSubDto);
   /// 
   ///
   /// Parameters:
-  /// * [createUpdateMessageSourceRouteSubDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -306,7 +306,7 @@ _bodyData=jsonEncode(createUpdateMessageSourceRouteSubDto);
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiAppMessageSourceRouteSubPost({ 
-    CreateUpdateMessageSourceRouteSubDto? createUpdateMessageSourceRouteSubDto,
+    CreateUpdateMessageSourceRouteSubDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -336,7 +336,7 @@ _bodyData=jsonEncode(createUpdateMessageSourceRouteSubDto);
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(createUpdateMessageSourceRouteSubDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

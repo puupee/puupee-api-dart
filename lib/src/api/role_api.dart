@@ -316,7 +316,7 @@ _responseData = deserialize<IdentityRoleDto, IdentityRoleDto>(_response.data!, '
   ///
   /// Parameters:
   /// * [id] 
-  /// * [identityRoleUpdateDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -328,7 +328,7 @@ _responseData = deserialize<IdentityRoleDto, IdentityRoleDto>(_response.data!, '
   /// Throws [DioError] if API call or serialization fails
   Future<Response<IdentityRoleDto>> apiIdentityRolesIdPut({ 
     required String id,
-    IdentityRoleUpdateDto? identityRoleUpdateDto,
+    IdentityRoleUpdateDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -358,7 +358,7 @@ _responseData = deserialize<IdentityRoleDto, IdentityRoleDto>(_response.data!, '
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(identityRoleUpdateDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -410,7 +410,7 @@ _responseData = deserialize<IdentityRoleDto, IdentityRoleDto>(_response.data!, '
   /// 
   ///
   /// Parameters:
-  /// * [identityRoleCreateDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -421,7 +421,7 @@ _responseData = deserialize<IdentityRoleDto, IdentityRoleDto>(_response.data!, '
   /// Returns a [Future] containing a [Response] with a [IdentityRoleDto] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<IdentityRoleDto>> apiIdentityRolesPost({ 
-    IdentityRoleCreateDto? identityRoleCreateDto,
+    IdentityRoleCreateDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -451,7 +451,7 @@ _responseData = deserialize<IdentityRoleDto, IdentityRoleDto>(_response.data!, '
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(identityRoleCreateDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

@@ -26,7 +26,7 @@ class AccountApi {
   /// 
   ///
   /// Parameters:
-  /// * [registerDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -37,7 +37,7 @@ class AccountApi {
   /// Returns a [Future] containing a [Response] with a [IdentityUserDto] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<IdentityUserDto>> apiAccountRegisterPost({ 
-    RegisterDto? registerDto,
+    RegisterDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -67,7 +67,7 @@ class AccountApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(registerDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -119,7 +119,7 @@ _responseData = deserialize<IdentityUserDto, IdentityUserDto>(_response.data!, '
   /// 
   ///
   /// Parameters:
-  /// * [resetPasswordDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -130,7 +130,7 @@ _responseData = deserialize<IdentityUserDto, IdentityUserDto>(_response.data!, '
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiAccountResetPasswordPost({ 
-    ResetPasswordDto? resetPasswordDto,
+    ResetPasswordDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -160,7 +160,7 @@ _responseData = deserialize<IdentityUserDto, IdentityUserDto>(_response.data!, '
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(resetPasswordDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -189,7 +189,7 @@ _bodyData=jsonEncode(resetPasswordDto);
   /// 
   ///
   /// Parameters:
-  /// * [sendPasswordResetCodeDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -200,7 +200,7 @@ _bodyData=jsonEncode(resetPasswordDto);
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiAccountSendPasswordResetCodePost({ 
-    SendPasswordResetCodeDto? sendPasswordResetCodeDto,
+    SendPasswordResetCodeDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -230,7 +230,7 @@ _bodyData=jsonEncode(resetPasswordDto);
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(sendPasswordResetCodeDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -259,7 +259,7 @@ _bodyData=jsonEncode(sendPasswordResetCodeDto);
   /// 
   ///
   /// Parameters:
-  /// * [verifyPasswordResetTokenInput] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -270,7 +270,7 @@ _bodyData=jsonEncode(sendPasswordResetCodeDto);
   /// Returns a [Future] containing a [Response] with a [bool] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<bool>> apiAccountVerifyPasswordResetTokenPost({ 
-    VerifyPasswordResetTokenInput? verifyPasswordResetTokenInput,
+    VerifyPasswordResetTokenInput? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -300,7 +300,7 @@ _bodyData=jsonEncode(sendPasswordResetCodeDto);
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(verifyPasswordResetTokenInput);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

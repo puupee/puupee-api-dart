@@ -417,7 +417,7 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
   ///
   /// Parameters:
   /// * [id] 
-  /// * [createOrUpdateAppDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -429,7 +429,7 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
   /// Throws [DioError] if API call or serialization fails
   Future<Response<AppDto>> apiAppAppIdPut({ 
     required String id,
-    CreateOrUpdateAppDto? createOrUpdateAppDto,
+    CreateOrUpdateAppDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -459,7 +459,7 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(createOrUpdateAppDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -512,7 +512,7 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
   ///
   /// Parameters:
   /// * [id] 
-  /// * [appRunRecordUpdateDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -524,7 +524,7 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
   /// Throws [DioError] if API call or serialization fails
   Future<Response<AppRunRecordDto>> apiAppAppIdRunStatePut({ 
     required String id,
-    AppRunRecordUpdateDto? appRunRecordUpdateDto,
+    AppRunRecordUpdateDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -554,7 +554,7 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(appRunRecordUpdateDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -688,7 +688,7 @@ _responseData = deserialize<AppWithUserDto, AppWithUserDto>(_response.data!, 'Ap
   /// 
   ///
   /// Parameters:
-  /// * [createOrUpdateAppDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -699,7 +699,7 @@ _responseData = deserialize<AppWithUserDto, AppWithUserDto>(_response.data!, 'Ap
   /// Returns a [Future] containing a [Response] with a [AppDto] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<AppDto>> apiAppAppPost({ 
-    CreateOrUpdateAppDto? createOrUpdateAppDto,
+    CreateOrUpdateAppDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -729,7 +729,7 @@ _responseData = deserialize<AppWithUserDto, AppWithUserDto>(_response.data!, 'Ap
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(createOrUpdateAppDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -867,7 +867,7 @@ _responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_respons
   /// 
   ///
   /// Parameters:
-  /// * [appRunDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -878,7 +878,7 @@ _responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_respons
   /// Returns a [Future] containing a [Response] with a [AppRunRecordDto] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<AppRunRecordDto>> apiAppAppRunPost({ 
-    AppRunDto? appRunDto,
+    AppRunDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -908,7 +908,7 @@ _responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_respons
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(appRunDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

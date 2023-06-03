@@ -17,7 +17,7 @@ void main() {
       // TODO
     });
 
-    //Future<MessageTemplateReleaseDto> apiAppMessageTemplateReleasePost({ CreateMessageTemplateReleaseDto createMessageTemplateReleaseDto }) async
+    //Future<MessageTemplateReleaseDto> apiAppMessageTemplateReleasePost({ CreateMessageTemplateReleaseDto body }) async
     test('test apiAppMessageTemplateReleasePost', () async {
       // TODO
     });

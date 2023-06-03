@@ -776,52 +776,52 @@ class CreateOrUpdatePuupeeDto {
   int get hashCode =>
     id.hashCode +
     name.hashCode +
-    (title == null ? 0 : title.hashCode) +
+    title.hashCode +
     isHidden.hashCode +
-    (description == null ? 0 : description.hashCode) +
-    (text == null ? 0 : text.hashCode) +
-    (content == null ? 0 : content.hashCode) +
-    (format == null ? 0 : format.hashCode) +
-    (password == null ? 0 : password.hashCode) +
-    (parentId == null ? 0 : parentId.hashCode) +
-    (key == null ? 0 : key.hashCode) +
-    (md5 == null ? 0 : md5.hashCode) +
-    (sliceMd5 == null ? 0 : sliceMd5.hashCode) +
-    (rapidCode == null ? 0 : rapidCode.hashCode) +
-    (contentType == null ? 0 : contentType.hashCode) +
-    (type == null ? 0 : type.hashCode) +
-    (displayStyle == null ? 0 : displayStyle.hashCode) +
-    (extension_ == null ? 0 : extension_.hashCode) +
-    (storageClass == null ? 0 : storageClass.hashCode) +
-    (storageObjectCreatedAt == null ? 0 : storageObjectCreatedAt.hashCode) +
-    (storageObjectUpdatedAt == null ? 0 : storageObjectUpdatedAt.hashCode) +
+    description.hashCode +
+    text.hashCode +
+    content.hashCode +
+    format.hashCode +
+    password.hashCode +
+    parentId.hashCode +
+    key.hashCode +
+    md5.hashCode +
+    sliceMd5.hashCode +
+    rapidCode.hashCode +
+    contentType.hashCode +
+    type.hashCode +
+    displayStyle.hashCode +
+    extension_.hashCode +
+    storageClass.hashCode +
+    storageObjectCreatedAt.hashCode +
+    storageObjectUpdatedAt.hashCode +
     syncVersion.hashCode +
     isDeleted.hashCode +
-    (deletionTime == null ? 0 : deletionTime.hashCode) +
+    deletionTime.hashCode +
     creationTime.hashCode +
-    (lastModificationTime == null ? 0 : lastModificationTime.hashCode) +
-    (priority == null ? 0 : priority.hashCode) +
-    (startAt == null ? 0 : startAt.hashCode) +
-    (endAt == null ? 0 : endAt.hashCode) +
-    (notifyAt == null ? 0 : notifyAt.hashCode) +
-    (notifyTimingType == null ? 0 : notifyTimingType.hashCode) +
-    (notifyTimingUnit == null ? 0 : notifyTimingUnit.hashCode) +
-    (notifyTimingValue == null ? 0 : notifyTimingValue.hashCode) +
-    (repeat == null ? 0 : repeat.hashCode) +
-    (repeatOffAt == null ? 0 : repeatOffAt.hashCode) +
-    (repeatOffTimes == null ? 0 : repeatOffTimes.hashCode) +
-    (repetitions == null ? 0 : repetitions.hashCode) +
+    lastModificationTime.hashCode +
+    priority.hashCode +
+    startAt.hashCode +
+    endAt.hashCode +
+    notifyAt.hashCode +
+    notifyTimingType.hashCode +
+    notifyTimingUnit.hashCode +
+    notifyTimingValue.hashCode +
+    repeat.hashCode +
+    repeatOffAt.hashCode +
+    repeatOffTimes.hashCode +
+    repetitions.hashCode +
     isDone.hashCode +
-    (doneAt == null ? 0 : doneAt.hashCode) +
-    (creatorId == null ? 0 : creatorId.hashCode) +
-    (lastModifierId == null ? 0 : lastModifierId.hashCode) +
-    (deleterId == null ? 0 : deleterId.hashCode) +
-    (tagging == null ? 0 : tagging.hashCode) +
-    (url == null ? 0 : url.hashCode) +
+    doneAt.hashCode +
+    creatorId.hashCode +
+    lastModifierId.hashCode +
+    deleterId.hashCode +
+    tagging.hashCode +
+    url.hashCode +
     size.hashCode +
-    (lastModifierDeviceToken == null ? 0 : lastModifierDeviceToken.hashCode) +
-    (lastModifierDevice == null ? 0 : lastModifierDevice.hashCode) +
-    (appName == null ? 0 : appName.hashCode) +
+    lastModifierDeviceToken.hashCode +
+    lastModifierDevice.hashCode +
+    appName.hashCode +
     pushToUser.hashCode +
     sortIndex.hashCode;
 

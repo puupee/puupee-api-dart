@@ -84,10 +84,10 @@ class StringKeyValue {
 
   @override
   int get hashCode =>
-    (value == null ? 0 : value.hashCode) +
-    (durationSeconds == null ? 0 : durationSeconds.hashCode) +
-    (expiredAt == null ? 0 : expiredAt.hashCode) +
-    (createdAt == null ? 0 : createdAt.hashCode);
+    value.hashCode +
+    durationSeconds.hashCode +
+    expiredAt.hashCode +
+    createdAt.hashCode;
 
   factory StringKeyValue.fromJson(Map<String, dynamic> json) => _$StringKeyValueFromJson(json);
 

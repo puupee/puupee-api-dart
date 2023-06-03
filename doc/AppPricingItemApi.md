@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppAppPricingItemIdPut**
-> AppPricingItemDto apiAppAppPricingItemIdPut(id, createOrUpdateAppPricingItemDto)
+> AppPricingItemDto apiAppAppPricingItemIdPut(id, body)
 
 
 
@@ -157,10 +157,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getAppPricingItemApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final CreateOrUpdateAppPricingItemDto createOrUpdateAppPricingItemDto = ; // CreateOrUpdateAppPricingItemDto | 
+final CreateOrUpdateAppPricingItemDto body = ; // CreateOrUpdateAppPricingItemDto | 
 
 try {
-    final response = api.apiAppAppPricingItemIdPut(id, createOrUpdateAppPricingItemDto);
+    final response = api.apiAppAppPricingItemIdPut(id, body);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AppPricingItemApi->apiAppAppPricingItemIdPut: $e\n');
@@ -172,7 +172,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **createOrUpdateAppPricingItemDto** | [**CreateOrUpdateAppPricingItemDto**](CreateOrUpdateAppPricingItemDto.md)|  | [optional] 
+ **body** | [**CreateOrUpdateAppPricingItemDto**](CreateOrUpdateAppPricingItemDto.md)|  | [optional] 
 
 ### Return type
 
@@ -190,7 +190,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppAppPricingItemPost**
-> AppPricingItemDto apiAppAppPricingItemPost(createOrUpdateAppPricingItemDto)
+> AppPricingItemDto apiAppAppPricingItemPost(body)
 
 
 
@@ -201,10 +201,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppPricingItemApi();
-final CreateOrUpdateAppPricingItemDto createOrUpdateAppPricingItemDto = ; // CreateOrUpdateAppPricingItemDto | 
+final CreateOrUpdateAppPricingItemDto body = ; // CreateOrUpdateAppPricingItemDto | 
 
 try {
-    final response = api.apiAppAppPricingItemPost(createOrUpdateAppPricingItemDto);
+    final response = api.apiAppAppPricingItemPost(body);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AppPricingItemApi->apiAppAppPricingItemPost: $e\n');
@@ -215,7 +215,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createOrUpdateAppPricingItemDto** | [**CreateOrUpdateAppPricingItemDto**](CreateOrUpdateAppPricingItemDto.md)|  | [optional] 
+ **body** | [**CreateOrUpdateAppPricingItemDto**](CreateOrUpdateAppPricingItemDto.md)|  | [optional] 
 
 ### Return type
 

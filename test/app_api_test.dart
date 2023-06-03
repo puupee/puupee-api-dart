@@ -32,12 +32,12 @@ void main() {
       // TODO
     });
 
-    //Future<AppDto> apiAppAppIdPut(String id, { CreateOrUpdateAppDto createOrUpdateAppDto }) async
+    //Future<AppDto> apiAppAppIdPut(String id, { CreateOrUpdateAppDto body }) async
     test('test apiAppAppIdPut', () async {
       // TODO
     });
 
-    //Future<AppRunRecordDto> apiAppAppIdRunStatePut(String id, { AppRunRecordUpdateDto appRunRecordUpdateDto }) async
+    //Future<AppRunRecordDto> apiAppAppIdRunStatePut(String id, { AppRunRecordUpdateDto body }) async
     test('test apiAppAppIdRunStatePut', () async {
       // TODO
     });
@@ -47,7 +47,7 @@ void main() {
       // TODO
     });
 
-    //Future<AppDto> apiAppAppPost({ CreateOrUpdateAppDto createOrUpdateAppDto }) async
+    //Future<AppDto> apiAppAppPost({ CreateOrUpdateAppDto body }) async
     test('test apiAppAppPost', () async {
       // TODO
     });
@@ -57,7 +57,7 @@ void main() {
       // TODO
     });
 
-    //Future<AppRunRecordDto> apiAppAppRunPost({ AppRunDto appRunDto }) async
+    //Future<AppRunRecordDto> apiAppAppRunPost({ AppRunDto body }) async
     test('test apiAppAppRunPost', () async {
       // TODO
     });

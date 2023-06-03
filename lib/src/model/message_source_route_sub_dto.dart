@@ -70,8 +70,8 @@ class MessageSourceRouteSubDto {
   @override
   int get hashCode =>
     routeId.hashCode +
-    (path == null ? 0 : path.hashCode) +
-    (values == null ? 0 : values.hashCode);
+    path.hashCode +
+    values.hashCode;
 
   factory MessageSourceRouteSubDto.fromJson(Map<String, dynamic> json) => _$MessageSourceRouteSubDtoFromJson(json);
 

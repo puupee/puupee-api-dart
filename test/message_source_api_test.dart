@@ -17,12 +17,12 @@ void main() {
       // TODO
     });
 
-    //Future<CreateUpdateMessageSourceDto> apiAppMessageSourceIdPut(String id, { CreateUpdateMessageSourceDto createUpdateMessageSourceDto }) async
+    //Future<CreateUpdateMessageSourceDto> apiAppMessageSourceIdPut(String id, { CreateUpdateMessageSourceDto body }) async
     test('test apiAppMessageSourceIdPut', () async {
       // TODO
     });
 
-    //Future<CreateUpdateMessageSourceDto> apiAppMessageSourcePost({ CreateUpdateMessageSourceDto createUpdateMessageSourceDto }) async
+    //Future<CreateUpdateMessageSourceDto> apiAppMessageSourcePost({ CreateUpdateMessageSourceDto body }) async
     test('test apiAppMessageSourcePost', () async {
       // TODO
     });

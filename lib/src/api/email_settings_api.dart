@@ -97,7 +97,7 @@ _responseData = deserialize<EmailSettingsDto, EmailSettingsDto>(_response.data!,
   /// 
   ///
   /// Parameters:
-  /// * [updateEmailSettingsDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -108,7 +108,7 @@ _responseData = deserialize<EmailSettingsDto, EmailSettingsDto>(_response.data!,
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiSettingManagementEmailingPost({ 
-    UpdateEmailSettingsDto? updateEmailSettingsDto,
+    UpdateEmailSettingsDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -138,7 +138,7 @@ _responseData = deserialize<EmailSettingsDto, EmailSettingsDto>(_response.data!,
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(updateEmailSettingsDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -167,7 +167,7 @@ _bodyData=jsonEncode(updateEmailSettingsDto);
   /// 
   ///
   /// Parameters:
-  /// * [sendTestEmailInput] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -178,7 +178,7 @@ _bodyData=jsonEncode(updateEmailSettingsDto);
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiSettingManagementEmailingSendTestEmailPost({ 
-    SendTestEmailInput? sendTestEmailInput,
+    SendTestEmailInput? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -208,7 +208,7 @@ _bodyData=jsonEncode(updateEmailSettingsDto);
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(sendTestEmailInput);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

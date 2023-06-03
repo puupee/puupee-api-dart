@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppAppReleaseIdPut**
-> AppReleaseDto apiAppAppReleaseIdPut(id, createOrUpdateAppReleaseDto)
+> AppReleaseDto apiAppAppReleaseIdPut(id, body)
 
 
 
@@ -170,10 +170,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getAppReleaseApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final CreateOrUpdateAppReleaseDto createOrUpdateAppReleaseDto = ; // CreateOrUpdateAppReleaseDto | 
+final CreateOrUpdateAppReleaseDto body = ; // CreateOrUpdateAppReleaseDto | 
 
 try {
-    final response = api.apiAppAppReleaseIdPut(id, createOrUpdateAppReleaseDto);
+    final response = api.apiAppAppReleaseIdPut(id, body);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AppReleaseApi->apiAppAppReleaseIdPut: $e\n');
@@ -185,7 +185,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **createOrUpdateAppReleaseDto** | [**CreateOrUpdateAppReleaseDto**](CreateOrUpdateAppReleaseDto.md)|  | [optional] 
+ **body** | [**CreateOrUpdateAppReleaseDto**](CreateOrUpdateAppReleaseDto.md)|  | [optional] 
 
 ### Return type
 
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppAppReleasePost**
-> AppReleaseDto apiAppAppReleasePost(createOrUpdateAppReleaseDto)
+> AppReleaseDto apiAppAppReleasePost(body)
 
 
 
@@ -263,10 +263,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppReleaseApi();
-final CreateOrUpdateAppReleaseDto createOrUpdateAppReleaseDto = ; // CreateOrUpdateAppReleaseDto | 
+final CreateOrUpdateAppReleaseDto body = ; // CreateOrUpdateAppReleaseDto | 
 
 try {
-    final response = api.apiAppAppReleasePost(createOrUpdateAppReleaseDto);
+    final response = api.apiAppAppReleasePost(body);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AppReleaseApi->apiAppAppReleasePost: $e\n');
@@ -277,7 +277,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createOrUpdateAppReleaseDto** | [**CreateOrUpdateAppReleaseDto**](CreateOrUpdateAppReleaseDto.md)|  | [optional] 
+ **body** | [**CreateOrUpdateAppReleaseDto**](CreateOrUpdateAppReleaseDto.md)|  | [optional] 
 
 ### Return type
 

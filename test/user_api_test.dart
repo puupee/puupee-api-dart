@@ -37,7 +37,7 @@ void main() {
       // TODO
     });
 
-    //Future<IdentityUserDto> apiIdentityUsersIdPut(String id, { IdentityUserUpdateDto identityUserUpdateDto }) async
+    //Future<IdentityUserDto> apiIdentityUsersIdPut(String id, { IdentityUserUpdateDto body }) async
     test('test apiIdentityUsersIdPut', () async {
       // TODO
     });
@@ -47,12 +47,12 @@ void main() {
       // TODO
     });
 
-    //Future apiIdentityUsersIdRolesPut(String id, { IdentityUserUpdateRolesDto identityUserUpdateRolesDto }) async
+    //Future apiIdentityUsersIdRolesPut(String id, { IdentityUserUpdateRolesDto body }) async
     test('test apiIdentityUsersIdRolesPut', () async {
       // TODO
     });
 
-    //Future<IdentityUserDto> apiIdentityUsersPost({ IdentityUserCreateDto identityUserCreateDto }) async
+    //Future<IdentityUserDto> apiIdentityUsersPost({ IdentityUserCreateDto body }) async
     test('test apiIdentityUsersPost', () async {
       // TODO
     });

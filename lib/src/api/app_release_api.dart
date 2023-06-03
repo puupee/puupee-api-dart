@@ -250,7 +250,7 @@ _responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppR
   ///
   /// Parameters:
   /// * [id] 
-  /// * [createOrUpdateAppReleaseDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -262,7 +262,7 @@ _responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppR
   /// Throws [DioError] if API call or serialization fails
   Future<Response<AppReleaseDto>> apiAppAppReleaseIdPut({ 
     required String id,
-    CreateOrUpdateAppReleaseDto? createOrUpdateAppReleaseDto,
+    CreateOrUpdateAppReleaseDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -292,7 +292,7 @@ _responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppR
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(createOrUpdateAppReleaseDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -433,7 +433,7 @@ _responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppR
   /// 
   ///
   /// Parameters:
-  /// * [createOrUpdateAppReleaseDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -444,7 +444,7 @@ _responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppR
   /// Returns a [Future] containing a [Response] with a [AppReleaseDto] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<AppReleaseDto>> apiAppAppReleasePost({ 
-    CreateOrUpdateAppReleaseDto? createOrUpdateAppReleaseDto,
+    CreateOrUpdateAppReleaseDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -474,7 +474,7 @@ _responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppR
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(createOrUpdateAppReleaseDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

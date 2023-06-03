@@ -174,15 +174,15 @@ class IdentityUserCreateDto {
 
   @override
   int get hashCode =>
-    (extraProperties == null ? 0 : extraProperties.hashCode) +
+    extraProperties.hashCode +
     userName.hashCode +
-    (name == null ? 0 : name.hashCode) +
-    (surname == null ? 0 : surname.hashCode) +
+    name.hashCode +
+    surname.hashCode +
     email.hashCode +
-    (phoneNumber == null ? 0 : phoneNumber.hashCode) +
+    phoneNumber.hashCode +
     isActive.hashCode +
     lockoutEnabled.hashCode +
-    (roleNames == null ? 0 : roleNames.hashCode) +
+    roleNames.hashCode +
     password.hashCode;
 
   factory IdentityUserCreateDto.fromJson(Map<String, dynamic> json) => _$IdentityUserCreateDtoFromJson(json);

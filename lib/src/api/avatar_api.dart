@@ -104,7 +104,7 @@ _responseData = deserialize<StorageObjectCredentials, StorageObjectCredentials>(
   /// 
   ///
   /// Parameters:
-  /// * [createAvatarDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -115,7 +115,7 @@ _responseData = deserialize<StorageObjectCredentials, StorageObjectCredentials>(
   /// Returns a [Future] containing a [Response] with a [AvatarDto] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<AvatarDto>> apiAppAvatarPost({ 
-    CreateAvatarDto? createAvatarDto,
+    CreateAvatarDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -145,7 +145,7 @@ _responseData = deserialize<StorageObjectCredentials, StorageObjectCredentials>(
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(createAvatarDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

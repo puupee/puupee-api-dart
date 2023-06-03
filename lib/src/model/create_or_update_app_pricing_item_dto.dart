@@ -144,10 +144,10 @@ class CreateOrUpdateAppPricingItemDto {
 
   @override
   int get hashCode =>
-    (name == null ? 0 : name.hashCode) +
-    (description == null ? 0 : description.hashCode) +
-    (linkUrl == null ? 0 : linkUrl.hashCode) +
-    (display == null ? 0 : display.hashCode) +
+    name.hashCode +
+    description.hashCode +
+    linkUrl.hashCode +
+    display.hashCode +
     appId.hashCode +
     isAvailable.hashCode +
     hasValue.hashCode +

@@ -12,7 +12,7 @@ void main() {
       // TODO
     });
 
-    //Future<AvatarDto> apiAppAvatarPost({ CreateAvatarDto createAvatarDto }) async
+    //Future<AvatarDto> apiAppAvatarPost({ CreateAvatarDto body }) async
     test('test apiAppAvatarPost', () async {
       // TODO
     });

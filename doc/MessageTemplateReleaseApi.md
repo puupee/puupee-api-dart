@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAppMessageTemplateReleasePost**
-> MessageTemplateReleaseDto apiAppMessageTemplateReleasePost(createMessageTemplateReleaseDto)
+> MessageTemplateReleaseDto apiAppMessageTemplateReleasePost(body)
 
 
 
@@ -112,10 +112,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getMessageTemplateReleaseApi();
-final CreateMessageTemplateReleaseDto createMessageTemplateReleaseDto = ; // CreateMessageTemplateReleaseDto | 
+final CreateMessageTemplateReleaseDto body = ; // CreateMessageTemplateReleaseDto | 
 
 try {
-    final response = api.apiAppMessageTemplateReleasePost(createMessageTemplateReleaseDto);
+    final response = api.apiAppMessageTemplateReleasePost(body);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling MessageTemplateReleaseApi->apiAppMessageTemplateReleasePost: $e\n');
@@ -126,7 +126,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createMessageTemplateReleaseDto** | [**CreateMessageTemplateReleaseDto**](CreateMessageTemplateReleaseDto.md)|  | [optional] 
+ **body** | [**CreateMessageTemplateReleaseDto**](CreateMessageTemplateReleaseDto.md)|  | [optional] 
 
 ### Return type
 

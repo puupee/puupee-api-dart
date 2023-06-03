@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **apiAccountCheckPasswordPost**
-> AbpLoginResult apiAccountCheckPasswordPost(userLoginInfo)
+> AbpLoginResult apiAccountCheckPasswordPost(body)
 
 
 
@@ -26,10 +26,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getLoginApi();
-final UserLoginInfo userLoginInfo = ; // UserLoginInfo | 
+final UserLoginInfo body = ; // UserLoginInfo | 
 
 try {
-    final response = api.apiAccountCheckPasswordPost(userLoginInfo);
+    final response = api.apiAccountCheckPasswordPost(body);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling LoginApi->apiAccountCheckPasswordPost: $e\n');
@@ -40,7 +40,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userLoginInfo** | [**UserLoginInfo**](UserLoginInfo.md)|  | [optional] 
+ **body** | [**UserLoginInfo**](UserLoginInfo.md)|  | [optional] 
 
 ### Return type
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAccountLoginPost**
-> AbpLoginResult apiAccountLoginPost(userLoginInfo)
+> AbpLoginResult apiAccountLoginPost(body)
 
 
 
@@ -69,10 +69,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getLoginApi();
-final UserLoginInfo userLoginInfo = ; // UserLoginInfo | 
+final UserLoginInfo body = ; // UserLoginInfo | 
 
 try {
-    final response = api.apiAccountLoginPost(userLoginInfo);
+    final response = api.apiAccountLoginPost(body);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling LoginApi->apiAccountLoginPost: $e\n');
@@ -83,7 +83,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **userLoginInfo** | [**UserLoginInfo**](UserLoginInfo.md)|  | [optional] 
+ **body** | [**UserLoginInfo**](UserLoginInfo.md)|  | [optional] 
 
 ### Return type
 

@@ -55,7 +55,7 @@ class IdentityRoleDtoPagedResultDto {
 
   @override
   int get hashCode =>
-    (items == null ? 0 : items.hashCode) +
+    items.hashCode +
     totalCount.hashCode;
 
   factory IdentityRoleDtoPagedResultDto.fromJson(Map<String, dynamic> json) => _$IdentityRoleDtoPagedResultDtoFromJson(json);

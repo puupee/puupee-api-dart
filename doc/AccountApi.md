@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **apiAccountRegisterPost**
-> IdentityUserDto apiAccountRegisterPost(registerDto)
+> IdentityUserDto apiAccountRegisterPost(body)
 
 
 
@@ -28,10 +28,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAccountApi();
-final RegisterDto registerDto = ; // RegisterDto | 
+final RegisterDto body = ; // RegisterDto | 
 
 try {
-    final response = api.apiAccountRegisterPost(registerDto);
+    final response = api.apiAccountRegisterPost(body);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AccountApi->apiAccountRegisterPost: $e\n');
@@ -42,7 +42,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **registerDto** | [**RegisterDto**](RegisterDto.md)|  | [optional] 
+ **body** | [**RegisterDto**](RegisterDto.md)|  | [optional] 
 
 ### Return type
 
@@ -60,7 +60,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAccountResetPasswordPost**
-> apiAccountResetPasswordPost(resetPasswordDto)
+> apiAccountResetPasswordPost(body)
 
 
 
@@ -71,10 +71,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAccountApi();
-final ResetPasswordDto resetPasswordDto = ; // ResetPasswordDto | 
+final ResetPasswordDto body = ; // ResetPasswordDto | 
 
 try {
-    api.apiAccountResetPasswordPost(resetPasswordDto);
+    api.apiAccountResetPasswordPost(body);
 } catch on DioError (e) {
     print('Exception when calling AccountApi->apiAccountResetPasswordPost: $e\n');
 }
@@ -84,7 +84,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **resetPasswordDto** | [**ResetPasswordDto**](ResetPasswordDto.md)|  | [optional] 
+ **body** | [**ResetPasswordDto**](ResetPasswordDto.md)|  | [optional] 
 
 ### Return type
 
@@ -102,7 +102,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAccountSendPasswordResetCodePost**
-> apiAccountSendPasswordResetCodePost(sendPasswordResetCodeDto)
+> apiAccountSendPasswordResetCodePost(body)
 
 
 
@@ -113,10 +113,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAccountApi();
-final SendPasswordResetCodeDto sendPasswordResetCodeDto = ; // SendPasswordResetCodeDto | 
+final SendPasswordResetCodeDto body = ; // SendPasswordResetCodeDto | 
 
 try {
-    api.apiAccountSendPasswordResetCodePost(sendPasswordResetCodeDto);
+    api.apiAccountSendPasswordResetCodePost(body);
 } catch on DioError (e) {
     print('Exception when calling AccountApi->apiAccountSendPasswordResetCodePost: $e\n');
 }
@@ -126,7 +126,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sendPasswordResetCodeDto** | [**SendPasswordResetCodeDto**](SendPasswordResetCodeDto.md)|  | [optional] 
+ **body** | [**SendPasswordResetCodeDto**](SendPasswordResetCodeDto.md)|  | [optional] 
 
 ### Return type
 
@@ -144,7 +144,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiAccountVerifyPasswordResetTokenPost**
-> bool apiAccountVerifyPasswordResetTokenPost(verifyPasswordResetTokenInput)
+> bool apiAccountVerifyPasswordResetTokenPost(body)
 
 
 
@@ -155,10 +155,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAccountApi();
-final VerifyPasswordResetTokenInput verifyPasswordResetTokenInput = ; // VerifyPasswordResetTokenInput | 
+final VerifyPasswordResetTokenInput body = ; // VerifyPasswordResetTokenInput | 
 
 try {
-    final response = api.apiAccountVerifyPasswordResetTokenPost(verifyPasswordResetTokenInput);
+    final response = api.apiAccountVerifyPasswordResetTokenPost(body);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AccountApi->apiAccountVerifyPasswordResetTokenPost: $e\n');
@@ -169,7 +169,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **verifyPasswordResetTokenInput** | [**VerifyPasswordResetTokenInput**](VerifyPasswordResetTokenInput.md)|  | [optional] 
+ **body** | [**VerifyPasswordResetTokenInput**](VerifyPasswordResetTokenInput.md)|  | [optional] 
 
 ### Return type
 

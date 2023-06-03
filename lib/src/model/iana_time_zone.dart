@@ -39,7 +39,7 @@ class IanaTimeZone {
 
   @override
   int get hashCode =>
-    (timeZoneName == null ? 0 : timeZoneName.hashCode);
+    timeZoneName.hashCode;
 
   factory IanaTimeZone.fromJson(Map<String, dynamic> json) => _$IanaTimeZoneFromJson(json);
 

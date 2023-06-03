@@ -39,7 +39,7 @@ class WindowsTimeZone {
 
   @override
   int get hashCode =>
-    (timeZoneId == null ? 0 : timeZoneId.hashCode);
+    timeZoneId.hashCode;
 
   factory WindowsTimeZone.fromJson(Map<String, dynamic> json) => _$WindowsTimeZoneFromJson(json);
 

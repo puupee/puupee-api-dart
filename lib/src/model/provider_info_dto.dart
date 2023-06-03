@@ -54,8 +54,8 @@ class ProviderInfoDto {
 
   @override
   int get hashCode =>
-    (providerName == null ? 0 : providerName.hashCode) +
-    (providerKey == null ? 0 : providerKey.hashCode);
+    providerName.hashCode +
+    providerKey.hashCode;
 
   factory ProviderInfoDto.fromJson(Map<String, dynamic> json) => _$ProviderInfoDtoFromJson(json);
 

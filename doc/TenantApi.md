@@ -283,7 +283,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiMultiTenancyTenantsIdPut**
-> TenantDto apiMultiTenancyTenantsIdPut(id, tenantUpdateDto)
+> TenantDto apiMultiTenancyTenantsIdPut(id, body)
 
 
 
@@ -295,10 +295,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getTenantApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final TenantUpdateDto tenantUpdateDto = ; // TenantUpdateDto | 
+final TenantUpdateDto body = ; // TenantUpdateDto | 
 
 try {
-    final response = api.apiMultiTenancyTenantsIdPut(id, tenantUpdateDto);
+    final response = api.apiMultiTenancyTenantsIdPut(id, body);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling TenantApi->apiMultiTenancyTenantsIdPut: $e\n');
@@ -310,7 +310,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **tenantUpdateDto** | [**TenantUpdateDto**](TenantUpdateDto.md)|  | [optional] 
+ **body** | [**TenantUpdateDto**](TenantUpdateDto.md)|  | [optional] 
 
 ### Return type
 
@@ -328,7 +328,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **apiMultiTenancyTenantsPost**
-> TenantDto apiMultiTenancyTenantsPost(tenantCreateDto)
+> TenantDto apiMultiTenancyTenantsPost(body)
 
 
 
@@ -339,10 +339,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getTenantApi();
-final TenantCreateDto tenantCreateDto = ; // TenantCreateDto | 
+final TenantCreateDto body = ; // TenantCreateDto | 
 
 try {
-    final response = api.apiMultiTenancyTenantsPost(tenantCreateDto);
+    final response = api.apiMultiTenancyTenantsPost(body);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling TenantApi->apiMultiTenancyTenantsPost: $e\n');
@@ -353,7 +353,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **tenantCreateDto** | [**TenantCreateDto**](TenantCreateDto.md)|  | [optional] 
+ **body** | [**TenantCreateDto**](TenantCreateDto.md)|  | [optional] 
 
 ### Return type
 

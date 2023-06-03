@@ -55,7 +55,7 @@ class BooleanSetKeyValueDto {
   @override
   int get hashCode =>
     value.hashCode +
-    (durationSeconds == null ? 0 : durationSeconds.hashCode);
+    durationSeconds.hashCode;
 
   factory BooleanSetKeyValueDto.fromJson(Map<String, dynamic> json) => _$BooleanSetKeyValueDtoFromJson(json);
 

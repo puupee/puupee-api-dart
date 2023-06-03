@@ -99,11 +99,11 @@ class CreateOrUpdateAppSdkDto {
 
   @override
   int get hashCode =>
-    (name == null ? 0 : name.hashCode) +
-    (description == null ? 0 : description.hashCode) +
-    (privacy == null ? 0 : privacy.hashCode) +
-    (privacyUrl == null ? 0 : privacyUrl.hashCode) +
-    (homePage == null ? 0 : homePage.hashCode);
+    name.hashCode +
+    description.hashCode +
+    privacy.hashCode +
+    privacyUrl.hashCode +
+    homePage.hashCode;
 
   factory CreateOrUpdateAppSdkDto.fromJson(Map<String, dynamic> json) => _$CreateOrUpdateAppSdkDtoFromJson(json);
 

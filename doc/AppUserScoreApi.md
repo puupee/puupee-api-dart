@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **apiAppAppUserScorePost**
-> AppUserScoreDto apiAppAppUserScorePost(createOrUpdateAppUserScoreDto)
+> AppUserScoreDto apiAppAppUserScorePost(body)
 
 
 
@@ -24,10 +24,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppUserScoreApi();
-final CreateOrUpdateAppUserScoreDto createOrUpdateAppUserScoreDto = ; // CreateOrUpdateAppUserScoreDto | 
+final CreateOrUpdateAppUserScoreDto body = ; // CreateOrUpdateAppUserScoreDto | 
 
 try {
-    final response = api.apiAppAppUserScorePost(createOrUpdateAppUserScoreDto);
+    final response = api.apiAppAppUserScorePost(body);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AppUserScoreApi->apiAppAppUserScorePost: $e\n');
@@ -38,7 +38,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createOrUpdateAppUserScoreDto** | [**CreateOrUpdateAppUserScoreDto**](CreateOrUpdateAppUserScoreDto.md)|  | [optional] 
+ **body** | [**CreateOrUpdateAppUserScoreDto**](CreateOrUpdateAppUserScoreDto.md)|  | [optional] 
 
 ### Return type
 

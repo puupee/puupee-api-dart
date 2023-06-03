@@ -24,7 +24,7 @@ class DeviceApi {
   /// 
   ///
   /// Parameters:
-  /// * [bindDeviceDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -35,7 +35,7 @@ class DeviceApi {
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiAppDeviceBindPost({ 
-    BindDeviceDto? bindDeviceDto,
+    BindDeviceDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -65,7 +65,7 @@ class DeviceApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(bindDeviceDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(
@@ -237,7 +237,7 @@ _responseData = deserialize<DeviceDtoPagedResultDto, DeviceDtoPagedResultDto>(_r
   /// 
   ///
   /// Parameters:
-  /// * [refreshDeviceStatusDto] 
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -248,7 +248,7 @@ _responseData = deserialize<DeviceDtoPagedResultDto, DeviceDtoPagedResultDto>(_r
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
   Future<Response<void>> apiAppDeviceRefreshPost({ 
-    RefreshDeviceStatusDto? refreshDeviceStatusDto,
+    RefreshDeviceStatusDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -278,7 +278,7 @@ _responseData = deserialize<DeviceDtoPagedResultDto, DeviceDtoPagedResultDto>(_r
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(refreshDeviceStatusDto);
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioError(
          requestOptions: _options.compose(

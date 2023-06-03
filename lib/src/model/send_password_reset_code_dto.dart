@@ -86,8 +86,8 @@ class SendPasswordResetCodeDto {
   int get hashCode =>
     email.hashCode +
     appName.hashCode +
-    (returnUrl == null ? 0 : returnUrl.hashCode) +
-    (returnUrlHash == null ? 0 : returnUrlHash.hashCode);
+    returnUrl.hashCode +
+    returnUrlHash.hashCode;
 
   factory SendPasswordResetCodeDto.fromJson(Map<String, dynamic> json) => _$SendPasswordResetCodeDtoFromJson(json);
 

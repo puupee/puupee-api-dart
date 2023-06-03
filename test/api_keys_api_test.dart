@@ -22,12 +22,12 @@ void main() {
       // TODO
     });
 
-    //Future<ApiKeyDto> apiApiKeysIdPut(String id, { ApiKeyUpdateDto apiKeyUpdateDto }) async
+    //Future<ApiKeyDto> apiApiKeysIdPut(String id, { ApiKeyUpdateDto body }) async
     test('test apiApiKeysIdPut', () async {
       // TODO
     });
 
-    //Future<ApiKeyDto> apiApiKeysPost({ ApiKeyCreateDto apiKeyCreateDto }) async
+    //Future<ApiKeyDto> apiApiKeysPost({ ApiKeyCreateDto body }) async
     test('test apiApiKeysPost', () async {
       // TODO
     });
