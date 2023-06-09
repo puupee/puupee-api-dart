@@ -1,4 +1,4 @@
-# puupee_api_client.model.ApiKeyCreateDto
+# puupee_api_client.model.AppSdkDtoPagedResultDto
 
 ## Load the model package
 ```dart
@@ -8,9 +8,8 @@ import 'package:puupee_api_client/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **String** |  | 
-**active** | **bool** |  | [optional] 
-**expireAt** | [**DateTime**](DateTime.md) |  | [optional] 
+**items** | [**List&lt;AppSdkDto&gt;**](AppSdkDto.md) |  | [optional] 
+**totalCount** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

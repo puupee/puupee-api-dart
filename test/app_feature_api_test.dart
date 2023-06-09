@@ -7,7 +7,7 @@ void main() {
   final instance = PuupeeApiClient().getAppFeatureApi();
 
   group(AppFeatureApi, () {
-    //Future<List<AppFeatureDto>> apiAppAppFeatureGet() async
+    //Future<AppFeatureDtoPagedResultDto> apiAppAppFeatureGet({ String sorting, int skipCount, int maxResultCount }) async
     test('test apiAppAppFeatureGet', () async {
       // TODO
     });

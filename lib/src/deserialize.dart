@@ -7,6 +7,7 @@ import 'package:puupee_api_client/src/model/api_key_update_dto.dart';
 import 'package:puupee_api_client/src/model/app_dto.dart';
 import 'package:puupee_api_client/src/model/app_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/app_feature_dto.dart';
+import 'package:puupee_api_client/src/model/app_feature_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/app_pricing_dto.dart';
 import 'package:puupee_api_client/src/model/app_pricing_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/app_pricing_item_dto.dart';
@@ -16,6 +17,7 @@ import 'package:puupee_api_client/src/model/app_run_dto.dart';
 import 'package:puupee_api_client/src/model/app_run_record_dto.dart';
 import 'package:puupee_api_client/src/model/app_run_record_update_dto.dart';
 import 'package:puupee_api_client/src/model/app_sdk_dto.dart';
+import 'package:puupee_api_client/src/model/app_sdk_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/app_theme.dart';
 import 'package:puupee_api_client/src/model/app_user_score_dto.dart';
 import 'package:puupee_api_client/src/model/app_with_user_dto.dart';
@@ -228,6 +230,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return AppDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppFeatureDto':
           return AppFeatureDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppFeatureDtoPagedResultDto':
+          return AppFeatureDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppPricingDto':
           return AppPricingDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppPricingDtoPagedResultDto':
@@ -246,6 +250,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return AppRunRecordUpdateDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppSdkDto':
           return AppSdkDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppSdkDtoPagedResultDto':
+          return AppSdkDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppTheme':
           return AppTheme.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppThemeMode':

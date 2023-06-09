@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **apiAppAppFeatureGet**
-> List<AppFeatureDto> apiAppAppFeatureGet()
+> AppFeatureDtoPagedResultDto apiAppAppFeatureGet(sorting, skipCount, maxResultCount)
 
 
 
@@ -27,9 +27,12 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppFeatureApi();
+final String sorting = sorting_example; // String | 
+final int skipCount = 56; // int | 
+final int maxResultCount = 56; // int | 
 
 try {
-    final response = api.apiAppAppFeatureGet();
+    final response = api.apiAppAppFeatureGet(sorting, skipCount, maxResultCount);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AppFeatureApi->apiAppAppFeatureGet: $e\n');
@@ -37,11 +40,16 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sorting** | **String**|  | [optional] 
+ **skipCount** | **int**|  | [optional] 
+ **maxResultCount** | **int**|  | [optional] 
 
 ### Return type
 
-[**List&lt;AppFeatureDto&gt;**](AppFeatureDto.md)
+[**AppFeatureDtoPagedResultDto**](AppFeatureDtoPagedResultDto.md)
 
 ### Authorization
 

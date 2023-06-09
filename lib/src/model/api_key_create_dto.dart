@@ -20,8 +20,6 @@ class ApiKeyCreateDto {
 
     required  this.name,
 
-    required  this.key,
-
      this.active,
 
      this.expireAt,
@@ -36,18 +34,6 @@ class ApiKeyCreateDto {
 
 
   String name;
-
-
-
-  @JsonKey(
-    
-    name: r'key',
-    required: true,
-    includeIfNull: false
-  )
-
-
-  String key;
 
 
 
@@ -78,14 +64,12 @@ class ApiKeyCreateDto {
   @override
   bool operator ==(Object other) => identical(this, other) || other is ApiKeyCreateDto &&
      other.name == name &&
-     other.key == key &&
      other.active == active &&
      other.expireAt == expireAt;
 
   @override
   int get hashCode =>
     name.hashCode +
-    key.hashCode +
     active.hashCode +
     expireAt.hashCode;
 

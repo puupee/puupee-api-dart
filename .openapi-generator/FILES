@@ -19,6 +19,7 @@ doc/AppDto.md
 doc/AppDtoPagedResultDto.md
 doc/AppFeatureApi.md
 doc/AppFeatureDto.md
+doc/AppFeatureDtoPagedResultDto.md
 doc/AppPricingApi.md
 doc/AppPricingDto.md
 doc/AppPricingDtoPagedResultDto.md
@@ -32,6 +33,7 @@ doc/AppRunRecordDto.md
 doc/AppRunRecordUpdateDto.md
 doc/AppSdkApi.md
 doc/AppSdkDto.md
+doc/AppSdkDtoPagedResultDto.md
 doc/AppTheme.md
 doc/AppThemeMode.md
 doc/AppUserScoreApi.md
@@ -299,6 +301,7 @@ lib/src/model/api_key_update_dto.dart
 lib/src/model/app_dto.dart
 lib/src/model/app_dto_paged_result_dto.dart
 lib/src/model/app_feature_dto.dart
+lib/src/model/app_feature_dto_paged_result_dto.dart
 lib/src/model/app_pricing_dto.dart
 lib/src/model/app_pricing_dto_paged_result_dto.dart
 lib/src/model/app_pricing_item_dto.dart
@@ -308,6 +311,7 @@ lib/src/model/app_run_dto.dart
 lib/src/model/app_run_record_dto.dart
 lib/src/model/app_run_record_update_dto.dart
 lib/src/model/app_sdk_dto.dart
+lib/src/model/app_sdk_dto_paged_result_dto.dart
 lib/src/model/app_theme.dart
 lib/src/model/app_theme_mode.dart
 lib/src/model/app_user_score_dto.dart
@@ -503,6 +507,7 @@ test/app_api_test.dart
 test/app_dto_paged_result_dto_test.dart
 test/app_dto_test.dart
 test/app_feature_api_test.dart
+test/app_feature_dto_paged_result_dto_test.dart
 test/app_feature_dto_test.dart
 test/app_pricing_api_test.dart
 test/app_pricing_dto_paged_result_dto_test.dart
@@ -516,6 +521,7 @@ test/app_run_dto_test.dart
 test/app_run_record_dto_test.dart
 test/app_run_record_update_dto_test.dart
 test/app_sdk_api_test.dart
+test/app_sdk_dto_paged_result_dto_test.dart
 test/app_sdk_dto_test.dart
 test/app_theme_mode_test.dart
 test/app_theme_test.dart

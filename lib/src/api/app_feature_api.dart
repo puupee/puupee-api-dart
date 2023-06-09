@@ -10,6 +10,7 @@ import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:puupee_api_client/src/model/app_feature_dto.dart';
+import 'package:puupee_api_client/src/model/app_feature_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_feature_dto.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 
@@ -23,6 +24,9 @@ class AppFeatureApi {
   /// 
   ///
   /// Parameters:
+  /// * [sorting] 
+  /// * [skipCount] 
+  /// * [maxResultCount] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -30,9 +34,12 @@ class AppFeatureApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [List<AppFeatureDto>] as data
+  /// Returns a [Future] containing a [Response] with a [AppFeatureDtoPagedResultDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<List<AppFeatureDto>>> apiAppAppFeatureGet({ 
+  Future<Response<AppFeatureDtoPagedResultDto>> apiAppAppFeatureGet({ 
+    String? sorting,
+    int? skipCount,
+    int? maxResultCount,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -58,18 +65,25 @@ class AppFeatureApi {
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (sorting != null) r'Sorting': sorting,
+      if (skipCount != null) r'SkipCount': skipCount,
+      if (maxResultCount != null) r'MaxResultCount': maxResultCount,
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<AppFeatureDto> _responseData;
+    AppFeatureDtoPagedResultDto _responseData;
 
     try {
-_responseData = deserialize<List<AppFeatureDto>, AppFeatureDto>(_response.data!, 'List<AppFeatureDto>', growable: true);
+_responseData = deserialize<AppFeatureDtoPagedResultDto, AppFeatureDtoPagedResultDto>(_response.data!, 'AppFeatureDtoPagedResultDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -80,7 +94,7 @@ _responseData = deserialize<List<AppFeatureDto>, AppFeatureDto>(_response.data!,
       );
     }
 
-    return Response<List<AppFeatureDto>>(
+    return Response<AppFeatureDtoPagedResultDto>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

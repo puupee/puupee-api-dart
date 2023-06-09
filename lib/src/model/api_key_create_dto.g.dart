@@ -13,11 +13,10 @@ ApiKeyCreateDto _$ApiKeyCreateDtoFromJson(Map<String, dynamic> json) =>
       ($checkedConvert) {
         $checkKeys(
           json,
-          requiredKeys: const ['name', 'key'],
+          requiredKeys: const ['name'],
         );
         final val = ApiKeyCreateDto(
           name: $checkedConvert('name', (v) => v as String),
-          key: $checkedConvert('key', (v) => v as String),
           active: $checkedConvert('active', (v) => v as bool?),
           expireAt: $checkedConvert('expireAt',
               (v) => v == null ? null : DateTime.parse(v as String)),
@@ -29,7 +28,6 @@ ApiKeyCreateDto _$ApiKeyCreateDtoFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$ApiKeyCreateDtoToJson(ApiKeyCreateDto instance) {
   final val = <String, dynamic>{
     'name': instance.name,
-    'key': instance.key,
   };
 
   void writeNotNull(String key, dynamic value) {

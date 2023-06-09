@@ -12,11 +12,6 @@ void main() {
       // TODO
     });
 
-    // String key
-    test('to test the property `key`', () async {
-      // TODO
-    });
-
     // bool active
     test('to test the property `active`', () async {
       // TODO

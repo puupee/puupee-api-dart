@@ -7,7 +7,7 @@ void main() {
   final instance = PuupeeApiClient().getAppSdkApi();
 
   group(AppSdkApi, () {
-    //Future<List<AppSdkDto>> apiAppAppSdkGet() async
+    //Future<AppSdkDtoPagedResultDto> apiAppAppSdkGet({ String sorting, int skipCount, int maxResultCount }) async
     test('test apiAppAppSdkGet', () async {
       // TODO
     });

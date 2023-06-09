@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **apiAppAppSdkGet**
-> List<AppSdkDto> apiAppAppSdkGet()
+> AppSdkDtoPagedResultDto apiAppAppSdkGet(sorting, skipCount, maxResultCount)
 
 
 
@@ -27,9 +27,12 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppSdkApi();
+final String sorting = sorting_example; // String | 
+final int skipCount = 56; // int | 
+final int maxResultCount = 56; // int | 
 
 try {
-    final response = api.apiAppAppSdkGet();
+    final response = api.apiAppAppSdkGet(sorting, skipCount, maxResultCount);
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AppSdkApi->apiAppAppSdkGet: $e\n');
@@ -37,11 +40,16 @@ try {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **sorting** | **String**|  | [optional] 
+ **skipCount** | **int**|  | [optional] 
+ **maxResultCount** | **int**|  | [optional] 
 
 ### Return type
 
-[**List&lt;AppSdkDto&gt;**](AppSdkDto.md)
+[**AppSdkDtoPagedResultDto**](AppSdkDtoPagedResultDto.md)
 
 ### Authorization
 
