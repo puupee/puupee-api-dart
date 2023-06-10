@@ -7,7 +7,7 @@ void main() {
   final instance = PuupeeApiClient().getAppPricingItemApi();
 
   group(AppPricingItemApi, () {
-    //Future<List<AppPricingItemDto>> apiAppAppPricingItemGet({ String appId }) async
+    //Future<List<AppPricingItemDto>> apiAppAppPricingItemGet() async
     test('test apiAppAppPricingItemGet', () async {
       // TODO
     });

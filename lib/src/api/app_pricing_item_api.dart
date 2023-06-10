@@ -23,7 +23,6 @@ class AppPricingItemApi {
   /// 
   ///
   /// Parameters:
-  /// * [appId] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -34,7 +33,6 @@ class AppPricingItemApi {
   /// Returns a [Future] containing a [Response] with a [List<AppPricingItemDto>] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<List<AppPricingItemDto>>> apiAppAppPricingItemGet({ 
-    String? appId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -60,14 +58,9 @@ class AppPricingItemApi {
       validateStatus: validateStatus,
     );
 
-    final _queryParameters = <String, dynamic>{
-      if (appId != null) r'appId': appId,
-    };
-
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
-      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,

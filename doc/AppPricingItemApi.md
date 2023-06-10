@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **apiAppAppPricingItemGet**
-> List<AppPricingItemDto> apiAppAppPricingItemGet(appId)
+> List<AppPricingItemDto> apiAppAppPricingItemGet()
 
 
 
@@ -28,10 +28,9 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppPricingItemApi();
-final String appId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final response = api.apiAppAppPricingItemGet(appId);
+    final response = api.apiAppAppPricingItemGet();
     print(response);
 } catch on DioError (e) {
     print('Exception when calling AppPricingItemApi->apiAppAppPricingItemGet: $e\n');
@@ -39,10 +38,7 @@ try {
 ```
 
 ### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **appId** | **String**|  | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
