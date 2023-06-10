@@ -1,12 +1,12 @@
 import 'package:test/test.dart';
 import 'package:puupee_api_client/puupee_api_client.dart';
 
-// tests for AppPricingItemDto
+// tests for AppPricingItemValueDto
 void main() {
-  final AppPricingItemDto? instance = /* AppPricingItemDto(...) */ null;
+  final AppPricingItemValueDto? instance = /* AppPricingItemValueDto(...) */ null;
   // TODO add properties to the entity
 
-  group(AppPricingItemDto, () {
+  group(AppPricingItemValueDto, () {
     // String id
     test('to test the property `id`', () async {
       // TODO
@@ -52,18 +52,8 @@ void main() {
       // TODO
     });
 
-    // String description
-    test('to test the property `description`', () async {
-      // TODO
-    });
-
-    // String linkUrl
-    test('to test the property `linkUrl`', () async {
-      // TODO
-    });
-
-    // String display
-    test('to test the property `display`', () async {
+    // String appId
+    test('to test the property `appId`', () async {
       // TODO
     });
 
@@ -72,8 +62,28 @@ void main() {
       // TODO
     });
 
-    // int sortIndex
-    test('to test the property `sortIndex`', () async {
+    // bool hasValue
+    test('to test the property `hasValue`', () async {
+      // TODO
+    });
+
+    // int intValue
+    test('to test the property `intValue`', () async {
+      // TODO
+    });
+
+    // double decimalValue
+    test('to test the property `decimalValue`', () async {
+      // TODO
+    });
+
+    // String stringValue
+    test('to test the property `stringValue`', () async {
+      // TODO
+    });
+
+    // bool boolValue
+    test('to test the property `boolValue`', () async {
       // TODO
     });
 

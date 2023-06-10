@@ -26,12 +26,6 @@ class CreateOrUpdateAppPricingItemDto {
 
      this.display,
 
-     this.appId,
-
-     this.isAvailable,
-
-     this.hasValue,
-
      this.sortIndex,
   });
 
@@ -85,42 +79,6 @@ class CreateOrUpdateAppPricingItemDto {
 
   @JsonKey(
     
-    name: r'appId',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? appId;
-
-
-
-  @JsonKey(
-    
-    name: r'isAvailable',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  bool? isAvailable;
-
-
-
-  @JsonKey(
-    
-    name: r'hasValue',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  bool? hasValue;
-
-
-
-  @JsonKey(
-    
     name: r'sortIndex',
     required: false,
     includeIfNull: false
@@ -137,9 +95,6 @@ class CreateOrUpdateAppPricingItemDto {
      other.description == description &&
      other.linkUrl == linkUrl &&
      other.display == display &&
-     other.appId == appId &&
-     other.isAvailable == isAvailable &&
-     other.hasValue == hasValue &&
      other.sortIndex == sortIndex;
 
   @override
@@ -148,9 +103,6 @@ class CreateOrUpdateAppPricingItemDto {
     description.hashCode +
     linkUrl.hashCode +
     display.hashCode +
-    appId.hashCode +
-    isAvailable.hashCode +
-    hasValue.hashCode +
     sortIndex.hashCode;
 
   factory CreateOrUpdateAppPricingItemDto.fromJson(Map<String, dynamic> json) => _$CreateOrUpdateAppPricingItemDtoFromJson(json);

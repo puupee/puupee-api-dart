@@ -54,8 +54,8 @@ AppPricingDto _$AppPricingDtoFromJson(Map<String, dynamic> json) =>
           items: $checkedConvert(
               'items',
               (v) => (v as List<dynamic>?)
-                  ?.map((e) =>
-                      AppPricingItemDto.fromJson(e as Map<String, dynamic>))
+                  ?.map((e) => AppPricingItemValueDto.fromJson(
+                      e as Map<String, dynamic>))
                   .toList()),
         );
         return val;

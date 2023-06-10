@@ -5,7 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:json_annotation/json_annotation.dart';
 
-part 'app_pricing_item_dto.g.dart';
+part 'app_pricing_item_value_dto.g.dart';
 
 
 @JsonSerializable(
@@ -14,9 +14,9 @@ part 'app_pricing_item_dto.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class AppPricingItemDto {
-  /// Returns a new [AppPricingItemDto] instance.
-  AppPricingItemDto({
+class AppPricingItemValueDto {
+  /// Returns a new [AppPricingItemValueDto] instance.
+  AppPricingItemValueDto({
 
      this.id,
 
@@ -36,15 +36,19 @@ class AppPricingItemDto {
 
      this.name,
 
-     this.description,
-
-     this.linkUrl,
-
-     this.display,
+     this.appId,
 
      this.isAvailable,
 
-     this.sortIndex,
+     this.hasValue,
+
+     this.intValue,
+
+     this.decimalValue,
+
+     this.stringValue,
+
+     this.boolValue,
   });
 
   @JsonKey(
@@ -157,37 +161,13 @@ class AppPricingItemDto {
 
   @JsonKey(
     
-    name: r'description',
+    name: r'appId',
     required: false,
     includeIfNull: false
   )
 
 
-  String? description;
-
-
-
-  @JsonKey(
-    
-    name: r'linkUrl',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? linkUrl;
-
-
-
-  @JsonKey(
-    
-    name: r'display',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? display;
+  String? appId;
 
 
 
@@ -205,18 +185,66 @@ class AppPricingItemDto {
 
   @JsonKey(
     
-    name: r'sortIndex',
+    name: r'hasValue',
     required: false,
     includeIfNull: false
   )
 
 
-  int? sortIndex;
+  bool? hasValue;
+
+
+
+  @JsonKey(
+    
+    name: r'intValue',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  int? intValue;
+
+
+
+  @JsonKey(
+    
+    name: r'decimalValue',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  double? decimalValue;
+
+
+
+  @JsonKey(
+    
+    name: r'stringValue',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? stringValue;
+
+
+
+  @JsonKey(
+    
+    name: r'boolValue',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  bool? boolValue;
 
 
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is AppPricingItemDto &&
+  bool operator ==(Object other) => identical(this, other) || other is AppPricingItemValueDto &&
      other.id == id &&
      other.creationTime == creationTime &&
      other.creatorId == creatorId &&
@@ -226,11 +254,13 @@ class AppPricingItemDto {
      other.deleterId == deleterId &&
      other.deletionTime == deletionTime &&
      other.name == name &&
-     other.description == description &&
-     other.linkUrl == linkUrl &&
-     other.display == display &&
+     other.appId == appId &&
      other.isAvailable == isAvailable &&
-     other.sortIndex == sortIndex;
+     other.hasValue == hasValue &&
+     other.intValue == intValue &&
+     other.decimalValue == decimalValue &&
+     other.stringValue == stringValue &&
+     other.boolValue == boolValue;
 
   @override
   int get hashCode =>
@@ -243,15 +273,17 @@ class AppPricingItemDto {
     deleterId.hashCode +
     deletionTime.hashCode +
     name.hashCode +
-    description.hashCode +
-    linkUrl.hashCode +
-    display.hashCode +
+    appId.hashCode +
     isAvailable.hashCode +
-    sortIndex.hashCode;
+    hasValue.hashCode +
+    intValue.hashCode +
+    decimalValue.hashCode +
+    stringValue.hashCode +
+    boolValue.hashCode;
 
-  factory AppPricingItemDto.fromJson(Map<String, dynamic> json) => _$AppPricingItemDtoFromJson(json);
+  factory AppPricingItemValueDto.fromJson(Map<String, dynamic> json) => _$AppPricingItemValueDtoFromJson(json);
 
-  Map<String, dynamic> toJson() => _$AppPricingItemDtoToJson(this);
+  Map<String, dynamic> toJson() => _$AppPricingItemValueDtoToJson(this);
 
   @override
   String toString() {

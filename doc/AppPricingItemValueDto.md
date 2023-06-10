@@ -1,4 +1,4 @@
-# puupee_api_client.model.AppPricingItemDto
+# puupee_api_client.model.AppPricingItemValueDto
 
 ## Load the model package
 ```dart
@@ -17,11 +17,13 @@ Name | Type | Description | Notes
 **deleterId** | **String** |  | [optional] 
 **deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
 **name** | **String** |  | [optional] 
-**description** | **String** |  | [optional] 
-**linkUrl** | **String** |  | [optional] 
-**display** | **String** |  | [optional] 
+**appId** | **String** |  | [optional] 
 **isAvailable** | **bool** |  | [optional] 
-**sortIndex** | **int** |  | [optional] 
+**hasValue** | **bool** |  | [optional] 
+**intValue** | **int** |  | [optional] 
+**decimalValue** | **double** |  | [optional] 
+**stringValue** | **String** |  | [optional] 
+**boolValue** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

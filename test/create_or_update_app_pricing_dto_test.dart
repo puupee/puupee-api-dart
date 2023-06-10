@@ -87,7 +87,7 @@ void main() {
       // TODO
     });
 
-    // List<CreateOrUpdateAppPricingItemDto> items
+    // List<AppPricingItemValueDto> items
     test('to test the property `items`', () async {
       // TODO
     });

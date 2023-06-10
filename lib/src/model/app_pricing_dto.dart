@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:puupee_api_client/src/model/app_pricing_item_dto.dart';
+import 'package:puupee_api_client/src/model/app_pricing_item_value_dto.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'app_pricing_dto.g.dart';
@@ -366,7 +366,7 @@ class AppPricingDto {
   )
 
 
-  List<AppPricingItemDto>? items;
+  List<AppPricingItemValueDto>? items;
 
 
 

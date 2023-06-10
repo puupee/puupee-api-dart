@@ -12,9 +12,6 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 **linkUrl** | **String** |  | [optional] 
 **display** | **String** |  | [optional] 
-**appId** | **String** |  | [optional] 
-**isAvailable** | **bool** |  | [optional] 
-**hasValue** | **bool** |  | [optional] 
 **sortIndex** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -127,7 +127,7 @@ void main() {
       // TODO
     });
 
-    // List<AppPricingItemDto> items
+    // List<AppPricingItemValueDto> items
     test('to test the property `items`', () async {
       // TODO
     });

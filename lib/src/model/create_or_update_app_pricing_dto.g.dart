@@ -43,7 +43,7 @@ CreateOrUpdateAppPricingDto _$CreateOrUpdateAppPricingDtoFromJson(
           items: $checkedConvert(
               'items',
               (v) => (v as List<dynamic>?)
-                  ?.map((e) => CreateOrUpdateAppPricingItemDto.fromJson(
+                  ?.map((e) => AppPricingItemValueDto.fromJson(
                       e as Map<String, dynamic>))
                   .toList()),
         );
