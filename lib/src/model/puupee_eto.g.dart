@@ -11,6 +11,7 @@ PuupeeEto _$PuupeeEtoFromJson(Map<String, dynamic> json) => $checkedCreate(
       json,
       ($checkedConvert) {
         final val = PuupeeEto(
+          id: $checkedConvert('id', (v) => v as String?),
           syncVersion: $checkedConvert('syncVersion', (v) => v as int?),
           url: $checkedConvert('url', (v) => v as String?),
           parentId: $checkedConvert('parentId', (v) => v as String?),
@@ -90,6 +91,7 @@ Map<String, dynamic> _$PuupeeEtoToJson(PuupeeEto instance) {
     }
   }
 
+  writeNotNull('id', instance.id);
   writeNotNull('syncVersion', instance.syncVersion);
   writeNotNull('url', instance.url);
   writeNotNull('parentId', instance.parentId);

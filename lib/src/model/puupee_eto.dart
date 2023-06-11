@@ -18,6 +18,8 @@ class PuupeeEto {
   /// Returns a new [PuupeeEto] instance.
   PuupeeEto({
 
+     this.id,
+
      this.syncVersion,
 
      this.url,
@@ -114,6 +116,18 @@ class PuupeeEto {
 
      this.isDeleted,
   });
+
+  @JsonKey(
+    
+    name: r'id',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? id;
+
+
 
   @JsonKey(
     
@@ -693,6 +707,7 @@ class PuupeeEto {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is PuupeeEto &&
+     other.id == id &&
      other.syncVersion == syncVersion &&
      other.url == url &&
      other.parentId == parentId &&
@@ -744,6 +759,7 @@ class PuupeeEto {
 
   @override
   int get hashCode =>
+    id.hashCode +
     syncVersion.hashCode +
     url.hashCode +
     parentId.hashCode +
