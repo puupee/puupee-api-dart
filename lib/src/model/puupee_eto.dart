@@ -3,9 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:puupee_api_client/src/model/identity_user.dart';
-import 'package:puupee_api_client/src/model/puupee.dart';
-import 'package:puupee_api_client/src/model/storage_object.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'puupee_eto.g.dart';
@@ -20,32 +17,6 @@ part 'puupee_eto.g.dart';
 class PuupeeEto {
   /// Returns a new [PuupeeEto] instance.
   PuupeeEto({
-
-     this.id,
-
-     this.extraProperties,
-
-     this.concurrencyStamp,
-
-     this.creationTime,
-
-     this.creatorId,
-
-     this.lastModificationTime,
-
-     this.lastModifierId,
-
-     this.isDeleted,
-
-     this.deleterId,
-
-     this.deletionTime,
-
-     this.deleter,
-
-     this.creator,
-
-     this.lastModifier,
 
      this.syncVersion,
 
@@ -68,10 +39,6 @@ class PuupeeEto {
      this.isHidden,
 
      this.tagging,
-
-     this.parent,
-
-     this.children,
 
      this.password,
 
@@ -96,10 +63,6 @@ class PuupeeEto {
      this.storageObjectUpdatedAt,
 
      this.displayStyle,
-
-     this.storageObjectId,
-
-     this.storageObject,
 
      this.priority,
 
@@ -136,163 +99,21 @@ class PuupeeEto {
      this.content,
 
      this.sortIndex,
+
+     this.creationTime,
+
+     this.creatorId,
+
+     this.lastModifierId,
+
+     this.lastModificationTime,
+
+     this.deleterId,
+
+     this.deletionTime,
+
+     this.isDeleted,
   });
-
-  @JsonKey(
-    
-    name: r'id',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? id;
-
-
-
-  @JsonKey(
-    
-    name: r'extraProperties',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  Map<String, Object>? extraProperties;
-
-
-
-  @JsonKey(
-    
-    name: r'concurrencyStamp',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? concurrencyStamp;
-
-
-
-  @JsonKey(
-    
-    name: r'creationTime',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  DateTime? creationTime;
-
-
-
-  @JsonKey(
-    
-    name: r'creatorId',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? creatorId;
-
-
-
-  @JsonKey(
-    
-    name: r'lastModificationTime',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  DateTime? lastModificationTime;
-
-
-
-  @JsonKey(
-    
-    name: r'lastModifierId',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? lastModifierId;
-
-
-
-  @JsonKey(
-    
-    name: r'isDeleted',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  bool? isDeleted;
-
-
-
-  @JsonKey(
-    
-    name: r'deleterId',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? deleterId;
-
-
-
-  @JsonKey(
-    
-    name: r'deletionTime',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  DateTime? deletionTime;
-
-
-
-  @JsonKey(
-    
-    name: r'deleter',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  IdentityUser? deleter;
-
-
-
-  @JsonKey(
-    
-    name: r'creator',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  IdentityUser? creator;
-
-
-
-  @JsonKey(
-    
-    name: r'lastModifier',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  IdentityUser? lastModifier;
-
-
 
   @JsonKey(
     
@@ -423,30 +244,6 @@ class PuupeeEto {
 
 
   String? tagging;
-
-
-
-  @JsonKey(
-    
-    name: r'parent',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  Puupee? parent;
-
-
-
-  @JsonKey(
-    
-    name: r'children',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  List<Puupee>? children;
 
 
 
@@ -591,30 +388,6 @@ class PuupeeEto {
 
 
   String? displayStyle;
-
-
-
-  @JsonKey(
-    
-    name: r'storageObjectId',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? storageObjectId;
-
-
-
-  @JsonKey(
-    
-    name: r'storageObject',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  StorageObject? storageObject;
 
 
 
@@ -834,21 +607,92 @@ class PuupeeEto {
 
 
 
+  @JsonKey(
+    
+    name: r'creationTime',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  DateTime? creationTime;
+
+
+
+  @JsonKey(
+    
+    name: r'creatorId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? creatorId;
+
+
+
+  @JsonKey(
+    
+    name: r'lastModifierId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? lastModifierId;
+
+
+
+  @JsonKey(
+    
+    name: r'lastModificationTime',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  DateTime? lastModificationTime;
+
+
+
+  @JsonKey(
+    
+    name: r'deleterId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? deleterId;
+
+
+
+  @JsonKey(
+    
+    name: r'deletionTime',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  DateTime? deletionTime;
+
+
+
+  @JsonKey(
+    
+    name: r'isDeleted',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  bool? isDeleted;
+
+
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is PuupeeEto &&
-     other.id == id &&
-     other.extraProperties == extraProperties &&
-     other.concurrencyStamp == concurrencyStamp &&
-     other.creationTime == creationTime &&
-     other.creatorId == creatorId &&
-     other.lastModificationTime == lastModificationTime &&
-     other.lastModifierId == lastModifierId &&
-     other.isDeleted == isDeleted &&
-     other.deleterId == deleterId &&
-     other.deletionTime == deletionTime &&
-     other.deleter == deleter &&
-     other.creator == creator &&
-     other.lastModifier == lastModifier &&
      other.syncVersion == syncVersion &&
      other.url == url &&
      other.parentId == parentId &&
@@ -860,8 +704,6 @@ class PuupeeEto {
      other.format == format &&
      other.isHidden == isHidden &&
      other.tagging == tagging &&
-     other.parent == parent &&
-     other.children == children &&
      other.password == password &&
      other.key == key &&
      other.size == size &&
@@ -874,8 +716,6 @@ class PuupeeEto {
      other.storageObjectCreatedAt == storageObjectCreatedAt &&
      other.storageObjectUpdatedAt == storageObjectUpdatedAt &&
      other.displayStyle == displayStyle &&
-     other.storageObjectId == storageObjectId &&
-     other.storageObject == storageObject &&
      other.priority == priority &&
      other.doneAt == doneAt &&
      other.isDone == isDone &&
@@ -893,23 +733,17 @@ class PuupeeEto {
      other.lastModifierDevice == lastModifierDevice &&
      other.appName == appName &&
      other.content == content &&
-     other.sortIndex == sortIndex;
+     other.sortIndex == sortIndex &&
+     other.creationTime == creationTime &&
+     other.creatorId == creatorId &&
+     other.lastModifierId == lastModifierId &&
+     other.lastModificationTime == lastModificationTime &&
+     other.deleterId == deleterId &&
+     other.deletionTime == deletionTime &&
+     other.isDeleted == isDeleted;
 
   @override
   int get hashCode =>
-    id.hashCode +
-    extraProperties.hashCode +
-    concurrencyStamp.hashCode +
-    creationTime.hashCode +
-    creatorId.hashCode +
-    lastModificationTime.hashCode +
-    lastModifierId.hashCode +
-    isDeleted.hashCode +
-    deleterId.hashCode +
-    deletionTime.hashCode +
-    deleter.hashCode +
-    creator.hashCode +
-    lastModifier.hashCode +
     syncVersion.hashCode +
     url.hashCode +
     parentId.hashCode +
@@ -921,8 +755,6 @@ class PuupeeEto {
     format.hashCode +
     isHidden.hashCode +
     tagging.hashCode +
-    parent.hashCode +
-    children.hashCode +
     password.hashCode +
     key.hashCode +
     size.hashCode +
@@ -935,8 +767,6 @@ class PuupeeEto {
     storageObjectCreatedAt.hashCode +
     storageObjectUpdatedAt.hashCode +
     displayStyle.hashCode +
-    storageObjectId.hashCode +
-    storageObject.hashCode +
     priority.hashCode +
     doneAt.hashCode +
     isDone.hashCode +
@@ -954,7 +784,14 @@ class PuupeeEto {
     lastModifierDevice.hashCode +
     appName.hashCode +
     content.hashCode +
-    sortIndex.hashCode;
+    sortIndex.hashCode +
+    creationTime.hashCode +
+    creatorId.hashCode +
+    lastModifierId.hashCode +
+    lastModificationTime.hashCode +
+    deleterId.hashCode +
+    deletionTime.hashCode +
+    isDeleted.hashCode;
 
   factory PuupeeEto.fromJson(Map<String, dynamic> json) => _$PuupeeEtoFromJson(json);
 

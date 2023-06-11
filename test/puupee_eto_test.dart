@@ -7,71 +7,6 @@ void main() {
   // TODO add properties to the entity
 
   group(PuupeeEto, () {
-    // String id
-    test('to test the property `id`', () async {
-      // TODO
-    });
-
-    // Map<String, Object> extraProperties
-    test('to test the property `extraProperties`', () async {
-      // TODO
-    });
-
-    // String concurrencyStamp
-    test('to test the property `concurrencyStamp`', () async {
-      // TODO
-    });
-
-    // DateTime creationTime
-    test('to test the property `creationTime`', () async {
-      // TODO
-    });
-
-    // String creatorId
-    test('to test the property `creatorId`', () async {
-      // TODO
-    });
-
-    // DateTime lastModificationTime
-    test('to test the property `lastModificationTime`', () async {
-      // TODO
-    });
-
-    // String lastModifierId
-    test('to test the property `lastModifierId`', () async {
-      // TODO
-    });
-
-    // bool isDeleted
-    test('to test the property `isDeleted`', () async {
-      // TODO
-    });
-
-    // String deleterId
-    test('to test the property `deleterId`', () async {
-      // TODO
-    });
-
-    // DateTime deletionTime
-    test('to test the property `deletionTime`', () async {
-      // TODO
-    });
-
-    // IdentityUser deleter
-    test('to test the property `deleter`', () async {
-      // TODO
-    });
-
-    // IdentityUser creator
-    test('to test the property `creator`', () async {
-      // TODO
-    });
-
-    // IdentityUser lastModifier
-    test('to test the property `lastModifier`', () async {
-      // TODO
-    });
-
     // int syncVersion
     test('to test the property `syncVersion`', () async {
       // TODO
@@ -124,16 +59,6 @@ void main() {
 
     // String tagging
     test('to test the property `tagging`', () async {
-      // TODO
-    });
-
-    // Puupee parent
-    test('to test the property `parent`', () async {
-      // TODO
-    });
-
-    // List<Puupee> children
-    test('to test the property `children`', () async {
       // TODO
     });
 
@@ -194,16 +119,6 @@ void main() {
 
     // String displayStyle
     test('to test the property `displayStyle`', () async {
-      // TODO
-    });
-
-    // String storageObjectId
-    test('to test the property `storageObjectId`', () async {
-      // TODO
-    });
-
-    // StorageObject storageObject
-    test('to test the property `storageObject`', () async {
       // TODO
     });
 
@@ -294,6 +209,41 @@ void main() {
 
     // int sortIndex
     test('to test the property `sortIndex`', () async {
+      // TODO
+    });
+
+    // DateTime creationTime
+    test('to test the property `creationTime`', () async {
+      // TODO
+    });
+
+    // String creatorId
+    test('to test the property `creatorId`', () async {
+      // TODO
+    });
+
+    // String lastModifierId
+    test('to test the property `lastModifierId`', () async {
+      // TODO
+    });
+
+    // DateTime lastModificationTime
+    test('to test the property `lastModificationTime`', () async {
+      // TODO
+    });
+
+    // String deleterId
+    test('to test the property `deleterId`', () async {
+      // TODO
+    });
+
+    // DateTime deletionTime
+    test('to test the property `deletionTime`', () async {
+      // TODO
+    });
+
+    // bool isDeleted
+    test('to test the property `isDeleted`', () async {
       // TODO
     });
 
