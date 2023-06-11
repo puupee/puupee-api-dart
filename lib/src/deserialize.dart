@@ -143,9 +143,10 @@ import 'package:puupee_api_client/src/model/permission_group_dto.dart';
 import 'package:puupee_api_client/src/model/profile_dto.dart';
 import 'package:puupee_api_client/src/model/property_api_description_model.dart';
 import 'package:puupee_api_client/src/model/provider_info_dto.dart';
-import 'package:puupee_api_client/src/model/puupee_changed_eto.dart';
+import 'package:puupee_api_client/src/model/puupee.dart';
 import 'package:puupee_api_client/src/model/puupee_dto.dart';
 import 'package:puupee_api_client/src/model/puupee_dto_paged_result_dto.dart';
+import 'package:puupee_api_client/src/model/puupee_eto.dart';
 import 'package:puupee_api_client/src/model/receipt.dart';
 import 'package:puupee_api_client/src/model/refresh_device_status_dto.dart';
 import 'package:puupee_api_client/src/model/register_dto.dart';
@@ -160,6 +161,7 @@ import 'package:puupee_api_client/src/model/send_verification_code_dto.dart';
 import 'package:puupee_api_client/src/model/settings_dto.dart';
 import 'package:puupee_api_client/src/model/simple_data_dto.dart';
 import 'package:puupee_api_client/src/model/simple_data_dto_paged_result_dto.dart';
+import 'package:puupee_api_client/src/model/storage_object.dart';
 import 'package:puupee_api_client/src/model/storage_object_credentials.dart';
 import 'package:puupee_api_client/src/model/storage_object_dto.dart';
 import 'package:puupee_api_client/src/model/storage_object_or_credentials_dto.dart';
@@ -509,12 +511,14 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return PropertyApiDescriptionModel.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ProviderInfoDto':
           return ProviderInfoDto.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'PuupeeChangedEto':
-          return PuupeeChangedEto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'Puupee':
+          return Puupee.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'PuupeeDto':
           return PuupeeDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'PuupeeDtoPagedResultDto':
           return PuupeeDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'PuupeeEto':
+          return PuupeeEto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'Receipt':
           return Receipt.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'RefreshDeviceStatusDto':
@@ -543,6 +547,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return SimpleDataDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'SimpleDataDtoPagedResultDto':
           return SimpleDataDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'StorageObject':
+          return StorageObject.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'StorageObjectCredentials':
           return StorageObjectCredentials.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'StorageObjectDto':

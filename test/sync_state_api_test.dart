@@ -7,12 +7,17 @@ void main() {
   final instance = PuupeeApiClient().getSyncStateApi();
 
   group(SyncStateApi, () {
+    //Future<PuupeeEto> apiAppSyncStateDeviceConnectedEtoPost() async
+    test('test apiAppSyncStateDeviceConnectedEtoPost', () async {
+      // TODO
+    });
+
     //Future<SyncStateDto> apiAppSyncStateGet() async
     test('test apiAppSyncStateGet', () async {
       // TODO
     });
 
-    //Future<PuupeeChangedEto> apiAppSyncStatePuupeeChangedEtoPost() async
+    //Future<PuupeeEto> apiAppSyncStatePuupeeChangedEtoPost() async
     test('test apiAppSyncStatePuupeeChangedEtoPost', () async {
       // TODO
     });

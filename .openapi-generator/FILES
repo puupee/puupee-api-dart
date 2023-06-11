@@ -178,10 +178,11 @@ doc/ProfileApi.md
 doc/ProfileDto.md
 doc/PropertyApiDescriptionModel.md
 doc/ProviderInfoDto.md
+doc/Puupee.md
 doc/PuupeeApi.md
-doc/PuupeeChangedEto.md
 doc/PuupeeDto.md
 doc/PuupeeDtoPagedResultDto.md
+doc/PuupeeEto.md
 doc/Receipt.md
 doc/RefreshDeviceStatusDto.md
 doc/RegisterDto.md
@@ -199,6 +200,7 @@ doc/SettingsDto.md
 doc/SimpleDataApi.md
 doc/SimpleDataDto.md
 doc/SimpleDataDtoPagedResultDto.md
+doc/StorageObject.md
 doc/StorageObjectApi.md
 doc/StorageObjectCredentials.md
 doc/StorageObjectDto.md
@@ -440,9 +442,10 @@ lib/src/model/permission_group_dto.dart
 lib/src/model/profile_dto.dart
 lib/src/model/property_api_description_model.dart
 lib/src/model/provider_info_dto.dart
-lib/src/model/puupee_changed_eto.dart
+lib/src/model/puupee.dart
 lib/src/model/puupee_dto.dart
 lib/src/model/puupee_dto_paged_result_dto.dart
+lib/src/model/puupee_eto.dart
 lib/src/model/receipt.dart
 lib/src/model/refresh_device_status_dto.dart
 lib/src/model/register_dto.dart
@@ -457,6 +460,7 @@ lib/src/model/send_verification_code_dto.dart
 lib/src/model/settings_dto.dart
 lib/src/model/simple_data_dto.dart
 lib/src/model/simple_data_dto_paged_result_dto.dart
+lib/src/model/storage_object.dart
 lib/src/model/storage_object_credentials.dart
 lib/src/model/storage_object_dto.dart
 lib/src/model/storage_object_or_credentials_dto.dart
@@ -670,9 +674,10 @@ test/profile_dto_test.dart
 test/property_api_description_model_test.dart
 test/provider_info_dto_test.dart
 test/puupee_api_test.dart
-test/puupee_changed_eto_test.dart
 test/puupee_dto_paged_result_dto_test.dart
 test/puupee_dto_test.dart
+test/puupee_eto_test.dart
+test/puupee_test.dart
 test/receipt_test.dart
 test/refresh_device_status_dto_test.dart
 test/register_dto_test.dart
@@ -694,6 +699,7 @@ test/storage_object_api_test.dart
 test/storage_object_credentials_test.dart
 test/storage_object_dto_test.dart
 test/storage_object_or_credentials_dto_test.dart
+test/storage_object_test.dart
 test/string_key_value_test.dart
 test/string_set_key_value_dto_test.dart
 test/subscription_api_test.dart
