@@ -244,6 +244,7 @@ export 'package:puupee_api_client/src/model/update_profile_dto.dart';
 export 'package:puupee_api_client/src/model/user_data.dart';
 export 'package:puupee_api_client/src/model/user_data_list_result_dto.dart';
 export 'package:puupee_api_client/src/model/user_login_info.dart';
+export 'package:puupee_api_client/src/model/user_profile_dto.dart';
 export 'package:puupee_api_client/src/model/user_storage_dto.dart';
 export 'package:puupee_api_client/src/model/user_storage_item_dto.dart';
 export 'package:puupee_api_client/src/model/verify_password_reset_token_input.dart';

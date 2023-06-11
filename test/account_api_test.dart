@@ -32,5 +32,10 @@ void main() {
       // TODO
     });
 
+    //Future<UserProfileDto> apiAppAccountGet() async
+    test('test apiAppAccountGet', () async {
+      // TODO
+    });
+
   });
 }
