@@ -87,6 +87,11 @@ void main() {
       // TODO
     });
 
+    // List<PuupeeDto> children
+    test('to test the property `children`', () async {
+      // TODO
+    });
+
     // String key
     test('to test the property `key`', () async {
       // TODO

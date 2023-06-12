@@ -51,6 +51,8 @@ class PuupeeDto {
 
      this.parentId,
 
+     this.children,
+
      this.key,
 
      this.url,
@@ -313,6 +315,18 @@ class PuupeeDto {
 
 
   String? parentId;
+
+
+
+  @JsonKey(
+    
+    name: r'children',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  List<PuupeeDto>? children;
 
 
 
@@ -766,6 +780,7 @@ class PuupeeDto {
      other.format == format &&
      other.password == password &&
      other.parentId == parentId &&
+     other.children == children &&
      other.key == key &&
      other.url == url &&
      other.size == size &&
@@ -821,6 +836,7 @@ class PuupeeDto {
     format.hashCode +
     password.hashCode +
     parentId.hashCode +
+    children.hashCode +
     key.hashCode +
     url.hashCode +
     size.hashCode +

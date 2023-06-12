@@ -31,6 +31,11 @@ PuupeeDto _$PuupeeDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
           format: $checkedConvert('format', (v) => v as String?),
           password: $checkedConvert('password', (v) => v as String?),
           parentId: $checkedConvert('parentId', (v) => v as String?),
+          children: $checkedConvert(
+              'children',
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) => PuupeeDto.fromJson(e as Map<String, dynamic>))
+                  .toList()),
           key: $checkedConvert('key', (v) => v as String?),
           url: $checkedConvert('url', (v) => v as String?),
           size: $checkedConvert('size', (v) => v as int?),
@@ -120,6 +125,7 @@ Map<String, dynamic> _$PuupeeDtoToJson(PuupeeDto instance) {
   writeNotNull('format', instance.format);
   writeNotNull('password', instance.password);
   writeNotNull('parentId', instance.parentId);
+  writeNotNull('children', instance.children?.map((e) => e.toJson()).toList());
   writeNotNull('key', instance.key);
   writeNotNull('url', instance.url);
   writeNotNull('size', instance.size);

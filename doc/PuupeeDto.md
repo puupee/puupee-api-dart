@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **format** | **String** |  | [optional] 
 **password** | **String** |  | [optional] 
 **parentId** | **String** |  | [optional] 
+**children** | [**List&lt;PuupeeDto&gt;**](PuupeeDto.md) |  | [optional] 
 **key** | **String** |  | [optional] 
 **url** | **String** |  | [optional] 
 **size** | **int** |  | [optional] 
