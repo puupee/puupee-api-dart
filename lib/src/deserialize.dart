@@ -19,7 +19,6 @@ import 'package:puupee_api_client/src/model/app_run_record_dto.dart';
 import 'package:puupee_api_client/src/model/app_run_record_update_dto.dart';
 import 'package:puupee_api_client/src/model/app_sdk_dto.dart';
 import 'package:puupee_api_client/src/model/app_sdk_dto_paged_result_dto.dart';
-import 'package:puupee_api_client/src/model/app_theme.dart';
 import 'package:puupee_api_client/src/model/app_user_score_dto.dart';
 import 'package:puupee_api_client/src/model/app_with_user_dto.dart';
 import 'package:puupee_api_client/src/model/app_with_user_dto_paged_result_dto.dart';
@@ -157,7 +156,6 @@ import 'package:puupee_api_client/src/model/return_value_api_description_model.d
 import 'package:puupee_api_client/src/model/send_password_reset_code_dto.dart';
 import 'package:puupee_api_client/src/model/send_test_email_input.dart';
 import 'package:puupee_api_client/src/model/send_verification_code_dto.dart';
-import 'package:puupee_api_client/src/model/settings_dto.dart';
 import 'package:puupee_api_client/src/model/simple_data_dto.dart';
 import 'package:puupee_api_client/src/model/simple_data_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/storage_object_credentials.dart';
@@ -177,7 +175,6 @@ import 'package:puupee_api_client/src/model/tenant_update_dto.dart';
 import 'package:puupee_api_client/src/model/test_date_time.dart';
 import 'package:puupee_api_client/src/model/time_zone.dart';
 import 'package:puupee_api_client/src/model/timing_dto.dart';
-import 'package:puupee_api_client/src/model/todo_settings_dto.dart';
 import 'package:puupee_api_client/src/model/type_api_description_model.dart';
 import 'package:puupee_api_client/src/model/update_email_settings_dto.dart';
 import 'package:puupee_api_client/src/model/update_feature_dto.dart';
@@ -256,11 +253,6 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return AppSdkDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppSdkDtoPagedResultDto':
           return AppSdkDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'AppTheme':
-          return AppTheme.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'AppThemeMode':
-          
-          
         case 'AppUserScoreDto':
           return AppUserScoreDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppWithUserDto':
@@ -538,8 +530,6 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return SendTestEmailInput.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'SendVerificationCodeDto':
           return SendVerificationCodeDto.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'SettingsDto':
-          return SettingsDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'SimpleDataDto':
           return SimpleDataDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'SimpleDataDtoPagedResultDto':
@@ -578,11 +568,6 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return TimeZone.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'TimingDto':
           return TimingDto.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'TodoOrderBy':
-          
-          
-        case 'TodoSettingsDto':
-          return TodoSettingsDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'TypeApiDescriptionModel':
           return TypeApiDescriptionModel.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'UpdateEmailSettingsDto':

@@ -47,16 +47,6 @@ void main() {
       // TODO
     });
 
-    // String name
-    test('to test the property `name`', () async {
-      // TODO
-    });
-
-    // String appId
-    test('to test the property `appId`', () async {
-      // TODO
-    });
-
     // bool isAvailable
     test('to test the property `isAvailable`', () async {
       // TODO
@@ -69,11 +59,6 @@ void main() {
 
     // int intValue
     test('to test the property `intValue`', () async {
-      // TODO
-    });
-
-    // double decimalValue
-    test('to test the property `decimalValue`', () async {
       // TODO
     });
 

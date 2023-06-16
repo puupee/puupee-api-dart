@@ -34,17 +34,11 @@ class AppPricingItemValueDto {
 
      this.deletionTime,
 
-     this.name,
-
-     this.appId,
-
      this.isAvailable,
 
      this.hasValue,
 
      this.intValue,
-
-     this.decimalValue,
 
      this.stringValue,
 
@@ -149,30 +143,6 @@ class AppPricingItemValueDto {
 
   @JsonKey(
     
-    name: r'name',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? name;
-
-
-
-  @JsonKey(
-    
-    name: r'appId',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? appId;
-
-
-
-  @JsonKey(
-    
     name: r'isAvailable',
     required: false,
     includeIfNull: false
@@ -204,18 +174,6 @@ class AppPricingItemValueDto {
 
 
   int? intValue;
-
-
-
-  @JsonKey(
-    
-    name: r'decimalValue',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  double? decimalValue;
 
 
 
@@ -253,12 +211,9 @@ class AppPricingItemValueDto {
      other.isDeleted == isDeleted &&
      other.deleterId == deleterId &&
      other.deletionTime == deletionTime &&
-     other.name == name &&
-     other.appId == appId &&
      other.isAvailable == isAvailable &&
      other.hasValue == hasValue &&
      other.intValue == intValue &&
-     other.decimalValue == decimalValue &&
      other.stringValue == stringValue &&
      other.boolValue == boolValue;
 
@@ -272,12 +227,9 @@ class AppPricingItemValueDto {
     isDeleted.hashCode +
     deleterId.hashCode +
     deletionTime.hashCode +
-    name.hashCode +
-    appId.hashCode +
     isAvailable.hashCode +
     hasValue.hashCode +
     intValue.hashCode +
-    decimalValue.hashCode +
     stringValue.hashCode +
     boolValue.hashCode;
 

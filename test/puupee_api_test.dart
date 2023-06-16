@@ -7,6 +7,11 @@ void main() {
   final instance = PuupeeApiClient().getPuupeeApi();
 
   group(PuupeeApi, () {
+    //Future<PuupeeDto> apiAppPuupeeByLinkedNamesGet({ String names }) async
+    test('test apiAppPuupeeByLinkedNamesGet', () async {
+      // TODO
+    });
+
     //Future<List<PuupeeDto>> apiAppPuupeeDriversWithRootsGet() async
     test('test apiAppPuupeeDriversWithRootsGet', () async {
       // TODO

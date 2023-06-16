@@ -17,6 +17,11 @@ void main() {
       // TODO
     });
 
+    //Future<List<AppFeatureDto>> apiAppAppFeaturesAppIdGet(String appId, { String env }) async
+    test('test apiAppAppFeaturesAppIdGet', () async {
+      // TODO
+    });
+
     //Future<AppDtoPagedResultDto> apiAppAppGet({ String creatorId, String sorting, int skipCount, int maxResultCount }) async
     test('test apiAppAppGet', () async {
       // TODO
@@ -59,6 +64,11 @@ void main() {
 
     //Future<AppRunRecordDto> apiAppAppRunPost({ AppRunDto body }) async
     test('test apiAppAppRunPost', () async {
+      // TODO
+    });
+
+    //Future<List<AppSdkDto>> apiAppAppSdksByIdAppIdGet(String appId, { String env }) async
+    test('test apiAppAppSdksByIdAppIdGet', () async {
       // TODO
     });
 

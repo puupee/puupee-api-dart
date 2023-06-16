@@ -38,7 +38,6 @@ import 'package:puupee_api_client/src/api/permissions_api.dart';
 import 'package:puupee_api_client/src/api/profile_api.dart';
 import 'package:puupee_api_client/src/api/puupee_api.dart';
 import 'package:puupee_api_client/src/api/role_api.dart';
-import 'package:puupee_api_client/src/api/settings_api.dart';
 import 'package:puupee_api_client/src/api/simple_data_api.dart';
 import 'package:puupee_api_client/src/api/storage_object_api.dart';
 import 'package:puupee_api_client/src/api/subscription_api.dart';
@@ -285,12 +284,6 @@ class PuupeeApiClient {
   /// by doing that all interceptors will not be executed
   RoleApi getRoleApi() {
     return RoleApi(dio);
-  }
-
-  /// Get SettingsApi instance, base route and serializer can be overridden by a given but be careful,
-  /// by doing that all interceptors will not be executed
-  SettingsApi getSettingsApi() {
-    return SettingsApi(dio);
   }
 
   /// Get SimpleDataApi instance, base route and serializer can be overridden by a given but be careful,

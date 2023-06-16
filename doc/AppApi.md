@@ -11,6 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**apiAppAppByDeveloperAllGet**](AppApi.md#apiappappbydeveloperallget) | **GET** /api/app/app/by-developer-all | 
 [**apiAppAppByNameGet**](AppApi.md#apiappappbynameget) | **GET** /api/app/app/by-name | 
+[**apiAppAppFeaturesAppIdGet**](AppApi.md#apiappappfeaturesappidget) | **GET** /api/app/app/features/{appId} | 
 [**apiAppAppGet**](AppApi.md#apiappappget) | **GET** /api/app/app | 
 [**apiAppAppIdDelete**](AppApi.md#apiappappiddelete) | **DELETE** /api/app/app/{id} | 
 [**apiAppAppIdGet**](AppApi.md#apiappappidget) | **GET** /api/app/app/{id} | 
@@ -20,6 +21,7 @@ Method | HTTP request | Description
 [**apiAppAppPost**](AppApi.md#apiappapppost) | **POST** /api/app/app | 
 [**apiAppAppPublicGet**](AppApi.md#apiappapppublicget) | **GET** /api/app/app/public | 
 [**apiAppAppRunPost**](AppApi.md#apiappapprunpost) | **POST** /api/app/app/run | 
+[**apiAppAppSdksByIdAppIdGet**](AppApi.md#apiappappsdksbyidappidget) | **GET** /api/app/app/sdks-by-id/{appId} | 
 [**apiAppAppUploadCredentialsGet**](AppApi.md#apiappappuploadcredentialsget) | **GET** /api/app/app/upload-credentials | 
 [**apiAppAppWithUserGet**](AppApi.md#apiappappwithuserget) | **GET** /api/app/app/with-user | 
 
@@ -100,6 +102,51 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AppDto**](AppDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **apiAppAppFeaturesAppIdGet**
+> List<AppFeatureDto> apiAppAppFeaturesAppIdGet(appId, env)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getAppApi();
+final String appId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final String env = env_example; // String | 
+
+try {
+    final response = api.apiAppAppFeaturesAppIdGet(appId, env);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AppApi->apiAppAppFeaturesAppIdGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **appId** | **String**|  | 
+ **env** | **String**|  | [optional] 
+
+### Return type
+
+[**List&lt;AppFeatureDto&gt;**](AppFeatureDto.md)
 
 ### Authorization
 
@@ -512,6 +559,51 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **apiAppAppSdksByIdAppIdGet**
+> List<AppSdkDto> apiAppAppSdksByIdAppIdGet(appId, env)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getAppApi();
+final String appId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final String env = env_example; // String | 
+
+try {
+    final response = api.apiAppAppSdksByIdAppIdGet(appId, env);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AppApi->apiAppAppSdksByIdAppIdGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **appId** | **String**|  | 
+ **env** | **String**|  | [optional] 
+
+### Return type
+
+[**List&lt;AppSdkDto&gt;**](AppSdkDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

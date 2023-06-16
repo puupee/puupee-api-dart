@@ -16,12 +16,9 @@ Name | Type | Description | Notes
 **isDeleted** | **bool** |  | [optional] 
 **deleterId** | **String** |  | [optional] 
 **deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
-**name** | **String** |  | [optional] 
-**appId** | **String** |  | [optional] 
 **isAvailable** | **bool** |  | [optional] 
 **hasValue** | **bool** |  | [optional] 
 **intValue** | **int** |  | [optional] 
-**decimalValue** | **double** |  | [optional] 
 **stringValue** | **String** |  | [optional] 
 **boolValue** | **bool** |  | [optional] 
 
