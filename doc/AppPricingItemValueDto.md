@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **intValue** | **int** |  | [optional] 
 **stringValue** | **String** |  | [optional] 
 **boolValue** | **bool** |  | [optional] 
+**intValueType** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

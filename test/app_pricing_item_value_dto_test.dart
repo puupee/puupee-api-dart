@@ -72,5 +72,10 @@ void main() {
       // TODO
     });
 
+    // String intValueType
+    test('to test the property `intValueType`', () async {
+      // TODO
+    });
+
   });
 }

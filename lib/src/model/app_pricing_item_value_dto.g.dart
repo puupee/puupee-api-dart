@@ -30,6 +30,7 @@ AppPricingItemValueDto _$AppPricingItemValueDtoFromJson(
           intValue: $checkedConvert('intValue', (v) => v as int?),
           stringValue: $checkedConvert('stringValue', (v) => v as String?),
           boolValue: $checkedConvert('boolValue', (v) => v as bool?),
+          intValueType: $checkedConvert('intValueType', (v) => v as String?),
         );
         return val;
       },
@@ -59,5 +60,6 @@ Map<String, dynamic> _$AppPricingItemValueDtoToJson(
   writeNotNull('intValue', instance.intValue);
   writeNotNull('stringValue', instance.stringValue);
   writeNotNull('boolValue', instance.boolValue);
+  writeNotNull('intValueType', instance.intValueType);
   return val;
 }

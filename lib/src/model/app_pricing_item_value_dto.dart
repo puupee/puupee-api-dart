@@ -43,6 +43,8 @@ class AppPricingItemValueDto {
      this.stringValue,
 
      this.boolValue,
+
+     this.intValueType,
   });
 
   @JsonKey(
@@ -201,6 +203,18 @@ class AppPricingItemValueDto {
 
 
 
+  @JsonKey(
+    
+    name: r'intValueType',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? intValueType;
+
+
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is AppPricingItemValueDto &&
      other.id == id &&
@@ -215,7 +229,8 @@ class AppPricingItemValueDto {
      other.hasValue == hasValue &&
      other.intValue == intValue &&
      other.stringValue == stringValue &&
-     other.boolValue == boolValue;
+     other.boolValue == boolValue &&
+     other.intValueType == intValueType;
 
   @override
   int get hashCode =>
@@ -231,7 +246,8 @@ class AppPricingItemValueDto {
     hasValue.hashCode +
     intValue.hashCode +
     stringValue.hashCode +
-    boolValue.hashCode;
+    boolValue.hashCode +
+    intValueType.hashCode;
 
   factory AppPricingItemValueDto.fromJson(Map<String, dynamic> json) => _$AppPricingItemValueDtoFromJson(json);
 
