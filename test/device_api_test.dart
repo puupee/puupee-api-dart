@@ -12,6 +12,11 @@ void main() {
       // TODO
     });
 
+    //Future<DeviceDto> apiAppDeviceByTokenGet({ String token }) async
+    test('test apiAppDeviceByTokenGet', () async {
+      // TODO
+    });
+
     //Future apiAppDeviceDelete({ String token }) async
     test('test apiAppDeviceDelete', () async {
       // TODO
@@ -19,6 +24,11 @@ void main() {
 
     //Future<DeviceDtoPagedResultDto> apiAppDeviceGet({ String sorting, int skipCount, int maxResultCount }) async
     test('test apiAppDeviceGet', () async {
+      // TODO
+    });
+
+    //Future<DeviceDto> apiAppDeviceIdGet(String id) async
+    test('test apiAppDeviceIdGet', () async {
       // TODO
     });
 
