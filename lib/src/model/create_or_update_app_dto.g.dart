@@ -39,17 +39,6 @@ CreateOrUpdateAppDto _$CreateOrUpdateAppDtoFromJson(
           defaultSingleFileMaxSize:
               $checkedConvert('defaultSingleFileMaxSize', (v) => v as int?),
           isPublished: $checkedConvert('isPublished', (v) => v as bool?),
-          features: $checkedConvert(
-              'features',
-              (v) => (v as List<dynamic>?)
-                  ?.map(
-                      (e) => AppFeatureDto.fromJson(e as Map<String, dynamic>))
-                  .toList()),
-          sdks: $checkedConvert(
-              'sdks',
-              (v) => (v as List<dynamic>?)
-                  ?.map((e) => AppSdkDto.fromJson(e as Map<String, dynamic>))
-                  .toList()),
           openClient: $checkedConvert(
               'openClient',
               (v) => v == null
@@ -91,8 +80,6 @@ Map<String, dynamic> _$CreateOrUpdateAppDtoToJson(
   writeNotNull('defaultStorageSize', instance.defaultStorageSize);
   writeNotNull('defaultSingleFileMaxSize', instance.defaultSingleFileMaxSize);
   writeNotNull('isPublished', instance.isPublished);
-  writeNotNull('features', instance.features?.map((e) => e.toJson()).toList());
-  writeNotNull('sdks', instance.sdks?.map((e) => e.toJson()).toList());
   writeNotNull('openClient', instance.openClient?.toJson());
   return val;
 }

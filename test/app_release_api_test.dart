@@ -7,7 +7,7 @@ void main() {
   final instance = PuupeeApiClient().getAppReleaseApi();
 
   group(AppReleaseApi, () {
-    //Future<AppReleaseDtoPagedResultDto> apiAppAppReleaseGet({ String appId, String environment, String platformPeriodName, String platformPeriodValue, String sorting, int skipCount, int maxResultCount }) async
+    //Future<AppReleaseDtoPagedResultDto> apiAppAppReleaseGet({ String appId, String environment, String platform, String sorting, int skipCount, int maxResultCount }) async
     test('test apiAppAppReleaseGet', () async {
       // TODO
     });

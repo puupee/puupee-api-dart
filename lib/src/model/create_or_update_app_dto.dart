@@ -3,8 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:puupee_api_client/src/model/app_sdk_dto.dart';
-import 'package:puupee_api_client/src/model/app_feature_dto.dart';
 import 'package:puupee_api_client/src/model/create_open_iddict_application_dto.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -60,10 +58,6 @@ class CreateOrUpdateAppDto {
      this.defaultSingleFileMaxSize,
 
      this.isPublished,
-
-     this.features,
-
-     this.sdks,
 
      this.openClient,
   });
@@ -310,30 +304,6 @@ class CreateOrUpdateAppDto {
 
   @JsonKey(
     
-    name: r'features',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  List<AppFeatureDto>? features;
-
-
-
-  @JsonKey(
-    
-    name: r'sdks',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  List<AppSdkDto>? sdks;
-
-
-
-  @JsonKey(
-    
     name: r'openClient',
     required: false,
     includeIfNull: false
@@ -366,8 +336,6 @@ class CreateOrUpdateAppDto {
      other.defaultStorageSize == defaultStorageSize &&
      other.defaultSingleFileMaxSize == defaultSingleFileMaxSize &&
      other.isPublished == isPublished &&
-     other.features == features &&
-     other.sdks == sdks &&
      other.openClient == openClient;
 
   @override
@@ -392,8 +360,6 @@ class CreateOrUpdateAppDto {
     defaultStorageSize.hashCode +
     defaultSingleFileMaxSize.hashCode +
     isPublished.hashCode +
-    features.hashCode +
-    sdks.hashCode +
     openClient.hashCode;
 
   factory CreateOrUpdateAppDto.fromJson(Map<String, dynamic> json) => _$CreateOrUpdateAppDtoFromJson(json);

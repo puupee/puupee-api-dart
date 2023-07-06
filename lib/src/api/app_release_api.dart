@@ -26,8 +26,7 @@ class AppReleaseApi {
   /// Parameters:
   /// * [appId] 
   /// * [environment] 
-  /// * [platformPeriodName] 
-  /// * [platformPeriodValue] 
+  /// * [platform] 
   /// * [sorting] 
   /// * [skipCount] 
   /// * [maxResultCount] 
@@ -43,8 +42,7 @@ class AppReleaseApi {
   Future<Response<AppReleaseDtoPagedResultDto>> apiAppAppReleaseGet({ 
     String? appId,
     String? environment,
-    String? platformPeriodName,
-    String? platformPeriodValue,
+    String? platform,
     String? sorting,
     int? skipCount,
     int? maxResultCount,
@@ -76,8 +74,7 @@ class AppReleaseApi {
     final _queryParameters = <String, dynamic>{
       if (appId != null) r'AppId': appId,
       if (environment != null) r'Environment': environment,
-      if (platformPeriodName != null) r'Platform.Name': platformPeriodName,
-      if (platformPeriodValue != null) r'Platform.Value': platformPeriodValue,
+      if (platform != null) r'Platform': platform,
       if (sorting != null) r'Sorting': sorting,
       if (skipCount != null) r'SkipCount': skipCount,
       if (maxResultCount != null) r'MaxResultCount': maxResultCount,
