@@ -27,11 +27,6 @@ void main() {
       // TODO
     });
 
-    // String type
-    test('to test the property `type`', () async {
-      // TODO
-    });
-
     // String name
     test('to test the property `name`', () async {
       // TODO
@@ -249,6 +244,101 @@ void main() {
 
     // bool isDeleted
     test('to test the property `isDeleted`', () async {
+      // TODO
+    });
+
+    // bool isAutoUpload
+    test('to test the property `isAutoUpload`', () async {
+      // TODO
+    });
+
+    // bool isBabyAlbum
+    test('to test the property `isBabyAlbum`', () async {
+      // TODO
+    });
+
+    // String babyName
+    test('to test the property `babyName`', () async {
+      // TODO
+    });
+
+    // String babyGender
+    test('to test the property `babyGender`', () async {
+      // TODO
+    });
+
+    // DateTime babyBirthday
+    test('to test the property `babyBirthday`', () async {
+      // TODO
+    });
+
+    // String billType
+    test('to test the property `billType`', () async {
+      // TODO
+    });
+
+    // String billAccountId
+    test('to test the property `billAccountId`', () async {
+      // TODO
+    });
+
+    // String billOwnerName
+    test('to test the property `billOwnerName`', () async {
+      // TODO
+    });
+
+    // String billImportedCount
+    test('to test the property `billImportedCount`', () async {
+      // TODO
+    });
+
+    // DateTime exportTime
+    test('to test the property `exportTime`', () async {
+      // TODO
+    });
+
+    // String transactionType
+    test('to test the property `transactionType`', () async {
+      // TODO
+    });
+
+    // String peerAccountName
+    test('to test the property `peerAccountName`', () async {
+      // TODO
+    });
+
+    // String peerAccountId
+    test('to test the property `peerAccountId`', () async {
+      // TODO
+    });
+
+    // String method
+    test('to test the property `method`', () async {
+      // TODO
+    });
+
+    // double amount
+    test('to test the property `amount`', () async {
+      // TODO
+    });
+
+    // String category
+    test('to test the property `category`', () async {
+      // TODO
+    });
+
+    // String transactionId
+    test('to test the property `transactionId`', () async {
+      // TODO
+    });
+
+    // String merchantOrderId
+    test('to test the property `merchantOrderId`', () async {
+      // TODO
+    });
+
+    // DateTime transactionTime
+    test('to test the property `transactionTime`', () async {
       // TODO
     });
 

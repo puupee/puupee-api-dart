@@ -15,7 +15,6 @@ PuupeeEto _$PuupeeEtoFromJson(Map<String, dynamic> json) => $checkedCreate(
           syncVersion: $checkedConvert('syncVersion', (v) => v as int?),
           url: $checkedConvert('url', (v) => v as String?),
           parentId: $checkedConvert('parentId', (v) => v as String?),
-          type: $checkedConvert('type', (v) => v as String?),
           name: $checkedConvert('name', (v) => v as String?),
           title: $checkedConvert('title', (v) => v as String?),
           description: $checkedConvert('description', (v) => v as String?),
@@ -76,6 +75,32 @@ PuupeeEto _$PuupeeEtoFromJson(Map<String, dynamic> json) => $checkedCreate(
           deletionTime: $checkedConvert('deletionTime',
               (v) => v == null ? null : DateTime.parse(v as String)),
           isDeleted: $checkedConvert('isDeleted', (v) => v as bool?),
+          isAutoUpload: $checkedConvert('isAutoUpload', (v) => v as bool?),
+          isBabyAlbum: $checkedConvert('isBabyAlbum', (v) => v as bool?),
+          babyName: $checkedConvert('babyName', (v) => v as String?),
+          babyGender: $checkedConvert('babyGender', (v) => v as String?),
+          babyBirthday: $checkedConvert('babyBirthday',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          billType: $checkedConvert('billType', (v) => v as String?),
+          billAccountId: $checkedConvert('billAccountId', (v) => v as String?),
+          billOwnerName: $checkedConvert('billOwnerName', (v) => v as String?),
+          billImportedCount:
+              $checkedConvert('billImportedCount', (v) => v as String?),
+          exportTime: $checkedConvert('exportTime',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          transactionType:
+              $checkedConvert('transactionType', (v) => v as String?),
+          peerAccountName:
+              $checkedConvert('peerAccountName', (v) => v as String?),
+          peerAccountId: $checkedConvert('peerAccountId', (v) => v as String?),
+          method: $checkedConvert('method', (v) => v as String?),
+          amount: $checkedConvert('amount', (v) => (v as num?)?.toDouble()),
+          category: $checkedConvert('category', (v) => v as String?),
+          transactionId: $checkedConvert('transactionId', (v) => v as String?),
+          merchantOrderId:
+              $checkedConvert('merchantOrderId', (v) => v as String?),
+          transactionTime: $checkedConvert('transactionTime',
+              (v) => v == null ? null : DateTime.parse(v as String)),
         );
         return val;
       },
@@ -95,7 +120,6 @@ Map<String, dynamic> _$PuupeeEtoToJson(PuupeeEto instance) {
   writeNotNull('syncVersion', instance.syncVersion);
   writeNotNull('url', instance.url);
   writeNotNull('parentId', instance.parentId);
-  writeNotNull('type', instance.type);
   writeNotNull('name', instance.name);
   writeNotNull('title', instance.title);
   writeNotNull('description', instance.description);
@@ -143,5 +167,24 @@ Map<String, dynamic> _$PuupeeEtoToJson(PuupeeEto instance) {
   writeNotNull('deleterId', instance.deleterId);
   writeNotNull('deletionTime', instance.deletionTime?.toIso8601String());
   writeNotNull('isDeleted', instance.isDeleted);
+  writeNotNull('isAutoUpload', instance.isAutoUpload);
+  writeNotNull('isBabyAlbum', instance.isBabyAlbum);
+  writeNotNull('babyName', instance.babyName);
+  writeNotNull('babyGender', instance.babyGender);
+  writeNotNull('babyBirthday', instance.babyBirthday?.toIso8601String());
+  writeNotNull('billType', instance.billType);
+  writeNotNull('billAccountId', instance.billAccountId);
+  writeNotNull('billOwnerName', instance.billOwnerName);
+  writeNotNull('billImportedCount', instance.billImportedCount);
+  writeNotNull('exportTime', instance.exportTime?.toIso8601String());
+  writeNotNull('transactionType', instance.transactionType);
+  writeNotNull('peerAccountName', instance.peerAccountName);
+  writeNotNull('peerAccountId', instance.peerAccountId);
+  writeNotNull('method', instance.method);
+  writeNotNull('amount', instance.amount);
+  writeNotNull('category', instance.category);
+  writeNotNull('transactionId', instance.transactionId);
+  writeNotNull('merchantOrderId', instance.merchantOrderId);
+  writeNotNull('transactionTime', instance.transactionTime?.toIso8601String());
   return val;
 }

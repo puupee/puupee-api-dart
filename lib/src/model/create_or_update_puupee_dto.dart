@@ -48,8 +48,6 @@ class CreateOrUpdatePuupeeDto {
 
      this.contentType,
 
-     this.type,
-
      this.displayStyle,
 
      this.extension_,
@@ -117,6 +115,44 @@ class CreateOrUpdatePuupeeDto {
      this.pushToUser,
 
      this.sortIndex,
+
+     this.isAutoUpload,
+
+     this.isBabyAlbum,
+
+     this.babyName,
+
+     this.babyGender,
+
+     this.babyBirthday,
+
+     this.billType,
+
+     this.billAccountId,
+
+     this.billOwnerName,
+
+     this.billImportedCount,
+
+     this.exportTime,
+
+     this.transactionType,
+
+     this.peerAccountName,
+
+     this.peerAccountId,
+
+     this.method,
+
+     this.amount,
+
+     this.category,
+
+     this.transactionId,
+
+     this.merchantOrderId,
+
+     this.transactionTime,
   });
 
   @JsonKey(
@@ -296,18 +332,6 @@ class CreateOrUpdatePuupeeDto {
 
 
   String? contentType;
-
-
-
-  @JsonKey(
-    
-    name: r'type',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? type;
 
 
 
@@ -719,6 +743,234 @@ class CreateOrUpdatePuupeeDto {
 
 
 
+  @JsonKey(
+    
+    name: r'isAutoUpload',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  bool? isAutoUpload;
+
+
+
+  @JsonKey(
+    
+    name: r'isBabyAlbum',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  bool? isBabyAlbum;
+
+
+
+  @JsonKey(
+    
+    name: r'babyName',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? babyName;
+
+
+
+  @JsonKey(
+    
+    name: r'babyGender',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? babyGender;
+
+
+
+  @JsonKey(
+    
+    name: r'babyBirthday',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  DateTime? babyBirthday;
+
+
+
+  @JsonKey(
+    
+    name: r'billType',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? billType;
+
+
+
+  @JsonKey(
+    
+    name: r'billAccountId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? billAccountId;
+
+
+
+  @JsonKey(
+    
+    name: r'billOwnerName',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? billOwnerName;
+
+
+
+  @JsonKey(
+    
+    name: r'billImportedCount',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? billImportedCount;
+
+
+
+  @JsonKey(
+    
+    name: r'exportTime',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  DateTime? exportTime;
+
+
+
+  @JsonKey(
+    
+    name: r'transactionType',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? transactionType;
+
+
+
+  @JsonKey(
+    
+    name: r'peerAccountName',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? peerAccountName;
+
+
+
+  @JsonKey(
+    
+    name: r'peerAccountId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? peerAccountId;
+
+
+
+  @JsonKey(
+    
+    name: r'method',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? method;
+
+
+
+  @JsonKey(
+    
+    name: r'amount',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  double? amount;
+
+
+
+  @JsonKey(
+    
+    name: r'category',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? category;
+
+
+
+  @JsonKey(
+    
+    name: r'transactionId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? transactionId;
+
+
+
+  @JsonKey(
+    
+    name: r'merchantOrderId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? merchantOrderId;
+
+
+
+  @JsonKey(
+    
+    name: r'transactionTime',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  DateTime? transactionTime;
+
+
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is CreateOrUpdatePuupeeDto &&
      other.id == id &&
@@ -736,7 +988,6 @@ class CreateOrUpdatePuupeeDto {
      other.sliceMd5 == sliceMd5 &&
      other.rapidCode == rapidCode &&
      other.contentType == contentType &&
-     other.type == type &&
      other.displayStyle == displayStyle &&
      other.extension_ == extension_ &&
      other.storageClass == storageClass &&
@@ -770,7 +1021,26 @@ class CreateOrUpdatePuupeeDto {
      other.lastModifierDevice == lastModifierDevice &&
      other.appName == appName &&
      other.pushToUser == pushToUser &&
-     other.sortIndex == sortIndex;
+     other.sortIndex == sortIndex &&
+     other.isAutoUpload == isAutoUpload &&
+     other.isBabyAlbum == isBabyAlbum &&
+     other.babyName == babyName &&
+     other.babyGender == babyGender &&
+     other.babyBirthday == babyBirthday &&
+     other.billType == billType &&
+     other.billAccountId == billAccountId &&
+     other.billOwnerName == billOwnerName &&
+     other.billImportedCount == billImportedCount &&
+     other.exportTime == exportTime &&
+     other.transactionType == transactionType &&
+     other.peerAccountName == peerAccountName &&
+     other.peerAccountId == peerAccountId &&
+     other.method == method &&
+     other.amount == amount &&
+     other.category == category &&
+     other.transactionId == transactionId &&
+     other.merchantOrderId == merchantOrderId &&
+     other.transactionTime == transactionTime;
 
   @override
   int get hashCode =>
@@ -789,7 +1059,6 @@ class CreateOrUpdatePuupeeDto {
     sliceMd5.hashCode +
     rapidCode.hashCode +
     contentType.hashCode +
-    type.hashCode +
     displayStyle.hashCode +
     extension_.hashCode +
     storageClass.hashCode +
@@ -823,7 +1092,26 @@ class CreateOrUpdatePuupeeDto {
     lastModifierDevice.hashCode +
     appName.hashCode +
     pushToUser.hashCode +
-    sortIndex.hashCode;
+    sortIndex.hashCode +
+    isAutoUpload.hashCode +
+    isBabyAlbum.hashCode +
+    babyName.hashCode +
+    babyGender.hashCode +
+    babyBirthday.hashCode +
+    billType.hashCode +
+    billAccountId.hashCode +
+    billOwnerName.hashCode +
+    billImportedCount.hashCode +
+    exportTime.hashCode +
+    transactionType.hashCode +
+    peerAccountName.hashCode +
+    peerAccountId.hashCode +
+    method.hashCode +
+    amount.hashCode +
+    category.hashCode +
+    transactionId.hashCode +
+    merchantOrderId.hashCode +
+    transactionTime.hashCode;
 
   factory CreateOrUpdatePuupeeDto.fromJson(Map<String, dynamic> json) => _$CreateOrUpdatePuupeeDtoFromJson(json);
 

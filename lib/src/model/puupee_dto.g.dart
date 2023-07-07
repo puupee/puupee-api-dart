@@ -43,7 +43,6 @@ PuupeeDto _$PuupeeDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
           sliceMd5: $checkedConvert('sliceMd5', (v) => v as String?),
           rapidCode: $checkedConvert('rapidCode', (v) => v as String?),
           contentType: $checkedConvert('contentType', (v) => v as String?),
-          type: $checkedConvert('type', (v) => v as String?),
           displayStyle: $checkedConvert('displayStyle', (v) => v as String?),
           extension_: $checkedConvert('extension', (v) => v as String?),
           storageClass: $checkedConvert('storageClass', (v) => v as String?),
@@ -93,6 +92,32 @@ PuupeeDto _$PuupeeDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
               $checkedConvert('lastModifierDevice', (v) => v as String?),
           appName: $checkedConvert('appName', (v) => v as String?),
           sortIndex: $checkedConvert('sortIndex', (v) => v as int?),
+          isAutoUpload: $checkedConvert('isAutoUpload', (v) => v as bool?),
+          isBabyAlbum: $checkedConvert('isBabyAlbum', (v) => v as bool?),
+          babyName: $checkedConvert('babyName', (v) => v as String?),
+          babyGender: $checkedConvert('babyGender', (v) => v as String?),
+          babyBirthday: $checkedConvert('babyBirthday',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          billType: $checkedConvert('billType', (v) => v as String?),
+          billAccountId: $checkedConvert('billAccountId', (v) => v as String?),
+          billOwnerName: $checkedConvert('billOwnerName', (v) => v as String?),
+          billImportedCount:
+              $checkedConvert('billImportedCount', (v) => v as String?),
+          exportTime: $checkedConvert('exportTime',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          transactionType:
+              $checkedConvert('transactionType', (v) => v as String?),
+          peerAccountName:
+              $checkedConvert('peerAccountName', (v) => v as String?),
+          peerAccountId: $checkedConvert('peerAccountId', (v) => v as String?),
+          method: $checkedConvert('method', (v) => v as String?),
+          amount: $checkedConvert('amount', (v) => (v as num?)?.toDouble()),
+          category: $checkedConvert('category', (v) => v as String?),
+          transactionId: $checkedConvert('transactionId', (v) => v as String?),
+          merchantOrderId:
+              $checkedConvert('merchantOrderId', (v) => v as String?),
+          transactionTime: $checkedConvert('transactionTime',
+              (v) => v == null ? null : DateTime.parse(v as String)),
         );
         return val;
       },
@@ -133,7 +158,6 @@ Map<String, dynamic> _$PuupeeDtoToJson(PuupeeDto instance) {
   writeNotNull('sliceMd5', instance.sliceMd5);
   writeNotNull('rapidCode', instance.rapidCode);
   writeNotNull('contentType', instance.contentType);
-  writeNotNull('type', instance.type);
   writeNotNull('displayStyle', instance.displayStyle);
   writeNotNull('extension', instance.extension_);
   writeNotNull('storageClass', instance.storageClass);
@@ -164,5 +188,24 @@ Map<String, dynamic> _$PuupeeDtoToJson(PuupeeDto instance) {
   writeNotNull('lastModifierDevice', instance.lastModifierDevice);
   writeNotNull('appName', instance.appName);
   writeNotNull('sortIndex', instance.sortIndex);
+  writeNotNull('isAutoUpload', instance.isAutoUpload);
+  writeNotNull('isBabyAlbum', instance.isBabyAlbum);
+  writeNotNull('babyName', instance.babyName);
+  writeNotNull('babyGender', instance.babyGender);
+  writeNotNull('babyBirthday', instance.babyBirthday?.toIso8601String());
+  writeNotNull('billType', instance.billType);
+  writeNotNull('billAccountId', instance.billAccountId);
+  writeNotNull('billOwnerName', instance.billOwnerName);
+  writeNotNull('billImportedCount', instance.billImportedCount);
+  writeNotNull('exportTime', instance.exportTime?.toIso8601String());
+  writeNotNull('transactionType', instance.transactionType);
+  writeNotNull('peerAccountName', instance.peerAccountName);
+  writeNotNull('peerAccountId', instance.peerAccountId);
+  writeNotNull('method', instance.method);
+  writeNotNull('amount', instance.amount);
+  writeNotNull('category', instance.category);
+  writeNotNull('transactionId', instance.transactionId);
+  writeNotNull('merchantOrderId', instance.merchantOrderId);
+  writeNotNull('transactionTime', instance.transactionTime?.toIso8601String());
   return val;
 }
