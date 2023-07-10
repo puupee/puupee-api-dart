@@ -9,7 +9,6 @@ import 'dart:convert';
 import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:puupee_api_client/src/model/create_or_update_puupee_dto.dart';
 import 'package:puupee_api_client/src/model/puupee_dto.dart';
 import 'package:puupee_api_client/src/model/puupee_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
@@ -277,7 +276,7 @@ _responseData = deserialize<PuupeeDtoPagedResultDto, PuupeeDtoPagedResultDto>(_r
   /// Returns a [Future] containing a [Response] with a [PuupeeDto] as data
   /// Throws [DioError] if API call or serialization fails
   Future<Response<PuupeeDto>> apiAppPuupeePushPost({ 
-    CreateOrUpdatePuupeeDto? body,
+    PuupeeDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,

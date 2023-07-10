@@ -72,7 +72,6 @@ doc/CreateOrUpdateAppReleaseDto.md
 doc/CreateOrUpdateAppSdkDto.md
 doc/CreateOrUpdateAppUserScoreDto.md
 doc/CreateOrUpdateMessageTemplateDto.md
-doc/CreateOrUpdatePuupeeDto.md
 doc/CreatePushNotificationDto.md
 doc/CreateUpdateMessageSourceDto.md
 doc/CreateUpdateMessageSourceRouteDto.md
@@ -343,7 +342,6 @@ lib/src/model/create_or_update_app_release_dto.dart
 lib/src/model/create_or_update_app_sdk_dto.dart
 lib/src/model/create_or_update_app_user_score_dto.dart
 lib/src/model/create_or_update_message_template_dto.dart
-lib/src/model/create_or_update_puupee_dto.dart
 lib/src/model/create_push_notification_dto.dart
 lib/src/model/create_update_message_source_dto.dart
 lib/src/model/create_update_message_source_route_dto.dart
@@ -553,7 +551,6 @@ test/create_or_update_app_release_dto_test.dart
 test/create_or_update_app_sdk_dto_test.dart
 test/create_or_update_app_user_score_dto_test.dart
 test/create_or_update_message_template_dto_test.dart
-test/create_or_update_puupee_dto_test.dart
 test/create_push_notification_dto_test.dart
 test/create_update_message_source_dto_test.dart
 test/create_update_message_source_route_dto_test.dart

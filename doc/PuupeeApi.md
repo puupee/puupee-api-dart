@@ -158,7 +158,7 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getPuupeeApi();
-final CreateOrUpdatePuupeeDto body = ; // CreateOrUpdatePuupeeDto | 
+final PuupeeDto body = ; // PuupeeDto | 
 
 try {
     final response = api.apiAppPuupeePushPost(body);
@@ -172,7 +172,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateOrUpdatePuupeeDto**](CreateOrUpdatePuupeeDto.md)|  | [optional] 
+ **body** | [**PuupeeDto**](PuupeeDto.md)|  | [optional] 
 
 ### Return type
 

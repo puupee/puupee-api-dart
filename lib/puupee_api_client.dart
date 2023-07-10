@@ -106,7 +106,6 @@ export 'package:puupee_api_client/src/model/create_or_update_app_release_dto.dar
 export 'package:puupee_api_client/src/model/create_or_update_app_sdk_dto.dart';
 export 'package:puupee_api_client/src/model/create_or_update_app_user_score_dto.dart';
 export 'package:puupee_api_client/src/model/create_or_update_message_template_dto.dart';
-export 'package:puupee_api_client/src/model/create_or_update_puupee_dto.dart';
 export 'package:puupee_api_client/src/model/create_push_notification_dto.dart';
 export 'package:puupee_api_client/src/model/create_update_message_source_dto.dart';
 export 'package:puupee_api_client/src/model/create_update_message_source_route_dto.dart';

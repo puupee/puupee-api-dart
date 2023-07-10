@@ -54,7 +54,6 @@ import 'package:puupee_api_client/src/model/create_or_update_app_release_dto.dar
 import 'package:puupee_api_client/src/model/create_or_update_app_sdk_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_user_score_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_message_template_dto.dart';
-import 'package:puupee_api_client/src/model/create_or_update_puupee_dto.dart';
 import 'package:puupee_api_client/src/model/create_push_notification_dto.dart';
 import 'package:puupee_api_client/src/model/create_update_message_source_dto.dart';
 import 'package:puupee_api_client/src/model/create_update_message_source_route_dto.dart';
@@ -323,8 +322,6 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return CreateOrUpdateAppUserScoreDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateOrUpdateMessageTemplateDto':
           return CreateOrUpdateMessageTemplateDto.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'CreateOrUpdatePuupeeDto':
-          return CreateOrUpdatePuupeeDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreatePushNotificationDto':
           return CreatePushNotificationDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateUpdateMessageSourceDto':
