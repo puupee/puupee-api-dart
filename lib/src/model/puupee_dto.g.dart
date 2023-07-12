@@ -11,18 +11,7 @@ PuupeeDto _$PuupeeDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
       json,
       ($checkedConvert) {
         final val = PuupeeDto(
-          id: $checkedConvert('id', (v) => v as String?),
-          creationTime: $checkedConvert('creationTime',
-              (v) => v == null ? null : DateTime.parse(v as String)),
-          creatorId: $checkedConvert('creatorId', (v) => v as String?),
-          lastModificationTime: $checkedConvert('lastModificationTime',
-              (v) => v == null ? null : DateTime.parse(v as String)),
-          lastModifierId:
-              $checkedConvert('lastModifierId', (v) => v as String?),
-          isDeleted: $checkedConvert('isDeleted', (v) => v as bool?),
-          deleterId: $checkedConvert('deleterId', (v) => v as String?),
-          deletionTime: $checkedConvert('deletionTime',
-              (v) => v == null ? null : DateTime.parse(v as String)),
+          gid: $checkedConvert('gid', (v) => v as String?),
           name: $checkedConvert('name', (v) => v as String?),
           title: $checkedConvert('title', (v) => v as String?),
           description: $checkedConvert('description', (v) => v as String?),
@@ -118,6 +107,18 @@ PuupeeDto _$PuupeeDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
               $checkedConvert('merchantOrderId', (v) => v as String?),
           transactionTime: $checkedConvert('transactionTime',
               (v) => v == null ? null : DateTime.parse(v as String)),
+          id: $checkedConvert('id', (v) => v as String?),
+          creationTime: $checkedConvert('creationTime',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          creatorId: $checkedConvert('creatorId', (v) => v as String?),
+          lastModifierId:
+              $checkedConvert('lastModifierId', (v) => v as String?),
+          lastModificationTime: $checkedConvert('lastModificationTime',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          deleterId: $checkedConvert('deleterId', (v) => v as String?),
+          deletionTime: $checkedConvert('deletionTime',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          isDeleted: $checkedConvert('isDeleted', (v) => v as bool?),
         );
         return val;
       },
@@ -133,15 +134,7 @@ Map<String, dynamic> _$PuupeeDtoToJson(PuupeeDto instance) {
     }
   }
 
-  writeNotNull('id', instance.id);
-  writeNotNull('creationTime', instance.creationTime?.toIso8601String());
-  writeNotNull('creatorId', instance.creatorId);
-  writeNotNull(
-      'lastModificationTime', instance.lastModificationTime?.toIso8601String());
-  writeNotNull('lastModifierId', instance.lastModifierId);
-  writeNotNull('isDeleted', instance.isDeleted);
-  writeNotNull('deleterId', instance.deleterId);
-  writeNotNull('deletionTime', instance.deletionTime?.toIso8601String());
+  writeNotNull('gid', instance.gid);
   writeNotNull('name', instance.name);
   writeNotNull('title', instance.title);
   writeNotNull('description', instance.description);
@@ -207,5 +200,14 @@ Map<String, dynamic> _$PuupeeDtoToJson(PuupeeDto instance) {
   writeNotNull('transactionId', instance.transactionId);
   writeNotNull('merchantOrderId', instance.merchantOrderId);
   writeNotNull('transactionTime', instance.transactionTime?.toIso8601String());
+  writeNotNull('id', instance.id);
+  writeNotNull('creationTime', instance.creationTime?.toIso8601String());
+  writeNotNull('creatorId', instance.creatorId);
+  writeNotNull('lastModifierId', instance.lastModifierId);
+  writeNotNull(
+      'lastModificationTime', instance.lastModificationTime?.toIso8601String());
+  writeNotNull('deleterId', instance.deleterId);
+  writeNotNull('deletionTime', instance.deletionTime?.toIso8601String());
+  writeNotNull('isDeleted', instance.isDeleted);
   return val;
 }

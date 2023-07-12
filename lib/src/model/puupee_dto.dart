@@ -19,21 +19,7 @@ class PuupeeDto {
   /// Returns a new [PuupeeDto] instance.
   PuupeeDto({
 
-     this.id,
-
-     this.creationTime,
-
-     this.creatorId,
-
-     this.lastModificationTime,
-
-     this.lastModifierId,
-
-     this.isDeleted,
-
-     this.deleterId,
-
-     this.deletionTime,
+     this.gid,
 
      this.name,
 
@@ -160,101 +146,33 @@ class PuupeeDto {
      this.merchantOrderId,
 
      this.transactionTime,
+
+     this.id,
+
+     this.creationTime,
+
+     this.creatorId,
+
+     this.lastModifierId,
+
+     this.lastModificationTime,
+
+     this.deleterId,
+
+     this.deletionTime,
+
+     this.isDeleted,
   });
 
   @JsonKey(
     
-    name: r'id',
+    name: r'gid',
     required: false,
     includeIfNull: false
   )
 
 
-  String? id;
-
-
-
-  @JsonKey(
-    
-    name: r'creationTime',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  DateTime? creationTime;
-
-
-
-  @JsonKey(
-    
-    name: r'creatorId',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? creatorId;
-
-
-
-  @JsonKey(
-    
-    name: r'lastModificationTime',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  DateTime? lastModificationTime;
-
-
-
-  @JsonKey(
-    
-    name: r'lastModifierId',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? lastModifierId;
-
-
-
-  @JsonKey(
-    
-    name: r'isDeleted',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  bool? isDeleted;
-
-
-
-  @JsonKey(
-    
-    name: r'deleterId',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? deleterId;
-
-
-
-  @JsonKey(
-    
-    name: r'deletionTime',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  DateTime? deletionTime;
+  String? gid;
 
 
 
@@ -1014,16 +932,105 @@ class PuupeeDto {
 
 
 
+  @JsonKey(
+    
+    name: r'id',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? id;
+
+
+
+  @JsonKey(
+    
+    name: r'creationTime',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  DateTime? creationTime;
+
+
+
+  @JsonKey(
+    
+    name: r'creatorId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? creatorId;
+
+
+
+  @JsonKey(
+    
+    name: r'lastModifierId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? lastModifierId;
+
+
+
+  @JsonKey(
+    
+    name: r'lastModificationTime',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  DateTime? lastModificationTime;
+
+
+
+  @JsonKey(
+    
+    name: r'deleterId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? deleterId;
+
+
+
+  @JsonKey(
+    
+    name: r'deletionTime',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  DateTime? deletionTime;
+
+
+
+  @JsonKey(
+    
+    name: r'isDeleted',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  bool? isDeleted;
+
+
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is PuupeeDto &&
-     other.id == id &&
-     other.creationTime == creationTime &&
-     other.creatorId == creatorId &&
-     other.lastModificationTime == lastModificationTime &&
-     other.lastModifierId == lastModifierId &&
-     other.isDeleted == isDeleted &&
-     other.deleterId == deleterId &&
-     other.deletionTime == deletionTime &&
+     other.gid == gid &&
      other.name == name &&
      other.title == title &&
      other.description == description &&
@@ -1086,18 +1093,19 @@ class PuupeeDto {
      other.category == category &&
      other.transactionId == transactionId &&
      other.merchantOrderId == merchantOrderId &&
-     other.transactionTime == transactionTime;
+     other.transactionTime == transactionTime &&
+     other.id == id &&
+     other.creationTime == creationTime &&
+     other.creatorId == creatorId &&
+     other.lastModifierId == lastModifierId &&
+     other.lastModificationTime == lastModificationTime &&
+     other.deleterId == deleterId &&
+     other.deletionTime == deletionTime &&
+     other.isDeleted == isDeleted;
 
   @override
   int get hashCode =>
-    id.hashCode +
-    creationTime.hashCode +
-    creatorId.hashCode +
-    lastModificationTime.hashCode +
-    lastModifierId.hashCode +
-    isDeleted.hashCode +
-    deleterId.hashCode +
-    deletionTime.hashCode +
+    gid.hashCode +
     name.hashCode +
     title.hashCode +
     description.hashCode +
@@ -1160,7 +1168,15 @@ class PuupeeDto {
     category.hashCode +
     transactionId.hashCode +
     merchantOrderId.hashCode +
-    transactionTime.hashCode;
+    transactionTime.hashCode +
+    id.hashCode +
+    creationTime.hashCode +
+    creatorId.hashCode +
+    lastModifierId.hashCode +
+    lastModificationTime.hashCode +
+    deleterId.hashCode +
+    deletionTime.hashCode +
+    isDeleted.hashCode;
 
   factory PuupeeDto.fromJson(Map<String, dynamic> json) => _$PuupeeDtoFromJson(json);
 

@@ -8,7 +8,7 @@ import 'package:puupee_api_client/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | [optional] 
+**gid** | **String** |  | [optional] 
 **syncVersion** | **int** |  | [optional] 
 **url** | **String** |  | [optional] 
 **parentId** | **String** |  | [optional] 
@@ -75,6 +75,7 @@ Name | Type | Description | Notes
 **transactionId** | **String** |  | [optional] 
 **merchantOrderId** | **String** |  | [optional] 
 **transactionTime** | [**DateTime**](DateTime.md) |  | [optional] 
+**id** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

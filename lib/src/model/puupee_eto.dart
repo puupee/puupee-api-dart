@@ -18,7 +18,7 @@ class PuupeeEto {
   /// Returns a new [PuupeeEto] instance.
   PuupeeEto({
 
-     this.id,
+     this.gid,
 
      this.syncVersion,
 
@@ -151,17 +151,19 @@ class PuupeeEto {
      this.merchantOrderId,
 
      this.transactionTime,
+
+     this.id,
   });
 
   @JsonKey(
     
-    name: r'id',
+    name: r'gid',
     required: false,
     includeIfNull: false
   )
 
 
-  String? id;
+  String? gid;
 
 
 
@@ -957,9 +959,21 @@ class PuupeeEto {
 
 
 
+  @JsonKey(
+    
+    name: r'id',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? id;
+
+
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is PuupeeEto &&
-     other.id == id &&
+     other.gid == gid &&
      other.syncVersion == syncVersion &&
      other.url == url &&
      other.parentId == parentId &&
@@ -1025,11 +1039,12 @@ class PuupeeEto {
      other.category == category &&
      other.transactionId == transactionId &&
      other.merchantOrderId == merchantOrderId &&
-     other.transactionTime == transactionTime;
+     other.transactionTime == transactionTime &&
+     other.id == id;
 
   @override
   int get hashCode =>
-    id.hashCode +
+    gid.hashCode +
     syncVersion.hashCode +
     url.hashCode +
     parentId.hashCode +
@@ -1095,7 +1110,8 @@ class PuupeeEto {
     category.hashCode +
     transactionId.hashCode +
     merchantOrderId.hashCode +
-    transactionTime.hashCode;
+    transactionTime.hashCode +
+    id.hashCode;
 
   factory PuupeeEto.fromJson(Map<String, dynamic> json) => _$PuupeeEtoFromJson(json);
 

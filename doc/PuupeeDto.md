@@ -8,14 +8,7 @@ import 'package:puupee_api_client/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **String** |  | [optional] 
-**creationTime** | [**DateTime**](DateTime.md) |  | [optional] 
-**creatorId** | **String** |  | [optional] 
-**lastModificationTime** | [**DateTime**](DateTime.md) |  | [optional] 
-**lastModifierId** | **String** |  | [optional] 
-**isDeleted** | **bool** |  | [optional] 
-**deleterId** | **String** |  | [optional] 
-**deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
+**gid** | **String** |  | [optional] 
 **name** | **String** |  | [optional] 
 **title** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
@@ -79,6 +72,14 @@ Name | Type | Description | Notes
 **transactionId** | **String** |  | [optional] 
 **merchantOrderId** | **String** |  | [optional] 
 **transactionTime** | [**DateTime**](DateTime.md) |  | [optional] 
+**id** | **String** |  | [optional] 
+**creationTime** | [**DateTime**](DateTime.md) |  | [optional] 
+**creatorId** | **String** |  | [optional] 
+**lastModifierId** | **String** |  | [optional] 
+**lastModificationTime** | [**DateTime**](DateTime.md) |  | [optional] 
+**deleterId** | **String** |  | [optional] 
+**deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
+**isDeleted** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

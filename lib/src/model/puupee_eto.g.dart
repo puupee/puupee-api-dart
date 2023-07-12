@@ -11,7 +11,7 @@ PuupeeEto _$PuupeeEtoFromJson(Map<String, dynamic> json) => $checkedCreate(
       json,
       ($checkedConvert) {
         final val = PuupeeEto(
-          id: $checkedConvert('id', (v) => v as String?),
+          gid: $checkedConvert('gid', (v) => v as String?),
           syncVersion: $checkedConvert('syncVersion', (v) => v as int?),
           url: $checkedConvert('url', (v) => v as String?),
           parentId: $checkedConvert('parentId', (v) => v as String?),
@@ -101,6 +101,7 @@ PuupeeEto _$PuupeeEtoFromJson(Map<String, dynamic> json) => $checkedCreate(
               $checkedConvert('merchantOrderId', (v) => v as String?),
           transactionTime: $checkedConvert('transactionTime',
               (v) => v == null ? null : DateTime.parse(v as String)),
+          id: $checkedConvert('id', (v) => v as String?),
         );
         return val;
       },
@@ -116,7 +117,7 @@ Map<String, dynamic> _$PuupeeEtoToJson(PuupeeEto instance) {
     }
   }
 
-  writeNotNull('id', instance.id);
+  writeNotNull('gid', instance.gid);
   writeNotNull('syncVersion', instance.syncVersion);
   writeNotNull('url', instance.url);
   writeNotNull('parentId', instance.parentId);
@@ -186,5 +187,6 @@ Map<String, dynamic> _$PuupeeEtoToJson(PuupeeEto instance) {
   writeNotNull('transactionId', instance.transactionId);
   writeNotNull('merchantOrderId', instance.merchantOrderId);
   writeNotNull('transactionTime', instance.transactionTime?.toIso8601String());
+  writeNotNull('id', instance.id);
   return val;
 }

@@ -7,8 +7,8 @@ void main() {
   // TODO add properties to the entity
 
   group(PuupeeEto, () {
-    // String id
-    test('to test the property `id`', () async {
+    // String gid
+    test('to test the property `gid`', () async {
       // TODO
     });
 
@@ -339,6 +339,11 @@ void main() {
 
     // DateTime transactionTime
     test('to test the property `transactionTime`', () async {
+      // TODO
+    });
+
+    // String id
+    test('to test the property `id`', () async {
       // TODO
     });
 
