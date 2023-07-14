@@ -7,13 +7,13 @@ void main() {
   final instance = PuupeeApiClient().getSyncStateApi();
 
   group(SyncStateApi, () {
-    //Future<SyncStateDto> callGet() async
-    test('test callGet', () async {
+    //Future<PuupeeEto> deviceConnectedEto() async
+    test('test deviceConnectedEto', () async {
       // TODO
     });
 
-    //Future<PuupeeEto> deviceConnectedEto() async
-    test('test deviceConnectedEto', () async {
+    //Future<SyncStateDto> getById() async
+    test('test getById', () async {
       // TODO
     });
 

@@ -9,52 +9,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**callGet**](AccountApi.md#callget) | **GET** /api/app/account | 
 [**delete**](AccountApi.md#delete) | **DELETE** /api/app/account | 
+[**getById**](AccountApi.md#getbyid) | **GET** /api/app/account | 
 [**register**](AccountApi.md#register) | **POST** /api/account/register | 
 [**resetPassword**](AccountApi.md#resetpassword) | **POST** /api/account/reset-password | 
 [**sendPasswordResetCode**](AccountApi.md#sendpasswordresetcode) | **POST** /api/account/send-password-reset-code | 
 [**verifyPasswordResetToken**](AccountApi.md#verifypasswordresettoken) | **POST** /api/account/verify-password-reset-token | 
 
-
-# **callGet**
-> UserProfileDto callGet()
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getAccountApi();
-
-try {
-    final response = api.callGet();
-    print(response);
-} catch on DioError (e) {
-    print('Exception when calling AccountApi->callGet: $e\n');
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**UserProfileDto**](UserProfileDto.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete**
 > delete()
@@ -82,6 +43,45 @@ This endpoint does not need any parameter.
 ### Return type
 
 void (empty response body)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getById**
+> UserProfileDto getById()
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getAccountApi();
+
+try {
+    final response = api.getById();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AccountApi->getById: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**UserProfileDto**](UserProfileDto.md)
 
 ### Authorization
 

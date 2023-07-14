@@ -9,55 +9,12 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**callGet**](MessageTemplateApi.md#callget) | **GET** /api/app/message-template/{id} | 
 [**create**](MessageTemplateApi.md#create) | **POST** /api/app/message-template | 
 [**delete**](MessageTemplateApi.md#delete) | **DELETE** /api/app/message-template/{id} | 
+[**getById**](MessageTemplateApi.md#getbyid) | **GET** /api/app/message-template/{id} | 
 [**getList**](MessageTemplateApi.md#getlist) | **GET** /api/app/message-template | 
 [**update**](MessageTemplateApi.md#update) | **PUT** /api/app/message-template/{id} | 
 
-
-# **callGet**
-> MessageTemplateDto callGet(id)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getMessageTemplateApi();
-final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-
-try {
-    final response = api.callGet(id);
-    print(response);
-} catch on DioError (e) {
-    print('Exception when calling MessageTemplateApi->callGet: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
-
-### Return type
-
-[**MessageTemplateDto**](MessageTemplateDto.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create**
 > MessageTemplateDto create(body)
@@ -132,6 +89,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getById**
+> MessageTemplateDto getById(id)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getMessageTemplateApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+
+try {
+    final response = api.getById(id);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling MessageTemplateApi->getById: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+[**MessageTemplateDto**](MessageTemplateDto.md)
 
 ### Authorization
 

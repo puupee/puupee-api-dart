@@ -9,54 +9,11 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**callGet**](SimpleDataApi.md#callget) | **GET** /api/app/simple-data/{id} | 
 [**delete**](SimpleDataApi.md#delete) | **DELETE** /api/app/simple-data/{id} | 
+[**getById**](SimpleDataApi.md#getbyid) | **GET** /api/app/simple-data/{id} | 
 [**getList**](SimpleDataApi.md#getlist) | **GET** /api/app/simple-data | 
 [**save**](SimpleDataApi.md#save) | **POST** /api/app/simple-data/save | 
 
-
-# **callGet**
-> SimpleDataDto callGet(id)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getSimpleDataApi();
-final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-
-try {
-    final response = api.callGet(id);
-    print(response);
-} catch on DioError (e) {
-    print('Exception when calling SimpleDataApi->callGet: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
-
-### Return type
-
-[**SimpleDataDto**](SimpleDataDto.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **delete**
 > delete(id)
@@ -88,6 +45,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getById**
+> SimpleDataDto getById(id)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getSimpleDataApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+
+try {
+    final response = api.getById(id);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling SimpleDataApi->getById: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+[**SimpleDataDto**](SimpleDataDto.md)
 
 ### Authorization
 

@@ -10,7 +10,7 @@ All URIs are relative to *http://localhost*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**bind**](DeviceApi.md#bind) | **POST** /api/app/device/bind | 
-[**callGet**](DeviceApi.md#callget) | **GET** /api/app/device/{id} | 
+[**getById**](DeviceApi.md#getbyid) | **GET** /api/app/device/{id} | 
 [**getByToken**](DeviceApi.md#getbytoken) | **GET** /api/app/device/by-token | 
 [**getList**](DeviceApi.md#getlist) | **GET** /api/app/device | 
 [**refresh**](DeviceApi.md#refresh) | **POST** /api/app/device/refresh | 
@@ -59,8 +59,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **callGet**
-> DeviceDto callGet(id)
+# **getById**
+> DeviceDto getById(id)
 
 
 
@@ -74,10 +74,10 @@ final api = PuupeeApiClient().getDeviceApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final response = api.callGet(id);
+    final response = api.getById(id);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling DeviceApi->callGet: $e\n');
+    print('Exception when calling DeviceApi->getById: $e\n');
 }
 ```
 

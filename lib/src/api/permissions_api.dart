@@ -19,7 +19,7 @@ class PermissionsApi {
 
   const PermissionsApi(this._dio);
 
-  /// callGet
+  /// getById
   /// 
   ///
   /// Parameters:
@@ -34,7 +34,7 @@ class PermissionsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [GetPermissionListResultDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<GetPermissionListResultDto>> callGet({ 
+  Future<Response<GetPermissionListResultDto>> getById({ 
     String? providerName,
     String? providerKey,
     CancelToken? cancelToken,

@@ -12,8 +12,8 @@ void main() {
       // TODO
     });
 
-    //Future<DeviceDto> callGet(String id) async
-    test('test callGet', () async {
+    //Future<DeviceDto> getById(String id) async
+    test('test getById', () async {
       // TODO
     });
 

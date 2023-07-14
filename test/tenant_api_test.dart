@@ -7,11 +7,6 @@ void main() {
   final instance = PuupeeApiClient().getTenantApi();
 
   group(TenantApi, () {
-    //Future<TenantDto> callGet(String id) async
-    test('test callGet', () async {
-      // TODO
-    });
-
     //Future<TenantDto> create({ TenantCreateDto body }) async
     test('test create', () async {
       // TODO
@@ -24,6 +19,11 @@ void main() {
 
     //Future deleteDefaultConnectionString(String id) async
     test('test deleteDefaultConnectionString', () async {
+      // TODO
+    });
+
+    //Future<TenantDto> getById(String id) async
+    test('test getById', () async {
       // TODO
     });
 

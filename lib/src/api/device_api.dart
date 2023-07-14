@@ -91,7 +91,7 @@ _bodyData=jsonEncode(body);
     return _response;
   }
 
-  /// callGet
+  /// getById
   /// 
   ///
   /// Parameters:
@@ -105,7 +105,7 @@ _bodyData=jsonEncode(body);
   ///
   /// Returns a [Future] containing a [Response] with a [DeviceDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<DeviceDto>> callGet({ 
+  Future<Response<DeviceDto>> getById({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

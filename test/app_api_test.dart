@@ -7,11 +7,6 @@ void main() {
   final instance = PuupeeApiClient().getAppApi();
 
   group(AppApi, () {
-    //Future<AppDto> callGet(String id, { String env }) async
-    test('test callGet', () async {
-      // TODO
-    });
-
     //Future<AppDto> create({ CreateOrUpdateAppDto body }) async
     test('test create', () async {
       // TODO
@@ -19,6 +14,11 @@ void main() {
 
     //Future delete(String id) async
     test('test delete', () async {
+      // TODO
+    });
+
+    //Future<AppDto> getById(String id, { String env }) async
+    test('test getById', () async {
       // TODO
     });
 

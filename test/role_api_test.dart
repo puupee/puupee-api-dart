@@ -7,11 +7,6 @@ void main() {
   final instance = PuupeeApiClient().getRoleApi();
 
   group(RoleApi, () {
-    //Future<IdentityRoleDto> callGet(String id) async
-    test('test callGet', () async {
-      // TODO
-    });
-
     //Future<IdentityRoleDto> create({ IdentityRoleCreateDto body }) async
     test('test create', () async {
       // TODO
@@ -24,6 +19,11 @@ void main() {
 
     //Future<IdentityRoleDtoListResultDto> getAllList() async
     test('test getAllList', () async {
+      // TODO
+    });
+
+    //Future<IdentityRoleDto> getById(String id) async
+    test('test getById', () async {
       // TODO
     });
 

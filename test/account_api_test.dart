@@ -7,13 +7,13 @@ void main() {
   final instance = PuupeeApiClient().getAccountApi();
 
   group(AccountApi, () {
-    //Future<UserProfileDto> callGet() async
-    test('test callGet', () async {
+    //Future delete() async
+    test('test delete', () async {
       // TODO
     });
 
-    //Future delete() async
-    test('test delete', () async {
+    //Future<UserProfileDto> getById() async
+    test('test getById', () async {
       // TODO
     });
 

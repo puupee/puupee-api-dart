@@ -9,13 +9,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**callGet**](EmailSettingsApi.md#callget) | **GET** /api/setting-management/emailing | 
+[**getById**](EmailSettingsApi.md#getbyid) | **GET** /api/setting-management/emailing | 
 [**sendTestEmail**](EmailSettingsApi.md#sendtestemail) | **POST** /api/setting-management/emailing/send-test-email | 
 [**update**](EmailSettingsApi.md#update) | **POST** /api/setting-management/emailing | 
 
 
-# **callGet**
-> EmailSettingsDto callGet()
+# **getById**
+> EmailSettingsDto getById()
 
 
 
@@ -28,10 +28,10 @@ import 'package:puupee_api_client/api.dart';
 final api = PuupeeApiClient().getEmailSettingsApi();
 
 try {
-    final response = api.callGet();
+    final response = api.getById();
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling EmailSettingsApi->callGet: $e\n');
+    print('Exception when calling EmailSettingsApi->getById: $e\n');
 }
 ```
 

@@ -9,56 +9,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**callGet**](RoleApi.md#callget) | **GET** /api/identity/roles/{id} | 
 [**create**](RoleApi.md#create) | **POST** /api/identity/roles | 
 [**delete**](RoleApi.md#delete) | **DELETE** /api/identity/roles/{id} | 
 [**getAllList**](RoleApi.md#getalllist) | **GET** /api/identity/roles/all | 
+[**getById**](RoleApi.md#getbyid) | **GET** /api/identity/roles/{id} | 
 [**getList**](RoleApi.md#getlist) | **GET** /api/identity/roles | 
 [**update**](RoleApi.md#update) | **PUT** /api/identity/roles/{id} | 
 
-
-# **callGet**
-> IdentityRoleDto callGet(id)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getRoleApi();
-final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-
-try {
-    final response = api.callGet(id);
-    print(response);
-} catch on DioError (e) {
-    print('Exception when calling RoleApi->callGet: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
-
-### Return type
-
-[**IdentityRoleDto**](IdentityRoleDto.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create**
 > IdentityRoleDto create(body)
@@ -172,6 +129,49 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**IdentityRoleDtoListResultDto**](IdentityRoleDtoListResultDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getById**
+> IdentityRoleDto getById(id)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getRoleApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+
+try {
+    final response = api.getById(id);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling RoleApi->getById: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+[**IdentityRoleDto**](IdentityRoleDto.md)
 
 ### Authorization
 

@@ -12,13 +12,13 @@ void main() {
       // TODO
     });
 
-    //Future<SubscriptionDto> callGet({ String appId }) async
-    test('test callGet', () async {
+    //Future<SubscriptionOrderDto> createOrder({ CreateOrGetSubscriptionOrderDto body }) async
+    test('test createOrder', () async {
       // TODO
     });
 
-    //Future<SubscriptionOrderDto> createOrder({ CreateOrGetSubscriptionOrderDto body }) async
-    test('test createOrder', () async {
+    //Future<SubscriptionDto> getById({ String appId }) async
+    test('test getById', () async {
       // TODO
     });
 

@@ -9,55 +9,12 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**callGet**](AppPricingItemApi.md#callget) | **GET** /api/app/app-pricing-item/{id} | 
 [**create**](AppPricingItemApi.md#create) | **POST** /api/app/app-pricing-item | 
 [**delete**](AppPricingItemApi.md#delete) | **DELETE** /api/app/app-pricing-item/{id} | 
+[**getById**](AppPricingItemApi.md#getbyid) | **GET** /api/app/app-pricing-item/{id} | 
 [**getList**](AppPricingItemApi.md#getlist) | **GET** /api/app/app-pricing-item | 
 [**update**](AppPricingItemApi.md#update) | **PUT** /api/app/app-pricing-item/{id} | 
 
-
-# **callGet**
-> AppPricingItemDto callGet(id)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getAppPricingItemApi();
-final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-
-try {
-    final response = api.callGet(id);
-    print(response);
-} catch on DioError (e) {
-    print('Exception when calling AppPricingItemApi->callGet: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
-
-### Return type
-
-[**AppPricingItemDto**](AppPricingItemDto.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create**
 > AppPricingItemDto create(body)
@@ -132,6 +89,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getById**
+> AppPricingItemDto getById(id)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getAppPricingItemApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+
+try {
+    final response = api.getById(id);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AppPricingItemApi->getById: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+[**AppPricingItemDto**](AppPricingItemDto.md)
 
 ### Authorization
 

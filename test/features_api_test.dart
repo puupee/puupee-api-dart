@@ -7,13 +7,13 @@ void main() {
   final instance = PuupeeApiClient().getFeaturesApi();
 
   group(FeaturesApi, () {
-    //Future<GetFeatureListResultDto> callGet({ String providerName, String providerKey }) async
-    test('test callGet', () async {
+    //Future delete({ String providerName, String providerKey }) async
+    test('test delete', () async {
       // TODO
     });
 
-    //Future delete({ String providerName, String providerKey }) async
-    test('test delete', () async {
+    //Future<GetFeatureListResultDto> getById({ String providerName, String providerKey }) async
+    test('test getById', () async {
       // TODO
     });
 

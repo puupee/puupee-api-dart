@@ -9,56 +9,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**callGet**](AppReleaseApi.md#callget) | **GET** /api/app/app-release/{id} | 
 [**create**](AppReleaseApi.md#create) | **POST** /api/app/app-release | 
 [**delete**](AppReleaseApi.md#delete) | **DELETE** /api/app/app-release/{id} | 
+[**getById**](AppReleaseApi.md#getbyid) | **GET** /api/app/app-release/{id} | 
 [**getLatest**](AppReleaseApi.md#getlatest) | **GET** /api/app/app-release/latest | 
 [**getList**](AppReleaseApi.md#getlist) | **GET** /api/app/app-release | 
 [**update**](AppReleaseApi.md#update) | **PUT** /api/app/app-release/{id} | 
 
-
-# **callGet**
-> AppReleaseDto callGet(id)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getAppReleaseApi();
-final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-
-try {
-    final response = api.callGet(id);
-    print(response);
-} catch on DioError (e) {
-    print('Exception when calling AppReleaseApi->callGet: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
-
-### Return type
-
-[**AppReleaseDto**](AppReleaseDto.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create**
 > AppReleaseDto create(body)
@@ -133,6 +90,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getById**
+> AppReleaseDto getById(id)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getAppReleaseApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+
+try {
+    final response = api.getById(id);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AppReleaseApi->getById: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+[**AppReleaseDto**](AppReleaseDto.md)
 
 ### Authorization
 
