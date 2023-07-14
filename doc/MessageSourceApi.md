@@ -9,15 +9,58 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiAppMessageSourceIdDelete**](MessageSourceApi.md#apiappmessagesourceiddelete) | **DELETE** /api/app/message-source/{id} | 
-[**apiAppMessageSourceIdGet**](MessageSourceApi.md#apiappmessagesourceidget) | **GET** /api/app/message-source/{id} | 
-[**apiAppMessageSourceIdPut**](MessageSourceApi.md#apiappmessagesourceidput) | **PUT** /api/app/message-source/{id} | 
-[**apiAppMessageSourcePost**](MessageSourceApi.md#apiappmessagesourcepost) | **POST** /api/app/message-source | 
-[**apiAppMessageSourcePublishedListCategoryIdGet**](MessageSourceApi.md#apiappmessagesourcepublishedlistcategoryidget) | **GET** /api/app/message-source/published-list/{categoryId} | 
+[**createAsync**](MessageSourceApi.md#createasync) | **POST** /api/app/message-source | 
+[**deleteAsync**](MessageSourceApi.md#deleteasync) | **DELETE** /api/app/message-source/{id} | 
+[**getAsync**](MessageSourceApi.md#getasync) | **GET** /api/app/message-source/{id} | 
+[**getPublishedListAsync**](MessageSourceApi.md#getpublishedlistasync) | **GET** /api/app/message-source/published-list/{categoryId} | 
+[**updateAsync**](MessageSourceApi.md#updateasync) | **PUT** /api/app/message-source/{id} | 
 
 
-# **apiAppMessageSourceIdDelete**
-> apiAppMessageSourceIdDelete(id)
+# **createAsync**
+> CreateUpdateMessageSourceDto createAsync(body)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getMessageSourceApi();
+final CreateUpdateMessageSourceDto body = ; // CreateUpdateMessageSourceDto | 
+
+try {
+    final response = api.createAsync(body);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling MessageSourceApi->createAsync: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CreateUpdateMessageSourceDto**](CreateUpdateMessageSourceDto.md)|  | [optional] 
+
+### Return type
+
+[**CreateUpdateMessageSourceDto**](CreateUpdateMessageSourceDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteAsync**
+> deleteAsync(id)
 
 
 
@@ -31,9 +74,9 @@ final api = PuupeeApiClient().getMessageSourceApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    api.apiAppMessageSourceIdDelete(id);
+    api.deleteAsync(id);
 } catch on DioError (e) {
-    print('Exception when calling MessageSourceApi->apiAppMessageSourceIdDelete: $e\n');
+    print('Exception when calling MessageSourceApi->deleteAsync: $e\n');
 }
 ```
 
@@ -58,8 +101,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppMessageSourceIdGet**
-> MessageSourceDto apiAppMessageSourceIdGet(id)
+# **getAsync**
+> MessageSourceDto getAsync(id)
 
 
 
@@ -73,10 +116,10 @@ final api = PuupeeApiClient().getMessageSourceApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final response = api.apiAppMessageSourceIdGet(id);
+    final response = api.getAsync(id);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling MessageSourceApi->apiAppMessageSourceIdGet: $e\n');
+    print('Exception when calling MessageSourceApi->getAsync: $e\n');
 }
 ```
 
@@ -101,8 +144,51 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppMessageSourceIdPut**
-> CreateUpdateMessageSourceDto apiAppMessageSourceIdPut(id, body)
+# **getPublishedListAsync**
+> List<MessageSourceDto> getPublishedListAsync(categoryId)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getMessageSourceApi();
+final String categoryId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+
+try {
+    final response = api.getPublishedListAsync(categoryId);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling MessageSourceApi->getPublishedListAsync: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **categoryId** | **String**|  | 
+
+### Return type
+
+[**List&lt;MessageSourceDto&gt;**](MessageSourceDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateAsync**
+> CreateUpdateMessageSourceDto updateAsync(id, body)
 
 
 
@@ -117,10 +203,10 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 final CreateUpdateMessageSourceDto body = ; // CreateUpdateMessageSourceDto | 
 
 try {
-    final response = api.apiAppMessageSourceIdPut(id, body);
+    final response = api.updateAsync(id, body);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling MessageSourceApi->apiAppMessageSourceIdPut: $e\n');
+    print('Exception when calling MessageSourceApi->updateAsync: $e\n');
 }
 ```
 
@@ -142,92 +228,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **apiAppMessageSourcePost**
-> CreateUpdateMessageSourceDto apiAppMessageSourcePost(body)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getMessageSourceApi();
-final CreateUpdateMessageSourceDto body = ; // CreateUpdateMessageSourceDto | 
-
-try {
-    final response = api.apiAppMessageSourcePost(body);
-    print(response);
-} catch on DioError (e) {
-    print('Exception when calling MessageSourceApi->apiAppMessageSourcePost: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**CreateUpdateMessageSourceDto**](CreateUpdateMessageSourceDto.md)|  | [optional] 
-
-### Return type
-
-[**CreateUpdateMessageSourceDto**](CreateUpdateMessageSourceDto.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **apiAppMessageSourcePublishedListCategoryIdGet**
-> List<MessageSourceDto> apiAppMessageSourcePublishedListCategoryIdGet(categoryId)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getMessageSourceApi();
-final String categoryId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-
-try {
-    final response = api.apiAppMessageSourcePublishedListCategoryIdGet(categoryId);
-    print(response);
-} catch on DioError (e) {
-    print('Exception when calling MessageSourceApi->apiAppMessageSourcePublishedListCategoryIdGet: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **categoryId** | **String**|  | 
-
-### Return type
-
-[**List&lt;MessageSourceDto&gt;**](MessageSourceDto.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -9,20 +9,20 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiIdentityUsersAssignableRolesGet**](UserApi.md#apiidentityusersassignablerolesget) | **GET** /api/identity/users/assignable-roles | 
-[**apiIdentityUsersByEmailEmailGet**](UserApi.md#apiidentityusersbyemailemailget) | **GET** /api/identity/users/by-email/{email} | 
-[**apiIdentityUsersByUsernameUserNameGet**](UserApi.md#apiidentityusersbyusernameusernameget) | **GET** /api/identity/users/by-username/{userName} | 
-[**apiIdentityUsersGet**](UserApi.md#apiidentityusersget) | **GET** /api/identity/users | 
-[**apiIdentityUsersIdDelete**](UserApi.md#apiidentityusersiddelete) | **DELETE** /api/identity/users/{id} | 
-[**apiIdentityUsersIdGet**](UserApi.md#apiidentityusersidget) | **GET** /api/identity/users/{id} | 
-[**apiIdentityUsersIdPut**](UserApi.md#apiidentityusersidput) | **PUT** /api/identity/users/{id} | 
-[**apiIdentityUsersIdRolesGet**](UserApi.md#apiidentityusersidrolesget) | **GET** /api/identity/users/{id}/roles | 
-[**apiIdentityUsersIdRolesPut**](UserApi.md#apiidentityusersidrolesput) | **PUT** /api/identity/users/{id}/roles | 
-[**apiIdentityUsersPost**](UserApi.md#apiidentityuserspost) | **POST** /api/identity/users | 
+[**createAsync**](UserApi.md#createasync) | **POST** /api/identity/users | 
+[**deleteAsync**](UserApi.md#deleteasync) | **DELETE** /api/identity/users/{id} | 
+[**findByEmailAsync**](UserApi.md#findbyemailasync) | **GET** /api/identity/users/by-email/{email} | 
+[**findByUsernameAsync**](UserApi.md#findbyusernameasync) | **GET** /api/identity/users/by-username/{userName} | 
+[**getAssignableRolesAsync**](UserApi.md#getassignablerolesasync) | **GET** /api/identity/users/assignable-roles | 
+[**getAsync**](UserApi.md#getasync) | **GET** /api/identity/users/{id} | 
+[**getListAsync**](UserApi.md#getlistasync) | **GET** /api/identity/users | 
+[**getRolesAsync**](UserApi.md#getrolesasync) | **GET** /api/identity/users/{id}/roles | 
+[**updateAsync**](UserApi.md#updateasync) | **PUT** /api/identity/users/{id} | 
+[**updateRolesAsync**](UserApi.md#updaterolesasync) | **PUT** /api/identity/users/{id}/roles | 
 
 
-# **apiIdentityUsersAssignableRolesGet**
-> IdentityRoleDtoListResultDto apiIdentityUsersAssignableRolesGet()
+# **createAsync**
+> IdentityUserDto createAsync(body)
 
 
 
@@ -33,21 +33,67 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getUserApi();
+final IdentityUserCreateDto body = ; // IdentityUserCreateDto | 
 
 try {
-    final response = api.apiIdentityUsersAssignableRolesGet();
+    final response = api.createAsync(body);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling UserApi->apiIdentityUsersAssignableRolesGet: $e\n');
+    print('Exception when calling UserApi->createAsync: $e\n');
 }
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**IdentityUserCreateDto**](IdentityUserCreateDto.md)|  | [optional] 
 
 ### Return type
 
-[**IdentityRoleDtoListResultDto**](IdentityRoleDtoListResultDto.md)
+[**IdentityUserDto**](IdentityUserDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteAsync**
+> deleteAsync(id)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getUserApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+
+try {
+    api.deleteAsync(id);
+} catch on DioError (e) {
+    print('Exception when calling UserApi->deleteAsync: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 
@@ -60,8 +106,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiIdentityUsersByEmailEmailGet**
-> IdentityUserDto apiIdentityUsersByEmailEmailGet(email)
+# **findByEmailAsync**
+> IdentityUserDto findByEmailAsync(email)
 
 
 
@@ -75,10 +121,10 @@ final api = PuupeeApiClient().getUserApi();
 final String email = email_example; // String | 
 
 try {
-    final response = api.apiIdentityUsersByEmailEmailGet(email);
+    final response = api.findByEmailAsync(email);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling UserApi->apiIdentityUsersByEmailEmailGet: $e\n');
+    print('Exception when calling UserApi->findByEmailAsync: $e\n');
 }
 ```
 
@@ -103,8 +149,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiIdentityUsersByUsernameUserNameGet**
-> IdentityUserDto apiIdentityUsersByUsernameUserNameGet(userName)
+# **findByUsernameAsync**
+> IdentityUserDto findByUsernameAsync(userName)
 
 
 
@@ -118,10 +164,10 @@ final api = PuupeeApiClient().getUserApi();
 final String userName = userName_example; // String | 
 
 try {
-    final response = api.apiIdentityUsersByUsernameUserNameGet(userName);
+    final response = api.findByUsernameAsync(userName);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling UserApi->apiIdentityUsersByUsernameUserNameGet: $e\n');
+    print('Exception when calling UserApi->findByUsernameAsync: $e\n');
 }
 ```
 
@@ -146,8 +192,90 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiIdentityUsersGet**
-> IdentityUserDtoPagedResultDto apiIdentityUsersGet(filter, sorting, skipCount, maxResultCount)
+# **getAssignableRolesAsync**
+> IdentityRoleDtoListResultDto getAssignableRolesAsync()
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getUserApi();
+
+try {
+    final response = api.getAssignableRolesAsync();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling UserApi->getAssignableRolesAsync: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**IdentityRoleDtoListResultDto**](IdentityRoleDtoListResultDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAsync**
+> IdentityUserDto getAsync(id)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getUserApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+
+try {
+    final response = api.getAsync(id);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling UserApi->getAsync: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+[**IdentityUserDto**](IdentityUserDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getListAsync**
+> IdentityUserDtoPagedResultDto getListAsync(filter, sorting, skipCount, maxResultCount)
 
 
 
@@ -164,10 +292,10 @@ final int skipCount = 56; // int |
 final int maxResultCount = 56; // int | 
 
 try {
-    final response = api.apiIdentityUsersGet(filter, sorting, skipCount, maxResultCount);
+    final response = api.getListAsync(filter, sorting, skipCount, maxResultCount);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling UserApi->apiIdentityUsersGet: $e\n');
+    print('Exception when calling UserApi->getListAsync: $e\n');
 }
 ```
 
@@ -195,8 +323,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiIdentityUsersIdDelete**
-> apiIdentityUsersIdDelete(id)
+# **getRolesAsync**
+> IdentityRoleDtoListResultDto getRolesAsync(id)
 
 
 
@@ -210,52 +338,10 @@ final api = PuupeeApiClient().getUserApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    api.apiIdentityUsersIdDelete(id);
-} catch on DioError (e) {
-    print('Exception when calling UserApi->apiIdentityUsersIdDelete: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **apiIdentityUsersIdGet**
-> IdentityUserDto apiIdentityUsersIdGet(id)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getUserApi();
-final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-
-try {
-    final response = api.apiIdentityUsersIdGet(id);
+    final response = api.getRolesAsync(id);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling UserApi->apiIdentityUsersIdGet: $e\n');
+    print('Exception when calling UserApi->getRolesAsync: $e\n');
 }
 ```
 
@@ -267,7 +353,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**IdentityUserDto**](IdentityUserDto.md)
+[**IdentityRoleDtoListResultDto**](IdentityRoleDtoListResultDto.md)
 
 ### Authorization
 
@@ -280,8 +366,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiIdentityUsersIdPut**
-> IdentityUserDto apiIdentityUsersIdPut(id, body)
+# **updateAsync**
+> IdentityUserDto updateAsync(id, body)
 
 
 
@@ -296,10 +382,10 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 final IdentityUserUpdateDto body = ; // IdentityUserUpdateDto | 
 
 try {
-    final response = api.apiIdentityUsersIdPut(id, body);
+    final response = api.updateAsync(id, body);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling UserApi->apiIdentityUsersIdPut: $e\n');
+    print('Exception when calling UserApi->updateAsync: $e\n');
 }
 ```
 
@@ -325,51 +411,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiIdentityUsersIdRolesGet**
-> IdentityRoleDtoListResultDto apiIdentityUsersIdRolesGet(id)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getUserApi();
-final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-
-try {
-    final response = api.apiIdentityUsersIdRolesGet(id);
-    print(response);
-} catch on DioError (e) {
-    print('Exception when calling UserApi->apiIdentityUsersIdRolesGet: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
-
-### Return type
-
-[**IdentityRoleDtoListResultDto**](IdentityRoleDtoListResultDto.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **apiIdentityUsersIdRolesPut**
-> apiIdentityUsersIdRolesPut(id, body)
+# **updateRolesAsync**
+> updateRolesAsync(id, body)
 
 
 
@@ -384,9 +427,9 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 final IdentityUserUpdateRolesDto body = ; // IdentityUserUpdateRolesDto | 
 
 try {
-    api.apiIdentityUsersIdRolesPut(id, body);
+    api.updateRolesAsync(id, body);
 } catch on DioError (e) {
-    print('Exception when calling UserApi->apiIdentityUsersIdRolesPut: $e\n');
+    print('Exception when calling UserApi->updateRolesAsync: $e\n');
 }
 ```
 
@@ -400,49 +443,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **apiIdentityUsersPost**
-> IdentityUserDto apiIdentityUsersPost(body)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getUserApi();
-final IdentityUserCreateDto body = ; // IdentityUserCreateDto | 
-
-try {
-    final response = api.apiIdentityUsersPost(body);
-    print(response);
-} catch on DioError (e) {
-    print('Exception when calling UserApi->apiIdentityUsersPost: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**IdentityUserCreateDto**](IdentityUserCreateDto.md)|  | [optional] 
-
-### Return type
-
-[**IdentityUserDto**](IdentityUserDto.md)
 
 ### Authorization
 

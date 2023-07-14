@@ -17,7 +17,7 @@ class TestApi {
 
   const TestApi(this._dio);
 
-  /// apiTestDatetimeGet
+  /// getTestDate
   /// 
   ///
   /// Parameters:
@@ -30,7 +30,7 @@ class TestApi {
   ///
   /// Returns a [Future] containing a [Response] with a [TestDateTime] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<TestDateTime>> apiTestDatetimeGet({ 
+  Future<Response<TestDateTime>> getTestDate({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,

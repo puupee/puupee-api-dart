@@ -7,33 +7,33 @@ void main() {
   final instance = PuupeeApiClient().getDeviceApi();
 
   group(DeviceApi, () {
-    //Future apiAppDeviceBindPost({ BindDeviceDto body }) async
-    test('test apiAppDeviceBindPost', () async {
+    //Future bindAsync({ BindDeviceDto body }) async
+    test('test bindAsync', () async {
       // TODO
     });
 
-    //Future<DeviceDto> apiAppDeviceByTokenGet({ String token }) async
-    test('test apiAppDeviceByTokenGet', () async {
+    //Future<DeviceDto> getAsync(String id) async
+    test('test getAsync', () async {
       // TODO
     });
 
-    //Future apiAppDeviceDelete({ String token }) async
-    test('test apiAppDeviceDelete', () async {
+    //Future<DeviceDto> getByTokenAsync({ String token }) async
+    test('test getByTokenAsync', () async {
       // TODO
     });
 
-    //Future<DeviceDtoPagedResultDto> apiAppDeviceGet({ String sorting, int skipCount, int maxResultCount }) async
-    test('test apiAppDeviceGet', () async {
+    //Future<DeviceDtoPagedResultDto> getListAsync({ String sorting, int skipCount, int maxResultCount }) async
+    test('test getListAsync', () async {
       // TODO
     });
 
-    //Future<DeviceDto> apiAppDeviceIdGet(String id) async
-    test('test apiAppDeviceIdGet', () async {
+    //Future refreshAsync({ RefreshDeviceStatusDto body }) async
+    test('test refreshAsync', () async {
       // TODO
     });
 
-    //Future apiAppDeviceRefreshPost({ RefreshDeviceStatusDto body }) async
-    test('test apiAppDeviceRefreshPost', () async {
+    //Future removeAsync({ String token }) async
+    test('test removeAsync', () async {
       // TODO
     });
 

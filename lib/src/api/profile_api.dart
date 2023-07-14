@@ -20,7 +20,7 @@ class ProfileApi {
 
   const ProfileApi(this._dio);
 
-  /// apiAccountMyProfileChangePasswordPost
+  /// changePasswordAsync
   /// 
   ///
   /// Parameters:
@@ -34,7 +34,7 @@ class ProfileApi {
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> apiAccountMyProfileChangePasswordPost({ 
+  Future<Response<void>> changePasswordAsync({ 
     ChangePasswordInput? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -90,7 +90,7 @@ _bodyData=jsonEncode(body);
     return _response;
   }
 
-  /// apiAccountMyProfileGet
+  /// getAsync
   /// 
   ///
   /// Parameters:
@@ -103,7 +103,7 @@ _bodyData=jsonEncode(body);
   ///
   /// Returns a [Future] containing a [Response] with a [ProfileDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<ProfileDto>> apiAccountMyProfileGet({ 
+  Future<Response<ProfileDto>> getAsync({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -163,7 +163,7 @@ _responseData = deserialize<ProfileDto, ProfileDto>(_response.data!, 'ProfileDto
     );
   }
 
-  /// apiAccountMyProfilePut
+  /// updateAsync
   /// 
   ///
   /// Parameters:
@@ -177,7 +177,7 @@ _responseData = deserialize<ProfileDto, ProfileDto>(_response.data!, 'ProfileDto
   ///
   /// Returns a [Future] containing a [Response] with a [ProfileDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<ProfileDto>> apiAccountMyProfilePut({ 
+  Future<Response<ProfileDto>> updateAsync({ 
     UpdateProfileDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

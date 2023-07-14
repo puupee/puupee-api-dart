@@ -9,22 +9,22 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiAppKeyValueBoolGet**](KeyValueApi.md#apiappkeyvalueboolget) | **GET** /api/app/key-value/bool | 
-[**apiAppKeyValueDateTimeGet**](KeyValueApi.md#apiappkeyvaluedatetimeget) | **GET** /api/app/key-value/date-time | 
-[**apiAppKeyValueDecimalGet**](KeyValueApi.md#apiappkeyvaluedecimalget) | **GET** /api/app/key-value/decimal | 
-[**apiAppKeyValueDoubleGet**](KeyValueApi.md#apiappkeyvaluedoubleget) | **GET** /api/app/key-value/double | 
-[**apiAppKeyValueIntGet**](KeyValueApi.md#apiappkeyvalueintget) | **GET** /api/app/key-value/int | 
-[**apiAppKeyValueSetBoolPost**](KeyValueApi.md#apiappkeyvaluesetboolpost) | **POST** /api/app/key-value/set-bool | 
-[**apiAppKeyValueSetDateTimePost**](KeyValueApi.md#apiappkeyvaluesetdatetimepost) | **POST** /api/app/key-value/set-date-time | 
-[**apiAppKeyValueSetDecimalPost**](KeyValueApi.md#apiappkeyvaluesetdecimalpost) | **POST** /api/app/key-value/set-decimal | 
-[**apiAppKeyValueSetDoublePost**](KeyValueApi.md#apiappkeyvaluesetdoublepost) | **POST** /api/app/key-value/set-double | 
-[**apiAppKeyValueSetIntPost**](KeyValueApi.md#apiappkeyvaluesetintpost) | **POST** /api/app/key-value/set-int | 
-[**apiAppKeyValueSetStringPost**](KeyValueApi.md#apiappkeyvaluesetstringpost) | **POST** /api/app/key-value/set-string | 
-[**apiAppKeyValueStringGet**](KeyValueApi.md#apiappkeyvaluestringget) | **GET** /api/app/key-value/string | 
+[**getBoolAsync**](KeyValueApi.md#getboolasync) | **GET** /api/app/key-value/bool | 
+[**getDateTimeAsync**](KeyValueApi.md#getdatetimeasync) | **GET** /api/app/key-value/date-time | 
+[**getDecimalAsync**](KeyValueApi.md#getdecimalasync) | **GET** /api/app/key-value/decimal | 
+[**getDoubleAsync**](KeyValueApi.md#getdoubleasync) | **GET** /api/app/key-value/double | 
+[**getIntAsync**](KeyValueApi.md#getintasync) | **GET** /api/app/key-value/int | 
+[**getStringAsync**](KeyValueApi.md#getstringasync) | **GET** /api/app/key-value/string | 
+[**setBoolAsync**](KeyValueApi.md#setboolasync) | **POST** /api/app/key-value/set-bool | 
+[**setDateTimeAsync**](KeyValueApi.md#setdatetimeasync) | **POST** /api/app/key-value/set-date-time | 
+[**setDecimalAsync**](KeyValueApi.md#setdecimalasync) | **POST** /api/app/key-value/set-decimal | 
+[**setDoubleAsync**](KeyValueApi.md#setdoubleasync) | **POST** /api/app/key-value/set-double | 
+[**setIntAsync**](KeyValueApi.md#setintasync) | **POST** /api/app/key-value/set-int | 
+[**setStringAsync**](KeyValueApi.md#setstringasync) | **POST** /api/app/key-value/set-string | 
 
 
-# **apiAppKeyValueBoolGet**
-> BooleanKeyValue apiAppKeyValueBoolGet(key)
+# **getBoolAsync**
+> BooleanKeyValue getBoolAsync(key)
 
 
 
@@ -38,10 +38,10 @@ final api = PuupeeApiClient().getKeyValueApi();
 final String key = key_example; // String | 
 
 try {
-    final response = api.apiAppKeyValueBoolGet(key);
+    final response = api.getBoolAsync(key);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling KeyValueApi->apiAppKeyValueBoolGet: $e\n');
+    print('Exception when calling KeyValueApi->getBoolAsync: $e\n');
 }
 ```
 
@@ -66,8 +66,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppKeyValueDateTimeGet**
-> DateTimeKeyValue apiAppKeyValueDateTimeGet(key)
+# **getDateTimeAsync**
+> DateTimeKeyValue getDateTimeAsync(key)
 
 
 
@@ -81,10 +81,10 @@ final api = PuupeeApiClient().getKeyValueApi();
 final String key = key_example; // String | 
 
 try {
-    final response = api.apiAppKeyValueDateTimeGet(key);
+    final response = api.getDateTimeAsync(key);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling KeyValueApi->apiAppKeyValueDateTimeGet: $e\n');
+    print('Exception when calling KeyValueApi->getDateTimeAsync: $e\n');
 }
 ```
 
@@ -109,8 +109,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppKeyValueDecimalGet**
-> DecimalKeyValue apiAppKeyValueDecimalGet(key)
+# **getDecimalAsync**
+> DecimalKeyValue getDecimalAsync(key)
 
 
 
@@ -124,10 +124,10 @@ final api = PuupeeApiClient().getKeyValueApi();
 final String key = key_example; // String | 
 
 try {
-    final response = api.apiAppKeyValueDecimalGet(key);
+    final response = api.getDecimalAsync(key);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling KeyValueApi->apiAppKeyValueDecimalGet: $e\n');
+    print('Exception when calling KeyValueApi->getDecimalAsync: $e\n');
 }
 ```
 
@@ -152,8 +152,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppKeyValueDoubleGet**
-> DoubleKeyValue apiAppKeyValueDoubleGet(key)
+# **getDoubleAsync**
+> DoubleKeyValue getDoubleAsync(key)
 
 
 
@@ -167,10 +167,10 @@ final api = PuupeeApiClient().getKeyValueApi();
 final String key = key_example; // String | 
 
 try {
-    final response = api.apiAppKeyValueDoubleGet(key);
+    final response = api.getDoubleAsync(key);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling KeyValueApi->apiAppKeyValueDoubleGet: $e\n');
+    print('Exception when calling KeyValueApi->getDoubleAsync: $e\n');
 }
 ```
 
@@ -195,8 +195,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppKeyValueIntGet**
-> Int32KeyValue apiAppKeyValueIntGet(key)
+# **getIntAsync**
+> Int32KeyValue getIntAsync(key)
 
 
 
@@ -210,10 +210,10 @@ final api = PuupeeApiClient().getKeyValueApi();
 final String key = key_example; // String | 
 
 try {
-    final response = api.apiAppKeyValueIntGet(key);
+    final response = api.getIntAsync(key);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling KeyValueApi->apiAppKeyValueIntGet: $e\n');
+    print('Exception when calling KeyValueApi->getIntAsync: $e\n');
 }
 ```
 
@@ -238,8 +238,51 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppKeyValueSetBoolPost**
-> apiAppKeyValueSetBoolPost(body, key)
+# **getStringAsync**
+> StringKeyValue getStringAsync(key)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getKeyValueApi();
+final String key = key_example; // String | 
+
+try {
+    final response = api.getStringAsync(key);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling KeyValueApi->getStringAsync: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **key** | **String**|  | [optional] 
+
+### Return type
+
+[**StringKeyValue**](StringKeyValue.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **setBoolAsync**
+> setBoolAsync(body, key)
 
 
 
@@ -254,9 +297,9 @@ final BooleanSetKeyValueDto body = ; // BooleanSetKeyValueDto |
 final String key = key_example; // String | 
 
 try {
-    api.apiAppKeyValueSetBoolPost(body, key);
+    api.setBoolAsync(body, key);
 } catch on DioError (e) {
-    print('Exception when calling KeyValueApi->apiAppKeyValueSetBoolPost: $e\n');
+    print('Exception when calling KeyValueApi->setBoolAsync: $e\n');
 }
 ```
 
@@ -282,8 +325,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppKeyValueSetDateTimePost**
-> apiAppKeyValueSetDateTimePost(body, key)
+# **setDateTimeAsync**
+> setDateTimeAsync(body, key)
 
 
 
@@ -298,9 +341,9 @@ final DateTimeSetKeyValueDto body = ; // DateTimeSetKeyValueDto |
 final String key = key_example; // String | 
 
 try {
-    api.apiAppKeyValueSetDateTimePost(body, key);
+    api.setDateTimeAsync(body, key);
 } catch on DioError (e) {
-    print('Exception when calling KeyValueApi->apiAppKeyValueSetDateTimePost: $e\n');
+    print('Exception when calling KeyValueApi->setDateTimeAsync: $e\n');
 }
 ```
 
@@ -326,8 +369,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppKeyValueSetDecimalPost**
-> apiAppKeyValueSetDecimalPost(body, key)
+# **setDecimalAsync**
+> setDecimalAsync(body, key)
 
 
 
@@ -342,9 +385,9 @@ final DecimalSetKeyValueDto body = ; // DecimalSetKeyValueDto |
 final String key = key_example; // String | 
 
 try {
-    api.apiAppKeyValueSetDecimalPost(body, key);
+    api.setDecimalAsync(body, key);
 } catch on DioError (e) {
-    print('Exception when calling KeyValueApi->apiAppKeyValueSetDecimalPost: $e\n');
+    print('Exception when calling KeyValueApi->setDecimalAsync: $e\n');
 }
 ```
 
@@ -370,8 +413,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppKeyValueSetDoublePost**
-> apiAppKeyValueSetDoublePost(body, key)
+# **setDoubleAsync**
+> setDoubleAsync(body, key)
 
 
 
@@ -386,9 +429,9 @@ final DoubleSetKeyValueDto body = ; // DoubleSetKeyValueDto |
 final String key = key_example; // String | 
 
 try {
-    api.apiAppKeyValueSetDoublePost(body, key);
+    api.setDoubleAsync(body, key);
 } catch on DioError (e) {
-    print('Exception when calling KeyValueApi->apiAppKeyValueSetDoublePost: $e\n');
+    print('Exception when calling KeyValueApi->setDoubleAsync: $e\n');
 }
 ```
 
@@ -414,8 +457,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppKeyValueSetIntPost**
-> apiAppKeyValueSetIntPost(body, key)
+# **setIntAsync**
+> setIntAsync(body, key)
 
 
 
@@ -430,9 +473,9 @@ final Int32SetKeyValueDto body = ; // Int32SetKeyValueDto |
 final String key = key_example; // String | 
 
 try {
-    api.apiAppKeyValueSetIntPost(body, key);
+    api.setIntAsync(body, key);
 } catch on DioError (e) {
-    print('Exception when calling KeyValueApi->apiAppKeyValueSetIntPost: $e\n');
+    print('Exception when calling KeyValueApi->setIntAsync: $e\n');
 }
 ```
 
@@ -458,8 +501,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppKeyValueSetStringPost**
-> apiAppKeyValueSetStringPost(body, key)
+# **setStringAsync**
+> setStringAsync(body, key)
 
 
 
@@ -474,9 +517,9 @@ final StringSetKeyValueDto body = ; // StringSetKeyValueDto |
 final String key = key_example; // String | 
 
 try {
-    api.apiAppKeyValueSetStringPost(body, key);
+    api.setStringAsync(body, key);
 } catch on DioError (e) {
-    print('Exception when calling KeyValueApi->apiAppKeyValueSetStringPost: $e\n');
+    print('Exception when calling KeyValueApi->setStringAsync: $e\n');
 }
 ```
 
@@ -498,49 +541,6 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **apiAppKeyValueStringGet**
-> StringKeyValue apiAppKeyValueStringGet(key)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getKeyValueApi();
-final String key = key_example; // String | 
-
-try {
-    final response = api.apiAppKeyValueStringGet(key);
-    print(response);
-} catch on DioError (e) {
-    print('Exception when calling KeyValueApi->apiAppKeyValueStringGet: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **key** | **String**|  | [optional] 
-
-### Return type
-
-[**StringKeyValue**](StringKeyValue.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -7,63 +7,63 @@ void main() {
   final instance = PuupeeApiClient().getKeyValueApi();
 
   group(KeyValueApi, () {
-    //Future<BooleanKeyValue> apiAppKeyValueBoolGet({ String key }) async
-    test('test apiAppKeyValueBoolGet', () async {
+    //Future<BooleanKeyValue> getBoolAsync({ String key }) async
+    test('test getBoolAsync', () async {
       // TODO
     });
 
-    //Future<DateTimeKeyValue> apiAppKeyValueDateTimeGet({ String key }) async
-    test('test apiAppKeyValueDateTimeGet', () async {
+    //Future<DateTimeKeyValue> getDateTimeAsync({ String key }) async
+    test('test getDateTimeAsync', () async {
       // TODO
     });
 
-    //Future<DecimalKeyValue> apiAppKeyValueDecimalGet({ String key }) async
-    test('test apiAppKeyValueDecimalGet', () async {
+    //Future<DecimalKeyValue> getDecimalAsync({ String key }) async
+    test('test getDecimalAsync', () async {
       // TODO
     });
 
-    //Future<DoubleKeyValue> apiAppKeyValueDoubleGet({ String key }) async
-    test('test apiAppKeyValueDoubleGet', () async {
+    //Future<DoubleKeyValue> getDoubleAsync({ String key }) async
+    test('test getDoubleAsync', () async {
       // TODO
     });
 
-    //Future<Int32KeyValue> apiAppKeyValueIntGet({ String key }) async
-    test('test apiAppKeyValueIntGet', () async {
+    //Future<Int32KeyValue> getIntAsync({ String key }) async
+    test('test getIntAsync', () async {
       // TODO
     });
 
-    //Future apiAppKeyValueSetBoolPost({ BooleanSetKeyValueDto body, String key }) async
-    test('test apiAppKeyValueSetBoolPost', () async {
+    //Future<StringKeyValue> getStringAsync({ String key }) async
+    test('test getStringAsync', () async {
       // TODO
     });
 
-    //Future apiAppKeyValueSetDateTimePost({ DateTimeSetKeyValueDto body, String key }) async
-    test('test apiAppKeyValueSetDateTimePost', () async {
+    //Future setBoolAsync({ BooleanSetKeyValueDto body, String key }) async
+    test('test setBoolAsync', () async {
       // TODO
     });
 
-    //Future apiAppKeyValueSetDecimalPost({ DecimalSetKeyValueDto body, String key }) async
-    test('test apiAppKeyValueSetDecimalPost', () async {
+    //Future setDateTimeAsync({ DateTimeSetKeyValueDto body, String key }) async
+    test('test setDateTimeAsync', () async {
       // TODO
     });
 
-    //Future apiAppKeyValueSetDoublePost({ DoubleSetKeyValueDto body, String key }) async
-    test('test apiAppKeyValueSetDoublePost', () async {
+    //Future setDecimalAsync({ DecimalSetKeyValueDto body, String key }) async
+    test('test setDecimalAsync', () async {
       // TODO
     });
 
-    //Future apiAppKeyValueSetIntPost({ Int32SetKeyValueDto body, String key }) async
-    test('test apiAppKeyValueSetIntPost', () async {
+    //Future setDoubleAsync({ DoubleSetKeyValueDto body, String key }) async
+    test('test setDoubleAsync', () async {
       // TODO
     });
 
-    //Future apiAppKeyValueSetStringPost({ StringSetKeyValueDto body, String key }) async
-    test('test apiAppKeyValueSetStringPost', () async {
+    //Future setIntAsync({ Int32SetKeyValueDto body, String key }) async
+    test('test setIntAsync', () async {
       // TODO
     });
 
-    //Future<StringKeyValue> apiAppKeyValueStringGet({ String key }) async
-    test('test apiAppKeyValueStringGet', () async {
+    //Future setStringAsync({ StringSetKeyValueDto body, String key }) async
+    test('test setStringAsync', () async {
       // TODO
     });
 

@@ -7,13 +7,13 @@ void main() {
   final instance = PuupeeApiClient().getAvatarApi();
 
   group(AvatarApi, () {
-    //Future<StorageObjectCredentials> apiAppAvatarCredentialsGet({ String key }) async
-    test('test apiAppAvatarCredentialsGet', () async {
+    //Future<AvatarDto> createAsync({ CreateAvatarDto body }) async
+    test('test createAsync', () async {
       // TODO
     });
 
-    //Future<AvatarDto> apiAppAvatarPost({ CreateAvatarDto body }) async
-    test('test apiAppAvatarPost', () async {
+    //Future<StorageObjectCredentials> getCredentialsAsync({ String key }) async
+    test('test getCredentialsAsync', () async {
       // TODO
     });
 

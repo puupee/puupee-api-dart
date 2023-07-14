@@ -9,13 +9,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiAppMessageTemplateReleaseGet**](MessageTemplateReleaseApi.md#apiappmessagetemplatereleaseget) | **GET** /api/app/message-template-release | 
-[**apiAppMessageTemplateReleaseIdGet**](MessageTemplateReleaseApi.md#apiappmessagetemplatereleaseidget) | **GET** /api/app/message-template-release/{id} | 
-[**apiAppMessageTemplateReleasePost**](MessageTemplateReleaseApi.md#apiappmessagetemplatereleasepost) | **POST** /api/app/message-template-release | 
+[**createAsync**](MessageTemplateReleaseApi.md#createasync) | **POST** /api/app/message-template-release | 
+[**getAsync**](MessageTemplateReleaseApi.md#getasync) | **GET** /api/app/message-template-release/{id} | 
+[**getListAsync**](MessageTemplateReleaseApi.md#getlistasync) | **GET** /api/app/message-template-release | 
 
 
-# **apiAppMessageTemplateReleaseGet**
-> List<MessageTemplateReleaseDto> apiAppMessageTemplateReleaseGet(templateId)
+# **createAsync**
+> MessageTemplateReleaseDto createAsync(body)
 
 
 
@@ -26,13 +26,13 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getMessageTemplateReleaseApi();
-final String templateId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final CreateMessageTemplateReleaseDto body = ; // CreateMessageTemplateReleaseDto | 
 
 try {
-    final response = api.apiAppMessageTemplateReleaseGet(templateId);
+    final response = api.createAsync(body);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling MessageTemplateReleaseApi->apiAppMessageTemplateReleaseGet: $e\n');
+    print('Exception when calling MessageTemplateReleaseApi->createAsync: $e\n');
 }
 ```
 
@@ -40,11 +40,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **templateId** | **String**|  | [optional] 
+ **body** | [**CreateMessageTemplateReleaseDto**](CreateMessageTemplateReleaseDto.md)|  | [optional] 
 
 ### Return type
 
-[**List&lt;MessageTemplateReleaseDto&gt;**](MessageTemplateReleaseDto.md)
+[**MessageTemplateReleaseDto**](MessageTemplateReleaseDto.md)
 
 ### Authorization
 
@@ -52,13 +52,13 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppMessageTemplateReleaseIdGet**
-> MessageTemplateReleaseDto apiAppMessageTemplateReleaseIdGet(id)
+# **getAsync**
+> MessageTemplateReleaseDto getAsync(id)
 
 
 
@@ -72,10 +72,10 @@ final api = PuupeeApiClient().getMessageTemplateReleaseApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final response = api.apiAppMessageTemplateReleaseIdGet(id);
+    final response = api.getAsync(id);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling MessageTemplateReleaseApi->apiAppMessageTemplateReleaseIdGet: $e\n');
+    print('Exception when calling MessageTemplateReleaseApi->getAsync: $e\n');
 }
 ```
 
@@ -100,8 +100,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppMessageTemplateReleasePost**
-> MessageTemplateReleaseDto apiAppMessageTemplateReleasePost(body)
+# **getListAsync**
+> List<MessageTemplateReleaseDto> getListAsync(templateId)
 
 
 
@@ -112,13 +112,13 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getMessageTemplateReleaseApi();
-final CreateMessageTemplateReleaseDto body = ; // CreateMessageTemplateReleaseDto | 
+final String templateId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final response = api.apiAppMessageTemplateReleasePost(body);
+    final response = api.getListAsync(templateId);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling MessageTemplateReleaseApi->apiAppMessageTemplateReleasePost: $e\n');
+    print('Exception when calling MessageTemplateReleaseApi->getListAsync: $e\n');
 }
 ```
 
@@ -126,11 +126,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateMessageTemplateReleaseDto**](CreateMessageTemplateReleaseDto.md)|  | [optional] 
+ **templateId** | **String**|  | [optional] 
 
 ### Return type
 
-[**MessageTemplateReleaseDto**](MessageTemplateReleaseDto.md)
+[**List&lt;MessageTemplateReleaseDto&gt;**](MessageTemplateReleaseDto.md)
 
 ### Authorization
 
@@ -138,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/*+json
+ - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

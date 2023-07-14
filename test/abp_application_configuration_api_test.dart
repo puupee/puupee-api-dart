@@ -7,8 +7,8 @@ void main() {
   final instance = PuupeeApiClient().getAbpApplicationConfigurationApi();
 
   group(AbpApplicationConfigurationApi, () {
-    //Future<ApplicationConfigurationDto> apiAbpApplicationConfigurationGet({ bool includeLocalizationResources }) async
-    test('test apiAbpApplicationConfigurationGet', () async {
+    //Future<ApplicationConfigurationDto> getAsync({ bool includeLocalizationResources }) async
+    test('test getAsync', () async {
       // TODO
     });
 

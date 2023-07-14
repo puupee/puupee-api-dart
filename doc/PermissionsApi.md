@@ -9,12 +9,12 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiPermissionManagementPermissionsGet**](PermissionsApi.md#apipermissionmanagementpermissionsget) | **GET** /api/permission-management/permissions | 
-[**apiPermissionManagementPermissionsPut**](PermissionsApi.md#apipermissionmanagementpermissionsput) | **PUT** /api/permission-management/permissions | 
+[**getAsync**](PermissionsApi.md#getasync) | **GET** /api/permission-management/permissions | 
+[**updateAsync**](PermissionsApi.md#updateasync) | **PUT** /api/permission-management/permissions | 
 
 
-# **apiPermissionManagementPermissionsGet**
-> GetPermissionListResultDto apiPermissionManagementPermissionsGet(providerName, providerKey)
+# **getAsync**
+> GetPermissionListResultDto getAsync(providerName, providerKey)
 
 
 
@@ -29,10 +29,10 @@ final String providerName = providerName_example; // String |
 final String providerKey = providerKey_example; // String | 
 
 try {
-    final response = api.apiPermissionManagementPermissionsGet(providerName, providerKey);
+    final response = api.getAsync(providerName, providerKey);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling PermissionsApi->apiPermissionManagementPermissionsGet: $e\n');
+    print('Exception when calling PermissionsApi->getAsync: $e\n');
 }
 ```
 
@@ -58,8 +58,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiPermissionManagementPermissionsPut**
-> apiPermissionManagementPermissionsPut(body, providerName, providerKey)
+# **updateAsync**
+> updateAsync(body, providerName, providerKey)
 
 
 
@@ -75,9 +75,9 @@ final String providerName = providerName_example; // String |
 final String providerKey = providerKey_example; // String | 
 
 try {
-    api.apiPermissionManagementPermissionsPut(body, providerName, providerKey);
+    api.updateAsync(body, providerName, providerKey);
 } catch on DioError (e) {
-    print('Exception when calling PermissionsApi->apiPermissionManagementPermissionsPut: $e\n');
+    print('Exception when calling PermissionsApi->updateAsync: $e\n');
 }
 ```
 

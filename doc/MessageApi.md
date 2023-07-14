@@ -9,14 +9,14 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiAppMessagePublishPost**](MessageApi.md#apiappmessagepublishpost) | **POST** /api/app/message/publish | 
-[**apiAppMessageRecallPost**](MessageApi.md#apiappmessagerecallpost) | **POST** /api/app/message/recall | 
-[**apiAppMessageSubscribePost**](MessageApi.md#apiappmessagesubscribepost) | **POST** /api/app/message/subscribe | 
-[**apiAppMessageUnsubscribePost**](MessageApi.md#apiappmessageunsubscribepost) | **POST** /api/app/message/unsubscribe | 
+[**publish**](MessageApi.md#publish) | **POST** /api/app/message/publish | 
+[**recall**](MessageApi.md#recall) | **POST** /api/app/message/recall | 
+[**subscribe**](MessageApi.md#subscribe) | **POST** /api/app/message/subscribe | 
+[**unsubscribe**](MessageApi.md#unsubscribe) | **POST** /api/app/message/unsubscribe | 
 
 
-# **apiAppMessagePublishPost**
-> apiAppMessagePublishPost(body)
+# **publish**
+> publish(body)
 
 
 
@@ -30,9 +30,9 @@ final api = PuupeeApiClient().getMessageApi();
 final MessagePublishDto body = ; // MessagePublishDto | 
 
 try {
-    api.apiAppMessagePublishPost(body);
+    api.publish(body);
 } catch on DioError (e) {
-    print('Exception when calling MessageApi->apiAppMessagePublishPost: $e\n');
+    print('Exception when calling MessageApi->publish: $e\n');
 }
 ```
 
@@ -57,8 +57,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppMessageRecallPost**
-> apiAppMessageRecallPost(body)
+# **recall**
+> recall(body)
 
 
 
@@ -72,9 +72,9 @@ final api = PuupeeApiClient().getMessageApi();
 final MessageRecallDto body = ; // MessageRecallDto | 
 
 try {
-    api.apiAppMessageRecallPost(body);
+    api.recall(body);
 } catch on DioError (e) {
-    print('Exception when calling MessageApi->apiAppMessageRecallPost: $e\n');
+    print('Exception when calling MessageApi->recall: $e\n');
 }
 ```
 
@@ -99,8 +99,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppMessageSubscribePost**
-> apiAppMessageSubscribePost(body)
+# **subscribe**
+> subscribe(body)
 
 
 
@@ -114,9 +114,9 @@ final api = PuupeeApiClient().getMessageApi();
 final MessageSubscribeDto body = ; // MessageSubscribeDto | 
 
 try {
-    api.apiAppMessageSubscribePost(body);
+    api.subscribe(body);
 } catch on DioError (e) {
-    print('Exception when calling MessageApi->apiAppMessageSubscribePost: $e\n');
+    print('Exception when calling MessageApi->subscribe: $e\n');
 }
 ```
 
@@ -141,8 +141,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppMessageUnsubscribePost**
-> apiAppMessageUnsubscribePost(body)
+# **unsubscribe**
+> unsubscribe(body)
 
 
 
@@ -156,9 +156,9 @@ final api = PuupeeApiClient().getMessageApi();
 final MessageUnsubscribeDto body = ; // MessageUnsubscribeDto | 
 
 try {
-    api.apiAppMessageUnsubscribePost(body);
+    api.unsubscribe(body);
 } catch on DioError (e) {
-    print('Exception when calling MessageApi->apiAppMessageUnsubscribePost: $e\n');
+    print('Exception when calling MessageApi->unsubscribe: $e\n');
 }
 ```
 

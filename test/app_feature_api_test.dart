@@ -7,23 +7,23 @@ void main() {
   final instance = PuupeeApiClient().getAppFeatureApi();
 
   group(AppFeatureApi, () {
-    //Future<AppFeatureDtoPagedResultDto> apiAppAppFeatureGet({ String sorting, int skipCount, int maxResultCount }) async
-    test('test apiAppAppFeatureGet', () async {
+    //Future<AppFeatureDto> createAsync({ CreateOrUpdateAppFeatureDto body }) async
+    test('test createAsync', () async {
       // TODO
     });
 
-    //Future apiAppAppFeatureIdDelete(String id) async
-    test('test apiAppAppFeatureIdDelete', () async {
+    //Future deleteAsync(String id) async
+    test('test deleteAsync', () async {
       // TODO
     });
 
-    //Future<AppFeatureDto> apiAppAppFeatureIdPut(String id, { CreateOrUpdateAppFeatureDto body }) async
-    test('test apiAppAppFeatureIdPut', () async {
+    //Future<AppFeatureDtoPagedResultDto> getListAsync({ String sorting, int skipCount, int maxResultCount }) async
+    test('test getListAsync', () async {
       // TODO
     });
 
-    //Future<AppFeatureDto> apiAppAppFeaturePost({ CreateOrUpdateAppFeatureDto body }) async
-    test('test apiAppAppFeaturePost', () async {
+    //Future<AppFeatureDto> updateAsync(String id, { CreateOrUpdateAppFeatureDto body }) async
+    test('test updateAsync', () async {
       // TODO
     });
 

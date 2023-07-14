@@ -7,23 +7,23 @@ void main() {
   final instance = PuupeeApiClient().getSubscriptionApi();
 
   group(SubscriptionApi, () {
-    //Future apiAppSubscriptionAppleNotificationsPost({ AppleNotificaionDto body }) async
-    test('test apiAppSubscriptionAppleNotificationsPost', () async {
+    //Future appleNotificationsAsync({ AppleNotificaionDto body }) async
+    test('test appleNotificationsAsync', () async {
       // TODO
     });
 
-    //Future<SubscriptionDto> apiAppSubscriptionGet({ String appId }) async
-    test('test apiAppSubscriptionGet', () async {
+    //Future<SubscriptionOrderDto> createOrderAsync({ CreateOrGetSubscriptionOrderDto body }) async
+    test('test createOrderAsync', () async {
       // TODO
     });
 
-    //Future<SubscriptionOrderDto> apiAppSubscriptionOrderPost({ CreateOrGetSubscriptionOrderDto body }) async
-    test('test apiAppSubscriptionOrderPost', () async {
+    //Future<SubscriptionDto> getAsync({ String appId }) async
+    test('test getAsync', () async {
       // TODO
     });
 
-    //Future<VerifyReceiptResult> apiAppSubscriptionVerifyReceiptPost({ VerifyReceiptDto body }) async
-    test('test apiAppSubscriptionVerifyReceiptPost', () async {
+    //Future<VerifyReceiptResult> verifyReceiptAsync({ VerifyReceiptDto body }) async
+    test('test verifyReceiptAsync', () async {
       // TODO
     });
 

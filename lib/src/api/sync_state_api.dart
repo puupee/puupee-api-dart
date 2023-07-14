@@ -19,7 +19,7 @@ class SyncStateApi {
 
   const SyncStateApi(this._dio);
 
-  /// apiAppSyncStateDeviceConnectedEtoPost
+  /// deviceConnectedEtoAsync
   /// 
   ///
   /// Parameters:
@@ -32,7 +32,7 @@ class SyncStateApi {
   ///
   /// Returns a [Future] containing a [Response] with a [PuupeeEto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<PuupeeEto>> apiAppSyncStateDeviceConnectedEtoPost({ 
+  Future<Response<PuupeeEto>> deviceConnectedEtoAsync({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -92,7 +92,7 @@ _responseData = deserialize<PuupeeEto, PuupeeEto>(_response.data!, 'PuupeeEto', 
     );
   }
 
-  /// apiAppSyncStateGet
+  /// getAsync
   /// 
   ///
   /// Parameters:
@@ -105,7 +105,7 @@ _responseData = deserialize<PuupeeEto, PuupeeEto>(_response.data!, 'PuupeeEto', 
   ///
   /// Returns a [Future] containing a [Response] with a [SyncStateDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<SyncStateDto>> apiAppSyncStateGet({ 
+  Future<Response<SyncStateDto>> getAsync({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -165,7 +165,7 @@ _responseData = deserialize<SyncStateDto, SyncStateDto>(_response.data!, 'SyncSt
     );
   }
 
-  /// apiAppSyncStatePuupeeChangedEtoPost
+  /// puupeeChangedEtoAsync
   /// 
   ///
   /// Parameters:
@@ -178,7 +178,7 @@ _responseData = deserialize<SyncStateDto, SyncStateDto>(_response.data!, 'SyncSt
   ///
   /// Returns a [Future] containing a [Response] with a [PuupeeEto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<PuupeeEto>> apiAppSyncStatePuupeeChangedEtoPost({ 
+  Future<Response<PuupeeEto>> puupeeChangedEtoAsync({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,

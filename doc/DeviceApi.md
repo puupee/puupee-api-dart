@@ -9,16 +9,16 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiAppDeviceBindPost**](DeviceApi.md#apiappdevicebindpost) | **POST** /api/app/device/bind | 
-[**apiAppDeviceByTokenGet**](DeviceApi.md#apiappdevicebytokenget) | **GET** /api/app/device/by-token | 
-[**apiAppDeviceDelete**](DeviceApi.md#apiappdevicedelete) | **DELETE** /api/app/device | 
-[**apiAppDeviceGet**](DeviceApi.md#apiappdeviceget) | **GET** /api/app/device | 
-[**apiAppDeviceIdGet**](DeviceApi.md#apiappdeviceidget) | **GET** /api/app/device/{id} | 
-[**apiAppDeviceRefreshPost**](DeviceApi.md#apiappdevicerefreshpost) | **POST** /api/app/device/refresh | 
+[**bindAsync**](DeviceApi.md#bindasync) | **POST** /api/app/device/bind | 
+[**getAsync**](DeviceApi.md#getasync) | **GET** /api/app/device/{id} | 
+[**getByTokenAsync**](DeviceApi.md#getbytokenasync) | **GET** /api/app/device/by-token | 
+[**getListAsync**](DeviceApi.md#getlistasync) | **GET** /api/app/device | 
+[**refreshAsync**](DeviceApi.md#refreshasync) | **POST** /api/app/device/refresh | 
+[**removeAsync**](DeviceApi.md#removeasync) | **DELETE** /api/app/device | 
 
 
-# **apiAppDeviceBindPost**
-> apiAppDeviceBindPost(body)
+# **bindAsync**
+> bindAsync(body)
 
 
 
@@ -32,9 +32,9 @@ final api = PuupeeApiClient().getDeviceApi();
 final BindDeviceDto body = ; // BindDeviceDto | 
 
 try {
-    api.apiAppDeviceBindPost(body);
+    api.bindAsync(body);
 } catch on DioError (e) {
-    print('Exception when calling DeviceApi->apiAppDeviceBindPost: $e\n');
+    print('Exception when calling DeviceApi->bindAsync: $e\n');
 }
 ```
 
@@ -59,8 +59,51 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppDeviceByTokenGet**
-> DeviceDto apiAppDeviceByTokenGet(token)
+# **getAsync**
+> DeviceDto getAsync(id)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getDeviceApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+
+try {
+    final response = api.getAsync(id);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling DeviceApi->getAsync: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+[**DeviceDto**](DeviceDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getByTokenAsync**
+> DeviceDto getByTokenAsync(token)
 
 
 
@@ -74,10 +117,10 @@ final api = PuupeeApiClient().getDeviceApi();
 final String token = token_example; // String | 
 
 try {
-    final response = api.apiAppDeviceByTokenGet(token);
+    final response = api.getByTokenAsync(token);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling DeviceApi->apiAppDeviceByTokenGet: $e\n');
+    print('Exception when calling DeviceApi->getByTokenAsync: $e\n');
 }
 ```
 
@@ -102,50 +145,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppDeviceDelete**
-> apiAppDeviceDelete(token)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getDeviceApi();
-final String token = token_example; // String | 
-
-try {
-    api.apiAppDeviceDelete(token);
-} catch on DioError (e) {
-    print('Exception when calling DeviceApi->apiAppDeviceDelete: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **token** | **String**|  | [optional] 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **apiAppDeviceGet**
-> DeviceDtoPagedResultDto apiAppDeviceGet(sorting, skipCount, maxResultCount)
+# **getListAsync**
+> DeviceDtoPagedResultDto getListAsync(sorting, skipCount, maxResultCount)
 
 
 
@@ -161,10 +162,10 @@ final int skipCount = 56; // int |
 final int maxResultCount = 56; // int | 
 
 try {
-    final response = api.apiAppDeviceGet(sorting, skipCount, maxResultCount);
+    final response = api.getListAsync(sorting, skipCount, maxResultCount);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling DeviceApi->apiAppDeviceGet: $e\n');
+    print('Exception when calling DeviceApi->getListAsync: $e\n');
 }
 ```
 
@@ -191,51 +192,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppDeviceIdGet**
-> DeviceDto apiAppDeviceIdGet(id)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getDeviceApi();
-final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-
-try {
-    final response = api.apiAppDeviceIdGet(id);
-    print(response);
-} catch on DioError (e) {
-    print('Exception when calling DeviceApi->apiAppDeviceIdGet: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
-
-### Return type
-
-[**DeviceDto**](DeviceDto.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **apiAppDeviceRefreshPost**
-> apiAppDeviceRefreshPost(body)
+# **refreshAsync**
+> refreshAsync(body)
 
 
 
@@ -249,9 +207,9 @@ final api = PuupeeApiClient().getDeviceApi();
 final RefreshDeviceStatusDto body = ; // RefreshDeviceStatusDto | 
 
 try {
-    api.apiAppDeviceRefreshPost(body);
+    api.refreshAsync(body);
 } catch on DioError (e) {
-    print('Exception when calling DeviceApi->apiAppDeviceRefreshPost: $e\n');
+    print('Exception when calling DeviceApi->refreshAsync: $e\n');
 }
 ```
 
@@ -272,6 +230,48 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **removeAsync**
+> removeAsync(token)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getDeviceApi();
+final String token = token_example; // String | 
+
+try {
+    api.removeAsync(token);
+} catch on DioError (e) {
+    print('Exception when calling DeviceApi->removeAsync: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **token** | **String**|  | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

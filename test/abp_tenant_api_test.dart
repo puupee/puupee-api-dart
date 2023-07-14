@@ -7,13 +7,13 @@ void main() {
   final instance = PuupeeApiClient().getAbpTenantApi();
 
   group(AbpTenantApi, () {
-    //Future<FindTenantResultDto> apiAbpMultiTenancyTenantsByIdIdGet(String id) async
-    test('test apiAbpMultiTenancyTenantsByIdIdGet', () async {
+    //Future<FindTenantResultDto> findTenantByIdAsync(String id) async
+    test('test findTenantByIdAsync', () async {
       // TODO
     });
 
-    //Future<FindTenantResultDto> apiAbpMultiTenancyTenantsByNameNameGet(String name) async
-    test('test apiAbpMultiTenancyTenantsByNameNameGet', () async {
+    //Future<FindTenantResultDto> findTenantByNameAsync(String name) async
+    test('test findTenantByNameAsync', () async {
       // TODO
     });
 

@@ -9,13 +9,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiAccountMyProfileChangePasswordPost**](ProfileApi.md#apiaccountmyprofilechangepasswordpost) | **POST** /api/account/my-profile/change-password | 
-[**apiAccountMyProfileGet**](ProfileApi.md#apiaccountmyprofileget) | **GET** /api/account/my-profile | 
-[**apiAccountMyProfilePut**](ProfileApi.md#apiaccountmyprofileput) | **PUT** /api/account/my-profile | 
+[**changePasswordAsync**](ProfileApi.md#changepasswordasync) | **POST** /api/account/my-profile/change-password | 
+[**getAsync**](ProfileApi.md#getasync) | **GET** /api/account/my-profile | 
+[**updateAsync**](ProfileApi.md#updateasync) | **PUT** /api/account/my-profile | 
 
 
-# **apiAccountMyProfileChangePasswordPost**
-> apiAccountMyProfileChangePasswordPost(body)
+# **changePasswordAsync**
+> changePasswordAsync(body)
 
 
 
@@ -29,9 +29,9 @@ final api = PuupeeApiClient().getProfileApi();
 final ChangePasswordInput body = ; // ChangePasswordInput | 
 
 try {
-    api.apiAccountMyProfileChangePasswordPost(body);
+    api.changePasswordAsync(body);
 } catch on DioError (e) {
-    print('Exception when calling ProfileApi->apiAccountMyProfileChangePasswordPost: $e\n');
+    print('Exception when calling ProfileApi->changePasswordAsync: $e\n');
 }
 ```
 
@@ -56,8 +56,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAccountMyProfileGet**
-> ProfileDto apiAccountMyProfileGet()
+# **getAsync**
+> ProfileDto getAsync()
 
 
 
@@ -70,10 +70,10 @@ import 'package:puupee_api_client/api.dart';
 final api = PuupeeApiClient().getProfileApi();
 
 try {
-    final response = api.apiAccountMyProfileGet();
+    final response = api.getAsync();
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling ProfileApi->apiAccountMyProfileGet: $e\n');
+    print('Exception when calling ProfileApi->getAsync: $e\n');
 }
 ```
 
@@ -95,8 +95,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAccountMyProfilePut**
-> ProfileDto apiAccountMyProfilePut(body)
+# **updateAsync**
+> ProfileDto updateAsync(body)
 
 
 
@@ -110,10 +110,10 @@ final api = PuupeeApiClient().getProfileApi();
 final UpdateProfileDto body = ; // UpdateProfileDto | 
 
 try {
-    final response = api.apiAccountMyProfilePut(body);
+    final response = api.updateAsync(body);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling ProfileApi->apiAccountMyProfilePut: $e\n');
+    print('Exception when calling ProfileApi->updateAsync: $e\n');
 }
 ```
 

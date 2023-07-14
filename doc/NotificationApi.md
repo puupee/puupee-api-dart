@@ -9,13 +9,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiAppNotificationBarkApiKeyMessageGet**](NotificationApi.md#apiappnotificationbarkapikeymessageget) | **GET** /api/app/notification/bark/{apiKey}/{message} | 
-[**apiAppNotificationGet**](NotificationApi.md#apiappnotificationget) | **GET** /api/app/notification | 
-[**apiAppNotificationPushPost**](NotificationApi.md#apiappnotificationpushpost) | **POST** /api/app/notification/push | 
+[**barkAsync**](NotificationApi.md#barkasync) | **GET** /api/app/notification/bark/{apiKey}/{message} | 
+[**getListAsync**](NotificationApi.md#getlistasync) | **GET** /api/app/notification | 
+[**pushAsync**](NotificationApi.md#pushasync) | **POST** /api/app/notification/push | 
 
 
-# **apiAppNotificationBarkApiKeyMessageGet**
-> apiAppNotificationBarkApiKeyMessageGet(apiKey, message, automaticallyCopy, copy, url, isArchive, group, icon, name, value)
+# **barkAsync**
+> barkAsync(apiKey, message, automaticallyCopy, copy, url, isArchive, group, icon, name, value)
 
 
 
@@ -38,9 +38,9 @@ final String name = name_example; // String |
 final String value = value_example; // String | 
 
 try {
-    api.apiAppNotificationBarkApiKeyMessageGet(apiKey, message, automaticallyCopy, copy, url, isArchive, group, icon, name, value);
+    api.barkAsync(apiKey, message, automaticallyCopy, copy, url, isArchive, group, icon, name, value);
 } catch on DioError (e) {
-    print('Exception when calling NotificationApi->apiAppNotificationBarkApiKeyMessageGet: $e\n');
+    print('Exception when calling NotificationApi->barkAsync: $e\n');
 }
 ```
 
@@ -74,8 +74,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppNotificationGet**
-> NotificationInfoDtoPagedResultDto apiAppNotificationGet(sorting, skipCount, maxResultCount)
+# **getListAsync**
+> NotificationInfoDtoPagedResultDto getListAsync(sorting, skipCount, maxResultCount)
 
 
 
@@ -91,10 +91,10 @@ final int skipCount = 56; // int |
 final int maxResultCount = 56; // int | 
 
 try {
-    final response = api.apiAppNotificationGet(sorting, skipCount, maxResultCount);
+    final response = api.getListAsync(sorting, skipCount, maxResultCount);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling NotificationApi->apiAppNotificationGet: $e\n');
+    print('Exception when calling NotificationApi->getListAsync: $e\n');
 }
 ```
 
@@ -121,8 +121,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppNotificationPushPost**
-> apiAppNotificationPushPost(body)
+# **pushAsync**
+> pushAsync(body)
 
 
 
@@ -136,9 +136,9 @@ final api = PuupeeApiClient().getNotificationApi();
 final CreatePushNotificationDto body = ; // CreatePushNotificationDto | 
 
 try {
-    api.apiAppNotificationPushPost(body);
+    api.pushAsync(body);
 } catch on DioError (e) {
-    print('Exception when calling NotificationApi->apiAppNotificationPushPost: $e\n');
+    print('Exception when calling NotificationApi->pushAsync: $e\n');
 }
 ```
 

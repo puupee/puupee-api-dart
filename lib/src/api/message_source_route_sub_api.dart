@@ -19,10 +19,11 @@ class MessageSourceRouteSubApi {
 
   const MessageSourceRouteSubApi(this._dio);
 
-  /// apiAppMessageSourceRouteSubGet
+  /// createAsync
   /// 
   ///
   /// Parameters:
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -30,9 +31,10 @@ class MessageSourceRouteSubApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [List<MessageSourceRouteSubDto>] as data
+  /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<List<MessageSourceRouteSubDto>>> apiAppMessageSourceRouteSubGet({ 
+  Future<Response<void>> createAsync({ 
+    CreateUpdateMessageSourceRouteSubDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -42,7 +44,7 @@ class MessageSourceRouteSubApi {
   }) async {
     final _path = r'/api/app/message-source-route-sub';
     final _options = Options(
-      method: r'GET',
+      method: r'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -55,44 +57,39 @@ class MessageSourceRouteSubApi {
         ],
         ...?extra,
       },
+      contentType: 'application/json',
       validateStatus: validateStatus,
     );
 
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    List<MessageSourceRouteSubDto> _responseData;
+    dynamic _bodyData;
 
     try {
-_responseData = deserialize<List<MessageSourceRouteSubDto>, MessageSourceRouteSubDto>(_response.data!, 'List<MessageSourceRouteSubDto>', growable: true);
-    } catch (error, stackTrace) {
+_bodyData=jsonEncode(body);
+    } catch(error, stackTrace) {
       throw DioError(
-        requestOptions: _response.requestOptions,
-        response: _response,
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
         type: DioErrorType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
     }
 
-    return Response<List<MessageSourceRouteSubDto>>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
     );
+
+    return _response;
   }
 
-  /// apiAppMessageSourceRouteSubIdDelete
+  /// deleteAsync
   /// 
   ///
   /// Parameters:
@@ -106,7 +103,7 @@ _responseData = deserialize<List<MessageSourceRouteSubDto>, MessageSourceRouteSu
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> apiAppMessageSourceRouteSubIdDelete({ 
+  Future<Response<void>> deleteAsync({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -144,7 +141,7 @@ _responseData = deserialize<List<MessageSourceRouteSubDto>, MessageSourceRouteSu
     return _response;
   }
 
-  /// apiAppMessageSourceRouteSubIdGet
+  /// getAsync
   /// 
   ///
   /// Parameters:
@@ -158,7 +155,7 @@ _responseData = deserialize<List<MessageSourceRouteSubDto>, MessageSourceRouteSu
   ///
   /// Returns a [Future] containing a [Response] with a [MessageSourceRouteSubDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<MessageSourceRouteSubDto>> apiAppMessageSourceRouteSubIdGet({ 
+  Future<Response<MessageSourceRouteSubDto>> getAsync({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -219,7 +216,80 @@ _responseData = deserialize<MessageSourceRouteSubDto, MessageSourceRouteSubDto>(
     );
   }
 
-  /// apiAppMessageSourceRouteSubIdPut
+  /// getListAsync
+  /// 
+  ///
+  /// Parameters:
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [List<MessageSourceRouteSubDto>] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<List<MessageSourceRouteSubDto>>> getListAsync({ 
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/app/message-source-route-sub';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'oauth2',
+            'name': 'oauth2',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    List<MessageSourceRouteSubDto> _responseData;
+
+    try {
+_responseData = deserialize<List<MessageSourceRouteSubDto>, MessageSourceRouteSubDto>(_response.data!, 'List<MessageSourceRouteSubDto>', growable: true);
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<List<MessageSourceRouteSubDto>>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// updateAsync
   /// 
   ///
   /// Parameters:
@@ -234,7 +304,7 @@ _responseData = deserialize<MessageSourceRouteSubDto, MessageSourceRouteSubDto>(
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> apiAppMessageSourceRouteSubIdPut({ 
+  Future<Response<void>> updateAsync({ 
     required String id,
     CreateUpdateMessageSourceRouteSubDto? body,
     CancelToken? cancelToken,
@@ -247,76 +317,6 @@ _responseData = deserialize<MessageSourceRouteSubDto, MessageSourceRouteSubDto>(
     final _path = r'/api/app/message-source-route-sub/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
-        ],
-        ...?extra,
-      },
-      contentType: 'application/json',
-      validateStatus: validateStatus,
-    );
-
-    dynamic _bodyData;
-
-    try {
-_bodyData=jsonEncode(body);
-    } catch(error, stackTrace) {
-      throw DioError(
-         requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
-        type: DioErrorType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    final _response = await _dio.request<Object>(
-      _path,
-      data: _bodyData,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    return _response;
-  }
-
-  /// apiAppMessageSourceRouteSubPost
-  /// 
-  ///
-  /// Parameters:
-  /// * [body] 
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future]
-  /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> apiAppMessageSourceRouteSubPost({ 
-    CreateUpdateMessageSourceRouteSubDto? body,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/app/message-source-route-sub';
-    final _options = Options(
-      method: r'POST',
       headers: <String, dynamic>{
         ...?headers,
       },

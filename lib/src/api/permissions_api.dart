@@ -19,7 +19,7 @@ class PermissionsApi {
 
   const PermissionsApi(this._dio);
 
-  /// apiPermissionManagementPermissionsGet
+  /// getAsync
   /// 
   ///
   /// Parameters:
@@ -34,7 +34,7 @@ class PermissionsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [GetPermissionListResultDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<GetPermissionListResultDto>> apiPermissionManagementPermissionsGet({ 
+  Future<Response<GetPermissionListResultDto>> getAsync({ 
     String? providerName,
     String? providerKey,
     CancelToken? cancelToken,
@@ -102,7 +102,7 @@ _responseData = deserialize<GetPermissionListResultDto, GetPermissionListResultD
     );
   }
 
-  /// apiPermissionManagementPermissionsPut
+  /// updateAsync
   /// 
   ///
   /// Parameters:
@@ -118,7 +118,7 @@ _responseData = deserialize<GetPermissionListResultDto, GetPermissionListResultD
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> apiPermissionManagementPermissionsPut({ 
+  Future<Response<void>> updateAsync({ 
     UpdatePermissionsDto? body,
     String? providerName,
     String? providerKey,

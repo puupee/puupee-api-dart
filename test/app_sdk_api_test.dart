@@ -7,23 +7,23 @@ void main() {
   final instance = PuupeeApiClient().getAppSdkApi();
 
   group(AppSdkApi, () {
-    //Future<AppSdkDtoPagedResultDto> apiAppAppSdkGet({ String sorting, int skipCount, int maxResultCount }) async
-    test('test apiAppAppSdkGet', () async {
+    //Future<AppSdkDto> createAsync({ CreateOrUpdateAppSdkDto body }) async
+    test('test createAsync', () async {
       // TODO
     });
 
-    //Future apiAppAppSdkIdDelete(String id) async
-    test('test apiAppAppSdkIdDelete', () async {
+    //Future deleteAsync(String id) async
+    test('test deleteAsync', () async {
       // TODO
     });
 
-    //Future<AppSdkDto> apiAppAppSdkIdPut(String id, { CreateOrUpdateAppSdkDto body }) async
-    test('test apiAppAppSdkIdPut', () async {
+    //Future<AppSdkDtoPagedResultDto> getListAsync({ String sorting, int skipCount, int maxResultCount }) async
+    test('test getListAsync', () async {
       // TODO
     });
 
-    //Future<AppSdkDto> apiAppAppSdkPost({ CreateOrUpdateAppSdkDto body }) async
-    test('test apiAppAppSdkPost', () async {
+    //Future<AppSdkDto> updateAsync(String id, { CreateOrUpdateAppSdkDto body }) async
+    test('test updateAsync', () async {
       // TODO
     });
 

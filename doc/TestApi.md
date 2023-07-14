@@ -9,11 +9,11 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiTestDatetimeGet**](TestApi.md#apitestdatetimeget) | **GET** /api/Test/datetime | 
+[**getTestDate**](TestApi.md#gettestdate) | **GET** /api/Test/datetime | 
 
 
-# **apiTestDatetimeGet**
-> TestDateTime apiTestDatetimeGet()
+# **getTestDate**
+> TestDateTime getTestDate()
 
 
 
@@ -26,10 +26,10 @@ import 'package:puupee_api_client/api.dart';
 final api = PuupeeApiClient().getTestApi();
 
 try {
-    final response = api.apiTestDatetimeGet();
+    final response = api.getTestDate();
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling TestApi->apiTestDatetimeGet: $e\n');
+    print('Exception when calling TestApi->getTestDate: $e\n');
 }
 ```
 

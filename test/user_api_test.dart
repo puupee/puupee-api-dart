@@ -7,53 +7,53 @@ void main() {
   final instance = PuupeeApiClient().getUserApi();
 
   group(UserApi, () {
-    //Future<IdentityRoleDtoListResultDto> apiIdentityUsersAssignableRolesGet() async
-    test('test apiIdentityUsersAssignableRolesGet', () async {
+    //Future<IdentityUserDto> createAsync({ IdentityUserCreateDto body }) async
+    test('test createAsync', () async {
       // TODO
     });
 
-    //Future<IdentityUserDto> apiIdentityUsersByEmailEmailGet(String email) async
-    test('test apiIdentityUsersByEmailEmailGet', () async {
+    //Future deleteAsync(String id) async
+    test('test deleteAsync', () async {
       // TODO
     });
 
-    //Future<IdentityUserDto> apiIdentityUsersByUsernameUserNameGet(String userName) async
-    test('test apiIdentityUsersByUsernameUserNameGet', () async {
+    //Future<IdentityUserDto> findByEmailAsync(String email) async
+    test('test findByEmailAsync', () async {
       // TODO
     });
 
-    //Future<IdentityUserDtoPagedResultDto> apiIdentityUsersGet({ String filter, String sorting, int skipCount, int maxResultCount }) async
-    test('test apiIdentityUsersGet', () async {
+    //Future<IdentityUserDto> findByUsernameAsync(String userName) async
+    test('test findByUsernameAsync', () async {
       // TODO
     });
 
-    //Future apiIdentityUsersIdDelete(String id) async
-    test('test apiIdentityUsersIdDelete', () async {
+    //Future<IdentityRoleDtoListResultDto> getAssignableRolesAsync() async
+    test('test getAssignableRolesAsync', () async {
       // TODO
     });
 
-    //Future<IdentityUserDto> apiIdentityUsersIdGet(String id) async
-    test('test apiIdentityUsersIdGet', () async {
+    //Future<IdentityUserDto> getAsync(String id) async
+    test('test getAsync', () async {
       // TODO
     });
 
-    //Future<IdentityUserDto> apiIdentityUsersIdPut(String id, { IdentityUserUpdateDto body }) async
-    test('test apiIdentityUsersIdPut', () async {
+    //Future<IdentityUserDtoPagedResultDto> getListAsync({ String filter, String sorting, int skipCount, int maxResultCount }) async
+    test('test getListAsync', () async {
       // TODO
     });
 
-    //Future<IdentityRoleDtoListResultDto> apiIdentityUsersIdRolesGet(String id) async
-    test('test apiIdentityUsersIdRolesGet', () async {
+    //Future<IdentityRoleDtoListResultDto> getRolesAsync(String id) async
+    test('test getRolesAsync', () async {
       // TODO
     });
 
-    //Future apiIdentityUsersIdRolesPut(String id, { IdentityUserUpdateRolesDto body }) async
-    test('test apiIdentityUsersIdRolesPut', () async {
+    //Future<IdentityUserDto> updateAsync(String id, { IdentityUserUpdateDto body }) async
+    test('test updateAsync', () async {
       // TODO
     });
 
-    //Future<IdentityUserDto> apiIdentityUsersPost({ IdentityUserCreateDto body }) async
-    test('test apiIdentityUsersPost', () async {
+    //Future updateRolesAsync(String id, { IdentityUserUpdateRolesDto body }) async
+    test('test updateRolesAsync', () async {
       // TODO
     });
 

@@ -7,23 +7,23 @@ void main() {
   final instance = PuupeeApiClient().getStorageObjectApi();
 
   group(StorageObjectApi, () {
-    //Future apiAppStorageObjectFileGet({ String key }) async
-    test('test apiAppStorageObjectFileGet', () async {
+    //Future<StorageObjectOrCredentialsDto> getFileOrCredentialsAsync({ String rapidCode, String key }) async
+    test('test getFileOrCredentialsAsync', () async {
       // TODO
     });
 
-    //Future<StorageObjectOrCredentialsDto> apiAppStorageObjectFileOrCredentialsGet({ String rapidCode, String key }) async
-    test('test apiAppStorageObjectFileOrCredentialsGet', () async {
+    //Future myFile({ String key }) async
+    test('test myFile', () async {
       // TODO
     });
 
-    //Future<String> apiAppStorageObjectPreSignUrlPost({ String key }) async
-    test('test apiAppStorageObjectPreSignUrlPost', () async {
+    //Future<String> preSignUrl({ String key }) async
+    test('test preSignUrl', () async {
       // TODO
     });
 
-    //Future apiAppStorageObjectThumbGet({ String key }) async
-    test('test apiAppStorageObjectThumbGet', () async {
+    //Future thumb({ String key }) async
+    test('test thumb', () async {
       // TODO
     });
 

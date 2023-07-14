@@ -20,7 +20,7 @@ class EmailSettingsApi {
 
   const EmailSettingsApi(this._dio);
 
-  /// apiSettingManagementEmailingGet
+  /// getAsync
   /// 
   ///
   /// Parameters:
@@ -33,7 +33,7 @@ class EmailSettingsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [EmailSettingsDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<EmailSettingsDto>> apiSettingManagementEmailingGet({ 
+  Future<Response<EmailSettingsDto>> getAsync({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -93,7 +93,7 @@ _responseData = deserialize<EmailSettingsDto, EmailSettingsDto>(_response.data!,
     );
   }
 
-  /// apiSettingManagementEmailingPost
+  /// sendTestEmailAsync
   /// 
   ///
   /// Parameters:
@@ -107,8 +107,8 @@ _responseData = deserialize<EmailSettingsDto, EmailSettingsDto>(_response.data!,
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> apiSettingManagementEmailingPost({ 
-    UpdateEmailSettingsDto? body,
+  Future<Response<void>> sendTestEmailAsync({ 
+    SendTestEmailInput? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -116,7 +116,7 @@ _responseData = deserialize<EmailSettingsDto, EmailSettingsDto>(_response.data!,
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/setting-management/emailing';
+    final _path = r'/api/setting-management/emailing/send-test-email';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{
@@ -163,7 +163,7 @@ _bodyData=jsonEncode(body);
     return _response;
   }
 
-  /// apiSettingManagementEmailingSendTestEmailPost
+  /// updateAsync
   /// 
   ///
   /// Parameters:
@@ -177,8 +177,8 @@ _bodyData=jsonEncode(body);
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> apiSettingManagementEmailingSendTestEmailPost({ 
-    SendTestEmailInput? body,
+  Future<Response<void>> updateAsync({ 
+    UpdateEmailSettingsDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -186,7 +186,7 @@ _bodyData=jsonEncode(body);
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/setting-management/emailing/send-test-email';
+    final _path = r'/api/setting-management/emailing';
     final _options = Options(
       method: r'POST',
       headers: <String, dynamic>{

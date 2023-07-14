@@ -7,18 +7,18 @@ void main() {
   final instance = PuupeeApiClient().getEmailSettingsApi();
 
   group(EmailSettingsApi, () {
-    //Future<EmailSettingsDto> apiSettingManagementEmailingGet() async
-    test('test apiSettingManagementEmailingGet', () async {
+    //Future<EmailSettingsDto> getAsync() async
+    test('test getAsync', () async {
       // TODO
     });
 
-    //Future apiSettingManagementEmailingPost({ UpdateEmailSettingsDto body }) async
-    test('test apiSettingManagementEmailingPost', () async {
+    //Future sendTestEmailAsync({ SendTestEmailInput body }) async
+    test('test sendTestEmailAsync', () async {
       // TODO
     });
 
-    //Future apiSettingManagementEmailingSendTestEmailPost({ SendTestEmailInput body }) async
-    test('test apiSettingManagementEmailingSendTestEmailPost', () async {
+    //Future updateAsync({ UpdateEmailSettingsDto body }) async
+    test('test updateAsync', () async {
       // TODO
     });
 

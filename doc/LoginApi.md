@@ -9,13 +9,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiAccountCheckPasswordPost**](LoginApi.md#apiaccountcheckpasswordpost) | **POST** /api/account/check-password | 
-[**apiAccountLoginPost**](LoginApi.md#apiaccountloginpost) | **POST** /api/account/login | 
-[**apiAccountLogoutGet**](LoginApi.md#apiaccountlogoutget) | **GET** /api/account/logout | 
+[**checkPassword**](LoginApi.md#checkpassword) | **POST** /api/account/check-password | 
+[**login**](LoginApi.md#login) | **POST** /api/account/login | 
+[**logout**](LoginApi.md#logout) | **GET** /api/account/logout | 
 
 
-# **apiAccountCheckPasswordPost**
-> AbpLoginResult apiAccountCheckPasswordPost(body)
+# **checkPassword**
+> AbpLoginResult checkPassword(body)
 
 
 
@@ -29,10 +29,10 @@ final api = PuupeeApiClient().getLoginApi();
 final UserLoginInfo body = ; // UserLoginInfo | 
 
 try {
-    final response = api.apiAccountCheckPasswordPost(body);
+    final response = api.checkPassword(body);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling LoginApi->apiAccountCheckPasswordPost: $e\n');
+    print('Exception when calling LoginApi->checkPassword: $e\n');
 }
 ```
 
@@ -57,8 +57,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAccountLoginPost**
-> AbpLoginResult apiAccountLoginPost(body)
+# **login**
+> AbpLoginResult login(body)
 
 
 
@@ -72,10 +72,10 @@ final api = PuupeeApiClient().getLoginApi();
 final UserLoginInfo body = ; // UserLoginInfo | 
 
 try {
-    final response = api.apiAccountLoginPost(body);
+    final response = api.login(body);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling LoginApi->apiAccountLoginPost: $e\n');
+    print('Exception when calling LoginApi->login: $e\n');
 }
 ```
 
@@ -100,8 +100,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAccountLogoutGet**
-> apiAccountLogoutGet()
+# **logout**
+> logout()
 
 
 
@@ -114,9 +114,9 @@ import 'package:puupee_api_client/api.dart';
 final api = PuupeeApiClient().getLoginApi();
 
 try {
-    api.apiAccountLogoutGet();
+    api.logout();
 } catch on DioError (e) {
-    print('Exception when calling LoginApi->apiAccountLogoutGet: $e\n');
+    print('Exception when calling LoginApi->logout: $e\n');
 }
 ```
 

@@ -7,18 +7,18 @@ void main() {
   final instance = PuupeeApiClient().getPuupeeApi();
 
   group(PuupeeApi, () {
-    //Future<PuupeeDto> apiAppPuupeeByLinkedNamesGet({ String names }) async
-    test('test apiAppPuupeeByLinkedNamesGet', () async {
+    //Future<PuupeeDto> getByLinkedNamesAsync({ String names }) async
+    test('test getByLinkedNamesAsync', () async {
       // TODO
     });
 
-    //Future<PuupeeDtoPagedResultDto> apiAppPuupeePullGet({ String appName, int afterVersion, int skipCount, int maxResultCount }) async
-    test('test apiAppPuupeePullGet', () async {
+    //Future<PuupeeDtoPagedResultDto> getPullAsync({ String appName, int afterVersion, int skipCount, int maxResultCount }) async
+    test('test getPullAsync', () async {
       // TODO
     });
 
-    //Future<PuupeeDto> apiAppPuupeePushPost({ PuupeeDto body }) async
-    test('test apiAppPuupeePushPost', () async {
+    //Future<PuupeeDto> pushAsync({ PuupeeDto body }) async
+    test('test pushAsync', () async {
       // TODO
     });
 

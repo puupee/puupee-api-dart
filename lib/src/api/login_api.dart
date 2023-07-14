@@ -19,7 +19,7 @@ class LoginApi {
 
   const LoginApi(this._dio);
 
-  /// apiAccountCheckPasswordPost
+  /// checkPassword
   /// 
   ///
   /// Parameters:
@@ -33,7 +33,7 @@ class LoginApi {
   ///
   /// Returns a [Future] containing a [Response] with a [AbpLoginResult] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<AbpLoginResult>> apiAccountCheckPasswordPost({ 
+  Future<Response<AbpLoginResult>> checkPassword({ 
     UserLoginInfo? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -112,7 +112,7 @@ _responseData = deserialize<AbpLoginResult, AbpLoginResult>(_response.data!, 'Ab
     );
   }
 
-  /// apiAccountLoginPost
+  /// login
   /// 
   ///
   /// Parameters:
@@ -126,7 +126,7 @@ _responseData = deserialize<AbpLoginResult, AbpLoginResult>(_response.data!, 'Ab
   ///
   /// Returns a [Future] containing a [Response] with a [AbpLoginResult] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<AbpLoginResult>> apiAccountLoginPost({ 
+  Future<Response<AbpLoginResult>> login({ 
     UserLoginInfo? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -205,7 +205,7 @@ _responseData = deserialize<AbpLoginResult, AbpLoginResult>(_response.data!, 'Ab
     );
   }
 
-  /// apiAccountLogoutGet
+  /// logout
   /// 
   ///
   /// Parameters:
@@ -218,7 +218,7 @@ _responseData = deserialize<AbpLoginResult, AbpLoginResult>(_response.data!, 'Ab
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> apiAccountLogoutGet({ 
+  Future<Response<void>> logout({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,

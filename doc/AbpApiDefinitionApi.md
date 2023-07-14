@@ -9,11 +9,11 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiAbpApiDefinitionGet**](AbpApiDefinitionApi.md#apiabpapidefinitionget) | **GET** /api/abp/api-definition | 
+[**callGet**](AbpApiDefinitionApi.md#callget) | **GET** /api/abp/api-definition | 
 
 
-# **apiAbpApiDefinitionGet**
-> ApplicationApiDescriptionModel apiAbpApiDefinitionGet(includeTypes)
+# **callGet**
+> ApplicationApiDescriptionModel callGet(includeTypes)
 
 
 
@@ -27,10 +27,10 @@ final api = PuupeeApiClient().getAbpApiDefinitionApi();
 final bool includeTypes = true; // bool | 
 
 try {
-    final response = api.apiAbpApiDefinitionGet(includeTypes);
+    final response = api.callGet(includeTypes);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling AbpApiDefinitionApi->apiAbpApiDefinitionGet: $e\n');
+    print('Exception when calling AbpApiDefinitionApi->callGet: $e\n');
 }
 ```
 

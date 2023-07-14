@@ -7,43 +7,43 @@ void main() {
   final instance = PuupeeApiClient().getTenantApi();
 
   group(TenantApi, () {
-    //Future<TenantDtoPagedResultDto> apiMultiTenancyTenantsGet({ String filter, String sorting, int skipCount, int maxResultCount }) async
-    test('test apiMultiTenancyTenantsGet', () async {
+    //Future<TenantDto> createAsync({ TenantCreateDto body }) async
+    test('test createAsync', () async {
       // TODO
     });
 
-    //Future apiMultiTenancyTenantsIdDefaultConnectionStringDelete(String id) async
-    test('test apiMultiTenancyTenantsIdDefaultConnectionStringDelete', () async {
+    //Future deleteAsync(String id) async
+    test('test deleteAsync', () async {
       // TODO
     });
 
-    //Future<String> apiMultiTenancyTenantsIdDefaultConnectionStringGet(String id) async
-    test('test apiMultiTenancyTenantsIdDefaultConnectionStringGet', () async {
+    //Future deleteDefaultConnectionStringAsync(String id) async
+    test('test deleteDefaultConnectionStringAsync', () async {
       // TODO
     });
 
-    //Future apiMultiTenancyTenantsIdDefaultConnectionStringPut(String id, { String defaultConnectionString }) async
-    test('test apiMultiTenancyTenantsIdDefaultConnectionStringPut', () async {
+    //Future<TenantDto> getAsync(String id) async
+    test('test getAsync', () async {
       // TODO
     });
 
-    //Future apiMultiTenancyTenantsIdDelete(String id) async
-    test('test apiMultiTenancyTenantsIdDelete', () async {
+    //Future<String> getDefaultConnectionStringAsync(String id) async
+    test('test getDefaultConnectionStringAsync', () async {
       // TODO
     });
 
-    //Future<TenantDto> apiMultiTenancyTenantsIdGet(String id) async
-    test('test apiMultiTenancyTenantsIdGet', () async {
+    //Future<TenantDtoPagedResultDto> getListAsync({ String filter, String sorting, int skipCount, int maxResultCount }) async
+    test('test getListAsync', () async {
       // TODO
     });
 
-    //Future<TenantDto> apiMultiTenancyTenantsIdPut(String id, { TenantUpdateDto body }) async
-    test('test apiMultiTenancyTenantsIdPut', () async {
+    //Future<TenantDto> updateAsync(String id, { TenantUpdateDto body }) async
+    test('test updateAsync', () async {
       // TODO
     });
 
-    //Future<TenantDto> apiMultiTenancyTenantsPost({ TenantCreateDto body }) async
-    test('test apiMultiTenancyTenantsPost', () async {
+    //Future updateDefaultConnectionStringAsync(String id, { String defaultConnectionString }) async
+    test('test updateDefaultConnectionStringAsync', () async {
       // TODO
     });
 

@@ -18,7 +18,7 @@ class AbpApplicationConfigurationApi {
 
   const AbpApplicationConfigurationApi(this._dio);
 
-  /// apiAbpApplicationConfigurationGet
+  /// getAsync
   /// 
   ///
   /// Parameters:
@@ -32,7 +32,7 @@ class AbpApplicationConfigurationApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ApplicationConfigurationDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<ApplicationConfigurationDto>> apiAbpApplicationConfigurationGet({ 
+  Future<Response<ApplicationConfigurationDto>> getAsync({ 
     bool? includeLocalizationResources,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

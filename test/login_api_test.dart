@@ -7,18 +7,18 @@ void main() {
   final instance = PuupeeApiClient().getLoginApi();
 
   group(LoginApi, () {
-    //Future<AbpLoginResult> apiAccountCheckPasswordPost({ UserLoginInfo body }) async
-    test('test apiAccountCheckPasswordPost', () async {
+    //Future<AbpLoginResult> checkPassword({ UserLoginInfo body }) async
+    test('test checkPassword', () async {
       // TODO
     });
 
-    //Future<AbpLoginResult> apiAccountLoginPost({ UserLoginInfo body }) async
-    test('test apiAccountLoginPost', () async {
+    //Future<AbpLoginResult> login({ UserLoginInfo body }) async
+    test('test login', () async {
       // TODO
     });
 
-    //Future apiAccountLogoutGet() async
-    test('test apiAccountLogoutGet', () async {
+    //Future logout() async
+    test('test logout', () async {
       // TODO
     });
 

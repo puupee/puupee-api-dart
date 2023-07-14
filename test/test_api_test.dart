@@ -7,8 +7,8 @@ void main() {
   final instance = PuupeeApiClient().getTestApi();
 
   group(TestApi, () {
-    //Future<TestDateTime> apiTestDatetimeGet() async
-    test('test apiTestDatetimeGet', () async {
+    //Future<TestDateTime> getTestDate() async
+    test('test getTestDate', () async {
       // TODO
     });
 

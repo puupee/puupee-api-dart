@@ -9,13 +9,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiSettingManagementEmailingGet**](EmailSettingsApi.md#apisettingmanagementemailingget) | **GET** /api/setting-management/emailing | 
-[**apiSettingManagementEmailingPost**](EmailSettingsApi.md#apisettingmanagementemailingpost) | **POST** /api/setting-management/emailing | 
-[**apiSettingManagementEmailingSendTestEmailPost**](EmailSettingsApi.md#apisettingmanagementemailingsendtestemailpost) | **POST** /api/setting-management/emailing/send-test-email | 
+[**getAsync**](EmailSettingsApi.md#getasync) | **GET** /api/setting-management/emailing | 
+[**sendTestEmailAsync**](EmailSettingsApi.md#sendtestemailasync) | **POST** /api/setting-management/emailing/send-test-email | 
+[**updateAsync**](EmailSettingsApi.md#updateasync) | **POST** /api/setting-management/emailing | 
 
 
-# **apiSettingManagementEmailingGet**
-> EmailSettingsDto apiSettingManagementEmailingGet()
+# **getAsync**
+> EmailSettingsDto getAsync()
 
 
 
@@ -28,10 +28,10 @@ import 'package:puupee_api_client/api.dart';
 final api = PuupeeApiClient().getEmailSettingsApi();
 
 try {
-    final response = api.apiSettingManagementEmailingGet();
+    final response = api.getAsync();
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling EmailSettingsApi->apiSettingManagementEmailingGet: $e\n');
+    print('Exception when calling EmailSettingsApi->getAsync: $e\n');
 }
 ```
 
@@ -53,8 +53,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiSettingManagementEmailingPost**
-> apiSettingManagementEmailingPost(body)
+# **sendTestEmailAsync**
+> sendTestEmailAsync(body)
 
 
 
@@ -65,12 +65,12 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getEmailSettingsApi();
-final UpdateEmailSettingsDto body = ; // UpdateEmailSettingsDto | 
+final SendTestEmailInput body = ; // SendTestEmailInput | 
 
 try {
-    api.apiSettingManagementEmailingPost(body);
+    api.sendTestEmailAsync(body);
 } catch on DioError (e) {
-    print('Exception when calling EmailSettingsApi->apiSettingManagementEmailingPost: $e\n');
+    print('Exception when calling EmailSettingsApi->sendTestEmailAsync: $e\n');
 }
 ```
 
@@ -78,7 +78,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateEmailSettingsDto**](UpdateEmailSettingsDto.md)|  | [optional] 
+ **body** | [**SendTestEmailInput**](SendTestEmailInput.md)|  | [optional] 
 
 ### Return type
 
@@ -95,8 +95,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiSettingManagementEmailingSendTestEmailPost**
-> apiSettingManagementEmailingSendTestEmailPost(body)
+# **updateAsync**
+> updateAsync(body)
 
 
 
@@ -107,12 +107,12 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getEmailSettingsApi();
-final SendTestEmailInput body = ; // SendTestEmailInput | 
+final UpdateEmailSettingsDto body = ; // UpdateEmailSettingsDto | 
 
 try {
-    api.apiSettingManagementEmailingSendTestEmailPost(body);
+    api.updateAsync(body);
 } catch on DioError (e) {
-    print('Exception when calling EmailSettingsApi->apiSettingManagementEmailingSendTestEmailPost: $e\n');
+    print('Exception when calling EmailSettingsApi->updateAsync: $e\n');
 }
 ```
 
@@ -120,7 +120,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SendTestEmailInput**](SendTestEmailInput.md)|  | [optional] 
+ **body** | [**UpdateEmailSettingsDto**](UpdateEmailSettingsDto.md)|  | [optional] 
 
 ### Return type
 

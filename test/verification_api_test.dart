@@ -7,8 +7,8 @@ void main() {
   final instance = PuupeeApiClient().getVerificationApi();
 
   group(VerificationApi, () {
-    //Future apiAppVerificationSendCodePost({ SendVerificationCodeDto body }) async
-    test('test apiAppVerificationSendCodePost', () async {
+    //Future sendCodeAsync({ SendVerificationCodeDto body }) async
+    test('test sendCodeAsync', () async {
       // TODO
     });
 

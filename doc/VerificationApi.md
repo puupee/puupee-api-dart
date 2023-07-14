@@ -9,11 +9,11 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiAppVerificationSendCodePost**](VerificationApi.md#apiappverificationsendcodepost) | **POST** /api/app/verification/send-code | 
+[**sendCodeAsync**](VerificationApi.md#sendcodeasync) | **POST** /api/app/verification/send-code | 
 
 
-# **apiAppVerificationSendCodePost**
-> apiAppVerificationSendCodePost(body)
+# **sendCodeAsync**
+> sendCodeAsync(body)
 
 
 
@@ -27,9 +27,9 @@ final api = PuupeeApiClient().getVerificationApi();
 final SendVerificationCodeDto body = ; // SendVerificationCodeDto | 
 
 try {
-    api.apiAppVerificationSendCodePost(body);
+    api.sendCodeAsync(body);
 } catch on DioError (e) {
-    print('Exception when calling VerificationApi->apiAppVerificationSendCodePost: $e\n');
+    print('Exception when calling VerificationApi->sendCodeAsync: $e\n');
 }
 ```
 

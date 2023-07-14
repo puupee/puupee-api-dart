@@ -21,7 +21,7 @@ class MessageApi {
 
   const MessageApi(this._dio);
 
-  /// apiAppMessagePublishPost
+  /// publish
   /// 
   ///
   /// Parameters:
@@ -35,7 +35,7 @@ class MessageApi {
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> apiAppMessagePublishPost({ 
+  Future<Response<void>> publish({ 
     MessagePublishDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -91,7 +91,7 @@ _bodyData=jsonEncode(body);
     return _response;
   }
 
-  /// apiAppMessageRecallPost
+  /// recall
   /// 
   ///
   /// Parameters:
@@ -105,7 +105,7 @@ _bodyData=jsonEncode(body);
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> apiAppMessageRecallPost({ 
+  Future<Response<void>> recall({ 
     MessageRecallDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -161,7 +161,7 @@ _bodyData=jsonEncode(body);
     return _response;
   }
 
-  /// apiAppMessageSubscribePost
+  /// subscribe
   /// 
   ///
   /// Parameters:
@@ -175,7 +175,7 @@ _bodyData=jsonEncode(body);
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> apiAppMessageSubscribePost({ 
+  Future<Response<void>> subscribe({ 
     MessageSubscribeDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -231,7 +231,7 @@ _bodyData=jsonEncode(body);
     return _response;
   }
 
-  /// apiAppMessageUnsubscribePost
+  /// unsubscribe
   /// 
   ///
   /// Parameters:
@@ -245,7 +245,7 @@ _bodyData=jsonEncode(body);
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> apiAppMessageUnsubscribePost({ 
+  Future<Response<void>> unsubscribe({ 
     MessageUnsubscribeDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

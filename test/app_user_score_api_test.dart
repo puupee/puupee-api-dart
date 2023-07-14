@@ -7,8 +7,8 @@ void main() {
   final instance = PuupeeApiClient().getAppUserScoreApi();
 
   group(AppUserScoreApi, () {
-    //Future<AppUserScoreDto> apiAppAppUserScorePost({ CreateOrUpdateAppUserScoreDto body }) async
-    test('test apiAppAppUserScorePost', () async {
+    //Future<AppUserScoreDto> createAsync({ CreateOrUpdateAppUserScoreDto body }) async
+    test('test createAsync', () async {
       // TODO
     });
 

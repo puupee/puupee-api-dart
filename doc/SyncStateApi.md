@@ -9,13 +9,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiAppSyncStateDeviceConnectedEtoPost**](SyncStateApi.md#apiappsyncstatedeviceconnectedetopost) | **POST** /api/app/sync-state/device-connected-eto | 
-[**apiAppSyncStateGet**](SyncStateApi.md#apiappsyncstateget) | **GET** /api/app/sync-state | 
-[**apiAppSyncStatePuupeeChangedEtoPost**](SyncStateApi.md#apiappsyncstatepuupeechangedetopost) | **POST** /api/app/sync-state/puupee-changed-eto | 
+[**deviceConnectedEtoAsync**](SyncStateApi.md#deviceconnectedetoasync) | **POST** /api/app/sync-state/device-connected-eto | 
+[**getAsync**](SyncStateApi.md#getasync) | **GET** /api/app/sync-state | 
+[**puupeeChangedEtoAsync**](SyncStateApi.md#puupeechangedetoasync) | **POST** /api/app/sync-state/puupee-changed-eto | 
 
 
-# **apiAppSyncStateDeviceConnectedEtoPost**
-> PuupeeEto apiAppSyncStateDeviceConnectedEtoPost()
+# **deviceConnectedEtoAsync**
+> PuupeeEto deviceConnectedEtoAsync()
 
 
 
@@ -28,10 +28,10 @@ import 'package:puupee_api_client/api.dart';
 final api = PuupeeApiClient().getSyncStateApi();
 
 try {
-    final response = api.apiAppSyncStateDeviceConnectedEtoPost();
+    final response = api.deviceConnectedEtoAsync();
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling SyncStateApi->apiAppSyncStateDeviceConnectedEtoPost: $e\n');
+    print('Exception when calling SyncStateApi->deviceConnectedEtoAsync: $e\n');
 }
 ```
 
@@ -53,8 +53,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppSyncStateGet**
-> SyncStateDto apiAppSyncStateGet()
+# **getAsync**
+> SyncStateDto getAsync()
 
 
 
@@ -67,10 +67,10 @@ import 'package:puupee_api_client/api.dart';
 final api = PuupeeApiClient().getSyncStateApi();
 
 try {
-    final response = api.apiAppSyncStateGet();
+    final response = api.getAsync();
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling SyncStateApi->apiAppSyncStateGet: $e\n');
+    print('Exception when calling SyncStateApi->getAsync: $e\n');
 }
 ```
 
@@ -92,8 +92,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppSyncStatePuupeeChangedEtoPost**
-> PuupeeEto apiAppSyncStatePuupeeChangedEtoPost()
+# **puupeeChangedEtoAsync**
+> PuupeeEto puupeeChangedEtoAsync()
 
 
 
@@ -106,10 +106,10 @@ import 'package:puupee_api_client/api.dart';
 final api = PuupeeApiClient().getSyncStateApi();
 
 try {
-    final response = api.apiAppSyncStatePuupeeChangedEtoPost();
+    final response = api.puupeeChangedEtoAsync();
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling SyncStateApi->apiAppSyncStatePuupeeChangedEtoPost: $e\n');
+    print('Exception when calling SyncStateApi->puupeeChangedEtoAsync: $e\n');
 }
 ```
 

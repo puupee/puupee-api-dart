@@ -23,7 +23,7 @@ class SubscriptionApi {
 
   const SubscriptionApi(this._dio);
 
-  /// apiAppSubscriptionAppleNotificationsPost
+  /// appleNotificationsAsync
   /// 
   ///
   /// Parameters:
@@ -37,7 +37,7 @@ class SubscriptionApi {
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> apiAppSubscriptionAppleNotificationsPost({ 
+  Future<Response<void>> appleNotificationsAsync({ 
     AppleNotificaionDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -93,87 +93,7 @@ _bodyData=jsonEncode(body);
     return _response;
   }
 
-  /// apiAppSubscriptionGet
-  /// 
-  ///
-  /// Parameters:
-  /// * [appId] 
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [SubscriptionDto] as data
-  /// Throws [DioError] if API call or serialization fails
-  Future<Response<SubscriptionDto>> apiAppSubscriptionGet({ 
-    String? appId,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/app/subscription';
-    final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _queryParameters = <String, dynamic>{
-      if (appId != null) r'appId': appId,
-    };
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    SubscriptionDto _responseData;
-
-    try {
-_responseData = deserialize<SubscriptionDto, SubscriptionDto>(_response.data!, 'SubscriptionDto', growable: true);
-    } catch (error, stackTrace) {
-      throw DioError(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioErrorType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<SubscriptionDto>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
-  /// apiAppSubscriptionOrderPost
+  /// createOrderAsync
   /// 
   ///
   /// Parameters:
@@ -187,7 +107,7 @@ _responseData = deserialize<SubscriptionDto, SubscriptionDto>(_response.data!, '
   ///
   /// Returns a [Future] containing a [Response] with a [SubscriptionOrderDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<SubscriptionOrderDto>> apiAppSubscriptionOrderPost({ 
+  Future<Response<SubscriptionOrderDto>> createOrderAsync({ 
     CreateOrGetSubscriptionOrderDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -266,7 +186,87 @@ _responseData = deserialize<SubscriptionOrderDto, SubscriptionOrderDto>(_respons
     );
   }
 
-  /// apiAppSubscriptionVerifyReceiptPost
+  /// getAsync
+  /// 
+  ///
+  /// Parameters:
+  /// * [appId] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [SubscriptionDto] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<SubscriptionDto>> getAsync({ 
+    String? appId,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/app/subscription';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'oauth2',
+            'name': 'oauth2',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      if (appId != null) r'appId': appId,
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    SubscriptionDto _responseData;
+
+    try {
+_responseData = deserialize<SubscriptionDto, SubscriptionDto>(_response.data!, 'SubscriptionDto', growable: true);
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<SubscriptionDto>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// verifyReceiptAsync
   /// 
   ///
   /// Parameters:
@@ -280,7 +280,7 @@ _responseData = deserialize<SubscriptionOrderDto, SubscriptionOrderDto>(_respons
   ///
   /// Returns a [Future] containing a [Response] with a [VerifyReceiptResult] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<VerifyReceiptResult>> apiAppSubscriptionVerifyReceiptPost({ 
+  Future<Response<VerifyReceiptResult>> verifyReceiptAsync({ 
     VerifyReceiptDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

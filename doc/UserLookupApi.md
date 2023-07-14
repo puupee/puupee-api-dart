@@ -9,100 +9,14 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiIdentityUsersLookupByUsernameUserNameGet**](UserLookupApi.md#apiidentityuserslookupbyusernameusernameget) | **GET** /api/identity/users/lookup/by-username/{userName} | 
-[**apiIdentityUsersLookupCountGet**](UserLookupApi.md#apiidentityuserslookupcountget) | **GET** /api/identity/users/lookup/count | 
-[**apiIdentityUsersLookupIdGet**](UserLookupApi.md#apiidentityuserslookupidget) | **GET** /api/identity/users/lookup/{id} | 
-[**apiIdentityUsersLookupSearchGet**](UserLookupApi.md#apiidentityuserslookupsearchget) | **GET** /api/identity/users/lookup/search | 
+[**findByIdAsync**](UserLookupApi.md#findbyidasync) | **GET** /api/identity/users/lookup/{id} | 
+[**findByUserNameAsync**](UserLookupApi.md#findbyusernameasync) | **GET** /api/identity/users/lookup/by-username/{userName} | 
+[**getCountAsync**](UserLookupApi.md#getcountasync) | **GET** /api/identity/users/lookup/count | 
+[**searchAsync**](UserLookupApi.md#searchasync) | **GET** /api/identity/users/lookup/search | 
 
 
-# **apiIdentityUsersLookupByUsernameUserNameGet**
-> UserData apiIdentityUsersLookupByUsernameUserNameGet(userName)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getUserLookupApi();
-final String userName = userName_example; // String | 
-
-try {
-    final response = api.apiIdentityUsersLookupByUsernameUserNameGet(userName);
-    print(response);
-} catch on DioError (e) {
-    print('Exception when calling UserLookupApi->apiIdentityUsersLookupByUsernameUserNameGet: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userName** | **String**|  | 
-
-### Return type
-
-[**UserData**](UserData.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **apiIdentityUsersLookupCountGet**
-> int apiIdentityUsersLookupCountGet(filter)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getUserLookupApi();
-final String filter = filter_example; // String | 
-
-try {
-    final response = api.apiIdentityUsersLookupCountGet(filter);
-    print(response);
-} catch on DioError (e) {
-    print('Exception when calling UserLookupApi->apiIdentityUsersLookupCountGet: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **filter** | **String**|  | [optional] 
-
-### Return type
-
-**int**
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **apiIdentityUsersLookupIdGet**
-> UserData apiIdentityUsersLookupIdGet(id)
+# **findByIdAsync**
+> UserData findByIdAsync(id)
 
 
 
@@ -116,10 +30,10 @@ final api = PuupeeApiClient().getUserLookupApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final response = api.apiIdentityUsersLookupIdGet(id);
+    final response = api.findByIdAsync(id);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling UserLookupApi->apiIdentityUsersLookupIdGet: $e\n');
+    print('Exception when calling UserLookupApi->findByIdAsync: $e\n');
 }
 ```
 
@@ -144,8 +58,94 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiIdentityUsersLookupSearchGet**
-> UserDataListResultDto apiIdentityUsersLookupSearchGet(filter, sorting, skipCount, maxResultCount)
+# **findByUserNameAsync**
+> UserData findByUserNameAsync(userName)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getUserLookupApi();
+final String userName = userName_example; // String | 
+
+try {
+    final response = api.findByUserNameAsync(userName);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling UserLookupApi->findByUserNameAsync: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userName** | **String**|  | 
+
+### Return type
+
+[**UserData**](UserData.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getCountAsync**
+> int getCountAsync(filter)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getUserLookupApi();
+final String filter = filter_example; // String | 
+
+try {
+    final response = api.getCountAsync(filter);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling UserLookupApi->getCountAsync: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **String**|  | [optional] 
+
+### Return type
+
+**int**
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **searchAsync**
+> UserDataListResultDto searchAsync(filter, sorting, skipCount, maxResultCount)
 
 
 
@@ -162,10 +162,10 @@ final int skipCount = 56; // int |
 final int maxResultCount = 56; // int | 
 
 try {
-    final response = api.apiIdentityUsersLookupSearchGet(filter, sorting, skipCount, maxResultCount);
+    final response = api.searchAsync(filter, sorting, skipCount, maxResultCount);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling UserLookupApi->apiIdentityUsersLookupSearchGet: $e\n');
+    print('Exception when calling UserLookupApi->searchAsync: $e\n');
 }
 ```
 

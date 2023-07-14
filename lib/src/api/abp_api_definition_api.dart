@@ -18,7 +18,7 @@ class AbpApiDefinitionApi {
 
   const AbpApiDefinitionApi(this._dio);
 
-  /// apiAbpApiDefinitionGet
+  /// callGet
   /// 
   ///
   /// Parameters:
@@ -32,7 +32,7 @@ class AbpApiDefinitionApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ApplicationApiDescriptionModel] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<ApplicationApiDescriptionModel>> apiAbpApiDefinitionGet({ 
+  Future<Response<ApplicationApiDescriptionModel>> callGet({ 
     bool? includeTypes,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

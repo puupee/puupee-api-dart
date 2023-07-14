@@ -19,7 +19,7 @@ class FeaturesApi {
 
   const FeaturesApi(this._dio);
 
-  /// apiFeatureManagementFeaturesDelete
+  /// deleteAsync
   /// 
   ///
   /// Parameters:
@@ -34,7 +34,7 @@ class FeaturesApi {
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> apiFeatureManagementFeaturesDelete({ 
+  Future<Response<void>> deleteAsync({ 
     String? providerName,
     String? providerKey,
     CancelToken? cancelToken,
@@ -79,7 +79,7 @@ class FeaturesApi {
     return _response;
   }
 
-  /// apiFeatureManagementFeaturesGet
+  /// getAsync
   /// 
   ///
   /// Parameters:
@@ -94,7 +94,7 @@ class FeaturesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [GetFeatureListResultDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<GetFeatureListResultDto>> apiFeatureManagementFeaturesGet({ 
+  Future<Response<GetFeatureListResultDto>> getAsync({ 
     String? providerName,
     String? providerKey,
     CancelToken? cancelToken,
@@ -162,7 +162,7 @@ _responseData = deserialize<GetFeatureListResultDto, GetFeatureListResultDto>(_r
     );
   }
 
-  /// apiFeatureManagementFeaturesPut
+  /// updateAsync
   /// 
   ///
   /// Parameters:
@@ -178,7 +178,7 @@ _responseData = deserialize<GetFeatureListResultDto, GetFeatureListResultDto>(_r
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> apiFeatureManagementFeaturesPut({ 
+  Future<Response<void>> updateAsync({ 
     UpdateFeaturesDto? body,
     String? providerName,
     String? providerKey,

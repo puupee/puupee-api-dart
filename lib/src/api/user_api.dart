@@ -23,10 +23,11 @@ class UserApi {
 
   const UserApi(this._dio);
 
-  /// apiIdentityUsersAssignableRolesGet
+  /// createAsync
   /// 
   ///
   /// Parameters:
+  /// * [body] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -34,9 +35,10 @@ class UserApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [IdentityRoleDtoListResultDto] as data
+  /// Returns a [Future] containing a [Response] with a [IdentityUserDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<IdentityRoleDtoListResultDto>> apiIdentityUsersAssignableRolesGet({ 
+  Future<Response<IdentityUserDto>> createAsync({ 
+    IdentityUserCreateDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -44,9 +46,102 @@ class UserApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/identity/users/assignable-roles';
+    final _path = r'/api/identity/users';
     final _options = Options(
-      method: r'GET',
+      method: r'POST',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'oauth2',
+            'name': 'oauth2',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+_bodyData=jsonEncode(body);
+    } catch(error, stackTrace) {
+      throw DioError(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioErrorType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    IdentityUserDto _responseData;
+
+    try {
+_responseData = deserialize<IdentityUserDto, IdentityUserDto>(_response.data!, 'IdentityUserDto', growable: true);
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<IdentityUserDto>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// deleteAsync
+  /// 
+  ///
+  /// Parameters:
+  /// * [id] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<void>> deleteAsync({ 
+    required String id,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/identity/users/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _options = Options(
+      method: r'DELETE',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -70,33 +165,10 @@ class UserApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    IdentityRoleDtoListResultDto _responseData;
-
-    try {
-_responseData = deserialize<IdentityRoleDtoListResultDto, IdentityRoleDtoListResultDto>(_response.data!, 'IdentityRoleDtoListResultDto', growable: true);
-    } catch (error, stackTrace) {
-      throw DioError(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioErrorType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<IdentityRoleDtoListResultDto>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+    return _response;
   }
 
-  /// apiIdentityUsersByEmailEmailGet
+  /// findByEmailAsync
   /// 
   ///
   /// Parameters:
@@ -110,7 +182,7 @@ _responseData = deserialize<IdentityRoleDtoListResultDto, IdentityRoleDtoListRes
   ///
   /// Returns a [Future] containing a [Response] with a [IdentityUserDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<IdentityUserDto>> apiIdentityUsersByEmailEmailGet({ 
+  Future<Response<IdentityUserDto>> findByEmailAsync({ 
     required String email,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -171,7 +243,7 @@ _responseData = deserialize<IdentityUserDto, IdentityUserDto>(_response.data!, '
     );
   }
 
-  /// apiIdentityUsersByUsernameUserNameGet
+  /// findByUsernameAsync
   /// 
   ///
   /// Parameters:
@@ -185,7 +257,7 @@ _responseData = deserialize<IdentityUserDto, IdentityUserDto>(_response.data!, '
   ///
   /// Returns a [Future] containing a [Response] with a [IdentityUserDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<IdentityUserDto>> apiIdentityUsersByUsernameUserNameGet({ 
+  Future<Response<IdentityUserDto>> findByUsernameAsync({ 
     required String userName,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -246,7 +318,155 @@ _responseData = deserialize<IdentityUserDto, IdentityUserDto>(_response.data!, '
     );
   }
 
-  /// apiIdentityUsersGet
+  /// getAssignableRolesAsync
+  /// 
+  ///
+  /// Parameters:
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [IdentityRoleDtoListResultDto] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<IdentityRoleDtoListResultDto>> getAssignableRolesAsync({ 
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/identity/users/assignable-roles';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'oauth2',
+            'name': 'oauth2',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    IdentityRoleDtoListResultDto _responseData;
+
+    try {
+_responseData = deserialize<IdentityRoleDtoListResultDto, IdentityRoleDtoListResultDto>(_response.data!, 'IdentityRoleDtoListResultDto', growable: true);
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<IdentityRoleDtoListResultDto>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// getAsync
+  /// 
+  ///
+  /// Parameters:
+  /// * [id] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [IdentityUserDto] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<IdentityUserDto>> getAsync({ 
+    required String id,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/identity/users/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'oauth2',
+            'name': 'oauth2',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    IdentityUserDto _responseData;
+
+    try {
+_responseData = deserialize<IdentityUserDto, IdentityUserDto>(_response.data!, 'IdentityUserDto', growable: true);
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<IdentityUserDto>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// getListAsync
   /// 
   ///
   /// Parameters:
@@ -263,7 +483,7 @@ _responseData = deserialize<IdentityUserDto, IdentityUserDto>(_response.data!, '
   ///
   /// Returns a [Future] containing a [Response] with a [IdentityUserDtoPagedResultDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<IdentityUserDtoPagedResultDto>> apiIdentityUsersGet({ 
+  Future<Response<IdentityUserDtoPagedResultDto>> getListAsync({ 
     String? filter,
     String? sorting,
     int? skipCount,
@@ -335,7 +555,7 @@ _responseData = deserialize<IdentityUserDtoPagedResultDto, IdentityUserDtoPagedR
     );
   }
 
-  /// apiIdentityUsersIdDelete
+  /// getRolesAsync
   /// 
   ///
   /// Parameters:
@@ -347,9 +567,9 @@ _responseData = deserialize<IdentityUserDtoPagedResultDto, IdentityUserDtoPagedR
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future]
+  /// Returns a [Future] containing a [Response] with a [IdentityRoleDtoListResultDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> apiIdentityUsersIdDelete({ 
+  Future<Response<IdentityRoleDtoListResultDto>> getRolesAsync({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -358,59 +578,7 @@ _responseData = deserialize<IdentityUserDtoPagedResultDto, IdentityUserDtoPagedR
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/identity/users/{id}'.replaceAll('{' r'id' '}', id.toString());
-    final _options = Options(
-      method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    return _response;
-  }
-
-  /// apiIdentityUsersIdGet
-  /// 
-  ///
-  /// Parameters:
-  /// * [id] 
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [IdentityUserDto] as data
-  /// Throws [DioError] if API call or serialization fails
-  Future<Response<IdentityUserDto>> apiIdentityUsersIdGet({ 
-    required String id,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/identity/users/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/identity/users/{id}/roles'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -436,10 +604,10 @@ _responseData = deserialize<IdentityUserDtoPagedResultDto, IdentityUserDtoPagedR
       onReceiveProgress: onReceiveProgress,
     );
 
-    IdentityUserDto _responseData;
+    IdentityRoleDtoListResultDto _responseData;
 
     try {
-_responseData = deserialize<IdentityUserDto, IdentityUserDto>(_response.data!, 'IdentityUserDto', growable: true);
+_responseData = deserialize<IdentityRoleDtoListResultDto, IdentityRoleDtoListResultDto>(_response.data!, 'IdentityRoleDtoListResultDto', growable: true);
     } catch (error, stackTrace) {
       throw DioError(
         requestOptions: _response.requestOptions,
@@ -450,7 +618,7 @@ _responseData = deserialize<IdentityUserDto, IdentityUserDto>(_response.data!, '
       );
     }
 
-    return Response<IdentityUserDto>(
+    return Response<IdentityRoleDtoListResultDto>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -462,7 +630,7 @@ _responseData = deserialize<IdentityUserDto, IdentityUserDto>(_response.data!, '
     );
   }
 
-  /// apiIdentityUsersIdPut
+  /// updateAsync
   /// 
   ///
   /// Parameters:
@@ -477,7 +645,7 @@ _responseData = deserialize<IdentityUserDto, IdentityUserDto>(_response.data!, '
   ///
   /// Returns a [Future] containing a [Response] with a [IdentityUserDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<IdentityUserDto>> apiIdentityUsersIdPut({ 
+  Future<Response<IdentityUserDto>> updateAsync({ 
     required String id,
     IdentityUserUpdateDto? body,
     CancelToken? cancelToken,
@@ -557,82 +725,7 @@ _responseData = deserialize<IdentityUserDto, IdentityUserDto>(_response.data!, '
     );
   }
 
-  /// apiIdentityUsersIdRolesGet
-  /// 
-  ///
-  /// Parameters:
-  /// * [id] 
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [IdentityRoleDtoListResultDto] as data
-  /// Throws [DioError] if API call or serialization fails
-  Future<Response<IdentityRoleDtoListResultDto>> apiIdentityUsersIdRolesGet({ 
-    required String id,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/identity/users/{id}/roles'.replaceAll('{' r'id' '}', id.toString());
-    final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    IdentityRoleDtoListResultDto _responseData;
-
-    try {
-_responseData = deserialize<IdentityRoleDtoListResultDto, IdentityRoleDtoListResultDto>(_response.data!, 'IdentityRoleDtoListResultDto', growable: true);
-    } catch (error, stackTrace) {
-      throw DioError(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioErrorType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<IdentityRoleDtoListResultDto>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
-  /// apiIdentityUsersIdRolesPut
+  /// updateRolesAsync
   /// 
   ///
   /// Parameters:
@@ -647,7 +740,7 @@ _responseData = deserialize<IdentityRoleDtoListResultDto, IdentityRoleDtoListRes
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> apiIdentityUsersIdRolesPut({ 
+  Future<Response<void>> updateRolesAsync({ 
     required String id,
     IdentityUserUpdateRolesDto? body,
     CancelToken? cancelToken,
@@ -702,99 +795,6 @@ _bodyData=jsonEncode(body);
     );
 
     return _response;
-  }
-
-  /// apiIdentityUsersPost
-  /// 
-  ///
-  /// Parameters:
-  /// * [body] 
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [IdentityUserDto] as data
-  /// Throws [DioError] if API call or serialization fails
-  Future<Response<IdentityUserDto>> apiIdentityUsersPost({ 
-    IdentityUserCreateDto? body,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/identity/users';
-    final _options = Options(
-      method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
-        ],
-        ...?extra,
-      },
-      contentType: 'application/json',
-      validateStatus: validateStatus,
-    );
-
-    dynamic _bodyData;
-
-    try {
-_bodyData=jsonEncode(body);
-    } catch(error, stackTrace) {
-      throw DioError(
-         requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
-        type: DioErrorType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    final _response = await _dio.request<Object>(
-      _path,
-      data: _bodyData,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    IdentityUserDto _responseData;
-
-    try {
-_responseData = deserialize<IdentityUserDto, IdentityUserDto>(_response.data!, 'IdentityUserDto', growable: true);
-    } catch (error, stackTrace) {
-      throw DioError(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioErrorType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<IdentityUserDto>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
   }
 
 }

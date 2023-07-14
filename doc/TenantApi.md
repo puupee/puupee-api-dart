@@ -9,18 +9,231 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiMultiTenancyTenantsGet**](TenantApi.md#apimultitenancytenantsget) | **GET** /api/multi-tenancy/tenants | 
-[**apiMultiTenancyTenantsIdDefaultConnectionStringDelete**](TenantApi.md#apimultitenancytenantsiddefaultconnectionstringdelete) | **DELETE** /api/multi-tenancy/tenants/{id}/default-connection-string | 
-[**apiMultiTenancyTenantsIdDefaultConnectionStringGet**](TenantApi.md#apimultitenancytenantsiddefaultconnectionstringget) | **GET** /api/multi-tenancy/tenants/{id}/default-connection-string | 
-[**apiMultiTenancyTenantsIdDefaultConnectionStringPut**](TenantApi.md#apimultitenancytenantsiddefaultconnectionstringput) | **PUT** /api/multi-tenancy/tenants/{id}/default-connection-string | 
-[**apiMultiTenancyTenantsIdDelete**](TenantApi.md#apimultitenancytenantsiddelete) | **DELETE** /api/multi-tenancy/tenants/{id} | 
-[**apiMultiTenancyTenantsIdGet**](TenantApi.md#apimultitenancytenantsidget) | **GET** /api/multi-tenancy/tenants/{id} | 
-[**apiMultiTenancyTenantsIdPut**](TenantApi.md#apimultitenancytenantsidput) | **PUT** /api/multi-tenancy/tenants/{id} | 
-[**apiMultiTenancyTenantsPost**](TenantApi.md#apimultitenancytenantspost) | **POST** /api/multi-tenancy/tenants | 
+[**createAsync**](TenantApi.md#createasync) | **POST** /api/multi-tenancy/tenants | 
+[**deleteAsync**](TenantApi.md#deleteasync) | **DELETE** /api/multi-tenancy/tenants/{id} | 
+[**deleteDefaultConnectionStringAsync**](TenantApi.md#deletedefaultconnectionstringasync) | **DELETE** /api/multi-tenancy/tenants/{id}/default-connection-string | 
+[**getAsync**](TenantApi.md#getasync) | **GET** /api/multi-tenancy/tenants/{id} | 
+[**getDefaultConnectionStringAsync**](TenantApi.md#getdefaultconnectionstringasync) | **GET** /api/multi-tenancy/tenants/{id}/default-connection-string | 
+[**getListAsync**](TenantApi.md#getlistasync) | **GET** /api/multi-tenancy/tenants | 
+[**updateAsync**](TenantApi.md#updateasync) | **PUT** /api/multi-tenancy/tenants/{id} | 
+[**updateDefaultConnectionStringAsync**](TenantApi.md#updatedefaultconnectionstringasync) | **PUT** /api/multi-tenancy/tenants/{id}/default-connection-string | 
 
 
-# **apiMultiTenancyTenantsGet**
-> TenantDtoPagedResultDto apiMultiTenancyTenantsGet(filter, sorting, skipCount, maxResultCount)
+# **createAsync**
+> TenantDto createAsync(body)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getTenantApi();
+final TenantCreateDto body = ; // TenantCreateDto | 
+
+try {
+    final response = api.createAsync(body);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling TenantApi->createAsync: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TenantCreateDto**](TenantCreateDto.md)|  | [optional] 
+
+### Return type
+
+[**TenantDto**](TenantDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteAsync**
+> deleteAsync(id)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getTenantApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+
+try {
+    api.deleteAsync(id);
+} catch on DioError (e) {
+    print('Exception when calling TenantApi->deleteAsync: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **deleteDefaultConnectionStringAsync**
+> deleteDefaultConnectionStringAsync(id)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getTenantApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+
+try {
+    api.deleteDefaultConnectionStringAsync(id);
+} catch on DioError (e) {
+    print('Exception when calling TenantApi->deleteDefaultConnectionStringAsync: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAsync**
+> TenantDto getAsync(id)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getTenantApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+
+try {
+    final response = api.getAsync(id);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling TenantApi->getAsync: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+[**TenantDto**](TenantDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getDefaultConnectionStringAsync**
+> String getDefaultConnectionStringAsync(id)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getTenantApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+
+try {
+    final response = api.getDefaultConnectionStringAsync(id);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling TenantApi->getDefaultConnectionStringAsync: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+**String**
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getListAsync**
+> TenantDtoPagedResultDto getListAsync(filter, sorting, skipCount, maxResultCount)
 
 
 
@@ -37,10 +250,10 @@ final int skipCount = 56; // int |
 final int maxResultCount = 56; // int | 
 
 try {
-    final response = api.apiMultiTenancyTenantsGet(filter, sorting, skipCount, maxResultCount);
+    final response = api.getListAsync(filter, sorting, skipCount, maxResultCount);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling TenantApi->apiMultiTenancyTenantsGet: $e\n');
+    print('Exception when calling TenantApi->getListAsync: $e\n');
 }
 ```
 
@@ -68,222 +281,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiMultiTenancyTenantsIdDefaultConnectionStringDelete**
-> apiMultiTenancyTenantsIdDefaultConnectionStringDelete(id)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getTenantApi();
-final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-
-try {
-    api.apiMultiTenancyTenantsIdDefaultConnectionStringDelete(id);
-} catch on DioError (e) {
-    print('Exception when calling TenantApi->apiMultiTenancyTenantsIdDefaultConnectionStringDelete: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **apiMultiTenancyTenantsIdDefaultConnectionStringGet**
-> String apiMultiTenancyTenantsIdDefaultConnectionStringGet(id)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getTenantApi();
-final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-
-try {
-    final response = api.apiMultiTenancyTenantsIdDefaultConnectionStringGet(id);
-    print(response);
-} catch on DioError (e) {
-    print('Exception when calling TenantApi->apiMultiTenancyTenantsIdDefaultConnectionStringGet: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
-
-### Return type
-
-**String**
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **apiMultiTenancyTenantsIdDefaultConnectionStringPut**
-> apiMultiTenancyTenantsIdDefaultConnectionStringPut(id, defaultConnectionString)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getTenantApi();
-final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final String defaultConnectionString = defaultConnectionString_example; // String | 
-
-try {
-    api.apiMultiTenancyTenantsIdDefaultConnectionStringPut(id, defaultConnectionString);
-} catch on DioError (e) {
-    print('Exception when calling TenantApi->apiMultiTenancyTenantsIdDefaultConnectionStringPut: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
- **defaultConnectionString** | **String**|  | [optional] 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **apiMultiTenancyTenantsIdDelete**
-> apiMultiTenancyTenantsIdDelete(id)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getTenantApi();
-final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-
-try {
-    api.apiMultiTenancyTenantsIdDelete(id);
-} catch on DioError (e) {
-    print('Exception when calling TenantApi->apiMultiTenancyTenantsIdDelete: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **apiMultiTenancyTenantsIdGet**
-> TenantDto apiMultiTenancyTenantsIdGet(id)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getTenantApi();
-final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-
-try {
-    final response = api.apiMultiTenancyTenantsIdGet(id);
-    print(response);
-} catch on DioError (e) {
-    print('Exception when calling TenantApi->apiMultiTenancyTenantsIdGet: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
-
-### Return type
-
-[**TenantDto**](TenantDto.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **apiMultiTenancyTenantsIdPut**
-> TenantDto apiMultiTenancyTenantsIdPut(id, body)
+# **updateAsync**
+> TenantDto updateAsync(id, body)
 
 
 
@@ -298,10 +297,10 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 final TenantUpdateDto body = ; // TenantUpdateDto | 
 
 try {
-    final response = api.apiMultiTenancyTenantsIdPut(id, body);
+    final response = api.updateAsync(id, body);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling TenantApi->apiMultiTenancyTenantsIdPut: $e\n');
+    print('Exception when calling TenantApi->updateAsync: $e\n');
 }
 ```
 
@@ -327,8 +326,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiMultiTenancyTenantsPost**
-> TenantDto apiMultiTenancyTenantsPost(body)
+# **updateDefaultConnectionStringAsync**
+> updateDefaultConnectionStringAsync(id, defaultConnectionString)
 
 
 
@@ -339,13 +338,13 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getTenantApi();
-final TenantCreateDto body = ; // TenantCreateDto | 
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final String defaultConnectionString = defaultConnectionString_example; // String | 
 
 try {
-    final response = api.apiMultiTenancyTenantsPost(body);
-    print(response);
+    api.updateDefaultConnectionStringAsync(id, defaultConnectionString);
 } catch on DioError (e) {
-    print('Exception when calling TenantApi->apiMultiTenancyTenantsPost: $e\n');
+    print('Exception when calling TenantApi->updateDefaultConnectionStringAsync: $e\n');
 }
 ```
 
@@ -353,11 +352,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TenantCreateDto**](TenantCreateDto.md)|  | [optional] 
+ **id** | **String**|  | 
+ **defaultConnectionString** | **String**|  | [optional] 
 
 ### Return type
 
-[**TenantDto**](TenantDto.md)
+void (empty response body)
 
 ### Authorization
 
@@ -365,7 +365,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json, text/json, application/*+json
+ - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

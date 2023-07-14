@@ -9,13 +9,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiAppPuupeeByLinkedNamesGet**](PuupeeApi.md#apiapppuupeebylinkednamesget) | **GET** /api/app/puupee/by-linked-names | 
-[**apiAppPuupeePullGet**](PuupeeApi.md#apiapppuupeepullget) | **GET** /api/app/puupee/pull | 
-[**apiAppPuupeePushPost**](PuupeeApi.md#apiapppuupeepushpost) | **POST** /api/app/puupee/push | 
+[**getByLinkedNamesAsync**](PuupeeApi.md#getbylinkednamesasync) | **GET** /api/app/puupee/by-linked-names | 
+[**getPullAsync**](PuupeeApi.md#getpullasync) | **GET** /api/app/puupee/pull | 
+[**pushAsync**](PuupeeApi.md#pushasync) | **POST** /api/app/puupee/push | 
 
 
-# **apiAppPuupeeByLinkedNamesGet**
-> PuupeeDto apiAppPuupeeByLinkedNamesGet(names)
+# **getByLinkedNamesAsync**
+> PuupeeDto getByLinkedNamesAsync(names)
 
 
 
@@ -29,10 +29,10 @@ final api = PuupeeApiClient().getPuupeeApi();
 final String names = names_example; // String | 
 
 try {
-    final response = api.apiAppPuupeeByLinkedNamesGet(names);
+    final response = api.getByLinkedNamesAsync(names);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling PuupeeApi->apiAppPuupeeByLinkedNamesGet: $e\n');
+    print('Exception when calling PuupeeApi->getByLinkedNamesAsync: $e\n');
 }
 ```
 
@@ -57,8 +57,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppPuupeePullGet**
-> PuupeeDtoPagedResultDto apiAppPuupeePullGet(appName, afterVersion, skipCount, maxResultCount)
+# **getPullAsync**
+> PuupeeDtoPagedResultDto getPullAsync(appName, afterVersion, skipCount, maxResultCount)
 
 
 
@@ -75,10 +75,10 @@ final int skipCount = 56; // int |
 final int maxResultCount = 56; // int | 
 
 try {
-    final response = api.apiAppPuupeePullGet(appName, afterVersion, skipCount, maxResultCount);
+    final response = api.getPullAsync(appName, afterVersion, skipCount, maxResultCount);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling PuupeeApi->apiAppPuupeePullGet: $e\n');
+    print('Exception when calling PuupeeApi->getPullAsync: $e\n');
 }
 ```
 
@@ -106,8 +106,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiAppPuupeePushPost**
-> PuupeeDto apiAppPuupeePushPost(body)
+# **pushAsync**
+> PuupeeDto pushAsync(body)
 
 
 
@@ -121,10 +121,10 @@ final api = PuupeeApiClient().getPuupeeApi();
 final PuupeeDto body = ; // PuupeeDto | 
 
 try {
-    final response = api.apiAppPuupeePushPost(body);
+    final response = api.pushAsync(body);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling PuupeeApi->apiAppPuupeePushPost: $e\n');
+    print('Exception when calling PuupeeApi->pushAsync: $e\n');
 }
 ```
 

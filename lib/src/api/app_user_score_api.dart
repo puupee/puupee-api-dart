@@ -19,7 +19,7 @@ class AppUserScoreApi {
 
   const AppUserScoreApi(this._dio);
 
-  /// apiAppAppUserScorePost
+  /// createAsync
   /// 
   ///
   /// Parameters:
@@ -33,7 +33,7 @@ class AppUserScoreApi {
   ///
   /// Returns a [Future] containing a [Response] with a [AppUserScoreDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<AppUserScoreDto>> apiAppAppUserScorePost({ 
+  Future<Response<AppUserScoreDto>> createAsync({ 
     CreateOrUpdateAppUserScoreDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

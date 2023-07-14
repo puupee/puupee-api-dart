@@ -19,7 +19,7 @@ class PuupeeApi {
 
   const PuupeeApi(this._dio);
 
-  /// apiAppPuupeeByLinkedNamesGet
+  /// getByLinkedNamesAsync
   /// 
   ///
   /// Parameters:
@@ -33,7 +33,7 @@ class PuupeeApi {
   ///
   /// Returns a [Future] containing a [Response] with a [PuupeeDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<PuupeeDto>> apiAppPuupeeByLinkedNamesGet({ 
+  Future<Response<PuupeeDto>> getByLinkedNamesAsync({ 
     String? names,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -99,7 +99,7 @@ _responseData = deserialize<PuupeeDto, PuupeeDto>(_response.data!, 'PuupeeDto', 
     );
   }
 
-  /// apiAppPuupeePullGet
+  /// getPullAsync
   /// 
   ///
   /// Parameters:
@@ -116,7 +116,7 @@ _responseData = deserialize<PuupeeDto, PuupeeDto>(_response.data!, 'PuupeeDto', 
   ///
   /// Returns a [Future] containing a [Response] with a [PuupeeDtoPagedResultDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<PuupeeDtoPagedResultDto>> apiAppPuupeePullGet({ 
+  Future<Response<PuupeeDtoPagedResultDto>> getPullAsync({ 
     String? appName,
     int? afterVersion,
     int? skipCount,
@@ -188,7 +188,7 @@ _responseData = deserialize<PuupeeDtoPagedResultDto, PuupeeDtoPagedResultDto>(_r
     );
   }
 
-  /// apiAppPuupeePushPost
+  /// pushAsync
   /// 
   ///
   /// Parameters:
@@ -202,7 +202,7 @@ _responseData = deserialize<PuupeeDtoPagedResultDto, PuupeeDtoPagedResultDto>(_r
   ///
   /// Returns a [Future] containing a [Response] with a [PuupeeDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<PuupeeDto>> apiAppPuupeePushPost({ 
+  Future<Response<PuupeeDto>> pushAsync({ 
     PuupeeDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

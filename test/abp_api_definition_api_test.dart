@@ -7,8 +7,8 @@ void main() {
   final instance = PuupeeApiClient().getAbpApiDefinitionApi();
 
   group(AbpApiDefinitionApi, () {
-    //Future<ApplicationApiDescriptionModel> apiAbpApiDefinitionGet({ bool includeTypes }) async
-    test('test apiAbpApiDefinitionGet', () async {
+    //Future<ApplicationApiDescriptionModel> callGet({ bool includeTypes }) async
+    test('test callGet', () async {
       // TODO
     });
 

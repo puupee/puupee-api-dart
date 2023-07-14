@@ -9,13 +9,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**apiFeatureManagementFeaturesDelete**](FeaturesApi.md#apifeaturemanagementfeaturesdelete) | **DELETE** /api/feature-management/features | 
-[**apiFeatureManagementFeaturesGet**](FeaturesApi.md#apifeaturemanagementfeaturesget) | **GET** /api/feature-management/features | 
-[**apiFeatureManagementFeaturesPut**](FeaturesApi.md#apifeaturemanagementfeaturesput) | **PUT** /api/feature-management/features | 
+[**deleteAsync**](FeaturesApi.md#deleteasync) | **DELETE** /api/feature-management/features | 
+[**getAsync**](FeaturesApi.md#getasync) | **GET** /api/feature-management/features | 
+[**updateAsync**](FeaturesApi.md#updateasync) | **PUT** /api/feature-management/features | 
 
 
-# **apiFeatureManagementFeaturesDelete**
-> apiFeatureManagementFeaturesDelete(providerName, providerKey)
+# **deleteAsync**
+> deleteAsync(providerName, providerKey)
 
 
 
@@ -30,9 +30,9 @@ final String providerName = providerName_example; // String |
 final String providerKey = providerKey_example; // String | 
 
 try {
-    api.apiFeatureManagementFeaturesDelete(providerName, providerKey);
+    api.deleteAsync(providerName, providerKey);
 } catch on DioError (e) {
-    print('Exception when calling FeaturesApi->apiFeatureManagementFeaturesDelete: $e\n');
+    print('Exception when calling FeaturesApi->deleteAsync: $e\n');
 }
 ```
 
@@ -58,8 +58,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiFeatureManagementFeaturesGet**
-> GetFeatureListResultDto apiFeatureManagementFeaturesGet(providerName, providerKey)
+# **getAsync**
+> GetFeatureListResultDto getAsync(providerName, providerKey)
 
 
 
@@ -74,10 +74,10 @@ final String providerName = providerName_example; // String |
 final String providerKey = providerKey_example; // String | 
 
 try {
-    final response = api.apiFeatureManagementFeaturesGet(providerName, providerKey);
+    final response = api.getAsync(providerName, providerKey);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling FeaturesApi->apiFeatureManagementFeaturesGet: $e\n');
+    print('Exception when calling FeaturesApi->getAsync: $e\n');
 }
 ```
 
@@ -103,8 +103,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **apiFeatureManagementFeaturesPut**
-> apiFeatureManagementFeaturesPut(body, providerName, providerKey)
+# **updateAsync**
+> updateAsync(body, providerName, providerKey)
 
 
 
@@ -120,9 +120,9 @@ final String providerName = providerName_example; // String |
 final String providerKey = providerKey_example; // String | 
 
 try {
-    api.apiFeatureManagementFeaturesPut(body, providerName, providerKey);
+    api.updateAsync(body, providerName, providerKey);
 } catch on DioError (e) {
-    print('Exception when calling FeaturesApi->apiFeatureManagementFeaturesPut: $e\n');
+    print('Exception when calling FeaturesApi->updateAsync: $e\n');
 }
 ```
 
