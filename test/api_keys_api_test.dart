@@ -7,28 +7,28 @@ void main() {
   final instance = PuupeeApiClient().getApiKeysApi();
 
   group(ApiKeysApi, () {
-    //Future<ApiKeyDto> createAsync({ ApiKeyCreateDto body }) async
-    test('test createAsync', () async {
+    //Future<ApiKeyDto> callGet(String id) async
+    test('test callGet', () async {
       // TODO
     });
 
-    //Future deleteAsync(String id) async
-    test('test deleteAsync', () async {
+    //Future<ApiKeyDto> create({ ApiKeyCreateDto body }) async
+    test('test create', () async {
       // TODO
     });
 
-    //Future<ApiKeyDto> getAsync(String id) async
-    test('test getAsync', () async {
+    //Future delete(String id) async
+    test('test delete', () async {
       // TODO
     });
 
-    //Future<ApiKeyDtoPagedResultDto> getListAsync({ String sorting, int skipCount, int maxResultCount }) async
-    test('test getListAsync', () async {
+    //Future<ApiKeyDtoPagedResultDto> getList({ String sorting, int skipCount, int maxResultCount }) async
+    test('test getList', () async {
       // TODO
     });
 
-    //Future<ApiKeyDto> updateAsync(String id, { ApiKeyUpdateDto body }) async
-    test('test updateAsync', () async {
+    //Future<ApiKeyDto> update(String id, { ApiKeyUpdateDto body }) async
+    test('test update', () async {
       // TODO
     });
 

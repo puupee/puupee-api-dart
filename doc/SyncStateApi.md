@@ -9,52 +9,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deviceConnectedEtoAsync**](SyncStateApi.md#deviceconnectedetoasync) | **POST** /api/app/sync-state/device-connected-eto | 
-[**getAsync**](SyncStateApi.md#getasync) | **GET** /api/app/sync-state | 
-[**puupeeChangedEtoAsync**](SyncStateApi.md#puupeechangedetoasync) | **POST** /api/app/sync-state/puupee-changed-eto | 
+[**callGet**](SyncStateApi.md#callget) | **GET** /api/app/sync-state | 
+[**deviceConnectedEto**](SyncStateApi.md#deviceconnectedeto) | **POST** /api/app/sync-state/device-connected-eto | 
+[**puupeeChangedEto**](SyncStateApi.md#puupeechangedeto) | **POST** /api/app/sync-state/puupee-changed-eto | 
 
 
-# **deviceConnectedEtoAsync**
-> PuupeeEto deviceConnectedEtoAsync()
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getSyncStateApi();
-
-try {
-    final response = api.deviceConnectedEtoAsync();
-    print(response);
-} catch on DioError (e) {
-    print('Exception when calling SyncStateApi->deviceConnectedEtoAsync: $e\n');
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-[**PuupeeEto**](PuupeeEto.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **getAsync**
-> SyncStateDto getAsync()
+# **callGet**
+> SyncStateDto callGet()
 
 
 
@@ -67,10 +28,10 @@ import 'package:puupee_api_client/api.dart';
 final api = PuupeeApiClient().getSyncStateApi();
 
 try {
-    final response = api.getAsync();
+    final response = api.callGet();
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling SyncStateApi->getAsync: $e\n');
+    print('Exception when calling SyncStateApi->callGet: $e\n');
 }
 ```
 
@@ -92,8 +53,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **puupeeChangedEtoAsync**
-> PuupeeEto puupeeChangedEtoAsync()
+# **deviceConnectedEto**
+> PuupeeEto deviceConnectedEto()
 
 
 
@@ -106,10 +67,49 @@ import 'package:puupee_api_client/api.dart';
 final api = PuupeeApiClient().getSyncStateApi();
 
 try {
-    final response = api.puupeeChangedEtoAsync();
+    final response = api.deviceConnectedEto();
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling SyncStateApi->puupeeChangedEtoAsync: $e\n');
+    print('Exception when calling SyncStateApi->deviceConnectedEto: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**PuupeeEto**](PuupeeEto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **puupeeChangedEto**
+> PuupeeEto puupeeChangedEto()
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getSyncStateApi();
+
+try {
+    final response = api.puupeeChangedEto();
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling SyncStateApi->puupeeChangedEto: $e\n');
 }
 ```
 

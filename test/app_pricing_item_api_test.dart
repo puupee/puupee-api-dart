@@ -7,28 +7,28 @@ void main() {
   final instance = PuupeeApiClient().getAppPricingItemApi();
 
   group(AppPricingItemApi, () {
-    //Future<AppPricingItemDto> createAsync({ CreateOrUpdateAppPricingItemDto body }) async
-    test('test createAsync', () async {
+    //Future<AppPricingItemDto> callGet(String id) async
+    test('test callGet', () async {
       // TODO
     });
 
-    //Future deleteAsync(String id) async
-    test('test deleteAsync', () async {
+    //Future<AppPricingItemDto> create({ CreateOrUpdateAppPricingItemDto body }) async
+    test('test create', () async {
       // TODO
     });
 
-    //Future<AppPricingItemDto> getAsync(String id) async
-    test('test getAsync', () async {
+    //Future delete(String id) async
+    test('test delete', () async {
       // TODO
     });
 
-    //Future<List<AppPricingItemDto>> getListAsync() async
-    test('test getListAsync', () async {
+    //Future<List<AppPricingItemDto>> getList() async
+    test('test getList', () async {
       // TODO
     });
 
-    //Future<AppPricingItemDto> updateAsync(String id, { CreateOrUpdateAppPricingItemDto body }) async
-    test('test updateAsync', () async {
+    //Future<AppPricingItemDto> update(String id, { CreateOrUpdateAppPricingItemDto body }) async
+    test('test update', () async {
       // TODO
     });
 

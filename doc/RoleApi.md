@@ -9,16 +9,59 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAsync**](RoleApi.md#createasync) | **POST** /api/identity/roles | 
-[**deleteAsync**](RoleApi.md#deleteasync) | **DELETE** /api/identity/roles/{id} | 
-[**getAllListAsync**](RoleApi.md#getalllistasync) | **GET** /api/identity/roles/all | 
-[**getAsync**](RoleApi.md#getasync) | **GET** /api/identity/roles/{id} | 
-[**getListAsync**](RoleApi.md#getlistasync) | **GET** /api/identity/roles | 
-[**updateAsync**](RoleApi.md#updateasync) | **PUT** /api/identity/roles/{id} | 
+[**callGet**](RoleApi.md#callget) | **GET** /api/identity/roles/{id} | 
+[**create**](RoleApi.md#create) | **POST** /api/identity/roles | 
+[**delete**](RoleApi.md#delete) | **DELETE** /api/identity/roles/{id} | 
+[**getAllList**](RoleApi.md#getalllist) | **GET** /api/identity/roles/all | 
+[**getList**](RoleApi.md#getlist) | **GET** /api/identity/roles | 
+[**update**](RoleApi.md#update) | **PUT** /api/identity/roles/{id} | 
 
 
-# **createAsync**
-> IdentityRoleDto createAsync(body)
+# **callGet**
+> IdentityRoleDto callGet(id)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getRoleApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+
+try {
+    final response = api.callGet(id);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling RoleApi->callGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+[**IdentityRoleDto**](IdentityRoleDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create**
+> IdentityRoleDto create(body)
 
 
 
@@ -32,10 +75,10 @@ final api = PuupeeApiClient().getRoleApi();
 final IdentityRoleCreateDto body = ; // IdentityRoleCreateDto | 
 
 try {
-    final response = api.createAsync(body);
+    final response = api.create(body);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling RoleApi->createAsync: $e\n');
+    print('Exception when calling RoleApi->create: $e\n');
 }
 ```
 
@@ -60,8 +103,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deleteAsync**
-> deleteAsync(id)
+# **delete**
+> delete(id)
 
 
 
@@ -75,9 +118,9 @@ final api = PuupeeApiClient().getRoleApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    api.deleteAsync(id);
+    api.delete(id);
 } catch on DioError (e) {
-    print('Exception when calling RoleApi->deleteAsync: $e\n');
+    print('Exception when calling RoleApi->delete: $e\n');
 }
 ```
 
@@ -102,8 +145,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getAllListAsync**
-> IdentityRoleDtoListResultDto getAllListAsync()
+# **getAllList**
+> IdentityRoleDtoListResultDto getAllList()
 
 
 
@@ -116,10 +159,10 @@ import 'package:puupee_api_client/api.dart';
 final api = PuupeeApiClient().getRoleApi();
 
 try {
-    final response = api.getAllListAsync();
+    final response = api.getAllList();
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling RoleApi->getAllListAsync: $e\n');
+    print('Exception when calling RoleApi->getAllList: $e\n');
 }
 ```
 
@@ -141,51 +184,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getAsync**
-> IdentityRoleDto getAsync(id)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getRoleApi();
-final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-
-try {
-    final response = api.getAsync(id);
-    print(response);
-} catch on DioError (e) {
-    print('Exception when calling RoleApi->getAsync: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
-
-### Return type
-
-[**IdentityRoleDto**](IdentityRoleDto.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **getListAsync**
-> IdentityRoleDtoPagedResultDto getListAsync(filter, sorting, skipCount, maxResultCount)
+# **getList**
+> IdentityRoleDtoPagedResultDto getList(filter, sorting, skipCount, maxResultCount)
 
 
 
@@ -202,10 +202,10 @@ final int skipCount = 56; // int |
 final int maxResultCount = 56; // int | 
 
 try {
-    final response = api.getListAsync(filter, sorting, skipCount, maxResultCount);
+    final response = api.getList(filter, sorting, skipCount, maxResultCount);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling RoleApi->getListAsync: $e\n');
+    print('Exception when calling RoleApi->getList: $e\n');
 }
 ```
 
@@ -233,8 +233,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **updateAsync**
-> IdentityRoleDto updateAsync(id, body)
+# **update**
+> IdentityRoleDto update(id, body)
 
 
 
@@ -249,10 +249,10 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 final IdentityRoleUpdateDto body = ; // IdentityRoleUpdateDto | 
 
 try {
-    final response = api.updateAsync(id, body);
+    final response = api.update(id, body);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling RoleApi->updateAsync: $e\n');
+    print('Exception when calling RoleApi->update: $e\n');
 }
 ```
 

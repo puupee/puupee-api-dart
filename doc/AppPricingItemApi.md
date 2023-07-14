@@ -9,15 +9,58 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAsync**](AppPricingItemApi.md#createasync) | **POST** /api/app/app-pricing-item | 
-[**deleteAsync**](AppPricingItemApi.md#deleteasync) | **DELETE** /api/app/app-pricing-item/{id} | 
-[**getAsync**](AppPricingItemApi.md#getasync) | **GET** /api/app/app-pricing-item/{id} | 
-[**getListAsync**](AppPricingItemApi.md#getlistasync) | **GET** /api/app/app-pricing-item | 
-[**updateAsync**](AppPricingItemApi.md#updateasync) | **PUT** /api/app/app-pricing-item/{id} | 
+[**callGet**](AppPricingItemApi.md#callget) | **GET** /api/app/app-pricing-item/{id} | 
+[**create**](AppPricingItemApi.md#create) | **POST** /api/app/app-pricing-item | 
+[**delete**](AppPricingItemApi.md#delete) | **DELETE** /api/app/app-pricing-item/{id} | 
+[**getList**](AppPricingItemApi.md#getlist) | **GET** /api/app/app-pricing-item | 
+[**update**](AppPricingItemApi.md#update) | **PUT** /api/app/app-pricing-item/{id} | 
 
 
-# **createAsync**
-> AppPricingItemDto createAsync(body)
+# **callGet**
+> AppPricingItemDto callGet(id)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getAppPricingItemApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+
+try {
+    final response = api.callGet(id);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AppPricingItemApi->callGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+[**AppPricingItemDto**](AppPricingItemDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create**
+> AppPricingItemDto create(body)
 
 
 
@@ -31,10 +74,10 @@ final api = PuupeeApiClient().getAppPricingItemApi();
 final CreateOrUpdateAppPricingItemDto body = ; // CreateOrUpdateAppPricingItemDto | 
 
 try {
-    final response = api.createAsync(body);
+    final response = api.create(body);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling AppPricingItemApi->createAsync: $e\n');
+    print('Exception when calling AppPricingItemApi->create: $e\n');
 }
 ```
 
@@ -59,8 +102,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deleteAsync**
-> deleteAsync(id)
+# **delete**
+> delete(id)
 
 
 
@@ -74,9 +117,9 @@ final api = PuupeeApiClient().getAppPricingItemApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    api.deleteAsync(id);
+    api.delete(id);
 } catch on DioError (e) {
-    print('Exception when calling AppPricingItemApi->deleteAsync: $e\n');
+    print('Exception when calling AppPricingItemApi->delete: $e\n');
 }
 ```
 
@@ -101,51 +144,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getAsync**
-> AppPricingItemDto getAsync(id)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getAppPricingItemApi();
-final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-
-try {
-    final response = api.getAsync(id);
-    print(response);
-} catch on DioError (e) {
-    print('Exception when calling AppPricingItemApi->getAsync: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
-
-### Return type
-
-[**AppPricingItemDto**](AppPricingItemDto.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **getListAsync**
-> List<AppPricingItemDto> getListAsync()
+# **getList**
+> List<AppPricingItemDto> getList()
 
 
 
@@ -158,10 +158,10 @@ import 'package:puupee_api_client/api.dart';
 final api = PuupeeApiClient().getAppPricingItemApi();
 
 try {
-    final response = api.getListAsync();
+    final response = api.getList();
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling AppPricingItemApi->getListAsync: $e\n');
+    print('Exception when calling AppPricingItemApi->getList: $e\n');
 }
 ```
 
@@ -183,8 +183,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **updateAsync**
-> AppPricingItemDto updateAsync(id, body)
+# **update**
+> AppPricingItemDto update(id, body)
 
 
 
@@ -199,10 +199,10 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 final CreateOrUpdateAppPricingItemDto body = ; // CreateOrUpdateAppPricingItemDto | 
 
 try {
-    final response = api.updateAsync(id, body);
+    final response = api.update(id, body);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling AppPricingItemApi->updateAsync: $e\n');
+    print('Exception when calling AppPricingItemApi->update: $e\n');
 }
 ```
 

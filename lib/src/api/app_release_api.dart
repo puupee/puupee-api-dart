@@ -20,7 +20,82 @@ class AppReleaseApi {
 
   const AppReleaseApi(this._dio);
 
-  /// createAsync
+  /// callGet
+  /// 
+  ///
+  /// Parameters:
+  /// * [id] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [AppReleaseDto] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<AppReleaseDto>> callGet({ 
+    required String id,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/app/app-release/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'oauth2',
+            'name': 'oauth2',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    AppReleaseDto _responseData;
+
+    try {
+_responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppReleaseDto', growable: true);
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<AppReleaseDto>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// create
   /// 
   ///
   /// Parameters:
@@ -34,7 +109,7 @@ class AppReleaseApi {
   ///
   /// Returns a [Future] containing a [Response] with a [AppReleaseDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<AppReleaseDto>> createAsync({ 
+  Future<Response<AppReleaseDto>> create({ 
     CreateOrUpdateAppReleaseDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -113,7 +188,7 @@ _responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppR
     );
   }
 
-  /// deleteAsync
+  /// delete
   /// 
   ///
   /// Parameters:
@@ -127,7 +202,7 @@ _responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppR
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> deleteAsync({ 
+  Future<Response<void>> delete({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -165,82 +240,7 @@ _responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppR
     return _response;
   }
 
-  /// getAsync
-  /// 
-  ///
-  /// Parameters:
-  /// * [id] 
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [AppReleaseDto] as data
-  /// Throws [DioError] if API call or serialization fails
-  Future<Response<AppReleaseDto>> getAsync({ 
-    required String id,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/app/app-release/{id}'.replaceAll('{' r'id' '}', id.toString());
-    final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    AppReleaseDto _responseData;
-
-    try {
-_responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppReleaseDto', growable: true);
-    } catch (error, stackTrace) {
-      throw DioError(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioErrorType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<AppReleaseDto>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
-  /// getLatestAsync
+  /// getLatest
   /// 
   ///
   /// Parameters:
@@ -257,7 +257,7 @@ _responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppR
   ///
   /// Returns a [Future] containing a [Response] with a [AppReleaseDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<AppReleaseDto>> getLatestAsync({ 
+  Future<Response<AppReleaseDto>> getLatest({ 
     String? appName,
     String? platform,
     String? productType,
@@ -329,7 +329,7 @@ _responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppR
     );
   }
 
-  /// getListAsync
+  /// getList
   /// 
   ///
   /// Parameters:
@@ -348,7 +348,7 @@ _responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppR
   ///
   /// Returns a [Future] containing a [Response] with a [AppReleaseDtoPagedResultDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<AppReleaseDtoPagedResultDto>> getListAsync({ 
+  Future<Response<AppReleaseDtoPagedResultDto>> getList({ 
     String? appId,
     String? environment,
     String? platform,
@@ -424,7 +424,7 @@ _responseData = deserialize<AppReleaseDtoPagedResultDto, AppReleaseDtoPagedResul
     );
   }
 
-  /// updateAsync
+  /// update
   /// 
   ///
   /// Parameters:
@@ -439,7 +439,7 @@ _responseData = deserialize<AppReleaseDtoPagedResultDto, AppReleaseDtoPagedResul
   ///
   /// Returns a [Future] containing a [Response] with a [AppReleaseDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<AppReleaseDto>> updateAsync({ 
+  Future<Response<AppReleaseDto>> update({ 
     required String id,
     CreateOrUpdateAppReleaseDto? body,
     CancelToken? cancelToken,

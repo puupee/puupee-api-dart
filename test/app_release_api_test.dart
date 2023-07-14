@@ -7,33 +7,33 @@ void main() {
   final instance = PuupeeApiClient().getAppReleaseApi();
 
   group(AppReleaseApi, () {
-    //Future<AppReleaseDto> createAsync({ CreateOrUpdateAppReleaseDto body }) async
-    test('test createAsync', () async {
+    //Future<AppReleaseDto> callGet(String id) async
+    test('test callGet', () async {
       // TODO
     });
 
-    //Future deleteAsync(String id) async
-    test('test deleteAsync', () async {
+    //Future<AppReleaseDto> create({ CreateOrUpdateAppReleaseDto body }) async
+    test('test create', () async {
       // TODO
     });
 
-    //Future<AppReleaseDto> getAsync(String id) async
-    test('test getAsync', () async {
+    //Future delete(String id) async
+    test('test delete', () async {
       // TODO
     });
 
-    //Future<AppReleaseDto> getLatestAsync({ String appName, String platform, String productType, String environment }) async
-    test('test getLatestAsync', () async {
+    //Future<AppReleaseDto> getLatest({ String appName, String platform, String productType, String environment }) async
+    test('test getLatest', () async {
       // TODO
     });
 
-    //Future<AppReleaseDtoPagedResultDto> getListAsync({ String appId, String environment, String platform, String sorting, int skipCount, int maxResultCount }) async
-    test('test getListAsync', () async {
+    //Future<AppReleaseDtoPagedResultDto> getList({ String appId, String environment, String platform, String sorting, int skipCount, int maxResultCount }) async
+    test('test getList', () async {
       // TODO
     });
 
-    //Future<AppReleaseDto> updateAsync(String id, { CreateOrUpdateAppReleaseDto body }) async
-    test('test updateAsync', () async {
+    //Future<AppReleaseDto> update(String id, { CreateOrUpdateAppReleaseDto body }) async
+    test('test update', () async {
       // TODO
     });
 

@@ -9,16 +9,16 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bindAsync**](DeviceApi.md#bindasync) | **POST** /api/app/device/bind | 
-[**getAsync**](DeviceApi.md#getasync) | **GET** /api/app/device/{id} | 
-[**getByTokenAsync**](DeviceApi.md#getbytokenasync) | **GET** /api/app/device/by-token | 
-[**getListAsync**](DeviceApi.md#getlistasync) | **GET** /api/app/device | 
-[**refreshAsync**](DeviceApi.md#refreshasync) | **POST** /api/app/device/refresh | 
-[**removeAsync**](DeviceApi.md#removeasync) | **DELETE** /api/app/device | 
+[**bind**](DeviceApi.md#bind) | **POST** /api/app/device/bind | 
+[**callGet**](DeviceApi.md#callget) | **GET** /api/app/device/{id} | 
+[**getByToken**](DeviceApi.md#getbytoken) | **GET** /api/app/device/by-token | 
+[**getList**](DeviceApi.md#getlist) | **GET** /api/app/device | 
+[**refresh**](DeviceApi.md#refresh) | **POST** /api/app/device/refresh | 
+[**remove**](DeviceApi.md#remove) | **DELETE** /api/app/device | 
 
 
-# **bindAsync**
-> bindAsync(body)
+# **bind**
+> bind(body)
 
 
 
@@ -32,9 +32,9 @@ final api = PuupeeApiClient().getDeviceApi();
 final BindDeviceDto body = ; // BindDeviceDto | 
 
 try {
-    api.bindAsync(body);
+    api.bind(body);
 } catch on DioError (e) {
-    print('Exception when calling DeviceApi->bindAsync: $e\n');
+    print('Exception when calling DeviceApi->bind: $e\n');
 }
 ```
 
@@ -59,8 +59,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getAsync**
-> DeviceDto getAsync(id)
+# **callGet**
+> DeviceDto callGet(id)
 
 
 
@@ -74,10 +74,10 @@ final api = PuupeeApiClient().getDeviceApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final response = api.getAsync(id);
+    final response = api.callGet(id);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling DeviceApi->getAsync: $e\n');
+    print('Exception when calling DeviceApi->callGet: $e\n');
 }
 ```
 
@@ -102,8 +102,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getByTokenAsync**
-> DeviceDto getByTokenAsync(token)
+# **getByToken**
+> DeviceDto getByToken(token)
 
 
 
@@ -117,10 +117,10 @@ final api = PuupeeApiClient().getDeviceApi();
 final String token = token_example; // String | 
 
 try {
-    final response = api.getByTokenAsync(token);
+    final response = api.getByToken(token);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling DeviceApi->getByTokenAsync: $e\n');
+    print('Exception when calling DeviceApi->getByToken: $e\n');
 }
 ```
 
@@ -145,8 +145,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getListAsync**
-> DeviceDtoPagedResultDto getListAsync(sorting, skipCount, maxResultCount)
+# **getList**
+> DeviceDtoPagedResultDto getList(sorting, skipCount, maxResultCount)
 
 
 
@@ -162,10 +162,10 @@ final int skipCount = 56; // int |
 final int maxResultCount = 56; // int | 
 
 try {
-    final response = api.getListAsync(sorting, skipCount, maxResultCount);
+    final response = api.getList(sorting, skipCount, maxResultCount);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling DeviceApi->getListAsync: $e\n');
+    print('Exception when calling DeviceApi->getList: $e\n');
 }
 ```
 
@@ -192,8 +192,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **refreshAsync**
-> refreshAsync(body)
+# **refresh**
+> refresh(body)
 
 
 
@@ -207,9 +207,9 @@ final api = PuupeeApiClient().getDeviceApi();
 final RefreshDeviceStatusDto body = ; // RefreshDeviceStatusDto | 
 
 try {
-    api.refreshAsync(body);
+    api.refresh(body);
 } catch on DioError (e) {
-    print('Exception when calling DeviceApi->refreshAsync: $e\n');
+    print('Exception when calling DeviceApi->refresh: $e\n');
 }
 ```
 
@@ -234,8 +234,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **removeAsync**
-> removeAsync(token)
+# **remove**
+> remove(token)
 
 
 
@@ -249,9 +249,9 @@ final api = PuupeeApiClient().getDeviceApi();
 final String token = token_example; // String | 
 
 try {
-    api.removeAsync(token);
+    api.remove(token);
 } catch on DioError (e) {
-    print('Exception when calling DeviceApi->removeAsync: $e\n');
+    print('Exception when calling DeviceApi->remove: $e\n');
 }
 ```
 

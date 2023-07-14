@@ -18,7 +18,7 @@ class StorageObjectApi {
 
   const StorageObjectApi(this._dio);
 
-  /// getFileOrCredentialsAsync
+  /// getFileOrCredentials
   /// 
   ///
   /// Parameters:
@@ -33,7 +33,7 @@ class StorageObjectApi {
   ///
   /// Returns a [Future] containing a [Response] with a [StorageObjectOrCredentialsDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<StorageObjectOrCredentialsDto>> getFileOrCredentialsAsync({ 
+  Future<Response<StorageObjectOrCredentialsDto>> getFileOrCredentials({ 
     String? rapidCode,
     String? key,
     CancelToken? cancelToken,

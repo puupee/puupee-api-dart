@@ -9,14 +9,14 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getFileOrCredentialsAsync**](StorageObjectApi.md#getfileorcredentialsasync) | **GET** /api/app/storage-object/file-or-credentials | 
+[**getFileOrCredentials**](StorageObjectApi.md#getfileorcredentials) | **GET** /api/app/storage-object/file-or-credentials | 
 [**myFile**](StorageObjectApi.md#myfile) | **GET** /api/app/storage-object/file | 
 [**preSignUrl**](StorageObjectApi.md#presignurl) | **POST** /api/app/storage-object/pre-sign-url | 
 [**thumb**](StorageObjectApi.md#thumb) | **GET** /api/app/storage-object/thumb | 
 
 
-# **getFileOrCredentialsAsync**
-> StorageObjectOrCredentialsDto getFileOrCredentialsAsync(rapidCode, key)
+# **getFileOrCredentials**
+> StorageObjectOrCredentialsDto getFileOrCredentials(rapidCode, key)
 
 
 
@@ -31,10 +31,10 @@ final String rapidCode = rapidCode_example; // String |
 final String key = key_example; // String | 
 
 try {
-    final response = api.getFileOrCredentialsAsync(rapidCode, key);
+    final response = api.getFileOrCredentials(rapidCode, key);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling StorageObjectApi->getFileOrCredentialsAsync: $e\n');
+    print('Exception when calling StorageObjectApi->getFileOrCredentials: $e\n');
 }
 ```
 

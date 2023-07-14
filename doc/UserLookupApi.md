@@ -9,14 +9,14 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**findByIdAsync**](UserLookupApi.md#findbyidasync) | **GET** /api/identity/users/lookup/{id} | 
-[**findByUserNameAsync**](UserLookupApi.md#findbyusernameasync) | **GET** /api/identity/users/lookup/by-username/{userName} | 
-[**getCountAsync**](UserLookupApi.md#getcountasync) | **GET** /api/identity/users/lookup/count | 
-[**searchAsync**](UserLookupApi.md#searchasync) | **GET** /api/identity/users/lookup/search | 
+[**findById**](UserLookupApi.md#findbyid) | **GET** /api/identity/users/lookup/{id} | 
+[**findByUserName**](UserLookupApi.md#findbyusername) | **GET** /api/identity/users/lookup/by-username/{userName} | 
+[**getCount**](UserLookupApi.md#getcount) | **GET** /api/identity/users/lookup/count | 
+[**search**](UserLookupApi.md#search) | **GET** /api/identity/users/lookup/search | 
 
 
-# **findByIdAsync**
-> UserData findByIdAsync(id)
+# **findById**
+> UserData findById(id)
 
 
 
@@ -30,10 +30,10 @@ final api = PuupeeApiClient().getUserLookupApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final response = api.findByIdAsync(id);
+    final response = api.findById(id);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling UserLookupApi->findByIdAsync: $e\n');
+    print('Exception when calling UserLookupApi->findById: $e\n');
 }
 ```
 
@@ -58,8 +58,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **findByUserNameAsync**
-> UserData findByUserNameAsync(userName)
+# **findByUserName**
+> UserData findByUserName(userName)
 
 
 
@@ -73,10 +73,10 @@ final api = PuupeeApiClient().getUserLookupApi();
 final String userName = userName_example; // String | 
 
 try {
-    final response = api.findByUserNameAsync(userName);
+    final response = api.findByUserName(userName);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling UserLookupApi->findByUserNameAsync: $e\n');
+    print('Exception when calling UserLookupApi->findByUserName: $e\n');
 }
 ```
 
@@ -101,8 +101,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getCountAsync**
-> int getCountAsync(filter)
+# **getCount**
+> int getCount(filter)
 
 
 
@@ -116,10 +116,10 @@ final api = PuupeeApiClient().getUserLookupApi();
 final String filter = filter_example; // String | 
 
 try {
-    final response = api.getCountAsync(filter);
+    final response = api.getCount(filter);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling UserLookupApi->getCountAsync: $e\n');
+    print('Exception when calling UserLookupApi->getCount: $e\n');
 }
 ```
 
@@ -144,8 +144,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **searchAsync**
-> UserDataListResultDto searchAsync(filter, sorting, skipCount, maxResultCount)
+# **search**
+> UserDataListResultDto search(filter, sorting, skipCount, maxResultCount)
 
 
 
@@ -162,10 +162,10 @@ final int skipCount = 56; // int |
 final int maxResultCount = 56; // int | 
 
 try {
-    final response = api.searchAsync(filter, sorting, skipCount, maxResultCount);
+    final response = api.search(filter, sorting, skipCount, maxResultCount);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling UserLookupApi->searchAsync: $e\n');
+    print('Exception when calling UserLookupApi->search: $e\n');
 }
 ```
 

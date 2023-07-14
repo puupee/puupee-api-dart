@@ -19,59 +19,7 @@ class SimpleDataApi {
 
   const SimpleDataApi(this._dio);
 
-  /// deleteAsync
-  /// 
-  ///
-  /// Parameters:
-  /// * [id] 
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future]
-  /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> deleteAsync({ 
-    required String id,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/app/simple-data/{id}'.replaceAll('{' r'id' '}', id.toString());
-    final _options = Options(
-      method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    return _response;
-  }
-
-  /// getAsync
+  /// callGet
   /// 
   ///
   /// Parameters:
@@ -85,7 +33,7 @@ class SimpleDataApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SimpleDataDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<SimpleDataDto>> getAsync({ 
+  Future<Response<SimpleDataDto>> callGet({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -146,7 +94,59 @@ _responseData = deserialize<SimpleDataDto, SimpleDataDto>(_response.data!, 'Simp
     );
   }
 
-  /// getListAsync
+  /// delete
+  /// 
+  ///
+  /// Parameters:
+  /// * [id] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<void>> delete({ 
+    required String id,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/app/simple-data/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _options = Options(
+      method: r'DELETE',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'oauth2',
+            'name': 'oauth2',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
+  }
+
+  /// getList
   /// 
   ///
   /// Parameters:
@@ -163,7 +163,7 @@ _responseData = deserialize<SimpleDataDto, SimpleDataDto>(_response.data!, 'Simp
   ///
   /// Returns a [Future] containing a [Response] with a [SimpleDataDtoPagedResultDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<SimpleDataDtoPagedResultDto>> getListAsync({ 
+  Future<Response<SimpleDataDtoPagedResultDto>> getList({ 
     String? collection,
     String? sorting,
     int? skipCount,
@@ -235,7 +235,7 @@ _responseData = deserialize<SimpleDataDtoPagedResultDto, SimpleDataDtoPagedResul
     );
   }
 
-  /// saveAsync
+  /// save
   /// 
   ///
   /// Parameters:
@@ -249,7 +249,7 @@ _responseData = deserialize<SimpleDataDtoPagedResultDto, SimpleDataDtoPagedResul
   ///
   /// Returns a [Future] containing a [Response] with a [SimpleDataDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<SimpleDataDto>> saveAsync({ 
+  Future<Response<SimpleDataDto>> save({ 
     SimpleDataDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

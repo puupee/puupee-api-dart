@@ -7,63 +7,63 @@ void main() {
   final instance = PuupeeApiClient().getKeyValueApi();
 
   group(KeyValueApi, () {
-    //Future<BooleanKeyValue> getBoolAsync({ String key }) async
-    test('test getBoolAsync', () async {
+    //Future<BooleanKeyValue> getBool({ String key }) async
+    test('test getBool', () async {
       // TODO
     });
 
-    //Future<DateTimeKeyValue> getDateTimeAsync({ String key }) async
-    test('test getDateTimeAsync', () async {
+    //Future<DateTimeKeyValue> getDateTime({ String key }) async
+    test('test getDateTime', () async {
       // TODO
     });
 
-    //Future<DecimalKeyValue> getDecimalAsync({ String key }) async
-    test('test getDecimalAsync', () async {
+    //Future<DecimalKeyValue> getDecimal({ String key }) async
+    test('test getDecimal', () async {
       // TODO
     });
 
-    //Future<DoubleKeyValue> getDoubleAsync({ String key }) async
-    test('test getDoubleAsync', () async {
+    //Future<DoubleKeyValue> getDouble({ String key }) async
+    test('test getDouble', () async {
       // TODO
     });
 
-    //Future<Int32KeyValue> getIntAsync({ String key }) async
-    test('test getIntAsync', () async {
+    //Future<Int32KeyValue> getInt({ String key }) async
+    test('test getInt', () async {
       // TODO
     });
 
-    //Future<StringKeyValue> getStringAsync({ String key }) async
-    test('test getStringAsync', () async {
+    //Future<StringKeyValue> getString({ String key }) async
+    test('test getString', () async {
       // TODO
     });
 
-    //Future setBoolAsync({ BooleanSetKeyValueDto body, String key }) async
-    test('test setBoolAsync', () async {
+    //Future setBool({ BooleanSetKeyValueDto body, String key }) async
+    test('test setBool', () async {
       // TODO
     });
 
-    //Future setDateTimeAsync({ DateTimeSetKeyValueDto body, String key }) async
-    test('test setDateTimeAsync', () async {
+    //Future setDateTime({ DateTimeSetKeyValueDto body, String key }) async
+    test('test setDateTime', () async {
       // TODO
     });
 
-    //Future setDecimalAsync({ DecimalSetKeyValueDto body, String key }) async
-    test('test setDecimalAsync', () async {
+    //Future setDecimal({ DecimalSetKeyValueDto body, String key }) async
+    test('test setDecimal', () async {
       // TODO
     });
 
-    //Future setDoubleAsync({ DoubleSetKeyValueDto body, String key }) async
-    test('test setDoubleAsync', () async {
+    //Future setDouble({ DoubleSetKeyValueDto body, String key }) async
+    test('test setDouble', () async {
       // TODO
     });
 
-    //Future setIntAsync({ Int32SetKeyValueDto body, String key }) async
-    test('test setIntAsync', () async {
+    //Future setInt({ Int32SetKeyValueDto body, String key }) async
+    test('test setInt', () async {
       // TODO
     });
 
-    //Future setStringAsync({ StringSetKeyValueDto body, String key }) async
-    test('test setStringAsync', () async {
+    //Future setString({ StringSetKeyValueDto body, String key }) async
+    test('test setString', () async {
       // TODO
     });
 

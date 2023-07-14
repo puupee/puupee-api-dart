@@ -9,11 +9,11 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getListAsync**](MessageSourceCategoryApi.md#getlistasync) | **GET** /api/app/message-source-category | 
+[**getList**](MessageSourceCategoryApi.md#getlist) | **GET** /api/app/message-source-category | 
 
 
-# **getListAsync**
-> List<MessageSourceCategoryDto> getListAsync()
+# **getList**
+> List<MessageSourceCategoryDto> getList()
 
 
 
@@ -26,10 +26,10 @@ import 'package:puupee_api_client/api.dart';
 final api = PuupeeApiClient().getMessageSourceCategoryApi();
 
 try {
-    final response = api.getListAsync();
+    final response = api.getList();
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling MessageSourceCategoryApi->getListAsync: $e\n');
+    print('Exception when calling MessageSourceCategoryApi->getList: $e\n');
 }
 ```
 

@@ -9,12 +9,12 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAsync**](PermissionsApi.md#getasync) | **GET** /api/permission-management/permissions | 
-[**updateAsync**](PermissionsApi.md#updateasync) | **PUT** /api/permission-management/permissions | 
+[**callGet**](PermissionsApi.md#callget) | **GET** /api/permission-management/permissions | 
+[**update**](PermissionsApi.md#update) | **PUT** /api/permission-management/permissions | 
 
 
-# **getAsync**
-> GetPermissionListResultDto getAsync(providerName, providerKey)
+# **callGet**
+> GetPermissionListResultDto callGet(providerName, providerKey)
 
 
 
@@ -29,10 +29,10 @@ final String providerName = providerName_example; // String |
 final String providerKey = providerKey_example; // String | 
 
 try {
-    final response = api.getAsync(providerName, providerKey);
+    final response = api.callGet(providerName, providerKey);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling PermissionsApi->getAsync: $e\n');
+    print('Exception when calling PermissionsApi->callGet: $e\n');
 }
 ```
 
@@ -58,8 +58,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **updateAsync**
-> updateAsync(body, providerName, providerKey)
+# **update**
+> update(body, providerName, providerKey)
 
 
 
@@ -75,9 +75,9 @@ final String providerName = providerName_example; // String |
 final String providerKey = providerKey_example; // String | 
 
 try {
-    api.updateAsync(body, providerName, providerKey);
+    api.update(body, providerName, providerKey);
 } catch on DioError (e) {
-    print('Exception when calling PermissionsApi->updateAsync: $e\n');
+    print('Exception when calling PermissionsApi->update: $e\n');
 }
 ```
 

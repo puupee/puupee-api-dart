@@ -19,129 +19,7 @@ class MessageSourceRouteSubApi {
 
   const MessageSourceRouteSubApi(this._dio);
 
-  /// createAsync
-  /// 
-  ///
-  /// Parameters:
-  /// * [body] 
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future]
-  /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> createAsync({ 
-    CreateUpdateMessageSourceRouteSubDto? body,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/app/message-source-route-sub';
-    final _options = Options(
-      method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
-        ],
-        ...?extra,
-      },
-      contentType: 'application/json',
-      validateStatus: validateStatus,
-    );
-
-    dynamic _bodyData;
-
-    try {
-_bodyData=jsonEncode(body);
-    } catch(error, stackTrace) {
-      throw DioError(
-         requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
-        type: DioErrorType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    final _response = await _dio.request<Object>(
-      _path,
-      data: _bodyData,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    return _response;
-  }
-
-  /// deleteAsync
-  /// 
-  ///
-  /// Parameters:
-  /// * [id] 
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future]
-  /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> deleteAsync({ 
-    required String id,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/app/message-source-route-sub/{id}'.replaceAll('{' r'id' '}', id.toString());
-    final _options = Options(
-      method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    return _response;
-  }
-
-  /// getAsync
+  /// callGet
   /// 
   ///
   /// Parameters:
@@ -155,7 +33,7 @@ _bodyData=jsonEncode(body);
   ///
   /// Returns a [Future] containing a [Response] with a [MessageSourceRouteSubDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<MessageSourceRouteSubDto>> getAsync({ 
+  Future<Response<MessageSourceRouteSubDto>> callGet({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -216,7 +94,129 @@ _responseData = deserialize<MessageSourceRouteSubDto, MessageSourceRouteSubDto>(
     );
   }
 
-  /// getListAsync
+  /// create
+  /// 
+  ///
+  /// Parameters:
+  /// * [body] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<void>> create({ 
+    CreateUpdateMessageSourceRouteSubDto? body,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/app/message-source-route-sub';
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'oauth2',
+            'name': 'oauth2',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+_bodyData=jsonEncode(body);
+    } catch(error, stackTrace) {
+      throw DioError(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioErrorType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
+  }
+
+  /// delete
+  /// 
+  ///
+  /// Parameters:
+  /// * [id] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<void>> delete({ 
+    required String id,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/app/message-source-route-sub/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _options = Options(
+      method: r'DELETE',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'oauth2',
+            'name': 'oauth2',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
+  }
+
+  /// getList
   /// 
   ///
   /// Parameters:
@@ -229,7 +229,7 @@ _responseData = deserialize<MessageSourceRouteSubDto, MessageSourceRouteSubDto>(
   ///
   /// Returns a [Future] containing a [Response] with a [List<MessageSourceRouteSubDto>] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<List<MessageSourceRouteSubDto>>> getListAsync({ 
+  Future<Response<List<MessageSourceRouteSubDto>>> getList({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -289,7 +289,7 @@ _responseData = deserialize<List<MessageSourceRouteSubDto>, MessageSourceRouteSu
     );
   }
 
-  /// updateAsync
+  /// update
   /// 
   ///
   /// Parameters:
@@ -304,7 +304,7 @@ _responseData = deserialize<List<MessageSourceRouteSubDto>, MessageSourceRouteSu
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> updateAsync({ 
+  Future<Response<void>> update({ 
     required String id,
     CreateUpdateMessageSourceRouteSubDto? body,
     CancelToken? cancelToken,

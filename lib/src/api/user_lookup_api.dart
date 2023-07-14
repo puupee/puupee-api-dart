@@ -19,7 +19,7 @@ class UserLookupApi {
 
   const UserLookupApi(this._dio);
 
-  /// findByIdAsync
+  /// findById
   /// 
   ///
   /// Parameters:
@@ -33,7 +33,7 @@ class UserLookupApi {
   ///
   /// Returns a [Future] containing a [Response] with a [UserData] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<UserData>> findByIdAsync({ 
+  Future<Response<UserData>> findById({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -94,7 +94,7 @@ _responseData = deserialize<UserData, UserData>(_response.data!, 'UserData', gro
     );
   }
 
-  /// findByUserNameAsync
+  /// findByUserName
   /// 
   ///
   /// Parameters:
@@ -108,7 +108,7 @@ _responseData = deserialize<UserData, UserData>(_response.data!, 'UserData', gro
   ///
   /// Returns a [Future] containing a [Response] with a [UserData] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<UserData>> findByUserNameAsync({ 
+  Future<Response<UserData>> findByUserName({ 
     required String userName,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -169,7 +169,7 @@ _responseData = deserialize<UserData, UserData>(_response.data!, 'UserData', gro
     );
   }
 
-  /// getCountAsync
+  /// getCount
   /// 
   ///
   /// Parameters:
@@ -183,7 +183,7 @@ _responseData = deserialize<UserData, UserData>(_response.data!, 'UserData', gro
   ///
   /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<int>> getCountAsync({ 
+  Future<Response<int>> getCount({ 
     String? filter,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -249,7 +249,7 @@ _responseData = deserialize<int, int>(_response.data!, 'int', growable: true);
     );
   }
 
-  /// searchAsync
+  /// search
   /// 
   ///
   /// Parameters:
@@ -266,7 +266,7 @@ _responseData = deserialize<int, int>(_response.data!, 'int', growable: true);
   ///
   /// Returns a [Future] containing a [Response] with a [UserDataListResultDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<UserDataListResultDto>> searchAsync({ 
+  Future<Response<UserDataListResultDto>> search({ 
     String? filter,
     String? sorting,
     int? skipCount,

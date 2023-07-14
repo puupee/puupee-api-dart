@@ -7,8 +7,8 @@ void main() {
   final instance = PuupeeApiClient().getStorageObjectApi();
 
   group(StorageObjectApi, () {
-    //Future<StorageObjectOrCredentialsDto> getFileOrCredentialsAsync({ String rapidCode, String key }) async
-    test('test getFileOrCredentialsAsync', () async {
+    //Future<StorageObjectOrCredentialsDto> getFileOrCredentials({ String rapidCode, String key }) async
+    test('test getFileOrCredentials', () async {
       // TODO
     });
 

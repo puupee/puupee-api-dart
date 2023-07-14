@@ -7,43 +7,43 @@ void main() {
   final instance = PuupeeApiClient().getTenantApi();
 
   group(TenantApi, () {
-    //Future<TenantDto> createAsync({ TenantCreateDto body }) async
-    test('test createAsync', () async {
+    //Future<TenantDto> callGet(String id) async
+    test('test callGet', () async {
       // TODO
     });
 
-    //Future deleteAsync(String id) async
-    test('test deleteAsync', () async {
+    //Future<TenantDto> create({ TenantCreateDto body }) async
+    test('test create', () async {
       // TODO
     });
 
-    //Future deleteDefaultConnectionStringAsync(String id) async
-    test('test deleteDefaultConnectionStringAsync', () async {
+    //Future delete(String id) async
+    test('test delete', () async {
       // TODO
     });
 
-    //Future<TenantDto> getAsync(String id) async
-    test('test getAsync', () async {
+    //Future deleteDefaultConnectionString(String id) async
+    test('test deleteDefaultConnectionString', () async {
       // TODO
     });
 
-    //Future<String> getDefaultConnectionStringAsync(String id) async
-    test('test getDefaultConnectionStringAsync', () async {
+    //Future<String> getDefaultConnectionString(String id) async
+    test('test getDefaultConnectionString', () async {
       // TODO
     });
 
-    //Future<TenantDtoPagedResultDto> getListAsync({ String filter, String sorting, int skipCount, int maxResultCount }) async
-    test('test getListAsync', () async {
+    //Future<TenantDtoPagedResultDto> getList({ String filter, String sorting, int skipCount, int maxResultCount }) async
+    test('test getList', () async {
       // TODO
     });
 
-    //Future<TenantDto> updateAsync(String id, { TenantUpdateDto body }) async
-    test('test updateAsync', () async {
+    //Future<TenantDto> update(String id, { TenantUpdateDto body }) async
+    test('test update', () async {
       // TODO
     });
 
-    //Future updateDefaultConnectionStringAsync(String id, { String defaultConnectionString }) async
-    test('test updateDefaultConnectionStringAsync', () async {
+    //Future updateDefaultConnectionString(String id, { String defaultConnectionString }) async
+    test('test updateDefaultConnectionString', () async {
       // TODO
     });
 

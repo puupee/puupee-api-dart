@@ -9,14 +9,14 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAsync**](AppSdkApi.md#createasync) | **POST** /api/app/app-sdk | 
-[**deleteAsync**](AppSdkApi.md#deleteasync) | **DELETE** /api/app/app-sdk/{id} | 
-[**getListAsync**](AppSdkApi.md#getlistasync) | **GET** /api/app/app-sdk | 
-[**updateAsync**](AppSdkApi.md#updateasync) | **PUT** /api/app/app-sdk/{id} | 
+[**create**](AppSdkApi.md#create) | **POST** /api/app/app-sdk | 
+[**delete**](AppSdkApi.md#delete) | **DELETE** /api/app/app-sdk/{id} | 
+[**getList**](AppSdkApi.md#getlist) | **GET** /api/app/app-sdk | 
+[**update**](AppSdkApi.md#update) | **PUT** /api/app/app-sdk/{id} | 
 
 
-# **createAsync**
-> AppSdkDto createAsync(body)
+# **create**
+> AppSdkDto create(body)
 
 
 
@@ -30,10 +30,10 @@ final api = PuupeeApiClient().getAppSdkApi();
 final CreateOrUpdateAppSdkDto body = ; // CreateOrUpdateAppSdkDto | 
 
 try {
-    final response = api.createAsync(body);
+    final response = api.create(body);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling AppSdkApi->createAsync: $e\n');
+    print('Exception when calling AppSdkApi->create: $e\n');
 }
 ```
 
@@ -58,8 +58,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deleteAsync**
-> deleteAsync(id)
+# **delete**
+> delete(id)
 
 
 
@@ -73,9 +73,9 @@ final api = PuupeeApiClient().getAppSdkApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    api.deleteAsync(id);
+    api.delete(id);
 } catch on DioError (e) {
-    print('Exception when calling AppSdkApi->deleteAsync: $e\n');
+    print('Exception when calling AppSdkApi->delete: $e\n');
 }
 ```
 
@@ -100,8 +100,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getListAsync**
-> AppSdkDtoPagedResultDto getListAsync(sorting, skipCount, maxResultCount)
+# **getList**
+> AppSdkDtoPagedResultDto getList(sorting, skipCount, maxResultCount)
 
 
 
@@ -117,10 +117,10 @@ final int skipCount = 56; // int |
 final int maxResultCount = 56; // int | 
 
 try {
-    final response = api.getListAsync(sorting, skipCount, maxResultCount);
+    final response = api.getList(sorting, skipCount, maxResultCount);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling AppSdkApi->getListAsync: $e\n');
+    print('Exception when calling AppSdkApi->getList: $e\n');
 }
 ```
 
@@ -147,8 +147,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **updateAsync**
-> AppSdkDto updateAsync(id, body)
+# **update**
+> AppSdkDto update(id, body)
 
 
 
@@ -163,10 +163,10 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 final CreateOrUpdateAppSdkDto body = ; // CreateOrUpdateAppSdkDto | 
 
 try {
-    final response = api.updateAsync(id, body);
+    final response = api.update(id, body);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling AppSdkApi->updateAsync: $e\n');
+    print('Exception when calling AppSdkApi->update: $e\n');
 }
 ```
 

@@ -9,54 +9,16 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deleteAsync**](AccountApi.md#deleteasync) | **DELETE** /api/app/account | 
-[**getAsync**](AccountApi.md#getasync) | **GET** /api/app/account | 
-[**registerAsync**](AccountApi.md#registerasync) | **POST** /api/account/register | 
-[**resetPasswordAsync**](AccountApi.md#resetpasswordasync) | **POST** /api/account/reset-password | 
-[**sendPasswordResetCodeAsync**](AccountApi.md#sendpasswordresetcodeasync) | **POST** /api/account/send-password-reset-code | 
-[**verifyPasswordResetTokenAsync**](AccountApi.md#verifypasswordresettokenasync) | **POST** /api/account/verify-password-reset-token | 
+[**callGet**](AccountApi.md#callget) | **GET** /api/app/account | 
+[**delete**](AccountApi.md#delete) | **DELETE** /api/app/account | 
+[**register**](AccountApi.md#register) | **POST** /api/account/register | 
+[**resetPassword**](AccountApi.md#resetpassword) | **POST** /api/account/reset-password | 
+[**sendPasswordResetCode**](AccountApi.md#sendpasswordresetcode) | **POST** /api/account/send-password-reset-code | 
+[**verifyPasswordResetToken**](AccountApi.md#verifypasswordresettoken) | **POST** /api/account/verify-password-reset-token | 
 
 
-# **deleteAsync**
-> deleteAsync()
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getAccountApi();
-
-try {
-    api.deleteAsync();
-} catch on DioError (e) {
-    print('Exception when calling AccountApi->deleteAsync: $e\n');
-}
-```
-
-### Parameters
-This endpoint does not need any parameter.
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **getAsync**
-> UserProfileDto getAsync()
+# **callGet**
+> UserProfileDto callGet()
 
 
 
@@ -69,10 +31,10 @@ import 'package:puupee_api_client/api.dart';
 final api = PuupeeApiClient().getAccountApi();
 
 try {
-    final response = api.getAsync();
+    final response = api.callGet();
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling AccountApi->getAsync: $e\n');
+    print('Exception when calling AccountApi->callGet: $e\n');
 }
 ```
 
@@ -94,8 +56,46 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **registerAsync**
-> IdentityUserDto registerAsync(body)
+# **delete**
+> delete()
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getAccountApi();
+
+try {
+    api.delete();
+} catch on DioError (e) {
+    print('Exception when calling AccountApi->delete: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **register**
+> IdentityUserDto register(body)
 
 
 
@@ -109,10 +109,10 @@ final api = PuupeeApiClient().getAccountApi();
 final RegisterDto body = ; // RegisterDto | 
 
 try {
-    final response = api.registerAsync(body);
+    final response = api.register(body);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling AccountApi->registerAsync: $e\n');
+    print('Exception when calling AccountApi->register: $e\n');
 }
 ```
 
@@ -137,8 +137,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **resetPasswordAsync**
-> resetPasswordAsync(body)
+# **resetPassword**
+> resetPassword(body)
 
 
 
@@ -152,9 +152,9 @@ final api = PuupeeApiClient().getAccountApi();
 final ResetPasswordDto body = ; // ResetPasswordDto | 
 
 try {
-    api.resetPasswordAsync(body);
+    api.resetPassword(body);
 } catch on DioError (e) {
-    print('Exception when calling AccountApi->resetPasswordAsync: $e\n');
+    print('Exception when calling AccountApi->resetPassword: $e\n');
 }
 ```
 
@@ -179,8 +179,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **sendPasswordResetCodeAsync**
-> sendPasswordResetCodeAsync(body)
+# **sendPasswordResetCode**
+> sendPasswordResetCode(body)
 
 
 
@@ -194,9 +194,9 @@ final api = PuupeeApiClient().getAccountApi();
 final SendPasswordResetCodeDto body = ; // SendPasswordResetCodeDto | 
 
 try {
-    api.sendPasswordResetCodeAsync(body);
+    api.sendPasswordResetCode(body);
 } catch on DioError (e) {
-    print('Exception when calling AccountApi->sendPasswordResetCodeAsync: $e\n');
+    print('Exception when calling AccountApi->sendPasswordResetCode: $e\n');
 }
 ```
 
@@ -221,8 +221,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **verifyPasswordResetTokenAsync**
-> bool verifyPasswordResetTokenAsync(body)
+# **verifyPasswordResetToken**
+> bool verifyPasswordResetToken(body)
 
 
 
@@ -236,10 +236,10 @@ final api = PuupeeApiClient().getAccountApi();
 final VerifyPasswordResetTokenInput body = ; // VerifyPasswordResetTokenInput | 
 
 try {
-    final response = api.verifyPasswordResetTokenAsync(body);
+    final response = api.verifyPasswordResetToken(body);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling AccountApi->verifyPasswordResetTokenAsync: $e\n');
+    print('Exception when calling AccountApi->verifyPasswordResetToken: $e\n');
 }
 ```
 

@@ -19,7 +19,7 @@ class NotificationApi {
 
   const NotificationApi(this._dio);
 
-  /// barkAsync
+  /// bark
   /// 
   ///
   /// Parameters:
@@ -42,7 +42,7 @@ class NotificationApi {
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> barkAsync({ 
+  Future<Response<void>> bark({ 
     required String apiKey,
     required String message,
     int? automaticallyCopy = 0,
@@ -101,7 +101,7 @@ class NotificationApi {
     return _response;
   }
 
-  /// getListAsync
+  /// getList
   /// 
   ///
   /// Parameters:
@@ -117,7 +117,7 @@ class NotificationApi {
   ///
   /// Returns a [Future] containing a [Response] with a [NotificationInfoDtoPagedResultDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<NotificationInfoDtoPagedResultDto>> getListAsync({ 
+  Future<Response<NotificationInfoDtoPagedResultDto>> getList({ 
     String? sorting,
     int? skipCount,
     int? maxResultCount,
@@ -187,7 +187,7 @@ _responseData = deserialize<NotificationInfoDtoPagedResultDto, NotificationInfoD
     );
   }
 
-  /// pushAsync
+  /// push
   /// 
   ///
   /// Parameters:
@@ -201,7 +201,7 @@ _responseData = deserialize<NotificationInfoDtoPagedResultDto, NotificationInfoD
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> pushAsync({ 
+  Future<Response<void>> push({ 
     CreatePushNotificationDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

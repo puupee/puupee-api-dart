@@ -7,23 +7,23 @@ void main() {
   final instance = PuupeeApiClient().getUserLookupApi();
 
   group(UserLookupApi, () {
-    //Future<UserData> findByIdAsync(String id) async
-    test('test findByIdAsync', () async {
+    //Future<UserData> findById(String id) async
+    test('test findById', () async {
       // TODO
     });
 
-    //Future<UserData> findByUserNameAsync(String userName) async
-    test('test findByUserNameAsync', () async {
+    //Future<UserData> findByUserName(String userName) async
+    test('test findByUserName', () async {
       // TODO
     });
 
-    //Future<int> getCountAsync({ String filter }) async
-    test('test getCountAsync', () async {
+    //Future<int> getCount({ String filter }) async
+    test('test getCount', () async {
       // TODO
     });
 
-    //Future<UserDataListResultDto> searchAsync({ String filter, String sorting, int skipCount, int maxResultCount }) async
-    test('test searchAsync', () async {
+    //Future<UserDataListResultDto> search({ String filter, String sorting, int skipCount, int maxResultCount }) async
+    test('test search', () async {
       // TODO
     });
 

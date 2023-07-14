@@ -20,7 +20,7 @@ class AppSdkApi {
 
   const AppSdkApi(this._dio);
 
-  /// createAsync
+  /// create
   /// 
   ///
   /// Parameters:
@@ -34,7 +34,7 @@ class AppSdkApi {
   ///
   /// Returns a [Future] containing a [Response] with a [AppSdkDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<AppSdkDto>> createAsync({ 
+  Future<Response<AppSdkDto>> create({ 
     CreateOrUpdateAppSdkDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -113,7 +113,7 @@ _responseData = deserialize<AppSdkDto, AppSdkDto>(_response.data!, 'AppSdkDto', 
     );
   }
 
-  /// deleteAsync
+  /// delete
   /// 
   ///
   /// Parameters:
@@ -127,7 +127,7 @@ _responseData = deserialize<AppSdkDto, AppSdkDto>(_response.data!, 'AppSdkDto', 
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> deleteAsync({ 
+  Future<Response<void>> delete({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -165,7 +165,7 @@ _responseData = deserialize<AppSdkDto, AppSdkDto>(_response.data!, 'AppSdkDto', 
     return _response;
   }
 
-  /// getListAsync
+  /// getList
   /// 
   ///
   /// Parameters:
@@ -181,7 +181,7 @@ _responseData = deserialize<AppSdkDto, AppSdkDto>(_response.data!, 'AppSdkDto', 
   ///
   /// Returns a [Future] containing a [Response] with a [AppSdkDtoPagedResultDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<AppSdkDtoPagedResultDto>> getListAsync({ 
+  Future<Response<AppSdkDtoPagedResultDto>> getList({ 
     String? sorting,
     int? skipCount,
     int? maxResultCount,
@@ -251,7 +251,7 @@ _responseData = deserialize<AppSdkDtoPagedResultDto, AppSdkDtoPagedResultDto>(_r
     );
   }
 
-  /// updateAsync
+  /// update
   /// 
   ///
   /// Parameters:
@@ -266,7 +266,7 @@ _responseData = deserialize<AppSdkDtoPagedResultDto, AppSdkDtoPagedResultDto>(_r
   ///
   /// Returns a [Future] containing a [Response] with a [AppSdkDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<AppSdkDto>> updateAsync({ 
+  Future<Response<AppSdkDto>> update({ 
     required String id,
     CreateOrUpdateAppSdkDto? body,
     CancelToken? cancelToken,

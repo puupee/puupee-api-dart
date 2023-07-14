@@ -7,8 +7,8 @@ void main() {
   final instance = PuupeeApiClient().getAbpApplicationLocalizationApi();
 
   group(AbpApplicationLocalizationApi, () {
-    //Future<ApplicationLocalizationDto> getAsync(String cultureName, { bool onlyDynamics }) async
-    test('test getAsync', () async {
+    //Future<ApplicationLocalizationDto> callGet(String cultureName, { bool onlyDynamics }) async
+    test('test callGet', () async {
       // TODO
     });
 

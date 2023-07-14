@@ -28,7 +28,89 @@ class AppApi {
 
   const AppApi(this._dio);
 
-  /// createAsync
+  /// callGet
+  /// 
+  ///
+  /// Parameters:
+  /// * [id] 
+  /// * [env] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [AppDto] as data
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<AppDto>> callGet({ 
+    required String id,
+    String? env,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/app/app/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'oauth2',
+            'name': 'oauth2',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      if (env != null) r'env': env,
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    AppDto _responseData;
+
+    try {
+_responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable: true);
+    } catch (error, stackTrace) {
+      throw DioError(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioErrorType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<AppDto>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// create
   /// 
   ///
   /// Parameters:
@@ -42,7 +124,7 @@ class AppApi {
   ///
   /// Returns a [Future] containing a [Response] with a [AppDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<AppDto>> createAsync({ 
+  Future<Response<AppDto>> create({ 
     CreateOrUpdateAppDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -121,7 +203,7 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
     );
   }
 
-  /// deleteAsync
+  /// delete
   /// 
   ///
   /// Parameters:
@@ -135,7 +217,7 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> deleteAsync({ 
+  Future<Response<void>> delete({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -171,88 +253,6 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
     );
 
     return _response;
-  }
-
-  /// getAsync
-  /// 
-  ///
-  /// Parameters:
-  /// * [id] 
-  /// * [env] 
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [AppDto] as data
-  /// Throws [DioError] if API call or serialization fails
-  Future<Response<AppDto>> getAsync({ 
-    required String id,
-    String? env,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/app/app/{id}'.replaceAll('{' r'id' '}', id.toString());
-    final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _queryParameters = <String, dynamic>{
-      if (env != null) r'env': env,
-    };
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    AppDto _responseData;
-
-    try {
-_responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable: true);
-    } catch (error, stackTrace) {
-      throw DioError(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioErrorType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<AppDto>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
   }
 
   /// getByName
@@ -420,7 +420,7 @@ _responseData = deserialize<List<AppFeatureDto>, AppFeatureDto>(_response.data!,
     );
   }
 
-  /// getListAsync
+  /// getList
   /// 
   ///
   /// Parameters:
@@ -437,7 +437,7 @@ _responseData = deserialize<List<AppFeatureDto>, AppFeatureDto>(_response.data!,
   ///
   /// Returns a [Future] containing a [Response] with a [AppDtoPagedResultDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<AppDtoPagedResultDto>> getListAsync({ 
+  Future<Response<AppDtoPagedResultDto>> getList({ 
     String? creatorId,
     String? sorting,
     int? skipCount,
@@ -509,7 +509,7 @@ _responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_respons
     );
   }
 
-  /// getListByDeveloperAllAsync
+  /// getListByDeveloperAll
   /// 
   ///
   /// Parameters:
@@ -523,7 +523,7 @@ _responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_respons
   ///
   /// Returns a [Future] containing a [Response] with a [AppDtoPagedResultDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<AppDtoPagedResultDto>> getListByDeveloperAllAsync({ 
+  Future<Response<AppDtoPagedResultDto>> getListByDeveloperAll({ 
     String? developerAccount,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -589,7 +589,7 @@ _responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_respons
     );
   }
 
-  /// getListPublicAsync
+  /// getListPublic
   /// 
   ///
   /// Parameters:
@@ -605,7 +605,7 @@ _responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_respons
   ///
   /// Returns a [Future] containing a [Response] with a [AppDtoPagedResultDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<AppDtoPagedResultDto>> getListPublicAsync({ 
+  Future<Response<AppDtoPagedResultDto>> getListPublic({ 
     String? type,
     String? developerAccount,
     String? currentAppName,
@@ -675,7 +675,7 @@ _responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_respons
     );
   }
 
-  /// getListWithUserAsync
+  /// getListWithUser
   /// 
   ///
   /// Parameters:
@@ -693,7 +693,7 @@ _responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_respons
   ///
   /// Returns a [Future] containing a [Response] with a [AppWithUserDtoPagedResultDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<AppWithUserDtoPagedResultDto>> getListWithUserAsync({ 
+  Future<Response<AppWithUserDtoPagedResultDto>> getListWithUser({ 
     String? type,
     String? searchKey,
     String? sorting,
@@ -849,7 +849,7 @@ _responseData = deserialize<List<AppSdkDto>, AppSdkDto>(_response.data!, 'List<A
     );
   }
 
-  /// getUploadCredentialsAsync
+  /// getUploadCredentials
   /// 
   ///
   /// Parameters:
@@ -863,7 +863,7 @@ _responseData = deserialize<List<AppSdkDto>, AppSdkDto>(_response.data!, 'List<A
   ///
   /// Returns a [Future] containing a [Response] with a [StorageObjectCredentials] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<StorageObjectCredentials>> getUploadCredentialsAsync({ 
+  Future<Response<StorageObjectCredentials>> getUploadCredentials({ 
     String? key,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -929,7 +929,7 @@ _responseData = deserialize<StorageObjectCredentials, StorageObjectCredentials>(
     );
   }
 
-  /// getWithUserAsync
+  /// getWithUser
   /// 
   ///
   /// Parameters:
@@ -944,7 +944,7 @@ _responseData = deserialize<StorageObjectCredentials, StorageObjectCredentials>(
   ///
   /// Returns a [Future] containing a [Response] with a [AppWithUserDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<AppWithUserDto>> getWithUserAsync({ 
+  Future<Response<AppWithUserDto>> getWithUser({ 
     required String id,
     String? env,
     CancelToken? cancelToken,
@@ -1011,7 +1011,7 @@ _responseData = deserialize<AppWithUserDto, AppWithUserDto>(_response.data!, 'Ap
     );
   }
 
-  /// runAsync
+  /// run
   /// 
   ///
   /// Parameters:
@@ -1025,7 +1025,7 @@ _responseData = deserialize<AppWithUserDto, AppWithUserDto>(_response.data!, 'Ap
   ///
   /// Returns a [Future] containing a [Response] with a [AppRunRecordDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<AppRunRecordDto>> runAsync({ 
+  Future<Response<AppRunRecordDto>> run({ 
     AppRunDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -1104,7 +1104,7 @@ _responseData = deserialize<AppRunRecordDto, AppRunRecordDto>(_response.data!, '
     );
   }
 
-  /// updateAsync
+  /// update
   /// 
   ///
   /// Parameters:
@@ -1119,7 +1119,7 @@ _responseData = deserialize<AppRunRecordDto, AppRunRecordDto>(_response.data!, '
   ///
   /// Returns a [Future] containing a [Response] with a [AppDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<AppDto>> updateAsync({ 
+  Future<Response<AppDto>> update({ 
     required String id,
     CreateOrUpdateAppDto? body,
     CancelToken? cancelToken,
@@ -1199,7 +1199,7 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
     );
   }
 
-  /// updateRunStateAsync
+  /// updateRunState
   /// 
   ///
   /// Parameters:
@@ -1214,7 +1214,7 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
   ///
   /// Returns a [Future] containing a [Response] with a [AppRunRecordDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<AppRunRecordDto>> updateRunStateAsync({ 
+  Future<Response<AppRunRecordDto>> updateRunState({ 
     required String id,
     AppRunRecordUpdateDto? body,
     CancelToken? cancelToken,

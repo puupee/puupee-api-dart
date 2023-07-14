@@ -23,57 +23,7 @@ class AccountApi {
 
   const AccountApi(this._dio);
 
-  /// deleteAsync
-  /// 
-  ///
-  /// Parameters:
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future]
-  /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> deleteAsync({ 
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/app/account';
-    final _options = Options(
-      method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    return _response;
-  }
-
-  /// getAsync
+  /// callGet
   /// 
   ///
   /// Parameters:
@@ -86,7 +36,7 @@ class AccountApi {
   ///
   /// Returns a [Future] containing a [Response] with a [UserProfileDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<UserProfileDto>> getAsync({ 
+  Future<Response<UserProfileDto>> callGet({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -146,7 +96,57 @@ _responseData = deserialize<UserProfileDto, UserProfileDto>(_response.data!, 'Us
     );
   }
 
-  /// registerAsync
+  /// delete
+  /// 
+  ///
+  /// Parameters:
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioError] if API call or serialization fails
+  Future<Response<void>> delete({ 
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/app/account';
+    final _options = Options(
+      method: r'DELETE',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'oauth2',
+            'name': 'oauth2',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
+  }
+
+  /// register
   /// 
   ///
   /// Parameters:
@@ -160,7 +160,7 @@ _responseData = deserialize<UserProfileDto, UserProfileDto>(_response.data!, 'Us
   ///
   /// Returns a [Future] containing a [Response] with a [IdentityUserDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<IdentityUserDto>> registerAsync({ 
+  Future<Response<IdentityUserDto>> register({ 
     RegisterDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -239,7 +239,7 @@ _responseData = deserialize<IdentityUserDto, IdentityUserDto>(_response.data!, '
     );
   }
 
-  /// resetPasswordAsync
+  /// resetPassword
   /// 
   ///
   /// Parameters:
@@ -253,7 +253,7 @@ _responseData = deserialize<IdentityUserDto, IdentityUserDto>(_response.data!, '
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> resetPasswordAsync({ 
+  Future<Response<void>> resetPassword({ 
     ResetPasswordDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -309,7 +309,7 @@ _bodyData=jsonEncode(body);
     return _response;
   }
 
-  /// sendPasswordResetCodeAsync
+  /// sendPasswordResetCode
   /// 
   ///
   /// Parameters:
@@ -323,7 +323,7 @@ _bodyData=jsonEncode(body);
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> sendPasswordResetCodeAsync({ 
+  Future<Response<void>> sendPasswordResetCode({ 
     SendPasswordResetCodeDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -379,7 +379,7 @@ _bodyData=jsonEncode(body);
     return _response;
   }
 
-  /// verifyPasswordResetTokenAsync
+  /// verifyPasswordResetToken
   /// 
   ///
   /// Parameters:
@@ -393,7 +393,7 @@ _bodyData=jsonEncode(body);
   ///
   /// Returns a [Future] containing a [Response] with a [bool] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<bool>> verifyPasswordResetTokenAsync({ 
+  Future<Response<bool>> verifyPasswordResetToken({ 
     VerifyPasswordResetTokenInput? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

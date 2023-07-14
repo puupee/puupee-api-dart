@@ -7,33 +7,33 @@ void main() {
   final instance = PuupeeApiClient().getDeviceApi();
 
   group(DeviceApi, () {
-    //Future bindAsync({ BindDeviceDto body }) async
-    test('test bindAsync', () async {
+    //Future bind({ BindDeviceDto body }) async
+    test('test bind', () async {
       // TODO
     });
 
-    //Future<DeviceDto> getAsync(String id) async
-    test('test getAsync', () async {
+    //Future<DeviceDto> callGet(String id) async
+    test('test callGet', () async {
       // TODO
     });
 
-    //Future<DeviceDto> getByTokenAsync({ String token }) async
-    test('test getByTokenAsync', () async {
+    //Future<DeviceDto> getByToken({ String token }) async
+    test('test getByToken', () async {
       // TODO
     });
 
-    //Future<DeviceDtoPagedResultDto> getListAsync({ String sorting, int skipCount, int maxResultCount }) async
-    test('test getListAsync', () async {
+    //Future<DeviceDtoPagedResultDto> getList({ String sorting, int skipCount, int maxResultCount }) async
+    test('test getList', () async {
       // TODO
     });
 
-    //Future refreshAsync({ RefreshDeviceStatusDto body }) async
-    test('test refreshAsync', () async {
+    //Future refresh({ RefreshDeviceStatusDto body }) async
+    test('test refresh', () async {
       // TODO
     });
 
-    //Future removeAsync({ String token }) async
-    test('test removeAsync', () async {
+    //Future remove({ String token }) async
+    test('test remove', () async {
       // TODO
     });
 

@@ -18,7 +18,7 @@ class AbpTenantApi {
 
   const AbpTenantApi(this._dio);
 
-  /// findTenantByIdAsync
+  /// findTenantById
   /// 
   ///
   /// Parameters:
@@ -32,7 +32,7 @@ class AbpTenantApi {
   ///
   /// Returns a [Future] containing a [Response] with a [FindTenantResultDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<FindTenantResultDto>> findTenantByIdAsync({ 
+  Future<Response<FindTenantResultDto>> findTenantById({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -93,7 +93,7 @@ _responseData = deserialize<FindTenantResultDto, FindTenantResultDto>(_response.
     );
   }
 
-  /// findTenantByNameAsync
+  /// findTenantByName
   /// 
   ///
   /// Parameters:
@@ -107,7 +107,7 @@ _responseData = deserialize<FindTenantResultDto, FindTenantResultDto>(_response.
   ///
   /// Returns a [Future] containing a [Response] with a [FindTenantResultDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<FindTenantResultDto>> findTenantByNameAsync({ 
+  Future<Response<FindTenantResultDto>> findTenantByName({ 
     required String name,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

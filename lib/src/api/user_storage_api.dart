@@ -18,7 +18,7 @@ class UserStorageApi {
 
   const UserStorageApi(this._dio);
 
-  /// getAsync
+  /// callGet
   /// 
   ///
   /// Parameters:
@@ -31,7 +31,7 @@ class UserStorageApi {
   ///
   /// Returns a [Future] containing a [Response] with a [UserStorageDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<UserStorageDto>> getAsync({ 
+  Future<Response<UserStorageDto>> callGet({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,

@@ -9,13 +9,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**barkAsync**](NotificationApi.md#barkasync) | **GET** /api/app/notification/bark/{apiKey}/{message} | 
-[**getListAsync**](NotificationApi.md#getlistasync) | **GET** /api/app/notification | 
-[**pushAsync**](NotificationApi.md#pushasync) | **POST** /api/app/notification/push | 
+[**bark**](NotificationApi.md#bark) | **GET** /api/app/notification/bark/{apiKey}/{message} | 
+[**getList**](NotificationApi.md#getlist) | **GET** /api/app/notification | 
+[**push**](NotificationApi.md#push) | **POST** /api/app/notification/push | 
 
 
-# **barkAsync**
-> barkAsync(apiKey, message, automaticallyCopy, copy, url, isArchive, group, icon, name, value)
+# **bark**
+> bark(apiKey, message, automaticallyCopy, copy, url, isArchive, group, icon, name, value)
 
 
 
@@ -38,9 +38,9 @@ final String name = name_example; // String |
 final String value = value_example; // String | 
 
 try {
-    api.barkAsync(apiKey, message, automaticallyCopy, copy, url, isArchive, group, icon, name, value);
+    api.bark(apiKey, message, automaticallyCopy, copy, url, isArchive, group, icon, name, value);
 } catch on DioError (e) {
-    print('Exception when calling NotificationApi->barkAsync: $e\n');
+    print('Exception when calling NotificationApi->bark: $e\n');
 }
 ```
 
@@ -74,8 +74,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getListAsync**
-> NotificationInfoDtoPagedResultDto getListAsync(sorting, skipCount, maxResultCount)
+# **getList**
+> NotificationInfoDtoPagedResultDto getList(sorting, skipCount, maxResultCount)
 
 
 
@@ -91,10 +91,10 @@ final int skipCount = 56; // int |
 final int maxResultCount = 56; // int | 
 
 try {
-    final response = api.getListAsync(sorting, skipCount, maxResultCount);
+    final response = api.getList(sorting, skipCount, maxResultCount);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling NotificationApi->getListAsync: $e\n');
+    print('Exception when calling NotificationApi->getList: $e\n');
 }
 ```
 
@@ -121,8 +121,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **pushAsync**
-> pushAsync(body)
+# **push**
+> push(body)
 
 
 
@@ -136,9 +136,9 @@ final api = PuupeeApiClient().getNotificationApi();
 final CreatePushNotificationDto body = ; // CreatePushNotificationDto | 
 
 try {
-    api.pushAsync(body);
+    api.push(body);
 } catch on DioError (e) {
-    print('Exception when calling NotificationApi->pushAsync: $e\n');
+    print('Exception when calling NotificationApi->push: $e\n');
 }
 ```
 

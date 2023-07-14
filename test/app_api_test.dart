@@ -7,18 +7,18 @@ void main() {
   final instance = PuupeeApiClient().getAppApi();
 
   group(AppApi, () {
-    //Future<AppDto> createAsync({ CreateOrUpdateAppDto body }) async
-    test('test createAsync', () async {
+    //Future<AppDto> callGet(String id, { String env }) async
+    test('test callGet', () async {
       // TODO
     });
 
-    //Future deleteAsync(String id) async
-    test('test deleteAsync', () async {
+    //Future<AppDto> create({ CreateOrUpdateAppDto body }) async
+    test('test create', () async {
       // TODO
     });
 
-    //Future<AppDto> getAsync(String id, { String env }) async
-    test('test getAsync', () async {
+    //Future delete(String id) async
+    test('test delete', () async {
       // TODO
     });
 
@@ -32,23 +32,23 @@ void main() {
       // TODO
     });
 
-    //Future<AppDtoPagedResultDto> getListAsync({ String creatorId, String sorting, int skipCount, int maxResultCount }) async
-    test('test getListAsync', () async {
+    //Future<AppDtoPagedResultDto> getList({ String creatorId, String sorting, int skipCount, int maxResultCount }) async
+    test('test getList', () async {
       // TODO
     });
 
-    //Future<AppDtoPagedResultDto> getListByDeveloperAllAsync({ String developerAccount }) async
-    test('test getListByDeveloperAllAsync', () async {
+    //Future<AppDtoPagedResultDto> getListByDeveloperAll({ String developerAccount }) async
+    test('test getListByDeveloperAll', () async {
       // TODO
     });
 
-    //Future<AppDtoPagedResultDto> getListPublicAsync({ String type, String developerAccount, String currentAppName }) async
-    test('test getListPublicAsync', () async {
+    //Future<AppDtoPagedResultDto> getListPublic({ String type, String developerAccount, String currentAppName }) async
+    test('test getListPublic', () async {
       // TODO
     });
 
-    //Future<AppWithUserDtoPagedResultDto> getListWithUserAsync({ String type, String searchKey, String sorting, int skipCount, int maxResultCount }) async
-    test('test getListWithUserAsync', () async {
+    //Future<AppWithUserDtoPagedResultDto> getListWithUser({ String type, String searchKey, String sorting, int skipCount, int maxResultCount }) async
+    test('test getListWithUser', () async {
       // TODO
     });
 
@@ -57,28 +57,28 @@ void main() {
       // TODO
     });
 
-    //Future<StorageObjectCredentials> getUploadCredentialsAsync({ String key }) async
-    test('test getUploadCredentialsAsync', () async {
+    //Future<StorageObjectCredentials> getUploadCredentials({ String key }) async
+    test('test getUploadCredentials', () async {
       // TODO
     });
 
-    //Future<AppWithUserDto> getWithUserAsync(String id, { String env }) async
-    test('test getWithUserAsync', () async {
+    //Future<AppWithUserDto> getWithUser(String id, { String env }) async
+    test('test getWithUser', () async {
       // TODO
     });
 
-    //Future<AppRunRecordDto> runAsync({ AppRunDto body }) async
-    test('test runAsync', () async {
+    //Future<AppRunRecordDto> run({ AppRunDto body }) async
+    test('test run', () async {
       // TODO
     });
 
-    //Future<AppDto> updateAsync(String id, { CreateOrUpdateAppDto body }) async
-    test('test updateAsync', () async {
+    //Future<AppDto> update(String id, { CreateOrUpdateAppDto body }) async
+    test('test update', () async {
       // TODO
     });
 
-    //Future<AppRunRecordDto> updateRunStateAsync(String id, { AppRunRecordUpdateDto body }) async
-    test('test updateRunStateAsync', () async {
+    //Future<AppRunRecordDto> updateRunState(String id, { AppRunRecordUpdateDto body }) async
+    test('test updateRunState', () async {
       // TODO
     });
 

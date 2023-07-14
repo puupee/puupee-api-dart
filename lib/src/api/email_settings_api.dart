@@ -20,7 +20,7 @@ class EmailSettingsApi {
 
   const EmailSettingsApi(this._dio);
 
-  /// getAsync
+  /// callGet
   /// 
   ///
   /// Parameters:
@@ -33,7 +33,7 @@ class EmailSettingsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [EmailSettingsDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<EmailSettingsDto>> getAsync({ 
+  Future<Response<EmailSettingsDto>> callGet({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -93,7 +93,7 @@ _responseData = deserialize<EmailSettingsDto, EmailSettingsDto>(_response.data!,
     );
   }
 
-  /// sendTestEmailAsync
+  /// sendTestEmail
   /// 
   ///
   /// Parameters:
@@ -107,7 +107,7 @@ _responseData = deserialize<EmailSettingsDto, EmailSettingsDto>(_response.data!,
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> sendTestEmailAsync({ 
+  Future<Response<void>> sendTestEmail({ 
     SendTestEmailInput? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -163,7 +163,7 @@ _bodyData=jsonEncode(body);
     return _response;
   }
 
-  /// updateAsync
+  /// update
   /// 
   ///
   /// Parameters:
@@ -177,7 +177,7 @@ _bodyData=jsonEncode(body);
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> updateAsync({ 
+  Future<Response<void>> update({ 
     UpdateEmailSettingsDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

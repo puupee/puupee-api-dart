@@ -7,33 +7,33 @@ void main() {
   final instance = PuupeeApiClient().getAccountApi();
 
   group(AccountApi, () {
-    //Future deleteAsync() async
-    test('test deleteAsync', () async {
+    //Future<UserProfileDto> callGet() async
+    test('test callGet', () async {
       // TODO
     });
 
-    //Future<UserProfileDto> getAsync() async
-    test('test getAsync', () async {
+    //Future delete() async
+    test('test delete', () async {
       // TODO
     });
 
-    //Future<IdentityUserDto> registerAsync({ RegisterDto body }) async
-    test('test registerAsync', () async {
+    //Future<IdentityUserDto> register({ RegisterDto body }) async
+    test('test register', () async {
       // TODO
     });
 
-    //Future resetPasswordAsync({ ResetPasswordDto body }) async
-    test('test resetPasswordAsync', () async {
+    //Future resetPassword({ ResetPasswordDto body }) async
+    test('test resetPassword', () async {
       // TODO
     });
 
-    //Future sendPasswordResetCodeAsync({ SendPasswordResetCodeDto body }) async
-    test('test sendPasswordResetCodeAsync', () async {
+    //Future sendPasswordResetCode({ SendPasswordResetCodeDto body }) async
+    test('test sendPasswordResetCode', () async {
       // TODO
     });
 
-    //Future<bool> verifyPasswordResetTokenAsync({ VerifyPasswordResetTokenInput body }) async
-    test('test verifyPasswordResetTokenAsync', () async {
+    //Future<bool> verifyPasswordResetToken({ VerifyPasswordResetTokenInput body }) async
+    test('test verifyPasswordResetToken', () async {
       // TODO
     });
 

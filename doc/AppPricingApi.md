@@ -9,16 +9,59 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAsync**](AppPricingApi.md#createasync) | **POST** /api/app/app-pricing | 
-[**deleteAsync**](AppPricingApi.md#deleteasync) | **DELETE** /api/app/app-pricing/{id} | 
-[**getAsync**](AppPricingApi.md#getasync) | **GET** /api/app/app-pricing/{id} | 
-[**getListAsync**](AppPricingApi.md#getlistasync) | **GET** /api/app/app-pricing | 
-[**getListByAppIdAsync**](AppPricingApi.md#getlistbyappidasync) | **GET** /api/app/app-pricing/by-app-id/{appId} | 
-[**updateAsync**](AppPricingApi.md#updateasync) | **PUT** /api/app/app-pricing/{id} | 
+[**callGet**](AppPricingApi.md#callget) | **GET** /api/app/app-pricing/{id} | 
+[**create**](AppPricingApi.md#create) | **POST** /api/app/app-pricing | 
+[**delete**](AppPricingApi.md#delete) | **DELETE** /api/app/app-pricing/{id} | 
+[**getList**](AppPricingApi.md#getlist) | **GET** /api/app/app-pricing | 
+[**getListByAppId**](AppPricingApi.md#getlistbyappid) | **GET** /api/app/app-pricing/by-app-id/{appId} | 
+[**update**](AppPricingApi.md#update) | **PUT** /api/app/app-pricing/{id} | 
 
 
-# **createAsync**
-> AppPricingDto createAsync(body)
+# **callGet**
+> AppPricingDto callGet(id)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getAppPricingApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+
+try {
+    final response = api.callGet(id);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AppPricingApi->callGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+[**AppPricingDto**](AppPricingDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create**
+> AppPricingDto create(body)
 
 
 
@@ -32,10 +75,10 @@ final api = PuupeeApiClient().getAppPricingApi();
 final CreateOrUpdateAppPricingDto body = ; // CreateOrUpdateAppPricingDto | 
 
 try {
-    final response = api.createAsync(body);
+    final response = api.create(body);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling AppPricingApi->createAsync: $e\n');
+    print('Exception when calling AppPricingApi->create: $e\n');
 }
 ```
 
@@ -60,8 +103,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deleteAsync**
-> deleteAsync(id)
+# **delete**
+> delete(id)
 
 
 
@@ -75,9 +118,9 @@ final api = PuupeeApiClient().getAppPricingApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    api.deleteAsync(id);
+    api.delete(id);
 } catch on DioError (e) {
-    print('Exception when calling AppPricingApi->deleteAsync: $e\n');
+    print('Exception when calling AppPricingApi->delete: $e\n');
 }
 ```
 
@@ -102,51 +145,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getAsync**
-> AppPricingDto getAsync(id)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getAppPricingApi();
-final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-
-try {
-    final response = api.getAsync(id);
-    print(response);
-} catch on DioError (e) {
-    print('Exception when calling AppPricingApi->getAsync: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
-
-### Return type
-
-[**AppPricingDto**](AppPricingDto.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **getListAsync**
-> AppPricingDtoPagedResultDto getListAsync(sorting, skipCount, maxResultCount)
+# **getList**
+> AppPricingDtoPagedResultDto getList(sorting, skipCount, maxResultCount)
 
 
 
@@ -162,10 +162,10 @@ final int skipCount = 56; // int |
 final int maxResultCount = 56; // int | 
 
 try {
-    final response = api.getListAsync(sorting, skipCount, maxResultCount);
+    final response = api.getList(sorting, skipCount, maxResultCount);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling AppPricingApi->getListAsync: $e\n');
+    print('Exception when calling AppPricingApi->getList: $e\n');
 }
 ```
 
@@ -192,8 +192,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getListByAppIdAsync**
-> List<AppPricingDto> getListByAppIdAsync(appId)
+# **getListByAppId**
+> List<AppPricingDto> getListByAppId(appId)
 
 
 
@@ -207,10 +207,10 @@ final api = PuupeeApiClient().getAppPricingApi();
 final String appId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final response = api.getListByAppIdAsync(appId);
+    final response = api.getListByAppId(appId);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling AppPricingApi->getListByAppIdAsync: $e\n');
+    print('Exception when calling AppPricingApi->getListByAppId: $e\n');
 }
 ```
 
@@ -235,8 +235,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **updateAsync**
-> AppPricingDto updateAsync(id, body)
+# **update**
+> AppPricingDto update(id, body)
 
 
 
@@ -251,10 +251,10 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 final CreateOrUpdateAppPricingDto body = ; // CreateOrUpdateAppPricingDto | 
 
 try {
-    final response = api.updateAsync(id, body);
+    final response = api.update(id, body);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling AppPricingApi->updateAsync: $e\n');
+    print('Exception when calling AppPricingApi->update: $e\n');
 }
 ```
 

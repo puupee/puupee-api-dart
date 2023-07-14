@@ -7,28 +7,28 @@ void main() {
   final instance = PuupeeApiClient().getMessageSourceRouteSubApi();
 
   group(MessageSourceRouteSubApi, () {
-    //Future createAsync({ CreateUpdateMessageSourceRouteSubDto body }) async
-    test('test createAsync', () async {
+    //Future<MessageSourceRouteSubDto> callGet(String id) async
+    test('test callGet', () async {
       // TODO
     });
 
-    //Future deleteAsync(String id) async
-    test('test deleteAsync', () async {
+    //Future create({ CreateUpdateMessageSourceRouteSubDto body }) async
+    test('test create', () async {
       // TODO
     });
 
-    //Future<MessageSourceRouteSubDto> getAsync(String id) async
-    test('test getAsync', () async {
+    //Future delete(String id) async
+    test('test delete', () async {
       // TODO
     });
 
-    //Future<List<MessageSourceRouteSubDto>> getListAsync() async
-    test('test getListAsync', () async {
+    //Future<List<MessageSourceRouteSubDto>> getList() async
+    test('test getList', () async {
       // TODO
     });
 
-    //Future updateAsync(String id, { CreateUpdateMessageSourceRouteSubDto body }) async
-    test('test updateAsync', () async {
+    //Future update(String id, { CreateUpdateMessageSourceRouteSubDto body }) async
+    test('test update', () async {
       // TODO
     });
 

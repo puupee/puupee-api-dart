@@ -7,8 +7,8 @@ void main() {
   final instance = PuupeeApiClient().getUserStorageApi();
 
   group(UserStorageApi, () {
-    //Future<UserStorageDto> getAsync() async
-    test('test getAsync', () async {
+    //Future<UserStorageDto> callGet() async
+    test('test callGet', () async {
       // TODO
     });
 

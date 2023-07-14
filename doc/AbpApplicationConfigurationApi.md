@@ -9,11 +9,11 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAsync**](AbpApplicationConfigurationApi.md#getasync) | **GET** /api/abp/application-configuration | 
+[**callGet**](AbpApplicationConfigurationApi.md#callget) | **GET** /api/abp/application-configuration | 
 
 
-# **getAsync**
-> ApplicationConfigurationDto getAsync(includeLocalizationResources)
+# **callGet**
+> ApplicationConfigurationDto callGet(includeLocalizationResources)
 
 
 
@@ -27,10 +27,10 @@ final api = PuupeeApiClient().getAbpApplicationConfigurationApi();
 final bool includeLocalizationResources = true; // bool | 
 
 try {
-    final response = api.getAsync(includeLocalizationResources);
+    final response = api.callGet(includeLocalizationResources);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling AbpApplicationConfigurationApi->getAsync: $e\n');
+    print('Exception when calling AbpApplicationConfigurationApi->callGet: $e\n');
 }
 ```
 

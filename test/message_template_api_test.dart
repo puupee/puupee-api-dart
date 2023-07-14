@@ -7,28 +7,28 @@ void main() {
   final instance = PuupeeApiClient().getMessageTemplateApi();
 
   group(MessageTemplateApi, () {
-    //Future<MessageTemplateDto> createAsync({ CreateOrUpdateMessageTemplateDto body }) async
-    test('test createAsync', () async {
+    //Future<MessageTemplateDto> callGet(String id) async
+    test('test callGet', () async {
       // TODO
     });
 
-    //Future deleteAsync(String id) async
-    test('test deleteAsync', () async {
+    //Future<MessageTemplateDto> create({ CreateOrUpdateMessageTemplateDto body }) async
+    test('test create', () async {
       // TODO
     });
 
-    //Future<MessageTemplateDto> getAsync(String id) async
-    test('test getAsync', () async {
+    //Future delete(String id) async
+    test('test delete', () async {
       // TODO
     });
 
-    //Future<List<MessageTemplateDto>> getListAsync() async
-    test('test getListAsync', () async {
+    //Future<List<MessageTemplateDto>> getList() async
+    test('test getList', () async {
       // TODO
     });
 
-    //Future<MessageTemplateDto> updateAsync(String id, { CreateOrUpdateMessageTemplateDto body }) async
-    test('test updateAsync', () async {
+    //Future<MessageTemplateDto> update(String id, { CreateOrUpdateMessageTemplateDto body }) async
+    test('test update', () async {
       // TODO
     });
 

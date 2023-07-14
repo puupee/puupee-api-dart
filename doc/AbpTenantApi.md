@@ -9,12 +9,12 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**findTenantByIdAsync**](AbpTenantApi.md#findtenantbyidasync) | **GET** /api/abp/multi-tenancy/tenants/by-id/{id} | 
-[**findTenantByNameAsync**](AbpTenantApi.md#findtenantbynameasync) | **GET** /api/abp/multi-tenancy/tenants/by-name/{name} | 
+[**findTenantById**](AbpTenantApi.md#findtenantbyid) | **GET** /api/abp/multi-tenancy/tenants/by-id/{id} | 
+[**findTenantByName**](AbpTenantApi.md#findtenantbyname) | **GET** /api/abp/multi-tenancy/tenants/by-name/{name} | 
 
 
-# **findTenantByIdAsync**
-> FindTenantResultDto findTenantByIdAsync(id)
+# **findTenantById**
+> FindTenantResultDto findTenantById(id)
 
 
 
@@ -28,10 +28,10 @@ final api = PuupeeApiClient().getAbpTenantApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final response = api.findTenantByIdAsync(id);
+    final response = api.findTenantById(id);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling AbpTenantApi->findTenantByIdAsync: $e\n');
+    print('Exception when calling AbpTenantApi->findTenantById: $e\n');
 }
 ```
 
@@ -56,8 +56,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **findTenantByNameAsync**
-> FindTenantResultDto findTenantByNameAsync(name)
+# **findTenantByName**
+> FindTenantResultDto findTenantByName(name)
 
 
 
@@ -71,10 +71,10 @@ final api = PuupeeApiClient().getAbpTenantApi();
 final String name = name_example; // String | 
 
 try {
-    final response = api.findTenantByNameAsync(name);
+    final response = api.findTenantByName(name);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling AbpTenantApi->findTenantByNameAsync: $e\n');
+    print('Exception when calling AbpTenantApi->findTenantByName: $e\n');
 }
 ```
 

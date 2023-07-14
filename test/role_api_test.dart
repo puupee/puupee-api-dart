@@ -7,33 +7,33 @@ void main() {
   final instance = PuupeeApiClient().getRoleApi();
 
   group(RoleApi, () {
-    //Future<IdentityRoleDto> createAsync({ IdentityRoleCreateDto body }) async
-    test('test createAsync', () async {
+    //Future<IdentityRoleDto> callGet(String id) async
+    test('test callGet', () async {
       // TODO
     });
 
-    //Future deleteAsync(String id) async
-    test('test deleteAsync', () async {
+    //Future<IdentityRoleDto> create({ IdentityRoleCreateDto body }) async
+    test('test create', () async {
       // TODO
     });
 
-    //Future<IdentityRoleDtoListResultDto> getAllListAsync() async
-    test('test getAllListAsync', () async {
+    //Future delete(String id) async
+    test('test delete', () async {
       // TODO
     });
 
-    //Future<IdentityRoleDto> getAsync(String id) async
-    test('test getAsync', () async {
+    //Future<IdentityRoleDtoListResultDto> getAllList() async
+    test('test getAllList', () async {
       // TODO
     });
 
-    //Future<IdentityRoleDtoPagedResultDto> getListAsync({ String filter, String sorting, int skipCount, int maxResultCount }) async
-    test('test getListAsync', () async {
+    //Future<IdentityRoleDtoPagedResultDto> getList({ String filter, String sorting, int skipCount, int maxResultCount }) async
+    test('test getList', () async {
       // TODO
     });
 
-    //Future<IdentityRoleDto> updateAsync(String id, { IdentityRoleUpdateDto body }) async
-    test('test updateAsync', () async {
+    //Future<IdentityRoleDto> update(String id, { IdentityRoleUpdateDto body }) async
+    test('test update', () async {
       // TODO
     });
 

@@ -29,7 +29,7 @@ class KeyValueApi {
 
   const KeyValueApi(this._dio);
 
-  /// getBoolAsync
+  /// getBool
   /// 
   ///
   /// Parameters:
@@ -43,7 +43,7 @@ class KeyValueApi {
   ///
   /// Returns a [Future] containing a [Response] with a [BooleanKeyValue] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<BooleanKeyValue>> getBoolAsync({ 
+  Future<Response<BooleanKeyValue>> getBool({ 
     String? key,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -109,7 +109,7 @@ _responseData = deserialize<BooleanKeyValue, BooleanKeyValue>(_response.data!, '
     );
   }
 
-  /// getDateTimeAsync
+  /// getDateTime
   /// 
   ///
   /// Parameters:
@@ -123,7 +123,7 @@ _responseData = deserialize<BooleanKeyValue, BooleanKeyValue>(_response.data!, '
   ///
   /// Returns a [Future] containing a [Response] with a [DateTimeKeyValue] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<DateTimeKeyValue>> getDateTimeAsync({ 
+  Future<Response<DateTimeKeyValue>> getDateTime({ 
     String? key,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -189,7 +189,7 @@ _responseData = deserialize<DateTimeKeyValue, DateTimeKeyValue>(_response.data!,
     );
   }
 
-  /// getDecimalAsync
+  /// getDecimal
   /// 
   ///
   /// Parameters:
@@ -203,7 +203,7 @@ _responseData = deserialize<DateTimeKeyValue, DateTimeKeyValue>(_response.data!,
   ///
   /// Returns a [Future] containing a [Response] with a [DecimalKeyValue] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<DecimalKeyValue>> getDecimalAsync({ 
+  Future<Response<DecimalKeyValue>> getDecimal({ 
     String? key,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -269,7 +269,7 @@ _responseData = deserialize<DecimalKeyValue, DecimalKeyValue>(_response.data!, '
     );
   }
 
-  /// getDoubleAsync
+  /// getDouble
   /// 
   ///
   /// Parameters:
@@ -283,7 +283,7 @@ _responseData = deserialize<DecimalKeyValue, DecimalKeyValue>(_response.data!, '
   ///
   /// Returns a [Future] containing a [Response] with a [DoubleKeyValue] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<DoubleKeyValue>> getDoubleAsync({ 
+  Future<Response<DoubleKeyValue>> getDouble({ 
     String? key,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -349,7 +349,7 @@ _responseData = deserialize<DoubleKeyValue, DoubleKeyValue>(_response.data!, 'Do
     );
   }
 
-  /// getIntAsync
+  /// getInt
   /// 
   ///
   /// Parameters:
@@ -363,7 +363,7 @@ _responseData = deserialize<DoubleKeyValue, DoubleKeyValue>(_response.data!, 'Do
   ///
   /// Returns a [Future] containing a [Response] with a [Int32KeyValue] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<Int32KeyValue>> getIntAsync({ 
+  Future<Response<Int32KeyValue>> getInt({ 
     String? key,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -429,7 +429,7 @@ _responseData = deserialize<Int32KeyValue, Int32KeyValue>(_response.data!, 'Int3
     );
   }
 
-  /// getStringAsync
+  /// getString
   /// 
   ///
   /// Parameters:
@@ -443,7 +443,7 @@ _responseData = deserialize<Int32KeyValue, Int32KeyValue>(_response.data!, 'Int3
   ///
   /// Returns a [Future] containing a [Response] with a [StringKeyValue] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<StringKeyValue>> getStringAsync({ 
+  Future<Response<StringKeyValue>> getString({ 
     String? key,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -509,7 +509,7 @@ _responseData = deserialize<StringKeyValue, StringKeyValue>(_response.data!, 'St
     );
   }
 
-  /// setBoolAsync
+  /// setBool
   /// 
   ///
   /// Parameters:
@@ -524,7 +524,7 @@ _responseData = deserialize<StringKeyValue, StringKeyValue>(_response.data!, 'St
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> setBoolAsync({ 
+  Future<Response<void>> setBool({ 
     BooleanSetKeyValueDto? body,
     String? key,
     CancelToken? cancelToken,
@@ -587,7 +587,7 @@ _bodyData=jsonEncode(body);
     return _response;
   }
 
-  /// setDateTimeAsync
+  /// setDateTime
   /// 
   ///
   /// Parameters:
@@ -602,7 +602,7 @@ _bodyData=jsonEncode(body);
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> setDateTimeAsync({ 
+  Future<Response<void>> setDateTime({ 
     DateTimeSetKeyValueDto? body,
     String? key,
     CancelToken? cancelToken,
@@ -665,7 +665,7 @@ _bodyData=jsonEncode(body);
     return _response;
   }
 
-  /// setDecimalAsync
+  /// setDecimal
   /// 
   ///
   /// Parameters:
@@ -680,7 +680,7 @@ _bodyData=jsonEncode(body);
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> setDecimalAsync({ 
+  Future<Response<void>> setDecimal({ 
     DecimalSetKeyValueDto? body,
     String? key,
     CancelToken? cancelToken,
@@ -743,7 +743,7 @@ _bodyData=jsonEncode(body);
     return _response;
   }
 
-  /// setDoubleAsync
+  /// setDouble
   /// 
   ///
   /// Parameters:
@@ -758,7 +758,7 @@ _bodyData=jsonEncode(body);
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> setDoubleAsync({ 
+  Future<Response<void>> setDouble({ 
     DoubleSetKeyValueDto? body,
     String? key,
     CancelToken? cancelToken,
@@ -821,7 +821,7 @@ _bodyData=jsonEncode(body);
     return _response;
   }
 
-  /// setIntAsync
+  /// setInt
   /// 
   ///
   /// Parameters:
@@ -836,7 +836,7 @@ _bodyData=jsonEncode(body);
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> setIntAsync({ 
+  Future<Response<void>> setInt({ 
     Int32SetKeyValueDto? body,
     String? key,
     CancelToken? cancelToken,
@@ -899,7 +899,7 @@ _bodyData=jsonEncode(body);
     return _response;
   }
 
-  /// setStringAsync
+  /// setString
   /// 
   ///
   /// Parameters:
@@ -914,7 +914,7 @@ _bodyData=jsonEncode(body);
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> setStringAsync({ 
+  Future<Response<void>> setString({ 
     StringSetKeyValueDto? body,
     String? key,
     CancelToken? cancelToken,

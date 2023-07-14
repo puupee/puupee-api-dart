@@ -20,7 +20,7 @@ class AppFeatureApi {
 
   const AppFeatureApi(this._dio);
 
-  /// createAsync
+  /// create
   /// 
   ///
   /// Parameters:
@@ -34,7 +34,7 @@ class AppFeatureApi {
   ///
   /// Returns a [Future] containing a [Response] with a [AppFeatureDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<AppFeatureDto>> createAsync({ 
+  Future<Response<AppFeatureDto>> create({ 
     CreateOrUpdateAppFeatureDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -113,7 +113,7 @@ _responseData = deserialize<AppFeatureDto, AppFeatureDto>(_response.data!, 'AppF
     );
   }
 
-  /// deleteAsync
+  /// delete
   /// 
   ///
   /// Parameters:
@@ -127,7 +127,7 @@ _responseData = deserialize<AppFeatureDto, AppFeatureDto>(_response.data!, 'AppF
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> deleteAsync({ 
+  Future<Response<void>> delete({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -165,7 +165,7 @@ _responseData = deserialize<AppFeatureDto, AppFeatureDto>(_response.data!, 'AppF
     return _response;
   }
 
-  /// getListAsync
+  /// getList
   /// 
   ///
   /// Parameters:
@@ -181,7 +181,7 @@ _responseData = deserialize<AppFeatureDto, AppFeatureDto>(_response.data!, 'AppF
   ///
   /// Returns a [Future] containing a [Response] with a [AppFeatureDtoPagedResultDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<AppFeatureDtoPagedResultDto>> getListAsync({ 
+  Future<Response<AppFeatureDtoPagedResultDto>> getList({ 
     String? sorting,
     int? skipCount,
     int? maxResultCount,
@@ -251,7 +251,7 @@ _responseData = deserialize<AppFeatureDtoPagedResultDto, AppFeatureDtoPagedResul
     );
   }
 
-  /// updateAsync
+  /// update
   /// 
   ///
   /// Parameters:
@@ -266,7 +266,7 @@ _responseData = deserialize<AppFeatureDtoPagedResultDto, AppFeatureDtoPagedResul
   ///
   /// Returns a [Future] containing a [Response] with a [AppFeatureDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<AppFeatureDto>> updateAsync({ 
+  Future<Response<AppFeatureDto>> update({ 
     required String id,
     CreateOrUpdateAppFeatureDto? body,
     CancelToken? cancelToken,

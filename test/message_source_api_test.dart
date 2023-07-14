@@ -7,28 +7,28 @@ void main() {
   final instance = PuupeeApiClient().getMessageSourceApi();
 
   group(MessageSourceApi, () {
-    //Future<CreateUpdateMessageSourceDto> createAsync({ CreateUpdateMessageSourceDto body }) async
-    test('test createAsync', () async {
+    //Future<MessageSourceDto> callGet(String id) async
+    test('test callGet', () async {
       // TODO
     });
 
-    //Future deleteAsync(String id) async
-    test('test deleteAsync', () async {
+    //Future<CreateUpdateMessageSourceDto> create({ CreateUpdateMessageSourceDto body }) async
+    test('test create', () async {
       // TODO
     });
 
-    //Future<MessageSourceDto> getAsync(String id) async
-    test('test getAsync', () async {
+    //Future delete(String id) async
+    test('test delete', () async {
       // TODO
     });
 
-    //Future<List<MessageSourceDto>> getPublishedListAsync(String categoryId) async
-    test('test getPublishedListAsync', () async {
+    //Future<List<MessageSourceDto>> getPublishedList(String categoryId) async
+    test('test getPublishedList', () async {
       // TODO
     });
 
-    //Future<CreateUpdateMessageSourceDto> updateAsync(String id, { CreateUpdateMessageSourceDto body }) async
-    test('test updateAsync', () async {
+    //Future<CreateUpdateMessageSourceDto> update(String id, { CreateUpdateMessageSourceDto body }) async
+    test('test update', () async {
       // TODO
     });
 

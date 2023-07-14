@@ -9,13 +9,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getAsync**](EmailSettingsApi.md#getasync) | **GET** /api/setting-management/emailing | 
-[**sendTestEmailAsync**](EmailSettingsApi.md#sendtestemailasync) | **POST** /api/setting-management/emailing/send-test-email | 
-[**updateAsync**](EmailSettingsApi.md#updateasync) | **POST** /api/setting-management/emailing | 
+[**callGet**](EmailSettingsApi.md#callget) | **GET** /api/setting-management/emailing | 
+[**sendTestEmail**](EmailSettingsApi.md#sendtestemail) | **POST** /api/setting-management/emailing/send-test-email | 
+[**update**](EmailSettingsApi.md#update) | **POST** /api/setting-management/emailing | 
 
 
-# **getAsync**
-> EmailSettingsDto getAsync()
+# **callGet**
+> EmailSettingsDto callGet()
 
 
 
@@ -28,10 +28,10 @@ import 'package:puupee_api_client/api.dart';
 final api = PuupeeApiClient().getEmailSettingsApi();
 
 try {
-    final response = api.getAsync();
+    final response = api.callGet();
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling EmailSettingsApi->getAsync: $e\n');
+    print('Exception when calling EmailSettingsApi->callGet: $e\n');
 }
 ```
 
@@ -53,8 +53,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **sendTestEmailAsync**
-> sendTestEmailAsync(body)
+# **sendTestEmail**
+> sendTestEmail(body)
 
 
 
@@ -68,9 +68,9 @@ final api = PuupeeApiClient().getEmailSettingsApi();
 final SendTestEmailInput body = ; // SendTestEmailInput | 
 
 try {
-    api.sendTestEmailAsync(body);
+    api.sendTestEmail(body);
 } catch on DioError (e) {
-    print('Exception when calling EmailSettingsApi->sendTestEmailAsync: $e\n');
+    print('Exception when calling EmailSettingsApi->sendTestEmail: $e\n');
 }
 ```
 
@@ -95,8 +95,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **updateAsync**
-> updateAsync(body)
+# **update**
+> update(body)
 
 
 
@@ -110,9 +110,9 @@ final api = PuupeeApiClient().getEmailSettingsApi();
 final UpdateEmailSettingsDto body = ; // UpdateEmailSettingsDto | 
 
 try {
-    api.updateAsync(body);
+    api.update(body);
 } catch on DioError (e) {
-    print('Exception when calling EmailSettingsApi->updateAsync: $e\n');
+    print('Exception when calling EmailSettingsApi->update: $e\n');
 }
 ```
 

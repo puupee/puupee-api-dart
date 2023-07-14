@@ -9,15 +9,58 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAsync**](ApiKeysApi.md#createasync) | **POST** /api/api-keys | 
-[**deleteAsync**](ApiKeysApi.md#deleteasync) | **DELETE** /api/api-keys/{id} | 
-[**getAsync**](ApiKeysApi.md#getasync) | **GET** /api/api-keys/{id} | 
-[**getListAsync**](ApiKeysApi.md#getlistasync) | **GET** /api/api-keys | 
-[**updateAsync**](ApiKeysApi.md#updateasync) | **PUT** /api/api-keys/{id} | 
+[**callGet**](ApiKeysApi.md#callget) | **GET** /api/api-keys/{id} | 
+[**create**](ApiKeysApi.md#create) | **POST** /api/api-keys | 
+[**delete**](ApiKeysApi.md#delete) | **DELETE** /api/api-keys/{id} | 
+[**getList**](ApiKeysApi.md#getlist) | **GET** /api/api-keys | 
+[**update**](ApiKeysApi.md#update) | **PUT** /api/api-keys/{id} | 
 
 
-# **createAsync**
-> ApiKeyDto createAsync(body)
+# **callGet**
+> ApiKeyDto callGet(id)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getApiKeysApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+
+try {
+    final response = api.callGet(id);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling ApiKeysApi->callGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+[**ApiKeyDto**](ApiKeyDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **create**
+> ApiKeyDto create(body)
 
 
 
@@ -31,10 +74,10 @@ final api = PuupeeApiClient().getApiKeysApi();
 final ApiKeyCreateDto body = ; // ApiKeyCreateDto | 
 
 try {
-    final response = api.createAsync(body);
+    final response = api.create(body);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling ApiKeysApi->createAsync: $e\n');
+    print('Exception when calling ApiKeysApi->create: $e\n');
 }
 ```
 
@@ -59,8 +102,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **deleteAsync**
-> deleteAsync(id)
+# **delete**
+> delete(id)
 
 
 
@@ -74,9 +117,9 @@ final api = PuupeeApiClient().getApiKeysApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    api.deleteAsync(id);
+    api.delete(id);
 } catch on DioError (e) {
-    print('Exception when calling ApiKeysApi->deleteAsync: $e\n');
+    print('Exception when calling ApiKeysApi->delete: $e\n');
 }
 ```
 
@@ -101,51 +144,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getAsync**
-> ApiKeyDto getAsync(id)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getApiKeysApi();
-final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-
-try {
-    final response = api.getAsync(id);
-    print(response);
-} catch on DioError (e) {
-    print('Exception when calling ApiKeysApi->getAsync: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
-
-### Return type
-
-[**ApiKeyDto**](ApiKeyDto.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **getListAsync**
-> ApiKeyDtoPagedResultDto getListAsync(sorting, skipCount, maxResultCount)
+# **getList**
+> ApiKeyDtoPagedResultDto getList(sorting, skipCount, maxResultCount)
 
 
 
@@ -161,10 +161,10 @@ final int skipCount = 56; // int |
 final int maxResultCount = 56; // int | 
 
 try {
-    final response = api.getListAsync(sorting, skipCount, maxResultCount);
+    final response = api.getList(sorting, skipCount, maxResultCount);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling ApiKeysApi->getListAsync: $e\n');
+    print('Exception when calling ApiKeysApi->getList: $e\n');
 }
 ```
 
@@ -191,8 +191,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **updateAsync**
-> ApiKeyDto updateAsync(id, body)
+# **update**
+> ApiKeyDto update(id, body)
 
 
 
@@ -207,10 +207,10 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 final ApiKeyUpdateDto body = ; // ApiKeyUpdateDto | 
 
 try {
-    final response = api.updateAsync(id, body);
+    final response = api.update(id, body);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling ApiKeysApi->updateAsync: $e\n');
+    print('Exception when calling ApiKeysApi->update: $e\n');
 }
 ```
 

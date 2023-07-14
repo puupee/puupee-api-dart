@@ -20,7 +20,7 @@ class AvatarApi {
 
   const AvatarApi(this._dio);
 
-  /// createAsync
+  /// create
   /// 
   ///
   /// Parameters:
@@ -34,7 +34,7 @@ class AvatarApi {
   ///
   /// Returns a [Future] containing a [Response] with a [AvatarDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<AvatarDto>> createAsync({ 
+  Future<Response<AvatarDto>> create({ 
     CreateAvatarDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -113,7 +113,7 @@ _responseData = deserialize<AvatarDto, AvatarDto>(_response.data!, 'AvatarDto', 
     );
   }
 
-  /// getCredentialsAsync
+  /// getCredentials
   /// 
   ///
   /// Parameters:
@@ -127,7 +127,7 @@ _responseData = deserialize<AvatarDto, AvatarDto>(_response.data!, 'AvatarDto', 
   ///
   /// Returns a [Future] containing a [Response] with a [StorageObjectCredentials] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<StorageObjectCredentials>> getCredentialsAsync({ 
+  Future<Response<StorageObjectCredentials>> getCredentials({ 
     String? key,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

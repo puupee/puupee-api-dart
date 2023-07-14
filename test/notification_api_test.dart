@@ -7,18 +7,18 @@ void main() {
   final instance = PuupeeApiClient().getNotificationApi();
 
   group(NotificationApi, () {
-    //Future barkAsync(String apiKey, String message, { int automaticallyCopy, String copy, String url, String isArchive, String group, String icon, String name, String value }) async
-    test('test barkAsync', () async {
+    //Future bark(String apiKey, String message, { int automaticallyCopy, String copy, String url, String isArchive, String group, String icon, String name, String value }) async
+    test('test bark', () async {
       // TODO
     });
 
-    //Future<NotificationInfoDtoPagedResultDto> getListAsync({ String sorting, int skipCount, int maxResultCount }) async
-    test('test getListAsync', () async {
+    //Future<NotificationInfoDtoPagedResultDto> getList({ String sorting, int skipCount, int maxResultCount }) async
+    test('test getList', () async {
       // TODO
     });
 
-    //Future pushAsync({ CreatePushNotificationDto body }) async
-    test('test pushAsync', () async {
+    //Future push({ CreatePushNotificationDto body }) async
+    test('test push', () async {
       // TODO
     });
 

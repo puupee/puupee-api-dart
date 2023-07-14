@@ -7,23 +7,23 @@ void main() {
   final instance = PuupeeApiClient().getSimpleDataApi();
 
   group(SimpleDataApi, () {
-    //Future deleteAsync(String id) async
-    test('test deleteAsync', () async {
+    //Future<SimpleDataDto> callGet(String id) async
+    test('test callGet', () async {
       // TODO
     });
 
-    //Future<SimpleDataDto> getAsync(String id) async
-    test('test getAsync', () async {
+    //Future delete(String id) async
+    test('test delete', () async {
       // TODO
     });
 
-    //Future<SimpleDataDtoPagedResultDto> getListAsync({ String collection, String sorting, int skipCount, int maxResultCount }) async
-    test('test getListAsync', () async {
+    //Future<SimpleDataDtoPagedResultDto> getList({ String collection, String sorting, int skipCount, int maxResultCount }) async
+    test('test getList', () async {
       // TODO
     });
 
-    //Future<SimpleDataDto> saveAsync({ SimpleDataDto body }) async
-    test('test saveAsync', () async {
+    //Future<SimpleDataDto> save({ SimpleDataDto body }) async
+    test('test save', () async {
       // TODO
     });
 

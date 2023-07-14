@@ -9,12 +9,12 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createAsync**](AvatarApi.md#createasync) | **POST** /api/app/avatar | 
-[**getCredentialsAsync**](AvatarApi.md#getcredentialsasync) | **GET** /api/app/avatar/credentials | 
+[**create**](AvatarApi.md#create) | **POST** /api/app/avatar | 
+[**getCredentials**](AvatarApi.md#getcredentials) | **GET** /api/app/avatar/credentials | 
 
 
-# **createAsync**
-> AvatarDto createAsync(body)
+# **create**
+> AvatarDto create(body)
 
 
 
@@ -28,10 +28,10 @@ final api = PuupeeApiClient().getAvatarApi();
 final CreateAvatarDto body = ; // CreateAvatarDto | 
 
 try {
-    final response = api.createAsync(body);
+    final response = api.create(body);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling AvatarApi->createAsync: $e\n');
+    print('Exception when calling AvatarApi->create: $e\n');
 }
 ```
 
@@ -56,8 +56,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getCredentialsAsync**
-> StorageObjectCredentials getCredentialsAsync(key)
+# **getCredentials**
+> StorageObjectCredentials getCredentials(key)
 
 
 
@@ -71,10 +71,10 @@ final api = PuupeeApiClient().getAvatarApi();
 final String key = key_example; // String | 
 
 try {
-    final response = api.getCredentialsAsync(key);
+    final response = api.getCredentials(key);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling AvatarApi->getCredentialsAsync: $e\n');
+    print('Exception when calling AvatarApi->getCredentials: $e\n');
 }
 ```
 

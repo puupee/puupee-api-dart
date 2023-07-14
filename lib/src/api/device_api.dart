@@ -21,7 +21,7 @@ class DeviceApi {
 
   const DeviceApi(this._dio);
 
-  /// bindAsync
+  /// bind
   /// 
   ///
   /// Parameters:
@@ -35,7 +35,7 @@ class DeviceApi {
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> bindAsync({ 
+  Future<Response<void>> bind({ 
     BindDeviceDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -91,7 +91,7 @@ _bodyData=jsonEncode(body);
     return _response;
   }
 
-  /// getAsync
+  /// callGet
   /// 
   ///
   /// Parameters:
@@ -105,7 +105,7 @@ _bodyData=jsonEncode(body);
   ///
   /// Returns a [Future] containing a [Response] with a [DeviceDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<DeviceDto>> getAsync({ 
+  Future<Response<DeviceDto>> callGet({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -166,7 +166,7 @@ _responseData = deserialize<DeviceDto, DeviceDto>(_response.data!, 'DeviceDto', 
     );
   }
 
-  /// getByTokenAsync
+  /// getByToken
   /// 
   ///
   /// Parameters:
@@ -180,7 +180,7 @@ _responseData = deserialize<DeviceDto, DeviceDto>(_response.data!, 'DeviceDto', 
   ///
   /// Returns a [Future] containing a [Response] with a [DeviceDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<DeviceDto>> getByTokenAsync({ 
+  Future<Response<DeviceDto>> getByToken({ 
     String? token,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -246,7 +246,7 @@ _responseData = deserialize<DeviceDto, DeviceDto>(_response.data!, 'DeviceDto', 
     );
   }
 
-  /// getListAsync
+  /// getList
   /// 
   ///
   /// Parameters:
@@ -262,7 +262,7 @@ _responseData = deserialize<DeviceDto, DeviceDto>(_response.data!, 'DeviceDto', 
   ///
   /// Returns a [Future] containing a [Response] with a [DeviceDtoPagedResultDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<DeviceDtoPagedResultDto>> getListAsync({ 
+  Future<Response<DeviceDtoPagedResultDto>> getList({ 
     String? sorting,
     int? skipCount,
     int? maxResultCount,
@@ -332,7 +332,7 @@ _responseData = deserialize<DeviceDtoPagedResultDto, DeviceDtoPagedResultDto>(_r
     );
   }
 
-  /// refreshAsync
+  /// refresh
   /// 
   ///
   /// Parameters:
@@ -346,7 +346,7 @@ _responseData = deserialize<DeviceDtoPagedResultDto, DeviceDtoPagedResultDto>(_r
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> refreshAsync({ 
+  Future<Response<void>> refresh({ 
     RefreshDeviceStatusDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -402,7 +402,7 @@ _bodyData=jsonEncode(body);
     return _response;
   }
 
-  /// removeAsync
+  /// remove
   /// 
   ///
   /// Parameters:
@@ -416,7 +416,7 @@ _bodyData=jsonEncode(body);
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> removeAsync({ 
+  Future<Response<void>> remove({ 
     String? token,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

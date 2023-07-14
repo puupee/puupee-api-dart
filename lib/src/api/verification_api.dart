@@ -18,7 +18,7 @@ class VerificationApi {
 
   const VerificationApi(this._dio);
 
-  /// sendCodeAsync
+  /// sendCode
   /// 
   ///
   /// Parameters:
@@ -32,7 +32,7 @@ class VerificationApi {
   ///
   /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<void>> sendCodeAsync({ 
+  Future<Response<void>> sendCode({ 
     SendVerificationCodeDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
