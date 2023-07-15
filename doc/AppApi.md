@@ -9,9 +9,9 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**callGet**](AppApi.md#callget) | **GET** /api/app/app/{id} | 
 [**create**](AppApi.md#create) | **POST** /api/app/app | 
 [**delete**](AppApi.md#delete) | **DELETE** /api/app/app/{id} | 
-[**getById**](AppApi.md#getbyid) | **GET** /api/app/app/{id} | 
 [**getByName**](AppApi.md#getbyname) | **GET** /api/app/app/by-name | 
 [**getFeatures**](AppApi.md#getfeatures) | **GET** /api/app/app/features/{appId} | 
 [**getList**](AppApi.md#getlist) | **GET** /api/app/app | 
@@ -25,6 +25,51 @@ Method | HTTP request | Description
 [**update**](AppApi.md#update) | **PUT** /api/app/app/{id} | 
 [**updateRunState**](AppApi.md#updaterunstate) | **PUT** /api/app/app/{id}/run-state | 
 
+
+# **callGet**
+> AppDto callGet(id, env)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getAppApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final String env = env_example; // String | 
+
+try {
+    final response = api.callGet(id, env);
+    print(response);
+} catch on DioError (e) {
+    print('Exception when calling AppApi->callGet: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+ **env** | **String**|  | [optional] 
+
+### Return type
+
+[**AppDto**](AppDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create**
 > AppDto create(body)
@@ -99,51 +144,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 void (empty response body)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **getById**
-> AppDto getById(id, env)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getAppApi();
-final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final String env = env_example; // String | 
-
-try {
-    final response = api.getById(id, env);
-    print(response);
-} catch on DioError (e) {
-    print('Exception when calling AppApi->getById: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
- **env** | **String**|  | [optional] 
-
-### Return type
-
-[**AppDto**](AppDto.md)
 
 ### Authorization
 

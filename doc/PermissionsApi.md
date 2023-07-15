@@ -9,12 +9,12 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getById**](PermissionsApi.md#getbyid) | **GET** /api/permission-management/permissions | 
+[**callGet**](PermissionsApi.md#callget) | **GET** /api/permission-management/permissions | 
 [**update**](PermissionsApi.md#update) | **PUT** /api/permission-management/permissions | 
 
 
-# **getById**
-> GetPermissionListResultDto getById(providerName, providerKey)
+# **callGet**
+> GetPermissionListResultDto callGet(providerName, providerKey)
 
 
 
@@ -29,10 +29,10 @@ final String providerName = providerName_example; // String |
 final String providerKey = providerKey_example; // String | 
 
 try {
-    final response = api.getById(providerName, providerKey);
+    final response = api.callGet(providerName, providerKey);
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling PermissionsApi->getById: $e\n');
+    print('Exception when calling PermissionsApi->callGet: $e\n');
 }
 ```
 

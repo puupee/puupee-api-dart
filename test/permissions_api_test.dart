@@ -7,8 +7,8 @@ void main() {
   final instance = PuupeeApiClient().getPermissionsApi();
 
   group(PermissionsApi, () {
-    //Future<GetPermissionListResultDto> getById({ String providerName, String providerKey }) async
-    test('test getById', () async {
+    //Future<GetPermissionListResultDto> callGet({ String providerName, String providerKey }) async
+    test('test callGet', () async {
       // TODO
     });
 

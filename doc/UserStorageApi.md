@@ -9,11 +9,11 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getById**](UserStorageApi.md#getbyid) | **GET** /api/app/user-storage | 
+[**callGet**](UserStorageApi.md#callget) | **GET** /api/app/user-storage | 
 
 
-# **getById**
-> UserStorageDto getById()
+# **callGet**
+> UserStorageDto callGet()
 
 
 
@@ -26,10 +26,10 @@ import 'package:puupee_api_client/api.dart';
 final api = PuupeeApiClient().getUserStorageApi();
 
 try {
-    final response = api.getById();
+    final response = api.callGet();
     print(response);
 } catch on DioError (e) {
-    print('Exception when calling UserStorageApi->getById: $e\n');
+    print('Exception when calling UserStorageApi->callGet: $e\n');
 }
 ```
 

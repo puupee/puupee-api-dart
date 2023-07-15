@@ -20,7 +20,7 @@ class EmailSettingsApi {
 
   const EmailSettingsApi(this._dio);
 
-  /// getById
+  /// callGet
   /// 
   ///
   /// Parameters:
@@ -33,7 +33,7 @@ class EmailSettingsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [EmailSettingsDto] as data
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<EmailSettingsDto>> getById({ 
+  Future<Response<EmailSettingsDto>> callGet({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
