@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **environment** | **String** |  | [optional] 
 **isRetryable** | **bool** |  | [optional] 
-**status** | [**AppleVerifyRecceiptStatus**](AppleVerifyRecceiptStatus.md) |  | [optional] 
+**status** | **int** |  | [optional] 
 **latestReceiptInfo** | [**List&lt;LatestReceiptInfo&gt;**](LatestReceiptInfo.md) |  | [optional] 
 **latestReceipt** | **String** |  | [optional] 
 **pendingRenewalInfo** | [**List&lt;PendingRenewalInfo&gt;**](PendingRenewalInfo.md) |  | [optional] 

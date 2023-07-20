@@ -57,7 +57,7 @@ void main() {
       // TODO
     });
 
-    // SubscriptionOrderType type
+    // String type
     test('to test the property `type`', () async {
       // TODO
     });

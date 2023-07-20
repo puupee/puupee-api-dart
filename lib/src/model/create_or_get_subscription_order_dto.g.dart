@@ -27,11 +27,7 @@ CreateOrGetSubscriptionOrderDto _$CreateOrGetSubscriptionOrderDtoFromJson(
               (v) => v == null ? null : DateTime.parse(v as String)),
           appId: $checkedConvert('appId', (v) => v as String?),
           pricingId: $checkedConvert('pricingId', (v) => v as String?),
-          type: $checkedConvert(
-              'type',
-              (v) => v == null
-                  ? null
-                  : SubscriptionOrderType.fromJson(v as Map<String, dynamic>)),
+          type: $checkedConvert('type', (v) => v as String?),
           productId: $checkedConvert('productId', (v) => v as String?),
         );
         return val;
@@ -59,7 +55,7 @@ Map<String, dynamic> _$CreateOrGetSubscriptionOrderDtoToJson(
   writeNotNull('deletionTime', instance.deletionTime?.toIso8601String());
   writeNotNull('appId', instance.appId);
   writeNotNull('pricingId', instance.pricingId);
-  writeNotNull('type', instance.type?.toJson());
+  writeNotNull('type', instance.type);
   writeNotNull('productId', instance.productId);
   return val;
 }

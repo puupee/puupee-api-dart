@@ -23,7 +23,6 @@ import 'package:puupee_api_client/src/model/app_user_score_dto.dart';
 import 'package:puupee_api_client/src/model/app_with_user_dto.dart';
 import 'package:puupee_api_client/src/model/app_with_user_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/apple_notificaion_dto.dart';
-import 'package:puupee_api_client/src/model/apple_verify_recceipt_status.dart';
 import 'package:puupee_api_client/src/model/apple_verify_receipt_result.dart';
 import 'package:puupee_api_client/src/model/application_api_description_model.dart';
 import 'package:puupee_api_client/src/model/application_auth_configuration_dto.dart';
@@ -164,8 +163,6 @@ import 'package:puupee_api_client/src/model/string_key_value.dart';
 import 'package:puupee_api_client/src/model/string_set_key_value_dto.dart';
 import 'package:puupee_api_client/src/model/subscription_dto.dart';
 import 'package:puupee_api_client/src/model/subscription_order_dto.dart';
-import 'package:puupee_api_client/src/model/subscription_order_status.dart';
-import 'package:puupee_api_client/src/model/subscription_order_type.dart';
 import 'package:puupee_api_client/src/model/sync_state_dto.dart';
 import 'package:puupee_api_client/src/model/tenant_create_dto.dart';
 import 'package:puupee_api_client/src/model/tenant_dto.dart';
@@ -260,8 +257,6 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return AppWithUserDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppleNotificaionDto':
           return AppleNotificaionDto.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'AppleVerifyRecceiptStatus':
-          return AppleVerifyRecceiptStatus.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppleVerifyReceiptResult':
           return AppleVerifyReceiptResult.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ApplicationApiDescriptionModel':
@@ -545,10 +540,6 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return SubscriptionDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'SubscriptionOrderDto':
           return SubscriptionOrderDto.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'SubscriptionOrderStatus':
-          return SubscriptionOrderStatus.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'SubscriptionOrderType':
-          return SubscriptionOrderType.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'SyncStateDto':
           return SyncStateDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'TenantCreateDto':
