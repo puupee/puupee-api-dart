@@ -52,13 +52,18 @@ void main() {
       // TODO
     });
 
-    // String key
-    test('to test the property `key`', () async {
+    // String url
+    test('to test the property `url`', () async {
       // TODO
     });
 
-    // String url
-    test('to test the property `url`', () async {
+    // int syncVersion
+    test('to test the property `syncVersion`', () async {
+      // TODO
+    });
+
+    // String key
+    test('to test the property `key`', () async {
       // TODO
     });
 
@@ -104,11 +109,6 @@ void main() {
 
     // DateTime storageObjectUpdatedAt
     test('to test the property `storageObjectUpdatedAt`', () async {
-      // TODO
-    });
-
-    // int syncVersion
-    test('to test the property `syncVersion`', () async {
       // TODO
     });
 

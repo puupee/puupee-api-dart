@@ -12,33 +12,12 @@ PuupeeDto _$PuupeeDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
       ($checkedConvert) {
         final val = PuupeeDto(
           gid: $checkedConvert('gid', (v) => v as String?),
-          name: $checkedConvert('name', (v) => v as String?),
-          title: $checkedConvert('title', (v) => v as String?),
-          description: $checkedConvert('description', (v) => v as String?),
-          text: $checkedConvert('text', (v) => v as String?),
-          content: $checkedConvert('content', (v) => v as String?),
-          format: $checkedConvert('format', (v) => v as String?),
-          password: $checkedConvert('password', (v) => v as String?),
-          parentId: $checkedConvert('parentId', (v) => v as String?),
           children: $checkedConvert(
               'children',
               (v) => (v as List<dynamic>?)
                   ?.map((e) => PuupeeDto.fromJson(e as Map<String, dynamic>))
                   .toList()),
-          key: $checkedConvert('key', (v) => v as String?),
-          url: $checkedConvert('url', (v) => v as String?),
-          size: $checkedConvert('size', (v) => v as int?),
-          md5: $checkedConvert('md5', (v) => v as String?),
-          sliceMd5: $checkedConvert('sliceMd5', (v) => v as String?),
-          rapidCode: $checkedConvert('rapidCode', (v) => v as String?),
-          contentType: $checkedConvert('contentType', (v) => v as String?),
           displayStyle: $checkedConvert('displayStyle', (v) => v as String?),
-          extension_: $checkedConvert('extension', (v) => v as String?),
-          storageClass: $checkedConvert('storageClass', (v) => v as String?),
-          storageObjectCreatedAt: $checkedConvert('storageObjectCreatedAt',
-              (v) => v == null ? null : DateTime.parse(v as String)),
-          storageObjectUpdatedAt: $checkedConvert('storageObjectUpdatedAt',
-              (v) => v == null ? null : DateTime.parse(v as String)),
           storageObjectId:
               $checkedConvert('storageObjectId', (v) => v as String?),
           storageObject: $checkedConvert(
@@ -51,6 +30,27 @@ PuupeeDto _$PuupeeDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
               (v) => v == null
                   ? null
                   : StorageObjectDto.fromJson(v as Map<String, dynamic>)),
+          name: $checkedConvert('name', (v) => v as String?),
+          title: $checkedConvert('title', (v) => v as String?),
+          description: $checkedConvert('description', (v) => v as String?),
+          text: $checkedConvert('text', (v) => v as String?),
+          content: $checkedConvert('content', (v) => v as String?),
+          format: $checkedConvert('format', (v) => v as String?),
+          password: $checkedConvert('password', (v) => v as String?),
+          parentId: $checkedConvert('parentId', (v) => v as String?),
+          key: $checkedConvert('key', (v) => v as String?),
+          url: $checkedConvert('url', (v) => v as String?),
+          size: $checkedConvert('size', (v) => v as int?),
+          md5: $checkedConvert('md5', (v) => v as String?),
+          sliceMd5: $checkedConvert('sliceMd5', (v) => v as String?),
+          rapidCode: $checkedConvert('rapidCode', (v) => v as String?),
+          contentType: $checkedConvert('contentType', (v) => v as String?),
+          extension_: $checkedConvert('extension', (v) => v as String?),
+          storageClass: $checkedConvert('storageClass', (v) => v as String?),
+          storageObjectCreatedAt: $checkedConvert('storageObjectCreatedAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
+          storageObjectUpdatedAt: $checkedConvert('storageObjectUpdatedAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
           priority: $checkedConvert('priority', (v) => v as int?),
           doneAt: $checkedConvert(
               'doneAt', (v) => v == null ? null : DateTime.parse(v as String)),
@@ -135,6 +135,11 @@ Map<String, dynamic> _$PuupeeDtoToJson(PuupeeDto instance) {
   }
 
   writeNotNull('gid', instance.gid);
+  writeNotNull('children', instance.children?.map((e) => e.toJson()).toList());
+  writeNotNull('displayStyle', instance.displayStyle);
+  writeNotNull('storageObjectId', instance.storageObjectId);
+  writeNotNull('storageObject', instance.storageObject?.toJson());
+  writeNotNull('thumb', instance.thumb?.toJson());
   writeNotNull('name', instance.name);
   writeNotNull('title', instance.title);
   writeNotNull('description', instance.description);
@@ -143,7 +148,6 @@ Map<String, dynamic> _$PuupeeDtoToJson(PuupeeDto instance) {
   writeNotNull('format', instance.format);
   writeNotNull('password', instance.password);
   writeNotNull('parentId', instance.parentId);
-  writeNotNull('children', instance.children?.map((e) => e.toJson()).toList());
   writeNotNull('key', instance.key);
   writeNotNull('url', instance.url);
   writeNotNull('size', instance.size);
@@ -151,16 +155,12 @@ Map<String, dynamic> _$PuupeeDtoToJson(PuupeeDto instance) {
   writeNotNull('sliceMd5', instance.sliceMd5);
   writeNotNull('rapidCode', instance.rapidCode);
   writeNotNull('contentType', instance.contentType);
-  writeNotNull('displayStyle', instance.displayStyle);
   writeNotNull('extension', instance.extension_);
   writeNotNull('storageClass', instance.storageClass);
   writeNotNull('storageObjectCreatedAt',
       instance.storageObjectCreatedAt?.toIso8601String());
   writeNotNull('storageObjectUpdatedAt',
       instance.storageObjectUpdatedAt?.toIso8601String());
-  writeNotNull('storageObjectId', instance.storageObjectId);
-  writeNotNull('storageObject', instance.storageObject?.toJson());
-  writeNotNull('thumb', instance.thumb?.toJson());
   writeNotNull('priority', instance.priority);
   writeNotNull('doneAt', instance.doneAt?.toIso8601String());
   writeNotNull('isDone', instance.isDone);

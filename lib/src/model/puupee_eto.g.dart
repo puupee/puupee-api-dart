@@ -12,6 +12,7 @@ PuupeeEto _$PuupeeEtoFromJson(Map<String, dynamic> json) => $checkedCreate(
       ($checkedConvert) {
         final val = PuupeeEto(
           gid: $checkedConvert('gid', (v) => v as String?),
+          displayStyle: $checkedConvert('displayStyle', (v) => v as String?),
           syncVersion: $checkedConvert('syncVersion', (v) => v as int?),
           url: $checkedConvert('url', (v) => v as String?),
           parentId: $checkedConvert('parentId', (v) => v as String?),
@@ -35,7 +36,6 @@ PuupeeEto _$PuupeeEtoFromJson(Map<String, dynamic> json) => $checkedCreate(
               (v) => v == null ? null : DateTime.parse(v as String)),
           storageObjectUpdatedAt: $checkedConvert('storageObjectUpdatedAt',
               (v) => v == null ? null : DateTime.parse(v as String)),
-          displayStyle: $checkedConvert('displayStyle', (v) => v as String?),
           priority: $checkedConvert('priority', (v) => v as int?),
           doneAt: $checkedConvert(
               'doneAt', (v) => v == null ? null : DateTime.parse(v as String)),
@@ -118,6 +118,7 @@ Map<String, dynamic> _$PuupeeEtoToJson(PuupeeEto instance) {
   }
 
   writeNotNull('gid', instance.gid);
+  writeNotNull('displayStyle', instance.displayStyle);
   writeNotNull('syncVersion', instance.syncVersion);
   writeNotNull('url', instance.url);
   writeNotNull('parentId', instance.parentId);
@@ -141,7 +142,6 @@ Map<String, dynamic> _$PuupeeEtoToJson(PuupeeEto instance) {
       instance.storageObjectCreatedAt?.toIso8601String());
   writeNotNull('storageObjectUpdatedAt',
       instance.storageObjectUpdatedAt?.toIso8601String());
-  writeNotNull('displayStyle', instance.displayStyle);
   writeNotNull('priority', instance.priority);
   writeNotNull('doneAt', instance.doneAt?.toIso8601String());
   writeNotNull('isDone', instance.isDone);

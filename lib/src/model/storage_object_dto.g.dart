@@ -25,8 +25,9 @@ StorageObjectDto _$StorageObjectDtoFromJson(Map<String, dynamic> json) =>
           deletionTime: $checkedConvert('deletionTime',
               (v) => v == null ? null : DateTime.parse(v as String)),
           name: $checkedConvert('name', (v) => v as String?),
-          key: $checkedConvert('key', (v) => v as String?),
           url: $checkedConvert('url', (v) => v as String?),
+          syncVersion: $checkedConvert('syncVersion', (v) => v as int?),
+          key: $checkedConvert('key', (v) => v as String?),
           size: $checkedConvert('size', (v) => v as int?),
           md5: $checkedConvert('md5', (v) => v as String?),
           sliceMd5: $checkedConvert('sliceMd5', (v) => v as String?),
@@ -38,7 +39,6 @@ StorageObjectDto _$StorageObjectDtoFromJson(Map<String, dynamic> json) =>
               (v) => v == null ? null : DateTime.parse(v as String)),
           storageObjectUpdatedAt: $checkedConvert('storageObjectUpdatedAt',
               (v) => v == null ? null : DateTime.parse(v as String)),
-          syncVersion: $checkedConvert('syncVersion', (v) => v as int?),
           password: $checkedConvert('password', (v) => v as String?),
         );
         return val;
@@ -65,8 +65,9 @@ Map<String, dynamic> _$StorageObjectDtoToJson(StorageObjectDto instance) {
   writeNotNull('deleterId', instance.deleterId);
   writeNotNull('deletionTime', instance.deletionTime?.toIso8601String());
   writeNotNull('name', instance.name);
-  writeNotNull('key', instance.key);
   writeNotNull('url', instance.url);
+  writeNotNull('syncVersion', instance.syncVersion);
+  writeNotNull('key', instance.key);
   writeNotNull('size', instance.size);
   writeNotNull('md5', instance.md5);
   writeNotNull('sliceMd5', instance.sliceMd5);
@@ -78,7 +79,6 @@ Map<String, dynamic> _$StorageObjectDtoToJson(StorageObjectDto instance) {
       instance.storageObjectCreatedAt?.toIso8601String());
   writeNotNull('storageObjectUpdatedAt',
       instance.storageObjectUpdatedAt?.toIso8601String());
-  writeNotNull('syncVersion', instance.syncVersion);
   writeNotNull('password', instance.password);
   return val;
 }

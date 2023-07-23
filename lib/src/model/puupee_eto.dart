@@ -20,6 +20,8 @@ class PuupeeEto {
 
      this.gid,
 
+     this.displayStyle,
+
      this.syncVersion,
 
      this.url,
@@ -61,8 +63,6 @@ class PuupeeEto {
      this.storageObjectCreatedAt,
 
      this.storageObjectUpdatedAt,
-
-     this.displayStyle,
 
      this.priority,
 
@@ -164,6 +164,18 @@ class PuupeeEto {
 
 
   String? gid;
+
+
+
+  @JsonKey(
+    
+    name: r'displayStyle',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? displayStyle;
 
 
 
@@ -416,18 +428,6 @@ class PuupeeEto {
 
 
   DateTime? storageObjectUpdatedAt;
-
-
-
-  @JsonKey(
-    
-    name: r'displayStyle',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? displayStyle;
 
 
 
@@ -974,6 +974,7 @@ class PuupeeEto {
   @override
   bool operator ==(Object other) => identical(this, other) || other is PuupeeEto &&
      other.gid == gid &&
+     other.displayStyle == displayStyle &&
      other.syncVersion == syncVersion &&
      other.url == url &&
      other.parentId == parentId &&
@@ -995,7 +996,6 @@ class PuupeeEto {
      other.storageClass == storageClass &&
      other.storageObjectCreatedAt == storageObjectCreatedAt &&
      other.storageObjectUpdatedAt == storageObjectUpdatedAt &&
-     other.displayStyle == displayStyle &&
      other.priority == priority &&
      other.doneAt == doneAt &&
      other.isDone == isDone &&
@@ -1045,6 +1045,7 @@ class PuupeeEto {
   @override
   int get hashCode =>
     gid.hashCode +
+    displayStyle.hashCode +
     syncVersion.hashCode +
     url.hashCode +
     parentId.hashCode +
@@ -1066,7 +1067,6 @@ class PuupeeEto {
     storageClass.hashCode +
     storageObjectCreatedAt.hashCode +
     storageObjectUpdatedAt.hashCode +
-    displayStyle.hashCode +
     priority.hashCode +
     doneAt.hashCode +
     isDone.hashCode +

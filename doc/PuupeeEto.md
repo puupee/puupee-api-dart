@@ -9,6 +9,7 @@ import 'package:puupee_api_client/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **gid** | **String** |  | [optional] 
+**displayStyle** | **String** |  | [optional] 
 **syncVersion** | **int** |  | [optional] 
 **url** | **String** |  | [optional] 
 **parentId** | **String** |  | [optional] 
@@ -30,7 +31,6 @@ Name | Type | Description | Notes
 **storageClass** | **String** |  | [optional] 
 **storageObjectCreatedAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **storageObjectUpdatedAt** | [**DateTime**](DateTime.md) |  | [optional] 
-**displayStyle** | **String** |  | [optional] 
 **priority** | **int** |  | [optional] 
 **doneAt** | [**DateTime**](DateTime.md) |  | [optional] 
 **isDone** | **bool** |  | [optional] 

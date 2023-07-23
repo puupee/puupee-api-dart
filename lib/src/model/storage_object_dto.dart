@@ -36,9 +36,11 @@ class StorageObjectDto {
 
      this.name,
 
-     this.key,
-
      this.url,
+
+     this.syncVersion,
+
+     this.key,
 
      this.size,
 
@@ -57,8 +59,6 @@ class StorageObjectDto {
      this.storageObjectCreatedAt,
 
      this.storageObjectUpdatedAt,
-
-     this.syncVersion,
 
      this.password,
   });
@@ -173,18 +173,6 @@ class StorageObjectDto {
 
   @JsonKey(
     
-    name: r'key',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? key;
-
-
-
-  @JsonKey(
-    
     name: r'url',
     required: false,
     includeIfNull: false
@@ -192,6 +180,30 @@ class StorageObjectDto {
 
 
   String? url;
+
+
+
+  @JsonKey(
+    
+    name: r'syncVersion',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  int? syncVersion;
+
+
+
+  @JsonKey(
+    
+    name: r'key',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? key;
 
 
 
@@ -305,18 +317,6 @@ class StorageObjectDto {
 
   @JsonKey(
     
-    name: r'syncVersion',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  int? syncVersion;
-
-
-
-  @JsonKey(
-    
     name: r'password',
     required: false,
     includeIfNull: false
@@ -338,8 +338,9 @@ class StorageObjectDto {
      other.deleterId == deleterId &&
      other.deletionTime == deletionTime &&
      other.name == name &&
-     other.key == key &&
      other.url == url &&
+     other.syncVersion == syncVersion &&
+     other.key == key &&
      other.size == size &&
      other.md5 == md5 &&
      other.sliceMd5 == sliceMd5 &&
@@ -349,7 +350,6 @@ class StorageObjectDto {
      other.storageClass == storageClass &&
      other.storageObjectCreatedAt == storageObjectCreatedAt &&
      other.storageObjectUpdatedAt == storageObjectUpdatedAt &&
-     other.syncVersion == syncVersion &&
      other.password == password;
 
   @override
@@ -363,8 +363,9 @@ class StorageObjectDto {
     deleterId.hashCode +
     deletionTime.hashCode +
     name.hashCode +
-    key.hashCode +
     url.hashCode +
+    syncVersion.hashCode +
+    key.hashCode +
     size.hashCode +
     md5.hashCode +
     sliceMd5.hashCode +
@@ -374,7 +375,6 @@ class StorageObjectDto {
     storageClass.hashCode +
     storageObjectCreatedAt.hashCode +
     storageObjectUpdatedAt.hashCode +
-    syncVersion.hashCode +
     password.hashCode;
 
   factory StorageObjectDto.fromJson(Map<String, dynamic> json) => _$StorageObjectDtoFromJson(json);

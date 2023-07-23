@@ -12,6 +12,11 @@ void main() {
       // TODO
     });
 
+    // String displayStyle
+    test('to test the property `displayStyle`', () async {
+      // TODO
+    });
+
     // int syncVersion
     test('to test the property `syncVersion`', () async {
       // TODO
@@ -114,11 +119,6 @@ void main() {
 
     // DateTime storageObjectUpdatedAt
     test('to test the property `storageObjectUpdatedAt`', () async {
-      // TODO
-    });
-
-    // String displayStyle
-    test('to test the property `displayStyle`', () async {
       // TODO
     });
 

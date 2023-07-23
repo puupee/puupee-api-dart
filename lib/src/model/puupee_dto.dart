@@ -21,6 +21,16 @@ class PuupeeDto {
 
      this.gid,
 
+     this.children,
+
+     this.displayStyle,
+
+     this.storageObjectId,
+
+     this.storageObject,
+
+     this.thumb,
+
      this.name,
 
      this.title,
@@ -37,8 +47,6 @@ class PuupeeDto {
 
      this.parentId,
 
-     this.children,
-
      this.key,
 
      this.url,
@@ -53,8 +61,6 @@ class PuupeeDto {
 
      this.contentType,
 
-     this.displayStyle,
-
      this.extension_,
 
      this.storageClass,
@@ -62,12 +68,6 @@ class PuupeeDto {
      this.storageObjectCreatedAt,
 
      this.storageObjectUpdatedAt,
-
-     this.storageObjectId,
-
-     this.storageObject,
-
-     this.thumb,
 
      this.priority,
 
@@ -178,6 +178,66 @@ class PuupeeDto {
 
   @JsonKey(
     
+    name: r'children',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  List<PuupeeDto>? children;
+
+
+
+  @JsonKey(
+    
+    name: r'displayStyle',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? displayStyle;
+
+
+
+  @JsonKey(
+    
+    name: r'storageObjectId',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? storageObjectId;
+
+
+
+  @JsonKey(
+    
+    name: r'storageObject',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  StorageObjectDto? storageObject;
+
+
+
+  @JsonKey(
+    
+    name: r'thumb',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  StorageObjectDto? thumb;
+
+
+
+  @JsonKey(
+    
     name: r'name',
     required: false,
     includeIfNull: false
@@ -274,18 +334,6 @@ class PuupeeDto {
 
   @JsonKey(
     
-    name: r'children',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  List<PuupeeDto>? children;
-
-
-
-  @JsonKey(
-    
     name: r'key',
     required: false,
     includeIfNull: false
@@ -370,18 +418,6 @@ class PuupeeDto {
 
   @JsonKey(
     
-    name: r'displayStyle',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? displayStyle;
-
-
-
-  @JsonKey(
-    
     name: r'extension',
     required: false,
     includeIfNull: false
@@ -425,42 +461,6 @@ class PuupeeDto {
 
 
   DateTime? storageObjectUpdatedAt;
-
-
-
-  @JsonKey(
-    
-    name: r'storageObjectId',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? storageObjectId;
-
-
-
-  @JsonKey(
-    
-    name: r'storageObject',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  StorageObjectDto? storageObject;
-
-
-
-  @JsonKey(
-    
-    name: r'thumb',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  StorageObjectDto? thumb;
 
 
 
@@ -1031,6 +1031,11 @@ class PuupeeDto {
   @override
   bool operator ==(Object other) => identical(this, other) || other is PuupeeDto &&
      other.gid == gid &&
+     other.children == children &&
+     other.displayStyle == displayStyle &&
+     other.storageObjectId == storageObjectId &&
+     other.storageObject == storageObject &&
+     other.thumb == thumb &&
      other.name == name &&
      other.title == title &&
      other.description == description &&
@@ -1039,7 +1044,6 @@ class PuupeeDto {
      other.format == format &&
      other.password == password &&
      other.parentId == parentId &&
-     other.children == children &&
      other.key == key &&
      other.url == url &&
      other.size == size &&
@@ -1047,14 +1051,10 @@ class PuupeeDto {
      other.sliceMd5 == sliceMd5 &&
      other.rapidCode == rapidCode &&
      other.contentType == contentType &&
-     other.displayStyle == displayStyle &&
      other.extension_ == extension_ &&
      other.storageClass == storageClass &&
      other.storageObjectCreatedAt == storageObjectCreatedAt &&
      other.storageObjectUpdatedAt == storageObjectUpdatedAt &&
-     other.storageObjectId == storageObjectId &&
-     other.storageObject == storageObject &&
-     other.thumb == thumb &&
      other.priority == priority &&
      other.doneAt == doneAt &&
      other.isDone == isDone &&
@@ -1106,6 +1106,11 @@ class PuupeeDto {
   @override
   int get hashCode =>
     gid.hashCode +
+    children.hashCode +
+    displayStyle.hashCode +
+    storageObjectId.hashCode +
+    storageObject.hashCode +
+    thumb.hashCode +
     name.hashCode +
     title.hashCode +
     description.hashCode +
@@ -1114,7 +1119,6 @@ class PuupeeDto {
     format.hashCode +
     password.hashCode +
     parentId.hashCode +
-    children.hashCode +
     key.hashCode +
     url.hashCode +
     size.hashCode +
@@ -1122,14 +1126,10 @@ class PuupeeDto {
     sliceMd5.hashCode +
     rapidCode.hashCode +
     contentType.hashCode +
-    displayStyle.hashCode +
     extension_.hashCode +
     storageClass.hashCode +
     storageObjectCreatedAt.hashCode +
     storageObjectUpdatedAt.hashCode +
-    storageObjectId.hashCode +
-    storageObject.hashCode +
-    thumb.hashCode +
     priority.hashCode +
     doneAt.hashCode +
     isDone.hashCode +

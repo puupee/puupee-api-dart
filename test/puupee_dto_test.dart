@@ -12,6 +12,31 @@ void main() {
       // TODO
     });
 
+    // List<PuupeeDto> children
+    test('to test the property `children`', () async {
+      // TODO
+    });
+
+    // String displayStyle
+    test('to test the property `displayStyle`', () async {
+      // TODO
+    });
+
+    // String storageObjectId
+    test('to test the property `storageObjectId`', () async {
+      // TODO
+    });
+
+    // StorageObjectDto storageObject
+    test('to test the property `storageObject`', () async {
+      // TODO
+    });
+
+    // StorageObjectDto thumb
+    test('to test the property `thumb`', () async {
+      // TODO
+    });
+
     // String name
     test('to test the property `name`', () async {
       // TODO
@@ -52,11 +77,6 @@ void main() {
       // TODO
     });
 
-    // List<PuupeeDto> children
-    test('to test the property `children`', () async {
-      // TODO
-    });
-
     // String key
     test('to test the property `key`', () async {
       // TODO
@@ -92,11 +112,6 @@ void main() {
       // TODO
     });
 
-    // String displayStyle
-    test('to test the property `displayStyle`', () async {
-      // TODO
-    });
-
     // String extension_
     test('to test the property `extension_`', () async {
       // TODO
@@ -114,21 +129,6 @@ void main() {
 
     // DateTime storageObjectUpdatedAt
     test('to test the property `storageObjectUpdatedAt`', () async {
-      // TODO
-    });
-
-    // String storageObjectId
-    test('to test the property `storageObjectId`', () async {
-      // TODO
-    });
-
-    // StorageObjectDto storageObject
-    test('to test the property `storageObject`', () async {
-      // TODO
-    });
-
-    // StorageObjectDto thumb
-    test('to test the property `thumb`', () async {
       // TODO
     });
 
