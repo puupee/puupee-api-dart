@@ -102,8 +102,8 @@ PuupeeEto _$PuupeeEtoFromJson(Map<String, dynamic> json) => $checkedCreate(
           transactionTime: $checkedConvert('transactionTime',
               (v) => v == null ? null : DateTime.parse(v as String)),
           id: $checkedConvert('id', (v) => v as String?),
-          thumbKey: $checkedConvert('thumbKey', (v) => v as bool?),
-          thumbMd5: $checkedConvert('thumbMd5', (v) => v as bool?),
+          thumbKey: $checkedConvert('thumbKey', (v) => v as String?),
+          thumbMd5: $checkedConvert('thumbMd5', (v) => v as String?),
           thumbSliceMd5: $checkedConvert('thumbSliceMd5', (v) => v as String?),
           thumbRapidCode:
               $checkedConvert('thumbRapidCode', (v) => v as String?),

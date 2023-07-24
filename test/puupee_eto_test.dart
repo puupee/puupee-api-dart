@@ -347,12 +347,12 @@ void main() {
       // TODO
     });
 
-    // bool thumbKey
+    // String thumbKey
     test('to test the property `thumbKey`', () async {
       // TODO
     });
 
-    // bool thumbMd5
+    // String thumbMd5
     test('to test the property `thumbMd5`', () async {
       // TODO
     });

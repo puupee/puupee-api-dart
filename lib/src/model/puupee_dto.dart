@@ -1050,7 +1050,7 @@ class PuupeeDto {
   )
 
 
-  bool? thumbKey;
+  String? thumbKey;
 
 
 
@@ -1062,7 +1062,7 @@ class PuupeeDto {
   )
 
 
-  bool? thumbMd5;
+  String? thumbMd5;
 
 
 
