@@ -367,5 +367,40 @@ void main() {
       // TODO
     });
 
+    // bool thumbKey
+    test('to test the property `thumbKey`', () async {
+      // TODO
+    });
+
+    // bool thumbMd5
+    test('to test the property `thumbMd5`', () async {
+      // TODO
+    });
+
+    // String thumbSliceMd5
+    test('to test the property `thumbSliceMd5`', () async {
+      // TODO
+    });
+
+    // String thumbRapidCode
+    test('to test the property `thumbRapidCode`', () async {
+      // TODO
+    });
+
+    // int thumbSize
+    test('to test the property `thumbSize`', () async {
+      // TODO
+    });
+
+    // int thumbWidth
+    test('to test the property `thumbWidth`', () async {
+      // TODO
+    });
+
+    // int thumbHeight
+    test('to test the property `thumbHeight`', () async {
+      // TODO
+    });
+
   });
 }

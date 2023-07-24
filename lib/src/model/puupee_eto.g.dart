@@ -102,6 +102,14 @@ PuupeeEto _$PuupeeEtoFromJson(Map<String, dynamic> json) => $checkedCreate(
           transactionTime: $checkedConvert('transactionTime',
               (v) => v == null ? null : DateTime.parse(v as String)),
           id: $checkedConvert('id', (v) => v as String?),
+          thumbKey: $checkedConvert('thumbKey', (v) => v as bool?),
+          thumbMd5: $checkedConvert('thumbMd5', (v) => v as bool?),
+          thumbSliceMd5: $checkedConvert('thumbSliceMd5', (v) => v as String?),
+          thumbRapidCode:
+              $checkedConvert('thumbRapidCode', (v) => v as String?),
+          thumbSize: $checkedConvert('thumbSize', (v) => v as int?),
+          thumbWidth: $checkedConvert('thumbWidth', (v) => v as int?),
+          thumbHeight: $checkedConvert('thumbHeight', (v) => v as int?),
         );
         return val;
       },
@@ -188,5 +196,12 @@ Map<String, dynamic> _$PuupeeEtoToJson(PuupeeEto instance) {
   writeNotNull('merchantOrderId', instance.merchantOrderId);
   writeNotNull('transactionTime', instance.transactionTime?.toIso8601String());
   writeNotNull('id', instance.id);
+  writeNotNull('thumbKey', instance.thumbKey);
+  writeNotNull('thumbMd5', instance.thumbMd5);
+  writeNotNull('thumbSliceMd5', instance.thumbSliceMd5);
+  writeNotNull('thumbRapidCode', instance.thumbRapidCode);
+  writeNotNull('thumbSize', instance.thumbSize);
+  writeNotNull('thumbWidth', instance.thumbWidth);
+  writeNotNull('thumbHeight', instance.thumbHeight);
   return val;
 }

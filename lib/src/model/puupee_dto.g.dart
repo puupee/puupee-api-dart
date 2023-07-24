@@ -119,6 +119,14 @@ PuupeeDto _$PuupeeDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
           deletionTime: $checkedConvert('deletionTime',
               (v) => v == null ? null : DateTime.parse(v as String)),
           isDeleted: $checkedConvert('isDeleted', (v) => v as bool?),
+          thumbKey: $checkedConvert('thumbKey', (v) => v as bool?),
+          thumbMd5: $checkedConvert('thumbMd5', (v) => v as bool?),
+          thumbSliceMd5: $checkedConvert('thumbSliceMd5', (v) => v as String?),
+          thumbRapidCode:
+              $checkedConvert('thumbRapidCode', (v) => v as String?),
+          thumbSize: $checkedConvert('thumbSize', (v) => v as int?),
+          thumbWidth: $checkedConvert('thumbWidth', (v) => v as int?),
+          thumbHeight: $checkedConvert('thumbHeight', (v) => v as int?),
         );
         return val;
       },
@@ -209,5 +217,12 @@ Map<String, dynamic> _$PuupeeDtoToJson(PuupeeDto instance) {
   writeNotNull('deleterId', instance.deleterId);
   writeNotNull('deletionTime', instance.deletionTime?.toIso8601String());
   writeNotNull('isDeleted', instance.isDeleted);
+  writeNotNull('thumbKey', instance.thumbKey);
+  writeNotNull('thumbMd5', instance.thumbMd5);
+  writeNotNull('thumbSliceMd5', instance.thumbSliceMd5);
+  writeNotNull('thumbRapidCode', instance.thumbRapidCode);
+  writeNotNull('thumbSize', instance.thumbSize);
+  writeNotNull('thumbWidth', instance.thumbWidth);
+  writeNotNull('thumbHeight', instance.thumbHeight);
   return val;
 }

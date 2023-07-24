@@ -76,6 +76,13 @@ Name | Type | Description | Notes
 **merchantOrderId** | **String** |  | [optional] 
 **transactionTime** | [**DateTime**](DateTime.md) |  | [optional] 
 **id** | **String** |  | [optional] 
+**thumbKey** | **bool** |  | [optional] 
+**thumbMd5** | **bool** |  | [optional] 
+**thumbSliceMd5** | **String** |  | [optional] 
+**thumbRapidCode** | **String** |  | [optional] 
+**thumbSize** | **int** |  | [optional] 
+**thumbWidth** | **int** |  | [optional] 
+**thumbHeight** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

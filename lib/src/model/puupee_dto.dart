@@ -162,6 +162,20 @@ class PuupeeDto {
      this.deletionTime,
 
      this.isDeleted,
+
+     this.thumbKey,
+
+     this.thumbMd5,
+
+     this.thumbSliceMd5,
+
+     this.thumbRapidCode,
+
+     this.thumbSize,
+
+     this.thumbWidth,
+
+     this.thumbHeight,
   });
 
   @JsonKey(
@@ -1028,6 +1042,90 @@ class PuupeeDto {
 
 
 
+  @JsonKey(
+    
+    name: r'thumbKey',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  bool? thumbKey;
+
+
+
+  @JsonKey(
+    
+    name: r'thumbMd5',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  bool? thumbMd5;
+
+
+
+  @JsonKey(
+    
+    name: r'thumbSliceMd5',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? thumbSliceMd5;
+
+
+
+  @JsonKey(
+    
+    name: r'thumbRapidCode',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? thumbRapidCode;
+
+
+
+  @JsonKey(
+    
+    name: r'thumbSize',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  int? thumbSize;
+
+
+
+  @JsonKey(
+    
+    name: r'thumbWidth',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  int? thumbWidth;
+
+
+
+  @JsonKey(
+    
+    name: r'thumbHeight',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  int? thumbHeight;
+
+
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is PuupeeDto &&
      other.gid == gid &&
@@ -1101,7 +1199,14 @@ class PuupeeDto {
      other.lastModificationTime == lastModificationTime &&
      other.deleterId == deleterId &&
      other.deletionTime == deletionTime &&
-     other.isDeleted == isDeleted;
+     other.isDeleted == isDeleted &&
+     other.thumbKey == thumbKey &&
+     other.thumbMd5 == thumbMd5 &&
+     other.thumbSliceMd5 == thumbSliceMd5 &&
+     other.thumbRapidCode == thumbRapidCode &&
+     other.thumbSize == thumbSize &&
+     other.thumbWidth == thumbWidth &&
+     other.thumbHeight == thumbHeight;
 
   @override
   int get hashCode =>
@@ -1176,7 +1281,14 @@ class PuupeeDto {
     lastModificationTime.hashCode +
     deleterId.hashCode +
     deletionTime.hashCode +
-    isDeleted.hashCode;
+    isDeleted.hashCode +
+    thumbKey.hashCode +
+    thumbMd5.hashCode +
+    thumbSliceMd5.hashCode +
+    thumbRapidCode.hashCode +
+    thumbSize.hashCode +
+    thumbWidth.hashCode +
+    thumbHeight.hashCode;
 
   factory PuupeeDto.fromJson(Map<String, dynamic> json) => _$PuupeeDtoFromJson(json);
 

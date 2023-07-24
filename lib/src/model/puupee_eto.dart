@@ -153,6 +153,20 @@ class PuupeeEto {
      this.transactionTime,
 
      this.id,
+
+     this.thumbKey,
+
+     this.thumbMd5,
+
+     this.thumbSliceMd5,
+
+     this.thumbRapidCode,
+
+     this.thumbSize,
+
+     this.thumbWidth,
+
+     this.thumbHeight,
   });
 
   @JsonKey(
@@ -971,6 +985,90 @@ class PuupeeEto {
 
 
 
+  @JsonKey(
+    
+    name: r'thumbKey',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  bool? thumbKey;
+
+
+
+  @JsonKey(
+    
+    name: r'thumbMd5',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  bool? thumbMd5;
+
+
+
+  @JsonKey(
+    
+    name: r'thumbSliceMd5',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? thumbSliceMd5;
+
+
+
+  @JsonKey(
+    
+    name: r'thumbRapidCode',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? thumbRapidCode;
+
+
+
+  @JsonKey(
+    
+    name: r'thumbSize',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  int? thumbSize;
+
+
+
+  @JsonKey(
+    
+    name: r'thumbWidth',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  int? thumbWidth;
+
+
+
+  @JsonKey(
+    
+    name: r'thumbHeight',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  int? thumbHeight;
+
+
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is PuupeeEto &&
      other.gid == gid &&
@@ -1040,7 +1138,14 @@ class PuupeeEto {
      other.transactionId == transactionId &&
      other.merchantOrderId == merchantOrderId &&
      other.transactionTime == transactionTime &&
-     other.id == id;
+     other.id == id &&
+     other.thumbKey == thumbKey &&
+     other.thumbMd5 == thumbMd5 &&
+     other.thumbSliceMd5 == thumbSliceMd5 &&
+     other.thumbRapidCode == thumbRapidCode &&
+     other.thumbSize == thumbSize &&
+     other.thumbWidth == thumbWidth &&
+     other.thumbHeight == thumbHeight;
 
   @override
   int get hashCode =>
@@ -1111,7 +1216,14 @@ class PuupeeEto {
     transactionId.hashCode +
     merchantOrderId.hashCode +
     transactionTime.hashCode +
-    id.hashCode;
+    id.hashCode +
+    thumbKey.hashCode +
+    thumbMd5.hashCode +
+    thumbSliceMd5.hashCode +
+    thumbRapidCode.hashCode +
+    thumbSize.hashCode +
+    thumbWidth.hashCode +
+    thumbHeight.hashCode;
 
   factory PuupeeEto.fromJson(Map<String, dynamic> json) => _$PuupeeEtoFromJson(json);
 
