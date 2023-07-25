@@ -17,8 +17,8 @@ void main() {
       // TODO
     });
 
-    //Future delete() async
-    test('test delete', () async {
+    //Future destroyAccount({ AccountDeletionDto body }) async
+    test('test destroyAccount', () async {
       // TODO
     });
 
@@ -34,6 +34,11 @@ void main() {
 
     //Future sendChangePasswordCode({ SendChangePasswordCodeDto body }) async
     test('test sendChangePasswordCode', () async {
+      // TODO
+    });
+
+    //Future sendDeletionCode({ SendDeletionCodeDto body }) async
+    test('test sendDeletionCode', () async {
       // TODO
     });
 
