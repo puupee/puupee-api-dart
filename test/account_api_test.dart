@@ -12,6 +12,11 @@ void main() {
       // TODO
     });
 
+    //Future changePassword({ ChangePasswordDto body }) async
+    test('test changePassword', () async {
+      // TODO
+    });
+
     //Future delete() async
     test('test delete', () async {
       // TODO
@@ -24,6 +29,11 @@ void main() {
 
     //Future resetPassword({ ResetPasswordDto body }) async
     test('test resetPassword', () async {
+      // TODO
+    });
+
+    //Future sendChangePasswordCode({ SendChangePasswordCodeDto body }) async
+    test('test sendChangePasswordCode', () async {
       // TODO
     });
 
