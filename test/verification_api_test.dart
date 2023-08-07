@@ -12,5 +12,10 @@ void main() {
       // TODO
     });
 
+    //Future sendCodeAnonymous({ SendVerificationCodeDto body }) async
+    test('test sendCodeAnonymous', () async {
+      // TODO
+    });
+
   });
 }
