@@ -206,8 +206,6 @@ export 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 export 'package:puupee_api_client/src/model/remote_service_validation_error_info.dart';
 export 'package:puupee_api_client/src/model/reset_password_dto.dart';
 export 'package:puupee_api_client/src/model/return_value_api_description_model.dart';
-export 'package:puupee_api_client/src/model/send_change_password_code_dto.dart';
-export 'package:puupee_api_client/src/model/send_deletion_code_dto.dart';
 export 'package:puupee_api_client/src/model/send_password_reset_code_dto.dart';
 export 'package:puupee_api_client/src/model/send_test_email_input.dart';
 export 'package:puupee_api_client/src/model/send_verification_code_dto.dart';

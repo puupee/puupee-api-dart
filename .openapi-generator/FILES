@@ -189,8 +189,6 @@ doc/RemoteServiceValidationErrorInfo.md
 doc/ResetPasswordDto.md
 doc/ReturnValueApiDescriptionModel.md
 doc/RoleApi.md
-doc/SendChangePasswordCodeDto.md
-doc/SendDeletionCodeDto.md
 doc/SendPasswordResetCodeDto.md
 doc/SendTestEmailInput.md
 doc/SendVerificationCodeDto.md
@@ -443,8 +441,6 @@ lib/src/model/remote_service_error_response.dart
 lib/src/model/remote_service_validation_error_info.dart
 lib/src/model/reset_password_dto.dart
 lib/src/model/return_value_api_description_model.dart
-lib/src/model/send_change_password_code_dto.dart
-lib/src/model/send_deletion_code_dto.dart
 lib/src/model/send_password_reset_code_dto.dart
 lib/src/model/send_test_email_input.dart
 lib/src/model/send_verification_code_dto.dart
@@ -670,8 +666,6 @@ test/remote_service_validation_error_info_test.dart
 test/reset_password_dto_test.dart
 test/return_value_api_description_model_test.dart
 test/role_api_test.dart
-test/send_change_password_code_dto_test.dart
-test/send_deletion_code_dto_test.dart
 test/send_password_reset_code_dto_test.dart
 test/send_test_email_input_test.dart
 test/send_verification_code_dto_test.dart

@@ -32,16 +32,6 @@ void main() {
       // TODO
     });
 
-    //Future sendChangePasswordCode({ SendChangePasswordCodeDto body }) async
-    test('test sendChangePasswordCode', () async {
-      // TODO
-    });
-
-    //Future sendDeletionCode({ SendDeletionCodeDto body }) async
-    test('test sendDeletionCode', () async {
-      // TODO
-    });
-
     //Future sendPasswordResetCode({ SendPasswordResetCodeDto body }) async
     test('test sendPasswordResetCode', () async {
       // TODO

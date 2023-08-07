@@ -14,8 +14,6 @@ Method | HTTP request | Description
 [**destroyAccount**](AccountApi.md#destroyaccount) | **POST** /api/app/account/destroy-account | 
 [**register**](AccountApi.md#register) | **POST** /api/account/register | 
 [**resetPassword**](AccountApi.md#resetpassword) | **POST** /api/account/reset-password | 
-[**sendChangePasswordCode**](AccountApi.md#sendchangepasswordcode) | **POST** /api/app/account/send-change-password-code | 
-[**sendDeletionCode**](AccountApi.md#senddeletioncode) | **POST** /api/app/account/send-deletion-code | 
 [**sendPasswordResetCode**](AccountApi.md#sendpasswordresetcode) | **POST** /api/account/send-password-reset-code | 
 [**verifyPasswordResetToken**](AccountApi.md#verifypasswordresettoken) | **POST** /api/account/verify-password-reset-token | 
 
@@ -212,90 +210,6 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**ResetPasswordDto**](ResetPasswordDto.md)|  | [optional] 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **sendChangePasswordCode**
-> sendChangePasswordCode(body)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getAccountApi();
-final SendChangePasswordCodeDto body = ; // SendChangePasswordCodeDto | 
-
-try {
-    api.sendChangePasswordCode(body);
-} catch on DioError (e) {
-    print('Exception when calling AccountApi->sendChangePasswordCode: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**SendChangePasswordCodeDto**](SendChangePasswordCodeDto.md)|  | [optional] 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **sendDeletionCode**
-> sendDeletionCode(body)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getAccountApi();
-final SendDeletionCodeDto body = ; // SendDeletionCodeDto | 
-
-try {
-    api.sendDeletionCode(body);
-} catch on DioError (e) {
-    print('Exception when calling AccountApi->sendDeletionCode: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**SendDeletionCodeDto**](SendDeletionCodeDto.md)|  | [optional] 
 
 ### Return type
 

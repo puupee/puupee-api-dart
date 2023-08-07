@@ -153,8 +153,6 @@ import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 import 'package:puupee_api_client/src/model/remote_service_validation_error_info.dart';
 import 'package:puupee_api_client/src/model/reset_password_dto.dart';
 import 'package:puupee_api_client/src/model/return_value_api_description_model.dart';
-import 'package:puupee_api_client/src/model/send_change_password_code_dto.dart';
-import 'package:puupee_api_client/src/model/send_deletion_code_dto.dart';
 import 'package:puupee_api_client/src/model/send_password_reset_code_dto.dart';
 import 'package:puupee_api_client/src/model/send_test_email_input.dart';
 import 'package:puupee_api_client/src/model/send_verification_code_dto.dart';
@@ -524,10 +522,6 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return ResetPasswordDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ReturnValueApiDescriptionModel':
           return ReturnValueApiDescriptionModel.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'SendChangePasswordCodeDto':
-          return SendChangePasswordCodeDto.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'SendDeletionCodeDto':
-          return SendDeletionCodeDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'SendPasswordResetCodeDto':
           return SendPasswordResetCodeDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'SendTestEmailInput':
