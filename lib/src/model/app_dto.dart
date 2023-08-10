@@ -74,6 +74,10 @@ class AppDto {
 
      this.specJsonSchema,
 
+     this.defaultStorageSize,
+
+     this.defaultSingleFileMaxSize,
+
      this.latestReleases,
 
      this.creator,
@@ -397,6 +401,30 @@ class AppDto {
 
   @JsonKey(
     
+    name: r'defaultStorageSize',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  int? defaultStorageSize;
+
+
+
+  @JsonKey(
+    
+    name: r'defaultSingleFileMaxSize',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  int? defaultSingleFileMaxSize;
+
+
+
+  @JsonKey(
+    
     name: r'latestReleases',
     required: false,
     includeIfNull: false
@@ -471,6 +499,8 @@ class AppDto {
      other.subscriptionPlatforms == subscriptionPlatforms &&
      other.freePlatforms == freePlatforms &&
      other.specJsonSchema == specJsonSchema &&
+     other.defaultStorageSize == defaultStorageSize &&
+     other.defaultSingleFileMaxSize == defaultSingleFileMaxSize &&
      other.latestReleases == latestReleases &&
      other.creator == creator &&
      other.features == features &&
@@ -504,6 +534,8 @@ class AppDto {
     subscriptionPlatforms.hashCode +
     freePlatforms.hashCode +
     specJsonSchema.hashCode +
+    defaultStorageSize.hashCode +
+    defaultSingleFileMaxSize.hashCode +
     latestReleases.hashCode +
     creator.hashCode +
     features.hashCode +

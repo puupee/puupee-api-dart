@@ -34,6 +34,8 @@ Name | Type | Description | Notes
 **subscriptionPlatforms** | **String** |  | [optional] 
 **freePlatforms** | **String** |  | [optional] 
 **specJsonSchema** | **String** |  | [optional] 
+**defaultStorageSize** | **int** |  | [optional] 
+**defaultSingleFileMaxSize** | **int** |  | [optional] 
 **latestReleases** | [**List&lt;AppReleaseDto&gt;**](AppReleaseDto.md) |  | [optional] 
 **creator** | [**IdentityUserDto**](IdentityUserDto.md) |  | [optional] 
 **features** | [**List&lt;AppFeatureDto&gt;**](AppFeatureDto.md) |  | [optional] 

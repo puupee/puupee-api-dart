@@ -74,6 +74,10 @@ class AppWithUserDto {
 
      this.specJsonSchema,
 
+     this.defaultStorageSize,
+
+     this.defaultSingleFileMaxSize,
+
      this.latestReleases,
 
      this.creator,
@@ -399,6 +403,30 @@ class AppWithUserDto {
 
   @JsonKey(
     
+    name: r'defaultStorageSize',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  int? defaultStorageSize;
+
+
+
+  @JsonKey(
+    
+    name: r'defaultSingleFileMaxSize',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  int? defaultSingleFileMaxSize;
+
+
+
+  @JsonKey(
+    
     name: r'latestReleases',
     required: false,
     includeIfNull: false
@@ -485,6 +513,8 @@ class AppWithUserDto {
      other.subscriptionPlatforms == subscriptionPlatforms &&
      other.freePlatforms == freePlatforms &&
      other.specJsonSchema == specJsonSchema &&
+     other.defaultStorageSize == defaultStorageSize &&
+     other.defaultSingleFileMaxSize == defaultSingleFileMaxSize &&
      other.latestReleases == latestReleases &&
      other.creator == creator &&
      other.features == features &&
@@ -519,6 +549,8 @@ class AppWithUserDto {
     subscriptionPlatforms.hashCode +
     freePlatforms.hashCode +
     specJsonSchema.hashCode +
+    defaultStorageSize.hashCode +
+    defaultSingleFileMaxSize.hashCode +
     latestReleases.hashCode +
     creator.hashCode +
     features.hashCode +

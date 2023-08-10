@@ -137,6 +137,16 @@ void main() {
       // TODO
     });
 
+    // int defaultStorageSize
+    test('to test the property `defaultStorageSize`', () async {
+      // TODO
+    });
+
+    // int defaultSingleFileMaxSize
+    test('to test the property `defaultSingleFileMaxSize`', () async {
+      // TODO
+    });
+
     // List<AppReleaseDto> latestReleases
     test('to test the property `latestReleases`', () async {
       // TODO

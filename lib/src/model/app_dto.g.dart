@@ -45,6 +45,10 @@ AppDto _$AppDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
           freePlatforms: $checkedConvert('freePlatforms', (v) => v as String?),
           specJsonSchema:
               $checkedConvert('specJsonSchema', (v) => v as String?),
+          defaultStorageSize:
+              $checkedConvert('defaultStorageSize', (v) => v as int?),
+          defaultSingleFileMaxSize:
+              $checkedConvert('defaultSingleFileMaxSize', (v) => v as int?),
           latestReleases: $checkedConvert(
               'latestReleases',
               (v) => (v as List<dynamic>?)
@@ -108,6 +112,8 @@ Map<String, dynamic> _$AppDtoToJson(AppDto instance) {
   writeNotNull('subscriptionPlatforms', instance.subscriptionPlatforms);
   writeNotNull('freePlatforms', instance.freePlatforms);
   writeNotNull('specJsonSchema', instance.specJsonSchema);
+  writeNotNull('defaultStorageSize', instance.defaultStorageSize);
+  writeNotNull('defaultSingleFileMaxSize', instance.defaultSingleFileMaxSize);
   writeNotNull('latestReleases',
       instance.latestReleases?.map((e) => e.toJson()).toList());
   writeNotNull('creator', instance.creator?.toJson());
