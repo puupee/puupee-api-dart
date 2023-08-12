@@ -47,6 +47,11 @@ void main() {
       // TODO
     });
 
+    // String key
+    test('to test the property `key`', () async {
+      // TODO
+    });
+
     // String name
     test('to test the property `name`', () async {
       // TODO

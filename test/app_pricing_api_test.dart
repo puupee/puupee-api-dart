@@ -32,6 +32,11 @@ void main() {
       // TODO
     });
 
+    //Future<List<AppPricingItemDto>> getPricingItemsByAppId(String appId) async
+    test('test getPricingItemsByAppId', () async {
+      // TODO
+    });
+
     //Future<AppPricingDto> update(String id, { CreateOrUpdateAppPricingDto body }) async
     test('test update', () async {
       // TODO

@@ -34,6 +34,8 @@ class AppPricingItemDto {
 
      this.deletionTime,
 
+     this.key,
+
      this.name,
 
      this.description,
@@ -145,6 +147,18 @@ class AppPricingItemDto {
 
   @JsonKey(
     
+    name: r'key',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  String? key;
+
+
+
+  @JsonKey(
+    
     name: r'name',
     required: false,
     includeIfNull: false
@@ -225,6 +239,7 @@ class AppPricingItemDto {
      other.isDeleted == isDeleted &&
      other.deleterId == deleterId &&
      other.deletionTime == deletionTime &&
+     other.key == key &&
      other.name == name &&
      other.description == description &&
      other.linkUrl == linkUrl &&
@@ -242,6 +257,7 @@ class AppPricingItemDto {
     isDeleted.hashCode +
     deleterId.hashCode +
     deletionTime.hashCode +
+    key.hashCode +
     name.hashCode +
     description.hashCode +
     linkUrl.hashCode +
