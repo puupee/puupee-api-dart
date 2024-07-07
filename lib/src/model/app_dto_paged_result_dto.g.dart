@@ -18,7 +18,8 @@ AppDtoPagedResultDto _$AppDtoPagedResultDtoFromJson(
               (v) => (v as List<dynamic>?)
                   ?.map((e) => AppDto.fromJson(e as Map<String, dynamic>))
                   .toList()),
-          totalCount: $checkedConvert('totalCount', (v) => v as int?),
+          totalCount:
+              $checkedConvert('totalCount', (v) => (v as num?)?.toInt()),
         );
         return val;
       },

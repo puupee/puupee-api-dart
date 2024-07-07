@@ -14,7 +14,7 @@ CreateOrUpdateAppUserScoreDto _$CreateOrUpdateAppUserScoreDtoFromJson(
       ($checkedConvert) {
         final val = CreateOrUpdateAppUserScoreDto(
           appId: $checkedConvert('appId', (v) => v as String?),
-          score: $checkedConvert('score', (v) => v as int?),
+          score: $checkedConvert('score', (v) => (v as num?)?.toInt()),
           comment: $checkedConvert('comment', (v) => v as String?),
         );
         return val;

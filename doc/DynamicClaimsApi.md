@@ -1,4 +1,4 @@
-# puupee_api_client.api.TestApi
+# puupee_api_client.api.DynamicClaimsApi
 
 ## Load the API package
 ```dart
@@ -9,11 +9,11 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getTestDate**](TestApi.md#gettestdate) | **GET** /api/Test/datetime | 
+[**refresh**](DynamicClaimsApi.md#refresh) | **POST** /api/account/dynamic-claims/refresh | 
 
 
-# **getTestDate**
-> TestDateTime getTestDate()
+# **refresh**
+> refresh()
 
 
 
@@ -23,13 +23,12 @@ import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
-final api = PuupeeApiClient().getTestApi();
+final api = PuupeeApiClient().getDynamicClaimsApi();
 
 try {
-    final response = api.getTestDate();
-    print(response);
+    api.refresh();
 } catch on DioError (e) {
-    print('Exception when calling TestApi->getTestDate: $e\n');
+    print('Exception when calling DynamicClaimsApi->refresh: $e\n');
 }
 ```
 
@@ -38,7 +37,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**TestDateTime**](TestDateTime.md)
+void (empty response body)
 
 ### Authorization
 

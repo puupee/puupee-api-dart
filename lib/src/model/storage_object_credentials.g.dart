@@ -23,7 +23,8 @@ StorageObjectCredentials _$StorageObjectCredentialsFromJson(
           accessKeySecret:
               $checkedConvert('accessKeySecret', (v) => v as String?),
           expiration: $checkedConvert('expiration', (v) => v as String?),
-          expiredTime: $checkedConvert('expiredTime', (v) => v as int?),
+          expiredTime:
+              $checkedConvert('expiredTime', (v) => (v as num?)?.toInt()),
           appId: $checkedConvert('appId', (v) => v as String?),
         );
         return val;

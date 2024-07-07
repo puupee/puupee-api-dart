@@ -35,7 +35,8 @@ VerifyReceiptDto _$VerifyReceiptDtoFromJson(Map<String, dynamic> json) =>
               (v) => v == null ? null : DateTime.parse(v as String)),
           orderId: $checkedConvert('orderId', (v) => v as String),
           receiptData: $checkedConvert('receiptData', (v) => v as String),
-          platform: $checkedConvert('platform', (v) => v as String),
+          platform: $checkedConvert(
+              'platform', (v) => $enumDecode(_$PlatformEnumMap, v)),
           deviceToken: $checkedConvert('deviceToken', (v) => v as String),
         );
         return val;
@@ -62,7 +63,20 @@ Map<String, dynamic> _$VerifyReceiptDtoToJson(VerifyReceiptDto instance) {
   writeNotNull('deletionTime', instance.deletionTime?.toIso8601String());
   val['orderId'] = instance.orderId;
   val['receiptData'] = instance.receiptData;
-  val['platform'] = instance.platform;
+  val['platform'] = _$PlatformEnumMap[instance.platform]!;
   val['deviceToken'] = instance.deviceToken;
   return val;
 }
+
+const _$PlatformEnumMap = {
+  Platform.none: 'None',
+  Platform.unknown: 'Unknown',
+  Platform.android: 'Android',
+  Platform.IOS: 'IOS',
+  Platform.macOS: 'MacOS',
+  Platform.windows: 'Windows',
+  Platform.linux: 'Linux',
+  Platform.web: 'Web',
+  Platform.service: 'Service',
+  Platform.other: 'Other',
+};

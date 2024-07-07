@@ -12,11 +12,13 @@ void main() {
       // TODO
     });
 
+    // 版本名称
     // String versionName
     test('to test the property `versionName`', () async {
       // TODO
     });
 
+    // 构建编号
     // int versionCode
     test('to test the property `versionCode`', () async {
       // TODO
@@ -27,7 +29,7 @@ void main() {
       // TODO
     });
 
-    // String platform
+    // Platform platform
     test('to test the property `platform`', () async {
       // TODO
     });
@@ -57,8 +59,8 @@ void main() {
       // TODO
     });
 
-    // String productType
-    test('to test the property `productType`', () async {
+    // ArtifactType artifactType
+    test('to test the property `artifactType`', () async {
       // TODO
     });
 

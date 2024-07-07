@@ -15,7 +15,7 @@ AppleVerifyReceiptResult _$AppleVerifyReceiptResultFromJson(
         final val = AppleVerifyReceiptResult(
           environment: $checkedConvert('environment', (v) => v as String?),
           isRetryable: $checkedConvert('is_retryable', (v) => v as bool?),
-          status: $checkedConvert('status', (v) => v as int?),
+          status: $checkedConvert('status', (v) => (v as num?)?.toInt()),
           latestReceiptInfo: $checkedConvert(
               'latest_receipt_info',
               (v) => (v as List<dynamic>?)

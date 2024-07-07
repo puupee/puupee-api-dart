@@ -47,11 +47,13 @@ void main() {
       // TODO
     });
 
+    // 是否可用
     // bool isAvailable
     test('to test the property `isAvailable`', () async {
       // TODO
     });
 
+    // 是否有值
     // bool hasValue
     test('to test the property `hasValue`', () async {
       // TODO
@@ -72,6 +74,7 @@ void main() {
       // TODO
     });
 
+    // 数字值类型, FileSize: 文件大小, Count: 数目
     // String intValueType
     test('to test the property `intValueType`', () async {
       // TODO

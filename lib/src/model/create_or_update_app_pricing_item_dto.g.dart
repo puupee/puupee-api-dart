@@ -17,7 +17,7 @@ CreateOrUpdateAppPricingItemDto _$CreateOrUpdateAppPricingItemDtoFromJson(
           description: $checkedConvert('description', (v) => v as String?),
           linkUrl: $checkedConvert('linkUrl', (v) => v as String?),
           display: $checkedConvert('display', (v) => v as String?),
-          sortIndex: $checkedConvert('sortIndex', (v) => v as int?),
+          sortIndex: $checkedConvert('sortIndex', (v) => (v as num?)?.toInt()),
         );
         return val;
       },

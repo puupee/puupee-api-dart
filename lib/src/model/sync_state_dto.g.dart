@@ -14,7 +14,7 @@ SyncStateDto _$SyncStateDtoFromJson(Map<String, dynamic> json) =>
         final val = SyncStateDto(
           lastSyncAt: $checkedConvert('lastSyncAt',
               (v) => v == null ? null : DateTime.parse(v as String)),
-          version: $checkedConvert('version', (v) => v as int?),
+          version: $checkedConvert('version', (v) => (v as num?)?.toInt()),
         );
         return val;
       },

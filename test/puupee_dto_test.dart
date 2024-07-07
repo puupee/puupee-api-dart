@@ -17,7 +17,7 @@ void main() {
       // TODO
     });
 
-    // String displayStyle
+    // DisplayStyle displayStyle
     test('to test the property `displayStyle`', () async {
       // TODO
     });
@@ -132,7 +132,7 @@ void main() {
       // TODO
     });
 
-    // int priority
+    // Priority priority
     test('to test the property `priority`', () async {
       // TODO
     });
@@ -162,12 +162,12 @@ void main() {
       // TODO
     });
 
-    // String notifyTimingType
+    // TodoNotifyTimingType notifyTimingType
     test('to test the property `notifyTimingType`', () async {
       // TODO
     });
 
-    // String notifyTimingUnit
+    // TodoNotifyTimingUnit notifyTimingUnit
     test('to test the property `notifyTimingUnit`', () async {
       // TODO
     });
@@ -177,7 +177,7 @@ void main() {
       // TODO
     });
 
-    // String repeat
+    // TodoRepeat repeat
     test('to test the property `repeat`', () async {
       // TODO
     });

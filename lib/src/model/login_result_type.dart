@@ -7,14 +7,14 @@ import 'package:json_annotation/json_annotation.dart';
 
 
 enum LoginResultType {
-  @JsonValue(r'Success')
-  success,
-  @JsonValue(r'InvalidUserNameOrPassword')
-  invalidUserNameOrPassword,
-  @JsonValue(r'NotAllowed')
-  notAllowed,
-  @JsonValue(r'LockedOut')
-  lockedOut,
-  @JsonValue(r'RequiresTwoFactor')
-  requiresTwoFactor,
+  @JsonValue(1)
+  number1,
+  @JsonValue(2)
+  number2,
+  @JsonValue(3)
+  number3,
+  @JsonValue(4)
+  number4,
+  @JsonValue(5)
+  number5,
 }

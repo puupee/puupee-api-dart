@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **tpnsToken** | **String** |  | [optional] 
 **isPhysicalDevice** | **bool** |  | [optional] 
 **name** | **String** |  | [optional] 
-**platform** | **String** |  | [optional] 
+**platform** | [**Platform**](Platform.md) |  | [optional] 
 **brand** | **String** |  | [optional] 
 **systemVersion** | **String** |  | [optional] 
 

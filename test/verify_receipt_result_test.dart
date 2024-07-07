@@ -72,7 +72,7 @@ void main() {
       // TODO
     });
 
-    // String platform
+    // Platform platform
     test('to test the property `platform`', () async {
       // TODO
     });

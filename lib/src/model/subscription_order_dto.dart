@@ -3,6 +3,8 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:puupee_api_client/src/model/subscription_order_status.dart';
+import 'package:puupee_api_client/src/model/subscription_order_type.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'subscription_order_dto.g.dart';
@@ -149,7 +151,7 @@ class SubscriptionOrderDto {
   )
 
 
-  String? type;
+  SubscriptionOrderType? type;
 
 
 
@@ -161,7 +163,7 @@ class SubscriptionOrderDto {
   )
 
 
-  String? status;
+  SubscriptionOrderStatus? status;
 
 
 

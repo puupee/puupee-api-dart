@@ -7,6 +7,7 @@ void main() {
   // TODO add properties to the entity
 
   group(SyncStateDto, () {
+    // 上次同步时间
     // DateTime lastSyncAt
     test('to test the property `lastSyncAt`', () async {
       // TODO

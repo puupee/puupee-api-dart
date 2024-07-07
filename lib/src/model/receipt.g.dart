@@ -12,14 +12,16 @@ Receipt _$ReceiptFromJson(Map<String, dynamic> json) => $checkedCreate(
       ($checkedConvert) {
         final val = Receipt(
           receiptType: $checkedConvert('receipt_type', (v) => v as String?),
-          adamId: $checkedConvert('adam_id', (v) => v as int?),
-          appItemId: $checkedConvert('app_item_id', (v) => v as int?),
+          adamId: $checkedConvert('adam_id', (v) => (v as num?)?.toInt()),
+          appItemId:
+              $checkedConvert('app_item_id', (v) => (v as num?)?.toInt()),
           bundleId: $checkedConvert('bundle_id', (v) => v as String?),
           applicationVersion:
               $checkedConvert('application_version', (v) => v as String?),
-          downloadId: $checkedConvert('download_id', (v) => v as int?),
-          versionExternalIdentifier:
-              $checkedConvert('version_external_identifier', (v) => v as int?),
+          downloadId:
+              $checkedConvert('download_id', (v) => (v as num?)?.toInt()),
+          versionExternalIdentifier: $checkedConvert(
+              'version_external_identifier', (v) => (v as num?)?.toInt()),
           receiptCreationDate:
               $checkedConvert('receipt_creation_date', (v) => v as String?),
           receiptCreationDateMs:

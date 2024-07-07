@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **isDeleted** | **bool** |  | [optional] 
 **deleterId** | **String** |  | [optional] 
 **deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
-**status** | **String** |  | 
+**status** | [**AppRunStatus**](AppRunStatus.md) |  | 
 **result** | **String** |  | [optional] 
 **error** | **String** |  | [optional] 
 **finishAt** | [**DateTime**](DateTime.md) |  | [optional] 

@@ -3,6 +3,8 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:puupee_api_client/src/model/platform.dart';
+import 'package:puupee_api_client/src/model/artifact_type.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'create_or_update_app_release_dto.g.dart';
@@ -38,7 +40,7 @@ class CreateOrUpdateAppReleaseDto {
 
      this.sliceMd5,
 
-     this.productType,
+     this.artifactType,
 
      this.isForceUpdate,
 
@@ -63,6 +65,7 @@ class CreateOrUpdateAppReleaseDto {
 
 
 
+      /// 版本名称
   @JsonKey(
     
     name: r'versionName',
@@ -75,6 +78,7 @@ class CreateOrUpdateAppReleaseDto {
 
 
 
+      /// 构建编号
   @JsonKey(
     
     name: r'versionCode',
@@ -107,7 +111,7 @@ class CreateOrUpdateAppReleaseDto {
   )
 
 
-  String? platform;
+  Platform? platform;
 
 
 
@@ -173,13 +177,13 @@ class CreateOrUpdateAppReleaseDto {
 
   @JsonKey(
     
-    name: r'productType',
+    name: r'artifactType',
     required: false,
     includeIfNull: false
   )
 
 
-  String? productType;
+  ArtifactType? artifactType;
 
 
 
@@ -255,7 +259,7 @@ class CreateOrUpdateAppReleaseDto {
      other.size == size &&
      other.md5 == md5 &&
      other.sliceMd5 == sliceMd5 &&
-     other.productType == productType &&
+     other.artifactType == artifactType &&
      other.isForceUpdate == isForceUpdate &&
      other.appId == appId &&
      other.isEnabled == isEnabled &&
@@ -274,7 +278,7 @@ class CreateOrUpdateAppReleaseDto {
     size.hashCode +
     md5.hashCode +
     sliceMd5.hashCode +
-    productType.hashCode +
+    artifactType.hashCode +
     isForceUpdate.hashCode +
     appId.hashCode +
     isEnabled.hashCode +

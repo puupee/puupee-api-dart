@@ -54,10 +54,11 @@ IdentityUser _$IdentityUserFromJson(Map<String, dynamic> json) =>
               (v) => v == null ? null : DateTime.parse(v as String)),
           lockoutEnabled: $checkedConvert('lockoutEnabled', (v) => v as bool?),
           accessFailedCount:
-              $checkedConvert('accessFailedCount', (v) => v as int?),
+              $checkedConvert('accessFailedCount', (v) => (v as num?)?.toInt()),
           shouldChangePasswordOnNextLogin: $checkedConvert(
               'shouldChangePasswordOnNextLogin', (v) => v as bool?),
-          entityVersion: $checkedConvert('entityVersion', (v) => v as int?),
+          entityVersion:
+              $checkedConvert('entityVersion', (v) => (v as num?)?.toInt()),
           lastPasswordChangeTime: $checkedConvert('lastPasswordChangeTime',
               (v) => v == null ? null : DateTime.parse(v as String)),
           roles: $checkedConvert(

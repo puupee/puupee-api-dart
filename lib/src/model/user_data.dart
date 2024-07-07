@@ -37,6 +37,8 @@ class UserData {
      this.phoneNumber,
 
      this.phoneNumberConfirmed,
+
+     this.extraProperties,
   });
 
   @JsonKey(
@@ -159,6 +161,18 @@ class UserData {
 
 
 
+  @JsonKey(
+    
+    name: r'extraProperties',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  Map<String, Object>? extraProperties;
+
+
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is UserData &&
      other.id == id &&
@@ -170,7 +184,8 @@ class UserData {
      other.email == email &&
      other.emailConfirmed == emailConfirmed &&
      other.phoneNumber == phoneNumber &&
-     other.phoneNumberConfirmed == phoneNumberConfirmed;
+     other.phoneNumberConfirmed == phoneNumberConfirmed &&
+     other.extraProperties == extraProperties;
 
   @override
   int get hashCode =>
@@ -183,7 +198,8 @@ class UserData {
     email.hashCode +
     emailConfirmed.hashCode +
     phoneNumber.hashCode +
-    phoneNumberConfirmed.hashCode;
+    phoneNumberConfirmed.hashCode +
+    extraProperties.hashCode;
 
   factory UserData.fromJson(Map<String, dynamic> json) => _$UserDataFromJson(json);
 

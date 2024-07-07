@@ -18,7 +18,8 @@ TenantDtoPagedResultDto _$TenantDtoPagedResultDtoFromJson(
               (v) => (v as List<dynamic>?)
                   ?.map((e) => TenantDto.fromJson(e as Map<String, dynamic>))
                   .toList()),
-          totalCount: $checkedConvert('totalCount', (v) => v as int?),
+          totalCount:
+              $checkedConvert('totalCount', (v) => (v as num?)?.toInt()),
         );
         return val;
       },

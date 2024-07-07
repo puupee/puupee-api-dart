@@ -19,20 +19,19 @@ class NotificationApi {
 
   const NotificationApi(this._dio);
 
-  /// bark
+  /// Bark 推送，兼容 Bark 推送协议  TODO: 验证 API KEY 功能, 添加[个人访问令牌]功能
   /// 
   ///
   /// Parameters:
-  /// * [apiKey] 
-  /// * [message] 
-  /// * [automaticallyCopy] 
-  /// * [copy] 
-  /// * [url] 
-  /// * [isArchive] 
-  /// * [group] 
-  /// * [icon] 
-  /// * [name] 
-  /// * [value] 
+  /// * [apiKey] - Bark apiKey, 需要申请，注意不要泄露，泄露后产生安全问题请及时移除或禁用 apiKey
+  /// * [message] - 消息内容
+  /// * [automaticallyCopy] - 携带参数 automaticallyCopy=1， 收到推送时，推送内容会自动复制到粘贴板（如发现不能自动复制，可尝试重启一下手机）
+  /// * [copy] - 携带copy参数， 则上面两种复制操作，将只复制copy参数的值
+  /// * [url] - 点击推送将跳转到url的地址（发送时，URL参数需要编码）
+  /// * [isArchive] - 指定是否需要保存推送信息到历史记录，1 为保存，其他值为不保存。\\n如果不指定这个参数，推送信息将按照APP内设置来决定是否保存。
+  /// * [group] - 指定推送消息分组，可在历史记录中按分组查看推送。
+  /// * [icon] - 指定推送消息图标, icon (仅 iOS15 或以上支持）
+  /// * [level] - 设置时效性通知 active：不设置时的默认值，系统会立即亮屏显示通知。\\ntimeSensitive：时效性通知，可在专注状态下显示通知。\\npassive：仅将通知添加到通知列表，不会亮屏提醒
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -51,8 +50,7 @@ class NotificationApi {
     String? isArchive,
     String? group,
     String? icon,
-    String? name,
-    String? value,
+    Object? level,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -85,8 +83,7 @@ class NotificationApi {
       if (isArchive != null) r'isArchive': isArchive,
       if (group != null) r'group': group,
       if (icon != null) r'icon': icon,
-      if (name != null) r'Name': name,
-      if (value != null) r'Value': value,
+      if (level != null) r'level': level,
     };
 
     final _response = await _dio.request<Object>(

@@ -26,7 +26,7 @@ MessageTemplateReleaseDto _$MessageTemplateReleaseDtoFromJson(
           deletionTime: $checkedConvert('deletionTime',
               (v) => v == null ? null : DateTime.parse(v as String)),
           templateName: $checkedConvert('templateName', (v) => v as String?),
-          version: $checkedConvert('version', (v) => v as int?),
+          version: $checkedConvert('version', (v) => (v as num?)?.toInt()),
           content: $checkedConvert('content', (v) => v as String?),
           templateId: $checkedConvert('templateId', (v) => v as String?),
         );

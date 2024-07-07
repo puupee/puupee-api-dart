@@ -26,7 +26,8 @@ MessageTemplateDto _$MessageTemplateDtoFromJson(Map<String, dynamic> json) =>
               (v) => v == null ? null : DateTime.parse(v as String)),
           name: $checkedConvert('name', (v) => v as String?),
           description: $checkedConvert('description', (v) => v as String?),
-          latestVersion: $checkedConvert('latestVersion', (v) => v as int?),
+          latestVersion:
+              $checkedConvert('latestVersion', (v) => (v as num?)?.toInt()),
         );
         return val;
       },

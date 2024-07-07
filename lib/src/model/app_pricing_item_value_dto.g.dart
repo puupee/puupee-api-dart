@@ -27,7 +27,7 @@ AppPricingItemValueDto _$AppPricingItemValueDtoFromJson(
               (v) => v == null ? null : DateTime.parse(v as String)),
           isAvailable: $checkedConvert('isAvailable', (v) => v as bool?),
           hasValue: $checkedConvert('hasValue', (v) => v as bool?),
-          intValue: $checkedConvert('intValue', (v) => v as int?),
+          intValue: $checkedConvert('intValue', (v) => (v as num?)?.toInt()),
           stringValue: $checkedConvert('stringValue', (v) => v as String?),
           boolValue: $checkedConvert('boolValue', (v) => v as bool?),
           intValueType: $checkedConvert('intValueType', (v) => v as String?),

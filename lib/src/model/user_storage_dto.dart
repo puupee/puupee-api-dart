@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:puupee_api_client/src/model/price_naming.dart';
 import 'package:puupee_api_client/src/model/user_storage_item_dto.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -19,9 +20,11 @@ class UserStorageDto {
   /// Returns a new [UserStorageDto] instance.
   UserStorageDto({
 
-     this.name,
+     this.appId,
 
-     this.displayName,
+     this.appName,
+
+     this.priceNaming,
 
      this.size,
 
@@ -31,33 +34,50 @@ class UserStorageDto {
 
      this.singleFileMaxSize,
 
+     this.expireAt,
+
      this.items,
   });
 
+      /// 所属应用
   @JsonKey(
     
-    name: r'name',
+    name: r'appId',
     required: false,
     includeIfNull: false
   )
 
 
-  String? name;
+  String? appId;
 
 
 
+      /// 应用名称
   @JsonKey(
     
-    name: r'displayName',
+    name: r'appName',
     required: false,
     includeIfNull: false
   )
 
 
-  String? displayName;
+  String? appName;
 
 
 
+  @JsonKey(
+    
+    name: r'priceNaming',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  PriceNaming? priceNaming;
+
+
+
+      /// 用户存储容量
   @JsonKey(
     
     name: r'size',
@@ -70,6 +90,7 @@ class UserStorageDto {
 
 
 
+      /// 当前使用大小
   @JsonKey(
     
     name: r'currentSize',
@@ -94,6 +115,7 @@ class UserStorageDto {
 
 
 
+      /// 单文件最大大小
   @JsonKey(
     
     name: r'singleFileMaxSize',
@@ -103,6 +125,19 @@ class UserStorageDto {
 
 
   int? singleFileMaxSize;
+
+
+
+      /// 过期时间, 为空表示永久有效, 一般是订阅产品的过期时间
+  @JsonKey(
+    
+    name: r'expireAt',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  DateTime? expireAt;
 
 
 
@@ -120,22 +155,26 @@ class UserStorageDto {
 
   @override
   bool operator ==(Object other) => identical(this, other) || other is UserStorageDto &&
-     other.name == name &&
-     other.displayName == displayName &&
+     other.appId == appId &&
+     other.appName == appName &&
+     other.priceNaming == priceNaming &&
      other.size == size &&
      other.currentSize == currentSize &&
      other.totalCount == totalCount &&
      other.singleFileMaxSize == singleFileMaxSize &&
+     other.expireAt == expireAt &&
      other.items == items;
 
   @override
   int get hashCode =>
-    name.hashCode +
-    displayName.hashCode +
+    appId.hashCode +
+    appName.hashCode +
+    priceNaming.hashCode +
     size.hashCode +
     currentSize.hashCode +
     totalCount.hashCode +
     singleFileMaxSize.hashCode +
+    expireAt.hashCode +
     items.hashCode;
 
   factory UserStorageDto.fromJson(Map<String, dynamic> json) => _$UserStorageDtoFromJson(json);

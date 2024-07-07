@@ -9,7 +9,7 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**appleNotifications**](SubscriptionApi.md#applenotifications) | **POST** /api/app/subscription/apple-notifications | 
+[**appleNotifications**](SubscriptionApi.md#applenotifications) | **POST** /api/app/subscription/apple-notifications | 苹果订阅 Callback 地址
 [**createOrder**](SubscriptionApi.md#createorder) | **POST** /api/app/subscription/order | 
 [**getById**](SubscriptionApi.md#getbyid) | **GET** /api/app/subscription | 
 [**verifyReceipt**](SubscriptionApi.md#verifyreceipt) | **POST** /api/app/subscription/verify-receipt | 
@@ -18,7 +18,7 @@ Method | HTTP request | Description
 # **appleNotifications**
 > appleNotifications(body)
 
-
+苹果订阅 Callback 地址
 
 ### Example
 ```dart

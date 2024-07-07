@@ -57,5 +57,10 @@ void main() {
       // TODO
     });
 
+    // Map<String, Object> extraProperties
+    test('to test the property `extraProperties`', () async {
+      // TODO
+    });
+
   });
 }

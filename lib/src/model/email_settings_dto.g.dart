@@ -13,7 +13,7 @@ EmailSettingsDto _$EmailSettingsDtoFromJson(Map<String, dynamic> json) =>
       ($checkedConvert) {
         final val = EmailSettingsDto(
           smtpHost: $checkedConvert('smtpHost', (v) => v as String?),
-          smtpPort: $checkedConvert('smtpPort', (v) => v as int?),
+          smtpPort: $checkedConvert('smtpPort', (v) => (v as num?)?.toInt()),
           smtpUserName: $checkedConvert('smtpUserName', (v) => v as String?),
           smtpPassword: $checkedConvert('smtpPassword', (v) => v as String?),
           smtpDomain: $checkedConvert('smtpDomain', (v) => v as String?),

@@ -19,7 +19,8 @@ AppPricingDtoPagedResultDto _$AppPricingDtoPagedResultDtoFromJson(
                   ?.map(
                       (e) => AppPricingDto.fromJson(e as Map<String, dynamic>))
                   .toList()),
-          totalCount: $checkedConvert('totalCount', (v) => v as int?),
+          totalCount:
+              $checkedConvert('totalCount', (v) => (v as num?)?.toInt()),
         );
         return val;
       },

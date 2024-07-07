@@ -3,6 +3,9 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:puupee_api_client/src/model/app_type.dart';
+import 'package:puupee_api_client/src/model/git_repository_type.dart';
+import 'package:puupee_api_client/src/model/framework.dart';
 import 'package:puupee_api_client/src/model/create_open_iddict_application_dto.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -94,7 +97,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  String? framework;
+  Framework? framework;
 
 
 
@@ -106,7 +109,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  String? appType;
+  AppType? appType;
 
 
 
@@ -134,6 +137,7 @@ class CreateOrUpdateAppDto {
 
 
 
+      /// 产品首页
   @JsonKey(
     
     name: r'homePage',
@@ -146,6 +150,7 @@ class CreateOrUpdateAppDto {
 
 
 
+      /// 显示排序
   @JsonKey(
     
     name: r'sortIndex',
@@ -178,7 +183,7 @@ class CreateOrUpdateAppDto {
   )
 
 
-  String? gitRepositoryType;
+  GitRepositoryType? gitRepositoryType;
 
 
 
@@ -194,6 +199,7 @@ class CreateOrUpdateAppDto {
 
 
 
+      /// Webhook Url 各种事件回调地址
   @JsonKey(
     
     name: r'webhookUrl',
@@ -206,6 +212,7 @@ class CreateOrUpdateAppDto {
 
 
 
+      /// 业务域名
   @JsonKey(
     
     name: r'businessDomain',
@@ -218,6 +225,7 @@ class CreateOrUpdateAppDto {
 
 
 
+      /// 业务地址
   @JsonKey(
     
     name: r'businessUrl',
@@ -230,6 +238,7 @@ class CreateOrUpdateAppDto {
 
 
 
+      /// 可以订阅的平台 Platform 枚举, 并用\",\"分割
   @JsonKey(
     
     name: r'subscriptionPlatforms',
@@ -242,6 +251,7 @@ class CreateOrUpdateAppDto {
 
 
 
+      /// 暂时免费的平台, 付费功能免费用的平台, 用\",\"分割
   @JsonKey(
     
     name: r'freePlatforms',
@@ -254,6 +264,7 @@ class CreateOrUpdateAppDto {
 
 
 
+      /// 声明格式
   @JsonKey(
     
     name: r'specJsonSchema',
@@ -266,6 +277,7 @@ class CreateOrUpdateAppDto {
 
 
 
+      /// 默认存储空间大小
   @JsonKey(
     
     name: r'defaultStorageSize',
@@ -278,6 +290,7 @@ class CreateOrUpdateAppDto {
 
 
 
+      /// 默认单文件最大大小
   @JsonKey(
     
     name: r'defaultSingleFileMaxSize',
@@ -290,6 +303,7 @@ class CreateOrUpdateAppDto {
 
 
 
+      /// 是否已经发布, 决定了是否给终端用户看见, 主要有一些 APP 自己使用
   @JsonKey(
     
     name: r'isPublished',

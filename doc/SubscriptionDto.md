@@ -16,9 +16,9 @@ Name | Type | Description | Notes
 **isDeleted** | **bool** |  | [optional] 
 **deleterId** | **String** |  | [optional] 
 **deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
-**expireAt** | [**DateTime**](DateTime.md) |  | [optional] 
-**appId** | **String** |  | [optional] 
-**priceNaming** | **String** |  | [optional] 
+**expireAt** | [**DateTime**](DateTime.md) | 会员过期时间 | [optional] 
+**appId** | **String** | 应用 ID | [optional] 
+**priceNaming** | [**PriceNaming**](PriceNaming.md) |  | [optional] 
 **pricingId** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

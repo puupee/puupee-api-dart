@@ -47,12 +47,12 @@ void main() {
       // TODO
     });
 
-    // String type
+    // SubscriptionOrderType type
     test('to test the property `type`', () async {
       // TODO
     });
 
-    // String status
+    // SubscriptionOrderStatus status
     test('to test the property `status`', () async {
       // TODO
     });

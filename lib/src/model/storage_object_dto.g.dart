@@ -26,9 +26,10 @@ StorageObjectDto _$StorageObjectDtoFromJson(Map<String, dynamic> json) =>
               (v) => v == null ? null : DateTime.parse(v as String)),
           name: $checkedConvert('name', (v) => v as String?),
           url: $checkedConvert('url', (v) => v as String?),
-          syncVersion: $checkedConvert('syncVersion', (v) => v as int?),
+          syncVersion:
+              $checkedConvert('syncVersion', (v) => (v as num?)?.toInt()),
           key: $checkedConvert('key', (v) => v as String?),
-          size: $checkedConvert('size', (v) => v as int?),
+          size: $checkedConvert('size', (v) => (v as num?)?.toInt()),
           md5: $checkedConvert('md5', (v) => v as String?),
           sliceMd5: $checkedConvert('sliceMd5', (v) => v as String?),
           rapidCode: $checkedConvert('rapidCode', (v) => v as String?),

@@ -27,9 +27,11 @@ Name | Type | Description | Notes
 **phoneNumberConfirmed** | **bool** |  | [optional] 
 **isActive** | **bool** |  | [optional] 
 **lockoutEnabled** | **bool** |  | [optional] 
+**accessFailedCount** | **int** |  | [optional] 
 **lockoutEnd** | [**DateTime**](DateTime.md) |  | [optional] 
 **concurrencyStamp** | **String** |  | [optional] 
 **entityVersion** | **int** |  | [optional] 
+**lastPasswordChangeTime** | [**DateTime**](DateTime.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

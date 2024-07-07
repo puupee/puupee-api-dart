@@ -60,6 +60,7 @@ class AppleVerifyReceiptResult {
 
 
 
+      /// 订阅订单状态
   @JsonKey(
     
     name: r'status',

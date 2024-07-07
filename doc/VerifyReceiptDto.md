@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
 **orderId** | **String** |  | 
 **receiptData** | **String** |  | 
-**platform** | **String** |  | 
+**platform** | [**Platform**](Platform.md) |  | 
 **deviceToken** | **String** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

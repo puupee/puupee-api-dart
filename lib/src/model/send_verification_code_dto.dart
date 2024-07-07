@@ -25,6 +25,7 @@ class SendVerificationCodeDto {
      this.purpose,
   });
 
+      /// 验证码发送器 暂时支持: SMS: 手机短信验证码
   @JsonKey(
     
     name: r'codeSender',
@@ -37,6 +38,7 @@ class SendVerificationCodeDto {
 
 
 
+      /// 验证码接受者, 用户账户
   @JsonKey(
     
     name: r'account',
@@ -49,6 +51,7 @@ class SendVerificationCodeDto {
 
 
 
+      /// 验证码用途
   @JsonKey(
     
     name: r'purpose',

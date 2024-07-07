@@ -22,6 +22,7 @@ import 'package:puupee_api_client/src/api/app_sdk_api.dart';
 import 'package:puupee_api_client/src/api/app_user_score_api.dart';
 import 'package:puupee_api_client/src/api/avatar_api.dart';
 import 'package:puupee_api_client/src/api/device_api.dart';
+import 'package:puupee_api_client/src/api/dynamic_claims_api.dart';
 import 'package:puupee_api_client/src/api/email_settings_api.dart';
 import 'package:puupee_api_client/src/api/features_api.dart';
 import 'package:puupee_api_client/src/api/key_value_api.dart';
@@ -43,7 +44,7 @@ import 'package:puupee_api_client/src/api/storage_object_api.dart';
 import 'package:puupee_api_client/src/api/subscription_api.dart';
 import 'package:puupee_api_client/src/api/sync_state_api.dart';
 import 'package:puupee_api_client/src/api/tenant_api.dart';
-import 'package:puupee_api_client/src/api/test_api.dart';
+import 'package:puupee_api_client/src/api/time_zone_settings_api.dart';
 import 'package:puupee_api_client/src/api/user_api.dart';
 import 'package:puupee_api_client/src/api/user_lookup_api.dart';
 import 'package:puupee_api_client/src/api/user_storage_api.dart';
@@ -190,6 +191,12 @@ class PuupeeApiClient {
     return DeviceApi(dio);
   }
 
+  /// Get DynamicClaimsApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  DynamicClaimsApi getDynamicClaimsApi() {
+    return DynamicClaimsApi(dio);
+  }
+
   /// Get EmailSettingsApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   EmailSettingsApi getEmailSettingsApi() {
@@ -316,10 +323,10 @@ class PuupeeApiClient {
     return TenantApi(dio);
   }
 
-  /// Get TestApi instance, base route and serializer can be overridden by a given but be careful,
+  /// Get TimeZoneSettingsApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
-  TestApi getTestApi() {
-    return TestApi(dio);
+  TimeZoneSettingsApi getTimeZoneSettingsApi() {
+    return TimeZoneSettingsApi(dio);
   }
 
   /// Get UserApi instance, base route and serializer can be overridden by a given but be careful,

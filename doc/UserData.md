@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **emailConfirmed** | **bool** |  | [optional] 
 **phoneNumber** | **String** |  | [optional] 
 **phoneNumberConfirmed** | **bool** |  | [optional] 
+**extraProperties** | **Map&lt;String, Object&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

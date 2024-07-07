@@ -102,6 +102,11 @@ void main() {
       // TODO
     });
 
+    // int accessFailedCount
+    test('to test the property `accessFailedCount`', () async {
+      // TODO
+    });
+
     // DateTime lockoutEnd
     test('to test the property `lockoutEnd`', () async {
       // TODO
@@ -114,6 +119,11 @@ void main() {
 
     // int entityVersion
     test('to test the property `entityVersion`', () async {
+      // TODO
+    });
+
+    // DateTime lastPasswordChangeTime
+    test('to test the property `lastPasswordChangeTime`', () async {
       // TODO
     });
 

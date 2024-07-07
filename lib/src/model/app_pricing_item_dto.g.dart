@@ -30,7 +30,7 @@ AppPricingItemDto _$AppPricingItemDtoFromJson(Map<String, dynamic> json) =>
           linkUrl: $checkedConvert('linkUrl', (v) => v as String?),
           display: $checkedConvert('display', (v) => v as String?),
           isAvailable: $checkedConvert('isAvailable', (v) => v as bool?),
-          sortIndex: $checkedConvert('sortIndex', (v) => v as int?),
+          sortIndex: $checkedConvert('sortIndex', (v) => (v as num?)?.toInt()),
         );
         return val;
       },

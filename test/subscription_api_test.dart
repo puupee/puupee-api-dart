@@ -7,6 +7,8 @@ void main() {
   final instance = PuupeeApiClient().getSubscriptionApi();
 
   group(SubscriptionApi, () {
+    // 苹果订阅 Callback 地址
+    //
     //Future appleNotifications({ AppleNotificaionDto body }) async
     test('test appleNotifications', () async {
       // TODO

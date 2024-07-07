@@ -23,6 +23,7 @@ class SyncStateDto {
      this.version,
   });
 
+      /// 上次同步时间
   @JsonKey(
     
     name: r'lastSyncAt',

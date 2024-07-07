@@ -20,7 +20,7 @@ class AppReleaseApi {
 
   const AppReleaseApi(this._dio);
 
-  /// create
+  /// 创建新版本
   /// 
   ///
   /// Parameters:
@@ -113,7 +113,7 @@ _responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppR
     );
   }
 
-  /// delete
+  /// 删除版本
   /// 
   ///
   /// Parameters:
@@ -165,7 +165,7 @@ _responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppR
     return _response;
   }
 
-  /// getById
+  /// 获取版本
   /// 
   ///
   /// Parameters:
@@ -240,7 +240,7 @@ _responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppR
     );
   }
 
-  /// getLatest
+  /// 获取最新版本
   /// 
   ///
   /// Parameters:
@@ -329,7 +329,7 @@ _responseData = deserialize<AppReleaseDto, AppReleaseDto>(_response.data!, 'AppR
     );
   }
 
-  /// getList
+  /// 获取版本列表
   /// 
   ///
   /// Parameters:
@@ -424,7 +424,7 @@ _responseData = deserialize<AppReleaseDtoPagedResultDto, AppReleaseDtoPagedResul
     );
   }
 
-  /// update
+  /// 更新版本
   /// 
   ///
   /// Parameters:

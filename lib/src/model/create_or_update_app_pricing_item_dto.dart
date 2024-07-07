@@ -29,6 +29,7 @@ class CreateOrUpdateAppPricingItemDto {
      this.sortIndex,
   });
 
+      /// 名称: 坐席
   @JsonKey(
     
     name: r'name',
@@ -41,6 +42,7 @@ class CreateOrUpdateAppPricingItemDto {
 
 
 
+      /// 描述, 使用 Markdown 格式, 允许包含图片
   @JsonKey(
     
     name: r'description',
@@ -53,6 +55,7 @@ class CreateOrUpdateAppPricingItemDto {
 
 
 
+      /// 链接地址
   @JsonKey(
     
     name: r'linkUrl',
@@ -65,6 +68,7 @@ class CreateOrUpdateAppPricingItemDto {
 
 
 
+      /// 显示模板: 包括{0}个坐席
   @JsonKey(
     
     name: r'display',
@@ -77,6 +81,7 @@ class CreateOrUpdateAppPricingItemDto {
 
 
 
+      /// 排序
   @JsonKey(
     
     name: r'sortIndex',

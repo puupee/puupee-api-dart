@@ -3,6 +3,11 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:puupee_api_client/src/model/todo_repeat.dart';
+import 'package:puupee_api_client/src/model/display_style.dart';
+import 'package:puupee_api_client/src/model/todo_notify_timing_unit.dart';
+import 'package:puupee_api_client/src/model/todo_notify_timing_type.dart';
+import 'package:puupee_api_client/src/model/priority.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'puupee_eto.g.dart';
@@ -189,7 +194,7 @@ class PuupeeEto {
   )
 
 
-  String? displayStyle;
+  DisplayStyle? displayStyle;
 
 
 
@@ -453,7 +458,7 @@ class PuupeeEto {
   )
 
 
-  int? priority;
+  Priority? priority;
 
 
 
@@ -525,7 +530,7 @@ class PuupeeEto {
   )
 
 
-  String? notifyTimingType;
+  TodoNotifyTimingType? notifyTimingType;
 
 
 
@@ -537,7 +542,7 @@ class PuupeeEto {
   )
 
 
-  String? notifyTimingUnit;
+  TodoNotifyTimingUnit? notifyTimingUnit;
 
 
 
@@ -561,7 +566,7 @@ class PuupeeEto {
   )
 
 
-  String? repeat;
+  TodoRepeat? repeat;
 
 
 

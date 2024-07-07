@@ -12,13 +12,19 @@ UserStorageDto _$UserStorageDtoFromJson(Map<String, dynamic> json) =>
       json,
       ($checkedConvert) {
         final val = UserStorageDto(
-          name: $checkedConvert('name', (v) => v as String?),
-          displayName: $checkedConvert('displayName', (v) => v as String?),
-          size: $checkedConvert('size', (v) => v as int?),
-          currentSize: $checkedConvert('currentSize', (v) => v as int?),
-          totalCount: $checkedConvert('totalCount', (v) => v as int?),
+          appId: $checkedConvert('appId', (v) => v as String?),
+          appName: $checkedConvert('appName', (v) => v as String?),
+          priceNaming: $checkedConvert('priceNaming',
+              (v) => $enumDecodeNullable(_$PriceNamingEnumMap, v)),
+          size: $checkedConvert('size', (v) => (v as num?)?.toInt()),
+          currentSize:
+              $checkedConvert('currentSize', (v) => (v as num?)?.toInt()),
+          totalCount:
+              $checkedConvert('totalCount', (v) => (v as num?)?.toInt()),
           singleFileMaxSize:
-              $checkedConvert('singleFileMaxSize', (v) => v as int?),
+              $checkedConvert('singleFileMaxSize', (v) => (v as num?)?.toInt()),
+          expireAt: $checkedConvert('expireAt',
+              (v) => v == null ? null : DateTime.parse(v as String)),
           items: $checkedConvert(
               'items',
               (v) => (v as List<dynamic>?)
@@ -39,12 +45,21 @@ Map<String, dynamic> _$UserStorageDtoToJson(UserStorageDto instance) {
     }
   }
 
-  writeNotNull('name', instance.name);
-  writeNotNull('displayName', instance.displayName);
+  writeNotNull('appId', instance.appId);
+  writeNotNull('appName', instance.appName);
+  writeNotNull('priceNaming', _$PriceNamingEnumMap[instance.priceNaming]);
   writeNotNull('size', instance.size);
   writeNotNull('currentSize', instance.currentSize);
   writeNotNull('totalCount', instance.totalCount);
   writeNotNull('singleFileMaxSize', instance.singleFileMaxSize);
+  writeNotNull('expireAt', instance.expireAt?.toIso8601String());
   writeNotNull('items', instance.items?.map((e) => e.toJson()).toList());
   return val;
 }
+
+const _$PriceNamingEnumMap = {
+  PriceNaming.free: 'Free',
+  PriceNaming.premium: 'Premium',
+  PriceNaming.pro: 'Pro',
+  PriceNaming.enterprise: 'Enterprise',
+};

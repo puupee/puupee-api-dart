@@ -28,7 +28,7 @@ class AppApi {
 
   const AppApi(this._dio);
 
-  /// callGet
+  /// 获取 APP 详情
   /// 
   ///
   /// Parameters:
@@ -110,7 +110,7 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
     );
   }
 
-  /// create
+  /// 创建新应用
   /// 
   ///
   /// Parameters:
@@ -203,7 +203,7 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
     );
   }
 
-  /// delete
+  /// 删除应用
   /// 
   ///
   /// Parameters:
@@ -255,7 +255,7 @@ _responseData = deserialize<AppDto, AppDto>(_response.data!, 'AppDto', growable:
     return _response;
   }
 
-  /// getByName
+  /// 获取 APP 详情
   /// 
   ///
   /// Parameters:
@@ -420,7 +420,7 @@ _responseData = deserialize<List<AppFeatureDto>, AppFeatureDto>(_response.data!,
     );
   }
 
-  /// getList
+  /// 获取当前用户的应用列表
   /// 
   ///
   /// Parameters:
@@ -509,7 +509,7 @@ _responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_respons
     );
   }
 
-  /// getListByDeveloperAll
+  /// 获取开发者所有 APP 包括未发布的
   /// 
   ///
   /// Parameters:
@@ -589,7 +589,7 @@ _responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_respons
     );
   }
 
-  /// getListPublic
+  /// 所有开发者已发布 APP 列表
   /// 
   ///
   /// Parameters:
@@ -675,7 +675,7 @@ _responseData = deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(_respons
     );
   }
 
-  /// getListWithUser
+  /// 获取APP列表包含用户订阅信息
   /// 
   ///
   /// Parameters:
@@ -849,7 +849,7 @@ _responseData = deserialize<List<AppSdkDto>, AppSdkDto>(_response.data!, 'List<A
     );
   }
 
-  /// getUploadCredentials
+  /// 获取上传凭证
   /// 
   ///
   /// Parameters:
@@ -929,7 +929,7 @@ _responseData = deserialize<StorageObjectCredentials, StorageObjectCredentials>(
     );
   }
 
-  /// getWithUser
+  /// 获取 APP 详情
   /// 
   ///
   /// Parameters:
@@ -1104,7 +1104,7 @@ _responseData = deserialize<AppRunRecordDto, AppRunRecordDto>(_response.data!, '
     );
   }
 
-  /// update
+  /// 更新 APP 信息
   /// 
   ///
   /// Parameters:

@@ -170,7 +170,6 @@ import 'package:puupee_api_client/src/model/tenant_create_dto.dart';
 import 'package:puupee_api_client/src/model/tenant_dto.dart';
 import 'package:puupee_api_client/src/model/tenant_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/tenant_update_dto.dart';
-import 'package:puupee_api_client/src/model/test_date_time.dart';
 import 'package:puupee_api_client/src/model/time_zone.dart';
 import 'package:puupee_api_client/src/model/timing_dto.dart';
 import 'package:puupee_api_client/src/model/type_api_description_model.dart';
@@ -249,10 +248,16 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return AppRunRecordDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppRunRecordUpdateDto':
           return AppRunRecordUpdateDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppRunStatus':
+          
+          
         case 'AppSdkDto':
           return AppSdkDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppSdkDtoPagedResultDto':
           return AppSdkDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppType':
+          
+          
         case 'AppUserScoreDto':
           return AppUserScoreDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppWithUserDto':
@@ -281,8 +286,14 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return ApplicationLocalizationResourceDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ApplicationSettingConfigurationDto':
           return ApplicationSettingConfigurationDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'ArtifactType':
+          
+          
         case 'AvatarDto':
           return AvatarDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'BarkNotificationLevel':
+          
+          
         case 'BindDeviceDto':
           return BindDeviceDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'BooleanKeyValue':
@@ -351,6 +362,12 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return DeviceDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'DeviceDtoPagedResultDto':
           return DeviceDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'DeviceStatus':
+          
+          
+        case 'DisplayStyle':
+          
+          
         case 'DoubleKeyValue':
           return DoubleKeyValue.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'DoubleSetKeyValueDto':
@@ -391,10 +408,16 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return FeatureProviderDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'FindTenantResultDto':
           return FindTenantResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'Framework':
+          
+          
         case 'GetFeatureListResultDto':
           return GetFeatureListResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'GetPermissionListResultDto':
           return GetPermissionListResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'GitRepositoryType':
+          
+          
         case 'IStringValueType':
           return IStringValueType.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'IValueValidator':
@@ -494,6 +517,15 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return PermissionGrantInfoDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'PermissionGroupDto':
           return PermissionGroupDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'Platform':
+          
+          
+        case 'PriceNaming':
+          
+          
+        case 'Priority':
+          
+          
         case 'ProfileDto':
           return ProfileDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'PropertyApiDescriptionModel':
@@ -546,6 +578,12 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return SubscriptionDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'SubscriptionOrderDto':
           return SubscriptionOrderDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'SubscriptionOrderStatus':
+          
+          
+        case 'SubscriptionOrderType':
+          
+          
         case 'SyncStateDto':
           return SyncStateDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'TenantCreateDto':
@@ -556,12 +594,19 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return TenantDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'TenantUpdateDto':
           return TenantUpdateDto.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'TestDateTime':
-          return TestDateTime.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'TimeZone':
           return TimeZone.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'TimingDto':
           return TimingDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'TodoNotifyTimingType':
+          
+          
+        case 'TodoNotifyTimingUnit':
+          
+          
+        case 'TodoRepeat':
+          
+          
         case 'TypeApiDescriptionModel':
           return TypeApiDescriptionModel.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'UpdateEmailSettingsDto':

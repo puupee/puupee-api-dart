@@ -9,15 +9,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**bark**](NotificationApi.md#bark) | **GET** /api/app/notification/bark/{apiKey}/{message} | 
+[**bark**](NotificationApi.md#bark) | **GET** /api/app/notification/bark/{apiKey}/{message} | Bark 推送，兼容 Bark 推送协议  TODO: 验证 API KEY 功能, 添加[个人访问令牌]功能
 [**getList**](NotificationApi.md#getlist) | **GET** /api/app/notification | 
 [**push**](NotificationApi.md#push) | **POST** /api/app/notification/push | 
 
 
 # **bark**
-> bark(apiKey, message, automaticallyCopy, copy, url, isArchive, group, icon, name, value)
+> bark(apiKey, message, automaticallyCopy, copy, url, isArchive, group, icon, level)
 
-
+Bark 推送，兼容 Bark 推送协议  TODO: 验证 API KEY 功能, 添加[个人访问令牌]功能
 
 ### Example
 ```dart
@@ -26,19 +26,18 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getNotificationApi();
-final String apiKey = apiKey_example; // String | 
-final String message = message_example; // String | 
-final int automaticallyCopy = 56; // int | 
-final String copy = copy_example; // String | 
-final String url = url_example; // String | 
-final String isArchive = isArchive_example; // String | 
-final String group = group_example; // String | 
-final String icon = icon_example; // String | 
-final String name = name_example; // String | 
-final String value = value_example; // String | 
+final String apiKey = apiKey_example; // String | Bark apiKey, 需要申请，注意不要泄露，泄露后产生安全问题请及时移除或禁用 apiKey
+final String message = message_example; // String | 消息内容
+final int automaticallyCopy = 56; // int | 携带参数 automaticallyCopy=1， 收到推送时，推送内容会自动复制到粘贴板（如发现不能自动复制，可尝试重启一下手机）
+final String copy = copy_example; // String | 携带copy参数， 则上面两种复制操作，将只复制copy参数的值
+final String url = url_example; // String | 点击推送将跳转到url的地址（发送时，URL参数需要编码）
+final String isArchive = isArchive_example; // String | 指定是否需要保存推送信息到历史记录，1 为保存，其他值为不保存。\\n如果不指定这个参数，推送信息将按照APP内设置来决定是否保存。
+final String group = group_example; // String | 指定推送消息分组，可在历史记录中按分组查看推送。
+final String icon = icon_example; // String | 指定推送消息图标, icon (仅 iOS15 或以上支持）
+final Object level = ; // Object | 设置时效性通知 active：不设置时的默认值，系统会立即亮屏显示通知。\\ntimeSensitive：时效性通知，可在专注状态下显示通知。\\npassive：仅将通知添加到通知列表，不会亮屏提醒
 
 try {
-    api.bark(apiKey, message, automaticallyCopy, copy, url, isArchive, group, icon, name, value);
+    api.bark(apiKey, message, automaticallyCopy, copy, url, isArchive, group, icon, level);
 } catch on DioError (e) {
     print('Exception when calling NotificationApi->bark: $e\n');
 }
@@ -48,16 +47,15 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **apiKey** | **String**|  | 
- **message** | **String**|  | 
- **automaticallyCopy** | **int**|  | [optional] [default to 0]
- **copy** | **String**|  | [optional] 
- **url** | **String**|  | [optional] 
- **isArchive** | **String**|  | [optional] 
- **group** | **String**|  | [optional] 
- **icon** | **String**|  | [optional] 
- **name** | **String**|  | [optional] 
- **value** | **String**|  | [optional] 
+ **apiKey** | **String**| Bark apiKey, 需要申请，注意不要泄露，泄露后产生安全问题请及时移除或禁用 apiKey | 
+ **message** | **String**| 消息内容 | 
+ **automaticallyCopy** | **int**| 携带参数 automaticallyCopy=1， 收到推送时，推送内容会自动复制到粘贴板（如发现不能自动复制，可尝试重启一下手机） | [optional] [default to 0]
+ **copy** | **String**| 携带copy参数， 则上面两种复制操作，将只复制copy参数的值 | [optional] 
+ **url** | **String**| 点击推送将跳转到url的地址（发送时，URL参数需要编码） | [optional] 
+ **isArchive** | **String**| 指定是否需要保存推送信息到历史记录，1 为保存，其他值为不保存。\\n如果不指定这个参数，推送信息将按照APP内设置来决定是否保存。 | [optional] 
+ **group** | **String**| 指定推送消息分组，可在历史记录中按分组查看推送。 | [optional] 
+ **icon** | **String**| 指定推送消息图标, icon (仅 iOS15 或以上支持） | [optional] 
+ **level** | [**Object**](.md)| 设置时效性通知 active：不设置时的默认值，系统会立即亮屏显示通知。\\ntimeSensitive：时效性通知，可在专注状态下显示通知。\\npassive：仅将通知添加到通知列表，不会亮屏提醒 | [optional] 
 
 ### Return type
 

@@ -25,8 +25,10 @@ SubscriptionOrderDto _$SubscriptionOrderDtoFromJson(
           deleterId: $checkedConvert('deleterId', (v) => v as String?),
           deletionTime: $checkedConvert('deletionTime',
               (v) => v == null ? null : DateTime.parse(v as String)),
-          type: $checkedConvert('type', (v) => v as String?),
-          status: $checkedConvert('status', (v) => v as String?),
+          type: $checkedConvert('type',
+              (v) => $enumDecodeNullable(_$SubscriptionOrderTypeEnumMap, v)),
+          status: $checkedConvert('status',
+              (v) => $enumDecodeNullable(_$SubscriptionOrderStatusEnumMap, v)),
           appId: $checkedConvert('appId', (v) => v as String?),
           pricingId: $checkedConvert('pricingId', (v) => v as String?),
           productId: $checkedConvert('productId', (v) => v as String?),
@@ -54,10 +56,24 @@ Map<String, dynamic> _$SubscriptionOrderDtoToJson(
   writeNotNull('isDeleted', instance.isDeleted);
   writeNotNull('deleterId', instance.deleterId);
   writeNotNull('deletionTime', instance.deletionTime?.toIso8601String());
-  writeNotNull('type', instance.type);
-  writeNotNull('status', instance.status);
+  writeNotNull('type', _$SubscriptionOrderTypeEnumMap[instance.type]);
+  writeNotNull('status', _$SubscriptionOrderStatusEnumMap[instance.status]);
   writeNotNull('appId', instance.appId);
   writeNotNull('pricingId', instance.pricingId);
   writeNotNull('productId', instance.productId);
   return val;
 }
+
+const _$SubscriptionOrderTypeEnumMap = {
+  SubscriptionOrderType.appleAuto: 'AppleAuto',
+  SubscriptionOrderType.alipayOnce: 'AlipayOnce',
+  SubscriptionOrderType.alipayAuto: 'AlipayAuto',
+  SubscriptionOrderType.wechatOnce: 'WechatOnce',
+  SubscriptionOrderType.wechatAuto: 'WechatAuto',
+};
+
+const _$SubscriptionOrderStatusEnumMap = {
+  SubscriptionOrderStatus.waiting: 'Waiting',
+  SubscriptionOrderStatus.overtime: 'Overtime',
+  SubscriptionOrderStatus.finished: 'Finished',
+};

@@ -28,7 +28,8 @@ DeviceDto _$DeviceDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
           isPhysicalDevice:
               $checkedConvert('isPhysicalDevice', (v) => v as bool?),
           name: $checkedConvert('name', (v) => v as String?),
-          platform: $checkedConvert('platform', (v) => v as String?),
+          platform: $checkedConvert(
+              'platform', (v) => $enumDecodeNullable(_$PlatformEnumMap, v)),
           brand: $checkedConvert('brand', (v) => v as String?),
           systemVersion: $checkedConvert('systemVersion', (v) => v as String?),
         );
@@ -58,8 +59,21 @@ Map<String, dynamic> _$DeviceDtoToJson(DeviceDto instance) {
   writeNotNull('tpnsToken', instance.tpnsToken);
   writeNotNull('isPhysicalDevice', instance.isPhysicalDevice);
   writeNotNull('name', instance.name);
-  writeNotNull('platform', instance.platform);
+  writeNotNull('platform', _$PlatformEnumMap[instance.platform]);
   writeNotNull('brand', instance.brand);
   writeNotNull('systemVersion', instance.systemVersion);
   return val;
 }
+
+const _$PlatformEnumMap = {
+  Platform.none: 'None',
+  Platform.unknown: 'Unknown',
+  Platform.android: 'Android',
+  Platform.IOS: 'IOS',
+  Platform.macOS: 'MacOS',
+  Platform.windows: 'Windows',
+  Platform.linux: 'Linux',
+  Platform.web: 'Web',
+  Platform.service: 'Service',
+  Platform.other: 'Other',
+};

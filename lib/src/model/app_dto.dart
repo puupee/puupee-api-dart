@@ -4,9 +4,12 @@
 
 // ignore_for_file: unused_element
 import 'package:puupee_api_client/src/model/app_sdk_dto.dart';
+import 'package:puupee_api_client/src/model/app_type.dart';
+import 'package:puupee_api_client/src/model/git_repository_type.dart';
 import 'package:puupee_api_client/src/model/app_feature_dto.dart';
 import 'package:puupee_api_client/src/model/identity_user_dto.dart';
 import 'package:puupee_api_client/src/model/app_release_dto.dart';
+import 'package:puupee_api_client/src/model/framework.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'app_dto.g.dart';
@@ -215,7 +218,7 @@ class AppDto {
   )
 
 
-  String? framework;
+  Framework? framework;
 
 
 
@@ -227,7 +230,7 @@ class AppDto {
   )
 
 
-  String? appType;
+  AppType? appType;
 
 
 
@@ -255,6 +258,7 @@ class AppDto {
 
 
 
+      /// 产品首页
   @JsonKey(
     
     name: r'homePage',
@@ -267,6 +271,7 @@ class AppDto {
 
 
 
+      /// 显示排序
   @JsonKey(
     
     name: r'sortIndex',
@@ -299,7 +304,7 @@ class AppDto {
   )
 
 
-  String? gitRepositoryType;
+  GitRepositoryType? gitRepositoryType;
 
 
 
@@ -315,6 +320,7 @@ class AppDto {
 
 
 
+      /// 是否已经发布, 决定了是否给终端用户看见, 主要有一些 APP 自己使用
   @JsonKey(
     
     name: r'isPublished',
@@ -327,6 +333,7 @@ class AppDto {
 
 
 
+      /// Webhook Url 各种事件回调地址
   @JsonKey(
     
     name: r'webhookUrl',
@@ -339,6 +346,7 @@ class AppDto {
 
 
 
+      /// 业务域名
   @JsonKey(
     
     name: r'businessDomain',
@@ -351,6 +359,7 @@ class AppDto {
 
 
 
+      /// 业务地址
   @JsonKey(
     
     name: r'businessUrl',
@@ -363,6 +372,7 @@ class AppDto {
 
 
 
+      /// 可以订阅的平台 Platform 枚举, 并用\",\"分割
   @JsonKey(
     
     name: r'subscriptionPlatforms',
@@ -375,6 +385,7 @@ class AppDto {
 
 
 
+      /// 暂时免费的平台, 付费功能免费用的平台, 用\",\"分割
   @JsonKey(
     
     name: r'freePlatforms',
@@ -387,6 +398,7 @@ class AppDto {
 
 
 
+      /// 声明格式
   @JsonKey(
     
     name: r'specJsonSchema',
@@ -399,6 +411,7 @@ class AppDto {
 
 
 
+      /// 默认存储空间大小
   @JsonKey(
     
     name: r'defaultStorageSize',
@@ -411,6 +424,7 @@ class AppDto {
 
 
 
+      /// 默认单文件最大大小
   @JsonKey(
     
     name: r'defaultSingleFileMaxSize',

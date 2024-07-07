@@ -24,7 +24,8 @@ AppPricingDto _$AppPricingDtoFromJson(Map<String, dynamic> json) =>
           deleterId: $checkedConvert('deleterId', (v) => v as String?),
           deletionTime: $checkedConvert('deletionTime',
               (v) => v == null ? null : DateTime.parse(v as String)),
-          naming: $checkedConvert('naming', (v) => v as String?),
+          naming: $checkedConvert(
+              'naming', (v) => $enumDecodeNullable(_$PriceNamingEnumMap, v)),
           monthProductId:
               $checkedConvert('monthProductId', (v) => v as String?),
           yearProductId: $checkedConvert('yearProductId', (v) => v as String?),
@@ -50,7 +51,7 @@ AppPricingDto _$AppPricingDtoFromJson(Map<String, dynamic> json) =>
               (v) => v == null ? null : DateTime.parse(v as String)),
           yearDiscountEndAt: $checkedConvert('yearDiscountEndAt',
               (v) => v == null ? null : DateTime.parse(v as String)),
-          sortIndex: $checkedConvert('sortIndex', (v) => v as int?),
+          sortIndex: $checkedConvert('sortIndex', (v) => (v as num?)?.toInt()),
           items: $checkedConvert(
               'items',
               (v) => (v as List<dynamic>?)
@@ -80,7 +81,7 @@ Map<String, dynamic> _$AppPricingDtoToJson(AppPricingDto instance) {
   writeNotNull('isDeleted', instance.isDeleted);
   writeNotNull('deleterId', instance.deleterId);
   writeNotNull('deletionTime', instance.deletionTime?.toIso8601String());
-  writeNotNull('naming', instance.naming);
+  writeNotNull('naming', _$PriceNamingEnumMap[instance.naming]);
   writeNotNull('monthProductId', instance.monthProductId);
   writeNotNull('yearProductId', instance.yearProductId);
   writeNotNull('description', instance.description);
@@ -103,3 +104,10 @@ Map<String, dynamic> _$AppPricingDtoToJson(AppPricingDto instance) {
   writeNotNull('items', instance.items?.map((e) => e.toJson()).toList());
   return val;
 }
+
+const _$PriceNamingEnumMap = {
+  PriceNaming.free: 'Free',
+  PriceNaming.premium: 'Premium',
+  PriceNaming.pro: 'Pro',
+  PriceNaming.enterprise: 'Enterprise',
+};

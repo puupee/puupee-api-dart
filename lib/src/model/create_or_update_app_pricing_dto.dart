@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:puupee_api_client/src/model/price_naming.dart';
 import 'package:puupee_api_client/src/model/app_pricing_item_value_dto.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -62,10 +63,11 @@ class CreateOrUpdateAppPricingDto {
   )
 
 
-  String? naming;
+  PriceNaming? naming;
 
 
 
+      /// 商店订阅产品 ID
   @JsonKey(
     
     name: r'monthProductId',
@@ -78,6 +80,7 @@ class CreateOrUpdateAppPricingDto {
 
 
 
+      /// 商店订阅产品 ID
   @JsonKey(
     
     name: r'yearProductId',
@@ -90,6 +93,7 @@ class CreateOrUpdateAppPricingDto {
 
 
 
+      /// 简单描述  适用于个人网站和任何想用基本的聊天方式与游客交流的人。  适用于希望改善客户关系的早期创业公司。  为需要全功能解决方案与客户沟通的公司而设。
   @JsonKey(
     
     name: r'description',
@@ -102,6 +106,7 @@ class CreateOrUpdateAppPricingDto {
 
 
 
+      /// APPID
   @JsonKey(
     
     name: r'appId',
@@ -114,6 +119,7 @@ class CreateOrUpdateAppPricingDto {
 
 
 
+      /// 价格
   @JsonKey(
     
     name: r'monthPrice',
@@ -126,6 +132,7 @@ class CreateOrUpdateAppPricingDto {
 
 
 
+      /// 折扣
   @JsonKey(
     
     name: r'monthDiscount',
@@ -138,6 +145,7 @@ class CreateOrUpdateAppPricingDto {
 
 
 
+      /// 折扣后价格 DiscountPrice = Price * Discount
   @JsonKey(
     
     name: r'monthDiscountPrice',
@@ -150,6 +158,7 @@ class CreateOrUpdateAppPricingDto {
 
 
 
+      /// 折扣开始时间
   @JsonKey(
     
     name: r'monthDiscountStartAt',
@@ -162,6 +171,7 @@ class CreateOrUpdateAppPricingDto {
 
 
 
+      /// 折扣结束时间
   @JsonKey(
     
     name: r'monthDiscountEndAt',
@@ -174,6 +184,7 @@ class CreateOrUpdateAppPricingDto {
 
 
 
+      /// 价格
   @JsonKey(
     
     name: r'yearPrice',
@@ -186,6 +197,7 @@ class CreateOrUpdateAppPricingDto {
 
 
 
+      /// 折扣
   @JsonKey(
     
     name: r'yearDiscount',
@@ -198,6 +210,7 @@ class CreateOrUpdateAppPricingDto {
 
 
 
+      /// 折扣后价格 DiscountPrice = Price * Discount
   @JsonKey(
     
     name: r'yearDiscountPrice',
@@ -210,6 +223,7 @@ class CreateOrUpdateAppPricingDto {
 
 
 
+      /// 折扣开始时间
   @JsonKey(
     
     name: r'yearDiscountStartAt',
@@ -222,6 +236,7 @@ class CreateOrUpdateAppPricingDto {
 
 
 
+      /// 折扣结束时间
   @JsonKey(
     
     name: r'yearDiscountEndAt',
@@ -234,6 +249,7 @@ class CreateOrUpdateAppPricingDto {
 
 
 
+      /// 排序
   @JsonKey(
     
     name: r'sortIndex',
@@ -246,6 +262,7 @@ class CreateOrUpdateAppPricingDto {
 
 
 
+      /// 收费点
   @JsonKey(
     
     name: r'items',

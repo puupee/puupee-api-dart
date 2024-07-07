@@ -56,11 +56,15 @@ class IdentityUserDto {
 
      this.lockoutEnabled,
 
+     this.accessFailedCount,
+
      this.lockoutEnd,
 
      this.concurrencyStamp,
 
      this.entityVersion,
+
+     this.lastPasswordChangeTime,
   });
 
   @JsonKey(
@@ -293,6 +297,18 @@ class IdentityUserDto {
 
   @JsonKey(
     
+    name: r'accessFailedCount',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  int? accessFailedCount;
+
+
+
+  @JsonKey(
+    
     name: r'lockoutEnd',
     required: false,
     includeIfNull: false
@@ -327,6 +343,18 @@ class IdentityUserDto {
 
 
 
+  @JsonKey(
+    
+    name: r'lastPasswordChangeTime',
+    required: false,
+    includeIfNull: false
+  )
+
+
+  DateTime? lastPasswordChangeTime;
+
+
+
   @override
   bool operator ==(Object other) => identical(this, other) || other is IdentityUserDto &&
      other.extraProperties == extraProperties &&
@@ -348,9 +376,11 @@ class IdentityUserDto {
      other.phoneNumberConfirmed == phoneNumberConfirmed &&
      other.isActive == isActive &&
      other.lockoutEnabled == lockoutEnabled &&
+     other.accessFailedCount == accessFailedCount &&
      other.lockoutEnd == lockoutEnd &&
      other.concurrencyStamp == concurrencyStamp &&
-     other.entityVersion == entityVersion;
+     other.entityVersion == entityVersion &&
+     other.lastPasswordChangeTime == lastPasswordChangeTime;
 
   @override
   int get hashCode =>
@@ -373,9 +403,11 @@ class IdentityUserDto {
     phoneNumberConfirmed.hashCode +
     isActive.hashCode +
     lockoutEnabled.hashCode +
+    accessFailedCount.hashCode +
     lockoutEnd.hashCode +
     concurrencyStamp.hashCode +
-    entityVersion.hashCode;
+    entityVersion.hashCode +
+    lastPasswordChangeTime.hashCode;
 
   factory IdentityUserDto.fromJson(Map<String, dynamic> json) => _$IdentityUserDtoFromJson(json);
 

@@ -26,16 +26,19 @@ AppReleaseDto _$AppReleaseDtoFromJson(Map<String, dynamic> json) =>
               (v) => v == null ? null : DateTime.parse(v as String)),
           version: $checkedConvert('version', (v) => v as String?),
           versionName: $checkedConvert('versionName', (v) => v as String?),
-          versionCode: $checkedConvert('versionCode', (v) => v as int?),
+          versionCode:
+              $checkedConvert('versionCode', (v) => (v as num?)?.toInt()),
           notes: $checkedConvert('notes', (v) => v as String?),
-          platform: $checkedConvert('platform', (v) => v as String?),
+          platform: $checkedConvert(
+              'platform', (v) => $enumDecodeNullable(_$PlatformEnumMap, v)),
           key: $checkedConvert('key', (v) => v as String?),
           rapidCode: $checkedConvert('rapidCode', (v) => v as String?),
-          size: $checkedConvert('size', (v) => v as int?),
+          size: $checkedConvert('size', (v) => (v as num?)?.toInt()),
           md5: $checkedConvert('md5', (v) => v as String?),
           sliceMd5: $checkedConvert('sliceMd5', (v) => v as String?),
           downloadUrl: $checkedConvert('downloadUrl', (v) => v as String?),
-          productType: $checkedConvert('productType', (v) => v as String?),
+          artifactType: $checkedConvert('artifactType',
+              (v) => $enumDecodeNullable(_$ArtifactTypeEnumMap, v)),
           isForceUpdate: $checkedConvert('isForceUpdate', (v) => v as bool?),
           appId: $checkedConvert('appId', (v) => v as String?),
           isEnabled: $checkedConvert('isEnabled', (v) => v as bool?),
@@ -68,14 +71,14 @@ Map<String, dynamic> _$AppReleaseDtoToJson(AppReleaseDto instance) {
   writeNotNull('versionName', instance.versionName);
   writeNotNull('versionCode', instance.versionCode);
   writeNotNull('notes', instance.notes);
-  writeNotNull('platform', instance.platform);
+  writeNotNull('platform', _$PlatformEnumMap[instance.platform]);
   writeNotNull('key', instance.key);
   writeNotNull('rapidCode', instance.rapidCode);
   writeNotNull('size', instance.size);
   writeNotNull('md5', instance.md5);
   writeNotNull('sliceMd5', instance.sliceMd5);
   writeNotNull('downloadUrl', instance.downloadUrl);
-  writeNotNull('productType', instance.productType);
+  writeNotNull('artifactType', _$ArtifactTypeEnumMap[instance.artifactType]);
   writeNotNull('isForceUpdate', instance.isForceUpdate);
   writeNotNull('appId', instance.appId);
   writeNotNull('isEnabled', instance.isEnabled);
@@ -83,3 +86,33 @@ Map<String, dynamic> _$AppReleaseDtoToJson(AppReleaseDto instance) {
   writeNotNull('environment', instance.environment);
   return val;
 }
+
+const _$PlatformEnumMap = {
+  Platform.none: 'None',
+  Platform.unknown: 'Unknown',
+  Platform.android: 'Android',
+  Platform.IOS: 'IOS',
+  Platform.macOS: 'MacOS',
+  Platform.windows: 'Windows',
+  Platform.linux: 'Linux',
+  Platform.web: 'Web',
+  Platform.service: 'Service',
+  Platform.other: 'Other',
+};
+
+const _$ArtifactTypeEnumMap = {
+  ArtifactType.apk: 'Apk',
+  ArtifactType.ipa: 'Ipa',
+  ArtifactType.exe: 'Exe',
+  ArtifactType.msi: 'Msi',
+  ArtifactType.dmg: 'Dmg',
+  ArtifactType.pkg: 'Pkg',
+  ArtifactType.appImage: 'AppImage',
+  ArtifactType.web: 'Web',
+  ArtifactType.service: 'Service',
+  ArtifactType.appStore: 'AppStore',
+  ArtifactType.googlePlay: 'GooglePlay',
+  ArtifactType.macAppStore: 'MacAppStore',
+  ArtifactType.microsoftStore: 'MicrosoftStore',
+  ArtifactType.other: 'Other',
+};

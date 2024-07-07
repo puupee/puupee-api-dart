@@ -35,9 +35,9 @@ Map<String, dynamic> _$AbpLoginResultToJson(AbpLoginResult instance) {
 }
 
 const _$LoginResultTypeEnumMap = {
-  LoginResultType.success: 'Success',
-  LoginResultType.invalidUserNameOrPassword: 'InvalidUserNameOrPassword',
-  LoginResultType.notAllowed: 'NotAllowed',
-  LoginResultType.lockedOut: 'LockedOut',
-  LoginResultType.requiresTwoFactor: 'RequiresTwoFactor',
+  LoginResultType.number1: 1,
+  LoginResultType.number2: 2,
+  LoginResultType.number3: 3,
+  LoginResultType.number4: 4,
+  LoginResultType.number5: 5,
 };

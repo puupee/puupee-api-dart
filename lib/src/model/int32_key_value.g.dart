@@ -12,7 +12,7 @@ Int32KeyValue _$Int32KeyValueFromJson(Map<String, dynamic> json) =>
       json,
       ($checkedConvert) {
         final val = Int32KeyValue(
-          value: $checkedConvert('value', (v) => v as int?),
+          value: $checkedConvert('value', (v) => (v as num?)?.toInt()),
           durationSeconds: $checkedConvert(
               'durationSeconds', (v) => (v as num?)?.toDouble()),
           expiredAt: $checkedConvert('expiredAt',

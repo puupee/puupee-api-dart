@@ -4,9 +4,12 @@
 
 // ignore_for_file: unused_element
 import 'package:puupee_api_client/src/model/app_sdk_dto.dart';
+import 'package:puupee_api_client/src/model/app_type.dart';
+import 'package:puupee_api_client/src/model/git_repository_type.dart';
 import 'package:puupee_api_client/src/model/app_feature_dto.dart';
 import 'package:puupee_api_client/src/model/identity_user_dto.dart';
 import 'package:puupee_api_client/src/model/app_release_dto.dart';
+import 'package:puupee_api_client/src/model/framework.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'app_with_user_dto.g.dart';
@@ -217,7 +220,7 @@ class AppWithUserDto {
   )
 
 
-  String? framework;
+  Framework? framework;
 
 
 
@@ -229,7 +232,7 @@ class AppWithUserDto {
   )
 
 
-  String? appType;
+  AppType? appType;
 
 
 
@@ -257,6 +260,7 @@ class AppWithUserDto {
 
 
 
+      /// 产品首页
   @JsonKey(
     
     name: r'homePage',
@@ -269,6 +273,7 @@ class AppWithUserDto {
 
 
 
+      /// 显示排序
   @JsonKey(
     
     name: r'sortIndex',
@@ -301,7 +306,7 @@ class AppWithUserDto {
   )
 
 
-  String? gitRepositoryType;
+  GitRepositoryType? gitRepositoryType;
 
 
 
@@ -317,6 +322,7 @@ class AppWithUserDto {
 
 
 
+      /// 是否已经发布, 决定了是否给终端用户看见, 主要有一些 APP 自己使用
   @JsonKey(
     
     name: r'isPublished',
@@ -329,6 +335,7 @@ class AppWithUserDto {
 
 
 
+      /// Webhook Url 各种事件回调地址
   @JsonKey(
     
     name: r'webhookUrl',
@@ -341,6 +348,7 @@ class AppWithUserDto {
 
 
 
+      /// 业务域名
   @JsonKey(
     
     name: r'businessDomain',
@@ -353,6 +361,7 @@ class AppWithUserDto {
 
 
 
+      /// 业务地址
   @JsonKey(
     
     name: r'businessUrl',
@@ -365,6 +374,7 @@ class AppWithUserDto {
 
 
 
+      /// 可以订阅的平台 Platform 枚举, 并用\",\"分割
   @JsonKey(
     
     name: r'subscriptionPlatforms',
@@ -377,6 +387,7 @@ class AppWithUserDto {
 
 
 
+      /// 暂时免费的平台, 付费功能免费用的平台, 用\",\"分割
   @JsonKey(
     
     name: r'freePlatforms',
@@ -389,6 +400,7 @@ class AppWithUserDto {
 
 
 
+      /// 声明格式
   @JsonKey(
     
     name: r'specJsonSchema',
@@ -401,6 +413,7 @@ class AppWithUserDto {
 
 
 
+      /// 默认存储空间大小
   @JsonKey(
     
     name: r'defaultStorageSize',
@@ -413,6 +426,7 @@ class AppWithUserDto {
 
 
 
+      /// 默认单文件最大大小
   @JsonKey(
     
     name: r'defaultSingleFileMaxSize',
@@ -473,6 +487,7 @@ class AppWithUserDto {
 
 
 
+      /// 是否已经订阅
   @JsonKey(
     
     name: r'subscribed',

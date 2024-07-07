@@ -22,6 +22,11 @@ UserData _$UserDataFromJson(Map<String, dynamic> json) => $checkedCreate(
           phoneNumber: $checkedConvert('phoneNumber', (v) => v as String?),
           phoneNumberConfirmed:
               $checkedConvert('phoneNumberConfirmed', (v) => v as bool?),
+          extraProperties: $checkedConvert(
+              'extraProperties',
+              (v) => (v as Map<String, dynamic>?)?.map(
+                    (k, e) => MapEntry(k, e as Object),
+                  )),
         );
         return val;
       },
@@ -46,5 +51,6 @@ Map<String, dynamic> _$UserDataToJson(UserData instance) {
   writeNotNull('emailConfirmed', instance.emailConfirmed);
   writeNotNull('phoneNumber', instance.phoneNumber);
   writeNotNull('phoneNumberConfirmed', instance.phoneNumberConfirmed);
+  writeNotNull('extraProperties', instance.extraProperties);
   return val;
 }

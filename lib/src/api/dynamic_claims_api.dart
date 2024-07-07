@@ -9,15 +9,15 @@ import 'dart:convert';
 import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:puupee_api_client/src/model/test_date_time.dart';
+import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 
-class TestApi {
+class DynamicClaimsApi {
 
   final Dio _dio;
 
-  const TestApi(this._dio);
+  const DynamicClaimsApi(this._dio);
 
-  /// getTestDate
+  /// refresh
   /// 
   ///
   /// Parameters:
@@ -28,9 +28,9 @@ class TestApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [TestDateTime] as data
+  /// Returns a [Future]
   /// Throws [DioError] if API call or serialization fails
-  Future<Response<TestDateTime>> getTestDate({ 
+  Future<Response<void>> refresh({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -38,9 +38,9 @@ class TestApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/Test/datetime';
+    final _path = r'/api/account/dynamic-claims/refresh';
     final _options = Options(
-      method: r'GET',
+      method: r'POST',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -64,30 +64,7 @@ class TestApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    TestDateTime _responseData;
-
-    try {
-_responseData = deserialize<TestDateTime, TestDateTime>(_response.data!, 'TestDateTime', growable: true);
-    } catch (error, stackTrace) {
-      throw DioError(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioErrorType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<TestDateTime>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+    return _response;
   }
 
 }

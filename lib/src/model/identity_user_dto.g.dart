@@ -40,11 +40,16 @@ IdentityUserDto _$IdentityUserDtoFromJson(Map<String, dynamic> json) =>
               $checkedConvert('phoneNumberConfirmed', (v) => v as bool?),
           isActive: $checkedConvert('isActive', (v) => v as bool?),
           lockoutEnabled: $checkedConvert('lockoutEnabled', (v) => v as bool?),
+          accessFailedCount:
+              $checkedConvert('accessFailedCount', (v) => (v as num?)?.toInt()),
           lockoutEnd: $checkedConvert('lockoutEnd',
               (v) => v == null ? null : DateTime.parse(v as String)),
           concurrencyStamp:
               $checkedConvert('concurrencyStamp', (v) => v as String?),
-          entityVersion: $checkedConvert('entityVersion', (v) => v as int?),
+          entityVersion:
+              $checkedConvert('entityVersion', (v) => (v as num?)?.toInt()),
+          lastPasswordChangeTime: $checkedConvert('lastPasswordChangeTime',
+              (v) => v == null ? null : DateTime.parse(v as String)),
         );
         return val;
       },
@@ -79,8 +84,11 @@ Map<String, dynamic> _$IdentityUserDtoToJson(IdentityUserDto instance) {
   writeNotNull('phoneNumberConfirmed', instance.phoneNumberConfirmed);
   writeNotNull('isActive', instance.isActive);
   writeNotNull('lockoutEnabled', instance.lockoutEnabled);
+  writeNotNull('accessFailedCount', instance.accessFailedCount);
   writeNotNull('lockoutEnd', instance.lockoutEnd?.toIso8601String());
   writeNotNull('concurrencyStamp', instance.concurrencyStamp);
   writeNotNull('entityVersion', instance.entityVersion);
+  writeNotNull('lastPasswordChangeTime',
+      instance.lastPasswordChangeTime?.toIso8601String());
   return val;
 }

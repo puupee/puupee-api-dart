@@ -12,18 +12,8 @@ void main() {
       // TODO
     });
 
-    //Future myFile({ String key }) async
-    test('test myFile', () async {
-      // TODO
-    });
-
     //Future<String> preSignUrl({ String key }) async
     test('test preSignUrl', () async {
-      // TODO
-    });
-
-    //Future thumb({ String key }) async
-    test('test thumb', () async {
       // TODO
     });
 

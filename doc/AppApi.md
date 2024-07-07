@@ -9,27 +9,27 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**callGet**](AppApi.md#callget) | **GET** /api/app/app/{id} | 
-[**create**](AppApi.md#create) | **POST** /api/app/app | 
-[**delete**](AppApi.md#delete) | **DELETE** /api/app/app/{id} | 
-[**getByName**](AppApi.md#getbyname) | **GET** /api/app/app/by-name | 
+[**callGet**](AppApi.md#callget) | **GET** /api/app/app/{id} | 获取 APP 详情
+[**create**](AppApi.md#create) | **POST** /api/app/app | 创建新应用
+[**delete**](AppApi.md#delete) | **DELETE** /api/app/app/{id} | 删除应用
+[**getByName**](AppApi.md#getbyname) | **GET** /api/app/app/by-name | 获取 APP 详情
 [**getFeatures**](AppApi.md#getfeatures) | **GET** /api/app/app/features/{appId} | 
-[**getList**](AppApi.md#getlist) | **GET** /api/app/app | 
-[**getListByDeveloperAll**](AppApi.md#getlistbydeveloperall) | **GET** /api/app/app/by-developer-all | 
-[**getListPublic**](AppApi.md#getlistpublic) | **GET** /api/app/app/public | 
-[**getListWithUser**](AppApi.md#getlistwithuser) | **GET** /api/app/app/with-user | 
+[**getList**](AppApi.md#getlist) | **GET** /api/app/app | 获取当前用户的应用列表
+[**getListByDeveloperAll**](AppApi.md#getlistbydeveloperall) | **GET** /api/app/app/by-developer-all | 获取开发者所有 APP 包括未发布的
+[**getListPublic**](AppApi.md#getlistpublic) | **GET** /api/app/app/public | 所有开发者已发布 APP 列表
+[**getListWithUser**](AppApi.md#getlistwithuser) | **GET** /api/app/app/with-user | 获取APP列表包含用户订阅信息
 [**getSdksById**](AppApi.md#getsdksbyid) | **GET** /api/app/app/sdks-by-id/{appId} | 
-[**getUploadCredentials**](AppApi.md#getuploadcredentials) | **GET** /api/app/app/upload-credentials | 
-[**getWithUser**](AppApi.md#getwithuser) | **GET** /api/app/app/{id}/with-user | 
+[**getUploadCredentials**](AppApi.md#getuploadcredentials) | **GET** /api/app/app/upload-credentials | 获取上传凭证
+[**getWithUser**](AppApi.md#getwithuser) | **GET** /api/app/app/{id}/with-user | 获取 APP 详情
 [**run**](AppApi.md#run) | **POST** /api/app/app/run | 
-[**update**](AppApi.md#update) | **PUT** /api/app/app/{id} | 
+[**update**](AppApi.md#update) | **PUT** /api/app/app/{id} | 更新 APP 信息
 [**updateRunState**](AppApi.md#updaterunstate) | **PUT** /api/app/app/{id}/run-state | 
 
 
 # **callGet**
 > AppDto callGet(id, env)
 
-
+获取 APP 详情
 
 ### Example
 ```dart
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 # **create**
 > AppDto create(body)
 
-
+创建新应用
 
 ### Example
 ```dart
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 # **delete**
 > delete(id)
 
-
+删除应用
 
 ### Example
 ```dart
@@ -159,7 +159,7 @@ void (empty response body)
 # **getByName**
 > AppDto getByName(name, env)
 
-
+获取 APP 详情
 
 ### Example
 ```dart
@@ -249,7 +249,7 @@ Name | Type | Description  | Notes
 # **getList**
 > AppDtoPagedResultDto getList(creatorId, sorting, skipCount, maxResultCount)
 
-
+获取当前用户的应用列表
 
 ### Example
 ```dart
@@ -298,7 +298,7 @@ Name | Type | Description  | Notes
 # **getListByDeveloperAll**
 > AppDtoPagedResultDto getListByDeveloperAll(developerAccount)
 
-
+获取开发者所有 APP 包括未发布的
 
 ### Example
 ```dart
@@ -341,7 +341,7 @@ Name | Type | Description  | Notes
 # **getListPublic**
 > AppDtoPagedResultDto getListPublic(type, developerAccount, currentAppName)
 
-
+所有开发者已发布 APP 列表
 
 ### Example
 ```dart
@@ -388,7 +388,7 @@ Name | Type | Description  | Notes
 # **getListWithUser**
 > AppWithUserDtoPagedResultDto getListWithUser(type, searchKey, sorting, skipCount, maxResultCount)
 
-
+获取APP列表包含用户订阅信息
 
 ### Example
 ```dart
@@ -484,7 +484,7 @@ Name | Type | Description  | Notes
 # **getUploadCredentials**
 > StorageObjectCredentials getUploadCredentials(key)
 
-
+获取上传凭证
 
 ### Example
 ```dart
@@ -527,7 +527,7 @@ Name | Type | Description  | Notes
 # **getWithUser**
 > AppWithUserDto getWithUser(id, env)
 
-
+获取 APP 详情
 
 ### Example
 ```dart
@@ -615,7 +615,7 @@ Name | Type | Description  | Notes
 # **update**
 > AppDto update(id, body)
 
-
+更新 APP 信息
 
 ### Example
 ```dart

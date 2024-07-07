@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:puupee_api_client/src/model/price_naming.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'subscription_dto.g.dart';
@@ -139,6 +140,7 @@ class SubscriptionDto {
 
 
 
+      /// 会员过期时间
   @JsonKey(
     
     name: r'expireAt',
@@ -151,6 +153,7 @@ class SubscriptionDto {
 
 
 
+      /// 应用 ID
   @JsonKey(
     
     name: r'appId',
@@ -171,7 +174,7 @@ class SubscriptionDto {
   )
 
 
-  String? priceNaming;
+  PriceNaming? priceNaming;
 
 
 

@@ -25,7 +25,7 @@ FeatureDto _$FeatureDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
               (v) => v == null
                   ? null
                   : IStringValueType.fromJson(v as Map<String, dynamic>)),
-          depth: $checkedConvert('depth', (v) => v as int?),
+          depth: $checkedConvert('depth', (v) => (v as num?)?.toInt()),
           parentName: $checkedConvert('parentName', (v) => v as String?),
         );
         return val;

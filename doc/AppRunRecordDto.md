@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **appName** | **String** |  | [optional] 
 **args** | **Object** |  | [optional] 
 **envs** | **Object** |  | [optional] 
-**status** | **String** |  | [optional] 
+**status** | [**AppRunStatus**](AppRunStatus.md) |  | [optional] 
 **result** | **String** |  | [optional] 
 **error** | **String** |  | [optional] 
 **finishAt** | [**DateTime**](DateTime.md) |  | [optional] 

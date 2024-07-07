@@ -7,21 +7,30 @@ void main() {
   // TODO add properties to the entity
 
   group(UserStorageDto, () {
-    // String name
-    test('to test the property `name`', () async {
+    // 所属应用
+    // String appId
+    test('to test the property `appId`', () async {
       // TODO
     });
 
-    // String displayName
-    test('to test the property `displayName`', () async {
+    // 应用名称
+    // String appName
+    test('to test the property `appName`', () async {
       // TODO
     });
 
+    // PriceNaming priceNaming
+    test('to test the property `priceNaming`', () async {
+      // TODO
+    });
+
+    // 用户存储容量
     // int size
     test('to test the property `size`', () async {
       // TODO
     });
 
+    // 当前使用大小
     // int currentSize
     test('to test the property `currentSize`', () async {
       // TODO
@@ -32,8 +41,15 @@ void main() {
       // TODO
     });
 
+    // 单文件最大大小
     // int singleFileMaxSize
     test('to test the property `singleFileMaxSize`', () async {
+      // TODO
+    });
+
+    // 过期时间, 为空表示永久有效, 一般是订阅产品的过期时间
+    // DateTime expireAt
+    test('to test the property `expireAt`', () async {
       // TODO
     });
 

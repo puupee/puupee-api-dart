@@ -145,6 +145,7 @@ class AppPricingItemDto {
 
 
 
+      /// 键值, 例如: Seat, SingleFileMaxSize, UserStorageSize, MaxPuupeeCount, 见 AppPricingItemKeys.cs
   @JsonKey(
     
     name: r'key',
@@ -157,6 +158,7 @@ class AppPricingItemDto {
 
 
 
+      /// 名称: 坐席
   @JsonKey(
     
     name: r'name',
@@ -169,6 +171,7 @@ class AppPricingItemDto {
 
 
 
+      /// 描述, 使用 Markdown 格式, 允许包含图片
   @JsonKey(
     
     name: r'description',
@@ -181,6 +184,7 @@ class AppPricingItemDto {
 
 
 
+      /// 链接地址
   @JsonKey(
     
     name: r'linkUrl',
@@ -193,6 +197,7 @@ class AppPricingItemDto {
 
 
 
+      /// 显示模板: 包括{0}个坐席
   @JsonKey(
     
     name: r'display',
@@ -205,6 +210,7 @@ class AppPricingItemDto {
 
 
 
+      /// 是否可用
   @JsonKey(
     
     name: r'isAvailable',
@@ -217,6 +223,7 @@ class AppPricingItemDto {
 
 
 
+      /// 排序
   @JsonKey(
     
     name: r'sortIndex',

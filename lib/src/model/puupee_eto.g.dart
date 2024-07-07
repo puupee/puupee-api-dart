@@ -12,8 +12,10 @@ PuupeeEto _$PuupeeEtoFromJson(Map<String, dynamic> json) => $checkedCreate(
       ($checkedConvert) {
         final val = PuupeeEto(
           gid: $checkedConvert('gid', (v) => v as String?),
-          displayStyle: $checkedConvert('displayStyle', (v) => v as String?),
-          syncVersion: $checkedConvert('syncVersion', (v) => v as int?),
+          displayStyle: $checkedConvert('displayStyle',
+              (v) => $enumDecodeNullable(_$DisplayStyleEnumMap, v)),
+          syncVersion:
+              $checkedConvert('syncVersion', (v) => (v as num?)?.toInt()),
           url: $checkedConvert('url', (v) => v as String?),
           parentId: $checkedConvert('parentId', (v) => v as String?),
           name: $checkedConvert('name', (v) => v as String?),
@@ -25,7 +27,7 @@ PuupeeEto _$PuupeeEtoFromJson(Map<String, dynamic> json) => $checkedCreate(
           tagging: $checkedConvert('tagging', (v) => v as String?),
           password: $checkedConvert('password', (v) => v as String?),
           key: $checkedConvert('key', (v) => v as String?),
-          size: $checkedConvert('size', (v) => v as int?),
+          size: $checkedConvert('size', (v) => (v as num?)?.toInt()),
           md5: $checkedConvert('md5', (v) => v as String?),
           sliceMd5: $checkedConvert('sliceMd5', (v) => v as String?),
           rapidCode: $checkedConvert('rapidCode', (v) => v as String?),
@@ -36,7 +38,8 @@ PuupeeEto _$PuupeeEtoFromJson(Map<String, dynamic> json) => $checkedCreate(
               (v) => v == null ? null : DateTime.parse(v as String)),
           storageObjectUpdatedAt: $checkedConvert('storageObjectUpdatedAt',
               (v) => v == null ? null : DateTime.parse(v as String)),
-          priority: $checkedConvert('priority', (v) => v as int?),
+          priority: $checkedConvert(
+              'priority', (v) => $enumDecodeNullable(_$PriorityEnumMap, v)),
           doneAt: $checkedConvert(
               'doneAt', (v) => v == null ? null : DateTime.parse(v as String)),
           isDone: $checkedConvert('isDone', (v) => v as bool?),
@@ -46,24 +49,27 @@ PuupeeEto _$PuupeeEtoFromJson(Map<String, dynamic> json) => $checkedCreate(
               'endAt', (v) => v == null ? null : DateTime.parse(v as String)),
           notifyAt: $checkedConvert('notifyAt',
               (v) => v == null ? null : DateTime.parse(v as String)),
-          notifyTimingType:
-              $checkedConvert('notifyTimingType', (v) => v as String?),
-          notifyTimingUnit:
-              $checkedConvert('notifyTimingUnit', (v) => v as String?),
+          notifyTimingType: $checkedConvert('notifyTimingType',
+              (v) => $enumDecodeNullable(_$TodoNotifyTimingTypeEnumMap, v)),
+          notifyTimingUnit: $checkedConvert('notifyTimingUnit',
+              (v) => $enumDecodeNullable(_$TodoNotifyTimingUnitEnumMap, v)),
           notifyTimingValue:
-              $checkedConvert('notifyTimingValue', (v) => v as int?),
-          repeat: $checkedConvert('repeat', (v) => v as String?),
+              $checkedConvert('notifyTimingValue', (v) => (v as num?)?.toInt()),
+          repeat: $checkedConvert(
+              'repeat', (v) => $enumDecodeNullable(_$TodoRepeatEnumMap, v)),
           repeatOffAt: $checkedConvert('repeatOffAt',
               (v) => v == null ? null : DateTime.parse(v as String)),
-          repeatOffTimes: $checkedConvert('repeatOffTimes', (v) => v as int?),
-          repetitions: $checkedConvert('repetitions', (v) => v as int?),
+          repeatOffTimes:
+              $checkedConvert('repeatOffTimes', (v) => (v as num?)?.toInt()),
+          repetitions:
+              $checkedConvert('repetitions', (v) => (v as num?)?.toInt()),
           lastModifierDeviceToken:
               $checkedConvert('lastModifierDeviceToken', (v) => v as String?),
           lastModifierDevice:
               $checkedConvert('lastModifierDevice', (v) => v as String?),
           appName: $checkedConvert('appName', (v) => v as String?),
           content: $checkedConvert('content', (v) => v as String?),
-          sortIndex: $checkedConvert('sortIndex', (v) => v as int?),
+          sortIndex: $checkedConvert('sortIndex', (v) => (v as num?)?.toInt()),
           creationTime: $checkedConvert('creationTime',
               (v) => v == null ? null : DateTime.parse(v as String)),
           creatorId: $checkedConvert('creatorId', (v) => v as String?),
@@ -107,9 +113,11 @@ PuupeeEto _$PuupeeEtoFromJson(Map<String, dynamic> json) => $checkedCreate(
           thumbSliceMd5: $checkedConvert('thumbSliceMd5', (v) => v as String?),
           thumbRapidCode:
               $checkedConvert('thumbRapidCode', (v) => v as String?),
-          thumbSize: $checkedConvert('thumbSize', (v) => v as int?),
-          thumbWidth: $checkedConvert('thumbWidth', (v) => v as int?),
-          thumbHeight: $checkedConvert('thumbHeight', (v) => v as int?),
+          thumbSize: $checkedConvert('thumbSize', (v) => (v as num?)?.toInt()),
+          thumbWidth:
+              $checkedConvert('thumbWidth', (v) => (v as num?)?.toInt()),
+          thumbHeight:
+              $checkedConvert('thumbHeight', (v) => (v as num?)?.toInt()),
         );
         return val;
       },
@@ -126,7 +134,7 @@ Map<String, dynamic> _$PuupeeEtoToJson(PuupeeEto instance) {
   }
 
   writeNotNull('gid', instance.gid);
-  writeNotNull('displayStyle', instance.displayStyle);
+  writeNotNull('displayStyle', _$DisplayStyleEnumMap[instance.displayStyle]);
   writeNotNull('syncVersion', instance.syncVersion);
   writeNotNull('url', instance.url);
   writeNotNull('parentId', instance.parentId);
@@ -150,16 +158,18 @@ Map<String, dynamic> _$PuupeeEtoToJson(PuupeeEto instance) {
       instance.storageObjectCreatedAt?.toIso8601String());
   writeNotNull('storageObjectUpdatedAt',
       instance.storageObjectUpdatedAt?.toIso8601String());
-  writeNotNull('priority', instance.priority);
+  writeNotNull('priority', _$PriorityEnumMap[instance.priority]);
   writeNotNull('doneAt', instance.doneAt?.toIso8601String());
   writeNotNull('isDone', instance.isDone);
   writeNotNull('startAt', instance.startAt?.toIso8601String());
   writeNotNull('endAt', instance.endAt?.toIso8601String());
   writeNotNull('notifyAt', instance.notifyAt?.toIso8601String());
-  writeNotNull('notifyTimingType', instance.notifyTimingType);
-  writeNotNull('notifyTimingUnit', instance.notifyTimingUnit);
+  writeNotNull('notifyTimingType',
+      _$TodoNotifyTimingTypeEnumMap[instance.notifyTimingType]);
+  writeNotNull('notifyTimingUnit',
+      _$TodoNotifyTimingUnitEnumMap[instance.notifyTimingUnit]);
   writeNotNull('notifyTimingValue', instance.notifyTimingValue);
-  writeNotNull('repeat', instance.repeat);
+  writeNotNull('repeat', _$TodoRepeatEnumMap[instance.repeat]);
   writeNotNull('repeatOffAt', instance.repeatOffAt?.toIso8601String());
   writeNotNull('repeatOffTimes', instance.repeatOffTimes);
   writeNotNull('repetitions', instance.repetitions);
@@ -205,3 +215,47 @@ Map<String, dynamic> _$PuupeeEtoToJson(PuupeeEto instance) {
   writeNotNull('thumbHeight', instance.thumbHeight);
   return val;
 }
+
+const _$DisplayStyleEnumMap = {
+  DisplayStyle.none: 'None',
+  DisplayStyle.listItem: 'ListItem',
+  DisplayStyle.largeThumbnail: 'LargeThumbnail',
+  DisplayStyle.table: 'Table',
+  DisplayStyle.other: 'Other',
+};
+
+const _$PriorityEnumMap = {
+  Priority.urgentImportant: 'UrgentImportant',
+  Priority.urgentNotImportant: 'UrgentNotImportant',
+  Priority.importantNotUrgent: 'ImportantNotUrgent',
+  Priority.notImportantNotUrgent: 'NotImportantNotUrgent',
+};
+
+const _$TodoNotifyTimingTypeEnumMap = {
+  TodoNotifyTimingType.none: 'None',
+  TodoNotifyTimingType.before: 'Before',
+  TodoNotifyTimingType.after: 'After',
+};
+
+const _$TodoNotifyTimingUnitEnumMap = {
+  TodoNotifyTimingUnit.none: 'None',
+  TodoNotifyTimingUnit.minute: 'Minute',
+  TodoNotifyTimingUnit.hour: 'Hour',
+  TodoNotifyTimingUnit.day: 'Day',
+  TodoNotifyTimingUnit.month: 'Month',
+  TodoNotifyTimingUnit.year: 'Year',
+  TodoNotifyTimingUnit.custom: 'Custom',
+};
+
+const _$TodoRepeatEnumMap = {
+  TodoRepeat.never: 'Never',
+  TodoRepeat.everyDay: 'EveryDay',
+  TodoRepeat.everyWeekday: 'EveryWeekday',
+  TodoRepeat.everyWorkDay: 'EveryWorkDay',
+  TodoRepeat.everyWeek: 'EveryWeek',
+  TodoRepeat.everyMonthThisDay: 'EveryMonthThisDay',
+  TodoRepeat.everyMonthThisWeekday: 'EveryMonthThisWeekday',
+  TodoRepeat.everyYearThisDay: 'EveryYearThisDay',
+  TodoRepeat.everyYearThisLunarDay: 'EveryYearThisLunarDay',
+  TodoRepeat.custom: 'Custom',
+};

@@ -26,15 +26,17 @@ AppWithUserDto _$AppWithUserDtoFromJson(Map<String, dynamic> json) =>
               (v) => v == null ? null : DateTime.parse(v as String)),
           name: $checkedConvert('name', (v) => v as String?),
           displayName: $checkedConvert('displayName', (v) => v as String?),
-          framework: $checkedConvert('framework', (v) => v as String?),
-          appType: $checkedConvert('appType', (v) => v as String?),
+          framework: $checkedConvert(
+              'framework', (v) => $enumDecodeNullable(_$FrameworkEnumMap, v)),
+          appType: $checkedConvert(
+              'appType', (v) => $enumDecodeNullable(_$AppTypeEnumMap, v)),
           description: $checkedConvert('description', (v) => v as String?),
           icon: $checkedConvert('icon', (v) => v as String?),
           homePage: $checkedConvert('homePage', (v) => v as String?),
-          sortIndex: $checkedConvert('sortIndex', (v) => v as int?),
+          sortIndex: $checkedConvert('sortIndex', (v) => (v as num?)?.toInt()),
           gitRepository: $checkedConvert('gitRepository', (v) => v as String?),
-          gitRepositoryType:
-              $checkedConvert('gitRepositoryType', (v) => v as String?),
+          gitRepositoryType: $checkedConvert('gitRepositoryType',
+              (v) => $enumDecodeNullable(_$GitRepositoryTypeEnumMap, v)),
           isEnabled: $checkedConvert('isEnabled', (v) => v as bool?),
           isPublished: $checkedConvert('isPublished', (v) => v as bool?),
           webhookUrl: $checkedConvert('webhookUrl', (v) => v as String?),
@@ -46,10 +48,10 @@ AppWithUserDto _$AppWithUserDtoFromJson(Map<String, dynamic> json) =>
           freePlatforms: $checkedConvert('freePlatforms', (v) => v as String?),
           specJsonSchema:
               $checkedConvert('specJsonSchema', (v) => v as String?),
-          defaultStorageSize:
-              $checkedConvert('defaultStorageSize', (v) => v as int?),
-          defaultSingleFileMaxSize:
-              $checkedConvert('defaultSingleFileMaxSize', (v) => v as int?),
+          defaultStorageSize: $checkedConvert(
+              'defaultStorageSize', (v) => (v as num?)?.toInt()),
+          defaultSingleFileMaxSize: $checkedConvert(
+              'defaultSingleFileMaxSize', (v) => (v as num?)?.toInt()),
           latestReleases: $checkedConvert(
               'latestReleases',
               (v) => (v as List<dynamic>?)
@@ -98,14 +100,15 @@ Map<String, dynamic> _$AppWithUserDtoToJson(AppWithUserDto instance) {
   writeNotNull('deletionTime', instance.deletionTime?.toIso8601String());
   writeNotNull('name', instance.name);
   writeNotNull('displayName', instance.displayName);
-  writeNotNull('framework', instance.framework);
-  writeNotNull('appType', instance.appType);
+  writeNotNull('framework', _$FrameworkEnumMap[instance.framework]);
+  writeNotNull('appType', _$AppTypeEnumMap[instance.appType]);
   writeNotNull('description', instance.description);
   writeNotNull('icon', instance.icon);
   writeNotNull('homePage', instance.homePage);
   writeNotNull('sortIndex', instance.sortIndex);
   writeNotNull('gitRepository', instance.gitRepository);
-  writeNotNull('gitRepositoryType', instance.gitRepositoryType);
+  writeNotNull('gitRepositoryType',
+      _$GitRepositoryTypeEnumMap[instance.gitRepositoryType]);
   writeNotNull('isEnabled', instance.isEnabled);
   writeNotNull('isPublished', instance.isPublished);
   writeNotNull('webhookUrl', instance.webhookUrl);
@@ -124,3 +127,35 @@ Map<String, dynamic> _$AppWithUserDtoToJson(AppWithUserDto instance) {
   writeNotNull('subscribed', instance.subscribed);
   return val;
 }
+
+const _$FrameworkEnumMap = {
+  Framework.flutter: 'Flutter',
+  Framework.reactNative: 'ReactNative',
+  Framework.react: 'React',
+  Framework.nativeIOS: 'NativeIOS',
+  Framework.nativeAndroid: 'NativeAndroid',
+  Framework.nativeWindows: 'NativeWindows',
+  Framework.nativeMacOS: 'NativeMacOS',
+  Framework.ionic: 'Ionic',
+  Framework.aspNetCore: 'AspNetCore',
+  Framework.other: 'Other',
+  Framework.golang: 'Golang',
+};
+
+const _$AppTypeEnumMap = {
+  AppType.client: 'Client',
+  AppType.service: 'Service',
+  AppType.web: 'Web',
+  AppType.messageAccount: 'MessageAccount',
+  AppType.wechatMiniProgram: 'WechatMiniProgram',
+  AppType.extension_: 'Extension',
+  AppType.runable: 'Runable',
+  AppType.worker: 'Worker',
+};
+
+const _$GitRepositoryTypeEnumMap = {
+  GitRepositoryType.gitHub: 'GitHub',
+  GitRepositoryType.gitLab: 'GitLab',
+  GitRepositoryType.bitBucket: 'BitBucket',
+  GitRepositoryType.other: 'Other',
+};

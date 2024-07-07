@@ -18,7 +18,8 @@ DeviceDtoPagedResultDto _$DeviceDtoPagedResultDtoFromJson(
               (v) => (v as List<dynamic>?)
                   ?.map((e) => DeviceDto.fromJson(e as Map<String, dynamic>))
                   .toList()),
-          totalCount: $checkedConvert('totalCount', (v) => v as int?),
+          totalCount:
+              $checkedConvert('totalCount', (v) => (v as num?)?.toInt()),
         );
         return val;
       },

@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:puupee_api_client/src/model/platform.dart';
 import 'package:puupee_api_client/src/model/identity_user.dart';
 import 'package:puupee_api_client/src/model/apple_verify_receipt_result.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -227,7 +228,7 @@ class VerifyReceiptResult {
   )
 
 
-  String? platform;
+  Platform? platform;
 
 
 

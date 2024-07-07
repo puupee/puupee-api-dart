@@ -23,7 +23,7 @@ class SubscriptionApi {
 
   const SubscriptionApi(this._dio);
 
-  /// appleNotifications
+  /// 苹果订阅 Callback 地址
   /// 
   ///
   /// Parameters:

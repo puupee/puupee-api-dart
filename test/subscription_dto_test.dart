@@ -47,17 +47,19 @@ void main() {
       // TODO
     });
 
+    // 会员过期时间
     // DateTime expireAt
     test('to test the property `expireAt`', () async {
       // TODO
     });
 
+    // 应用 ID
     // String appId
     test('to test the property `appId`', () async {
       // TODO
     });
 
-    // String priceNaming
+    // PriceNaming priceNaming
     test('to test the property `priceNaming`', () async {
       // TODO
     });

@@ -65,6 +65,7 @@ class MessagePublishDto {
 
 
 
+      /// 模板名称, 包含版本号  puupee/wechat-app-msg?version=1 微信应用消息模板  puupee/wechat-official-msg?version=2 微信公众号消息模板
   @JsonKey(
     
     name: r'template',
@@ -77,6 +78,7 @@ class MessagePublishDto {
 
 
 
+      /// JSON格式数据
   @JsonKey(
     
     name: r'data',

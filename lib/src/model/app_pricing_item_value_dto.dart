@@ -143,6 +143,7 @@ class AppPricingItemValueDto {
 
 
 
+      /// 是否可用
   @JsonKey(
     
     name: r'isAvailable',
@@ -155,6 +156,7 @@ class AppPricingItemValueDto {
 
 
 
+      /// 是否有值
   @JsonKey(
     
     name: r'hasValue',
@@ -203,6 +205,7 @@ class AppPricingItemValueDto {
 
 
 
+      /// 数字值类型, FileSize: 文件大小, Count: 数目
   @JsonKey(
     
     name: r'intValueType',

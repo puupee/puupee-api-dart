@@ -9,18 +9,18 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](AppReleaseApi.md#create) | **POST** /api/app/app-release | 
-[**delete**](AppReleaseApi.md#delete) | **DELETE** /api/app/app-release/{id} | 
-[**getById**](AppReleaseApi.md#getbyid) | **GET** /api/app/app-release/{id} | 
-[**getLatest**](AppReleaseApi.md#getlatest) | **GET** /api/app/app-release/latest | 
-[**getList**](AppReleaseApi.md#getlist) | **GET** /api/app/app-release | 
-[**update**](AppReleaseApi.md#update) | **PUT** /api/app/app-release/{id} | 
+[**create**](AppReleaseApi.md#create) | **POST** /api/app/app-release | 创建新版本
+[**delete**](AppReleaseApi.md#delete) | **DELETE** /api/app/app-release/{id} | 删除版本
+[**getById**](AppReleaseApi.md#getbyid) | **GET** /api/app/app-release/{id} | 获取版本
+[**getLatest**](AppReleaseApi.md#getlatest) | **GET** /api/app/app-release/latest | 获取最新版本
+[**getList**](AppReleaseApi.md#getlist) | **GET** /api/app/app-release | 获取版本列表
+[**update**](AppReleaseApi.md#update) | **PUT** /api/app/app-release/{id} | 更新版本
 
 
 # **create**
 > AppReleaseDto create(body)
 
-
+创建新版本
 
 ### Example
 ```dart
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 # **delete**
 > delete(id)
 
-
+删除版本
 
 ### Example
 ```dart
@@ -105,7 +105,7 @@ void (empty response body)
 # **getById**
 > AppReleaseDto getById(id)
 
-
+获取版本
 
 ### Example
 ```dart
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 # **getLatest**
 > AppReleaseDto getLatest(appName, platform, productType, environment)
 
-
+获取最新版本
 
 ### Example
 ```dart
@@ -197,7 +197,7 @@ Name | Type | Description  | Notes
 # **getList**
 > AppReleaseDtoPagedResultDto getList(appId, environment, platform, sorting, skipCount, maxResultCount)
 
-
+获取版本列表
 
 ### Example
 ```dart
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 # **update**
 > AppReleaseDto update(id, body)
 
-
+更新版本
 
 ### Example
 ```dart

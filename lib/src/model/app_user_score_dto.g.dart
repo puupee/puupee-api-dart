@@ -25,7 +25,7 @@ AppUserScoreDto _$AppUserScoreDtoFromJson(Map<String, dynamic> json) =>
           deletionTime: $checkedConvert('deletionTime',
               (v) => v == null ? null : DateTime.parse(v as String)),
           appId: $checkedConvert('appId', (v) => v as String?),
-          score: $checkedConvert('score', (v) => v as int?),
+          score: $checkedConvert('score', (v) => (v as num?)?.toInt()),
           comment: $checkedConvert('comment', (v) => v as String?),
         );
         return val;

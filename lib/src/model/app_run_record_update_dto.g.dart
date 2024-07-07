@@ -29,7 +29,8 @@ AppRunRecordUpdateDto _$AppRunRecordUpdateDtoFromJson(
           deleterId: $checkedConvert('deleterId', (v) => v as String?),
           deletionTime: $checkedConvert('deletionTime',
               (v) => v == null ? null : DateTime.parse(v as String)),
-          status: $checkedConvert('status', (v) => v as String),
+          status: $checkedConvert(
+              'status', (v) => $enumDecode(_$AppRunStatusEnumMap, v)),
           result: $checkedConvert('result', (v) => v as String?),
           error: $checkedConvert('error', (v) => v as String?),
           finishAt: $checkedConvert('finishAt',
@@ -61,7 +62,7 @@ Map<String, dynamic> _$AppRunRecordUpdateDtoToJson(
   writeNotNull('isDeleted', instance.isDeleted);
   writeNotNull('deleterId', instance.deleterId);
   writeNotNull('deletionTime', instance.deletionTime?.toIso8601String());
-  val['status'] = instance.status;
+  val['status'] = _$AppRunStatusEnumMap[instance.status]!;
   writeNotNull('result', instance.result);
   writeNotNull('error', instance.error);
   writeNotNull('finishAt', instance.finishAt?.toIso8601String());
@@ -70,3 +71,13 @@ Map<String, dynamic> _$AppRunRecordUpdateDtoToJson(
   val['workerName'] = instance.workerName;
   return val;
 }
+
+const _$AppRunStatusEnumMap = {
+  AppRunStatus.pending: 'Pending',
+  AppRunStatus.distributed: 'Distributed',
+  AppRunStatus.waiting: 'Waiting',
+  AppRunStatus.running: 'Running',
+  AppRunStatus.canceled: 'Canceled',
+  AppRunStatus.failed: 'Failed',
+  AppRunStatus.succeed: 'Succeed',
+};
