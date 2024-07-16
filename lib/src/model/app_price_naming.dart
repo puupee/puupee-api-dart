@@ -6,7 +6,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 
-enum PriceNaming {
+enum AppPriceNaming {
   @JsonValue(r'Free')
   free,
   @JsonValue(r'Premium')

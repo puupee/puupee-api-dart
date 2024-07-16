@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:puupee_api_client/src/model/platform.dart';
+import 'package:puupee_api_client/src/model/app_platform.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'device_dto.g.dart';
@@ -202,7 +202,7 @@ class DeviceDto {
   )
 
 
-  Platform? platform;
+  AppPlatform? platform;
 
 
 

@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **lastModifier** | [**IdentityUser**](IdentityUser.md) |  | [optional] 
 **orderId** | **String** |  | [optional] 
 **receiptData** | **String** |  | [optional] 
-**platform** | [**Platform**](Platform.md) |  | [optional] 
+**platform** | [**AppPlatform**](AppPlatform.md) |  | [optional] 
 **deviceToken** | **String** |  | [optional] 
 **ok** | **bool** |  | [optional] 
 **statusCode** | **String** |  | [optional] 

@@ -15,7 +15,7 @@ UserStorageDto _$UserStorageDtoFromJson(Map<String, dynamic> json) =>
           appId: $checkedConvert('appId', (v) => v as String?),
           appName: $checkedConvert('appName', (v) => v as String?),
           priceNaming: $checkedConvert('priceNaming',
-              (v) => $enumDecodeNullable(_$PriceNamingEnumMap, v)),
+              (v) => $enumDecodeNullable(_$AppPriceNamingEnumMap, v)),
           size: $checkedConvert('size', (v) => (v as num?)?.toInt()),
           currentSize:
               $checkedConvert('currentSize', (v) => (v as num?)?.toInt()),
@@ -47,7 +47,7 @@ Map<String, dynamic> _$UserStorageDtoToJson(UserStorageDto instance) {
 
   writeNotNull('appId', instance.appId);
   writeNotNull('appName', instance.appName);
-  writeNotNull('priceNaming', _$PriceNamingEnumMap[instance.priceNaming]);
+  writeNotNull('priceNaming', _$AppPriceNamingEnumMap[instance.priceNaming]);
   writeNotNull('size', instance.size);
   writeNotNull('currentSize', instance.currentSize);
   writeNotNull('totalCount', instance.totalCount);
@@ -57,9 +57,9 @@ Map<String, dynamic> _$UserStorageDtoToJson(UserStorageDto instance) {
   return val;
 }
 
-const _$PriceNamingEnumMap = {
-  PriceNaming.free: 'Free',
-  PriceNaming.premium: 'Premium',
-  PriceNaming.pro: 'Pro',
-  PriceNaming.enterprise: 'Enterprise',
+const _$AppPriceNamingEnumMap = {
+  AppPriceNaming.free: 'Free',
+  AppPriceNaming.premium: 'Premium',
+  AppPriceNaming.pro: 'Pro',
+  AppPriceNaming.enterprise: 'Enterprise',
 };

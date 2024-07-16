@@ -27,7 +27,7 @@ void main() {
       // TODO
     });
 
-    // Platform platform
+    // AppPlatform platform
     test('to test the property `platform`', () async {
       // TODO
     });

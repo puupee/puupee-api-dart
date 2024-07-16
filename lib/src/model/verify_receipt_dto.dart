@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:puupee_api_client/src/model/platform.dart';
+import 'package:puupee_api_client/src/model/app_platform.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'verify_receipt_dto.g.dart';
@@ -172,7 +172,7 @@ class VerifyReceiptDto {
   )
 
 
-  Platform platform;
+  AppPlatform platform;
 
 
 

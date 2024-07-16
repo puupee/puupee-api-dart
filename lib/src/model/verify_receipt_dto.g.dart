@@ -36,7 +36,7 @@ VerifyReceiptDto _$VerifyReceiptDtoFromJson(Map<String, dynamic> json) =>
           orderId: $checkedConvert('orderId', (v) => v as String),
           receiptData: $checkedConvert('receiptData', (v) => v as String),
           platform: $checkedConvert(
-              'platform', (v) => $enumDecode(_$PlatformEnumMap, v)),
+              'platform', (v) => $enumDecode(_$AppPlatformEnumMap, v)),
           deviceToken: $checkedConvert('deviceToken', (v) => v as String),
         );
         return val;
@@ -63,20 +63,20 @@ Map<String, dynamic> _$VerifyReceiptDtoToJson(VerifyReceiptDto instance) {
   writeNotNull('deletionTime', instance.deletionTime?.toIso8601String());
   val['orderId'] = instance.orderId;
   val['receiptData'] = instance.receiptData;
-  val['platform'] = _$PlatformEnumMap[instance.platform]!;
+  val['platform'] = _$AppPlatformEnumMap[instance.platform]!;
   val['deviceToken'] = instance.deviceToken;
   return val;
 }
 
-const _$PlatformEnumMap = {
-  Platform.none: 'None',
-  Platform.unknown: 'Unknown',
-  Platform.android: 'Android',
-  Platform.IOS: 'IOS',
-  Platform.macOS: 'MacOS',
-  Platform.windows: 'Windows',
-  Platform.linux: 'Linux',
-  Platform.web: 'Web',
-  Platform.service: 'Service',
-  Platform.other: 'Other',
+const _$AppPlatformEnumMap = {
+  AppPlatform.none: 'None',
+  AppPlatform.unknown: 'Unknown',
+  AppPlatform.android: 'Android',
+  AppPlatform.IOS: 'IOS',
+  AppPlatform.macOS: 'MacOS',
+  AppPlatform.windows: 'Windows',
+  AppPlatform.linux: 'Linux',
+  AppPlatform.web: 'Web',
+  AppPlatform.service: 'Service',
+  AppPlatform.other: 'Other',
 };

@@ -1,4 +1,4 @@
-# puupee_api_client.model.Framework
+# puupee_api_client.model.AppFramework
 
 ## Load the model package
 ```dart

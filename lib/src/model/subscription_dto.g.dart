@@ -28,7 +28,7 @@ SubscriptionDto _$SubscriptionDtoFromJson(Map<String, dynamic> json) =>
               (v) => v == null ? null : DateTime.parse(v as String)),
           appId: $checkedConvert('appId', (v) => v as String?),
           priceNaming: $checkedConvert('priceNaming',
-              (v) => $enumDecodeNullable(_$PriceNamingEnumMap, v)),
+              (v) => $enumDecodeNullable(_$AppPriceNamingEnumMap, v)),
           pricingId: $checkedConvert('pricingId', (v) => v as String?),
         );
         return val;
@@ -55,14 +55,14 @@ Map<String, dynamic> _$SubscriptionDtoToJson(SubscriptionDto instance) {
   writeNotNull('deletionTime', instance.deletionTime?.toIso8601String());
   writeNotNull('expireAt', instance.expireAt?.toIso8601String());
   writeNotNull('appId', instance.appId);
-  writeNotNull('priceNaming', _$PriceNamingEnumMap[instance.priceNaming]);
+  writeNotNull('priceNaming', _$AppPriceNamingEnumMap[instance.priceNaming]);
   writeNotNull('pricingId', instance.pricingId);
   return val;
 }
 
-const _$PriceNamingEnumMap = {
-  PriceNaming.free: 'Free',
-  PriceNaming.premium: 'Premium',
-  PriceNaming.pro: 'Pro',
-  PriceNaming.enterprise: 'Enterprise',
+const _$AppPriceNamingEnumMap = {
+  AppPriceNaming.free: 'Free',
+  AppPriceNaming.premium: 'Premium',
+  AppPriceNaming.pro: 'Pro',
+  AppPriceNaming.enterprise: 'Enterprise',
 };

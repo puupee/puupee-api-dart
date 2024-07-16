@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:puupee_api_client/src/model/price_naming.dart';
+import 'package:puupee_api_client/src/model/app_price_naming.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'subscription_dto.g.dart';
@@ -174,7 +174,7 @@ class SubscriptionDto {
   )
 
 
-  PriceNaming? priceNaming;
+  AppPriceNaming? priceNaming;
 
 
 

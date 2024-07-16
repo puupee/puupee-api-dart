@@ -57,7 +57,7 @@ void main() {
       // TODO
     });
 
-    // Framework framework
+    // AppFramework framework
     test('to test the property `framework`', () async {
       // TODO
     });

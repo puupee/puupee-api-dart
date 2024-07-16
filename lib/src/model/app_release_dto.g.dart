@@ -30,7 +30,7 @@ AppReleaseDto _$AppReleaseDtoFromJson(Map<String, dynamic> json) =>
               $checkedConvert('versionCode', (v) => (v as num?)?.toInt()),
           notes: $checkedConvert('notes', (v) => v as String?),
           platform: $checkedConvert(
-              'platform', (v) => $enumDecodeNullable(_$PlatformEnumMap, v)),
+              'platform', (v) => $enumDecodeNullable(_$AppPlatformEnumMap, v)),
           key: $checkedConvert('key', (v) => v as String?),
           rapidCode: $checkedConvert('rapidCode', (v) => v as String?),
           size: $checkedConvert('size', (v) => (v as num?)?.toInt()),
@@ -71,7 +71,7 @@ Map<String, dynamic> _$AppReleaseDtoToJson(AppReleaseDto instance) {
   writeNotNull('versionName', instance.versionName);
   writeNotNull('versionCode', instance.versionCode);
   writeNotNull('notes', instance.notes);
-  writeNotNull('platform', _$PlatformEnumMap[instance.platform]);
+  writeNotNull('platform', _$AppPlatformEnumMap[instance.platform]);
   writeNotNull('key', instance.key);
   writeNotNull('rapidCode', instance.rapidCode);
   writeNotNull('size', instance.size);
@@ -87,17 +87,17 @@ Map<String, dynamic> _$AppReleaseDtoToJson(AppReleaseDto instance) {
   return val;
 }
 
-const _$PlatformEnumMap = {
-  Platform.none: 'None',
-  Platform.unknown: 'Unknown',
-  Platform.android: 'Android',
-  Platform.IOS: 'IOS',
-  Platform.macOS: 'MacOS',
-  Platform.windows: 'Windows',
-  Platform.linux: 'Linux',
-  Platform.web: 'Web',
-  Platform.service: 'Service',
-  Platform.other: 'Other',
+const _$AppPlatformEnumMap = {
+  AppPlatform.none: 'None',
+  AppPlatform.unknown: 'Unknown',
+  AppPlatform.android: 'Android',
+  AppPlatform.IOS: 'IOS',
+  AppPlatform.macOS: 'MacOS',
+  AppPlatform.windows: 'Windows',
+  AppPlatform.linux: 'Linux',
+  AppPlatform.web: 'Web',
+  AppPlatform.service: 'Service',
+  AppPlatform.other: 'Other',
 };
 
 const _$ArtifactTypeEnumMap = {

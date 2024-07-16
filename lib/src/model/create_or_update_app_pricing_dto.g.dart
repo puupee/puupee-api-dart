@@ -14,7 +14,7 @@ CreateOrUpdateAppPricingDto _$CreateOrUpdateAppPricingDtoFromJson(
       ($checkedConvert) {
         final val = CreateOrUpdateAppPricingDto(
           naming: $checkedConvert(
-              'naming', (v) => $enumDecodeNullable(_$PriceNamingEnumMap, v)),
+              'naming', (v) => $enumDecodeNullable(_$AppPriceNamingEnumMap, v)),
           monthProductId:
               $checkedConvert('monthProductId', (v) => v as String?),
           yearProductId: $checkedConvert('yearProductId', (v) => v as String?),
@@ -62,7 +62,7 @@ Map<String, dynamic> _$CreateOrUpdateAppPricingDtoToJson(
     }
   }
 
-  writeNotNull('naming', _$PriceNamingEnumMap[instance.naming]);
+  writeNotNull('naming', _$AppPriceNamingEnumMap[instance.naming]);
   writeNotNull('monthProductId', instance.monthProductId);
   writeNotNull('yearProductId', instance.yearProductId);
   writeNotNull('description', instance.description);
@@ -86,9 +86,9 @@ Map<String, dynamic> _$CreateOrUpdateAppPricingDtoToJson(
   return val;
 }
 
-const _$PriceNamingEnumMap = {
-  PriceNaming.free: 'Free',
-  PriceNaming.premium: 'Premium',
-  PriceNaming.pro: 'Pro',
-  PriceNaming.enterprise: 'Enterprise',
+const _$AppPriceNamingEnumMap = {
+  AppPriceNaming.free: 'Free',
+  AppPriceNaming.premium: 'Premium',
+  AppPriceNaming.pro: 'Pro',
+  AppPriceNaming.enterprise: 'Enterprise',
 };

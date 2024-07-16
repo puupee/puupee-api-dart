@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **versionName** | **String** | 版本名称 | [optional] 
 **versionCode** | **int** | 构建编号 | [optional] 
 **notes** | **String** |  | [optional] 
-**platform** | [**Platform**](Platform.md) |  | [optional] 
+**platform** | [**AppPlatform**](AppPlatform.md) |  | [optional] 
 **key** | **String** |  | [optional] 
 **rapidCode** | **String** |  | [optional] 
 **size** | **int** |  | [optional] 

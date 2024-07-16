@@ -18,7 +18,7 @@ BindDeviceDto _$BindDeviceDtoFromJson(Map<String, dynamic> json) =>
               $checkedConvert('isPhysicalDevice', (v) => v as bool?),
           name: $checkedConvert('name', (v) => v as String?),
           platform: $checkedConvert(
-              'platform', (v) => $enumDecodeNullable(_$PlatformEnumMap, v)),
+              'platform', (v) => $enumDecodeNullable(_$AppPlatformEnumMap, v)),
           brand: $checkedConvert('brand', (v) => v as String?),
           systemVersion: $checkedConvert('systemVersion', (v) => v as String?),
         );
@@ -39,21 +39,21 @@ Map<String, dynamic> _$BindDeviceDtoToJson(BindDeviceDto instance) {
   writeNotNull('tpnsToken', instance.tpnsToken);
   writeNotNull('isPhysicalDevice', instance.isPhysicalDevice);
   writeNotNull('name', instance.name);
-  writeNotNull('platform', _$PlatformEnumMap[instance.platform]);
+  writeNotNull('platform', _$AppPlatformEnumMap[instance.platform]);
   writeNotNull('brand', instance.brand);
   writeNotNull('systemVersion', instance.systemVersion);
   return val;
 }
 
-const _$PlatformEnumMap = {
-  Platform.none: 'None',
-  Platform.unknown: 'Unknown',
-  Platform.android: 'Android',
-  Platform.IOS: 'IOS',
-  Platform.macOS: 'MacOS',
-  Platform.windows: 'Windows',
-  Platform.linux: 'Linux',
-  Platform.web: 'Web',
-  Platform.service: 'Service',
-  Platform.other: 'Other',
+const _$AppPlatformEnumMap = {
+  AppPlatform.none: 'None',
+  AppPlatform.unknown: 'Unknown',
+  AppPlatform.android: 'Android',
+  AppPlatform.IOS: 'IOS',
+  AppPlatform.macOS: 'MacOS',
+  AppPlatform.windows: 'Windows',
+  AppPlatform.linux: 'Linux',
+  AppPlatform.web: 'Web',
+  AppPlatform.service: 'Service',
+  AppPlatform.other: 'Other',
 };

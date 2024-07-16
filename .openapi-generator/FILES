@@ -21,6 +21,9 @@ doc/AppDtoPagedResultDto.md
 doc/AppFeatureApi.md
 doc/AppFeatureDto.md
 doc/AppFeatureDtoPagedResultDto.md
+doc/AppFramework.md
+doc/AppPlatform.md
+doc/AppPriceNaming.md
 doc/AppPricingApi.md
 doc/AppPricingDto.md
 doc/AppPricingDtoPagedResultDto.md
@@ -117,7 +120,6 @@ doc/FeatureGroupDto.md
 doc/FeatureProviderDto.md
 doc/FeaturesApi.md
 doc/FindTenantResultDto.md
-doc/Framework.md
 doc/GetFeatureListResultDto.md
 doc/GetPermissionListResultDto.md
 doc/GitRepositoryType.md
@@ -181,8 +183,6 @@ doc/PendingRenewalInfo.md
 doc/PermissionGrantInfoDto.md
 doc/PermissionGroupDto.md
 doc/PermissionsApi.md
-doc/Platform.md
-doc/PriceNaming.md
 doc/Priority.md
 doc/ProfileApi.md
 doc/ProfileDto.md
@@ -313,6 +313,9 @@ lib/src/model/app_dto.dart
 lib/src/model/app_dto_paged_result_dto.dart
 lib/src/model/app_feature_dto.dart
 lib/src/model/app_feature_dto_paged_result_dto.dart
+lib/src/model/app_framework.dart
+lib/src/model/app_platform.dart
+lib/src/model/app_price_naming.dart
 lib/src/model/app_pricing_dto.dart
 lib/src/model/app_pricing_dto_paged_result_dto.dart
 lib/src/model/app_pricing_item_dto.dart
@@ -399,7 +402,6 @@ lib/src/model/feature_dto.dart
 lib/src/model/feature_group_dto.dart
 lib/src/model/feature_provider_dto.dart
 lib/src/model/find_tenant_result_dto.dart
-lib/src/model/framework.dart
 lib/src/model/get_feature_list_result_dto.dart
 lib/src/model/get_permission_list_result_dto.dart
 lib/src/model/git_repository_type.dart
@@ -452,8 +454,6 @@ lib/src/model/parameter_api_description_model.dart
 lib/src/model/pending_renewal_info.dart
 lib/src/model/permission_grant_info_dto.dart
 lib/src/model/permission_group_dto.dart
-lib/src/model/platform.dart
-lib/src/model/price_naming.dart
 lib/src/model/priority.dart
 lib/src/model/profile_dto.dart
 lib/src/model/property_api_description_model.dart
@@ -530,6 +530,9 @@ test/app_dto_test.dart
 test/app_feature_api_test.dart
 test/app_feature_dto_paged_result_dto_test.dart
 test/app_feature_dto_test.dart
+test/app_framework_test.dart
+test/app_platform_test.dart
+test/app_price_naming_test.dart
 test/app_pricing_api_test.dart
 test/app_pricing_dto_paged_result_dto_test.dart
 test/app_pricing_dto_test.dart
@@ -626,7 +629,6 @@ test/feature_group_dto_test.dart
 test/feature_provider_dto_test.dart
 test/features_api_test.dart
 test/find_tenant_result_dto_test.dart
-test/framework_test.dart
 test/get_feature_list_result_dto_test.dart
 test/get_permission_list_result_dto_test.dart
 test/git_repository_type_test.dart
@@ -690,8 +692,6 @@ test/pending_renewal_info_test.dart
 test/permission_grant_info_dto_test.dart
 test/permission_group_dto_test.dart
 test/permissions_api_test.dart
-test/platform_test.dart
-test/price_naming_test.dart
 test/priority_test.dart
 test/profile_api_test.dart
 test/profile_dto_test.dart

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **tpnsToken** | **String** |  | [optional] 
 **isPhysicalDevice** | **bool** |  | [optional] 
 **name** | **String** |  | [optional] 
-**platform** | [**Platform**](Platform.md) |  | [optional] 
+**platform** | [**AppPlatform**](AppPlatform.md) |  | [optional] 
 **brand** | **String** |  | [optional] 
 **systemVersion** | **String** |  | [optional] 
 

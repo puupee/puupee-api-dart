@@ -6,7 +6,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 
-enum Platform {
+enum AppPlatform {
   @JsonValue(r'None')
   none,
   @JsonValue(r'Unknown')

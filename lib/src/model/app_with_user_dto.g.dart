@@ -26,8 +26,8 @@ AppWithUserDto _$AppWithUserDtoFromJson(Map<String, dynamic> json) =>
               (v) => v == null ? null : DateTime.parse(v as String)),
           name: $checkedConvert('name', (v) => v as String?),
           displayName: $checkedConvert('displayName', (v) => v as String?),
-          framework: $checkedConvert(
-              'framework', (v) => $enumDecodeNullable(_$FrameworkEnumMap, v)),
+          framework: $checkedConvert('framework',
+              (v) => $enumDecodeNullable(_$AppFrameworkEnumMap, v)),
           appType: $checkedConvert(
               'appType', (v) => $enumDecodeNullable(_$AppTypeEnumMap, v)),
           description: $checkedConvert('description', (v) => v as String?),
@@ -100,7 +100,7 @@ Map<String, dynamic> _$AppWithUserDtoToJson(AppWithUserDto instance) {
   writeNotNull('deletionTime', instance.deletionTime?.toIso8601String());
   writeNotNull('name', instance.name);
   writeNotNull('displayName', instance.displayName);
-  writeNotNull('framework', _$FrameworkEnumMap[instance.framework]);
+  writeNotNull('framework', _$AppFrameworkEnumMap[instance.framework]);
   writeNotNull('appType', _$AppTypeEnumMap[instance.appType]);
   writeNotNull('description', instance.description);
   writeNotNull('icon', instance.icon);
@@ -128,18 +128,18 @@ Map<String, dynamic> _$AppWithUserDtoToJson(AppWithUserDto instance) {
   return val;
 }
 
-const _$FrameworkEnumMap = {
-  Framework.flutter: 'Flutter',
-  Framework.reactNative: 'ReactNative',
-  Framework.react: 'React',
-  Framework.nativeIOS: 'NativeIOS',
-  Framework.nativeAndroid: 'NativeAndroid',
-  Framework.nativeWindows: 'NativeWindows',
-  Framework.nativeMacOS: 'NativeMacOS',
-  Framework.ionic: 'Ionic',
-  Framework.aspNetCore: 'AspNetCore',
-  Framework.other: 'Other',
-  Framework.golang: 'Golang',
+const _$AppFrameworkEnumMap = {
+  AppFramework.flutter: 'Flutter',
+  AppFramework.reactNative: 'ReactNative',
+  AppFramework.react: 'React',
+  AppFramework.nativeIOS: 'NativeIOS',
+  AppFramework.nativeAndroid: 'NativeAndroid',
+  AppFramework.nativeWindows: 'NativeWindows',
+  AppFramework.nativeMacOS: 'NativeMacOS',
+  AppFramework.ionic: 'Ionic',
+  AppFramework.aspNetCore: 'AspNetCore',
+  AppFramework.other: 'Other',
+  AppFramework.golang: 'Golang',
 };
 
 const _$AppTypeEnumMap = {

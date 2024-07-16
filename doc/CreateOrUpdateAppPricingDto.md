@@ -8,7 +8,7 @@ import 'package:puupee_api_client/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**naming** | [**PriceNaming**](PriceNaming.md) |  | [optional] 
+**naming** | [**AppPriceNaming**](AppPriceNaming.md) |  | [optional] 
 **monthProductId** | **String** | 商店订阅产品 ID | [optional] 
 **yearProductId** | **String** | 商店订阅产品 ID | [optional] 
 **description** | **String** | 简单描述  适用于个人网站和任何想用基本的聊天方式与游客交流的人。  适用于希望改善客户关系的早期创业公司。  为需要全功能解决方案与客户沟通的公司而设。 | [optional] 

@@ -6,7 +6,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 /// 技术框架
-enum Framework {
+enum AppFramework {
   /// 技术框架
   @JsonValue(r'Flutter')
   flutter,

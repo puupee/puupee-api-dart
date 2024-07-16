@@ -1,4 +1,4 @@
-# puupee_api_client.model.Platform
+# puupee_api_client.model.AppPriceNaming
 
 ## Load the model package
 ```dart

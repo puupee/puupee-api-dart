@@ -7,7 +7,7 @@ void main() {
   // TODO add properties to the entity
 
   group(CreateOrUpdateAppPricingDto, () {
-    // PriceNaming naming
+    // AppPriceNaming naming
     test('to test the property `naming`', () async {
       // TODO
     });

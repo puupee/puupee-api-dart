@@ -9,7 +9,7 @@ import 'package:puupee_api_client/src/model/git_repository_type.dart';
 import 'package:puupee_api_client/src/model/app_feature_dto.dart';
 import 'package:puupee_api_client/src/model/identity_user_dto.dart';
 import 'package:puupee_api_client/src/model/app_release_dto.dart';
-import 'package:puupee_api_client/src/model/framework.dart';
+import 'package:puupee_api_client/src/model/app_framework.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'app_with_user_dto.g.dart';
@@ -220,7 +220,7 @@ class AppWithUserDto {
   )
 
 
-  Framework? framework;
+  AppFramework? framework;
 
 
 

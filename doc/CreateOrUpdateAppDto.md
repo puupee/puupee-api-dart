@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | [optional] 
 **displayName** | **String** |  | [optional] 
-**framework** | [**Framework**](Framework.md) |  | [optional] 
+**framework** | [**AppFramework**](AppFramework.md) |  | [optional] 
 **appType** | [**AppType**](AppType.md) |  | [optional] 
 **description** | **String** |  | [optional] 
 **icon** | **String** |  | [optional] 

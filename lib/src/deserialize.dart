@@ -230,6 +230,15 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return AppFeatureDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppFeatureDtoPagedResultDto':
           return AppFeatureDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppFramework':
+          
+          
+        case 'AppPlatform':
+          
+          
+        case 'AppPriceNaming':
+          
+          
         case 'AppPricingDto':
           return AppPricingDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppPricingDtoPagedResultDto':
@@ -408,9 +417,6 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return FeatureProviderDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'FindTenantResultDto':
           return FindTenantResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'Framework':
-          
-          
         case 'GetFeatureListResultDto':
           return GetFeatureListResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'GetPermissionListResultDto':
@@ -517,12 +523,6 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return PermissionGrantInfoDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'PermissionGroupDto':
           return PermissionGroupDto.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'Platform':
-          
-          
-        case 'PriceNaming':
-          
-          
         case 'Priority':
           
           

@@ -59,7 +59,7 @@ void main() {
       // TODO
     });
 
-    // PriceNaming priceNaming
+    // AppPriceNaming priceNaming
     test('to test the property `priceNaming`', () async {
       // TODO
     });

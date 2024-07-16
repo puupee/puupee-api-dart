@@ -1,9 +1,9 @@
 import 'package:test/test.dart';
 import 'package:puupee_api_client/puupee_api_client.dart';
 
-// tests for Framework
+// tests for AppFramework
 void main() {
 
-  group(Framework, () {
+  group(AppFramework, () {
   });
 }

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **appId** | **String** | 所属应用 | [optional] 
 **appName** | **String** | 应用名称 | [optional] 
-**priceNaming** | [**PriceNaming**](PriceNaming.md) |  | [optional] 
+**priceNaming** | [**AppPriceNaming**](AppPriceNaming.md) |  | [optional] 
 **size** | **int** | 用户存储容量 | [optional] 
 **currentSize** | **int** | 当前使用大小 | [optional] 
 **totalCount** | **int** |  | [optional] 

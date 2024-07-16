@@ -3,7 +3,7 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:puupee_api_client/src/model/platform.dart';
+import 'package:puupee_api_client/src/model/app_platform.dart';
 import 'package:puupee_api_client/src/model/artifact_type.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -225,7 +225,7 @@ class AppReleaseDto {
   )
 
 
-  Platform? platform;
+  AppPlatform? platform;
 
 
 
