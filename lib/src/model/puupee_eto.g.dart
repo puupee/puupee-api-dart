@@ -233,6 +233,7 @@ const _$PriorityEnumMap = {
 
 const _$TodoNotifyTimingTypeEnumMap = {
   TodoNotifyTimingType.none: 'None',
+  TodoNotifyTimingType.onTime: 'onTime',
   TodoNotifyTimingType.before: 'Before',
   TodoNotifyTimingType.after: 'After',
 };

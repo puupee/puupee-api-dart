@@ -11,6 +11,9 @@ enum TodoNotifyTimingType {
   @JsonValue(r'None')
   none,
   /// Represents the timing type for notifying a todo.
+  @JsonValue(r'onTime')
+  onTime,
+  /// Represents the timing type for notifying a todo.
   @JsonValue(r'Before')
   before,
   /// Represents the timing type for notifying a todo.
