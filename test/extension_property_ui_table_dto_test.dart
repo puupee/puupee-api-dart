@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for ExtensionPropertyUiTableDto
 void main() {
-  final instance = ExtensionPropertyUiTableDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final ExtensionPropertyUiTableDto? instance = /* ExtensionPropertyUiTableDto(...) */ null;
+  // TODO add properties to the entity
 
   group(ExtensionPropertyUiTableDto, () {
     // bool isVisible

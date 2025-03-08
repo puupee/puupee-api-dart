@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for UserData
 void main() {
-  final instance = UserDataBuilder();
-  // TODO add properties to the builder and call build()
+  final UserData? instance = /* UserData(...) */ null;
+  // TODO add properties to the entity
 
   group(UserData, () {
     // String id
@@ -57,7 +57,7 @@ void main() {
       // TODO
     });
 
-    // BuiltMap<String, JsonObject> extraProperties
+    // Map<String, Object> extraProperties
     test('to test the property `extraProperties`', () async {
       // TODO
     });

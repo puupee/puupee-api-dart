@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for IValueValidator
 void main() {
-  final instance = IValueValidatorBuilder();
-  // TODO add properties to the builder and call build()
+  final IValueValidator? instance = /* IValueValidator(...) */ null;
+  // TODO add properties to the entity
 
   group(IValueValidator, () {
     // String name
@@ -12,7 +12,7 @@ void main() {
       // TODO
     });
 
-    // BuiltMap<String, JsonObject> properties
+    // Map<String, Object> properties
     test('to test the property `properties`', () async {
       // TODO
     });

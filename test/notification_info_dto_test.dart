@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for NotificationInfoDto
 void main() {
-  final instance = NotificationInfoDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final NotificationInfoDto? instance = /* NotificationInfoDto(...) */ null;
+  // TODO add properties to the entity
 
   group(NotificationInfoDto, () {
     // String id

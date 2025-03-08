@@ -3,143 +3,86 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/json_object.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'create_update_message_source_route_sub_dto.g.dart';
 
-/// CreateUpdateMessageSourceRouteSubDto
-///
-/// Properties:
-/// * [routeId] 
-/// * [path] 
-/// * [values] 
-@BuiltValue()
-abstract class CreateUpdateMessageSourceRouteSubDto implements Built<CreateUpdateMessageSourceRouteSubDto, CreateUpdateMessageSourceRouteSubDtoBuilder> {
-  @BuiltValueField(wireName: r'routeId')
-  String? get routeId;
 
-  @BuiltValueField(wireName: r'path')
-  String? get path;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class CreateUpdateMessageSourceRouteSubDto {
+  /// Returns a new [CreateUpdateMessageSourceRouteSubDto] instance.
+  CreateUpdateMessageSourceRouteSubDto({
 
-  @BuiltValueField(wireName: r'values')
-  JsonObject? get values;
+     this.routeId,
 
-  CreateUpdateMessageSourceRouteSubDto._();
+     this.path,
 
-  factory CreateUpdateMessageSourceRouteSubDto([void updates(CreateUpdateMessageSourceRouteSubDtoBuilder b)]) = _$CreateUpdateMessageSourceRouteSubDto;
+     this.values,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CreateUpdateMessageSourceRouteSubDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'routeId',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<CreateUpdateMessageSourceRouteSubDto> get serializer => _$CreateUpdateMessageSourceRouteSubDtoSerializer();
-}
 
-class _$CreateUpdateMessageSourceRouteSubDtoSerializer implements PrimitiveSerializer<CreateUpdateMessageSourceRouteSubDto> {
-  @override
-  final Iterable<Type> types = const [CreateUpdateMessageSourceRouteSubDto, _$CreateUpdateMessageSourceRouteSubDto];
+  String? routeId;
 
-  @override
-  final String wireName = r'CreateUpdateMessageSourceRouteSubDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    CreateUpdateMessageSourceRouteSubDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.routeId != null) {
-      yield r'routeId';
-      yield serializers.serialize(
-        object.routeId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.path != null) {
-      yield r'path';
-      yield serializers.serialize(
-        object.path,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.values != null) {
-      yield r'values';
-      yield serializers.serialize(
-        object.values,
-        specifiedType: const FullType(JsonObject),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    CreateUpdateMessageSourceRouteSubDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'path',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required CreateUpdateMessageSourceRouteSubDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'routeId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.routeId = valueDes;
-          break;
-        case r'path':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.path = valueDes;
-          break;
-        case r'values':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.values = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  String? path;
+
+
+
+  @JsonKey(
+    
+    name: r'values',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  Object? values;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is CreateUpdateMessageSourceRouteSubDto &&
+      other.routeId == routeId &&
+      other.path == path &&
+      other.values == values;
+
+    @override
+    int get hashCode =>
+        routeId.hashCode +
+        path.hashCode +
+        values.hashCode;
+
+  factory CreateUpdateMessageSourceRouteSubDto.fromJson(Map<String, dynamic> json) => _$CreateUpdateMessageSourceRouteSubDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$CreateUpdateMessageSourceRouteSubDtoToJson(this);
 
   @override
-  CreateUpdateMessageSourceRouteSubDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = CreateUpdateMessageSourceRouteSubDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

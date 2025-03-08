@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for ExtensionPropertyApiDto
 void main() {
-  final instance = ExtensionPropertyApiDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final ExtensionPropertyApiDto? instance = /* ExtensionPropertyApiDto(...) */ null;
+  // TODO add properties to the entity
 
   group(ExtensionPropertyApiDto, () {
     // ExtensionPropertyApiGetDto onGet

@@ -3,11 +3,11 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for UpdateFeaturesDto
 void main() {
-  final instance = UpdateFeaturesDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final UpdateFeaturesDto? instance = /* UpdateFeaturesDto(...) */ null;
+  // TODO add properties to the entity
 
   group(UpdateFeaturesDto, () {
-    // BuiltList<UpdateFeatureDto> features
+    // List<UpdateFeatureDto> features
     test('to test the property `features`', () async {
       // TODO
     });

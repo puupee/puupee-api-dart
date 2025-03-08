@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for CurrentUserDto
 void main() {
-  final instance = CurrentUserDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final CurrentUserDto? instance = /* CurrentUserDto(...) */ null;
+  // TODO add properties to the entity
 
   group(CurrentUserDto, () {
     // bool isAuthenticated
@@ -77,7 +77,7 @@ void main() {
       // TODO
     });
 
-    // BuiltList<String> roles
+    // List<String> roles
     test('to test the property `roles`', () async {
       // TODO
     });

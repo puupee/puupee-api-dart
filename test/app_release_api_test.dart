@@ -30,14 +30,14 @@ void main() {
 
     // 获取最新版本
     //
-    //Future<AppReleaseDto> getLatest({ String appName, JsonObject platform, JsonObject productType, String environment }) async
+    //Future<AppReleaseDto> getLatest({ String appName, Object platform, Object productType, String environment }) async
     test('test getLatest', () async {
       // TODO
     });
 
     // 获取版本列表
     //
-    //Future<AppReleaseDtoPagedResultDto> getList({ String appId, String environment, JsonObject platform, String sorting, int skipCount, int maxResultCount }) async
+    //Future<AppReleaseDtoPagedResultDto> getList({ String appId, String environment, Object platform, String sorting, int skipCount, int maxResultCount }) async
     test('test getList', () async {
       // TODO
     });

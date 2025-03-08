@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for MessageSubscribeDto
 void main() {
-  final instance = MessageSubscribeDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final MessageSubscribeDto? instance = /* MessageSubscribeDto(...) */ null;
+  // TODO add properties to the entity
 
   group(MessageSubscribeDto, () {
     // String appId

@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for SubscriptionOrderDto
 void main() {
-  final instance = SubscriptionOrderDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final SubscriptionOrderDto? instance = /* SubscriptionOrderDto(...) */ null;
+  // TODO add properties to the entity
 
   group(SubscriptionOrderDto, () {
     // String id

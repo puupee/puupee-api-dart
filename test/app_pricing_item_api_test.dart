@@ -22,7 +22,7 @@ void main() {
       // TODO
     });
 
-    //Future<BuiltList<AppPricingItemDto>> getList() async
+    //Future<List<AppPricingItemDto>> getList() async
     test('test getList', () async {
       // TODO
     });

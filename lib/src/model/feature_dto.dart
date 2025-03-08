@@ -5,232 +5,166 @@
 // ignore_for_file: unused_element
 import 'package:puupee_api_client/src/model/feature_provider_dto.dart';
 import 'package:puupee_api_client/src/model/i_string_value_type.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'feature_dto.g.dart';
 
-/// FeatureDto
-///
-/// Properties:
-/// * [name] 
-/// * [displayName] 
-/// * [value] 
-/// * [provider] 
-/// * [description] 
-/// * [valueType] 
-/// * [depth] 
-/// * [parentName] 
-@BuiltValue()
-abstract class FeatureDto implements Built<FeatureDto, FeatureDtoBuilder> {
-  @BuiltValueField(wireName: r'name')
-  String? get name;
 
-  @BuiltValueField(wireName: r'displayName')
-  String? get displayName;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class FeatureDto {
+  /// Returns a new [FeatureDto] instance.
+  FeatureDto({
 
-  @BuiltValueField(wireName: r'value')
-  String? get value;
+     this.name,
 
-  @BuiltValueField(wireName: r'provider')
-  FeatureProviderDto? get provider;
+     this.displayName,
 
-  @BuiltValueField(wireName: r'description')
-  String? get description;
+     this.value,
 
-  @BuiltValueField(wireName: r'valueType')
-  IStringValueType? get valueType;
+     this.provider,
 
-  @BuiltValueField(wireName: r'depth')
-  int? get depth;
+     this.description,
 
-  @BuiltValueField(wireName: r'parentName')
-  String? get parentName;
+     this.valueType,
 
-  FeatureDto._();
+     this.depth,
 
-  factory FeatureDto([void updates(FeatureDtoBuilder b)]) = _$FeatureDto;
+     this.parentName,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(FeatureDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'name',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<FeatureDto> get serializer => _$FeatureDtoSerializer();
-}
 
-class _$FeatureDtoSerializer implements PrimitiveSerializer<FeatureDto> {
-  @override
-  final Iterable<Type> types = const [FeatureDto, _$FeatureDto];
+  String? name;
 
-  @override
-  final String wireName = r'FeatureDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    FeatureDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.name != null) {
-      yield r'name';
-      yield serializers.serialize(
-        object.name,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.displayName != null) {
-      yield r'displayName';
-      yield serializers.serialize(
-        object.displayName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.value != null) {
-      yield r'value';
-      yield serializers.serialize(
-        object.value,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.provider != null) {
-      yield r'provider';
-      yield serializers.serialize(
-        object.provider,
-        specifiedType: const FullType(FeatureProviderDto),
-      );
-    }
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.valueType != null) {
-      yield r'valueType';
-      yield serializers.serialize(
-        object.valueType,
-        specifiedType: const FullType(IStringValueType),
-      );
-    }
-    if (object.depth != null) {
-      yield r'depth';
-      yield serializers.serialize(
-        object.depth,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.parentName != null) {
-      yield r'parentName';
-      yield serializers.serialize(
-        object.parentName,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    FeatureDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'displayName',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required FeatureDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'displayName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.displayName = valueDes;
-          break;
-        case r'value':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.value = valueDes;
-          break;
-        case r'provider':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(FeatureProviderDto),
-          ) as FeatureProviderDto;
-          result.provider.replace(valueDes);
-          break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
-        case r'valueType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(IStringValueType),
-          ) as IStringValueType;
-          result.valueType.replace(valueDes);
-          break;
-        case r'depth':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.depth = valueDes;
-          break;
-        case r'parentName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.parentName = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  String? displayName;
+
+
+
+  @JsonKey(
+    
+    name: r'value',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? value;
+
+
+
+  @JsonKey(
+    
+    name: r'provider',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  FeatureProviderDto? provider;
+
+
+
+  @JsonKey(
+    
+    name: r'description',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? description;
+
+
+
+  @JsonKey(
+    
+    name: r'valueType',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  IStringValueType? valueType;
+
+
+
+  @JsonKey(
+    
+    name: r'depth',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  int? depth;
+
+
+
+  @JsonKey(
+    
+    name: r'parentName',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? parentName;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is FeatureDto &&
+      other.name == name &&
+      other.displayName == displayName &&
+      other.value == value &&
+      other.provider == provider &&
+      other.description == description &&
+      other.valueType == valueType &&
+      other.depth == depth &&
+      other.parentName == parentName;
+
+    @override
+    int get hashCode =>
+        name.hashCode +
+        displayName.hashCode +
+        value.hashCode +
+        provider.hashCode +
+        description.hashCode +
+        valueType.hashCode +
+        depth.hashCode +
+        parentName.hashCode;
+
+  factory FeatureDto.fromJson(Map<String, dynamic> json) => _$FeatureDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$FeatureDtoToJson(this);
 
   @override
-  FeatureDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = FeatureDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

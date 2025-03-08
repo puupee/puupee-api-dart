@@ -158,8 +158,8 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getAppReleaseApi();
 final String appName = appName_example; // String | 
-final JsonObject platform = ; // JsonObject | 
-final JsonObject productType = ; // JsonObject | 
+final Object platform = ; // Object | 
+final Object productType = ; // Object | 
 final String environment = environment_example; // String | 
 
 try {
@@ -175,8 +175,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **appName** | **String**|  | [optional] 
- **platform** | [**JsonObject**](.md)|  | [optional] 
- **productType** | [**JsonObject**](.md)|  | [optional] 
+ **platform** | [**Object**](.md)|  | [optional] 
+ **productType** | [**Object**](.md)|  | [optional] 
  **environment** | **String**|  | [optional] 
 
 ### Return type
@@ -208,7 +208,7 @@ import 'package:puupee_api_client/api.dart';
 final api = PuupeeApiClient().getAppReleaseApi();
 final String appId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 final String environment = environment_example; // String | 
-final JsonObject platform = ; // JsonObject | 
+final Object platform = ; // Object | 
 final String sorting = sorting_example; // String | 
 final int skipCount = 56; // int | 
 final int maxResultCount = 56; // int | 
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **appId** | **String**|  | [optional] 
  **environment** | **String**|  | [optional] 
- **platform** | [**JsonObject**](.md)|  | [optional] 
+ **platform** | [**Object**](.md)|  | [optional] 
  **sorting** | **String**|  | [optional] 
  **skipCount** | **int**|  | [optional] 
  **maxResultCount** | **int**|  | [optional] 

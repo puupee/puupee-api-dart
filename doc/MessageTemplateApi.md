@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getList**
-> BuiltList<MessageTemplateDto> getList()
+> List<MessageTemplateDto> getList()
 
 
 
@@ -170,7 +170,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;MessageTemplateDto&gt;**](MessageTemplateDto.md)
+[**List&lt;MessageTemplateDto&gt;**](MessageTemplateDto.md)
 
 ### Authorization
 

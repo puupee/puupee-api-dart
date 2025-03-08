@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for IdentityUserOrganizationUnit
 void main() {
-  final instance = IdentityUserOrganizationUnitBuilder();
-  // TODO add properties to the builder and call build()
+  final IdentityUserOrganizationUnit? instance = /* IdentityUserOrganizationUnit(...) */ null;
+  // TODO add properties to the entity
 
   group(IdentityUserOrganizationUnit, () {
     // DateTime creationTime

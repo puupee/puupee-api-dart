@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getPublishedList**
-> BuiltList<MessageSourceDto> getPublishedList(categoryId)
+> List<MessageSourceDto> getPublishedList(categoryId)
 
 
 
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;MessageSourceDto&gt;**](MessageSourceDto.md)
+[**List&lt;MessageSourceDto&gt;**](MessageSourceDto.md)
 
 ### Authorization
 

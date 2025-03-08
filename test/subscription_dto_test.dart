@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for SubscriptionDto
 void main() {
-  final instance = SubscriptionDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final SubscriptionDto? instance = /* SubscriptionDto(...) */ null;
+  // TODO add properties to the entity
 
   group(SubscriptionDto, () {
     // String id

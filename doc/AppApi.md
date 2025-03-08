@@ -198,7 +198,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getFeatures**
-> BuiltList<AppFeatureDto> getFeatures(appId, env)
+> List<AppFeatureDto> getFeatures(appId, env)
 
 
 
@@ -229,7 +229,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;AppFeatureDto&gt;**](AppFeatureDto.md)
+[**List&lt;AppFeatureDto&gt;**](AppFeatureDto.md)
 
 ### Authorization
 
@@ -346,7 +346,7 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppApi();
-final JsonObject type = ; // JsonObject | 
+final Object type = ; // Object | 
 final String developerAccount = developerAccount_example; // String | 
 final String currentAppName = currentAppName_example; // String | 
 
@@ -362,7 +362,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | [**JsonObject**](.md)|  | [optional] 
+ **type** | [**Object**](.md)|  | [optional] 
  **developerAccount** | **String**|  | [optional] 
  **currentAppName** | **String**|  | [optional] 
 
@@ -393,7 +393,7 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppApi();
-final JsonObject type = ; // JsonObject | 
+final Object type = ; // Object | 
 final String searchKey = searchKey_example; // String | 
 final String sorting = sorting_example; // String | 
 final int skipCount = 56; // int | 
@@ -411,7 +411,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | [**JsonObject**](.md)|  | [optional] 
+ **type** | [**Object**](.md)|  | [optional] 
  **searchKey** | **String**|  | [optional] 
  **sorting** | **String**|  | [optional] 
  **skipCount** | **int**|  | [optional] 
@@ -433,7 +433,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getSdksById**
-> BuiltList<AppSdkDto> getSdksById(appId, env)
+> List<AppSdkDto> getSdksById(appId, env)
 
 
 
@@ -464,7 +464,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;AppSdkDto&gt;**](AppSdkDto.md)
+[**List&lt;AppSdkDto&gt;**](AppSdkDto.md)
 
 ### Authorization
 

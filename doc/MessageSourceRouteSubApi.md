@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getList**
-> BuiltList<MessageSourceRouteSubDto> getList()
+> List<MessageSourceRouteSubDto> getList()
 
 
 
@@ -169,7 +169,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;MessageSourceRouteSubDto&gt;**](MessageSourceRouteSubDto.md)
+[**List&lt;MessageSourceRouteSubDto&gt;**](MessageSourceRouteSubDto.md)
 
 ### Authorization
 

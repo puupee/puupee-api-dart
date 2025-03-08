@@ -4,12 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/create_update_message_source_route_dto.dart';
 import 'package:puupee_api_client/src/model/message_source_route_dto.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
@@ -18,9 +17,7 @@ class MessageSourceRouteApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const MessageSourceRouteApi(this._dio, this._serializers);
+  const MessageSourceRouteApi(this._dio);
 
   /// create
   /// 
@@ -67,9 +64,7 @@ class MessageSourceRouteApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CreateUpdateMessageSourceRouteDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -117,7 +112,7 @@ class MessageSourceRouteApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/app/message-source-route/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/app/message-source-route/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -169,7 +164,7 @@ class MessageSourceRouteApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/app/message-source-route/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/app/message-source-route/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -198,12 +193,8 @@ class MessageSourceRouteApi {
     MessageSourceRouteDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(MessageSourceRouteDto),
-      ) as MessageSourceRouteDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<MessageSourceRouteDto, MessageSourceRouteDto>(rawData, 'MessageSourceRouteDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -238,9 +229,9 @@ class MessageSourceRouteApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<MessageSourceRouteDto>] as data
+  /// Returns a [Future] containing a [Response] with a [List<MessageSourceRouteDto>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<MessageSourceRouteDto>>> getPublishedList({ 
+  Future<Response<List<MessageSourceRouteDto>>> getPublishedList({ 
     required String sourceId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -249,7 +240,7 @@ class MessageSourceRouteApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/app/message-source-route/published-list/{sourceId}'.replaceAll('{' r'sourceId' '}', encodeQueryParameter(_serializers, sourceId, const FullType(String)).toString());
+    final _path = r'/api/app/message-source-route/published-list/{sourceId}'.replaceAll('{' r'sourceId' '}', sourceId.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -275,15 +266,11 @@ class MessageSourceRouteApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<MessageSourceRouteDto>? _responseData;
+    List<MessageSourceRouteDto>? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(MessageSourceRouteDto)]),
-      ) as BuiltList<MessageSourceRouteDto>;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<List<MessageSourceRouteDto>, MessageSourceRouteDto>(rawData, 'List<MessageSourceRouteDto>', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -294,7 +281,7 @@ class MessageSourceRouteApi {
       );
     }
 
-    return Response<BuiltList<MessageSourceRouteDto>>(
+    return Response<List<MessageSourceRouteDto>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -331,7 +318,7 @@ class MessageSourceRouteApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/app/message-source-route/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/app/message-source-route/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -353,9 +340,7 @@ class MessageSourceRouteApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CreateUpdateMessageSourceRouteDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(

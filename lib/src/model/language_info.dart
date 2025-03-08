@@ -3,178 +3,118 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'language_info.g.dart';
 
-/// LanguageInfo
-///
-/// Properties:
-/// * [cultureName] 
-/// * [uiCultureName] 
-/// * [displayName] 
-/// * [twoLetterISOLanguageName] 
-/// * [flagIcon] 
-@BuiltValue()
-abstract class LanguageInfo implements Built<LanguageInfo, LanguageInfoBuilder> {
-  @BuiltValueField(wireName: r'cultureName')
-  String? get cultureName;
 
-  @BuiltValueField(wireName: r'uiCultureName')
-  String? get uiCultureName;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class LanguageInfo {
+  /// Returns a new [LanguageInfo] instance.
+  LanguageInfo({
 
-  @BuiltValueField(wireName: r'displayName')
-  String? get displayName;
+     this.cultureName,
 
-  @BuiltValueField(wireName: r'twoLetterISOLanguageName')
-  String? get twoLetterISOLanguageName;
+     this.uiCultureName,
 
-  @BuiltValueField(wireName: r'flagIcon')
-  String? get flagIcon;
+     this.displayName,
 
-  LanguageInfo._();
+     this.twoLetterISOLanguageName,
 
-  factory LanguageInfo([void updates(LanguageInfoBuilder b)]) = _$LanguageInfo;
+     this.flagIcon,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(LanguageInfoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'cultureName',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<LanguageInfo> get serializer => _$LanguageInfoSerializer();
-}
 
-class _$LanguageInfoSerializer implements PrimitiveSerializer<LanguageInfo> {
-  @override
-  final Iterable<Type> types = const [LanguageInfo, _$LanguageInfo];
+  String? cultureName;
 
-  @override
-  final String wireName = r'LanguageInfo';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    LanguageInfo object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.cultureName != null) {
-      yield r'cultureName';
-      yield serializers.serialize(
-        object.cultureName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.uiCultureName != null) {
-      yield r'uiCultureName';
-      yield serializers.serialize(
-        object.uiCultureName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.displayName != null) {
-      yield r'displayName';
-      yield serializers.serialize(
-        object.displayName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.twoLetterISOLanguageName != null) {
-      yield r'twoLetterISOLanguageName';
-      yield serializers.serialize(
-        object.twoLetterISOLanguageName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.flagIcon != null) {
-      yield r'flagIcon';
-      yield serializers.serialize(
-        object.flagIcon,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    LanguageInfo object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'uiCultureName',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required LanguageInfoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'cultureName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.cultureName = valueDes;
-          break;
-        case r'uiCultureName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.uiCultureName = valueDes;
-          break;
-        case r'displayName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.displayName = valueDes;
-          break;
-        case r'twoLetterISOLanguageName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.twoLetterISOLanguageName = valueDes;
-          break;
-        case r'flagIcon':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.flagIcon = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  String? uiCultureName;
+
+
+
+  @JsonKey(
+    
+    name: r'displayName',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? displayName;
+
+
+
+  @JsonKey(
+    
+    name: r'twoLetterISOLanguageName',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? twoLetterISOLanguageName;
+
+
+
+  @JsonKey(
+    
+    name: r'flagIcon',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? flagIcon;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is LanguageInfo &&
+      other.cultureName == cultureName &&
+      other.uiCultureName == uiCultureName &&
+      other.displayName == displayName &&
+      other.twoLetterISOLanguageName == twoLetterISOLanguageName &&
+      other.flagIcon == flagIcon;
+
+    @override
+    int get hashCode =>
+        cultureName.hashCode +
+        uiCultureName.hashCode +
+        displayName.hashCode +
+        twoLetterISOLanguageName.hashCode +
+        flagIcon.hashCode;
+
+  factory LanguageInfo.fromJson(Map<String, dynamic> json) => _$LanguageInfoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$LanguageInfoToJson(this);
 
   @override
-  LanguageInfo deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = LanguageInfoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

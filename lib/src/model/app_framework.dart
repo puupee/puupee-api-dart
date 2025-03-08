@@ -3,61 +3,48 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
-part 'app_framework.g.dart';
+/// 技术框架
+enum AppFramework {
+          /// 技术框架
+      @JsonValue(r'Flutter')
+      flutter(r'Flutter'),
+          /// 技术框架
+      @JsonValue(r'ReactNative')
+      reactNative(r'ReactNative'),
+          /// 技术框架
+      @JsonValue(r'React')
+      react(r'React'),
+          /// 技术框架
+      @JsonValue(r'NativeIOS')
+      nativeIOS(r'NativeIOS'),
+          /// 技术框架
+      @JsonValue(r'NativeAndroid')
+      nativeAndroid(r'NativeAndroid'),
+          /// 技术框架
+      @JsonValue(r'NativeWindows')
+      nativeWindows(r'NativeWindows'),
+          /// 技术框架
+      @JsonValue(r'NativeMacOS')
+      nativeMacOS(r'NativeMacOS'),
+          /// 技术框架
+      @JsonValue(r'Ionic')
+      ionic(r'Ionic'),
+          /// 技术框架
+      @JsonValue(r'AspNetCore')
+      aspNetCore(r'AspNetCore'),
+          /// 技术框架
+      @JsonValue(r'Other')
+      other(r'Other'),
+          /// 技术框架
+      @JsonValue(r'Golang')
+      golang(r'Golang');
 
-class AppFramework extends EnumClass {
+  const AppFramework(this.value);
 
-  /// 技术框架
-  @BuiltValueEnumConst(wireName: r'Flutter')
-  static const AppFramework flutter = _$flutter;
-  /// 技术框架
-  @BuiltValueEnumConst(wireName: r'ReactNative')
-  static const AppFramework reactNative = _$reactNative;
-  /// 技术框架
-  @BuiltValueEnumConst(wireName: r'React')
-  static const AppFramework react = _$react;
-  /// 技术框架
-  @BuiltValueEnumConst(wireName: r'NativeIOS')
-  static const AppFramework nativeIOS = _$nativeIOS;
-  /// 技术框架
-  @BuiltValueEnumConst(wireName: r'NativeAndroid')
-  static const AppFramework nativeAndroid = _$nativeAndroid;
-  /// 技术框架
-  @BuiltValueEnumConst(wireName: r'NativeWindows')
-  static const AppFramework nativeWindows = _$nativeWindows;
-  /// 技术框架
-  @BuiltValueEnumConst(wireName: r'NativeMacOS')
-  static const AppFramework nativeMacOS = _$nativeMacOS;
-  /// 技术框架
-  @BuiltValueEnumConst(wireName: r'Ionic')
-  static const AppFramework ionic = _$ionic;
-  /// 技术框架
-  @BuiltValueEnumConst(wireName: r'AspNetCore')
-  static const AppFramework aspNetCore = _$aspNetCore;
-  /// 技术框架
-  @BuiltValueEnumConst(wireName: r'Other')
-  static const AppFramework other = _$other;
-  /// 技术框架
-  @BuiltValueEnumConst(wireName: r'Golang')
-  static const AppFramework golang = _$golang;
+  final String value;
 
-  static Serializer<AppFramework> get serializer => _$appFrameworkSerializer;
-
-  const AppFramework._(String name): super(name);
-
-  static BuiltSet<AppFramework> get values => _$values;
-  static AppFramework valueOf(String name) => _$valueOf(name);
+  @override
+  String toString() => value;
 }
-
-/// Optionally, enum_class can generate a mixin to go with your enum for use
-/// with Angular. It exposes your enum constants as getters. So, if you mix it
-/// in to your Dart component class, the values become available to the
-/// corresponding Angular template.
-///
-/// Trigger mixin generation by writing a line like this one next to your enum.
-abstract class AppFrameworkMixin = Object with _$AppFrameworkMixin;
-

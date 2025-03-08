@@ -3,268 +3,198 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'create_update_message_source_route_dto.g.dart';
 
-/// CreateUpdateMessageSourceRouteDto
-///
-/// Properties:
-/// * [title] 
-/// * [description] 
-/// * [path] 
-/// * [sourceId] 
-/// * [extra] 
-/// * [anticrawler] 
-/// * [radar] 
-/// * [rssbud] 
-/// * [isPublished] 
-/// * [iconUrl] 
-@BuiltValue()
-abstract class CreateUpdateMessageSourceRouteDto implements Built<CreateUpdateMessageSourceRouteDto, CreateUpdateMessageSourceRouteDtoBuilder> {
-  @BuiltValueField(wireName: r'title')
-  String? get title;
 
-  @BuiltValueField(wireName: r'description')
-  String? get description;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class CreateUpdateMessageSourceRouteDto {
+  /// Returns a new [CreateUpdateMessageSourceRouteDto] instance.
+  CreateUpdateMessageSourceRouteDto({
 
-  @BuiltValueField(wireName: r'path')
-  String? get path;
+     this.title,
 
-  @BuiltValueField(wireName: r'sourceId')
-  String? get sourceId;
+     this.description,
 
-  @BuiltValueField(wireName: r'extra')
-  String? get extra;
+     this.path,
 
-  @BuiltValueField(wireName: r'anticrawler')
-  bool? get anticrawler;
+     this.sourceId,
 
-  @BuiltValueField(wireName: r'radar')
-  bool? get radar;
+     this.extra,
 
-  @BuiltValueField(wireName: r'rssbud')
-  bool? get rssbud;
+     this.anticrawler,
 
-  @BuiltValueField(wireName: r'isPublished')
-  bool? get isPublished;
+     this.radar,
 
-  @BuiltValueField(wireName: r'iconUrl')
-  String? get iconUrl;
+     this.rssbud,
 
-  CreateUpdateMessageSourceRouteDto._();
+     this.isPublished,
 
-  factory CreateUpdateMessageSourceRouteDto([void updates(CreateUpdateMessageSourceRouteDtoBuilder b)]) = _$CreateUpdateMessageSourceRouteDto;
+     this.iconUrl,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CreateUpdateMessageSourceRouteDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'title',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<CreateUpdateMessageSourceRouteDto> get serializer => _$CreateUpdateMessageSourceRouteDtoSerializer();
-}
 
-class _$CreateUpdateMessageSourceRouteDtoSerializer implements PrimitiveSerializer<CreateUpdateMessageSourceRouteDto> {
-  @override
-  final Iterable<Type> types = const [CreateUpdateMessageSourceRouteDto, _$CreateUpdateMessageSourceRouteDto];
+  String? title;
 
-  @override
-  final String wireName = r'CreateUpdateMessageSourceRouteDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    CreateUpdateMessageSourceRouteDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.title != null) {
-      yield r'title';
-      yield serializers.serialize(
-        object.title,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.path != null) {
-      yield r'path';
-      yield serializers.serialize(
-        object.path,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.sourceId != null) {
-      yield r'sourceId';
-      yield serializers.serialize(
-        object.sourceId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.extra != null) {
-      yield r'extra';
-      yield serializers.serialize(
-        object.extra,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.anticrawler != null) {
-      yield r'anticrawler';
-      yield serializers.serialize(
-        object.anticrawler,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.radar != null) {
-      yield r'radar';
-      yield serializers.serialize(
-        object.radar,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.rssbud != null) {
-      yield r'rssbud';
-      yield serializers.serialize(
-        object.rssbud,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.isPublished != null) {
-      yield r'isPublished';
-      yield serializers.serialize(
-        object.isPublished,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.iconUrl != null) {
-      yield r'iconUrl';
-      yield serializers.serialize(
-        object.iconUrl,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    CreateUpdateMessageSourceRouteDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'description',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required CreateUpdateMessageSourceRouteDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.title = valueDes;
-          break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
-        case r'path':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.path = valueDes;
-          break;
-        case r'sourceId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.sourceId = valueDes;
-          break;
-        case r'extra':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.extra = valueDes;
-          break;
-        case r'anticrawler':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.anticrawler = valueDes;
-          break;
-        case r'radar':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.radar = valueDes;
-          break;
-        case r'rssbud':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.rssbud = valueDes;
-          break;
-        case r'isPublished':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isPublished = valueDes;
-          break;
-        case r'iconUrl':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.iconUrl = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  String? description;
+
+
+
+  @JsonKey(
+    
+    name: r'path',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? path;
+
+
+
+  @JsonKey(
+    
+    name: r'sourceId',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? sourceId;
+
+
+
+  @JsonKey(
+    
+    name: r'extra',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? extra;
+
+
+
+  @JsonKey(
+    
+    name: r'anticrawler',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  bool? anticrawler;
+
+
+
+  @JsonKey(
+    
+    name: r'radar',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  bool? radar;
+
+
+
+  @JsonKey(
+    
+    name: r'rssbud',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  bool? rssbud;
+
+
+
+  @JsonKey(
+    
+    name: r'isPublished',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  bool? isPublished;
+
+
+
+  @JsonKey(
+    
+    name: r'iconUrl',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? iconUrl;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is CreateUpdateMessageSourceRouteDto &&
+      other.title == title &&
+      other.description == description &&
+      other.path == path &&
+      other.sourceId == sourceId &&
+      other.extra == extra &&
+      other.anticrawler == anticrawler &&
+      other.radar == radar &&
+      other.rssbud == rssbud &&
+      other.isPublished == isPublished &&
+      other.iconUrl == iconUrl;
+
+    @override
+    int get hashCode =>
+        title.hashCode +
+        description.hashCode +
+        path.hashCode +
+        sourceId.hashCode +
+        extra.hashCode +
+        anticrawler.hashCode +
+        radar.hashCode +
+        rssbud.hashCode +
+        isPublished.hashCode +
+        iconUrl.hashCode;
+
+  factory CreateUpdateMessageSourceRouteDto.fromJson(Map<String, dynamic> json) => _$CreateUpdateMessageSourceRouteDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$CreateUpdateMessageSourceRouteDtoToJson(this);
 
   @override
-  CreateUpdateMessageSourceRouteDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = CreateUpdateMessageSourceRouteDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

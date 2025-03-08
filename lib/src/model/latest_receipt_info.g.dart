@@ -3,287 +3,87 @@
 part of 'latest_receipt_info.dart';
 
 // **************************************************************************
-// BuiltValueGenerator
+// JsonSerializableGenerator
 // **************************************************************************
 
-class _$LatestReceiptInfo extends LatestReceiptInfo {
-  @override
-  final String? quantity;
-  @override
-  final String? productId;
-  @override
-  final String? transactionId;
-  @override
-  final String? originalTransactionId;
-  @override
-  final String? purchaseDate;
-  @override
-  final String? purchaseDateMs;
-  @override
-  final String? purchaseDatePst;
-  @override
-  final String? originalPurchaseDate;
-  @override
-  final String? originalPurchaseDateMs;
-  @override
-  final String? originalPurchaseDatePst;
-  @override
-  final String? expiresDate;
-  @override
-  final String? expiresDateMs;
-  @override
-  final String? expiresDatePst;
-  @override
-  final String? webOrderLineItemId;
-  @override
-  final String? isTrialPeriod;
-  @override
-  final String? isInIntroOfferPeriod;
-
-  factory _$LatestReceiptInfo(
-          [void Function(LatestReceiptInfoBuilder)? updates]) =>
-      (new LatestReceiptInfoBuilder()..update(updates))._build();
-
-  _$LatestReceiptInfo._(
-      {this.quantity,
-      this.productId,
-      this.transactionId,
-      this.originalTransactionId,
-      this.purchaseDate,
-      this.purchaseDateMs,
-      this.purchaseDatePst,
-      this.originalPurchaseDate,
-      this.originalPurchaseDateMs,
-      this.originalPurchaseDatePst,
-      this.expiresDate,
-      this.expiresDateMs,
-      this.expiresDatePst,
-      this.webOrderLineItemId,
-      this.isTrialPeriod,
-      this.isInIntroOfferPeriod})
-      : super._();
-
-  @override
-  LatestReceiptInfo rebuild(void Function(LatestReceiptInfoBuilder) updates) =>
-      (toBuilder()..update(updates)).build();
-
-  @override
-  LatestReceiptInfoBuilder toBuilder() =>
-      new LatestReceiptInfoBuilder()..replace(this);
-
-  @override
-  bool operator ==(Object other) {
-    if (identical(other, this)) return true;
-    return other is LatestReceiptInfo &&
-        quantity == other.quantity &&
-        productId == other.productId &&
-        transactionId == other.transactionId &&
-        originalTransactionId == other.originalTransactionId &&
-        purchaseDate == other.purchaseDate &&
-        purchaseDateMs == other.purchaseDateMs &&
-        purchaseDatePst == other.purchaseDatePst &&
-        originalPurchaseDate == other.originalPurchaseDate &&
-        originalPurchaseDateMs == other.originalPurchaseDateMs &&
-        originalPurchaseDatePst == other.originalPurchaseDatePst &&
-        expiresDate == other.expiresDate &&
-        expiresDateMs == other.expiresDateMs &&
-        expiresDatePst == other.expiresDatePst &&
-        webOrderLineItemId == other.webOrderLineItemId &&
-        isTrialPeriod == other.isTrialPeriod &&
-        isInIntroOfferPeriod == other.isInIntroOfferPeriod;
-  }
-
-  @override
-  int get hashCode {
-    var _$hash = 0;
-    _$hash = $jc(_$hash, quantity.hashCode);
-    _$hash = $jc(_$hash, productId.hashCode);
-    _$hash = $jc(_$hash, transactionId.hashCode);
-    _$hash = $jc(_$hash, originalTransactionId.hashCode);
-    _$hash = $jc(_$hash, purchaseDate.hashCode);
-    _$hash = $jc(_$hash, purchaseDateMs.hashCode);
-    _$hash = $jc(_$hash, purchaseDatePst.hashCode);
-    _$hash = $jc(_$hash, originalPurchaseDate.hashCode);
-    _$hash = $jc(_$hash, originalPurchaseDateMs.hashCode);
-    _$hash = $jc(_$hash, originalPurchaseDatePst.hashCode);
-    _$hash = $jc(_$hash, expiresDate.hashCode);
-    _$hash = $jc(_$hash, expiresDateMs.hashCode);
-    _$hash = $jc(_$hash, expiresDatePst.hashCode);
-    _$hash = $jc(_$hash, webOrderLineItemId.hashCode);
-    _$hash = $jc(_$hash, isTrialPeriod.hashCode);
-    _$hash = $jc(_$hash, isInIntroOfferPeriod.hashCode);
-    _$hash = $jf(_$hash);
-    return _$hash;
-  }
-
-  @override
-  String toString() {
-    return (newBuiltValueToStringHelper(r'LatestReceiptInfo')
-          ..add('quantity', quantity)
-          ..add('productId', productId)
-          ..add('transactionId', transactionId)
-          ..add('originalTransactionId', originalTransactionId)
-          ..add('purchaseDate', purchaseDate)
-          ..add('purchaseDateMs', purchaseDateMs)
-          ..add('purchaseDatePst', purchaseDatePst)
-          ..add('originalPurchaseDate', originalPurchaseDate)
-          ..add('originalPurchaseDateMs', originalPurchaseDateMs)
-          ..add('originalPurchaseDatePst', originalPurchaseDatePst)
-          ..add('expiresDate', expiresDate)
-          ..add('expiresDateMs', expiresDateMs)
-          ..add('expiresDatePst', expiresDatePst)
-          ..add('webOrderLineItemId', webOrderLineItemId)
-          ..add('isTrialPeriod', isTrialPeriod)
-          ..add('isInIntroOfferPeriod', isInIntroOfferPeriod))
-        .toString();
-  }
-}
-
-class LatestReceiptInfoBuilder
-    implements Builder<LatestReceiptInfo, LatestReceiptInfoBuilder> {
-  _$LatestReceiptInfo? _$v;
-
-  String? _quantity;
-  String? get quantity => _$this._quantity;
-  set quantity(String? quantity) => _$this._quantity = quantity;
-
-  String? _productId;
-  String? get productId => _$this._productId;
-  set productId(String? productId) => _$this._productId = productId;
-
-  String? _transactionId;
-  String? get transactionId => _$this._transactionId;
-  set transactionId(String? transactionId) =>
-      _$this._transactionId = transactionId;
-
-  String? _originalTransactionId;
-  String? get originalTransactionId => _$this._originalTransactionId;
-  set originalTransactionId(String? originalTransactionId) =>
-      _$this._originalTransactionId = originalTransactionId;
-
-  String? _purchaseDate;
-  String? get purchaseDate => _$this._purchaseDate;
-  set purchaseDate(String? purchaseDate) => _$this._purchaseDate = purchaseDate;
-
-  String? _purchaseDateMs;
-  String? get purchaseDateMs => _$this._purchaseDateMs;
-  set purchaseDateMs(String? purchaseDateMs) =>
-      _$this._purchaseDateMs = purchaseDateMs;
-
-  String? _purchaseDatePst;
-  String? get purchaseDatePst => _$this._purchaseDatePst;
-  set purchaseDatePst(String? purchaseDatePst) =>
-      _$this._purchaseDatePst = purchaseDatePst;
-
-  String? _originalPurchaseDate;
-  String? get originalPurchaseDate => _$this._originalPurchaseDate;
-  set originalPurchaseDate(String? originalPurchaseDate) =>
-      _$this._originalPurchaseDate = originalPurchaseDate;
-
-  String? _originalPurchaseDateMs;
-  String? get originalPurchaseDateMs => _$this._originalPurchaseDateMs;
-  set originalPurchaseDateMs(String? originalPurchaseDateMs) =>
-      _$this._originalPurchaseDateMs = originalPurchaseDateMs;
-
-  String? _originalPurchaseDatePst;
-  String? get originalPurchaseDatePst => _$this._originalPurchaseDatePst;
-  set originalPurchaseDatePst(String? originalPurchaseDatePst) =>
-      _$this._originalPurchaseDatePst = originalPurchaseDatePst;
-
-  String? _expiresDate;
-  String? get expiresDate => _$this._expiresDate;
-  set expiresDate(String? expiresDate) => _$this._expiresDate = expiresDate;
-
-  String? _expiresDateMs;
-  String? get expiresDateMs => _$this._expiresDateMs;
-  set expiresDateMs(String? expiresDateMs) =>
-      _$this._expiresDateMs = expiresDateMs;
-
-  String? _expiresDatePst;
-  String? get expiresDatePst => _$this._expiresDatePst;
-  set expiresDatePst(String? expiresDatePst) =>
-      _$this._expiresDatePst = expiresDatePst;
-
-  String? _webOrderLineItemId;
-  String? get webOrderLineItemId => _$this._webOrderLineItemId;
-  set webOrderLineItemId(String? webOrderLineItemId) =>
-      _$this._webOrderLineItemId = webOrderLineItemId;
-
-  String? _isTrialPeriod;
-  String? get isTrialPeriod => _$this._isTrialPeriod;
-  set isTrialPeriod(String? isTrialPeriod) =>
-      _$this._isTrialPeriod = isTrialPeriod;
-
-  String? _isInIntroOfferPeriod;
-  String? get isInIntroOfferPeriod => _$this._isInIntroOfferPeriod;
-  set isInIntroOfferPeriod(String? isInIntroOfferPeriod) =>
-      _$this._isInIntroOfferPeriod = isInIntroOfferPeriod;
-
-  LatestReceiptInfoBuilder() {
-    LatestReceiptInfo._defaults(this);
-  }
-
-  LatestReceiptInfoBuilder get _$this {
-    final $v = _$v;
-    if ($v != null) {
-      _quantity = $v.quantity;
-      _productId = $v.productId;
-      _transactionId = $v.transactionId;
-      _originalTransactionId = $v.originalTransactionId;
-      _purchaseDate = $v.purchaseDate;
-      _purchaseDateMs = $v.purchaseDateMs;
-      _purchaseDatePst = $v.purchaseDatePst;
-      _originalPurchaseDate = $v.originalPurchaseDate;
-      _originalPurchaseDateMs = $v.originalPurchaseDateMs;
-      _originalPurchaseDatePst = $v.originalPurchaseDatePst;
-      _expiresDate = $v.expiresDate;
-      _expiresDateMs = $v.expiresDateMs;
-      _expiresDatePst = $v.expiresDatePst;
-      _webOrderLineItemId = $v.webOrderLineItemId;
-      _isTrialPeriod = $v.isTrialPeriod;
-      _isInIntroOfferPeriod = $v.isInIntroOfferPeriod;
-      _$v = null;
-    }
-    return this;
-  }
-
-  @override
-  void replace(LatestReceiptInfo other) {
-    ArgumentError.checkNotNull(other, 'other');
-    _$v = other as _$LatestReceiptInfo;
-  }
-
-  @override
-  void update(void Function(LatestReceiptInfoBuilder)? updates) {
-    if (updates != null) updates(this);
-  }
-
-  @override
-  LatestReceiptInfo build() => _build();
-
-  _$LatestReceiptInfo _build() {
-    final _$result = _$v ??
-        new _$LatestReceiptInfo._(
-          quantity: quantity,
-          productId: productId,
-          transactionId: transactionId,
-          originalTransactionId: originalTransactionId,
-          purchaseDate: purchaseDate,
-          purchaseDateMs: purchaseDateMs,
-          purchaseDatePst: purchaseDatePst,
-          originalPurchaseDate: originalPurchaseDate,
-          originalPurchaseDateMs: originalPurchaseDateMs,
-          originalPurchaseDatePst: originalPurchaseDatePst,
-          expiresDate: expiresDate,
-          expiresDateMs: expiresDateMs,
-          expiresDatePst: expiresDatePst,
-          webOrderLineItemId: webOrderLineItemId,
-          isTrialPeriod: isTrialPeriod,
-          isInIntroOfferPeriod: isInIntroOfferPeriod,
+LatestReceiptInfo _$LatestReceiptInfoFromJson(Map<String, dynamic> json) =>
+    $checkedCreate(
+      'LatestReceiptInfo',
+      json,
+      ($checkedConvert) {
+        final val = LatestReceiptInfo(
+          quantity: $checkedConvert('quantity', (v) => v as String?),
+          productId: $checkedConvert('product_id', (v) => v as String?),
+          transactionId: $checkedConvert('transaction_id', (v) => v as String?),
+          originalTransactionId:
+              $checkedConvert('original_transaction_id', (v) => v as String?),
+          purchaseDate: $checkedConvert('purchase_date', (v) => v as String?),
+          purchaseDateMs:
+              $checkedConvert('purchase_date_ms', (v) => v as String?),
+          purchaseDatePst:
+              $checkedConvert('purchase_date_pst', (v) => v as String?),
+          originalPurchaseDate:
+              $checkedConvert('original_purchase_date', (v) => v as String?),
+          originalPurchaseDateMs:
+              $checkedConvert('original_purchase_date_ms', (v) => v as String?),
+          originalPurchaseDatePst: $checkedConvert(
+              'original_purchase_date_pst', (v) => v as String?),
+          expiresDate: $checkedConvert('expires_date', (v) => v as String?),
+          expiresDateMs:
+              $checkedConvert('expires_date_ms', (v) => v as String?),
+          expiresDatePst:
+              $checkedConvert('expires_date_pst', (v) => v as String?),
+          webOrderLineItemId:
+              $checkedConvert('web_order_line_item_id', (v) => v as String?),
+          isTrialPeriod:
+              $checkedConvert('is_trial_period', (v) => v as String?),
+          isInIntroOfferPeriod:
+              $checkedConvert('is_in_intro_offer_period', (v) => v as String?),
         );
-    replace(_$result);
-    return _$result;
-  }
-}
+        return val;
+      },
+      fieldKeyMap: const {
+        'productId': 'product_id',
+        'transactionId': 'transaction_id',
+        'originalTransactionId': 'original_transaction_id',
+        'purchaseDate': 'purchase_date',
+        'purchaseDateMs': 'purchase_date_ms',
+        'purchaseDatePst': 'purchase_date_pst',
+        'originalPurchaseDate': 'original_purchase_date',
+        'originalPurchaseDateMs': 'original_purchase_date_ms',
+        'originalPurchaseDatePst': 'original_purchase_date_pst',
+        'expiresDate': 'expires_date',
+        'expiresDateMs': 'expires_date_ms',
+        'expiresDatePst': 'expires_date_pst',
+        'webOrderLineItemId': 'web_order_line_item_id',
+        'isTrialPeriod': 'is_trial_period',
+        'isInIntroOfferPeriod': 'is_in_intro_offer_period'
+      },
+    );
 
-// ignore_for_file: deprecated_member_use_from_same_package,type=lint
+Map<String, dynamic> _$LatestReceiptInfoToJson(LatestReceiptInfo instance) =>
+    <String, dynamic>{
+      if (instance.quantity case final value?) 'quantity': value,
+      if (instance.productId case final value?) 'product_id': value,
+      if (instance.transactionId case final value?) 'transaction_id': value,
+      if (instance.originalTransactionId case final value?)
+        'original_transaction_id': value,
+      if (instance.purchaseDate case final value?) 'purchase_date': value,
+      if (instance.purchaseDateMs case final value?) 'purchase_date_ms': value,
+      if (instance.purchaseDatePst case final value?)
+        'purchase_date_pst': value,
+      if (instance.originalPurchaseDate case final value?)
+        'original_purchase_date': value,
+      if (instance.originalPurchaseDateMs case final value?)
+        'original_purchase_date_ms': value,
+      if (instance.originalPurchaseDatePst case final value?)
+        'original_purchase_date_pst': value,
+      if (instance.expiresDate case final value?) 'expires_date': value,
+      if (instance.expiresDateMs case final value?) 'expires_date_ms': value,
+      if (instance.expiresDatePst case final value?) 'expires_date_pst': value,
+      if (instance.webOrderLineItemId case final value?)
+        'web_order_line_item_id': value,
+      if (instance.isTrialPeriod case final value?) 'is_trial_period': value,
+      if (instance.isInIntroOfferPeriod case final value?)
+        'is_in_intro_offer_period': value,
+    };

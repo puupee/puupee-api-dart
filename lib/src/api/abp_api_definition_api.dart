@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/application_api_description_model.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 
@@ -16,9 +16,7 @@ class AbpApiDefinitionApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const AbpApiDefinitionApi(this._dio, this._serializers);
+  const AbpApiDefinitionApi(this._dio);
 
   /// callGet
   /// 
@@ -62,7 +60,7 @@ class AbpApiDefinitionApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (includeTypes != null) r'IncludeTypes': encodeQueryParameter(_serializers, includeTypes, const FullType(bool)),
+      if (includeTypes != null) r'IncludeTypes': includeTypes,
     };
 
     final _response = await _dio.request<Object>(
@@ -77,12 +75,8 @@ class AbpApiDefinitionApi {
     ApplicationApiDescriptionModel? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ApplicationApiDescriptionModel),
-      ) as ApplicationApiDescriptionModel;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ApplicationApiDescriptionModel, ApplicationApiDescriptionModel>(rawData, 'ApplicationApiDescriptionModel', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

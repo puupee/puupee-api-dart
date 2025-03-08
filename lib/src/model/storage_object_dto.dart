@@ -3,484 +3,390 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'storage_object_dto.g.dart';
 
-/// StorageObjectDto
-///
-/// Properties:
-/// * [id] 
-/// * [creationTime] 
-/// * [creatorId] 
-/// * [lastModificationTime] 
-/// * [lastModifierId] 
-/// * [isDeleted] 
-/// * [deleterId] 
-/// * [deletionTime] 
-/// * [name] 
-/// * [url] 
-/// * [syncVersion] 
-/// * [key] 
-/// * [size] 
-/// * [md5] 
-/// * [sliceMd5] 
-/// * [rapidCode] 
-/// * [contentType] 
-/// * [extension_] 
-/// * [storageClass] 
-/// * [storageObjectCreatedAt] 
-/// * [storageObjectUpdatedAt] 
-/// * [password] 
-@BuiltValue()
-abstract class StorageObjectDto implements Built<StorageObjectDto, StorageObjectDtoBuilder> {
-  @BuiltValueField(wireName: r'id')
-  String? get id;
 
-  @BuiltValueField(wireName: r'creationTime')
-  DateTime? get creationTime;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class StorageObjectDto {
+  /// Returns a new [StorageObjectDto] instance.
+  StorageObjectDto({
 
-  @BuiltValueField(wireName: r'creatorId')
-  String? get creatorId;
+     this.id,
 
-  @BuiltValueField(wireName: r'lastModificationTime')
-  DateTime? get lastModificationTime;
+     this.creationTime,
 
-  @BuiltValueField(wireName: r'lastModifierId')
-  String? get lastModifierId;
+     this.creatorId,
 
-  @BuiltValueField(wireName: r'isDeleted')
-  bool? get isDeleted;
+     this.lastModificationTime,
 
-  @BuiltValueField(wireName: r'deleterId')
-  String? get deleterId;
+     this.lastModifierId,
 
-  @BuiltValueField(wireName: r'deletionTime')
-  DateTime? get deletionTime;
+     this.isDeleted,
 
-  @BuiltValueField(wireName: r'name')
-  String? get name;
+     this.deleterId,
 
-  @BuiltValueField(wireName: r'url')
-  String? get url;
+     this.deletionTime,
 
-  @BuiltValueField(wireName: r'syncVersion')
-  int? get syncVersion;
+     this.name,
 
-  @BuiltValueField(wireName: r'key')
-  String? get key;
+     this.url,
 
-  @BuiltValueField(wireName: r'size')
-  int? get size;
+     this.syncVersion,
 
-  @BuiltValueField(wireName: r'md5')
-  String? get md5;
+     this.key,
 
-  @BuiltValueField(wireName: r'sliceMd5')
-  String? get sliceMd5;
+     this.size,
 
-  @BuiltValueField(wireName: r'rapidCode')
-  String? get rapidCode;
+     this.md5,
 
-  @BuiltValueField(wireName: r'contentType')
-  String? get contentType;
+     this.sliceMd5,
 
-  @BuiltValueField(wireName: r'extension')
-  String? get extension_;
+     this.rapidCode,
 
-  @BuiltValueField(wireName: r'storageClass')
-  String? get storageClass;
+     this.contentType,
 
-  @BuiltValueField(wireName: r'storageObjectCreatedAt')
-  DateTime? get storageObjectCreatedAt;
+     this.extension_,
 
-  @BuiltValueField(wireName: r'storageObjectUpdatedAt')
-  DateTime? get storageObjectUpdatedAt;
+     this.storageClass,
 
-  @BuiltValueField(wireName: r'password')
-  String? get password;
+     this.storageObjectCreatedAt,
 
-  StorageObjectDto._();
+     this.storageObjectUpdatedAt,
 
-  factory StorageObjectDto([void updates(StorageObjectDtoBuilder b)]) = _$StorageObjectDto;
+     this.password,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(StorageObjectDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'id',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<StorageObjectDto> get serializer => _$StorageObjectDtoSerializer();
-}
 
-class _$StorageObjectDtoSerializer implements PrimitiveSerializer<StorageObjectDto> {
-  @override
-  final Iterable<Type> types = const [StorageObjectDto, _$StorageObjectDto];
+  String? id;
 
-  @override
-  final String wireName = r'StorageObjectDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    StorageObjectDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.creationTime != null) {
-      yield r'creationTime';
-      yield serializers.serialize(
-        object.creationTime,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.creatorId != null) {
-      yield r'creatorId';
-      yield serializers.serialize(
-        object.creatorId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.lastModificationTime != null) {
-      yield r'lastModificationTime';
-      yield serializers.serialize(
-        object.lastModificationTime,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.lastModifierId != null) {
-      yield r'lastModifierId';
-      yield serializers.serialize(
-        object.lastModifierId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.isDeleted != null) {
-      yield r'isDeleted';
-      yield serializers.serialize(
-        object.isDeleted,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.deleterId != null) {
-      yield r'deleterId';
-      yield serializers.serialize(
-        object.deleterId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.deletionTime != null) {
-      yield r'deletionTime';
-      yield serializers.serialize(
-        object.deletionTime,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.name != null) {
-      yield r'name';
-      yield serializers.serialize(
-        object.name,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.url != null) {
-      yield r'url';
-      yield serializers.serialize(
-        object.url,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.syncVersion != null) {
-      yield r'syncVersion';
-      yield serializers.serialize(
-        object.syncVersion,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.key != null) {
-      yield r'key';
-      yield serializers.serialize(
-        object.key,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.size != null) {
-      yield r'size';
-      yield serializers.serialize(
-        object.size,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.md5 != null) {
-      yield r'md5';
-      yield serializers.serialize(
-        object.md5,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.sliceMd5 != null) {
-      yield r'sliceMd5';
-      yield serializers.serialize(
-        object.sliceMd5,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.rapidCode != null) {
-      yield r'rapidCode';
-      yield serializers.serialize(
-        object.rapidCode,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.contentType != null) {
-      yield r'contentType';
-      yield serializers.serialize(
-        object.contentType,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.extension_ != null) {
-      yield r'extension';
-      yield serializers.serialize(
-        object.extension_,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.storageClass != null) {
-      yield r'storageClass';
-      yield serializers.serialize(
-        object.storageClass,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.storageObjectCreatedAt != null) {
-      yield r'storageObjectCreatedAt';
-      yield serializers.serialize(
-        object.storageObjectCreatedAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.storageObjectUpdatedAt != null) {
-      yield r'storageObjectUpdatedAt';
-      yield serializers.serialize(
-        object.storageObjectUpdatedAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.password != null) {
-      yield r'password';
-      yield serializers.serialize(
-        object.password,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    StorageObjectDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'creationTime',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required StorageObjectDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
-        case r'creationTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.creationTime = valueDes;
-          break;
-        case r'creatorId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.creatorId = valueDes;
-          break;
-        case r'lastModificationTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.lastModificationTime = valueDes;
-          break;
-        case r'lastModifierId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.lastModifierId = valueDes;
-          break;
-        case r'isDeleted':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isDeleted = valueDes;
-          break;
-        case r'deleterId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.deleterId = valueDes;
-          break;
-        case r'deletionTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.deletionTime = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'url':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.url = valueDes;
-          break;
-        case r'syncVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.syncVersion = valueDes;
-          break;
-        case r'key':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.key = valueDes;
-          break;
-        case r'size':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.size = valueDes;
-          break;
-        case r'md5':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.md5 = valueDes;
-          break;
-        case r'sliceMd5':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.sliceMd5 = valueDes;
-          break;
-        case r'rapidCode':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.rapidCode = valueDes;
-          break;
-        case r'contentType':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.contentType = valueDes;
-          break;
-        case r'extension':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.extension_ = valueDes;
-          break;
-        case r'storageClass':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.storageClass = valueDes;
-          break;
-        case r'storageObjectCreatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.storageObjectCreatedAt = valueDes;
-          break;
-        case r'storageObjectUpdatedAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.storageObjectUpdatedAt = valueDes;
-          break;
-        case r'password':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.password = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  DateTime? creationTime;
+
+
+
+  @JsonKey(
+    
+    name: r'creatorId',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? creatorId;
+
+
+
+  @JsonKey(
+    
+    name: r'lastModificationTime',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  DateTime? lastModificationTime;
+
+
+
+  @JsonKey(
+    
+    name: r'lastModifierId',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? lastModifierId;
+
+
+
+  @JsonKey(
+    
+    name: r'isDeleted',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  bool? isDeleted;
+
+
+
+  @JsonKey(
+    
+    name: r'deleterId',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? deleterId;
+
+
+
+  @JsonKey(
+    
+    name: r'deletionTime',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  DateTime? deletionTime;
+
+
+
+  @JsonKey(
+    
+    name: r'name',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? name;
+
+
+
+  @JsonKey(
+    
+    name: r'url',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? url;
+
+
+
+  @JsonKey(
+    
+    name: r'syncVersion',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  int? syncVersion;
+
+
+
+  @JsonKey(
+    
+    name: r'key',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? key;
+
+
+
+  @JsonKey(
+    
+    name: r'size',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  int? size;
+
+
+
+  @JsonKey(
+    
+    name: r'md5',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? md5;
+
+
+
+  @JsonKey(
+    
+    name: r'sliceMd5',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? sliceMd5;
+
+
+
+  @JsonKey(
+    
+    name: r'rapidCode',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? rapidCode;
+
+
+
+  @JsonKey(
+    
+    name: r'contentType',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? contentType;
+
+
+
+  @JsonKey(
+    
+    name: r'extension',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? extension_;
+
+
+
+  @JsonKey(
+    
+    name: r'storageClass',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? storageClass;
+
+
+
+  @JsonKey(
+    
+    name: r'storageObjectCreatedAt',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  DateTime? storageObjectCreatedAt;
+
+
+
+  @JsonKey(
+    
+    name: r'storageObjectUpdatedAt',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  DateTime? storageObjectUpdatedAt;
+
+
+
+  @JsonKey(
+    
+    name: r'password',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? password;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is StorageObjectDto &&
+      other.id == id &&
+      other.creationTime == creationTime &&
+      other.creatorId == creatorId &&
+      other.lastModificationTime == lastModificationTime &&
+      other.lastModifierId == lastModifierId &&
+      other.isDeleted == isDeleted &&
+      other.deleterId == deleterId &&
+      other.deletionTime == deletionTime &&
+      other.name == name &&
+      other.url == url &&
+      other.syncVersion == syncVersion &&
+      other.key == key &&
+      other.size == size &&
+      other.md5 == md5 &&
+      other.sliceMd5 == sliceMd5 &&
+      other.rapidCode == rapidCode &&
+      other.contentType == contentType &&
+      other.extension_ == extension_ &&
+      other.storageClass == storageClass &&
+      other.storageObjectCreatedAt == storageObjectCreatedAt &&
+      other.storageObjectUpdatedAt == storageObjectUpdatedAt &&
+      other.password == password;
+
+    @override
+    int get hashCode =>
+        id.hashCode +
+        creationTime.hashCode +
+        creatorId.hashCode +
+        lastModificationTime.hashCode +
+        lastModifierId.hashCode +
+        isDeleted.hashCode +
+        deleterId.hashCode +
+        deletionTime.hashCode +
+        name.hashCode +
+        url.hashCode +
+        syncVersion.hashCode +
+        key.hashCode +
+        size.hashCode +
+        md5.hashCode +
+        sliceMd5.hashCode +
+        rapidCode.hashCode +
+        contentType.hashCode +
+        extension_.hashCode +
+        storageClass.hashCode +
+        storageObjectCreatedAt.hashCode +
+        storageObjectUpdatedAt.hashCode +
+        password.hashCode;
+
+  factory StorageObjectDto.fromJson(Map<String, dynamic> json) => _$StorageObjectDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$StorageObjectDtoToJson(this);
 
   @override
-  StorageObjectDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = StorageObjectDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

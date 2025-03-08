@@ -4,125 +4,70 @@
 
 // ignore_for_file: unused_element
 import 'package:puupee_api_client/src/model/login_result_type.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'abp_login_result.g.dart';
 
-/// AbpLoginResult
-///
-/// Properties:
-/// * [result] 
-/// * [description] 
-@BuiltValue()
-abstract class AbpLoginResult implements Built<AbpLoginResult, AbpLoginResultBuilder> {
-  @BuiltValueField(wireName: r'result')
-  LoginResultType? get result;
-  // enum resultEnum {  1,  2,  3,  4,  5,  };
 
-  @BuiltValueField(wireName: r'description')
-  String? get description;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class AbpLoginResult {
+  /// Returns a new [AbpLoginResult] instance.
+  AbpLoginResult({
 
-  AbpLoginResult._();
+     this.result,
 
-  factory AbpLoginResult([void updates(AbpLoginResultBuilder b)]) = _$AbpLoginResult;
+     this.description,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AbpLoginResultBuilder b) => b;
+  @JsonKey(
+    
+    name: r'result',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<AbpLoginResult> get serializer => _$AbpLoginResultSerializer();
-}
 
-class _$AbpLoginResultSerializer implements PrimitiveSerializer<AbpLoginResult> {
-  @override
-  final Iterable<Type> types = const [AbpLoginResult, _$AbpLoginResult];
+  LoginResultType? result;
 
-  @override
-  final String wireName = r'AbpLoginResult';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    AbpLoginResult object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.result != null) {
-      yield r'result';
-      yield serializers.serialize(
-        object.result,
-        specifiedType: const FullType(LoginResultType),
-      );
-    }
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    AbpLoginResult object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'description',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required AbpLoginResultBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'result':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(LoginResultType),
-          ) as LoginResultType;
-          result.result = valueDes;
-          break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  String? description;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is AbpLoginResult &&
+      other.result == result &&
+      other.description == description;
+
+    @override
+    int get hashCode =>
+        result.hashCode +
+        description.hashCode;
+
+  factory AbpLoginResult.fromJson(Map<String, dynamic> json) => _$AbpLoginResultFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AbpLoginResultToJson(this);
 
   @override
-  AbpLoginResult deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = AbpLoginResultBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

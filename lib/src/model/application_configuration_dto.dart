@@ -6,314 +6,238 @@
 import 'package:puupee_api_client/src/model/multi_tenancy_info_dto.dart';
 import 'package:puupee_api_client/src/model/current_user_dto.dart';
 import 'package:puupee_api_client/src/model/application_localization_configuration_dto.dart';
-import 'package:puupee_api_client/src/model/application_setting_configuration_dto.dart';
-import 'package:puupee_api_client/src/model/current_tenant_dto.dart';
-import 'package:puupee_api_client/src/model/application_auth_configuration_dto.dart';
-import 'package:puupee_api_client/src/model/application_feature_configuration_dto.dart';
-import 'package:built_collection/built_collection.dart';
 import 'package:puupee_api_client/src/model/application_global_feature_configuration_dto.dart';
 import 'package:puupee_api_client/src/model/object_extensions_dto.dart';
 import 'package:puupee_api_client/src/model/clock_dto.dart';
 import 'package:puupee_api_client/src/model/timing_dto.dart';
-import 'package:built_value/json_object.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:puupee_api_client/src/model/application_setting_configuration_dto.dart';
+import 'package:puupee_api_client/src/model/current_tenant_dto.dart';
+import 'package:puupee_api_client/src/model/application_auth_configuration_dto.dart';
+import 'package:puupee_api_client/src/model/application_feature_configuration_dto.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'application_configuration_dto.g.dart';
 
-/// ApplicationConfigurationDto
-///
-/// Properties:
-/// * [localization] 
-/// * [auth] 
-/// * [setting] 
-/// * [currentUser] 
-/// * [features] 
-/// * [globalFeatures] 
-/// * [multiTenancy] 
-/// * [currentTenant] 
-/// * [timing] 
-/// * [clock] 
-/// * [objectExtensions] 
-/// * [extraProperties] 
-@BuiltValue()
-abstract class ApplicationConfigurationDto implements Built<ApplicationConfigurationDto, ApplicationConfigurationDtoBuilder> {
-  @BuiltValueField(wireName: r'localization')
-  ApplicationLocalizationConfigurationDto? get localization;
 
-  @BuiltValueField(wireName: r'auth')
-  ApplicationAuthConfigurationDto? get auth;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class ApplicationConfigurationDto {
+  /// Returns a new [ApplicationConfigurationDto] instance.
+  ApplicationConfigurationDto({
 
-  @BuiltValueField(wireName: r'setting')
-  ApplicationSettingConfigurationDto? get setting;
+     this.localization,
 
-  @BuiltValueField(wireName: r'currentUser')
-  CurrentUserDto? get currentUser;
+     this.auth,
 
-  @BuiltValueField(wireName: r'features')
-  ApplicationFeatureConfigurationDto? get features;
+     this.setting,
 
-  @BuiltValueField(wireName: r'globalFeatures')
-  ApplicationGlobalFeatureConfigurationDto? get globalFeatures;
+     this.currentUser,
 
-  @BuiltValueField(wireName: r'multiTenancy')
-  MultiTenancyInfoDto? get multiTenancy;
+     this.features,
 
-  @BuiltValueField(wireName: r'currentTenant')
-  CurrentTenantDto? get currentTenant;
+     this.globalFeatures,
 
-  @BuiltValueField(wireName: r'timing')
-  TimingDto? get timing;
+     this.multiTenancy,
 
-  @BuiltValueField(wireName: r'clock')
-  ClockDto? get clock;
+     this.currentTenant,
 
-  @BuiltValueField(wireName: r'objectExtensions')
-  ObjectExtensionsDto? get objectExtensions;
+     this.timing,
 
-  @BuiltValueField(wireName: r'extraProperties')
-  BuiltMap<String, JsonObject>? get extraProperties;
+     this.clock,
 
-  ApplicationConfigurationDto._();
+     this.objectExtensions,
 
-  factory ApplicationConfigurationDto([void updates(ApplicationConfigurationDtoBuilder b)]) = _$ApplicationConfigurationDto;
+     this.extraProperties,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ApplicationConfigurationDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'localization',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ApplicationConfigurationDto> get serializer => _$ApplicationConfigurationDtoSerializer();
-}
 
-class _$ApplicationConfigurationDtoSerializer implements PrimitiveSerializer<ApplicationConfigurationDto> {
-  @override
-  final Iterable<Type> types = const [ApplicationConfigurationDto, _$ApplicationConfigurationDto];
+  ApplicationLocalizationConfigurationDto? localization;
 
-  @override
-  final String wireName = r'ApplicationConfigurationDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    ApplicationConfigurationDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.localization != null) {
-      yield r'localization';
-      yield serializers.serialize(
-        object.localization,
-        specifiedType: const FullType(ApplicationLocalizationConfigurationDto),
-      );
-    }
-    if (object.auth != null) {
-      yield r'auth';
-      yield serializers.serialize(
-        object.auth,
-        specifiedType: const FullType(ApplicationAuthConfigurationDto),
-      );
-    }
-    if (object.setting != null) {
-      yield r'setting';
-      yield serializers.serialize(
-        object.setting,
-        specifiedType: const FullType(ApplicationSettingConfigurationDto),
-      );
-    }
-    if (object.currentUser != null) {
-      yield r'currentUser';
-      yield serializers.serialize(
-        object.currentUser,
-        specifiedType: const FullType(CurrentUserDto),
-      );
-    }
-    if (object.features != null) {
-      yield r'features';
-      yield serializers.serialize(
-        object.features,
-        specifiedType: const FullType(ApplicationFeatureConfigurationDto),
-      );
-    }
-    if (object.globalFeatures != null) {
-      yield r'globalFeatures';
-      yield serializers.serialize(
-        object.globalFeatures,
-        specifiedType: const FullType(ApplicationGlobalFeatureConfigurationDto),
-      );
-    }
-    if (object.multiTenancy != null) {
-      yield r'multiTenancy';
-      yield serializers.serialize(
-        object.multiTenancy,
-        specifiedType: const FullType(MultiTenancyInfoDto),
-      );
-    }
-    if (object.currentTenant != null) {
-      yield r'currentTenant';
-      yield serializers.serialize(
-        object.currentTenant,
-        specifiedType: const FullType(CurrentTenantDto),
-      );
-    }
-    if (object.timing != null) {
-      yield r'timing';
-      yield serializers.serialize(
-        object.timing,
-        specifiedType: const FullType(TimingDto),
-      );
-    }
-    if (object.clock != null) {
-      yield r'clock';
-      yield serializers.serialize(
-        object.clock,
-        specifiedType: const FullType(ClockDto),
-      );
-    }
-    if (object.objectExtensions != null) {
-      yield r'objectExtensions';
-      yield serializers.serialize(
-        object.objectExtensions,
-        specifiedType: const FullType(ObjectExtensionsDto),
-      );
-    }
-    if (object.extraProperties != null) {
-      yield r'extraProperties';
-      yield serializers.serialize(
-        object.extraProperties,
-        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    ApplicationConfigurationDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'auth',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required ApplicationConfigurationDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'localization':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ApplicationLocalizationConfigurationDto),
-          ) as ApplicationLocalizationConfigurationDto;
-          result.localization.replace(valueDes);
-          break;
-        case r'auth':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ApplicationAuthConfigurationDto),
-          ) as ApplicationAuthConfigurationDto;
-          result.auth.replace(valueDes);
-          break;
-        case r'setting':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ApplicationSettingConfigurationDto),
-          ) as ApplicationSettingConfigurationDto;
-          result.setting.replace(valueDes);
-          break;
-        case r'currentUser':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CurrentUserDto),
-          ) as CurrentUserDto;
-          result.currentUser.replace(valueDes);
-          break;
-        case r'features':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ApplicationFeatureConfigurationDto),
-          ) as ApplicationFeatureConfigurationDto;
-          result.features.replace(valueDes);
-          break;
-        case r'globalFeatures':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ApplicationGlobalFeatureConfigurationDto),
-          ) as ApplicationGlobalFeatureConfigurationDto;
-          result.globalFeatures.replace(valueDes);
-          break;
-        case r'multiTenancy':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(MultiTenancyInfoDto),
-          ) as MultiTenancyInfoDto;
-          result.multiTenancy.replace(valueDes);
-          break;
-        case r'currentTenant':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CurrentTenantDto),
-          ) as CurrentTenantDto;
-          result.currentTenant.replace(valueDes);
-          break;
-        case r'timing':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(TimingDto),
-          ) as TimingDto;
-          result.timing.replace(valueDes);
-          break;
-        case r'clock':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ClockDto),
-          ) as ClockDto;
-          result.clock.replace(valueDes);
-          break;
-        case r'objectExtensions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ObjectExtensionsDto),
-          ) as ObjectExtensionsDto;
-          result.objectExtensions.replace(valueDes);
-          break;
-        case r'extraProperties':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
-          ) as BuiltMap<String, JsonObject>;
-          result.extraProperties.replace(valueDes);
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  ApplicationAuthConfigurationDto? auth;
+
+
+
+  @JsonKey(
+    
+    name: r'setting',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  ApplicationSettingConfigurationDto? setting;
+
+
+
+  @JsonKey(
+    
+    name: r'currentUser',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  CurrentUserDto? currentUser;
+
+
+
+  @JsonKey(
+    
+    name: r'features',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  ApplicationFeatureConfigurationDto? features;
+
+
+
+  @JsonKey(
+    
+    name: r'globalFeatures',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  ApplicationGlobalFeatureConfigurationDto? globalFeatures;
+
+
+
+  @JsonKey(
+    
+    name: r'multiTenancy',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  MultiTenancyInfoDto? multiTenancy;
+
+
+
+  @JsonKey(
+    
+    name: r'currentTenant',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  CurrentTenantDto? currentTenant;
+
+
+
+  @JsonKey(
+    
+    name: r'timing',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  TimingDto? timing;
+
+
+
+  @JsonKey(
+    
+    name: r'clock',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  ClockDto? clock;
+
+
+
+  @JsonKey(
+    
+    name: r'objectExtensions',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  ObjectExtensionsDto? objectExtensions;
+
+
+
+  @JsonKey(
+    
+    name: r'extraProperties',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  Map<String, Object>? extraProperties;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is ApplicationConfigurationDto &&
+      other.localization == localization &&
+      other.auth == auth &&
+      other.setting == setting &&
+      other.currentUser == currentUser &&
+      other.features == features &&
+      other.globalFeatures == globalFeatures &&
+      other.multiTenancy == multiTenancy &&
+      other.currentTenant == currentTenant &&
+      other.timing == timing &&
+      other.clock == clock &&
+      other.objectExtensions == objectExtensions &&
+      other.extraProperties == extraProperties;
+
+    @override
+    int get hashCode =>
+        localization.hashCode +
+        auth.hashCode +
+        setting.hashCode +
+        currentUser.hashCode +
+        features.hashCode +
+        globalFeatures.hashCode +
+        multiTenancy.hashCode +
+        currentTenant.hashCode +
+        timing.hashCode +
+        clock.hashCode +
+        objectExtensions.hashCode +
+        extraProperties.hashCode;
+
+  factory ApplicationConfigurationDto.fromJson(Map<String, dynamic> json) => _$ApplicationConfigurationDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ApplicationConfigurationDtoToJson(this);
 
   @override
-  ApplicationConfigurationDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ApplicationConfigurationDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

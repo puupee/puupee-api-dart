@@ -3,125 +3,70 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'remote_service_validation_error_info.g.dart';
 
-/// RemoteServiceValidationErrorInfo
-///
-/// Properties:
-/// * [message] 
-/// * [members] 
-@BuiltValue()
-abstract class RemoteServiceValidationErrorInfo implements Built<RemoteServiceValidationErrorInfo, RemoteServiceValidationErrorInfoBuilder> {
-  @BuiltValueField(wireName: r'message')
-  String? get message;
 
-  @BuiltValueField(wireName: r'members')
-  BuiltList<String>? get members;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class RemoteServiceValidationErrorInfo {
+  /// Returns a new [RemoteServiceValidationErrorInfo] instance.
+  RemoteServiceValidationErrorInfo({
 
-  RemoteServiceValidationErrorInfo._();
+     this.message,
 
-  factory RemoteServiceValidationErrorInfo([void updates(RemoteServiceValidationErrorInfoBuilder b)]) = _$RemoteServiceValidationErrorInfo;
+     this.members,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(RemoteServiceValidationErrorInfoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'message',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<RemoteServiceValidationErrorInfo> get serializer => _$RemoteServiceValidationErrorInfoSerializer();
-}
 
-class _$RemoteServiceValidationErrorInfoSerializer implements PrimitiveSerializer<RemoteServiceValidationErrorInfo> {
-  @override
-  final Iterable<Type> types = const [RemoteServiceValidationErrorInfo, _$RemoteServiceValidationErrorInfo];
+  String? message;
 
-  @override
-  final String wireName = r'RemoteServiceValidationErrorInfo';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    RemoteServiceValidationErrorInfo object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.message != null) {
-      yield r'message';
-      yield serializers.serialize(
-        object.message,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.members != null) {
-      yield r'members';
-      yield serializers.serialize(
-        object.members,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    RemoteServiceValidationErrorInfo object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'members',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required RemoteServiceValidationErrorInfoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'message':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.message = valueDes;
-          break;
-        case r'members':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.members.replace(valueDes);
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  List<String>? members;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is RemoteServiceValidationErrorInfo &&
+      other.message == message &&
+      other.members == members;
+
+    @override
+    int get hashCode =>
+        message.hashCode +
+        members.hashCode;
+
+  factory RemoteServiceValidationErrorInfo.fromJson(Map<String, dynamic> json) => _$RemoteServiceValidationErrorInfoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$RemoteServiceValidationErrorInfoToJson(this);
 
   @override
-  RemoteServiceValidationErrorInfo deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = RemoteServiceValidationErrorInfoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

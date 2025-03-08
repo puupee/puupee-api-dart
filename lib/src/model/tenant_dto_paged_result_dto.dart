@@ -4,125 +4,70 @@
 
 // ignore_for_file: unused_element
 import 'package:puupee_api_client/src/model/tenant_dto.dart';
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'tenant_dto_paged_result_dto.g.dart';
 
-/// TenantDtoPagedResultDto
-///
-/// Properties:
-/// * [items] 
-/// * [totalCount] 
-@BuiltValue()
-abstract class TenantDtoPagedResultDto implements Built<TenantDtoPagedResultDto, TenantDtoPagedResultDtoBuilder> {
-  @BuiltValueField(wireName: r'items')
-  BuiltList<TenantDto>? get items;
 
-  @BuiltValueField(wireName: r'totalCount')
-  int? get totalCount;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class TenantDtoPagedResultDto {
+  /// Returns a new [TenantDtoPagedResultDto] instance.
+  TenantDtoPagedResultDto({
 
-  TenantDtoPagedResultDto._();
+     this.items,
 
-  factory TenantDtoPagedResultDto([void updates(TenantDtoPagedResultDtoBuilder b)]) = _$TenantDtoPagedResultDto;
+     this.totalCount,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(TenantDtoPagedResultDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'items',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<TenantDtoPagedResultDto> get serializer => _$TenantDtoPagedResultDtoSerializer();
-}
 
-class _$TenantDtoPagedResultDtoSerializer implements PrimitiveSerializer<TenantDtoPagedResultDto> {
-  @override
-  final Iterable<Type> types = const [TenantDtoPagedResultDto, _$TenantDtoPagedResultDto];
+  List<TenantDto>? items;
 
-  @override
-  final String wireName = r'TenantDtoPagedResultDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    TenantDtoPagedResultDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.items != null) {
-      yield r'items';
-      yield serializers.serialize(
-        object.items,
-        specifiedType: const FullType(BuiltList, [FullType(TenantDto)]),
-      );
-    }
-    if (object.totalCount != null) {
-      yield r'totalCount';
-      yield serializers.serialize(
-        object.totalCount,
-        specifiedType: const FullType(int),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    TenantDtoPagedResultDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'totalCount',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required TenantDtoPagedResultDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(TenantDto)]),
-          ) as BuiltList<TenantDto>;
-          result.items.replace(valueDes);
-          break;
-        case r'totalCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.totalCount = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  int? totalCount;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is TenantDtoPagedResultDto &&
+      other.items == items &&
+      other.totalCount == totalCount;
+
+    @override
+    int get hashCode =>
+        items.hashCode +
+        totalCount.hashCode;
+
+  factory TenantDtoPagedResultDto.fromJson(Map<String, dynamic> json) => _$TenantDtoPagedResultDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$TenantDtoPagedResultDtoToJson(this);
 
   @override
-  TenantDtoPagedResultDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = TenantDtoPagedResultDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

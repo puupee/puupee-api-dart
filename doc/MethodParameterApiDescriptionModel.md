@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **type** | **String** |  | [optional] 
 **typeSimple** | **String** |  | [optional] 
 **isOptional** | **bool** |  | [optional] 
-**defaultValue** | [**JsonObject**](.md) |  | [optional] 
+**defaultValue** | **Object** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

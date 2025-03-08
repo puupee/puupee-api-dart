@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for CreateOrUpdateMessageTemplateDto
 void main() {
-  final instance = CreateOrUpdateMessageTemplateDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final CreateOrUpdateMessageTemplateDto? instance = /* CreateOrUpdateMessageTemplateDto(...) */ null;
+  // TODO add properties to the entity
 
   group(CreateOrUpdateMessageTemplateDto, () {
     // String name

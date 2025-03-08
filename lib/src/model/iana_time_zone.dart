@@ -3,106 +3,54 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'iana_time_zone.g.dart';
 
-/// IanaTimeZone
-///
-/// Properties:
-/// * [timeZoneName] 
-@BuiltValue()
-abstract class IanaTimeZone implements Built<IanaTimeZone, IanaTimeZoneBuilder> {
-  @BuiltValueField(wireName: r'timeZoneName')
-  String? get timeZoneName;
 
-  IanaTimeZone._();
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class IanaTimeZone {
+  /// Returns a new [IanaTimeZone] instance.
+  IanaTimeZone({
 
-  factory IanaTimeZone([void updates(IanaTimeZoneBuilder b)]) = _$IanaTimeZone;
+     this.timeZoneName,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(IanaTimeZoneBuilder b) => b;
+  @JsonKey(
+    
+    name: r'timeZoneName',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<IanaTimeZone> get serializer => _$IanaTimeZoneSerializer();
-}
 
-class _$IanaTimeZoneSerializer implements PrimitiveSerializer<IanaTimeZone> {
-  @override
-  final Iterable<Type> types = const [IanaTimeZone, _$IanaTimeZone];
+  String? timeZoneName;
 
-  @override
-  final String wireName = r'IanaTimeZone';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    IanaTimeZone object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.timeZoneName != null) {
-      yield r'timeZoneName';
-      yield serializers.serialize(
-        object.timeZoneName,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    IanaTimeZone object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required IanaTimeZoneBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'timeZoneName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.timeZoneName = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is IanaTimeZone &&
+      other.timeZoneName == timeZoneName;
+
+    @override
+    int get hashCode =>
+        timeZoneName.hashCode;
+
+  factory IanaTimeZone.fromJson(Map<String, dynamic> json) => _$IanaTimeZoneFromJson(json);
+
+  Map<String, dynamic> toJson() => _$IanaTimeZoneToJson(this);
 
   @override
-  IanaTimeZone deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = IanaTimeZoneBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

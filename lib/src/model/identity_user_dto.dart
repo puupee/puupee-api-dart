@@ -3,522 +3,422 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/json_object.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'identity_user_dto.g.dart';
 
-/// IdentityUserDto
-///
-/// Properties:
-/// * [extraProperties] 
-/// * [id] 
-/// * [creationTime] 
-/// * [creatorId] 
-/// * [lastModificationTime] 
-/// * [lastModifierId] 
-/// * [isDeleted] 
-/// * [deleterId] 
-/// * [deletionTime] 
-/// * [tenantId] 
-/// * [userName] 
-/// * [name] 
-/// * [surname] 
-/// * [email] 
-/// * [emailConfirmed] 
-/// * [phoneNumber] 
-/// * [phoneNumberConfirmed] 
-/// * [isActive] 
-/// * [lockoutEnabled] 
-/// * [accessFailedCount] 
-/// * [lockoutEnd] 
-/// * [concurrencyStamp] 
-/// * [entityVersion] 
-/// * [lastPasswordChangeTime] 
-@BuiltValue()
-abstract class IdentityUserDto implements Built<IdentityUserDto, IdentityUserDtoBuilder> {
-  @BuiltValueField(wireName: r'extraProperties')
-  BuiltMap<String, JsonObject>? get extraProperties;
 
-  @BuiltValueField(wireName: r'id')
-  String? get id;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class IdentityUserDto {
+  /// Returns a new [IdentityUserDto] instance.
+  IdentityUserDto({
 
-  @BuiltValueField(wireName: r'creationTime')
-  DateTime? get creationTime;
+     this.extraProperties,
 
-  @BuiltValueField(wireName: r'creatorId')
-  String? get creatorId;
+     this.id,
 
-  @BuiltValueField(wireName: r'lastModificationTime')
-  DateTime? get lastModificationTime;
+     this.creationTime,
 
-  @BuiltValueField(wireName: r'lastModifierId')
-  String? get lastModifierId;
+     this.creatorId,
 
-  @BuiltValueField(wireName: r'isDeleted')
-  bool? get isDeleted;
+     this.lastModificationTime,
 
-  @BuiltValueField(wireName: r'deleterId')
-  String? get deleterId;
+     this.lastModifierId,
 
-  @BuiltValueField(wireName: r'deletionTime')
-  DateTime? get deletionTime;
+     this.isDeleted,
 
-  @BuiltValueField(wireName: r'tenantId')
-  String? get tenantId;
+     this.deleterId,
 
-  @BuiltValueField(wireName: r'userName')
-  String? get userName;
+     this.deletionTime,
 
-  @BuiltValueField(wireName: r'name')
-  String? get name;
+     this.tenantId,
 
-  @BuiltValueField(wireName: r'surname')
-  String? get surname;
+     this.userName,
 
-  @BuiltValueField(wireName: r'email')
-  String? get email;
+     this.name,
 
-  @BuiltValueField(wireName: r'emailConfirmed')
-  bool? get emailConfirmed;
+     this.surname,
 
-  @BuiltValueField(wireName: r'phoneNumber')
-  String? get phoneNumber;
+     this.email,
 
-  @BuiltValueField(wireName: r'phoneNumberConfirmed')
-  bool? get phoneNumberConfirmed;
+     this.emailConfirmed,
 
-  @BuiltValueField(wireName: r'isActive')
-  bool? get isActive;
+     this.phoneNumber,
 
-  @BuiltValueField(wireName: r'lockoutEnabled')
-  bool? get lockoutEnabled;
+     this.phoneNumberConfirmed,
 
-  @BuiltValueField(wireName: r'accessFailedCount')
-  int? get accessFailedCount;
+     this.isActive,
 
-  @BuiltValueField(wireName: r'lockoutEnd')
-  DateTime? get lockoutEnd;
+     this.lockoutEnabled,
 
-  @BuiltValueField(wireName: r'concurrencyStamp')
-  String? get concurrencyStamp;
+     this.accessFailedCount,
 
-  @BuiltValueField(wireName: r'entityVersion')
-  int? get entityVersion;
+     this.lockoutEnd,
 
-  @BuiltValueField(wireName: r'lastPasswordChangeTime')
-  DateTime? get lastPasswordChangeTime;
+     this.concurrencyStamp,
 
-  IdentityUserDto._();
+     this.entityVersion,
 
-  factory IdentityUserDto([void updates(IdentityUserDtoBuilder b)]) = _$IdentityUserDto;
+     this.lastPasswordChangeTime,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(IdentityUserDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'extraProperties',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<IdentityUserDto> get serializer => _$IdentityUserDtoSerializer();
-}
 
-class _$IdentityUserDtoSerializer implements PrimitiveSerializer<IdentityUserDto> {
-  @override
-  final Iterable<Type> types = const [IdentityUserDto, _$IdentityUserDto];
+  Map<String, Object>? extraProperties;
 
-  @override
-  final String wireName = r'IdentityUserDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    IdentityUserDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.extraProperties != null) {
-      yield r'extraProperties';
-      yield serializers.serialize(
-        object.extraProperties,
-        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
-      );
-    }
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.creationTime != null) {
-      yield r'creationTime';
-      yield serializers.serialize(
-        object.creationTime,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.creatorId != null) {
-      yield r'creatorId';
-      yield serializers.serialize(
-        object.creatorId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.lastModificationTime != null) {
-      yield r'lastModificationTime';
-      yield serializers.serialize(
-        object.lastModificationTime,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.lastModifierId != null) {
-      yield r'lastModifierId';
-      yield serializers.serialize(
-        object.lastModifierId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.isDeleted != null) {
-      yield r'isDeleted';
-      yield serializers.serialize(
-        object.isDeleted,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.deleterId != null) {
-      yield r'deleterId';
-      yield serializers.serialize(
-        object.deleterId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.deletionTime != null) {
-      yield r'deletionTime';
-      yield serializers.serialize(
-        object.deletionTime,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.tenantId != null) {
-      yield r'tenantId';
-      yield serializers.serialize(
-        object.tenantId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.userName != null) {
-      yield r'userName';
-      yield serializers.serialize(
-        object.userName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.name != null) {
-      yield r'name';
-      yield serializers.serialize(
-        object.name,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.surname != null) {
-      yield r'surname';
-      yield serializers.serialize(
-        object.surname,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.email != null) {
-      yield r'email';
-      yield serializers.serialize(
-        object.email,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.emailConfirmed != null) {
-      yield r'emailConfirmed';
-      yield serializers.serialize(
-        object.emailConfirmed,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.phoneNumber != null) {
-      yield r'phoneNumber';
-      yield serializers.serialize(
-        object.phoneNumber,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.phoneNumberConfirmed != null) {
-      yield r'phoneNumberConfirmed';
-      yield serializers.serialize(
-        object.phoneNumberConfirmed,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.isActive != null) {
-      yield r'isActive';
-      yield serializers.serialize(
-        object.isActive,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.lockoutEnabled != null) {
-      yield r'lockoutEnabled';
-      yield serializers.serialize(
-        object.lockoutEnabled,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.accessFailedCount != null) {
-      yield r'accessFailedCount';
-      yield serializers.serialize(
-        object.accessFailedCount,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.lockoutEnd != null) {
-      yield r'lockoutEnd';
-      yield serializers.serialize(
-        object.lockoutEnd,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-    if (object.concurrencyStamp != null) {
-      yield r'concurrencyStamp';
-      yield serializers.serialize(
-        object.concurrencyStamp,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.entityVersion != null) {
-      yield r'entityVersion';
-      yield serializers.serialize(
-        object.entityVersion,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.lastPasswordChangeTime != null) {
-      yield r'lastPasswordChangeTime';
-      yield serializers.serialize(
-        object.lastPasswordChangeTime,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    IdentityUserDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'id',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required IdentityUserDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'extraProperties':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
-          ) as BuiltMap<String, JsonObject>;
-          result.extraProperties.replace(valueDes);
-          break;
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
-        case r'creationTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.creationTime = valueDes;
-          break;
-        case r'creatorId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.creatorId = valueDes;
-          break;
-        case r'lastModificationTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.lastModificationTime = valueDes;
-          break;
-        case r'lastModifierId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.lastModifierId = valueDes;
-          break;
-        case r'isDeleted':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isDeleted = valueDes;
-          break;
-        case r'deleterId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.deleterId = valueDes;
-          break;
-        case r'deletionTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.deletionTime = valueDes;
-          break;
-        case r'tenantId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.tenantId = valueDes;
-          break;
-        case r'userName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.userName = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'surname':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.surname = valueDes;
-          break;
-        case r'email':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.email = valueDes;
-          break;
-        case r'emailConfirmed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.emailConfirmed = valueDes;
-          break;
-        case r'phoneNumber':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.phoneNumber = valueDes;
-          break;
-        case r'phoneNumberConfirmed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.phoneNumberConfirmed = valueDes;
-          break;
-        case r'isActive':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isActive = valueDes;
-          break;
-        case r'lockoutEnabled':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.lockoutEnabled = valueDes;
-          break;
-        case r'accessFailedCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.accessFailedCount = valueDes;
-          break;
-        case r'lockoutEnd':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.lockoutEnd = valueDes;
-          break;
-        case r'concurrencyStamp':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.concurrencyStamp = valueDes;
-          break;
-        case r'entityVersion':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.entityVersion = valueDes;
-          break;
-        case r'lastPasswordChangeTime':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.lastPasswordChangeTime = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  String? id;
+
+
+
+  @JsonKey(
+    
+    name: r'creationTime',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  DateTime? creationTime;
+
+
+
+  @JsonKey(
+    
+    name: r'creatorId',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? creatorId;
+
+
+
+  @JsonKey(
+    
+    name: r'lastModificationTime',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  DateTime? lastModificationTime;
+
+
+
+  @JsonKey(
+    
+    name: r'lastModifierId',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? lastModifierId;
+
+
+
+  @JsonKey(
+    
+    name: r'isDeleted',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  bool? isDeleted;
+
+
+
+  @JsonKey(
+    
+    name: r'deleterId',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? deleterId;
+
+
+
+  @JsonKey(
+    
+    name: r'deletionTime',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  DateTime? deletionTime;
+
+
+
+  @JsonKey(
+    
+    name: r'tenantId',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? tenantId;
+
+
+
+  @JsonKey(
+    
+    name: r'userName',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? userName;
+
+
+
+  @JsonKey(
+    
+    name: r'name',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? name;
+
+
+
+  @JsonKey(
+    
+    name: r'surname',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? surname;
+
+
+
+  @JsonKey(
+    
+    name: r'email',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? email;
+
+
+
+  @JsonKey(
+    
+    name: r'emailConfirmed',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  bool? emailConfirmed;
+
+
+
+  @JsonKey(
+    
+    name: r'phoneNumber',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? phoneNumber;
+
+
+
+  @JsonKey(
+    
+    name: r'phoneNumberConfirmed',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  bool? phoneNumberConfirmed;
+
+
+
+  @JsonKey(
+    
+    name: r'isActive',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  bool? isActive;
+
+
+
+  @JsonKey(
+    
+    name: r'lockoutEnabled',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  bool? lockoutEnabled;
+
+
+
+  @JsonKey(
+    
+    name: r'accessFailedCount',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  int? accessFailedCount;
+
+
+
+  @JsonKey(
+    
+    name: r'lockoutEnd',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  DateTime? lockoutEnd;
+
+
+
+  @JsonKey(
+    
+    name: r'concurrencyStamp',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? concurrencyStamp;
+
+
+
+  @JsonKey(
+    
+    name: r'entityVersion',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  int? entityVersion;
+
+
+
+  @JsonKey(
+    
+    name: r'lastPasswordChangeTime',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  DateTime? lastPasswordChangeTime;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is IdentityUserDto &&
+      other.extraProperties == extraProperties &&
+      other.id == id &&
+      other.creationTime == creationTime &&
+      other.creatorId == creatorId &&
+      other.lastModificationTime == lastModificationTime &&
+      other.lastModifierId == lastModifierId &&
+      other.isDeleted == isDeleted &&
+      other.deleterId == deleterId &&
+      other.deletionTime == deletionTime &&
+      other.tenantId == tenantId &&
+      other.userName == userName &&
+      other.name == name &&
+      other.surname == surname &&
+      other.email == email &&
+      other.emailConfirmed == emailConfirmed &&
+      other.phoneNumber == phoneNumber &&
+      other.phoneNumberConfirmed == phoneNumberConfirmed &&
+      other.isActive == isActive &&
+      other.lockoutEnabled == lockoutEnabled &&
+      other.accessFailedCount == accessFailedCount &&
+      other.lockoutEnd == lockoutEnd &&
+      other.concurrencyStamp == concurrencyStamp &&
+      other.entityVersion == entityVersion &&
+      other.lastPasswordChangeTime == lastPasswordChangeTime;
+
+    @override
+    int get hashCode =>
+        extraProperties.hashCode +
+        id.hashCode +
+        creationTime.hashCode +
+        creatorId.hashCode +
+        lastModificationTime.hashCode +
+        lastModifierId.hashCode +
+        isDeleted.hashCode +
+        deleterId.hashCode +
+        deletionTime.hashCode +
+        tenantId.hashCode +
+        userName.hashCode +
+        name.hashCode +
+        surname.hashCode +
+        email.hashCode +
+        emailConfirmed.hashCode +
+        phoneNumber.hashCode +
+        phoneNumberConfirmed.hashCode +
+        isActive.hashCode +
+        lockoutEnabled.hashCode +
+        accessFailedCount.hashCode +
+        lockoutEnd.hashCode +
+        concurrencyStamp.hashCode +
+        entityVersion.hashCode +
+        lastPasswordChangeTime.hashCode;
+
+  factory IdentityUserDto.fromJson(Map<String, dynamic> json) => _$IdentityUserDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$IdentityUserDtoToJson(this);
 
   @override
-  IdentityUserDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = IdentityUserDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for AppPricingDto
 void main() {
-  final instance = AppPricingDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final AppPricingDto? instance = /* AppPricingDto(...) */ null;
+  // TODO add properties to the entity
 
   group(AppPricingDto, () {
     // String id
@@ -143,7 +143,7 @@ void main() {
     });
 
     // 收费点
-    // BuiltList<AppPricingItemValueDto> items
+    // List<AppPricingItemValueDto> items
     test('to test the property `items`', () async {
       // TODO
     });

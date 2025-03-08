@@ -3,126 +3,70 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/json_object.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'extension_property_attribute_dto.g.dart';
 
-/// ExtensionPropertyAttributeDto
-///
-/// Properties:
-/// * [typeSimple] 
-/// * [config] 
-@BuiltValue()
-abstract class ExtensionPropertyAttributeDto implements Built<ExtensionPropertyAttributeDto, ExtensionPropertyAttributeDtoBuilder> {
-  @BuiltValueField(wireName: r'typeSimple')
-  String? get typeSimple;
 
-  @BuiltValueField(wireName: r'config')
-  BuiltMap<String, JsonObject>? get config;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class ExtensionPropertyAttributeDto {
+  /// Returns a new [ExtensionPropertyAttributeDto] instance.
+  ExtensionPropertyAttributeDto({
 
-  ExtensionPropertyAttributeDto._();
+     this.typeSimple,
 
-  factory ExtensionPropertyAttributeDto([void updates(ExtensionPropertyAttributeDtoBuilder b)]) = _$ExtensionPropertyAttributeDto;
+     this.config,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ExtensionPropertyAttributeDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'typeSimple',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ExtensionPropertyAttributeDto> get serializer => _$ExtensionPropertyAttributeDtoSerializer();
-}
 
-class _$ExtensionPropertyAttributeDtoSerializer implements PrimitiveSerializer<ExtensionPropertyAttributeDto> {
-  @override
-  final Iterable<Type> types = const [ExtensionPropertyAttributeDto, _$ExtensionPropertyAttributeDto];
+  String? typeSimple;
 
-  @override
-  final String wireName = r'ExtensionPropertyAttributeDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    ExtensionPropertyAttributeDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.typeSimple != null) {
-      yield r'typeSimple';
-      yield serializers.serialize(
-        object.typeSimple,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.config != null) {
-      yield r'config';
-      yield serializers.serialize(
-        object.config,
-        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    ExtensionPropertyAttributeDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'config',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required ExtensionPropertyAttributeDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'typeSimple':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.typeSimple = valueDes;
-          break;
-        case r'config':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
-          ) as BuiltMap<String, JsonObject>;
-          result.config.replace(valueDes);
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  Map<String, Object>? config;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is ExtensionPropertyAttributeDto &&
+      other.typeSimple == typeSimple &&
+      other.config == config;
+
+    @override
+    int get hashCode =>
+        typeSimple.hashCode +
+        config.hashCode;
+
+  factory ExtensionPropertyAttributeDto.fromJson(Map<String, dynamic> json) => _$ExtensionPropertyAttributeDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ExtensionPropertyAttributeDtoToJson(this);
 
   @override
-  ExtensionPropertyAttributeDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ExtensionPropertyAttributeDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

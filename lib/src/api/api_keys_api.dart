@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/api_key_create_dto.dart';
 import 'package:puupee_api_client/src/model/api_key_dto.dart';
 import 'package:puupee_api_client/src/model/api_key_dto_paged_result_dto.dart';
@@ -19,9 +19,7 @@ class ApiKeysApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const ApiKeysApi(this._dio, this._serializers);
+  const ApiKeysApi(this._dio);
 
   /// create
   /// 
@@ -68,9 +66,7 @@ class ApiKeysApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ApiKeyCreateDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -95,12 +91,8 @@ class ApiKeysApi {
     ApiKeyDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ApiKeyDto),
-      ) as ApiKeyDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ApiKeyDto, ApiKeyDto>(rawData, 'ApiKeyDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -146,7 +138,7 @@ class ApiKeysApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/api-keys/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/api-keys/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -198,7 +190,7 @@ class ApiKeysApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/api-keys/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/api-keys/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -227,12 +219,8 @@ class ApiKeysApi {
     ApiKeyDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ApiKeyDto),
-      ) as ApiKeyDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ApiKeyDto, ApiKeyDto>(rawData, 'ApiKeyDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -301,9 +289,9 @@ class ApiKeysApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (sorting != null) r'Sorting': encodeQueryParameter(_serializers, sorting, const FullType(String)),
-      if (skipCount != null) r'SkipCount': encodeQueryParameter(_serializers, skipCount, const FullType(int)),
-      if (maxResultCount != null) r'MaxResultCount': encodeQueryParameter(_serializers, maxResultCount, const FullType(int)),
+      if (sorting != null) r'Sorting': sorting,
+      if (skipCount != null) r'SkipCount': skipCount,
+      if (maxResultCount != null) r'MaxResultCount': maxResultCount,
     };
 
     final _response = await _dio.request<Object>(
@@ -318,12 +306,8 @@ class ApiKeysApi {
     ApiKeyDtoPagedResultDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ApiKeyDtoPagedResultDto),
-      ) as ApiKeyDtoPagedResultDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ApiKeyDtoPagedResultDto, ApiKeyDtoPagedResultDto>(rawData, 'ApiKeyDtoPagedResultDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -371,7 +355,7 @@ class ApiKeysApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/api-keys/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/api-keys/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -393,9 +377,7 @@ class ApiKeysApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ApiKeyUpdateDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -420,12 +402,8 @@ class ApiKeysApi {
     ApiKeyDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ApiKeyDto),
-      ) as ApiKeyDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ApiKeyDto, ApiKeyDto>(rawData, 'ApiKeyDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

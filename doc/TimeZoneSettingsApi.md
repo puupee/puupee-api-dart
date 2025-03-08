@@ -54,7 +54,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTimezones**
-> BuiltList<NameValue> getTimezones()
+> List<NameValue> getTimezones()
 
 
 
@@ -79,7 +79,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;NameValue&gt;**](NameValue.md)
+[**List&lt;NameValue&gt;**](NameValue.md)
 
 ### Authorization
 

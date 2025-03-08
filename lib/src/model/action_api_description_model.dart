@@ -3,272 +3,201 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
 import 'package:puupee_api_client/src/model/parameter_api_description_model.dart';
 import 'package:puupee_api_client/src/model/return_value_api_description_model.dart';
 import 'package:puupee_api_client/src/model/method_parameter_api_description_model.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'action_api_description_model.g.dart';
 
-/// ActionApiDescriptionModel
-///
-/// Properties:
-/// * [uniqueName] 
-/// * [name] 
-/// * [httpMethod] 
-/// * [url] 
-/// * [supportedVersions] 
-/// * [parametersOnMethod] 
-/// * [parameters] 
-/// * [returnValue] 
-/// * [allowAnonymous] 
-/// * [implementFrom] 
-@BuiltValue()
-abstract class ActionApiDescriptionModel implements Built<ActionApiDescriptionModel, ActionApiDescriptionModelBuilder> {
-  @BuiltValueField(wireName: r'uniqueName')
-  String? get uniqueName;
 
-  @BuiltValueField(wireName: r'name')
-  String? get name;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class ActionApiDescriptionModel {
+  /// Returns a new [ActionApiDescriptionModel] instance.
+  ActionApiDescriptionModel({
 
-  @BuiltValueField(wireName: r'httpMethod')
-  String? get httpMethod;
+     this.uniqueName,
 
-  @BuiltValueField(wireName: r'url')
-  String? get url;
+     this.name,
 
-  @BuiltValueField(wireName: r'supportedVersions')
-  BuiltList<String>? get supportedVersions;
+     this.httpMethod,
 
-  @BuiltValueField(wireName: r'parametersOnMethod')
-  BuiltList<MethodParameterApiDescriptionModel>? get parametersOnMethod;
+     this.url,
 
-  @BuiltValueField(wireName: r'parameters')
-  BuiltList<ParameterApiDescriptionModel>? get parameters;
+     this.supportedVersions,
 
-  @BuiltValueField(wireName: r'returnValue')
-  ReturnValueApiDescriptionModel? get returnValue;
+     this.parametersOnMethod,
 
-  @BuiltValueField(wireName: r'allowAnonymous')
-  bool? get allowAnonymous;
+     this.parameters,
 
-  @BuiltValueField(wireName: r'implementFrom')
-  String? get implementFrom;
+     this.returnValue,
 
-  ActionApiDescriptionModel._();
+     this.allowAnonymous,
 
-  factory ActionApiDescriptionModel([void updates(ActionApiDescriptionModelBuilder b)]) = _$ActionApiDescriptionModel;
+     this.implementFrom,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ActionApiDescriptionModelBuilder b) => b;
+  @JsonKey(
+    
+    name: r'uniqueName',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ActionApiDescriptionModel> get serializer => _$ActionApiDescriptionModelSerializer();
-}
 
-class _$ActionApiDescriptionModelSerializer implements PrimitiveSerializer<ActionApiDescriptionModel> {
-  @override
-  final Iterable<Type> types = const [ActionApiDescriptionModel, _$ActionApiDescriptionModel];
+  String? uniqueName;
 
-  @override
-  final String wireName = r'ActionApiDescriptionModel';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    ActionApiDescriptionModel object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.uniqueName != null) {
-      yield r'uniqueName';
-      yield serializers.serialize(
-        object.uniqueName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.name != null) {
-      yield r'name';
-      yield serializers.serialize(
-        object.name,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.httpMethod != null) {
-      yield r'httpMethod';
-      yield serializers.serialize(
-        object.httpMethod,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.url != null) {
-      yield r'url';
-      yield serializers.serialize(
-        object.url,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.supportedVersions != null) {
-      yield r'supportedVersions';
-      yield serializers.serialize(
-        object.supportedVersions,
-        specifiedType: const FullType(BuiltList, [FullType(String)]),
-      );
-    }
-    if (object.parametersOnMethod != null) {
-      yield r'parametersOnMethod';
-      yield serializers.serialize(
-        object.parametersOnMethod,
-        specifiedType: const FullType(BuiltList, [FullType(MethodParameterApiDescriptionModel)]),
-      );
-    }
-    if (object.parameters != null) {
-      yield r'parameters';
-      yield serializers.serialize(
-        object.parameters,
-        specifiedType: const FullType(BuiltList, [FullType(ParameterApiDescriptionModel)]),
-      );
-    }
-    if (object.returnValue != null) {
-      yield r'returnValue';
-      yield serializers.serialize(
-        object.returnValue,
-        specifiedType: const FullType(ReturnValueApiDescriptionModel),
-      );
-    }
-    if (object.allowAnonymous != null) {
-      yield r'allowAnonymous';
-      yield serializers.serialize(
-        object.allowAnonymous,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.implementFrom != null) {
-      yield r'implementFrom';
-      yield serializers.serialize(
-        object.implementFrom,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    ActionApiDescriptionModel object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'name',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required ActionApiDescriptionModelBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'uniqueName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.uniqueName = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'httpMethod':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.httpMethod = valueDes;
-          break;
-        case r'url':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.url = valueDes;
-          break;
-        case r'supportedVersions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(String)]),
-          ) as BuiltList<String>;
-          result.supportedVersions.replace(valueDes);
-          break;
-        case r'parametersOnMethod':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(MethodParameterApiDescriptionModel)]),
-          ) as BuiltList<MethodParameterApiDescriptionModel>;
-          result.parametersOnMethod.replace(valueDes);
-          break;
-        case r'parameters':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(ParameterApiDescriptionModel)]),
-          ) as BuiltList<ParameterApiDescriptionModel>;
-          result.parameters.replace(valueDes);
-          break;
-        case r'returnValue':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ReturnValueApiDescriptionModel),
-          ) as ReturnValueApiDescriptionModel;
-          result.returnValue.replace(valueDes);
-          break;
-        case r'allowAnonymous':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.allowAnonymous = valueDes;
-          break;
-        case r'implementFrom':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.implementFrom = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  String? name;
+
+
+
+  @JsonKey(
+    
+    name: r'httpMethod',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? httpMethod;
+
+
+
+  @JsonKey(
+    
+    name: r'url',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? url;
+
+
+
+  @JsonKey(
+    
+    name: r'supportedVersions',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  List<String>? supportedVersions;
+
+
+
+  @JsonKey(
+    
+    name: r'parametersOnMethod',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  List<MethodParameterApiDescriptionModel>? parametersOnMethod;
+
+
+
+  @JsonKey(
+    
+    name: r'parameters',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  List<ParameterApiDescriptionModel>? parameters;
+
+
+
+  @JsonKey(
+    
+    name: r'returnValue',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  ReturnValueApiDescriptionModel? returnValue;
+
+
+
+  @JsonKey(
+    
+    name: r'allowAnonymous',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  bool? allowAnonymous;
+
+
+
+  @JsonKey(
+    
+    name: r'implementFrom',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? implementFrom;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is ActionApiDescriptionModel &&
+      other.uniqueName == uniqueName &&
+      other.name == name &&
+      other.httpMethod == httpMethod &&
+      other.url == url &&
+      other.supportedVersions == supportedVersions &&
+      other.parametersOnMethod == parametersOnMethod &&
+      other.parameters == parameters &&
+      other.returnValue == returnValue &&
+      other.allowAnonymous == allowAnonymous &&
+      other.implementFrom == implementFrom;
+
+    @override
+    int get hashCode =>
+        uniqueName.hashCode +
+        name.hashCode +
+        httpMethod.hashCode +
+        url.hashCode +
+        supportedVersions.hashCode +
+        parametersOnMethod.hashCode +
+        parameters.hashCode +
+        returnValue.hashCode +
+        allowAnonymous.hashCode +
+        implementFrom.hashCode;
+
+  factory ActionApiDescriptionModel.fromJson(Map<String, dynamic> json) => _$ActionApiDescriptionModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ActionApiDescriptionModelToJson(this);
 
   @override
-  ActionApiDescriptionModel deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ActionApiDescriptionModelBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

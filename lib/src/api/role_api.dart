@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/identity_role_create_dto.dart';
 import 'package:puupee_api_client/src/model/identity_role_dto.dart';
 import 'package:puupee_api_client/src/model/identity_role_dto_list_result_dto.dart';
@@ -20,9 +20,7 @@ class RoleApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const RoleApi(this._dio, this._serializers);
+  const RoleApi(this._dio);
 
   /// create
   /// 
@@ -69,9 +67,7 @@ class RoleApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(IdentityRoleCreateDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -96,12 +92,8 @@ class RoleApi {
     IdentityRoleDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(IdentityRoleDto),
-      ) as IdentityRoleDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<IdentityRoleDto, IdentityRoleDto>(rawData, 'IdentityRoleDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -147,7 +139,7 @@ class RoleApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/identity/roles/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/identity/roles/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -226,12 +218,8 @@ class RoleApi {
     IdentityRoleDtoListResultDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(IdentityRoleDtoListResultDto),
-      ) as IdentityRoleDtoListResultDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<IdentityRoleDtoListResultDto, IdentityRoleDtoListResultDto>(rawData, 'IdentityRoleDtoListResultDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -277,7 +265,7 @@ class RoleApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/identity/roles/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/identity/roles/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -306,12 +294,8 @@ class RoleApi {
     IdentityRoleDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(IdentityRoleDto),
-      ) as IdentityRoleDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<IdentityRoleDto, IdentityRoleDto>(rawData, 'IdentityRoleDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -382,10 +366,10 @@ class RoleApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (filter != null) r'Filter': encodeQueryParameter(_serializers, filter, const FullType(String)),
-      if (sorting != null) r'Sorting': encodeQueryParameter(_serializers, sorting, const FullType(String)),
-      if (skipCount != null) r'SkipCount': encodeQueryParameter(_serializers, skipCount, const FullType(int)),
-      if (maxResultCount != null) r'MaxResultCount': encodeQueryParameter(_serializers, maxResultCount, const FullType(int)),
+      if (filter != null) r'Filter': filter,
+      if (sorting != null) r'Sorting': sorting,
+      if (skipCount != null) r'SkipCount': skipCount,
+      if (maxResultCount != null) r'MaxResultCount': maxResultCount,
     };
 
     final _response = await _dio.request<Object>(
@@ -400,12 +384,8 @@ class RoleApi {
     IdentityRoleDtoPagedResultDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(IdentityRoleDtoPagedResultDto),
-      ) as IdentityRoleDtoPagedResultDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<IdentityRoleDtoPagedResultDto, IdentityRoleDtoPagedResultDto>(rawData, 'IdentityRoleDtoPagedResultDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -453,7 +433,7 @@ class RoleApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/identity/roles/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/identity/roles/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -475,9 +455,7 @@ class RoleApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(IdentityRoleUpdateDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -502,12 +480,8 @@ class RoleApi {
     IdentityRoleDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(IdentityRoleDto),
-      ) as IdentityRoleDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<IdentityRoleDto, IdentityRoleDto>(rawData, 'IdentityRoleDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

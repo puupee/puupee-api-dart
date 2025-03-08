@@ -3,376 +3,294 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'in_app.g.dart';
 
-/// InApp
-///
-/// Properties:
-/// * [quantity] 
-/// * [productId] 
-/// * [transactionId] 
-/// * [originalTransactionId] 
-/// * [purchaseDate] 
-/// * [purchaseDateMs] 
-/// * [purchaseDatePst] 
-/// * [originalPurchaseDate] 
-/// * [originalPurchaseDateMs] 
-/// * [originalPurchaseDatePst] 
-/// * [expiresDate] 
-/// * [expiresDateMs] 
-/// * [expiresDatePst] 
-/// * [webOrderLineItemId] 
-/// * [isTrialPeriod] 
-/// * [isInIntroOfferPeriod] 
-@BuiltValue()
-abstract class InApp implements Built<InApp, InAppBuilder> {
-  @BuiltValueField(wireName: r'quantity')
-  String? get quantity;
 
-  @BuiltValueField(wireName: r'product_id')
-  String? get productId;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class InApp {
+  /// Returns a new [InApp] instance.
+  InApp({
 
-  @BuiltValueField(wireName: r'transaction_id')
-  String? get transactionId;
+     this.quantity,
 
-  @BuiltValueField(wireName: r'original_transaction_id')
-  String? get originalTransactionId;
+     this.productId,
 
-  @BuiltValueField(wireName: r'purchase_date')
-  String? get purchaseDate;
+     this.transactionId,
 
-  @BuiltValueField(wireName: r'purchase_date_ms')
-  String? get purchaseDateMs;
+     this.originalTransactionId,
 
-  @BuiltValueField(wireName: r'purchase_date_pst')
-  String? get purchaseDatePst;
+     this.purchaseDate,
 
-  @BuiltValueField(wireName: r'original_purchase_date')
-  String? get originalPurchaseDate;
+     this.purchaseDateMs,
 
-  @BuiltValueField(wireName: r'original_purchase_date_ms')
-  String? get originalPurchaseDateMs;
+     this.purchaseDatePst,
 
-  @BuiltValueField(wireName: r'original_purchase_date_pst')
-  String? get originalPurchaseDatePst;
+     this.originalPurchaseDate,
 
-  @BuiltValueField(wireName: r'expires_date')
-  String? get expiresDate;
+     this.originalPurchaseDateMs,
 
-  @BuiltValueField(wireName: r'expires_date_ms')
-  String? get expiresDateMs;
+     this.originalPurchaseDatePst,
 
-  @BuiltValueField(wireName: r'expires_date_pst')
-  String? get expiresDatePst;
+     this.expiresDate,
 
-  @BuiltValueField(wireName: r'web_order_line_item_id')
-  String? get webOrderLineItemId;
+     this.expiresDateMs,
 
-  @BuiltValueField(wireName: r'is_trial_period')
-  String? get isTrialPeriod;
+     this.expiresDatePst,
 
-  @BuiltValueField(wireName: r'is_in_intro_offer_period')
-  String? get isInIntroOfferPeriod;
+     this.webOrderLineItemId,
 
-  InApp._();
+     this.isTrialPeriod,
 
-  factory InApp([void updates(InAppBuilder b)]) = _$InApp;
+     this.isInIntroOfferPeriod,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(InAppBuilder b) => b;
+  @JsonKey(
+    
+    name: r'quantity',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<InApp> get serializer => _$InAppSerializer();
-}
 
-class _$InAppSerializer implements PrimitiveSerializer<InApp> {
-  @override
-  final Iterable<Type> types = const [InApp, _$InApp];
+  String? quantity;
 
-  @override
-  final String wireName = r'InApp';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    InApp object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.quantity != null) {
-      yield r'quantity';
-      yield serializers.serialize(
-        object.quantity,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.productId != null) {
-      yield r'product_id';
-      yield serializers.serialize(
-        object.productId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.transactionId != null) {
-      yield r'transaction_id';
-      yield serializers.serialize(
-        object.transactionId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.originalTransactionId != null) {
-      yield r'original_transaction_id';
-      yield serializers.serialize(
-        object.originalTransactionId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.purchaseDate != null) {
-      yield r'purchase_date';
-      yield serializers.serialize(
-        object.purchaseDate,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.purchaseDateMs != null) {
-      yield r'purchase_date_ms';
-      yield serializers.serialize(
-        object.purchaseDateMs,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.purchaseDatePst != null) {
-      yield r'purchase_date_pst';
-      yield serializers.serialize(
-        object.purchaseDatePst,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.originalPurchaseDate != null) {
-      yield r'original_purchase_date';
-      yield serializers.serialize(
-        object.originalPurchaseDate,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.originalPurchaseDateMs != null) {
-      yield r'original_purchase_date_ms';
-      yield serializers.serialize(
-        object.originalPurchaseDateMs,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.originalPurchaseDatePst != null) {
-      yield r'original_purchase_date_pst';
-      yield serializers.serialize(
-        object.originalPurchaseDatePst,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.expiresDate != null) {
-      yield r'expires_date';
-      yield serializers.serialize(
-        object.expiresDate,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.expiresDateMs != null) {
-      yield r'expires_date_ms';
-      yield serializers.serialize(
-        object.expiresDateMs,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.expiresDatePst != null) {
-      yield r'expires_date_pst';
-      yield serializers.serialize(
-        object.expiresDatePst,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.webOrderLineItemId != null) {
-      yield r'web_order_line_item_id';
-      yield serializers.serialize(
-        object.webOrderLineItemId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.isTrialPeriod != null) {
-      yield r'is_trial_period';
-      yield serializers.serialize(
-        object.isTrialPeriod,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.isInIntroOfferPeriod != null) {
-      yield r'is_in_intro_offer_period';
-      yield serializers.serialize(
-        object.isInIntroOfferPeriod,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    InApp object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'product_id',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required InAppBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'quantity':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.quantity = valueDes;
-          break;
-        case r'product_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.productId = valueDes;
-          break;
-        case r'transaction_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.transactionId = valueDes;
-          break;
-        case r'original_transaction_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.originalTransactionId = valueDes;
-          break;
-        case r'purchase_date':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.purchaseDate = valueDes;
-          break;
-        case r'purchase_date_ms':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.purchaseDateMs = valueDes;
-          break;
-        case r'purchase_date_pst':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.purchaseDatePst = valueDes;
-          break;
-        case r'original_purchase_date':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.originalPurchaseDate = valueDes;
-          break;
-        case r'original_purchase_date_ms':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.originalPurchaseDateMs = valueDes;
-          break;
-        case r'original_purchase_date_pst':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.originalPurchaseDatePst = valueDes;
-          break;
-        case r'expires_date':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.expiresDate = valueDes;
-          break;
-        case r'expires_date_ms':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.expiresDateMs = valueDes;
-          break;
-        case r'expires_date_pst':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.expiresDatePst = valueDes;
-          break;
-        case r'web_order_line_item_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.webOrderLineItemId = valueDes;
-          break;
-        case r'is_trial_period':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.isTrialPeriod = valueDes;
-          break;
-        case r'is_in_intro_offer_period':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.isInIntroOfferPeriod = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  String? productId;
+
+
+
+  @JsonKey(
+    
+    name: r'transaction_id',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? transactionId;
+
+
+
+  @JsonKey(
+    
+    name: r'original_transaction_id',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? originalTransactionId;
+
+
+
+  @JsonKey(
+    
+    name: r'purchase_date',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? purchaseDate;
+
+
+
+  @JsonKey(
+    
+    name: r'purchase_date_ms',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? purchaseDateMs;
+
+
+
+  @JsonKey(
+    
+    name: r'purchase_date_pst',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? purchaseDatePst;
+
+
+
+  @JsonKey(
+    
+    name: r'original_purchase_date',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? originalPurchaseDate;
+
+
+
+  @JsonKey(
+    
+    name: r'original_purchase_date_ms',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? originalPurchaseDateMs;
+
+
+
+  @JsonKey(
+    
+    name: r'original_purchase_date_pst',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? originalPurchaseDatePst;
+
+
+
+  @JsonKey(
+    
+    name: r'expires_date',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? expiresDate;
+
+
+
+  @JsonKey(
+    
+    name: r'expires_date_ms',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? expiresDateMs;
+
+
+
+  @JsonKey(
+    
+    name: r'expires_date_pst',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? expiresDatePst;
+
+
+
+  @JsonKey(
+    
+    name: r'web_order_line_item_id',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? webOrderLineItemId;
+
+
+
+  @JsonKey(
+    
+    name: r'is_trial_period',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? isTrialPeriod;
+
+
+
+  @JsonKey(
+    
+    name: r'is_in_intro_offer_period',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? isInIntroOfferPeriod;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is InApp &&
+      other.quantity == quantity &&
+      other.productId == productId &&
+      other.transactionId == transactionId &&
+      other.originalTransactionId == originalTransactionId &&
+      other.purchaseDate == purchaseDate &&
+      other.purchaseDateMs == purchaseDateMs &&
+      other.purchaseDatePst == purchaseDatePst &&
+      other.originalPurchaseDate == originalPurchaseDate &&
+      other.originalPurchaseDateMs == originalPurchaseDateMs &&
+      other.originalPurchaseDatePst == originalPurchaseDatePst &&
+      other.expiresDate == expiresDate &&
+      other.expiresDateMs == expiresDateMs &&
+      other.expiresDatePst == expiresDatePst &&
+      other.webOrderLineItemId == webOrderLineItemId &&
+      other.isTrialPeriod == isTrialPeriod &&
+      other.isInIntroOfferPeriod == isInIntroOfferPeriod;
+
+    @override
+    int get hashCode =>
+        quantity.hashCode +
+        productId.hashCode +
+        transactionId.hashCode +
+        originalTransactionId.hashCode +
+        purchaseDate.hashCode +
+        purchaseDateMs.hashCode +
+        purchaseDatePst.hashCode +
+        originalPurchaseDate.hashCode +
+        originalPurchaseDateMs.hashCode +
+        originalPurchaseDatePst.hashCode +
+        expiresDate.hashCode +
+        expiresDateMs.hashCode +
+        expiresDatePst.hashCode +
+        webOrderLineItemId.hashCode +
+        isTrialPeriod.hashCode +
+        isInIntroOfferPeriod.hashCode;
+
+  factory InApp.fromJson(Map<String, dynamic> json) => _$InAppFromJson(json);
+
+  Map<String, dynamic> toJson() => _$InAppToJson(this);
 
   @override
-  InApp deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = InAppBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

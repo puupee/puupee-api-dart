@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **type** | **String** |  | [optional] 
 **typeSimple** | **String** |  | [optional] 
 **isOptional** | **bool** |  | [optional] 
-**defaultValue** | [**JsonObject**](.md) |  | [optional] 
-**constraintTypes** | **BuiltList&lt;String&gt;** |  | [optional] 
+**defaultValue** | **Object** |  | [optional] 
+**constraintTypes** | **List&lt;String&gt;** |  | [optional] 
 **bindingSourceId** | **String** |  | [optional] 
 **descriptorName** | **String** |  | [optional] 
 

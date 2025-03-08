@@ -3,268 +3,198 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'property_api_description_model.g.dart';
 
-/// PropertyApiDescriptionModel
-///
-/// Properties:
-/// * [name] 
-/// * [jsonName] 
-/// * [type] 
-/// * [typeSimple] 
-/// * [isRequired] 
-/// * [minLength] 
-/// * [maxLength] 
-/// * [minimum] 
-/// * [maximum] 
-/// * [regex] 
-@BuiltValue()
-abstract class PropertyApiDescriptionModel implements Built<PropertyApiDescriptionModel, PropertyApiDescriptionModelBuilder> {
-  @BuiltValueField(wireName: r'name')
-  String? get name;
 
-  @BuiltValueField(wireName: r'jsonName')
-  String? get jsonName;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class PropertyApiDescriptionModel {
+  /// Returns a new [PropertyApiDescriptionModel] instance.
+  PropertyApiDescriptionModel({
 
-  @BuiltValueField(wireName: r'type')
-  String? get type;
+     this.name,
 
-  @BuiltValueField(wireName: r'typeSimple')
-  String? get typeSimple;
+     this.jsonName,
 
-  @BuiltValueField(wireName: r'isRequired')
-  bool? get isRequired;
+     this.type,
 
-  @BuiltValueField(wireName: r'minLength')
-  int? get minLength;
+     this.typeSimple,
 
-  @BuiltValueField(wireName: r'maxLength')
-  int? get maxLength;
+     this.isRequired,
 
-  @BuiltValueField(wireName: r'minimum')
-  String? get minimum;
+     this.minLength,
 
-  @BuiltValueField(wireName: r'maximum')
-  String? get maximum;
+     this.maxLength,
 
-  @BuiltValueField(wireName: r'regex')
-  String? get regex;
+     this.minimum,
 
-  PropertyApiDescriptionModel._();
+     this.maximum,
 
-  factory PropertyApiDescriptionModel([void updates(PropertyApiDescriptionModelBuilder b)]) = _$PropertyApiDescriptionModel;
+     this.regex,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(PropertyApiDescriptionModelBuilder b) => b;
+  @JsonKey(
+    
+    name: r'name',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<PropertyApiDescriptionModel> get serializer => _$PropertyApiDescriptionModelSerializer();
-}
 
-class _$PropertyApiDescriptionModelSerializer implements PrimitiveSerializer<PropertyApiDescriptionModel> {
-  @override
-  final Iterable<Type> types = const [PropertyApiDescriptionModel, _$PropertyApiDescriptionModel];
+  String? name;
 
-  @override
-  final String wireName = r'PropertyApiDescriptionModel';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    PropertyApiDescriptionModel object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.name != null) {
-      yield r'name';
-      yield serializers.serialize(
-        object.name,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.jsonName != null) {
-      yield r'jsonName';
-      yield serializers.serialize(
-        object.jsonName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.type != null) {
-      yield r'type';
-      yield serializers.serialize(
-        object.type,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.typeSimple != null) {
-      yield r'typeSimple';
-      yield serializers.serialize(
-        object.typeSimple,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.isRequired != null) {
-      yield r'isRequired';
-      yield serializers.serialize(
-        object.isRequired,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.minLength != null) {
-      yield r'minLength';
-      yield serializers.serialize(
-        object.minLength,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.maxLength != null) {
-      yield r'maxLength';
-      yield serializers.serialize(
-        object.maxLength,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.minimum != null) {
-      yield r'minimum';
-      yield serializers.serialize(
-        object.minimum,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.maximum != null) {
-      yield r'maximum';
-      yield serializers.serialize(
-        object.maximum,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.regex != null) {
-      yield r'regex';
-      yield serializers.serialize(
-        object.regex,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    PropertyApiDescriptionModel object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'jsonName',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required PropertyApiDescriptionModelBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'jsonName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.jsonName = valueDes;
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.type = valueDes;
-          break;
-        case r'typeSimple':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.typeSimple = valueDes;
-          break;
-        case r'isRequired':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isRequired = valueDes;
-          break;
-        case r'minLength':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.minLength = valueDes;
-          break;
-        case r'maxLength':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.maxLength = valueDes;
-          break;
-        case r'minimum':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.minimum = valueDes;
-          break;
-        case r'maximum':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.maximum = valueDes;
-          break;
-        case r'regex':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.regex = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  String? jsonName;
+
+
+
+  @JsonKey(
+    
+    name: r'type',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? type;
+
+
+
+  @JsonKey(
+    
+    name: r'typeSimple',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? typeSimple;
+
+
+
+  @JsonKey(
+    
+    name: r'isRequired',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  bool? isRequired;
+
+
+
+  @JsonKey(
+    
+    name: r'minLength',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  int? minLength;
+
+
+
+  @JsonKey(
+    
+    name: r'maxLength',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  int? maxLength;
+
+
+
+  @JsonKey(
+    
+    name: r'minimum',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? minimum;
+
+
+
+  @JsonKey(
+    
+    name: r'maximum',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? maximum;
+
+
+
+  @JsonKey(
+    
+    name: r'regex',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? regex;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is PropertyApiDescriptionModel &&
+      other.name == name &&
+      other.jsonName == jsonName &&
+      other.type == type &&
+      other.typeSimple == typeSimple &&
+      other.isRequired == isRequired &&
+      other.minLength == minLength &&
+      other.maxLength == maxLength &&
+      other.minimum == minimum &&
+      other.maximum == maximum &&
+      other.regex == regex;
+
+    @override
+    int get hashCode =>
+        name.hashCode +
+        jsonName.hashCode +
+        type.hashCode +
+        typeSimple.hashCode +
+        isRequired.hashCode +
+        minLength.hashCode +
+        maxLength.hashCode +
+        minimum.hashCode +
+        maximum.hashCode +
+        regex.hashCode;
+
+  factory PropertyApiDescriptionModel.fromJson(Map<String, dynamic> json) => _$PropertyApiDescriptionModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$PropertyApiDescriptionModelToJson(this);
 
   @override
-  PropertyApiDescriptionModel deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = PropertyApiDescriptionModelBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

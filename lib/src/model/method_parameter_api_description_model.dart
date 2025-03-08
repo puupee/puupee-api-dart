@@ -3,197 +3,134 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/json_object.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'method_parameter_api_description_model.g.dart';
 
-/// MethodParameterApiDescriptionModel
-///
-/// Properties:
-/// * [name] 
-/// * [typeAsString] 
-/// * [type] 
-/// * [typeSimple] 
-/// * [isOptional] 
-/// * [defaultValue] 
-@BuiltValue()
-abstract class MethodParameterApiDescriptionModel implements Built<MethodParameterApiDescriptionModel, MethodParameterApiDescriptionModelBuilder> {
-  @BuiltValueField(wireName: r'name')
-  String? get name;
 
-  @BuiltValueField(wireName: r'typeAsString')
-  String? get typeAsString;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class MethodParameterApiDescriptionModel {
+  /// Returns a new [MethodParameterApiDescriptionModel] instance.
+  MethodParameterApiDescriptionModel({
 
-  @BuiltValueField(wireName: r'type')
-  String? get type;
+     this.name,
 
-  @BuiltValueField(wireName: r'typeSimple')
-  String? get typeSimple;
+     this.typeAsString,
 
-  @BuiltValueField(wireName: r'isOptional')
-  bool? get isOptional;
+     this.type,
 
-  @BuiltValueField(wireName: r'defaultValue')
-  JsonObject? get defaultValue;
+     this.typeSimple,
 
-  MethodParameterApiDescriptionModel._();
+     this.isOptional,
 
-  factory MethodParameterApiDescriptionModel([void updates(MethodParameterApiDescriptionModelBuilder b)]) = _$MethodParameterApiDescriptionModel;
+     this.defaultValue,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(MethodParameterApiDescriptionModelBuilder b) => b;
+  @JsonKey(
+    
+    name: r'name',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<MethodParameterApiDescriptionModel> get serializer => _$MethodParameterApiDescriptionModelSerializer();
-}
 
-class _$MethodParameterApiDescriptionModelSerializer implements PrimitiveSerializer<MethodParameterApiDescriptionModel> {
-  @override
-  final Iterable<Type> types = const [MethodParameterApiDescriptionModel, _$MethodParameterApiDescriptionModel];
+  String? name;
 
-  @override
-  final String wireName = r'MethodParameterApiDescriptionModel';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    MethodParameterApiDescriptionModel object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.name != null) {
-      yield r'name';
-      yield serializers.serialize(
-        object.name,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.typeAsString != null) {
-      yield r'typeAsString';
-      yield serializers.serialize(
-        object.typeAsString,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.type != null) {
-      yield r'type';
-      yield serializers.serialize(
-        object.type,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.typeSimple != null) {
-      yield r'typeSimple';
-      yield serializers.serialize(
-        object.typeSimple,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.isOptional != null) {
-      yield r'isOptional';
-      yield serializers.serialize(
-        object.isOptional,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.defaultValue != null) {
-      yield r'defaultValue';
-      yield serializers.serialize(
-        object.defaultValue,
-        specifiedType: const FullType(JsonObject),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    MethodParameterApiDescriptionModel object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'typeAsString',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required MethodParameterApiDescriptionModelBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'typeAsString':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.typeAsString = valueDes;
-          break;
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.type = valueDes;
-          break;
-        case r'typeSimple':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.typeSimple = valueDes;
-          break;
-        case r'isOptional':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isOptional = valueDes;
-          break;
-        case r'defaultValue':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.defaultValue = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  String? typeAsString;
+
+
+
+  @JsonKey(
+    
+    name: r'type',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? type;
+
+
+
+  @JsonKey(
+    
+    name: r'typeSimple',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? typeSimple;
+
+
+
+  @JsonKey(
+    
+    name: r'isOptional',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  bool? isOptional;
+
+
+
+  @JsonKey(
+    
+    name: r'defaultValue',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  Object? defaultValue;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is MethodParameterApiDescriptionModel &&
+      other.name == name &&
+      other.typeAsString == typeAsString &&
+      other.type == type &&
+      other.typeSimple == typeSimple &&
+      other.isOptional == isOptional &&
+      other.defaultValue == defaultValue;
+
+    @override
+    int get hashCode =>
+        name.hashCode +
+        typeAsString.hashCode +
+        type.hashCode +
+        typeSimple.hashCode +
+        isOptional.hashCode +
+        defaultValue.hashCode;
+
+  factory MethodParameterApiDescriptionModel.fromJson(Map<String, dynamic> json) => _$MethodParameterApiDescriptionModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$MethodParameterApiDescriptionModelToJson(this);
 
   @override
-  MethodParameterApiDescriptionModel deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = MethodParameterApiDescriptionModelBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

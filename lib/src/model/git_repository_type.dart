@@ -3,36 +3,23 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
-part 'git_repository_type.g.dart';
 
-class GitRepositoryType extends EnumClass {
+enum GitRepositoryType {
+      @JsonValue(r'GitHub')
+      gitHub(r'GitHub'),
+      @JsonValue(r'GitLab')
+      gitLab(r'GitLab'),
+      @JsonValue(r'BitBucket')
+      bitBucket(r'BitBucket'),
+      @JsonValue(r'Other')
+      other(r'Other');
 
-  @BuiltValueEnumConst(wireName: r'GitHub')
-  static const GitRepositoryType gitHub = _$gitHub;
-  @BuiltValueEnumConst(wireName: r'GitLab')
-  static const GitRepositoryType gitLab = _$gitLab;
-  @BuiltValueEnumConst(wireName: r'BitBucket')
-  static const GitRepositoryType bitBucket = _$bitBucket;
-  @BuiltValueEnumConst(wireName: r'Other')
-  static const GitRepositoryType other = _$other;
+  const GitRepositoryType(this.value);
 
-  static Serializer<GitRepositoryType> get serializer => _$gitRepositoryTypeSerializer;
+  final String value;
 
-  const GitRepositoryType._(String name): super(name);
-
-  static BuiltSet<GitRepositoryType> get values => _$values;
-  static GitRepositoryType valueOf(String name) => _$valueOf(name);
+  @override
+  String toString() => value;
 }
-
-/// Optionally, enum_class can generate a mixin to go with your enum for use
-/// with Angular. It exposes your enum constants as getters. So, if you mix it
-/// in to your Dart component class, the values become available to the
-/// corresponding Angular template.
-///
-/// Trigger mixin generation by writing a line like this one next to your enum.
-abstract class GitRepositoryTypeMixin = Object with _$GitRepositoryTypeMixin;
-

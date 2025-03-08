@@ -4,8 +4,9 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:puupee_api_client/src/model/account_deletion_dto.dart';
@@ -23,9 +24,7 @@ class AccountApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const AccountApi(this._dio, this._serializers);
+  const AccountApi(this._dio);
 
   /// callGet
   /// 
@@ -77,12 +76,8 @@ class AccountApi {
     UserProfileDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(UserProfileDto),
-      ) as UserProfileDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<UserProfileDto, UserProfileDto>(rawData, 'UserProfileDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -150,9 +145,7 @@ class AccountApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ChangePasswordDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -227,12 +220,8 @@ class AccountApi {
     CheckSyncAuthResultDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(CheckSyncAuthResultDto),
-      ) as CheckSyncAuthResultDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<CheckSyncAuthResultDto, CheckSyncAuthResultDto>(rawData, 'CheckSyncAuthResultDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -300,9 +289,7 @@ class AccountApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(AccountDeletionDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -372,9 +359,7 @@ class AccountApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(RegisterDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -399,12 +384,8 @@ class AccountApi {
     IdentityUserDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(IdentityUserDto),
-      ) as IdentityUserDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<IdentityUserDto, IdentityUserDto>(rawData, 'IdentityUserDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -472,9 +453,7 @@ class AccountApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ResetPasswordDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -544,9 +523,7 @@ class AccountApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(SendPasswordResetCodeDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -616,9 +593,7 @@ class AccountApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(VerifyPasswordResetTokenInput);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -643,9 +618,8 @@ class AccountApi {
     bool? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as bool;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<bool, bool>(rawData, 'bool', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

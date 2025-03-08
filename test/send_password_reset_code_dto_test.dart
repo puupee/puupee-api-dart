@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for SendPasswordResetCodeDto
 void main() {
-  final instance = SendPasswordResetCodeDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final SendPasswordResetCodeDto? instance = /* SendPasswordResetCodeDto(...) */ null;
+  // TODO add properties to the entity
 
   group(SendPasswordResetCodeDto, () {
     // String email

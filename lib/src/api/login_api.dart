@@ -4,8 +4,9 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:puupee_api_client/src/model/abp_login_result.dart';
@@ -16,9 +17,7 @@ class LoginApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const LoginApi(this._dio, this._serializers);
+  const LoginApi(this._dio);
 
   /// checkPassword
   /// 
@@ -65,9 +64,7 @@ class LoginApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(UserLoginInfo);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -92,12 +89,8 @@ class LoginApi {
     AbpLoginResult? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(AbpLoginResult),
-      ) as AbpLoginResult;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<AbpLoginResult, AbpLoginResult>(rawData, 'AbpLoginResult', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -165,9 +158,7 @@ class LoginApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(UserLoginInfo);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -192,12 +183,8 @@ class LoginApi {
     AbpLoginResult? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(AbpLoginResult),
-      ) as AbpLoginResult;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<AbpLoginResult, AbpLoginResult>(rawData, 'AbpLoginResult', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

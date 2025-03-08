@@ -3,144 +3,87 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
 import 'package:puupee_api_client/src/model/controller_api_description_model.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'module_api_description_model.g.dart';
 
-/// ModuleApiDescriptionModel
-///
-/// Properties:
-/// * [rootPath] 
-/// * [remoteServiceName] 
-/// * [controllers] 
-@BuiltValue()
-abstract class ModuleApiDescriptionModel implements Built<ModuleApiDescriptionModel, ModuleApiDescriptionModelBuilder> {
-  @BuiltValueField(wireName: r'rootPath')
-  String? get rootPath;
 
-  @BuiltValueField(wireName: r'remoteServiceName')
-  String? get remoteServiceName;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class ModuleApiDescriptionModel {
+  /// Returns a new [ModuleApiDescriptionModel] instance.
+  ModuleApiDescriptionModel({
 
-  @BuiltValueField(wireName: r'controllers')
-  BuiltMap<String, ControllerApiDescriptionModel>? get controllers;
+     this.rootPath,
 
-  ModuleApiDescriptionModel._();
+     this.remoteServiceName,
 
-  factory ModuleApiDescriptionModel([void updates(ModuleApiDescriptionModelBuilder b)]) = _$ModuleApiDescriptionModel;
+     this.controllers,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ModuleApiDescriptionModelBuilder b) => b;
+  @JsonKey(
+    
+    name: r'rootPath',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ModuleApiDescriptionModel> get serializer => _$ModuleApiDescriptionModelSerializer();
-}
 
-class _$ModuleApiDescriptionModelSerializer implements PrimitiveSerializer<ModuleApiDescriptionModel> {
-  @override
-  final Iterable<Type> types = const [ModuleApiDescriptionModel, _$ModuleApiDescriptionModel];
+  String? rootPath;
 
-  @override
-  final String wireName = r'ModuleApiDescriptionModel';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    ModuleApiDescriptionModel object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.rootPath != null) {
-      yield r'rootPath';
-      yield serializers.serialize(
-        object.rootPath,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.remoteServiceName != null) {
-      yield r'remoteServiceName';
-      yield serializers.serialize(
-        object.remoteServiceName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.controllers != null) {
-      yield r'controllers';
-      yield serializers.serialize(
-        object.controllers,
-        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(ControllerApiDescriptionModel)]),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    ModuleApiDescriptionModel object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'remoteServiceName',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required ModuleApiDescriptionModelBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'rootPath':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.rootPath = valueDes;
-          break;
-        case r'remoteServiceName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.remoteServiceName = valueDes;
-          break;
-        case r'controllers':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(ControllerApiDescriptionModel)]),
-          ) as BuiltMap<String, ControllerApiDescriptionModel>;
-          result.controllers.replace(valueDes);
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  String? remoteServiceName;
+
+
+
+  @JsonKey(
+    
+    name: r'controllers',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  Map<String, ControllerApiDescriptionModel>? controllers;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is ModuleApiDescriptionModel &&
+      other.rootPath == rootPath &&
+      other.remoteServiceName == remoteServiceName &&
+      other.controllers == controllers;
+
+    @override
+    int get hashCode =>
+        rootPath.hashCode +
+        remoteServiceName.hashCode +
+        controllers.hashCode;
+
+  factory ModuleApiDescriptionModel.fromJson(Map<String, dynamic> json) => _$ModuleApiDescriptionModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ModuleApiDescriptionModelToJson(this);
 
   @override
-  ModuleApiDescriptionModel deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ModuleApiDescriptionModelBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

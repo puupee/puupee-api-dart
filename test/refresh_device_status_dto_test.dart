@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for RefreshDeviceStatusDto
 void main() {
-  final instance = RefreshDeviceStatusDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final RefreshDeviceStatusDto? instance = /* RefreshDeviceStatusDto(...) */ null;
+  // TODO add properties to the entity
 
   group(RefreshDeviceStatusDto, () {
     // String token

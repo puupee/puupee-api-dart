@@ -4,8 +4,9 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:puupee_api_client/src/model/change_password_input.dart';
@@ -17,9 +18,7 @@ class ProfileApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const ProfileApi(this._dio, this._serializers);
+  const ProfileApi(this._dio);
 
   /// callGet
   /// 
@@ -71,12 +70,8 @@ class ProfileApi {
     ProfileDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ProfileDto),
-      ) as ProfileDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ProfileDto, ProfileDto>(rawData, 'ProfileDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -144,9 +139,7 @@ class ProfileApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(ChangePasswordInput);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -216,9 +209,7 @@ class ProfileApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(UpdateProfileDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -243,12 +234,8 @@ class ProfileApi {
     ProfileDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(ProfileDto),
-      ) as ProfileDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<ProfileDto, ProfileDto>(rawData, 'ProfileDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

@@ -3,172 +3,118 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/json_object.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'register_dto.g.dart';
 
-/// RegisterDto
-///
-/// Properties:
-/// * [extraProperties] 
-/// * [userName] 
-/// * [emailAddress] 
-/// * [password] 
-/// * [appName] 
-@BuiltValue()
-abstract class RegisterDto implements Built<RegisterDto, RegisterDtoBuilder> {
-  @BuiltValueField(wireName: r'extraProperties')
-  BuiltMap<String, JsonObject>? get extraProperties;
 
-  @BuiltValueField(wireName: r'userName')
-  String get userName;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class RegisterDto {
+  /// Returns a new [RegisterDto] instance.
+  RegisterDto({
 
-  @BuiltValueField(wireName: r'emailAddress')
-  String get emailAddress;
+     this.extraProperties,
 
-  @BuiltValueField(wireName: r'password')
-  String get password;
+    required  this.userName,
 
-  @BuiltValueField(wireName: r'appName')
-  String get appName;
+    required  this.emailAddress,
 
-  RegisterDto._();
+    required  this.password,
 
-  factory RegisterDto([void updates(RegisterDtoBuilder b)]) = _$RegisterDto;
+    required  this.appName,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(RegisterDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'extraProperties',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<RegisterDto> get serializer => _$RegisterDtoSerializer();
-}
 
-class _$RegisterDtoSerializer implements PrimitiveSerializer<RegisterDto> {
-  @override
-  final Iterable<Type> types = const [RegisterDto, _$RegisterDto];
+  Map<String, Object>? extraProperties;
 
-  @override
-  final String wireName = r'RegisterDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    RegisterDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.extraProperties != null) {
-      yield r'extraProperties';
-      yield serializers.serialize(
-        object.extraProperties,
-        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
-      );
-    }
-    yield r'userName';
-    yield serializers.serialize(
-      object.userName,
-      specifiedType: const FullType(String),
-    );
-    yield r'emailAddress';
-    yield serializers.serialize(
-      object.emailAddress,
-      specifiedType: const FullType(String),
-    );
-    yield r'password';
-    yield serializers.serialize(
-      object.password,
-      specifiedType: const FullType(String),
-    );
-    yield r'appName';
-    yield serializers.serialize(
-      object.appName,
-      specifiedType: const FullType(String),
-    );
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    RegisterDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'userName',
+    required: true,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required RegisterDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'extraProperties':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
-          ) as BuiltMap<String, JsonObject>;
-          result.extraProperties.replace(valueDes);
-          break;
-        case r'userName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.userName = valueDes;
-          break;
-        case r'emailAddress':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.emailAddress = valueDes;
-          break;
-        case r'password':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.password = valueDes;
-          break;
-        case r'appName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.appName = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  String userName;
+
+
+
+  @JsonKey(
+    
+    name: r'emailAddress',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  String emailAddress;
+
+
+
+  @JsonKey(
+    
+    name: r'password',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  String password;
+
+
+
+  @JsonKey(
+    
+    name: r'appName',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  String appName;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is RegisterDto &&
+      other.extraProperties == extraProperties &&
+      other.userName == userName &&
+      other.emailAddress == emailAddress &&
+      other.password == password &&
+      other.appName == appName;
+
+    @override
+    int get hashCode =>
+        extraProperties.hashCode +
+        userName.hashCode +
+        emailAddress.hashCode +
+        password.hashCode +
+        appName.hashCode;
+
+  factory RegisterDto.fromJson(Map<String, dynamic> json) => _$RegisterDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$RegisterDtoToJson(this);
 
   @override
-  RegisterDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = RegisterDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

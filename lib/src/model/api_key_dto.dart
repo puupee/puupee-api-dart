@@ -3,178 +3,118 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'api_key_dto.g.dart';
 
-/// ApiKeyDto
-///
-/// Properties:
-/// * [id] 
-/// * [name] 
-/// * [key] 
-/// * [active] 
-/// * [expireAt] 
-@BuiltValue()
-abstract class ApiKeyDto implements Built<ApiKeyDto, ApiKeyDtoBuilder> {
-  @BuiltValueField(wireName: r'id')
-  String? get id;
 
-  @BuiltValueField(wireName: r'name')
-  String? get name;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class ApiKeyDto {
+  /// Returns a new [ApiKeyDto] instance.
+  ApiKeyDto({
 
-  @BuiltValueField(wireName: r'key')
-  String? get key;
+     this.id,
 
-  @BuiltValueField(wireName: r'active')
-  bool? get active;
+     this.name,
 
-  @BuiltValueField(wireName: r'expireAt')
-  DateTime? get expireAt;
+     this.key,
 
-  ApiKeyDto._();
+     this.active,
 
-  factory ApiKeyDto([void updates(ApiKeyDtoBuilder b)]) = _$ApiKeyDto;
+     this.expireAt,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ApiKeyDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'id',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ApiKeyDto> get serializer => _$ApiKeyDtoSerializer();
-}
 
-class _$ApiKeyDtoSerializer implements PrimitiveSerializer<ApiKeyDto> {
-  @override
-  final Iterable<Type> types = const [ApiKeyDto, _$ApiKeyDto];
+  String? id;
 
-  @override
-  final String wireName = r'ApiKeyDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    ApiKeyDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.id != null) {
-      yield r'id';
-      yield serializers.serialize(
-        object.id,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.name != null) {
-      yield r'name';
-      yield serializers.serialize(
-        object.name,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.key != null) {
-      yield r'key';
-      yield serializers.serialize(
-        object.key,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.active != null) {
-      yield r'active';
-      yield serializers.serialize(
-        object.active,
-        specifiedType: const FullType(bool),
-      );
-    }
-    if (object.expireAt != null) {
-      yield r'expireAt';
-      yield serializers.serialize(
-        object.expireAt,
-        specifiedType: const FullType(DateTime),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    ApiKeyDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'name',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required ApiKeyDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.id = valueDes;
-          break;
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'key':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.key = valueDes;
-          break;
-        case r'active':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.active = valueDes;
-          break;
-        case r'expireAt':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(DateTime),
-          ) as DateTime;
-          result.expireAt = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  String? name;
+
+
+
+  @JsonKey(
+    
+    name: r'key',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? key;
+
+
+
+  @JsonKey(
+    
+    name: r'active',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  bool? active;
+
+
+
+  @JsonKey(
+    
+    name: r'expireAt',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  DateTime? expireAt;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is ApiKeyDto &&
+      other.id == id &&
+      other.name == name &&
+      other.key == key &&
+      other.active == active &&
+      other.expireAt == expireAt;
+
+    @override
+    int get hashCode =>
+        id.hashCode +
+        name.hashCode +
+        key.hashCode +
+        active.hashCode +
+        expireAt.hashCode;
+
+  factory ApiKeyDto.fromJson(Map<String, dynamic> json) => _$ApiKeyDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ApiKeyDtoToJson(this);
 
   @override
-  ApiKeyDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ApiKeyDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

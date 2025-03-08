@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for CreateOrUpdateAppPricingItemDto
 void main() {
-  final instance = CreateOrUpdateAppPricingItemDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final CreateOrUpdateAppPricingItemDto? instance = /* CreateOrUpdateAppPricingItemDto(...) */ null;
+  // TODO add properties to the entity
 
   group(CreateOrUpdateAppPricingItemDto, () {
     // 名称: 坐席

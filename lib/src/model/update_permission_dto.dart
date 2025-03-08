@@ -3,124 +3,70 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'update_permission_dto.g.dart';
 
-/// UpdatePermissionDto
-///
-/// Properties:
-/// * [name] 
-/// * [isGranted] 
-@BuiltValue()
-abstract class UpdatePermissionDto implements Built<UpdatePermissionDto, UpdatePermissionDtoBuilder> {
-  @BuiltValueField(wireName: r'name')
-  String? get name;
 
-  @BuiltValueField(wireName: r'isGranted')
-  bool? get isGranted;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class UpdatePermissionDto {
+  /// Returns a new [UpdatePermissionDto] instance.
+  UpdatePermissionDto({
 
-  UpdatePermissionDto._();
+     this.name,
 
-  factory UpdatePermissionDto([void updates(UpdatePermissionDtoBuilder b)]) = _$UpdatePermissionDto;
+     this.isGranted,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(UpdatePermissionDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'name',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<UpdatePermissionDto> get serializer => _$UpdatePermissionDtoSerializer();
-}
 
-class _$UpdatePermissionDtoSerializer implements PrimitiveSerializer<UpdatePermissionDto> {
-  @override
-  final Iterable<Type> types = const [UpdatePermissionDto, _$UpdatePermissionDto];
+  String? name;
 
-  @override
-  final String wireName = r'UpdatePermissionDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    UpdatePermissionDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.name != null) {
-      yield r'name';
-      yield serializers.serialize(
-        object.name,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.isGranted != null) {
-      yield r'isGranted';
-      yield serializers.serialize(
-        object.isGranted,
-        specifiedType: const FullType(bool),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    UpdatePermissionDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'isGranted',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required UpdatePermissionDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'name':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.name = valueDes;
-          break;
-        case r'isGranted':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isGranted = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  bool? isGranted;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is UpdatePermissionDto &&
+      other.name == name &&
+      other.isGranted == isGranted;
+
+    @override
+    int get hashCode =>
+        name.hashCode +
+        isGranted.hashCode;
+
+  factory UpdatePermissionDto.fromJson(Map<String, dynamic> json) => _$UpdatePermissionDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$UpdatePermissionDtoToJson(this);
 
   @override
-  UpdatePermissionDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = UpdatePermissionDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

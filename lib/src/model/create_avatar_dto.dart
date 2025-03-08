@@ -3,106 +3,54 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'create_avatar_dto.g.dart';
 
-/// CreateAvatarDto
-///
-/// Properties:
-/// * [key] 
-@BuiltValue()
-abstract class CreateAvatarDto implements Built<CreateAvatarDto, CreateAvatarDtoBuilder> {
-  @BuiltValueField(wireName: r'key')
-  String? get key;
 
-  CreateAvatarDto._();
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class CreateAvatarDto {
+  /// Returns a new [CreateAvatarDto] instance.
+  CreateAvatarDto({
 
-  factory CreateAvatarDto([void updates(CreateAvatarDtoBuilder b)]) = _$CreateAvatarDto;
+     this.key,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CreateAvatarDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'key',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<CreateAvatarDto> get serializer => _$CreateAvatarDtoSerializer();
-}
 
-class _$CreateAvatarDtoSerializer implements PrimitiveSerializer<CreateAvatarDto> {
-  @override
-  final Iterable<Type> types = const [CreateAvatarDto, _$CreateAvatarDto];
+  String? key;
 
-  @override
-  final String wireName = r'CreateAvatarDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    CreateAvatarDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.key != null) {
-      yield r'key';
-      yield serializers.serialize(
-        object.key,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    CreateAvatarDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required CreateAvatarDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'key':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.key = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is CreateAvatarDto &&
+      other.key == key;
+
+    @override
+    int get hashCode =>
+        key.hashCode;
+
+  factory CreateAvatarDto.fromJson(Map<String, dynamic> json) => _$CreateAvatarDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$CreateAvatarDtoToJson(this);
 
   @override
-  CreateAvatarDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = CreateAvatarDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

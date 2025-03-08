@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for MessageSourceDto
 void main() {
-  final instance = MessageSourceDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final MessageSourceDto? instance = /* MessageSourceDto(...) */ null;
+  // TODO add properties to the entity
 
   group(MessageSourceDto, () {
     // String name
@@ -27,7 +27,7 @@ void main() {
       // TODO
     });
 
-    // BuiltList<MessageSourceRouteSubDto> routes
+    // List<MessageSourceRouteSubDto> routes
     test('to test the property `routes`', () async {
       // TODO
     });

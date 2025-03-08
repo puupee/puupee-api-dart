@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **getList**
-> BuiltList<MessageSourceCategoryDto> getList()
+> List<MessageSourceCategoryDto> getList()
 
 
 
@@ -38,7 +38,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;MessageSourceCategoryDto&gt;**](MessageSourceCategoryDto.md)
+[**List&lt;MessageSourceCategoryDto&gt;**](MessageSourceCategoryDto.md)
 
 ### Authorization
 

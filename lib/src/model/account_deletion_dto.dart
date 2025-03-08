@@ -3,106 +3,54 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'account_deletion_dto.g.dart';
 
-/// AccountDeletionDto
-///
-/// Properties:
-/// * [code] 
-@BuiltValue()
-abstract class AccountDeletionDto implements Built<AccountDeletionDto, AccountDeletionDtoBuilder> {
-  @BuiltValueField(wireName: r'code')
-  String? get code;
 
-  AccountDeletionDto._();
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class AccountDeletionDto {
+  /// Returns a new [AccountDeletionDto] instance.
+  AccountDeletionDto({
 
-  factory AccountDeletionDto([void updates(AccountDeletionDtoBuilder b)]) = _$AccountDeletionDto;
+     this.code,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(AccountDeletionDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'code',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<AccountDeletionDto> get serializer => _$AccountDeletionDtoSerializer();
-}
 
-class _$AccountDeletionDtoSerializer implements PrimitiveSerializer<AccountDeletionDto> {
-  @override
-  final Iterable<Type> types = const [AccountDeletionDto, _$AccountDeletionDto];
+  String? code;
 
-  @override
-  final String wireName = r'AccountDeletionDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    AccountDeletionDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.code != null) {
-      yield r'code';
-      yield serializers.serialize(
-        object.code,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    AccountDeletionDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required AccountDeletionDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'code':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.code = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is AccountDeletionDto &&
+      other.code == code;
+
+    @override
+    int get hashCode =>
+        code.hashCode;
+
+  factory AccountDeletionDto.fromJson(Map<String, dynamic> json) => _$AccountDeletionDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AccountDeletionDtoToJson(this);
 
   @override
-  AccountDeletionDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = AccountDeletionDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

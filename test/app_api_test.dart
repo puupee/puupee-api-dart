@@ -35,7 +35,7 @@ void main() {
       // TODO
     });
 
-    //Future<BuiltList<AppFeatureDto>> getFeatures(String appId, { String env }) async
+    //Future<List<AppFeatureDto>> getFeatures(String appId, { String env }) async
     test('test getFeatures', () async {
       // TODO
     });
@@ -56,19 +56,19 @@ void main() {
 
     // 所有开发者已发布 APP 列表
     //
-    //Future<AppDtoPagedResultDto> getListPublic({ JsonObject type, String developerAccount, String currentAppName }) async
+    //Future<AppDtoPagedResultDto> getListPublic({ Object type, String developerAccount, String currentAppName }) async
     test('test getListPublic', () async {
       // TODO
     });
 
     // 获取APP列表包含用户订阅信息
     //
-    //Future<AppWithUserDtoPagedResultDto> getListWithUser({ JsonObject type, String searchKey, String sorting, int skipCount, int maxResultCount }) async
+    //Future<AppWithUserDtoPagedResultDto> getListWithUser({ Object type, String searchKey, String sorting, int skipCount, int maxResultCount }) async
     test('test getListWithUser', () async {
       // TODO
     });
 
-    //Future<BuiltList<AppSdkDto>> getSdksById(String appId, { String env }) async
+    //Future<List<AppSdkDto>> getSdksById(String appId, { String env }) async
     test('test getSdksById', () async {
       // TODO
     });

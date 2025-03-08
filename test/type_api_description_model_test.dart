@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for TypeApiDescriptionModel
 void main() {
-  final instance = TypeApiDescriptionModelBuilder();
-  // TODO add properties to the builder and call build()
+  final TypeApiDescriptionModel? instance = /* TypeApiDescriptionModel(...) */ null;
+  // TODO add properties to the entity
 
   group(TypeApiDescriptionModel, () {
     // String baseType
@@ -17,22 +17,22 @@ void main() {
       // TODO
     });
 
-    // BuiltList<String> enumNames
+    // List<String> enumNames
     test('to test the property `enumNames`', () async {
       // TODO
     });
 
-    // BuiltList<JsonObject> enumValues
+    // List<Object> enumValues
     test('to test the property `enumValues`', () async {
       // TODO
     });
 
-    // BuiltList<String> genericArguments
+    // List<String> genericArguments
     test('to test the property `genericArguments`', () async {
       // TODO
     });
 
-    // BuiltList<PropertyApiDescriptionModel> properties
+    // List<PropertyApiDescriptionModel> properties
     test('to test the property `properties`', () async {
       // TODO
     });

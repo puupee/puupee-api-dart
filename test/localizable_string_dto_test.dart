@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for LocalizableStringDto
 void main() {
-  final instance = LocalizableStringDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final LocalizableStringDto? instance = /* LocalizableStringDto(...) */ null;
+  // TODO add properties to the entity
 
   group(LocalizableStringDto, () {
     // String name

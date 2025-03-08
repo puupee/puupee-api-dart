@@ -4,413 +4,326 @@
 
 // ignore_for_file: unused_element
 import 'package:puupee_api_client/src/model/in_app.dart';
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'receipt.g.dart';
 
-/// Receipt
-///
-/// Properties:
-/// * [receiptType] 
-/// * [adamId] 
-/// * [appItemId] 
-/// * [bundleId] 
-/// * [applicationVersion] 
-/// * [downloadId] 
-/// * [versionExternalIdentifier] 
-/// * [receiptCreationDate] 
-/// * [receiptCreationDateMs] 
-/// * [receiptCreationDatePst] 
-/// * [requestDate] 
-/// * [requestDateMs] 
-/// * [requestDatePst] 
-/// * [originalPurchaseDate] 
-/// * [originalPurchaseDateMs] 
-/// * [originalPurchaseDatePst] 
-/// * [originalApplicationVersion] 
-/// * [inApp] 
-@BuiltValue()
-abstract class Receipt implements Built<Receipt, ReceiptBuilder> {
-  @BuiltValueField(wireName: r'receipt_type')
-  String? get receiptType;
 
-  @BuiltValueField(wireName: r'adam_id')
-  int? get adamId;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class Receipt {
+  /// Returns a new [Receipt] instance.
+  Receipt({
 
-  @BuiltValueField(wireName: r'app_item_id')
-  int? get appItemId;
+     this.receiptType,
 
-  @BuiltValueField(wireName: r'bundle_id')
-  String? get bundleId;
+     this.adamId,
 
-  @BuiltValueField(wireName: r'application_version')
-  String? get applicationVersion;
+     this.appItemId,
 
-  @BuiltValueField(wireName: r'download_id')
-  int? get downloadId;
+     this.bundleId,
 
-  @BuiltValueField(wireName: r'version_external_identifier')
-  int? get versionExternalIdentifier;
+     this.applicationVersion,
 
-  @BuiltValueField(wireName: r'receipt_creation_date')
-  String? get receiptCreationDate;
+     this.downloadId,
 
-  @BuiltValueField(wireName: r'receipt_creation_date_ms')
-  String? get receiptCreationDateMs;
+     this.versionExternalIdentifier,
 
-  @BuiltValueField(wireName: r'receipt_creation_date_pst')
-  String? get receiptCreationDatePst;
+     this.receiptCreationDate,
 
-  @BuiltValueField(wireName: r'request_date')
-  String? get requestDate;
+     this.receiptCreationDateMs,
 
-  @BuiltValueField(wireName: r'request_date_ms')
-  String? get requestDateMs;
+     this.receiptCreationDatePst,
 
-  @BuiltValueField(wireName: r'request_date_pst')
-  String? get requestDatePst;
+     this.requestDate,
 
-  @BuiltValueField(wireName: r'original_purchase_date')
-  String? get originalPurchaseDate;
+     this.requestDateMs,
 
-  @BuiltValueField(wireName: r'original_purchase_date_ms')
-  String? get originalPurchaseDateMs;
+     this.requestDatePst,
 
-  @BuiltValueField(wireName: r'original_purchase_date_pst')
-  String? get originalPurchaseDatePst;
+     this.originalPurchaseDate,
 
-  @BuiltValueField(wireName: r'original_application_version')
-  String? get originalApplicationVersion;
+     this.originalPurchaseDateMs,
 
-  @BuiltValueField(wireName: r'in_app')
-  BuiltList<InApp>? get inApp;
+     this.originalPurchaseDatePst,
 
-  Receipt._();
+     this.originalApplicationVersion,
 
-  factory Receipt([void updates(ReceiptBuilder b)]) = _$Receipt;
+     this.inApp,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ReceiptBuilder b) => b;
+  @JsonKey(
+    
+    name: r'receipt_type',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<Receipt> get serializer => _$ReceiptSerializer();
-}
 
-class _$ReceiptSerializer implements PrimitiveSerializer<Receipt> {
-  @override
-  final Iterable<Type> types = const [Receipt, _$Receipt];
+  String? receiptType;
 
-  @override
-  final String wireName = r'Receipt';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    Receipt object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.receiptType != null) {
-      yield r'receipt_type';
-      yield serializers.serialize(
-        object.receiptType,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.adamId != null) {
-      yield r'adam_id';
-      yield serializers.serialize(
-        object.adamId,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.appItemId != null) {
-      yield r'app_item_id';
-      yield serializers.serialize(
-        object.appItemId,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.bundleId != null) {
-      yield r'bundle_id';
-      yield serializers.serialize(
-        object.bundleId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.applicationVersion != null) {
-      yield r'application_version';
-      yield serializers.serialize(
-        object.applicationVersion,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.downloadId != null) {
-      yield r'download_id';
-      yield serializers.serialize(
-        object.downloadId,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.versionExternalIdentifier != null) {
-      yield r'version_external_identifier';
-      yield serializers.serialize(
-        object.versionExternalIdentifier,
-        specifiedType: const FullType(int),
-      );
-    }
-    if (object.receiptCreationDate != null) {
-      yield r'receipt_creation_date';
-      yield serializers.serialize(
-        object.receiptCreationDate,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.receiptCreationDateMs != null) {
-      yield r'receipt_creation_date_ms';
-      yield serializers.serialize(
-        object.receiptCreationDateMs,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.receiptCreationDatePst != null) {
-      yield r'receipt_creation_date_pst';
-      yield serializers.serialize(
-        object.receiptCreationDatePst,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.requestDate != null) {
-      yield r'request_date';
-      yield serializers.serialize(
-        object.requestDate,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.requestDateMs != null) {
-      yield r'request_date_ms';
-      yield serializers.serialize(
-        object.requestDateMs,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.requestDatePst != null) {
-      yield r'request_date_pst';
-      yield serializers.serialize(
-        object.requestDatePst,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.originalPurchaseDate != null) {
-      yield r'original_purchase_date';
-      yield serializers.serialize(
-        object.originalPurchaseDate,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.originalPurchaseDateMs != null) {
-      yield r'original_purchase_date_ms';
-      yield serializers.serialize(
-        object.originalPurchaseDateMs,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.originalPurchaseDatePst != null) {
-      yield r'original_purchase_date_pst';
-      yield serializers.serialize(
-        object.originalPurchaseDatePst,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.originalApplicationVersion != null) {
-      yield r'original_application_version';
-      yield serializers.serialize(
-        object.originalApplicationVersion,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.inApp != null) {
-      yield r'in_app';
-      yield serializers.serialize(
-        object.inApp,
-        specifiedType: const FullType(BuiltList, [FullType(InApp)]),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    Receipt object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'adam_id',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required ReceiptBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'receipt_type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.receiptType = valueDes;
-          break;
-        case r'adam_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.adamId = valueDes;
-          break;
-        case r'app_item_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.appItemId = valueDes;
-          break;
-        case r'bundle_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.bundleId = valueDes;
-          break;
-        case r'application_version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.applicationVersion = valueDes;
-          break;
-        case r'download_id':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.downloadId = valueDes;
-          break;
-        case r'version_external_identifier':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.versionExternalIdentifier = valueDes;
-          break;
-        case r'receipt_creation_date':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.receiptCreationDate = valueDes;
-          break;
-        case r'receipt_creation_date_ms':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.receiptCreationDateMs = valueDes;
-          break;
-        case r'receipt_creation_date_pst':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.receiptCreationDatePst = valueDes;
-          break;
-        case r'request_date':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.requestDate = valueDes;
-          break;
-        case r'request_date_ms':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.requestDateMs = valueDes;
-          break;
-        case r'request_date_pst':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.requestDatePst = valueDes;
-          break;
-        case r'original_purchase_date':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.originalPurchaseDate = valueDes;
-          break;
-        case r'original_purchase_date_ms':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.originalPurchaseDateMs = valueDes;
-          break;
-        case r'original_purchase_date_pst':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.originalPurchaseDatePst = valueDes;
-          break;
-        case r'original_application_version':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.originalApplicationVersion = valueDes;
-          break;
-        case r'in_app':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(InApp)]),
-          ) as BuiltList<InApp>;
-          result.inApp.replace(valueDes);
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  int? adamId;
+
+
+
+  @JsonKey(
+    
+    name: r'app_item_id',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  int? appItemId;
+
+
+
+  @JsonKey(
+    
+    name: r'bundle_id',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? bundleId;
+
+
+
+  @JsonKey(
+    
+    name: r'application_version',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? applicationVersion;
+
+
+
+  @JsonKey(
+    
+    name: r'download_id',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  int? downloadId;
+
+
+
+  @JsonKey(
+    
+    name: r'version_external_identifier',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  int? versionExternalIdentifier;
+
+
+
+  @JsonKey(
+    
+    name: r'receipt_creation_date',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? receiptCreationDate;
+
+
+
+  @JsonKey(
+    
+    name: r'receipt_creation_date_ms',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? receiptCreationDateMs;
+
+
+
+  @JsonKey(
+    
+    name: r'receipt_creation_date_pst',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? receiptCreationDatePst;
+
+
+
+  @JsonKey(
+    
+    name: r'request_date',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? requestDate;
+
+
+
+  @JsonKey(
+    
+    name: r'request_date_ms',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? requestDateMs;
+
+
+
+  @JsonKey(
+    
+    name: r'request_date_pst',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? requestDatePst;
+
+
+
+  @JsonKey(
+    
+    name: r'original_purchase_date',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? originalPurchaseDate;
+
+
+
+  @JsonKey(
+    
+    name: r'original_purchase_date_ms',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? originalPurchaseDateMs;
+
+
+
+  @JsonKey(
+    
+    name: r'original_purchase_date_pst',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? originalPurchaseDatePst;
+
+
+
+  @JsonKey(
+    
+    name: r'original_application_version',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? originalApplicationVersion;
+
+
+
+  @JsonKey(
+    
+    name: r'in_app',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  List<InApp>? inApp;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is Receipt &&
+      other.receiptType == receiptType &&
+      other.adamId == adamId &&
+      other.appItemId == appItemId &&
+      other.bundleId == bundleId &&
+      other.applicationVersion == applicationVersion &&
+      other.downloadId == downloadId &&
+      other.versionExternalIdentifier == versionExternalIdentifier &&
+      other.receiptCreationDate == receiptCreationDate &&
+      other.receiptCreationDateMs == receiptCreationDateMs &&
+      other.receiptCreationDatePst == receiptCreationDatePst &&
+      other.requestDate == requestDate &&
+      other.requestDateMs == requestDateMs &&
+      other.requestDatePst == requestDatePst &&
+      other.originalPurchaseDate == originalPurchaseDate &&
+      other.originalPurchaseDateMs == originalPurchaseDateMs &&
+      other.originalPurchaseDatePst == originalPurchaseDatePst &&
+      other.originalApplicationVersion == originalApplicationVersion &&
+      other.inApp == inApp;
+
+    @override
+    int get hashCode =>
+        receiptType.hashCode +
+        adamId.hashCode +
+        appItemId.hashCode +
+        bundleId.hashCode +
+        applicationVersion.hashCode +
+        downloadId.hashCode +
+        versionExternalIdentifier.hashCode +
+        receiptCreationDate.hashCode +
+        receiptCreationDateMs.hashCode +
+        receiptCreationDatePst.hashCode +
+        requestDate.hashCode +
+        requestDateMs.hashCode +
+        requestDatePst.hashCode +
+        originalPurchaseDate.hashCode +
+        originalPurchaseDateMs.hashCode +
+        originalPurchaseDatePst.hashCode +
+        originalApplicationVersion.hashCode +
+        inApp.hashCode;
+
+  factory Receipt.fromJson(Map<String, dynamic> json) => _$ReceiptFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ReceiptToJson(this);
 
   @override
-  Receipt deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ReceiptBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

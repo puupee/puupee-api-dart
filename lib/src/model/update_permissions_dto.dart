@@ -3,108 +3,55 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
 import 'package:puupee_api_client/src/model/update_permission_dto.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'update_permissions_dto.g.dart';
 
-/// UpdatePermissionsDto
-///
-/// Properties:
-/// * [permissions] 
-@BuiltValue()
-abstract class UpdatePermissionsDto implements Built<UpdatePermissionsDto, UpdatePermissionsDtoBuilder> {
-  @BuiltValueField(wireName: r'permissions')
-  BuiltList<UpdatePermissionDto>? get permissions;
 
-  UpdatePermissionsDto._();
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class UpdatePermissionsDto {
+  /// Returns a new [UpdatePermissionsDto] instance.
+  UpdatePermissionsDto({
 
-  factory UpdatePermissionsDto([void updates(UpdatePermissionsDtoBuilder b)]) = _$UpdatePermissionsDto;
+     this.permissions,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(UpdatePermissionsDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'permissions',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<UpdatePermissionsDto> get serializer => _$UpdatePermissionsDtoSerializer();
-}
 
-class _$UpdatePermissionsDtoSerializer implements PrimitiveSerializer<UpdatePermissionsDto> {
-  @override
-  final Iterable<Type> types = const [UpdatePermissionsDto, _$UpdatePermissionsDto];
+  List<UpdatePermissionDto>? permissions;
 
-  @override
-  final String wireName = r'UpdatePermissionsDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    UpdatePermissionsDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.permissions != null) {
-      yield r'permissions';
-      yield serializers.serialize(
-        object.permissions,
-        specifiedType: const FullType(BuiltList, [FullType(UpdatePermissionDto)]),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    UpdatePermissionsDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required UpdatePermissionsDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'permissions':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(UpdatePermissionDto)]),
-          ) as BuiltList<UpdatePermissionDto>;
-          result.permissions.replace(valueDes);
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is UpdatePermissionsDto &&
+      other.permissions == permissions;
+
+    @override
+    int get hashCode =>
+        permissions.hashCode;
+
+  factory UpdatePermissionsDto.fromJson(Map<String, dynamic> json) => _$UpdatePermissionsDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$UpdatePermissionsDtoToJson(this);
 
   @override
-  UpdatePermissionsDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = UpdatePermissionsDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

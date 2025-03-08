@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getList**
-> BuiltList<AppPricingItemDto> getList()
+> List<AppPricingItemDto> getList()
 
 
 
@@ -170,7 +170,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**BuiltList&lt;AppPricingItemDto&gt;**](AppPricingItemDto.md)
+[**List&lt;AppPricingItemDto&gt;**](AppPricingItemDto.md)
 
 ### Authorization
 

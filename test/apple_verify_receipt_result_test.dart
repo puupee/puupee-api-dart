@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for AppleVerifyReceiptResult
 void main() {
-  final instance = AppleVerifyReceiptResultBuilder();
-  // TODO add properties to the builder and call build()
+  final AppleVerifyReceiptResult? instance = /* AppleVerifyReceiptResult(...) */ null;
+  // TODO add properties to the entity
 
   group(AppleVerifyReceiptResult, () {
     // String environment
@@ -23,7 +23,7 @@ void main() {
       // TODO
     });
 
-    // BuiltList<LatestReceiptInfo> latestReceiptInfo
+    // List<LatestReceiptInfo> latestReceiptInfo
     test('to test the property `latestReceiptInfo`', () async {
       // TODO
     });
@@ -33,7 +33,7 @@ void main() {
       // TODO
     });
 
-    // BuiltList<PendingRenewalInfo> pendingRenewalInfo
+    // List<PendingRenewalInfo> pendingRenewalInfo
     test('to test the property `pendingRenewalInfo`', () async {
       // TODO
     });

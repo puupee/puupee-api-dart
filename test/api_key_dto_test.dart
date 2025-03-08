@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for ApiKeyDto
 void main() {
-  final instance = ApiKeyDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final ApiKeyDto? instance = /* ApiKeyDto(...) */ null;
+  // TODO add properties to the entity
 
   group(ApiKeyDto, () {
     // String id

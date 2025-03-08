@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for CheckSyncAuthResultDto
 void main() {
-  final instance = CheckSyncAuthResultDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final CheckSyncAuthResultDto? instance = /* CheckSyncAuthResultDto(...) */ null;
+  // TODO add properties to the entity
 
   group(CheckSyncAuthResultDto, () {
     // bool isAuthed

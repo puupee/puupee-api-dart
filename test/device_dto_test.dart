@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for DeviceDto
 void main() {
-  final instance = DeviceDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final DeviceDto? instance = /* DeviceDto(...) */ null;
+  // TODO add properties to the entity
 
   group(DeviceDto, () {
     // String id

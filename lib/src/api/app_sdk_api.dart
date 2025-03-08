@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/app_sdk_dto.dart';
 import 'package:puupee_api_client/src/model/app_sdk_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_sdk_dto.dart';
@@ -18,9 +18,7 @@ class AppSdkApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const AppSdkApi(this._dio, this._serializers);
+  const AppSdkApi(this._dio);
 
   /// create
   /// 
@@ -67,9 +65,7 @@ class AppSdkApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CreateOrUpdateAppSdkDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -94,12 +90,8 @@ class AppSdkApi {
     AppSdkDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(AppSdkDto),
-      ) as AppSdkDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<AppSdkDto, AppSdkDto>(rawData, 'AppSdkDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -145,7 +137,7 @@ class AppSdkApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/app/app-sdk/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/app/app-sdk/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -220,9 +212,9 @@ class AppSdkApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (sorting != null) r'Sorting': encodeQueryParameter(_serializers, sorting, const FullType(String)),
-      if (skipCount != null) r'SkipCount': encodeQueryParameter(_serializers, skipCount, const FullType(int)),
-      if (maxResultCount != null) r'MaxResultCount': encodeQueryParameter(_serializers, maxResultCount, const FullType(int)),
+      if (sorting != null) r'Sorting': sorting,
+      if (skipCount != null) r'SkipCount': skipCount,
+      if (maxResultCount != null) r'MaxResultCount': maxResultCount,
     };
 
     final _response = await _dio.request<Object>(
@@ -237,12 +229,8 @@ class AppSdkApi {
     AppSdkDtoPagedResultDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(AppSdkDtoPagedResultDto),
-      ) as AppSdkDtoPagedResultDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<AppSdkDtoPagedResultDto, AppSdkDtoPagedResultDto>(rawData, 'AppSdkDtoPagedResultDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -290,7 +278,7 @@ class AppSdkApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/app/app-sdk/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/app/app-sdk/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -312,9 +300,7 @@ class AppSdkApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CreateOrUpdateAppSdkDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -339,12 +325,8 @@ class AppSdkApi {
     AppSdkDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(AppSdkDto),
-      ) as AppSdkDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<AppSdkDto, AppSdkDto>(rawData, 'AppSdkDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

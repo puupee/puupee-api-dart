@@ -4,12 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/name_value.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 
@@ -17,9 +16,7 @@ class TimeZoneSettingsApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const TimeZoneSettingsApi(this._dio, this._serializers);
+  const TimeZoneSettingsApi(this._dio);
 
   /// callGet
   /// 
@@ -71,9 +68,8 @@ class TimeZoneSettingsApi {
     String? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : rawResponse as String;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<String, String>(rawData, 'String', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -107,9 +103,9 @@ class TimeZoneSettingsApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<NameValue>] as data
+  /// Returns a [Future] containing a [Response] with a [List<NameValue>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<NameValue>>> getTimezones({ 
+  Future<Response<List<NameValue>>> getTimezones({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -143,15 +139,11 @@ class TimeZoneSettingsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<NameValue>? _responseData;
+    List<NameValue>? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(NameValue)]),
-      ) as BuiltList<NameValue>;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<List<NameValue>, NameValue>(rawData, 'List<NameValue>', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -162,7 +154,7 @@ class TimeZoneSettingsApi {
       );
     }
 
-    return Response<BuiltList<NameValue>>(
+    return Response<List<NameValue>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -216,7 +208,7 @@ class TimeZoneSettingsApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (timezone != null) r'timezone': encodeQueryParameter(_serializers, timezone, const FullType(String)),
+      if (timezone != null) r'timezone': timezone,
     };
 
     final _response = await _dio.request<Object>(

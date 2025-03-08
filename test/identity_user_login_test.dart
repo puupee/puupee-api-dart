@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for IdentityUserLogin
 void main() {
-  final instance = IdentityUserLoginBuilder();
-  // TODO add properties to the builder and call build()
+  final IdentityUserLogin? instance = /* IdentityUserLogin(...) */ null;
+  // TODO add properties to the entity
 
   group(IdentityUserLogin, () {
     // String tenantId

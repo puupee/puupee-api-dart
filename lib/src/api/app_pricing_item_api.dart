@@ -4,12 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/app_pricing_item_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_pricing_item_dto.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
@@ -18,9 +17,7 @@ class AppPricingItemApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const AppPricingItemApi(this._dio, this._serializers);
+  const AppPricingItemApi(this._dio);
 
   /// create
   /// 
@@ -67,9 +64,7 @@ class AppPricingItemApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CreateOrUpdateAppPricingItemDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -94,12 +89,8 @@ class AppPricingItemApi {
     AppPricingItemDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(AppPricingItemDto),
-      ) as AppPricingItemDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<AppPricingItemDto, AppPricingItemDto>(rawData, 'AppPricingItemDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -145,7 +136,7 @@ class AppPricingItemApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/app/app-pricing-item/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/app/app-pricing-item/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -197,7 +188,7 @@ class AppPricingItemApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/app/app-pricing-item/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/app/app-pricing-item/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -226,12 +217,8 @@ class AppPricingItemApi {
     AppPricingItemDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(AppPricingItemDto),
-      ) as AppPricingItemDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<AppPricingItemDto, AppPricingItemDto>(rawData, 'AppPricingItemDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -265,9 +252,9 @@ class AppPricingItemApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<AppPricingItemDto>] as data
+  /// Returns a [Future] containing a [Response] with a [List<AppPricingItemDto>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<AppPricingItemDto>>> getList({ 
+  Future<Response<List<AppPricingItemDto>>> getList({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -301,15 +288,11 @@ class AppPricingItemApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<AppPricingItemDto>? _responseData;
+    List<AppPricingItemDto>? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(AppPricingItemDto)]),
-      ) as BuiltList<AppPricingItemDto>;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<List<AppPricingItemDto>, AppPricingItemDto>(rawData, 'List<AppPricingItemDto>', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -320,7 +303,7 @@ class AppPricingItemApi {
       );
     }
 
-    return Response<BuiltList<AppPricingItemDto>>(
+    return Response<List<AppPricingItemDto>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -357,7 +340,7 @@ class AppPricingItemApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/app/app-pricing-item/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/app/app-pricing-item/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -379,9 +362,7 @@ class AppPricingItemApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CreateOrUpdateAppPricingItemDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -406,12 +387,8 @@ class AppPricingItemApi {
     AppPricingItemDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(AppPricingItemDto),
-      ) as AppPricingItemDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<AppPricingItemDto, AppPricingItemDto>(rawData, 'AppPricingItemDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

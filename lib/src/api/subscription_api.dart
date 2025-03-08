@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/apple_notificaion_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_get_subscription_order_dto.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
@@ -21,9 +21,7 @@ class SubscriptionApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const SubscriptionApi(this._dio, this._serializers);
+  const SubscriptionApi(this._dio);
 
   /// 苹果订阅 Callback 地址
   /// 
@@ -70,9 +68,7 @@ class SubscriptionApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(AppleNotificaionDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -142,9 +138,7 @@ class SubscriptionApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CreateOrGetSubscriptionOrderDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -169,12 +163,8 @@ class SubscriptionApi {
     SubscriptionOrderDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SubscriptionOrderDto),
-      ) as SubscriptionOrderDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<SubscriptionOrderDto, SubscriptionOrderDto>(rawData, 'SubscriptionOrderDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -239,7 +229,7 @@ class SubscriptionApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (appId != null) r'appId': encodeQueryParameter(_serializers, appId, const FullType(String)),
+      if (appId != null) r'appId': appId,
     };
 
     final _response = await _dio.request<Object>(
@@ -254,12 +244,8 @@ class SubscriptionApi {
     SubscriptionDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(SubscriptionDto),
-      ) as SubscriptionDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<SubscriptionDto, SubscriptionDto>(rawData, 'SubscriptionDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -327,9 +313,7 @@ class SubscriptionApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(VerifyReceiptDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -354,12 +338,8 @@ class SubscriptionApi {
     VerifyReceiptResult? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(VerifyReceiptResult),
-      ) as VerifyReceiptResult;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<VerifyReceiptResult, VerifyReceiptResult>(rawData, 'VerifyReceiptResult', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for ReturnValueApiDescriptionModel
 void main() {
-  final instance = ReturnValueApiDescriptionModelBuilder();
-  // TODO add properties to the builder and call build()
+  final ReturnValueApiDescriptionModel? instance = /* ReturnValueApiDescriptionModel(...) */ null;
+  // TODO add properties to the entity
 
   group(ReturnValueApiDescriptionModel, () {
     // String type

@@ -3,11 +3,11 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for ApplicationLocalizationDto
 void main() {
-  final instance = ApplicationLocalizationDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final ApplicationLocalizationDto? instance = /* ApplicationLocalizationDto(...) */ null;
+  // TODO add properties to the entity
 
   group(ApplicationLocalizationDto, () {
-    // BuiltMap<String, ApplicationLocalizationResourceDto> resources
+    // Map<String, ApplicationLocalizationResourceDto> resources
     test('to test the property `resources`', () async {
       // TODO
     });

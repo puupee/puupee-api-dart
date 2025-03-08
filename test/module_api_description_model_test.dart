@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for ModuleApiDescriptionModel
 void main() {
-  final instance = ModuleApiDescriptionModelBuilder();
-  // TODO add properties to the builder and call build()
+  final ModuleApiDescriptionModel? instance = /* ModuleApiDescriptionModel(...) */ null;
+  // TODO add properties to the entity
 
   group(ModuleApiDescriptionModel, () {
     // String rootPath
@@ -17,7 +17,7 @@ void main() {
       // TODO
     });
 
-    // BuiltMap<String, ControllerApiDescriptionModel> controllers
+    // Map<String, ControllerApiDescriptionModel> controllers
     test('to test the property `controllers`', () async {
       // TODO
     });

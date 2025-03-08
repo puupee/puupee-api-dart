@@ -3,11 +3,11 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for AppPricingDtoPagedResultDto
 void main() {
-  final instance = AppPricingDtoPagedResultDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final AppPricingDtoPagedResultDto? instance = /* AppPricingDtoPagedResultDto(...) */ null;
+  // TODO add properties to the entity
 
   group(AppPricingDtoPagedResultDto, () {
-    // BuiltList<AppPricingDto> items
+    // List<AppPricingDto> items
     test('to test the property `items`', () async {
       // TODO
     });

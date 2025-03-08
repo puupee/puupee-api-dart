@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for Receipt
 void main() {
-  final instance = ReceiptBuilder();
-  // TODO add properties to the builder and call build()
+  final Receipt? instance = /* Receipt(...) */ null;
+  // TODO add properties to the entity
 
   group(Receipt, () {
     // String receiptType
@@ -92,7 +92,7 @@ void main() {
       // TODO
     });
 
-    // BuiltList<InApp> inApp
+    // List<InApp> inApp
     test('to test the property `inApp`', () async {
       // TODO
     });

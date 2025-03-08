@@ -11,15 +11,15 @@ Name | Type | Description | Notes
 **type** | **String** |  | [optional] 
 **displayName** | **String** |  | [optional] 
 **displayNames** | **String** |  | [optional] 
-**permissions** | **BuiltList&lt;String&gt;** |  | [optional] 
+**permissions** | **List&lt;String&gt;** |  | [optional] 
 **postLogoutRedirectUris** | **String** |  | [optional] 
 **properties** | **String** |  | [optional] 
 **redirectUris** | **String** |  | [optional] 
 **requirements** | **String** |  | [optional] 
 **clientUri** | **String** |  | [optional] 
 **logoUri** | **String** |  | [optional] 
-**grantTypes** | **BuiltList&lt;String&gt;** |  | [optional] 
-**scopes** | **BuiltList&lt;String&gt;** |  | [optional] 
+**grantTypes** | **List&lt;String&gt;** |  | [optional] 
+**scopes** | **List&lt;String&gt;** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

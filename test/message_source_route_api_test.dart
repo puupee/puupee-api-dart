@@ -22,7 +22,7 @@ void main() {
       // TODO
     });
 
-    //Future<BuiltList<MessageSourceRouteDto>> getPublishedList(String sourceId) async
+    //Future<List<MessageSourceRouteDto>> getPublishedList(String sourceId) async
     test('test getPublishedList', () async {
       // TODO
     });

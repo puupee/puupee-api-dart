@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getListByAppId**
-> BuiltList<AppPricingDto> getListByAppId(appId)
+> List<AppPricingDto> getListByAppId(appId)
 
 
 
@@ -223,7 +223,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;AppPricingDto&gt;**](AppPricingDto.md)
+[**List&lt;AppPricingDto&gt;**](AppPricingDto.md)
 
 ### Authorization
 
@@ -237,7 +237,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getPricingItemsByAppId**
-> BuiltList<AppPricingItemDto> getPricingItemsByAppId(appId)
+> List<AppPricingItemDto> getPricingItemsByAppId(appId)
 
 
 
@@ -266,7 +266,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;AppPricingItemDto&gt;**](AppPricingItemDto.md)
+[**List&lt;AppPricingItemDto&gt;**](AppPricingItemDto.md)
 
 ### Authorization
 

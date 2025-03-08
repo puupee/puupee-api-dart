@@ -4,218 +4,153 @@
 
 // ignore_for_file: unused_element
 import 'package:puupee_api_client/src/model/application_localization_resource_dto.dart';
-import 'package:built_collection/built_collection.dart';
 import 'package:puupee_api_client/src/model/language_info.dart';
 import 'package:puupee_api_client/src/model/current_culture_dto.dart';
 import 'package:puupee_api_client/src/model/name_value.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'application_localization_configuration_dto.g.dart';
 
-/// ApplicationLocalizationConfigurationDto
-///
-/// Properties:
-/// * [values] 
-/// * [resources] 
-/// * [languages] 
-/// * [currentCulture] 
-/// * [defaultResourceName] 
-/// * [languagesMap] 
-/// * [languageFilesMap] 
-@BuiltValue()
-abstract class ApplicationLocalizationConfigurationDto implements Built<ApplicationLocalizationConfigurationDto, ApplicationLocalizationConfigurationDtoBuilder> {
-  @BuiltValueField(wireName: r'values')
-  BuiltMap<String, BuiltMap<String, String>>? get values;
 
-  @BuiltValueField(wireName: r'resources')
-  BuiltMap<String, ApplicationLocalizationResourceDto>? get resources;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class ApplicationLocalizationConfigurationDto {
+  /// Returns a new [ApplicationLocalizationConfigurationDto] instance.
+  ApplicationLocalizationConfigurationDto({
 
-  @BuiltValueField(wireName: r'languages')
-  BuiltList<LanguageInfo>? get languages;
+     this.values,
 
-  @BuiltValueField(wireName: r'currentCulture')
-  CurrentCultureDto? get currentCulture;
+     this.resources,
 
-  @BuiltValueField(wireName: r'defaultResourceName')
-  String? get defaultResourceName;
+     this.languages,
 
-  @BuiltValueField(wireName: r'languagesMap')
-  BuiltMap<String, BuiltList<NameValue>>? get languagesMap;
+     this.currentCulture,
 
-  @BuiltValueField(wireName: r'languageFilesMap')
-  BuiltMap<String, BuiltList<NameValue>>? get languageFilesMap;
+     this.defaultResourceName,
 
-  ApplicationLocalizationConfigurationDto._();
+     this.languagesMap,
 
-  factory ApplicationLocalizationConfigurationDto([void updates(ApplicationLocalizationConfigurationDtoBuilder b)]) = _$ApplicationLocalizationConfigurationDto;
+     this.languageFilesMap,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ApplicationLocalizationConfigurationDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'values',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ApplicationLocalizationConfigurationDto> get serializer => _$ApplicationLocalizationConfigurationDtoSerializer();
-}
 
-class _$ApplicationLocalizationConfigurationDtoSerializer implements PrimitiveSerializer<ApplicationLocalizationConfigurationDto> {
-  @override
-  final Iterable<Type> types = const [ApplicationLocalizationConfigurationDto, _$ApplicationLocalizationConfigurationDto];
+  Map<String, Map<String, String>>? values;
 
-  @override
-  final String wireName = r'ApplicationLocalizationConfigurationDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    ApplicationLocalizationConfigurationDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.values != null) {
-      yield r'values';
-      yield serializers.serialize(
-        object.values,
-        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(BuiltMap, [FullType(String), FullType(String)])]),
-      );
-    }
-    if (object.resources != null) {
-      yield r'resources';
-      yield serializers.serialize(
-        object.resources,
-        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(ApplicationLocalizationResourceDto)]),
-      );
-    }
-    if (object.languages != null) {
-      yield r'languages';
-      yield serializers.serialize(
-        object.languages,
-        specifiedType: const FullType(BuiltList, [FullType(LanguageInfo)]),
-      );
-    }
-    if (object.currentCulture != null) {
-      yield r'currentCulture';
-      yield serializers.serialize(
-        object.currentCulture,
-        specifiedType: const FullType(CurrentCultureDto),
-      );
-    }
-    if (object.defaultResourceName != null) {
-      yield r'defaultResourceName';
-      yield serializers.serialize(
-        object.defaultResourceName,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.languagesMap != null) {
-      yield r'languagesMap';
-      yield serializers.serialize(
-        object.languagesMap,
-        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(BuiltList, [FullType(NameValue)])]),
-      );
-    }
-    if (object.languageFilesMap != null) {
-      yield r'languageFilesMap';
-      yield serializers.serialize(
-        object.languageFilesMap,
-        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(BuiltList, [FullType(NameValue)])]),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    ApplicationLocalizationConfigurationDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'resources',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required ApplicationLocalizationConfigurationDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'values':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(BuiltMap, [FullType(String), FullType(String)])]),
-          ) as BuiltMap<String, BuiltMap<String, String>>;
-          result.values.replace(valueDes);
-          break;
-        case r'resources':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(ApplicationLocalizationResourceDto)]),
-          ) as BuiltMap<String, ApplicationLocalizationResourceDto>;
-          result.resources.replace(valueDes);
-          break;
-        case r'languages':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(LanguageInfo)]),
-          ) as BuiltList<LanguageInfo>;
-          result.languages.replace(valueDes);
-          break;
-        case r'currentCulture':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(CurrentCultureDto),
-          ) as CurrentCultureDto;
-          result.currentCulture.replace(valueDes);
-          break;
-        case r'defaultResourceName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.defaultResourceName = valueDes;
-          break;
-        case r'languagesMap':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(BuiltList, [FullType(NameValue)])]),
-          ) as BuiltMap<String, BuiltList<NameValue>>;
-          result.languagesMap.replace(valueDes);
-          break;
-        case r'languageFilesMap':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(BuiltList, [FullType(NameValue)])]),
-          ) as BuiltMap<String, BuiltList<NameValue>>;
-          result.languageFilesMap.replace(valueDes);
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  Map<String, ApplicationLocalizationResourceDto>? resources;
+
+
+
+  @JsonKey(
+    
+    name: r'languages',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  List<LanguageInfo>? languages;
+
+
+
+  @JsonKey(
+    
+    name: r'currentCulture',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  CurrentCultureDto? currentCulture;
+
+
+
+  @JsonKey(
+    
+    name: r'defaultResourceName',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? defaultResourceName;
+
+
+
+  @JsonKey(
+    
+    name: r'languagesMap',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  Map<String, List<NameValue>>? languagesMap;
+
+
+
+  @JsonKey(
+    
+    name: r'languageFilesMap',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  Map<String, List<NameValue>>? languageFilesMap;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is ApplicationLocalizationConfigurationDto &&
+      other.values == values &&
+      other.resources == resources &&
+      other.languages == languages &&
+      other.currentCulture == currentCulture &&
+      other.defaultResourceName == defaultResourceName &&
+      other.languagesMap == languagesMap &&
+      other.languageFilesMap == languageFilesMap;
+
+    @override
+    int get hashCode =>
+        values.hashCode +
+        resources.hashCode +
+        languages.hashCode +
+        currentCulture.hashCode +
+        defaultResourceName.hashCode +
+        languagesMap.hashCode +
+        languageFilesMap.hashCode;
+
+  factory ApplicationLocalizationConfigurationDto.fromJson(Map<String, dynamic> json) => _$ApplicationLocalizationConfigurationDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ApplicationLocalizationConfigurationDtoToJson(this);
 
   @override
-  ApplicationLocalizationConfigurationDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ApplicationLocalizationConfigurationDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

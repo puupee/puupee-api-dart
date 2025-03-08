@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for TimeZone
 void main() {
-  final instance = TimeZoneBuilder();
-  // TODO add properties to the builder and call build()
+  final TimeZone? instance = /* TimeZone(...) */ null;
+  // TODO add properties to the entity
 
   group(TimeZone, () {
     // IanaTimeZone iana

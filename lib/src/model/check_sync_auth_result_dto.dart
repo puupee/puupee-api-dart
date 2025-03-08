@@ -3,106 +3,54 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'check_sync_auth_result_dto.g.dart';
 
-/// CheckSyncAuthResultDto
-///
-/// Properties:
-/// * [isAuthed] 
-@BuiltValue()
-abstract class CheckSyncAuthResultDto implements Built<CheckSyncAuthResultDto, CheckSyncAuthResultDtoBuilder> {
-  @BuiltValueField(wireName: r'isAuthed')
-  bool? get isAuthed;
 
-  CheckSyncAuthResultDto._();
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class CheckSyncAuthResultDto {
+  /// Returns a new [CheckSyncAuthResultDto] instance.
+  CheckSyncAuthResultDto({
 
-  factory CheckSyncAuthResultDto([void updates(CheckSyncAuthResultDtoBuilder b)]) = _$CheckSyncAuthResultDto;
+     this.isAuthed,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CheckSyncAuthResultDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'isAuthed',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<CheckSyncAuthResultDto> get serializer => _$CheckSyncAuthResultDtoSerializer();
-}
 
-class _$CheckSyncAuthResultDtoSerializer implements PrimitiveSerializer<CheckSyncAuthResultDto> {
-  @override
-  final Iterable<Type> types = const [CheckSyncAuthResultDto, _$CheckSyncAuthResultDto];
+  bool? isAuthed;
 
-  @override
-  final String wireName = r'CheckSyncAuthResultDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    CheckSyncAuthResultDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.isAuthed != null) {
-      yield r'isAuthed';
-      yield serializers.serialize(
-        object.isAuthed,
-        specifiedType: const FullType(bool),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    CheckSyncAuthResultDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required CheckSyncAuthResultDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'isAuthed':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(bool),
-          ) as bool;
-          result.isAuthed = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is CheckSyncAuthResultDto &&
+      other.isAuthed == isAuthed;
+
+    @override
+    int get hashCode =>
+        isAuthed.hashCode;
+
+  factory CheckSyncAuthResultDto.fromJson(Map<String, dynamic> json) => _$CheckSyncAuthResultDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$CheckSyncAuthResultDtoToJson(this);
 
   @override
-  CheckSyncAuthResultDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = CheckSyncAuthResultDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

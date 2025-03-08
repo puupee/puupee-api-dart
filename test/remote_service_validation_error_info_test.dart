@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for RemoteServiceValidationErrorInfo
 void main() {
-  final instance = RemoteServiceValidationErrorInfoBuilder();
-  // TODO add properties to the builder and call build()
+  final RemoteServiceValidationErrorInfo? instance = /* RemoteServiceValidationErrorInfo(...) */ null;
+  // TODO add properties to the entity
 
   group(RemoteServiceValidationErrorInfo, () {
     // String message
@@ -12,7 +12,7 @@ void main() {
       // TODO
     });
 
-    // BuiltList<String> members
+    // List<String> members
     test('to test the property `members`', () async {
       // TODO
     });

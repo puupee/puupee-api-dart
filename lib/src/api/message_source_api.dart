@@ -4,12 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:built_collection/built_collection.dart';
-import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/create_update_message_source_dto.dart';
 import 'package:puupee_api_client/src/model/message_source_dto.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
@@ -18,9 +17,7 @@ class MessageSourceApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const MessageSourceApi(this._dio, this._serializers);
+  const MessageSourceApi(this._dio);
 
   /// create
   /// 
@@ -67,9 +64,7 @@ class MessageSourceApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CreateUpdateMessageSourceDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -94,12 +89,8 @@ class MessageSourceApi {
     CreateUpdateMessageSourceDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(CreateUpdateMessageSourceDto),
-      ) as CreateUpdateMessageSourceDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<CreateUpdateMessageSourceDto, CreateUpdateMessageSourceDto>(rawData, 'CreateUpdateMessageSourceDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -145,7 +136,7 @@ class MessageSourceApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/app/message-source/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/app/message-source/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -197,7 +188,7 @@ class MessageSourceApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/app/message-source/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/app/message-source/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -226,12 +217,8 @@ class MessageSourceApi {
     MessageSourceDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(MessageSourceDto),
-      ) as MessageSourceDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<MessageSourceDto, MessageSourceDto>(rawData, 'MessageSourceDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -266,9 +253,9 @@ class MessageSourceApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [BuiltList<MessageSourceDto>] as data
+  /// Returns a [Future] containing a [Response] with a [List<MessageSourceDto>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<BuiltList<MessageSourceDto>>> getPublishedList({ 
+  Future<Response<List<MessageSourceDto>>> getPublishedList({ 
     required String categoryId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -277,7 +264,7 @@ class MessageSourceApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/app/message-source/published-list/{categoryId}'.replaceAll('{' r'categoryId' '}', encodeQueryParameter(_serializers, categoryId, const FullType(String)).toString());
+    final _path = r'/api/app/message-source/published-list/{categoryId}'.replaceAll('{' r'categoryId' '}', categoryId.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -303,15 +290,11 @@ class MessageSourceApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    BuiltList<MessageSourceDto>? _responseData;
+    List<MessageSourceDto>? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(BuiltList, [FullType(MessageSourceDto)]),
-      ) as BuiltList<MessageSourceDto>;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<List<MessageSourceDto>, MessageSourceDto>(rawData, 'List<MessageSourceDto>', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -322,7 +305,7 @@ class MessageSourceApi {
       );
     }
 
-    return Response<BuiltList<MessageSourceDto>>(
+    return Response<List<MessageSourceDto>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -359,7 +342,7 @@ class MessageSourceApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/app/message-source/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
+    final _path = r'/api/app/message-source/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -381,9 +364,7 @@ class MessageSourceApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CreateUpdateMessageSourceDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -408,12 +389,8 @@ class MessageSourceApi {
     CreateUpdateMessageSourceDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(CreateUpdateMessageSourceDto),
-      ) as CreateUpdateMessageSourceDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<CreateUpdateMessageSourceDto, CreateUpdateMessageSourceDto>(rawData, 'CreateUpdateMessageSourceDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

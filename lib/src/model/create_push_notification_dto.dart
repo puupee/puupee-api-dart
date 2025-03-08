@@ -3,178 +3,118 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'create_push_notification_dto.g.dart';
 
-/// CreatePushNotificationDto
-///
-/// Properties:
-/// * [title] 
-/// * [description] 
-/// * [puupeeId] 
-/// * [creatorId] 
-/// * [app] 
-@BuiltValue()
-abstract class CreatePushNotificationDto implements Built<CreatePushNotificationDto, CreatePushNotificationDtoBuilder> {
-  @BuiltValueField(wireName: r'title')
-  String? get title;
 
-  @BuiltValueField(wireName: r'description')
-  String? get description;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class CreatePushNotificationDto {
+  /// Returns a new [CreatePushNotificationDto] instance.
+  CreatePushNotificationDto({
 
-  @BuiltValueField(wireName: r'puupeeId')
-  String? get puupeeId;
+     this.title,
 
-  @BuiltValueField(wireName: r'creatorId')
-  String? get creatorId;
+     this.description,
 
-  @BuiltValueField(wireName: r'app')
-  String? get app;
+     this.puupeeId,
 
-  CreatePushNotificationDto._();
+     this.creatorId,
 
-  factory CreatePushNotificationDto([void updates(CreatePushNotificationDtoBuilder b)]) = _$CreatePushNotificationDto;
+     this.app,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(CreatePushNotificationDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'title',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<CreatePushNotificationDto> get serializer => _$CreatePushNotificationDtoSerializer();
-}
 
-class _$CreatePushNotificationDtoSerializer implements PrimitiveSerializer<CreatePushNotificationDto> {
-  @override
-  final Iterable<Type> types = const [CreatePushNotificationDto, _$CreatePushNotificationDto];
+  String? title;
 
-  @override
-  final String wireName = r'CreatePushNotificationDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    CreatePushNotificationDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.title != null) {
-      yield r'title';
-      yield serializers.serialize(
-        object.title,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.description != null) {
-      yield r'description';
-      yield serializers.serialize(
-        object.description,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.puupeeId != null) {
-      yield r'puupeeId';
-      yield serializers.serialize(
-        object.puupeeId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.creatorId != null) {
-      yield r'creatorId';
-      yield serializers.serialize(
-        object.creatorId,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.app != null) {
-      yield r'app';
-      yield serializers.serialize(
-        object.app,
-        specifiedType: const FullType(String),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    CreatePushNotificationDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'description',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required CreatePushNotificationDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'title':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.title = valueDes;
-          break;
-        case r'description':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.description = valueDes;
-          break;
-        case r'puupeeId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.puupeeId = valueDes;
-          break;
-        case r'creatorId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.creatorId = valueDes;
-          break;
-        case r'app':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.app = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  String? description;
+
+
+
+  @JsonKey(
+    
+    name: r'puupeeId',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? puupeeId;
+
+
+
+  @JsonKey(
+    
+    name: r'creatorId',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? creatorId;
+
+
+
+  @JsonKey(
+    
+    name: r'app',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? app;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is CreatePushNotificationDto &&
+      other.title == title &&
+      other.description == description &&
+      other.puupeeId == puupeeId &&
+      other.creatorId == creatorId &&
+      other.app == app;
+
+    @override
+    int get hashCode =>
+        title.hashCode +
+        description.hashCode +
+        puupeeId.hashCode +
+        creatorId.hashCode +
+        app.hashCode;
+
+  factory CreatePushNotificationDto.fromJson(Map<String, dynamic> json) => _$CreatePushNotificationDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$CreatePushNotificationDtoToJson(this);
 
   @override
-  CreatePushNotificationDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = CreatePushNotificationDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

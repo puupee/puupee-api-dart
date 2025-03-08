@@ -3,108 +3,55 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_collection/built_collection.dart';
 import 'package:puupee_api_client/src/model/identity_role_dto.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'identity_role_dto_list_result_dto.g.dart';
 
-/// IdentityRoleDtoListResultDto
-///
-/// Properties:
-/// * [items] 
-@BuiltValue()
-abstract class IdentityRoleDtoListResultDto implements Built<IdentityRoleDtoListResultDto, IdentityRoleDtoListResultDtoBuilder> {
-  @BuiltValueField(wireName: r'items')
-  BuiltList<IdentityRoleDto>? get items;
 
-  IdentityRoleDtoListResultDto._();
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class IdentityRoleDtoListResultDto {
+  /// Returns a new [IdentityRoleDtoListResultDto] instance.
+  IdentityRoleDtoListResultDto({
 
-  factory IdentityRoleDtoListResultDto([void updates(IdentityRoleDtoListResultDtoBuilder b)]) = _$IdentityRoleDtoListResultDto;
+     this.items,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(IdentityRoleDtoListResultDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'items',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<IdentityRoleDtoListResultDto> get serializer => _$IdentityRoleDtoListResultDtoSerializer();
-}
 
-class _$IdentityRoleDtoListResultDtoSerializer implements PrimitiveSerializer<IdentityRoleDtoListResultDto> {
-  @override
-  final Iterable<Type> types = const [IdentityRoleDtoListResultDto, _$IdentityRoleDtoListResultDto];
+  List<IdentityRoleDto>? items;
 
-  @override
-  final String wireName = r'IdentityRoleDtoListResultDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    IdentityRoleDtoListResultDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.items != null) {
-      yield r'items';
-      yield serializers.serialize(
-        object.items,
-        specifiedType: const FullType(BuiltList, [FullType(IdentityRoleDto)]),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    IdentityRoleDtoListResultDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required IdentityRoleDtoListResultDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(IdentityRoleDto)]),
-          ) as BuiltList<IdentityRoleDto>;
-          result.items.replace(valueDes);
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is IdentityRoleDtoListResultDto &&
+      other.items == items;
+
+    @override
+    int get hashCode =>
+        items.hashCode;
+
+  factory IdentityRoleDtoListResultDto.fromJson(Map<String, dynamic> json) => _$IdentityRoleDtoListResultDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$IdentityRoleDtoListResultDtoToJson(this);
 
   @override
-  IdentityRoleDtoListResultDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = IdentityRoleDtoListResultDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

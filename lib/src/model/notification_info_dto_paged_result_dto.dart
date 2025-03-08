@@ -4,125 +4,70 @@
 
 // ignore_for_file: unused_element
 import 'package:puupee_api_client/src/model/notification_info_dto.dart';
-import 'package:built_collection/built_collection.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'notification_info_dto_paged_result_dto.g.dart';
 
-/// NotificationInfoDtoPagedResultDto
-///
-/// Properties:
-/// * [items] 
-/// * [totalCount] 
-@BuiltValue()
-abstract class NotificationInfoDtoPagedResultDto implements Built<NotificationInfoDtoPagedResultDto, NotificationInfoDtoPagedResultDtoBuilder> {
-  @BuiltValueField(wireName: r'items')
-  BuiltList<NotificationInfoDto>? get items;
 
-  @BuiltValueField(wireName: r'totalCount')
-  int? get totalCount;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class NotificationInfoDtoPagedResultDto {
+  /// Returns a new [NotificationInfoDtoPagedResultDto] instance.
+  NotificationInfoDtoPagedResultDto({
 
-  NotificationInfoDtoPagedResultDto._();
+     this.items,
 
-  factory NotificationInfoDtoPagedResultDto([void updates(NotificationInfoDtoPagedResultDtoBuilder b)]) = _$NotificationInfoDtoPagedResultDto;
+     this.totalCount,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(NotificationInfoDtoPagedResultDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'items',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<NotificationInfoDtoPagedResultDto> get serializer => _$NotificationInfoDtoPagedResultDtoSerializer();
-}
 
-class _$NotificationInfoDtoPagedResultDtoSerializer implements PrimitiveSerializer<NotificationInfoDtoPagedResultDto> {
-  @override
-  final Iterable<Type> types = const [NotificationInfoDtoPagedResultDto, _$NotificationInfoDtoPagedResultDto];
+  List<NotificationInfoDto>? items;
 
-  @override
-  final String wireName = r'NotificationInfoDtoPagedResultDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    NotificationInfoDtoPagedResultDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.items != null) {
-      yield r'items';
-      yield serializers.serialize(
-        object.items,
-        specifiedType: const FullType(BuiltList, [FullType(NotificationInfoDto)]),
-      );
-    }
-    if (object.totalCount != null) {
-      yield r'totalCount';
-      yield serializers.serialize(
-        object.totalCount,
-        specifiedType: const FullType(int),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    NotificationInfoDtoPagedResultDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'totalCount',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required NotificationInfoDtoPagedResultDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'items':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(NotificationInfoDto)]),
-          ) as BuiltList<NotificationInfoDto>;
-          result.items.replace(valueDes);
-          break;
-        case r'totalCount':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(int),
-          ) as int;
-          result.totalCount = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  int? totalCount;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is NotificationInfoDtoPagedResultDto &&
+      other.items == items &&
+      other.totalCount == totalCount;
+
+    @override
+    int get hashCode =>
+        items.hashCode +
+        totalCount.hashCode;
+
+  factory NotificationInfoDtoPagedResultDto.fromJson(Map<String, dynamic> json) => _$NotificationInfoDtoPagedResultDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$NotificationInfoDtoPagedResultDtoToJson(this);
 
   @override
-  NotificationInfoDtoPagedResultDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = NotificationInfoDtoPagedResultDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

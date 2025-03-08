@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for CreateOrUpdateAppSdkDto
 void main() {
-  final instance = CreateOrUpdateAppSdkDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final CreateOrUpdateAppSdkDto? instance = /* CreateOrUpdateAppSdkDto(...) */ null;
+  // TODO add properties to the entity
 
   group(CreateOrUpdateAppSdkDto, () {
     // String name

@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getPublishedList**
-> BuiltList<MessageSourceRouteDto> getPublishedList(sourceId)
+> List<MessageSourceRouteDto> getPublishedList(sourceId)
 
 
 
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BuiltList&lt;MessageSourceRouteDto&gt;**](MessageSourceRouteDto.md)
+[**List&lt;MessageSourceRouteDto&gt;**](MessageSourceRouteDto.md)
 
 ### Authorization
 

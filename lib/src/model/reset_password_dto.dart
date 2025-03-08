@@ -3,138 +3,86 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'reset_password_dto.g.dart';
 
-/// ResetPasswordDto
-///
-/// Properties:
-/// * [userId] 
-/// * [resetToken] 
-/// * [password] 
-@BuiltValue()
-abstract class ResetPasswordDto implements Built<ResetPasswordDto, ResetPasswordDtoBuilder> {
-  @BuiltValueField(wireName: r'userId')
-  String? get userId;
 
-  @BuiltValueField(wireName: r'resetToken')
-  String get resetToken;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class ResetPasswordDto {
+  /// Returns a new [ResetPasswordDto] instance.
+  ResetPasswordDto({
 
-  @BuiltValueField(wireName: r'password')
-  String get password;
+     this.userId,
 
-  ResetPasswordDto._();
+    required  this.resetToken,
 
-  factory ResetPasswordDto([void updates(ResetPasswordDtoBuilder b)]) = _$ResetPasswordDto;
+    required  this.password,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ResetPasswordDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'userId',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ResetPasswordDto> get serializer => _$ResetPasswordDtoSerializer();
-}
 
-class _$ResetPasswordDtoSerializer implements PrimitiveSerializer<ResetPasswordDto> {
-  @override
-  final Iterable<Type> types = const [ResetPasswordDto, _$ResetPasswordDto];
+  String? userId;
 
-  @override
-  final String wireName = r'ResetPasswordDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    ResetPasswordDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.userId != null) {
-      yield r'userId';
-      yield serializers.serialize(
-        object.userId,
-        specifiedType: const FullType(String),
-      );
-    }
-    yield r'resetToken';
-    yield serializers.serialize(
-      object.resetToken,
-      specifiedType: const FullType(String),
-    );
-    yield r'password';
-    yield serializers.serialize(
-      object.password,
-      specifiedType: const FullType(String),
-    );
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    ResetPasswordDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'resetToken',
+    required: true,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required ResetPasswordDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'userId':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.userId = valueDes;
-          break;
-        case r'resetToken':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.resetToken = valueDes;
-          break;
-        case r'password':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.password = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  String resetToken;
+
+
+
+  @JsonKey(
+    
+    name: r'password',
+    required: true,
+    includeIfNull: false,
+  )
+
+
+  String password;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is ResetPasswordDto &&
+      other.userId == userId &&
+      other.resetToken == resetToken &&
+      other.password == password;
+
+    @override
+    int get hashCode =>
+        userId.hashCode +
+        resetToken.hashCode +
+        password.hashCode;
+
+  factory ResetPasswordDto.fromJson(Map<String, dynamic> json) => _$ResetPasswordDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ResetPasswordDtoToJson(this);
 
   @override
-  ResetPasswordDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ResetPasswordDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

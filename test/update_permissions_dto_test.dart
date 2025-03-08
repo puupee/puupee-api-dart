@@ -3,11 +3,11 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for UpdatePermissionsDto
 void main() {
-  final instance = UpdatePermissionsDtoBuilder();
-  // TODO add properties to the builder and call build()
+  final UpdatePermissionsDto? instance = /* UpdatePermissionsDto(...) */ null;
+  // TODO add properties to the entity
 
   group(UpdatePermissionsDto, () {
-    // BuiltList<UpdatePermissionDto> permissions
+    // List<UpdatePermissionDto> permissions
     test('to test the property `permissions`', () async {
       // TODO
     });

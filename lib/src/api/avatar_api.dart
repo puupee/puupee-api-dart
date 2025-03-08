@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/avatar_dto.dart';
 import 'package:puupee_api_client/src/model/create_avatar_dto.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
@@ -18,9 +18,7 @@ class AvatarApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const AvatarApi(this._dio, this._serializers);
+  const AvatarApi(this._dio);
 
   /// create
   /// 
@@ -67,9 +65,7 @@ class AvatarApi {
     dynamic _bodyData;
 
     try {
-      const _type = FullType(CreateAvatarDto);
-      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
-
+_bodyData=jsonEncode(body);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -94,12 +90,8 @@ class AvatarApi {
     AvatarDto? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(AvatarDto),
-      ) as AvatarDto;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<AvatarDto, AvatarDto>(rawData, 'AvatarDto', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -164,7 +156,7 @@ class AvatarApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (key != null) r'key': encodeQueryParameter(_serializers, key, const FullType(String)),
+      if (key != null) r'key': key,
     };
 
     final _response = await _dio.request<Object>(
@@ -179,12 +171,8 @@ class AvatarApi {
     StorageObjectCredentials? _responseData;
 
     try {
-      final rawResponse = _response.data;
-      _responseData = rawResponse == null ? null : _serializers.deserialize(
-        rawResponse,
-        specifiedType: const FullType(StorageObjectCredentials),
-      ) as StorageObjectCredentials;
-
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<StorageObjectCredentials, StorageObjectCredentials>(rawData, 'StorageObjectCredentials', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

@@ -34,7 +34,7 @@ final String url = url_example; // String | 点击推送将跳转到url的地址
 final String isArchive = isArchive_example; // String | 指定是否需要保存推送信息到历史记录，1 为保存，其他值为不保存。\\n如果不指定这个参数，推送信息将按照APP内设置来决定是否保存。
 final String group = group_example; // String | 指定推送消息分组，可在历史记录中按分组查看推送。
 final String icon = icon_example; // String | 指定推送消息图标, icon (仅 iOS15 或以上支持）
-final JsonObject level = ; // JsonObject | 设置时效性通知 active：不设置时的默认值，系统会立即亮屏显示通知。\\ntimeSensitive：时效性通知，可在专注状态下显示通知。\\npassive：仅将通知添加到通知列表，不会亮屏提醒
+final Object level = ; // Object | 设置时效性通知 active：不设置时的默认值，系统会立即亮屏显示通知。\\ntimeSensitive：时效性通知，可在专注状态下显示通知。\\npassive：仅将通知添加到通知列表，不会亮屏提醒
 
 try {
     api.bark(apiKey, message, automaticallyCopy, copy, url, isArchive, group, icon, level);
@@ -55,7 +55,7 @@ Name | Type | Description  | Notes
  **isArchive** | **String**| 指定是否需要保存推送信息到历史记录，1 为保存，其他值为不保存。\\n如果不指定这个参数，推送信息将按照APP内设置来决定是否保存。 | [optional] 
  **group** | **String**| 指定推送消息分组，可在历史记录中按分组查看推送。 | [optional] 
  **icon** | **String**| 指定推送消息图标, icon (仅 iOS15 或以上支持） | [optional] 
- **level** | [**JsonObject**](.md)| 设置时效性通知 active：不设置时的默认值，系统会立即亮屏显示通知。\\ntimeSensitive：时效性通知，可在专注状态下显示通知。\\npassive：仅将通知添加到通知列表，不会亮屏提醒 | [optional] 
+ **level** | [**Object**](.md)| 设置时效性通知 active：不设置时的默认值，系统会立即亮屏显示通知。\\ntimeSensitive：时效性通知，可在专注状态下显示通知。\\npassive：仅将通知添加到通知列表，不会亮屏提醒 | [optional] 
 
 ### Return type
 

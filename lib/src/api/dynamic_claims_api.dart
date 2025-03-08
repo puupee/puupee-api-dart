@@ -4,8 +4,9 @@
 
 import 'dart:async';
 
-import 'package:built_value/json_object.dart';
-import 'package:built_value/serializer.dart';
+// ignore: unused_import
+import 'dart:convert';
+import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
@@ -14,9 +15,7 @@ class DynamicClaimsApi {
 
   final Dio _dio;
 
-  final Serializers _serializers;
-
-  const DynamicClaimsApi(this._dio, this._serializers);
+  const DynamicClaimsApi(this._dio);
 
   /// refresh
   /// 

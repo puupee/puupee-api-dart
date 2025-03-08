@@ -6,235 +6,167 @@
 import 'package:puupee_api_client/src/model/extension_property_ui_dto.dart';
 import 'package:puupee_api_client/src/model/extension_property_api_dto.dart';
 import 'package:puupee_api_client/src/model/localizable_string_dto.dart';
-import 'package:built_collection/built_collection.dart';
 import 'package:puupee_api_client/src/model/extension_property_attribute_dto.dart';
-import 'package:built_value/json_object.dart';
-import 'package:built_value/built_value.dart';
-import 'package:built_value/serializer.dart';
+import 'package:json_annotation/json_annotation.dart';
 
 part 'extension_property_dto.g.dart';
 
-/// ExtensionPropertyDto
-///
-/// Properties:
-/// * [type] 
-/// * [typeSimple] 
-/// * [displayName] 
-/// * [api] 
-/// * [ui] 
-/// * [attributes] 
-/// * [configuration] 
-/// * [defaultValue] 
-@BuiltValue()
-abstract class ExtensionPropertyDto implements Built<ExtensionPropertyDto, ExtensionPropertyDtoBuilder> {
-  @BuiltValueField(wireName: r'type')
-  String? get type;
 
-  @BuiltValueField(wireName: r'typeSimple')
-  String? get typeSimple;
+@JsonSerializable(
+  checked: true,
+  createToJson: true,
+  disallowUnrecognizedKeys: false,
+  explicitToJson: true,
+)
+class ExtensionPropertyDto {
+  /// Returns a new [ExtensionPropertyDto] instance.
+  ExtensionPropertyDto({
 
-  @BuiltValueField(wireName: r'displayName')
-  LocalizableStringDto? get displayName;
+     this.type,
 
-  @BuiltValueField(wireName: r'api')
-  ExtensionPropertyApiDto? get api;
+     this.typeSimple,
 
-  @BuiltValueField(wireName: r'ui')
-  ExtensionPropertyUiDto? get ui;
+     this.displayName,
 
-  @BuiltValueField(wireName: r'attributes')
-  BuiltList<ExtensionPropertyAttributeDto>? get attributes;
+     this.api,
 
-  @BuiltValueField(wireName: r'configuration')
-  BuiltMap<String, JsonObject>? get configuration;
+     this.ui,
 
-  @BuiltValueField(wireName: r'defaultValue')
-  JsonObject? get defaultValue;
+     this.attributes,
 
-  ExtensionPropertyDto._();
+     this.configuration,
 
-  factory ExtensionPropertyDto([void updates(ExtensionPropertyDtoBuilder b)]) = _$ExtensionPropertyDto;
+     this.defaultValue,
+  });
 
-  @BuiltValueHook(initializeBuilder: true)
-  static void _defaults(ExtensionPropertyDtoBuilder b) => b;
+  @JsonKey(
+    
+    name: r'type',
+    required: false,
+    includeIfNull: false,
+  )
 
-  @BuiltValueSerializer(custom: true)
-  static Serializer<ExtensionPropertyDto> get serializer => _$ExtensionPropertyDtoSerializer();
-}
 
-class _$ExtensionPropertyDtoSerializer implements PrimitiveSerializer<ExtensionPropertyDto> {
-  @override
-  final Iterable<Type> types = const [ExtensionPropertyDto, _$ExtensionPropertyDto];
+  String? type;
 
-  @override
-  final String wireName = r'ExtensionPropertyDto';
 
-  Iterable<Object?> _serializeProperties(
-    Serializers serializers,
-    ExtensionPropertyDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) sync* {
-    if (object.type != null) {
-      yield r'type';
-      yield serializers.serialize(
-        object.type,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.typeSimple != null) {
-      yield r'typeSimple';
-      yield serializers.serialize(
-        object.typeSimple,
-        specifiedType: const FullType(String),
-      );
-    }
-    if (object.displayName != null) {
-      yield r'displayName';
-      yield serializers.serialize(
-        object.displayName,
-        specifiedType: const FullType(LocalizableStringDto),
-      );
-    }
-    if (object.api != null) {
-      yield r'api';
-      yield serializers.serialize(
-        object.api,
-        specifiedType: const FullType(ExtensionPropertyApiDto),
-      );
-    }
-    if (object.ui != null) {
-      yield r'ui';
-      yield serializers.serialize(
-        object.ui,
-        specifiedType: const FullType(ExtensionPropertyUiDto),
-      );
-    }
-    if (object.attributes != null) {
-      yield r'attributes';
-      yield serializers.serialize(
-        object.attributes,
-        specifiedType: const FullType(BuiltList, [FullType(ExtensionPropertyAttributeDto)]),
-      );
-    }
-    if (object.configuration != null) {
-      yield r'configuration';
-      yield serializers.serialize(
-        object.configuration,
-        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
-      );
-    }
-    if (object.defaultValue != null) {
-      yield r'defaultValue';
-      yield serializers.serialize(
-        object.defaultValue,
-        specifiedType: const FullType(JsonObject),
-      );
-    }
-  }
 
-  @override
-  Object serialize(
-    Serializers serializers,
-    ExtensionPropertyDto object, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
-  }
+  @JsonKey(
+    
+    name: r'typeSimple',
+    required: false,
+    includeIfNull: false,
+  )
 
-  void _deserializeProperties(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-    required List<Object?> serializedList,
-    required ExtensionPropertyDtoBuilder result,
-    required List<Object?> unhandled,
-  }) {
-    for (var i = 0; i < serializedList.length; i += 2) {
-      final key = serializedList[i] as String;
-      final value = serializedList[i + 1];
-      switch (key) {
-        case r'type':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.type = valueDes;
-          break;
-        case r'typeSimple':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(String),
-          ) as String;
-          result.typeSimple = valueDes;
-          break;
-        case r'displayName':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(LocalizableStringDto),
-          ) as LocalizableStringDto;
-          result.displayName.replace(valueDes);
-          break;
-        case r'api':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ExtensionPropertyApiDto),
-          ) as ExtensionPropertyApiDto;
-          result.api.replace(valueDes);
-          break;
-        case r'ui':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(ExtensionPropertyUiDto),
-          ) as ExtensionPropertyUiDto;
-          result.ui.replace(valueDes);
-          break;
-        case r'attributes':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltList, [FullType(ExtensionPropertyAttributeDto)]),
-          ) as BuiltList<ExtensionPropertyAttributeDto>;
-          result.attributes.replace(valueDes);
-          break;
-        case r'configuration':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
-          ) as BuiltMap<String, JsonObject>;
-          result.configuration.replace(valueDes);
-          break;
-        case r'defaultValue':
-          final valueDes = serializers.deserialize(
-            value,
-            specifiedType: const FullType(JsonObject),
-          ) as JsonObject;
-          result.defaultValue = valueDes;
-          break;
-        default:
-          unhandled.add(key);
-          unhandled.add(value);
-          break;
-      }
-    }
-  }
+
+  String? typeSimple;
+
+
+
+  @JsonKey(
+    
+    name: r'displayName',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  LocalizableStringDto? displayName;
+
+
+
+  @JsonKey(
+    
+    name: r'api',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  ExtensionPropertyApiDto? api;
+
+
+
+  @JsonKey(
+    
+    name: r'ui',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  ExtensionPropertyUiDto? ui;
+
+
+
+  @JsonKey(
+    
+    name: r'attributes',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  List<ExtensionPropertyAttributeDto>? attributes;
+
+
+
+  @JsonKey(
+    
+    name: r'configuration',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  Map<String, Object>? configuration;
+
+
+
+  @JsonKey(
+    
+    name: r'defaultValue',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  Object? defaultValue;
+
+
+
+
+
+    @override
+    bool operator ==(Object other) => identical(this, other) || other is ExtensionPropertyDto &&
+      other.type == type &&
+      other.typeSimple == typeSimple &&
+      other.displayName == displayName &&
+      other.api == api &&
+      other.ui == ui &&
+      other.attributes == attributes &&
+      other.configuration == configuration &&
+      other.defaultValue == defaultValue;
+
+    @override
+    int get hashCode =>
+        type.hashCode +
+        typeSimple.hashCode +
+        displayName.hashCode +
+        api.hashCode +
+        ui.hashCode +
+        attributes.hashCode +
+        configuration.hashCode +
+        defaultValue.hashCode;
+
+  factory ExtensionPropertyDto.fromJson(Map<String, dynamic> json) => _$ExtensionPropertyDtoFromJson(json);
+
+  Map<String, dynamic> toJson() => _$ExtensionPropertyDtoToJson(this);
 
   @override
-  ExtensionPropertyDto deserialize(
-    Serializers serializers,
-    Object serialized, {
-    FullType specifiedType = FullType.unspecified,
-  }) {
-    final result = ExtensionPropertyDtoBuilder();
-    final serializedList = (serialized as Iterable<Object?>).toList();
-    final unhandled = <Object?>[];
-    _deserializeProperties(
-      serializers,
-      serialized,
-      specifiedType: specifiedType,
-      serializedList: serializedList,
-      unhandled: unhandled,
-      result: result,
-    );
-    return result.build();
+  String toString() {
+    return toJson().toString();
   }
+
 }
 

@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 **yearDiscountStartAt** | [**DateTime**](DateTime.md) | 折扣开始时间 | [optional] 
 **yearDiscountEndAt** | [**DateTime**](DateTime.md) | 折扣结束时间 | [optional] 
 **sortIndex** | **int** | 排序 | [optional] 
-**items** | [**BuiltList&lt;AppPricingItemValueDto&gt;**](AppPricingItemValueDto.md) | 收费点 | [optional] 
+**items** | [**List&lt;AppPricingItemValueDto&gt;**](AppPricingItemValueDto.md) | 收费点 | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

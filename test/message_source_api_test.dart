@@ -22,7 +22,7 @@ void main() {
       // TODO
     });
 
-    //Future<BuiltList<MessageSourceDto>> getPublishedList(String categoryId) async
+    //Future<List<MessageSourceDto>> getPublishedList(String categoryId) async
     test('test getPublishedList', () async {
       // TODO
     });
