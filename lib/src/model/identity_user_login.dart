@@ -3,116 +3,178 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'identity_user_login.g.dart';
 
+/// IdentityUserLogin
+///
+/// Properties:
+/// * [tenantId] 
+/// * [userId] 
+/// * [loginProvider] 
+/// * [providerKey] 
+/// * [providerDisplayName] 
+@BuiltValue()
+abstract class IdentityUserLogin implements Built<IdentityUserLogin, IdentityUserLoginBuilder> {
+  @BuiltValueField(wireName: r'tenantId')
+  String? get tenantId;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class IdentityUserLogin {
-  /// Returns a new [IdentityUserLogin] instance.
-  IdentityUserLogin({
+  @BuiltValueField(wireName: r'userId')
+  String? get userId;
 
-     this.tenantId,
+  @BuiltValueField(wireName: r'loginProvider')
+  String? get loginProvider;
 
-     this.userId,
+  @BuiltValueField(wireName: r'providerKey')
+  String? get providerKey;
 
-     this.loginProvider,
+  @BuiltValueField(wireName: r'providerDisplayName')
+  String? get providerDisplayName;
 
-     this.providerKey,
+  IdentityUserLogin._();
 
-     this.providerDisplayName,
-  });
+  factory IdentityUserLogin([void updates(IdentityUserLoginBuilder b)]) = _$IdentityUserLogin;
 
-  @JsonKey(
-    
-    name: r'tenantId',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(IdentityUserLoginBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<IdentityUserLogin> get serializer => _$IdentityUserLoginSerializer();
+}
 
-  String? tenantId;
-
-
-
-  @JsonKey(
-    
-    name: r'userId',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? userId;
-
-
-
-  @JsonKey(
-    
-    name: r'loginProvider',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? loginProvider;
-
-
-
-  @JsonKey(
-    
-    name: r'providerKey',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? providerKey;
-
-
-
-  @JsonKey(
-    
-    name: r'providerDisplayName',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? providerDisplayName;
-
-
+class _$IdentityUserLoginSerializer implements PrimitiveSerializer<IdentityUserLogin> {
+  @override
+  final Iterable<Type> types = const [IdentityUserLogin, _$IdentityUserLogin];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is IdentityUserLogin &&
-     other.tenantId == tenantId &&
-     other.userId == userId &&
-     other.loginProvider == loginProvider &&
-     other.providerKey == providerKey &&
-     other.providerDisplayName == providerDisplayName;
+  final String wireName = r'IdentityUserLogin';
 
-  @override
-  int get hashCode =>
-    tenantId.hashCode +
-    userId.hashCode +
-    loginProvider.hashCode +
-    providerKey.hashCode +
-    providerDisplayName.hashCode;
-
-  factory IdentityUserLogin.fromJson(Map<String, dynamic> json) => _$IdentityUserLoginFromJson(json);
-
-  Map<String, dynamic> toJson() => _$IdentityUserLoginToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    IdentityUserLogin object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.tenantId != null) {
+      yield r'tenantId';
+      yield serializers.serialize(
+        object.tenantId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.userId != null) {
+      yield r'userId';
+      yield serializers.serialize(
+        object.userId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.loginProvider != null) {
+      yield r'loginProvider';
+      yield serializers.serialize(
+        object.loginProvider,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.providerKey != null) {
+      yield r'providerKey';
+      yield serializers.serialize(
+        object.providerKey,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.providerDisplayName != null) {
+      yield r'providerDisplayName';
+      yield serializers.serialize(
+        object.providerDisplayName,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    IdentityUserLogin object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required IdentityUserLoginBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'tenantId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.tenantId = valueDes;
+          break;
+        case r'userId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.userId = valueDes;
+          break;
+        case r'loginProvider':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.loginProvider = valueDes;
+          break;
+        case r'providerKey':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.providerKey = valueDes;
+          break;
+        case r'providerDisplayName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.providerDisplayName = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  IdentityUserLogin deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = IdentityUserLoginBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

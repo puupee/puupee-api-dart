@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for ProviderInfoDto
 void main() {
-  final ProviderInfoDto? instance = /* ProviderInfoDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = ProviderInfoDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(ProviderInfoDto, () {
     // String providerName

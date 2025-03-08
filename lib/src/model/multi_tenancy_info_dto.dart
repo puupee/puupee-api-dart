@@ -3,52 +3,106 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'multi_tenancy_info_dto.g.dart';
 
+/// MultiTenancyInfoDto
+///
+/// Properties:
+/// * [isEnabled] 
+@BuiltValue()
+abstract class MultiTenancyInfoDto implements Built<MultiTenancyInfoDto, MultiTenancyInfoDtoBuilder> {
+  @BuiltValueField(wireName: r'isEnabled')
+  bool? get isEnabled;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class MultiTenancyInfoDto {
-  /// Returns a new [MultiTenancyInfoDto] instance.
-  MultiTenancyInfoDto({
+  MultiTenancyInfoDto._();
 
-     this.isEnabled,
-  });
+  factory MultiTenancyInfoDto([void updates(MultiTenancyInfoDtoBuilder b)]) = _$MultiTenancyInfoDto;
 
-  @JsonKey(
-    
-    name: r'isEnabled',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(MultiTenancyInfoDtoBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<MultiTenancyInfoDto> get serializer => _$MultiTenancyInfoDtoSerializer();
+}
 
-  bool? isEnabled;
-
-
+class _$MultiTenancyInfoDtoSerializer implements PrimitiveSerializer<MultiTenancyInfoDto> {
+  @override
+  final Iterable<Type> types = const [MultiTenancyInfoDto, _$MultiTenancyInfoDto];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is MultiTenancyInfoDto &&
-     other.isEnabled == isEnabled;
+  final String wireName = r'MultiTenancyInfoDto';
 
-  @override
-  int get hashCode =>
-    isEnabled.hashCode;
-
-  factory MultiTenancyInfoDto.fromJson(Map<String, dynamic> json) => _$MultiTenancyInfoDtoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$MultiTenancyInfoDtoToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    MultiTenancyInfoDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.isEnabled != null) {
+      yield r'isEnabled';
+      yield serializers.serialize(
+        object.isEnabled,
+        specifiedType: const FullType(bool),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    MultiTenancyInfoDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required MultiTenancyInfoDtoBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'isEnabled':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isEnabled = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  MultiTenancyInfoDto deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = MultiTenancyInfoDtoBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

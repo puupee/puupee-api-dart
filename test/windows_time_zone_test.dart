@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for WindowsTimeZone
 void main() {
-  final WindowsTimeZone? instance = /* WindowsTimeZone(...) */ null;
-  // TODO add properties to the entity
+  final instance = WindowsTimeZoneBuilder();
+  // TODO add properties to the builder and call build()
 
   group(WindowsTimeZone, () {
     // String timeZoneId

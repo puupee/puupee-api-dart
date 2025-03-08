@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for ExtensionPropertyUiLookupDto
 void main() {
-  final ExtensionPropertyUiLookupDto? instance = /* ExtensionPropertyUiLookupDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = ExtensionPropertyUiLookupDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(ExtensionPropertyUiLookupDto, () {
     // String url

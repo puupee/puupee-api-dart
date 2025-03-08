@@ -3,107 +3,288 @@
 part of 'application_configuration_dto.dart';
 
 // **************************************************************************
-// JsonSerializableGenerator
+// BuiltValueGenerator
 // **************************************************************************
 
-ApplicationConfigurationDto _$ApplicationConfigurationDtoFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'ApplicationConfigurationDto',
-      json,
-      ($checkedConvert) {
-        final val = ApplicationConfigurationDto(
-          localization: $checkedConvert(
-              'localization',
-              (v) => v == null
-                  ? null
-                  : ApplicationLocalizationConfigurationDto.fromJson(
-                      v as Map<String, dynamic>)),
-          auth: $checkedConvert(
-              'auth',
-              (v) => v == null
-                  ? null
-                  : ApplicationAuthConfigurationDto.fromJson(
-                      v as Map<String, dynamic>)),
-          setting: $checkedConvert(
-              'setting',
-              (v) => v == null
-                  ? null
-                  : ApplicationSettingConfigurationDto.fromJson(
-                      v as Map<String, dynamic>)),
-          currentUser: $checkedConvert(
-              'currentUser',
-              (v) => v == null
-                  ? null
-                  : CurrentUserDto.fromJson(v as Map<String, dynamic>)),
-          features: $checkedConvert(
-              'features',
-              (v) => v == null
-                  ? null
-                  : ApplicationFeatureConfigurationDto.fromJson(
-                      v as Map<String, dynamic>)),
-          globalFeatures: $checkedConvert(
-              'globalFeatures',
-              (v) => v == null
-                  ? null
-                  : ApplicationGlobalFeatureConfigurationDto.fromJson(
-                      v as Map<String, dynamic>)),
-          multiTenancy: $checkedConvert(
-              'multiTenancy',
-              (v) => v == null
-                  ? null
-                  : MultiTenancyInfoDto.fromJson(v as Map<String, dynamic>)),
-          currentTenant: $checkedConvert(
-              'currentTenant',
-              (v) => v == null
-                  ? null
-                  : CurrentTenantDto.fromJson(v as Map<String, dynamic>)),
-          timing: $checkedConvert(
-              'timing',
-              (v) => v == null
-                  ? null
-                  : TimingDto.fromJson(v as Map<String, dynamic>)),
-          clock: $checkedConvert(
-              'clock',
-              (v) => v == null
-                  ? null
-                  : ClockDto.fromJson(v as Map<String, dynamic>)),
-          objectExtensions: $checkedConvert(
-              'objectExtensions',
-              (v) => v == null
-                  ? null
-                  : ObjectExtensionsDto.fromJson(v as Map<String, dynamic>)),
-          extraProperties: $checkedConvert(
-              'extraProperties',
-              (v) => (v as Map<String, dynamic>?)?.map(
-                    (k, e) => MapEntry(k, e as Object),
-                  )),
-        );
-        return val;
-      },
-    );
+class _$ApplicationConfigurationDto extends ApplicationConfigurationDto {
+  @override
+  final ApplicationLocalizationConfigurationDto? localization;
+  @override
+  final ApplicationAuthConfigurationDto? auth;
+  @override
+  final ApplicationSettingConfigurationDto? setting;
+  @override
+  final CurrentUserDto? currentUser;
+  @override
+  final ApplicationFeatureConfigurationDto? features;
+  @override
+  final ApplicationGlobalFeatureConfigurationDto? globalFeatures;
+  @override
+  final MultiTenancyInfoDto? multiTenancy;
+  @override
+  final CurrentTenantDto? currentTenant;
+  @override
+  final TimingDto? timing;
+  @override
+  final ClockDto? clock;
+  @override
+  final ObjectExtensionsDto? objectExtensions;
+  @override
+  final BuiltMap<String, JsonObject>? extraProperties;
 
-Map<String, dynamic> _$ApplicationConfigurationDtoToJson(
-    ApplicationConfigurationDto instance) {
-  final val = <String, dynamic>{};
+  factory _$ApplicationConfigurationDto(
+          [void Function(ApplicationConfigurationDtoBuilder)? updates]) =>
+      (new ApplicationConfigurationDtoBuilder()..update(updates))._build();
 
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
+  _$ApplicationConfigurationDto._(
+      {this.localization,
+      this.auth,
+      this.setting,
+      this.currentUser,
+      this.features,
+      this.globalFeatures,
+      this.multiTenancy,
+      this.currentTenant,
+      this.timing,
+      this.clock,
+      this.objectExtensions,
+      this.extraProperties})
+      : super._();
+
+  @override
+  ApplicationConfigurationDto rebuild(
+          void Function(ApplicationConfigurationDtoBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  ApplicationConfigurationDtoBuilder toBuilder() =>
+      new ApplicationConfigurationDtoBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is ApplicationConfigurationDto &&
+        localization == other.localization &&
+        auth == other.auth &&
+        setting == other.setting &&
+        currentUser == other.currentUser &&
+        features == other.features &&
+        globalFeatures == other.globalFeatures &&
+        multiTenancy == other.multiTenancy &&
+        currentTenant == other.currentTenant &&
+        timing == other.timing &&
+        clock == other.clock &&
+        objectExtensions == other.objectExtensions &&
+        extraProperties == other.extraProperties;
   }
 
-  writeNotNull('localization', instance.localization?.toJson());
-  writeNotNull('auth', instance.auth?.toJson());
-  writeNotNull('setting', instance.setting?.toJson());
-  writeNotNull('currentUser', instance.currentUser?.toJson());
-  writeNotNull('features', instance.features?.toJson());
-  writeNotNull('globalFeatures', instance.globalFeatures?.toJson());
-  writeNotNull('multiTenancy', instance.multiTenancy?.toJson());
-  writeNotNull('currentTenant', instance.currentTenant?.toJson());
-  writeNotNull('timing', instance.timing?.toJson());
-  writeNotNull('clock', instance.clock?.toJson());
-  writeNotNull('objectExtensions', instance.objectExtensions?.toJson());
-  writeNotNull('extraProperties', instance.extraProperties);
-  return val;
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, localization.hashCode);
+    _$hash = $jc(_$hash, auth.hashCode);
+    _$hash = $jc(_$hash, setting.hashCode);
+    _$hash = $jc(_$hash, currentUser.hashCode);
+    _$hash = $jc(_$hash, features.hashCode);
+    _$hash = $jc(_$hash, globalFeatures.hashCode);
+    _$hash = $jc(_$hash, multiTenancy.hashCode);
+    _$hash = $jc(_$hash, currentTenant.hashCode);
+    _$hash = $jc(_$hash, timing.hashCode);
+    _$hash = $jc(_$hash, clock.hashCode);
+    _$hash = $jc(_$hash, objectExtensions.hashCode);
+    _$hash = $jc(_$hash, extraProperties.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'ApplicationConfigurationDto')
+          ..add('localization', localization)
+          ..add('auth', auth)
+          ..add('setting', setting)
+          ..add('currentUser', currentUser)
+          ..add('features', features)
+          ..add('globalFeatures', globalFeatures)
+          ..add('multiTenancy', multiTenancy)
+          ..add('currentTenant', currentTenant)
+          ..add('timing', timing)
+          ..add('clock', clock)
+          ..add('objectExtensions', objectExtensions)
+          ..add('extraProperties', extraProperties))
+        .toString();
+  }
 }
+
+class ApplicationConfigurationDtoBuilder
+    implements
+        Builder<ApplicationConfigurationDto,
+            ApplicationConfigurationDtoBuilder> {
+  _$ApplicationConfigurationDto? _$v;
+
+  ApplicationLocalizationConfigurationDtoBuilder? _localization;
+  ApplicationLocalizationConfigurationDtoBuilder get localization =>
+      _$this._localization ??=
+          new ApplicationLocalizationConfigurationDtoBuilder();
+  set localization(
+          ApplicationLocalizationConfigurationDtoBuilder? localization) =>
+      _$this._localization = localization;
+
+  ApplicationAuthConfigurationDtoBuilder? _auth;
+  ApplicationAuthConfigurationDtoBuilder get auth =>
+      _$this._auth ??= new ApplicationAuthConfigurationDtoBuilder();
+  set auth(ApplicationAuthConfigurationDtoBuilder? auth) => _$this._auth = auth;
+
+  ApplicationSettingConfigurationDtoBuilder? _setting;
+  ApplicationSettingConfigurationDtoBuilder get setting =>
+      _$this._setting ??= new ApplicationSettingConfigurationDtoBuilder();
+  set setting(ApplicationSettingConfigurationDtoBuilder? setting) =>
+      _$this._setting = setting;
+
+  CurrentUserDtoBuilder? _currentUser;
+  CurrentUserDtoBuilder get currentUser =>
+      _$this._currentUser ??= new CurrentUserDtoBuilder();
+  set currentUser(CurrentUserDtoBuilder? currentUser) =>
+      _$this._currentUser = currentUser;
+
+  ApplicationFeatureConfigurationDtoBuilder? _features;
+  ApplicationFeatureConfigurationDtoBuilder get features =>
+      _$this._features ??= new ApplicationFeatureConfigurationDtoBuilder();
+  set features(ApplicationFeatureConfigurationDtoBuilder? features) =>
+      _$this._features = features;
+
+  ApplicationGlobalFeatureConfigurationDtoBuilder? _globalFeatures;
+  ApplicationGlobalFeatureConfigurationDtoBuilder get globalFeatures =>
+      _$this._globalFeatures ??=
+          new ApplicationGlobalFeatureConfigurationDtoBuilder();
+  set globalFeatures(
+          ApplicationGlobalFeatureConfigurationDtoBuilder? globalFeatures) =>
+      _$this._globalFeatures = globalFeatures;
+
+  MultiTenancyInfoDtoBuilder? _multiTenancy;
+  MultiTenancyInfoDtoBuilder get multiTenancy =>
+      _$this._multiTenancy ??= new MultiTenancyInfoDtoBuilder();
+  set multiTenancy(MultiTenancyInfoDtoBuilder? multiTenancy) =>
+      _$this._multiTenancy = multiTenancy;
+
+  CurrentTenantDtoBuilder? _currentTenant;
+  CurrentTenantDtoBuilder get currentTenant =>
+      _$this._currentTenant ??= new CurrentTenantDtoBuilder();
+  set currentTenant(CurrentTenantDtoBuilder? currentTenant) =>
+      _$this._currentTenant = currentTenant;
+
+  TimingDtoBuilder? _timing;
+  TimingDtoBuilder get timing => _$this._timing ??= new TimingDtoBuilder();
+  set timing(TimingDtoBuilder? timing) => _$this._timing = timing;
+
+  ClockDtoBuilder? _clock;
+  ClockDtoBuilder get clock => _$this._clock ??= new ClockDtoBuilder();
+  set clock(ClockDtoBuilder? clock) => _$this._clock = clock;
+
+  ObjectExtensionsDtoBuilder? _objectExtensions;
+  ObjectExtensionsDtoBuilder get objectExtensions =>
+      _$this._objectExtensions ??= new ObjectExtensionsDtoBuilder();
+  set objectExtensions(ObjectExtensionsDtoBuilder? objectExtensions) =>
+      _$this._objectExtensions = objectExtensions;
+
+  MapBuilder<String, JsonObject>? _extraProperties;
+  MapBuilder<String, JsonObject> get extraProperties =>
+      _$this._extraProperties ??= new MapBuilder<String, JsonObject>();
+  set extraProperties(MapBuilder<String, JsonObject>? extraProperties) =>
+      _$this._extraProperties = extraProperties;
+
+  ApplicationConfigurationDtoBuilder() {
+    ApplicationConfigurationDto._defaults(this);
+  }
+
+  ApplicationConfigurationDtoBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _localization = $v.localization?.toBuilder();
+      _auth = $v.auth?.toBuilder();
+      _setting = $v.setting?.toBuilder();
+      _currentUser = $v.currentUser?.toBuilder();
+      _features = $v.features?.toBuilder();
+      _globalFeatures = $v.globalFeatures?.toBuilder();
+      _multiTenancy = $v.multiTenancy?.toBuilder();
+      _currentTenant = $v.currentTenant?.toBuilder();
+      _timing = $v.timing?.toBuilder();
+      _clock = $v.clock?.toBuilder();
+      _objectExtensions = $v.objectExtensions?.toBuilder();
+      _extraProperties = $v.extraProperties?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(ApplicationConfigurationDto other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$ApplicationConfigurationDto;
+  }
+
+  @override
+  void update(void Function(ApplicationConfigurationDtoBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  ApplicationConfigurationDto build() => _build();
+
+  _$ApplicationConfigurationDto _build() {
+    _$ApplicationConfigurationDto _$result;
+    try {
+      _$result = _$v ??
+          new _$ApplicationConfigurationDto._(
+            localization: _localization?.build(),
+            auth: _auth?.build(),
+            setting: _setting?.build(),
+            currentUser: _currentUser?.build(),
+            features: _features?.build(),
+            globalFeatures: _globalFeatures?.build(),
+            multiTenancy: _multiTenancy?.build(),
+            currentTenant: _currentTenant?.build(),
+            timing: _timing?.build(),
+            clock: _clock?.build(),
+            objectExtensions: _objectExtensions?.build(),
+            extraProperties: _extraProperties?.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'localization';
+        _localization?.build();
+        _$failedField = 'auth';
+        _auth?.build();
+        _$failedField = 'setting';
+        _setting?.build();
+        _$failedField = 'currentUser';
+        _currentUser?.build();
+        _$failedField = 'features';
+        _features?.build();
+        _$failedField = 'globalFeatures';
+        _globalFeatures?.build();
+        _$failedField = 'multiTenancy';
+        _multiTenancy?.build();
+        _$failedField = 'currentTenant';
+        _currentTenant?.build();
+        _$failedField = 'timing';
+        _timing?.build();
+        _$failedField = 'clock';
+        _clock?.build();
+        _$failedField = 'objectExtensions';
+        _objectExtensions?.build();
+        _$failedField = 'extraProperties';
+        _extraProperties?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'ApplicationConfigurationDto', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

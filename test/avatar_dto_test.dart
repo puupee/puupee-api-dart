@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for AvatarDto
 void main() {
-  final AvatarDto? instance = /* AvatarDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = AvatarDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(AvatarDto, () {
     // String key

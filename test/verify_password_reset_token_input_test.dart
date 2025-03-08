@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for VerifyPasswordResetTokenInput
 void main() {
-  final VerifyPasswordResetTokenInput? instance = /* VerifyPasswordResetTokenInput(...) */ null;
-  // TODO add properties to the entity
+  final instance = VerifyPasswordResetTokenInputBuilder();
+  // TODO add properties to the builder and call build()
 
   group(VerifyPasswordResetTokenInput, () {
     // String userId

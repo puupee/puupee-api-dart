@@ -4,9 +4,8 @@
 
 import 'dart:async';
 
-// ignore: unused_import
-import 'dart:convert';
-import 'package:puupee_api_client/src/deserialize.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:puupee_api_client/src/model/change_password_input.dart';
@@ -18,7 +17,9 @@ class ProfileApi {
 
   final Dio _dio;
 
-  const ProfileApi(this._dio);
+  final Serializers _serializers;
+
+  const ProfileApi(this._dio, this._serializers);
 
   /// callGet
   /// 
@@ -32,7 +33,7 @@ class ProfileApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [ProfileDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<ProfileDto>> callGet({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -67,15 +68,20 @@ class ProfileApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    ProfileDto _responseData;
+    ProfileDto? _responseData;
 
     try {
-_responseData = deserialize<ProfileDto, ProfileDto>(_response.data!, 'ProfileDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(ProfileDto),
+      ) as ProfileDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -106,7 +112,7 @@ _responseData = deserialize<ProfileDto, ProfileDto>(_response.data!, 'ProfileDto
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future]
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> changePassword({ 
     ChangePasswordInput? body,
     CancelToken? cancelToken,
@@ -138,14 +144,16 @@ _responseData = deserialize<ProfileDto, ProfileDto>(_response.data!, 'ProfileDto
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+      const _type = FullType(ChangePasswordInput);
+      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
+
     } catch(error, stackTrace) {
-      throw DioError(
+      throw DioException(
          requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -176,7 +184,7 @@ _bodyData=jsonEncode(body);
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [ProfileDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<ProfileDto>> update({ 
     UpdateProfileDto? body,
     CancelToken? cancelToken,
@@ -208,14 +216,16 @@ _bodyData=jsonEncode(body);
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+      const _type = FullType(UpdateProfileDto);
+      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
+
     } catch(error, stackTrace) {
-      throw DioError(
+      throw DioException(
          requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -230,15 +240,20 @@ _bodyData=jsonEncode(body);
       onReceiveProgress: onReceiveProgress,
     );
 
-    ProfileDto _responseData;
+    ProfileDto? _responseData;
 
     try {
-_responseData = deserialize<ProfileDto, ProfileDto>(_response.data!, 'ProfileDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(ProfileDto),
+      ) as ProfileDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

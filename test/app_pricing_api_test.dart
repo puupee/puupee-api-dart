@@ -27,12 +27,12 @@ void main() {
       // TODO
     });
 
-    //Future<List<AppPricingDto>> getListByAppId(String appId) async
+    //Future<BuiltList<AppPricingDto>> getListByAppId(String appId) async
     test('test getListByAppId', () async {
       // TODO
     });
 
-    //Future<List<AppPricingItemDto>> getPricingItemsByAppId(String appId) async
+    //Future<BuiltList<AppPricingItemDto>> getPricingItemsByAppId(String appId) async
     test('test getPricingItemsByAppId', () async {
       // TODO
     });

@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for SendVerificationCodeDto
 void main() {
-  final SendVerificationCodeDto? instance = /* SendVerificationCodeDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = SendVerificationCodeDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(SendVerificationCodeDto, () {
     // 验证码发送器 暂时支持: SMS: 手机短信验证码

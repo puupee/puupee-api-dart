@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for UserLoginInfo
 void main() {
-  final UserLoginInfo? instance = /* UserLoginInfo(...) */ null;
-  // TODO add properties to the entity
+  final instance = UserLoginInfoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(UserLoginInfo, () {
     // String userNameOrEmailAddress

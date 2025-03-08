@@ -3,11 +3,11 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for TenantUpdateDto
 void main() {
-  final TenantUpdateDto? instance = /* TenantUpdateDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = TenantUpdateDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(TenantUpdateDto, () {
-    // Map<String, Object> extraProperties
+    // BuiltMap<String, JsonObject> extraProperties
     test('to test the property `extraProperties`', () async {
       // TODO
     });

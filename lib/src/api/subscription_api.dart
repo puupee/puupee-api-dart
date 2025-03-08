@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-// ignore: unused_import
-import 'dart:convert';
-import 'package:puupee_api_client/src/deserialize.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/apple_notificaion_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_get_subscription_order_dto.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
@@ -21,7 +21,9 @@ class SubscriptionApi {
 
   final Dio _dio;
 
-  const SubscriptionApi(this._dio);
+  final Serializers _serializers;
+
+  const SubscriptionApi(this._dio, this._serializers);
 
   /// 苹果订阅 Callback 地址
   /// 
@@ -36,7 +38,7 @@ class SubscriptionApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future]
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> appleNotifications({ 
     AppleNotificaionDto? body,
     CancelToken? cancelToken,
@@ -68,14 +70,16 @@ class SubscriptionApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+      const _type = FullType(AppleNotificaionDto);
+      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
+
     } catch(error, stackTrace) {
-      throw DioError(
+      throw DioException(
          requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -106,7 +110,7 @@ _bodyData=jsonEncode(body);
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [SubscriptionOrderDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<SubscriptionOrderDto>> createOrder({ 
     CreateOrGetSubscriptionOrderDto? body,
     CancelToken? cancelToken,
@@ -138,14 +142,16 @@ _bodyData=jsonEncode(body);
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+      const _type = FullType(CreateOrGetSubscriptionOrderDto);
+      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
+
     } catch(error, stackTrace) {
-      throw DioError(
+      throw DioException(
          requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -160,15 +166,20 @@ _bodyData=jsonEncode(body);
       onReceiveProgress: onReceiveProgress,
     );
 
-    SubscriptionOrderDto _responseData;
+    SubscriptionOrderDto? _responseData;
 
     try {
-_responseData = deserialize<SubscriptionOrderDto, SubscriptionOrderDto>(_response.data!, 'SubscriptionOrderDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(SubscriptionOrderDto),
+      ) as SubscriptionOrderDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -199,7 +210,7 @@ _responseData = deserialize<SubscriptionOrderDto, SubscriptionOrderDto>(_respons
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [SubscriptionDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<SubscriptionDto>> getById({ 
     String? appId,
     CancelToken? cancelToken,
@@ -228,7 +239,7 @@ _responseData = deserialize<SubscriptionOrderDto, SubscriptionOrderDto>(_respons
     );
 
     final _queryParameters = <String, dynamic>{
-      if (appId != null) r'appId': appId,
+      if (appId != null) r'appId': encodeQueryParameter(_serializers, appId, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -240,15 +251,20 @@ _responseData = deserialize<SubscriptionOrderDto, SubscriptionOrderDto>(_respons
       onReceiveProgress: onReceiveProgress,
     );
 
-    SubscriptionDto _responseData;
+    SubscriptionDto? _responseData;
 
     try {
-_responseData = deserialize<SubscriptionDto, SubscriptionDto>(_response.data!, 'SubscriptionDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(SubscriptionDto),
+      ) as SubscriptionDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -279,7 +295,7 @@ _responseData = deserialize<SubscriptionDto, SubscriptionDto>(_response.data!, '
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [VerifyReceiptResult] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<VerifyReceiptResult>> verifyReceipt({ 
     VerifyReceiptDto? body,
     CancelToken? cancelToken,
@@ -311,14 +327,16 @@ _responseData = deserialize<SubscriptionDto, SubscriptionDto>(_response.data!, '
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+      const _type = FullType(VerifyReceiptDto);
+      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
+
     } catch(error, stackTrace) {
-      throw DioError(
+      throw DioException(
          requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -333,15 +351,20 @@ _bodyData=jsonEncode(body);
       onReceiveProgress: onReceiveProgress,
     );
 
-    VerifyReceiptResult _responseData;
+    VerifyReceiptResult? _responseData;
 
     try {
-_responseData = deserialize<VerifyReceiptResult, VerifyReceiptResult>(_response.data!, 'VerifyReceiptResult', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(VerifyReceiptResult),
+      ) as VerifyReceiptResult;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

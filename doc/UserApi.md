@@ -38,7 +38,7 @@ final IdentityUserCreateDto body = ; // IdentityUserCreateDto |
 try {
     final response = api.create(body);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling UserApi->create: $e\n');
 }
 ```
@@ -80,7 +80,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 
 try {
     api.delete(id);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling UserApi->delete: $e\n');
 }
 ```
@@ -123,7 +123,7 @@ final String email = email_example; // String |
 try {
     final response = api.findByEmail(email);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling UserApi->findByEmail: $e\n');
 }
 ```
@@ -166,7 +166,7 @@ final String userName = userName_example; // String |
 try {
     final response = api.findByUsername(userName);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling UserApi->findByUsername: $e\n');
 }
 ```
@@ -208,7 +208,7 @@ final api = PuupeeApiClient().getUserApi();
 try {
     final response = api.getAssignableRoles();
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling UserApi->getAssignableRoles: $e\n');
 }
 ```
@@ -248,7 +248,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getById(id);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling UserApi->getById: $e\n');
 }
 ```
@@ -294,7 +294,7 @@ final int maxResultCount = 56; // int |
 try {
     final response = api.getList(filter, sorting, skipCount, maxResultCount);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling UserApi->getList: $e\n');
 }
 ```
@@ -340,7 +340,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getRoles(id);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling UserApi->getRoles: $e\n');
 }
 ```
@@ -384,7 +384,7 @@ final IdentityUserUpdateDto body = ; // IdentityUserUpdateDto |
 try {
     final response = api.update(id, body);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling UserApi->update: $e\n');
 }
 ```
@@ -428,7 +428,7 @@ final IdentityUserUpdateRolesDto body = ; // IdentityUserUpdateRolesDto |
 
 try {
     api.updateRoles(id, body);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling UserApi->updateRoles: $e\n');
 }
 ```

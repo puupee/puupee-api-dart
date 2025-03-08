@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **originalPurchaseDateMs** | **String** |  | [optional] 
 **originalPurchaseDatePst** | **String** |  | [optional] 
 **originalApplicationVersion** | **String** |  | [optional] 
-**inApp** | [**List&lt;InApp&gt;**](InApp.md) |  | [optional] 
+**inApp** | [**BuiltList&lt;InApp&gt;**](InApp.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

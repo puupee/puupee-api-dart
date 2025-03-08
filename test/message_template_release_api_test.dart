@@ -17,7 +17,7 @@ void main() {
       // TODO
     });
 
-    //Future<List<MessageTemplateReleaseDto>> getList({ String templateId }) async
+    //Future<BuiltList<MessageTemplateReleaseDto>> getList({ String templateId }) async
     test('test getList', () async {
       // TODO
     });

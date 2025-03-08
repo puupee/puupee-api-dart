@@ -3,11 +3,11 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for IdentityRoleDtoListResultDto
 void main() {
-  final IdentityRoleDtoListResultDto? instance = /* IdentityRoleDtoListResultDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = IdentityRoleDtoListResultDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(IdentityRoleDtoListResultDto, () {
-    // List<IdentityRoleDto> items
+    // BuiltList<IdentityRoleDto> items
     test('to test the property `items`', () async {
       // TODO
     });

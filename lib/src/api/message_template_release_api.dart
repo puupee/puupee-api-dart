@@ -4,11 +4,12 @@
 
 import 'dart:async';
 
-// ignore: unused_import
-import 'dart:convert';
-import 'package:puupee_api_client/src/deserialize.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:built_collection/built_collection.dart';
+import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/create_message_template_release_dto.dart';
 import 'package:puupee_api_client/src/model/message_template_release_dto.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
@@ -17,7 +18,9 @@ class MessageTemplateReleaseApi {
 
   final Dio _dio;
 
-  const MessageTemplateReleaseApi(this._dio);
+  final Serializers _serializers;
+
+  const MessageTemplateReleaseApi(this._dio, this._serializers);
 
   /// create
   /// 
@@ -32,7 +35,7 @@ class MessageTemplateReleaseApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [MessageTemplateReleaseDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<MessageTemplateReleaseDto>> create({ 
     CreateMessageTemplateReleaseDto? body,
     CancelToken? cancelToken,
@@ -64,14 +67,16 @@ class MessageTemplateReleaseApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+      const _type = FullType(CreateMessageTemplateReleaseDto);
+      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
+
     } catch(error, stackTrace) {
-      throw DioError(
+      throw DioException(
          requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -86,15 +91,20 @@ _bodyData=jsonEncode(body);
       onReceiveProgress: onReceiveProgress,
     );
 
-    MessageTemplateReleaseDto _responseData;
+    MessageTemplateReleaseDto? _responseData;
 
     try {
-_responseData = deserialize<MessageTemplateReleaseDto, MessageTemplateReleaseDto>(_response.data!, 'MessageTemplateReleaseDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(MessageTemplateReleaseDto),
+      ) as MessageTemplateReleaseDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -125,7 +135,7 @@ _responseData = deserialize<MessageTemplateReleaseDto, MessageTemplateReleaseDto
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [MessageTemplateReleaseDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<MessageTemplateReleaseDto>> getById({ 
     required String id,
     CancelToken? cancelToken,
@@ -135,7 +145,7 @@ _responseData = deserialize<MessageTemplateReleaseDto, MessageTemplateReleaseDto
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/app/message-template-release/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/app/message-template-release/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -161,15 +171,20 @@ _responseData = deserialize<MessageTemplateReleaseDto, MessageTemplateReleaseDto
       onReceiveProgress: onReceiveProgress,
     );
 
-    MessageTemplateReleaseDto _responseData;
+    MessageTemplateReleaseDto? _responseData;
 
     try {
-_responseData = deserialize<MessageTemplateReleaseDto, MessageTemplateReleaseDto>(_response.data!, 'MessageTemplateReleaseDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(MessageTemplateReleaseDto),
+      ) as MessageTemplateReleaseDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -199,9 +214,9 @@ _responseData = deserialize<MessageTemplateReleaseDto, MessageTemplateReleaseDto
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [List<MessageTemplateReleaseDto>] as data
-  /// Throws [DioError] if API call or serialization fails
-  Future<Response<List<MessageTemplateReleaseDto>>> getList({ 
+  /// Returns a [Future] containing a [Response] with a [BuiltList<MessageTemplateReleaseDto>] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<BuiltList<MessageTemplateReleaseDto>>> getList({ 
     String? templateId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -229,7 +244,7 @@ _responseData = deserialize<MessageTemplateReleaseDto, MessageTemplateReleaseDto
     );
 
     final _queryParameters = <String, dynamic>{
-      if (templateId != null) r'templateId': templateId,
+      if (templateId != null) r'templateId': encodeQueryParameter(_serializers, templateId, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -241,21 +256,26 @@ _responseData = deserialize<MessageTemplateReleaseDto, MessageTemplateReleaseDto
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<MessageTemplateReleaseDto> _responseData;
+    BuiltList<MessageTemplateReleaseDto>? _responseData;
 
     try {
-_responseData = deserialize<List<MessageTemplateReleaseDto>, MessageTemplateReleaseDto>(_response.data!, 'List<MessageTemplateReleaseDto>', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(BuiltList, [FullType(MessageTemplateReleaseDto)]),
+      ) as BuiltList<MessageTemplateReleaseDto>;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
     }
 
-    return Response<List<MessageTemplateReleaseDto>>(
+    return Response<BuiltList<MessageTemplateReleaseDto>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,

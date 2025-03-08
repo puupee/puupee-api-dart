@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for CurrentCultureDto
 void main() {
-  final CurrentCultureDto? instance = /* CurrentCultureDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = CurrentCultureDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(CurrentCultureDto, () {
     // String displayName

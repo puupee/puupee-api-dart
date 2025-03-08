@@ -32,7 +32,7 @@ final CreateUpdateMessageSourceRouteDto body = ; // CreateUpdateMessageSourceRou
 
 try {
     api.create(body);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling MessageSourceRouteApi->create: $e\n');
 }
 ```
@@ -74,7 +74,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 
 try {
     api.delete(id);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling MessageSourceRouteApi->delete: $e\n');
 }
 ```
@@ -117,7 +117,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getById(id);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling MessageSourceRouteApi->getById: $e\n');
 }
 ```
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getPublishedList**
-> List<MessageSourceRouteDto> getPublishedList(sourceId)
+> BuiltList<MessageSourceRouteDto> getPublishedList(sourceId)
 
 
 
@@ -160,7 +160,7 @@ final String sourceId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getPublishedList(sourceId);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling MessageSourceRouteApi->getPublishedList: $e\n');
 }
 ```
@@ -173,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;MessageSourceRouteDto&gt;**](MessageSourceRouteDto.md)
+[**BuiltList&lt;MessageSourceRouteDto&gt;**](MessageSourceRouteDto.md)
 
 ### Authorization
 
@@ -203,7 +203,7 @@ final CreateUpdateMessageSourceRouteDto body = ; // CreateUpdateMessageSourceRou
 
 try {
     api.update(id, body);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling MessageSourceRouteApi->update: $e\n');
 }
 ```

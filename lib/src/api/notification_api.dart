@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-// ignore: unused_import
-import 'dart:convert';
-import 'package:puupee_api_client/src/deserialize.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/create_push_notification_dto.dart';
 import 'package:puupee_api_client/src/model/notification_info_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
@@ -17,7 +17,9 @@ class NotificationApi {
 
   final Dio _dio;
 
-  const NotificationApi(this._dio);
+  final Serializers _serializers;
+
+  const NotificationApi(this._dio, this._serializers);
 
   /// Bark 推送，兼容 Bark 推送协议  TODO: 验证 API KEY 功能, 添加[个人访问令牌]功能
   /// 
@@ -40,7 +42,7 @@ class NotificationApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future]
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> bark({ 
     required String apiKey,
     required String message,
@@ -50,7 +52,7 @@ class NotificationApi {
     String? isArchive,
     String? group,
     String? icon,
-    Object? level,
+    JsonObject? level,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -58,7 +60,7 @@ class NotificationApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/app/notification/bark/{apiKey}/{message}'.replaceAll('{' r'apiKey' '}', apiKey.toString()).replaceAll('{' r'message' '}', message.toString());
+    final _path = r'/api/app/notification/bark/{apiKey}/{message}'.replaceAll('{' r'apiKey' '}', encodeQueryParameter(_serializers, apiKey, const FullType(String)).toString()).replaceAll('{' r'message' '}', encodeQueryParameter(_serializers, message, const FullType(String)).toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -77,13 +79,13 @@ class NotificationApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (automaticallyCopy != null) r'automaticallyCopy': automaticallyCopy,
-      if (copy != null) r'copy': copy,
-      if (url != null) r'url': url,
-      if (isArchive != null) r'isArchive': isArchive,
-      if (group != null) r'group': group,
-      if (icon != null) r'icon': icon,
-      if (level != null) r'level': level,
+      if (automaticallyCopy != null) r'automaticallyCopy': encodeQueryParameter(_serializers, automaticallyCopy, const FullType(int)),
+      if (copy != null) r'copy': encodeQueryParameter(_serializers, copy, const FullType(String)),
+      if (url != null) r'url': encodeQueryParameter(_serializers, url, const FullType(String)),
+      if (isArchive != null) r'isArchive': encodeQueryParameter(_serializers, isArchive, const FullType(String)),
+      if (group != null) r'group': encodeQueryParameter(_serializers, group, const FullType(String)),
+      if (icon != null) r'icon': encodeQueryParameter(_serializers, icon, const FullType(String)),
+      if (level != null) r'level': encodeQueryParameter(_serializers, level, const FullType(JsonObject)),
     };
 
     final _response = await _dio.request<Object>(
@@ -113,7 +115,7 @@ class NotificationApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [NotificationInfoDtoPagedResultDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<NotificationInfoDtoPagedResultDto>> getList({ 
     String? sorting,
     int? skipCount,
@@ -144,9 +146,9 @@ class NotificationApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (sorting != null) r'Sorting': sorting,
-      if (skipCount != null) r'SkipCount': skipCount,
-      if (maxResultCount != null) r'MaxResultCount': maxResultCount,
+      if (sorting != null) r'Sorting': encodeQueryParameter(_serializers, sorting, const FullType(String)),
+      if (skipCount != null) r'SkipCount': encodeQueryParameter(_serializers, skipCount, const FullType(int)),
+      if (maxResultCount != null) r'MaxResultCount': encodeQueryParameter(_serializers, maxResultCount, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(
@@ -158,15 +160,20 @@ class NotificationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    NotificationInfoDtoPagedResultDto _responseData;
+    NotificationInfoDtoPagedResultDto? _responseData;
 
     try {
-_responseData = deserialize<NotificationInfoDtoPagedResultDto, NotificationInfoDtoPagedResultDto>(_response.data!, 'NotificationInfoDtoPagedResultDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(NotificationInfoDtoPagedResultDto),
+      ) as NotificationInfoDtoPagedResultDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -197,7 +204,7 @@ _responseData = deserialize<NotificationInfoDtoPagedResultDto, NotificationInfoD
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future]
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> push({ 
     CreatePushNotificationDto? body,
     CancelToken? cancelToken,
@@ -229,14 +236,16 @@ _responseData = deserialize<NotificationInfoDtoPagedResultDto, NotificationInfoD
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+      const _type = FullType(CreatePushNotificationDto);
+      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
+
     } catch(error, stackTrace) {
-      throw DioError(
+      throw DioException(
          requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

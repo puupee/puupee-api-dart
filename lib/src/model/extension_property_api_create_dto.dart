@@ -3,52 +3,106 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'extension_property_api_create_dto.g.dart';
 
+/// ExtensionPropertyApiCreateDto
+///
+/// Properties:
+/// * [isAvailable] 
+@BuiltValue()
+abstract class ExtensionPropertyApiCreateDto implements Built<ExtensionPropertyApiCreateDto, ExtensionPropertyApiCreateDtoBuilder> {
+  @BuiltValueField(wireName: r'isAvailable')
+  bool? get isAvailable;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class ExtensionPropertyApiCreateDto {
-  /// Returns a new [ExtensionPropertyApiCreateDto] instance.
-  ExtensionPropertyApiCreateDto({
+  ExtensionPropertyApiCreateDto._();
 
-     this.isAvailable,
-  });
+  factory ExtensionPropertyApiCreateDto([void updates(ExtensionPropertyApiCreateDtoBuilder b)]) = _$ExtensionPropertyApiCreateDto;
 
-  @JsonKey(
-    
-    name: r'isAvailable',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ExtensionPropertyApiCreateDtoBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<ExtensionPropertyApiCreateDto> get serializer => _$ExtensionPropertyApiCreateDtoSerializer();
+}
 
-  bool? isAvailable;
-
-
+class _$ExtensionPropertyApiCreateDtoSerializer implements PrimitiveSerializer<ExtensionPropertyApiCreateDto> {
+  @override
+  final Iterable<Type> types = const [ExtensionPropertyApiCreateDto, _$ExtensionPropertyApiCreateDto];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is ExtensionPropertyApiCreateDto &&
-     other.isAvailable == isAvailable;
+  final String wireName = r'ExtensionPropertyApiCreateDto';
 
-  @override
-  int get hashCode =>
-    isAvailable.hashCode;
-
-  factory ExtensionPropertyApiCreateDto.fromJson(Map<String, dynamic> json) => _$ExtensionPropertyApiCreateDtoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$ExtensionPropertyApiCreateDtoToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    ExtensionPropertyApiCreateDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.isAvailable != null) {
+      yield r'isAvailable';
+      yield serializers.serialize(
+        object.isAvailable,
+        specifiedType: const FullType(bool),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    ExtensionPropertyApiCreateDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required ExtensionPropertyApiCreateDtoBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'isAvailable':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isAvailable = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  ExtensionPropertyApiCreateDto deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = ExtensionPropertyApiCreateDtoBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

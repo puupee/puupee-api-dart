@@ -30,7 +30,7 @@ final api = PuupeeApiClient().getProfileApi();
 try {
     final response = api.callGet();
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling ProfileApi->callGet: $e\n');
 }
 ```
@@ -69,7 +69,7 @@ final ChangePasswordInput body = ; // ChangePasswordInput |
 
 try {
     api.changePassword(body);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling ProfileApi->changePassword: $e\n');
 }
 ```
@@ -112,7 +112,7 @@ final UpdateProfileDto body = ; // UpdateProfileDto |
 try {
     final response = api.update(body);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling ProfileApi->update: $e\n');
 }
 ```

@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for VerifyReceiptResult
 void main() {
-  final VerifyReceiptResult? instance = /* VerifyReceiptResult(...) */ null;
-  // TODO add properties to the entity
+  final instance = VerifyReceiptResultBuilder();
+  // TODO add properties to the builder and call build()
 
   group(VerifyReceiptResult, () {
     // String id

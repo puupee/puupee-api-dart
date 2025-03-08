@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for PendingRenewalInfo
 void main() {
-  final PendingRenewalInfo? instance = /* PendingRenewalInfo(...) */ null;
-  // TODO add properties to the entity
+  final instance = PendingRenewalInfoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(PendingRenewalInfo, () {
     // String autoRenewProductId

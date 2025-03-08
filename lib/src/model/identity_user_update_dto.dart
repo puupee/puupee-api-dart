@@ -3,212 +3,284 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'identity_user_update_dto.g.dart';
 
-
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class IdentityUserUpdateDto {
-  /// Returns a new [IdentityUserUpdateDto] instance.
-  IdentityUserUpdateDto({
-
-     this.extraProperties,
-
-    required  this.userName,
-
-     this.name,
-
-     this.surname,
-
-    required  this.email,
-
-     this.phoneNumber,
-
-     this.isActive,
-
-     this.lockoutEnabled,
-
-     this.roleNames,
-
-     this.password,
-
-     this.concurrencyStamp,
-  });
-
-  @JsonKey(
-    
-    name: r'extraProperties',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  Map<String, Object>? extraProperties;
-
-
-
-  @JsonKey(
-    
-    name: r'userName',
-    required: true,
-    includeIfNull: false
-  )
-
-
-  String userName;
-
-
-
-  @JsonKey(
-    
-    name: r'name',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? name;
-
-
-
-  @JsonKey(
-    
-    name: r'surname',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? surname;
-
-
-
-  @JsonKey(
-    
-    name: r'email',
-    required: true,
-    includeIfNull: false
-  )
-
-
-  String email;
-
-
-
-  @JsonKey(
-    
-    name: r'phoneNumber',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? phoneNumber;
-
-
-
-  @JsonKey(
-    
-    name: r'isActive',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  bool? isActive;
-
-
-
-  @JsonKey(
-    
-    name: r'lockoutEnabled',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  bool? lockoutEnabled;
-
-
-
-  @JsonKey(
-    
-    name: r'roleNames',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  List<String>? roleNames;
-
-
-
-  @JsonKey(
-    
-    name: r'password',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? password;
-
-
-
-  @JsonKey(
-    
-    name: r'concurrencyStamp',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? concurrencyStamp;
-
-
+/// IdentityUserUpdateDto
+///
+/// Properties:
+/// * [extraProperties] 
+/// * [userName] 
+/// * [name] 
+/// * [surname] 
+/// * [email] 
+/// * [phoneNumber] 
+/// * [isActive] 
+/// * [lockoutEnabled] 
+/// * [roleNames] 
+/// * [password] 
+/// * [concurrencyStamp] 
+@BuiltValue()
+abstract class IdentityUserUpdateDto implements Built<IdentityUserUpdateDto, IdentityUserUpdateDtoBuilder> {
+  @BuiltValueField(wireName: r'extraProperties')
+  BuiltMap<String, JsonObject>? get extraProperties;
+
+  @BuiltValueField(wireName: r'userName')
+  String get userName;
+
+  @BuiltValueField(wireName: r'name')
+  String? get name;
+
+  @BuiltValueField(wireName: r'surname')
+  String? get surname;
+
+  @BuiltValueField(wireName: r'email')
+  String get email;
+
+  @BuiltValueField(wireName: r'phoneNumber')
+  String? get phoneNumber;
+
+  @BuiltValueField(wireName: r'isActive')
+  bool? get isActive;
+
+  @BuiltValueField(wireName: r'lockoutEnabled')
+  bool? get lockoutEnabled;
+
+  @BuiltValueField(wireName: r'roleNames')
+  BuiltList<String>? get roleNames;
+
+  @BuiltValueField(wireName: r'password')
+  String? get password;
+
+  @BuiltValueField(wireName: r'concurrencyStamp')
+  String? get concurrencyStamp;
+
+  IdentityUserUpdateDto._();
+
+  factory IdentityUserUpdateDto([void updates(IdentityUserUpdateDtoBuilder b)]) = _$IdentityUserUpdateDto;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(IdentityUserUpdateDtoBuilder b) => b;
+
+  @BuiltValueSerializer(custom: true)
+  static Serializer<IdentityUserUpdateDto> get serializer => _$IdentityUserUpdateDtoSerializer();
+}
+
+class _$IdentityUserUpdateDtoSerializer implements PrimitiveSerializer<IdentityUserUpdateDto> {
+  @override
+  final Iterable<Type> types = const [IdentityUserUpdateDto, _$IdentityUserUpdateDto];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is IdentityUserUpdateDto &&
-     other.extraProperties == extraProperties &&
-     other.userName == userName &&
-     other.name == name &&
-     other.surname == surname &&
-     other.email == email &&
-     other.phoneNumber == phoneNumber &&
-     other.isActive == isActive &&
-     other.lockoutEnabled == lockoutEnabled &&
-     other.roleNames == roleNames &&
-     other.password == password &&
-     other.concurrencyStamp == concurrencyStamp;
+  final String wireName = r'IdentityUserUpdateDto';
 
-  @override
-  int get hashCode =>
-    extraProperties.hashCode +
-    userName.hashCode +
-    name.hashCode +
-    surname.hashCode +
-    email.hashCode +
-    phoneNumber.hashCode +
-    isActive.hashCode +
-    lockoutEnabled.hashCode +
-    roleNames.hashCode +
-    password.hashCode +
-    concurrencyStamp.hashCode;
-
-  factory IdentityUserUpdateDto.fromJson(Map<String, dynamic> json) => _$IdentityUserUpdateDtoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$IdentityUserUpdateDtoToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    IdentityUserUpdateDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.extraProperties != null) {
+      yield r'extraProperties';
+      yield serializers.serialize(
+        object.extraProperties,
+        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+      );
+    }
+    yield r'userName';
+    yield serializers.serialize(
+      object.userName,
+      specifiedType: const FullType(String),
+    );
+    if (object.name != null) {
+      yield r'name';
+      yield serializers.serialize(
+        object.name,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.surname != null) {
+      yield r'surname';
+      yield serializers.serialize(
+        object.surname,
+        specifiedType: const FullType(String),
+      );
+    }
+    yield r'email';
+    yield serializers.serialize(
+      object.email,
+      specifiedType: const FullType(String),
+    );
+    if (object.phoneNumber != null) {
+      yield r'phoneNumber';
+      yield serializers.serialize(
+        object.phoneNumber,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.isActive != null) {
+      yield r'isActive';
+      yield serializers.serialize(
+        object.isActive,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.lockoutEnabled != null) {
+      yield r'lockoutEnabled';
+      yield serializers.serialize(
+        object.lockoutEnabled,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.roleNames != null) {
+      yield r'roleNames';
+      yield serializers.serialize(
+        object.roleNames,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
+    if (object.password != null) {
+      yield r'password';
+      yield serializers.serialize(
+        object.password,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.concurrencyStamp != null) {
+      yield r'concurrencyStamp';
+      yield serializers.serialize(
+        object.concurrencyStamp,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    IdentityUserUpdateDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required IdentityUserUpdateDtoBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'extraProperties':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+          ) as BuiltMap<String, JsonObject>;
+          result.extraProperties.replace(valueDes);
+          break;
+        case r'userName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.userName = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'surname':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.surname = valueDes;
+          break;
+        case r'email':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.email = valueDes;
+          break;
+        case r'phoneNumber':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.phoneNumber = valueDes;
+          break;
+        case r'isActive':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isActive = valueDes;
+          break;
+        case r'lockoutEnabled':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.lockoutEnabled = valueDes;
+          break;
+        case r'roleNames':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.roleNames.replace(valueDes);
+          break;
+        case r'password':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.password = valueDes;
+          break;
+        case r'concurrencyStamp':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.concurrencyStamp = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  IdentityUserUpdateDto deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = IdentityUserUpdateDtoBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

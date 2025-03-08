@@ -3,116 +3,178 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'create_or_update_app_sdk_dto.g.dart';
 
+/// CreateOrUpdateAppSdkDto
+///
+/// Properties:
+/// * [name] 
+/// * [description] 
+/// * [privacy] 
+/// * [privacyUrl] 
+/// * [homePage] 
+@BuiltValue()
+abstract class CreateOrUpdateAppSdkDto implements Built<CreateOrUpdateAppSdkDto, CreateOrUpdateAppSdkDtoBuilder> {
+  @BuiltValueField(wireName: r'name')
+  String? get name;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class CreateOrUpdateAppSdkDto {
-  /// Returns a new [CreateOrUpdateAppSdkDto] instance.
-  CreateOrUpdateAppSdkDto({
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
-     this.name,
+  @BuiltValueField(wireName: r'privacy')
+  String? get privacy;
 
-     this.description,
+  @BuiltValueField(wireName: r'privacyUrl')
+  String? get privacyUrl;
 
-     this.privacy,
+  @BuiltValueField(wireName: r'homePage')
+  String? get homePage;
 
-     this.privacyUrl,
+  CreateOrUpdateAppSdkDto._();
 
-     this.homePage,
-  });
+  factory CreateOrUpdateAppSdkDto([void updates(CreateOrUpdateAppSdkDtoBuilder b)]) = _$CreateOrUpdateAppSdkDto;
 
-  @JsonKey(
-    
-    name: r'name',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(CreateOrUpdateAppSdkDtoBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<CreateOrUpdateAppSdkDto> get serializer => _$CreateOrUpdateAppSdkDtoSerializer();
+}
 
-  String? name;
-
-
-
-  @JsonKey(
-    
-    name: r'description',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? description;
-
-
-
-  @JsonKey(
-    
-    name: r'privacy',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? privacy;
-
-
-
-  @JsonKey(
-    
-    name: r'privacyUrl',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? privacyUrl;
-
-
-
-  @JsonKey(
-    
-    name: r'homePage',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? homePage;
-
-
+class _$CreateOrUpdateAppSdkDtoSerializer implements PrimitiveSerializer<CreateOrUpdateAppSdkDto> {
+  @override
+  final Iterable<Type> types = const [CreateOrUpdateAppSdkDto, _$CreateOrUpdateAppSdkDto];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is CreateOrUpdateAppSdkDto &&
-     other.name == name &&
-     other.description == description &&
-     other.privacy == privacy &&
-     other.privacyUrl == privacyUrl &&
-     other.homePage == homePage;
+  final String wireName = r'CreateOrUpdateAppSdkDto';
 
-  @override
-  int get hashCode =>
-    name.hashCode +
-    description.hashCode +
-    privacy.hashCode +
-    privacyUrl.hashCode +
-    homePage.hashCode;
-
-  factory CreateOrUpdateAppSdkDto.fromJson(Map<String, dynamic> json) => _$CreateOrUpdateAppSdkDtoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$CreateOrUpdateAppSdkDtoToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    CreateOrUpdateAppSdkDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.name != null) {
+      yield r'name';
+      yield serializers.serialize(
+        object.name,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.privacy != null) {
+      yield r'privacy';
+      yield serializers.serialize(
+        object.privacy,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.privacyUrl != null) {
+      yield r'privacyUrl';
+      yield serializers.serialize(
+        object.privacyUrl,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.homePage != null) {
+      yield r'homePage';
+      yield serializers.serialize(
+        object.homePage,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    CreateOrUpdateAppSdkDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required CreateOrUpdateAppSdkDtoBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
+          break;
+        case r'privacy':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.privacy = valueDes;
+          break;
+        case r'privacyUrl':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.privacyUrl = valueDes;
+          break;
+        case r'homePage':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.homePage = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  CreateOrUpdateAppSdkDto deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = CreateOrUpdateAppSdkDtoBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

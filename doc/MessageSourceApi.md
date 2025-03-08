@@ -33,7 +33,7 @@ final CreateUpdateMessageSourceDto body = ; // CreateUpdateMessageSourceDto |
 try {
     final response = api.create(body);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling MessageSourceApi->create: $e\n');
 }
 ```
@@ -75,7 +75,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 
 try {
     api.delete(id);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling MessageSourceApi->delete: $e\n');
 }
 ```
@@ -118,7 +118,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getById(id);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling MessageSourceApi->getById: $e\n');
 }
 ```
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getPublishedList**
-> List<MessageSourceDto> getPublishedList(categoryId)
+> BuiltList<MessageSourceDto> getPublishedList(categoryId)
 
 
 
@@ -161,7 +161,7 @@ final String categoryId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getPublishedList(categoryId);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling MessageSourceApi->getPublishedList: $e\n');
 }
 ```
@@ -174,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;MessageSourceDto&gt;**](MessageSourceDto.md)
+[**BuiltList&lt;MessageSourceDto&gt;**](MessageSourceDto.md)
 
 ### Authorization
 
@@ -205,7 +205,7 @@ final CreateUpdateMessageSourceDto body = ; // CreateUpdateMessageSourceDto |
 try {
     final response = api.update(id, body);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling MessageSourceApi->update: $e\n');
 }
 ```

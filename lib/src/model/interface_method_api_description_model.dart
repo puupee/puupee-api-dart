@@ -3,86 +3,145 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
 import 'package:puupee_api_client/src/model/return_value_api_description_model.dart';
 import 'package:puupee_api_client/src/model/method_parameter_api_description_model.dart';
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'interface_method_api_description_model.g.dart';
 
+/// InterfaceMethodApiDescriptionModel
+///
+/// Properties:
+/// * [name] 
+/// * [parametersOnMethod] 
+/// * [returnValue] 
+@BuiltValue()
+abstract class InterfaceMethodApiDescriptionModel implements Built<InterfaceMethodApiDescriptionModel, InterfaceMethodApiDescriptionModelBuilder> {
+  @BuiltValueField(wireName: r'name')
+  String? get name;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class InterfaceMethodApiDescriptionModel {
-  /// Returns a new [InterfaceMethodApiDescriptionModel] instance.
-  InterfaceMethodApiDescriptionModel({
+  @BuiltValueField(wireName: r'parametersOnMethod')
+  BuiltList<MethodParameterApiDescriptionModel>? get parametersOnMethod;
 
-     this.name,
+  @BuiltValueField(wireName: r'returnValue')
+  ReturnValueApiDescriptionModel? get returnValue;
 
-     this.parametersOnMethod,
+  InterfaceMethodApiDescriptionModel._();
 
-     this.returnValue,
-  });
+  factory InterfaceMethodApiDescriptionModel([void updates(InterfaceMethodApiDescriptionModelBuilder b)]) = _$InterfaceMethodApiDescriptionModel;
 
-  @JsonKey(
-    
-    name: r'name',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(InterfaceMethodApiDescriptionModelBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<InterfaceMethodApiDescriptionModel> get serializer => _$InterfaceMethodApiDescriptionModelSerializer();
+}
 
-  String? name;
-
-
-
-  @JsonKey(
-    
-    name: r'parametersOnMethod',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  List<MethodParameterApiDescriptionModel>? parametersOnMethod;
-
-
-
-  @JsonKey(
-    
-    name: r'returnValue',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  ReturnValueApiDescriptionModel? returnValue;
-
-
+class _$InterfaceMethodApiDescriptionModelSerializer implements PrimitiveSerializer<InterfaceMethodApiDescriptionModel> {
+  @override
+  final Iterable<Type> types = const [InterfaceMethodApiDescriptionModel, _$InterfaceMethodApiDescriptionModel];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is InterfaceMethodApiDescriptionModel &&
-     other.name == name &&
-     other.parametersOnMethod == parametersOnMethod &&
-     other.returnValue == returnValue;
+  final String wireName = r'InterfaceMethodApiDescriptionModel';
 
-  @override
-  int get hashCode =>
-    name.hashCode +
-    parametersOnMethod.hashCode +
-    returnValue.hashCode;
-
-  factory InterfaceMethodApiDescriptionModel.fromJson(Map<String, dynamic> json) => _$InterfaceMethodApiDescriptionModelFromJson(json);
-
-  Map<String, dynamic> toJson() => _$InterfaceMethodApiDescriptionModelToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    InterfaceMethodApiDescriptionModel object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.name != null) {
+      yield r'name';
+      yield serializers.serialize(
+        object.name,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.parametersOnMethod != null) {
+      yield r'parametersOnMethod';
+      yield serializers.serialize(
+        object.parametersOnMethod,
+        specifiedType: const FullType(BuiltList, [FullType(MethodParameterApiDescriptionModel)]),
+      );
+    }
+    if (object.returnValue != null) {
+      yield r'returnValue';
+      yield serializers.serialize(
+        object.returnValue,
+        specifiedType: const FullType(ReturnValueApiDescriptionModel),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    InterfaceMethodApiDescriptionModel object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required InterfaceMethodApiDescriptionModelBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'parametersOnMethod':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(MethodParameterApiDescriptionModel)]),
+          ) as BuiltList<MethodParameterApiDescriptionModel>;
+          result.parametersOnMethod.replace(valueDes);
+          break;
+        case r'returnValue':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ReturnValueApiDescriptionModel),
+          ) as ReturnValueApiDescriptionModel;
+          result.returnValue.replace(valueDes);
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  InterfaceMethodApiDescriptionModel deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = InterfaceMethodApiDescriptionModelBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

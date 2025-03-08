@@ -33,7 +33,7 @@ final BindDeviceDto body = ; // BindDeviceDto |
 
 try {
     api.bind(body);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling DeviceApi->bind: $e\n');
 }
 ```
@@ -76,7 +76,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getById(id);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling DeviceApi->getById: $e\n');
 }
 ```
@@ -119,7 +119,7 @@ final String token = token_example; // String |
 try {
     final response = api.getByToken(token);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling DeviceApi->getByToken: $e\n');
 }
 ```
@@ -164,7 +164,7 @@ final int maxResultCount = 56; // int |
 try {
     final response = api.getList(sorting, skipCount, maxResultCount);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling DeviceApi->getList: $e\n');
 }
 ```
@@ -208,7 +208,7 @@ final RefreshDeviceStatusDto body = ; // RefreshDeviceStatusDto |
 
 try {
     api.refresh(body);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling DeviceApi->refresh: $e\n');
 }
 ```
@@ -250,7 +250,7 @@ final String token = token_example; // String |
 
 try {
     api.remove(token);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling DeviceApi->remove: $e\n');
 }
 ```

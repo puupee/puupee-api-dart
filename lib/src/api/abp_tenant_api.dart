@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-// ignore: unused_import
-import 'dart:convert';
-import 'package:puupee_api_client/src/deserialize.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/find_tenant_result_dto.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 
@@ -16,7 +16,9 @@ class AbpTenantApi {
 
   final Dio _dio;
 
-  const AbpTenantApi(this._dio);
+  final Serializers _serializers;
+
+  const AbpTenantApi(this._dio, this._serializers);
 
   /// findTenantById
   /// 
@@ -31,7 +33,7 @@ class AbpTenantApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [FindTenantResultDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<FindTenantResultDto>> findTenantById({ 
     required String id,
     CancelToken? cancelToken,
@@ -41,7 +43,7 @@ class AbpTenantApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/abp/multi-tenancy/tenants/by-id/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/abp/multi-tenancy/tenants/by-id/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -67,15 +69,20 @@ class AbpTenantApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    FindTenantResultDto _responseData;
+    FindTenantResultDto? _responseData;
 
     try {
-_responseData = deserialize<FindTenantResultDto, FindTenantResultDto>(_response.data!, 'FindTenantResultDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(FindTenantResultDto),
+      ) as FindTenantResultDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -106,7 +113,7 @@ _responseData = deserialize<FindTenantResultDto, FindTenantResultDto>(_response.
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [FindTenantResultDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<FindTenantResultDto>> findTenantByName({ 
     required String name,
     CancelToken? cancelToken,
@@ -116,7 +123,7 @@ _responseData = deserialize<FindTenantResultDto, FindTenantResultDto>(_response.
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/abp/multi-tenancy/tenants/by-name/{name}'.replaceAll('{' r'name' '}', name.toString());
+    final _path = r'/api/abp/multi-tenancy/tenants/by-name/{name}'.replaceAll('{' r'name' '}', encodeQueryParameter(_serializers, name, const FullType(String)).toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -142,15 +149,20 @@ _responseData = deserialize<FindTenantResultDto, FindTenantResultDto>(_response.
       onReceiveProgress: onReceiveProgress,
     );
 
-    FindTenantResultDto _responseData;
+    FindTenantResultDto? _responseData;
 
     try {
-_responseData = deserialize<FindTenantResultDto, FindTenantResultDto>(_response.data!, 'FindTenantResultDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(FindTenantResultDto),
+      ) as FindTenantResultDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

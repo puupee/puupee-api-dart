@@ -3,68 +3,124 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'change_password_dto.g.dart';
 
+/// ChangePasswordDto
+///
+/// Properties:
+/// * [code] 
+/// * [password] 
+@BuiltValue()
+abstract class ChangePasswordDto implements Built<ChangePasswordDto, ChangePasswordDtoBuilder> {
+  @BuiltValueField(wireName: r'code')
+  String? get code;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class ChangePasswordDto {
-  /// Returns a new [ChangePasswordDto] instance.
-  ChangePasswordDto({
+  @BuiltValueField(wireName: r'password')
+  String? get password;
 
-     this.code,
+  ChangePasswordDto._();
 
-     this.password,
-  });
+  factory ChangePasswordDto([void updates(ChangePasswordDtoBuilder b)]) = _$ChangePasswordDto;
 
-  @JsonKey(
-    
-    name: r'code',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ChangePasswordDtoBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<ChangePasswordDto> get serializer => _$ChangePasswordDtoSerializer();
+}
 
-  String? code;
-
-
-
-  @JsonKey(
-    
-    name: r'password',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? password;
-
-
+class _$ChangePasswordDtoSerializer implements PrimitiveSerializer<ChangePasswordDto> {
+  @override
+  final Iterable<Type> types = const [ChangePasswordDto, _$ChangePasswordDto];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is ChangePasswordDto &&
-     other.code == code &&
-     other.password == password;
+  final String wireName = r'ChangePasswordDto';
 
-  @override
-  int get hashCode =>
-    code.hashCode +
-    password.hashCode;
-
-  factory ChangePasswordDto.fromJson(Map<String, dynamic> json) => _$ChangePasswordDtoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$ChangePasswordDtoToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    ChangePasswordDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.code != null) {
+      yield r'code';
+      yield serializers.serialize(
+        object.code,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.password != null) {
+      yield r'password';
+      yield serializers.serialize(
+        object.password,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    ChangePasswordDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required ChangePasswordDtoBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'code':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.code = valueDes;
+          break;
+        case r'password':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.password = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  ChangePasswordDto deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = ChangePasswordDtoBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

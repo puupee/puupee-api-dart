@@ -8,7 +8,7 @@ import 'package:puupee_api_client/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**extraProperties** | **Map&lt;String, Object&gt;** |  | [optional] 
+**extraProperties** | [**BuiltMap&lt;String, JsonObject&gt;**](JsonObject.md) |  | [optional] 
 **userName** | **String** |  | 
 **name** | **String** |  | [optional] 
 **surname** | **String** |  | [optional] 
@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **phoneNumber** | **String** |  | [optional] 
 **isActive** | **bool** |  | [optional] 
 **lockoutEnabled** | **bool** |  | [optional] 
-**roleNames** | **List&lt;String&gt;** |  | [optional] 
+**roleNames** | **BuiltList&lt;String&gt;** |  | [optional] 
 **password** | **String** |  | [optional] 
 **concurrencyStamp** | **String** |  | [optional] 
 

@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-// ignore: unused_import
-import 'dart:convert';
-import 'package:puupee_api_client/src/deserialize.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/api_key_create_dto.dart';
 import 'package:puupee_api_client/src/model/api_key_dto.dart';
 import 'package:puupee_api_client/src/model/api_key_dto_paged_result_dto.dart';
@@ -19,7 +19,9 @@ class ApiKeysApi {
 
   final Dio _dio;
 
-  const ApiKeysApi(this._dio);
+  final Serializers _serializers;
+
+  const ApiKeysApi(this._dio, this._serializers);
 
   /// create
   /// 
@@ -34,7 +36,7 @@ class ApiKeysApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [ApiKeyDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<ApiKeyDto>> create({ 
     ApiKeyCreateDto? body,
     CancelToken? cancelToken,
@@ -66,14 +68,16 @@ class ApiKeysApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+      const _type = FullType(ApiKeyCreateDto);
+      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
+
     } catch(error, stackTrace) {
-      throw DioError(
+      throw DioException(
          requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -88,15 +92,20 @@ _bodyData=jsonEncode(body);
       onReceiveProgress: onReceiveProgress,
     );
 
-    ApiKeyDto _responseData;
+    ApiKeyDto? _responseData;
 
     try {
-_responseData = deserialize<ApiKeyDto, ApiKeyDto>(_response.data!, 'ApiKeyDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(ApiKeyDto),
+      ) as ApiKeyDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -127,7 +136,7 @@ _responseData = deserialize<ApiKeyDto, ApiKeyDto>(_response.data!, 'ApiKeyDto', 
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future]
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> delete({ 
     required String id,
     CancelToken? cancelToken,
@@ -137,7 +146,7 @@ _responseData = deserialize<ApiKeyDto, ApiKeyDto>(_response.data!, 'ApiKeyDto', 
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/api-keys/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/api-keys/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -179,7 +188,7 @@ _responseData = deserialize<ApiKeyDto, ApiKeyDto>(_response.data!, 'ApiKeyDto', 
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [ApiKeyDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<ApiKeyDto>> getById({ 
     required String id,
     CancelToken? cancelToken,
@@ -189,7 +198,7 @@ _responseData = deserialize<ApiKeyDto, ApiKeyDto>(_response.data!, 'ApiKeyDto', 
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/api-keys/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/api-keys/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -215,15 +224,20 @@ _responseData = deserialize<ApiKeyDto, ApiKeyDto>(_response.data!, 'ApiKeyDto', 
       onReceiveProgress: onReceiveProgress,
     );
 
-    ApiKeyDto _responseData;
+    ApiKeyDto? _responseData;
 
     try {
-_responseData = deserialize<ApiKeyDto, ApiKeyDto>(_response.data!, 'ApiKeyDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(ApiKeyDto),
+      ) as ApiKeyDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -256,7 +270,7 @@ _responseData = deserialize<ApiKeyDto, ApiKeyDto>(_response.data!, 'ApiKeyDto', 
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [ApiKeyDtoPagedResultDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<ApiKeyDtoPagedResultDto>> getList({ 
     String? sorting,
     int? skipCount,
@@ -287,9 +301,9 @@ _responseData = deserialize<ApiKeyDto, ApiKeyDto>(_response.data!, 'ApiKeyDto', 
     );
 
     final _queryParameters = <String, dynamic>{
-      if (sorting != null) r'Sorting': sorting,
-      if (skipCount != null) r'SkipCount': skipCount,
-      if (maxResultCount != null) r'MaxResultCount': maxResultCount,
+      if (sorting != null) r'Sorting': encodeQueryParameter(_serializers, sorting, const FullType(String)),
+      if (skipCount != null) r'SkipCount': encodeQueryParameter(_serializers, skipCount, const FullType(int)),
+      if (maxResultCount != null) r'MaxResultCount': encodeQueryParameter(_serializers, maxResultCount, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(
@@ -301,15 +315,20 @@ _responseData = deserialize<ApiKeyDto, ApiKeyDto>(_response.data!, 'ApiKeyDto', 
       onReceiveProgress: onReceiveProgress,
     );
 
-    ApiKeyDtoPagedResultDto _responseData;
+    ApiKeyDtoPagedResultDto? _responseData;
 
     try {
-_responseData = deserialize<ApiKeyDtoPagedResultDto, ApiKeyDtoPagedResultDto>(_response.data!, 'ApiKeyDtoPagedResultDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(ApiKeyDtoPagedResultDto),
+      ) as ApiKeyDtoPagedResultDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -341,7 +360,7 @@ _responseData = deserialize<ApiKeyDtoPagedResultDto, ApiKeyDtoPagedResultDto>(_r
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [ApiKeyDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<ApiKeyDto>> update({ 
     required String id,
     ApiKeyUpdateDto? body,
@@ -352,7 +371,7 @@ _responseData = deserialize<ApiKeyDtoPagedResultDto, ApiKeyDtoPagedResultDto>(_r
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/api-keys/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/api-keys/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -374,14 +393,16 @@ _responseData = deserialize<ApiKeyDtoPagedResultDto, ApiKeyDtoPagedResultDto>(_r
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+      const _type = FullType(ApiKeyUpdateDto);
+      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
+
     } catch(error, stackTrace) {
-      throw DioError(
+      throw DioException(
          requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -396,15 +417,20 @@ _bodyData=jsonEncode(body);
       onReceiveProgress: onReceiveProgress,
     );
 
-    ApiKeyDto _responseData;
+    ApiKeyDto? _responseData;
 
     try {
-_responseData = deserialize<ApiKeyDto, ApiKeyDto>(_response.data!, 'ApiKeyDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(ApiKeyDto),
+      ) as ApiKeyDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

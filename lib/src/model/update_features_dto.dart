@@ -3,53 +3,108 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
 import 'package:puupee_api_client/src/model/update_feature_dto.dart';
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'update_features_dto.g.dart';
 
+/// UpdateFeaturesDto
+///
+/// Properties:
+/// * [features] 
+@BuiltValue()
+abstract class UpdateFeaturesDto implements Built<UpdateFeaturesDto, UpdateFeaturesDtoBuilder> {
+  @BuiltValueField(wireName: r'features')
+  BuiltList<UpdateFeatureDto>? get features;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class UpdateFeaturesDto {
-  /// Returns a new [UpdateFeaturesDto] instance.
-  UpdateFeaturesDto({
+  UpdateFeaturesDto._();
 
-     this.features,
-  });
+  factory UpdateFeaturesDto([void updates(UpdateFeaturesDtoBuilder b)]) = _$UpdateFeaturesDto;
 
-  @JsonKey(
-    
-    name: r'features',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(UpdateFeaturesDtoBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<UpdateFeaturesDto> get serializer => _$UpdateFeaturesDtoSerializer();
+}
 
-  List<UpdateFeatureDto>? features;
-
-
+class _$UpdateFeaturesDtoSerializer implements PrimitiveSerializer<UpdateFeaturesDto> {
+  @override
+  final Iterable<Type> types = const [UpdateFeaturesDto, _$UpdateFeaturesDto];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is UpdateFeaturesDto &&
-     other.features == features;
+  final String wireName = r'UpdateFeaturesDto';
 
-  @override
-  int get hashCode =>
-    features.hashCode;
-
-  factory UpdateFeaturesDto.fromJson(Map<String, dynamic> json) => _$UpdateFeaturesDtoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$UpdateFeaturesDtoToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    UpdateFeaturesDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.features != null) {
+      yield r'features';
+      yield serializers.serialize(
+        object.features,
+        specifiedType: const FullType(BuiltList, [FullType(UpdateFeatureDto)]),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    UpdateFeaturesDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required UpdateFeaturesDtoBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'features':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(UpdateFeatureDto)]),
+          ) as BuiltList<UpdateFeatureDto>;
+          result.features.replace(valueDes);
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  UpdateFeaturesDto deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = UpdateFeaturesDtoBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

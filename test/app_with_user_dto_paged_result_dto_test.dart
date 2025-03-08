@@ -3,11 +3,11 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for AppWithUserDtoPagedResultDto
 void main() {
-  final AppWithUserDtoPagedResultDto? instance = /* AppWithUserDtoPagedResultDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = AppWithUserDtoPagedResultDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(AppWithUserDtoPagedResultDto, () {
-    // List<AppWithUserDto> items
+    // BuiltList<AppWithUserDto> items
     test('to test the property `items`', () async {
       // TODO
     });

@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for AppleNotificaionDto
 void main() {
-  final AppleNotificaionDto? instance = /* AppleNotificaionDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = AppleNotificaionDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(AppleNotificaionDto, () {
     // String id

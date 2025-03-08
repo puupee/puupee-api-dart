@@ -9,7 +9,7 @@ void main() {
   group(NotificationApi, () {
     // Bark 推送，兼容 Bark 推送协议  TODO: 验证 API KEY 功能, 添加[个人访问令牌]功能
     //
-    //Future bark(String apiKey, String message, { int automaticallyCopy, String copy, String url, String isArchive, String group, String icon, Object level }) async
+    //Future bark(String apiKey, String message, { int automaticallyCopy, String copy, String url, String isArchive, String group, String icon, JsonObject level }) async
     test('test bark', () async {
       // TODO
     });

@@ -9,7 +9,7 @@ import 'package:puupee_api_client/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **id** | **String** |  | [optional] 
-**extraProperties** | **Map&lt;String, Object&gt;** |  | [optional] 
+**extraProperties** | [**BuiltMap&lt;String, JsonObject&gt;**](JsonObject.md) |  | [optional] 
 **concurrencyStamp** | **String** |  | [optional] 
 **creationTime** | [**DateTime**](DateTime.md) |  | [optional] 
 **creatorId** | **String** |  | [optional] 
@@ -39,11 +39,11 @@ Name | Type | Description | Notes
 **shouldChangePasswordOnNextLogin** | **bool** |  | [optional] 
 **entityVersion** | **int** |  | [optional] 
 **lastPasswordChangeTime** | [**DateTime**](DateTime.md) |  | [optional] 
-**roles** | [**List&lt;IdentityUserRole&gt;**](IdentityUserRole.md) |  | [optional] 
-**claims** | [**List&lt;IdentityUserClaim&gt;**](IdentityUserClaim.md) |  | [optional] 
-**logins** | [**List&lt;IdentityUserLogin&gt;**](IdentityUserLogin.md) |  | [optional] 
-**tokens** | [**List&lt;IdentityUserToken&gt;**](IdentityUserToken.md) |  | [optional] 
-**organizationUnits** | [**List&lt;IdentityUserOrganizationUnit&gt;**](IdentityUserOrganizationUnit.md) |  | [optional] 
+**roles** | [**BuiltList&lt;IdentityUserRole&gt;**](IdentityUserRole.md) |  | [optional] 
+**claims** | [**BuiltList&lt;IdentityUserClaim&gt;**](IdentityUserClaim.md) |  | [optional] 
+**logins** | [**BuiltList&lt;IdentityUserLogin&gt;**](IdentityUserLogin.md) |  | [optional] 
+**tokens** | [**BuiltList&lt;IdentityUserToken&gt;**](IdentityUserToken.md) |  | [optional] 
+**organizationUnits** | [**BuiltList&lt;IdentityUserOrganizationUnit&gt;**](IdentityUserOrganizationUnit.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for InApp
 void main() {
-  final InApp? instance = /* InApp(...) */ null;
-  // TODO add properties to the entity
+  final instance = InAppBuilder();
+  // TODO add properties to the builder and call build()
 
   group(InApp, () {
     // String quantity

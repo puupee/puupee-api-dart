@@ -18,8 +18,8 @@ Name | Type | Description | Notes
 **deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
 **appId** | **String** |  | [optional] 
 **appName** | **String** |  | [optional] 
-**args** | **Object** |  | [optional] 
-**envs** | **Object** |  | [optional] 
+**args** | [**JsonObject**](.md) |  | [optional] 
+**envs** | [**JsonObject**](.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

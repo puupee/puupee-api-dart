@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-// ignore: unused_import
-import 'dart:convert';
-import 'package:puupee_api_client/src/deserialize.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 import 'package:puupee_api_client/src/model/storage_object_or_credentials_dto.dart';
 
@@ -16,7 +16,9 @@ class StorageObjectApi {
 
   final Dio _dio;
 
-  const StorageObjectApi(this._dio);
+  final Serializers _serializers;
+
+  const StorageObjectApi(this._dio, this._serializers);
 
   /// getFileOrCredentials
   /// 
@@ -31,7 +33,7 @@ class StorageObjectApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [StorageObjectOrCredentialsDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<StorageObjectOrCredentialsDto>> getFileOrCredentials({ 
     String? rapidCode,
     CancelToken? cancelToken,
@@ -60,7 +62,7 @@ class StorageObjectApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (rapidCode != null) r'rapidCode': rapidCode,
+      if (rapidCode != null) r'rapidCode': encodeQueryParameter(_serializers, rapidCode, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -72,15 +74,20 @@ class StorageObjectApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    StorageObjectOrCredentialsDto _responseData;
+    StorageObjectOrCredentialsDto? _responseData;
 
     try {
-_responseData = deserialize<StorageObjectOrCredentialsDto, StorageObjectOrCredentialsDto>(_response.data!, 'StorageObjectOrCredentialsDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(StorageObjectOrCredentialsDto),
+      ) as StorageObjectOrCredentialsDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -111,7 +118,7 @@ _responseData = deserialize<StorageObjectOrCredentialsDto, StorageObjectOrCreden
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [String] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<String>> preSignUrl({ 
     String? key,
     CancelToken? cancelToken,
@@ -140,7 +147,7 @@ _responseData = deserialize<StorageObjectOrCredentialsDto, StorageObjectOrCreden
     );
 
     final _queryParameters = <String, dynamic>{
-      if (key != null) r'key': key,
+      if (key != null) r'key': encodeQueryParameter(_serializers, key, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -152,15 +159,17 @@ _responseData = deserialize<StorageObjectOrCredentialsDto, StorageObjectOrCreden
       onReceiveProgress: onReceiveProgress,
     );
 
-    String _responseData;
+    String? _responseData;
 
     try {
-_responseData = deserialize<String, String>(_response.data!, 'String', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : rawResponse as String;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

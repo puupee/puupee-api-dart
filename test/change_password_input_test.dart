@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for ChangePasswordInput
 void main() {
-  final ChangePasswordInput? instance = /* ChangePasswordInput(...) */ null;
-  // TODO add properties to the entity
+  final instance = ChangePasswordInputBuilder();
+  // TODO add properties to the builder and call build()
 
   group(ChangePasswordInput, () {
     // String currentPassword

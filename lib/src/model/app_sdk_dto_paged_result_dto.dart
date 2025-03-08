@@ -4,68 +4,125 @@
 
 // ignore_for_file: unused_element
 import 'package:puupee_api_client/src/model/app_sdk_dto.dart';
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'app_sdk_dto_paged_result_dto.g.dart';
 
+/// AppSdkDtoPagedResultDto
+///
+/// Properties:
+/// * [items] 
+/// * [totalCount] 
+@BuiltValue()
+abstract class AppSdkDtoPagedResultDto implements Built<AppSdkDtoPagedResultDto, AppSdkDtoPagedResultDtoBuilder> {
+  @BuiltValueField(wireName: r'items')
+  BuiltList<AppSdkDto>? get items;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class AppSdkDtoPagedResultDto {
-  /// Returns a new [AppSdkDtoPagedResultDto] instance.
-  AppSdkDtoPagedResultDto({
+  @BuiltValueField(wireName: r'totalCount')
+  int? get totalCount;
 
-     this.items,
+  AppSdkDtoPagedResultDto._();
 
-     this.totalCount,
-  });
+  factory AppSdkDtoPagedResultDto([void updates(AppSdkDtoPagedResultDtoBuilder b)]) = _$AppSdkDtoPagedResultDto;
 
-  @JsonKey(
-    
-    name: r'items',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(AppSdkDtoPagedResultDtoBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<AppSdkDtoPagedResultDto> get serializer => _$AppSdkDtoPagedResultDtoSerializer();
+}
 
-  List<AppSdkDto>? items;
-
-
-
-  @JsonKey(
-    
-    name: r'totalCount',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  int? totalCount;
-
-
+class _$AppSdkDtoPagedResultDtoSerializer implements PrimitiveSerializer<AppSdkDtoPagedResultDto> {
+  @override
+  final Iterable<Type> types = const [AppSdkDtoPagedResultDto, _$AppSdkDtoPagedResultDto];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is AppSdkDtoPagedResultDto &&
-     other.items == items &&
-     other.totalCount == totalCount;
+  final String wireName = r'AppSdkDtoPagedResultDto';
 
-  @override
-  int get hashCode =>
-    items.hashCode +
-    totalCount.hashCode;
-
-  factory AppSdkDtoPagedResultDto.fromJson(Map<String, dynamic> json) => _$AppSdkDtoPagedResultDtoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$AppSdkDtoPagedResultDtoToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    AppSdkDtoPagedResultDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.items != null) {
+      yield r'items';
+      yield serializers.serialize(
+        object.items,
+        specifiedType: const FullType(BuiltList, [FullType(AppSdkDto)]),
+      );
+    }
+    if (object.totalCount != null) {
+      yield r'totalCount';
+      yield serializers.serialize(
+        object.totalCount,
+        specifiedType: const FullType(int),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    AppSdkDtoPagedResultDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required AppSdkDtoPagedResultDtoBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'items':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(AppSdkDto)]),
+          ) as BuiltList<AppSdkDto>;
+          result.items.replace(valueDes);
+          break;
+        case r'totalCount':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.totalCount = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  AppSdkDtoPagedResultDto deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = AppSdkDtoPagedResultDtoBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

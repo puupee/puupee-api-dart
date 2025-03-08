@@ -30,7 +30,7 @@ final bool onlyDynamics = true; // bool |
 try {
     final response = api.callGet(cultureName, onlyDynamics);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AbpApplicationLocalizationApi->callGet: $e\n');
 }
 ```

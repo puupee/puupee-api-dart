@@ -3,196 +3,264 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'identity_user_create_dto.g.dart';
 
+/// IdentityUserCreateDto
+///
+/// Properties:
+/// * [extraProperties] 
+/// * [userName] 
+/// * [name] 
+/// * [surname] 
+/// * [email] 
+/// * [phoneNumber] 
+/// * [isActive] 
+/// * [lockoutEnabled] 
+/// * [roleNames] 
+/// * [password] 
+@BuiltValue()
+abstract class IdentityUserCreateDto implements Built<IdentityUserCreateDto, IdentityUserCreateDtoBuilder> {
+  @BuiltValueField(wireName: r'extraProperties')
+  BuiltMap<String, JsonObject>? get extraProperties;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class IdentityUserCreateDto {
-  /// Returns a new [IdentityUserCreateDto] instance.
-  IdentityUserCreateDto({
+  @BuiltValueField(wireName: r'userName')
+  String get userName;
 
-     this.extraProperties,
+  @BuiltValueField(wireName: r'name')
+  String? get name;
 
-    required  this.userName,
+  @BuiltValueField(wireName: r'surname')
+  String? get surname;
 
-     this.name,
+  @BuiltValueField(wireName: r'email')
+  String get email;
 
-     this.surname,
+  @BuiltValueField(wireName: r'phoneNumber')
+  String? get phoneNumber;
 
-    required  this.email,
+  @BuiltValueField(wireName: r'isActive')
+  bool? get isActive;
 
-     this.phoneNumber,
+  @BuiltValueField(wireName: r'lockoutEnabled')
+  bool? get lockoutEnabled;
 
-     this.isActive,
+  @BuiltValueField(wireName: r'roleNames')
+  BuiltList<String>? get roleNames;
 
-     this.lockoutEnabled,
+  @BuiltValueField(wireName: r'password')
+  String get password;
 
-     this.roleNames,
+  IdentityUserCreateDto._();
 
-    required  this.password,
-  });
+  factory IdentityUserCreateDto([void updates(IdentityUserCreateDtoBuilder b)]) = _$IdentityUserCreateDto;
 
-  @JsonKey(
-    
-    name: r'extraProperties',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(IdentityUserCreateDtoBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<IdentityUserCreateDto> get serializer => _$IdentityUserCreateDtoSerializer();
+}
 
-  Map<String, Object>? extraProperties;
-
-
-
-  @JsonKey(
-    
-    name: r'userName',
-    required: true,
-    includeIfNull: false
-  )
-
-
-  String userName;
-
-
-
-  @JsonKey(
-    
-    name: r'name',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? name;
-
-
-
-  @JsonKey(
-    
-    name: r'surname',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? surname;
-
-
-
-  @JsonKey(
-    
-    name: r'email',
-    required: true,
-    includeIfNull: false
-  )
-
-
-  String email;
-
-
-
-  @JsonKey(
-    
-    name: r'phoneNumber',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? phoneNumber;
-
-
-
-  @JsonKey(
-    
-    name: r'isActive',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  bool? isActive;
-
-
-
-  @JsonKey(
-    
-    name: r'lockoutEnabled',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  bool? lockoutEnabled;
-
-
-
-  @JsonKey(
-    
-    name: r'roleNames',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  List<String>? roleNames;
-
-
-
-  @JsonKey(
-    
-    name: r'password',
-    required: true,
-    includeIfNull: false
-  )
-
-
-  String password;
-
-
+class _$IdentityUserCreateDtoSerializer implements PrimitiveSerializer<IdentityUserCreateDto> {
+  @override
+  final Iterable<Type> types = const [IdentityUserCreateDto, _$IdentityUserCreateDto];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is IdentityUserCreateDto &&
-     other.extraProperties == extraProperties &&
-     other.userName == userName &&
-     other.name == name &&
-     other.surname == surname &&
-     other.email == email &&
-     other.phoneNumber == phoneNumber &&
-     other.isActive == isActive &&
-     other.lockoutEnabled == lockoutEnabled &&
-     other.roleNames == roleNames &&
-     other.password == password;
+  final String wireName = r'IdentityUserCreateDto';
 
-  @override
-  int get hashCode =>
-    extraProperties.hashCode +
-    userName.hashCode +
-    name.hashCode +
-    surname.hashCode +
-    email.hashCode +
-    phoneNumber.hashCode +
-    isActive.hashCode +
-    lockoutEnabled.hashCode +
-    roleNames.hashCode +
-    password.hashCode;
-
-  factory IdentityUserCreateDto.fromJson(Map<String, dynamic> json) => _$IdentityUserCreateDtoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$IdentityUserCreateDtoToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    IdentityUserCreateDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.extraProperties != null) {
+      yield r'extraProperties';
+      yield serializers.serialize(
+        object.extraProperties,
+        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+      );
+    }
+    yield r'userName';
+    yield serializers.serialize(
+      object.userName,
+      specifiedType: const FullType(String),
+    );
+    if (object.name != null) {
+      yield r'name';
+      yield serializers.serialize(
+        object.name,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.surname != null) {
+      yield r'surname';
+      yield serializers.serialize(
+        object.surname,
+        specifiedType: const FullType(String),
+      );
+    }
+    yield r'email';
+    yield serializers.serialize(
+      object.email,
+      specifiedType: const FullType(String),
+    );
+    if (object.phoneNumber != null) {
+      yield r'phoneNumber';
+      yield serializers.serialize(
+        object.phoneNumber,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.isActive != null) {
+      yield r'isActive';
+      yield serializers.serialize(
+        object.isActive,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.lockoutEnabled != null) {
+      yield r'lockoutEnabled';
+      yield serializers.serialize(
+        object.lockoutEnabled,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.roleNames != null) {
+      yield r'roleNames';
+      yield serializers.serialize(
+        object.roleNames,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
+    yield r'password';
+    yield serializers.serialize(
+      object.password,
+      specifiedType: const FullType(String),
+    );
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    IdentityUserCreateDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required IdentityUserCreateDtoBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'extraProperties':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+          ) as BuiltMap<String, JsonObject>;
+          result.extraProperties.replace(valueDes);
+          break;
+        case r'userName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.userName = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'surname':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.surname = valueDes;
+          break;
+        case r'email':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.email = valueDes;
+          break;
+        case r'phoneNumber':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.phoneNumber = valueDes;
+          break;
+        case r'isActive':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isActive = valueDes;
+          break;
+        case r'lockoutEnabled':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.lockoutEnabled = valueDes;
+          break;
+        case r'roleNames':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.roleNames.replace(valueDes);
+          break;
+        case r'password':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.password = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  IdentityUserCreateDto deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = IdentityUserCreateDtoBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

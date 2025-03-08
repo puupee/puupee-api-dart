@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for AppRunRecordUpdateDto
 void main() {
-  final AppRunRecordUpdateDto? instance = /* AppRunRecordUpdateDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = AppRunRecordUpdateDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(AppRunRecordUpdateDto, () {
     // String id

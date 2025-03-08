@@ -8,7 +8,7 @@ import 'package:puupee_api_client/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**extraProperties** | **Map&lt;String, Object&gt;** |  | [optional] 
+**extraProperties** | [**BuiltMap&lt;String, JsonObject&gt;**](JsonObject.md) |  | [optional] 
 **id** | **String** |  | [optional] 
 **creationTime** | [**DateTime**](DateTime.md) |  | [optional] 
 **creatorId** | **String** |  | [optional] 

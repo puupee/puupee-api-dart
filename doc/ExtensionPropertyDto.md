@@ -13,9 +13,9 @@ Name | Type | Description | Notes
 **displayName** | [**LocalizableStringDto**](LocalizableStringDto.md) |  | [optional] 
 **api** | [**ExtensionPropertyApiDto**](ExtensionPropertyApiDto.md) |  | [optional] 
 **ui** | [**ExtensionPropertyUiDto**](ExtensionPropertyUiDto.md) |  | [optional] 
-**attributes** | [**List&lt;ExtensionPropertyAttributeDto&gt;**](ExtensionPropertyAttributeDto.md) |  | [optional] 
-**configuration** | **Map&lt;String, Object&gt;** |  | [optional] 
-**defaultValue** | **Object** |  | [optional] 
+**attributes** | [**BuiltList&lt;ExtensionPropertyAttributeDto&gt;**](ExtensionPropertyAttributeDto.md) |  | [optional] 
+**configuration** | [**BuiltMap&lt;String, JsonObject&gt;**](JsonObject.md) |  | [optional] 
+**defaultValue** | [**JsonObject**](.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

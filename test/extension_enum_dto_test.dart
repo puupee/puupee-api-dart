@@ -3,11 +3,11 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for ExtensionEnumDto
 void main() {
-  final ExtensionEnumDto? instance = /* ExtensionEnumDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = ExtensionEnumDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(ExtensionEnumDto, () {
-    // List<ExtensionEnumFieldDto> fields
+    // BuiltList<ExtensionEnumFieldDto> fields
     test('to test the property `fields`', () async {
       // TODO
     });

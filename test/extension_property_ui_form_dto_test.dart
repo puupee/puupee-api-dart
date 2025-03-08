@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for ExtensionPropertyUiFormDto
 void main() {
-  final ExtensionPropertyUiFormDto? instance = /* ExtensionPropertyUiFormDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = ExtensionPropertyUiFormDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(ExtensionPropertyUiFormDto, () {
     // bool isVisible

@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for ExtensionEnumFieldDto
 void main() {
-  final ExtensionEnumFieldDto? instance = /* ExtensionEnumFieldDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = ExtensionEnumFieldDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(ExtensionEnumFieldDto, () {
     // String name
@@ -12,7 +12,7 @@ void main() {
       // TODO
     });
 
-    // Object value
+    // JsonObject value
     test('to test the property `value`', () async {
       // TODO
     });

@@ -30,7 +30,7 @@ final String rapidCode = rapidCode_example; // String |
 try {
     final response = api.getFileOrCredentials(rapidCode);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling StorageObjectApi->getFileOrCredentials: $e\n');
 }
 ```
@@ -73,7 +73,7 @@ final String key = key_example; // String |
 try {
     final response = api.preSignUrl(key);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling StorageObjectApi->preSignUrl: $e\n');
 }
 ```

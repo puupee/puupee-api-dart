@@ -29,7 +29,7 @@ final bool includeLocalizationResources = true; // bool |
 try {
     final response = api.callGet(includeLocalizationResources);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AbpApplicationConfigurationApi->callGet: $e\n');
 }
 ```

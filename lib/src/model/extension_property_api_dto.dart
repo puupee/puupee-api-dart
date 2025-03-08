@@ -6,84 +6,142 @@
 import 'package:puupee_api_client/src/model/extension_property_api_update_dto.dart';
 import 'package:puupee_api_client/src/model/extension_property_api_get_dto.dart';
 import 'package:puupee_api_client/src/model/extension_property_api_create_dto.dart';
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'extension_property_api_dto.g.dart';
 
+/// ExtensionPropertyApiDto
+///
+/// Properties:
+/// * [onGet] 
+/// * [onCreate] 
+/// * [onUpdate] 
+@BuiltValue()
+abstract class ExtensionPropertyApiDto implements Built<ExtensionPropertyApiDto, ExtensionPropertyApiDtoBuilder> {
+  @BuiltValueField(wireName: r'onGet')
+  ExtensionPropertyApiGetDto? get onGet;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class ExtensionPropertyApiDto {
-  /// Returns a new [ExtensionPropertyApiDto] instance.
-  ExtensionPropertyApiDto({
+  @BuiltValueField(wireName: r'onCreate')
+  ExtensionPropertyApiCreateDto? get onCreate;
 
-     this.onGet,
+  @BuiltValueField(wireName: r'onUpdate')
+  ExtensionPropertyApiUpdateDto? get onUpdate;
 
-     this.onCreate,
+  ExtensionPropertyApiDto._();
 
-     this.onUpdate,
-  });
+  factory ExtensionPropertyApiDto([void updates(ExtensionPropertyApiDtoBuilder b)]) = _$ExtensionPropertyApiDto;
 
-  @JsonKey(
-    
-    name: r'onGet',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ExtensionPropertyApiDtoBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<ExtensionPropertyApiDto> get serializer => _$ExtensionPropertyApiDtoSerializer();
+}
 
-  ExtensionPropertyApiGetDto? onGet;
-
-
-
-  @JsonKey(
-    
-    name: r'onCreate',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  ExtensionPropertyApiCreateDto? onCreate;
-
-
-
-  @JsonKey(
-    
-    name: r'onUpdate',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  ExtensionPropertyApiUpdateDto? onUpdate;
-
-
+class _$ExtensionPropertyApiDtoSerializer implements PrimitiveSerializer<ExtensionPropertyApiDto> {
+  @override
+  final Iterable<Type> types = const [ExtensionPropertyApiDto, _$ExtensionPropertyApiDto];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is ExtensionPropertyApiDto &&
-     other.onGet == onGet &&
-     other.onCreate == onCreate &&
-     other.onUpdate == onUpdate;
+  final String wireName = r'ExtensionPropertyApiDto';
 
-  @override
-  int get hashCode =>
-    onGet.hashCode +
-    onCreate.hashCode +
-    onUpdate.hashCode;
-
-  factory ExtensionPropertyApiDto.fromJson(Map<String, dynamic> json) => _$ExtensionPropertyApiDtoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$ExtensionPropertyApiDtoToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    ExtensionPropertyApiDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.onGet != null) {
+      yield r'onGet';
+      yield serializers.serialize(
+        object.onGet,
+        specifiedType: const FullType(ExtensionPropertyApiGetDto),
+      );
+    }
+    if (object.onCreate != null) {
+      yield r'onCreate';
+      yield serializers.serialize(
+        object.onCreate,
+        specifiedType: const FullType(ExtensionPropertyApiCreateDto),
+      );
+    }
+    if (object.onUpdate != null) {
+      yield r'onUpdate';
+      yield serializers.serialize(
+        object.onUpdate,
+        specifiedType: const FullType(ExtensionPropertyApiUpdateDto),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    ExtensionPropertyApiDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required ExtensionPropertyApiDtoBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'onGet':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ExtensionPropertyApiGetDto),
+          ) as ExtensionPropertyApiGetDto;
+          result.onGet.replace(valueDes);
+          break;
+        case r'onCreate':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ExtensionPropertyApiCreateDto),
+          ) as ExtensionPropertyApiCreateDto;
+          result.onCreate.replace(valueDes);
+          break;
+        case r'onUpdate':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(ExtensionPropertyApiUpdateDto),
+          ) as ExtensionPropertyApiUpdateDto;
+          result.onUpdate.replace(valueDes);
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  ExtensionPropertyApiDto deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = ExtensionPropertyApiDtoBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

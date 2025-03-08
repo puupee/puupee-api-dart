@@ -31,7 +31,7 @@ final AppleNotificaionDto body = ; // AppleNotificaionDto |
 
 try {
     api.appleNotifications(body);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling SubscriptionApi->appleNotifications: $e\n');
 }
 ```
@@ -74,7 +74,7 @@ final CreateOrGetSubscriptionOrderDto body = ; // CreateOrGetSubscriptionOrderDt
 try {
     final response = api.createOrder(body);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling SubscriptionApi->createOrder: $e\n');
 }
 ```
@@ -117,7 +117,7 @@ final String appId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getById(appId);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling SubscriptionApi->getById: $e\n');
 }
 ```
@@ -160,7 +160,7 @@ final VerifyReceiptDto body = ; // VerifyReceiptDto |
 try {
     final response = api.verifyReceipt(body);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling SubscriptionApi->verifyReceipt: $e\n');
 }
 ```

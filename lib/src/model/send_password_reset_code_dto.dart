@@ -3,100 +3,156 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'send_password_reset_code_dto.g.dart';
 
+/// SendPasswordResetCodeDto
+///
+/// Properties:
+/// * [email] 
+/// * [appName] 
+/// * [returnUrl] 
+/// * [returnUrlHash] 
+@BuiltValue()
+abstract class SendPasswordResetCodeDto implements Built<SendPasswordResetCodeDto, SendPasswordResetCodeDtoBuilder> {
+  @BuiltValueField(wireName: r'email')
+  String get email;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class SendPasswordResetCodeDto {
-  /// Returns a new [SendPasswordResetCodeDto] instance.
-  SendPasswordResetCodeDto({
+  @BuiltValueField(wireName: r'appName')
+  String get appName;
 
-    required  this.email,
+  @BuiltValueField(wireName: r'returnUrl')
+  String? get returnUrl;
 
-    required  this.appName,
+  @BuiltValueField(wireName: r'returnUrlHash')
+  String? get returnUrlHash;
 
-     this.returnUrl,
+  SendPasswordResetCodeDto._();
 
-     this.returnUrlHash,
-  });
+  factory SendPasswordResetCodeDto([void updates(SendPasswordResetCodeDtoBuilder b)]) = _$SendPasswordResetCodeDto;
 
-  @JsonKey(
-    
-    name: r'email',
-    required: true,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(SendPasswordResetCodeDtoBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<SendPasswordResetCodeDto> get serializer => _$SendPasswordResetCodeDtoSerializer();
+}
 
-  String email;
-
-
-
-  @JsonKey(
-    
-    name: r'appName',
-    required: true,
-    includeIfNull: false
-  )
-
-
-  String appName;
-
-
-
-  @JsonKey(
-    
-    name: r'returnUrl',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? returnUrl;
-
-
-
-  @JsonKey(
-    
-    name: r'returnUrlHash',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? returnUrlHash;
-
-
+class _$SendPasswordResetCodeDtoSerializer implements PrimitiveSerializer<SendPasswordResetCodeDto> {
+  @override
+  final Iterable<Type> types = const [SendPasswordResetCodeDto, _$SendPasswordResetCodeDto];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is SendPasswordResetCodeDto &&
-     other.email == email &&
-     other.appName == appName &&
-     other.returnUrl == returnUrl &&
-     other.returnUrlHash == returnUrlHash;
+  final String wireName = r'SendPasswordResetCodeDto';
 
-  @override
-  int get hashCode =>
-    email.hashCode +
-    appName.hashCode +
-    returnUrl.hashCode +
-    returnUrlHash.hashCode;
-
-  factory SendPasswordResetCodeDto.fromJson(Map<String, dynamic> json) => _$SendPasswordResetCodeDtoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$SendPasswordResetCodeDtoToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    SendPasswordResetCodeDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    yield r'email';
+    yield serializers.serialize(
+      object.email,
+      specifiedType: const FullType(String),
+    );
+    yield r'appName';
+    yield serializers.serialize(
+      object.appName,
+      specifiedType: const FullType(String),
+    );
+    if (object.returnUrl != null) {
+      yield r'returnUrl';
+      yield serializers.serialize(
+        object.returnUrl,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.returnUrlHash != null) {
+      yield r'returnUrlHash';
+      yield serializers.serialize(
+        object.returnUrlHash,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    SendPasswordResetCodeDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required SendPasswordResetCodeDtoBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'email':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.email = valueDes;
+          break;
+        case r'appName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.appName = valueDes;
+          break;
+        case r'returnUrl':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.returnUrl = valueDes;
+          break;
+        case r'returnUrlHash':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.returnUrlHash = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  SendPasswordResetCodeDto deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = SendPasswordResetCodeDtoBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

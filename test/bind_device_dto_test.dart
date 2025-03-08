@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for BindDeviceDto
 void main() {
-  final BindDeviceDto? instance = /* BindDeviceDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = BindDeviceDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(BindDeviceDto, () {
     // String token

@@ -4,11 +4,12 @@
 
 import 'dart:async';
 
-// ignore: unused_import
-import 'dart:convert';
-import 'package:puupee_api_client/src/deserialize.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:built_collection/built_collection.dart';
+import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/create_update_message_source_route_sub_dto.dart';
 import 'package:puupee_api_client/src/model/message_source_route_sub_dto.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
@@ -17,7 +18,9 @@ class MessageSourceRouteSubApi {
 
   final Dio _dio;
 
-  const MessageSourceRouteSubApi(this._dio);
+  final Serializers _serializers;
+
+  const MessageSourceRouteSubApi(this._dio, this._serializers);
 
   /// create
   /// 
@@ -32,7 +35,7 @@ class MessageSourceRouteSubApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future]
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> create({ 
     CreateUpdateMessageSourceRouteSubDto? body,
     CancelToken? cancelToken,
@@ -64,14 +67,16 @@ class MessageSourceRouteSubApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+      const _type = FullType(CreateUpdateMessageSourceRouteSubDto);
+      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
+
     } catch(error, stackTrace) {
-      throw DioError(
+      throw DioException(
          requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -102,7 +107,7 @@ _bodyData=jsonEncode(body);
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future]
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> delete({ 
     required String id,
     CancelToken? cancelToken,
@@ -112,7 +117,7 @@ _bodyData=jsonEncode(body);
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/app/message-source-route-sub/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/app/message-source-route-sub/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -154,7 +159,7 @@ _bodyData=jsonEncode(body);
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [MessageSourceRouteSubDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<MessageSourceRouteSubDto>> getById({ 
     required String id,
     CancelToken? cancelToken,
@@ -164,7 +169,7 @@ _bodyData=jsonEncode(body);
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/app/message-source-route-sub/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/app/message-source-route-sub/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -190,15 +195,20 @@ _bodyData=jsonEncode(body);
       onReceiveProgress: onReceiveProgress,
     );
 
-    MessageSourceRouteSubDto _responseData;
+    MessageSourceRouteSubDto? _responseData;
 
     try {
-_responseData = deserialize<MessageSourceRouteSubDto, MessageSourceRouteSubDto>(_response.data!, 'MessageSourceRouteSubDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(MessageSourceRouteSubDto),
+      ) as MessageSourceRouteSubDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -227,9 +237,9 @@ _responseData = deserialize<MessageSourceRouteSubDto, MessageSourceRouteSubDto>(
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [List<MessageSourceRouteSubDto>] as data
-  /// Throws [DioError] if API call or serialization fails
-  Future<Response<List<MessageSourceRouteSubDto>>> getList({ 
+  /// Returns a [Future] containing a [Response] with a [BuiltList<MessageSourceRouteSubDto>] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<BuiltList<MessageSourceRouteSubDto>>> getList({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -263,21 +273,26 @@ _responseData = deserialize<MessageSourceRouteSubDto, MessageSourceRouteSubDto>(
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<MessageSourceRouteSubDto> _responseData;
+    BuiltList<MessageSourceRouteSubDto>? _responseData;
 
     try {
-_responseData = deserialize<List<MessageSourceRouteSubDto>, MessageSourceRouteSubDto>(_response.data!, 'List<MessageSourceRouteSubDto>', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(BuiltList, [FullType(MessageSourceRouteSubDto)]),
+      ) as BuiltList<MessageSourceRouteSubDto>;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
     }
 
-    return Response<List<MessageSourceRouteSubDto>>(
+    return Response<BuiltList<MessageSourceRouteSubDto>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -303,7 +318,7 @@ _responseData = deserialize<List<MessageSourceRouteSubDto>, MessageSourceRouteSu
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future]
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> update({ 
     required String id,
     CreateUpdateMessageSourceRouteSubDto? body,
@@ -314,7 +329,7 @@ _responseData = deserialize<List<MessageSourceRouteSubDto>, MessageSourceRouteSu
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/app/message-source-route-sub/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/app/message-source-route-sub/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -336,14 +351,16 @@ _responseData = deserialize<List<MessageSourceRouteSubDto>, MessageSourceRouteSu
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+      const _type = FullType(CreateUpdateMessageSourceRouteSubDto);
+      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
+
     } catch(error, stackTrace) {
-      throw DioError(
+      throw DioException(
          requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

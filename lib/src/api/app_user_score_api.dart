@@ -4,9 +4,8 @@
 
 import 'dart:async';
 
-// ignore: unused_import
-import 'dart:convert';
-import 'package:puupee_api_client/src/deserialize.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
 import 'package:puupee_api_client/src/model/app_user_score_dto.dart';
@@ -17,7 +16,9 @@ class AppUserScoreApi {
 
   final Dio _dio;
 
-  const AppUserScoreApi(this._dio);
+  final Serializers _serializers;
+
+  const AppUserScoreApi(this._dio, this._serializers);
 
   /// create
   /// 
@@ -32,7 +33,7 @@ class AppUserScoreApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [AppUserScoreDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<AppUserScoreDto>> create({ 
     CreateOrUpdateAppUserScoreDto? body,
     CancelToken? cancelToken,
@@ -64,14 +65,16 @@ class AppUserScoreApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+      const _type = FullType(CreateOrUpdateAppUserScoreDto);
+      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
+
     } catch(error, stackTrace) {
-      throw DioError(
+      throw DioException(
          requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -86,15 +89,20 @@ _bodyData=jsonEncode(body);
       onReceiveProgress: onReceiveProgress,
     );
 
-    AppUserScoreDto _responseData;
+    AppUserScoreDto? _responseData;
 
     try {
-_responseData = deserialize<AppUserScoreDto, AppUserScoreDto>(_response.data!, 'AppUserScoreDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(AppUserScoreDto),
+      ) as AppUserScoreDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for LatestReceiptInfo
 void main() {
-  final LatestReceiptInfo? instance = /* LatestReceiptInfo(...) */ null;
-  // TODO add properties to the entity
+  final instance = LatestReceiptInfoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(LatestReceiptInfo, () {
     // String quantity

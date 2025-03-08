@@ -4,325 +4,413 @@
 
 // ignore_for_file: unused_element
 import 'package:puupee_api_client/src/model/app_pricing_item_value_dto.dart';
+import 'package:built_collection/built_collection.dart';
 import 'package:puupee_api_client/src/model/app_price_naming.dart';
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'create_or_update_app_pricing_dto.g.dart';
 
-
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class CreateOrUpdateAppPricingDto {
-  /// Returns a new [CreateOrUpdateAppPricingDto] instance.
-  CreateOrUpdateAppPricingDto({
-
-     this.naming,
-
-     this.monthProductId,
-
-     this.yearProductId,
-
-     this.description,
-
-     this.appId,
-
-     this.monthPrice,
-
-     this.monthDiscount,
-
-     this.monthDiscountPrice,
-
-     this.monthDiscountStartAt,
-
-     this.monthDiscountEndAt,
-
-     this.yearPrice,
-
-     this.yearDiscount,
-
-     this.yearDiscountPrice,
-
-     this.yearDiscountStartAt,
-
-     this.yearDiscountEndAt,
-
-     this.sortIndex,
-
-     this.items,
-  });
-
-  @JsonKey(
-    
-    name: r'naming',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  AppPriceNaming? naming;
-
-
-
-      /// 商店订阅产品 ID
-  @JsonKey(
-    
-    name: r'monthProductId',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? monthProductId;
-
-
-
-      /// 商店订阅产品 ID
-  @JsonKey(
-    
-    name: r'yearProductId',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? yearProductId;
-
-
-
-      /// 简单描述  适用于个人网站和任何想用基本的聊天方式与游客交流的人。  适用于希望改善客户关系的早期创业公司。  为需要全功能解决方案与客户沟通的公司而设。
-  @JsonKey(
-    
-    name: r'description',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? description;
-
-
-
-      /// APPID
-  @JsonKey(
-    
-    name: r'appId',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? appId;
-
-
-
-      /// 价格
-  @JsonKey(
-    
-    name: r'monthPrice',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  double? monthPrice;
-
-
-
-      /// 折扣
-  @JsonKey(
-    
-    name: r'monthDiscount',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  double? monthDiscount;
-
-
-
-      /// 折扣后价格 DiscountPrice = Price * Discount
-  @JsonKey(
-    
-    name: r'monthDiscountPrice',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  double? monthDiscountPrice;
-
-
-
-      /// 折扣开始时间
-  @JsonKey(
-    
-    name: r'monthDiscountStartAt',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  DateTime? monthDiscountStartAt;
-
-
-
-      /// 折扣结束时间
-  @JsonKey(
-    
-    name: r'monthDiscountEndAt',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  DateTime? monthDiscountEndAt;
-
-
-
-      /// 价格
-  @JsonKey(
-    
-    name: r'yearPrice',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  double? yearPrice;
-
-
-
-      /// 折扣
-  @JsonKey(
-    
-    name: r'yearDiscount',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  double? yearDiscount;
-
-
-
-      /// 折扣后价格 DiscountPrice = Price * Discount
-  @JsonKey(
-    
-    name: r'yearDiscountPrice',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  double? yearDiscountPrice;
-
-
-
-      /// 折扣开始时间
-  @JsonKey(
-    
-    name: r'yearDiscountStartAt',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  DateTime? yearDiscountStartAt;
-
-
-
-      /// 折扣结束时间
-  @JsonKey(
-    
-    name: r'yearDiscountEndAt',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  DateTime? yearDiscountEndAt;
-
-
-
-      /// 排序
-  @JsonKey(
-    
-    name: r'sortIndex',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  int? sortIndex;
-
-
-
-      /// 收费点
-  @JsonKey(
-    
-    name: r'items',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  List<AppPricingItemValueDto>? items;
-
-
+/// CreateOrUpdateAppPricingDto
+///
+/// Properties:
+/// * [naming] 
+/// * [monthProductId] - 商店订阅产品 ID
+/// * [yearProductId] - 商店订阅产品 ID
+/// * [description] - 简单描述  适用于个人网站和任何想用基本的聊天方式与游客交流的人。  适用于希望改善客户关系的早期创业公司。  为需要全功能解决方案与客户沟通的公司而设。
+/// * [appId] - APPID
+/// * [monthPrice] - 价格
+/// * [monthDiscount] - 折扣
+/// * [monthDiscountPrice] - 折扣后价格 DiscountPrice = Price * Discount
+/// * [monthDiscountStartAt] - 折扣开始时间
+/// * [monthDiscountEndAt] - 折扣结束时间
+/// * [yearPrice] - 价格
+/// * [yearDiscount] - 折扣
+/// * [yearDiscountPrice] - 折扣后价格 DiscountPrice = Price * Discount
+/// * [yearDiscountStartAt] - 折扣开始时间
+/// * [yearDiscountEndAt] - 折扣结束时间
+/// * [sortIndex] - 排序
+/// * [items] - 收费点
+@BuiltValue()
+abstract class CreateOrUpdateAppPricingDto implements Built<CreateOrUpdateAppPricingDto, CreateOrUpdateAppPricingDtoBuilder> {
+  @BuiltValueField(wireName: r'naming')
+  AppPriceNaming? get naming;
+  // enum namingEnum {  Free,  Premium,  Pro,  Enterprise,  };
+
+  /// 商店订阅产品 ID
+  @BuiltValueField(wireName: r'monthProductId')
+  String? get monthProductId;
+
+  /// 商店订阅产品 ID
+  @BuiltValueField(wireName: r'yearProductId')
+  String? get yearProductId;
+
+  /// 简单描述  适用于个人网站和任何想用基本的聊天方式与游客交流的人。  适用于希望改善客户关系的早期创业公司。  为需要全功能解决方案与客户沟通的公司而设。
+  @BuiltValueField(wireName: r'description')
+  String? get description;
+
+  /// APPID
+  @BuiltValueField(wireName: r'appId')
+  String? get appId;
+
+  /// 价格
+  @BuiltValueField(wireName: r'monthPrice')
+  double? get monthPrice;
+
+  /// 折扣
+  @BuiltValueField(wireName: r'monthDiscount')
+  double? get monthDiscount;
+
+  /// 折扣后价格 DiscountPrice = Price * Discount
+  @BuiltValueField(wireName: r'monthDiscountPrice')
+  double? get monthDiscountPrice;
+
+  /// 折扣开始时间
+  @BuiltValueField(wireName: r'monthDiscountStartAt')
+  DateTime? get monthDiscountStartAt;
+
+  /// 折扣结束时间
+  @BuiltValueField(wireName: r'monthDiscountEndAt')
+  DateTime? get monthDiscountEndAt;
+
+  /// 价格
+  @BuiltValueField(wireName: r'yearPrice')
+  double? get yearPrice;
+
+  /// 折扣
+  @BuiltValueField(wireName: r'yearDiscount')
+  double? get yearDiscount;
+
+  /// 折扣后价格 DiscountPrice = Price * Discount
+  @BuiltValueField(wireName: r'yearDiscountPrice')
+  double? get yearDiscountPrice;
+
+  /// 折扣开始时间
+  @BuiltValueField(wireName: r'yearDiscountStartAt')
+  DateTime? get yearDiscountStartAt;
+
+  /// 折扣结束时间
+  @BuiltValueField(wireName: r'yearDiscountEndAt')
+  DateTime? get yearDiscountEndAt;
+
+  /// 排序
+  @BuiltValueField(wireName: r'sortIndex')
+  int? get sortIndex;
+
+  /// 收费点
+  @BuiltValueField(wireName: r'items')
+  BuiltList<AppPricingItemValueDto>? get items;
+
+  CreateOrUpdateAppPricingDto._();
+
+  factory CreateOrUpdateAppPricingDto([void updates(CreateOrUpdateAppPricingDtoBuilder b)]) = _$CreateOrUpdateAppPricingDto;
+
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(CreateOrUpdateAppPricingDtoBuilder b) => b;
+
+  @BuiltValueSerializer(custom: true)
+  static Serializer<CreateOrUpdateAppPricingDto> get serializer => _$CreateOrUpdateAppPricingDtoSerializer();
+}
+
+class _$CreateOrUpdateAppPricingDtoSerializer implements PrimitiveSerializer<CreateOrUpdateAppPricingDto> {
+  @override
+  final Iterable<Type> types = const [CreateOrUpdateAppPricingDto, _$CreateOrUpdateAppPricingDto];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is CreateOrUpdateAppPricingDto &&
-     other.naming == naming &&
-     other.monthProductId == monthProductId &&
-     other.yearProductId == yearProductId &&
-     other.description == description &&
-     other.appId == appId &&
-     other.monthPrice == monthPrice &&
-     other.monthDiscount == monthDiscount &&
-     other.monthDiscountPrice == monthDiscountPrice &&
-     other.monthDiscountStartAt == monthDiscountStartAt &&
-     other.monthDiscountEndAt == monthDiscountEndAt &&
-     other.yearPrice == yearPrice &&
-     other.yearDiscount == yearDiscount &&
-     other.yearDiscountPrice == yearDiscountPrice &&
-     other.yearDiscountStartAt == yearDiscountStartAt &&
-     other.yearDiscountEndAt == yearDiscountEndAt &&
-     other.sortIndex == sortIndex &&
-     other.items == items;
+  final String wireName = r'CreateOrUpdateAppPricingDto';
 
-  @override
-  int get hashCode =>
-    naming.hashCode +
-    monthProductId.hashCode +
-    yearProductId.hashCode +
-    description.hashCode +
-    appId.hashCode +
-    monthPrice.hashCode +
-    monthDiscount.hashCode +
-    monthDiscountPrice.hashCode +
-    monthDiscountStartAt.hashCode +
-    monthDiscountEndAt.hashCode +
-    yearPrice.hashCode +
-    yearDiscount.hashCode +
-    yearDiscountPrice.hashCode +
-    yearDiscountStartAt.hashCode +
-    yearDiscountEndAt.hashCode +
-    sortIndex.hashCode +
-    items.hashCode;
-
-  factory CreateOrUpdateAppPricingDto.fromJson(Map<String, dynamic> json) => _$CreateOrUpdateAppPricingDtoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$CreateOrUpdateAppPricingDtoToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    CreateOrUpdateAppPricingDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.naming != null) {
+      yield r'naming';
+      yield serializers.serialize(
+        object.naming,
+        specifiedType: const FullType(AppPriceNaming),
+      );
+    }
+    if (object.monthProductId != null) {
+      yield r'monthProductId';
+      yield serializers.serialize(
+        object.monthProductId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.yearProductId != null) {
+      yield r'yearProductId';
+      yield serializers.serialize(
+        object.yearProductId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.appId != null) {
+      yield r'appId';
+      yield serializers.serialize(
+        object.appId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.monthPrice != null) {
+      yield r'monthPrice';
+      yield serializers.serialize(
+        object.monthPrice,
+        specifiedType: const FullType(double),
+      );
+    }
+    if (object.monthDiscount != null) {
+      yield r'monthDiscount';
+      yield serializers.serialize(
+        object.monthDiscount,
+        specifiedType: const FullType(double),
+      );
+    }
+    if (object.monthDiscountPrice != null) {
+      yield r'monthDiscountPrice';
+      yield serializers.serialize(
+        object.monthDiscountPrice,
+        specifiedType: const FullType(double),
+      );
+    }
+    if (object.monthDiscountStartAt != null) {
+      yield r'monthDiscountStartAt';
+      yield serializers.serialize(
+        object.monthDiscountStartAt,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.monthDiscountEndAt != null) {
+      yield r'monthDiscountEndAt';
+      yield serializers.serialize(
+        object.monthDiscountEndAt,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.yearPrice != null) {
+      yield r'yearPrice';
+      yield serializers.serialize(
+        object.yearPrice,
+        specifiedType: const FullType(double),
+      );
+    }
+    if (object.yearDiscount != null) {
+      yield r'yearDiscount';
+      yield serializers.serialize(
+        object.yearDiscount,
+        specifiedType: const FullType(double),
+      );
+    }
+    if (object.yearDiscountPrice != null) {
+      yield r'yearDiscountPrice';
+      yield serializers.serialize(
+        object.yearDiscountPrice,
+        specifiedType: const FullType(double),
+      );
+    }
+    if (object.yearDiscountStartAt != null) {
+      yield r'yearDiscountStartAt';
+      yield serializers.serialize(
+        object.yearDiscountStartAt,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.yearDiscountEndAt != null) {
+      yield r'yearDiscountEndAt';
+      yield serializers.serialize(
+        object.yearDiscountEndAt,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.sortIndex != null) {
+      yield r'sortIndex';
+      yield serializers.serialize(
+        object.sortIndex,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.items != null) {
+      yield r'items';
+      yield serializers.serialize(
+        object.items,
+        specifiedType: const FullType(BuiltList, [FullType(AppPricingItemValueDto)]),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    CreateOrUpdateAppPricingDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required CreateOrUpdateAppPricingDtoBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'naming':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AppPriceNaming),
+          ) as AppPriceNaming;
+          result.naming = valueDes;
+          break;
+        case r'monthProductId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.monthProductId = valueDes;
+          break;
+        case r'yearProductId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.yearProductId = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
+          break;
+        case r'appId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.appId = valueDes;
+          break;
+        case r'monthPrice':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(double),
+          ) as double;
+          result.monthPrice = valueDes;
+          break;
+        case r'monthDiscount':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(double),
+          ) as double;
+          result.monthDiscount = valueDes;
+          break;
+        case r'monthDiscountPrice':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(double),
+          ) as double;
+          result.monthDiscountPrice = valueDes;
+          break;
+        case r'monthDiscountStartAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.monthDiscountStartAt = valueDes;
+          break;
+        case r'monthDiscountEndAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.monthDiscountEndAt = valueDes;
+          break;
+        case r'yearPrice':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(double),
+          ) as double;
+          result.yearPrice = valueDes;
+          break;
+        case r'yearDiscount':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(double),
+          ) as double;
+          result.yearDiscount = valueDes;
+          break;
+        case r'yearDiscountPrice':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(double),
+          ) as double;
+          result.yearDiscountPrice = valueDes;
+          break;
+        case r'yearDiscountStartAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.yearDiscountStartAt = valueDes;
+          break;
+        case r'yearDiscountEndAt':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.yearDiscountEndAt = valueDes;
+          break;
+        case r'sortIndex':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.sortIndex = valueDes;
+          break;
+        case r'items':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(AppPricingItemValueDto)]),
+          ) as BuiltList<AppPricingItemValueDto>;
+          result.items.replace(valueDes);
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  CreateOrUpdateAppPricingDto deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = CreateOrUpdateAppPricingDtoBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

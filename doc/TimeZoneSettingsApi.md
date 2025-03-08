@@ -30,7 +30,7 @@ final api = PuupeeApiClient().getTimeZoneSettingsApi();
 try {
     final response = api.callGet();
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling TimeZoneSettingsApi->callGet: $e\n');
 }
 ```
@@ -54,7 +54,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getTimezones**
-> List<NameValue> getTimezones()
+> BuiltList<NameValue> getTimezones()
 
 
 
@@ -69,7 +69,7 @@ final api = PuupeeApiClient().getTimeZoneSettingsApi();
 try {
     final response = api.getTimezones();
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling TimeZoneSettingsApi->getTimezones: $e\n');
 }
 ```
@@ -79,7 +79,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List&lt;NameValue&gt;**](NameValue.md)
+[**BuiltList&lt;NameValue&gt;**](NameValue.md)
 
 ### Authorization
 
@@ -108,7 +108,7 @@ final String timezone = timezone_example; // String |
 
 try {
     api.update(timezone);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling TimeZoneSettingsApi->update: $e\n');
 }
 ```

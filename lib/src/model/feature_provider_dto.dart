@@ -3,68 +3,124 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'feature_provider_dto.g.dart';
 
+/// FeatureProviderDto
+///
+/// Properties:
+/// * [name] 
+/// * [key] 
+@BuiltValue()
+abstract class FeatureProviderDto implements Built<FeatureProviderDto, FeatureProviderDtoBuilder> {
+  @BuiltValueField(wireName: r'name')
+  String? get name;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class FeatureProviderDto {
-  /// Returns a new [FeatureProviderDto] instance.
-  FeatureProviderDto({
+  @BuiltValueField(wireName: r'key')
+  String? get key;
 
-     this.name,
+  FeatureProviderDto._();
 
-     this.key,
-  });
+  factory FeatureProviderDto([void updates(FeatureProviderDtoBuilder b)]) = _$FeatureProviderDto;
 
-  @JsonKey(
-    
-    name: r'name',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(FeatureProviderDtoBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<FeatureProviderDto> get serializer => _$FeatureProviderDtoSerializer();
+}
 
-  String? name;
-
-
-
-  @JsonKey(
-    
-    name: r'key',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? key;
-
-
+class _$FeatureProviderDtoSerializer implements PrimitiveSerializer<FeatureProviderDto> {
+  @override
+  final Iterable<Type> types = const [FeatureProviderDto, _$FeatureProviderDto];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is FeatureProviderDto &&
-     other.name == name &&
-     other.key == key;
+  final String wireName = r'FeatureProviderDto';
 
-  @override
-  int get hashCode =>
-    name.hashCode +
-    key.hashCode;
-
-  factory FeatureProviderDto.fromJson(Map<String, dynamic> json) => _$FeatureProviderDtoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$FeatureProviderDtoToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    FeatureProviderDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.name != null) {
+      yield r'name';
+      yield serializers.serialize(
+        object.name,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.key != null) {
+      yield r'key';
+      yield serializers.serialize(
+        object.key,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    FeatureProviderDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required FeatureProviderDtoBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'key':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.key = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  FeatureProviderDto deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = FeatureProviderDtoBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

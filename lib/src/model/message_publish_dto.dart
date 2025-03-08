@@ -3,118 +3,182 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'message_publish_dto.g.dart';
 
+/// MessagePublishDto
+///
+/// Properties:
+/// * [title] 
+/// * [description] 
+/// * [appId] 
+/// * [template] - 模板名称, 包含版本号  puupee/wechat-app-msg?version=1 微信应用消息模板  puupee/wechat-official-msg?version=2 微信公众号消息模板
+/// * [data] - JSON格式数据
+@BuiltValue()
+abstract class MessagePublishDto implements Built<MessagePublishDto, MessagePublishDtoBuilder> {
+  @BuiltValueField(wireName: r'title')
+  String? get title;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class MessagePublishDto {
-  /// Returns a new [MessagePublishDto] instance.
-  MessagePublishDto({
+  @BuiltValueField(wireName: r'description')
+  String? get description;
 
-     this.title,
+  @BuiltValueField(wireName: r'appId')
+  String? get appId;
 
-     this.description,
+  /// 模板名称, 包含版本号  puupee/wechat-app-msg?version=1 微信应用消息模板  puupee/wechat-official-msg?version=2 微信公众号消息模板
+  @BuiltValueField(wireName: r'template')
+  String? get template;
 
-     this.appId,
+  /// JSON格式数据
+  @BuiltValueField(wireName: r'data')
+  BuiltMap<String, JsonObject>? get data;
 
-     this.template,
+  MessagePublishDto._();
 
-     this.data,
-  });
+  factory MessagePublishDto([void updates(MessagePublishDtoBuilder b)]) = _$MessagePublishDto;
 
-  @JsonKey(
-    
-    name: r'title',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(MessagePublishDtoBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<MessagePublishDto> get serializer => _$MessagePublishDtoSerializer();
+}
 
-  String? title;
-
-
-
-  @JsonKey(
-    
-    name: r'description',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? description;
-
-
-
-  @JsonKey(
-    
-    name: r'appId',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? appId;
-
-
-
-      /// 模板名称, 包含版本号  puupee/wechat-app-msg?version=1 微信应用消息模板  puupee/wechat-official-msg?version=2 微信公众号消息模板
-  @JsonKey(
-    
-    name: r'template',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? template;
-
-
-
-      /// JSON格式数据
-  @JsonKey(
-    
-    name: r'data',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  Map<String, Object>? data;
-
-
+class _$MessagePublishDtoSerializer implements PrimitiveSerializer<MessagePublishDto> {
+  @override
+  final Iterable<Type> types = const [MessagePublishDto, _$MessagePublishDto];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is MessagePublishDto &&
-     other.title == title &&
-     other.description == description &&
-     other.appId == appId &&
-     other.template == template &&
-     other.data == data;
+  final String wireName = r'MessagePublishDto';
 
-  @override
-  int get hashCode =>
-    title.hashCode +
-    description.hashCode +
-    appId.hashCode +
-    template.hashCode +
-    data.hashCode;
-
-  factory MessagePublishDto.fromJson(Map<String, dynamic> json) => _$MessagePublishDtoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$MessagePublishDtoToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    MessagePublishDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.title != null) {
+      yield r'title';
+      yield serializers.serialize(
+        object.title,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.description != null) {
+      yield r'description';
+      yield serializers.serialize(
+        object.description,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.appId != null) {
+      yield r'appId';
+      yield serializers.serialize(
+        object.appId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.template != null) {
+      yield r'template';
+      yield serializers.serialize(
+        object.template,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.data != null) {
+      yield r'data';
+      yield serializers.serialize(
+        object.data,
+        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    MessagePublishDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required MessagePublishDtoBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'title':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.title = valueDes;
+          break;
+        case r'description':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.description = valueDes;
+          break;
+        case r'appId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.appId = valueDes;
+          break;
+        case r'template':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.template = valueDes;
+          break;
+        case r'data':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+          ) as BuiltMap<String, JsonObject>;
+          result.data.replace(valueDes);
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  MessagePublishDto deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = MessagePublishDtoBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

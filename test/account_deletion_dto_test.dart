@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for AccountDeletionDto
 void main() {
-  final AccountDeletionDto? instance = /* AccountDeletionDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = AccountDeletionDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(AccountDeletionDto, () {
     // String code

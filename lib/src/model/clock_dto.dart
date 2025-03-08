@@ -3,52 +3,106 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'clock_dto.g.dart';
 
+/// ClockDto
+///
+/// Properties:
+/// * [kind] 
+@BuiltValue()
+abstract class ClockDto implements Built<ClockDto, ClockDtoBuilder> {
+  @BuiltValueField(wireName: r'kind')
+  String? get kind;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class ClockDto {
-  /// Returns a new [ClockDto] instance.
-  ClockDto({
+  ClockDto._();
 
-     this.kind,
-  });
+  factory ClockDto([void updates(ClockDtoBuilder b)]) = _$ClockDto;
 
-  @JsonKey(
-    
-    name: r'kind',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ClockDtoBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<ClockDto> get serializer => _$ClockDtoSerializer();
+}
 
-  String? kind;
-
-
+class _$ClockDtoSerializer implements PrimitiveSerializer<ClockDto> {
+  @override
+  final Iterable<Type> types = const [ClockDto, _$ClockDto];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is ClockDto &&
-     other.kind == kind;
+  final String wireName = r'ClockDto';
 
-  @override
-  int get hashCode =>
-    kind.hashCode;
-
-  factory ClockDto.fromJson(Map<String, dynamic> json) => _$ClockDtoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$ClockDtoToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    ClockDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.kind != null) {
+      yield r'kind';
+      yield serializers.serialize(
+        object.kind,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    ClockDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required ClockDtoBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'kind':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.kind = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  ClockDto deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = ClockDtoBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

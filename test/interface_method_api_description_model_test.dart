@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for InterfaceMethodApiDescriptionModel
 void main() {
-  final InterfaceMethodApiDescriptionModel? instance = /* InterfaceMethodApiDescriptionModel(...) */ null;
-  // TODO add properties to the entity
+  final instance = InterfaceMethodApiDescriptionModelBuilder();
+  // TODO add properties to the builder and call build()
 
   group(InterfaceMethodApiDescriptionModel, () {
     // String name
@@ -12,7 +12,7 @@ void main() {
       // TODO
     });
 
-    // List<MethodParameterApiDescriptionModel> parametersOnMethod
+    // BuiltList<MethodParameterApiDescriptionModel> parametersOnMethod
     test('to test the property `parametersOnMethod`', () async {
       // TODO
     });

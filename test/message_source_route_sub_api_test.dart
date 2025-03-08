@@ -22,7 +22,7 @@ void main() {
       // TODO
     });
 
-    //Future<List<MessageSourceRouteSubDto>> getList() async
+    //Future<BuiltList<MessageSourceRouteSubDto>> getList() async
     test('test getList', () async {
       // TODO
     });

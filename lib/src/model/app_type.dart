@@ -3,32 +3,52 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
-/// 应用类型
-enum AppType {
+part 'app_type.g.dart';
+
+class AppType extends EnumClass {
+
   /// 应用类型
-  @JsonValue(r'Client')
-  client,
+  @BuiltValueEnumConst(wireName: r'Client')
+  static const AppType client = _$client;
   /// 应用类型
-  @JsonValue(r'Service')
-  service,
+  @BuiltValueEnumConst(wireName: r'Service')
+  static const AppType service = _$service;
   /// 应用类型
-  @JsonValue(r'Web')
-  web,
+  @BuiltValueEnumConst(wireName: r'Web')
+  static const AppType web = _$web;
   /// 应用类型
-  @JsonValue(r'MessageAccount')
-  messageAccount,
+  @BuiltValueEnumConst(wireName: r'MessageAccount')
+  static const AppType messageAccount = _$messageAccount;
   /// 应用类型
-  @JsonValue(r'WechatMiniProgram')
-  wechatMiniProgram,
+  @BuiltValueEnumConst(wireName: r'WechatMiniProgram')
+  static const AppType wechatMiniProgram = _$wechatMiniProgram;
   /// 应用类型
-  @JsonValue(r'Extension')
-  extension_,
+  @BuiltValueEnumConst(wireName: r'Extension')
+  static const AppType extension_ = _$extension_;
   /// 应用类型
-  @JsonValue(r'Runable')
-  runable,
+  @BuiltValueEnumConst(wireName: r'Runable')
+  static const AppType runable = _$runable;
   /// 应用类型
-  @JsonValue(r'Worker')
-  worker,
+  @BuiltValueEnumConst(wireName: r'Worker')
+  static const AppType worker = _$worker;
+
+  static Serializer<AppType> get serializer => _$appTypeSerializer;
+
+  const AppType._(String name): super(name);
+
+  static BuiltSet<AppType> get values => _$values;
+  static AppType valueOf(String name) => _$valueOf(name);
 }
+
+/// Optionally, enum_class can generate a mixin to go with your enum for use
+/// with Angular. It exposes your enum constants as getters. So, if you mix it
+/// in to your Dart component class, the values become available to the
+/// corresponding Angular template.
+///
+/// Trigger mixin generation by writing a line like this one next to your enum.
+abstract class AppTypeMixin = Object with _$AppTypeMixin;
+

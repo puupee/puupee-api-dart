@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-// ignore: unused_import
-import 'dart:convert';
-import 'package:puupee_api_client/src/deserialize.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/application_configuration_dto.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 
@@ -16,7 +16,9 @@ class AbpApplicationConfigurationApi {
 
   final Dio _dio;
 
-  const AbpApplicationConfigurationApi(this._dio);
+  final Serializers _serializers;
+
+  const AbpApplicationConfigurationApi(this._dio, this._serializers);
 
   /// callGet
   /// 
@@ -31,7 +33,7 @@ class AbpApplicationConfigurationApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [ApplicationConfigurationDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<ApplicationConfigurationDto>> callGet({ 
     bool? includeLocalizationResources,
     CancelToken? cancelToken,
@@ -60,7 +62,7 @@ class AbpApplicationConfigurationApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (includeLocalizationResources != null) r'IncludeLocalizationResources': includeLocalizationResources,
+      if (includeLocalizationResources != null) r'IncludeLocalizationResources': encodeQueryParameter(_serializers, includeLocalizationResources, const FullType(bool)),
     };
 
     final _response = await _dio.request<Object>(
@@ -72,15 +74,20 @@ class AbpApplicationConfigurationApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    ApplicationConfigurationDto _responseData;
+    ApplicationConfigurationDto? _responseData;
 
     try {
-_responseData = deserialize<ApplicationConfigurationDto, ApplicationConfigurationDto>(_response.data!, 'ApplicationConfigurationDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(ApplicationConfigurationDto),
+      ) as ApplicationConfigurationDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

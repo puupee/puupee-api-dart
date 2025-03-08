@@ -3,11 +3,11 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for NotificationInfoDtoPagedResultDto
 void main() {
-  final NotificationInfoDtoPagedResultDto? instance = /* NotificationInfoDtoPagedResultDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = NotificationInfoDtoPagedResultDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(NotificationInfoDtoPagedResultDto, () {
-    // List<NotificationInfoDto> items
+    // BuiltList<NotificationInfoDto> items
     test('to test the property `items`', () async {
       // TODO
     });

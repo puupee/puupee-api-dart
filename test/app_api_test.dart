@@ -7,13 +7,6 @@ void main() {
   final instance = PuupeeApiClient().getAppApi();
 
   group(AppApi, () {
-    // 获取 APP 详情
-    //
-    //Future<AppDto> callGet(String id, { String env }) async
-    test('test callGet', () async {
-      // TODO
-    });
-
     // 创建新应用
     //
     //Future<AppDto> create({ CreateOrUpdateAppDto body }) async
@@ -30,12 +23,19 @@ void main() {
 
     // 获取 APP 详情
     //
-    //Future<AppDto> getByName({ String name, String env }) async
+    //Future<AppDto> getById(String id) async
+    test('test getById', () async {
+      // TODO
+    });
+
+    // 获取 APP 详情
+    //
+    //Future<AppDto> getByName({ String name }) async
     test('test getByName', () async {
       // TODO
     });
 
-    //Future<List<AppFeatureDto>> getFeatures(String appId, { String env }) async
+    //Future<BuiltList<AppFeatureDto>> getFeatures(String appId, { String env }) async
     test('test getFeatures', () async {
       // TODO
     });
@@ -56,19 +56,19 @@ void main() {
 
     // 所有开发者已发布 APP 列表
     //
-    //Future<AppDtoPagedResultDto> getListPublic({ String type, String developerAccount, String currentAppName }) async
+    //Future<AppDtoPagedResultDto> getListPublic({ JsonObject type, String developerAccount, String currentAppName }) async
     test('test getListPublic', () async {
       // TODO
     });
 
     // 获取APP列表包含用户订阅信息
     //
-    //Future<AppWithUserDtoPagedResultDto> getListWithUser({ String type, String searchKey, String sorting, int skipCount, int maxResultCount }) async
+    //Future<AppWithUserDtoPagedResultDto> getListWithUser({ JsonObject type, String searchKey, String sorting, int skipCount, int maxResultCount }) async
     test('test getListWithUser', () async {
       // TODO
     });
 
-    //Future<List<AppSdkDto>> getSdksById(String appId, { String env }) async
+    //Future<BuiltList<AppSdkDto>> getSdksById(String appId, { String env }) async
     test('test getSdksById', () async {
       // TODO
     });
@@ -82,7 +82,7 @@ void main() {
 
     // 获取 APP 详情
     //
-    //Future<AppWithUserDto> getWithUser(String id, { String env }) async
+    //Future<AppWithUserDto> getWithUser(String id) async
     test('test getWithUser', () async {
       // TODO
     });

@@ -17,6 +17,13 @@ void main() {
       // TODO
     });
 
+    // 检查同步认证
+    //
+    //Future<CheckSyncAuthResultDto> checkSyncAuth() async
+    test('test checkSyncAuth', () async {
+      // TODO
+    });
+
     //Future destroyAccount({ AccountDeletionDto body }) async
     test('test destroyAccount', () async {
       // TODO

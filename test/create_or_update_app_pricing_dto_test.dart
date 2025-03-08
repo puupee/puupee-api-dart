@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for CreateOrUpdateAppPricingDto
 void main() {
-  final CreateOrUpdateAppPricingDto? instance = /* CreateOrUpdateAppPricingDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = CreateOrUpdateAppPricingDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(CreateOrUpdateAppPricingDto, () {
     // AppPriceNaming naming
@@ -103,7 +103,7 @@ void main() {
     });
 
     // 收费点
-    // List<AppPricingItemValueDto> items
+    // BuiltList<AppPricingItemValueDto> items
     test('to test the property `items`', () async {
       // TODO
     });

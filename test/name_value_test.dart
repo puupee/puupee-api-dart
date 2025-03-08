@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for NameValue
 void main() {
-  final NameValue? instance = /* NameValue(...) */ null;
-  // TODO add properties to the entity
+  final instance = NameValueBuilder();
+  // TODO add properties to the builder and call build()
 
   group(NameValue, () {
     // String name

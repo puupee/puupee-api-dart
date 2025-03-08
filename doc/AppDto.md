@@ -36,10 +36,10 @@ Name | Type | Description | Notes
 **specJsonSchema** | **String** | 声明格式 | [optional] 
 **defaultStorageSize** | **int** | 默认存储空间大小 | [optional] 
 **defaultSingleFileMaxSize** | **int** | 默认单文件最大大小 | [optional] 
-**latestReleases** | [**List&lt;AppReleaseDto&gt;**](AppReleaseDto.md) |  | [optional] 
+**latestReleases** | [**BuiltList&lt;AppReleaseDto&gt;**](AppReleaseDto.md) |  | [optional] 
 **creator** | [**IdentityUserDto**](IdentityUserDto.md) |  | [optional] 
-**features** | [**List&lt;AppFeatureDto&gt;**](AppFeatureDto.md) |  | [optional] 
-**sdks** | [**List&lt;AppSdkDto&gt;**](AppSdkDto.md) |  | [optional] 
+**features** | [**BuiltList&lt;AppFeatureDto&gt;**](AppFeatureDto.md) |  | [optional] 
+**sdks** | [**BuiltList&lt;AppSdkDto&gt;**](AppSdkDto.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

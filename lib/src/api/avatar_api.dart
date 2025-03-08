@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-// ignore: unused_import
-import 'dart:convert';
-import 'package:puupee_api_client/src/deserialize.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/avatar_dto.dart';
 import 'package:puupee_api_client/src/model/create_avatar_dto.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
@@ -18,7 +18,9 @@ class AvatarApi {
 
   final Dio _dio;
 
-  const AvatarApi(this._dio);
+  final Serializers _serializers;
+
+  const AvatarApi(this._dio, this._serializers);
 
   /// create
   /// 
@@ -33,7 +35,7 @@ class AvatarApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [AvatarDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<AvatarDto>> create({ 
     CreateAvatarDto? body,
     CancelToken? cancelToken,
@@ -65,14 +67,16 @@ class AvatarApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+      const _type = FullType(CreateAvatarDto);
+      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
+
     } catch(error, stackTrace) {
-      throw DioError(
+      throw DioException(
          requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -87,15 +91,20 @@ _bodyData=jsonEncode(body);
       onReceiveProgress: onReceiveProgress,
     );
 
-    AvatarDto _responseData;
+    AvatarDto? _responseData;
 
     try {
-_responseData = deserialize<AvatarDto, AvatarDto>(_response.data!, 'AvatarDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(AvatarDto),
+      ) as AvatarDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -126,7 +135,7 @@ _responseData = deserialize<AvatarDto, AvatarDto>(_response.data!, 'AvatarDto', 
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [StorageObjectCredentials] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<StorageObjectCredentials>> getCredentials({ 
     String? key,
     CancelToken? cancelToken,
@@ -155,7 +164,7 @@ _responseData = deserialize<AvatarDto, AvatarDto>(_response.data!, 'AvatarDto', 
     );
 
     final _queryParameters = <String, dynamic>{
-      if (key != null) r'key': key,
+      if (key != null) r'key': encodeQueryParameter(_serializers, key, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(
@@ -167,15 +176,20 @@ _responseData = deserialize<AvatarDto, AvatarDto>(_response.data!, 'AvatarDto', 
       onReceiveProgress: onReceiveProgress,
     );
 
-    StorageObjectCredentials _responseData;
+    StorageObjectCredentials? _responseData;
 
     try {
-_responseData = deserialize<StorageObjectCredentials, StorageObjectCredentials>(_response.data!, 'StorageObjectCredentials', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(StorageObjectCredentials),
+      ) as StorageObjectCredentials;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

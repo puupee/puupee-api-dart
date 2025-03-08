@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for MessagePublishDto
 void main() {
-  final MessagePublishDto? instance = /* MessagePublishDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = MessagePublishDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(MessagePublishDto, () {
     // String title
@@ -29,7 +29,7 @@ void main() {
     });
 
     // JSON格式数据
-    // Map<String, Object> data
+    // BuiltMap<String, JsonObject> data
     test('to test the property `data`', () async {
       // TODO
     });

@@ -4,11 +4,12 @@
 
 import 'dart:async';
 
-// ignore: unused_import
-import 'dart:convert';
-import 'package:puupee_api_client/src/deserialize.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:built_collection/built_collection.dart';
+import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/name_value.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 
@@ -16,7 +17,9 @@ class TimeZoneSettingsApi {
 
   final Dio _dio;
 
-  const TimeZoneSettingsApi(this._dio);
+  final Serializers _serializers;
+
+  const TimeZoneSettingsApi(this._dio, this._serializers);
 
   /// callGet
   /// 
@@ -30,7 +33,7 @@ class TimeZoneSettingsApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [String] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<String>> callGet({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -65,15 +68,17 @@ class TimeZoneSettingsApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    String _responseData;
+    String? _responseData;
 
     try {
-_responseData = deserialize<String, String>(_response.data!, 'String', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : rawResponse as String;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -102,9 +107,9 @@ _responseData = deserialize<String, String>(_response.data!, 'String', growable:
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [List<NameValue>] as data
-  /// Throws [DioError] if API call or serialization fails
-  Future<Response<List<NameValue>>> getTimezones({ 
+  /// Returns a [Future] containing a [Response] with a [BuiltList<NameValue>] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<BuiltList<NameValue>>> getTimezones({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -138,21 +143,26 @@ _responseData = deserialize<String, String>(_response.data!, 'String', growable:
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<NameValue> _responseData;
+    BuiltList<NameValue>? _responseData;
 
     try {
-_responseData = deserialize<List<NameValue>, NameValue>(_response.data!, 'List<NameValue>', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(BuiltList, [FullType(NameValue)]),
+      ) as BuiltList<NameValue>;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
     }
 
-    return Response<List<NameValue>>(
+    return Response<BuiltList<NameValue>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -177,7 +187,7 @@ _responseData = deserialize<List<NameValue>, NameValue>(_response.data!, 'List<N
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future]
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> update({ 
     String? timezone,
     CancelToken? cancelToken,
@@ -206,7 +216,7 @@ _responseData = deserialize<List<NameValue>, NameValue>(_response.data!, 'List<N
     );
 
     final _queryParameters = <String, dynamic>{
-      if (timezone != null) r'timezone': timezone,
+      if (timezone != null) r'timezone': encodeQueryParameter(_serializers, timezone, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(

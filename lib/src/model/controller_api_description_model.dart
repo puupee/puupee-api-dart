@@ -4,165 +4,234 @@
 
 // ignore_for_file: unused_element
 import 'package:puupee_api_client/src/model/action_api_description_model.dart';
+import 'package:built_collection/built_collection.dart';
 import 'package:puupee_api_client/src/model/controller_interface_api_description_model.dart';
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'controller_api_description_model.g.dart';
 
+/// ControllerApiDescriptionModel
+///
+/// Properties:
+/// * [controllerName] 
+/// * [controllerGroupName] 
+/// * [isRemoteService] 
+/// * [isIntegrationService] 
+/// * [apiVersion] 
+/// * [type] 
+/// * [interfaces] 
+/// * [actions] 
+@BuiltValue()
+abstract class ControllerApiDescriptionModel implements Built<ControllerApiDescriptionModel, ControllerApiDescriptionModelBuilder> {
+  @BuiltValueField(wireName: r'controllerName')
+  String? get controllerName;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class ControllerApiDescriptionModel {
-  /// Returns a new [ControllerApiDescriptionModel] instance.
-  ControllerApiDescriptionModel({
+  @BuiltValueField(wireName: r'controllerGroupName')
+  String? get controllerGroupName;
 
-     this.controllerName,
+  @BuiltValueField(wireName: r'isRemoteService')
+  bool? get isRemoteService;
 
-     this.controllerGroupName,
+  @BuiltValueField(wireName: r'isIntegrationService')
+  bool? get isIntegrationService;
 
-     this.isRemoteService,
+  @BuiltValueField(wireName: r'apiVersion')
+  String? get apiVersion;
 
-     this.isIntegrationService,
+  @BuiltValueField(wireName: r'type')
+  String? get type;
 
-     this.apiVersion,
+  @BuiltValueField(wireName: r'interfaces')
+  BuiltList<ControllerInterfaceApiDescriptionModel>? get interfaces;
 
-     this.type,
+  @BuiltValueField(wireName: r'actions')
+  BuiltMap<String, ActionApiDescriptionModel>? get actions;
 
-     this.interfaces,
+  ControllerApiDescriptionModel._();
 
-     this.actions,
-  });
+  factory ControllerApiDescriptionModel([void updates(ControllerApiDescriptionModelBuilder b)]) = _$ControllerApiDescriptionModel;
 
-  @JsonKey(
-    
-    name: r'controllerName',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ControllerApiDescriptionModelBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<ControllerApiDescriptionModel> get serializer => _$ControllerApiDescriptionModelSerializer();
+}
 
-  String? controllerName;
-
-
-
-  @JsonKey(
-    
-    name: r'controllerGroupName',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? controllerGroupName;
-
-
-
-  @JsonKey(
-    
-    name: r'isRemoteService',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  bool? isRemoteService;
-
-
-
-  @JsonKey(
-    
-    name: r'isIntegrationService',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  bool? isIntegrationService;
-
-
-
-  @JsonKey(
-    
-    name: r'apiVersion',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? apiVersion;
-
-
-
-  @JsonKey(
-    
-    name: r'type',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? type;
-
-
-
-  @JsonKey(
-    
-    name: r'interfaces',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  List<ControllerInterfaceApiDescriptionModel>? interfaces;
-
-
-
-  @JsonKey(
-    
-    name: r'actions',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  Map<String, ActionApiDescriptionModel>? actions;
-
-
+class _$ControllerApiDescriptionModelSerializer implements PrimitiveSerializer<ControllerApiDescriptionModel> {
+  @override
+  final Iterable<Type> types = const [ControllerApiDescriptionModel, _$ControllerApiDescriptionModel];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is ControllerApiDescriptionModel &&
-     other.controllerName == controllerName &&
-     other.controllerGroupName == controllerGroupName &&
-     other.isRemoteService == isRemoteService &&
-     other.isIntegrationService == isIntegrationService &&
-     other.apiVersion == apiVersion &&
-     other.type == type &&
-     other.interfaces == interfaces &&
-     other.actions == actions;
+  final String wireName = r'ControllerApiDescriptionModel';
 
-  @override
-  int get hashCode =>
-    controllerName.hashCode +
-    controllerGroupName.hashCode +
-    isRemoteService.hashCode +
-    isIntegrationService.hashCode +
-    apiVersion.hashCode +
-    type.hashCode +
-    interfaces.hashCode +
-    actions.hashCode;
-
-  factory ControllerApiDescriptionModel.fromJson(Map<String, dynamic> json) => _$ControllerApiDescriptionModelFromJson(json);
-
-  Map<String, dynamic> toJson() => _$ControllerApiDescriptionModelToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    ControllerApiDescriptionModel object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.controllerName != null) {
+      yield r'controllerName';
+      yield serializers.serialize(
+        object.controllerName,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.controllerGroupName != null) {
+      yield r'controllerGroupName';
+      yield serializers.serialize(
+        object.controllerGroupName,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.isRemoteService != null) {
+      yield r'isRemoteService';
+      yield serializers.serialize(
+        object.isRemoteService,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.isIntegrationService != null) {
+      yield r'isIntegrationService';
+      yield serializers.serialize(
+        object.isIntegrationService,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.apiVersion != null) {
+      yield r'apiVersion';
+      yield serializers.serialize(
+        object.apiVersion,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.type != null) {
+      yield r'type';
+      yield serializers.serialize(
+        object.type,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.interfaces != null) {
+      yield r'interfaces';
+      yield serializers.serialize(
+        object.interfaces,
+        specifiedType: const FullType(BuiltList, [FullType(ControllerInterfaceApiDescriptionModel)]),
+      );
+    }
+    if (object.actions != null) {
+      yield r'actions';
+      yield serializers.serialize(
+        object.actions,
+        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(ActionApiDescriptionModel)]),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    ControllerApiDescriptionModel object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required ControllerApiDescriptionModelBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'controllerName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.controllerName = valueDes;
+          break;
+        case r'controllerGroupName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.controllerGroupName = valueDes;
+          break;
+        case r'isRemoteService':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isRemoteService = valueDes;
+          break;
+        case r'isIntegrationService':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isIntegrationService = valueDes;
+          break;
+        case r'apiVersion':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.apiVersion = valueDes;
+          break;
+        case r'type':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.type = valueDes;
+          break;
+        case r'interfaces':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(ControllerInterfaceApiDescriptionModel)]),
+          ) as BuiltList<ControllerInterfaceApiDescriptionModel>;
+          result.interfaces.replace(valueDes);
+          break;
+        case r'actions':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(ActionApiDescriptionModel)]),
+          ) as BuiltMap<String, ActionApiDescriptionModel>;
+          result.actions.replace(valueDes);
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  ControllerApiDescriptionModel deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = ControllerApiDescriptionModelBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

@@ -3,16 +3,16 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for ApplicationApiDescriptionModel
 void main() {
-  final ApplicationApiDescriptionModel? instance = /* ApplicationApiDescriptionModel(...) */ null;
-  // TODO add properties to the entity
+  final instance = ApplicationApiDescriptionModelBuilder();
+  // TODO add properties to the builder and call build()
 
   group(ApplicationApiDescriptionModel, () {
-    // Map<String, ModuleApiDescriptionModel> modules
+    // BuiltMap<String, ModuleApiDescriptionModel> modules
     test('to test the property `modules`', () async {
       // TODO
     });
 
-    // Map<String, TypeApiDescriptionModel> types
+    // BuiltMap<String, TypeApiDescriptionModel> types
     test('to test the property `types`', () async {
       // TODO
     });

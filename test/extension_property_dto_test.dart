@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for ExtensionPropertyDto
 void main() {
-  final ExtensionPropertyDto? instance = /* ExtensionPropertyDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = ExtensionPropertyDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(ExtensionPropertyDto, () {
     // String type
@@ -32,17 +32,17 @@ void main() {
       // TODO
     });
 
-    // List<ExtensionPropertyAttributeDto> attributes
+    // BuiltList<ExtensionPropertyAttributeDto> attributes
     test('to test the property `attributes`', () async {
       // TODO
     });
 
-    // Map<String, Object> configuration
+    // BuiltMap<String, JsonObject> configuration
     test('to test the property `configuration`', () async {
       // TODO
     });
 
-    // Object defaultValue
+    // JsonObject defaultValue
     test('to test the property `defaultValue`', () async {
       // TODO
     });

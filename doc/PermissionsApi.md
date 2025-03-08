@@ -31,7 +31,7 @@ final String providerKey = providerKey_example; // String |
 try {
     final response = api.callGet(providerName, providerKey);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling PermissionsApi->callGet: $e\n');
 }
 ```
@@ -76,7 +76,7 @@ final String providerKey = providerKey_example; // String |
 
 try {
     api.update(body, providerName, providerKey);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling PermissionsApi->update: $e\n');
 }
 ```

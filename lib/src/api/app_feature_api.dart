@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-// ignore: unused_import
-import 'dart:convert';
-import 'package:puupee_api_client/src/deserialize.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/app_feature_dto.dart';
 import 'package:puupee_api_client/src/model/app_feature_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_feature_dto.dart';
@@ -18,7 +18,9 @@ class AppFeatureApi {
 
   final Dio _dio;
 
-  const AppFeatureApi(this._dio);
+  final Serializers _serializers;
+
+  const AppFeatureApi(this._dio, this._serializers);
 
   /// create
   /// 
@@ -33,7 +35,7 @@ class AppFeatureApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [AppFeatureDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<AppFeatureDto>> create({ 
     CreateOrUpdateAppFeatureDto? body,
     CancelToken? cancelToken,
@@ -65,14 +67,16 @@ class AppFeatureApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+      const _type = FullType(CreateOrUpdateAppFeatureDto);
+      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
+
     } catch(error, stackTrace) {
-      throw DioError(
+      throw DioException(
          requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -87,15 +91,20 @@ _bodyData=jsonEncode(body);
       onReceiveProgress: onReceiveProgress,
     );
 
-    AppFeatureDto _responseData;
+    AppFeatureDto? _responseData;
 
     try {
-_responseData = deserialize<AppFeatureDto, AppFeatureDto>(_response.data!, 'AppFeatureDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(AppFeatureDto),
+      ) as AppFeatureDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -126,7 +135,7 @@ _responseData = deserialize<AppFeatureDto, AppFeatureDto>(_response.data!, 'AppF
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future]
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> delete({ 
     required String id,
     CancelToken? cancelToken,
@@ -136,7 +145,7 @@ _responseData = deserialize<AppFeatureDto, AppFeatureDto>(_response.data!, 'AppF
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/app/app-feature/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/app/app-feature/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -180,7 +189,7 @@ _responseData = deserialize<AppFeatureDto, AppFeatureDto>(_response.data!, 'AppF
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [AppFeatureDtoPagedResultDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<AppFeatureDtoPagedResultDto>> getList({ 
     String? sorting,
     int? skipCount,
@@ -211,9 +220,9 @@ _responseData = deserialize<AppFeatureDto, AppFeatureDto>(_response.data!, 'AppF
     );
 
     final _queryParameters = <String, dynamic>{
-      if (sorting != null) r'Sorting': sorting,
-      if (skipCount != null) r'SkipCount': skipCount,
-      if (maxResultCount != null) r'MaxResultCount': maxResultCount,
+      if (sorting != null) r'Sorting': encodeQueryParameter(_serializers, sorting, const FullType(String)),
+      if (skipCount != null) r'SkipCount': encodeQueryParameter(_serializers, skipCount, const FullType(int)),
+      if (maxResultCount != null) r'MaxResultCount': encodeQueryParameter(_serializers, maxResultCount, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(
@@ -225,15 +234,20 @@ _responseData = deserialize<AppFeatureDto, AppFeatureDto>(_response.data!, 'AppF
       onReceiveProgress: onReceiveProgress,
     );
 
-    AppFeatureDtoPagedResultDto _responseData;
+    AppFeatureDtoPagedResultDto? _responseData;
 
     try {
-_responseData = deserialize<AppFeatureDtoPagedResultDto, AppFeatureDtoPagedResultDto>(_response.data!, 'AppFeatureDtoPagedResultDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(AppFeatureDtoPagedResultDto),
+      ) as AppFeatureDtoPagedResultDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -265,7 +279,7 @@ _responseData = deserialize<AppFeatureDtoPagedResultDto, AppFeatureDtoPagedResul
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [AppFeatureDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<AppFeatureDto>> update({ 
     required String id,
     CreateOrUpdateAppFeatureDto? body,
@@ -276,7 +290,7 @@ _responseData = deserialize<AppFeatureDtoPagedResultDto, AppFeatureDtoPagedResul
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/app/app-feature/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/app/app-feature/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -298,14 +312,16 @@ _responseData = deserialize<AppFeatureDtoPagedResultDto, AppFeatureDtoPagedResul
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+      const _type = FullType(CreateOrUpdateAppFeatureDto);
+      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
+
     } catch(error, stackTrace) {
-      throw DioError(
+      throw DioException(
          requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -320,15 +336,20 @@ _bodyData=jsonEncode(body);
       onReceiveProgress: onReceiveProgress,
     );
 
-    AppFeatureDto _responseData;
+    AppFeatureDto? _responseData;
 
     try {
-_responseData = deserialize<AppFeatureDto, AppFeatureDto>(_response.data!, 'AppFeatureDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(AppFeatureDto),
+      ) as AppFeatureDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

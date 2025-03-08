@@ -3,69 +3,127 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
 import 'package:puupee_api_client/src/model/extension_property_dto.dart';
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'entity_extension_dto.g.dart';
 
+/// EntityExtensionDto
+///
+/// Properties:
+/// * [properties] 
+/// * [configuration] 
+@BuiltValue()
+abstract class EntityExtensionDto implements Built<EntityExtensionDto, EntityExtensionDtoBuilder> {
+  @BuiltValueField(wireName: r'properties')
+  BuiltMap<String, ExtensionPropertyDto>? get properties;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class EntityExtensionDto {
-  /// Returns a new [EntityExtensionDto] instance.
-  EntityExtensionDto({
+  @BuiltValueField(wireName: r'configuration')
+  BuiltMap<String, JsonObject>? get configuration;
 
-     this.properties,
+  EntityExtensionDto._();
 
-     this.configuration,
-  });
+  factory EntityExtensionDto([void updates(EntityExtensionDtoBuilder b)]) = _$EntityExtensionDto;
 
-  @JsonKey(
-    
-    name: r'properties',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(EntityExtensionDtoBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<EntityExtensionDto> get serializer => _$EntityExtensionDtoSerializer();
+}
 
-  Map<String, ExtensionPropertyDto>? properties;
-
-
-
-  @JsonKey(
-    
-    name: r'configuration',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  Map<String, Object>? configuration;
-
-
+class _$EntityExtensionDtoSerializer implements PrimitiveSerializer<EntityExtensionDto> {
+  @override
+  final Iterable<Type> types = const [EntityExtensionDto, _$EntityExtensionDto];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is EntityExtensionDto &&
-     other.properties == properties &&
-     other.configuration == configuration;
+  final String wireName = r'EntityExtensionDto';
 
-  @override
-  int get hashCode =>
-    properties.hashCode +
-    configuration.hashCode;
-
-  factory EntityExtensionDto.fromJson(Map<String, dynamic> json) => _$EntityExtensionDtoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$EntityExtensionDtoToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    EntityExtensionDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.properties != null) {
+      yield r'properties';
+      yield serializers.serialize(
+        object.properties,
+        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(ExtensionPropertyDto)]),
+      );
+    }
+    if (object.configuration != null) {
+      yield r'configuration';
+      yield serializers.serialize(
+        object.configuration,
+        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    EntityExtensionDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required EntityExtensionDtoBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'properties':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(ExtensionPropertyDto)]),
+          ) as BuiltMap<String, ExtensionPropertyDto>;
+          result.properties.replace(valueDes);
+          break;
+        case r'configuration':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+          ) as BuiltMap<String, JsonObject>;
+          result.configuration.replace(valueDes);
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  EntityExtensionDto deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = EntityExtensionDtoBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

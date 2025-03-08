@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **description** | **String** |  | [optional] 
 **isPublished** | **bool** |  | [optional] 
 **iconUrl** | **String** |  | [optional] 
-**routes** | [**List&lt;CreateUpdateMessageSourceRouteSubDto&gt;**](CreateUpdateMessageSourceRouteSubDto.md) |  | [optional] 
+**routes** | [**BuiltList&lt;CreateUpdateMessageSourceRouteSubDto&gt;**](CreateUpdateMessageSourceRouteSubDto.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

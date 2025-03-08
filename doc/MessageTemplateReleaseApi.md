@@ -31,7 +31,7 @@ final CreateMessageTemplateReleaseDto body = ; // CreateMessageTemplateReleaseDt
 try {
     final response = api.create(body);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling MessageTemplateReleaseApi->create: $e\n');
 }
 ```
@@ -74,7 +74,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getById(id);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling MessageTemplateReleaseApi->getById: $e\n');
 }
 ```
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getList**
-> List<MessageTemplateReleaseDto> getList(templateId)
+> BuiltList<MessageTemplateReleaseDto> getList(templateId)
 
 
 
@@ -117,7 +117,7 @@ final String templateId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getList(templateId);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling MessageTemplateReleaseApi->getList: $e\n');
 }
 ```
@@ -130,7 +130,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**List&lt;MessageTemplateReleaseDto&gt;**](MessageTemplateReleaseDto.md)
+[**BuiltList&lt;MessageTemplateReleaseDto&gt;**](MessageTemplateReleaseDto.md)
 
 ### Authorization
 

@@ -3,68 +3,125 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'application_localization_resource_dto.g.dart';
 
+/// ApplicationLocalizationResourceDto
+///
+/// Properties:
+/// * [texts] 
+/// * [baseResources] 
+@BuiltValue()
+abstract class ApplicationLocalizationResourceDto implements Built<ApplicationLocalizationResourceDto, ApplicationLocalizationResourceDtoBuilder> {
+  @BuiltValueField(wireName: r'texts')
+  BuiltMap<String, String>? get texts;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class ApplicationLocalizationResourceDto {
-  /// Returns a new [ApplicationLocalizationResourceDto] instance.
-  ApplicationLocalizationResourceDto({
+  @BuiltValueField(wireName: r'baseResources')
+  BuiltList<String>? get baseResources;
 
-     this.texts,
+  ApplicationLocalizationResourceDto._();
 
-     this.baseResources,
-  });
+  factory ApplicationLocalizationResourceDto([void updates(ApplicationLocalizationResourceDtoBuilder b)]) = _$ApplicationLocalizationResourceDto;
 
-  @JsonKey(
-    
-    name: r'texts',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ApplicationLocalizationResourceDtoBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<ApplicationLocalizationResourceDto> get serializer => _$ApplicationLocalizationResourceDtoSerializer();
+}
 
-  Map<String, String>? texts;
-
-
-
-  @JsonKey(
-    
-    name: r'baseResources',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  List<String>? baseResources;
-
-
+class _$ApplicationLocalizationResourceDtoSerializer implements PrimitiveSerializer<ApplicationLocalizationResourceDto> {
+  @override
+  final Iterable<Type> types = const [ApplicationLocalizationResourceDto, _$ApplicationLocalizationResourceDto];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is ApplicationLocalizationResourceDto &&
-     other.texts == texts &&
-     other.baseResources == baseResources;
+  final String wireName = r'ApplicationLocalizationResourceDto';
 
-  @override
-  int get hashCode =>
-    texts.hashCode +
-    baseResources.hashCode;
-
-  factory ApplicationLocalizationResourceDto.fromJson(Map<String, dynamic> json) => _$ApplicationLocalizationResourceDtoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$ApplicationLocalizationResourceDtoToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    ApplicationLocalizationResourceDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.texts != null) {
+      yield r'texts';
+      yield serializers.serialize(
+        object.texts,
+        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(String)]),
+      );
+    }
+    if (object.baseResources != null) {
+      yield r'baseResources';
+      yield serializers.serialize(
+        object.baseResources,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    ApplicationLocalizationResourceDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required ApplicationLocalizationResourceDtoBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'texts':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(String)]),
+          ) as BuiltMap<String, String>;
+          result.texts.replace(valueDes);
+          break;
+        case r'baseResources':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.baseResources.replace(valueDes);
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  ApplicationLocalizationResourceDto deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = ApplicationLocalizationResourceDtoBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

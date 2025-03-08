@@ -36,7 +36,7 @@ final TenantCreateDto body = ; // TenantCreateDto |
 try {
     final response = api.create(body);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling TenantApi->create: $e\n');
 }
 ```
@@ -78,7 +78,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 
 try {
     api.delete(id);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling TenantApi->delete: $e\n');
 }
 ```
@@ -120,7 +120,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 
 try {
     api.deleteDefaultConnectionString(id);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling TenantApi->deleteDefaultConnectionString: $e\n');
 }
 ```
@@ -163,7 +163,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getById(id);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling TenantApi->getById: $e\n');
 }
 ```
@@ -206,7 +206,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getDefaultConnectionString(id);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling TenantApi->getDefaultConnectionString: $e\n');
 }
 ```
@@ -252,7 +252,7 @@ final int maxResultCount = 56; // int |
 try {
     final response = api.getList(filter, sorting, skipCount, maxResultCount);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling TenantApi->getList: $e\n');
 }
 ```
@@ -299,7 +299,7 @@ final TenantUpdateDto body = ; // TenantUpdateDto |
 try {
     final response = api.update(id, body);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling TenantApi->update: $e\n');
 }
 ```
@@ -343,7 +343,7 @@ final String defaultConnectionString = defaultConnectionString_example; // Strin
 
 try {
     api.updateDefaultConnectionString(id, defaultConnectionString);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling TenantApi->updateDefaultConnectionString: $e\n');
 }
 ```

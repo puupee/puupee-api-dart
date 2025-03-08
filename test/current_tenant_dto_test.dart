@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for CurrentTenantDto
 void main() {
-  final CurrentTenantDto? instance = /* CurrentTenantDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = CurrentTenantDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(CurrentTenantDto, () {
     // String id

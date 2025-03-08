@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-// ignore: unused_import
-import 'dart:convert';
-import 'package:puupee_api_client/src/deserialize.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/identity_role_create_dto.dart';
 import 'package:puupee_api_client/src/model/identity_role_dto.dart';
 import 'package:puupee_api_client/src/model/identity_role_dto_list_result_dto.dart';
@@ -20,7 +20,9 @@ class RoleApi {
 
   final Dio _dio;
 
-  const RoleApi(this._dio);
+  final Serializers _serializers;
+
+  const RoleApi(this._dio, this._serializers);
 
   /// create
   /// 
@@ -35,7 +37,7 @@ class RoleApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [IdentityRoleDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<IdentityRoleDto>> create({ 
     IdentityRoleCreateDto? body,
     CancelToken? cancelToken,
@@ -67,14 +69,16 @@ class RoleApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+      const _type = FullType(IdentityRoleCreateDto);
+      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
+
     } catch(error, stackTrace) {
-      throw DioError(
+      throw DioException(
          requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -89,15 +93,20 @@ _bodyData=jsonEncode(body);
       onReceiveProgress: onReceiveProgress,
     );
 
-    IdentityRoleDto _responseData;
+    IdentityRoleDto? _responseData;
 
     try {
-_responseData = deserialize<IdentityRoleDto, IdentityRoleDto>(_response.data!, 'IdentityRoleDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(IdentityRoleDto),
+      ) as IdentityRoleDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -128,7 +137,7 @@ _responseData = deserialize<IdentityRoleDto, IdentityRoleDto>(_response.data!, '
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future]
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> delete({ 
     required String id,
     CancelToken? cancelToken,
@@ -138,7 +147,7 @@ _responseData = deserialize<IdentityRoleDto, IdentityRoleDto>(_response.data!, '
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/identity/roles/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/identity/roles/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -179,7 +188,7 @@ _responseData = deserialize<IdentityRoleDto, IdentityRoleDto>(_response.data!, '
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [IdentityRoleDtoListResultDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<IdentityRoleDtoListResultDto>> getAllList({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -214,15 +223,20 @@ _responseData = deserialize<IdentityRoleDto, IdentityRoleDto>(_response.data!, '
       onReceiveProgress: onReceiveProgress,
     );
 
-    IdentityRoleDtoListResultDto _responseData;
+    IdentityRoleDtoListResultDto? _responseData;
 
     try {
-_responseData = deserialize<IdentityRoleDtoListResultDto, IdentityRoleDtoListResultDto>(_response.data!, 'IdentityRoleDtoListResultDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(IdentityRoleDtoListResultDto),
+      ) as IdentityRoleDtoListResultDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -253,7 +267,7 @@ _responseData = deserialize<IdentityRoleDtoListResultDto, IdentityRoleDtoListRes
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [IdentityRoleDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<IdentityRoleDto>> getById({ 
     required String id,
     CancelToken? cancelToken,
@@ -263,7 +277,7 @@ _responseData = deserialize<IdentityRoleDtoListResultDto, IdentityRoleDtoListRes
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/identity/roles/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/identity/roles/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -289,15 +303,20 @@ _responseData = deserialize<IdentityRoleDtoListResultDto, IdentityRoleDtoListRes
       onReceiveProgress: onReceiveProgress,
     );
 
-    IdentityRoleDto _responseData;
+    IdentityRoleDto? _responseData;
 
     try {
-_responseData = deserialize<IdentityRoleDto, IdentityRoleDto>(_response.data!, 'IdentityRoleDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(IdentityRoleDto),
+      ) as IdentityRoleDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -331,7 +350,7 @@ _responseData = deserialize<IdentityRoleDto, IdentityRoleDto>(_response.data!, '
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [IdentityRoleDtoPagedResultDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<IdentityRoleDtoPagedResultDto>> getList({ 
     String? filter,
     String? sorting,
@@ -363,10 +382,10 @@ _responseData = deserialize<IdentityRoleDto, IdentityRoleDto>(_response.data!, '
     );
 
     final _queryParameters = <String, dynamic>{
-      if (filter != null) r'Filter': filter,
-      if (sorting != null) r'Sorting': sorting,
-      if (skipCount != null) r'SkipCount': skipCount,
-      if (maxResultCount != null) r'MaxResultCount': maxResultCount,
+      if (filter != null) r'Filter': encodeQueryParameter(_serializers, filter, const FullType(String)),
+      if (sorting != null) r'Sorting': encodeQueryParameter(_serializers, sorting, const FullType(String)),
+      if (skipCount != null) r'SkipCount': encodeQueryParameter(_serializers, skipCount, const FullType(int)),
+      if (maxResultCount != null) r'MaxResultCount': encodeQueryParameter(_serializers, maxResultCount, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(
@@ -378,15 +397,20 @@ _responseData = deserialize<IdentityRoleDto, IdentityRoleDto>(_response.data!, '
       onReceiveProgress: onReceiveProgress,
     );
 
-    IdentityRoleDtoPagedResultDto _responseData;
+    IdentityRoleDtoPagedResultDto? _responseData;
 
     try {
-_responseData = deserialize<IdentityRoleDtoPagedResultDto, IdentityRoleDtoPagedResultDto>(_response.data!, 'IdentityRoleDtoPagedResultDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(IdentityRoleDtoPagedResultDto),
+      ) as IdentityRoleDtoPagedResultDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -418,7 +442,7 @@ _responseData = deserialize<IdentityRoleDtoPagedResultDto, IdentityRoleDtoPagedR
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [IdentityRoleDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<IdentityRoleDto>> update({ 
     required String id,
     IdentityRoleUpdateDto? body,
@@ -429,7 +453,7 @@ _responseData = deserialize<IdentityRoleDtoPagedResultDto, IdentityRoleDtoPagedR
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/identity/roles/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/identity/roles/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -451,14 +475,16 @@ _responseData = deserialize<IdentityRoleDtoPagedResultDto, IdentityRoleDtoPagedR
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+      const _type = FullType(IdentityRoleUpdateDto);
+      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
+
     } catch(error, stackTrace) {
-      throw DioError(
+      throw DioException(
          requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -473,15 +499,20 @@ _bodyData=jsonEncode(body);
       onReceiveProgress: onReceiveProgress,
     );
 
-    IdentityRoleDto _responseData;
+    IdentityRoleDto? _responseData;
 
     try {
-_responseData = deserialize<IdentityRoleDto, IdentityRoleDto>(_response.data!, 'IdentityRoleDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(IdentityRoleDto),
+      ) as IdentityRoleDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

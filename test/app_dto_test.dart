@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for AppDto
 void main() {
-  final AppDto? instance = /* AppDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = AppDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(AppDto, () {
     // String id
@@ -158,7 +158,7 @@ void main() {
       // TODO
     });
 
-    // List<AppReleaseDto> latestReleases
+    // BuiltList<AppReleaseDto> latestReleases
     test('to test the property `latestReleases`', () async {
       // TODO
     });
@@ -168,12 +168,12 @@ void main() {
       // TODO
     });
 
-    // List<AppFeatureDto> features
+    // BuiltList<AppFeatureDto> features
     test('to test the property `features`', () async {
       // TODO
     });
 
-    // List<AppSdkDto> sdks
+    // BuiltList<AppSdkDto> sdks
     test('to test the property `sdks`', () async {
       // TODO
     });

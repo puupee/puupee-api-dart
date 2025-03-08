@@ -3,182 +3,246 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'update_email_settings_dto.g.dart';
 
+/// UpdateEmailSettingsDto
+///
+/// Properties:
+/// * [smtpHost] 
+/// * [smtpPort] 
+/// * [smtpUserName] 
+/// * [smtpPassword] 
+/// * [smtpDomain] 
+/// * [smtpEnableSsl] 
+/// * [smtpUseDefaultCredentials] 
+/// * [defaultFromAddress] 
+/// * [defaultFromDisplayName] 
+@BuiltValue()
+abstract class UpdateEmailSettingsDto implements Built<UpdateEmailSettingsDto, UpdateEmailSettingsDtoBuilder> {
+  @BuiltValueField(wireName: r'smtpHost')
+  String? get smtpHost;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class UpdateEmailSettingsDto {
-  /// Returns a new [UpdateEmailSettingsDto] instance.
-  UpdateEmailSettingsDto({
+  @BuiltValueField(wireName: r'smtpPort')
+  int? get smtpPort;
 
-     this.smtpHost,
+  @BuiltValueField(wireName: r'smtpUserName')
+  String? get smtpUserName;
 
-     this.smtpPort,
+  @BuiltValueField(wireName: r'smtpPassword')
+  String? get smtpPassword;
 
-     this.smtpUserName,
+  @BuiltValueField(wireName: r'smtpDomain')
+  String? get smtpDomain;
 
-     this.smtpPassword,
+  @BuiltValueField(wireName: r'smtpEnableSsl')
+  bool? get smtpEnableSsl;
 
-     this.smtpDomain,
+  @BuiltValueField(wireName: r'smtpUseDefaultCredentials')
+  bool? get smtpUseDefaultCredentials;
 
-     this.smtpEnableSsl,
+  @BuiltValueField(wireName: r'defaultFromAddress')
+  String get defaultFromAddress;
 
-     this.smtpUseDefaultCredentials,
+  @BuiltValueField(wireName: r'defaultFromDisplayName')
+  String get defaultFromDisplayName;
 
-    required  this.defaultFromAddress,
+  UpdateEmailSettingsDto._();
 
-    required  this.defaultFromDisplayName,
-  });
+  factory UpdateEmailSettingsDto([void updates(UpdateEmailSettingsDtoBuilder b)]) = _$UpdateEmailSettingsDto;
 
-  @JsonKey(
-    
-    name: r'smtpHost',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(UpdateEmailSettingsDtoBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<UpdateEmailSettingsDto> get serializer => _$UpdateEmailSettingsDtoSerializer();
+}
 
-  String? smtpHost;
-
-
-
-          // minimum: 1
-          // maximum: 65535
-  @JsonKey(
-    
-    name: r'smtpPort',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  int? smtpPort;
-
-
-
-  @JsonKey(
-    
-    name: r'smtpUserName',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? smtpUserName;
-
-
-
-  @JsonKey(
-    
-    name: r'smtpPassword',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? smtpPassword;
-
-
-
-  @JsonKey(
-    
-    name: r'smtpDomain',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? smtpDomain;
-
-
-
-  @JsonKey(
-    
-    name: r'smtpEnableSsl',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  bool? smtpEnableSsl;
-
-
-
-  @JsonKey(
-    
-    name: r'smtpUseDefaultCredentials',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  bool? smtpUseDefaultCredentials;
-
-
-
-  @JsonKey(
-    
-    name: r'defaultFromAddress',
-    required: true,
-    includeIfNull: false
-  )
-
-
-  String defaultFromAddress;
-
-
-
-  @JsonKey(
-    
-    name: r'defaultFromDisplayName',
-    required: true,
-    includeIfNull: false
-  )
-
-
-  String defaultFromDisplayName;
-
-
+class _$UpdateEmailSettingsDtoSerializer implements PrimitiveSerializer<UpdateEmailSettingsDto> {
+  @override
+  final Iterable<Type> types = const [UpdateEmailSettingsDto, _$UpdateEmailSettingsDto];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is UpdateEmailSettingsDto &&
-     other.smtpHost == smtpHost &&
-     other.smtpPort == smtpPort &&
-     other.smtpUserName == smtpUserName &&
-     other.smtpPassword == smtpPassword &&
-     other.smtpDomain == smtpDomain &&
-     other.smtpEnableSsl == smtpEnableSsl &&
-     other.smtpUseDefaultCredentials == smtpUseDefaultCredentials &&
-     other.defaultFromAddress == defaultFromAddress &&
-     other.defaultFromDisplayName == defaultFromDisplayName;
+  final String wireName = r'UpdateEmailSettingsDto';
 
-  @override
-  int get hashCode =>
-    smtpHost.hashCode +
-    smtpPort.hashCode +
-    smtpUserName.hashCode +
-    smtpPassword.hashCode +
-    smtpDomain.hashCode +
-    smtpEnableSsl.hashCode +
-    smtpUseDefaultCredentials.hashCode +
-    defaultFromAddress.hashCode +
-    defaultFromDisplayName.hashCode;
-
-  factory UpdateEmailSettingsDto.fromJson(Map<String, dynamic> json) => _$UpdateEmailSettingsDtoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$UpdateEmailSettingsDtoToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    UpdateEmailSettingsDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.smtpHost != null) {
+      yield r'smtpHost';
+      yield serializers.serialize(
+        object.smtpHost,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.smtpPort != null) {
+      yield r'smtpPort';
+      yield serializers.serialize(
+        object.smtpPort,
+        specifiedType: const FullType(int),
+      );
+    }
+    if (object.smtpUserName != null) {
+      yield r'smtpUserName';
+      yield serializers.serialize(
+        object.smtpUserName,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.smtpPassword != null) {
+      yield r'smtpPassword';
+      yield serializers.serialize(
+        object.smtpPassword,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.smtpDomain != null) {
+      yield r'smtpDomain';
+      yield serializers.serialize(
+        object.smtpDomain,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.smtpEnableSsl != null) {
+      yield r'smtpEnableSsl';
+      yield serializers.serialize(
+        object.smtpEnableSsl,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.smtpUseDefaultCredentials != null) {
+      yield r'smtpUseDefaultCredentials';
+      yield serializers.serialize(
+        object.smtpUseDefaultCredentials,
+        specifiedType: const FullType(bool),
+      );
+    }
+    yield r'defaultFromAddress';
+    yield serializers.serialize(
+      object.defaultFromAddress,
+      specifiedType: const FullType(String),
+    );
+    yield r'defaultFromDisplayName';
+    yield serializers.serialize(
+      object.defaultFromDisplayName,
+      specifiedType: const FullType(String),
+    );
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    UpdateEmailSettingsDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required UpdateEmailSettingsDtoBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'smtpHost':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.smtpHost = valueDes;
+          break;
+        case r'smtpPort':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(int),
+          ) as int;
+          result.smtpPort = valueDes;
+          break;
+        case r'smtpUserName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.smtpUserName = valueDes;
+          break;
+        case r'smtpPassword':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.smtpPassword = valueDes;
+          break;
+        case r'smtpDomain':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.smtpDomain = valueDes;
+          break;
+        case r'smtpEnableSsl':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.smtpEnableSsl = valueDes;
+          break;
+        case r'smtpUseDefaultCredentials':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.smtpUseDefaultCredentials = valueDes;
+          break;
+        case r'defaultFromAddress':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.defaultFromAddress = valueDes;
+          break;
+        case r'defaultFromDisplayName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.defaultFromDisplayName = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  UpdateEmailSettingsDto deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = UpdateEmailSettingsDtoBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

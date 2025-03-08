@@ -32,7 +32,7 @@ final CreateUpdateMessageSourceRouteSubDto body = ; // CreateUpdateMessageSource
 
 try {
     api.create(body);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling MessageSourceRouteSubApi->create: $e\n');
 }
 ```
@@ -74,7 +74,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 
 try {
     api.delete(id);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling MessageSourceRouteSubApi->delete: $e\n');
 }
 ```
@@ -117,7 +117,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getById(id);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling MessageSourceRouteSubApi->getById: $e\n');
 }
 ```
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getList**
-> List<MessageSourceRouteSubDto> getList()
+> BuiltList<MessageSourceRouteSubDto> getList()
 
 
 
@@ -159,7 +159,7 @@ final api = PuupeeApiClient().getMessageSourceRouteSubApi();
 try {
     final response = api.getList();
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling MessageSourceRouteSubApi->getList: $e\n');
 }
 ```
@@ -169,7 +169,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List&lt;MessageSourceRouteSubDto&gt;**](MessageSourceRouteSubDto.md)
+[**BuiltList&lt;MessageSourceRouteSubDto&gt;**](MessageSourceRouteSubDto.md)
 
 ### Authorization
 
@@ -199,7 +199,7 @@ final CreateUpdateMessageSourceRouteSubDto body = ; // CreateUpdateMessageSource
 
 try {
     api.update(id, body);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling MessageSourceRouteSubApi->update: $e\n');
 }
 ```

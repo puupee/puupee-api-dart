@@ -3,84 +3,142 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'identity_user_role.g.dart';
 
+/// IdentityUserRole
+///
+/// Properties:
+/// * [tenantId] 
+/// * [userId] 
+/// * [roleId] 
+@BuiltValue()
+abstract class IdentityUserRole implements Built<IdentityUserRole, IdentityUserRoleBuilder> {
+  @BuiltValueField(wireName: r'tenantId')
+  String? get tenantId;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class IdentityUserRole {
-  /// Returns a new [IdentityUserRole] instance.
-  IdentityUserRole({
+  @BuiltValueField(wireName: r'userId')
+  String? get userId;
 
-     this.tenantId,
+  @BuiltValueField(wireName: r'roleId')
+  String? get roleId;
 
-     this.userId,
+  IdentityUserRole._();
 
-     this.roleId,
-  });
+  factory IdentityUserRole([void updates(IdentityUserRoleBuilder b)]) = _$IdentityUserRole;
 
-  @JsonKey(
-    
-    name: r'tenantId',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(IdentityUserRoleBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<IdentityUserRole> get serializer => _$IdentityUserRoleSerializer();
+}
 
-  String? tenantId;
-
-
-
-  @JsonKey(
-    
-    name: r'userId',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? userId;
-
-
-
-  @JsonKey(
-    
-    name: r'roleId',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? roleId;
-
-
+class _$IdentityUserRoleSerializer implements PrimitiveSerializer<IdentityUserRole> {
+  @override
+  final Iterable<Type> types = const [IdentityUserRole, _$IdentityUserRole];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is IdentityUserRole &&
-     other.tenantId == tenantId &&
-     other.userId == userId &&
-     other.roleId == roleId;
+  final String wireName = r'IdentityUserRole';
 
-  @override
-  int get hashCode =>
-    tenantId.hashCode +
-    userId.hashCode +
-    roleId.hashCode;
-
-  factory IdentityUserRole.fromJson(Map<String, dynamic> json) => _$IdentityUserRoleFromJson(json);
-
-  Map<String, dynamic> toJson() => _$IdentityUserRoleToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    IdentityUserRole object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.tenantId != null) {
+      yield r'tenantId';
+      yield serializers.serialize(
+        object.tenantId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.userId != null) {
+      yield r'userId';
+      yield serializers.serialize(
+        object.userId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.roleId != null) {
+      yield r'roleId';
+      yield serializers.serialize(
+        object.roleId,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    IdentityUserRole object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required IdentityUserRoleBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'tenantId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.tenantId = valueDes;
+          break;
+        case r'userId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.userId = valueDes;
+          break;
+        case r'roleId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.roleId = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  IdentityUserRole deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = IdentityUserRoleBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

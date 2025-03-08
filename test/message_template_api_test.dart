@@ -22,7 +22,7 @@ void main() {
       // TODO
     });
 
-    //Future<List<MessageTemplateDto>> getList() async
+    //Future<BuiltList<MessageTemplateDto>> getList() async
     test('test getList', () async {
       // TODO
     });

@@ -3,116 +3,178 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'extension_property_ui_lookup_dto.g.dart';
 
+/// ExtensionPropertyUiLookupDto
+///
+/// Properties:
+/// * [url] 
+/// * [resultListPropertyName] 
+/// * [displayPropertyName] 
+/// * [valuePropertyName] 
+/// * [filterParamName] 
+@BuiltValue()
+abstract class ExtensionPropertyUiLookupDto implements Built<ExtensionPropertyUiLookupDto, ExtensionPropertyUiLookupDtoBuilder> {
+  @BuiltValueField(wireName: r'url')
+  String? get url;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class ExtensionPropertyUiLookupDto {
-  /// Returns a new [ExtensionPropertyUiLookupDto] instance.
-  ExtensionPropertyUiLookupDto({
+  @BuiltValueField(wireName: r'resultListPropertyName')
+  String? get resultListPropertyName;
 
-     this.url,
+  @BuiltValueField(wireName: r'displayPropertyName')
+  String? get displayPropertyName;
 
-     this.resultListPropertyName,
+  @BuiltValueField(wireName: r'valuePropertyName')
+  String? get valuePropertyName;
 
-     this.displayPropertyName,
+  @BuiltValueField(wireName: r'filterParamName')
+  String? get filterParamName;
 
-     this.valuePropertyName,
+  ExtensionPropertyUiLookupDto._();
 
-     this.filterParamName,
-  });
+  factory ExtensionPropertyUiLookupDto([void updates(ExtensionPropertyUiLookupDtoBuilder b)]) = _$ExtensionPropertyUiLookupDto;
 
-  @JsonKey(
-    
-    name: r'url',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ExtensionPropertyUiLookupDtoBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<ExtensionPropertyUiLookupDto> get serializer => _$ExtensionPropertyUiLookupDtoSerializer();
+}
 
-  String? url;
-
-
-
-  @JsonKey(
-    
-    name: r'resultListPropertyName',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? resultListPropertyName;
-
-
-
-  @JsonKey(
-    
-    name: r'displayPropertyName',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? displayPropertyName;
-
-
-
-  @JsonKey(
-    
-    name: r'valuePropertyName',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? valuePropertyName;
-
-
-
-  @JsonKey(
-    
-    name: r'filterParamName',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? filterParamName;
-
-
+class _$ExtensionPropertyUiLookupDtoSerializer implements PrimitiveSerializer<ExtensionPropertyUiLookupDto> {
+  @override
+  final Iterable<Type> types = const [ExtensionPropertyUiLookupDto, _$ExtensionPropertyUiLookupDto];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is ExtensionPropertyUiLookupDto &&
-     other.url == url &&
-     other.resultListPropertyName == resultListPropertyName &&
-     other.displayPropertyName == displayPropertyName &&
-     other.valuePropertyName == valuePropertyName &&
-     other.filterParamName == filterParamName;
+  final String wireName = r'ExtensionPropertyUiLookupDto';
 
-  @override
-  int get hashCode =>
-    url.hashCode +
-    resultListPropertyName.hashCode +
-    displayPropertyName.hashCode +
-    valuePropertyName.hashCode +
-    filterParamName.hashCode;
-
-  factory ExtensionPropertyUiLookupDto.fromJson(Map<String, dynamic> json) => _$ExtensionPropertyUiLookupDtoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$ExtensionPropertyUiLookupDtoToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    ExtensionPropertyUiLookupDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.url != null) {
+      yield r'url';
+      yield serializers.serialize(
+        object.url,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.resultListPropertyName != null) {
+      yield r'resultListPropertyName';
+      yield serializers.serialize(
+        object.resultListPropertyName,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.displayPropertyName != null) {
+      yield r'displayPropertyName';
+      yield serializers.serialize(
+        object.displayPropertyName,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.valuePropertyName != null) {
+      yield r'valuePropertyName';
+      yield serializers.serialize(
+        object.valuePropertyName,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.filterParamName != null) {
+      yield r'filterParamName';
+      yield serializers.serialize(
+        object.filterParamName,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    ExtensionPropertyUiLookupDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required ExtensionPropertyUiLookupDtoBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'url':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.url = valueDes;
+          break;
+        case r'resultListPropertyName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.resultListPropertyName = valueDes;
+          break;
+        case r'displayPropertyName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.displayPropertyName = valueDes;
+          break;
+        case r'valuePropertyName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.valuePropertyName = valueDes;
+          break;
+        case r'filterParamName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.filterParamName = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  ExtensionPropertyUiLookupDto deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = ExtensionPropertyUiLookupDtoBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

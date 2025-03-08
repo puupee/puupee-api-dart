@@ -3,52 +3,107 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'application_feature_configuration_dto.g.dart';
 
+/// ApplicationFeatureConfigurationDto
+///
+/// Properties:
+/// * [values] 
+@BuiltValue()
+abstract class ApplicationFeatureConfigurationDto implements Built<ApplicationFeatureConfigurationDto, ApplicationFeatureConfigurationDtoBuilder> {
+  @BuiltValueField(wireName: r'values')
+  BuiltMap<String, String>? get values;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class ApplicationFeatureConfigurationDto {
-  /// Returns a new [ApplicationFeatureConfigurationDto] instance.
-  ApplicationFeatureConfigurationDto({
+  ApplicationFeatureConfigurationDto._();
 
-     this.values,
-  });
+  factory ApplicationFeatureConfigurationDto([void updates(ApplicationFeatureConfigurationDtoBuilder b)]) = _$ApplicationFeatureConfigurationDto;
 
-  @JsonKey(
-    
-    name: r'values',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ApplicationFeatureConfigurationDtoBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<ApplicationFeatureConfigurationDto> get serializer => _$ApplicationFeatureConfigurationDtoSerializer();
+}
 
-  Map<String, String>? values;
-
-
+class _$ApplicationFeatureConfigurationDtoSerializer implements PrimitiveSerializer<ApplicationFeatureConfigurationDto> {
+  @override
+  final Iterable<Type> types = const [ApplicationFeatureConfigurationDto, _$ApplicationFeatureConfigurationDto];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is ApplicationFeatureConfigurationDto &&
-     other.values == values;
+  final String wireName = r'ApplicationFeatureConfigurationDto';
 
-  @override
-  int get hashCode =>
-    values.hashCode;
-
-  factory ApplicationFeatureConfigurationDto.fromJson(Map<String, dynamic> json) => _$ApplicationFeatureConfigurationDtoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$ApplicationFeatureConfigurationDtoToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    ApplicationFeatureConfigurationDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.values != null) {
+      yield r'values';
+      yield serializers.serialize(
+        object.values,
+        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(String)]),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    ApplicationFeatureConfigurationDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required ApplicationFeatureConfigurationDtoBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'values':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(String)]),
+          ) as BuiltMap<String, String>;
+          result.values.replace(valueDes);
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  ApplicationFeatureConfigurationDto deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = ApplicationFeatureConfigurationDtoBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

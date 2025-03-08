@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-// ignore: unused_import
-import 'dart:convert';
-import 'package:puupee_api_client/src/deserialize.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 import 'package:puupee_api_client/src/model/tenant_create_dto.dart';
 import 'package:puupee_api_client/src/model/tenant_dto.dart';
@@ -19,7 +19,9 @@ class TenantApi {
 
   final Dio _dio;
 
-  const TenantApi(this._dio);
+  final Serializers _serializers;
+
+  const TenantApi(this._dio, this._serializers);
 
   /// create
   /// 
@@ -34,7 +36,7 @@ class TenantApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [TenantDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<TenantDto>> create({ 
     TenantCreateDto? body,
     CancelToken? cancelToken,
@@ -66,14 +68,16 @@ class TenantApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+      const _type = FullType(TenantCreateDto);
+      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
+
     } catch(error, stackTrace) {
-      throw DioError(
+      throw DioException(
          requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -88,15 +92,20 @@ _bodyData=jsonEncode(body);
       onReceiveProgress: onReceiveProgress,
     );
 
-    TenantDto _responseData;
+    TenantDto? _responseData;
 
     try {
-_responseData = deserialize<TenantDto, TenantDto>(_response.data!, 'TenantDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(TenantDto),
+      ) as TenantDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -127,7 +136,7 @@ _responseData = deserialize<TenantDto, TenantDto>(_response.data!, 'TenantDto', 
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future]
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> delete({ 
     required String id,
     CancelToken? cancelToken,
@@ -137,7 +146,7 @@ _responseData = deserialize<TenantDto, TenantDto>(_response.data!, 'TenantDto', 
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/multi-tenancy/tenants/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/multi-tenancy/tenants/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -179,7 +188,7 @@ _responseData = deserialize<TenantDto, TenantDto>(_response.data!, 'TenantDto', 
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future]
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> deleteDefaultConnectionString({ 
     required String id,
     CancelToken? cancelToken,
@@ -189,7 +198,7 @@ _responseData = deserialize<TenantDto, TenantDto>(_response.data!, 'TenantDto', 
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/multi-tenancy/tenants/{id}/default-connection-string'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/multi-tenancy/tenants/{id}/default-connection-string'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -231,7 +240,7 @@ _responseData = deserialize<TenantDto, TenantDto>(_response.data!, 'TenantDto', 
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [TenantDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<TenantDto>> getById({ 
     required String id,
     CancelToken? cancelToken,
@@ -241,7 +250,7 @@ _responseData = deserialize<TenantDto, TenantDto>(_response.data!, 'TenantDto', 
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/multi-tenancy/tenants/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/multi-tenancy/tenants/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -267,15 +276,20 @@ _responseData = deserialize<TenantDto, TenantDto>(_response.data!, 'TenantDto', 
       onReceiveProgress: onReceiveProgress,
     );
 
-    TenantDto _responseData;
+    TenantDto? _responseData;
 
     try {
-_responseData = deserialize<TenantDto, TenantDto>(_response.data!, 'TenantDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(TenantDto),
+      ) as TenantDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -306,7 +320,7 @@ _responseData = deserialize<TenantDto, TenantDto>(_response.data!, 'TenantDto', 
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [String] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<String>> getDefaultConnectionString({ 
     required String id,
     CancelToken? cancelToken,
@@ -316,7 +330,7 @@ _responseData = deserialize<TenantDto, TenantDto>(_response.data!, 'TenantDto', 
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/multi-tenancy/tenants/{id}/default-connection-string'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/multi-tenancy/tenants/{id}/default-connection-string'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -342,15 +356,17 @@ _responseData = deserialize<TenantDto, TenantDto>(_response.data!, 'TenantDto', 
       onReceiveProgress: onReceiveProgress,
     );
 
-    String _responseData;
+    String? _responseData;
 
     try {
-_responseData = deserialize<String, String>(_response.data!, 'String', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : rawResponse as String;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -384,7 +400,7 @@ _responseData = deserialize<String, String>(_response.data!, 'String', growable:
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [TenantDtoPagedResultDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<TenantDtoPagedResultDto>> getList({ 
     String? filter,
     String? sorting,
@@ -416,10 +432,10 @@ _responseData = deserialize<String, String>(_response.data!, 'String', growable:
     );
 
     final _queryParameters = <String, dynamic>{
-      if (filter != null) r'Filter': filter,
-      if (sorting != null) r'Sorting': sorting,
-      if (skipCount != null) r'SkipCount': skipCount,
-      if (maxResultCount != null) r'MaxResultCount': maxResultCount,
+      if (filter != null) r'Filter': encodeQueryParameter(_serializers, filter, const FullType(String)),
+      if (sorting != null) r'Sorting': encodeQueryParameter(_serializers, sorting, const FullType(String)),
+      if (skipCount != null) r'SkipCount': encodeQueryParameter(_serializers, skipCount, const FullType(int)),
+      if (maxResultCount != null) r'MaxResultCount': encodeQueryParameter(_serializers, maxResultCount, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(
@@ -431,15 +447,20 @@ _responseData = deserialize<String, String>(_response.data!, 'String', growable:
       onReceiveProgress: onReceiveProgress,
     );
 
-    TenantDtoPagedResultDto _responseData;
+    TenantDtoPagedResultDto? _responseData;
 
     try {
-_responseData = deserialize<TenantDtoPagedResultDto, TenantDtoPagedResultDto>(_response.data!, 'TenantDtoPagedResultDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(TenantDtoPagedResultDto),
+      ) as TenantDtoPagedResultDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -471,7 +492,7 @@ _responseData = deserialize<TenantDtoPagedResultDto, TenantDtoPagedResultDto>(_r
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [TenantDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<TenantDto>> update({ 
     required String id,
     TenantUpdateDto? body,
@@ -482,7 +503,7 @@ _responseData = deserialize<TenantDtoPagedResultDto, TenantDtoPagedResultDto>(_r
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/multi-tenancy/tenants/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/multi-tenancy/tenants/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -504,14 +525,16 @@ _responseData = deserialize<TenantDtoPagedResultDto, TenantDtoPagedResultDto>(_r
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+      const _type = FullType(TenantUpdateDto);
+      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
+
     } catch(error, stackTrace) {
-      throw DioError(
+      throw DioException(
          requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -526,15 +549,20 @@ _bodyData=jsonEncode(body);
       onReceiveProgress: onReceiveProgress,
     );
 
-    TenantDto _responseData;
+    TenantDto? _responseData;
 
     try {
-_responseData = deserialize<TenantDto, TenantDto>(_response.data!, 'TenantDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(TenantDto),
+      ) as TenantDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -566,7 +594,7 @@ _responseData = deserialize<TenantDto, TenantDto>(_response.data!, 'TenantDto', 
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future]
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> updateDefaultConnectionString({ 
     required String id,
     String? defaultConnectionString,
@@ -577,7 +605,7 @@ _responseData = deserialize<TenantDto, TenantDto>(_response.data!, 'TenantDto', 
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/multi-tenancy/tenants/{id}/default-connection-string'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/multi-tenancy/tenants/{id}/default-connection-string'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -596,7 +624,7 @@ _responseData = deserialize<TenantDto, TenantDto>(_response.data!, 'TenantDto', 
     );
 
     final _queryParameters = <String, dynamic>{
-      if (defaultConnectionString != null) r'defaultConnectionString': defaultConnectionString,
+      if (defaultConnectionString != null) r'defaultConnectionString': encodeQueryParameter(_serializers, defaultConnectionString, const FullType(String)),
     };
 
     final _response = await _dio.request<Object>(

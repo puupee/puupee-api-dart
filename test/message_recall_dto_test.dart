@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for MessageRecallDto
 void main() {
-  final MessageRecallDto? instance = /* MessageRecallDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = MessageRecallDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(MessageRecallDto, () {
     // String puupeeId

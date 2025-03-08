@@ -4,148 +4,215 @@
 
 // ignore_for_file: unused_element
 import 'package:puupee_api_client/src/model/app_platform.dart';
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'bind_device_dto.g.dart';
 
+/// BindDeviceDto
+///
+/// Properties:
+/// * [token] 
+/// * [tpnsToken] 
+/// * [isPhysicalDevice] 
+/// * [name] 
+/// * [platform] 
+/// * [brand] 
+/// * [systemVersion] 
+@BuiltValue()
+abstract class BindDeviceDto implements Built<BindDeviceDto, BindDeviceDtoBuilder> {
+  @BuiltValueField(wireName: r'token')
+  String? get token;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class BindDeviceDto {
-  /// Returns a new [BindDeviceDto] instance.
-  BindDeviceDto({
+  @BuiltValueField(wireName: r'tpnsToken')
+  String? get tpnsToken;
 
-     this.token,
+  @BuiltValueField(wireName: r'isPhysicalDevice')
+  bool? get isPhysicalDevice;
 
-     this.tpnsToken,
+  @BuiltValueField(wireName: r'name')
+  String? get name;
 
-     this.isPhysicalDevice,
+  @BuiltValueField(wireName: r'platform')
+  AppPlatform? get platform;
+  // enum platformEnum {  None,  Unknown,  Android,  IOS,  MacOS,  Windows,  Linux,  Web,  Service,  Other,  };
 
-     this.name,
+  @BuiltValueField(wireName: r'brand')
+  String? get brand;
 
-     this.platform,
+  @BuiltValueField(wireName: r'systemVersion')
+  String? get systemVersion;
 
-     this.brand,
+  BindDeviceDto._();
 
-     this.systemVersion,
-  });
+  factory BindDeviceDto([void updates(BindDeviceDtoBuilder b)]) = _$BindDeviceDto;
 
-  @JsonKey(
-    
-    name: r'token',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(BindDeviceDtoBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<BindDeviceDto> get serializer => _$BindDeviceDtoSerializer();
+}
 
-  String? token;
-
-
-
-  @JsonKey(
-    
-    name: r'tpnsToken',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? tpnsToken;
-
-
-
-  @JsonKey(
-    
-    name: r'isPhysicalDevice',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  bool? isPhysicalDevice;
-
-
-
-  @JsonKey(
-    
-    name: r'name',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? name;
-
-
-
-  @JsonKey(
-    
-    name: r'platform',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  AppPlatform? platform;
-
-
-
-  @JsonKey(
-    
-    name: r'brand',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? brand;
-
-
-
-  @JsonKey(
-    
-    name: r'systemVersion',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? systemVersion;
-
-
+class _$BindDeviceDtoSerializer implements PrimitiveSerializer<BindDeviceDto> {
+  @override
+  final Iterable<Type> types = const [BindDeviceDto, _$BindDeviceDto];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is BindDeviceDto &&
-     other.token == token &&
-     other.tpnsToken == tpnsToken &&
-     other.isPhysicalDevice == isPhysicalDevice &&
-     other.name == name &&
-     other.platform == platform &&
-     other.brand == brand &&
-     other.systemVersion == systemVersion;
+  final String wireName = r'BindDeviceDto';
 
-  @override
-  int get hashCode =>
-    token.hashCode +
-    tpnsToken.hashCode +
-    isPhysicalDevice.hashCode +
-    name.hashCode +
-    platform.hashCode +
-    brand.hashCode +
-    systemVersion.hashCode;
-
-  factory BindDeviceDto.fromJson(Map<String, dynamic> json) => _$BindDeviceDtoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$BindDeviceDtoToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    BindDeviceDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.token != null) {
+      yield r'token';
+      yield serializers.serialize(
+        object.token,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.tpnsToken != null) {
+      yield r'tpnsToken';
+      yield serializers.serialize(
+        object.tpnsToken,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.isPhysicalDevice != null) {
+      yield r'isPhysicalDevice';
+      yield serializers.serialize(
+        object.isPhysicalDevice,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.name != null) {
+      yield r'name';
+      yield serializers.serialize(
+        object.name,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.platform != null) {
+      yield r'platform';
+      yield serializers.serialize(
+        object.platform,
+        specifiedType: const FullType(AppPlatform),
+      );
+    }
+    if (object.brand != null) {
+      yield r'brand';
+      yield serializers.serialize(
+        object.brand,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.systemVersion != null) {
+      yield r'systemVersion';
+      yield serializers.serialize(
+        object.systemVersion,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    BindDeviceDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required BindDeviceDtoBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'token':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.token = valueDes;
+          break;
+        case r'tpnsToken':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.tpnsToken = valueDes;
+          break;
+        case r'isPhysicalDevice':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isPhysicalDevice = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'platform':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(AppPlatform),
+          ) as AppPlatform;
+          result.platform = valueDes;
+          break;
+        case r'brand':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.brand = valueDes;
+          break;
+        case r'systemVersion':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.systemVersion = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  BindDeviceDto deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = BindDeviceDtoBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

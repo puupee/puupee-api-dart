@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for MethodParameterApiDescriptionModel
 void main() {
-  final MethodParameterApiDescriptionModel? instance = /* MethodParameterApiDescriptionModel(...) */ null;
-  // TODO add properties to the entity
+  final instance = MethodParameterApiDescriptionModelBuilder();
+  // TODO add properties to the builder and call build()
 
   group(MethodParameterApiDescriptionModel, () {
     // String name
@@ -32,7 +32,7 @@ void main() {
       // TODO
     });
 
-    // Object defaultValue
+    // JsonObject defaultValue
     test('to test the property `defaultValue`', () async {
       // TODO
     });

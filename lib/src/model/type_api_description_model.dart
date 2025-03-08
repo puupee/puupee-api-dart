@@ -4,132 +4,198 @@
 
 // ignore_for_file: unused_element
 import 'package:puupee_api_client/src/model/property_api_description_model.dart';
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'type_api_description_model.g.dart';
 
+/// TypeApiDescriptionModel
+///
+/// Properties:
+/// * [baseType] 
+/// * [isEnum] 
+/// * [enumNames] 
+/// * [enumValues] 
+/// * [genericArguments] 
+/// * [properties] 
+@BuiltValue()
+abstract class TypeApiDescriptionModel implements Built<TypeApiDescriptionModel, TypeApiDescriptionModelBuilder> {
+  @BuiltValueField(wireName: r'baseType')
+  String? get baseType;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class TypeApiDescriptionModel {
-  /// Returns a new [TypeApiDescriptionModel] instance.
-  TypeApiDescriptionModel({
+  @BuiltValueField(wireName: r'isEnum')
+  bool? get isEnum;
 
-     this.baseType,
+  @BuiltValueField(wireName: r'enumNames')
+  BuiltList<String>? get enumNames;
 
-     this.isEnum,
+  @BuiltValueField(wireName: r'enumValues')
+  BuiltList<JsonObject>? get enumValues;
 
-     this.enumNames,
+  @BuiltValueField(wireName: r'genericArguments')
+  BuiltList<String>? get genericArguments;
 
-     this.enumValues,
+  @BuiltValueField(wireName: r'properties')
+  BuiltList<PropertyApiDescriptionModel>? get properties;
 
-     this.genericArguments,
+  TypeApiDescriptionModel._();
 
-     this.properties,
-  });
+  factory TypeApiDescriptionModel([void updates(TypeApiDescriptionModelBuilder b)]) = _$TypeApiDescriptionModel;
 
-  @JsonKey(
-    
-    name: r'baseType',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(TypeApiDescriptionModelBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<TypeApiDescriptionModel> get serializer => _$TypeApiDescriptionModelSerializer();
+}
 
-  String? baseType;
-
-
-
-  @JsonKey(
-    
-    name: r'isEnum',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  bool? isEnum;
-
-
-
-  @JsonKey(
-    
-    name: r'enumNames',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  List<String>? enumNames;
-
-
-
-  @JsonKey(
-    
-    name: r'enumValues',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  List<Object>? enumValues;
-
-
-
-  @JsonKey(
-    
-    name: r'genericArguments',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  List<String>? genericArguments;
-
-
-
-  @JsonKey(
-    
-    name: r'properties',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  List<PropertyApiDescriptionModel>? properties;
-
-
+class _$TypeApiDescriptionModelSerializer implements PrimitiveSerializer<TypeApiDescriptionModel> {
+  @override
+  final Iterable<Type> types = const [TypeApiDescriptionModel, _$TypeApiDescriptionModel];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is TypeApiDescriptionModel &&
-     other.baseType == baseType &&
-     other.isEnum == isEnum &&
-     other.enumNames == enumNames &&
-     other.enumValues == enumValues &&
-     other.genericArguments == genericArguments &&
-     other.properties == properties;
+  final String wireName = r'TypeApiDescriptionModel';
 
-  @override
-  int get hashCode =>
-    baseType.hashCode +
-    isEnum.hashCode +
-    enumNames.hashCode +
-    enumValues.hashCode +
-    genericArguments.hashCode +
-    properties.hashCode;
-
-  factory TypeApiDescriptionModel.fromJson(Map<String, dynamic> json) => _$TypeApiDescriptionModelFromJson(json);
-
-  Map<String, dynamic> toJson() => _$TypeApiDescriptionModelToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    TypeApiDescriptionModel object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.baseType != null) {
+      yield r'baseType';
+      yield serializers.serialize(
+        object.baseType,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.isEnum != null) {
+      yield r'isEnum';
+      yield serializers.serialize(
+        object.isEnum,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.enumNames != null) {
+      yield r'enumNames';
+      yield serializers.serialize(
+        object.enumNames,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
+    if (object.enumValues != null) {
+      yield r'enumValues';
+      yield serializers.serialize(
+        object.enumValues,
+        specifiedType: const FullType(BuiltList, [FullType(JsonObject)]),
+      );
+    }
+    if (object.genericArguments != null) {
+      yield r'genericArguments';
+      yield serializers.serialize(
+        object.genericArguments,
+        specifiedType: const FullType(BuiltList, [FullType(String)]),
+      );
+    }
+    if (object.properties != null) {
+      yield r'properties';
+      yield serializers.serialize(
+        object.properties,
+        specifiedType: const FullType(BuiltList, [FullType(PropertyApiDescriptionModel)]),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    TypeApiDescriptionModel object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required TypeApiDescriptionModelBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'baseType':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.baseType = valueDes;
+          break;
+        case r'isEnum':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isEnum = valueDes;
+          break;
+        case r'enumNames':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.enumNames.replace(valueDes);
+          break;
+        case r'enumValues':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(JsonObject)]),
+          ) as BuiltList<JsonObject>;
+          result.enumValues.replace(valueDes);
+          break;
+        case r'genericArguments':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(String)]),
+          ) as BuiltList<String>;
+          result.genericArguments.replace(valueDes);
+          break;
+        case r'properties':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltList, [FullType(PropertyApiDescriptionModel)]),
+          ) as BuiltList<PropertyApiDescriptionModel>;
+          result.properties.replace(valueDes);
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  TypeApiDescriptionModel deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = TypeApiDescriptionModelBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

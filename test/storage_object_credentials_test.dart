@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for StorageObjectCredentials
 void main() {
-  final StorageObjectCredentials? instance = /* StorageObjectCredentials(...) */ null;
-  // TODO add properties to the entity
+  final instance = StorageObjectCredentialsBuilder();
+  // TODO add properties to the builder and call build()
 
   group(StorageObjectCredentials, () {
     // String storageClass

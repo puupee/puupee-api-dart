@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-// ignore: unused_import
-import 'dart:convert';
-import 'package:puupee_api_client/src/deserialize.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/app_sdk_dto.dart';
 import 'package:puupee_api_client/src/model/app_sdk_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_sdk_dto.dart';
@@ -18,7 +18,9 @@ class AppSdkApi {
 
   final Dio _dio;
 
-  const AppSdkApi(this._dio);
+  final Serializers _serializers;
+
+  const AppSdkApi(this._dio, this._serializers);
 
   /// create
   /// 
@@ -33,7 +35,7 @@ class AppSdkApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [AppSdkDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<AppSdkDto>> create({ 
     CreateOrUpdateAppSdkDto? body,
     CancelToken? cancelToken,
@@ -65,14 +67,16 @@ class AppSdkApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+      const _type = FullType(CreateOrUpdateAppSdkDto);
+      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
+
     } catch(error, stackTrace) {
-      throw DioError(
+      throw DioException(
          requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -87,15 +91,20 @@ _bodyData=jsonEncode(body);
       onReceiveProgress: onReceiveProgress,
     );
 
-    AppSdkDto _responseData;
+    AppSdkDto? _responseData;
 
     try {
-_responseData = deserialize<AppSdkDto, AppSdkDto>(_response.data!, 'AppSdkDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(AppSdkDto),
+      ) as AppSdkDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -126,7 +135,7 @@ _responseData = deserialize<AppSdkDto, AppSdkDto>(_response.data!, 'AppSdkDto', 
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future]
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> delete({ 
     required String id,
     CancelToken? cancelToken,
@@ -136,7 +145,7 @@ _responseData = deserialize<AppSdkDto, AppSdkDto>(_response.data!, 'AppSdkDto', 
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/app/app-sdk/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/app/app-sdk/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
     final _options = Options(
       method: r'DELETE',
       headers: <String, dynamic>{
@@ -180,7 +189,7 @@ _responseData = deserialize<AppSdkDto, AppSdkDto>(_response.data!, 'AppSdkDto', 
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [AppSdkDtoPagedResultDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<AppSdkDtoPagedResultDto>> getList({ 
     String? sorting,
     int? skipCount,
@@ -211,9 +220,9 @@ _responseData = deserialize<AppSdkDto, AppSdkDto>(_response.data!, 'AppSdkDto', 
     );
 
     final _queryParameters = <String, dynamic>{
-      if (sorting != null) r'Sorting': sorting,
-      if (skipCount != null) r'SkipCount': skipCount,
-      if (maxResultCount != null) r'MaxResultCount': maxResultCount,
+      if (sorting != null) r'Sorting': encodeQueryParameter(_serializers, sorting, const FullType(String)),
+      if (skipCount != null) r'SkipCount': encodeQueryParameter(_serializers, skipCount, const FullType(int)),
+      if (maxResultCount != null) r'MaxResultCount': encodeQueryParameter(_serializers, maxResultCount, const FullType(int)),
     };
 
     final _response = await _dio.request<Object>(
@@ -225,15 +234,20 @@ _responseData = deserialize<AppSdkDto, AppSdkDto>(_response.data!, 'AppSdkDto', 
       onReceiveProgress: onReceiveProgress,
     );
 
-    AppSdkDtoPagedResultDto _responseData;
+    AppSdkDtoPagedResultDto? _responseData;
 
     try {
-_responseData = deserialize<AppSdkDtoPagedResultDto, AppSdkDtoPagedResultDto>(_response.data!, 'AppSdkDtoPagedResultDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(AppSdkDtoPagedResultDto),
+      ) as AppSdkDtoPagedResultDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -265,7 +279,7 @@ _responseData = deserialize<AppSdkDtoPagedResultDto, AppSdkDtoPagedResultDto>(_r
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [AppSdkDto] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<AppSdkDto>> update({ 
     required String id,
     CreateOrUpdateAppSdkDto? body,
@@ -276,7 +290,7 @@ _responseData = deserialize<AppSdkDtoPagedResultDto, AppSdkDtoPagedResultDto>(_r
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/app/app-sdk/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/app/app-sdk/{id}'.replaceAll('{' r'id' '}', encodeQueryParameter(_serializers, id, const FullType(String)).toString());
     final _options = Options(
       method: r'PUT',
       headers: <String, dynamic>{
@@ -298,14 +312,16 @@ _responseData = deserialize<AppSdkDtoPagedResultDto, AppSdkDtoPagedResultDto>(_r
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+      const _type = FullType(CreateOrUpdateAppSdkDto);
+      _bodyData = body == null ? null : _serializers.serialize(body, specifiedType: _type);
+
     } catch(error, stackTrace) {
-      throw DioError(
+      throw DioException(
          requestOptions: _options.compose(
           _dio.options,
           _path,
         ),
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
@@ -320,15 +336,20 @@ _bodyData=jsonEncode(body);
       onReceiveProgress: onReceiveProgress,
     );
 
-    AppSdkDto _responseData;
+    AppSdkDto? _responseData;
 
     try {
-_responseData = deserialize<AppSdkDto, AppSdkDto>(_response.data!, 'AppSdkDto', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(AppSdkDto),
+      ) as AppSdkDto;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

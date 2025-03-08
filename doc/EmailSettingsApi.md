@@ -30,7 +30,7 @@ final api = PuupeeApiClient().getEmailSettingsApi();
 try {
     final response = api.callGet();
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling EmailSettingsApi->callGet: $e\n');
 }
 ```
@@ -69,7 +69,7 @@ final SendTestEmailInput body = ; // SendTestEmailInput |
 
 try {
     api.sendTestEmail(body);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling EmailSettingsApi->sendTestEmail: $e\n');
 }
 ```
@@ -111,7 +111,7 @@ final UpdateEmailSettingsDto body = ; // UpdateEmailSettingsDto |
 
 try {
     api.update(body);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling EmailSettingsApi->update: $e\n');
 }
 ```

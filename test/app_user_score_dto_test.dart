@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for AppUserScoreDto
 void main() {
-  final AppUserScoreDto? instance = /* AppUserScoreDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = AppUserScoreDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(AppUserScoreDto, () {
     // String id

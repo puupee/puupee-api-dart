@@ -3,36 +3,108 @@
 part of 'remote_service_error_response.dart';
 
 // **************************************************************************
-// JsonSerializableGenerator
+// BuiltValueGenerator
 // **************************************************************************
 
-RemoteServiceErrorResponse _$RemoteServiceErrorResponseFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'RemoteServiceErrorResponse',
-      json,
-      ($checkedConvert) {
-        final val = RemoteServiceErrorResponse(
-          error: $checkedConvert(
-              'error',
-              (v) => v == null
-                  ? null
-                  : RemoteServiceErrorInfo.fromJson(v as Map<String, dynamic>)),
-        );
-        return val;
-      },
-    );
+class _$RemoteServiceErrorResponse extends RemoteServiceErrorResponse {
+  @override
+  final RemoteServiceErrorInfo? error;
 
-Map<String, dynamic> _$RemoteServiceErrorResponseToJson(
-    RemoteServiceErrorResponse instance) {
-  final val = <String, dynamic>{};
+  factory _$RemoteServiceErrorResponse(
+          [void Function(RemoteServiceErrorResponseBuilder)? updates]) =>
+      (new RemoteServiceErrorResponseBuilder()..update(updates))._build();
 
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
+  _$RemoteServiceErrorResponse._({this.error}) : super._();
+
+  @override
+  RemoteServiceErrorResponse rebuild(
+          void Function(RemoteServiceErrorResponseBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  RemoteServiceErrorResponseBuilder toBuilder() =>
+      new RemoteServiceErrorResponseBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is RemoteServiceErrorResponse && error == other.error;
   }
 
-  writeNotNull('error', instance.error?.toJson());
-  return val;
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, error.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'RemoteServiceErrorResponse')
+          ..add('error', error))
+        .toString();
+  }
 }
+
+class RemoteServiceErrorResponseBuilder
+    implements
+        Builder<RemoteServiceErrorResponse, RemoteServiceErrorResponseBuilder> {
+  _$RemoteServiceErrorResponse? _$v;
+
+  RemoteServiceErrorInfoBuilder? _error;
+  RemoteServiceErrorInfoBuilder get error =>
+      _$this._error ??= new RemoteServiceErrorInfoBuilder();
+  set error(RemoteServiceErrorInfoBuilder? error) => _$this._error = error;
+
+  RemoteServiceErrorResponseBuilder() {
+    RemoteServiceErrorResponse._defaults(this);
+  }
+
+  RemoteServiceErrorResponseBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _error = $v.error?.toBuilder();
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(RemoteServiceErrorResponse other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$RemoteServiceErrorResponse;
+  }
+
+  @override
+  void update(void Function(RemoteServiceErrorResponseBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  RemoteServiceErrorResponse build() => _build();
+
+  _$RemoteServiceErrorResponse _build() {
+    _$RemoteServiceErrorResponse _$result;
+    try {
+      _$result = _$v ??
+          new _$RemoteServiceErrorResponse._(
+            error: _error?.build(),
+          );
+    } catch (_) {
+      late String _$failedField;
+      try {
+        _$failedField = 'error';
+        _error?.build();
+      } catch (e) {
+        throw new BuiltValueNestedFieldError(
+            r'RemoteServiceErrorResponse', _$failedField, e.toString());
+      }
+      rethrow;
+    }
+    replace(_$result);
+    return _$result;
+  }
+}
+
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

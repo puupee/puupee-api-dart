@@ -3,85 +3,145 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:built_collection/built_collection.dart';
 import 'package:puupee_api_client/src/model/i_value_validator.dart';
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'i_string_value_type.g.dart';
 
+/// IStringValueType
+///
+/// Properties:
+/// * [name] 
+/// * [properties] 
+/// * [validator] 
+@BuiltValue()
+abstract class IStringValueType implements Built<IStringValueType, IStringValueTypeBuilder> {
+  @BuiltValueField(wireName: r'name')
+  String? get name;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class IStringValueType {
-  /// Returns a new [IStringValueType] instance.
-  IStringValueType({
+  @BuiltValueField(wireName: r'properties')
+  BuiltMap<String, JsonObject>? get properties;
 
-     this.name,
+  @BuiltValueField(wireName: r'validator')
+  IValueValidator? get validator;
 
-     this.properties,
+  IStringValueType._();
 
-     this.validator,
-  });
+  factory IStringValueType([void updates(IStringValueTypeBuilder b)]) = _$IStringValueType;
 
-  @JsonKey(
-    
-    name: r'name',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(IStringValueTypeBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<IStringValueType> get serializer => _$IStringValueTypeSerializer();
+}
 
-  String? name;
-
-
-
-  @JsonKey(
-    
-    name: r'properties',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  Map<String, Object>? properties;
-
-
-
-  @JsonKey(
-    
-    name: r'validator',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  IValueValidator? validator;
-
-
+class _$IStringValueTypeSerializer implements PrimitiveSerializer<IStringValueType> {
+  @override
+  final Iterable<Type> types = const [IStringValueType, _$IStringValueType];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is IStringValueType &&
-     other.name == name &&
-     other.properties == properties &&
-     other.validator == validator;
+  final String wireName = r'IStringValueType';
 
-  @override
-  int get hashCode =>
-    name.hashCode +
-    properties.hashCode +
-    validator.hashCode;
-
-  factory IStringValueType.fromJson(Map<String, dynamic> json) => _$IStringValueTypeFromJson(json);
-
-  Map<String, dynamic> toJson() => _$IStringValueTypeToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    IStringValueType object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.name != null) {
+      yield r'name';
+      yield serializers.serialize(
+        object.name,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.properties != null) {
+      yield r'properties';
+      yield serializers.serialize(
+        object.properties,
+        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+      );
+    }
+    if (object.validator != null) {
+      yield r'validator';
+      yield serializers.serialize(
+        object.validator,
+        specifiedType: const FullType(IValueValidator),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    IStringValueType object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required IStringValueTypeBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'properties':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+          ) as BuiltMap<String, JsonObject>;
+          result.properties.replace(valueDes);
+          break;
+        case r'validator':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(IValueValidator),
+          ) as IValueValidator;
+          result.validator.replace(valueDes);
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  IStringValueType deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = IStringValueTypeBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

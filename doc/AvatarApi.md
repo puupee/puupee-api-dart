@@ -30,7 +30,7 @@ final CreateAvatarDto body = ; // CreateAvatarDto |
 try {
     final response = api.create(body);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AvatarApi->create: $e\n');
 }
 ```
@@ -73,7 +73,7 @@ final String key = key_example; // String |
 try {
     final response = api.getCredentials(key);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AvatarApi->getCredentials: $e\n');
 }
 ```

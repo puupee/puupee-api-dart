@@ -3,148 +3,216 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'identity_role_dto.g.dart';
 
+/// IdentityRoleDto
+///
+/// Properties:
+/// * [extraProperties] 
+/// * [id] 
+/// * [name] 
+/// * [isDefault] 
+/// * [isStatic] 
+/// * [isPublic] 
+/// * [concurrencyStamp] 
+@BuiltValue()
+abstract class IdentityRoleDto implements Built<IdentityRoleDto, IdentityRoleDtoBuilder> {
+  @BuiltValueField(wireName: r'extraProperties')
+  BuiltMap<String, JsonObject>? get extraProperties;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class IdentityRoleDto {
-  /// Returns a new [IdentityRoleDto] instance.
-  IdentityRoleDto({
+  @BuiltValueField(wireName: r'id')
+  String? get id;
 
-     this.extraProperties,
+  @BuiltValueField(wireName: r'name')
+  String? get name;
 
-     this.id,
+  @BuiltValueField(wireName: r'isDefault')
+  bool? get isDefault;
 
-     this.name,
+  @BuiltValueField(wireName: r'isStatic')
+  bool? get isStatic;
 
-     this.isDefault,
+  @BuiltValueField(wireName: r'isPublic')
+  bool? get isPublic;
 
-     this.isStatic,
+  @BuiltValueField(wireName: r'concurrencyStamp')
+  String? get concurrencyStamp;
 
-     this.isPublic,
+  IdentityRoleDto._();
 
-     this.concurrencyStamp,
-  });
+  factory IdentityRoleDto([void updates(IdentityRoleDtoBuilder b)]) = _$IdentityRoleDto;
 
-  @JsonKey(
-    
-    name: r'extraProperties',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(IdentityRoleDtoBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<IdentityRoleDto> get serializer => _$IdentityRoleDtoSerializer();
+}
 
-  Map<String, Object>? extraProperties;
-
-
-
-  @JsonKey(
-    
-    name: r'id',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? id;
-
-
-
-  @JsonKey(
-    
-    name: r'name',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? name;
-
-
-
-  @JsonKey(
-    
-    name: r'isDefault',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  bool? isDefault;
-
-
-
-  @JsonKey(
-    
-    name: r'isStatic',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  bool? isStatic;
-
-
-
-  @JsonKey(
-    
-    name: r'isPublic',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  bool? isPublic;
-
-
-
-  @JsonKey(
-    
-    name: r'concurrencyStamp',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? concurrencyStamp;
-
-
+class _$IdentityRoleDtoSerializer implements PrimitiveSerializer<IdentityRoleDto> {
+  @override
+  final Iterable<Type> types = const [IdentityRoleDto, _$IdentityRoleDto];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is IdentityRoleDto &&
-     other.extraProperties == extraProperties &&
-     other.id == id &&
-     other.name == name &&
-     other.isDefault == isDefault &&
-     other.isStatic == isStatic &&
-     other.isPublic == isPublic &&
-     other.concurrencyStamp == concurrencyStamp;
+  final String wireName = r'IdentityRoleDto';
 
-  @override
-  int get hashCode =>
-    extraProperties.hashCode +
-    id.hashCode +
-    name.hashCode +
-    isDefault.hashCode +
-    isStatic.hashCode +
-    isPublic.hashCode +
-    concurrencyStamp.hashCode;
-
-  factory IdentityRoleDto.fromJson(Map<String, dynamic> json) => _$IdentityRoleDtoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$IdentityRoleDtoToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    IdentityRoleDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.extraProperties != null) {
+      yield r'extraProperties';
+      yield serializers.serialize(
+        object.extraProperties,
+        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+      );
+    }
+    if (object.id != null) {
+      yield r'id';
+      yield serializers.serialize(
+        object.id,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.name != null) {
+      yield r'name';
+      yield serializers.serialize(
+        object.name,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.isDefault != null) {
+      yield r'isDefault';
+      yield serializers.serialize(
+        object.isDefault,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.isStatic != null) {
+      yield r'isStatic';
+      yield serializers.serialize(
+        object.isStatic,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.isPublic != null) {
+      yield r'isPublic';
+      yield serializers.serialize(
+        object.isPublic,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.concurrencyStamp != null) {
+      yield r'concurrencyStamp';
+      yield serializers.serialize(
+        object.concurrencyStamp,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    IdentityRoleDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required IdentityRoleDtoBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'extraProperties':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+          ) as BuiltMap<String, JsonObject>;
+          result.extraProperties.replace(valueDes);
+          break;
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'isDefault':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isDefault = valueDes;
+          break;
+        case r'isStatic':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isStatic = valueDes;
+          break;
+        case r'isPublic':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isPublic = valueDes;
+          break;
+        case r'concurrencyStamp':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.concurrencyStamp = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  IdentityRoleDto deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = IdentityRoleDtoBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

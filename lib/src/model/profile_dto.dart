@@ -3,180 +3,252 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'profile_dto.g.dart';
 
+/// ProfileDto
+///
+/// Properties:
+/// * [extraProperties] 
+/// * [userName] 
+/// * [email] 
+/// * [name] 
+/// * [surname] 
+/// * [phoneNumber] 
+/// * [isExternal] 
+/// * [hasPassword] 
+/// * [concurrencyStamp] 
+@BuiltValue()
+abstract class ProfileDto implements Built<ProfileDto, ProfileDtoBuilder> {
+  @BuiltValueField(wireName: r'extraProperties')
+  BuiltMap<String, JsonObject>? get extraProperties;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class ProfileDto {
-  /// Returns a new [ProfileDto] instance.
-  ProfileDto({
+  @BuiltValueField(wireName: r'userName')
+  String? get userName;
 
-     this.extraProperties,
+  @BuiltValueField(wireName: r'email')
+  String? get email;
 
-     this.userName,
+  @BuiltValueField(wireName: r'name')
+  String? get name;
 
-     this.email,
+  @BuiltValueField(wireName: r'surname')
+  String? get surname;
 
-     this.name,
+  @BuiltValueField(wireName: r'phoneNumber')
+  String? get phoneNumber;
 
-     this.surname,
+  @BuiltValueField(wireName: r'isExternal')
+  bool? get isExternal;
 
-     this.phoneNumber,
+  @BuiltValueField(wireName: r'hasPassword')
+  bool? get hasPassword;
 
-     this.isExternal,
+  @BuiltValueField(wireName: r'concurrencyStamp')
+  String? get concurrencyStamp;
 
-     this.hasPassword,
+  ProfileDto._();
 
-     this.concurrencyStamp,
-  });
+  factory ProfileDto([void updates(ProfileDtoBuilder b)]) = _$ProfileDto;
 
-  @JsonKey(
-    
-    name: r'extraProperties',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(ProfileDtoBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<ProfileDto> get serializer => _$ProfileDtoSerializer();
+}
 
-  Map<String, Object>? extraProperties;
-
-
-
-  @JsonKey(
-    
-    name: r'userName',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? userName;
-
-
-
-  @JsonKey(
-    
-    name: r'email',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? email;
-
-
-
-  @JsonKey(
-    
-    name: r'name',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? name;
-
-
-
-  @JsonKey(
-    
-    name: r'surname',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? surname;
-
-
-
-  @JsonKey(
-    
-    name: r'phoneNumber',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? phoneNumber;
-
-
-
-  @JsonKey(
-    
-    name: r'isExternal',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  bool? isExternal;
-
-
-
-  @JsonKey(
-    
-    name: r'hasPassword',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  bool? hasPassword;
-
-
-
-  @JsonKey(
-    
-    name: r'concurrencyStamp',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? concurrencyStamp;
-
-
+class _$ProfileDtoSerializer implements PrimitiveSerializer<ProfileDto> {
+  @override
+  final Iterable<Type> types = const [ProfileDto, _$ProfileDto];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is ProfileDto &&
-     other.extraProperties == extraProperties &&
-     other.userName == userName &&
-     other.email == email &&
-     other.name == name &&
-     other.surname == surname &&
-     other.phoneNumber == phoneNumber &&
-     other.isExternal == isExternal &&
-     other.hasPassword == hasPassword &&
-     other.concurrencyStamp == concurrencyStamp;
+  final String wireName = r'ProfileDto';
 
-  @override
-  int get hashCode =>
-    extraProperties.hashCode +
-    userName.hashCode +
-    email.hashCode +
-    name.hashCode +
-    surname.hashCode +
-    phoneNumber.hashCode +
-    isExternal.hashCode +
-    hasPassword.hashCode +
-    concurrencyStamp.hashCode;
-
-  factory ProfileDto.fromJson(Map<String, dynamic> json) => _$ProfileDtoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$ProfileDtoToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    ProfileDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.extraProperties != null) {
+      yield r'extraProperties';
+      yield serializers.serialize(
+        object.extraProperties,
+        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+      );
+    }
+    if (object.userName != null) {
+      yield r'userName';
+      yield serializers.serialize(
+        object.userName,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.email != null) {
+      yield r'email';
+      yield serializers.serialize(
+        object.email,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.name != null) {
+      yield r'name';
+      yield serializers.serialize(
+        object.name,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.surname != null) {
+      yield r'surname';
+      yield serializers.serialize(
+        object.surname,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.phoneNumber != null) {
+      yield r'phoneNumber';
+      yield serializers.serialize(
+        object.phoneNumber,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.isExternal != null) {
+      yield r'isExternal';
+      yield serializers.serialize(
+        object.isExternal,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.hasPassword != null) {
+      yield r'hasPassword';
+      yield serializers.serialize(
+        object.hasPassword,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.concurrencyStamp != null) {
+      yield r'concurrencyStamp';
+      yield serializers.serialize(
+        object.concurrencyStamp,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    ProfileDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required ProfileDtoBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'extraProperties':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+          ) as BuiltMap<String, JsonObject>;
+          result.extraProperties.replace(valueDes);
+          break;
+        case r'userName':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.userName = valueDes;
+          break;
+        case r'email':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.email = valueDes;
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'surname':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.surname = valueDes;
+          break;
+        case r'phoneNumber':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.phoneNumber = valueDes;
+          break;
+        case r'isExternal':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isExternal = valueDes;
+          break;
+        case r'hasPassword':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.hasPassword = valueDes;
+          break;
+        case r'concurrencyStamp':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.concurrencyStamp = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  ProfileDto deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = ProfileDtoBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for LanguageInfo
 void main() {
-  final LanguageInfo? instance = /* LanguageInfo(...) */ null;
-  // TODO add properties to the entity
+  final instance = LanguageInfoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(LanguageInfo, () {
     // String cultureName

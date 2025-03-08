@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for CreateOrUpdateAppUserScoreDto
 void main() {
-  final CreateOrUpdateAppUserScoreDto? instance = /* CreateOrUpdateAppUserScoreDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = CreateOrUpdateAppUserScoreDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(CreateOrUpdateAppUserScoreDto, () {
     // String appId

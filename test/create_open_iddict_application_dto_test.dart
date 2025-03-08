@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for CreateOpenIddictApplicationDto
 void main() {
-  final CreateOpenIddictApplicationDto? instance = /* CreateOpenIddictApplicationDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = CreateOpenIddictApplicationDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(CreateOpenIddictApplicationDto, () {
     // String type
@@ -22,7 +22,7 @@ void main() {
       // TODO
     });
 
-    // List<String> permissions
+    // BuiltList<String> permissions
     test('to test the property `permissions`', () async {
       // TODO
     });
@@ -57,12 +57,12 @@ void main() {
       // TODO
     });
 
-    // List<String> grantTypes
+    // BuiltList<String> grantTypes
     test('to test the property `grantTypes`', () async {
       // TODO
     });
 
-    // List<String> scopes
+    // BuiltList<String> scopes
     test('to test the property `scopes`', () async {
       // TODO
     });

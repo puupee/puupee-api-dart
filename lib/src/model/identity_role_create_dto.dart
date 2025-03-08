@@ -3,100 +3,160 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_collection/built_collection.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'identity_role_create_dto.g.dart';
 
+/// IdentityRoleCreateDto
+///
+/// Properties:
+/// * [extraProperties] 
+/// * [name] 
+/// * [isDefault] 
+/// * [isPublic] 
+@BuiltValue()
+abstract class IdentityRoleCreateDto implements Built<IdentityRoleCreateDto, IdentityRoleCreateDtoBuilder> {
+  @BuiltValueField(wireName: r'extraProperties')
+  BuiltMap<String, JsonObject>? get extraProperties;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class IdentityRoleCreateDto {
-  /// Returns a new [IdentityRoleCreateDto] instance.
-  IdentityRoleCreateDto({
+  @BuiltValueField(wireName: r'name')
+  String get name;
 
-     this.extraProperties,
+  @BuiltValueField(wireName: r'isDefault')
+  bool? get isDefault;
 
-    required  this.name,
+  @BuiltValueField(wireName: r'isPublic')
+  bool? get isPublic;
 
-     this.isDefault,
+  IdentityRoleCreateDto._();
 
-     this.isPublic,
-  });
+  factory IdentityRoleCreateDto([void updates(IdentityRoleCreateDtoBuilder b)]) = _$IdentityRoleCreateDto;
 
-  @JsonKey(
-    
-    name: r'extraProperties',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(IdentityRoleCreateDtoBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<IdentityRoleCreateDto> get serializer => _$IdentityRoleCreateDtoSerializer();
+}
 
-  Map<String, Object>? extraProperties;
-
-
-
-  @JsonKey(
-    
-    name: r'name',
-    required: true,
-    includeIfNull: false
-  )
-
-
-  String name;
-
-
-
-  @JsonKey(
-    
-    name: r'isDefault',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  bool? isDefault;
-
-
-
-  @JsonKey(
-    
-    name: r'isPublic',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  bool? isPublic;
-
-
+class _$IdentityRoleCreateDtoSerializer implements PrimitiveSerializer<IdentityRoleCreateDto> {
+  @override
+  final Iterable<Type> types = const [IdentityRoleCreateDto, _$IdentityRoleCreateDto];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is IdentityRoleCreateDto &&
-     other.extraProperties == extraProperties &&
-     other.name == name &&
-     other.isDefault == isDefault &&
-     other.isPublic == isPublic;
+  final String wireName = r'IdentityRoleCreateDto';
 
-  @override
-  int get hashCode =>
-    extraProperties.hashCode +
-    name.hashCode +
-    isDefault.hashCode +
-    isPublic.hashCode;
-
-  factory IdentityRoleCreateDto.fromJson(Map<String, dynamic> json) => _$IdentityRoleCreateDtoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$IdentityRoleCreateDtoToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    IdentityRoleCreateDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.extraProperties != null) {
+      yield r'extraProperties';
+      yield serializers.serialize(
+        object.extraProperties,
+        specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+      );
+    }
+    yield r'name';
+    yield serializers.serialize(
+      object.name,
+      specifiedType: const FullType(String),
+    );
+    if (object.isDefault != null) {
+      yield r'isDefault';
+      yield serializers.serialize(
+        object.isDefault,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.isPublic != null) {
+      yield r'isPublic';
+      yield serializers.serialize(
+        object.isPublic,
+        specifiedType: const FullType(bool),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    IdentityRoleCreateDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required IdentityRoleCreateDtoBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'extraProperties':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(BuiltMap, [FullType(String), FullType(JsonObject)]),
+          ) as BuiltMap<String, JsonObject>;
+          result.extraProperties.replace(valueDes);
+          break;
+        case r'name':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.name = valueDes;
+          break;
+        case r'isDefault':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isDefault = valueDes;
+          break;
+        case r'isPublic':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isPublic = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  IdentityRoleCreateDto deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = IdentityRoleCreateDtoBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

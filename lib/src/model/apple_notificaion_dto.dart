@@ -3,180 +3,250 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'apple_notificaion_dto.g.dart';
 
+/// AppleNotificaionDto
+///
+/// Properties:
+/// * [id] 
+/// * [creationTime] 
+/// * [creatorId] 
+/// * [lastModificationTime] 
+/// * [lastModifierId] 
+/// * [isDeleted] 
+/// * [deleterId] 
+/// * [deletionTime] 
+/// * [signedPayload] 
+@BuiltValue()
+abstract class AppleNotificaionDto implements Built<AppleNotificaionDto, AppleNotificaionDtoBuilder> {
+  @BuiltValueField(wireName: r'id')
+  String? get id;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class AppleNotificaionDto {
-  /// Returns a new [AppleNotificaionDto] instance.
-  AppleNotificaionDto({
+  @BuiltValueField(wireName: r'creationTime')
+  DateTime? get creationTime;
 
-     this.id,
+  @BuiltValueField(wireName: r'creatorId')
+  String? get creatorId;
 
-     this.creationTime,
+  @BuiltValueField(wireName: r'lastModificationTime')
+  DateTime? get lastModificationTime;
 
-     this.creatorId,
+  @BuiltValueField(wireName: r'lastModifierId')
+  String? get lastModifierId;
 
-     this.lastModificationTime,
+  @BuiltValueField(wireName: r'isDeleted')
+  bool? get isDeleted;
 
-     this.lastModifierId,
+  @BuiltValueField(wireName: r'deleterId')
+  String? get deleterId;
 
-     this.isDeleted,
+  @BuiltValueField(wireName: r'deletionTime')
+  DateTime? get deletionTime;
 
-     this.deleterId,
+  @BuiltValueField(wireName: r'signedPayload')
+  String? get signedPayload;
 
-     this.deletionTime,
+  AppleNotificaionDto._();
 
-     this.signedPayload,
-  });
+  factory AppleNotificaionDto([void updates(AppleNotificaionDtoBuilder b)]) = _$AppleNotificaionDto;
 
-  @JsonKey(
-    
-    name: r'id',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(AppleNotificaionDtoBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<AppleNotificaionDto> get serializer => _$AppleNotificaionDtoSerializer();
+}
 
-  String? id;
-
-
-
-  @JsonKey(
-    
-    name: r'creationTime',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  DateTime? creationTime;
-
-
-
-  @JsonKey(
-    
-    name: r'creatorId',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? creatorId;
-
-
-
-  @JsonKey(
-    
-    name: r'lastModificationTime',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  DateTime? lastModificationTime;
-
-
-
-  @JsonKey(
-    
-    name: r'lastModifierId',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? lastModifierId;
-
-
-
-  @JsonKey(
-    
-    name: r'isDeleted',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  bool? isDeleted;
-
-
-
-  @JsonKey(
-    
-    name: r'deleterId',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? deleterId;
-
-
-
-  @JsonKey(
-    
-    name: r'deletionTime',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  DateTime? deletionTime;
-
-
-
-  @JsonKey(
-    
-    name: r'signedPayload',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? signedPayload;
-
-
+class _$AppleNotificaionDtoSerializer implements PrimitiveSerializer<AppleNotificaionDto> {
+  @override
+  final Iterable<Type> types = const [AppleNotificaionDto, _$AppleNotificaionDto];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is AppleNotificaionDto &&
-     other.id == id &&
-     other.creationTime == creationTime &&
-     other.creatorId == creatorId &&
-     other.lastModificationTime == lastModificationTime &&
-     other.lastModifierId == lastModifierId &&
-     other.isDeleted == isDeleted &&
-     other.deleterId == deleterId &&
-     other.deletionTime == deletionTime &&
-     other.signedPayload == signedPayload;
+  final String wireName = r'AppleNotificaionDto';
 
-  @override
-  int get hashCode =>
-    id.hashCode +
-    creationTime.hashCode +
-    creatorId.hashCode +
-    lastModificationTime.hashCode +
-    lastModifierId.hashCode +
-    isDeleted.hashCode +
-    deleterId.hashCode +
-    deletionTime.hashCode +
-    signedPayload.hashCode;
-
-  factory AppleNotificaionDto.fromJson(Map<String, dynamic> json) => _$AppleNotificaionDtoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$AppleNotificaionDtoToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    AppleNotificaionDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.id != null) {
+      yield r'id';
+      yield serializers.serialize(
+        object.id,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.creationTime != null) {
+      yield r'creationTime';
+      yield serializers.serialize(
+        object.creationTime,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.creatorId != null) {
+      yield r'creatorId';
+      yield serializers.serialize(
+        object.creatorId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.lastModificationTime != null) {
+      yield r'lastModificationTime';
+      yield serializers.serialize(
+        object.lastModificationTime,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.lastModifierId != null) {
+      yield r'lastModifierId';
+      yield serializers.serialize(
+        object.lastModifierId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.isDeleted != null) {
+      yield r'isDeleted';
+      yield serializers.serialize(
+        object.isDeleted,
+        specifiedType: const FullType(bool),
+      );
+    }
+    if (object.deleterId != null) {
+      yield r'deleterId';
+      yield serializers.serialize(
+        object.deleterId,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.deletionTime != null) {
+      yield r'deletionTime';
+      yield serializers.serialize(
+        object.deletionTime,
+        specifiedType: const FullType(DateTime),
+      );
+    }
+    if (object.signedPayload != null) {
+      yield r'signedPayload';
+      yield serializers.serialize(
+        object.signedPayload,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    AppleNotificaionDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required AppleNotificaionDtoBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
+          break;
+        case r'creationTime':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.creationTime = valueDes;
+          break;
+        case r'creatorId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.creatorId = valueDes;
+          break;
+        case r'lastModificationTime':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.lastModificationTime = valueDes;
+          break;
+        case r'lastModifierId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.lastModifierId = valueDes;
+          break;
+        case r'isDeleted':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(bool),
+          ) as bool;
+          result.isDeleted = valueDes;
+          break;
+        case r'deleterId':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.deleterId = valueDes;
+          break;
+        case r'deletionTime':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(DateTime),
+          ) as DateTime;
+          result.deletionTime = valueDes;
+          break;
+        case r'signedPayload':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.signedPayload = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  AppleNotificaionDto deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = AppleNotificaionDtoBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

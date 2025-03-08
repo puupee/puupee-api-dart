@@ -12,7 +12,7 @@ void main() {
       // TODO
     });
 
-    //Future<List<NameValue>> getTimezones() async
+    //Future<BuiltList<NameValue>> getTimezones() async
     test('test getTimezones', () async {
       // TODO
     });

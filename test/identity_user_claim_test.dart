@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for IdentityUserClaim
 void main() {
-  final IdentityUserClaim? instance = /* IdentityUserClaim(...) */ null;
-  // TODO add properties to the entity
+  final instance = IdentityUserClaimBuilder();
+  // TODO add properties to the builder and call build()
 
   group(IdentityUserClaim, () {
     // String id

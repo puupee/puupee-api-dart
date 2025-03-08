@@ -3,50 +3,206 @@
 part of 'property_api_description_model.dart';
 
 // **************************************************************************
-// JsonSerializableGenerator
+// BuiltValueGenerator
 // **************************************************************************
 
-PropertyApiDescriptionModel _$PropertyApiDescriptionModelFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'PropertyApiDescriptionModel',
-      json,
-      ($checkedConvert) {
-        final val = PropertyApiDescriptionModel(
-          name: $checkedConvert('name', (v) => v as String?),
-          jsonName: $checkedConvert('jsonName', (v) => v as String?),
-          type: $checkedConvert('type', (v) => v as String?),
-          typeSimple: $checkedConvert('typeSimple', (v) => v as String?),
-          isRequired: $checkedConvert('isRequired', (v) => v as bool?),
-          minLength: $checkedConvert('minLength', (v) => (v as num?)?.toInt()),
-          maxLength: $checkedConvert('maxLength', (v) => (v as num?)?.toInt()),
-          minimum: $checkedConvert('minimum', (v) => v as String?),
-          maximum: $checkedConvert('maximum', (v) => v as String?),
-          regex: $checkedConvert('regex', (v) => v as String?),
-        );
-        return val;
-      },
-    );
+class _$PropertyApiDescriptionModel extends PropertyApiDescriptionModel {
+  @override
+  final String? name;
+  @override
+  final String? jsonName;
+  @override
+  final String? type;
+  @override
+  final String? typeSimple;
+  @override
+  final bool? isRequired;
+  @override
+  final int? minLength;
+  @override
+  final int? maxLength;
+  @override
+  final String? minimum;
+  @override
+  final String? maximum;
+  @override
+  final String? regex;
 
-Map<String, dynamic> _$PropertyApiDescriptionModelToJson(
-    PropertyApiDescriptionModel instance) {
-  final val = <String, dynamic>{};
+  factory _$PropertyApiDescriptionModel(
+          [void Function(PropertyApiDescriptionModelBuilder)? updates]) =>
+      (new PropertyApiDescriptionModelBuilder()..update(updates))._build();
 
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
+  _$PropertyApiDescriptionModel._(
+      {this.name,
+      this.jsonName,
+      this.type,
+      this.typeSimple,
+      this.isRequired,
+      this.minLength,
+      this.maxLength,
+      this.minimum,
+      this.maximum,
+      this.regex})
+      : super._();
+
+  @override
+  PropertyApiDescriptionModel rebuild(
+          void Function(PropertyApiDescriptionModelBuilder) updates) =>
+      (toBuilder()..update(updates)).build();
+
+  @override
+  PropertyApiDescriptionModelBuilder toBuilder() =>
+      new PropertyApiDescriptionModelBuilder()..replace(this);
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(other, this)) return true;
+    return other is PropertyApiDescriptionModel &&
+        name == other.name &&
+        jsonName == other.jsonName &&
+        type == other.type &&
+        typeSimple == other.typeSimple &&
+        isRequired == other.isRequired &&
+        minLength == other.minLength &&
+        maxLength == other.maxLength &&
+        minimum == other.minimum &&
+        maximum == other.maximum &&
+        regex == other.regex;
   }
 
-  writeNotNull('name', instance.name);
-  writeNotNull('jsonName', instance.jsonName);
-  writeNotNull('type', instance.type);
-  writeNotNull('typeSimple', instance.typeSimple);
-  writeNotNull('isRequired', instance.isRequired);
-  writeNotNull('minLength', instance.minLength);
-  writeNotNull('maxLength', instance.maxLength);
-  writeNotNull('minimum', instance.minimum);
-  writeNotNull('maximum', instance.maximum);
-  writeNotNull('regex', instance.regex);
-  return val;
+  @override
+  int get hashCode {
+    var _$hash = 0;
+    _$hash = $jc(_$hash, name.hashCode);
+    _$hash = $jc(_$hash, jsonName.hashCode);
+    _$hash = $jc(_$hash, type.hashCode);
+    _$hash = $jc(_$hash, typeSimple.hashCode);
+    _$hash = $jc(_$hash, isRequired.hashCode);
+    _$hash = $jc(_$hash, minLength.hashCode);
+    _$hash = $jc(_$hash, maxLength.hashCode);
+    _$hash = $jc(_$hash, minimum.hashCode);
+    _$hash = $jc(_$hash, maximum.hashCode);
+    _$hash = $jc(_$hash, regex.hashCode);
+    _$hash = $jf(_$hash);
+    return _$hash;
+  }
+
+  @override
+  String toString() {
+    return (newBuiltValueToStringHelper(r'PropertyApiDescriptionModel')
+          ..add('name', name)
+          ..add('jsonName', jsonName)
+          ..add('type', type)
+          ..add('typeSimple', typeSimple)
+          ..add('isRequired', isRequired)
+          ..add('minLength', minLength)
+          ..add('maxLength', maxLength)
+          ..add('minimum', minimum)
+          ..add('maximum', maximum)
+          ..add('regex', regex))
+        .toString();
+  }
 }
+
+class PropertyApiDescriptionModelBuilder
+    implements
+        Builder<PropertyApiDescriptionModel,
+            PropertyApiDescriptionModelBuilder> {
+  _$PropertyApiDescriptionModel? _$v;
+
+  String? _name;
+  String? get name => _$this._name;
+  set name(String? name) => _$this._name = name;
+
+  String? _jsonName;
+  String? get jsonName => _$this._jsonName;
+  set jsonName(String? jsonName) => _$this._jsonName = jsonName;
+
+  String? _type;
+  String? get type => _$this._type;
+  set type(String? type) => _$this._type = type;
+
+  String? _typeSimple;
+  String? get typeSimple => _$this._typeSimple;
+  set typeSimple(String? typeSimple) => _$this._typeSimple = typeSimple;
+
+  bool? _isRequired;
+  bool? get isRequired => _$this._isRequired;
+  set isRequired(bool? isRequired) => _$this._isRequired = isRequired;
+
+  int? _minLength;
+  int? get minLength => _$this._minLength;
+  set minLength(int? minLength) => _$this._minLength = minLength;
+
+  int? _maxLength;
+  int? get maxLength => _$this._maxLength;
+  set maxLength(int? maxLength) => _$this._maxLength = maxLength;
+
+  String? _minimum;
+  String? get minimum => _$this._minimum;
+  set minimum(String? minimum) => _$this._minimum = minimum;
+
+  String? _maximum;
+  String? get maximum => _$this._maximum;
+  set maximum(String? maximum) => _$this._maximum = maximum;
+
+  String? _regex;
+  String? get regex => _$this._regex;
+  set regex(String? regex) => _$this._regex = regex;
+
+  PropertyApiDescriptionModelBuilder() {
+    PropertyApiDescriptionModel._defaults(this);
+  }
+
+  PropertyApiDescriptionModelBuilder get _$this {
+    final $v = _$v;
+    if ($v != null) {
+      _name = $v.name;
+      _jsonName = $v.jsonName;
+      _type = $v.type;
+      _typeSimple = $v.typeSimple;
+      _isRequired = $v.isRequired;
+      _minLength = $v.minLength;
+      _maxLength = $v.maxLength;
+      _minimum = $v.minimum;
+      _maximum = $v.maximum;
+      _regex = $v.regex;
+      _$v = null;
+    }
+    return this;
+  }
+
+  @override
+  void replace(PropertyApiDescriptionModel other) {
+    ArgumentError.checkNotNull(other, 'other');
+    _$v = other as _$PropertyApiDescriptionModel;
+  }
+
+  @override
+  void update(void Function(PropertyApiDescriptionModelBuilder)? updates) {
+    if (updates != null) updates(this);
+  }
+
+  @override
+  PropertyApiDescriptionModel build() => _build();
+
+  _$PropertyApiDescriptionModel _build() {
+    final _$result = _$v ??
+        new _$PropertyApiDescriptionModel._(
+          name: name,
+          jsonName: jsonName,
+          type: type,
+          typeSimple: typeSimple,
+          isRequired: isRequired,
+          minLength: minLength,
+          maxLength: maxLength,
+          minimum: minimum,
+          maximum: maximum,
+          regex: regex,
+        );
+    replace(_$result);
+    return _$result;
+  }
+}
+
+// ignore_for_file: deprecated_member_use_from_same_package,type=lint

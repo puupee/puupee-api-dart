@@ -11,6 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**callGet**](AccountApi.md#callget) | **GET** /api/app/account | 
 [**changePassword**](AccountApi.md#changepassword) | **POST** /api/app/account/change-password | 
+[**checkSyncAuth**](AccountApi.md#checksyncauth) | **POST** /api/app/account/check-sync-auth | 检查同步认证
 [**destroyAccount**](AccountApi.md#destroyaccount) | **POST** /api/app/account/destroy-account | 
 [**register**](AccountApi.md#register) | **POST** /api/account/register | 
 [**resetPassword**](AccountApi.md#resetpassword) | **POST** /api/account/reset-password | 
@@ -34,7 +35,7 @@ final api = PuupeeApiClient().getAccountApi();
 try {
     final response = api.callGet();
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AccountApi->callGet: $e\n');
 }
 ```
@@ -73,7 +74,7 @@ final ChangePasswordDto body = ; // ChangePasswordDto |
 
 try {
     api.changePassword(body);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AccountApi->changePassword: $e\n');
 }
 ```
@@ -99,6 +100,45 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **checkSyncAuth**
+> CheckSyncAuthResultDto checkSyncAuth()
+
+检查同步认证
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getAccountApi();
+
+try {
+    final response = api.checkSyncAuth();
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AccountApi->checkSyncAuth: $e\n');
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**CheckSyncAuthResultDto**](CheckSyncAuthResultDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **destroyAccount**
 > destroyAccount(body)
 
@@ -115,7 +155,7 @@ final AccountDeletionDto body = ; // AccountDeletionDto |
 
 try {
     api.destroyAccount(body);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AccountApi->destroyAccount: $e\n');
 }
 ```
@@ -158,7 +198,7 @@ final RegisterDto body = ; // RegisterDto |
 try {
     final response = api.register(body);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AccountApi->register: $e\n');
 }
 ```
@@ -200,7 +240,7 @@ final ResetPasswordDto body = ; // ResetPasswordDto |
 
 try {
     api.resetPassword(body);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AccountApi->resetPassword: $e\n');
 }
 ```
@@ -242,7 +282,7 @@ final SendPasswordResetCodeDto body = ; // SendPasswordResetCodeDto |
 
 try {
     api.sendPasswordResetCode(body);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AccountApi->sendPasswordResetCode: $e\n');
 }
 ```
@@ -285,7 +325,7 @@ final VerifyPasswordResetTokenInput body = ; // VerifyPasswordResetTokenInput |
 try {
     final response = api.verifyPasswordResetToken(body);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AccountApi->verifyPasswordResetToken: $e\n');
 }
 ```

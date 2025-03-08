@@ -3,68 +3,124 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'message_source_category_dto.g.dart';
 
+/// MessageSourceCategoryDto
+///
+/// Properties:
+/// * [id] 
+/// * [title] 
+@BuiltValue()
+abstract class MessageSourceCategoryDto implements Built<MessageSourceCategoryDto, MessageSourceCategoryDtoBuilder> {
+  @BuiltValueField(wireName: r'id')
+  String? get id;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class MessageSourceCategoryDto {
-  /// Returns a new [MessageSourceCategoryDto] instance.
-  MessageSourceCategoryDto({
+  @BuiltValueField(wireName: r'title')
+  String? get title;
 
-     this.id,
+  MessageSourceCategoryDto._();
 
-     this.title,
-  });
+  factory MessageSourceCategoryDto([void updates(MessageSourceCategoryDtoBuilder b)]) = _$MessageSourceCategoryDto;
 
-  @JsonKey(
-    
-    name: r'id',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(MessageSourceCategoryDtoBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<MessageSourceCategoryDto> get serializer => _$MessageSourceCategoryDtoSerializer();
+}
 
-  String? id;
-
-
-
-  @JsonKey(
-    
-    name: r'title',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? title;
-
-
+class _$MessageSourceCategoryDtoSerializer implements PrimitiveSerializer<MessageSourceCategoryDto> {
+  @override
+  final Iterable<Type> types = const [MessageSourceCategoryDto, _$MessageSourceCategoryDto];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is MessageSourceCategoryDto &&
-     other.id == id &&
-     other.title == title;
+  final String wireName = r'MessageSourceCategoryDto';
 
-  @override
-  int get hashCode =>
-    id.hashCode +
-    title.hashCode;
-
-  factory MessageSourceCategoryDto.fromJson(Map<String, dynamic> json) => _$MessageSourceCategoryDtoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$MessageSourceCategoryDtoToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    MessageSourceCategoryDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.id != null) {
+      yield r'id';
+      yield serializers.serialize(
+        object.id,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.title != null) {
+      yield r'title';
+      yield serializers.serialize(
+        object.title,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    MessageSourceCategoryDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required MessageSourceCategoryDtoBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'id':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.id = valueDes;
+          break;
+        case r'title':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.title = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  MessageSourceCategoryDto deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = MessageSourceCategoryDtoBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

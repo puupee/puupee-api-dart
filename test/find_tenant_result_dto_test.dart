@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for FindTenantResultDto
 void main() {
-  final FindTenantResultDto? instance = /* FindTenantResultDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = FindTenantResultDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(FindTenantResultDto, () {
     // bool success

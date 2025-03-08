@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for MultiTenancyInfoDto
 void main() {
-  final MultiTenancyInfoDto? instance = /* MultiTenancyInfoDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = MultiTenancyInfoDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(MultiTenancyInfoDto, () {
     // bool isEnabled

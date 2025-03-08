@@ -33,7 +33,7 @@ final CreateOrUpdateAppPricingItemDto body = ; // CreateOrUpdateAppPricingItemDt
 try {
     final response = api.create(body);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AppPricingItemApi->create: $e\n');
 }
 ```
@@ -75,7 +75,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 
 try {
     api.delete(id);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AppPricingItemApi->delete: $e\n');
 }
 ```
@@ -118,7 +118,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getById(id);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AppPricingItemApi->getById: $e\n');
 }
 ```
@@ -145,7 +145,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getList**
-> List<AppPricingItemDto> getList()
+> BuiltList<AppPricingItemDto> getList()
 
 
 
@@ -160,7 +160,7 @@ final api = PuupeeApiClient().getAppPricingItemApi();
 try {
     final response = api.getList();
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AppPricingItemApi->getList: $e\n');
 }
 ```
@@ -170,7 +170,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List&lt;AppPricingItemDto&gt;**](AppPricingItemDto.md)
+[**BuiltList&lt;AppPricingItemDto&gt;**](AppPricingItemDto.md)
 
 ### Authorization
 
@@ -201,7 +201,7 @@ final CreateOrUpdateAppPricingItemDto body = ; // CreateOrUpdateAppPricingItemDt
 try {
     final response = api.update(id, body);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AppPricingItemApi->update: $e\n');
 }
 ```

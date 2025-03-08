@@ -34,7 +34,7 @@ final CreateOrUpdateAppReleaseDto body = ; // CreateOrUpdateAppReleaseDto |
 try {
     final response = api.create(body);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AppReleaseApi->create: $e\n');
 }
 ```
@@ -76,7 +76,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 
 try {
     api.delete(id);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AppReleaseApi->delete: $e\n');
 }
 ```
@@ -119,7 +119,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getById(id);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AppReleaseApi->getById: $e\n');
 }
 ```
@@ -158,14 +158,14 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getAppReleaseApi();
 final String appName = appName_example; // String | 
-final String platform = platform_example; // String | 
-final String productType = productType_example; // String | 
+final JsonObject platform = ; // JsonObject | 
+final JsonObject productType = ; // JsonObject | 
 final String environment = environment_example; // String | 
 
 try {
     final response = api.getLatest(appName, platform, productType, environment);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AppReleaseApi->getLatest: $e\n');
 }
 ```
@@ -175,8 +175,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **appName** | **String**|  | [optional] 
- **platform** | **String**|  | [optional] 
- **productType** | **String**|  | [optional] 
+ **platform** | [**JsonObject**](.md)|  | [optional] 
+ **productType** | [**JsonObject**](.md)|  | [optional] 
  **environment** | **String**|  | [optional] 
 
 ### Return type
@@ -208,7 +208,7 @@ import 'package:puupee_api_client/api.dart';
 final api = PuupeeApiClient().getAppReleaseApi();
 final String appId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 final String environment = environment_example; // String | 
-final String platform = platform_example; // String | 
+final JsonObject platform = ; // JsonObject | 
 final String sorting = sorting_example; // String | 
 final int skipCount = 56; // int | 
 final int maxResultCount = 56; // int | 
@@ -216,7 +216,7 @@ final int maxResultCount = 56; // int |
 try {
     final response = api.getList(appId, environment, platform, sorting, skipCount, maxResultCount);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AppReleaseApi->getList: $e\n');
 }
 ```
@@ -227,7 +227,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **appId** | **String**|  | [optional] 
  **environment** | **String**|  | [optional] 
- **platform** | **String**|  | [optional] 
+ **platform** | [**JsonObject**](.md)|  | [optional] 
  **sorting** | **String**|  | [optional] 
  **skipCount** | **int**|  | [optional] 
  **maxResultCount** | **int**|  | [optional] 
@@ -265,7 +265,7 @@ final CreateOrUpdateAppReleaseDto body = ; // CreateOrUpdateAppReleaseDto |
 try {
     final response = api.update(id, body);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling AppReleaseApi->update: $e\n');
 }
 ```

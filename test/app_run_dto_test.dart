@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for AppRunDto
 void main() {
-  final AppRunDto? instance = /* AppRunDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = AppRunDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(AppRunDto, () {
     // String id
@@ -57,12 +57,12 @@ void main() {
       // TODO
     });
 
-    // Object args
+    // JsonObject args
     test('to test the property `args`', () async {
       // TODO
     });
 
-    // Object envs
+    // JsonObject envs
     test('to test the property `envs`', () async {
       // TODO
     });

@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for GetPermissionListResultDto
 void main() {
-  final GetPermissionListResultDto? instance = /* GetPermissionListResultDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = GetPermissionListResultDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(GetPermissionListResultDto, () {
     // String entityDisplayName
@@ -12,7 +12,7 @@ void main() {
       // TODO
     });
 
-    // List<PermissionGroupDto> groups
+    // BuiltList<PermissionGroupDto> groups
     test('to test the property `groups`', () async {
       // TODO
     });

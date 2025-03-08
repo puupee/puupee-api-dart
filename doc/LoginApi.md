@@ -31,7 +31,7 @@ final UserLoginInfo body = ; // UserLoginInfo |
 try {
     final response = api.checkPassword(body);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling LoginApi->checkPassword: $e\n');
 }
 ```
@@ -74,7 +74,7 @@ final UserLoginInfo body = ; // UserLoginInfo |
 try {
     final response = api.login(body);
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling LoginApi->login: $e\n');
 }
 ```
@@ -115,7 +115,7 @@ final api = PuupeeApiClient().getLoginApi();
 
 try {
     api.logout();
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling LoginApi->logout: $e\n');
 }
 ```

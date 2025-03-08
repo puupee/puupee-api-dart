@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for ResetPasswordDto
 void main() {
-  final ResetPasswordDto? instance = /* ResetPasswordDto(...) */ null;
-  // TODO add properties to the entity
+  final instance = ResetPasswordDtoBuilder();
+  // TODO add properties to the builder and call build()
 
   group(ResetPasswordDto, () {
     // String userId

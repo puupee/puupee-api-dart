@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-// ignore: unused_import
-import 'dart:convert';
-import 'package:puupee_api_client/src/deserialize.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:puupee_api_client/src/api_util.dart';
 import 'package:puupee_api_client/src/model/application_api_description_model.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 
@@ -16,7 +16,9 @@ class AbpApiDefinitionApi {
 
   final Dio _dio;
 
-  const AbpApiDefinitionApi(this._dio);
+  final Serializers _serializers;
+
+  const AbpApiDefinitionApi(this._dio, this._serializers);
 
   /// callGet
   /// 
@@ -31,7 +33,7 @@ class AbpApiDefinitionApi {
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
   /// Returns a [Future] containing a [Response] with a [ApplicationApiDescriptionModel] as data
-  /// Throws [DioError] if API call or serialization fails
+  /// Throws [DioException] if API call or serialization fails
   Future<Response<ApplicationApiDescriptionModel>> callGet({ 
     bool? includeTypes,
     CancelToken? cancelToken,
@@ -60,7 +62,7 @@ class AbpApiDefinitionApi {
     );
 
     final _queryParameters = <String, dynamic>{
-      if (includeTypes != null) r'IncludeTypes': includeTypes,
+      if (includeTypes != null) r'IncludeTypes': encodeQueryParameter(_serializers, includeTypes, const FullType(bool)),
     };
 
     final _response = await _dio.request<Object>(
@@ -72,15 +74,20 @@ class AbpApiDefinitionApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    ApplicationApiDescriptionModel _responseData;
+    ApplicationApiDescriptionModel? _responseData;
 
     try {
-_responseData = deserialize<ApplicationApiDescriptionModel, ApplicationApiDescriptionModel>(_response.data!, 'ApplicationApiDescriptionModel', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(ApplicationApiDescriptionModel),
+      ) as ApplicationApiDescriptionModel;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );

@@ -3,148 +3,214 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:json_annotation/json_annotation.dart';
+import 'package:built_value/built_value.dart';
+import 'package:built_value/serializer.dart';
 
 part 'date_time_format_dto.g.dart';
 
+/// DateTimeFormatDto
+///
+/// Properties:
+/// * [calendarAlgorithmType] 
+/// * [dateTimeFormatLong] 
+/// * [shortDatePattern] 
+/// * [fullDateTimePattern] 
+/// * [dateSeparator] 
+/// * [shortTimePattern] 
+/// * [longTimePattern] 
+@BuiltValue()
+abstract class DateTimeFormatDto implements Built<DateTimeFormatDto, DateTimeFormatDtoBuilder> {
+  @BuiltValueField(wireName: r'calendarAlgorithmType')
+  String? get calendarAlgorithmType;
 
-@JsonSerializable(
-  checked: true,
-  createToJson: true,
-  disallowUnrecognizedKeys: false,
-  explicitToJson: true,
-)
-class DateTimeFormatDto {
-  /// Returns a new [DateTimeFormatDto] instance.
-  DateTimeFormatDto({
+  @BuiltValueField(wireName: r'dateTimeFormatLong')
+  String? get dateTimeFormatLong;
 
-     this.calendarAlgorithmType,
+  @BuiltValueField(wireName: r'shortDatePattern')
+  String? get shortDatePattern;
 
-     this.dateTimeFormatLong,
+  @BuiltValueField(wireName: r'fullDateTimePattern')
+  String? get fullDateTimePattern;
 
-     this.shortDatePattern,
+  @BuiltValueField(wireName: r'dateSeparator')
+  String? get dateSeparator;
 
-     this.fullDateTimePattern,
+  @BuiltValueField(wireName: r'shortTimePattern')
+  String? get shortTimePattern;
 
-     this.dateSeparator,
+  @BuiltValueField(wireName: r'longTimePattern')
+  String? get longTimePattern;
 
-     this.shortTimePattern,
+  DateTimeFormatDto._();
 
-     this.longTimePattern,
-  });
+  factory DateTimeFormatDto([void updates(DateTimeFormatDtoBuilder b)]) = _$DateTimeFormatDto;
 
-  @JsonKey(
-    
-    name: r'calendarAlgorithmType',
-    required: false,
-    includeIfNull: false
-  )
+  @BuiltValueHook(initializeBuilder: true)
+  static void _defaults(DateTimeFormatDtoBuilder b) => b;
 
+  @BuiltValueSerializer(custom: true)
+  static Serializer<DateTimeFormatDto> get serializer => _$DateTimeFormatDtoSerializer();
+}
 
-  String? calendarAlgorithmType;
-
-
-
-  @JsonKey(
-    
-    name: r'dateTimeFormatLong',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? dateTimeFormatLong;
-
-
-
-  @JsonKey(
-    
-    name: r'shortDatePattern',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? shortDatePattern;
-
-
-
-  @JsonKey(
-    
-    name: r'fullDateTimePattern',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? fullDateTimePattern;
-
-
-
-  @JsonKey(
-    
-    name: r'dateSeparator',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? dateSeparator;
-
-
-
-  @JsonKey(
-    
-    name: r'shortTimePattern',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? shortTimePattern;
-
-
-
-  @JsonKey(
-    
-    name: r'longTimePattern',
-    required: false,
-    includeIfNull: false
-  )
-
-
-  String? longTimePattern;
-
-
+class _$DateTimeFormatDtoSerializer implements PrimitiveSerializer<DateTimeFormatDto> {
+  @override
+  final Iterable<Type> types = const [DateTimeFormatDto, _$DateTimeFormatDto];
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is DateTimeFormatDto &&
-     other.calendarAlgorithmType == calendarAlgorithmType &&
-     other.dateTimeFormatLong == dateTimeFormatLong &&
-     other.shortDatePattern == shortDatePattern &&
-     other.fullDateTimePattern == fullDateTimePattern &&
-     other.dateSeparator == dateSeparator &&
-     other.shortTimePattern == shortTimePattern &&
-     other.longTimePattern == longTimePattern;
+  final String wireName = r'DateTimeFormatDto';
 
-  @override
-  int get hashCode =>
-    calendarAlgorithmType.hashCode +
-    dateTimeFormatLong.hashCode +
-    shortDatePattern.hashCode +
-    fullDateTimePattern.hashCode +
-    dateSeparator.hashCode +
-    shortTimePattern.hashCode +
-    longTimePattern.hashCode;
-
-  factory DateTimeFormatDto.fromJson(Map<String, dynamic> json) => _$DateTimeFormatDtoFromJson(json);
-
-  Map<String, dynamic> toJson() => _$DateTimeFormatDtoToJson(this);
-
-  @override
-  String toString() {
-    return toJson().toString();
+  Iterable<Object?> _serializeProperties(
+    Serializers serializers,
+    DateTimeFormatDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) sync* {
+    if (object.calendarAlgorithmType != null) {
+      yield r'calendarAlgorithmType';
+      yield serializers.serialize(
+        object.calendarAlgorithmType,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.dateTimeFormatLong != null) {
+      yield r'dateTimeFormatLong';
+      yield serializers.serialize(
+        object.dateTimeFormatLong,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.shortDatePattern != null) {
+      yield r'shortDatePattern';
+      yield serializers.serialize(
+        object.shortDatePattern,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.fullDateTimePattern != null) {
+      yield r'fullDateTimePattern';
+      yield serializers.serialize(
+        object.fullDateTimePattern,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.dateSeparator != null) {
+      yield r'dateSeparator';
+      yield serializers.serialize(
+        object.dateSeparator,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.shortTimePattern != null) {
+      yield r'shortTimePattern';
+      yield serializers.serialize(
+        object.shortTimePattern,
+        specifiedType: const FullType(String),
+      );
+    }
+    if (object.longTimePattern != null) {
+      yield r'longTimePattern';
+      yield serializers.serialize(
+        object.longTimePattern,
+        specifiedType: const FullType(String),
+      );
+    }
   }
 
+  @override
+  Object serialize(
+    Serializers serializers,
+    DateTimeFormatDto object, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    return _serializeProperties(serializers, object, specifiedType: specifiedType).toList();
+  }
+
+  void _deserializeProperties(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+    required List<Object?> serializedList,
+    required DateTimeFormatDtoBuilder result,
+    required List<Object?> unhandled,
+  }) {
+    for (var i = 0; i < serializedList.length; i += 2) {
+      final key = serializedList[i] as String;
+      final value = serializedList[i + 1];
+      switch (key) {
+        case r'calendarAlgorithmType':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.calendarAlgorithmType = valueDes;
+          break;
+        case r'dateTimeFormatLong':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.dateTimeFormatLong = valueDes;
+          break;
+        case r'shortDatePattern':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.shortDatePattern = valueDes;
+          break;
+        case r'fullDateTimePattern':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.fullDateTimePattern = valueDes;
+          break;
+        case r'dateSeparator':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.dateSeparator = valueDes;
+          break;
+        case r'shortTimePattern':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.shortTimePattern = valueDes;
+          break;
+        case r'longTimePattern':
+          final valueDes = serializers.deserialize(
+            value,
+            specifiedType: const FullType(String),
+          ) as String;
+          result.longTimePattern = valueDes;
+          break;
+        default:
+          unhandled.add(key);
+          unhandled.add(value);
+          break;
+      }
+    }
+  }
+
+  @override
+  DateTimeFormatDto deserialize(
+    Serializers serializers,
+    Object serialized, {
+    FullType specifiedType = FullType.unspecified,
+  }) {
+    final result = DateTimeFormatDtoBuilder();
+    final serializedList = (serialized as Iterable<Object?>).toList();
+    final unhandled = <Object?>[];
+    _deserializeProperties(
+      serializers,
+      serialized,
+      specifiedType: specifiedType,
+      serializedList: serializedList,
+      unhandled: unhandled,
+      result: result,
+    );
+    return result.build();
+  }
 }
 

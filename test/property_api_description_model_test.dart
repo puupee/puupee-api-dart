@@ -3,8 +3,8 @@ import 'package:puupee_api_client/puupee_api_client.dart';
 
 // tests for PropertyApiDescriptionModel
 void main() {
-  final PropertyApiDescriptionModel? instance = /* PropertyApiDescriptionModel(...) */ null;
-  // TODO add properties to the entity
+  final instance = PropertyApiDescriptionModelBuilder();
+  // TODO add properties to the builder and call build()
 
   group(PropertyApiDescriptionModel, () {
     // String name

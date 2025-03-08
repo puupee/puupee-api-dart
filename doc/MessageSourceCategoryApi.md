@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **getList**
-> List<MessageSourceCategoryDto> getList()
+> BuiltList<MessageSourceCategoryDto> getList()
 
 
 
@@ -28,7 +28,7 @@ final api = PuupeeApiClient().getMessageSourceCategoryApi();
 try {
     final response = api.getList();
     print(response);
-} catch on DioError (e) {
+} catch on DioException (e) {
     print('Exception when calling MessageSourceCategoryApi->getList: $e\n');
 }
 ```
@@ -38,7 +38,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**List&lt;MessageSourceCategoryDto&gt;**](MessageSourceCategoryDto.md)
+[**BuiltList&lt;MessageSourceCategoryDto&gt;**](MessageSourceCategoryDto.md)
 
 ### Authorization
 

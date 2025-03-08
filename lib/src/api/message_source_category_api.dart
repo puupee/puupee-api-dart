@@ -4,11 +4,11 @@
 
 import 'dart:async';
 
-// ignore: unused_import
-import 'dart:convert';
-import 'package:puupee_api_client/src/deserialize.dart';
+import 'package:built_value/json_object.dart';
+import 'package:built_value/serializer.dart';
 import 'package:dio/dio.dart';
 
+import 'package:built_collection/built_collection.dart';
 import 'package:puupee_api_client/src/model/message_source_category_dto.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 
@@ -16,7 +16,9 @@ class MessageSourceCategoryApi {
 
   final Dio _dio;
 
-  const MessageSourceCategoryApi(this._dio);
+  final Serializers _serializers;
+
+  const MessageSourceCategoryApi(this._dio, this._serializers);
 
   /// getList
   /// 
@@ -29,9 +31,9 @@ class MessageSourceCategoryApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [List<MessageSourceCategoryDto>] as data
-  /// Throws [DioError] if API call or serialization fails
-  Future<Response<List<MessageSourceCategoryDto>>> getList({ 
+  /// Returns a [Future] containing a [Response] with a [BuiltList<MessageSourceCategoryDto>] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<BuiltList<MessageSourceCategoryDto>>> getList({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -65,21 +67,26 @@ class MessageSourceCategoryApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    List<MessageSourceCategoryDto> _responseData;
+    BuiltList<MessageSourceCategoryDto>? _responseData;
 
     try {
-_responseData = deserialize<List<MessageSourceCategoryDto>, MessageSourceCategoryDto>(_response.data!, 'List<MessageSourceCategoryDto>', growable: true);
+      final rawResponse = _response.data;
+      _responseData = rawResponse == null ? null : _serializers.deserialize(
+        rawResponse,
+        specifiedType: const FullType(BuiltList, [FullType(MessageSourceCategoryDto)]),
+      ) as BuiltList<MessageSourceCategoryDto>;
+
     } catch (error, stackTrace) {
-      throw DioError(
+      throw DioException(
         requestOptions: _response.requestOptions,
         response: _response,
-        type: DioErrorType.unknown,
+        type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
       );
     }
 
-    return Response<List<MessageSourceCategoryDto>>(
+    return Response<BuiltList<MessageSourceCategoryDto>>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
