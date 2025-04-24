@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **getFileOrCredentials**
-> StorageObjectOrCredentialsDto getFileOrCredentials(rapidCode, bucket)
+> StorageObjectOrCredentialsDto getFileOrCredentials(rapidCode, bucket, key)
 
 
 
@@ -27,9 +27,10 @@ import 'package:puupee_api_client/api.dart';
 final api = PuupeeApiClient().getStorageObjectApi();
 final String rapidCode = rapidCode_example; // String | 
 final String bucket = bucket_example; // String | 
+final String key = key_example; // String | 
 
 try {
-    final response = api.getFileOrCredentials(rapidCode, bucket);
+    final response = api.getFileOrCredentials(rapidCode, bucket, key);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling StorageObjectApi->getFileOrCredentials: $e\n');
@@ -42,6 +43,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **rapidCode** | **String**|  | [optional] 
  **bucket** | **String**|  | [optional] 
+ **key** | **String**|  | [optional] 
 
 ### Return type
 

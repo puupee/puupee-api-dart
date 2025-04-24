@@ -24,6 +24,7 @@ class StorageObjectApi {
   /// Parameters:
   /// * [rapidCode] 
   /// * [bucket] 
+  /// * [key] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -36,6 +37,7 @@ class StorageObjectApi {
   Future<Response<StorageObjectOrCredentialsDto>> getFileOrCredentials({ 
     String? rapidCode,
     String? bucket,
+    String? key,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -64,6 +66,7 @@ class StorageObjectApi {
     final _queryParameters = <String, dynamic>{
       if (rapidCode != null) r'rapidCode': rapidCode,
       if (bucket != null) r'bucket': bucket,
+      if (key != null) r'key': key,
     };
 
     final _response = await _dio.request<Object>(
