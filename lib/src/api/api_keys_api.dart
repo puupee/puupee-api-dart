@@ -21,7 +21,7 @@ class ApiKeysApi {
 
   const ApiKeysApi(this._dio);
 
-  /// create
+  /// createApiKeys
   /// 
   ///
   /// Parameters:
@@ -35,7 +35,7 @@ class ApiKeysApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ApiKeyDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ApiKeyDto>> create({ 
+  Future<Response<ApiKeyDto>> createApiKeys({ 
     ApiKeyCreateDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -115,7 +115,7 @@ _responseData = rawData == null ? null : deserialize<ApiKeyDto, ApiKeyDto>(rawDa
     );
   }
 
-  /// delete
+  /// deleteApiKeysById
   /// 
   ///
   /// Parameters:
@@ -129,7 +129,7 @@ _responseData = rawData == null ? null : deserialize<ApiKeyDto, ApiKeyDto>(rawDa
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> delete({ 
+  Future<Response<void>> deleteApiKeysById({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -167,7 +167,7 @@ _responseData = rawData == null ? null : deserialize<ApiKeyDto, ApiKeyDto>(rawDa
     return _response;
   }
 
-  /// getById
+  /// getApiKeysById
   /// 
   ///
   /// Parameters:
@@ -181,7 +181,7 @@ _responseData = rawData == null ? null : deserialize<ApiKeyDto, ApiKeyDto>(rawDa
   ///
   /// Returns a [Future] containing a [Response] with a [ApiKeyDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ApiKeyDto>> getById({ 
+  Future<Response<ApiKeyDto>> getApiKeysById({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -243,7 +243,7 @@ _responseData = rawData == null ? null : deserialize<ApiKeyDto, ApiKeyDto>(rawDa
     );
   }
 
-  /// getList
+  /// getApiKeysList
   /// 
   ///
   /// Parameters:
@@ -259,7 +259,7 @@ _responseData = rawData == null ? null : deserialize<ApiKeyDto, ApiKeyDto>(rawDa
   ///
   /// Returns a [Future] containing a [Response] with a [ApiKeyDtoPagedResultDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ApiKeyDtoPagedResultDto>> getList({ 
+  Future<Response<ApiKeyDtoPagedResultDto>> getApiKeysList({ 
     String? sorting,
     int? skipCount,
     int? maxResultCount,
@@ -330,7 +330,7 @@ _responseData = rawData == null ? null : deserialize<ApiKeyDtoPagedResultDto, Ap
     );
   }
 
-  /// update
+  /// updateApiKeys
   /// 
   ///
   /// Parameters:
@@ -345,7 +345,7 @@ _responseData = rawData == null ? null : deserialize<ApiKeyDtoPagedResultDto, Ap
   ///
   /// Returns a [Future] containing a [Response] with a [ApiKeyDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ApiKeyDto>> update({ 
+  Future<Response<ApiKeyDto>> updateApiKeys({ 
     required String id,
     ApiKeyUpdateDto? body,
     CancelToken? cancelToken,

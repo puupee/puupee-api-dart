@@ -19,7 +19,7 @@ class MessageTemplateApi {
 
   const MessageTemplateApi(this._dio);
 
-  /// create
+  /// createMessageTemplate
   /// 
   ///
   /// Parameters:
@@ -33,7 +33,7 @@ class MessageTemplateApi {
   ///
   /// Returns a [Future] containing a [Response] with a [MessageTemplateDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<MessageTemplateDto>> create({ 
+  Future<Response<MessageTemplateDto>> createMessageTemplate({ 
     CreateOrUpdateMessageTemplateDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -113,7 +113,7 @@ _responseData = rawData == null ? null : deserialize<MessageTemplateDto, Message
     );
   }
 
-  /// delete
+  /// deleteMessageTemplateById
   /// 
   ///
   /// Parameters:
@@ -127,7 +127,7 @@ _responseData = rawData == null ? null : deserialize<MessageTemplateDto, Message
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> delete({ 
+  Future<Response<void>> deleteMessageTemplateById({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -165,7 +165,7 @@ _responseData = rawData == null ? null : deserialize<MessageTemplateDto, Message
     return _response;
   }
 
-  /// getById
+  /// getMessageTemplateById
   /// 
   ///
   /// Parameters:
@@ -179,7 +179,7 @@ _responseData = rawData == null ? null : deserialize<MessageTemplateDto, Message
   ///
   /// Returns a [Future] containing a [Response] with a [MessageTemplateDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<MessageTemplateDto>> getById({ 
+  Future<Response<MessageTemplateDto>> getMessageTemplateById({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -241,7 +241,7 @@ _responseData = rawData == null ? null : deserialize<MessageTemplateDto, Message
     );
   }
 
-  /// getList
+  /// getMessageTemplateList
   /// 
   ///
   /// Parameters:
@@ -254,7 +254,7 @@ _responseData = rawData == null ? null : deserialize<MessageTemplateDto, Message
   ///
   /// Returns a [Future] containing a [Response] with a [List<MessageTemplateDto>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<List<MessageTemplateDto>>> getList({ 
+  Future<Response<List<MessageTemplateDto>>> getMessageTemplateList({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -315,7 +315,7 @@ _responseData = rawData == null ? null : deserialize<List<MessageTemplateDto>, M
     );
   }
 
-  /// update
+  /// updateMessageTemplate
   /// 
   ///
   /// Parameters:
@@ -330,7 +330,7 @@ _responseData = rawData == null ? null : deserialize<List<MessageTemplateDto>, M
   ///
   /// Returns a [Future] containing a [Response] with a [MessageTemplateDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<MessageTemplateDto>> update({ 
+  Future<Response<MessageTemplateDto>> updateMessageTemplate({ 
     required String id,
     CreateOrUpdateMessageTemplateDto? body,
     CancelToken? cancelToken,

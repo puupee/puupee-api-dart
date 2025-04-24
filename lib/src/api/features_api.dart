@@ -19,7 +19,67 @@ class FeaturesApi {
 
   const FeaturesApi(this._dio);
 
-  /// callGet
+  /// deleteFeatures
+  /// 
+  ///
+  /// Parameters:
+  /// * [providerName] 
+  /// * [providerKey] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<void>> deleteFeatures({ 
+    String? providerName,
+    String? providerKey,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/feature-management/features';
+    final _options = Options(
+      method: r'DELETE',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'oauth2',
+            'name': 'oauth2',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      if (providerName != null) r'providerName': providerName,
+      if (providerKey != null) r'providerKey': providerKey,
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
+  }
+
+  /// getFeatures
   /// 
   ///
   /// Parameters:
@@ -34,7 +94,7 @@ class FeaturesApi {
   ///
   /// Returns a [Future] containing a [Response] with a [GetFeatureListResultDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<GetFeatureListResultDto>> callGet({ 
+  Future<Response<GetFeatureListResultDto>> getFeatures({ 
     String? providerName,
     String? providerKey,
     CancelToken? cancelToken,
@@ -103,67 +163,7 @@ _responseData = rawData == null ? null : deserialize<GetFeatureListResultDto, Ge
     );
   }
 
-  /// delete
-  /// 
-  ///
-  /// Parameters:
-  /// * [providerName] 
-  /// * [providerKey] 
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future]
-  /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> delete({ 
-    String? providerName,
-    String? providerKey,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/feature-management/features';
-    final _options = Options(
-      method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _queryParameters = <String, dynamic>{
-      if (providerName != null) r'providerName': providerName,
-      if (providerKey != null) r'providerKey': providerKey,
-    };
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    return _response;
-  }
-
-  /// update
+  /// updateFeatures
   /// 
   ///
   /// Parameters:
@@ -179,7 +179,7 @@ _responseData = rawData == null ? null : deserialize<GetFeatureListResultDto, Ge
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> update({ 
+  Future<Response<void>> updateFeatures({ 
     UpdateFeaturesDto? body,
     String? providerName,
     String? providerKey,

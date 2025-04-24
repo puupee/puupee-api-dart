@@ -9,22 +9,29 @@ void main() {
   group(AppApi, () {
     // 创建新应用
     //
-    //Future<AppDto> create({ CreateOrUpdateAppDto body }) async
-    test('test create', () async {
+    //Future<AppDto> createApp({ CreateOrUpdateAppDto body }) async
+    test('test createApp', () async {
       // TODO
     });
 
     // 删除应用
     //
-    //Future delete(String id) async
-    test('test delete', () async {
+    //Future deleteAppById(String id) async
+    test('test deleteAppById', () async {
       // TODO
     });
 
     // 获取 APP 详情
     //
-    //Future<AppDto> getById(String id) async
-    test('test getById', () async {
+    //Future<AppDto> getAppById(String id) async
+    test('test getAppById', () async {
+      // TODO
+    });
+
+    // 获取当前用户的应用列表
+    //
+    //Future<AppDtoPagedResultDto> getAppList({ String creatorId, String sorting, int skipCount, int maxResultCount }) async
+    test('test getAppList', () async {
       // TODO
     });
 
@@ -35,15 +42,8 @@ void main() {
       // TODO
     });
 
-    //Future<List<AppFeatureDto>> getFeatures(String appId, { String env }) async
-    test('test getFeatures', () async {
-      // TODO
-    });
-
-    // 获取当前用户的应用列表
-    //
-    //Future<AppDtoPagedResultDto> getList({ String creatorId, String sorting, int skipCount, int maxResultCount }) async
-    test('test getList', () async {
+    //Future<List<AppFeatureDto>> getFeatureList(String appId, { String env }) async
+    test('test getFeatureList', () async {
       // TODO
     });
 
@@ -56,14 +56,14 @@ void main() {
 
     // 所有开发者已发布 APP 列表
     //
-    //Future<AppDtoPagedResultDto> getListPublic({ Object type, String developerAccount, String currentAppName }) async
+    //Future<AppDtoPagedResultDto> getListPublic({ String type, String developerAccount, String currentAppName }) async
     test('test getListPublic', () async {
       // TODO
     });
 
     // 获取APP列表包含用户订阅信息
     //
-    //Future<AppWithUserDtoPagedResultDto> getListWithUser({ Object type, String searchKey, String sorting, int skipCount, int maxResultCount }) async
+    //Future<AppWithUserDtoPagedResultDto> getListWithUser({ String type, String searchKey, String sorting, int skipCount, int maxResultCount }) async
     test('test getListWithUser', () async {
       // TODO
     });
@@ -94,8 +94,8 @@ void main() {
 
     // 更新 APP 信息
     //
-    //Future<AppDto> update(String id, { CreateOrUpdateAppDto body }) async
-    test('test update', () async {
+    //Future<AppDto> updateApp(String id, { CreateOrUpdateAppDto body }) async
+    test('test updateApp', () async {
       // TODO
     });
 

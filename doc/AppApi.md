@@ -9,12 +9,12 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](AppApi.md#create) | **POST** /api/app/app | 创建新应用
-[**delete**](AppApi.md#delete) | **DELETE** /api/app/app/{id} | 删除应用
-[**getById**](AppApi.md#getbyid) | **GET** /api/app/app/{id} | 获取 APP 详情
+[**createApp**](AppApi.md#createapp) | **POST** /api/app/app | 创建新应用
+[**deleteAppById**](AppApi.md#deleteappbyid) | **DELETE** /api/app/app/{id} | 删除应用
+[**getAppById**](AppApi.md#getappbyid) | **GET** /api/app/app/{id} | 获取 APP 详情
+[**getAppList**](AppApi.md#getapplist) | **GET** /api/app/app | 获取当前用户的应用列表
 [**getByName**](AppApi.md#getbyname) | **GET** /api/app/app/by-name | 获取 APP 详情
-[**getFeatures**](AppApi.md#getfeatures) | **GET** /api/app/app/features/{appId} | 
-[**getList**](AppApi.md#getlist) | **GET** /api/app/app | 获取当前用户的应用列表
+[**getFeatureList**](AppApi.md#getfeaturelist) | **GET** /api/app/app/feature-list/{appId} | 
 [**getListByDeveloperAll**](AppApi.md#getlistbydeveloperall) | **GET** /api/app/app/by-developer-all | 获取开发者所有 APP 包括未发布的
 [**getListPublic**](AppApi.md#getlistpublic) | **GET** /api/app/app/public | 所有开发者已发布 APP 列表
 [**getListWithUser**](AppApi.md#getlistwithuser) | **GET** /api/app/app/with-user | 获取APP列表包含用户订阅信息
@@ -22,12 +22,12 @@ Method | HTTP request | Description
 [**getUploadCredentials**](AppApi.md#getuploadcredentials) | **GET** /api/app/app/upload-credentials | 获取上传凭证
 [**getWithUser**](AppApi.md#getwithuser) | **GET** /api/app/app/{id}/with-user | 获取 APP 详情
 [**run**](AppApi.md#run) | **POST** /api/app/app/run | 
-[**update**](AppApi.md#update) | **PUT** /api/app/app/{id} | 更新 APP 信息
+[**updateApp**](AppApi.md#updateapp) | **PUT** /api/app/app/{id} | 更新 APP 信息
 [**updateRunState**](AppApi.md#updaterunstate) | **PUT** /api/app/app/{id}/run-state | 
 
 
-# **create**
-> AppDto create(body)
+# **createApp**
+> AppDto createApp(body)
 
 创建新应用
 
@@ -41,10 +41,10 @@ final api = PuupeeApiClient().getAppApi();
 final CreateOrUpdateAppDto body = ; // CreateOrUpdateAppDto | 
 
 try {
-    final response = api.create(body);
+    final response = api.createApp(body);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling AppApi->create: $e\n');
+    print('Exception when calling AppApi->createApp: $e\n');
 }
 ```
 
@@ -69,8 +69,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete**
-> delete(id)
+# **deleteAppById**
+> deleteAppById(id)
 
 删除应用
 
@@ -84,9 +84,9 @@ final api = PuupeeApiClient().getAppApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    api.delete(id);
+    api.deleteAppById(id);
 } catch on DioException (e) {
-    print('Exception when calling AppApi->delete: $e\n');
+    print('Exception when calling AppApi->deleteAppById: $e\n');
 }
 ```
 
@@ -111,8 +111,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getById**
-> AppDto getById(id)
+# **getAppById**
+> AppDto getAppById(id)
 
 获取 APP 详情
 
@@ -126,10 +126,10 @@ final api = PuupeeApiClient().getAppApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final response = api.getById(id);
+    final response = api.getAppById(id);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling AppApi->getById: $e\n');
+    print('Exception when calling AppApi->getAppById: $e\n');
 }
 ```
 
@@ -142,6 +142,55 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AppDto**](AppDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAppList**
+> AppDtoPagedResultDto getAppList(creatorId, sorting, skipCount, maxResultCount)
+
+获取当前用户的应用列表
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getAppApi();
+final String creatorId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final String sorting = sorting_example; // String | 
+final int skipCount = 56; // int | 
+final int maxResultCount = 56; // int | 
+
+try {
+    final response = api.getAppList(creatorId, sorting, skipCount, maxResultCount);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AppApi->getAppList: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **creatorId** | **String**|  | [optional] 
+ **sorting** | **String**|  | [optional] 
+ **skipCount** | **int**|  | [optional] 
+ **maxResultCount** | **int**|  | [optional] 
+
+### Return type
+
+[**AppDtoPagedResultDto**](AppDtoPagedResultDto.md)
 
 ### Authorization
 
@@ -197,8 +246,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getFeatures**
-> List<AppFeatureDto> getFeatures(appId, env)
+# **getFeatureList**
+> List<AppFeatureDto> getFeatureList(appId, env)
 
 
 
@@ -213,10 +262,10 @@ final String appId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 final String env = env_example; // String | 
 
 try {
-    final response = api.getFeatures(appId, env);
+    final response = api.getFeatureList(appId, env);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling AppApi->getFeatures: $e\n');
+    print('Exception when calling AppApi->getFeatureList: $e\n');
 }
 ```
 
@@ -230,55 +279,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**List&lt;AppFeatureDto&gt;**](AppFeatureDto.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **getList**
-> AppDtoPagedResultDto getList(creatorId, sorting, skipCount, maxResultCount)
-
-获取当前用户的应用列表
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getAppApi();
-final String creatorId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final String sorting = sorting_example; // String | 
-final int skipCount = 56; // int | 
-final int maxResultCount = 56; // int | 
-
-try {
-    final response = api.getList(creatorId, sorting, skipCount, maxResultCount);
-    print(response);
-} catch on DioException (e) {
-    print('Exception when calling AppApi->getList: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **creatorId** | **String**|  | [optional] 
- **sorting** | **String**|  | [optional] 
- **skipCount** | **int**|  | [optional] 
- **maxResultCount** | **int**|  | [optional] 
-
-### Return type
-
-[**AppDtoPagedResultDto**](AppDtoPagedResultDto.md)
 
 ### Authorization
 
@@ -346,7 +346,7 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppApi();
-final Object type = ; // Object | 
+final String type = type_example; // String | 
 final String developerAccount = developerAccount_example; // String | 
 final String currentAppName = currentAppName_example; // String | 
 
@@ -362,7 +362,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | [**Object**](.md)|  | [optional] 
+ **type** | **String**|  | [optional] 
  **developerAccount** | **String**|  | [optional] 
  **currentAppName** | **String**|  | [optional] 
 
@@ -393,7 +393,7 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppApi();
-final Object type = ; // Object | 
+final String type = type_example; // String | 
 final String searchKey = searchKey_example; // String | 
 final String sorting = sorting_example; // String | 
 final int skipCount = 56; // int | 
@@ -411,7 +411,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | [**Object**](.md)|  | [optional] 
+ **type** | **String**|  | [optional] 
  **searchKey** | **String**|  | [optional] 
  **sorting** | **String**|  | [optional] 
  **skipCount** | **int**|  | [optional] 
@@ -606,8 +606,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update**
-> AppDto update(id, body)
+# **updateApp**
+> AppDto updateApp(id, body)
 
 更新 APP 信息
 
@@ -622,10 +622,10 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 final CreateOrUpdateAppDto body = ; // CreateOrUpdateAppDto | 
 
 try {
-    final response = api.update(id, body);
+    final response = api.updateApp(id, body);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling AppApi->update: $e\n');
+    print('Exception when calling AppApi->updateApp: $e\n');
 }
 ```
 

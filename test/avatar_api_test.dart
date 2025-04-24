@@ -7,8 +7,8 @@ void main() {
   final instance = PuupeeApiClient().getAvatarApi();
 
   group(AvatarApi, () {
-    //Future<AvatarDto> create({ CreateAvatarDto body }) async
-    test('test create', () async {
+    //Future<AvatarDto> createAvatar({ CreateAvatarDto body }) async
+    test('test createAvatar', () async {
       // TODO
     });
 

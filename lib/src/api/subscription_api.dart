@@ -187,7 +187,7 @@ _responseData = rawData == null ? null : deserialize<SubscriptionOrderDto, Subsc
     );
   }
 
-  /// getById
+  /// getSubscriptionById
   /// 
   ///
   /// Parameters:
@@ -201,7 +201,7 @@ _responseData = rawData == null ? null : deserialize<SubscriptionOrderDto, Subsc
   ///
   /// Returns a [Future] containing a [Response] with a [SubscriptionDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SubscriptionDto>> getById({ 
+  Future<Response<SubscriptionDto>> getSubscriptionById({ 
     String? appId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

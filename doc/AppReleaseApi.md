@@ -9,16 +9,16 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](AppReleaseApi.md#create) | **POST** /api/app/app-release | 创建新版本
-[**delete**](AppReleaseApi.md#delete) | **DELETE** /api/app/app-release/{id} | 删除版本
-[**getById**](AppReleaseApi.md#getbyid) | **GET** /api/app/app-release/{id} | 获取版本
+[**createAppRelease**](AppReleaseApi.md#createapprelease) | **POST** /api/app/app-release | 创建新版本
+[**deleteAppReleaseById**](AppReleaseApi.md#deleteappreleasebyid) | **DELETE** /api/app/app-release/{id} | 删除版本
+[**getAppReleaseById**](AppReleaseApi.md#getappreleasebyid) | **GET** /api/app/app-release/{id} | 获取版本
+[**getAppReleaseList**](AppReleaseApi.md#getappreleaselist) | **GET** /api/app/app-release | 获取版本列表
 [**getLatest**](AppReleaseApi.md#getlatest) | **GET** /api/app/app-release/latest | 获取最新版本
-[**getList**](AppReleaseApi.md#getlist) | **GET** /api/app/app-release | 获取版本列表
-[**update**](AppReleaseApi.md#update) | **PUT** /api/app/app-release/{id} | 更新版本
+[**updateAppRelease**](AppReleaseApi.md#updateapprelease) | **PUT** /api/app/app-release/{id} | 更新版本
 
 
-# **create**
-> AppReleaseDto create(body)
+# **createAppRelease**
+> AppReleaseDto createAppRelease(body)
 
 创建新版本
 
@@ -32,10 +32,10 @@ final api = PuupeeApiClient().getAppReleaseApi();
 final CreateOrUpdateAppReleaseDto body = ; // CreateOrUpdateAppReleaseDto | 
 
 try {
-    final response = api.create(body);
+    final response = api.createAppRelease(body);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling AppReleaseApi->create: $e\n');
+    print('Exception when calling AppReleaseApi->createAppRelease: $e\n');
 }
 ```
 
@@ -60,8 +60,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete**
-> delete(id)
+# **deleteAppReleaseById**
+> deleteAppReleaseById(id)
 
 删除版本
 
@@ -75,9 +75,9 @@ final api = PuupeeApiClient().getAppReleaseApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    api.delete(id);
+    api.deleteAppReleaseById(id);
 } catch on DioException (e) {
-    print('Exception when calling AppReleaseApi->delete: $e\n');
+    print('Exception when calling AppReleaseApi->deleteAppReleaseById: $e\n');
 }
 ```
 
@@ -102,8 +102,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getById**
-> AppReleaseDto getById(id)
+# **getAppReleaseById**
+> AppReleaseDto getAppReleaseById(id)
 
 获取版本
 
@@ -117,10 +117,10 @@ final api = PuupeeApiClient().getAppReleaseApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final response = api.getById(id);
+    final response = api.getAppReleaseById(id);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling AppReleaseApi->getById: $e\n');
+    print('Exception when calling AppReleaseApi->getAppReleaseById: $e\n');
 }
 ```
 
@@ -133,6 +133,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AppReleaseDto**](AppReleaseDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getAppReleaseList**
+> AppReleaseDtoPagedResultDto getAppReleaseList(appId, environment, platform, sorting, skipCount, maxResultCount)
+
+获取版本列表
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getAppReleaseApi();
+final String appId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final String environment = environment_example; // String | 
+final String platform = platform_example; // String | 
+final String sorting = sorting_example; // String | 
+final int skipCount = 56; // int | 
+final int maxResultCount = 56; // int | 
+
+try {
+    final response = api.getAppReleaseList(appId, environment, platform, sorting, skipCount, maxResultCount);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling AppReleaseApi->getAppReleaseList: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **appId** | **String**|  | [optional] 
+ **environment** | **String**|  | [optional] 
+ **platform** | **String**|  | [optional] 
+ **sorting** | **String**|  | [optional] 
+ **skipCount** | **int**|  | [optional] 
+ **maxResultCount** | **int**|  | [optional] 
+
+### Return type
+
+[**AppReleaseDtoPagedResultDto**](AppReleaseDtoPagedResultDto.md)
 
 ### Authorization
 
@@ -158,8 +211,8 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getAppReleaseApi();
 final String appName = appName_example; // String | 
-final Object platform = ; // Object | 
-final Object productType = ; // Object | 
+final String platform = platform_example; // String | 
+final String productType = productType_example; // String | 
 final String environment = environment_example; // String | 
 
 try {
@@ -175,8 +228,8 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **appName** | **String**|  | [optional] 
- **platform** | [**Object**](.md)|  | [optional] 
- **productType** | [**Object**](.md)|  | [optional] 
+ **platform** | **String**|  | [optional] 
+ **productType** | **String**|  | [optional] 
  **environment** | **String**|  | [optional] 
 
 ### Return type
@@ -194,61 +247,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getList**
-> AppReleaseDtoPagedResultDto getList(appId, environment, platform, sorting, skipCount, maxResultCount)
-
-获取版本列表
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getAppReleaseApi();
-final String appId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final String environment = environment_example; // String | 
-final Object platform = ; // Object | 
-final String sorting = sorting_example; // String | 
-final int skipCount = 56; // int | 
-final int maxResultCount = 56; // int | 
-
-try {
-    final response = api.getList(appId, environment, platform, sorting, skipCount, maxResultCount);
-    print(response);
-} catch on DioException (e) {
-    print('Exception when calling AppReleaseApi->getList: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **appId** | **String**|  | [optional] 
- **environment** | **String**|  | [optional] 
- **platform** | [**Object**](.md)|  | [optional] 
- **sorting** | **String**|  | [optional] 
- **skipCount** | **int**|  | [optional] 
- **maxResultCount** | **int**|  | [optional] 
-
-### Return type
-
-[**AppReleaseDtoPagedResultDto**](AppReleaseDtoPagedResultDto.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **update**
-> AppReleaseDto update(id, body)
+# **updateAppRelease**
+> AppReleaseDto updateAppRelease(id, body)
 
 更新版本
 
@@ -263,10 +263,10 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 final CreateOrUpdateAppReleaseDto body = ; // CreateOrUpdateAppReleaseDto | 
 
 try {
-    final response = api.update(id, body);
+    final response = api.updateAppRelease(id, body);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling AppReleaseApi->update: $e\n');
+    print('Exception when calling AppReleaseApi->updateAppRelease: $e\n');
 }
 ```
 

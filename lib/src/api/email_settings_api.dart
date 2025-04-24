@@ -20,7 +20,7 @@ class EmailSettingsApi {
 
   const EmailSettingsApi(this._dio);
 
-  /// callGet
+  /// getEmailSettings
   /// 
   ///
   /// Parameters:
@@ -33,7 +33,7 @@ class EmailSettingsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [EmailSettingsDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<EmailSettingsDto>> callGet({ 
+  Future<Response<EmailSettingsDto>> getEmailSettings({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -164,7 +164,7 @@ _bodyData=jsonEncode(body);
     return _response;
   }
 
-  /// update
+  /// updateEmailSettings
   /// 
   ///
   /// Parameters:
@@ -178,7 +178,7 @@ _bodyData=jsonEncode(body);
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> update({ 
+  Future<Response<void>> updateEmailSettings({ 
     UpdateEmailSettingsDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

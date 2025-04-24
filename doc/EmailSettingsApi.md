@@ -9,13 +9,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**callGet**](EmailSettingsApi.md#callget) | **GET** /api/setting-management/emailing | 
+[**getEmailSettings**](EmailSettingsApi.md#getemailsettings) | **GET** /api/setting-management/emailing | 
 [**sendTestEmail**](EmailSettingsApi.md#sendtestemail) | **POST** /api/setting-management/emailing/send-test-email | 
-[**update**](EmailSettingsApi.md#update) | **POST** /api/setting-management/emailing | 
+[**updateEmailSettings**](EmailSettingsApi.md#updateemailsettings) | **POST** /api/setting-management/emailing | 
 
 
-# **callGet**
-> EmailSettingsDto callGet()
+# **getEmailSettings**
+> EmailSettingsDto getEmailSettings()
 
 
 
@@ -28,10 +28,10 @@ import 'package:puupee_api_client/api.dart';
 final api = PuupeeApiClient().getEmailSettingsApi();
 
 try {
-    final response = api.callGet();
+    final response = api.getEmailSettings();
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling EmailSettingsApi->callGet: $e\n');
+    print('Exception when calling EmailSettingsApi->getEmailSettings: $e\n');
 }
 ```
 
@@ -95,8 +95,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update**
-> update(body)
+# **updateEmailSettings**
+> updateEmailSettings(body)
 
 
 
@@ -110,9 +110,9 @@ final api = PuupeeApiClient().getEmailSettingsApi();
 final UpdateEmailSettingsDto body = ; // UpdateEmailSettingsDto | 
 
 try {
-    api.update(body);
+    api.updateEmailSettings(body);
 } catch on DioException (e) {
-    print('Exception when calling EmailSettingsApi->update: $e\n');
+    print('Exception when calling EmailSettingsApi->updateEmailSettings: $e\n');
 }
 ```
 

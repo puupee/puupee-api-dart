@@ -18,7 +18,7 @@ class TimeZoneSettingsApi {
 
   const TimeZoneSettingsApi(this._dio);
 
-  /// callGet
+  /// getTimeZoneSettings
   /// 
   ///
   /// Parameters:
@@ -31,7 +31,7 @@ class TimeZoneSettingsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [String] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<String>> callGet({ 
+  Future<Response<String>> getTimeZoneSettings({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -166,7 +166,7 @@ _responseData = rawData == null ? null : deserialize<List<NameValue>, NameValue>
     );
   }
 
-  /// update
+  /// updateTimeZoneSettings
   /// 
   ///
   /// Parameters:
@@ -180,7 +180,7 @@ _responseData = rawData == null ? null : deserialize<List<NameValue>, NameValue>
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> update({ 
+  Future<Response<void>> updateTimeZoneSettings({ 
     String? timezone,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

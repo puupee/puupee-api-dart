@@ -9,12 +9,12 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**callGet**](PermissionsApi.md#callget) | **GET** /api/permission-management/permissions | 
-[**update**](PermissionsApi.md#update) | **PUT** /api/permission-management/permissions | 
+[**getPermissions**](PermissionsApi.md#getpermissions) | **GET** /api/permission-management/permissions | 
+[**updatePermissions**](PermissionsApi.md#updatepermissions) | **PUT** /api/permission-management/permissions | 
 
 
-# **callGet**
-> GetPermissionListResultDto callGet(providerName, providerKey)
+# **getPermissions**
+> GetPermissionListResultDto getPermissions(providerName, providerKey)
 
 
 
@@ -29,10 +29,10 @@ final String providerName = providerName_example; // String |
 final String providerKey = providerKey_example; // String | 
 
 try {
-    final response = api.callGet(providerName, providerKey);
+    final response = api.getPermissions(providerName, providerKey);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling PermissionsApi->callGet: $e\n');
+    print('Exception when calling PermissionsApi->getPermissions: $e\n');
 }
 ```
 
@@ -58,8 +58,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update**
-> update(body, providerName, providerKey)
+# **updatePermissions**
+> updatePermissions(body, providerName, providerKey)
 
 
 
@@ -75,9 +75,9 @@ final String providerName = providerName_example; // String |
 final String providerKey = providerKey_example; // String | 
 
 try {
-    api.update(body, providerName, providerKey);
+    api.updatePermissions(body, providerName, providerKey);
 } catch on DioException (e) {
-    print('Exception when calling PermissionsApi->update: $e\n');
+    print('Exception when calling PermissionsApi->updatePermissions: $e\n');
 }
 ```
 

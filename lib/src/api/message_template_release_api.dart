@@ -19,7 +19,7 @@ class MessageTemplateReleaseApi {
 
   const MessageTemplateReleaseApi(this._dio);
 
-  /// create
+  /// createMessageTemplateRelease
   /// 
   ///
   /// Parameters:
@@ -33,7 +33,7 @@ class MessageTemplateReleaseApi {
   ///
   /// Returns a [Future] containing a [Response] with a [MessageTemplateReleaseDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<MessageTemplateReleaseDto>> create({ 
+  Future<Response<MessageTemplateReleaseDto>> createMessageTemplateRelease({ 
     CreateMessageTemplateReleaseDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -113,7 +113,7 @@ _responseData = rawData == null ? null : deserialize<MessageTemplateReleaseDto, 
     );
   }
 
-  /// getById
+  /// getMessageTemplateReleaseById
   /// 
   ///
   /// Parameters:
@@ -127,7 +127,7 @@ _responseData = rawData == null ? null : deserialize<MessageTemplateReleaseDto, 
   ///
   /// Returns a [Future] containing a [Response] with a [MessageTemplateReleaseDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<MessageTemplateReleaseDto>> getById({ 
+  Future<Response<MessageTemplateReleaseDto>> getMessageTemplateReleaseById({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -189,7 +189,7 @@ _responseData = rawData == null ? null : deserialize<MessageTemplateReleaseDto, 
     );
   }
 
-  /// getList
+  /// getMessageTemplateReleaseList
   /// 
   ///
   /// Parameters:
@@ -203,7 +203,7 @@ _responseData = rawData == null ? null : deserialize<MessageTemplateReleaseDto, 
   ///
   /// Returns a [Future] containing a [Response] with a [List<MessageTemplateReleaseDto>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<List<MessageTemplateReleaseDto>>> getList({ 
+  Future<Response<List<MessageTemplateReleaseDto>>> getMessageTemplateReleaseList({ 
     String? templateId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

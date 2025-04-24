@@ -21,7 +21,7 @@ class AppPricingApi {
 
   const AppPricingApi(this._dio);
 
-  /// create
+  /// createAppPricing
   /// 
   ///
   /// Parameters:
@@ -35,7 +35,7 @@ class AppPricingApi {
   ///
   /// Returns a [Future] containing a [Response] with a [AppPricingDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<AppPricingDto>> create({ 
+  Future<Response<AppPricingDto>> createAppPricing({ 
     CreateOrUpdateAppPricingDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -115,7 +115,7 @@ _responseData = rawData == null ? null : deserialize<AppPricingDto, AppPricingDt
     );
   }
 
-  /// delete
+  /// deleteAppPricingById
   /// 
   ///
   /// Parameters:
@@ -129,7 +129,7 @@ _responseData = rawData == null ? null : deserialize<AppPricingDto, AppPricingDt
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> delete({ 
+  Future<Response<void>> deleteAppPricingById({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -167,7 +167,7 @@ _responseData = rawData == null ? null : deserialize<AppPricingDto, AppPricingDt
     return _response;
   }
 
-  /// getById
+  /// getAppPricingById
   /// 
   ///
   /// Parameters:
@@ -181,7 +181,7 @@ _responseData = rawData == null ? null : deserialize<AppPricingDto, AppPricingDt
   ///
   /// Returns a [Future] containing a [Response] with a [AppPricingDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<AppPricingDto>> getById({ 
+  Future<Response<AppPricingDto>> getAppPricingById({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -243,7 +243,7 @@ _responseData = rawData == null ? null : deserialize<AppPricingDto, AppPricingDt
     );
   }
 
-  /// getList
+  /// getAppPricingList
   /// 
   ///
   /// Parameters:
@@ -259,7 +259,7 @@ _responseData = rawData == null ? null : deserialize<AppPricingDto, AppPricingDt
   ///
   /// Returns a [Future] containing a [Response] with a [AppPricingDtoPagedResultDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<AppPricingDtoPagedResultDto>> getList({ 
+  Future<Response<AppPricingDtoPagedResultDto>> getAppPricingList({ 
     String? sorting,
     int? skipCount,
     int? maxResultCount,
@@ -482,7 +482,7 @@ _responseData = rawData == null ? null : deserialize<List<AppPricingItemDto>, Ap
     );
   }
 
-  /// update
+  /// updateAppPricing
   /// 
   ///
   /// Parameters:
@@ -497,7 +497,7 @@ _responseData = rawData == null ? null : deserialize<List<AppPricingItemDto>, Ap
   ///
   /// Returns a [Future] containing a [Response] with a [AppPricingDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<AppPricingDto>> update({ 
+  Future<Response<AppPricingDto>> updateAppPricing({ 
     required String id,
     CreateOrUpdateAppPricingDto? body,
     CancelToken? cancelToken,

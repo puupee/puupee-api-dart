@@ -9,20 +9,20 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](UserApi.md#create) | **POST** /api/identity/users | 
-[**delete**](UserApi.md#delete) | **DELETE** /api/identity/users/{id} | 
+[**createIdentityUser**](UserApi.md#createidentityuser) | **POST** /api/identity/users | 
+[**deleteIdentityUserById**](UserApi.md#deleteidentityuserbyid) | **DELETE** /api/identity/users/{id} | 
 [**findByEmail**](UserApi.md#findbyemail) | **GET** /api/identity/users/by-email/{email} | 
 [**findByUsername**](UserApi.md#findbyusername) | **GET** /api/identity/users/by-username/{userName} | 
 [**getAssignableRoles**](UserApi.md#getassignableroles) | **GET** /api/identity/users/assignable-roles | 
-[**getById**](UserApi.md#getbyid) | **GET** /api/identity/users/{id} | 
-[**getList**](UserApi.md#getlist) | **GET** /api/identity/users | 
+[**getIdentityUserById**](UserApi.md#getidentityuserbyid) | **GET** /api/identity/users/{id} | 
+[**getIdentityUserList**](UserApi.md#getidentityuserlist) | **GET** /api/identity/users | 
 [**getRoles**](UserApi.md#getroles) | **GET** /api/identity/users/{id}/roles | 
-[**update**](UserApi.md#update) | **PUT** /api/identity/users/{id} | 
+[**updateIdentityUser**](UserApi.md#updateidentityuser) | **PUT** /api/identity/users/{id} | 
 [**updateRoles**](UserApi.md#updateroles) | **PUT** /api/identity/users/{id}/roles | 
 
 
-# **create**
-> IdentityUserDto create(body)
+# **createIdentityUser**
+> IdentityUserDto createIdentityUser(body)
 
 
 
@@ -36,10 +36,10 @@ final api = PuupeeApiClient().getUserApi();
 final IdentityUserCreateDto body = ; // IdentityUserCreateDto | 
 
 try {
-    final response = api.create(body);
+    final response = api.createIdentityUser(body);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling UserApi->create: $e\n');
+    print('Exception when calling UserApi->createIdentityUser: $e\n');
 }
 ```
 
@@ -64,8 +64,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete**
-> delete(id)
+# **deleteIdentityUserById**
+> deleteIdentityUserById(id)
 
 
 
@@ -79,9 +79,9 @@ final api = PuupeeApiClient().getUserApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    api.delete(id);
+    api.deleteIdentityUserById(id);
 } catch on DioException (e) {
-    print('Exception when calling UserApi->delete: $e\n');
+    print('Exception when calling UserApi->deleteIdentityUserById: $e\n');
 }
 ```
 
@@ -231,8 +231,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getById**
-> IdentityUserDto getById(id)
+# **getIdentityUserById**
+> IdentityUserDto getIdentityUserById(id)
 
 
 
@@ -246,10 +246,10 @@ final api = PuupeeApiClient().getUserApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final response = api.getById(id);
+    final response = api.getIdentityUserById(id);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling UserApi->getById: $e\n');
+    print('Exception when calling UserApi->getIdentityUserById: $e\n');
 }
 ```
 
@@ -274,8 +274,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getList**
-> IdentityUserDtoPagedResultDto getList(filter, sorting, skipCount, maxResultCount)
+# **getIdentityUserList**
+> IdentityUserDtoPagedResultDto getIdentityUserList(filter, sorting, skipCount, maxResultCount)
 
 
 
@@ -292,10 +292,10 @@ final int skipCount = 56; // int |
 final int maxResultCount = 56; // int | 
 
 try {
-    final response = api.getList(filter, sorting, skipCount, maxResultCount);
+    final response = api.getIdentityUserList(filter, sorting, skipCount, maxResultCount);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling UserApi->getList: $e\n');
+    print('Exception when calling UserApi->getIdentityUserList: $e\n');
 }
 ```
 
@@ -366,8 +366,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update**
-> IdentityUserDto update(id, body)
+# **updateIdentityUser**
+> IdentityUserDto updateIdentityUser(id, body)
 
 
 
@@ -382,10 +382,10 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 final IdentityUserUpdateDto body = ; // IdentityUserUpdateDto | 
 
 try {
-    final response = api.update(id, body);
+    final response = api.updateIdentityUser(id, body);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling UserApi->update: $e\n');
+    print('Exception when calling UserApi->updateIdentityUser: $e\n');
 }
 ```
 

@@ -7,13 +7,8 @@ void main() {
   final instance = PuupeeApiClient().getTenantApi();
 
   group(TenantApi, () {
-    //Future<TenantDto> create({ TenantCreateDto body }) async
-    test('test create', () async {
-      // TODO
-    });
-
-    //Future delete(String id) async
-    test('test delete', () async {
+    //Future<TenantDto> createTenant({ TenantCreateDto body }) async
+    test('test createTenant', () async {
       // TODO
     });
 
@@ -22,8 +17,8 @@ void main() {
       // TODO
     });
 
-    //Future<TenantDto> getById(String id) async
-    test('test getById', () async {
+    //Future deleteTenantById(String id) async
+    test('test deleteTenantById', () async {
       // TODO
     });
 
@@ -32,18 +27,23 @@ void main() {
       // TODO
     });
 
-    //Future<TenantDtoPagedResultDto> getList({ String filter, String sorting, int skipCount, int maxResultCount }) async
-    test('test getList', () async {
+    //Future<TenantDto> getTenantById(String id) async
+    test('test getTenantById', () async {
       // TODO
     });
 
-    //Future<TenantDto> update(String id, { TenantUpdateDto body }) async
-    test('test update', () async {
+    //Future<TenantDtoPagedResultDto> getTenantList({ String filter, String sorting, int skipCount, int maxResultCount }) async
+    test('test getTenantList', () async {
       // TODO
     });
 
     //Future updateDefaultConnectionString(String id, { String defaultConnectionString }) async
     test('test updateDefaultConnectionString', () async {
+      // TODO
+    });
+
+    //Future<TenantDto> updateTenant(String id, { TenantUpdateDto body }) async
+    test('test updateTenant', () async {
       // TODO
     });
 

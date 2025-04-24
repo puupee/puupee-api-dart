@@ -7,13 +7,13 @@ void main() {
   final instance = PuupeeApiClient().getUserApi();
 
   group(UserApi, () {
-    //Future<IdentityUserDto> create({ IdentityUserCreateDto body }) async
-    test('test create', () async {
+    //Future<IdentityUserDto> createIdentityUser({ IdentityUserCreateDto body }) async
+    test('test createIdentityUser', () async {
       // TODO
     });
 
-    //Future delete(String id) async
-    test('test delete', () async {
+    //Future deleteIdentityUserById(String id) async
+    test('test deleteIdentityUserById', () async {
       // TODO
     });
 
@@ -32,13 +32,13 @@ void main() {
       // TODO
     });
 
-    //Future<IdentityUserDto> getById(String id) async
-    test('test getById', () async {
+    //Future<IdentityUserDto> getIdentityUserById(String id) async
+    test('test getIdentityUserById', () async {
       // TODO
     });
 
-    //Future<IdentityUserDtoPagedResultDto> getList({ String filter, String sorting, int skipCount, int maxResultCount }) async
-    test('test getList', () async {
+    //Future<IdentityUserDtoPagedResultDto> getIdentityUserList({ String filter, String sorting, int skipCount, int maxResultCount }) async
+    test('test getIdentityUserList', () async {
       // TODO
     });
 
@@ -47,8 +47,8 @@ void main() {
       // TODO
     });
 
-    //Future<IdentityUserDto> update(String id, { IdentityUserUpdateDto body }) async
-    test('test update', () async {
+    //Future<IdentityUserDto> updateIdentityUser(String id, { IdentityUserUpdateDto body }) async
+    test('test updateIdentityUser', () async {
       // TODO
     });
 

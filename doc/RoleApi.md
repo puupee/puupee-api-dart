@@ -9,16 +9,16 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](RoleApi.md#create) | **POST** /api/identity/roles | 
-[**delete**](RoleApi.md#delete) | **DELETE** /api/identity/roles/{id} | 
+[**createIdentityRole**](RoleApi.md#createidentityrole) | **POST** /api/identity/roles | 
+[**deleteIdentityRoleById**](RoleApi.md#deleteidentityrolebyid) | **DELETE** /api/identity/roles/{id} | 
 [**getAllList**](RoleApi.md#getalllist) | **GET** /api/identity/roles/all | 
-[**getById**](RoleApi.md#getbyid) | **GET** /api/identity/roles/{id} | 
-[**getList**](RoleApi.md#getlist) | **GET** /api/identity/roles | 
-[**update**](RoleApi.md#update) | **PUT** /api/identity/roles/{id} | 
+[**getIdentityRoleById**](RoleApi.md#getidentityrolebyid) | **GET** /api/identity/roles/{id} | 
+[**getIdentityRoleList**](RoleApi.md#getidentityrolelist) | **GET** /api/identity/roles | 
+[**updateIdentityRole**](RoleApi.md#updateidentityrole) | **PUT** /api/identity/roles/{id} | 
 
 
-# **create**
-> IdentityRoleDto create(body)
+# **createIdentityRole**
+> IdentityRoleDto createIdentityRole(body)
 
 
 
@@ -32,10 +32,10 @@ final api = PuupeeApiClient().getRoleApi();
 final IdentityRoleCreateDto body = ; // IdentityRoleCreateDto | 
 
 try {
-    final response = api.create(body);
+    final response = api.createIdentityRole(body);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling RoleApi->create: $e\n');
+    print('Exception when calling RoleApi->createIdentityRole: $e\n');
 }
 ```
 
@@ -60,8 +60,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete**
-> delete(id)
+# **deleteIdentityRoleById**
+> deleteIdentityRoleById(id)
 
 
 
@@ -75,9 +75,9 @@ final api = PuupeeApiClient().getRoleApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    api.delete(id);
+    api.deleteIdentityRoleById(id);
 } catch on DioException (e) {
-    print('Exception when calling RoleApi->delete: $e\n');
+    print('Exception when calling RoleApi->deleteIdentityRoleById: $e\n');
 }
 ```
 
@@ -141,8 +141,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getById**
-> IdentityRoleDto getById(id)
+# **getIdentityRoleById**
+> IdentityRoleDto getIdentityRoleById(id)
 
 
 
@@ -156,10 +156,10 @@ final api = PuupeeApiClient().getRoleApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final response = api.getById(id);
+    final response = api.getIdentityRoleById(id);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling RoleApi->getById: $e\n');
+    print('Exception when calling RoleApi->getIdentityRoleById: $e\n');
 }
 ```
 
@@ -184,8 +184,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getList**
-> IdentityRoleDtoPagedResultDto getList(filter, sorting, skipCount, maxResultCount)
+# **getIdentityRoleList**
+> IdentityRoleDtoPagedResultDto getIdentityRoleList(filter, sorting, skipCount, maxResultCount)
 
 
 
@@ -202,10 +202,10 @@ final int skipCount = 56; // int |
 final int maxResultCount = 56; // int | 
 
 try {
-    final response = api.getList(filter, sorting, skipCount, maxResultCount);
+    final response = api.getIdentityRoleList(filter, sorting, skipCount, maxResultCount);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling RoleApi->getList: $e\n');
+    print('Exception when calling RoleApi->getIdentityRoleList: $e\n');
 }
 ```
 
@@ -233,8 +233,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update**
-> IdentityRoleDto update(id, body)
+# **updateIdentityRole**
+> IdentityRoleDto updateIdentityRole(id, body)
 
 
 
@@ -249,10 +249,10 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 final IdentityRoleUpdateDto body = ; // IdentityRoleUpdateDto | 
 
 try {
-    final response = api.update(id, body);
+    final response = api.updateIdentityRole(id, body);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling RoleApi->update: $e\n');
+    print('Exception when calling RoleApi->updateIdentityRole: $e\n');
 }
 ```
 

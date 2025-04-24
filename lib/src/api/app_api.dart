@@ -42,7 +42,7 @@ class AppApi {
   ///
   /// Returns a [Future] containing a [Response] with a [AppDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<AppDto>> create({ 
+  Future<Response<AppDto>> createApp({ 
     CreateOrUpdateAppDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -136,7 +136,7 @@ _responseData = rawData == null ? null : deserialize<AppDto, AppDto>(rawData, 'A
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> delete({ 
+  Future<Response<void>> deleteAppById({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -188,7 +188,7 @@ _responseData = rawData == null ? null : deserialize<AppDto, AppDto>(rawData, 'A
   ///
   /// Returns a [Future] containing a [Response] with a [AppDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<AppDto>> getById({ 
+  Future<Response<AppDto>> getAppById({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -239,6 +239,96 @@ _responseData = rawData == null ? null : deserialize<AppDto, AppDto>(rawData, 'A
     }
 
     return Response<AppDto>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// 获取当前用户的应用列表
+  /// 
+  ///
+  /// Parameters:
+  /// * [creatorId] 
+  /// * [sorting] 
+  /// * [skipCount] 
+  /// * [maxResultCount] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [AppDtoPagedResultDto] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<AppDtoPagedResultDto>> getAppList({ 
+    String? creatorId,
+    String? sorting,
+    int? skipCount,
+    int? maxResultCount,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/app/app';
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'oauth2',
+            'name': 'oauth2',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      if (creatorId != null) r'CreatorId': creatorId,
+      if (sorting != null) r'Sorting': sorting,
+      if (skipCount != null) r'SkipCount': skipCount,
+      if (maxResultCount != null) r'MaxResultCount': maxResultCount,
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    AppDtoPagedResultDto? _responseData;
+
+    try {
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(rawData, 'AppDtoPagedResultDto', growable: true);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<AppDtoPagedResultDto>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -331,7 +421,7 @@ _responseData = rawData == null ? null : deserialize<AppDto, AppDto>(rawData, 'A
     );
   }
 
-  /// getFeatures
+  /// getFeatureList
   /// 
   ///
   /// Parameters:
@@ -346,7 +436,7 @@ _responseData = rawData == null ? null : deserialize<AppDto, AppDto>(rawData, 'A
   ///
   /// Returns a [Future] containing a [Response] with a [List<AppFeatureDto>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<List<AppFeatureDto>>> getFeatures({ 
+  Future<Response<List<AppFeatureDto>>> getFeatureList({ 
     required String appId,
     String? env,
     CancelToken? cancelToken,
@@ -356,7 +446,7 @@ _responseData = rawData == null ? null : deserialize<AppDto, AppDto>(rawData, 'A
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/app/app/features/{appId}'.replaceAll('{' r'appId' '}', appId.toString());
+    final _path = r'/api/app/app/feature-list/{appId}'.replaceAll('{' r'appId' '}', appId.toString());
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -403,96 +493,6 @@ _responseData = rawData == null ? null : deserialize<List<AppFeatureDto>, AppFea
     }
 
     return Response<List<AppFeatureDto>>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
-  }
-
-  /// 获取当前用户的应用列表
-  /// 
-  ///
-  /// Parameters:
-  /// * [creatorId] 
-  /// * [sorting] 
-  /// * [skipCount] 
-  /// * [maxResultCount] 
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future] containing a [Response] with a [AppDtoPagedResultDto] as data
-  /// Throws [DioException] if API call or serialization fails
-  Future<Response<AppDtoPagedResultDto>> getList({ 
-    String? creatorId,
-    String? sorting,
-    int? skipCount,
-    int? maxResultCount,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/app/app';
-    final _options = Options(
-      method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _queryParameters = <String, dynamic>{
-      if (creatorId != null) r'CreatorId': creatorId,
-      if (sorting != null) r'Sorting': sorting,
-      if (skipCount != null) r'SkipCount': skipCount,
-      if (maxResultCount != null) r'MaxResultCount': maxResultCount,
-    };
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    AppDtoPagedResultDto? _responseData;
-
-    try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<AppDtoPagedResultDto, AppDtoPagedResultDto>(rawData, 'AppDtoPagedResultDto', growable: true);
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<AppDtoPagedResultDto>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -602,7 +602,7 @@ _responseData = rawData == null ? null : deserialize<AppDtoPagedResultDto, AppDt
   /// Returns a [Future] containing a [Response] with a [AppDtoPagedResultDto] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<AppDtoPagedResultDto>> getListPublic({ 
-    Object? type,
+    String? type,
     String? developerAccount,
     String? currentAppName,
     CancelToken? cancelToken,
@@ -691,7 +691,7 @@ _responseData = rawData == null ? null : deserialize<AppDtoPagedResultDto, AppDt
   /// Returns a [Future] containing a [Response] with a [AppWithUserDtoPagedResultDto] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<AppWithUserDtoPagedResultDto>> getListWithUser({ 
-    Object? type,
+    String? type,
     String? searchKey,
     String? sorting,
     int? skipCount,
@@ -1114,7 +1114,7 @@ _responseData = rawData == null ? null : deserialize<AppRunRecordDto, AppRunReco
   ///
   /// Returns a [Future] containing a [Response] with a [AppDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<AppDto>> update({ 
+  Future<Response<AppDto>> updateApp({ 
     required String id,
     CreateOrUpdateAppDto? body,
     CancelToken? cancelToken,

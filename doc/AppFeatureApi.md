@@ -9,14 +9,14 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](AppFeatureApi.md#create) | **POST** /api/app/app-feature | 
-[**delete**](AppFeatureApi.md#delete) | **DELETE** /api/app/app-feature/{id} | 
-[**getList**](AppFeatureApi.md#getlist) | **GET** /api/app/app-feature | 
-[**update**](AppFeatureApi.md#update) | **PUT** /api/app/app-feature/{id} | 
+[**createAppFeature**](AppFeatureApi.md#createappfeature) | **POST** /api/app/app-feature | 
+[**deleteAppFeatureById**](AppFeatureApi.md#deleteappfeaturebyid) | **DELETE** /api/app/app-feature/{id} | 
+[**getAppFeatureList**](AppFeatureApi.md#getappfeaturelist) | **GET** /api/app/app-feature | 
+[**updateAppFeature**](AppFeatureApi.md#updateappfeature) | **PUT** /api/app/app-feature/{id} | 
 
 
-# **create**
-> AppFeatureDto create(body)
+# **createAppFeature**
+> AppFeatureDto createAppFeature(body)
 
 
 
@@ -30,10 +30,10 @@ final api = PuupeeApiClient().getAppFeatureApi();
 final CreateOrUpdateAppFeatureDto body = ; // CreateOrUpdateAppFeatureDto | 
 
 try {
-    final response = api.create(body);
+    final response = api.createAppFeature(body);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling AppFeatureApi->create: $e\n');
+    print('Exception when calling AppFeatureApi->createAppFeature: $e\n');
 }
 ```
 
@@ -58,8 +58,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete**
-> delete(id)
+# **deleteAppFeatureById**
+> deleteAppFeatureById(id)
 
 
 
@@ -73,9 +73,9 @@ final api = PuupeeApiClient().getAppFeatureApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    api.delete(id);
+    api.deleteAppFeatureById(id);
 } catch on DioException (e) {
-    print('Exception when calling AppFeatureApi->delete: $e\n');
+    print('Exception when calling AppFeatureApi->deleteAppFeatureById: $e\n');
 }
 ```
 
@@ -100,8 +100,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getList**
-> AppFeatureDtoPagedResultDto getList(sorting, skipCount, maxResultCount)
+# **getAppFeatureList**
+> AppFeatureDtoPagedResultDto getAppFeatureList(sorting, skipCount, maxResultCount)
 
 
 
@@ -117,10 +117,10 @@ final int skipCount = 56; // int |
 final int maxResultCount = 56; // int | 
 
 try {
-    final response = api.getList(sorting, skipCount, maxResultCount);
+    final response = api.getAppFeatureList(sorting, skipCount, maxResultCount);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling AppFeatureApi->getList: $e\n');
+    print('Exception when calling AppFeatureApi->getAppFeatureList: $e\n');
 }
 ```
 
@@ -147,8 +147,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update**
-> AppFeatureDto update(id, body)
+# **updateAppFeature**
+> AppFeatureDto updateAppFeature(id, body)
 
 
 
@@ -163,10 +163,10 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 final CreateOrUpdateAppFeatureDto body = ; // CreateOrUpdateAppFeatureDto | 
 
 try {
-    final response = api.update(id, body);
+    final response = api.updateAppFeature(id, body);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling AppFeatureApi->update: $e\n');
+    print('Exception when calling AppFeatureApi->updateAppFeature: $e\n');
 }
 ```
 

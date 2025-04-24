@@ -9,13 +9,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**callGet**](TimeZoneSettingsApi.md#callget) | **GET** /api/setting-management/timezone | 
+[**getTimeZoneSettings**](TimeZoneSettingsApi.md#gettimezonesettings) | **GET** /api/setting-management/timezone | 
 [**getTimezones**](TimeZoneSettingsApi.md#gettimezones) | **GET** /api/setting-management/timezone/timezones | 
-[**update**](TimeZoneSettingsApi.md#update) | **POST** /api/setting-management/timezone | 
+[**updateTimeZoneSettings**](TimeZoneSettingsApi.md#updatetimezonesettings) | **POST** /api/setting-management/timezone | 
 
 
-# **callGet**
-> String callGet()
+# **getTimeZoneSettings**
+> String getTimeZoneSettings()
 
 
 
@@ -28,10 +28,10 @@ import 'package:puupee_api_client/api.dart';
 final api = PuupeeApiClient().getTimeZoneSettingsApi();
 
 try {
-    final response = api.callGet();
+    final response = api.getTimeZoneSettings();
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling TimeZoneSettingsApi->callGet: $e\n');
+    print('Exception when calling TimeZoneSettingsApi->getTimeZoneSettings: $e\n');
 }
 ```
 
@@ -92,8 +92,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update**
-> update(timezone)
+# **updateTimeZoneSettings**
+> updateTimeZoneSettings(timezone)
 
 
 
@@ -107,9 +107,9 @@ final api = PuupeeApiClient().getTimeZoneSettingsApi();
 final String timezone = timezone_example; // String | 
 
 try {
-    api.update(timezone);
+    api.updateTimeZoneSettings(timezone);
 } catch on DioException (e) {
-    print('Exception when calling TimeZoneSettingsApi->update: $e\n');
+    print('Exception when calling TimeZoneSettingsApi->updateTimeZoneSettings: $e\n');
 }
 ```
 

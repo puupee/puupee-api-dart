@@ -9,15 +9,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](ApiKeysApi.md#create) | **POST** /api/api-keys | 
-[**delete**](ApiKeysApi.md#delete) | **DELETE** /api/api-keys/{id} | 
-[**getById**](ApiKeysApi.md#getbyid) | **GET** /api/api-keys/{id} | 
-[**getList**](ApiKeysApi.md#getlist) | **GET** /api/api-keys | 
-[**update**](ApiKeysApi.md#update) | **PUT** /api/api-keys/{id} | 
+[**createApiKeys**](ApiKeysApi.md#createapikeys) | **POST** /api/api-keys | 
+[**deleteApiKeysById**](ApiKeysApi.md#deleteapikeysbyid) | **DELETE** /api/api-keys/{id} | 
+[**getApiKeysById**](ApiKeysApi.md#getapikeysbyid) | **GET** /api/api-keys/{id} | 
+[**getApiKeysList**](ApiKeysApi.md#getapikeyslist) | **GET** /api/api-keys | 
+[**updateApiKeys**](ApiKeysApi.md#updateapikeys) | **PUT** /api/api-keys/{id} | 
 
 
-# **create**
-> ApiKeyDto create(body)
+# **createApiKeys**
+> ApiKeyDto createApiKeys(body)
 
 
 
@@ -31,10 +31,10 @@ final api = PuupeeApiClient().getApiKeysApi();
 final ApiKeyCreateDto body = ; // ApiKeyCreateDto | 
 
 try {
-    final response = api.create(body);
+    final response = api.createApiKeys(body);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling ApiKeysApi->create: $e\n');
+    print('Exception when calling ApiKeysApi->createApiKeys: $e\n');
 }
 ```
 
@@ -59,8 +59,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete**
-> delete(id)
+# **deleteApiKeysById**
+> deleteApiKeysById(id)
 
 
 
@@ -74,9 +74,9 @@ final api = PuupeeApiClient().getApiKeysApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    api.delete(id);
+    api.deleteApiKeysById(id);
 } catch on DioException (e) {
-    print('Exception when calling ApiKeysApi->delete: $e\n');
+    print('Exception when calling ApiKeysApi->deleteApiKeysById: $e\n');
 }
 ```
 
@@ -101,8 +101,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getById**
-> ApiKeyDto getById(id)
+# **getApiKeysById**
+> ApiKeyDto getApiKeysById(id)
 
 
 
@@ -116,10 +116,10 @@ final api = PuupeeApiClient().getApiKeysApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final response = api.getById(id);
+    final response = api.getApiKeysById(id);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling ApiKeysApi->getById: $e\n');
+    print('Exception when calling ApiKeysApi->getApiKeysById: $e\n');
 }
 ```
 
@@ -144,8 +144,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getList**
-> ApiKeyDtoPagedResultDto getList(sorting, skipCount, maxResultCount)
+# **getApiKeysList**
+> ApiKeyDtoPagedResultDto getApiKeysList(sorting, skipCount, maxResultCount)
 
 
 
@@ -161,10 +161,10 @@ final int skipCount = 56; // int |
 final int maxResultCount = 56; // int | 
 
 try {
-    final response = api.getList(sorting, skipCount, maxResultCount);
+    final response = api.getApiKeysList(sorting, skipCount, maxResultCount);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling ApiKeysApi->getList: $e\n');
+    print('Exception when calling ApiKeysApi->getApiKeysList: $e\n');
 }
 ```
 
@@ -191,8 +191,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update**
-> ApiKeyDto update(id, body)
+# **updateApiKeys**
+> ApiKeyDto updateApiKeys(id, body)
 
 
 
@@ -207,10 +207,10 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 final ApiKeyUpdateDto body = ; // ApiKeyUpdateDto | 
 
 try {
-    final response = api.update(id, body);
+    final response = api.updateApiKeys(id, body);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling ApiKeysApi->update: $e\n');
+    print('Exception when calling ApiKeysApi->updateApiKeys: $e\n');
 }
 ```
 

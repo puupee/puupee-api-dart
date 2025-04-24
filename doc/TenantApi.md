@@ -9,18 +9,18 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](TenantApi.md#create) | **POST** /api/multi-tenancy/tenants | 
-[**delete**](TenantApi.md#delete) | **DELETE** /api/multi-tenancy/tenants/{id} | 
+[**createTenant**](TenantApi.md#createtenant) | **POST** /api/multi-tenancy/tenants | 
 [**deleteDefaultConnectionString**](TenantApi.md#deletedefaultconnectionstring) | **DELETE** /api/multi-tenancy/tenants/{id}/default-connection-string | 
-[**getById**](TenantApi.md#getbyid) | **GET** /api/multi-tenancy/tenants/{id} | 
+[**deleteTenantById**](TenantApi.md#deletetenantbyid) | **DELETE** /api/multi-tenancy/tenants/{id} | 
 [**getDefaultConnectionString**](TenantApi.md#getdefaultconnectionstring) | **GET** /api/multi-tenancy/tenants/{id}/default-connection-string | 
-[**getList**](TenantApi.md#getlist) | **GET** /api/multi-tenancy/tenants | 
-[**update**](TenantApi.md#update) | **PUT** /api/multi-tenancy/tenants/{id} | 
+[**getTenantById**](TenantApi.md#gettenantbyid) | **GET** /api/multi-tenancy/tenants/{id} | 
+[**getTenantList**](TenantApi.md#gettenantlist) | **GET** /api/multi-tenancy/tenants | 
 [**updateDefaultConnectionString**](TenantApi.md#updatedefaultconnectionstring) | **PUT** /api/multi-tenancy/tenants/{id}/default-connection-string | 
+[**updateTenant**](TenantApi.md#updatetenant) | **PUT** /api/multi-tenancy/tenants/{id} | 
 
 
-# **create**
-> TenantDto create(body)
+# **createTenant**
+> TenantDto createTenant(body)
 
 
 
@@ -34,10 +34,10 @@ final api = PuupeeApiClient().getTenantApi();
 final TenantCreateDto body = ; // TenantCreateDto | 
 
 try {
-    final response = api.create(body);
+    final response = api.createTenant(body);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling TenantApi->create: $e\n');
+    print('Exception when calling TenantApi->createTenant: $e\n');
 }
 ```
 
@@ -58,48 +58,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json, text/json, application/*+json
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **delete**
-> delete(id)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getTenantApi();
-final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-
-try {
-    api.delete(id);
-} catch on DioException (e) {
-    print('Exception when calling TenantApi->delete: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -146,8 +104,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getById**
-> TenantDto getById(id)
+# **deleteTenantById**
+> deleteTenantById(id)
 
 
 
@@ -161,10 +119,9 @@ final api = PuupeeApiClient().getTenantApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final response = api.getById(id);
-    print(response);
+    api.deleteTenantById(id);
 } catch on DioException (e) {
-    print('Exception when calling TenantApi->getById: $e\n');
+    print('Exception when calling TenantApi->deleteTenantById: $e\n');
 }
 ```
 
@@ -176,7 +133,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TenantDto**](TenantDto.md)
+void (empty response body)
 
 ### Authorization
 
@@ -232,8 +189,51 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getList**
-> TenantDtoPagedResultDto getList(filter, sorting, skipCount, maxResultCount)
+# **getTenantById**
+> TenantDto getTenantById(id)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getTenantApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+
+try {
+    final response = api.getTenantById(id);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling TenantApi->getTenantById: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+
+### Return type
+
+[**TenantDto**](TenantDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getTenantList**
+> TenantDtoPagedResultDto getTenantList(filter, sorting, skipCount, maxResultCount)
 
 
 
@@ -250,10 +250,10 @@ final int skipCount = 56; // int |
 final int maxResultCount = 56; // int | 
 
 try {
-    final response = api.getList(filter, sorting, skipCount, maxResultCount);
+    final response = api.getTenantList(filter, sorting, skipCount, maxResultCount);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling TenantApi->getList: $e\n');
+    print('Exception when calling TenantApi->getTenantList: $e\n');
 }
 ```
 
@@ -277,51 +277,6 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: text/plain, application/json, text/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **update**
-> TenantDto update(id, body)
-
-
-
-### Example
-```dart
-import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
-
-final api = PuupeeApiClient().getTenantApi();
-final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final TenantUpdateDto body = ; // TenantUpdateDto | 
-
-try {
-    final response = api.update(id, body);
-    print(response);
-} catch on DioException (e) {
-    print('Exception when calling TenantApi->update: $e\n');
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **id** | **String**|  | 
- **body** | [**TenantUpdateDto**](TenantUpdateDto.md)|  | [optional] 
-
-### Return type
-
-[**TenantDto**](TenantDto.md)
-
-### Authorization
-
-[oauth2](../README.md#oauth2)
-
-### HTTP request headers
-
- - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -366,6 +321,51 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateTenant**
+> TenantDto updateTenant(id, body)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getTenantApi();
+final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final TenantUpdateDto body = ; // TenantUpdateDto | 
+
+try {
+    final response = api.updateTenant(id, body);
+    print(response);
+} catch on DioException (e) {
+    print('Exception when calling TenantApi->updateTenant: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**|  | 
+ **body** | [**TenantUpdateDto**](TenantUpdateDto.md)|  | [optional] 
+
+### Return type
+
+[**TenantDto**](TenantDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/*+json
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

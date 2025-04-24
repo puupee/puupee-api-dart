@@ -19,7 +19,7 @@ class PermissionsApi {
 
   const PermissionsApi(this._dio);
 
-  /// callGet
+  /// getPermissions
   /// 
   ///
   /// Parameters:
@@ -34,7 +34,7 @@ class PermissionsApi {
   ///
   /// Returns a [Future] containing a [Response] with a [GetPermissionListResultDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<GetPermissionListResultDto>> callGet({ 
+  Future<Response<GetPermissionListResultDto>> getPermissions({ 
     String? providerName,
     String? providerKey,
     CancelToken? cancelToken,
@@ -103,7 +103,7 @@ _responseData = rawData == null ? null : deserialize<GetPermissionListResultDto,
     );
   }
 
-  /// update
+  /// updatePermissions
   /// 
   ///
   /// Parameters:
@@ -119,7 +119,7 @@ _responseData = rawData == null ? null : deserialize<GetPermissionListResultDto,
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> update({ 
+  Future<Response<void>> updatePermissions({ 
     UpdatePermissionsDto? body,
     String? providerName,
     String? providerKey,

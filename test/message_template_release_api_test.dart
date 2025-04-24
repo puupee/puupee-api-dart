@@ -7,18 +7,18 @@ void main() {
   final instance = PuupeeApiClient().getMessageTemplateReleaseApi();
 
   group(MessageTemplateReleaseApi, () {
-    //Future<MessageTemplateReleaseDto> create({ CreateMessageTemplateReleaseDto body }) async
-    test('test create', () async {
+    //Future<MessageTemplateReleaseDto> createMessageTemplateRelease({ CreateMessageTemplateReleaseDto body }) async
+    test('test createMessageTemplateRelease', () async {
       // TODO
     });
 
-    //Future<MessageTemplateReleaseDto> getById(String id) async
-    test('test getById', () async {
+    //Future<MessageTemplateReleaseDto> getMessageTemplateReleaseById(String id) async
+    test('test getMessageTemplateReleaseById', () async {
       // TODO
     });
 
-    //Future<List<MessageTemplateReleaseDto>> getList({ String templateId }) async
-    test('test getList', () async {
+    //Future<List<MessageTemplateReleaseDto>> getMessageTemplateReleaseList({ String templateId }) async
+    test('test getMessageTemplateReleaseList', () async {
       // TODO
     });
 

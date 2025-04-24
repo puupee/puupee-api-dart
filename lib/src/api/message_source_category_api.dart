@@ -18,7 +18,7 @@ class MessageSourceCategoryApi {
 
   const MessageSourceCategoryApi(this._dio);
 
-  /// getList
+  /// getMessageSourceCategoryList
   /// 
   ///
   /// Parameters:
@@ -31,7 +31,7 @@ class MessageSourceCategoryApi {
   ///
   /// Returns a [Future] containing a [Response] with a [List<MessageSourceCategoryDto>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<List<MessageSourceCategoryDto>>> getList({ 
+  Future<Response<List<MessageSourceCategoryDto>>> getMessageSourceCategoryList({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,

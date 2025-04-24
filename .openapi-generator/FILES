@@ -59,7 +59,6 @@ doc/ApplicationSettingConfigurationDto.md
 doc/ArtifactType.md
 doc/AvatarApi.md
 doc/AvatarDto.md
-doc/BarkNotificationLevel.md
 doc/BindDeviceDto.md
 doc/ChangePasswordDto.md
 doc/ChangePasswordInput.md
@@ -311,7 +310,6 @@ lib/src/model/application_localization_resource_dto.dart
 lib/src/model/application_setting_configuration_dto.dart
 lib/src/model/artifact_type.dart
 lib/src/model/avatar_dto.dart
-lib/src/model/bark_notification_level.dart
 lib/src/model/bind_device_dto.dart
 lib/src/model/change_password_dto.dart
 lib/src/model/change_password_input.dart
@@ -510,7 +508,6 @@ test/application_setting_configuration_dto_test.dart
 test/artifact_type_test.dart
 test/avatar_api_test.dart
 test/avatar_dto_test.dart
-test/bark_notification_level_test.dart
 test/bind_device_dto_test.dart
 test/change_password_dto_test.dart
 test/change_password_input_test.dart

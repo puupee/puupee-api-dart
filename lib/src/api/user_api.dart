@@ -23,7 +23,7 @@ class UserApi {
 
   const UserApi(this._dio);
 
-  /// create
+  /// createIdentityUser
   /// 
   ///
   /// Parameters:
@@ -37,7 +37,7 @@ class UserApi {
   ///
   /// Returns a [Future] containing a [Response] with a [IdentityUserDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<IdentityUserDto>> create({ 
+  Future<Response<IdentityUserDto>> createIdentityUser({ 
     IdentityUserCreateDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -117,7 +117,7 @@ _responseData = rawData == null ? null : deserialize<IdentityUserDto, IdentityUs
     );
   }
 
-  /// delete
+  /// deleteIdentityUserById
   /// 
   ///
   /// Parameters:
@@ -131,7 +131,7 @@ _responseData = rawData == null ? null : deserialize<IdentityUserDto, IdentityUs
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> delete({ 
+  Future<Response<void>> deleteIdentityUserById({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -395,7 +395,7 @@ _responseData = rawData == null ? null : deserialize<IdentityRoleDtoListResultDt
     );
   }
 
-  /// getById
+  /// getIdentityUserById
   /// 
   ///
   /// Parameters:
@@ -409,7 +409,7 @@ _responseData = rawData == null ? null : deserialize<IdentityRoleDtoListResultDt
   ///
   /// Returns a [Future] containing a [Response] with a [IdentityUserDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<IdentityUserDto>> getById({ 
+  Future<Response<IdentityUserDto>> getIdentityUserById({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -471,7 +471,7 @@ _responseData = rawData == null ? null : deserialize<IdentityUserDto, IdentityUs
     );
   }
 
-  /// getList
+  /// getIdentityUserList
   /// 
   ///
   /// Parameters:
@@ -488,7 +488,7 @@ _responseData = rawData == null ? null : deserialize<IdentityUserDto, IdentityUs
   ///
   /// Returns a [Future] containing a [Response] with a [IdentityUserDtoPagedResultDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<IdentityUserDtoPagedResultDto>> getList({ 
+  Future<Response<IdentityUserDtoPagedResultDto>> getIdentityUserList({ 
     String? filter,
     String? sorting,
     int? skipCount,
@@ -637,7 +637,7 @@ _responseData = rawData == null ? null : deserialize<IdentityRoleDtoListResultDt
     );
   }
 
-  /// update
+  /// updateIdentityUser
   /// 
   ///
   /// Parameters:
@@ -652,7 +652,7 @@ _responseData = rawData == null ? null : deserialize<IdentityRoleDtoListResultDt
   ///
   /// Returns a [Future] containing a [Response] with a [IdentityUserDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<IdentityUserDto>> update({ 
+  Future<Response<IdentityUserDto>> updateIdentityUser({ 
     required String id,
     IdentityUserUpdateDto? body,
     CancelToken? cancelToken,

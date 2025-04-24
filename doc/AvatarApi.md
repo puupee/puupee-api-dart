@@ -9,12 +9,12 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](AvatarApi.md#create) | **POST** /api/app/avatar | 
+[**createAvatar**](AvatarApi.md#createavatar) | **POST** /api/app/avatar | 
 [**getCredentials**](AvatarApi.md#getcredentials) | **GET** /api/app/avatar/credentials | 
 
 
-# **create**
-> AvatarDto create(body)
+# **createAvatar**
+> AvatarDto createAvatar(body)
 
 
 
@@ -28,10 +28,10 @@ final api = PuupeeApiClient().getAvatarApi();
 final CreateAvatarDto body = ; // CreateAvatarDto | 
 
 try {
-    final response = api.create(body);
+    final response = api.createAvatar(body);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling AvatarApi->create: $e\n');
+    print('Exception when calling AvatarApi->createAvatar: $e\n');
 }
 ```
 

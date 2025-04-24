@@ -281,9 +281,6 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           
         case 'AvatarDto':
           return AvatarDto.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'BarkNotificationLevel':
-          
-          
         case 'BindDeviceDto':
           return BindDeviceDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ChangePasswordDto':

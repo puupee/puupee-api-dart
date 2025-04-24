@@ -7,28 +7,28 @@ void main() {
   final instance = PuupeeApiClient().getApiKeysApi();
 
   group(ApiKeysApi, () {
-    //Future<ApiKeyDto> create({ ApiKeyCreateDto body }) async
-    test('test create', () async {
+    //Future<ApiKeyDto> createApiKeys({ ApiKeyCreateDto body }) async
+    test('test createApiKeys', () async {
       // TODO
     });
 
-    //Future delete(String id) async
-    test('test delete', () async {
+    //Future deleteApiKeysById(String id) async
+    test('test deleteApiKeysById', () async {
       // TODO
     });
 
-    //Future<ApiKeyDto> getById(String id) async
-    test('test getById', () async {
+    //Future<ApiKeyDto> getApiKeysById(String id) async
+    test('test getApiKeysById', () async {
       // TODO
     });
 
-    //Future<ApiKeyDtoPagedResultDto> getList({ String sorting, int skipCount, int maxResultCount }) async
-    test('test getList', () async {
+    //Future<ApiKeyDtoPagedResultDto> getApiKeysList({ String sorting, int skipCount, int maxResultCount }) async
+    test('test getApiKeysList', () async {
       // TODO
     });
 
-    //Future<ApiKeyDto> update(String id, { ApiKeyUpdateDto body }) async
-    test('test update', () async {
+    //Future<ApiKeyDto> updateApiKeys(String id, { ApiKeyUpdateDto body }) async
+    test('test updateApiKeys', () async {
       // TODO
     });
 

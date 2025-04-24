@@ -19,7 +19,7 @@ class MessageSourceRouteSubApi {
 
   const MessageSourceRouteSubApi(this._dio);
 
-  /// create
+  /// createMessageSourceRouteSub
   /// 
   ///
   /// Parameters:
@@ -33,7 +33,7 @@ class MessageSourceRouteSubApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> create({ 
+  Future<Response<void>> createMessageSourceRouteSub({ 
     CreateUpdateMessageSourceRouteSubDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -89,7 +89,7 @@ _bodyData=jsonEncode(body);
     return _response;
   }
 
-  /// delete
+  /// deleteMessageSourceRouteSubById
   /// 
   ///
   /// Parameters:
@@ -103,7 +103,7 @@ _bodyData=jsonEncode(body);
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> delete({ 
+  Future<Response<void>> deleteMessageSourceRouteSubById({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -141,7 +141,7 @@ _bodyData=jsonEncode(body);
     return _response;
   }
 
-  /// getById
+  /// getMessageSourceRouteSubById
   /// 
   ///
   /// Parameters:
@@ -155,7 +155,7 @@ _bodyData=jsonEncode(body);
   ///
   /// Returns a [Future] containing a [Response] with a [MessageSourceRouteSubDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<MessageSourceRouteSubDto>> getById({ 
+  Future<Response<MessageSourceRouteSubDto>> getMessageSourceRouteSubById({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -217,7 +217,7 @@ _responseData = rawData == null ? null : deserialize<MessageSourceRouteSubDto, M
     );
   }
 
-  /// getList
+  /// getMessageSourceRouteSubList
   /// 
   ///
   /// Parameters:
@@ -230,7 +230,7 @@ _responseData = rawData == null ? null : deserialize<MessageSourceRouteSubDto, M
   ///
   /// Returns a [Future] containing a [Response] with a [List<MessageSourceRouteSubDto>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<List<MessageSourceRouteSubDto>>> getList({ 
+  Future<Response<List<MessageSourceRouteSubDto>>> getMessageSourceRouteSubList({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -291,7 +291,7 @@ _responseData = rawData == null ? null : deserialize<List<MessageSourceRouteSubD
     );
   }
 
-  /// update
+  /// updateMessageSourceRouteSub
   /// 
   ///
   /// Parameters:
@@ -306,7 +306,7 @@ _responseData = rawData == null ? null : deserialize<List<MessageSourceRouteSubD
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> update({ 
+  Future<Response<void>> updateMessageSourceRouteSub({ 
     required String id,
     CreateUpdateMessageSourceRouteSubDto? body,
     CancelToken? cancelToken,

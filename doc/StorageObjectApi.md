@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **getFileOrCredentials**
-> StorageObjectOrCredentialsDto getFileOrCredentials(rapidCode)
+> StorageObjectOrCredentialsDto getFileOrCredentials(rapidCode, bucket)
 
 
 
@@ -26,9 +26,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getStorageObjectApi();
 final String rapidCode = rapidCode_example; // String | 
+final String bucket = bucket_example; // String | 
 
 try {
-    final response = api.getFileOrCredentials(rapidCode);
+    final response = api.getFileOrCredentials(rapidCode, bucket);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling StorageObjectApi->getFileOrCredentials: $e\n');
@@ -40,6 +41,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **rapidCode** | **String**|  | [optional] 
+ **bucket** | **String**|  | [optional] 
 
 ### Return type
 
@@ -57,7 +59,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **preSignUrl**
-> String preSignUrl(key)
+> String preSignUrl(key, bucket)
 
 
 
@@ -69,9 +71,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getStorageObjectApi();
 final String key = key_example; // String | 
+final String bucket = bucket_example; // String | 
 
 try {
-    final response = api.preSignUrl(key);
+    final response = api.preSignUrl(key, bucket);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling StorageObjectApi->preSignUrl: $e\n');
@@ -83,6 +86,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **key** | **String**|  | [optional] 
+ **bucket** | **String**|  | [optional] 
 
 ### Return type
 

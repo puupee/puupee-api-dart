@@ -21,7 +21,7 @@ class TenantApi {
 
   const TenantApi(this._dio);
 
-  /// create
+  /// createTenant
   /// 
   ///
   /// Parameters:
@@ -35,7 +35,7 @@ class TenantApi {
   ///
   /// Returns a [Future] containing a [Response] with a [TenantDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<TenantDto>> create({ 
+  Future<Response<TenantDto>> createTenant({ 
     TenantCreateDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -115,58 +115,6 @@ _responseData = rawData == null ? null : deserialize<TenantDto, TenantDto>(rawDa
     );
   }
 
-  /// delete
-  /// 
-  ///
-  /// Parameters:
-  /// * [id] 
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future]
-  /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> delete({ 
-    required String id,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/multi-tenancy/tenants/{id}'.replaceAll('{' r'id' '}', id.toString());
-    final _options = Options(
-      method: r'DELETE',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    return _response;
-  }
-
   /// deleteDefaultConnectionString
   /// 
   ///
@@ -219,7 +167,7 @@ _responseData = rawData == null ? null : deserialize<TenantDto, TenantDto>(rawDa
     return _response;
   }
 
-  /// getById
+  /// deleteTenantById
   /// 
   ///
   /// Parameters:
@@ -231,9 +179,9 @@ _responseData = rawData == null ? null : deserialize<TenantDto, TenantDto>(rawDa
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [TenantDto] as data
+  /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<TenantDto>> getById({ 
+  Future<Response<void>> deleteTenantById({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -244,7 +192,7 @@ _responseData = rawData == null ? null : deserialize<TenantDto, TenantDto>(rawDa
   }) async {
     final _path = r'/api/multi-tenancy/tenants/{id}'.replaceAll('{' r'id' '}', id.toString());
     final _options = Options(
-      method: r'GET',
+      method: r'DELETE',
       headers: <String, dynamic>{
         ...?headers,
       },
@@ -268,31 +216,7 @@ _responseData = rawData == null ? null : deserialize<TenantDto, TenantDto>(rawDa
       onReceiveProgress: onReceiveProgress,
     );
 
-    TenantDto? _responseData;
-
-    try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<TenantDto, TenantDto>(rawData, 'TenantDto', growable: true);
-    } catch (error, stackTrace) {
-      throw DioException(
-        requestOptions: _response.requestOptions,
-        response: _response,
-        type: DioExceptionType.unknown,
-        error: error,
-        stackTrace: stackTrace,
-      );
-    }
-
-    return Response<TenantDto>(
-      data: _responseData,
-      headers: _response.headers,
-      isRedirect: _response.isRedirect,
-      requestOptions: _response.requestOptions,
-      redirects: _response.redirects,
-      statusCode: _response.statusCode,
-      statusMessage: _response.statusMessage,
-      extra: _response.extra,
-    );
+    return _response;
   }
 
   /// getDefaultConnectionString
@@ -371,7 +295,83 @@ _responseData = rawData == null ? null : deserialize<String, String>(rawData, 'S
     );
   }
 
-  /// getList
+  /// getTenantById
+  /// 
+  ///
+  /// Parameters:
+  /// * [id] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future] containing a [Response] with a [TenantDto] as data
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<TenantDto>> getTenantById({ 
+    required String id,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/multi-tenancy/tenants/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _options = Options(
+      method: r'GET',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'oauth2',
+            'name': 'oauth2',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    TenantDto? _responseData;
+
+    try {
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<TenantDto, TenantDto>(rawData, 'TenantDto', growable: true);
+    } catch (error, stackTrace) {
+      throw DioException(
+        requestOptions: _response.requestOptions,
+        response: _response,
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    return Response<TenantDto>(
+      data: _responseData,
+      headers: _response.headers,
+      isRedirect: _response.isRedirect,
+      requestOptions: _response.requestOptions,
+      redirects: _response.redirects,
+      statusCode: _response.statusCode,
+      statusMessage: _response.statusMessage,
+      extra: _response.extra,
+    );
+  }
+
+  /// getTenantList
   /// 
   ///
   /// Parameters:
@@ -388,7 +388,7 @@ _responseData = rawData == null ? null : deserialize<String, String>(rawData, 'S
   ///
   /// Returns a [Future] containing a [Response] with a [TenantDtoPagedResultDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<TenantDtoPagedResultDto>> getList({ 
+  Future<Response<TenantDtoPagedResultDto>> getTenantList({ 
     String? filter,
     String? sorting,
     int? skipCount,
@@ -461,7 +461,66 @@ _responseData = rawData == null ? null : deserialize<TenantDtoPagedResultDto, Te
     );
   }
 
-  /// update
+  /// updateDefaultConnectionString
+  /// 
+  ///
+  /// Parameters:
+  /// * [id] 
+  /// * [defaultConnectionString] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<void>> updateDefaultConnectionString({ 
+    required String id,
+    String? defaultConnectionString,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/multi-tenancy/tenants/{id}/default-connection-string'.replaceAll('{' r'id' '}', id.toString());
+    final _options = Options(
+      method: r'PUT',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'oauth2',
+            'name': 'oauth2',
+          },
+        ],
+        ...?extra,
+      },
+      validateStatus: validateStatus,
+    );
+
+    final _queryParameters = <String, dynamic>{
+      if (defaultConnectionString != null) r'defaultConnectionString': defaultConnectionString,
+    };
+
+    final _response = await _dio.request<Object>(
+      _path,
+      options: _options,
+      queryParameters: _queryParameters,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
+  }
+
+  /// updateTenant
   /// 
   ///
   /// Parameters:
@@ -476,7 +535,7 @@ _responseData = rawData == null ? null : deserialize<TenantDtoPagedResultDto, Te
   ///
   /// Returns a [Future] containing a [Response] with a [TenantDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<TenantDto>> update({ 
+  Future<Response<TenantDto>> updateTenant({ 
     required String id,
     TenantUpdateDto? body,
     CancelToken? cancelToken,
@@ -555,65 +614,6 @@ _responseData = rawData == null ? null : deserialize<TenantDto, TenantDto>(rawDa
       statusMessage: _response.statusMessage,
       extra: _response.extra,
     );
-  }
-
-  /// updateDefaultConnectionString
-  /// 
-  ///
-  /// Parameters:
-  /// * [id] 
-  /// * [defaultConnectionString] 
-  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
-  /// * [headers] - Can be used to add additional headers to the request
-  /// * [extras] - Can be used to add flags to the request
-  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
-  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
-  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
-  ///
-  /// Returns a [Future]
-  /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> updateDefaultConnectionString({ 
-    required String id,
-    String? defaultConnectionString,
-    CancelToken? cancelToken,
-    Map<String, dynamic>? headers,
-    Map<String, dynamic>? extra,
-    ValidateStatus? validateStatus,
-    ProgressCallback? onSendProgress,
-    ProgressCallback? onReceiveProgress,
-  }) async {
-    final _path = r'/api/multi-tenancy/tenants/{id}/default-connection-string'.replaceAll('{' r'id' '}', id.toString());
-    final _options = Options(
-      method: r'PUT',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
-      extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
-        ],
-        ...?extra,
-      },
-      validateStatus: validateStatus,
-    );
-
-    final _queryParameters = <String, dynamic>{
-      if (defaultConnectionString != null) r'defaultConnectionString': defaultConnectionString,
-    };
-
-    final _response = await _dio.request<Object>(
-      _path,
-      options: _options,
-      queryParameters: _queryParameters,
-      cancelToken: cancelToken,
-      onSendProgress: onSendProgress,
-      onReceiveProgress: onReceiveProgress,
-    );
-
-    return _response;
   }
 
 }

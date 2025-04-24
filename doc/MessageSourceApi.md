@@ -9,15 +9,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](MessageSourceApi.md#create) | **POST** /api/app/message-source | 
-[**delete**](MessageSourceApi.md#delete) | **DELETE** /api/app/message-source/{id} | 
-[**getById**](MessageSourceApi.md#getbyid) | **GET** /api/app/message-source/{id} | 
-[**getPublishedList**](MessageSourceApi.md#getpublishedlist) | **GET** /api/app/message-source/published-list/{categoryId} | 
-[**update**](MessageSourceApi.md#update) | **PUT** /api/app/message-source/{id} | 
+[**createMessageSource**](MessageSourceApi.md#createmessagesource) | **POST** /api/app/message-source | 
+[**deleteMessageSourceById**](MessageSourceApi.md#deletemessagesourcebyid) | **DELETE** /api/app/message-source/{id} | 
+[**getMessageSourceById**](MessageSourceApi.md#getmessagesourcebyid) | **GET** /api/app/message-source/{id} | 
+[**getMessageSourceList**](MessageSourceApi.md#getmessagesourcelist) | **GET** /api/app/message-source | 
+[**updateMessageSource**](MessageSourceApi.md#updatemessagesource) | **PUT** /api/app/message-source/{id} | 
 
 
-# **create**
-> CreateUpdateMessageSourceDto create(body)
+# **createMessageSource**
+> CreateUpdateMessageSourceDto createMessageSource(body)
 
 
 
@@ -31,10 +31,10 @@ final api = PuupeeApiClient().getMessageSourceApi();
 final CreateUpdateMessageSourceDto body = ; // CreateUpdateMessageSourceDto | 
 
 try {
-    final response = api.create(body);
+    final response = api.createMessageSource(body);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling MessageSourceApi->create: $e\n');
+    print('Exception when calling MessageSourceApi->createMessageSource: $e\n');
 }
 ```
 
@@ -59,8 +59,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete**
-> delete(id)
+# **deleteMessageSourceById**
+> deleteMessageSourceById(id)
 
 
 
@@ -74,9 +74,9 @@ final api = PuupeeApiClient().getMessageSourceApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    api.delete(id);
+    api.deleteMessageSourceById(id);
 } catch on DioException (e) {
-    print('Exception when calling MessageSourceApi->delete: $e\n');
+    print('Exception when calling MessageSourceApi->deleteMessageSourceById: $e\n');
 }
 ```
 
@@ -101,8 +101,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getById**
-> MessageSourceDto getById(id)
+# **getMessageSourceById**
+> MessageSourceDto getMessageSourceById(id)
 
 
 
@@ -116,10 +116,10 @@ final api = PuupeeApiClient().getMessageSourceApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final response = api.getById(id);
+    final response = api.getMessageSourceById(id);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling MessageSourceApi->getById: $e\n');
+    print('Exception when calling MessageSourceApi->getMessageSourceById: $e\n');
 }
 ```
 
@@ -144,8 +144,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getPublishedList**
-> List<MessageSourceDto> getPublishedList(categoryId)
+# **getMessageSourceList**
+> List<MessageSourceDto> getMessageSourceList(categoryId)
 
 
 
@@ -159,10 +159,10 @@ final api = PuupeeApiClient().getMessageSourceApi();
 final String categoryId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final response = api.getPublishedList(categoryId);
+    final response = api.getMessageSourceList(categoryId);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling MessageSourceApi->getPublishedList: $e\n');
+    print('Exception when calling MessageSourceApi->getMessageSourceList: $e\n');
 }
 ```
 
@@ -170,7 +170,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **categoryId** | **String**|  | 
+ **categoryId** | **String**|  | [optional] 
 
 ### Return type
 
@@ -187,8 +187,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update**
-> CreateUpdateMessageSourceDto update(id, body)
+# **updateMessageSource**
+> CreateUpdateMessageSourceDto updateMessageSource(id, body)
 
 
 
@@ -203,10 +203,10 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 final CreateUpdateMessageSourceDto body = ; // CreateUpdateMessageSourceDto | 
 
 try {
-    final response = api.update(id, body);
+    final response = api.updateMessageSource(id, body);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling MessageSourceApi->update: $e\n');
+    print('Exception when calling MessageSourceApi->updateMessageSource: $e\n');
 }
 ```
 

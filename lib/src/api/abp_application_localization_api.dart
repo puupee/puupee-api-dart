@@ -18,7 +18,7 @@ class AbpApplicationLocalizationApi {
 
   const AbpApplicationLocalizationApi(this._dio);
 
-  /// callGet
+  /// getAbpApplicationLocalization
   /// 
   ///
   /// Parameters:
@@ -33,7 +33,7 @@ class AbpApplicationLocalizationApi {
   ///
   /// Returns a [Future] containing a [Response] with a [ApplicationLocalizationDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<ApplicationLocalizationDto>> callGet({ 
+  Future<Response<ApplicationLocalizationDto>> getAbpApplicationLocalization({ 
     required String cultureName,
     bool? onlyDynamics,
     CancelToken? cancelToken,

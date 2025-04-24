@@ -9,13 +9,13 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](MessageTemplateReleaseApi.md#create) | **POST** /api/app/message-template-release | 
-[**getById**](MessageTemplateReleaseApi.md#getbyid) | **GET** /api/app/message-template-release/{id} | 
-[**getList**](MessageTemplateReleaseApi.md#getlist) | **GET** /api/app/message-template-release | 
+[**createMessageTemplateRelease**](MessageTemplateReleaseApi.md#createmessagetemplaterelease) | **POST** /api/app/message-template-release | 
+[**getMessageTemplateReleaseById**](MessageTemplateReleaseApi.md#getmessagetemplatereleasebyid) | **GET** /api/app/message-template-release/{id} | 
+[**getMessageTemplateReleaseList**](MessageTemplateReleaseApi.md#getmessagetemplatereleaselist) | **GET** /api/app/message-template-release | 
 
 
-# **create**
-> MessageTemplateReleaseDto create(body)
+# **createMessageTemplateRelease**
+> MessageTemplateReleaseDto createMessageTemplateRelease(body)
 
 
 
@@ -29,10 +29,10 @@ final api = PuupeeApiClient().getMessageTemplateReleaseApi();
 final CreateMessageTemplateReleaseDto body = ; // CreateMessageTemplateReleaseDto | 
 
 try {
-    final response = api.create(body);
+    final response = api.createMessageTemplateRelease(body);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling MessageTemplateReleaseApi->create: $e\n');
+    print('Exception when calling MessageTemplateReleaseApi->createMessageTemplateRelease: $e\n');
 }
 ```
 
@@ -57,8 +57,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getById**
-> MessageTemplateReleaseDto getById(id)
+# **getMessageTemplateReleaseById**
+> MessageTemplateReleaseDto getMessageTemplateReleaseById(id)
 
 
 
@@ -72,10 +72,10 @@ final api = PuupeeApiClient().getMessageTemplateReleaseApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final response = api.getById(id);
+    final response = api.getMessageTemplateReleaseById(id);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling MessageTemplateReleaseApi->getById: $e\n');
+    print('Exception when calling MessageTemplateReleaseApi->getMessageTemplateReleaseById: $e\n');
 }
 ```
 
@@ -100,8 +100,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getList**
-> List<MessageTemplateReleaseDto> getList(templateId)
+# **getMessageTemplateReleaseList**
+> List<MessageTemplateReleaseDto> getMessageTemplateReleaseList(templateId)
 
 
 
@@ -115,10 +115,10 @@ final api = PuupeeApiClient().getMessageTemplateReleaseApi();
 final String templateId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final response = api.getList(templateId);
+    final response = api.getMessageTemplateReleaseList(templateId);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling MessageTemplateReleaseApi->getList: $e\n');
+    print('Exception when calling MessageTemplateReleaseApi->getMessageTemplateReleaseList: $e\n');
 }
 ```
 

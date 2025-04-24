@@ -9,17 +9,17 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](AppPricingApi.md#create) | **POST** /api/app/app-pricing | 
-[**delete**](AppPricingApi.md#delete) | **DELETE** /api/app/app-pricing/{id} | 
-[**getById**](AppPricingApi.md#getbyid) | **GET** /api/app/app-pricing/{id} | 
-[**getList**](AppPricingApi.md#getlist) | **GET** /api/app/app-pricing | 
+[**createAppPricing**](AppPricingApi.md#createapppricing) | **POST** /api/app/app-pricing | 
+[**deleteAppPricingById**](AppPricingApi.md#deleteapppricingbyid) | **DELETE** /api/app/app-pricing/{id} | 
+[**getAppPricingById**](AppPricingApi.md#getapppricingbyid) | **GET** /api/app/app-pricing/{id} | 
+[**getAppPricingList**](AppPricingApi.md#getapppricinglist) | **GET** /api/app/app-pricing | 
 [**getListByAppId**](AppPricingApi.md#getlistbyappid) | **GET** /api/app/app-pricing/by-app-id/{appId} | 
 [**getPricingItemsByAppId**](AppPricingApi.md#getpricingitemsbyappid) | **GET** /api/app/app-pricing/pricing-items-by-app-id/{appId} | 
-[**update**](AppPricingApi.md#update) | **PUT** /api/app/app-pricing/{id} | 
+[**updateAppPricing**](AppPricingApi.md#updateapppricing) | **PUT** /api/app/app-pricing/{id} | 
 
 
-# **create**
-> AppPricingDto create(body)
+# **createAppPricing**
+> AppPricingDto createAppPricing(body)
 
 
 
@@ -33,10 +33,10 @@ final api = PuupeeApiClient().getAppPricingApi();
 final CreateOrUpdateAppPricingDto body = ; // CreateOrUpdateAppPricingDto | 
 
 try {
-    final response = api.create(body);
+    final response = api.createAppPricing(body);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling AppPricingApi->create: $e\n');
+    print('Exception when calling AppPricingApi->createAppPricing: $e\n');
 }
 ```
 
@@ -61,8 +61,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete**
-> delete(id)
+# **deleteAppPricingById**
+> deleteAppPricingById(id)
 
 
 
@@ -76,9 +76,9 @@ final api = PuupeeApiClient().getAppPricingApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    api.delete(id);
+    api.deleteAppPricingById(id);
 } catch on DioException (e) {
-    print('Exception when calling AppPricingApi->delete: $e\n');
+    print('Exception when calling AppPricingApi->deleteAppPricingById: $e\n');
 }
 ```
 
@@ -103,8 +103,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getById**
-> AppPricingDto getById(id)
+# **getAppPricingById**
+> AppPricingDto getAppPricingById(id)
 
 
 
@@ -118,10 +118,10 @@ final api = PuupeeApiClient().getAppPricingApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final response = api.getById(id);
+    final response = api.getAppPricingById(id);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling AppPricingApi->getById: $e\n');
+    print('Exception when calling AppPricingApi->getAppPricingById: $e\n');
 }
 ```
 
@@ -146,8 +146,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getList**
-> AppPricingDtoPagedResultDto getList(sorting, skipCount, maxResultCount)
+# **getAppPricingList**
+> AppPricingDtoPagedResultDto getAppPricingList(sorting, skipCount, maxResultCount)
 
 
 
@@ -163,10 +163,10 @@ final int skipCount = 56; // int |
 final int maxResultCount = 56; // int | 
 
 try {
-    final response = api.getList(sorting, skipCount, maxResultCount);
+    final response = api.getAppPricingList(sorting, skipCount, maxResultCount);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling AppPricingApi->getList: $e\n');
+    print('Exception when calling AppPricingApi->getAppPricingList: $e\n');
 }
 ```
 
@@ -279,8 +279,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update**
-> AppPricingDto update(id, body)
+# **updateAppPricing**
+> AppPricingDto updateAppPricing(id, body)
 
 
 
@@ -295,10 +295,10 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 final CreateOrUpdateAppPricingDto body = ; // CreateOrUpdateAppPricingDto | 
 
 try {
-    final response = api.update(id, body);
+    final response = api.updateAppPricing(id, body);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling AppPricingApi->update: $e\n');
+    print('Exception when calling AppPricingApi->updateAppPricing: $e\n');
 }
 ```
 

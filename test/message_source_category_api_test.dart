@@ -7,8 +7,8 @@ void main() {
   final instance = PuupeeApiClient().getMessageSourceCategoryApi();
 
   group(MessageSourceCategoryApi, () {
-    //Future<List<MessageSourceCategoryDto>> getList() async
-    test('test getList', () async {
+    //Future<List<MessageSourceCategoryDto>> getMessageSourceCategoryList() async
+    test('test getMessageSourceCategoryList', () async {
       // TODO
     });
 

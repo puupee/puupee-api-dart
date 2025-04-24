@@ -19,8 +19,8 @@ void main() {
       // TODO
     });
 
-    //Future<SubscriptionDto> getById({ String appId }) async
-    test('test getById', () async {
+    //Future<SubscriptionDto> getSubscriptionById({ String appId }) async
+    test('test getSubscriptionById', () async {
       // TODO
     });
 

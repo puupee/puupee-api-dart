@@ -9,11 +9,11 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**callGet**](AbpApplicationLocalizationApi.md#callget) | **GET** /api/abp/application-localization | 
+[**getAbpApplicationLocalization**](AbpApplicationLocalizationApi.md#getabpapplicationlocalization) | **GET** /api/abp/application-localization | 
 
 
-# **callGet**
-> ApplicationLocalizationDto callGet(cultureName, onlyDynamics)
+# **getAbpApplicationLocalization**
+> ApplicationLocalizationDto getAbpApplicationLocalization(cultureName, onlyDynamics)
 
 
 
@@ -28,10 +28,10 @@ final String cultureName = cultureName_example; // String |
 final bool onlyDynamics = true; // bool | 
 
 try {
-    final response = api.callGet(cultureName, onlyDynamics);
+    final response = api.getAbpApplicationLocalization(cultureName, onlyDynamics);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling AbpApplicationLocalizationApi->callGet: $e\n');
+    print('Exception when calling AbpApplicationLocalizationApi->getAbpApplicationLocalization: $e\n');
 }
 ```
 

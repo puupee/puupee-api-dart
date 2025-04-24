@@ -9,11 +9,11 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](AppUserScoreApi.md#create) | **POST** /api/app/app-user-score | 
+[**createAppUserScore**](AppUserScoreApi.md#createappuserscore) | **POST** /api/app/app-user-score | 
 
 
-# **create**
-> AppUserScoreDto create(body)
+# **createAppUserScore**
+> AppUserScoreDto createAppUserScore(body)
 
 
 
@@ -27,10 +27,10 @@ final api = PuupeeApiClient().getAppUserScoreApi();
 final CreateOrUpdateAppUserScoreDto body = ; // CreateOrUpdateAppUserScoreDto | 
 
 try {
-    final response = api.create(body);
+    final response = api.createAppUserScore(body);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling AppUserScoreApi->create: $e\n');
+    print('Exception when calling AppUserScoreApi->createAppUserScore: $e\n');
 }
 ```
 

@@ -50,7 +50,7 @@ class NotificationApi {
     String? isArchive,
     String? group,
     String? icon,
-    Object? level,
+    String? level,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -98,7 +98,7 @@ class NotificationApi {
     return _response;
   }
 
-  /// getList
+  /// getNotificationList
   /// 
   ///
   /// Parameters:
@@ -114,7 +114,7 @@ class NotificationApi {
   ///
   /// Returns a [Future] containing a [Response] with a [NotificationInfoDtoPagedResultDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<NotificationInfoDtoPagedResultDto>> getList({ 
+  Future<Response<NotificationInfoDtoPagedResultDto>> getNotificationList({ 
     String? sorting,
     int? skipCount,
     int? maxResultCount,

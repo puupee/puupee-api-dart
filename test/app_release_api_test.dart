@@ -9,43 +9,43 @@ void main() {
   group(AppReleaseApi, () {
     // 创建新版本
     //
-    //Future<AppReleaseDto> create({ CreateOrUpdateAppReleaseDto body }) async
-    test('test create', () async {
+    //Future<AppReleaseDto> createAppRelease({ CreateOrUpdateAppReleaseDto body }) async
+    test('test createAppRelease', () async {
       // TODO
     });
 
     // 删除版本
     //
-    //Future delete(String id) async
-    test('test delete', () async {
+    //Future deleteAppReleaseById(String id) async
+    test('test deleteAppReleaseById', () async {
       // TODO
     });
 
     // 获取版本
     //
-    //Future<AppReleaseDto> getById(String id) async
-    test('test getById', () async {
-      // TODO
-    });
-
-    // 获取最新版本
-    //
-    //Future<AppReleaseDto> getLatest({ String appName, Object platform, Object productType, String environment }) async
-    test('test getLatest', () async {
+    //Future<AppReleaseDto> getAppReleaseById(String id) async
+    test('test getAppReleaseById', () async {
       // TODO
     });
 
     // 获取版本列表
     //
-    //Future<AppReleaseDtoPagedResultDto> getList({ String appId, String environment, Object platform, String sorting, int skipCount, int maxResultCount }) async
-    test('test getList', () async {
+    //Future<AppReleaseDtoPagedResultDto> getAppReleaseList({ String appId, String environment, String platform, String sorting, int skipCount, int maxResultCount }) async
+    test('test getAppReleaseList', () async {
+      // TODO
+    });
+
+    // 获取最新版本
+    //
+    //Future<AppReleaseDto> getLatest({ String appName, String platform, String productType, String environment }) async
+    test('test getLatest', () async {
       // TODO
     });
 
     // 更新版本
     //
-    //Future<AppReleaseDto> update(String id, { CreateOrUpdateAppReleaseDto body }) async
-    test('test update', () async {
+    //Future<AppReleaseDto> updateAppRelease(String id, { CreateOrUpdateAppReleaseDto body }) async
+    test('test updateAppRelease', () async {
       // TODO
     });
 

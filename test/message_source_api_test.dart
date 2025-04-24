@@ -7,28 +7,28 @@ void main() {
   final instance = PuupeeApiClient().getMessageSourceApi();
 
   group(MessageSourceApi, () {
-    //Future<CreateUpdateMessageSourceDto> create({ CreateUpdateMessageSourceDto body }) async
-    test('test create', () async {
+    //Future<CreateUpdateMessageSourceDto> createMessageSource({ CreateUpdateMessageSourceDto body }) async
+    test('test createMessageSource', () async {
       // TODO
     });
 
-    //Future delete(String id) async
-    test('test delete', () async {
+    //Future deleteMessageSourceById(String id) async
+    test('test deleteMessageSourceById', () async {
       // TODO
     });
 
-    //Future<MessageSourceDto> getById(String id) async
-    test('test getById', () async {
+    //Future<MessageSourceDto> getMessageSourceById(String id) async
+    test('test getMessageSourceById', () async {
       // TODO
     });
 
-    //Future<List<MessageSourceDto>> getPublishedList(String categoryId) async
-    test('test getPublishedList', () async {
+    //Future<List<MessageSourceDto>> getMessageSourceList({ String categoryId }) async
+    test('test getMessageSourceList', () async {
       // TODO
     });
 
-    //Future<CreateUpdateMessageSourceDto> update(String id, { CreateUpdateMessageSourceDto body }) async
-    test('test update', () async {
+    //Future<CreateUpdateMessageSourceDto> updateMessageSource(String id, { CreateUpdateMessageSourceDto body }) async
+    test('test updateMessageSource', () async {
       // TODO
     });
 

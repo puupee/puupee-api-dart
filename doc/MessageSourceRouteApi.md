@@ -9,15 +9,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](MessageSourceRouteApi.md#create) | **POST** /api/app/message-source-route | 
-[**delete**](MessageSourceRouteApi.md#delete) | **DELETE** /api/app/message-source-route/{id} | 
-[**getById**](MessageSourceRouteApi.md#getbyid) | **GET** /api/app/message-source-route/{id} | 
-[**getPublishedList**](MessageSourceRouteApi.md#getpublishedlist) | **GET** /api/app/message-source-route/published-list/{sourceId} | 
-[**update**](MessageSourceRouteApi.md#update) | **PUT** /api/app/message-source-route/{id} | 
+[**createMessageSourceRoute**](MessageSourceRouteApi.md#createmessagesourceroute) | **POST** /api/app/message-source-route | 
+[**deleteMessageSourceRouteById**](MessageSourceRouteApi.md#deletemessagesourceroutebyid) | **DELETE** /api/app/message-source-route/{id} | 
+[**getMessageSourceRouteById**](MessageSourceRouteApi.md#getmessagesourceroutebyid) | **GET** /api/app/message-source-route/{id} | 
+[**getMessageSourceRouteList**](MessageSourceRouteApi.md#getmessagesourceroutelist) | **GET** /api/app/message-source-route | 
+[**updateMessageSourceRoute**](MessageSourceRouteApi.md#updatemessagesourceroute) | **PUT** /api/app/message-source-route/{id} | 
 
 
-# **create**
-> create(body)
+# **createMessageSourceRoute**
+> createMessageSourceRoute(body)
 
 
 
@@ -31,9 +31,9 @@ final api = PuupeeApiClient().getMessageSourceRouteApi();
 final CreateUpdateMessageSourceRouteDto body = ; // CreateUpdateMessageSourceRouteDto | 
 
 try {
-    api.create(body);
+    api.createMessageSourceRoute(body);
 } catch on DioException (e) {
-    print('Exception when calling MessageSourceRouteApi->create: $e\n');
+    print('Exception when calling MessageSourceRouteApi->createMessageSourceRoute: $e\n');
 }
 ```
 
@@ -58,8 +58,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete**
-> delete(id)
+# **deleteMessageSourceRouteById**
+> deleteMessageSourceRouteById(id)
 
 
 
@@ -73,9 +73,9 @@ final api = PuupeeApiClient().getMessageSourceRouteApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    api.delete(id);
+    api.deleteMessageSourceRouteById(id);
 } catch on DioException (e) {
-    print('Exception when calling MessageSourceRouteApi->delete: $e\n');
+    print('Exception when calling MessageSourceRouteApi->deleteMessageSourceRouteById: $e\n');
 }
 ```
 
@@ -100,8 +100,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getById**
-> MessageSourceRouteDto getById(id)
+# **getMessageSourceRouteById**
+> MessageSourceRouteDto getMessageSourceRouteById(id)
 
 
 
@@ -115,10 +115,10 @@ final api = PuupeeApiClient().getMessageSourceRouteApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final response = api.getById(id);
+    final response = api.getMessageSourceRouteById(id);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling MessageSourceRouteApi->getById: $e\n');
+    print('Exception when calling MessageSourceRouteApi->getMessageSourceRouteById: $e\n');
 }
 ```
 
@@ -143,8 +143,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getPublishedList**
-> List<MessageSourceRouteDto> getPublishedList(sourceId)
+# **getMessageSourceRouteList**
+> List<MessageSourceRouteDto> getMessageSourceRouteList(sourceId)
 
 
 
@@ -158,10 +158,10 @@ final api = PuupeeApiClient().getMessageSourceRouteApi();
 final String sourceId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final response = api.getPublishedList(sourceId);
+    final response = api.getMessageSourceRouteList(sourceId);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling MessageSourceRouteApi->getPublishedList: $e\n');
+    print('Exception when calling MessageSourceRouteApi->getMessageSourceRouteList: $e\n');
 }
 ```
 
@@ -169,7 +169,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sourceId** | **String**|  | 
+ **sourceId** | **String**|  | [optional] 
 
 ### Return type
 
@@ -186,8 +186,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update**
-> update(id, body)
+# **updateMessageSourceRoute**
+> updateMessageSourceRoute(id, body)
 
 
 
@@ -202,9 +202,9 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 final CreateUpdateMessageSourceRouteDto body = ; // CreateUpdateMessageSourceRouteDto | 
 
 try {
-    api.update(id, body);
+    api.updateMessageSourceRoute(id, body);
 } catch on DioException (e) {
-    print('Exception when calling MessageSourceRouteApi->update: $e\n');
+    print('Exception when calling MessageSourceRouteApi->updateMessageSourceRoute: $e\n');
 }
 ```
 

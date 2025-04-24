@@ -19,7 +19,7 @@ class MessageSourceApi {
 
   const MessageSourceApi(this._dio);
 
-  /// create
+  /// createMessageSource
   /// 
   ///
   /// Parameters:
@@ -33,7 +33,7 @@ class MessageSourceApi {
   ///
   /// Returns a [Future] containing a [Response] with a [CreateUpdateMessageSourceDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CreateUpdateMessageSourceDto>> create({ 
+  Future<Response<CreateUpdateMessageSourceDto>> createMessageSource({ 
     CreateUpdateMessageSourceDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -113,7 +113,7 @@ _responseData = rawData == null ? null : deserialize<CreateUpdateMessageSourceDt
     );
   }
 
-  /// delete
+  /// deleteMessageSourceById
   /// 
   ///
   /// Parameters:
@@ -127,7 +127,7 @@ _responseData = rawData == null ? null : deserialize<CreateUpdateMessageSourceDt
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> delete({ 
+  Future<Response<void>> deleteMessageSourceById({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -165,7 +165,7 @@ _responseData = rawData == null ? null : deserialize<CreateUpdateMessageSourceDt
     return _response;
   }
 
-  /// getById
+  /// getMessageSourceById
   /// 
   ///
   /// Parameters:
@@ -179,7 +179,7 @@ _responseData = rawData == null ? null : deserialize<CreateUpdateMessageSourceDt
   ///
   /// Returns a [Future] containing a [Response] with a [MessageSourceDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<MessageSourceDto>> getById({ 
+  Future<Response<MessageSourceDto>> getMessageSourceById({ 
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -241,7 +241,7 @@ _responseData = rawData == null ? null : deserialize<MessageSourceDto, MessageSo
     );
   }
 
-  /// getPublishedList
+  /// getMessageSourceList
   /// 
   ///
   /// Parameters:
@@ -255,8 +255,8 @@ _responseData = rawData == null ? null : deserialize<MessageSourceDto, MessageSo
   ///
   /// Returns a [Future] containing a [Response] with a [List<MessageSourceDto>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<List<MessageSourceDto>>> getPublishedList({ 
-    required String categoryId,
+  Future<Response<List<MessageSourceDto>>> getMessageSourceList({ 
+    String? categoryId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -264,7 +264,7 @@ _responseData = rawData == null ? null : deserialize<MessageSourceDto, MessageSo
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/app/message-source/published-list/{categoryId}'.replaceAll('{' r'categoryId' '}', categoryId.toString());
+    final _path = r'/api/app/message-source';
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -282,9 +282,14 @@ _responseData = rawData == null ? null : deserialize<MessageSourceDto, MessageSo
       validateStatus: validateStatus,
     );
 
+    final _queryParameters = <String, dynamic>{
+      if (categoryId != null) r'categoryId': categoryId,
+    };
+
     final _response = await _dio.request<Object>(
       _path,
       options: _options,
+      queryParameters: _queryParameters,
       cancelToken: cancelToken,
       onSendProgress: onSendProgress,
       onReceiveProgress: onReceiveProgress,
@@ -317,7 +322,7 @@ _responseData = rawData == null ? null : deserialize<List<MessageSourceDto>, Mes
     );
   }
 
-  /// update
+  /// updateMessageSource
   /// 
   ///
   /// Parameters:
@@ -332,7 +337,7 @@ _responseData = rawData == null ? null : deserialize<List<MessageSourceDto>, Mes
   ///
   /// Returns a [Future] containing a [Response] with a [CreateUpdateMessageSourceDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CreateUpdateMessageSourceDto>> update({ 
+  Future<Response<CreateUpdateMessageSourceDto>> updateMessageSource({ 
     required String id,
     CreateUpdateMessageSourceDto? body,
     CancelToken? cancelToken,

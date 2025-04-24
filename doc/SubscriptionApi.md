@@ -11,7 +11,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**appleNotifications**](SubscriptionApi.md#applenotifications) | **POST** /api/app/subscription/apple-notifications | 苹果订阅 Callback 地址
 [**createOrder**](SubscriptionApi.md#createorder) | **POST** /api/app/subscription/order | 
-[**getById**](SubscriptionApi.md#getbyid) | **GET** /api/app/subscription | 
+[**getSubscriptionById**](SubscriptionApi.md#getsubscriptionbyid) | **GET** /api/app/subscription | 
 [**verifyReceipt**](SubscriptionApi.md#verifyreceipt) | **POST** /api/app/subscription/verify-receipt | 
 
 
@@ -100,8 +100,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getById**
-> SubscriptionDto getById(appId)
+# **getSubscriptionById**
+> SubscriptionDto getSubscriptionById(appId)
 
 
 
@@ -115,10 +115,10 @@ final api = PuupeeApiClient().getSubscriptionApi();
 final String appId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final response = api.getById(appId);
+    final response = api.getSubscriptionById(appId);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling SubscriptionApi->getById: $e\n');
+    print('Exception when calling SubscriptionApi->getSubscriptionById: $e\n');
 }
 ```
 

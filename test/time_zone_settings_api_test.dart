@@ -7,8 +7,8 @@ void main() {
   final instance = PuupeeApiClient().getTimeZoneSettingsApi();
 
   group(TimeZoneSettingsApi, () {
-    //Future<String> callGet() async
-    test('test callGet', () async {
+    //Future<String> getTimeZoneSettings() async
+    test('test getTimeZoneSettings', () async {
       // TODO
     });
 
@@ -17,8 +17,8 @@ void main() {
       // TODO
     });
 
-    //Future update({ String timezone }) async
-    test('test update', () async {
+    //Future updateTimeZoneSettings({ String timezone }) async
+    test('test updateTimeZoneSettings', () async {
       // TODO
     });
 

@@ -90,7 +90,6 @@ export 'package:puupee_api_client/src/model/application_localization_resource_dt
 export 'package:puupee_api_client/src/model/application_setting_configuration_dto.dart';
 export 'package:puupee_api_client/src/model/artifact_type.dart';
 export 'package:puupee_api_client/src/model/avatar_dto.dart';
-export 'package:puupee_api_client/src/model/bark_notification_level.dart';
 export 'package:puupee_api_client/src/model/bind_device_dto.dart';
 export 'package:puupee_api_client/src/model/change_password_dto.dart';
 export 'package:puupee_api_client/src/model/change_password_input.dart';

@@ -9,15 +9,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](MessageTemplateApi.md#create) | **POST** /api/app/message-template | 
-[**delete**](MessageTemplateApi.md#delete) | **DELETE** /api/app/message-template/{id} | 
-[**getById**](MessageTemplateApi.md#getbyid) | **GET** /api/app/message-template/{id} | 
-[**getList**](MessageTemplateApi.md#getlist) | **GET** /api/app/message-template | 
-[**update**](MessageTemplateApi.md#update) | **PUT** /api/app/message-template/{id} | 
+[**createMessageTemplate**](MessageTemplateApi.md#createmessagetemplate) | **POST** /api/app/message-template | 
+[**deleteMessageTemplateById**](MessageTemplateApi.md#deletemessagetemplatebyid) | **DELETE** /api/app/message-template/{id} | 
+[**getMessageTemplateById**](MessageTemplateApi.md#getmessagetemplatebyid) | **GET** /api/app/message-template/{id} | 
+[**getMessageTemplateList**](MessageTemplateApi.md#getmessagetemplatelist) | **GET** /api/app/message-template | 
+[**updateMessageTemplate**](MessageTemplateApi.md#updatemessagetemplate) | **PUT** /api/app/message-template/{id} | 
 
 
-# **create**
-> MessageTemplateDto create(body)
+# **createMessageTemplate**
+> MessageTemplateDto createMessageTemplate(body)
 
 
 
@@ -31,10 +31,10 @@ final api = PuupeeApiClient().getMessageTemplateApi();
 final CreateOrUpdateMessageTemplateDto body = ; // CreateOrUpdateMessageTemplateDto | 
 
 try {
-    final response = api.create(body);
+    final response = api.createMessageTemplate(body);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling MessageTemplateApi->create: $e\n');
+    print('Exception when calling MessageTemplateApi->createMessageTemplate: $e\n');
 }
 ```
 
@@ -59,8 +59,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete**
-> delete(id)
+# **deleteMessageTemplateById**
+> deleteMessageTemplateById(id)
 
 
 
@@ -74,9 +74,9 @@ final api = PuupeeApiClient().getMessageTemplateApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    api.delete(id);
+    api.deleteMessageTemplateById(id);
 } catch on DioException (e) {
-    print('Exception when calling MessageTemplateApi->delete: $e\n');
+    print('Exception when calling MessageTemplateApi->deleteMessageTemplateById: $e\n');
 }
 ```
 
@@ -101,8 +101,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getById**
-> MessageTemplateDto getById(id)
+# **getMessageTemplateById**
+> MessageTemplateDto getMessageTemplateById(id)
 
 
 
@@ -116,10 +116,10 @@ final api = PuupeeApiClient().getMessageTemplateApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final response = api.getById(id);
+    final response = api.getMessageTemplateById(id);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling MessageTemplateApi->getById: $e\n');
+    print('Exception when calling MessageTemplateApi->getMessageTemplateById: $e\n');
 }
 ```
 
@@ -144,8 +144,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getList**
-> List<MessageTemplateDto> getList()
+# **getMessageTemplateList**
+> List<MessageTemplateDto> getMessageTemplateList()
 
 
 
@@ -158,10 +158,10 @@ import 'package:puupee_api_client/api.dart';
 final api = PuupeeApiClient().getMessageTemplateApi();
 
 try {
-    final response = api.getList();
+    final response = api.getMessageTemplateList();
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling MessageTemplateApi->getList: $e\n');
+    print('Exception when calling MessageTemplateApi->getMessageTemplateList: $e\n');
 }
 ```
 
@@ -183,8 +183,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update**
-> MessageTemplateDto update(id, body)
+# **updateMessageTemplate**
+> MessageTemplateDto updateMessageTemplate(id, body)
 
 
 
@@ -199,10 +199,10 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 final CreateOrUpdateMessageTemplateDto body = ; // CreateOrUpdateMessageTemplateDto | 
 
 try {
-    final response = api.update(id, body);
+    final response = api.updateMessageTemplate(id, body);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling MessageTemplateApi->update: $e\n');
+    print('Exception when calling MessageTemplateApi->updateMessageTemplate: $e\n');
 }
 ```
 

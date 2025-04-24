@@ -7,18 +7,18 @@ void main() {
   final instance = PuupeeApiClient().getProfileApi();
 
   group(ProfileApi, () {
-    //Future<ProfileDto> callGet() async
-    test('test callGet', () async {
-      // TODO
-    });
-
     //Future changePassword({ ChangePasswordInput body }) async
     test('test changePassword', () async {
       // TODO
     });
 
-    //Future<ProfileDto> update({ UpdateProfileDto body }) async
-    test('test update', () async {
+    //Future<ProfileDto> getProfile() async
+    test('test getProfile', () async {
+      // TODO
+    });
+
+    //Future<ProfileDto> updateProfile({ UpdateProfileDto body }) async
+    test('test updateProfile', () async {
       // TODO
     });
 

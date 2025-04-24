@@ -20,7 +20,7 @@ class AvatarApi {
 
   const AvatarApi(this._dio);
 
-  /// create
+  /// createAvatar
   /// 
   ///
   /// Parameters:
@@ -34,7 +34,7 @@ class AvatarApi {
   ///
   /// Returns a [Future] containing a [Response] with a [AvatarDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<AvatarDto>> create({ 
+  Future<Response<AvatarDto>> createAvatar({ 
     CreateAvatarDto? body,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,

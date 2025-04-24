@@ -9,15 +9,15 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create**](MessageSourceRouteSubApi.md#create) | **POST** /api/app/message-source-route-sub | 
-[**delete**](MessageSourceRouteSubApi.md#delete) | **DELETE** /api/app/message-source-route-sub/{id} | 
-[**getById**](MessageSourceRouteSubApi.md#getbyid) | **GET** /api/app/message-source-route-sub/{id} | 
-[**getList**](MessageSourceRouteSubApi.md#getlist) | **GET** /api/app/message-source-route-sub | 
-[**update**](MessageSourceRouteSubApi.md#update) | **PUT** /api/app/message-source-route-sub/{id} | 
+[**createMessageSourceRouteSub**](MessageSourceRouteSubApi.md#createmessagesourceroutesub) | **POST** /api/app/message-source-route-sub | 
+[**deleteMessageSourceRouteSubById**](MessageSourceRouteSubApi.md#deletemessagesourceroutesubbyid) | **DELETE** /api/app/message-source-route-sub/{id} | 
+[**getMessageSourceRouteSubById**](MessageSourceRouteSubApi.md#getmessagesourceroutesubbyid) | **GET** /api/app/message-source-route-sub/{id} | 
+[**getMessageSourceRouteSubList**](MessageSourceRouteSubApi.md#getmessagesourceroutesublist) | **GET** /api/app/message-source-route-sub | 
+[**updateMessageSourceRouteSub**](MessageSourceRouteSubApi.md#updatemessagesourceroutesub) | **PUT** /api/app/message-source-route-sub/{id} | 
 
 
-# **create**
-> create(body)
+# **createMessageSourceRouteSub**
+> createMessageSourceRouteSub(body)
 
 
 
@@ -31,9 +31,9 @@ final api = PuupeeApiClient().getMessageSourceRouteSubApi();
 final CreateUpdateMessageSourceRouteSubDto body = ; // CreateUpdateMessageSourceRouteSubDto | 
 
 try {
-    api.create(body);
+    api.createMessageSourceRouteSub(body);
 } catch on DioException (e) {
-    print('Exception when calling MessageSourceRouteSubApi->create: $e\n');
+    print('Exception when calling MessageSourceRouteSubApi->createMessageSourceRouteSub: $e\n');
 }
 ```
 
@@ -58,8 +58,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete**
-> delete(id)
+# **deleteMessageSourceRouteSubById**
+> deleteMessageSourceRouteSubById(id)
 
 
 
@@ -73,9 +73,9 @@ final api = PuupeeApiClient().getMessageSourceRouteSubApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    api.delete(id);
+    api.deleteMessageSourceRouteSubById(id);
 } catch on DioException (e) {
-    print('Exception when calling MessageSourceRouteSubApi->delete: $e\n');
+    print('Exception when calling MessageSourceRouteSubApi->deleteMessageSourceRouteSubById: $e\n');
 }
 ```
 
@@ -100,8 +100,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getById**
-> MessageSourceRouteSubDto getById(id)
+# **getMessageSourceRouteSubById**
+> MessageSourceRouteSubDto getMessageSourceRouteSubById(id)
 
 
 
@@ -115,10 +115,10 @@ final api = PuupeeApiClient().getMessageSourceRouteSubApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 
 try {
-    final response = api.getById(id);
+    final response = api.getMessageSourceRouteSubById(id);
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling MessageSourceRouteSubApi->getById: $e\n');
+    print('Exception when calling MessageSourceRouteSubApi->getMessageSourceRouteSubById: $e\n');
 }
 ```
 
@@ -143,8 +143,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getList**
-> List<MessageSourceRouteSubDto> getList()
+# **getMessageSourceRouteSubList**
+> List<MessageSourceRouteSubDto> getMessageSourceRouteSubList()
 
 
 
@@ -157,10 +157,10 @@ import 'package:puupee_api_client/api.dart';
 final api = PuupeeApiClient().getMessageSourceRouteSubApi();
 
 try {
-    final response = api.getList();
+    final response = api.getMessageSourceRouteSubList();
     print(response);
 } catch on DioException (e) {
-    print('Exception when calling MessageSourceRouteSubApi->getList: $e\n');
+    print('Exception when calling MessageSourceRouteSubApi->getMessageSourceRouteSubList: $e\n');
 }
 ```
 
@@ -182,8 +182,8 @@ This endpoint does not need any parameter.
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update**
-> update(id, body)
+# **updateMessageSourceRouteSub**
+> updateMessageSourceRouteSub(id, body)
 
 
 
@@ -198,9 +198,9 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 final CreateUpdateMessageSourceRouteSubDto body = ; // CreateUpdateMessageSourceRouteSubDto | 
 
 try {
-    api.update(id, body);
+    api.updateMessageSourceRouteSub(id, body);
 } catch on DioException (e) {
-    print('Exception when calling MessageSourceRouteSubApi->update: $e\n');
+    print('Exception when calling MessageSourceRouteSubApi->updateMessageSourceRouteSub: $e\n');
 }
 ```
 
