@@ -166,6 +166,8 @@ import 'package:puupee_api_client/src/model/user_data.dart';
 import 'package:puupee_api_client/src/model/user_data_list_result_dto.dart';
 import 'package:puupee_api_client/src/model/user_login_info.dart';
 import 'package:puupee_api_client/src/model/user_profile_dto.dart';
+import 'package:puupee_api_client/src/model/user_storage_dto.dart';
+import 'package:puupee_api_client/src/model/user_storage_item_dto.dart';
 import 'package:puupee_api_client/src/model/verify_password_reset_token_input.dart';
 import 'package:puupee_api_client/src/model/verify_receipt_dto.dart';
 import 'package:puupee_api_client/src/model/verify_receipt_result.dart';
@@ -558,6 +560,10 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return UserLoginInfo.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'UserProfileDto':
           return UserProfileDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'UserStorageDto':
+          return UserStorageDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'UserStorageItemDto':
+          return UserStorageItemDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'VerifyPasswordResetTokenInput':
           return VerifyPasswordResetTokenInput.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'VerifyReceiptDto':

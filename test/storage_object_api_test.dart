@@ -12,6 +12,11 @@ void main() {
       // TODO
     });
 
+    //Future<List<UserStorageDto>> getUserStorages() async
+    test('test getUserStorages', () async {
+      // TODO
+    });
+
     //Future<String> preSignUrl({ String key, String bucket }) async
     test('test preSignUrl', () async {
       // TODO

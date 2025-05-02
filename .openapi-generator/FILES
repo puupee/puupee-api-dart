@@ -217,6 +217,8 @@ doc/UserDataListResultDto.md
 doc/UserLoginInfo.md
 doc/UserLookupApi.md
 doc/UserProfileDto.md
+doc/UserStorageDto.md
+doc/UserStorageItemDto.md
 doc/VerificationApi.md
 doc/VerifyPasswordResetTokenInput.md
 doc/VerifyReceiptDto.md
@@ -446,6 +448,8 @@ lib/src/model/user_data.dart
 lib/src/model/user_data_list_result_dto.dart
 lib/src/model/user_login_info.dart
 lib/src/model/user_profile_dto.dart
+lib/src/model/user_storage_dto.dart
+lib/src/model/user_storage_item_dto.dart
 lib/src/model/verify_password_reset_token_input.dart
 lib/src/model/verify_receipt_dto.dart
 lib/src/model/verify_receipt_result.dart
@@ -666,6 +670,8 @@ test/user_data_test.dart
 test/user_login_info_test.dart
 test/user_lookup_api_test.dart
 test/user_profile_dto_test.dart
+test/user_storage_dto_test.dart
+test/user_storage_item_dto_test.dart
 test/verification_api_test.dart
 test/verify_password_reset_token_input_test.dart
 test/verify_receipt_dto_test.dart
