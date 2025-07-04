@@ -179,16 +179,16 @@ class ActionApiDescriptionModel {
 
     @override
     int get hashCode =>
-        uniqueName.hashCode +
-        name.hashCode +
-        httpMethod.hashCode +
-        url.hashCode +
-        supportedVersions.hashCode +
-        parametersOnMethod.hashCode +
-        parameters.hashCode +
+        (uniqueName == null ? 0 : uniqueName.hashCode) +
+        (name == null ? 0 : name.hashCode) +
+        (httpMethod == null ? 0 : httpMethod.hashCode) +
+        (url == null ? 0 : url.hashCode) +
+        (supportedVersions == null ? 0 : supportedVersions.hashCode) +
+        (parametersOnMethod == null ? 0 : parametersOnMethod.hashCode) +
+        (parameters == null ? 0 : parameters.hashCode) +
         returnValue.hashCode +
-        allowAnonymous.hashCode +
-        implementFrom.hashCode;
+        (allowAnonymous == null ? 0 : allowAnonymous.hashCode) +
+        (implementFrom == null ? 0 : implementFrom.hashCode);
 
   factory ActionApiDescriptionModel.fromJson(Map<String, dynamic> json) => _$ActionApiDescriptionModelFromJson(json);
 

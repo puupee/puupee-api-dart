@@ -10,7 +10,7 @@ import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
-import 'package:puupee_api_client/src/model/storage_object_or_credentials_dto.dart';
+import 'package:puupee_api_client/src/model/storage_object_credentials.dart';
 import 'package:puupee_api_client/src/model/user_storage_dto.dart';
 
 class StorageObjectApi {
@@ -19,12 +19,13 @@ class StorageObjectApi {
 
   const StorageObjectApi(this._dio);
 
-  /// getFileOrCredentials
+  /// getFileCredential
   /// 
   ///
   /// Parameters:
+  /// * [userTotalSize] 
   /// * [rapidCode] 
-  /// * [bucket] 
+  /// * [usage] 
   /// * [key] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
@@ -33,11 +34,12 @@ class StorageObjectApi {
   /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
   /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
   ///
-  /// Returns a [Future] containing a [Response] with a [StorageObjectOrCredentialsDto] as data
+  /// Returns a [Future] containing a [Response] with a [StorageObjectCredentials] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<StorageObjectOrCredentialsDto>> getFileOrCredentials({ 
+  Future<Response<StorageObjectCredentials>> getFileCredential({ 
+    int? userTotalSize,
     String? rapidCode,
-    String? bucket,
+    String? usage,
     String? key,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -46,7 +48,7 @@ class StorageObjectApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/app/storage-object/file-or-credentials';
+    final _path = r'/api/app/storage-object/file-credential';
     final _options = Options(
       method: r'GET',
       headers: <String, dynamic>{
@@ -65,8 +67,9 @@ class StorageObjectApi {
     );
 
     final _queryParameters = <String, dynamic>{
+      if (userTotalSize != null) r'userTotalSize': userTotalSize,
       if (rapidCode != null) r'rapidCode': rapidCode,
-      if (bucket != null) r'bucket': bucket,
+      if (usage != null) r'usage': usage,
       if (key != null) r'key': key,
     };
 
@@ -79,11 +82,11 @@ class StorageObjectApi {
       onReceiveProgress: onReceiveProgress,
     );
 
-    StorageObjectOrCredentialsDto? _responseData;
+    StorageObjectCredentials? _responseData;
 
     try {
 final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<StorageObjectOrCredentialsDto, StorageObjectOrCredentialsDto>(rawData, 'StorageObjectOrCredentialsDto', growable: true);
+_responseData = rawData == null ? null : deserialize<StorageObjectCredentials, StorageObjectCredentials>(rawData, 'StorageObjectCredentials', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -94,7 +97,7 @@ _responseData = rawData == null ? null : deserialize<StorageObjectOrCredentialsD
       );
     }
 
-    return Response<StorageObjectOrCredentialsDto>(
+    return Response<StorageObjectCredentials>(
       data: _responseData,
       headers: _response.headers,
       isRedirect: _response.isRedirect,
@@ -184,8 +187,8 @@ _responseData = rawData == null ? null : deserialize<List<UserStorageDto>, UserS
   /// 
   ///
   /// Parameters:
-  /// * [key] 
   /// * [bucket] 
+  /// * [key] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -196,8 +199,8 @@ _responseData = rawData == null ? null : deserialize<List<UserStorageDto>, UserS
   /// Returns a [Future] containing a [Response] with a [String] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<String>> preSignUrl({ 
-    String? key,
     String? bucket,
+    String? key,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -224,8 +227,8 @@ _responseData = rawData == null ? null : deserialize<List<UserStorageDto>, UserS
     );
 
     final _queryParameters = <String, dynamic>{
-      if (key != null) r'key': key,
       if (bucket != null) r'bucket': bucket,
+      if (key != null) r'key': key,
     };
 
     final _response = await _dio.request<Object>(

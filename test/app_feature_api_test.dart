@@ -7,7 +7,7 @@ void main() {
   final instance = PuupeeApiClient().getAppFeatureApi();
 
   group(AppFeatureApi, () {
-    //Future<AppFeatureDto> createAppFeature({ CreateOrUpdateAppFeatureDto body }) async
+    //Future<AppFeatureDto> createAppFeature({ CreateOrUpdateAppFeatureDto createOrUpdateAppFeatureDto }) async
     test('test createAppFeature', () async {
       // TODO
     });
@@ -22,7 +22,7 @@ void main() {
       // TODO
     });
 
-    //Future<AppFeatureDto> updateAppFeature(String id, { CreateOrUpdateAppFeatureDto body }) async
+    //Future<AppFeatureDto> updateAppFeature(String id, { CreateOrUpdateAppFeatureDto createOrUpdateAppFeatureDto }) async
     test('test updateAppFeature', () async {
       // TODO
     });

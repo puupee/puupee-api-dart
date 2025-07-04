@@ -9,12 +9,12 @@ void main() {
   group(SubscriptionApi, () {
     // 苹果订阅 Callback 地址
     //
-    //Future appleNotifications({ AppleNotificaionDto body }) async
+    //Future appleNotifications({ AppleNotificaionDto appleNotificaionDto }) async
     test('test appleNotifications', () async {
       // TODO
     });
 
-    //Future<SubscriptionOrderDto> createOrder({ CreateOrGetSubscriptionOrderDto body }) async
+    //Future<SubscriptionOrderDto> createOrder({ CreateOrGetSubscriptionOrderDto createOrGetSubscriptionOrderDto }) async
     test('test createOrder', () async {
       // TODO
     });
@@ -24,7 +24,7 @@ void main() {
       // TODO
     });
 
-    //Future<VerifyReceiptResult> verifyReceipt({ VerifyReceiptDto body }) async
+    //Future<VerifyReceiptResult> verifyReceipt({ VerifyReceiptDto verifyReceiptDto }) async
     test('test verifyReceipt', () async {
       // TODO
     });

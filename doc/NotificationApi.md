@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **push**
-> push(body)
+> push(createPushNotificationDto)
 
 
 
@@ -131,10 +131,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getNotificationApi();
-final CreatePushNotificationDto body = ; // CreatePushNotificationDto | 
+final CreatePushNotificationDto createPushNotificationDto = ; // CreatePushNotificationDto | 
 
 try {
-    api.push(body);
+    api.push(createPushNotificationDto);
 } catch on DioException (e) {
     print('Exception when calling NotificationApi->push: $e\n');
 }
@@ -144,7 +144,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreatePushNotificationDto**](CreatePushNotificationDto.md)|  | [optional] 
+ **createPushNotificationDto** | [**CreatePushNotificationDto**](CreatePushNotificationDto.md)|  | [optional] 
 
 ### Return type
 

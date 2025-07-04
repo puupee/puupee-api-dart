@@ -19,13 +19,13 @@ import 'package:puupee_api_client/src/api/app_pricing_api.dart';
 import 'package:puupee_api_client/src/api/app_pricing_item_api.dart';
 import 'package:puupee_api_client/src/api/app_release_api.dart';
 import 'package:puupee_api_client/src/api/app_sdk_api.dart';
+import 'package:puupee_api_client/src/api/app_tester_api.dart';
 import 'package:puupee_api_client/src/api/app_user_score_api.dart';
 import 'package:puupee_api_client/src/api/avatar_api.dart';
 import 'package:puupee_api_client/src/api/device_api.dart';
 import 'package:puupee_api_client/src/api/dynamic_claims_api.dart';
 import 'package:puupee_api_client/src/api/email_settings_api.dart';
 import 'package:puupee_api_client/src/api/features_api.dart';
-import 'package:puupee_api_client/src/api/login_api.dart';
 import 'package:puupee_api_client/src/api/message_api.dart';
 import 'package:puupee_api_client/src/api/message_source_api.dart';
 import 'package:puupee_api_client/src/api/message_source_category_api.dart';
@@ -168,6 +168,12 @@ class PuupeeApiClient {
     return AppSdkApi(dio);
   }
 
+  /// Get AppTesterApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  AppTesterApi getAppTesterApi() {
+    return AppTesterApi(dio);
+  }
+
   /// Get AppUserScoreApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   AppUserScoreApi getAppUserScoreApi() {
@@ -202,12 +208,6 @@ class PuupeeApiClient {
   /// by doing that all interceptors will not be executed
   FeaturesApi getFeaturesApi() {
     return FeaturesApi(dio);
-  }
-
-  /// Get LoginApi instance, base route and serializer can be overridden by a given but be careful,
-  /// by doing that all interceptors will not be executed
-  LoginApi getLoginApi() {
-    return LoginApi(dio);
   }
 
   /// Get MessageApi instance, base route and serializer can be overridden by a given but be careful,

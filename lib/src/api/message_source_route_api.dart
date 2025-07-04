@@ -23,7 +23,7 @@ class MessageSourceRouteApi {
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [createUpdateMessageSourceRouteDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -34,7 +34,7 @@ class MessageSourceRouteApi {
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> createMessageSourceRoute({ 
-    CreateUpdateMessageSourceRouteDto? body,
+    CreateUpdateMessageSourceRouteDto? createUpdateMessageSourceRouteDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -64,7 +64,7 @@ class MessageSourceRouteApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(createUpdateMessageSourceRouteDto);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -303,7 +303,7 @@ _responseData = rawData == null ? null : deserialize<List<MessageSourceRouteDto>
   ///
   /// Parameters:
   /// * [id] 
-  /// * [body] 
+  /// * [createUpdateMessageSourceRouteDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -315,7 +315,7 @@ _responseData = rawData == null ? null : deserialize<List<MessageSourceRouteDto>
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> updateMessageSourceRoute({ 
     required String id,
-    CreateUpdateMessageSourceRouteDto? body,
+    CreateUpdateMessageSourceRouteDto? createUpdateMessageSourceRouteDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -345,7 +345,7 @@ _responseData = rawData == null ? null : deserialize<List<MessageSourceRouteDto>
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(createUpdateMessageSourceRouteDto);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(

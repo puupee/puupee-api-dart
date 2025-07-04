@@ -148,14 +148,14 @@ class ControllerApiDescriptionModel {
 
     @override
     int get hashCode =>
-        controllerName.hashCode +
-        controllerGroupName.hashCode +
+        (controllerName == null ? 0 : controllerName.hashCode) +
+        (controllerGroupName == null ? 0 : controllerGroupName.hashCode) +
         isRemoteService.hashCode +
         isIntegrationService.hashCode +
-        apiVersion.hashCode +
-        type.hashCode +
-        interfaces.hashCode +
-        actions.hashCode;
+        (apiVersion == null ? 0 : apiVersion.hashCode) +
+        (type == null ? 0 : type.hashCode) +
+        (interfaces == null ? 0 : interfaces.hashCode) +
+        (actions == null ? 0 : actions.hashCode);
 
   factory ControllerApiDescriptionModel.fromJson(Map<String, dynamic> json) => _$ControllerApiDescriptionModelFromJson(json);
 

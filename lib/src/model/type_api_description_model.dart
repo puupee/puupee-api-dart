@@ -117,12 +117,12 @@ class TypeApiDescriptionModel {
 
     @override
     int get hashCode =>
-        baseType.hashCode +
+        (baseType == null ? 0 : baseType.hashCode) +
         isEnum.hashCode +
-        enumNames.hashCode +
-        enumValues.hashCode +
-        genericArguments.hashCode +
-        properties.hashCode;
+        (enumNames == null ? 0 : enumNames.hashCode) +
+        (enumValues == null ? 0 : enumValues.hashCode) +
+        (genericArguments == null ? 0 : genericArguments.hashCode) +
+        (properties == null ? 0 : properties.hashCode);
 
   factory TypeApiDescriptionModel.fromJson(Map<String, dynamic> json) => _$TypeApiDescriptionModelFromJson(json);
 

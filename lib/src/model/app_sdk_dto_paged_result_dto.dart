@@ -57,7 +57,7 @@ class AppSdkDtoPagedResultDto {
 
     @override
     int get hashCode =>
-        items.hashCode +
+        (items == null ? 0 : items.hashCode) +
         totalCount.hashCode;
 
   factory AppSdkDtoPagedResultDto.fromJson(Map<String, dynamic> json) => _$AppSdkDtoPagedResultDtoFromJson(json);

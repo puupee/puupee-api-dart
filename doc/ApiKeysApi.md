@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **createApiKeys**
-> ApiKeyDto createApiKeys(body)
+> ApiKeyDto createApiKeys(apiKeyCreateDto)
 
 
 
@@ -28,10 +28,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getApiKeysApi();
-final ApiKeyCreateDto body = ; // ApiKeyCreateDto | 
+final ApiKeyCreateDto apiKeyCreateDto = ; // ApiKeyCreateDto | 
 
 try {
-    final response = api.createApiKeys(body);
+    final response = api.createApiKeys(apiKeyCreateDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling ApiKeysApi->createApiKeys: $e\n');
@@ -42,7 +42,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ApiKeyCreateDto**](ApiKeyCreateDto.md)|  | [optional] 
+ **apiKeyCreateDto** | [**ApiKeyCreateDto**](ApiKeyCreateDto.md)|  | [optional] 
 
 ### Return type
 
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateApiKeys**
-> ApiKeyDto updateApiKeys(id, body)
+> ApiKeyDto updateApiKeys(id, apiKeyUpdateDto)
 
 
 
@@ -204,10 +204,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getApiKeysApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final ApiKeyUpdateDto body = ; // ApiKeyUpdateDto | 
+final ApiKeyUpdateDto apiKeyUpdateDto = ; // ApiKeyUpdateDto | 
 
 try {
-    final response = api.updateApiKeys(id, body);
+    final response = api.updateApiKeys(id, apiKeyUpdateDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling ApiKeysApi->updateApiKeys: $e\n');
@@ -219,7 +219,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **body** | [**ApiKeyUpdateDto**](ApiKeyUpdateDto.md)|  | [optional] 
+ **apiKeyUpdateDto** | [**ApiKeyUpdateDto**](ApiKeyUpdateDto.md)|  | [optional] 
 
 ### Return type
 

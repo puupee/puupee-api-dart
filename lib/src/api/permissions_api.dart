@@ -107,7 +107,7 @@ _responseData = rawData == null ? null : deserialize<GetPermissionListResultDto,
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [updatePermissionsDto] 
   /// * [providerName] 
   /// * [providerKey] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -120,7 +120,7 @@ _responseData = rawData == null ? null : deserialize<GetPermissionListResultDto,
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> updatePermissions({ 
-    UpdatePermissionsDto? body,
+    UpdatePermissionsDto? updatePermissionsDto,
     String? providerName,
     String? providerKey,
     CancelToken? cancelToken,
@@ -157,7 +157,7 @@ _responseData = rawData == null ? null : deserialize<GetPermissionListResultDto,
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(updatePermissionsDto);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(

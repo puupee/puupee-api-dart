@@ -101,11 +101,11 @@ class CreatePushNotificationDto {
 
     @override
     int get hashCode =>
-        title.hashCode +
-        description.hashCode +
-        puupeeId.hashCode +
-        creatorId.hashCode +
-        app.hashCode;
+        (title == null ? 0 : title.hashCode) +
+        (description == null ? 0 : description.hashCode) +
+        (puupeeId == null ? 0 : puupeeId.hashCode) +
+        (creatorId == null ? 0 : creatorId.hashCode) +
+        (app == null ? 0 : app.hashCode);
 
   factory CreatePushNotificationDto.fromJson(Map<String, dynamic> json) => _$CreatePushNotificationDtoFromJson(json);
 

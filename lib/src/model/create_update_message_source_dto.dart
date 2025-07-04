@@ -102,11 +102,11 @@ class CreateUpdateMessageSourceDto {
 
     @override
     int get hashCode =>
-        name.hashCode +
-        description.hashCode +
+        (name == null ? 0 : name.hashCode) +
+        (description == null ? 0 : description.hashCode) +
         isPublished.hashCode +
-        iconUrl.hashCode +
-        routes.hashCode;
+        (iconUrl == null ? 0 : iconUrl.hashCode) +
+        (routes == null ? 0 : routes.hashCode);
 
   factory CreateUpdateMessageSourceDto.fromJson(Map<String, dynamic> json) => _$CreateUpdateMessageSourceDtoFromJson(json);
 

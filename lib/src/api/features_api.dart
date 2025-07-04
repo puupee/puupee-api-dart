@@ -167,7 +167,7 @@ _responseData = rawData == null ? null : deserialize<GetFeatureListResultDto, Ge
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [updateFeaturesDto] 
   /// * [providerName] 
   /// * [providerKey] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -180,7 +180,7 @@ _responseData = rawData == null ? null : deserialize<GetFeatureListResultDto, Ge
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> updateFeatures({ 
-    UpdateFeaturesDto? body,
+    UpdateFeaturesDto? updateFeaturesDto,
     String? providerName,
     String? providerKey,
     CancelToken? cancelToken,
@@ -217,7 +217,7 @@ _responseData = rawData == null ? null : deserialize<GetFeatureListResultDto, Ge
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(updateFeaturesDto);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(

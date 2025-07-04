@@ -25,7 +25,7 @@ class ApiKeysApi {
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [apiKeyCreateDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -36,7 +36,7 @@ class ApiKeysApi {
   /// Returns a [Future] containing a [Response] with a [ApiKeyDto] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ApiKeyDto>> createApiKeys({ 
-    ApiKeyCreateDto? body,
+    ApiKeyCreateDto? apiKeyCreateDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -66,7 +66,7 @@ class ApiKeysApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(apiKeyCreateDto);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -335,7 +335,7 @@ _responseData = rawData == null ? null : deserialize<ApiKeyDtoPagedResultDto, Ap
   ///
   /// Parameters:
   /// * [id] 
-  /// * [body] 
+  /// * [apiKeyUpdateDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -347,7 +347,7 @@ _responseData = rawData == null ? null : deserialize<ApiKeyDtoPagedResultDto, Ap
   /// Throws [DioException] if API call or serialization fails
   Future<Response<ApiKeyDto>> updateApiKeys({ 
     required String id,
-    ApiKeyUpdateDto? body,
+    ApiKeyUpdateDto? apiKeyUpdateDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -377,7 +377,7 @@ _responseData = rawData == null ? null : deserialize<ApiKeyDtoPagedResultDto, Ap
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(apiKeyUpdateDto);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(

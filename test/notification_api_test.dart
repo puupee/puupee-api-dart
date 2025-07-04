@@ -19,7 +19,7 @@ void main() {
       // TODO
     });
 
-    //Future push({ CreatePushNotificationDto body }) async
+    //Future push({ CreatePushNotificationDto createPushNotificationDto }) async
     test('test push', () async {
       // TODO
     });

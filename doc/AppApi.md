@@ -27,7 +27,7 @@ Method | HTTP request | Description
 
 
 # **createApp**
-> AppDto createApp(body)
+> AppDto createApp(createOrUpdateAppDto)
 
 创建新应用
 
@@ -38,10 +38,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppApi();
-final CreateOrUpdateAppDto body = ; // CreateOrUpdateAppDto | 
+final CreateOrUpdateAppDto createOrUpdateAppDto = ; // CreateOrUpdateAppDto | 
 
 try {
-    final response = api.createApp(body);
+    final response = api.createApp(createOrUpdateAppDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AppApi->createApp: $e\n');
@@ -52,7 +52,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateOrUpdateAppDto**](CreateOrUpdateAppDto.md)|  | [optional] 
+ **createOrUpdateAppDto** | [**CreateOrUpdateAppDto**](CreateOrUpdateAppDto.md)|  | [optional] 
 
 ### Return type
 
@@ -564,7 +564,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **run**
-> AppRunRecordDto run(body)
+> AppRunRecordDto run(appRunDto)
 
 
 
@@ -575,10 +575,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppApi();
-final AppRunDto body = ; // AppRunDto | 
+final AppRunDto appRunDto = ; // AppRunDto | 
 
 try {
-    final response = api.run(body);
+    final response = api.run(appRunDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AppApi->run: $e\n');
@@ -589,7 +589,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AppRunDto**](AppRunDto.md)|  | [optional] 
+ **appRunDto** | [**AppRunDto**](AppRunDto.md)|  | [optional] 
 
 ### Return type
 
@@ -607,7 +607,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateApp**
-> AppDto updateApp(id, body)
+> AppDto updateApp(id, createOrUpdateAppDto)
 
 更新 APP 信息
 
@@ -619,10 +619,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getAppApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final CreateOrUpdateAppDto body = ; // CreateOrUpdateAppDto | 
+final CreateOrUpdateAppDto createOrUpdateAppDto = ; // CreateOrUpdateAppDto | 
 
 try {
-    final response = api.updateApp(id, body);
+    final response = api.updateApp(id, createOrUpdateAppDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AppApi->updateApp: $e\n');
@@ -634,7 +634,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **body** | [**CreateOrUpdateAppDto**](CreateOrUpdateAppDto.md)|  | [optional] 
+ **createOrUpdateAppDto** | [**CreateOrUpdateAppDto**](CreateOrUpdateAppDto.md)|  | [optional] 
 
 ### Return type
 
@@ -652,7 +652,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateRunState**
-> AppRunRecordDto updateRunState(id, body)
+> AppRunRecordDto updateRunState(id, appRunRecordUpdateDto)
 
 
 
@@ -664,10 +664,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getAppApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final AppRunRecordUpdateDto body = ; // AppRunRecordUpdateDto | 
+final AppRunRecordUpdateDto appRunRecordUpdateDto = ; // AppRunRecordUpdateDto | 
 
 try {
-    final response = api.updateRunState(id, body);
+    final response = api.updateRunState(id, appRunRecordUpdateDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AppApi->updateRunState: $e\n');
@@ -679,7 +679,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **body** | [**AppRunRecordUpdateDto**](AppRunRecordUpdateDto.md)|  | [optional] 
+ **appRunRecordUpdateDto** | [**AppRunRecordUpdateDto**](AppRunRecordUpdateDto.md)|  | [optional] 
 
 ### Return type
 

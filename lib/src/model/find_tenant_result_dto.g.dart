@@ -15,6 +15,8 @@ FindTenantResultDto _$FindTenantResultDtoFromJson(Map<String, dynamic> json) =>
           success: $checkedConvert('success', (v) => v as bool?),
           tenantId: $checkedConvert('tenantId', (v) => v as String?),
           name: $checkedConvert('name', (v) => v as String?),
+          normalizedName:
+              $checkedConvert('normalizedName', (v) => v as String?),
           isActive: $checkedConvert('isActive', (v) => v as bool?),
         );
         return val;
@@ -27,5 +29,6 @@ Map<String, dynamic> _$FindTenantResultDtoToJson(
       if (instance.success case final value?) 'success': value,
       if (instance.tenantId case final value?) 'tenantId': value,
       if (instance.name case final value?) 'name': value,
+      if (instance.normalizedName case final value?) 'normalizedName': value,
       if (instance.isActive case final value?) 'isActive': value,
     };

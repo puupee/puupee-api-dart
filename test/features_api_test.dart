@@ -17,7 +17,7 @@ void main() {
       // TODO
     });
 
-    //Future updateFeatures({ UpdateFeaturesDto body, String providerName, String providerKey }) async
+    //Future updateFeatures({ UpdateFeaturesDto updateFeaturesDto, String providerName, String providerKey }) async
     test('test updateFeatures', () async {
       // TODO
     });

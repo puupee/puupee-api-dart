@@ -189,7 +189,7 @@ _responseData = rawData == null ? null : deserialize<NotificationInfoDtoPagedRes
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [createPushNotificationDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -200,7 +200,7 @@ _responseData = rawData == null ? null : deserialize<NotificationInfoDtoPagedRes
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> push({ 
-    CreatePushNotificationDto? body,
+    CreatePushNotificationDto? createPushNotificationDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -230,7 +230,7 @@ _responseData = rawData == null ? null : deserialize<NotificationInfoDtoPagedRes
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(createPushNotificationDto);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(

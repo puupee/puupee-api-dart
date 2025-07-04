@@ -56,7 +56,7 @@ class ChangePasswordInput {
 
     @override
     int get hashCode =>
-        currentPassword.hashCode +
+        (currentPassword == null ? 0 : currentPassword.hashCode) +
         newPassword.hashCode;
 
   factory ChangePasswordInput.fromJson(Map<String, dynamic> json) => _$ChangePasswordInputFromJson(json);

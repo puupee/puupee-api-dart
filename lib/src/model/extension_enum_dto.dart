@@ -57,8 +57,8 @@ class ExtensionEnumDto {
 
     @override
     int get hashCode =>
-        fields.hashCode +
-        localizationResource.hashCode;
+        (fields == null ? 0 : fields.hashCode) +
+        (localizationResource == null ? 0 : localizationResource.hashCode);
 
   factory ExtensionEnumDto.fromJson(Map<String, dynamic> json) => _$ExtensionEnumDtoFromJson(json);
 

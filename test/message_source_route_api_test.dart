@@ -7,7 +7,7 @@ void main() {
   final instance = PuupeeApiClient().getMessageSourceRouteApi();
 
   group(MessageSourceRouteApi, () {
-    //Future createMessageSourceRoute({ CreateUpdateMessageSourceRouteDto body }) async
+    //Future createMessageSourceRoute({ CreateUpdateMessageSourceRouteDto createUpdateMessageSourceRouteDto }) async
     test('test createMessageSourceRoute', () async {
       // TODO
     });
@@ -27,7 +27,7 @@ void main() {
       // TODO
     });
 
-    //Future updateMessageSourceRoute(String id, { CreateUpdateMessageSourceRouteDto body }) async
+    //Future updateMessageSourceRoute(String id, { CreateUpdateMessageSourceRouteDto createUpdateMessageSourceRouteDto }) async
     test('test updateMessageSourceRoute', () async {
       // TODO
     });

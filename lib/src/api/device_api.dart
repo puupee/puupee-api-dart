@@ -25,7 +25,7 @@ class DeviceApi {
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [bindDeviceDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -36,7 +36,7 @@ class DeviceApi {
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> bind({ 
-    BindDeviceDto? body,
+    BindDeviceDto? bindDeviceDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -66,7 +66,7 @@ class DeviceApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(bindDeviceDto);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -339,7 +339,7 @@ _responseData = rawData == null ? null : deserialize<DeviceDtoPagedResultDto, De
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [refreshDeviceStatusDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -350,7 +350,7 @@ _responseData = rawData == null ? null : deserialize<DeviceDtoPagedResultDto, De
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> refreshDevice({ 
-    RefreshDeviceStatusDto? body,
+    RefreshDeviceStatusDto? refreshDeviceStatusDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -380,7 +380,7 @@ _responseData = rawData == null ? null : deserialize<DeviceDtoPagedResultDto, De
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(refreshDeviceStatusDto);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(

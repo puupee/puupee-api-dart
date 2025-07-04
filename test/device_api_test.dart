@@ -7,7 +7,7 @@ void main() {
   final instance = PuupeeApiClient().getDeviceApi();
 
   group(DeviceApi, () {
-    //Future bind({ BindDeviceDto body }) async
+    //Future bind({ BindDeviceDto bindDeviceDto }) async
     test('test bind', () async {
       // TODO
     });
@@ -27,7 +27,7 @@ void main() {
       // TODO
     });
 
-    //Future refreshDevice({ RefreshDeviceStatusDto body }) async
+    //Future refreshDevice({ RefreshDeviceStatusDto refreshDeviceStatusDto }) async
     test('test refreshDevice', () async {
       // TODO
     });

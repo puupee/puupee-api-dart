@@ -1,4 +1,4 @@
-# puupee_api_client.model.StorageObjectDto
+# puupee_api_client.model.AppTesterDto
 
 ## Load the model package
 ```dart
@@ -16,20 +16,9 @@ Name | Type | Description | Notes
 **isDeleted** | **bool** |  | [optional] 
 **deleterId** | **String** |  | [optional] 
 **deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
-**name** | **String** |  | [optional] 
-**url** | **String** |  | [optional] 
-**syncVersion** | **int** |  | [optional] 
-**key** | **String** |  | [optional] 
-**size** | **int** |  | [optional] 
-**md5** | **String** |  | [optional] 
-**sliceMd5** | **String** |  | [optional] 
-**rapidCode** | **String** |  | [optional] 
-**contentType** | **String** |  | [optional] 
-**extension_** | **String** |  | [optional] 
-**storageClass** | **String** |  | [optional] 
-**storageObjectCreatedAt** | [**DateTime**](DateTime.md) |  | [optional] 
-**storageObjectUpdatedAt** | [**DateTime**](DateTime.md) |  | [optional] 
-**password** | **String** |  | [optional] 
+**appId** | **String** | 应用ID | [optional] 
+**userId** | **String** | 用户ID | [optional] 
+**isEnabled** | **bool** | 是否启用 | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

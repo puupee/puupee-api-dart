@@ -5,7 +5,6 @@ build.yaml
 doc/AbpApiDefinitionApi.md
 doc/AbpApplicationConfigurationApi.md
 doc/AbpApplicationLocalizationApi.md
-doc/AbpLoginResult.md
 doc/AbpTenantApi.md
 doc/AccountApi.md
 doc/AccountDeletionDto.md
@@ -40,6 +39,9 @@ doc/AppRunStatus.md
 doc/AppSdkApi.md
 doc/AppSdkDto.md
 doc/AppSdkDtoPagedResultDto.md
+doc/AppTesterApi.md
+doc/AppTesterDto.md
+doc/AppTesterDtoPagedResultDto.md
 doc/AppType.md
 doc/AppUserScoreApi.md
 doc/AppUserScoreDto.md
@@ -79,6 +81,7 @@ doc/CreateOrUpdateAppSdkDto.md
 doc/CreateOrUpdateAppUserScoreDto.md
 doc/CreateOrUpdateMessageTemplateDto.md
 doc/CreatePushNotificationDto.md
+doc/CreateUpdateAppTesterDto.md
 doc/CreateUpdateMessageSourceDto.md
 doc/CreateUpdateMessageSourceRouteDto.md
 doc/CreateUpdateMessageSourceRouteSubDto.md
@@ -138,8 +141,6 @@ doc/InterfaceMethodApiDescriptionModel.md
 doc/LanguageInfo.md
 doc/LatestReceiptInfo.md
 doc/LocalizableStringDto.md
-doc/LoginApi.md
-doc/LoginResultType.md
 doc/MessageApi.md
 doc/MessagePublishDto.md
 doc/MessageRecallDto.md
@@ -189,8 +190,6 @@ doc/SendTestEmailInput.md
 doc/SendVerificationCodeDto.md
 doc/StorageObjectApi.md
 doc/StorageObjectCredentials.md
-doc/StorageObjectDto.md
-doc/StorageObjectOrCredentialsDto.md
 doc/SubscriptionApi.md
 doc/SubscriptionDto.md
 doc/SubscriptionOrderDto.md
@@ -214,7 +213,6 @@ doc/UpdateProfileDto.md
 doc/UserApi.md
 doc/UserData.md
 doc/UserDataListResultDto.md
-doc/UserLoginInfo.md
 doc/UserLookupApi.md
 doc/UserProfileDto.md
 doc/UserStorageDto.md
@@ -238,13 +236,13 @@ lib/src/api/app_pricing_api.dart
 lib/src/api/app_pricing_item_api.dart
 lib/src/api/app_release_api.dart
 lib/src/api/app_sdk_api.dart
+lib/src/api/app_tester_api.dart
 lib/src/api/app_user_score_api.dart
 lib/src/api/avatar_api.dart
 lib/src/api/device_api.dart
 lib/src/api/dynamic_claims_api.dart
 lib/src/api/email_settings_api.dart
 lib/src/api/features_api.dart
-lib/src/api/login_api.dart
 lib/src/api/message_api.dart
 lib/src/api/message_source_api.dart
 lib/src/api/message_source_category_api.dart
@@ -269,7 +267,6 @@ lib/src/auth/basic_auth.dart
 lib/src/auth/bearer_auth.dart
 lib/src/auth/oauth.dart
 lib/src/deserialize.dart
-lib/src/model/abp_login_result.dart
 lib/src/model/account_deletion_dto.dart
 lib/src/model/action_api_description_model.dart
 lib/src/model/api_key_create_dto.dart
@@ -295,6 +292,8 @@ lib/src/model/app_run_record_update_dto.dart
 lib/src/model/app_run_status.dart
 lib/src/model/app_sdk_dto.dart
 lib/src/model/app_sdk_dto_paged_result_dto.dart
+lib/src/model/app_tester_dto.dart
+lib/src/model/app_tester_dto_paged_result_dto.dart
 lib/src/model/app_type.dart
 lib/src/model/app_user_score_dto.dart
 lib/src/model/app_with_user_dto.dart
@@ -332,6 +331,7 @@ lib/src/model/create_or_update_app_sdk_dto.dart
 lib/src/model/create_or_update_app_user_score_dto.dart
 lib/src/model/create_or_update_message_template_dto.dart
 lib/src/model/create_push_notification_dto.dart
+lib/src/model/create_update_app_tester_dto.dart
 lib/src/model/create_update_message_source_dto.dart
 lib/src/model/create_update_message_source_route_dto.dart
 lib/src/model/create_update_message_source_route_sub_dto.dart
@@ -387,7 +387,6 @@ lib/src/model/interface_method_api_description_model.dart
 lib/src/model/language_info.dart
 lib/src/model/latest_receipt_info.dart
 lib/src/model/localizable_string_dto.dart
-lib/src/model/login_result_type.dart
 lib/src/model/message_publish_dto.dart
 lib/src/model/message_recall_dto.dart
 lib/src/model/message_source_category_dto.dart
@@ -425,8 +424,6 @@ lib/src/model/send_password_reset_code_dto.dart
 lib/src/model/send_test_email_input.dart
 lib/src/model/send_verification_code_dto.dart
 lib/src/model/storage_object_credentials.dart
-lib/src/model/storage_object_dto.dart
-lib/src/model/storage_object_or_credentials_dto.dart
 lib/src/model/subscription_dto.dart
 lib/src/model/subscription_order_dto.dart
 lib/src/model/subscription_order_status.dart
@@ -446,7 +443,6 @@ lib/src/model/update_permissions_dto.dart
 lib/src/model/update_profile_dto.dart
 lib/src/model/user_data.dart
 lib/src/model/user_data_list_result_dto.dart
-lib/src/model/user_login_info.dart
 lib/src/model/user_profile_dto.dart
 lib/src/model/user_storage_dto.dart
 lib/src/model/user_storage_item_dto.dart
@@ -458,7 +454,6 @@ pubspec.yaml
 test/abp_api_definition_api_test.dart
 test/abp_application_configuration_api_test.dart
 test/abp_application_localization_api_test.dart
-test/abp_login_result_test.dart
 test/abp_tenant_api_test.dart
 test/account_api_test.dart
 test/account_deletion_dto_test.dart
@@ -493,6 +488,9 @@ test/app_run_status_test.dart
 test/app_sdk_api_test.dart
 test/app_sdk_dto_paged_result_dto_test.dart
 test/app_sdk_dto_test.dart
+test/app_tester_api_test.dart
+test/app_tester_dto_paged_result_dto_test.dart
+test/app_tester_dto_test.dart
 test/app_type_test.dart
 test/app_user_score_api_test.dart
 test/app_user_score_dto_test.dart
@@ -532,6 +530,7 @@ test/create_or_update_app_sdk_dto_test.dart
 test/create_or_update_app_user_score_dto_test.dart
 test/create_or_update_message_template_dto_test.dart
 test/create_push_notification_dto_test.dart
+test/create_update_app_tester_dto_test.dart
 test/create_update_message_source_dto_test.dart
 test/create_update_message_source_route_dto_test.dart
 test/create_update_message_source_route_sub_dto_test.dart
@@ -591,8 +590,6 @@ test/interface_method_api_description_model_test.dart
 test/language_info_test.dart
 test/latest_receipt_info_test.dart
 test/localizable_string_dto_test.dart
-test/login_api_test.dart
-test/login_result_type_test.dart
 test/message_api_test.dart
 test/message_publish_dto_test.dart
 test/message_recall_dto_test.dart
@@ -642,8 +639,6 @@ test/send_test_email_input_test.dart
 test/send_verification_code_dto_test.dart
 test/storage_object_api_test.dart
 test/storage_object_credentials_test.dart
-test/storage_object_dto_test.dart
-test/storage_object_or_credentials_dto_test.dart
 test/subscription_api_test.dart
 test/subscription_dto_test.dart
 test/subscription_order_dto_test.dart
@@ -667,7 +662,6 @@ test/update_profile_dto_test.dart
 test/user_api_test.dart
 test/user_data_list_result_dto_test.dart
 test/user_data_test.dart
-test/user_login_info_test.dart
 test/user_lookup_api_test.dart
 test/user_profile_dto_test.dart
 test/user_storage_dto_test.dart

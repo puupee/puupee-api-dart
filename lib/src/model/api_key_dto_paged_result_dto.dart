@@ -57,7 +57,7 @@ class ApiKeyDtoPagedResultDto {
 
     @override
     int get hashCode =>
-        items.hashCode +
+        (items == null ? 0 : items.hashCode) +
         totalCount.hashCode;
 
   factory ApiKeyDtoPagedResultDto.fromJson(Map<String, dynamic> json) => _$ApiKeyDtoPagedResultDtoFromJson(json);

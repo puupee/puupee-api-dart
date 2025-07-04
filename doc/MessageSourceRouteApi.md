@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **createMessageSourceRoute**
-> createMessageSourceRoute(body)
+> createMessageSourceRoute(createUpdateMessageSourceRouteDto)
 
 
 
@@ -28,10 +28,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getMessageSourceRouteApi();
-final CreateUpdateMessageSourceRouteDto body = ; // CreateUpdateMessageSourceRouteDto | 
+final CreateUpdateMessageSourceRouteDto createUpdateMessageSourceRouteDto = ; // CreateUpdateMessageSourceRouteDto | 
 
 try {
-    api.createMessageSourceRoute(body);
+    api.createMessageSourceRoute(createUpdateMessageSourceRouteDto);
 } catch on DioException (e) {
     print('Exception when calling MessageSourceRouteApi->createMessageSourceRoute: $e\n');
 }
@@ -41,7 +41,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateUpdateMessageSourceRouteDto**](CreateUpdateMessageSourceRouteDto.md)|  | [optional] 
+ **createUpdateMessageSourceRouteDto** | [**CreateUpdateMessageSourceRouteDto**](CreateUpdateMessageSourceRouteDto.md)|  | [optional] 
 
 ### Return type
 
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateMessageSourceRoute**
-> updateMessageSourceRoute(id, body)
+> updateMessageSourceRoute(id, createUpdateMessageSourceRouteDto)
 
 
 
@@ -199,10 +199,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getMessageSourceRouteApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final CreateUpdateMessageSourceRouteDto body = ; // CreateUpdateMessageSourceRouteDto | 
+final CreateUpdateMessageSourceRouteDto createUpdateMessageSourceRouteDto = ; // CreateUpdateMessageSourceRouteDto | 
 
 try {
-    api.updateMessageSourceRoute(id, body);
+    api.updateMessageSourceRoute(id, createUpdateMessageSourceRouteDto);
 } catch on DioException (e) {
     print('Exception when calling MessageSourceRouteApi->updateMessageSourceRoute: $e\n');
 }
@@ -213,7 +213,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **body** | [**CreateUpdateMessageSourceRouteDto**](CreateUpdateMessageSourceRouteDto.md)|  | [optional] 
+ **createUpdateMessageSourceRouteDto** | [**CreateUpdateMessageSourceRouteDto**](CreateUpdateMessageSourceRouteDto.md)|  | [optional] 
 
 ### Return type
 

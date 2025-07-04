@@ -176,16 +176,16 @@ class PropertyApiDescriptionModel {
 
     @override
     int get hashCode =>
-        name.hashCode +
-        jsonName.hashCode +
-        type.hashCode +
-        typeSimple.hashCode +
+        (name == null ? 0 : name.hashCode) +
+        (jsonName == null ? 0 : jsonName.hashCode) +
+        (type == null ? 0 : type.hashCode) +
+        (typeSimple == null ? 0 : typeSimple.hashCode) +
         isRequired.hashCode +
-        minLength.hashCode +
-        maxLength.hashCode +
-        minimum.hashCode +
-        maximum.hashCode +
-        regex.hashCode;
+        (minLength == null ? 0 : minLength.hashCode) +
+        (maxLength == null ? 0 : maxLength.hashCode) +
+        (minimum == null ? 0 : minimum.hashCode) +
+        (maximum == null ? 0 : maximum.hashCode) +
+        (regex == null ? 0 : regex.hashCode);
 
   factory PropertyApiDescriptionModel.fromJson(Map<String, dynamic> json) => _$PropertyApiDescriptionModelFromJson(json);
 

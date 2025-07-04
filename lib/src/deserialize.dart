@@ -1,4 +1,3 @@
-import 'package:puupee_api_client/src/model/abp_login_result.dart';
 import 'package:puupee_api_client/src/model/account_deletion_dto.dart';
 import 'package:puupee_api_client/src/model/action_api_description_model.dart';
 import 'package:puupee_api_client/src/model/api_key_create_dto.dart';
@@ -20,6 +19,8 @@ import 'package:puupee_api_client/src/model/app_run_record_dto.dart';
 import 'package:puupee_api_client/src/model/app_run_record_update_dto.dart';
 import 'package:puupee_api_client/src/model/app_sdk_dto.dart';
 import 'package:puupee_api_client/src/model/app_sdk_dto_paged_result_dto.dart';
+import 'package:puupee_api_client/src/model/app_tester_dto.dart';
+import 'package:puupee_api_client/src/model/app_tester_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/app_user_score_dto.dart';
 import 'package:puupee_api_client/src/model/app_with_user_dto.dart';
 import 'package:puupee_api_client/src/model/app_with_user_dto_paged_result_dto.dart';
@@ -55,6 +56,7 @@ import 'package:puupee_api_client/src/model/create_or_update_app_sdk_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_user_score_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_message_template_dto.dart';
 import 'package:puupee_api_client/src/model/create_push_notification_dto.dart';
+import 'package:puupee_api_client/src/model/create_update_app_tester_dto.dart';
 import 'package:puupee_api_client/src/model/create_update_message_source_dto.dart';
 import 'package:puupee_api_client/src/model/create_update_message_source_route_dto.dart';
 import 'package:puupee_api_client/src/model/create_update_message_source_route_sub_dto.dart';
@@ -145,8 +147,6 @@ import 'package:puupee_api_client/src/model/send_password_reset_code_dto.dart';
 import 'package:puupee_api_client/src/model/send_test_email_input.dart';
 import 'package:puupee_api_client/src/model/send_verification_code_dto.dart';
 import 'package:puupee_api_client/src/model/storage_object_credentials.dart';
-import 'package:puupee_api_client/src/model/storage_object_dto.dart';
-import 'package:puupee_api_client/src/model/storage_object_or_credentials_dto.dart';
 import 'package:puupee_api_client/src/model/subscription_dto.dart';
 import 'package:puupee_api_client/src/model/subscription_order_dto.dart';
 import 'package:puupee_api_client/src/model/tenant_create_dto.dart';
@@ -164,7 +164,6 @@ import 'package:puupee_api_client/src/model/update_permissions_dto.dart';
 import 'package:puupee_api_client/src/model/update_profile_dto.dart';
 import 'package:puupee_api_client/src/model/user_data.dart';
 import 'package:puupee_api_client/src/model/user_data_list_result_dto.dart';
-import 'package:puupee_api_client/src/model/user_login_info.dart';
 import 'package:puupee_api_client/src/model/user_profile_dto.dart';
 import 'package:puupee_api_client/src/model/user_storage_dto.dart';
 import 'package:puupee_api_client/src/model/user_storage_item_dto.dart';
@@ -191,8 +190,6 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return (valueString == 'true' || valueString == '1') as ReturnType;
         case 'double':
           return (value is double ? value : double.parse('$value')) as ReturnType;
-        case 'AbpLoginResult':
-          return AbpLoginResult.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AccountDeletionDto':
           return AccountDeletionDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ActionApiDescriptionModel':
@@ -247,6 +244,10 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return AppSdkDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppSdkDtoPagedResultDto':
           return AppSdkDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppTesterDto':
+          return AppTesterDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppTesterDtoPagedResultDto':
+          return AppTesterDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppType':
           
           
@@ -323,6 +324,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return CreateOrUpdateMessageTemplateDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreatePushNotificationDto':
           return CreatePushNotificationDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'CreateUpdateAppTesterDto':
+          return CreateUpdateAppTesterDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateUpdateMessageSourceDto':
           return CreateUpdateMessageSourceDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateUpdateMessageSourceRouteDto':
@@ -435,9 +438,6 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return LatestReceiptInfo.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'LocalizableStringDto':
           return LocalizableStringDto.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'LoginResultType':
-          
-          
         case 'MessagePublishDto':
           return MessagePublishDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'MessageRecallDto':
@@ -512,10 +512,6 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return SendVerificationCodeDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'StorageObjectCredentials':
           return StorageObjectCredentials.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'StorageObjectDto':
-          return StorageObjectDto.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'StorageObjectOrCredentialsDto':
-          return StorageObjectOrCredentialsDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'SubscriptionDto':
           return SubscriptionDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'SubscriptionOrderDto':
@@ -556,8 +552,6 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return UserData.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'UserDataListResultDto':
           return UserDataListResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
-        case 'UserLoginInfo':
-          return UserLoginInfo.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'UserProfileDto':
           return UserProfileDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'UserStorageDto':

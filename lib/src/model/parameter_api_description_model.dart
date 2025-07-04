@@ -176,16 +176,16 @@ class ParameterApiDescriptionModel {
 
     @override
     int get hashCode =>
-        nameOnMethod.hashCode +
-        name.hashCode +
-        jsonName.hashCode +
-        type.hashCode +
-        typeSimple.hashCode +
+        (nameOnMethod == null ? 0 : nameOnMethod.hashCode) +
+        (name == null ? 0 : name.hashCode) +
+        (jsonName == null ? 0 : jsonName.hashCode) +
+        (type == null ? 0 : type.hashCode) +
+        (typeSimple == null ? 0 : typeSimple.hashCode) +
         isOptional.hashCode +
-        defaultValue.hashCode +
-        constraintTypes.hashCode +
-        bindingSourceId.hashCode +
-        descriptorName.hashCode;
+        (defaultValue == null ? 0 : defaultValue.hashCode) +
+        (constraintTypes == null ? 0 : constraintTypes.hashCode) +
+        (bindingSourceId == null ? 0 : bindingSourceId.hashCode) +
+        (descriptorName == null ? 0 : descriptorName.hashCode);
 
   factory ParameterApiDescriptionModel.fromJson(Map<String, dynamic> json) => _$ParameterApiDescriptionModelFromJson(json);
 

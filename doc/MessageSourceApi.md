@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **createMessageSource**
-> CreateUpdateMessageSourceDto createMessageSource(body)
+> CreateUpdateMessageSourceDto createMessageSource(createUpdateMessageSourceDto)
 
 
 
@@ -28,10 +28,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getMessageSourceApi();
-final CreateUpdateMessageSourceDto body = ; // CreateUpdateMessageSourceDto | 
+final CreateUpdateMessageSourceDto createUpdateMessageSourceDto = ; // CreateUpdateMessageSourceDto | 
 
 try {
-    final response = api.createMessageSource(body);
+    final response = api.createMessageSource(createUpdateMessageSourceDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling MessageSourceApi->createMessageSource: $e\n');
@@ -42,7 +42,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateUpdateMessageSourceDto**](CreateUpdateMessageSourceDto.md)|  | [optional] 
+ **createUpdateMessageSourceDto** | [**CreateUpdateMessageSourceDto**](CreateUpdateMessageSourceDto.md)|  | [optional] 
 
 ### Return type
 
@@ -188,7 +188,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateMessageSource**
-> CreateUpdateMessageSourceDto updateMessageSource(id, body)
+> CreateUpdateMessageSourceDto updateMessageSource(id, createUpdateMessageSourceDto)
 
 
 
@@ -200,10 +200,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getMessageSourceApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final CreateUpdateMessageSourceDto body = ; // CreateUpdateMessageSourceDto | 
+final CreateUpdateMessageSourceDto createUpdateMessageSourceDto = ; // CreateUpdateMessageSourceDto | 
 
 try {
-    final response = api.updateMessageSource(id, body);
+    final response = api.updateMessageSource(id, createUpdateMessageSourceDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling MessageSourceApi->updateMessageSource: $e\n');
@@ -215,7 +215,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **body** | [**CreateUpdateMessageSourceDto**](CreateUpdateMessageSourceDto.md)|  | [optional] 
+ **createUpdateMessageSourceDto** | [**CreateUpdateMessageSourceDto**](CreateUpdateMessageSourceDto.md)|  | [optional] 
 
 ### Return type
 

@@ -54,7 +54,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sendTestEmail**
-> sendTestEmail(body)
+> sendTestEmail(sendTestEmailInput)
 
 
 
@@ -65,10 +65,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getEmailSettingsApi();
-final SendTestEmailInput body = ; // SendTestEmailInput | 
+final SendTestEmailInput sendTestEmailInput = ; // SendTestEmailInput | 
 
 try {
-    api.sendTestEmail(body);
+    api.sendTestEmail(sendTestEmailInput);
 } catch on DioException (e) {
     print('Exception when calling EmailSettingsApi->sendTestEmail: $e\n');
 }
@@ -78,7 +78,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SendTestEmailInput**](SendTestEmailInput.md)|  | [optional] 
+ **sendTestEmailInput** | [**SendTestEmailInput**](SendTestEmailInput.md)|  | [optional] 
 
 ### Return type
 
@@ -96,7 +96,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateEmailSettings**
-> updateEmailSettings(body)
+> updateEmailSettings(updateEmailSettingsDto)
 
 
 
@@ -107,10 +107,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getEmailSettingsApi();
-final UpdateEmailSettingsDto body = ; // UpdateEmailSettingsDto | 
+final UpdateEmailSettingsDto updateEmailSettingsDto = ; // UpdateEmailSettingsDto | 
 
 try {
-    api.updateEmailSettings(body);
+    api.updateEmailSettings(updateEmailSettingsDto);
 } catch on DioException (e) {
     print('Exception when calling EmailSettingsApi->updateEmailSettings: $e\n');
 }
@@ -120,7 +120,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateEmailSettingsDto**](UpdateEmailSettingsDto.md)|  | [optional] 
+ **updateEmailSettingsDto** | [**UpdateEmailSettingsDto**](UpdateEmailSettingsDto.md)|  | [optional] 
 
 ### Return type
 

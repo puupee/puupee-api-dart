@@ -72,9 +72,9 @@ class FeatureGroupDto {
 
     @override
     int get hashCode =>
-        name.hashCode +
-        displayName.hashCode +
-        features.hashCode;
+        (name == null ? 0 : name.hashCode) +
+        (displayName == null ? 0 : displayName.hashCode) +
+        (features == null ? 0 : features.hashCode);
 
   factory FeatureGroupDto.fromJson(Map<String, dynamic> json) => _$FeatureGroupDtoFromJson(json);
 

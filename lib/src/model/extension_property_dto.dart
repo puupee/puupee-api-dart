@@ -150,14 +150,14 @@ class ExtensionPropertyDto {
 
     @override
     int get hashCode =>
-        type.hashCode +
-        typeSimple.hashCode +
+        (type == null ? 0 : type.hashCode) +
+        (typeSimple == null ? 0 : typeSimple.hashCode) +
         displayName.hashCode +
         api.hashCode +
         ui.hashCode +
-        attributes.hashCode +
-        configuration.hashCode +
-        defaultValue.hashCode;
+        (attributes == null ? 0 : attributes.hashCode) +
+        (configuration == null ? 0 : configuration.hashCode) +
+        (defaultValue == null ? 0 : defaultValue.hashCode);
 
   factory ExtensionPropertyDto.fromJson(Map<String, dynamic> json) => _$ExtensionPropertyDtoFromJson(json);
 

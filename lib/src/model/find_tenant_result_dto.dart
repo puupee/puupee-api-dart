@@ -24,6 +24,8 @@ class FindTenantResultDto {
 
      this.name,
 
+     this.normalizedName,
+
      this.isActive,
   });
 
@@ -65,6 +67,18 @@ class FindTenantResultDto {
 
   @JsonKey(
     
+    name: r'normalizedName',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? normalizedName;
+
+
+
+  @JsonKey(
+    
     name: r'isActive',
     required: false,
     includeIfNull: false,
@@ -82,13 +96,15 @@ class FindTenantResultDto {
       other.success == success &&
       other.tenantId == tenantId &&
       other.name == name &&
+      other.normalizedName == normalizedName &&
       other.isActive == isActive;
 
     @override
     int get hashCode =>
         success.hashCode +
-        tenantId.hashCode +
-        name.hashCode +
+        (tenantId == null ? 0 : tenantId.hashCode) +
+        (name == null ? 0 : name.hashCode) +
+        (normalizedName == null ? 0 : normalizedName.hashCode) +
         isActive.hashCode;
 
   factory FindTenantResultDto.fromJson(Map<String, dynamic> json) => _$FindTenantResultDtoFromJson(json);

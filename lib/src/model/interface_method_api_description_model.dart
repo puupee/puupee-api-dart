@@ -73,8 +73,8 @@ class InterfaceMethodApiDescriptionModel {
 
     @override
     int get hashCode =>
-        name.hashCode +
-        parametersOnMethod.hashCode +
+        (name == null ? 0 : name.hashCode) +
+        (parametersOnMethod == null ? 0 : parametersOnMethod.hashCode) +
         returnValue.hashCode;
 
   factory InterfaceMethodApiDescriptionModel.fromJson(Map<String, dynamic> json) => _$InterfaceMethodApiDescriptionModelFromJson(json);

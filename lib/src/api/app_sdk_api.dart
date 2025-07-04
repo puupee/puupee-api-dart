@@ -24,7 +24,7 @@ class AppSdkApi {
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [createOrUpdateAppSdkDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -35,7 +35,7 @@ class AppSdkApi {
   /// Returns a [Future] containing a [Response] with a [AppSdkDto] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<AppSdkDto>> createAppSdk({ 
-    CreateOrUpdateAppSdkDto? body,
+    CreateOrUpdateAppSdkDto? createOrUpdateAppSdkDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -65,7 +65,7 @@ class AppSdkApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(createOrUpdateAppSdkDto);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -258,7 +258,7 @@ _responseData = rawData == null ? null : deserialize<AppSdkDtoPagedResultDto, Ap
   ///
   /// Parameters:
   /// * [id] 
-  /// * [body] 
+  /// * [createOrUpdateAppSdkDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -270,7 +270,7 @@ _responseData = rawData == null ? null : deserialize<AppSdkDtoPagedResultDto, Ap
   /// Throws [DioException] if API call or serialization fails
   Future<Response<AppSdkDto>> updateAppSdk({ 
     required String id,
-    CreateOrUpdateAppSdkDto? body,
+    CreateOrUpdateAppSdkDto? createOrUpdateAppSdkDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -300,7 +300,7 @@ _responseData = rawData == null ? null : deserialize<AppSdkDtoPagedResultDto, Ap
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(createOrUpdateAppSdkDto);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(

@@ -25,7 +25,7 @@ class TenantApi {
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [tenantCreateDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -36,7 +36,7 @@ class TenantApi {
   /// Returns a [Future] containing a [Response] with a [TenantDto] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<TenantDto>> createTenant({ 
-    TenantCreateDto? body,
+    TenantCreateDto? tenantCreateDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -66,7 +66,7 @@ class TenantApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(tenantCreateDto);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -525,7 +525,7 @@ _responseData = rawData == null ? null : deserialize<TenantDtoPagedResultDto, Te
   ///
   /// Parameters:
   /// * [id] 
-  /// * [body] 
+  /// * [tenantUpdateDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -537,7 +537,7 @@ _responseData = rawData == null ? null : deserialize<TenantDtoPagedResultDto, Te
   /// Throws [DioException] if API call or serialization fails
   Future<Response<TenantDto>> updateTenant({ 
     required String id,
-    TenantUpdateDto? body,
+    TenantUpdateDto? tenantUpdateDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -567,7 +567,7 @@ _responseData = rawData == null ? null : deserialize<TenantDtoPagedResultDto, Te
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(tenantUpdateDto);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(

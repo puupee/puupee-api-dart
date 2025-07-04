@@ -98,7 +98,7 @@ _responseData = rawData == null ? null : deserialize<EmailSettingsDto, EmailSett
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [sendTestEmailInput] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -109,7 +109,7 @@ _responseData = rawData == null ? null : deserialize<EmailSettingsDto, EmailSett
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> sendTestEmail({ 
-    SendTestEmailInput? body,
+    SendTestEmailInput? sendTestEmailInput,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -139,7 +139,7 @@ _responseData = rawData == null ? null : deserialize<EmailSettingsDto, EmailSett
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(sendTestEmailInput);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -168,7 +168,7 @@ _bodyData=jsonEncode(body);
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [updateEmailSettingsDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -179,7 +179,7 @@ _bodyData=jsonEncode(body);
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> updateEmailSettings({ 
-    UpdateEmailSettingsDto? body,
+    UpdateEmailSettingsDto? updateEmailSettingsDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -209,7 +209,7 @@ _bodyData=jsonEncode(body);
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(updateEmailSettingsDto);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(

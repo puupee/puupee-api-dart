@@ -7,7 +7,7 @@ void main() {
   final instance = PuupeeApiClient().getMessageSourceApi();
 
   group(MessageSourceApi, () {
-    //Future<CreateUpdateMessageSourceDto> createMessageSource({ CreateUpdateMessageSourceDto body }) async
+    //Future<CreateUpdateMessageSourceDto> createMessageSource({ CreateUpdateMessageSourceDto createUpdateMessageSourceDto }) async
     test('test createMessageSource', () async {
       // TODO
     });
@@ -27,7 +27,7 @@ void main() {
       // TODO
     });
 
-    //Future<CreateUpdateMessageSourceDto> updateMessageSource(String id, { CreateUpdateMessageSourceDto body }) async
+    //Future<CreateUpdateMessageSourceDto> updateMessageSource(String id, { CreateUpdateMessageSourceDto createUpdateMessageSourceDto }) async
     test('test updateMessageSource', () async {
       // TODO
     });

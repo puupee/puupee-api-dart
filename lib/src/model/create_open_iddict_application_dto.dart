@@ -206,18 +206,18 @@ class CreateOpenIddictApplicationDto {
 
     @override
     int get hashCode =>
-        type.hashCode +
-        displayName.hashCode +
-        displayNames.hashCode +
-        permissions.hashCode +
-        postLogoutRedirectUris.hashCode +
-        properties.hashCode +
-        redirectUris.hashCode +
-        requirements.hashCode +
-        clientUri.hashCode +
-        logoUri.hashCode +
-        grantTypes.hashCode +
-        scopes.hashCode;
+        (type == null ? 0 : type.hashCode) +
+        (displayName == null ? 0 : displayName.hashCode) +
+        (displayNames == null ? 0 : displayNames.hashCode) +
+        (permissions == null ? 0 : permissions.hashCode) +
+        (postLogoutRedirectUris == null ? 0 : postLogoutRedirectUris.hashCode) +
+        (properties == null ? 0 : properties.hashCode) +
+        (redirectUris == null ? 0 : redirectUris.hashCode) +
+        (requirements == null ? 0 : requirements.hashCode) +
+        (clientUri == null ? 0 : clientUri.hashCode) +
+        (logoUri == null ? 0 : logoUri.hashCode) +
+        (grantTypes == null ? 0 : grantTypes.hashCode) +
+        (scopes == null ? 0 : scopes.hashCode);
 
   factory CreateOpenIddictApplicationDto.fromJson(Map<String, dynamic> json) => _$CreateOpenIddictApplicationDtoFromJson(json);
 

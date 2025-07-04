@@ -9,7 +9,7 @@ void main() {
   group(AppReleaseApi, () {
     // 创建新版本
     //
-    //Future<AppReleaseDto> createAppRelease({ CreateOrUpdateAppReleaseDto body }) async
+    //Future<AppReleaseDto> createAppRelease({ CreateOrUpdateAppReleaseDto createOrUpdateAppReleaseDto }) async
     test('test createAppRelease', () async {
       // TODO
     });
@@ -44,7 +44,7 @@ void main() {
 
     // 更新版本
     //
-    //Future<AppReleaseDto> updateAppRelease(String id, { CreateOrUpdateAppReleaseDto body }) async
+    //Future<AppReleaseDto> updateAppRelease(String id, { CreateOrUpdateAppReleaseDto createOrUpdateAppReleaseDto }) async
     test('test updateAppRelease', () async {
       // TODO
     });

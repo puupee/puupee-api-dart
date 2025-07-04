@@ -22,6 +22,11 @@ void main() {
       // TODO
     });
 
+    // String normalizedName
+    test('to test the property `normalizedName`', () async {
+      // TODO
+    });
+
     // bool isActive
     test('to test the property `isActive`', () async {
       // TODO

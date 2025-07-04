@@ -7,12 +7,12 @@ void main() {
   final instance = PuupeeApiClient().getVerificationApi();
 
   group(VerificationApi, () {
-    //Future sendCode({ SendVerificationCodeDto body }) async
+    //Future sendCode({ SendVerificationCodeDto sendVerificationCodeDto }) async
     test('test sendCode', () async {
       // TODO
     });
 
-    //Future sendCodeAnonymous({ SendVerificationCodeDto body }) async
+    //Future sendCodeAnonymous({ SendVerificationCodeDto sendVerificationCodeDto }) async
     test('test sendCodeAnonymous', () async {
       // TODO
     });

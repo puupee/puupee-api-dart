@@ -56,7 +56,7 @@ class UpdatePermissionDto {
 
     @override
     int get hashCode =>
-        name.hashCode +
+        (name == null ? 0 : name.hashCode) +
         isGranted.hashCode;
 
   factory UpdatePermissionDto.fromJson(Map<String, dynamic> json) => _$UpdatePermissionDtoFromJson(json);

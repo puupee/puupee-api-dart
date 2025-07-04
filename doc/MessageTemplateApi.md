@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **createMessageTemplate**
-> MessageTemplateDto createMessageTemplate(body)
+> MessageTemplateDto createMessageTemplate(createOrUpdateMessageTemplateDto)
 
 
 
@@ -28,10 +28,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getMessageTemplateApi();
-final CreateOrUpdateMessageTemplateDto body = ; // CreateOrUpdateMessageTemplateDto | 
+final CreateOrUpdateMessageTemplateDto createOrUpdateMessageTemplateDto = ; // CreateOrUpdateMessageTemplateDto | 
 
 try {
-    final response = api.createMessageTemplate(body);
+    final response = api.createMessageTemplate(createOrUpdateMessageTemplateDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling MessageTemplateApi->createMessageTemplate: $e\n');
@@ -42,7 +42,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateOrUpdateMessageTemplateDto**](CreateOrUpdateMessageTemplateDto.md)|  | [optional] 
+ **createOrUpdateMessageTemplateDto** | [**CreateOrUpdateMessageTemplateDto**](CreateOrUpdateMessageTemplateDto.md)|  | [optional] 
 
 ### Return type
 
@@ -184,7 +184,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateMessageTemplate**
-> MessageTemplateDto updateMessageTemplate(id, body)
+> MessageTemplateDto updateMessageTemplate(id, createOrUpdateMessageTemplateDto)
 
 
 
@@ -196,10 +196,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getMessageTemplateApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final CreateOrUpdateMessageTemplateDto body = ; // CreateOrUpdateMessageTemplateDto | 
+final CreateOrUpdateMessageTemplateDto createOrUpdateMessageTemplateDto = ; // CreateOrUpdateMessageTemplateDto | 
 
 try {
-    final response = api.updateMessageTemplate(id, body);
+    final response = api.updateMessageTemplate(id, createOrUpdateMessageTemplateDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling MessageTemplateApi->updateMessageTemplate: $e\n');
@@ -211,7 +211,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **body** | [**CreateOrUpdateMessageTemplateDto**](CreateOrUpdateMessageTemplateDto.md)|  | [optional] 
+ **createOrUpdateMessageTemplateDto** | [**CreateOrUpdateMessageTemplateDto**](CreateOrUpdateMessageTemplateDto.md)|  | [optional] 
 
 ### Return type
 

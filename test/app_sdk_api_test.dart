@@ -7,7 +7,7 @@ void main() {
   final instance = PuupeeApiClient().getAppSdkApi();
 
   group(AppSdkApi, () {
-    //Future<AppSdkDto> createAppSdk({ CreateOrUpdateAppSdkDto body }) async
+    //Future<AppSdkDto> createAppSdk({ CreateOrUpdateAppSdkDto createOrUpdateAppSdkDto }) async
     test('test createAppSdk', () async {
       // TODO
     });
@@ -22,7 +22,7 @@ void main() {
       // TODO
     });
 
-    //Future<AppSdkDto> updateAppSdk(String id, { CreateOrUpdateAppSdkDto body }) async
+    //Future<AppSdkDto> updateAppSdk(String id, { CreateOrUpdateAppSdkDto createOrUpdateAppSdkDto }) async
     test('test updateAppSdk', () async {
       // TODO
     });

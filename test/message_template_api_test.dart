@@ -7,7 +7,7 @@ void main() {
   final instance = PuupeeApiClient().getMessageTemplateApi();
 
   group(MessageTemplateApi, () {
-    //Future<MessageTemplateDto> createMessageTemplate({ CreateOrUpdateMessageTemplateDto body }) async
+    //Future<MessageTemplateDto> createMessageTemplate({ CreateOrUpdateMessageTemplateDto createOrUpdateMessageTemplateDto }) async
     test('test createMessageTemplate', () async {
       // TODO
     });
@@ -27,7 +27,7 @@ void main() {
       // TODO
     });
 
-    //Future<MessageTemplateDto> updateMessageTemplate(String id, { CreateOrUpdateMessageTemplateDto body }) async
+    //Future<MessageTemplateDto> updateMessageTemplate(String id, { CreateOrUpdateMessageTemplateDto createOrUpdateMessageTemplateDto }) async
     test('test updateMessageTemplate', () async {
       // TODO
     });

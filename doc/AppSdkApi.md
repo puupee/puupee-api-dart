@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **createAppSdk**
-> AppSdkDto createAppSdk(body)
+> AppSdkDto createAppSdk(createOrUpdateAppSdkDto)
 
 
 
@@ -27,10 +27,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppSdkApi();
-final CreateOrUpdateAppSdkDto body = ; // CreateOrUpdateAppSdkDto | 
+final CreateOrUpdateAppSdkDto createOrUpdateAppSdkDto = ; // CreateOrUpdateAppSdkDto | 
 
 try {
-    final response = api.createAppSdk(body);
+    final response = api.createAppSdk(createOrUpdateAppSdkDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AppSdkApi->createAppSdk: $e\n');
@@ -41,7 +41,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateOrUpdateAppSdkDto**](CreateOrUpdateAppSdkDto.md)|  | [optional] 
+ **createOrUpdateAppSdkDto** | [**CreateOrUpdateAppSdkDto**](CreateOrUpdateAppSdkDto.md)|  | [optional] 
 
 ### Return type
 
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateAppSdk**
-> AppSdkDto updateAppSdk(id, body)
+> AppSdkDto updateAppSdk(id, createOrUpdateAppSdkDto)
 
 
 
@@ -160,10 +160,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getAppSdkApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final CreateOrUpdateAppSdkDto body = ; // CreateOrUpdateAppSdkDto | 
+final CreateOrUpdateAppSdkDto createOrUpdateAppSdkDto = ; // CreateOrUpdateAppSdkDto | 
 
 try {
-    final response = api.updateAppSdk(id, body);
+    final response = api.updateAppSdk(id, createOrUpdateAppSdkDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AppSdkApi->updateAppSdk: $e\n');
@@ -175,7 +175,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **body** | [**CreateOrUpdateAppSdkDto**](CreateOrUpdateAppSdkDto.md)|  | [optional] 
+ **createOrUpdateAppSdkDto** | [**CreateOrUpdateAppSdkDto**](CreateOrUpdateAppSdkDto.md)|  | [optional] 
 
 ### Return type
 

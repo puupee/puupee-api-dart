@@ -23,7 +23,7 @@ class MessageTemplateApi {
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [createOrUpdateMessageTemplateDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -34,7 +34,7 @@ class MessageTemplateApi {
   /// Returns a [Future] containing a [Response] with a [MessageTemplateDto] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<MessageTemplateDto>> createMessageTemplate({ 
-    CreateOrUpdateMessageTemplateDto? body,
+    CreateOrUpdateMessageTemplateDto? createOrUpdateMessageTemplateDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -64,7 +64,7 @@ class MessageTemplateApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(createOrUpdateMessageTemplateDto);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -320,7 +320,7 @@ _responseData = rawData == null ? null : deserialize<List<MessageTemplateDto>, M
   ///
   /// Parameters:
   /// * [id] 
-  /// * [body] 
+  /// * [createOrUpdateMessageTemplateDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -332,7 +332,7 @@ _responseData = rawData == null ? null : deserialize<List<MessageTemplateDto>, M
   /// Throws [DioException] if API call or serialization fails
   Future<Response<MessageTemplateDto>> updateMessageTemplate({ 
     required String id,
-    CreateOrUpdateMessageTemplateDto? body,
+    CreateOrUpdateMessageTemplateDto? createOrUpdateMessageTemplateDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -362,7 +362,7 @@ _responseData = rawData == null ? null : deserialize<List<MessageTemplateDto>, M
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(createOrUpdateMessageTemplateDto);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(

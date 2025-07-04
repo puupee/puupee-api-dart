@@ -42,7 +42,7 @@ class UpdatePermissionsDto {
 
     @override
     int get hashCode =>
-        permissions.hashCode;
+        (permissions == null ? 0 : permissions.hashCode);
 
   factory UpdatePermissionsDto.fromJson(Map<String, dynamic> json) => _$UpdatePermissionsDtoFromJson(json);
 

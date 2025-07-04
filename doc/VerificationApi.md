@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **sendCode**
-> sendCode(body)
+> sendCode(sendVerificationCodeDto)
 
 
 
@@ -25,10 +25,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getVerificationApi();
-final SendVerificationCodeDto body = ; // SendVerificationCodeDto | 
+final SendVerificationCodeDto sendVerificationCodeDto = ; // SendVerificationCodeDto | 
 
 try {
-    api.sendCode(body);
+    api.sendCode(sendVerificationCodeDto);
 } catch on DioException (e) {
     print('Exception when calling VerificationApi->sendCode: $e\n');
 }
@@ -38,7 +38,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SendVerificationCodeDto**](SendVerificationCodeDto.md)|  | [optional] 
+ **sendVerificationCodeDto** | [**SendVerificationCodeDto**](SendVerificationCodeDto.md)|  | [optional] 
 
 ### Return type
 
@@ -56,7 +56,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sendCodeAnonymous**
-> sendCodeAnonymous(body)
+> sendCodeAnonymous(sendVerificationCodeDto)
 
 
 
@@ -67,10 +67,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getVerificationApi();
-final SendVerificationCodeDto body = ; // SendVerificationCodeDto | 
+final SendVerificationCodeDto sendVerificationCodeDto = ; // SendVerificationCodeDto | 
 
 try {
-    api.sendCodeAnonymous(body);
+    api.sendCodeAnonymous(sendVerificationCodeDto);
 } catch on DioException (e) {
     print('Exception when calling VerificationApi->sendCodeAnonymous: $e\n');
 }
@@ -80,7 +80,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SendVerificationCodeDto**](SendVerificationCodeDto.md)|  | [optional] 
+ **sendVerificationCodeDto** | [**SendVerificationCodeDto**](SendVerificationCodeDto.md)|  | [optional] 
 
 ### Return type
 

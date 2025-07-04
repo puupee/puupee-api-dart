@@ -7,7 +7,7 @@ void main() {
   final instance = PuupeeApiClient().getTenantApi();
 
   group(TenantApi, () {
-    //Future<TenantDto> createTenant({ TenantCreateDto body }) async
+    //Future<TenantDto> createTenant({ TenantCreateDto tenantCreateDto }) async
     test('test createTenant', () async {
       // TODO
     });
@@ -42,7 +42,7 @@ void main() {
       // TODO
     });
 
-    //Future<TenantDto> updateTenant(String id, { TenantUpdateDto body }) async
+    //Future<TenantDto> updateTenant(String id, { TenantUpdateDto tenantUpdateDto }) async
     test('test updateTenant', () async {
       // TODO
     });

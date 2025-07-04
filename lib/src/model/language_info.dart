@@ -101,11 +101,11 @@ class LanguageInfo {
 
     @override
     int get hashCode =>
-        cultureName.hashCode +
-        uiCultureName.hashCode +
-        displayName.hashCode +
-        twoLetterISOLanguageName.hashCode +
-        flagIcon.hashCode;
+        (cultureName == null ? 0 : cultureName.hashCode) +
+        (uiCultureName == null ? 0 : uiCultureName.hashCode) +
+        (displayName == null ? 0 : displayName.hashCode) +
+        (twoLetterISOLanguageName == null ? 0 : twoLetterISOLanguageName.hashCode) +
+        (flagIcon == null ? 0 : flagIcon.hashCode);
 
   factory LanguageInfo.fromJson(Map<String, dynamic> json) => _$LanguageInfoFromJson(json);
 

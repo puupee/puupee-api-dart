@@ -24,7 +24,7 @@ class AvatarApi {
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [createAvatarDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -35,7 +35,7 @@ class AvatarApi {
   /// Returns a [Future] containing a [Response] with a [AvatarDto] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<AvatarDto>> createAvatar({ 
-    CreateAvatarDto? body,
+    CreateAvatarDto? createAvatarDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -65,7 +65,7 @@ class AvatarApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(createAvatarDto);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(

@@ -72,8 +72,8 @@ class CreateUpdateMessageSourceRouteSubDto {
     @override
     int get hashCode =>
         routeId.hashCode +
-        path.hashCode +
-        values.hashCode;
+        (path == null ? 0 : path.hashCode) +
+        (values == null ? 0 : values.hashCode);
 
   factory CreateUpdateMessageSourceRouteSubDto.fromJson(Map<String, dynamic> json) => _$CreateUpdateMessageSourceRouteSubDtoFromJson(json);
 

@@ -1,4 +1,4 @@
-# puupee_api_client.model.StorageObjectOrCredentialsDto
+# puupee_api_client.model.CreateUpdateAppTesterDto
 
 ## Load the model package
 ```dart
@@ -8,8 +8,9 @@ import 'package:puupee_api_client/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**storageObject** | [**StorageObjectDto**](StorageObjectDto.md) |  | [optional] 
-**credentials** | [**StorageObjectCredentials**](StorageObjectCredentials.md) |  | [optional] 
+**appId** | **String** | 应用ID | [optional] 
+**userId** | **String** | 用户ID | [optional] 
+**isEnabled** | **bool** | 是否启用 | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

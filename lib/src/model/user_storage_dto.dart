@@ -170,14 +170,14 @@ class UserStorageDto {
     @override
     int get hashCode =>
         appId.hashCode +
-        appName.hashCode +
+        (appName == null ? 0 : appName.hashCode) +
         priceNaming.hashCode +
         size.hashCode +
         currentSize.hashCode +
         totalCount.hashCode +
         singleFileMaxSize.hashCode +
-        expireAt.hashCode +
-        items.hashCode;
+        (expireAt == null ? 0 : expireAt.hashCode) +
+        (items == null ? 0 : items.hashCode);
 
   factory UserStorageDto.fromJson(Map<String, dynamic> json) => _$UserStorageDtoFromJson(json);
 

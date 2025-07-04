@@ -56,8 +56,8 @@ class NameValue {
 
     @override
     int get hashCode =>
-        name.hashCode +
-        value.hashCode;
+        (name == null ? 0 : name.hashCode) +
+        (value == null ? 0 : value.hashCode);
 
   factory NameValue.fromJson(Map<String, dynamic> json) => _$NameValueFromJson(json);
 

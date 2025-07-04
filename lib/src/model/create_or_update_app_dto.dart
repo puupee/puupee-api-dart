@@ -356,23 +356,23 @@ class CreateOrUpdateAppDto {
 
     @override
     int get hashCode =>
-        name.hashCode +
-        displayName.hashCode +
+        (name == null ? 0 : name.hashCode) +
+        (displayName == null ? 0 : displayName.hashCode) +
         framework.hashCode +
         appType.hashCode +
-        description.hashCode +
-        icon.hashCode +
-        homePage.hashCode +
+        (description == null ? 0 : description.hashCode) +
+        (icon == null ? 0 : icon.hashCode) +
+        (homePage == null ? 0 : homePage.hashCode) +
         sortIndex.hashCode +
-        gitRepository.hashCode +
+        (gitRepository == null ? 0 : gitRepository.hashCode) +
         gitRepositoryType.hashCode +
         isEnabled.hashCode +
-        webhookUrl.hashCode +
-        businessDomain.hashCode +
-        businessUrl.hashCode +
-        subscriptionPlatforms.hashCode +
-        freePlatforms.hashCode +
-        specJsonSchema.hashCode +
+        (webhookUrl == null ? 0 : webhookUrl.hashCode) +
+        (businessDomain == null ? 0 : businessDomain.hashCode) +
+        (businessUrl == null ? 0 : businessUrl.hashCode) +
+        (subscriptionPlatforms == null ? 0 : subscriptionPlatforms.hashCode) +
+        (freePlatforms == null ? 0 : freePlatforms.hashCode) +
+        (specJsonSchema == null ? 0 : specJsonSchema.hashCode) +
         defaultStorageSize.hashCode +
         defaultSingleFileMaxSize.hashCode +
         isPublished.hashCode +

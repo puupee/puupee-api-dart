@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 # **createMessageSourceRouteSub**
-> createMessageSourceRouteSub(body)
+> createMessageSourceRouteSub(createUpdateMessageSourceRouteSubDto)
 
 
 
@@ -28,10 +28,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getMessageSourceRouteSubApi();
-final CreateUpdateMessageSourceRouteSubDto body = ; // CreateUpdateMessageSourceRouteSubDto | 
+final CreateUpdateMessageSourceRouteSubDto createUpdateMessageSourceRouteSubDto = ; // CreateUpdateMessageSourceRouteSubDto | 
 
 try {
-    api.createMessageSourceRouteSub(body);
+    api.createMessageSourceRouteSub(createUpdateMessageSourceRouteSubDto);
 } catch on DioException (e) {
     print('Exception when calling MessageSourceRouteSubApi->createMessageSourceRouteSub: $e\n');
 }
@@ -41,7 +41,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateUpdateMessageSourceRouteSubDto**](CreateUpdateMessageSourceRouteSubDto.md)|  | [optional] 
+ **createUpdateMessageSourceRouteSubDto** | [**CreateUpdateMessageSourceRouteSubDto**](CreateUpdateMessageSourceRouteSubDto.md)|  | [optional] 
 
 ### Return type
 
@@ -183,7 +183,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateMessageSourceRouteSub**
-> updateMessageSourceRouteSub(id, body)
+> updateMessageSourceRouteSub(id, createUpdateMessageSourceRouteSubDto)
 
 
 
@@ -195,10 +195,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getMessageSourceRouteSubApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final CreateUpdateMessageSourceRouteSubDto body = ; // CreateUpdateMessageSourceRouteSubDto | 
+final CreateUpdateMessageSourceRouteSubDto createUpdateMessageSourceRouteSubDto = ; // CreateUpdateMessageSourceRouteSubDto | 
 
 try {
-    api.updateMessageSourceRouteSub(id, body);
+    api.updateMessageSourceRouteSub(id, createUpdateMessageSourceRouteSubDto);
 } catch on DioException (e) {
     print('Exception when calling MessageSourceRouteSubApi->updateMessageSourceRouteSub: $e\n');
 }
@@ -209,7 +209,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **body** | [**CreateUpdateMessageSourceRouteSubDto**](CreateUpdateMessageSourceRouteSubDto.md)|  | [optional] 
+ **createUpdateMessageSourceRouteSubDto** | [**CreateUpdateMessageSourceRouteSubDto**](CreateUpdateMessageSourceRouteSubDto.md)|  | [optional] 
 
 ### Return type
 

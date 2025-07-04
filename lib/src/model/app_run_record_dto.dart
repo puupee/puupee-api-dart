@@ -314,23 +314,23 @@ class AppRunRecordDto {
     int get hashCode =>
         id.hashCode +
         creationTime.hashCode +
-        creatorId.hashCode +
-        lastModificationTime.hashCode +
-        lastModifierId.hashCode +
+        (creatorId == null ? 0 : creatorId.hashCode) +
+        (lastModificationTime == null ? 0 : lastModificationTime.hashCode) +
+        (lastModifierId == null ? 0 : lastModifierId.hashCode) +
         isDeleted.hashCode +
-        deleterId.hashCode +
-        deletionTime.hashCode +
+        (deleterId == null ? 0 : deleterId.hashCode) +
+        (deletionTime == null ? 0 : deletionTime.hashCode) +
         appId.hashCode +
-        appName.hashCode +
-        args.hashCode +
-        envs.hashCode +
+        (appName == null ? 0 : appName.hashCode) +
+        (args == null ? 0 : args.hashCode) +
+        (envs == null ? 0 : envs.hashCode) +
         status.hashCode +
-        result.hashCode +
-        error.hashCode +
-        finishAt.hashCode +
-        output.hashCode +
-        workerId.hashCode +
-        workerName.hashCode;
+        (result == null ? 0 : result.hashCode) +
+        (error == null ? 0 : error.hashCode) +
+        (finishAt == null ? 0 : finishAt.hashCode) +
+        (output == null ? 0 : output.hashCode) +
+        (workerId == null ? 0 : workerId.hashCode) +
+        (workerName == null ? 0 : workerName.hashCode);
 
   factory AppRunRecordDto.fromJson(Map<String, dynamic> json) => _$AppRunRecordDtoFromJson(json);
 

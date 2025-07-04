@@ -23,7 +23,7 @@ class MessageSourceRouteSubApi {
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [createUpdateMessageSourceRouteSubDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -34,7 +34,7 @@ class MessageSourceRouteSubApi {
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> createMessageSourceRouteSub({ 
-    CreateUpdateMessageSourceRouteSubDto? body,
+    CreateUpdateMessageSourceRouteSubDto? createUpdateMessageSourceRouteSubDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -64,7 +64,7 @@ class MessageSourceRouteSubApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(createUpdateMessageSourceRouteSubDto);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -296,7 +296,7 @@ _responseData = rawData == null ? null : deserialize<List<MessageSourceRouteSubD
   ///
   /// Parameters:
   /// * [id] 
-  /// * [body] 
+  /// * [createUpdateMessageSourceRouteSubDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -308,7 +308,7 @@ _responseData = rawData == null ? null : deserialize<List<MessageSourceRouteSubD
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> updateMessageSourceRouteSub({ 
     required String id,
-    CreateUpdateMessageSourceRouteSubDto? body,
+    CreateUpdateMessageSourceRouteSubDto? createUpdateMessageSourceRouteSubDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -338,7 +338,7 @@ _responseData = rawData == null ? null : deserialize<List<MessageSourceRouteSubD
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(createUpdateMessageSourceRouteSubDto);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(

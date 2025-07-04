@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **bind**
-> bind(body)
+> bind(bindDeviceDto)
 
 
 
@@ -29,10 +29,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getDeviceApi();
-final BindDeviceDto body = ; // BindDeviceDto | 
+final BindDeviceDto bindDeviceDto = ; // BindDeviceDto | 
 
 try {
-    api.bind(body);
+    api.bind(bindDeviceDto);
 } catch on DioException (e) {
     print('Exception when calling DeviceApi->bind: $e\n');
 }
@@ -42,7 +42,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**BindDeviceDto**](BindDeviceDto.md)|  | [optional] 
+ **bindDeviceDto** | [**BindDeviceDto**](BindDeviceDto.md)|  | [optional] 
 
 ### Return type
 
@@ -193,7 +193,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **refreshDevice**
-> refreshDevice(body)
+> refreshDevice(refreshDeviceStatusDto)
 
 
 
@@ -204,10 +204,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getDeviceApi();
-final RefreshDeviceStatusDto body = ; // RefreshDeviceStatusDto | 
+final RefreshDeviceStatusDto refreshDeviceStatusDto = ; // RefreshDeviceStatusDto | 
 
 try {
-    api.refreshDevice(body);
+    api.refreshDevice(refreshDeviceStatusDto);
 } catch on DioException (e) {
     print('Exception when calling DeviceApi->refreshDevice: $e\n');
 }
@@ -217,7 +217,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RefreshDeviceStatusDto**](RefreshDeviceStatusDto.md)|  | [optional] 
+ **refreshDeviceStatusDto** | [**RefreshDeviceStatusDto**](RefreshDeviceStatusDto.md)|  | [optional] 
 
 ### Return type
 

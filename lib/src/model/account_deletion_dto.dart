@@ -41,7 +41,7 @@ class AccountDeletionDto {
 
     @override
     int get hashCode =>
-        code.hashCode;
+        (code == null ? 0 : code.hashCode);
 
   factory AccountDeletionDto.fromJson(Map<String, dynamic> json) => _$AccountDeletionDtoFromJson(json);
 

@@ -12,12 +12,12 @@ void main() {
       // TODO
     });
 
-    //Future sendTestEmail({ SendTestEmailInput body }) async
+    //Future sendTestEmail({ SendTestEmailInput sendTestEmailInput }) async
     test('test sendTestEmail', () async {
       // TODO
     });
 
-    //Future updateEmailSettings({ UpdateEmailSettingsDto body }) async
+    //Future updateEmailSettings({ UpdateEmailSettingsDto updateEmailSettingsDto }) async
     test('test updateEmailSettings', () async {
       // TODO
     });

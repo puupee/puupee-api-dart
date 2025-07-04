@@ -57,7 +57,7 @@ class NotificationInfoDtoPagedResultDto {
 
     @override
     int get hashCode =>
-        items.hashCode +
+        (items == null ? 0 : items.hashCode) +
         totalCount.hashCode;
 
   factory NotificationInfoDtoPagedResultDto.fromJson(Map<String, dynamic> json) => _$NotificationInfoDtoPagedResultDtoFromJson(json);

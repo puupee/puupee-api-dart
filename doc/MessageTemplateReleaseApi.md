@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 # **createMessageTemplateRelease**
-> MessageTemplateReleaseDto createMessageTemplateRelease(body)
+> MessageTemplateReleaseDto createMessageTemplateRelease(createMessageTemplateReleaseDto)
 
 
 
@@ -26,10 +26,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getMessageTemplateReleaseApi();
-final CreateMessageTemplateReleaseDto body = ; // CreateMessageTemplateReleaseDto | 
+final CreateMessageTemplateReleaseDto createMessageTemplateReleaseDto = ; // CreateMessageTemplateReleaseDto | 
 
 try {
-    final response = api.createMessageTemplateRelease(body);
+    final response = api.createMessageTemplateRelease(createMessageTemplateReleaseDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling MessageTemplateReleaseApi->createMessageTemplateRelease: $e\n');
@@ -40,7 +40,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateMessageTemplateReleaseDto**](CreateMessageTemplateReleaseDto.md)|  | [optional] 
+ **createMessageTemplateReleaseDto** | [**CreateMessageTemplateReleaseDto**](CreateMessageTemplateReleaseDto.md)|  | [optional] 
 
 ### Return type
 

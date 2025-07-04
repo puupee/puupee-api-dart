@@ -56,8 +56,8 @@ class ChangePasswordDto {
 
     @override
     int get hashCode =>
-        code.hashCode +
-        password.hashCode;
+        (code == null ? 0 : code.hashCode) +
+        (password == null ? 0 : password.hashCode);
 
   factory ChangePasswordDto.fromJson(Map<String, dynamic> json) => _$ChangePasswordDtoFromJson(json);
 

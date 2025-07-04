@@ -132,11 +132,11 @@ class UserProfileDto {
     @override
     int get hashCode =>
         id.hashCode +
-        name.hashCode +
-        userName.hashCode +
-        avatarUrl.hashCode +
-        email.hashCode +
-        phoneNumber.hashCode +
+        (name == null ? 0 : name.hashCode) +
+        (userName == null ? 0 : userName.hashCode) +
+        (avatarUrl == null ? 0 : avatarUrl.hashCode) +
+        (email == null ? 0 : email.hashCode) +
+        (phoneNumber == null ? 0 : phoneNumber.hashCode) +
         hasPassword.hashCode;
 
   factory UserProfileDto.fromJson(Map<String, dynamic> json) => _$UserProfileDtoFromJson(json);

@@ -73,7 +73,7 @@ class ApiKeyCreateDto {
     int get hashCode =>
         name.hashCode +
         active.hashCode +
-        expireAt.hashCode;
+        (expireAt == null ? 0 : expireAt.hashCode);
 
   factory ApiKeyCreateDto.fromJson(Map<String, dynamic> json) => _$ApiKeyCreateDtoFromJson(json);
 

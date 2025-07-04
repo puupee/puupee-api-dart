@@ -23,7 +23,7 @@ class MessageSourceApi {
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [createUpdateMessageSourceDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -34,7 +34,7 @@ class MessageSourceApi {
   /// Returns a [Future] containing a [Response] with a [CreateUpdateMessageSourceDto] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<CreateUpdateMessageSourceDto>> createMessageSource({ 
-    CreateUpdateMessageSourceDto? body,
+    CreateUpdateMessageSourceDto? createUpdateMessageSourceDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -64,7 +64,7 @@ class MessageSourceApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(createUpdateMessageSourceDto);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -327,7 +327,7 @@ _responseData = rawData == null ? null : deserialize<List<MessageSourceDto>, Mes
   ///
   /// Parameters:
   /// * [id] 
-  /// * [body] 
+  /// * [createUpdateMessageSourceDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -339,7 +339,7 @@ _responseData = rawData == null ? null : deserialize<List<MessageSourceDto>, Mes
   /// Throws [DioException] if API call or serialization fails
   Future<Response<CreateUpdateMessageSourceDto>> updateMessageSource({ 
     required String id,
-    CreateUpdateMessageSourceDto? body,
+    CreateUpdateMessageSourceDto? createUpdateMessageSourceDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -369,7 +369,7 @@ _responseData = rawData == null ? null : deserialize<List<MessageSourceDto>, Mes
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(createUpdateMessageSourceDto);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(

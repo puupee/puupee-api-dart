@@ -57,7 +57,7 @@ class MessageSourceCategoryDto {
     @override
     int get hashCode =>
         id.hashCode +
-        title.hashCode;
+        (title == null ? 0 : title.hashCode);
 
   factory MessageSourceCategoryDto.fromJson(Map<String, dynamic> json) => _$MessageSourceCategoryDtoFromJson(json);
 

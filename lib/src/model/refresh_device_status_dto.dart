@@ -57,7 +57,7 @@ class RefreshDeviceStatusDto {
 
     @override
     int get hashCode =>
-        token.hashCode +
+        (token == null ? 0 : token.hashCode) +
         status.hashCode;
 
   factory RefreshDeviceStatusDto.fromJson(Map<String, dynamic> json) => _$RefreshDeviceStatusDtoFromJson(json);

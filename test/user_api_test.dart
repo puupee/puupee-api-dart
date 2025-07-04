@@ -7,7 +7,7 @@ void main() {
   final instance = PuupeeApiClient().getUserApi();
 
   group(UserApi, () {
-    //Future<IdentityUserDto> createIdentityUser({ IdentityUserCreateDto body }) async
+    //Future<IdentityUserDto> createIdentityUser({ IdentityUserCreateDto identityUserCreateDto }) async
     test('test createIdentityUser', () async {
       // TODO
     });
@@ -47,12 +47,12 @@ void main() {
       // TODO
     });
 
-    //Future<IdentityUserDto> updateIdentityUser(String id, { IdentityUserUpdateDto body }) async
+    //Future<IdentityUserDto> updateIdentityUser(String id, { IdentityUserUpdateDto identityUserUpdateDto }) async
     test('test updateIdentityUser', () async {
       // TODO
     });
 
-    //Future updateRoles(String id, { IdentityUserUpdateRolesDto body }) async
+    //Future updateRoles(String id, { IdentityUserUpdateRolesDto identityUserUpdateRolesDto }) async
     test('test updateRoles', () async {
       // TODO
     });

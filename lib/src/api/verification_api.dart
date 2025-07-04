@@ -22,7 +22,7 @@ class VerificationApi {
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [sendVerificationCodeDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -33,7 +33,7 @@ class VerificationApi {
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> sendCode({ 
-    SendVerificationCodeDto? body,
+    SendVerificationCodeDto? sendVerificationCodeDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -63,7 +63,7 @@ class VerificationApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(sendVerificationCodeDto);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -92,7 +92,7 @@ _bodyData=jsonEncode(body);
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [sendVerificationCodeDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -103,7 +103,7 @@ _bodyData=jsonEncode(body);
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
   Future<Response<void>> sendCodeAnonymous({ 
-    SendVerificationCodeDto? body,
+    SendVerificationCodeDto? sendVerificationCodeDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -133,7 +133,7 @@ _bodyData=jsonEncode(body);
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(sendVerificationCodeDto);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(

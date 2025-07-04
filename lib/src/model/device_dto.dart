@@ -254,19 +254,19 @@ class DeviceDto {
     int get hashCode =>
         id.hashCode +
         creationTime.hashCode +
-        creatorId.hashCode +
-        lastModificationTime.hashCode +
-        lastModifierId.hashCode +
+        (creatorId == null ? 0 : creatorId.hashCode) +
+        (lastModificationTime == null ? 0 : lastModificationTime.hashCode) +
+        (lastModifierId == null ? 0 : lastModifierId.hashCode) +
         isDeleted.hashCode +
-        deleterId.hashCode +
-        deletionTime.hashCode +
-        token.hashCode +
-        tpnsToken.hashCode +
+        (deleterId == null ? 0 : deleterId.hashCode) +
+        (deletionTime == null ? 0 : deletionTime.hashCode) +
+        (token == null ? 0 : token.hashCode) +
+        (tpnsToken == null ? 0 : tpnsToken.hashCode) +
         isPhysicalDevice.hashCode +
-        name.hashCode +
+        (name == null ? 0 : name.hashCode) +
         platform.hashCode +
-        brand.hashCode +
-        systemVersion.hashCode;
+        (brand == null ? 0 : brand.hashCode) +
+        (systemVersion == null ? 0 : systemVersion.hashCode);
 
   factory DeviceDto.fromJson(Map<String, dynamic> json) => _$DeviceDtoFromJson(json);
 

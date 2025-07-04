@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **createTenant**
-> TenantDto createTenant(body)
+> TenantDto createTenant(tenantCreateDto)
 
 
 
@@ -31,10 +31,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getTenantApi();
-final TenantCreateDto body = ; // TenantCreateDto | 
+final TenantCreateDto tenantCreateDto = ; // TenantCreateDto | 
 
 try {
-    final response = api.createTenant(body);
+    final response = api.createTenant(tenantCreateDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling TenantApi->createTenant: $e\n');
@@ -45,7 +45,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TenantCreateDto**](TenantCreateDto.md)|  | [optional] 
+ **tenantCreateDto** | [**TenantCreateDto**](TenantCreateDto.md)|  | [optional] 
 
 ### Return type
 
@@ -326,7 +326,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateTenant**
-> TenantDto updateTenant(id, body)
+> TenantDto updateTenant(id, tenantUpdateDto)
 
 
 
@@ -338,10 +338,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getTenantApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final TenantUpdateDto body = ; // TenantUpdateDto | 
+final TenantUpdateDto tenantUpdateDto = ; // TenantUpdateDto | 
 
 try {
-    final response = api.updateTenant(id, body);
+    final response = api.updateTenant(id, tenantUpdateDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling TenantApi->updateTenant: $e\n');
@@ -353,7 +353,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **body** | [**TenantUpdateDto**](TenantUpdateDto.md)|  | [optional] 
+ **tenantUpdateDto** | [**TenantUpdateDto**](TenantUpdateDto.md)|  | [optional] 
 
 ### Return type
 

@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **publish**
-> publish(body)
+> publish(messagePublishDto)
 
 
 
@@ -27,10 +27,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getMessageApi();
-final MessagePublishDto body = ; // MessagePublishDto | 
+final MessagePublishDto messagePublishDto = ; // MessagePublishDto | 
 
 try {
-    api.publish(body);
+    api.publish(messagePublishDto);
 } catch on DioException (e) {
     print('Exception when calling MessageApi->publish: $e\n');
 }
@@ -40,7 +40,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MessagePublishDto**](MessagePublishDto.md)|  | [optional] 
+ **messagePublishDto** | [**MessagePublishDto**](MessagePublishDto.md)|  | [optional] 
 
 ### Return type
 
@@ -58,7 +58,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **recall**
-> recall(body)
+> recall(messageRecallDto)
 
 
 
@@ -69,10 +69,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getMessageApi();
-final MessageRecallDto body = ; // MessageRecallDto | 
+final MessageRecallDto messageRecallDto = ; // MessageRecallDto | 
 
 try {
-    api.recall(body);
+    api.recall(messageRecallDto);
 } catch on DioException (e) {
     print('Exception when calling MessageApi->recall: $e\n');
 }
@@ -82,7 +82,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MessageRecallDto**](MessageRecallDto.md)|  | [optional] 
+ **messageRecallDto** | [**MessageRecallDto**](MessageRecallDto.md)|  | [optional] 
 
 ### Return type
 
@@ -100,7 +100,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **subscribe**
-> subscribe(body)
+> subscribe(messageSubscribeDto)
 
 
 
@@ -111,10 +111,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getMessageApi();
-final MessageSubscribeDto body = ; // MessageSubscribeDto | 
+final MessageSubscribeDto messageSubscribeDto = ; // MessageSubscribeDto | 
 
 try {
-    api.subscribe(body);
+    api.subscribe(messageSubscribeDto);
 } catch on DioException (e) {
     print('Exception when calling MessageApi->subscribe: $e\n');
 }
@@ -124,7 +124,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MessageSubscribeDto**](MessageSubscribeDto.md)|  | [optional] 
+ **messageSubscribeDto** | [**MessageSubscribeDto**](MessageSubscribeDto.md)|  | [optional] 
 
 ### Return type
 
@@ -142,7 +142,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **unsubscribe**
-> unsubscribe(body)
+> unsubscribe(messageUnsubscribeDto)
 
 
 
@@ -153,10 +153,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getMessageApi();
-final MessageUnsubscribeDto body = ; // MessageUnsubscribeDto | 
+final MessageUnsubscribeDto messageUnsubscribeDto = ; // MessageUnsubscribeDto | 
 
 try {
-    api.unsubscribe(body);
+    api.unsubscribe(messageUnsubscribeDto);
 } catch on DioException (e) {
     print('Exception when calling MessageApi->unsubscribe: $e\n');
 }
@@ -166,7 +166,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MessageUnsubscribeDto**](MessageUnsubscribeDto.md)|  | [optional] 
+ **messageUnsubscribeDto** | [**MessageUnsubscribeDto**](MessageUnsubscribeDto.md)|  | [optional] 
 
 ### Return type
 

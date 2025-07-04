@@ -7,7 +7,7 @@ void main() {
   final instance = PuupeeApiClient().getApiKeysApi();
 
   group(ApiKeysApi, () {
-    //Future<ApiKeyDto> createApiKeys({ ApiKeyCreateDto body }) async
+    //Future<ApiKeyDto> createApiKeys({ ApiKeyCreateDto apiKeyCreateDto }) async
     test('test createApiKeys', () async {
       // TODO
     });
@@ -27,7 +27,7 @@ void main() {
       // TODO
     });
 
-    //Future<ApiKeyDto> updateApiKeys(String id, { ApiKeyUpdateDto body }) async
+    //Future<ApiKeyDto> updateApiKeys(String id, { ApiKeyUpdateDto apiKeyUpdateDto }) async
     test('test updateApiKeys', () async {
       // TODO
     });

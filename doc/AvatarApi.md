@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 # **createAvatar**
-> AvatarDto createAvatar(body)
+> AvatarDto createAvatar(createAvatarDto)
 
 
 
@@ -25,10 +25,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAvatarApi();
-final CreateAvatarDto body = ; // CreateAvatarDto | 
+final CreateAvatarDto createAvatarDto = ; // CreateAvatarDto | 
 
 try {
-    final response = api.createAvatar(body);
+    final response = api.createAvatar(createAvatarDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AvatarApi->createAvatar: $e\n');
@@ -39,7 +39,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateAvatarDto**](CreateAvatarDto.md)|  | [optional] 
+ **createAvatarDto** | [**CreateAvatarDto**](CreateAvatarDto.md)|  | [optional] 
 
 ### Return type
 

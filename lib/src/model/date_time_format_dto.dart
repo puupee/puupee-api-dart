@@ -131,13 +131,13 @@ class DateTimeFormatDto {
 
     @override
     int get hashCode =>
-        calendarAlgorithmType.hashCode +
-        dateTimeFormatLong.hashCode +
-        shortDatePattern.hashCode +
-        fullDateTimePattern.hashCode +
-        dateSeparator.hashCode +
-        shortTimePattern.hashCode +
-        longTimePattern.hashCode;
+        (calendarAlgorithmType == null ? 0 : calendarAlgorithmType.hashCode) +
+        (dateTimeFormatLong == null ? 0 : dateTimeFormatLong.hashCode) +
+        (shortDatePattern == null ? 0 : shortDatePattern.hashCode) +
+        (fullDateTimePattern == null ? 0 : fullDateTimePattern.hashCode) +
+        (dateSeparator == null ? 0 : dateSeparator.hashCode) +
+        (shortTimePattern == null ? 0 : shortTimePattern.hashCode) +
+        (longTimePattern == null ? 0 : longTimePattern.hashCode);
 
   factory DateTimeFormatDto.fromJson(Map<String, dynamic> json) => _$DateTimeFormatDtoFromJson(json);
 

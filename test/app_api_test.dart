@@ -9,7 +9,7 @@ void main() {
   group(AppApi, () {
     // 创建新应用
     //
-    //Future<AppDto> createApp({ CreateOrUpdateAppDto body }) async
+    //Future<AppDto> createApp({ CreateOrUpdateAppDto createOrUpdateAppDto }) async
     test('test createApp', () async {
       // TODO
     });
@@ -87,19 +87,19 @@ void main() {
       // TODO
     });
 
-    //Future<AppRunRecordDto> run({ AppRunDto body }) async
+    //Future<AppRunRecordDto> run({ AppRunDto appRunDto }) async
     test('test run', () async {
       // TODO
     });
 
     // 更新 APP 信息
     //
-    //Future<AppDto> updateApp(String id, { CreateOrUpdateAppDto body }) async
+    //Future<AppDto> updateApp(String id, { CreateOrUpdateAppDto createOrUpdateAppDto }) async
     test('test updateApp', () async {
       // TODO
     });
 
-    //Future<AppRunRecordDto> updateRunState(String id, { AppRunRecordUpdateDto body }) async
+    //Future<AppRunRecordDto> updateRunState(String id, { AppRunRecordUpdateDto appRunRecordUpdateDto }) async
     test('test updateRunState', () async {
       // TODO
     });

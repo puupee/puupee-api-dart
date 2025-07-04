@@ -56,8 +56,8 @@ class LocalizableStringDto {
 
     @override
     int get hashCode =>
-        name.hashCode +
-        resource.hashCode;
+        (name == null ? 0 : name.hashCode) +
+        (resource == null ? 0 : resource.hashCode);
 
   factory LocalizableStringDto.fromJson(Map<String, dynamic> json) => _$LocalizableStringDtoFromJson(json);
 

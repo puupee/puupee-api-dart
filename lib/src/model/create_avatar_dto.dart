@@ -41,7 +41,7 @@ class CreateAvatarDto {
 
     @override
     int get hashCode =>
-        key.hashCode;
+        (key == null ? 0 : key.hashCode);
 
   factory CreateAvatarDto.fromJson(Map<String, dynamic> json) => _$CreateAvatarDtoFromJson(json);
 

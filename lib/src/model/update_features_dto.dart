@@ -42,7 +42,7 @@ class UpdateFeaturesDto {
 
     @override
     int get hashCode =>
-        features.hashCode;
+        (features == null ? 0 : features.hashCode);
 
   factory UpdateFeaturesDto.fromJson(Map<String, dynamic> json) => _$UpdateFeaturesDtoFromJson(json);
 

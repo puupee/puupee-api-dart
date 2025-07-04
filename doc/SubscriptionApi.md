@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 # **appleNotifications**
-> appleNotifications(body)
+> appleNotifications(appleNotificaionDto)
 
 苹果订阅 Callback 地址
 
@@ -27,10 +27,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getSubscriptionApi();
-final AppleNotificaionDto body = ; // AppleNotificaionDto | 
+final AppleNotificaionDto appleNotificaionDto = ; // AppleNotificaionDto | 
 
 try {
-    api.appleNotifications(body);
+    api.appleNotifications(appleNotificaionDto);
 } catch on DioException (e) {
     print('Exception when calling SubscriptionApi->appleNotifications: $e\n');
 }
@@ -40,7 +40,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AppleNotificaionDto**](AppleNotificaionDto.md)|  | [optional] 
+ **appleNotificaionDto** | [**AppleNotificaionDto**](AppleNotificaionDto.md)|  | [optional] 
 
 ### Return type
 
@@ -58,7 +58,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **createOrder**
-> SubscriptionOrderDto createOrder(body)
+> SubscriptionOrderDto createOrder(createOrGetSubscriptionOrderDto)
 
 
 
@@ -69,10 +69,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getSubscriptionApi();
-final CreateOrGetSubscriptionOrderDto body = ; // CreateOrGetSubscriptionOrderDto | 
+final CreateOrGetSubscriptionOrderDto createOrGetSubscriptionOrderDto = ; // CreateOrGetSubscriptionOrderDto | 
 
 try {
-    final response = api.createOrder(body);
+    final response = api.createOrder(createOrGetSubscriptionOrderDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling SubscriptionApi->createOrder: $e\n');
@@ -83,7 +83,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateOrGetSubscriptionOrderDto**](CreateOrGetSubscriptionOrderDto.md)|  | [optional] 
+ **createOrGetSubscriptionOrderDto** | [**CreateOrGetSubscriptionOrderDto**](CreateOrGetSubscriptionOrderDto.md)|  | [optional] 
 
 ### Return type
 
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **verifyReceipt**
-> VerifyReceiptResult verifyReceipt(body)
+> VerifyReceiptResult verifyReceipt(verifyReceiptDto)
 
 
 
@@ -155,10 +155,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getSubscriptionApi();
-final VerifyReceiptDto body = ; // VerifyReceiptDto | 
+final VerifyReceiptDto verifyReceiptDto = ; // VerifyReceiptDto | 
 
 try {
-    final response = api.verifyReceipt(body);
+    final response = api.verifyReceipt(verifyReceiptDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling SubscriptionApi->verifyReceipt: $e\n');
@@ -169,7 +169,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**VerifyReceiptDto**](VerifyReceiptDto.md)|  | [optional] 
+ **verifyReceiptDto** | [**VerifyReceiptDto**](VerifyReceiptDto.md)|  | [optional] 
 
 ### Return type
 

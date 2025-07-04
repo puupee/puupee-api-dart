@@ -101,11 +101,11 @@ class IdentityUserLogin {
 
     @override
     int get hashCode =>
-        tenantId.hashCode +
+        (tenantId == null ? 0 : tenantId.hashCode) +
         userId.hashCode +
-        loginProvider.hashCode +
-        providerKey.hashCode +
-        providerDisplayName.hashCode;
+        (loginProvider == null ? 0 : loginProvider.hashCode) +
+        (providerKey == null ? 0 : providerKey.hashCode) +
+        (providerDisplayName == null ? 0 : providerDisplayName.hashCode);
 
   factory IdentityUserLogin.fromJson(Map<String, dynamic> json) => _$IdentityUserLoginFromJson(json);
 

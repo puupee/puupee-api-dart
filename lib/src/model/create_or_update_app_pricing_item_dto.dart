@@ -106,10 +106,10 @@ class CreateOrUpdateAppPricingItemDto {
 
     @override
     int get hashCode =>
-        name.hashCode +
-        description.hashCode +
-        linkUrl.hashCode +
-        display.hashCode +
+        (name == null ? 0 : name.hashCode) +
+        (description == null ? 0 : description.hashCode) +
+        (linkUrl == null ? 0 : linkUrl.hashCode) +
+        (display == null ? 0 : display.hashCode) +
         sortIndex.hashCode;
 
   factory CreateOrUpdateAppPricingItemDto.fromJson(Map<String, dynamic> json) => _$CreateOrUpdateAppPricingItemDtoFromJson(json);

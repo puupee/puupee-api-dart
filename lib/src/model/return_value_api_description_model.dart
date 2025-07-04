@@ -56,8 +56,8 @@ class ReturnValueApiDescriptionModel {
 
     @override
     int get hashCode =>
-        type.hashCode +
-        typeSimple.hashCode;
+        (type == null ? 0 : type.hashCode) +
+        (typeSimple == null ? 0 : typeSimple.hashCode);
 
   factory ReturnValueApiDescriptionModel.fromJson(Map<String, dynamic> json) => _$ReturnValueApiDescriptionModelFromJson(json);
 

@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 # **changeAccountPassword**
-> changeAccountPassword(body)
+> changeAccountPassword(changePasswordDto)
 
 
 
@@ -31,10 +31,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAccountApi();
-final ChangePasswordDto body = ; // ChangePasswordDto | 
+final ChangePasswordDto changePasswordDto = ; // ChangePasswordDto | 
 
 try {
-    api.changeAccountPassword(body);
+    api.changeAccountPassword(changePasswordDto);
 } catch on DioException (e) {
     print('Exception when calling AccountApi->changeAccountPassword: $e\n');
 }
@@ -44,7 +44,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ChangePasswordDto**](ChangePasswordDto.md)|  | [optional] 
+ **changePasswordDto** | [**ChangePasswordDto**](ChangePasswordDto.md)|  | [optional] 
 
 ### Return type
 
@@ -101,7 +101,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **destroyAccount**
-> destroyAccount(body)
+> destroyAccount(accountDeletionDto)
 
 
 
@@ -112,10 +112,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAccountApi();
-final AccountDeletionDto body = ; // AccountDeletionDto | 
+final AccountDeletionDto accountDeletionDto = ; // AccountDeletionDto | 
 
 try {
-    api.destroyAccount(body);
+    api.destroyAccount(accountDeletionDto);
 } catch on DioException (e) {
     print('Exception when calling AccountApi->destroyAccount: $e\n');
 }
@@ -125,7 +125,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AccountDeletionDto**](AccountDeletionDto.md)|  | [optional] 
+ **accountDeletionDto** | [**AccountDeletionDto**](AccountDeletionDto.md)|  | [optional] 
 
 ### Return type
 
@@ -182,7 +182,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **register**
-> IdentityUserDto register(body)
+> IdentityUserDto register(registerDto)
 
 
 
@@ -193,10 +193,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAccountApi();
-final RegisterDto body = ; // RegisterDto | 
+final RegisterDto registerDto = ; // RegisterDto | 
 
 try {
-    final response = api.register(body);
+    final response = api.register(registerDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AccountApi->register: $e\n');
@@ -207,7 +207,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RegisterDto**](RegisterDto.md)|  | [optional] 
+ **registerDto** | [**RegisterDto**](RegisterDto.md)|  | [optional] 
 
 ### Return type
 
@@ -225,7 +225,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **resetPassword**
-> resetPassword(body)
+> resetPassword(resetPasswordDto)
 
 
 
@@ -236,10 +236,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAccountApi();
-final ResetPasswordDto body = ; // ResetPasswordDto | 
+final ResetPasswordDto resetPasswordDto = ; // ResetPasswordDto | 
 
 try {
-    api.resetPassword(body);
+    api.resetPassword(resetPasswordDto);
 } catch on DioException (e) {
     print('Exception when calling AccountApi->resetPassword: $e\n');
 }
@@ -249,7 +249,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ResetPasswordDto**](ResetPasswordDto.md)|  | [optional] 
+ **resetPasswordDto** | [**ResetPasswordDto**](ResetPasswordDto.md)|  | [optional] 
 
 ### Return type
 
@@ -267,7 +267,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **sendPasswordResetCode**
-> sendPasswordResetCode(body)
+> sendPasswordResetCode(sendPasswordResetCodeDto)
 
 
 
@@ -278,10 +278,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAccountApi();
-final SendPasswordResetCodeDto body = ; // SendPasswordResetCodeDto | 
+final SendPasswordResetCodeDto sendPasswordResetCodeDto = ; // SendPasswordResetCodeDto | 
 
 try {
-    api.sendPasswordResetCode(body);
+    api.sendPasswordResetCode(sendPasswordResetCodeDto);
 } catch on DioException (e) {
     print('Exception when calling AccountApi->sendPasswordResetCode: $e\n');
 }
@@ -291,7 +291,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SendPasswordResetCodeDto**](SendPasswordResetCodeDto.md)|  | [optional] 
+ **sendPasswordResetCodeDto** | [**SendPasswordResetCodeDto**](SendPasswordResetCodeDto.md)|  | [optional] 
 
 ### Return type
 
@@ -309,7 +309,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **verifyPasswordResetToken**
-> bool verifyPasswordResetToken(body)
+> bool verifyPasswordResetToken(verifyPasswordResetTokenInput)
 
 
 
@@ -320,10 +320,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAccountApi();
-final VerifyPasswordResetTokenInput body = ; // VerifyPasswordResetTokenInput | 
+final VerifyPasswordResetTokenInput verifyPasswordResetTokenInput = ; // VerifyPasswordResetTokenInput | 
 
 try {
-    final response = api.verifyPasswordResetToken(body);
+    final response = api.verifyPasswordResetToken(verifyPasswordResetTokenInput);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AccountApi->verifyPasswordResetToken: $e\n');
@@ -334,7 +334,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**VerifyPasswordResetTokenInput**](VerifyPasswordResetTokenInput.md)|  | [optional] 
+ **verifyPasswordResetTokenInput** | [**VerifyPasswordResetTokenInput**](VerifyPasswordResetTokenInput.md)|  | [optional] 
 
 ### Return type
 

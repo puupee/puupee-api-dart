@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 
 # **createAppRelease**
-> AppReleaseDto createAppRelease(body)
+> AppReleaseDto createAppRelease(createOrUpdateAppReleaseDto)
 
 创建新版本
 
@@ -29,10 +29,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppReleaseApi();
-final CreateOrUpdateAppReleaseDto body = ; // CreateOrUpdateAppReleaseDto | 
+final CreateOrUpdateAppReleaseDto createOrUpdateAppReleaseDto = ; // CreateOrUpdateAppReleaseDto | 
 
 try {
-    final response = api.createAppRelease(body);
+    final response = api.createAppRelease(createOrUpdateAppReleaseDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AppReleaseApi->createAppRelease: $e\n');
@@ -43,7 +43,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateOrUpdateAppReleaseDto**](CreateOrUpdateAppReleaseDto.md)|  | [optional] 
+ **createOrUpdateAppReleaseDto** | [**CreateOrUpdateAppReleaseDto**](CreateOrUpdateAppReleaseDto.md)|  | [optional] 
 
 ### Return type
 
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateAppRelease**
-> AppReleaseDto updateAppRelease(id, body)
+> AppReleaseDto updateAppRelease(id, createOrUpdateAppReleaseDto)
 
 更新版本
 
@@ -260,10 +260,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getAppReleaseApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final CreateOrUpdateAppReleaseDto body = ; // CreateOrUpdateAppReleaseDto | 
+final CreateOrUpdateAppReleaseDto createOrUpdateAppReleaseDto = ; // CreateOrUpdateAppReleaseDto | 
 
 try {
-    final response = api.updateAppRelease(id, body);
+    final response = api.updateAppRelease(id, createOrUpdateAppReleaseDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AppReleaseApi->updateAppRelease: $e\n');
@@ -275,7 +275,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **body** | [**CreateOrUpdateAppReleaseDto**](CreateOrUpdateAppReleaseDto.md)|  | [optional] 
+ **createOrUpdateAppReleaseDto** | [**CreateOrUpdateAppReleaseDto**](CreateOrUpdateAppReleaseDto.md)|  | [optional] 
 
 ### Return type
 

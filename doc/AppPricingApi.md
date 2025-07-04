@@ -19,7 +19,7 @@ Method | HTTP request | Description
 
 
 # **createAppPricing**
-> AppPricingDto createAppPricing(body)
+> AppPricingDto createAppPricing(createOrUpdateAppPricingDto)
 
 
 
@@ -30,10 +30,10 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppPricingApi();
-final CreateOrUpdateAppPricingDto body = ; // CreateOrUpdateAppPricingDto | 
+final CreateOrUpdateAppPricingDto createOrUpdateAppPricingDto = ; // CreateOrUpdateAppPricingDto | 
 
 try {
-    final response = api.createAppPricing(body);
+    final response = api.createAppPricing(createOrUpdateAppPricingDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AppPricingApi->createAppPricing: $e\n');
@@ -44,7 +44,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateOrUpdateAppPricingDto**](CreateOrUpdateAppPricingDto.md)|  | [optional] 
+ **createOrUpdateAppPricingDto** | [**CreateOrUpdateAppPricingDto**](CreateOrUpdateAppPricingDto.md)|  | [optional] 
 
 ### Return type
 
@@ -280,7 +280,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateAppPricing**
-> AppPricingDto updateAppPricing(id, body)
+> AppPricingDto updateAppPricing(id, createOrUpdateAppPricingDto)
 
 
 
@@ -292,10 +292,10 @@ import 'package:puupee_api_client/api.dart';
 
 final api = PuupeeApiClient().getAppPricingApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
-final CreateOrUpdateAppPricingDto body = ; // CreateOrUpdateAppPricingDto | 
+final CreateOrUpdateAppPricingDto createOrUpdateAppPricingDto = ; // CreateOrUpdateAppPricingDto | 
 
 try {
-    final response = api.updateAppPricing(id, body);
+    final response = api.updateAppPricing(id, createOrUpdateAppPricingDto);
     print(response);
 } catch on DioException (e) {
     print('Exception when calling AppPricingApi->updateAppPricing: $e\n');
@@ -307,7 +307,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **String**|  | 
- **body** | [**CreateOrUpdateAppPricingDto**](CreateOrUpdateAppPricingDto.md)|  | [optional] 
+ **createOrUpdateAppPricingDto** | [**CreateOrUpdateAppPricingDto**](CreateOrUpdateAppPricingDto.md)|  | [optional] 
 
 ### Return type
 

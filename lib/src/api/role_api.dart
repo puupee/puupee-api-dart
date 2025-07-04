@@ -26,7 +26,7 @@ class RoleApi {
   /// 
   ///
   /// Parameters:
-  /// * [body] 
+  /// * [identityRoleCreateDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -37,7 +37,7 @@ class RoleApi {
   /// Returns a [Future] containing a [Response] with a [IdentityRoleDto] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<IdentityRoleDto>> createIdentityRole({ 
-    IdentityRoleCreateDto? body,
+    IdentityRoleCreateDto? identityRoleCreateDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -67,7 +67,7 @@ class RoleApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(identityRoleCreateDto);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(
@@ -413,7 +413,7 @@ _responseData = rawData == null ? null : deserialize<IdentityRoleDtoPagedResultD
   ///
   /// Parameters:
   /// * [id] 
-  /// * [body] 
+  /// * [identityRoleUpdateDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -425,7 +425,7 @@ _responseData = rawData == null ? null : deserialize<IdentityRoleDtoPagedResultD
   /// Throws [DioException] if API call or serialization fails
   Future<Response<IdentityRoleDto>> updateIdentityRole({ 
     required String id,
-    IdentityRoleUpdateDto? body,
+    IdentityRoleUpdateDto? identityRoleUpdateDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -455,7 +455,7 @@ _responseData = rawData == null ? null : deserialize<IdentityRoleDtoPagedResultD
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(body);
+_bodyData=jsonEncode(identityRoleUpdateDto);
     } catch(error, stackTrace) {
       throw DioException(
          requestOptions: _options.compose(

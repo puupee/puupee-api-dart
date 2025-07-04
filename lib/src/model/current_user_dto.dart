@@ -252,20 +252,20 @@ class CurrentUserDto {
     @override
     int get hashCode =>
         isAuthenticated.hashCode +
-        id.hashCode +
-        tenantId.hashCode +
-        impersonatorUserId.hashCode +
-        impersonatorTenantId.hashCode +
-        impersonatorUserName.hashCode +
-        impersonatorTenantName.hashCode +
-        userName.hashCode +
-        name.hashCode +
-        surName.hashCode +
-        email.hashCode +
+        (id == null ? 0 : id.hashCode) +
+        (tenantId == null ? 0 : tenantId.hashCode) +
+        (impersonatorUserId == null ? 0 : impersonatorUserId.hashCode) +
+        (impersonatorTenantId == null ? 0 : impersonatorTenantId.hashCode) +
+        (impersonatorUserName == null ? 0 : impersonatorUserName.hashCode) +
+        (impersonatorTenantName == null ? 0 : impersonatorTenantName.hashCode) +
+        (userName == null ? 0 : userName.hashCode) +
+        (name == null ? 0 : name.hashCode) +
+        (surName == null ? 0 : surName.hashCode) +
+        (email == null ? 0 : email.hashCode) +
         emailVerified.hashCode +
-        phoneNumber.hashCode +
+        (phoneNumber == null ? 0 : phoneNumber.hashCode) +
         phoneNumberVerified.hashCode +
-        roles.hashCode;
+        (roles == null ? 0 : roles.hashCode);
 
   factory CurrentUserDto.fromJson(Map<String, dynamic> json) => _$CurrentUserDtoFromJson(json);
 
