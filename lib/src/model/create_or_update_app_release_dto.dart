@@ -36,9 +36,7 @@ class CreateOrUpdateAppReleaseDto {
 
      this.size,
 
-     this.md5,
-
-     this.sliceMd5,
+     this.hash,
 
      this.artifactType,
 
@@ -153,25 +151,13 @@ class CreateOrUpdateAppReleaseDto {
 
   @JsonKey(
     
-    name: r'md5',
+    name: r'hash',
     required: false,
     includeIfNull: false,
   )
 
 
-  String? md5;
-
-
-
-  @JsonKey(
-    
-    name: r'sliceMd5',
-    required: false,
-    includeIfNull: false,
-  )
-
-
-  String? sliceMd5;
+  String? hash;
 
 
 
@@ -259,8 +245,7 @@ class CreateOrUpdateAppReleaseDto {
       other.key == key &&
       other.rapidCode == rapidCode &&
       other.size == size &&
-      other.md5 == md5 &&
-      other.sliceMd5 == sliceMd5 &&
+      other.hash == hash &&
       other.artifactType == artifactType &&
       other.isForceUpdate == isForceUpdate &&
       other.appId == appId &&
@@ -278,8 +263,7 @@ class CreateOrUpdateAppReleaseDto {
         (key == null ? 0 : key.hashCode) +
         (rapidCode == null ? 0 : rapidCode.hashCode) +
         (size == null ? 0 : size.hashCode) +
-        (md5 == null ? 0 : md5.hashCode) +
-        (sliceMd5 == null ? 0 : sliceMd5.hashCode) +
+        (hash == null ? 0 : hash.hashCode) +
         artifactType.hashCode +
         isForceUpdate.hashCode +
         appId.hashCode +

@@ -89,13 +89,8 @@ void main() {
       // TODO
     });
 
-    // String md5
-    test('to test the property `md5`', () async {
-      // TODO
-    });
-
-    // String sliceMd5
-    test('to test the property `sliceMd5`', () async {
+    // String hash
+    test('to test the property `hash`', () async {
       // TODO
     });
 
