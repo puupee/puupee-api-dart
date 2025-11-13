@@ -29,7 +29,7 @@ final CreateOrUpdateAppUserScoreDto createOrUpdateAppUserScoreDto = ; // CreateO
 try {
     final response = api.createAppUserScore(createOrUpdateAppUserScoreDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppUserScoreApi->createAppUserScore: $e\n');
 }
 ```

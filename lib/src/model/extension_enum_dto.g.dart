@@ -7,28 +7,27 @@ part of 'extension_enum_dto.dart';
 // **************************************************************************
 
 ExtensionEnumDto _$ExtensionEnumDtoFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'ExtensionEnumDto',
-      json,
-      ($checkedConvert) {
-        final val = ExtensionEnumDto(
-          fields: $checkedConvert(
-              'fields',
-              (v) => (v as List<dynamic>?)
-                  ?.map((e) =>
-                      ExtensionEnumFieldDto.fromJson(e as Map<String, dynamic>))
-                  .toList()),
-          localizationResource:
-              $checkedConvert('localizationResource', (v) => v as String?),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('ExtensionEnumDto', json, ($checkedConvert) {
+      final val = ExtensionEnumDto(
+        fields: $checkedConvert(
+          'fields',
+          (v) => (v as List<dynamic>?)
+              ?.map(
+                (e) =>
+                    ExtensionEnumFieldDto.fromJson(e as Map<String, dynamic>),
+              )
+              .toList(),
+        ),
+        localizationResource: $checkedConvert(
+          'localizationResource',
+          (v) => v as String?,
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$ExtensionEnumDtoToJson(ExtensionEnumDto instance) =>
     <String, dynamic>{
-      if (instance.fields?.map((e) => e.toJson()).toList() case final value?)
-        'fields': value,
-      if (instance.localizationResource case final value?)
-        'localizationResource': value,
+      'fields': ?instance.fields?.map((e) => e.toJson()).toList(),
+      'localizationResource': ?instance.localizationResource,
     };

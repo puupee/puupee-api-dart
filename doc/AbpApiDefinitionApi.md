@@ -29,7 +29,7 @@ final bool includeTypes = true; // bool |
 try {
     final response = api.getAbpApiDefinition(includeTypes);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AbpApiDefinitionApi->getAbpApiDefinition: $e\n');
 }
 ```

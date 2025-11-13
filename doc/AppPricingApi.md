@@ -35,7 +35,7 @@ final CreateOrUpdateAppPricingDto createOrUpdateAppPricingDto = ; // CreateOrUpd
 try {
     final response = api.createAppPricing(createOrUpdateAppPricingDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppPricingApi->createAppPricing: $e\n');
 }
 ```
@@ -77,7 +77,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 
 try {
     api.deleteAppPricingById(id);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppPricingApi->deleteAppPricingById: $e\n');
 }
 ```
@@ -120,7 +120,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getAppPricingById(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppPricingApi->getAppPricingById: $e\n');
 }
 ```
@@ -165,7 +165,7 @@ final int maxResultCount = 56; // int |
 try {
     final response = api.getAppPricingList(sorting, skipCount, maxResultCount);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppPricingApi->getAppPricingList: $e\n');
 }
 ```
@@ -210,7 +210,7 @@ final String appId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getListByAppId(appId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppPricingApi->getListByAppId: $e\n');
 }
 ```
@@ -253,7 +253,7 @@ final String appId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getPricingItemsByAppId(appId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppPricingApi->getPricingItemsByAppId: $e\n');
 }
 ```
@@ -297,7 +297,7 @@ final CreateOrUpdateAppPricingDto createOrUpdateAppPricingDto = ; // CreateOrUpd
 try {
     final response = api.updateAppPricing(id, createOrUpdateAppPricingDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppPricingApi->updateAppPricing: $e\n');
 }
 ```

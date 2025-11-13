@@ -165,6 +165,7 @@ _bodyData=jsonEncode(createOrGetSubscriptionOrderDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<SubscriptionOrderDto, SubscriptionOrderDto>(rawData, 'SubscriptionOrderDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -246,6 +247,7 @@ _responseData = rawData == null ? null : deserialize<SubscriptionOrderDto, Subsc
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<SubscriptionDto, SubscriptionDto>(rawData, 'SubscriptionDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -340,6 +342,7 @@ _bodyData=jsonEncode(verifyReceiptDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<VerifyReceiptResult, VerifyReceiptResult>(rawData, 'VerifyReceiptResult', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

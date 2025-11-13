@@ -28,7 +28,7 @@ final api = PuupeeApiClient().getMessageSourceCategoryApi();
 try {
     final response = api.getMessageSourceCategoryList();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageSourceCategoryApi->getMessageSourceCategoryList: $e\n');
 }
 ```

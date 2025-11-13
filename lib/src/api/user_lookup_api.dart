@@ -73,6 +73,7 @@ class UserLookupApi {
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<UserData, UserData>(rawData, 'UserData', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -149,6 +150,7 @@ _responseData = rawData == null ? null : deserialize<UserData, UserData>(rawData
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<UserData, UserData>(rawData, 'UserData', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -230,6 +232,7 @@ _responseData = rawData == null ? null : deserialize<UserData, UserData>(rawData
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<int, int>(rawData, 'int', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -320,6 +323,7 @@ _responseData = rawData == null ? null : deserialize<int, int>(rawData, 'int', g
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<UserDataListResultDto, UserDataListResultDto>(rawData, 'UserDataListResultDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

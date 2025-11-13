@@ -32,7 +32,7 @@ final CreateOrUpdateAppSdkDto createOrUpdateAppSdkDto = ; // CreateOrUpdateAppSd
 try {
     final response = api.createAppSdk(createOrUpdateAppSdkDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppSdkApi->createAppSdk: $e\n');
 }
 ```
@@ -74,7 +74,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 
 try {
     api.deleteAppSdkById(id);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppSdkApi->deleteAppSdkById: $e\n');
 }
 ```
@@ -119,7 +119,7 @@ final int maxResultCount = 56; // int |
 try {
     final response = api.getAppSdkList(sorting, skipCount, maxResultCount);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppSdkApi->getAppSdkList: $e\n');
 }
 ```
@@ -165,7 +165,7 @@ final CreateOrUpdateAppSdkDto createOrUpdateAppSdkDto = ; // CreateOrUpdateAppSd
 try {
     final response = api.updateAppSdk(id, createOrUpdateAppSdkDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppSdkApi->updateAppSdk: $e\n');
 }
 ```

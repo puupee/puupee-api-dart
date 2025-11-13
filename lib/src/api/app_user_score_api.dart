@@ -91,6 +91,7 @@ _bodyData=jsonEncode(createOrUpdateAppUserScoreDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<AppUserScoreDto, AppUserScoreDto>(rawData, 'AppUserScoreDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

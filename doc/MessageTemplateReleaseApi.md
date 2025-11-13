@@ -31,7 +31,7 @@ final CreateMessageTemplateReleaseDto createMessageTemplateReleaseDto = ; // Cre
 try {
     final response = api.createMessageTemplateRelease(createMessageTemplateReleaseDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageTemplateReleaseApi->createMessageTemplateRelease: $e\n');
 }
 ```
@@ -74,7 +74,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getMessageTemplateReleaseById(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageTemplateReleaseApi->getMessageTemplateReleaseById: $e\n');
 }
 ```
@@ -117,7 +117,7 @@ final String templateId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getMessageTemplateReleaseList(templateId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageTemplateReleaseApi->getMessageTemplateReleaseList: $e\n');
 }
 ```

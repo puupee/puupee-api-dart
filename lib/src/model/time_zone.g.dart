@@ -7,26 +7,27 @@ part of 'time_zone.dart';
 // **************************************************************************
 
 TimeZone _$TimeZoneFromJson(Map<String, dynamic> json) => $checkedCreate(
-      'TimeZone',
-      json,
-      ($checkedConvert) {
-        final val = TimeZone(
-          iana: $checkedConvert(
-              'iana',
-              (v) => v == null
-                  ? null
-                  : IanaTimeZone.fromJson(v as Map<String, dynamic>)),
-          windows: $checkedConvert(
-              'windows',
-              (v) => v == null
-                  ? null
-                  : WindowsTimeZone.fromJson(v as Map<String, dynamic>)),
-        );
-        return val;
-      },
+  'TimeZone',
+  json,
+  ($checkedConvert) {
+    final val = TimeZone(
+      iana: $checkedConvert(
+        'iana',
+        (v) =>
+            v == null ? null : IanaTimeZone.fromJson(v as Map<String, dynamic>),
+      ),
+      windows: $checkedConvert(
+        'windows',
+        (v) => v == null
+            ? null
+            : WindowsTimeZone.fromJson(v as Map<String, dynamic>),
+      ),
     );
+    return val;
+  },
+);
 
 Map<String, dynamic> _$TimeZoneToJson(TimeZone instance) => <String, dynamic>{
-      if (instance.iana?.toJson() case final value?) 'iana': value,
-      if (instance.windows?.toJson() case final value?) 'windows': value,
-    };
+  'iana': ?instance.iana?.toJson(),
+  'windows': ?instance.windows?.toJson(),
+};

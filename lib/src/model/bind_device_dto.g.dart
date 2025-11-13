@@ -7,36 +7,34 @@ part of 'bind_device_dto.dart';
 // **************************************************************************
 
 BindDeviceDto _$BindDeviceDtoFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'BindDeviceDto',
-      json,
-      ($checkedConvert) {
-        final val = BindDeviceDto(
-          token: $checkedConvert('token', (v) => v as String?),
-          tpnsToken: $checkedConvert('tpnsToken', (v) => v as String?),
-          isPhysicalDevice:
-              $checkedConvert('isPhysicalDevice', (v) => v as bool?),
-          name: $checkedConvert('name', (v) => v as String?),
-          platform: $checkedConvert(
-              'platform', (v) => $enumDecodeNullable(_$AppPlatformEnumMap, v)),
-          brand: $checkedConvert('brand', (v) => v as String?),
-          systemVersion: $checkedConvert('systemVersion', (v) => v as String?),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('BindDeviceDto', json, ($checkedConvert) {
+      final val = BindDeviceDto(
+        token: $checkedConvert('token', (v) => v as String?),
+        tpnsToken: $checkedConvert('tpnsToken', (v) => v as String?),
+        isPhysicalDevice: $checkedConvert(
+          'isPhysicalDevice',
+          (v) => v as bool?,
+        ),
+        name: $checkedConvert('name', (v) => v as String?),
+        platform: $checkedConvert(
+          'platform',
+          (v) => $enumDecodeNullable(_$AppPlatformEnumMap, v),
+        ),
+        brand: $checkedConvert('brand', (v) => v as String?),
+        systemVersion: $checkedConvert('systemVersion', (v) => v as String?),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$BindDeviceDtoToJson(BindDeviceDto instance) =>
     <String, dynamic>{
-      if (instance.token case final value?) 'token': value,
-      if (instance.tpnsToken case final value?) 'tpnsToken': value,
-      if (instance.isPhysicalDevice case final value?)
-        'isPhysicalDevice': value,
-      if (instance.name case final value?) 'name': value,
-      if (_$AppPlatformEnumMap[instance.platform] case final value?)
-        'platform': value,
-      if (instance.brand case final value?) 'brand': value,
-      if (instance.systemVersion case final value?) 'systemVersion': value,
+      'token': ?instance.token,
+      'tpnsToken': ?instance.tpnsToken,
+      'isPhysicalDevice': ?instance.isPhysicalDevice,
+      'name': ?instance.name,
+      'platform': ?_$AppPlatformEnumMap[instance.platform],
+      'brand': ?instance.brand,
+      'systemVersion': ?instance.systemVersion,
     };
 
 const _$AppPlatformEnumMap = {

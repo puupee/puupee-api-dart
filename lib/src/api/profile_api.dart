@@ -142,6 +142,7 @@ _bodyData=jsonEncode(changePasswordInput);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<ProfileDto, ProfileDto>(rawData, 'ProfileDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -236,6 +237,7 @@ _bodyData=jsonEncode(updateProfileDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<ProfileDto, ProfileDto>(rawData, 'ProfileDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

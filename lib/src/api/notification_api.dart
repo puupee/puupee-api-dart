@@ -163,6 +163,7 @@ class NotificationApi {
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<NotificationInfoDtoPagedResultDto, NotificationInfoDtoPagedResultDto>(rawData, 'NotificationInfoDtoPagedResultDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

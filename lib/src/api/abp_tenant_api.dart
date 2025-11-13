@@ -72,6 +72,7 @@ class AbpTenantApi {
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<FindTenantResultDto, FindTenantResultDto>(rawData, 'FindTenantResultDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -148,6 +149,7 @@ _responseData = rawData == null ? null : deserialize<FindTenantResultDto, FindTe
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<FindTenantResultDto, FindTenantResultDto>(rawData, 'FindTenantResultDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

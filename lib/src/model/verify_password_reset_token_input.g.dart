@@ -7,26 +7,19 @@ part of 'verify_password_reset_token_input.dart';
 // **************************************************************************
 
 VerifyPasswordResetTokenInput _$VerifyPasswordResetTokenInputFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'VerifyPasswordResetTokenInput',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['resetToken'],
-        );
-        final val = VerifyPasswordResetTokenInput(
-          userId: $checkedConvert('userId', (v) => v as String?),
-          resetToken: $checkedConvert('resetToken', (v) => v as String),
-        );
-        return val;
-      },
-    );
+  Map<String, dynamic> json,
+) => $checkedCreate('VerifyPasswordResetTokenInput', json, ($checkedConvert) {
+  $checkKeys(json, requiredKeys: const ['resetToken']);
+  final val = VerifyPasswordResetTokenInput(
+    userId: $checkedConvert('userId', (v) => v as String?),
+    resetToken: $checkedConvert('resetToken', (v) => v as String),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$VerifyPasswordResetTokenInputToJson(
-        VerifyPasswordResetTokenInput instance) =>
-    <String, dynamic>{
-      if (instance.userId case final value?) 'userId': value,
-      'resetToken': instance.resetToken,
-    };
+  VerifyPasswordResetTokenInput instance,
+) => <String, dynamic>{
+  'userId': ?instance.userId,
+  'resetToken': instance.resetToken,
+};

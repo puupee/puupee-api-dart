@@ -92,6 +92,7 @@ _bodyData=jsonEncode(createOrUpdateAppSdkDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<AppSdkDto, AppSdkDto>(rawData, 'AppSdkDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -231,6 +232,7 @@ _responseData = rawData == null ? null : deserialize<AppSdkDto, AppSdkDto>(rawDa
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<AppSdkDtoPagedResultDto, AppSdkDtoPagedResultDto>(rawData, 'AppSdkDtoPagedResultDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -327,6 +329,7 @@ _bodyData=jsonEncode(createOrUpdateAppSdkDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<AppSdkDto, AppSdkDto>(rawData, 'AppSdkDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

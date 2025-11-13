@@ -7,20 +7,14 @@ part of 'extension_property_api_get_dto.dart';
 // **************************************************************************
 
 ExtensionPropertyApiGetDto _$ExtensionPropertyApiGetDtoFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'ExtensionPropertyApiGetDto',
-      json,
-      ($checkedConvert) {
-        final val = ExtensionPropertyApiGetDto(
-          isAvailable: $checkedConvert('isAvailable', (v) => v as bool?),
-        );
-        return val;
-      },
-    );
+  Map<String, dynamic> json,
+) => $checkedCreate('ExtensionPropertyApiGetDto', json, ($checkedConvert) {
+  final val = ExtensionPropertyApiGetDto(
+    isAvailable: $checkedConvert('isAvailable', (v) => v as bool?),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$ExtensionPropertyApiGetDtoToJson(
-        ExtensionPropertyApiGetDto instance) =>
-    <String, dynamic>{
-      if (instance.isAvailable case final value?) 'isAvailable': value,
-    };
+  ExtensionPropertyApiGetDto instance,
+) => <String, dynamic>{'isAvailable': ?instance.isAvailable};

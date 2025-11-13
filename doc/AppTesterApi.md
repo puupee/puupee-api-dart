@@ -35,7 +35,7 @@ final String userId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.checkIsAppTester(appId, userId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppTesterApi->checkIsAppTester: $e\n');
 }
 ```
@@ -79,7 +79,7 @@ final CreateUpdateAppTesterDto createUpdateAppTesterDto = ; // CreateUpdateAppTe
 try {
     final response = api.createAppTester(createUpdateAppTesterDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppTesterApi->createAppTester: $e\n');
 }
 ```
@@ -121,7 +121,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 
 try {
     api.deleteAppTesterById(id);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppTesterApi->deleteAppTesterById: $e\n');
 }
 ```
@@ -164,7 +164,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getAppTesterById(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppTesterApi->getAppTesterById: $e\n');
 }
 ```
@@ -209,7 +209,7 @@ final int maxResultCount = 56; // int |
 try {
     final response = api.getAppTesterList(sorting, skipCount, maxResultCount);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppTesterApi->getAppTesterList: $e\n');
 }
 ```
@@ -255,7 +255,7 @@ final CreateUpdateAppTesterDto createUpdateAppTesterDto = ; // CreateUpdateAppTe
 try {
     final response = api.updateAppTester(id, createUpdateAppTesterDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppTesterApi->updateAppTester: $e\n');
 }
 ```

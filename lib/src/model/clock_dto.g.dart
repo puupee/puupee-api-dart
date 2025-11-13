@@ -6,17 +6,12 @@ part of 'clock_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-ClockDto _$ClockDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
-      'ClockDto',
-      json,
-      ($checkedConvert) {
-        final val = ClockDto(
-          kind: $checkedConvert('kind', (v) => v as String?),
-        );
-        return val;
-      },
-    );
+ClockDto _$ClockDtoFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('ClockDto', json, ($checkedConvert) {
+      final val = ClockDto(kind: $checkedConvert('kind', (v) => v as String?));
+      return val;
+    });
 
 Map<String, dynamic> _$ClockDtoToJson(ClockDto instance) => <String, dynamic>{
-      if (instance.kind case final value?) 'kind': value,
-    };
+  'kind': ?instance.kind,
+};

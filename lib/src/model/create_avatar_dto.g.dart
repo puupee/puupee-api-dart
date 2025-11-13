@@ -7,18 +7,12 @@ part of 'create_avatar_dto.dart';
 // **************************************************************************
 
 CreateAvatarDto _$CreateAvatarDtoFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'CreateAvatarDto',
-      json,
-      ($checkedConvert) {
-        final val = CreateAvatarDto(
-          key: $checkedConvert('key', (v) => v as String?),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('CreateAvatarDto', json, ($checkedConvert) {
+      final val = CreateAvatarDto(
+        key: $checkedConvert('key', (v) => v as String?),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$CreateAvatarDtoToJson(CreateAvatarDto instance) =>
-    <String, dynamic>{
-      if (instance.key case final value?) 'key': value,
-    };
+    <String, dynamic>{'key': ?instance.key};

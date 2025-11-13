@@ -30,7 +30,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.findTenantById(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AbpTenantApi->findTenantById: $e\n');
 }
 ```
@@ -73,7 +73,7 @@ final String name = name_example; // String |
 try {
     final response = api.findTenantByName(name);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AbpTenantApi->findTenantByName: $e\n');
 }
 ```

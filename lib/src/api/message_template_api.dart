@@ -91,6 +91,7 @@ _bodyData=jsonEncode(createOrUpdateMessageTemplateDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<MessageTemplateDto, MessageTemplateDto>(rawData, 'MessageTemplateDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -219,6 +220,7 @@ _responseData = rawData == null ? null : deserialize<MessageTemplateDto, Message
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<MessageTemplateDto, MessageTemplateDto>(rawData, 'MessageTemplateDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -293,6 +295,7 @@ _responseData = rawData == null ? null : deserialize<MessageTemplateDto, Message
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<List<MessageTemplateDto>, MessageTemplateDto>(rawData, 'List<MessageTemplateDto>', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -389,6 +392,7 @@ _bodyData=jsonEncode(createOrUpdateMessageTemplateDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<MessageTemplateDto, MessageTemplateDto>(rawData, 'MessageTemplateDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

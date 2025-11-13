@@ -30,7 +30,7 @@ final api = PuupeeApiClient().getTimeZoneSettingsApi();
 try {
     final response = api.getTimeZoneSettings();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TimeZoneSettingsApi->getTimeZoneSettings: $e\n');
 }
 ```
@@ -69,7 +69,7 @@ final api = PuupeeApiClient().getTimeZoneSettingsApi();
 try {
     final response = api.getTimezones();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TimeZoneSettingsApi->getTimezones: $e\n');
 }
 ```
@@ -108,7 +108,7 @@ final String timezone = timezone_example; // String |
 
 try {
     api.updateTimeZoneSettings(timezone);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TimeZoneSettingsApi->updateTimeZoneSettings: $e\n');
 }
 ```

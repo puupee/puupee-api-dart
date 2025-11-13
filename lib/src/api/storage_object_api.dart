@@ -87,6 +87,7 @@ class StorageObjectApi {
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<StorageObjectCredentials, StorageObjectCredentials>(rawData, 'StorageObjectCredentials', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -161,6 +162,7 @@ _responseData = rawData == null ? null : deserialize<StorageObjectCredentials, S
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<List<UserStorageDto>, UserStorageDto>(rawData, 'List<UserStorageDto>', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -245,6 +247,7 @@ _responseData = rawData == null ? null : deserialize<List<UserStorageDto>, UserS
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<String, String>(rawData, 'String', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

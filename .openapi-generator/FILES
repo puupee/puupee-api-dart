@@ -62,6 +62,11 @@ doc/ArtifactType.md
 doc/AvatarApi.md
 doc/AvatarDto.md
 doc/BindDeviceDto.md
+doc/BuildRecordApi.md
+doc/BuildRecordDto.md
+doc/BuildRecordDtoPagedResultDto.md
+doc/BuildStatus.md
+doc/BuildTrigger.md
 doc/ChangePasswordDto.md
 doc/ChangePasswordInput.md
 doc/CheckSyncAuthResultDto.md
@@ -69,6 +74,8 @@ doc/ClockDto.md
 doc/ControllerApiDescriptionModel.md
 doc/ControllerInterfaceApiDescriptionModel.md
 doc/CreateAvatarDto.md
+doc/CreateBuildRecordDto.md
+doc/CreateDeployRecordDto.md
 doc/CreateMessageTemplateReleaseDto.md
 doc/CreateOpenIddictApplicationDto.md
 doc/CreateOrGetSubscriptionOrderDto.md
@@ -89,6 +96,10 @@ doc/CurrentCultureDto.md
 doc/CurrentTenantDto.md
 doc/CurrentUserDto.md
 doc/DateTimeFormatDto.md
+doc/DeployRecordApi.md
+doc/DeployRecordDto.md
+doc/DeployRecordDtoPagedResultDto.md
+doc/DeployStatus.md
 doc/DeviceApi.md
 doc/DeviceDto.md
 doc/DeviceDtoPagedResultDto.md
@@ -204,6 +215,8 @@ doc/TimeZone.md
 doc/TimeZoneSettingsApi.md
 doc/TimingDto.md
 doc/TypeApiDescriptionModel.md
+doc/UpdateBuildRecordDto.md
+doc/UpdateDeployRecordDto.md
 doc/UpdateEmailSettingsDto.md
 doc/UpdateFeatureDto.md
 doc/UpdateFeaturesDto.md
@@ -239,6 +252,8 @@ lib/src/api/app_sdk_api.dart
 lib/src/api/app_tester_api.dart
 lib/src/api/app_user_score_api.dart
 lib/src/api/avatar_api.dart
+lib/src/api/build_record_api.dart
+lib/src/api/deploy_record_api.dart
 lib/src/api/device_api.dart
 lib/src/api/dynamic_claims_api.dart
 lib/src/api/email_settings_api.dart
@@ -312,6 +327,10 @@ lib/src/model/application_setting_configuration_dto.dart
 lib/src/model/artifact_type.dart
 lib/src/model/avatar_dto.dart
 lib/src/model/bind_device_dto.dart
+lib/src/model/build_record_dto.dart
+lib/src/model/build_record_dto_paged_result_dto.dart
+lib/src/model/build_status.dart
+lib/src/model/build_trigger.dart
 lib/src/model/change_password_dto.dart
 lib/src/model/change_password_input.dart
 lib/src/model/check_sync_auth_result_dto.dart
@@ -319,6 +338,8 @@ lib/src/model/clock_dto.dart
 lib/src/model/controller_api_description_model.dart
 lib/src/model/controller_interface_api_description_model.dart
 lib/src/model/create_avatar_dto.dart
+lib/src/model/create_build_record_dto.dart
+lib/src/model/create_deploy_record_dto.dart
 lib/src/model/create_message_template_release_dto.dart
 lib/src/model/create_open_iddict_application_dto.dart
 lib/src/model/create_or_get_subscription_order_dto.dart
@@ -339,6 +360,9 @@ lib/src/model/current_culture_dto.dart
 lib/src/model/current_tenant_dto.dart
 lib/src/model/current_user_dto.dart
 lib/src/model/date_time_format_dto.dart
+lib/src/model/deploy_record_dto.dart
+lib/src/model/deploy_record_dto_paged_result_dto.dart
+lib/src/model/deploy_status.dart
 lib/src/model/device_dto.dart
 lib/src/model/device_dto_paged_result_dto.dart
 lib/src/model/device_status.dart
@@ -435,6 +459,8 @@ lib/src/model/tenant_update_dto.dart
 lib/src/model/time_zone.dart
 lib/src/model/timing_dto.dart
 lib/src/model/type_api_description_model.dart
+lib/src/model/update_build_record_dto.dart
+lib/src/model/update_deploy_record_dto.dart
 lib/src/model/update_email_settings_dto.dart
 lib/src/model/update_feature_dto.dart
 lib/src/model/update_features_dto.dart
@@ -511,6 +537,11 @@ test/artifact_type_test.dart
 test/avatar_api_test.dart
 test/avatar_dto_test.dart
 test/bind_device_dto_test.dart
+test/build_record_api_test.dart
+test/build_record_dto_paged_result_dto_test.dart
+test/build_record_dto_test.dart
+test/build_status_test.dart
+test/build_trigger_test.dart
 test/change_password_dto_test.dart
 test/change_password_input_test.dart
 test/check_sync_auth_result_dto_test.dart
@@ -518,6 +549,8 @@ test/clock_dto_test.dart
 test/controller_api_description_model_test.dart
 test/controller_interface_api_description_model_test.dart
 test/create_avatar_dto_test.dart
+test/create_build_record_dto_test.dart
+test/create_deploy_record_dto_test.dart
 test/create_message_template_release_dto_test.dart
 test/create_open_iddict_application_dto_test.dart
 test/create_or_get_subscription_order_dto_test.dart
@@ -538,6 +571,10 @@ test/current_culture_dto_test.dart
 test/current_tenant_dto_test.dart
 test/current_user_dto_test.dart
 test/date_time_format_dto_test.dart
+test/deploy_record_api_test.dart
+test/deploy_record_dto_paged_result_dto_test.dart
+test/deploy_record_dto_test.dart
+test/deploy_status_test.dart
 test/device_api_test.dart
 test/device_dto_paged_result_dto_test.dart
 test/device_dto_test.dart
@@ -653,6 +690,8 @@ test/time_zone_settings_api_test.dart
 test/time_zone_test.dart
 test/timing_dto_test.dart
 test/type_api_description_model_test.dart
+test/update_build_record_dto_test.dart
+test/update_deploy_record_dto_test.dart
 test/update_email_settings_dto_test.dart
 test/update_feature_dto_test.dart
 test/update_features_dto_test.dart

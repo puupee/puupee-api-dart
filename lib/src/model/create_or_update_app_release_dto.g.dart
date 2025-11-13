@@ -7,56 +7,53 @@ part of 'create_or_update_app_release_dto.dart';
 // **************************************************************************
 
 CreateOrUpdateAppReleaseDto _$CreateOrUpdateAppReleaseDtoFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'CreateOrUpdateAppReleaseDto',
-      json,
-      ($checkedConvert) {
-        final val = CreateOrUpdateAppReleaseDto(
-          version: $checkedConvert('version', (v) => v as String?),
-          versionName: $checkedConvert('versionName', (v) => v as String?),
-          versionCode:
-              $checkedConvert('versionCode', (v) => (v as num?)?.toInt()),
-          notes: $checkedConvert('notes', (v) => v as String?),
-          platform: $checkedConvert(
-              'platform', (v) => $enumDecodeNullable(_$AppPlatformEnumMap, v)),
-          key: $checkedConvert('key', (v) => v as String?),
-          rapidCode: $checkedConvert('rapidCode', (v) => v as String?),
-          size: $checkedConvert('size', (v) => (v as num?)?.toInt()),
-          hash: $checkedConvert('hash', (v) => v as String?),
-          artifactType: $checkedConvert('artifactType',
-              (v) => $enumDecodeNullable(_$ArtifactTypeEnumMap, v)),
-          isForceUpdate: $checkedConvert('isForceUpdate', (v) => v as bool?),
-          appId: $checkedConvert('appId', (v) => v as String?),
-          isEnabled: $checkedConvert('isEnabled', (v) => v as bool?),
-          channel: $checkedConvert('channel', (v) => v as String?),
-          environment: $checkedConvert('environment', (v) => v as String?),
-        );
-        return val;
-      },
-    );
+  Map<String, dynamic> json,
+) => $checkedCreate('CreateOrUpdateAppReleaseDto', json, ($checkedConvert) {
+  final val = CreateOrUpdateAppReleaseDto(
+    version: $checkedConvert('version', (v) => v as String?),
+    versionName: $checkedConvert('versionName', (v) => v as String?),
+    versionCode: $checkedConvert('versionCode', (v) => (v as num?)?.toInt()),
+    notes: $checkedConvert('notes', (v) => v as String?),
+    platform: $checkedConvert(
+      'platform',
+      (v) => $enumDecodeNullable(_$AppPlatformEnumMap, v),
+    ),
+    key: $checkedConvert('key', (v) => v as String?),
+    rapidCode: $checkedConvert('rapidCode', (v) => v as String?),
+    size: $checkedConvert('size', (v) => (v as num?)?.toInt()),
+    hash: $checkedConvert('hash', (v) => v as String?),
+    artifactType: $checkedConvert(
+      'artifactType',
+      (v) => $enumDecodeNullable(_$ArtifactTypeEnumMap, v),
+    ),
+    isForceUpdate: $checkedConvert('isForceUpdate', (v) => v as bool?),
+    appId: $checkedConvert('appId', (v) => v as String?),
+    isEnabled: $checkedConvert('isEnabled', (v) => v as bool?),
+    channel: $checkedConvert('channel', (v) => v as String?),
+    environment: $checkedConvert('environment', (v) => v as String?),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$CreateOrUpdateAppReleaseDtoToJson(
-        CreateOrUpdateAppReleaseDto instance) =>
-    <String, dynamic>{
-      if (instance.version case final value?) 'version': value,
-      if (instance.versionName case final value?) 'versionName': value,
-      if (instance.versionCode case final value?) 'versionCode': value,
-      if (instance.notes case final value?) 'notes': value,
-      if (_$AppPlatformEnumMap[instance.platform] case final value?)
-        'platform': value,
-      if (instance.key case final value?) 'key': value,
-      if (instance.rapidCode case final value?) 'rapidCode': value,
-      if (instance.size case final value?) 'size': value,
-      if (instance.hash case final value?) 'hash': value,
-      if (_$ArtifactTypeEnumMap[instance.artifactType] case final value?)
-        'artifactType': value,
-      if (instance.isForceUpdate case final value?) 'isForceUpdate': value,
-      if (instance.appId case final value?) 'appId': value,
-      if (instance.isEnabled case final value?) 'isEnabled': value,
-      if (instance.channel case final value?) 'channel': value,
-      if (instance.environment case final value?) 'environment': value,
-    };
+  CreateOrUpdateAppReleaseDto instance,
+) => <String, dynamic>{
+  'version': ?instance.version,
+  'versionName': ?instance.versionName,
+  'versionCode': ?instance.versionCode,
+  'notes': ?instance.notes,
+  'platform': ?_$AppPlatformEnumMap[instance.platform],
+  'key': ?instance.key,
+  'rapidCode': ?instance.rapidCode,
+  'size': ?instance.size,
+  'hash': ?instance.hash,
+  'artifactType': ?_$ArtifactTypeEnumMap[instance.artifactType],
+  'isForceUpdate': ?instance.isForceUpdate,
+  'appId': ?instance.appId,
+  'isEnabled': ?instance.isEnabled,
+  'channel': ?instance.channel,
+  'environment': ?instance.environment,
+};
 
 const _$AppPlatformEnumMap = {
   AppPlatform.none: 'None',

@@ -91,6 +91,7 @@ _bodyData=jsonEncode(createUpdateMessageSourceDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<CreateUpdateMessageSourceDto, CreateUpdateMessageSourceDto>(rawData, 'CreateUpdateMessageSourceDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -219,6 +220,7 @@ _responseData = rawData == null ? null : deserialize<CreateUpdateMessageSourceDt
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<MessageSourceDto, MessageSourceDto>(rawData, 'MessageSourceDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -300,6 +302,7 @@ _responseData = rawData == null ? null : deserialize<MessageSourceDto, MessageSo
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<List<MessageSourceDto>, MessageSourceDto>(rawData, 'List<MessageSourceDto>', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -396,6 +399,7 @@ _bodyData=jsonEncode(createUpdateMessageSourceDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<CreateUpdateMessageSourceDto, CreateUpdateMessageSourceDto>(rawData, 'CreateUpdateMessageSourceDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

@@ -7,24 +7,18 @@ part of 'application_auth_configuration_dto.dart';
 // **************************************************************************
 
 ApplicationAuthConfigurationDto _$ApplicationAuthConfigurationDtoFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'ApplicationAuthConfigurationDto',
-      json,
-      ($checkedConvert) {
-        final val = ApplicationAuthConfigurationDto(
-          grantedPolicies: $checkedConvert(
-              'grantedPolicies',
-              (v) => (v as Map<String, dynamic>?)?.map(
-                    (k, e) => MapEntry(k, e as bool),
-                  )),
-        );
-        return val;
-      },
-    );
+  Map<String, dynamic> json,
+) => $checkedCreate('ApplicationAuthConfigurationDto', json, ($checkedConvert) {
+  final val = ApplicationAuthConfigurationDto(
+    grantedPolicies: $checkedConvert(
+      'grantedPolicies',
+      (v) =>
+          (v as Map<String, dynamic>?)?.map((k, e) => MapEntry(k, e as bool)),
+    ),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$ApplicationAuthConfigurationDtoToJson(
-        ApplicationAuthConfigurationDto instance) =>
-    <String, dynamic>{
-      if (instance.grantedPolicies case final value?) 'grantedPolicies': value,
-    };
+  ApplicationAuthConfigurationDto instance,
+) => <String, dynamic>{'grantedPolicies': ?instance.grantedPolicies};

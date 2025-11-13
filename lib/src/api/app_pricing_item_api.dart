@@ -91,6 +91,7 @@ _bodyData=jsonEncode(createOrUpdateAppPricingItemDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<AppPricingItemDto, AppPricingItemDto>(rawData, 'AppPricingItemDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -219,6 +220,7 @@ _responseData = rawData == null ? null : deserialize<AppPricingItemDto, AppPrici
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<AppPricingItemDto, AppPricingItemDto>(rawData, 'AppPricingItemDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -293,6 +295,7 @@ _responseData = rawData == null ? null : deserialize<AppPricingItemDto, AppPrici
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<List<AppPricingItemDto>, AppPricingItemDto>(rawData, 'List<AppPricingItemDto>', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -389,6 +392,7 @@ _bodyData=jsonEncode(createOrUpdateAppPricingItemDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<AppPricingItemDto, AppPricingItemDto>(rawData, 'AppPricingItemDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

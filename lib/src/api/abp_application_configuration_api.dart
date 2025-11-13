@@ -77,6 +77,7 @@ class AbpApplicationConfigurationApi {
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<ApplicationConfigurationDto, ApplicationConfigurationDto>(rawData, 'ApplicationConfigurationDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

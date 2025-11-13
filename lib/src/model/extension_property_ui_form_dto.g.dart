@@ -7,20 +7,14 @@ part of 'extension_property_ui_form_dto.dart';
 // **************************************************************************
 
 ExtensionPropertyUiFormDto _$ExtensionPropertyUiFormDtoFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'ExtensionPropertyUiFormDto',
-      json,
-      ($checkedConvert) {
-        final val = ExtensionPropertyUiFormDto(
-          isVisible: $checkedConvert('isVisible', (v) => v as bool?),
-        );
-        return val;
-      },
-    );
+  Map<String, dynamic> json,
+) => $checkedCreate('ExtensionPropertyUiFormDto', json, ($checkedConvert) {
+  final val = ExtensionPropertyUiFormDto(
+    isVisible: $checkedConvert('isVisible', (v) => v as bool?),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$ExtensionPropertyUiFormDtoToJson(
-        ExtensionPropertyUiFormDto instance) =>
-    <String, dynamic>{
-      if (instance.isVisible case final value?) 'isVisible': value,
-    };
+  ExtensionPropertyUiFormDto instance,
+) => <String, dynamic>{'isVisible': ?instance.isVisible};

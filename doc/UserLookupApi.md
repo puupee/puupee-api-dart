@@ -32,7 +32,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.findById(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UserLookupApi->findById: $e\n');
 }
 ```
@@ -75,7 +75,7 @@ final String userName = userName_example; // String |
 try {
     final response = api.findByUserName(userName);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UserLookupApi->findByUserName: $e\n');
 }
 ```
@@ -118,7 +118,7 @@ final String filter = filter_example; // String |
 try {
     final response = api.getCount(filter);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UserLookupApi->getCount: $e\n');
 }
 ```
@@ -164,7 +164,7 @@ final int maxResultCount = 56; // int |
 try {
     final response = api.search(filter, sorting, skipCount, maxResultCount);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling UserLookupApi->search: $e\n');
 }
 ```

@@ -36,7 +36,7 @@ final TenantCreateDto tenantCreateDto = ; // TenantCreateDto |
 try {
     final response = api.createTenant(tenantCreateDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TenantApi->createTenant: $e\n');
 }
 ```
@@ -78,7 +78,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 
 try {
     api.deleteDefaultConnectionString(id);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TenantApi->deleteDefaultConnectionString: $e\n');
 }
 ```
@@ -120,7 +120,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 
 try {
     api.deleteTenantById(id);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TenantApi->deleteTenantById: $e\n');
 }
 ```
@@ -163,7 +163,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getDefaultConnectionString(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TenantApi->getDefaultConnectionString: $e\n');
 }
 ```
@@ -206,7 +206,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getTenantById(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TenantApi->getTenantById: $e\n');
 }
 ```
@@ -252,7 +252,7 @@ final int maxResultCount = 56; // int |
 try {
     final response = api.getTenantList(filter, sorting, skipCount, maxResultCount);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TenantApi->getTenantList: $e\n');
 }
 ```
@@ -298,7 +298,7 @@ final String defaultConnectionString = defaultConnectionString_example; // Strin
 
 try {
     api.updateDefaultConnectionString(id, defaultConnectionString);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TenantApi->updateDefaultConnectionString: $e\n');
 }
 ```
@@ -343,7 +343,7 @@ final TenantUpdateDto tenantUpdateDto = ; // TenantUpdateDto |
 try {
     final response = api.updateTenant(id, tenantUpdateDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling TenantApi->updateTenant: $e\n');
 }
 ```

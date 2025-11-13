@@ -82,6 +82,7 @@ class AppTesterApi {
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<bool, bool>(rawData, 'bool', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -176,6 +177,7 @@ _bodyData=jsonEncode(createUpdateAppTesterDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<AppTesterDto, AppTesterDto>(rawData, 'AppTesterDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -304,6 +306,7 @@ _responseData = rawData == null ? null : deserialize<AppTesterDto, AppTesterDto>
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<AppTesterDto, AppTesterDto>(rawData, 'AppTesterDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -391,6 +394,7 @@ _responseData = rawData == null ? null : deserialize<AppTesterDto, AppTesterDto>
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<AppTesterDtoPagedResultDto, AppTesterDtoPagedResultDto>(rawData, 'AppTesterDtoPagedResultDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -487,6 +491,7 @@ _bodyData=jsonEncode(createUpdateAppTesterDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<AppTesterDto, AppTesterDto>(rawData, 'AppTesterDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

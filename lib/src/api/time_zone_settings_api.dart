@@ -70,6 +70,7 @@ class TimeZoneSettingsApi {
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<String, String>(rawData, 'String', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -144,6 +145,7 @@ _responseData = rawData == null ? null : deserialize<String, String>(rawData, 'S
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<List<NameValue>, NameValue>(rawData, 'List<NameValue>', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

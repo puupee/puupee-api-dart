@@ -81,6 +81,7 @@ class PermissionsApi {
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<GetPermissionListResultDto, GetPermissionListResultDto>(rawData, 'GetPermissionListResultDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

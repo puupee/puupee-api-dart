@@ -92,6 +92,7 @@ _bodyData=jsonEncode(createOrUpdateAppFeatureDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<AppFeatureDto, AppFeatureDto>(rawData, 'AppFeatureDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -231,6 +232,7 @@ _responseData = rawData == null ? null : deserialize<AppFeatureDto, AppFeatureDt
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<AppFeatureDtoPagedResultDto, AppFeatureDtoPagedResultDto>(rawData, 'AppFeatureDtoPagedResultDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -327,6 +329,7 @@ _bodyData=jsonEncode(createOrUpdateAppFeatureDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<AppFeatureDto, AppFeatureDto>(rawData, 'AppFeatureDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

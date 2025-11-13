@@ -7,33 +7,30 @@ part of 'entity_extension_dto.dart';
 // **************************************************************************
 
 EntityExtensionDto _$EntityExtensionDtoFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'EntityExtensionDto',
-      json,
-      ($checkedConvert) {
-        final val = EntityExtensionDto(
-          properties: $checkedConvert(
-              'properties',
-              (v) => (v as Map<String, dynamic>?)?.map(
-                    (k, e) => MapEntry(
-                        k,
-                        ExtensionPropertyDto.fromJson(
-                            e as Map<String, dynamic>)),
-                  )),
-          configuration: $checkedConvert(
-              'configuration',
-              (v) => (v as Map<String, dynamic>?)?.map(
-                    (k, e) => MapEntry(k, e as Object),
-                  )),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('EntityExtensionDto', json, ($checkedConvert) {
+      final val = EntityExtensionDto(
+        properties: $checkedConvert(
+          'properties',
+          (v) => (v as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry(
+              k,
+              ExtensionPropertyDto.fromJson(e as Map<String, dynamic>),
+            ),
+          ),
+        ),
+        configuration: $checkedConvert(
+          'configuration',
+          (v) => (v as Map<String, dynamic>?)?.map(
+            (k, e) => MapEntry(k, e as Object),
+          ),
+        ),
+      );
+      return val;
+    });
 
-Map<String, dynamic> _$EntityExtensionDtoToJson(EntityExtensionDto instance) =>
-    <String, dynamic>{
-      if (instance.properties?.map((k, e) => MapEntry(k, e.toJson()))
-          case final value?)
-        'properties': value,
-      if (instance.configuration case final value?) 'configuration': value,
-    };
+Map<String, dynamic> _$EntityExtensionDtoToJson(
+  EntityExtensionDto instance,
+) => <String, dynamic>{
+  'properties': ?instance.properties?.map((k, e) => MapEntry(k, e.toJson())),
+  'configuration': ?instance.configuration,
+};

@@ -7,24 +7,19 @@ part of 'update_features_dto.dart';
 // **************************************************************************
 
 UpdateFeaturesDto _$UpdateFeaturesDtoFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'UpdateFeaturesDto',
-      json,
-      ($checkedConvert) {
-        final val = UpdateFeaturesDto(
-          features: $checkedConvert(
-              'features',
-              (v) => (v as List<dynamic>?)
-                  ?.map((e) =>
-                      UpdateFeatureDto.fromJson(e as Map<String, dynamic>))
-                  .toList()),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('UpdateFeaturesDto', json, ($checkedConvert) {
+      final val = UpdateFeaturesDto(
+        features: $checkedConvert(
+          'features',
+          (v) => (v as List<dynamic>?)
+              ?.map((e) => UpdateFeatureDto.fromJson(e as Map<String, dynamic>))
+              .toList(),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$UpdateFeaturesDtoToJson(UpdateFeaturesDto instance) =>
     <String, dynamic>{
-      if (instance.features?.map((e) => e.toJson()).toList() case final value?)
-        'features': value,
+      'features': ?instance.features?.map((e) => e.toJson()).toList(),
     };

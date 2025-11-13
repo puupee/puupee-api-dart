@@ -43,7 +43,7 @@ final CreateOrUpdateAppDto createOrUpdateAppDto = ; // CreateOrUpdateAppDto |
 try {
     final response = api.createApp(createOrUpdateAppDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppApi->createApp: $e\n');
 }
 ```
@@ -85,7 +85,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 
 try {
     api.deleteAppById(id);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppApi->deleteAppById: $e\n');
 }
 ```
@@ -128,7 +128,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getAppById(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppApi->getAppById: $e\n');
 }
 ```
@@ -174,7 +174,7 @@ final int maxResultCount = 56; // int |
 try {
     final response = api.getAppList(creatorId, sorting, skipCount, maxResultCount);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppApi->getAppList: $e\n');
 }
 ```
@@ -220,7 +220,7 @@ final String name = name_example; // String |
 try {
     final response = api.getByName(name);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppApi->getByName: $e\n');
 }
 ```
@@ -264,7 +264,7 @@ final String env = env_example; // String |
 try {
     final response = api.getFeatureList(appId, env);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppApi->getFeatureList: $e\n');
 }
 ```
@@ -308,7 +308,7 @@ final String developerAccount = developerAccount_example; // String |
 try {
     final response = api.getListByDeveloperAll(developerAccount);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppApi->getListByDeveloperAll: $e\n');
 }
 ```
@@ -353,7 +353,7 @@ final String currentAppName = currentAppName_example; // String |
 try {
     final response = api.getListPublic(type, developerAccount, currentAppName);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppApi->getListPublic: $e\n');
 }
 ```
@@ -402,7 +402,7 @@ final int maxResultCount = 56; // int |
 try {
     final response = api.getListWithUser(type, searchKey, sorting, skipCount, maxResultCount);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppApi->getListWithUser: $e\n');
 }
 ```
@@ -450,7 +450,7 @@ final String env = env_example; // String |
 try {
     final response = api.getSdksById(appId, env);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppApi->getSdksById: $e\n');
 }
 ```
@@ -494,7 +494,7 @@ final String key = key_example; // String |
 try {
     final response = api.getUploadCredentials(key);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppApi->getUploadCredentials: $e\n');
 }
 ```
@@ -537,7 +537,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getWithUser(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppApi->getWithUser: $e\n');
 }
 ```
@@ -580,7 +580,7 @@ final AppRunDto appRunDto = ; // AppRunDto |
 try {
     final response = api.run(appRunDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppApi->run: $e\n');
 }
 ```
@@ -624,7 +624,7 @@ final CreateOrUpdateAppDto createOrUpdateAppDto = ; // CreateOrUpdateAppDto |
 try {
     final response = api.updateApp(id, createOrUpdateAppDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppApi->updateApp: $e\n');
 }
 ```
@@ -669,7 +669,7 @@ final AppRunRecordUpdateDto appRunRecordUpdateDto = ; // AppRunRecordUpdateDto |
 try {
     final response = api.updateRunState(id, appRunRecordUpdateDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppApi->updateRunState: $e\n');
 }
 ```

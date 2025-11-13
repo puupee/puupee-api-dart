@@ -92,6 +92,7 @@ _bodyData=jsonEncode(createAvatarDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<AvatarDto, AvatarDto>(rawData, 'AvatarDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -173,6 +174,7 @@ _responseData = rawData == null ? null : deserialize<AvatarDto, AvatarDto>(rawDa
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<StorageObjectCredentials, StorageObjectCredentials>(rawData, 'StorageObjectCredentials', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

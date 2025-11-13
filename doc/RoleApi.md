@@ -34,7 +34,7 @@ final IdentityRoleCreateDto identityRoleCreateDto = ; // IdentityRoleCreateDto |
 try {
     final response = api.createIdentityRole(identityRoleCreateDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling RoleApi->createIdentityRole: $e\n');
 }
 ```
@@ -76,7 +76,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 
 try {
     api.deleteIdentityRoleById(id);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling RoleApi->deleteIdentityRoleById: $e\n');
 }
 ```
@@ -118,7 +118,7 @@ final api = PuupeeApiClient().getRoleApi();
 try {
     final response = api.getAllList();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling RoleApi->getAllList: $e\n');
 }
 ```
@@ -158,7 +158,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getIdentityRoleById(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling RoleApi->getIdentityRoleById: $e\n');
 }
 ```
@@ -204,7 +204,7 @@ final int maxResultCount = 56; // int |
 try {
     final response = api.getIdentityRoleList(filter, sorting, skipCount, maxResultCount);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling RoleApi->getIdentityRoleList: $e\n');
 }
 ```
@@ -251,7 +251,7 @@ final IdentityRoleUpdateDto identityRoleUpdateDto = ; // IdentityRoleUpdateDto |
 try {
     final response = api.updateIdentityRole(id, identityRoleUpdateDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling RoleApi->updateIdentityRole: $e\n');
 }
 ```

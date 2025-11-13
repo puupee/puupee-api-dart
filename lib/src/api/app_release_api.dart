@@ -92,6 +92,7 @@ _bodyData=jsonEncode(createOrUpdateAppReleaseDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<AppReleaseDto, AppReleaseDto>(rawData, 'AppReleaseDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -220,6 +221,7 @@ _responseData = rawData == null ? null : deserialize<AppReleaseDto, AppReleaseDt
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<AppReleaseDto, AppReleaseDto>(rawData, 'AppReleaseDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -316,6 +318,7 @@ _responseData = rawData == null ? null : deserialize<AppReleaseDto, AppReleaseDt
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<AppReleaseDtoPagedResultDto, AppReleaseDtoPagedResultDto>(rawData, 'AppReleaseDtoPagedResultDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -406,6 +409,7 @@ _responseData = rawData == null ? null : deserialize<AppReleaseDtoPagedResultDto
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<AppReleaseDto, AppReleaseDto>(rawData, 'AppReleaseDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -502,6 +506,7 @@ _bodyData=jsonEncode(createOrUpdateAppReleaseDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<AppReleaseDto, AppReleaseDto>(rawData, 'AppReleaseDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

@@ -7,18 +7,12 @@ part of 'account_deletion_dto.dart';
 // **************************************************************************
 
 AccountDeletionDto _$AccountDeletionDtoFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'AccountDeletionDto',
-      json,
-      ($checkedConvert) {
-        final val = AccountDeletionDto(
-          code: $checkedConvert('code', (v) => v as String?),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('AccountDeletionDto', json, ($checkedConvert) {
+      final val = AccountDeletionDto(
+        code: $checkedConvert('code', (v) => v as String?),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$AccountDeletionDtoToJson(AccountDeletionDto instance) =>
-    <String, dynamic>{
-      if (instance.code case final value?) 'code': value,
-    };
+    <String, dynamic>{'code': ?instance.code};

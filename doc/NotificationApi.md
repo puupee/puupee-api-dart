@@ -38,7 +38,7 @@ final String level = level_example; // String | 设置时效性通知 active：�
 
 try {
     api.bark(apiKey, message, automaticallyCopy, copy, url, isArchive, group, icon, level);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NotificationApi->bark: $e\n');
 }
 ```
@@ -91,7 +91,7 @@ final int maxResultCount = 56; // int |
 try {
     final response = api.getNotificationList(sorting, skipCount, maxResultCount);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NotificationApi->getNotificationList: $e\n');
 }
 ```
@@ -135,7 +135,7 @@ final CreatePushNotificationDto createPushNotificationDto = ; // CreatePushNotif
 
 try {
     api.push(createPushNotificationDto);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling NotificationApi->push: $e\n');
 }
 ```

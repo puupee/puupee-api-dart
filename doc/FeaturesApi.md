@@ -31,7 +31,7 @@ final String providerKey = providerKey_example; // String |
 
 try {
     api.deleteFeatures(providerName, providerKey);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FeaturesApi->deleteFeatures: $e\n');
 }
 ```
@@ -76,7 +76,7 @@ final String providerKey = providerKey_example; // String |
 try {
     final response = api.getFeatures(providerName, providerKey);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FeaturesApi->getFeatures: $e\n');
 }
 ```
@@ -121,7 +121,7 @@ final String providerKey = providerKey_example; // String |
 
 try {
     api.updateFeatures(updateFeaturesDto, providerName, providerKey);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling FeaturesApi->updateFeatures: $e\n');
 }
 ```

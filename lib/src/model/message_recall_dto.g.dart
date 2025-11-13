@@ -7,18 +7,12 @@ part of 'message_recall_dto.dart';
 // **************************************************************************
 
 MessageRecallDto _$MessageRecallDtoFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'MessageRecallDto',
-      json,
-      ($checkedConvert) {
-        final val = MessageRecallDto(
-          puupeeId: $checkedConvert('puupeeId', (v) => v as String?),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('MessageRecallDto', json, ($checkedConvert) {
+      final val = MessageRecallDto(
+        puupeeId: $checkedConvert('puupeeId', (v) => v as String?),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$MessageRecallDtoToJson(MessageRecallDto instance) =>
-    <String, dynamic>{
-      if (instance.puupeeId case final value?) 'puupeeId': value,
-    };
+    <String, dynamic>{'puupeeId': ?instance.puupeeId};

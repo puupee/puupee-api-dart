@@ -7,19 +7,13 @@ part of 'message_subscribe_dto.dart';
 // **************************************************************************
 
 MessageSubscribeDto _$MessageSubscribeDtoFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'MessageSubscribeDto',
-      json,
-      ($checkedConvert) {
-        final val = MessageSubscribeDto(
-          appId: $checkedConvert('appId', (v) => v as String?),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('MessageSubscribeDto', json, ($checkedConvert) {
+      final val = MessageSubscribeDto(
+        appId: $checkedConvert('appId', (v) => v as String?),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$MessageSubscribeDtoToJson(
-        MessageSubscribeDto instance) =>
-    <String, dynamic>{
-      if (instance.appId case final value?) 'appId': value,
-    };
+  MessageSubscribeDto instance,
+) => <String, dynamic>{'appId': ?instance.appId};

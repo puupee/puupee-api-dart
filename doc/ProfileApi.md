@@ -30,7 +30,7 @@ final ChangePasswordInput changePasswordInput = ; // ChangePasswordInput |
 
 try {
     api.changePassword(changePasswordInput);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ProfileApi->changePassword: $e\n');
 }
 ```
@@ -72,7 +72,7 @@ final api = PuupeeApiClient().getProfileApi();
 try {
     final response = api.getProfile();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ProfileApi->getProfile: $e\n');
 }
 ```
@@ -112,7 +112,7 @@ final UpdateProfileDto updateProfileDto = ; // UpdateProfileDto |
 try {
     final response = api.updateProfile(updateProfileDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ProfileApi->updateProfile: $e\n');
 }
 ```

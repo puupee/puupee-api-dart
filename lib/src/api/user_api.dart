@@ -95,6 +95,7 @@ _bodyData=jsonEncode(identityUserCreateDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<IdentityUserDto, IdentityUserDto>(rawData, 'IdentityUserDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -223,6 +224,7 @@ _responseData = rawData == null ? null : deserialize<IdentityUserDto, IdentityUs
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<IdentityUserDto, IdentityUserDto>(rawData, 'IdentityUserDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -299,6 +301,7 @@ _responseData = rawData == null ? null : deserialize<IdentityUserDto, IdentityUs
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<IdentityUserDto, IdentityUserDto>(rawData, 'IdentityUserDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -373,6 +376,7 @@ _responseData = rawData == null ? null : deserialize<IdentityUserDto, IdentityUs
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<IdentityRoleDtoListResultDto, IdentityRoleDtoListResultDto>(rawData, 'IdentityRoleDtoListResultDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -449,6 +453,7 @@ _responseData = rawData == null ? null : deserialize<IdentityRoleDtoListResultDt
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<IdentityUserDto, IdentityUserDto>(rawData, 'IdentityUserDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -539,6 +544,7 @@ _responseData = rawData == null ? null : deserialize<IdentityUserDto, IdentityUs
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<IdentityUserDtoPagedResultDto, IdentityUserDtoPagedResultDto>(rawData, 'IdentityUserDtoPagedResultDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -615,6 +621,7 @@ _responseData = rawData == null ? null : deserialize<IdentityUserDtoPagedResultD
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<IdentityRoleDtoListResultDto, IdentityRoleDtoListResultDto>(rawData, 'IdentityRoleDtoListResultDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -711,6 +718,7 @@ _bodyData=jsonEncode(identityUserUpdateDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<IdentityUserDto, IdentityUserDto>(rawData, 'IdentityUserDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

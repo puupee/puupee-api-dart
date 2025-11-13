@@ -34,7 +34,7 @@ final String key = key_example; // String |
 try {
     final response = api.getFileCredential(userTotalSize, rapidCode, usage, key);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StorageObjectApi->getFileCredential: $e\n');
 }
 ```
@@ -79,7 +79,7 @@ final api = PuupeeApiClient().getStorageObjectApi();
 try {
     final response = api.getUserStorages();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StorageObjectApi->getUserStorages: $e\n');
 }
 ```
@@ -120,7 +120,7 @@ final String key = key_example; // String |
 try {
     final response = api.preSignUrl(bucket, key);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling StorageObjectApi->preSignUrl: $e\n');
 }
 ```

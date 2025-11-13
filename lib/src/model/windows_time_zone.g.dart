@@ -7,18 +7,12 @@ part of 'windows_time_zone.dart';
 // **************************************************************************
 
 WindowsTimeZone _$WindowsTimeZoneFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'WindowsTimeZone',
-      json,
-      ($checkedConvert) {
-        final val = WindowsTimeZone(
-          timeZoneId: $checkedConvert('timeZoneId', (v) => v as String?),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('WindowsTimeZone', json, ($checkedConvert) {
+      final val = WindowsTimeZone(
+        timeZoneId: $checkedConvert('timeZoneId', (v) => v as String?),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$WindowsTimeZoneToJson(WindowsTimeZone instance) =>
-    <String, dynamic>{
-      if (instance.timeZoneId case final value?) 'timeZoneId': value,
-    };
+    <String, dynamic>{'timeZoneId': ?instance.timeZoneId};

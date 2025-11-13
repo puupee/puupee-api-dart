@@ -7,20 +7,14 @@ part of 'check_sync_auth_result_dto.dart';
 // **************************************************************************
 
 CheckSyncAuthResultDto _$CheckSyncAuthResultDtoFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'CheckSyncAuthResultDto',
-      json,
-      ($checkedConvert) {
-        final val = CheckSyncAuthResultDto(
-          isAuthed: $checkedConvert('isAuthed', (v) => v as bool?),
-        );
-        return val;
-      },
-    );
+  Map<String, dynamic> json,
+) => $checkedCreate('CheckSyncAuthResultDto', json, ($checkedConvert) {
+  final val = CheckSyncAuthResultDto(
+    isAuthed: $checkedConvert('isAuthed', (v) => v as bool?),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$CheckSyncAuthResultDtoToJson(
-        CheckSyncAuthResultDto instance) =>
-    <String, dynamic>{
-      if (instance.isAuthed case final value?) 'isAuthed': value,
-    };
+  CheckSyncAuthResultDto instance,
+) => <String, dynamic>{'isAuthed': ?instance.isAuthed};

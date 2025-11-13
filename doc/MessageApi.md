@@ -31,7 +31,7 @@ final MessagePublishDto messagePublishDto = ; // MessagePublishDto |
 
 try {
     api.publish(messagePublishDto);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageApi->publish: $e\n');
 }
 ```
@@ -73,7 +73,7 @@ final MessageRecallDto messageRecallDto = ; // MessageRecallDto |
 
 try {
     api.recall(messageRecallDto);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageApi->recall: $e\n');
 }
 ```
@@ -115,7 +115,7 @@ final MessageSubscribeDto messageSubscribeDto = ; // MessageSubscribeDto |
 
 try {
     api.subscribe(messageSubscribeDto);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageApi->subscribe: $e\n');
 }
 ```
@@ -157,7 +157,7 @@ final MessageUnsubscribeDto messageUnsubscribeDto = ; // MessageUnsubscribeDto |
 
 try {
     api.unsubscribe(messageUnsubscribeDto);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageApi->unsubscribe: $e\n');
 }
 ```

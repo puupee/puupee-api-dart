@@ -29,7 +29,7 @@ final SendVerificationCodeDto sendVerificationCodeDto = ; // SendVerificationCod
 
 try {
     api.sendCode(sendVerificationCodeDto);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling VerificationApi->sendCode: $e\n');
 }
 ```
@@ -71,7 +71,7 @@ final SendVerificationCodeDto sendVerificationCodeDto = ; // SendVerificationCod
 
 try {
     api.sendCodeAnonymous(sendVerificationCodeDto);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling VerificationApi->sendCodeAnonymous: $e\n');
 }
 ```

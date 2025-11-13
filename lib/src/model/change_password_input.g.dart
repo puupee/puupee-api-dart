@@ -7,26 +7,21 @@ part of 'change_password_input.dart';
 // **************************************************************************
 
 ChangePasswordInput _$ChangePasswordInputFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'ChangePasswordInput',
-      json,
-      ($checkedConvert) {
-        $checkKeys(
-          json,
-          requiredKeys: const ['newPassword'],
-        );
-        final val = ChangePasswordInput(
-          currentPassword:
-              $checkedConvert('currentPassword', (v) => v as String?),
-          newPassword: $checkedConvert('newPassword', (v) => v as String),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('ChangePasswordInput', json, ($checkedConvert) {
+      $checkKeys(json, requiredKeys: const ['newPassword']);
+      final val = ChangePasswordInput(
+        currentPassword: $checkedConvert(
+          'currentPassword',
+          (v) => v as String?,
+        ),
+        newPassword: $checkedConvert('newPassword', (v) => v as String),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$ChangePasswordInputToJson(
-        ChangePasswordInput instance) =>
-    <String, dynamic>{
-      if (instance.currentPassword case final value?) 'currentPassword': value,
-      'newPassword': instance.newPassword,
-    };
+  ChangePasswordInput instance,
+) => <String, dynamic>{
+  'currentPassword': ?instance.currentPassword,
+  'newPassword': instance.newPassword,
+};

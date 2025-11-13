@@ -32,7 +32,7 @@ final CreateUpdateMessageSourceRouteSubDto createUpdateMessageSourceRouteSubDto 
 
 try {
     api.createMessageSourceRouteSub(createUpdateMessageSourceRouteSubDto);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageSourceRouteSubApi->createMessageSourceRouteSub: $e\n');
 }
 ```
@@ -74,7 +74,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 
 try {
     api.deleteMessageSourceRouteSubById(id);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageSourceRouteSubApi->deleteMessageSourceRouteSubById: $e\n');
 }
 ```
@@ -117,7 +117,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getMessageSourceRouteSubById(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageSourceRouteSubApi->getMessageSourceRouteSubById: $e\n');
 }
 ```
@@ -159,7 +159,7 @@ final api = PuupeeApiClient().getMessageSourceRouteSubApi();
 try {
     final response = api.getMessageSourceRouteSubList();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageSourceRouteSubApi->getMessageSourceRouteSubList: $e\n');
 }
 ```
@@ -199,7 +199,7 @@ final CreateUpdateMessageSourceRouteSubDto createUpdateMessageSourceRouteSubDto 
 
 try {
     api.updateMessageSourceRouteSub(id, createUpdateMessageSourceRouteSubDto);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageSourceRouteSubApi->updateMessageSourceRouteSub: $e\n');
 }
 ```

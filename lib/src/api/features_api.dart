@@ -141,6 +141,7 @@ class FeaturesApi {
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<GetFeatureListResultDto, GetFeatureListResultDto>(rawData, 'GetFeatureListResultDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

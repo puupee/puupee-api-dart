@@ -1,0 +1,71 @@
+import 'package:test/test.dart';
+import 'package:puupee_api_client/puupee_api_client.dart';
+
+
+/// tests for DeployRecordApi
+void main() {
+  final instance = PuupeeApiClient().getDeployRecordApi();
+
+  group(DeployRecordApi, () {
+    //Future<DeployRecordDto> createDeployRecord({ CreateDeployRecordDto createDeployRecordDto }) async
+    test('test createDeployRecord', () async {
+      // TODO
+    });
+
+    //Future deleteDeployRecordById(String id) async
+    test('test deleteDeployRecordById', () async {
+      // TODO
+    });
+
+    //Future<DeployRecordDto> getByCiDeployId(String ciDeployId) async
+    test('test getByCiDeployId', () async {
+      // TODO
+    });
+
+    //Future<DeployRecordDto> getDeployRecordById(String id) async
+    test('test getDeployRecordById', () async {
+      // TODO
+    });
+
+    //Future<DeployRecordDtoPagedResultDto> getDeployRecordList({ String appId, DeployStatus status, AppPlatform platform, String environment, String version, String buildRecordId, String sorting, int skipCount, int maxResultCount }) async
+    test('test getDeployRecordList', () async {
+      // TODO
+    });
+
+    //Future<DeployRecordDto> getLatest(String appId, { AppPlatform platform, String environment }) async
+    test('test getLatest', () async {
+      // TODO
+    });
+
+    //Future<List<DeployRecordDto>> getListByBuildRecordId(String buildRecordId) async
+    test('test getListByBuildRecordId', () async {
+      // TODO
+    });
+
+    //Future<DeployRecordDto> markAsCanceled(String id) async
+    test('test markAsCanceled', () async {
+      // TODO
+    });
+
+    //Future<DeployRecordDto> markAsDeploying(String id) async
+    test('test markAsDeploying', () async {
+      // TODO
+    });
+
+    //Future<DeployRecordDto> markAsFailed(String id, { String errorMessage }) async
+    test('test markAsFailed', () async {
+      // TODO
+    });
+
+    //Future<DeployRecordDto> markAsSucceeded(String id, { String deployUrl }) async
+    test('test markAsSucceeded', () async {
+      // TODO
+    });
+
+    //Future<DeployRecordDto> updateDeployRecord(String id, { UpdateDeployRecordDto updateDeployRecordDto }) async
+    test('test updateDeployRecord', () async {
+      // TODO
+    });
+
+  });
+}

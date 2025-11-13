@@ -80,6 +80,7 @@ class AbpApplicationLocalizationApi {
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<ApplicationLocalizationDto, ApplicationLocalizationDto>(rawData, 'ApplicationLocalizationDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

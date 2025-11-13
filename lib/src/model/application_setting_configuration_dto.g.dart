@@ -7,24 +7,20 @@ part of 'application_setting_configuration_dto.dart';
 // **************************************************************************
 
 ApplicationSettingConfigurationDto _$ApplicationSettingConfigurationDtoFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'ApplicationSettingConfigurationDto',
-      json,
-      ($checkedConvert) {
-        final val = ApplicationSettingConfigurationDto(
-          values: $checkedConvert(
-              'values',
-              (v) => (v as Map<String, dynamic>?)?.map(
-                    (k, e) => MapEntry(k, e as String),
-                  )),
-        );
-        return val;
-      },
-    );
+  Map<String, dynamic> json,
+) => $checkedCreate('ApplicationSettingConfigurationDto', json, (
+  $checkedConvert,
+) {
+  final val = ApplicationSettingConfigurationDto(
+    values: $checkedConvert(
+      'values',
+      (v) =>
+          (v as Map<String, dynamic>?)?.map((k, e) => MapEntry(k, e as String)),
+    ),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$ApplicationSettingConfigurationDtoToJson(
-        ApplicationSettingConfigurationDto instance) =>
-    <String, dynamic>{
-      if (instance.values case final value?) 'values': value,
-    };
+  ApplicationSettingConfigurationDto instance,
+) => <String, dynamic>{'values': ?instance.values};

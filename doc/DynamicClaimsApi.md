@@ -27,7 +27,7 @@ final api = PuupeeApiClient().getDynamicClaimsApi();
 
 try {
     api.refresh();
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling DynamicClaimsApi->refresh: $e\n');
 }
 ```

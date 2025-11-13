@@ -35,7 +35,7 @@ final ChangePasswordDto changePasswordDto = ; // ChangePasswordDto |
 
 try {
     api.changeAccountPassword(changePasswordDto);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountApi->changeAccountPassword: $e\n');
 }
 ```
@@ -77,7 +77,7 @@ final api = PuupeeApiClient().getAccountApi();
 try {
     final response = api.checkSyncAuth();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountApi->checkSyncAuth: $e\n');
 }
 ```
@@ -116,7 +116,7 @@ final AccountDeletionDto accountDeletionDto = ; // AccountDeletionDto |
 
 try {
     api.destroyAccount(accountDeletionDto);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountApi->destroyAccount: $e\n');
 }
 ```
@@ -158,7 +158,7 @@ final api = PuupeeApiClient().getAccountApi();
 try {
     final response = api.getAccount();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountApi->getAccount: $e\n');
 }
 ```
@@ -198,7 +198,7 @@ final RegisterDto registerDto = ; // RegisterDto |
 try {
     final response = api.register(registerDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountApi->register: $e\n');
 }
 ```
@@ -240,7 +240,7 @@ final ResetPasswordDto resetPasswordDto = ; // ResetPasswordDto |
 
 try {
     api.resetPassword(resetPasswordDto);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountApi->resetPassword: $e\n');
 }
 ```
@@ -282,7 +282,7 @@ final SendPasswordResetCodeDto sendPasswordResetCodeDto = ; // SendPasswordReset
 
 try {
     api.sendPasswordResetCode(sendPasswordResetCodeDto);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountApi->sendPasswordResetCode: $e\n');
 }
 ```
@@ -325,7 +325,7 @@ final VerifyPasswordResetTokenInput verifyPasswordResetTokenInput = ; // VerifyP
 try {
     final response = api.verifyPasswordResetToken(verifyPasswordResetTokenInput);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AccountApi->verifyPasswordResetToken: $e\n');
 }
 ```

@@ -148,6 +148,7 @@ _bodyData=jsonEncode(changePasswordDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<CheckSyncAuthResultDto, CheckSyncAuthResultDto>(rawData, 'CheckSyncAuthResultDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -292,6 +293,7 @@ _bodyData=jsonEncode(accountDeletionDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<UserProfileDto, UserProfileDto>(rawData, 'UserProfileDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -386,6 +388,7 @@ _bodyData=jsonEncode(registerDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<IdentityUserDto, IdentityUserDto>(rawData, 'IdentityUserDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -620,6 +623,7 @@ _bodyData=jsonEncode(verifyPasswordResetTokenInput);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<bool, bool>(rawData, 'bool', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

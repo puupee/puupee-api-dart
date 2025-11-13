@@ -33,7 +33,7 @@ final CreateOrUpdateMessageTemplateDto createOrUpdateMessageTemplateDto = ; // C
 try {
     final response = api.createMessageTemplate(createOrUpdateMessageTemplateDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageTemplateApi->createMessageTemplate: $e\n');
 }
 ```
@@ -75,7 +75,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 
 try {
     api.deleteMessageTemplateById(id);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageTemplateApi->deleteMessageTemplateById: $e\n');
 }
 ```
@@ -118,7 +118,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getMessageTemplateById(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageTemplateApi->getMessageTemplateById: $e\n');
 }
 ```
@@ -160,7 +160,7 @@ final api = PuupeeApiClient().getMessageTemplateApi();
 try {
     final response = api.getMessageTemplateList();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageTemplateApi->getMessageTemplateList: $e\n');
 }
 ```
@@ -201,7 +201,7 @@ final CreateOrUpdateMessageTemplateDto createOrUpdateMessageTemplateDto = ; // C
 try {
     final response = api.updateMessageTemplate(id, createOrUpdateMessageTemplateDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageTemplateApi->updateMessageTemplate: $e\n');
 }
 ```

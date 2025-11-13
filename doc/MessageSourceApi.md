@@ -33,7 +33,7 @@ final CreateUpdateMessageSourceDto createUpdateMessageSourceDto = ; // CreateUpd
 try {
     final response = api.createMessageSource(createUpdateMessageSourceDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageSourceApi->createMessageSource: $e\n');
 }
 ```
@@ -75,7 +75,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 
 try {
     api.deleteMessageSourceById(id);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageSourceApi->deleteMessageSourceById: $e\n');
 }
 ```
@@ -118,7 +118,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getMessageSourceById(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageSourceApi->getMessageSourceById: $e\n');
 }
 ```
@@ -161,7 +161,7 @@ final String categoryId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getMessageSourceList(categoryId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageSourceApi->getMessageSourceList: $e\n');
 }
 ```
@@ -205,7 +205,7 @@ final CreateUpdateMessageSourceDto createUpdateMessageSourceDto = ; // CreateUpd
 try {
     final response = api.updateMessageSource(id, createUpdateMessageSourceDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageSourceApi->updateMessageSource: $e\n');
 }
 ```

@@ -93,6 +93,7 @@ _bodyData=jsonEncode(apiKeyCreateDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<ApiKeyDto, ApiKeyDto>(rawData, 'ApiKeyDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -221,6 +222,7 @@ _responseData = rawData == null ? null : deserialize<ApiKeyDto, ApiKeyDto>(rawDa
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<ApiKeyDto, ApiKeyDto>(rawData, 'ApiKeyDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -308,6 +310,7 @@ _responseData = rawData == null ? null : deserialize<ApiKeyDto, ApiKeyDto>(rawDa
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<ApiKeyDtoPagedResultDto, ApiKeyDtoPagedResultDto>(rawData, 'ApiKeyDtoPagedResultDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -404,6 +407,7 @@ _bodyData=jsonEncode(apiKeyUpdateDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<ApiKeyDto, ApiKeyDto>(rawData, 'ApiKeyDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

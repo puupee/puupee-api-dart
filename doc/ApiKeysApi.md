@@ -33,7 +33,7 @@ final ApiKeyCreateDto apiKeyCreateDto = ; // ApiKeyCreateDto |
 try {
     final response = api.createApiKeys(apiKeyCreateDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ApiKeysApi->createApiKeys: $e\n');
 }
 ```
@@ -75,7 +75,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 
 try {
     api.deleteApiKeysById(id);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ApiKeysApi->deleteApiKeysById: $e\n');
 }
 ```
@@ -118,7 +118,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getApiKeysById(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ApiKeysApi->getApiKeysById: $e\n');
 }
 ```
@@ -163,7 +163,7 @@ final int maxResultCount = 56; // int |
 try {
     final response = api.getApiKeysList(sorting, skipCount, maxResultCount);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ApiKeysApi->getApiKeysList: $e\n');
 }
 ```
@@ -209,7 +209,7 @@ final ApiKeyUpdateDto apiKeyUpdateDto = ; // ApiKeyUpdateDto |
 try {
     final response = api.updateApiKeys(id, apiKeyUpdateDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling ApiKeysApi->updateApiKeys: $e\n');
 }
 ```

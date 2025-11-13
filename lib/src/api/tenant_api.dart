@@ -93,6 +93,7 @@ _bodyData=jsonEncode(tenantCreateDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<TenantDto, TenantDto>(rawData, 'TenantDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -273,6 +274,7 @@ _responseData = rawData == null ? null : deserialize<TenantDto, TenantDto>(rawDa
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<String, String>(rawData, 'String', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -349,6 +351,7 @@ _responseData = rawData == null ? null : deserialize<String, String>(rawData, 'S
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<TenantDto, TenantDto>(rawData, 'TenantDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -439,6 +442,7 @@ _responseData = rawData == null ? null : deserialize<TenantDto, TenantDto>(rawDa
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<TenantDtoPagedResultDto, TenantDtoPagedResultDto>(rawData, 'TenantDtoPagedResultDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -594,6 +598,7 @@ _bodyData=jsonEncode(tenantUpdateDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<TenantDto, TenantDto>(rawData, 'TenantDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

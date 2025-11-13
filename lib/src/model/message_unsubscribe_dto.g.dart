@@ -7,20 +7,14 @@ part of 'message_unsubscribe_dto.dart';
 // **************************************************************************
 
 MessageUnsubscribeDto _$MessageUnsubscribeDtoFromJson(
-        Map<String, dynamic> json) =>
-    $checkedCreate(
-      'MessageUnsubscribeDto',
-      json,
-      ($checkedConvert) {
-        final val = MessageUnsubscribeDto(
-          appId: $checkedConvert('appId', (v) => v as String?),
-        );
-        return val;
-      },
-    );
+  Map<String, dynamic> json,
+) => $checkedCreate('MessageUnsubscribeDto', json, ($checkedConvert) {
+  final val = MessageUnsubscribeDto(
+    appId: $checkedConvert('appId', (v) => v as String?),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$MessageUnsubscribeDtoToJson(
-        MessageUnsubscribeDto instance) =>
-    <String, dynamic>{
-      if (instance.appId case final value?) 'appId': value,
-    };
+  MessageUnsubscribeDto instance,
+) => <String, dynamic>{'appId': ?instance.appId};

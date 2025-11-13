@@ -22,6 +22,8 @@ import 'package:puupee_api_client/src/api/app_sdk_api.dart';
 import 'package:puupee_api_client/src/api/app_tester_api.dart';
 import 'package:puupee_api_client/src/api/app_user_score_api.dart';
 import 'package:puupee_api_client/src/api/avatar_api.dart';
+import 'package:puupee_api_client/src/api/build_record_api.dart';
+import 'package:puupee_api_client/src/api/deploy_record_api.dart';
 import 'package:puupee_api_client/src/api/device_api.dart';
 import 'package:puupee_api_client/src/api/dynamic_claims_api.dart';
 import 'package:puupee_api_client/src/api/email_settings_api.dart';
@@ -184,6 +186,18 @@ class PuupeeApiClient {
   /// by doing that all interceptors will not be executed
   AvatarApi getAvatarApi() {
     return AvatarApi(dio);
+  }
+
+  /// Get BuildRecordApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  BuildRecordApi getBuildRecordApi() {
+    return BuildRecordApi(dio);
+  }
+
+  /// Get DeployRecordApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  DeployRecordApi getDeployRecordApi() {
+    return DeployRecordApi(dio);
   }
 
   /// Get DeviceApi instance, base route and serializer can be overridden by a given but be careful,

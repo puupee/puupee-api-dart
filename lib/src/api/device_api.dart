@@ -150,6 +150,7 @@ _bodyData=jsonEncode(bindDeviceDto);
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<DeviceDto, DeviceDto>(rawData, 'DeviceDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -226,6 +227,7 @@ _responseData = rawData == null ? null : deserialize<DeviceDto, DeviceDto>(rawDa
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<DeviceDto, DeviceDto>(rawData, 'DeviceDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -313,6 +315,7 @@ _responseData = rawData == null ? null : deserialize<DeviceDto, DeviceDto>(rawDa
     try {
 final rawData = _response.data;
 _responseData = rawData == null ? null : deserialize<DeviceDtoPagedResultDto, DeviceDtoPagedResultDto>(rawData, 'DeviceDtoPagedResultDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,

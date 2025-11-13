@@ -7,21 +7,17 @@ part of 'update_permission_dto.dart';
 // **************************************************************************
 
 UpdatePermissionDto _$UpdatePermissionDtoFromJson(Map<String, dynamic> json) =>
-    $checkedCreate(
-      'UpdatePermissionDto',
-      json,
-      ($checkedConvert) {
-        final val = UpdatePermissionDto(
-          name: $checkedConvert('name', (v) => v as String?),
-          isGranted: $checkedConvert('isGranted', (v) => v as bool?),
-        );
-        return val;
-      },
-    );
+    $checkedCreate('UpdatePermissionDto', json, ($checkedConvert) {
+      final val = UpdatePermissionDto(
+        name: $checkedConvert('name', (v) => v as String?),
+        isGranted: $checkedConvert('isGranted', (v) => v as bool?),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$UpdatePermissionDtoToJson(
-        UpdatePermissionDto instance) =>
-    <String, dynamic>{
-      if (instance.name case final value?) 'name': value,
-      if (instance.isGranted case final value?) 'isGranted': value,
-    };
+  UpdatePermissionDto instance,
+) => <String, dynamic>{
+  'name': ?instance.name,
+  'isGranted': ?instance.isGranted,
+};

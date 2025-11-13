@@ -30,7 +30,7 @@ final bool onlyDynamics = true; // bool |
 try {
     final response = api.getAbpApplicationLocalization(cultureName, onlyDynamics);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AbpApplicationLocalizationApi->getAbpApplicationLocalization: $e\n');
 }
 ```

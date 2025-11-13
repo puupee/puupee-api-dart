@@ -32,7 +32,7 @@ final CreateOrUpdateAppFeatureDto createOrUpdateAppFeatureDto = ; // CreateOrUpd
 try {
     final response = api.createAppFeature(createOrUpdateAppFeatureDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppFeatureApi->createAppFeature: $e\n');
 }
 ```
@@ -74,7 +74,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 
 try {
     api.deleteAppFeatureById(id);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppFeatureApi->deleteAppFeatureById: $e\n');
 }
 ```
@@ -119,7 +119,7 @@ final int maxResultCount = 56; // int |
 try {
     final response = api.getAppFeatureList(sorting, skipCount, maxResultCount);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppFeatureApi->getAppFeatureList: $e\n');
 }
 ```
@@ -165,7 +165,7 @@ final CreateOrUpdateAppFeatureDto createOrUpdateAppFeatureDto = ; // CreateOrUpd
 try {
     final response = api.updateAppFeature(id, createOrUpdateAppFeatureDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppFeatureApi->updateAppFeature: $e\n');
 }
 ```

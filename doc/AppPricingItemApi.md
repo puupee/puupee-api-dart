@@ -33,7 +33,7 @@ final CreateOrUpdateAppPricingItemDto createOrUpdateAppPricingItemDto = ; // Cre
 try {
     final response = api.createAppPricingItem(createOrUpdateAppPricingItemDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppPricingItemApi->createAppPricingItem: $e\n');
 }
 ```
@@ -75,7 +75,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 
 try {
     api.deleteAppPricingItemById(id);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppPricingItemApi->deleteAppPricingItemById: $e\n');
 }
 ```
@@ -118,7 +118,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getAppPricingItemById(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppPricingItemApi->getAppPricingItemById: $e\n');
 }
 ```
@@ -160,7 +160,7 @@ final api = PuupeeApiClient().getAppPricingItemApi();
 try {
     final response = api.getAppPricingItemList();
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppPricingItemApi->getAppPricingItemList: $e\n');
 }
 ```
@@ -201,7 +201,7 @@ final CreateOrUpdateAppPricingItemDto createOrUpdateAppPricingItemDto = ; // Cre
 try {
     final response = api.updateAppPricingItem(id, createOrUpdateAppPricingItemDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppPricingItemApi->updateAppPricingItem: $e\n');
 }
 ```

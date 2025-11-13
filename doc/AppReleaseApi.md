@@ -34,7 +34,7 @@ final CreateOrUpdateAppReleaseDto createOrUpdateAppReleaseDto = ; // CreateOrUpd
 try {
     final response = api.createAppRelease(createOrUpdateAppReleaseDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppReleaseApi->createAppRelease: $e\n');
 }
 ```
@@ -76,7 +76,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 
 try {
     api.deleteAppReleaseById(id);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppReleaseApi->deleteAppReleaseById: $e\n');
 }
 ```
@@ -119,7 +119,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getAppReleaseById(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppReleaseApi->getAppReleaseById: $e\n');
 }
 ```
@@ -167,7 +167,7 @@ final int maxResultCount = 56; // int |
 try {
     final response = api.getAppReleaseList(appId, environment, platform, sorting, skipCount, maxResultCount);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppReleaseApi->getAppReleaseList: $e\n');
 }
 ```
@@ -218,7 +218,7 @@ final String environment = environment_example; // String |
 try {
     final response = api.getLatest(appName, platform, productType, environment);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppReleaseApi->getLatest: $e\n');
 }
 ```
@@ -265,7 +265,7 @@ final CreateOrUpdateAppReleaseDto createOrUpdateAppReleaseDto = ; // CreateOrUpd
 try {
     final response = api.updateAppRelease(id, createOrUpdateAppReleaseDto);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling AppReleaseApi->updateAppRelease: $e\n');
 }
 ```

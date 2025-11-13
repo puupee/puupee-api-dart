@@ -7,25 +7,19 @@ part of 'application_global_feature_configuration_dto.dart';
 // **************************************************************************
 
 ApplicationGlobalFeatureConfigurationDto
-    _$ApplicationGlobalFeatureConfigurationDtoFromJson(
-            Map<String, dynamic> json) =>
-        $checkedCreate(
-          'ApplicationGlobalFeatureConfigurationDto',
-          json,
-          ($checkedConvert) {
-            final val = ApplicationGlobalFeatureConfigurationDto(
-              enabledFeatures: $checkedConvert(
-                  'enabledFeatures',
-                  (v) =>
-                      (v as List<dynamic>?)?.map((e) => e as String).toSet()),
-            );
-            return val;
-          },
-        );
+_$ApplicationGlobalFeatureConfigurationDtoFromJson(Map<String, dynamic> json) =>
+    $checkedCreate('ApplicationGlobalFeatureConfigurationDto', json, (
+      $checkedConvert,
+    ) {
+      final val = ApplicationGlobalFeatureConfigurationDto(
+        enabledFeatures: $checkedConvert(
+          'enabledFeatures',
+          (v) => (v as List<dynamic>?)?.map((e) => e as String).toSet(),
+        ),
+      );
+      return val;
+    });
 
 Map<String, dynamic> _$ApplicationGlobalFeatureConfigurationDtoToJson(
-        ApplicationGlobalFeatureConfigurationDto instance) =>
-    <String, dynamic>{
-      if (instance.enabledFeatures?.toList() case final value?)
-        'enabledFeatures': value,
-    };
+  ApplicationGlobalFeatureConfigurationDto instance,
+) => <String, dynamic>{'enabledFeatures': ?instance.enabledFeatures?.toList()};

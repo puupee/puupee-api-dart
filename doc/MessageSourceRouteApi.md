@@ -32,7 +32,7 @@ final CreateUpdateMessageSourceRouteDto createUpdateMessageSourceRouteDto = ; //
 
 try {
     api.createMessageSourceRoute(createUpdateMessageSourceRouteDto);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageSourceRouteApi->createMessageSourceRoute: $e\n');
 }
 ```
@@ -74,7 +74,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 
 try {
     api.deleteMessageSourceRouteById(id);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageSourceRouteApi->deleteMessageSourceRouteById: $e\n');
 }
 ```
@@ -117,7 +117,7 @@ final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getMessageSourceRouteById(id);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageSourceRouteApi->getMessageSourceRouteById: $e\n');
 }
 ```
@@ -160,7 +160,7 @@ final String sourceId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 try {
     final response = api.getMessageSourceRouteList(sourceId);
     print(response);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageSourceRouteApi->getMessageSourceRouteList: $e\n');
 }
 ```
@@ -203,7 +203,7 @@ final CreateUpdateMessageSourceRouteDto createUpdateMessageSourceRouteDto = ; //
 
 try {
     api.updateMessageSourceRoute(id, createUpdateMessageSourceRouteDto);
-} catch on DioException (e) {
+} on DioException catch (e) {
     print('Exception when calling MessageSourceRouteApi->updateMessageSourceRoute: $e\n');
 }
 ```

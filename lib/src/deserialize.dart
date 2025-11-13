@@ -37,6 +37,8 @@ import 'package:puupee_api_client/src/model/application_localization_resource_dt
 import 'package:puupee_api_client/src/model/application_setting_configuration_dto.dart';
 import 'package:puupee_api_client/src/model/avatar_dto.dart';
 import 'package:puupee_api_client/src/model/bind_device_dto.dart';
+import 'package:puupee_api_client/src/model/build_record_dto.dart';
+import 'package:puupee_api_client/src/model/build_record_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/change_password_dto.dart';
 import 'package:puupee_api_client/src/model/change_password_input.dart';
 import 'package:puupee_api_client/src/model/check_sync_auth_result_dto.dart';
@@ -44,6 +46,8 @@ import 'package:puupee_api_client/src/model/clock_dto.dart';
 import 'package:puupee_api_client/src/model/controller_api_description_model.dart';
 import 'package:puupee_api_client/src/model/controller_interface_api_description_model.dart';
 import 'package:puupee_api_client/src/model/create_avatar_dto.dart';
+import 'package:puupee_api_client/src/model/create_build_record_dto.dart';
+import 'package:puupee_api_client/src/model/create_deploy_record_dto.dart';
 import 'package:puupee_api_client/src/model/create_message_template_release_dto.dart';
 import 'package:puupee_api_client/src/model/create_open_iddict_application_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_get_subscription_order_dto.dart';
@@ -64,6 +68,8 @@ import 'package:puupee_api_client/src/model/current_culture_dto.dart';
 import 'package:puupee_api_client/src/model/current_tenant_dto.dart';
 import 'package:puupee_api_client/src/model/current_user_dto.dart';
 import 'package:puupee_api_client/src/model/date_time_format_dto.dart';
+import 'package:puupee_api_client/src/model/deploy_record_dto.dart';
+import 'package:puupee_api_client/src/model/deploy_record_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/device_dto.dart';
 import 'package:puupee_api_client/src/model/device_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/email_settings_dto.dart';
@@ -156,6 +162,8 @@ import 'package:puupee_api_client/src/model/tenant_update_dto.dart';
 import 'package:puupee_api_client/src/model/time_zone.dart';
 import 'package:puupee_api_client/src/model/timing_dto.dart';
 import 'package:puupee_api_client/src/model/type_api_description_model.dart';
+import 'package:puupee_api_client/src/model/update_build_record_dto.dart';
+import 'package:puupee_api_client/src/model/update_deploy_record_dto.dart';
 import 'package:puupee_api_client/src/model/update_email_settings_dto.dart';
 import 'package:puupee_api_client/src/model/update_feature_dto.dart';
 import 'package:puupee_api_client/src/model/update_features_dto.dart';
@@ -286,6 +294,16 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return AvatarDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'BindDeviceDto':
           return BindDeviceDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'BuildRecordDto':
+          return BuildRecordDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'BuildRecordDtoPagedResultDto':
+          return BuildRecordDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'BuildStatus':
+          
+          
+        case 'BuildTrigger':
+          
+          
         case 'ChangePasswordDto':
           return ChangePasswordDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ChangePasswordInput':
@@ -300,6 +318,10 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return ControllerInterfaceApiDescriptionModel.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateAvatarDto':
           return CreateAvatarDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'CreateBuildRecordDto':
+          return CreateBuildRecordDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'CreateDeployRecordDto':
+          return CreateDeployRecordDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateMessageTemplateReleaseDto':
           return CreateMessageTemplateReleaseDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateOpenIddictApplicationDto':
@@ -340,6 +362,13 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return CurrentUserDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'DateTimeFormatDto':
           return DateTimeFormatDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'DeployRecordDto':
+          return DeployRecordDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'DeployRecordDtoPagedResultDto':
+          return DeployRecordDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'DeployStatus':
+          
+          
         case 'DeviceDto':
           return DeviceDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'DeviceDtoPagedResultDto':
@@ -536,6 +565,10 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return TimingDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'TypeApiDescriptionModel':
           return TypeApiDescriptionModel.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'UpdateBuildRecordDto':
+          return UpdateBuildRecordDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'UpdateDeployRecordDto':
+          return UpdateDeployRecordDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'UpdateEmailSettingsDto':
           return UpdateEmailSettingsDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'UpdateFeatureDto':
