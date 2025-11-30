@@ -6,70 +6,68 @@ part of 'build_record_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-BuildRecordDto _$BuildRecordDtoFromJson(Map<String, dynamic> json) =>
-    $checkedCreate('BuildRecordDto', json, ($checkedConvert) {
-      final val = BuildRecordDto(
-        id: $checkedConvert('id', (v) => v as String?),
-        creationTime: $checkedConvert(
-          'creationTime',
-          (v) => v == null ? null : DateTime.parse(v as String),
-        ),
-        creatorId: $checkedConvert('creatorId', (v) => v as String?),
-        lastModificationTime: $checkedConvert(
-          'lastModificationTime',
-          (v) => v == null ? null : DateTime.parse(v as String),
-        ),
-        lastModifierId: $checkedConvert('lastModifierId', (v) => v as String?),
-        isDeleted: $checkedConvert('isDeleted', (v) => v as bool?),
-        deleterId: $checkedConvert('deleterId', (v) => v as String?),
-        deletionTime: $checkedConvert(
-          'deletionTime',
-          (v) => v == null ? null : DateTime.parse(v as String),
-        ),
-        appId: $checkedConvert('appId', (v) => v as String?),
-        appName: $checkedConvert('appName', (v) => v as String?),
-        version: $checkedConvert('version', (v) => v as String?),
-        branch: $checkedConvert('branch', (v) => v as String?),
-        commitHash: $checkedConvert('commitHash', (v) => v as String?),
-        trigger: $checkedConvert(
-          'trigger',
-          (v) => $enumDecodeNullable(_$BuildTriggerEnumMap, v),
-        ),
-        platform: $checkedConvert(
-          'platform',
-          (v) => $enumDecodeNullable(_$AppPlatformEnumMap, v),
-        ),
-        artifactType: $checkedConvert(
-          'artifactType',
-          (v) => $enumDecodeNullable(_$ArtifactTypeEnumMap, v),
-        ),
-        environment: $checkedConvert('environment', (v) => v as String?),
-        buildNumber: $checkedConvert('buildNumber', (v) => v as String?),
-        status: $checkedConvert(
-          'status',
-          (v) => $enumDecodeNullable(_$BuildStatusEnumMap, v),
-        ),
-        startedAt: $checkedConvert(
-          'startedAt',
-          (v) => v == null ? null : DateTime.parse(v as String),
-        ),
-        completedAt: $checkedConvert(
-          'completedAt',
-          (v) => v == null ? null : DateTime.parse(v as String),
-        ),
-        errorMessage: $checkedConvert('errorMessage', (v) => v as String?),
-        artifactUrl: $checkedConvert('artifactUrl', (v) => v as String?),
-        artifactSize: $checkedConvert(
-          'artifactSize',
-          (v) => (v as num?)?.toInt(),
-        ),
-        ciSystem: $checkedConvert('ciSystem', (v) => v as String?),
-        ciBuildId: $checkedConvert('ciBuildId', (v) => v as String?),
-        ciBuildUrl: $checkedConvert('ciBuildUrl', (v) => v as String?),
-        duration: $checkedConvert('duration', (v) => (v as num?)?.toInt()),
-      );
-      return val;
-    });
+BuildRecordDto _$BuildRecordDtoFromJson(
+  Map<String, dynamic> json,
+) => $checkedCreate('BuildRecordDto', json, ($checkedConvert) {
+  final val = BuildRecordDto(
+    id: $checkedConvert('id', (v) => v as String?),
+    creationTime: $checkedConvert(
+      'creationTime',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+    creatorId: $checkedConvert('creatorId', (v) => v as String?),
+    lastModificationTime: $checkedConvert(
+      'lastModificationTime',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+    lastModifierId: $checkedConvert('lastModifierId', (v) => v as String?),
+    isDeleted: $checkedConvert('isDeleted', (v) => v as bool?),
+    deleterId: $checkedConvert('deleterId', (v) => v as String?),
+    deletionTime: $checkedConvert(
+      'deletionTime',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+    appId: $checkedConvert('appId', (v) => v as String?),
+    appName: $checkedConvert('appName', (v) => v as String?),
+    version: $checkedConvert('version', (v) => v as String?),
+    branch: $checkedConvert('branch', (v) => v as String?),
+    commitHash: $checkedConvert('commitHash', (v) => v as String?),
+    trigger: $checkedConvert(
+      'trigger',
+      (v) => $enumDecodeNullable(_$BuildTriggerEnumMap, v),
+    ),
+    platform: $checkedConvert(
+      'platform',
+      (v) => $enumDecodeNullable(_$AppPlatformEnumMap, v),
+    ),
+    artifactType: $checkedConvert(
+      'artifactType',
+      (v) => $enumDecodeNullable(_$ArtifactTypeEnumMap, v),
+    ),
+    environment: $checkedConvert('environment', (v) => v as String?),
+    buildNumber: $checkedConvert('buildNumber', (v) => (v as num?)?.toInt()),
+    status: $checkedConvert(
+      'status',
+      (v) => $enumDecodeNullable(_$BuildStatusEnumMap, v),
+    ),
+    startedAt: $checkedConvert(
+      'startedAt',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+    completedAt: $checkedConvert(
+      'completedAt',
+      (v) => v == null ? null : DateTime.parse(v as String),
+    ),
+    errorMessage: $checkedConvert('errorMessage', (v) => v as String?),
+    artifactUrl: $checkedConvert('artifactUrl', (v) => v as String?),
+    artifactSize: $checkedConvert('artifactSize', (v) => (v as num?)?.toInt()),
+    ciSystem: $checkedConvert('ciSystem', (v) => v as String?),
+    ciBuildId: $checkedConvert('ciBuildId', (v) => v as String?),
+    ciBuildUrl: $checkedConvert('ciBuildUrl', (v) => v as String?),
+    duration: $checkedConvert('duration', (v) => (v as num?)?.toInt()),
+  );
+  return val;
+});
 
 Map<String, dynamic> _$BuildRecordDtoToJson(BuildRecordDto instance) =>
     <String, dynamic>{

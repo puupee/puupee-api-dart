@@ -37,8 +37,6 @@ class CreateBuildRecordDto {
 
      this.environment,
 
-     this.buildNumber,
-
      this.ciSystem,
 
      this.ciBuildId,
@@ -147,19 +145,6 @@ class CreateBuildRecordDto {
 
 
 
-      /// 构建号
-  @JsonKey(
-    
-    name: r'buildNumber',
-    required: false,
-    includeIfNull: false,
-  )
-
-
-  String? buildNumber;
-
-
-
       /// CI/CD 系统信息
   @JsonKey(
     
@@ -211,7 +196,6 @@ class CreateBuildRecordDto {
       other.platform == platform &&
       other.artifactType == artifactType &&
       other.environment == environment &&
-      other.buildNumber == buildNumber &&
       other.ciSystem == ciSystem &&
       other.ciBuildId == ciBuildId &&
       other.ciBuildUrl == ciBuildUrl;
@@ -226,7 +210,6 @@ class CreateBuildRecordDto {
         platform.hashCode +
         artifactType.hashCode +
         (environment == null ? 0 : environment.hashCode) +
-        (buildNumber == null ? 0 : buildNumber.hashCode) +
         (ciSystem == null ? 0 : ciSystem.hashCode) +
         (ciBuildId == null ? 0 : ciBuildId.hashCode) +
         (ciBuildUrl == null ? 0 : ciBuildUrl.hashCode);

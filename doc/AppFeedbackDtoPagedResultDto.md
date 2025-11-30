@@ -1,4 +1,4 @@
-# puupee_api_client.model.BindDeviceDto
+# puupee_api_client.model.AppFeedbackDtoPagedResultDto
 
 ## Load the model package
 ```dart
@@ -8,12 +8,8 @@ import 'package:puupee_api_client/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**token** | **String** |  | [optional] 
-**isPhysicalDevice** | **bool** |  | [optional] 
-**name** | **String** |  | [optional] 
-**platform** | [**AppPlatform**](AppPlatform.md) |  | [optional] 
-**brand** | **String** |  | [optional] 
-**systemVersion** | **String** |  | [optional] 
+**items** | [**List&lt;AppFeedbackDto&gt;**](AppFeedbackDto.md) |  | [optional] 
+**totalCount** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

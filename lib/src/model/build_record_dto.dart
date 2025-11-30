@@ -298,7 +298,7 @@ class BuildRecordDto {
   )
 
 
-  String? buildNumber;
+  int? buildNumber;
 
 
 

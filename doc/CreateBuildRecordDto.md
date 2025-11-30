@@ -16,7 +16,6 @@ Name | Type | Description | Notes
 **platform** | [**AppPlatform**](AppPlatform.md) |  | 
 **artifactType** | [**ArtifactType**](ArtifactType.md) |  | 
 **environment** | **String** | 环境 | [optional] 
-**buildNumber** | **String** | 构建号 | [optional] 
 **ciSystem** | **String** | CI/CD 系统信息 | [optional] 
 **ciBuildId** | **String** | CI/CD 构建ID | [optional] 
 **ciBuildUrl** | **String** | CI/CD 构建URL | [optional] 

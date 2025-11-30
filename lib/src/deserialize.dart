@@ -8,6 +8,8 @@ import 'package:puupee_api_client/src/model/app_dto.dart';
 import 'package:puupee_api_client/src/model/app_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/app_feature_dto.dart';
 import 'package:puupee_api_client/src/model/app_feature_dto_paged_result_dto.dart';
+import 'package:puupee_api_client/src/model/app_feedback_dto.dart';
+import 'package:puupee_api_client/src/model/app_feedback_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/app_pricing_dto.dart';
 import 'package:puupee_api_client/src/model/app_pricing_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/app_pricing_item_dto.dart';
@@ -45,6 +47,7 @@ import 'package:puupee_api_client/src/model/check_sync_auth_result_dto.dart';
 import 'package:puupee_api_client/src/model/clock_dto.dart';
 import 'package:puupee_api_client/src/model/controller_api_description_model.dart';
 import 'package:puupee_api_client/src/model/controller_interface_api_description_model.dart';
+import 'package:puupee_api_client/src/model/create_app_feedback_dto.dart';
 import 'package:puupee_api_client/src/model/create_avatar_dto.dart';
 import 'package:puupee_api_client/src/model/create_build_record_dto.dart';
 import 'package:puupee_api_client/src/model/create_deploy_record_dto.dart';
@@ -147,6 +150,7 @@ import 'package:puupee_api_client/src/model/register_dto.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_info.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 import 'package:puupee_api_client/src/model/remote_service_validation_error_info.dart';
+import 'package:puupee_api_client/src/model/reply_app_feedback_dto.dart';
 import 'package:puupee_api_client/src/model/reset_password_dto.dart';
 import 'package:puupee_api_client/src/model/return_value_api_description_model.dart';
 import 'package:puupee_api_client/src/model/send_password_reset_code_dto.dart';
@@ -218,6 +222,16 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return AppFeatureDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppFeatureDtoPagedResultDto':
           return AppFeatureDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppFeedbackDto':
+          return AppFeedbackDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppFeedbackDtoPagedResultDto':
+          return AppFeedbackDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppFeedbackStatus':
+          
+          
+        case 'AppFeedbackType':
+          
+          
         case 'AppFramework':
           
           
@@ -316,6 +330,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return ControllerApiDescriptionModel.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ControllerInterfaceApiDescriptionModel':
           return ControllerInterfaceApiDescriptionModel.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'CreateAppFeedbackDto':
+          return CreateAppFeedbackDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateAvatarDto':
           return CreateAvatarDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateBuildRecordDto':
@@ -529,6 +545,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return RemoteServiceErrorResponse.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'RemoteServiceValidationErrorInfo':
           return RemoteServiceValidationErrorInfo.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'ReplyAppFeedbackDto':
+          return ReplyAppFeedbackDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ResetPasswordDto':
           return ResetPasswordDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ReturnValueApiDescriptionModel':

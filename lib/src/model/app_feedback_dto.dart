@@ -3,10 +3,11 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:puupee_api_client/src/model/app_platform.dart';
+import 'package:puupee_api_client/src/model/app_feedback_type.dart';
+import 'package:puupee_api_client/src/model/app_feedback_status.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'device_dto.g.dart';
+part 'app_feedback_dto.g.dart';
 
 
 @JsonSerializable(
@@ -15,9 +16,9 @@ part 'device_dto.g.dart';
   disallowUnrecognizedKeys: false,
   explicitToJson: true,
 )
-class DeviceDto {
-  /// Returns a new [DeviceDto] instance.
-  DeviceDto({
+class AppFeedbackDto {
+  /// Returns a new [AppFeedbackDto] instance.
+  AppFeedbackDto({
 
      this.id,
 
@@ -35,17 +36,25 @@ class DeviceDto {
 
      this.deletionTime,
 
-     this.token,
+     this.appId,
 
-     this.isPhysicalDevice,
+     this.appName,
 
-     this.name,
+     this.content,
 
-     this.platform,
+     this.type,
 
-     this.brand,
+     this.status,
 
-     this.systemVersion,
+     this.contact,
+
+     this.deviceInfo,
+
+     this.appVersion,
+
+     this.reply,
+
+     this.repliedAt,
   });
 
   @JsonKey(
@@ -144,82 +153,138 @@ class DeviceDto {
 
 
 
+      /// 应用ID
   @JsonKey(
     
-    name: r'token',
+    name: r'appId',
     required: false,
     includeIfNull: false,
   )
 
 
-  String? token;
+  String? appId;
 
 
 
+      /// 应用名称
   @JsonKey(
     
-    name: r'isPhysicalDevice',
+    name: r'appName',
     required: false,
     includeIfNull: false,
   )
 
 
-  bool? isPhysicalDevice;
+  String? appName;
 
 
 
+      /// 反馈内容
   @JsonKey(
     
-    name: r'name',
+    name: r'content',
     required: false,
     includeIfNull: false,
   )
 
 
-  String? name;
+  String? content;
 
 
 
   @JsonKey(
     
-    name: r'platform',
+    name: r'type',
     required: false,
     includeIfNull: false,
   )
 
 
-  AppPlatform? platform;
+  AppFeedbackType? type;
 
 
 
   @JsonKey(
     
-    name: r'brand',
+    name: r'status',
     required: false,
     includeIfNull: false,
   )
 
 
-  String? brand;
+  AppFeedbackStatus? status;
 
 
 
+      /// 联系方式
   @JsonKey(
     
-    name: r'systemVersion',
+    name: r'contact',
     required: false,
     includeIfNull: false,
   )
 
 
-  String? systemVersion;
+  String? contact;
+
+
+
+      /// 设备信息
+  @JsonKey(
+    
+    name: r'deviceInfo',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? deviceInfo;
+
+
+
+      /// 应用版本
+  @JsonKey(
+    
+    name: r'appVersion',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? appVersion;
+
+
+
+      /// 回复内容
+  @JsonKey(
+    
+    name: r'reply',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? reply;
+
+
+
+      /// 回复时间
+  @JsonKey(
+    
+    name: r'repliedAt',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  DateTime? repliedAt;
 
 
 
 
 
     @override
-    bool operator ==(Object other) => identical(this, other) || other is DeviceDto &&
+    bool operator ==(Object other) => identical(this, other) || other is AppFeedbackDto &&
       other.id == id &&
       other.creationTime == creationTime &&
       other.creatorId == creatorId &&
@@ -228,12 +293,16 @@ class DeviceDto {
       other.isDeleted == isDeleted &&
       other.deleterId == deleterId &&
       other.deletionTime == deletionTime &&
-      other.token == token &&
-      other.isPhysicalDevice == isPhysicalDevice &&
-      other.name == name &&
-      other.platform == platform &&
-      other.brand == brand &&
-      other.systemVersion == systemVersion;
+      other.appId == appId &&
+      other.appName == appName &&
+      other.content == content &&
+      other.type == type &&
+      other.status == status &&
+      other.contact == contact &&
+      other.deviceInfo == deviceInfo &&
+      other.appVersion == appVersion &&
+      other.reply == reply &&
+      other.repliedAt == repliedAt;
 
     @override
     int get hashCode =>
@@ -245,16 +314,20 @@ class DeviceDto {
         isDeleted.hashCode +
         (deleterId == null ? 0 : deleterId.hashCode) +
         (deletionTime == null ? 0 : deletionTime.hashCode) +
-        (token == null ? 0 : token.hashCode) +
-        isPhysicalDevice.hashCode +
-        (name == null ? 0 : name.hashCode) +
-        platform.hashCode +
-        (brand == null ? 0 : brand.hashCode) +
-        (systemVersion == null ? 0 : systemVersion.hashCode);
+        appId.hashCode +
+        (appName == null ? 0 : appName.hashCode) +
+        (content == null ? 0 : content.hashCode) +
+        type.hashCode +
+        status.hashCode +
+        (contact == null ? 0 : contact.hashCode) +
+        (deviceInfo == null ? 0 : deviceInfo.hashCode) +
+        (appVersion == null ? 0 : appVersion.hashCode) +
+        (reply == null ? 0 : reply.hashCode) +
+        (repliedAt == null ? 0 : repliedAt.hashCode);
 
-  factory DeviceDto.fromJson(Map<String, dynamic> json) => _$DeviceDtoFromJson(json);
+  factory AppFeedbackDto.fromJson(Map<String, dynamic> json) => _$AppFeedbackDtoFromJson(json);
 
-  Map<String, dynamic> toJson() => _$DeviceDtoToJson(this);
+  Map<String, dynamic> toJson() => _$AppFeedbackDtoToJson(this);
 
   @override
   String toString() {

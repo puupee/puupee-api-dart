@@ -52,12 +52,6 @@ void main() {
       // TODO
     });
 
-    // 构建号
-    // String buildNumber
-    test('to test the property `buildNumber`', () async {
-      // TODO
-    });
-
     // CI/CD 系统信息
     // String ciSystem
     test('to test the property `ciSystem`', () async {

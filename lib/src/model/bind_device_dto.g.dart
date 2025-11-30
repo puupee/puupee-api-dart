@@ -10,7 +10,6 @@ BindDeviceDto _$BindDeviceDtoFromJson(Map<String, dynamic> json) =>
     $checkedCreate('BindDeviceDto', json, ($checkedConvert) {
       final val = BindDeviceDto(
         token: $checkedConvert('token', (v) => v as String?),
-        tpnsToken: $checkedConvert('tpnsToken', (v) => v as String?),
         isPhysicalDevice: $checkedConvert(
           'isPhysicalDevice',
           (v) => v as bool?,
@@ -29,7 +28,6 @@ BindDeviceDto _$BindDeviceDtoFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$BindDeviceDtoToJson(BindDeviceDto instance) =>
     <String, dynamic>{
       'token': ?instance.token,
-      'tpnsToken': ?instance.tpnsToken,
       'isPhysicalDevice': ?instance.isPhysicalDevice,
       'name': ?instance.name,
       'platform': ?_$AppPlatformEnumMap[instance.platform],

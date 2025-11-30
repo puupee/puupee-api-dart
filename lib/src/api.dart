@@ -15,6 +15,7 @@ import 'package:puupee_api_client/src/api/account_api.dart';
 import 'package:puupee_api_client/src/api/api_keys_api.dart';
 import 'package:puupee_api_client/src/api/app_api.dart';
 import 'package:puupee_api_client/src/api/app_feature_api.dart';
+import 'package:puupee_api_client/src/api/app_feedback_api.dart';
 import 'package:puupee_api_client/src/api/app_pricing_api.dart';
 import 'package:puupee_api_client/src/api/app_pricing_item_api.dart';
 import 'package:puupee_api_client/src/api/app_release_api.dart';
@@ -144,6 +145,12 @@ class PuupeeApiClient {
   /// by doing that all interceptors will not be executed
   AppFeatureApi getAppFeatureApi() {
     return AppFeatureApi(dio);
+  }
+
+  /// Get AppFeedbackApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  AppFeedbackApi getAppFeedbackApi() {
+    return AppFeedbackApi(dio);
   }
 
   /// Get AppPricingApi instance, base route and serializer can be overridden by a given but be careful,

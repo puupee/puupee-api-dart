@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **platform** | [**AppPlatform**](AppPlatform.md) |  | [optional] 
 **artifactType** | [**ArtifactType**](ArtifactType.md) |  | [optional] 
 **environment** | **String** | 环境 | [optional] 
-**buildNumber** | **String** | 构建号 | [optional] 
+**buildNumber** | **int** | 构建号 | [optional] 
 **status** | [**BuildStatus**](BuildStatus.md) |  | [optional] 
 **startedAt** | [**DateTime**](DateTime.md) | 开始时间 | [optional] 
 **completedAt** | [**DateTime**](DateTime.md) | 结束时间 | [optional] 

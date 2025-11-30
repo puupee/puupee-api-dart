@@ -12,11 +12,6 @@ void main() {
       // TODO
     });
 
-    // String tpnsToken
-    test('to test the property `tpnsToken`', () async {
-      // TODO
-    });
-
     // bool isPhysicalDevice
     test('to test the property `isPhysicalDevice`', () async {
       // TODO

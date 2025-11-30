@@ -99,7 +99,7 @@ void main() {
     });
 
     // 构建号
-    // String buildNumber
+    // int buildNumber
     test('to test the property `buildNumber`', () async {
       // TODO
     });
