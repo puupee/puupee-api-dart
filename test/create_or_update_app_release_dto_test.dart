@@ -84,5 +84,11 @@ void main() {
       // TODO
     });
 
+    // 构建记录ID（可选，如果提供则使用对应构建的BuildNumber作为VersionCode）
+    // String buildRecordId
+    test('to test the property `buildRecordId`', () async {
+      // TODO
+    });
+
   });
 }

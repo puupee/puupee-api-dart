@@ -49,6 +49,8 @@ class CreateOrUpdateAppReleaseDto {
      this.channel,
 
      this.environment,
+
+     this.buildRecordId,
   });
 
   @JsonKey(
@@ -233,6 +235,19 @@ class CreateOrUpdateAppReleaseDto {
 
 
 
+      /// 构建记录ID（可选，如果提供则使用对应构建的BuildNumber作为VersionCode）
+  @JsonKey(
+    
+    name: r'buildRecordId',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? buildRecordId;
+
+
+
 
 
     @override
@@ -251,7 +266,8 @@ class CreateOrUpdateAppReleaseDto {
       other.appId == appId &&
       other.isEnabled == isEnabled &&
       other.channel == channel &&
-      other.environment == environment;
+      other.environment == environment &&
+      other.buildRecordId == buildRecordId;
 
     @override
     int get hashCode =>
@@ -269,7 +285,8 @@ class CreateOrUpdateAppReleaseDto {
         appId.hashCode +
         isEnabled.hashCode +
         (channel == null ? 0 : channel.hashCode) +
-        (environment == null ? 0 : environment.hashCode);
+        (environment == null ? 0 : environment.hashCode) +
+        (buildRecordId == null ? 0 : buildRecordId.hashCode);
 
   factory CreateOrUpdateAppReleaseDto.fromJson(Map<String, dynamic> json) => _$CreateOrUpdateAppReleaseDtoFromJson(json);
 

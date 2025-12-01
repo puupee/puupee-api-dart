@@ -31,6 +31,7 @@ CreateOrUpdateAppReleaseDto _$CreateOrUpdateAppReleaseDtoFromJson(
     isEnabled: $checkedConvert('isEnabled', (v) => v as bool?),
     channel: $checkedConvert('channel', (v) => v as String?),
     environment: $checkedConvert('environment', (v) => v as String?),
+    buildRecordId: $checkedConvert('buildRecordId', (v) => v as String?),
   );
   return val;
 });
@@ -53,6 +54,7 @@ Map<String, dynamic> _$CreateOrUpdateAppReleaseDtoToJson(
   'isEnabled': ?instance.isEnabled,
   'channel': ?instance.channel,
   'environment': ?instance.environment,
+  'buildRecordId': ?instance.buildRecordId,
 };
 
 const _$AppPlatformEnumMap = {
