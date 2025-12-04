@@ -19,5 +19,5 @@ TimingDto _$TimingDtoFromJson(Map<String, dynamic> json) =>
     });
 
 Map<String, dynamic> _$TimingDtoToJson(TimingDto instance) => <String, dynamic>{
-  'timeZone': ?instance.timeZone?.toJson(),
+  if (instance.timeZone?.toJson() case final value?) 'timeZone': value,
 };

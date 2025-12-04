@@ -16,4 +16,6 @@ MultiTenancyInfoDto _$MultiTenancyInfoDtoFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$MultiTenancyInfoDtoToJson(
   MultiTenancyInfoDto instance,
-) => <String, dynamic>{'isEnabled': ?instance.isEnabled};
+) => <String, dynamic>{
+  if (instance.isEnabled case final value?) 'isEnabled': value,
+};

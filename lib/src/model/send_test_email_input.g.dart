@@ -36,5 +36,5 @@ Map<String, dynamic> _$SendTestEmailInputToJson(SendTestEmailInput instance) =>
       'senderEmailAddress': instance.senderEmailAddress,
       'targetEmailAddress': instance.targetEmailAddress,
       'subject': instance.subject,
-      'body': ?instance.body,
+      if (instance.body case final value?) 'body': value,
     };

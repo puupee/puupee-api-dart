@@ -39,22 +39,24 @@ CreateOrUpdateAppReleaseDto _$CreateOrUpdateAppReleaseDtoFromJson(
 Map<String, dynamic> _$CreateOrUpdateAppReleaseDtoToJson(
   CreateOrUpdateAppReleaseDto instance,
 ) => <String, dynamic>{
-  'version': ?instance.version,
-  'versionName': ?instance.versionName,
-  'versionCode': ?instance.versionCode,
-  'notes': ?instance.notes,
-  'platform': ?_$AppPlatformEnumMap[instance.platform],
-  'key': ?instance.key,
-  'rapidCode': ?instance.rapidCode,
-  'size': ?instance.size,
-  'hash': ?instance.hash,
-  'artifactType': ?_$ArtifactTypeEnumMap[instance.artifactType],
-  'isForceUpdate': ?instance.isForceUpdate,
-  'appId': ?instance.appId,
-  'isEnabled': ?instance.isEnabled,
-  'channel': ?instance.channel,
-  'environment': ?instance.environment,
-  'buildRecordId': ?instance.buildRecordId,
+  if (instance.version case final value?) 'version': value,
+  if (instance.versionName case final value?) 'versionName': value,
+  if (instance.versionCode case final value?) 'versionCode': value,
+  if (instance.notes case final value?) 'notes': value,
+  if (_$AppPlatformEnumMap[instance.platform] case final value?)
+    'platform': value,
+  if (instance.key case final value?) 'key': value,
+  if (instance.rapidCode case final value?) 'rapidCode': value,
+  if (instance.size case final value?) 'size': value,
+  if (instance.hash case final value?) 'hash': value,
+  if (_$ArtifactTypeEnumMap[instance.artifactType] case final value?)
+    'artifactType': value,
+  if (instance.isForceUpdate case final value?) 'isForceUpdate': value,
+  if (instance.appId case final value?) 'appId': value,
+  if (instance.isEnabled case final value?) 'isEnabled': value,
+  if (instance.channel case final value?) 'channel': value,
+  if (instance.environment case final value?) 'environment': value,
+  if (instance.buildRecordId case final value?) 'buildRecordId': value,
 };
 
 const _$AppPlatformEnumMap = {

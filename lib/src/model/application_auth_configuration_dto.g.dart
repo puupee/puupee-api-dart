@@ -21,4 +21,6 @@ ApplicationAuthConfigurationDto _$ApplicationAuthConfigurationDtoFromJson(
 
 Map<String, dynamic> _$ApplicationAuthConfigurationDtoToJson(
   ApplicationAuthConfigurationDto instance,
-) => <String, dynamic>{'grantedPolicies': ?instance.grantedPolicies};
+) => <String, dynamic>{
+  if (instance.grantedPolicies case final value?) 'grantedPolicies': value,
+};

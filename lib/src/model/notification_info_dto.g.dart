@@ -33,12 +33,15 @@ NotificationInfoDto _$NotificationInfoDtoFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$NotificationInfoDtoToJson(
   NotificationInfoDto instance,
 ) => <String, dynamic>{
-  'id': ?instance.id,
-  'creationTime': ?instance.creationTime?.toIso8601String(),
-  'creatorId': ?instance.creatorId,
-  'lastModificationTime': ?instance.lastModificationTime?.toIso8601String(),
-  'lastModifierId': ?instance.lastModifierId,
-  'isDeleted': ?instance.isDeleted,
-  'deleterId': ?instance.deleterId,
-  'deletionTime': ?instance.deletionTime?.toIso8601String(),
+  if (instance.id case final value?) 'id': value,
+  if (instance.creationTime?.toIso8601String() case final value?)
+    'creationTime': value,
+  if (instance.creatorId case final value?) 'creatorId': value,
+  if (instance.lastModificationTime?.toIso8601String() case final value?)
+    'lastModificationTime': value,
+  if (instance.lastModifierId case final value?) 'lastModifierId': value,
+  if (instance.isDeleted case final value?) 'isDeleted': value,
+  if (instance.deleterId case final value?) 'deleterId': value,
+  if (instance.deletionTime?.toIso8601String() case final value?)
+    'deletionTime': value,
 };

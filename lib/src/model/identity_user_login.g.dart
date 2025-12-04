@@ -23,9 +23,10 @@ IdentityUserLogin _$IdentityUserLoginFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$IdentityUserLoginToJson(IdentityUserLogin instance) =>
     <String, dynamic>{
-      'tenantId': ?instance.tenantId,
-      'userId': ?instance.userId,
-      'loginProvider': ?instance.loginProvider,
-      'providerKey': ?instance.providerKey,
-      'providerDisplayName': ?instance.providerDisplayName,
+      if (instance.tenantId case final value?) 'tenantId': value,
+      if (instance.userId case final value?) 'userId': value,
+      if (instance.loginProvider case final value?) 'loginProvider': value,
+      if (instance.providerKey case final value?) 'providerKey': value,
+      if (instance.providerDisplayName case final value?)
+        'providerDisplayName': value,
     };

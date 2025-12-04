@@ -17,4 +17,6 @@ ExtensionPropertyApiCreateDto _$ExtensionPropertyApiCreateDtoFromJson(
 
 Map<String, dynamic> _$ExtensionPropertyApiCreateDtoToJson(
   ExtensionPropertyApiCreateDto instance,
-) => <String, dynamic>{'isAvailable': ?instance.isAvailable};
+) => <String, dynamic>{
+  if (instance.isAvailable case final value?) 'isAvailable': value,
+};

@@ -30,9 +30,9 @@ Map<String, dynamic> _$CreateAppFeedbackDtoToJson(
   'appId': instance.appId,
   'content': instance.content,
   'type': _$AppFeedbackTypeEnumMap[instance.type]!,
-  'contact': ?instance.contact,
-  'deviceInfo': ?instance.deviceInfo,
-  'appVersion': ?instance.appVersion,
+  if (instance.contact case final value?) 'contact': value,
+  if (instance.deviceInfo case final value?) 'deviceInfo': value,
+  if (instance.appVersion case final value?) 'appVersion': value,
 };
 
 const _$AppFeedbackTypeEnumMap = {

@@ -28,9 +28,10 @@ EntityExtensionDto _$EntityExtensionDtoFromJson(Map<String, dynamic> json) =>
       return val;
     });
 
-Map<String, dynamic> _$EntityExtensionDtoToJson(
-  EntityExtensionDto instance,
-) => <String, dynamic>{
-  'properties': ?instance.properties?.map((k, e) => MapEntry(k, e.toJson())),
-  'configuration': ?instance.configuration,
-};
+Map<String, dynamic> _$EntityExtensionDtoToJson(EntityExtensionDto instance) =>
+    <String, dynamic>{
+      if (instance.properties?.map((k, e) => MapEntry(k, e.toJson()))
+          case final value?)
+        'properties': value,
+      if (instance.configuration case final value?) 'configuration': value,
+    };

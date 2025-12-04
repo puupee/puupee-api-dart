@@ -17,4 +17,6 @@ ExtensionPropertyApiGetDto _$ExtensionPropertyApiGetDtoFromJson(
 
 Map<String, dynamic> _$ExtensionPropertyApiGetDtoToJson(
   ExtensionPropertyApiGetDto instance,
-) => <String, dynamic>{'isAvailable': ?instance.isAvailable};
+) => <String, dynamic>{
+  if (instance.isAvailable case final value?) 'isAvailable': value,
+};

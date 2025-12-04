@@ -16,4 +16,7 @@ ChangePasswordDto _$ChangePasswordDtoFromJson(Map<String, dynamic> json) =>
     });
 
 Map<String, dynamic> _$ChangePasswordDtoToJson(ChangePasswordDto instance) =>
-    <String, dynamic>{'code': ?instance.code, 'password': ?instance.password};
+    <String, dynamic>{
+      if (instance.code case final value?) 'code': value,
+      if (instance.password case final value?) 'password': value,
+    };

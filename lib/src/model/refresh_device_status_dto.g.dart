@@ -22,8 +22,8 @@ RefreshDeviceStatusDto _$RefreshDeviceStatusDtoFromJson(
 Map<String, dynamic> _$RefreshDeviceStatusDtoToJson(
   RefreshDeviceStatusDto instance,
 ) => <String, dynamic>{
-  'token': ?instance.token,
-  'status': ?_$DeviceStatusEnumMap[instance.status],
+  if (instance.token case final value?) 'token': value,
+  if (_$DeviceStatusEnumMap[instance.status] case final value?) 'status': value,
 };
 
 const _$DeviceStatusEnumMap = {

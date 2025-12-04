@@ -21,5 +21,6 @@ UpdateFeaturesDto _$UpdateFeaturesDtoFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$UpdateFeaturesDtoToJson(UpdateFeaturesDto instance) =>
     <String, dynamic>{
-      'features': ?instance.features?.map((e) => e.toJson()).toList(),
+      if (instance.features?.map((e) => e.toJson()).toList() case final value?)
+        'features': value,
     };

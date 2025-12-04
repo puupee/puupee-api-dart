@@ -22,9 +22,9 @@ CreatePushNotificationDto _$CreatePushNotificationDtoFromJson(
 Map<String, dynamic> _$CreatePushNotificationDtoToJson(
   CreatePushNotificationDto instance,
 ) => <String, dynamic>{
-  'title': ?instance.title,
-  'description': ?instance.description,
-  'puupeeId': ?instance.puupeeId,
-  'creatorId': ?instance.creatorId,
-  'app': ?instance.app,
+  if (instance.title case final value?) 'title': value,
+  if (instance.description case final value?) 'description': value,
+  if (instance.puupeeId case final value?) 'puupeeId': value,
+  if (instance.creatorId case final value?) 'creatorId': value,
+  if (instance.app case final value?) 'app': value,
 };

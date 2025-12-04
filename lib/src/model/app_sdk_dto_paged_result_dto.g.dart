@@ -24,6 +24,7 @@ AppSdkDtoPagedResultDto _$AppSdkDtoPagedResultDtoFromJson(
 Map<String, dynamic> _$AppSdkDtoPagedResultDtoToJson(
   AppSdkDtoPagedResultDto instance,
 ) => <String, dynamic>{
-  'items': ?instance.items?.map((e) => e.toJson()).toList(),
-  'totalCount': ?instance.totalCount,
+  if (instance.items?.map((e) => e.toJson()).toList() case final value?)
+    'items': value,
+  if (instance.totalCount case final value?) 'totalCount': value,
 };

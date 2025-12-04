@@ -15,4 +15,6 @@ WindowsTimeZone _$WindowsTimeZoneFromJson(Map<String, dynamic> json) =>
     });
 
 Map<String, dynamic> _$WindowsTimeZoneToJson(WindowsTimeZone instance) =>
-    <String, dynamic>{'timeZoneId': ?instance.timeZoneId};
+    <String, dynamic>{
+      if (instance.timeZoneId case final value?) 'timeZoneId': value,
+    };

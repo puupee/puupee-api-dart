@@ -22,9 +22,10 @@ TenantUpdateDto _$TenantUpdateDtoFromJson(
   return val;
 });
 
-Map<String, dynamic> _$TenantUpdateDtoToJson(TenantUpdateDto instance) =>
-    <String, dynamic>{
-      'extraProperties': ?instance.extraProperties,
-      'name': instance.name,
-      'concurrencyStamp': ?instance.concurrencyStamp,
-    };
+Map<String, dynamic> _$TenantUpdateDtoToJson(
+  TenantUpdateDto instance,
+) => <String, dynamic>{
+  if (instance.extraProperties case final value?) 'extraProperties': value,
+  'name': instance.name,
+  if (instance.concurrencyStamp case final value?) 'concurrencyStamp': value,
+};

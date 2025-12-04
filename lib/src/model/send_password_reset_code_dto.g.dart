@@ -24,6 +24,6 @@ Map<String, dynamic> _$SendPasswordResetCodeDtoToJson(
 ) => <String, dynamic>{
   'email': instance.email,
   'appName': instance.appName,
-  'returnUrl': ?instance.returnUrl,
-  'returnUrlHash': ?instance.returnUrlHash,
+  if (instance.returnUrl case final value?) 'returnUrl': value,
+  if (instance.returnUrlHash case final value?) 'returnUrlHash': value,
 };

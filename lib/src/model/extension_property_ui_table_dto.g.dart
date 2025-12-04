@@ -17,4 +17,6 @@ ExtensionPropertyUiTableDto _$ExtensionPropertyUiTableDtoFromJson(
 
 Map<String, dynamic> _$ExtensionPropertyUiTableDtoToJson(
   ExtensionPropertyUiTableDto instance,
-) => <String, dynamic>{'isVisible': ?instance.isVisible};
+) => <String, dynamic>{
+  if (instance.isVisible case final value?) 'isVisible': value,
+};

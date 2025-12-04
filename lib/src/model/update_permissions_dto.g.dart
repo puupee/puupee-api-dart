@@ -23,5 +23,6 @@ UpdatePermissionsDto _$UpdatePermissionsDtoFromJson(
 Map<String, dynamic> _$UpdatePermissionsDtoToJson(
   UpdatePermissionsDto instance,
 ) => <String, dynamic>{
-  'permissions': ?instance.permissions?.map((e) => e.toJson()).toList(),
+  if (instance.permissions?.map((e) => e.toJson()).toList() case final value?)
+    'permissions': value,
 };

@@ -20,7 +20,7 @@ CreateUpdateAppTesterDto _$CreateUpdateAppTesterDtoFromJson(
 Map<String, dynamic> _$CreateUpdateAppTesterDtoToJson(
   CreateUpdateAppTesterDto instance,
 ) => <String, dynamic>{
-  'appId': ?instance.appId,
-  'userId': ?instance.userId,
-  'isEnabled': ?instance.isEnabled,
+  if (instance.appId case final value?) 'appId': value,
+  if (instance.userId case final value?) 'userId': value,
+  if (instance.isEnabled case final value?) 'isEnabled': value,
 };

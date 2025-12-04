@@ -17,4 +17,6 @@ CheckSyncAuthResultDto _$CheckSyncAuthResultDtoFromJson(
 
 Map<String, dynamic> _$CheckSyncAuthResultDtoToJson(
   CheckSyncAuthResultDto instance,
-) => <String, dynamic>{'isAuthed': ?instance.isAuthed};
+) => <String, dynamic>{
+  if (instance.isAuthed case final value?) 'isAuthed': value,
+};

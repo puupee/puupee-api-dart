@@ -31,7 +31,9 @@ ModuleApiDescriptionModel _$ModuleApiDescriptionModelFromJson(
 Map<String, dynamic> _$ModuleApiDescriptionModelToJson(
   ModuleApiDescriptionModel instance,
 ) => <String, dynamic>{
-  'rootPath': ?instance.rootPath,
-  'remoteServiceName': ?instance.remoteServiceName,
-  'controllers': ?instance.controllers?.map((k, e) => MapEntry(k, e.toJson())),
+  if (instance.rootPath case final value?) 'rootPath': value,
+  if (instance.remoteServiceName case final value?) 'remoteServiceName': value,
+  if (instance.controllers?.map((k, e) => MapEntry(k, e.toJson()))
+      case final value?)
+    'controllers': value,
 };

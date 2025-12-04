@@ -23,5 +23,6 @@ GetFeatureListResultDto _$GetFeatureListResultDtoFromJson(
 Map<String, dynamic> _$GetFeatureListResultDtoToJson(
   GetFeatureListResultDto instance,
 ) => <String, dynamic>{
-  'groups': ?instance.groups?.map((e) => e.toJson()).toList(),
+  if (instance.groups?.map((e) => e.toJson()).toList() case final value?)
+    'groups': value,
 };

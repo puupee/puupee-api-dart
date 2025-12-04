@@ -28,5 +28,7 @@ ApplicationLocalizationDto _$ApplicationLocalizationDtoFromJson(
 Map<String, dynamic> _$ApplicationLocalizationDtoToJson(
   ApplicationLocalizationDto instance,
 ) => <String, dynamic>{
-  'resources': ?instance.resources?.map((k, e) => MapEntry(k, e.toJson())),
+  if (instance.resources?.map((k, e) => MapEntry(k, e.toJson()))
+      case final value?)
+    'resources': value,
 };

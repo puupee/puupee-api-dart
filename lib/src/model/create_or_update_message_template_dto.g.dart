@@ -20,6 +20,6 @@ CreateOrUpdateMessageTemplateDto _$CreateOrUpdateMessageTemplateDtoFromJson(
 Map<String, dynamic> _$CreateOrUpdateMessageTemplateDtoToJson(
   CreateOrUpdateMessageTemplateDto instance,
 ) => <String, dynamic>{
-  'name': ?instance.name,
-  'description': ?instance.description,
+  if (instance.name case final value?) 'name': value,
+  if (instance.description case final value?) 'description': value,
 };

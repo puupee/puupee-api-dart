@@ -15,4 +15,4 @@ CreateAvatarDto _$CreateAvatarDtoFromJson(Map<String, dynamic> json) =>
     });
 
 Map<String, dynamic> _$CreateAvatarDtoToJson(CreateAvatarDto instance) =>
-    <String, dynamic>{'key': ?instance.key};
+    <String, dynamic>{if (instance.key case final value?) 'key': value};

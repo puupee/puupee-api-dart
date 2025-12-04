@@ -22,9 +22,9 @@ CreateOrUpdateAppPricingItemDto _$CreateOrUpdateAppPricingItemDtoFromJson(
 Map<String, dynamic> _$CreateOrUpdateAppPricingItemDtoToJson(
   CreateOrUpdateAppPricingItemDto instance,
 ) => <String, dynamic>{
-  'name': ?instance.name,
-  'description': ?instance.description,
-  'linkUrl': ?instance.linkUrl,
-  'display': ?instance.display,
-  'sortIndex': ?instance.sortIndex,
+  if (instance.name case final value?) 'name': value,
+  if (instance.description case final value?) 'description': value,
+  if (instance.linkUrl case final value?) 'linkUrl': value,
+  if (instance.display case final value?) 'display': value,
+  if (instance.sortIndex case final value?) 'sortIndex': value,
 };

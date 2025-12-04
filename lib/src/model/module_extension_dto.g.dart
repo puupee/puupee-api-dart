@@ -28,6 +28,8 @@ ModuleExtensionDto _$ModuleExtensionDtoFromJson(
 
 Map<String, dynamic> _$ModuleExtensionDtoToJson(ModuleExtensionDto instance) =>
     <String, dynamic>{
-      'entities': ?instance.entities?.map((k, e) => MapEntry(k, e.toJson())),
-      'configuration': ?instance.configuration,
+      if (instance.entities?.map((k, e) => MapEntry(k, e.toJson()))
+          case final value?)
+        'entities': value,
+      if (instance.configuration case final value?) 'configuration': value,
     };

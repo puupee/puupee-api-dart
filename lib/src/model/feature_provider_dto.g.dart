@@ -16,4 +16,7 @@ FeatureProviderDto _$FeatureProviderDtoFromJson(Map<String, dynamic> json) =>
     });
 
 Map<String, dynamic> _$FeatureProviderDtoToJson(FeatureProviderDto instance) =>
-    <String, dynamic>{'name': ?instance.name, 'key': ?instance.key};
+    <String, dynamic>{
+      if (instance.name case final value?) 'name': value,
+      if (instance.key case final value?) 'key': value,
+    };

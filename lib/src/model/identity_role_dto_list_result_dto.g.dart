@@ -23,5 +23,6 @@ IdentityRoleDtoListResultDto _$IdentityRoleDtoListResultDtoFromJson(
 Map<String, dynamic> _$IdentityRoleDtoListResultDtoToJson(
   IdentityRoleDtoListResultDto instance,
 ) => <String, dynamic>{
-  'items': ?instance.items?.map((e) => e.toJson()).toList(),
+  if (instance.items?.map((e) => e.toJson()).toList() case final value?)
+    'items': value,
 };

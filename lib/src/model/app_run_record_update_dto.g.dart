@@ -48,19 +48,22 @@ AppRunRecordUpdateDto _$AppRunRecordUpdateDtoFromJson(
 Map<String, dynamic> _$AppRunRecordUpdateDtoToJson(
   AppRunRecordUpdateDto instance,
 ) => <String, dynamic>{
-  'id': ?instance.id,
-  'creationTime': ?instance.creationTime?.toIso8601String(),
-  'creatorId': ?instance.creatorId,
-  'lastModificationTime': ?instance.lastModificationTime?.toIso8601String(),
-  'lastModifierId': ?instance.lastModifierId,
-  'isDeleted': ?instance.isDeleted,
-  'deleterId': ?instance.deleterId,
-  'deletionTime': ?instance.deletionTime?.toIso8601String(),
+  if (instance.id case final value?) 'id': value,
+  if (instance.creationTime?.toIso8601String() case final value?)
+    'creationTime': value,
+  if (instance.creatorId case final value?) 'creatorId': value,
+  if (instance.lastModificationTime?.toIso8601String() case final value?)
+    'lastModificationTime': value,
+  if (instance.lastModifierId case final value?) 'lastModifierId': value,
+  if (instance.isDeleted case final value?) 'isDeleted': value,
+  if (instance.deleterId case final value?) 'deleterId': value,
+  if (instance.deletionTime?.toIso8601String() case final value?)
+    'deletionTime': value,
   'status': _$AppRunStatusEnumMap[instance.status]!,
-  'result': ?instance.result,
-  'error': ?instance.error,
-  'finishAt': ?instance.finishAt?.toIso8601String(),
-  'output': ?instance.output,
+  if (instance.result case final value?) 'result': value,
+  if (instance.error case final value?) 'error': value,
+  if (instance.finishAt?.toIso8601String() case final value?) 'finishAt': value,
+  if (instance.output case final value?) 'output': value,
   'workerId': instance.workerId,
   'workerName': instance.workerName,
 };

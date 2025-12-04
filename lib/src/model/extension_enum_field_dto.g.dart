@@ -18,4 +18,7 @@ ExtensionEnumFieldDto _$ExtensionEnumFieldDtoFromJson(
 
 Map<String, dynamic> _$ExtensionEnumFieldDtoToJson(
   ExtensionEnumFieldDto instance,
-) => <String, dynamic>{'name': ?instance.name, 'value': ?instance.value};
+) => <String, dynamic>{
+  if (instance.name case final value?) 'name': value,
+  if (instance.value case final value?) 'value': value,
+};

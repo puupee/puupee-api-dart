@@ -31,6 +31,9 @@ ObjectExtensionsDto _$ObjectExtensionsDtoFromJson(
 Map<String, dynamic> _$ObjectExtensionsDtoToJson(
   ObjectExtensionsDto instance,
 ) => <String, dynamic>{
-  'modules': ?instance.modules?.map((k, e) => MapEntry(k, e.toJson())),
-  'enums': ?instance.enums?.map((k, e) => MapEntry(k, e.toJson())),
+  if (instance.modules?.map((k, e) => MapEntry(k, e.toJson()))
+      case final value?)
+    'modules': value,
+  if (instance.enums?.map((k, e) => MapEntry(k, e.toJson())) case final value?)
+    'enums': value,
 };

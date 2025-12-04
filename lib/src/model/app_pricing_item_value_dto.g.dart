@@ -40,18 +40,21 @@ AppPricingItemValueDto _$AppPricingItemValueDtoFromJson(
 Map<String, dynamic> _$AppPricingItemValueDtoToJson(
   AppPricingItemValueDto instance,
 ) => <String, dynamic>{
-  'id': ?instance.id,
-  'creationTime': ?instance.creationTime?.toIso8601String(),
-  'creatorId': ?instance.creatorId,
-  'lastModificationTime': ?instance.lastModificationTime?.toIso8601String(),
-  'lastModifierId': ?instance.lastModifierId,
-  'isDeleted': ?instance.isDeleted,
-  'deleterId': ?instance.deleterId,
-  'deletionTime': ?instance.deletionTime?.toIso8601String(),
-  'isAvailable': ?instance.isAvailable,
-  'hasValue': ?instance.hasValue,
-  'intValue': ?instance.intValue,
-  'stringValue': ?instance.stringValue,
-  'boolValue': ?instance.boolValue,
-  'intValueType': ?instance.intValueType,
+  if (instance.id case final value?) 'id': value,
+  if (instance.creationTime?.toIso8601String() case final value?)
+    'creationTime': value,
+  if (instance.creatorId case final value?) 'creatorId': value,
+  if (instance.lastModificationTime?.toIso8601String() case final value?)
+    'lastModificationTime': value,
+  if (instance.lastModifierId case final value?) 'lastModifierId': value,
+  if (instance.isDeleted case final value?) 'isDeleted': value,
+  if (instance.deleterId case final value?) 'deleterId': value,
+  if (instance.deletionTime?.toIso8601String() case final value?)
+    'deletionTime': value,
+  if (instance.isAvailable case final value?) 'isAvailable': value,
+  if (instance.hasValue case final value?) 'hasValue': value,
+  if (instance.intValue case final value?) 'intValue': value,
+  if (instance.stringValue case final value?) 'stringValue': value,
+  if (instance.boolValue case final value?) 'boolValue': value,
+  if (instance.intValueType case final value?) 'intValueType': value,
 };

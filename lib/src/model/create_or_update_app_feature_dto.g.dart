@@ -22,9 +22,9 @@ CreateOrUpdateAppFeatureDto _$CreateOrUpdateAppFeatureDtoFromJson(
 Map<String, dynamic> _$CreateOrUpdateAppFeatureDtoToJson(
   CreateOrUpdateAppFeatureDto instance,
 ) => <String, dynamic>{
-  'name': ?instance.name,
-  'displayName': ?instance.displayName,
-  'description': ?instance.description,
-  'details': ?instance.details,
-  'screenshotKeys': ?instance.screenshotKeys,
+  if (instance.name case final value?) 'name': value,
+  if (instance.displayName case final value?) 'displayName': value,
+  if (instance.description case final value?) 'description': value,
+  if (instance.details case final value?) 'details': value,
+  if (instance.screenshotKeys case final value?) 'screenshotKeys': value,
 };

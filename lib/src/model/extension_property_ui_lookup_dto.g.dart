@@ -31,9 +31,11 @@ ExtensionPropertyUiLookupDto _$ExtensionPropertyUiLookupDtoFromJson(
 Map<String, dynamic> _$ExtensionPropertyUiLookupDtoToJson(
   ExtensionPropertyUiLookupDto instance,
 ) => <String, dynamic>{
-  'url': ?instance.url,
-  'resultListPropertyName': ?instance.resultListPropertyName,
-  'displayPropertyName': ?instance.displayPropertyName,
-  'valuePropertyName': ?instance.valuePropertyName,
-  'filterParamName': ?instance.filterParamName,
+  if (instance.url case final value?) 'url': value,
+  if (instance.resultListPropertyName case final value?)
+    'resultListPropertyName': value,
+  if (instance.displayPropertyName case final value?)
+    'displayPropertyName': value,
+  if (instance.valuePropertyName case final value?) 'valuePropertyName': value,
+  if (instance.filterParamName case final value?) 'filterParamName': value,
 };

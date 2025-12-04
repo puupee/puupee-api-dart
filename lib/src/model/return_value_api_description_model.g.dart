@@ -19,6 +19,6 @@ ReturnValueApiDescriptionModel _$ReturnValueApiDescriptionModelFromJson(
 Map<String, dynamic> _$ReturnValueApiDescriptionModelToJson(
   ReturnValueApiDescriptionModel instance,
 ) => <String, dynamic>{
-  'type': ?instance.type,
-  'typeSimple': ?instance.typeSimple,
+  if (instance.type case final value?) 'type': value,
+  if (instance.typeSimple case final value?) 'typeSimple': value,
 };

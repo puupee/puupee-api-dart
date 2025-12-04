@@ -18,4 +18,7 @@ LocalizableStringDto _$LocalizableStringDtoFromJson(
 
 Map<String, dynamic> _$LocalizableStringDtoToJson(
   LocalizableStringDto instance,
-) => <String, dynamic>{'name': ?instance.name, 'resource': ?instance.resource};
+) => <String, dynamic>{
+  if (instance.name case final value?) 'name': value,
+  if (instance.resource case final value?) 'resource': value,
+};

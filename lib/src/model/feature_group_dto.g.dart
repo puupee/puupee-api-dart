@@ -23,7 +23,8 @@ FeatureGroupDto _$FeatureGroupDtoFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$FeatureGroupDtoToJson(FeatureGroupDto instance) =>
     <String, dynamic>{
-      'name': ?instance.name,
-      'displayName': ?instance.displayName,
-      'features': ?instance.features?.map((e) => e.toJson()).toList(),
+      if (instance.name case final value?) 'name': value,
+      if (instance.displayName case final value?) 'displayName': value,
+      if (instance.features?.map((e) => e.toJson()).toList() case final value?)
+        'features': value,
     };

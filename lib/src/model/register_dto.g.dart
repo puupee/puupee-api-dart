@@ -29,7 +29,7 @@ RegisterDto _$RegisterDtoFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$RegisterDtoToJson(RegisterDto instance) =>
     <String, dynamic>{
-      'extraProperties': ?instance.extraProperties,
+      if (instance.extraProperties case final value?) 'extraProperties': value,
       'userName': instance.userName,
       'emailAddress': instance.emailAddress,
       'password': instance.password,

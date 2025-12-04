@@ -26,8 +26,8 @@ IdentityRoleCreateDto _$IdentityRoleCreateDtoFromJson(
 Map<String, dynamic> _$IdentityRoleCreateDtoToJson(
   IdentityRoleCreateDto instance,
 ) => <String, dynamic>{
-  'extraProperties': ?instance.extraProperties,
+  if (instance.extraProperties case final value?) 'extraProperties': value,
   'name': instance.name,
-  'isDefault': ?instance.isDefault,
-  'isPublic': ?instance.isPublic,
+  if (instance.isDefault case final value?) 'isDefault': value,
+  if (instance.isPublic case final value?) 'isPublic': value,
 };

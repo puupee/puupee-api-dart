@@ -13,5 +13,5 @@ AvatarDto _$AvatarDtoFromJson(Map<String, dynamic> json) =>
     });
 
 Map<String, dynamic> _$AvatarDtoToJson(AvatarDto instance) => <String, dynamic>{
-  'key': ?instance.key,
+  if (instance.key case final value?) 'key': value,
 };

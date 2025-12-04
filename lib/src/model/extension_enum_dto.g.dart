@@ -28,6 +28,8 @@ ExtensionEnumDto _$ExtensionEnumDtoFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$ExtensionEnumDtoToJson(ExtensionEnumDto instance) =>
     <String, dynamic>{
-      'fields': ?instance.fields?.map((e) => e.toJson()).toList(),
-      'localizationResource': ?instance.localizationResource,
+      if (instance.fields?.map((e) => e.toJson()).toList() case final value?)
+        'fields': value,
+      if (instance.localizationResource case final value?)
+        'localizationResource': value,
     };
