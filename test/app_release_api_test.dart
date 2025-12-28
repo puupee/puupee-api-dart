@@ -30,14 +30,14 @@ void main() {
 
     // 获取版本列表
     //
-    //Future<AppReleaseDtoPagedResultDto> getAppReleaseList({ String appId, String environment, String platform, String sorting, int skipCount, int maxResultCount }) async
+    //Future<AppReleaseDtoPagedResultDto> getAppReleaseList({ String appId, ReleaseChannel channel, String platform, String sorting, int skipCount, int maxResultCount }) async
     test('test getAppReleaseList', () async {
       // TODO
     });
 
     // 获取最新版本
     //
-    //Future<AppReleaseDto> getLatest({ String appName, String platform, String productType, String environment }) async
+    //Future<AppReleaseDto> getLatest({ String appName, String platform, String productType }) async
     test('test getLatest', () async {
       // TODO
     });

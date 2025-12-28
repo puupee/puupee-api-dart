@@ -539,6 +539,9 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return RefreshDeviceStatusDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'RegisterDto':
           return RegisterDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'ReleaseChannel':
+          
+          
         case 'RemoteServiceErrorInfo':
           return RemoteServiceErrorInfo.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'RemoteServiceErrorResponse':

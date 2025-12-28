@@ -12,6 +12,7 @@ import 'package:dio/dio.dart';
 import 'package:puupee_api_client/src/model/app_release_dto.dart';
 import 'package:puupee_api_client/src/model/app_release_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_release_dto.dart';
+import 'package:puupee_api_client/src/model/release_channel.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 
 class AppReleaseApi {
@@ -249,7 +250,7 @@ _responseData = rawData == null ? null : deserialize<AppReleaseDto, AppReleaseDt
   ///
   /// Parameters:
   /// * [appId] 
-  /// * [environment] 
+  /// * [channel] 
   /// * [platform] 
   /// * [sorting] 
   /// * [skipCount] 
@@ -265,7 +266,7 @@ _responseData = rawData == null ? null : deserialize<AppReleaseDto, AppReleaseDt
   /// Throws [DioException] if API call or serialization fails
   Future<Response<AppReleaseDtoPagedResultDto>> getAppReleaseList({ 
     String? appId,
-    String? environment,
+    ReleaseChannel? channel,
     String? platform,
     String? sorting,
     int? skipCount,
@@ -297,7 +298,7 @@ _responseData = rawData == null ? null : deserialize<AppReleaseDto, AppReleaseDt
 
     final _queryParameters = <String, dynamic>{
       if (appId != null) r'AppId': appId,
-      if (environment != null) r'Environment': environment,
+      if (channel != null) r'Channel': channel,
       if (platform != null) r'Platform': platform,
       if (sorting != null) r'Sorting': sorting,
       if (skipCount != null) r'SkipCount': skipCount,
@@ -348,7 +349,6 @@ _responseData = rawData == null ? null : deserialize<AppReleaseDtoPagedResultDto
   /// * [appName] 
   /// * [platform] 
   /// * [productType] 
-  /// * [environment] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -362,7 +362,6 @@ _responseData = rawData == null ? null : deserialize<AppReleaseDtoPagedResultDto
     String? appName,
     String? platform,
     String? productType,
-    String? environment,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -392,7 +391,6 @@ _responseData = rawData == null ? null : deserialize<AppReleaseDtoPagedResultDto
       if (appName != null) r'AppName': appName,
       if (platform != null) r'Platform': platform,
       if (productType != null) r'ProductType': productType,
-      if (environment != null) r'Environment': environment,
     };
 
     final _response = await _dio.request<Object>(

@@ -29,8 +29,10 @@ CreateOrUpdateAppReleaseDto _$CreateOrUpdateAppReleaseDtoFromJson(
     isForceUpdate: $checkedConvert('isForceUpdate', (v) => v as bool?),
     appId: $checkedConvert('appId', (v) => v as String?),
     isEnabled: $checkedConvert('isEnabled', (v) => v as bool?),
-    channel: $checkedConvert('channel', (v) => v as String?),
-    environment: $checkedConvert('environment', (v) => v as String?),
+    channel: $checkedConvert(
+      'channel',
+      (v) => $enumDecodeNullable(_$ReleaseChannelEnumMap, v),
+    ),
     buildRecordId: $checkedConvert('buildRecordId', (v) => v as String?),
   );
   return val;
@@ -54,8 +56,8 @@ Map<String, dynamic> _$CreateOrUpdateAppReleaseDtoToJson(
   if (instance.isForceUpdate case final value?) 'isForceUpdate': value,
   if (instance.appId case final value?) 'appId': value,
   if (instance.isEnabled case final value?) 'isEnabled': value,
-  if (instance.channel case final value?) 'channel': value,
-  if (instance.environment case final value?) 'environment': value,
+  if (_$ReleaseChannelEnumMap[instance.channel] case final value?)
+    'channel': value,
   if (instance.buildRecordId case final value?) 'buildRecordId': value,
 };
 
@@ -87,4 +89,11 @@ const _$ArtifactTypeEnumMap = {
   ArtifactType.macAppStore: 'MacAppStore',
   ArtifactType.microsoftStore: 'MicrosoftStore',
   ArtifactType.other: 'Other',
+};
+
+const _$ReleaseChannelEnumMap = {
+  ReleaseChannel.internal: 'Internal',
+  ReleaseChannel.alpha: 'Alpha',
+  ReleaseChannel.beta: 'Beta',
+  ReleaseChannel.production: 'Production',
 };

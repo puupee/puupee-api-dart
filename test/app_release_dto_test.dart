@@ -119,13 +119,8 @@ void main() {
       // TODO
     });
 
-    // String channel
+    // ReleaseChannel channel
     test('to test the property `channel`', () async {
-      // TODO
-    });
-
-    // String environment
-    test('to test the property `environment`', () async {
       // TODO
     });
 

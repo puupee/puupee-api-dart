@@ -212,6 +212,7 @@ export 'package:puupee_api_client/src/model/provider_info_dto.dart';
 export 'package:puupee_api_client/src/model/receipt.dart';
 export 'package:puupee_api_client/src/model/refresh_device_status_dto.dart';
 export 'package:puupee_api_client/src/model/register_dto.dart';
+export 'package:puupee_api_client/src/model/release_channel.dart';
 export 'package:puupee_api_client/src/model/remote_service_error_info.dart';
 export 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 export 'package:puupee_api_client/src/model/remote_service_validation_error_info.dart';

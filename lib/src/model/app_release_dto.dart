@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:puupee_api_client/src/model/app_platform.dart';
 import 'package:puupee_api_client/src/model/artifact_type.dart';
+import 'package:puupee_api_client/src/model/release_channel.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'app_release_dto.g.dart';
@@ -65,8 +66,6 @@ class AppReleaseDto {
      this.isEnabled,
 
      this.channel,
-
-     this.environment,
   });
 
   @JsonKey(
@@ -343,19 +342,7 @@ class AppReleaseDto {
   )
 
 
-  String? channel;
-
-
-
-  @JsonKey(
-    
-    name: r'environment',
-    required: false,
-    includeIfNull: false,
-  )
-
-
-  String? environment;
+  ReleaseChannel? channel;
 
 
 
@@ -385,8 +372,7 @@ class AppReleaseDto {
       other.isForceUpdate == isForceUpdate &&
       other.appId == appId &&
       other.isEnabled == isEnabled &&
-      other.channel == channel &&
-      other.environment == environment;
+      other.channel == channel;
 
     @override
     int get hashCode =>
@@ -412,8 +398,7 @@ class AppReleaseDto {
         isForceUpdate.hashCode +
         appId.hashCode +
         isEnabled.hashCode +
-        (channel == null ? 0 : channel.hashCode) +
-        (environment == null ? 0 : environment.hashCode);
+        channel.hashCode;
 
   factory AppReleaseDto.fromJson(Map<String, dynamic> json) => _$AppReleaseDtoFromJson(json);
 

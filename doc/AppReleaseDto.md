@@ -30,8 +30,7 @@ Name | Type | Description | Notes
 **isForceUpdate** | **bool** |  | [optional] 
 **appId** | **String** |  | [optional] 
 **isEnabled** | **bool** |  | [optional] 
-**channel** | **String** |  | [optional] 
-**environment** | **String** |  | [optional] 
+**channel** | [**ReleaseChannel**](ReleaseChannel.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

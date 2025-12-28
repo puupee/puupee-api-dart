@@ -197,6 +197,7 @@ doc/ProviderInfoDto.md
 doc/Receipt.md
 doc/RefreshDeviceStatusDto.md
 doc/RegisterDto.md
+doc/ReleaseChannel.md
 doc/RemoteServiceErrorInfo.md
 doc/RemoteServiceErrorResponse.md
 doc/RemoteServiceValidationErrorInfo.md
@@ -453,6 +454,7 @@ lib/src/model/provider_info_dto.dart
 lib/src/model/receipt.dart
 lib/src/model/refresh_device_status_dto.dart
 lib/src/model/register_dto.dart
+lib/src/model/release_channel.dart
 lib/src/model/remote_service_error_info.dart
 lib/src/model/remote_service_error_response.dart
 lib/src/model/remote_service_validation_error_info.dart
@@ -686,6 +688,7 @@ test/provider_info_dto_test.dart
 test/receipt_test.dart
 test/refresh_device_status_dto_test.dart
 test/register_dto_test.dart
+test/release_channel_test.dart
 test/remote_service_error_info_test.dart
 test/remote_service_error_response_test.dart
 test/remote_service_validation_error_info_test.dart

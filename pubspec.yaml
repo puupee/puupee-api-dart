@@ -1,12 +1,12 @@
 name: puupee_api_client
 resolution: workspace
-version: 1.17.59
+version: 1.17.73
 description: Api for puupee app service.
 homepage: https://github.com/puupee/puupee-api-dart
 
 
 environment:
-  sdk: ^3.8.1
+  sdk: '>=3.8.0 <4.0.0'
 
 dependencies:
   dio: '^5.7.0'
