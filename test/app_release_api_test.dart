@@ -42,6 +42,13 @@ void main() {
       // TODO
     });
 
+    // 开发者获取版本列表（版本的创建者为当前用户）
+    //
+    //Future<AppReleaseDtoPagedResultDto> getListByDeveloper({ String appId, ReleaseChannel channel, String platform, String sorting, int skipCount, int maxResultCount }) async
+    test('test getListByDeveloper', () async {
+      // TODO
+    });
+
     // 更新版本
     //
     //Future<AppReleaseDto> updateAppRelease(String id, { CreateOrUpdateAppReleaseDto createOrUpdateAppReleaseDto }) async
