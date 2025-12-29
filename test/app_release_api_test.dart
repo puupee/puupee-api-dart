@@ -37,7 +37,7 @@ void main() {
 
     // 获取最新版本
     //
-    //Future<AppReleaseDto> getLatest({ String appName, String platform, String productType }) async
+    //Future<AppReleaseDto> getLatest({ String appName, String platform, String artifactType }) async
     test('test getLatest', () async {
       // TODO
     });

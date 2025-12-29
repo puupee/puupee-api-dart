@@ -348,7 +348,7 @@ _responseData = rawData == null ? null : deserialize<AppReleaseDtoPagedResultDto
   /// Parameters:
   /// * [appName] 
   /// * [platform] 
-  /// * [productType] 
+  /// * [artifactType] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -361,7 +361,7 @@ _responseData = rawData == null ? null : deserialize<AppReleaseDtoPagedResultDto
   Future<Response<AppReleaseDto>> getLatest({ 
     String? appName,
     String? platform,
-    String? productType,
+    String? artifactType,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -390,7 +390,7 @@ _responseData = rawData == null ? null : deserialize<AppReleaseDtoPagedResultDto
     final _queryParameters = <String, dynamic>{
       if (appName != null) r'AppName': appName,
       if (platform != null) r'Platform': platform,
-      if (productType != null) r'ProductType': productType,
+      if (artifactType != null) r'ArtifactType': artifactType,
     };
 
     final _response = await _dio.request<Object>(
