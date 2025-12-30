@@ -62,5 +62,10 @@ void main() {
       // TODO
     });
 
+    // String cdnDomain
+    test('to test the property `cdnDomain`', () async {
+      // TODO
+    });
+
   });
 }

@@ -21,6 +21,7 @@ StorageObjectCredentials _$StorageObjectCredentialsFromJson(
     expiration: $checkedConvert('expiration', (v) => v as String?),
     expiredTime: $checkedConvert('expiredTime', (v) => (v as num?)?.toInt()),
     appId: $checkedConvert('appId', (v) => v as String?),
+    cdnDomain: $checkedConvert('cdnDomain', (v) => v as String?),
   );
   return val;
 });
@@ -39,4 +40,5 @@ Map<String, dynamic> _$StorageObjectCredentialsToJson(
   if (instance.expiration case final value?) 'expiration': value,
   if (instance.expiredTime case final value?) 'expiredTime': value,
   if (instance.appId case final value?) 'appId': value,
+  if (instance.cdnDomain case final value?) 'cdnDomain': value,
 };

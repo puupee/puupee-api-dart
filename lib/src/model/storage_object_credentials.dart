@@ -39,6 +39,8 @@ class StorageObjectCredentials {
      this.expiredTime,
 
      this.appId,
+
+     this.cdnDomain,
   });
 
   @JsonKey(
@@ -173,6 +175,18 @@ class StorageObjectCredentials {
 
 
 
+  @JsonKey(
+    
+    name: r'cdnDomain',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? cdnDomain;
+
+
+
 
 
     @override
@@ -187,7 +201,8 @@ class StorageObjectCredentials {
       other.accessKeySecret == accessKeySecret &&
       other.expiration == expiration &&
       other.expiredTime == expiredTime &&
-      other.appId == appId;
+      other.appId == appId &&
+      other.cdnDomain == cdnDomain;
 
     @override
     int get hashCode =>
@@ -201,7 +216,8 @@ class StorageObjectCredentials {
         (accessKeySecret == null ? 0 : accessKeySecret.hashCode) +
         (expiration == null ? 0 : expiration.hashCode) +
         expiredTime.hashCode +
-        (appId == null ? 0 : appId.hashCode);
+        (appId == null ? 0 : appId.hashCode) +
+        (cdnDomain == null ? 0 : cdnDomain.hashCode);
 
   factory StorageObjectCredentials.fromJson(Map<String, dynamic> json) => _$StorageObjectCredentialsFromJson(json);
 

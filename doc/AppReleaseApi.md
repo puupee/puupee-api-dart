@@ -1,12 +1,11 @@
 # puupee_api_client.api.AppReleaseApi
 
 ## Load the API package
-
 ```dart
 import 'package:puupee_api_client/api.dart';
 ```
 
-All URIs are relative to *<http://localhost>*
+All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,14 +17,13 @@ Method | HTTP request | Description
 [**getListByDeveloper**](AppReleaseApi.md#getlistbydeveloper) | **GET** /api/app/app-release/by-developer | 开发者获取版本列表（版本的创建者为当前用户）
 [**updateAppRelease**](AppReleaseApi.md#updateapprelease) | **PUT** /api/app/app-release/{id} | 更新版本
 
+
 # **createAppRelease**
->
 > AppReleaseDto createAppRelease(createOrUpdateAppReleaseDto)
 
 创建新版本
 
 ### Example
-
 ```dart
 import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
@@ -46,7 +44,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **createOrUpdateAppReleaseDto** | [**CreateOrUpdateAppReleaseDto**](CreateOrUpdateAppReleaseDto.md)|  | [optional]
+ **createOrUpdateAppReleaseDto** | [**CreateOrUpdateAppReleaseDto**](CreateOrUpdateAppReleaseDto.md)|  | [optional] 
 
 ### Return type
 
@@ -58,19 +56,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **deleteAppReleaseById**
->
 > deleteAppReleaseById(id)
 
 删除版本
 
 ### Example
-
 ```dart
 import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
@@ -90,7 +86,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  |
+ **id** | **String**|  | 
 
 ### Return type
 
@@ -102,19 +98,17 @@ void (empty response body)
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getAppReleaseById**
->
 > AppReleaseDto getAppReleaseById(id)
 
 获取版本
 
 ### Example
-
 ```dart
 import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
@@ -135,7 +129,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  |
+ **id** | **String**|  | 
 
 ### Return type
 
@@ -147,19 +141,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getAppReleaseList**
->
 > AppReleaseDtoPagedResultDto getAppReleaseList(appId, channel, platform, sorting, skipCount, maxResultCount)
 
 获取版本列表
 
 ### Example
-
 ```dart
 import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
@@ -185,12 +177,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **String**|  | [optional]
- **channel** | [**ReleaseChannel**](.md)|  | [optional]
- **platform** | **String**|  | [optional]
- **sorting** | **String**|  | [optional]
- **skipCount** | **int**|  | [optional]
- **maxResultCount** | **int**|  | [optional]
+ **appId** | **String**|  | [optional] 
+ **channel** | [**ReleaseChannel**](.md)|  | [optional] 
+ **platform** | **String**|  | [optional] 
+ **sorting** | **String**|  | [optional] 
+ **skipCount** | **int**|  | [optional] 
+ **maxResultCount** | **int**|  | [optional] 
 
 ### Return type
 
@@ -202,19 +194,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getLatest**
->
 > AppReleaseDto getLatest(appName, platform, artifactType)
 
 获取最新版本
 
 ### Example
-
 ```dart
 import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
@@ -237,9 +227,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appName** | **String**|  | [optional]
- **platform** | **String**|  | [optional]
- **artifactType** | **String**|  | [optional]
+ **appName** | **String**|  | [optional] 
+ **platform** | **String**|  | [optional] 
+ **artifactType** | **String**|  | [optional] 
 
 ### Return type
 
@@ -251,19 +241,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getListByDeveloper**
->
 > AppReleaseDtoPagedResultDto getListByDeveloper(appId, channel, platform, sorting, skipCount, maxResultCount)
 
 开发者获取版本列表（版本的创建者为当前用户）
 
 ### Example
-
 ```dart
 import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
@@ -289,12 +277,12 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **appId** | **String**|  | [optional]
- **channel** | [**ReleaseChannel**](.md)|  | [optional]
- **platform** | **String**|  | [optional]
- **sorting** | **String**|  | [optional]
- **skipCount** | **int**|  | [optional]
- **maxResultCount** | **int**|  | [optional]
+ **appId** | **String**|  | [optional] 
+ **channel** | [**ReleaseChannel**](.md)|  | [optional] 
+ **platform** | **String**|  | [optional] 
+ **sorting** | **String**|  | [optional] 
+ **skipCount** | **int**|  | [optional] 
+ **maxResultCount** | **int**|  | [optional] 
 
 ### Return type
 
@@ -306,19 +294,17 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **updateAppRelease**
->
 > AppReleaseDto updateAppRelease(id, createOrUpdateAppReleaseDto)
 
 更新版本
 
 ### Example
-
 ```dart
 import 'package:puupee_api_client/api.dart';
 // TODO Configure OAuth2 access token for authorization: oauth2
@@ -340,8 +326,8 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **String**|  |
- **createOrUpdateAppReleaseDto** | [**CreateOrUpdateAppReleaseDto**](CreateOrUpdateAppReleaseDto.md)|  | [optional]
+ **id** | **String**|  | 
+ **createOrUpdateAppReleaseDto** | [**CreateOrUpdateAppReleaseDto**](CreateOrUpdateAppReleaseDto.md)|  | [optional] 
 
 ### Return type
 
@@ -353,7 +339,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json, text/json, application/*+json
-- **Accept**: text/plain, application/json, text/json
+ - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+

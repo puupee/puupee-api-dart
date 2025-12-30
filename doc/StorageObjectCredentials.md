@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **expiration** | **String** |  | [optional] 
 **expiredTime** | **int** |  | [optional] 
 **appId** | **String** |  | [optional] 
+**cdnDomain** | **String** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
