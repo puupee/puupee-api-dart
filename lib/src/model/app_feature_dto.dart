@@ -34,6 +34,8 @@ class AppFeatureDto {
 
      this.deletionTime,
 
+     this.appId,
+
      this.name,
 
      this.displayName,
@@ -43,6 +45,12 @@ class AppFeatureDto {
      this.details,
 
      this.screenshotKeys,
+
+     this.displayNameLocalized,
+
+     this.descriptionLocalized,
+
+     this.detailsLocalized,
   });
 
   @JsonKey(
@@ -141,6 +149,20 @@ class AppFeatureDto {
 
 
 
+      /// 所属应用ID
+  @JsonKey(
+    
+    name: r'appId',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? appId;
+
+
+
+      /// 功能名称（唯一标识）
   @JsonKey(
     
     name: r'name',
@@ -153,6 +175,7 @@ class AppFeatureDto {
 
 
 
+      /// 显示名称（默认语言）
   @JsonKey(
     
     name: r'displayName',
@@ -165,6 +188,7 @@ class AppFeatureDto {
 
 
 
+      /// 描述（默认语言）
   @JsonKey(
     
     name: r'description',
@@ -177,6 +201,7 @@ class AppFeatureDto {
 
 
 
+      /// 详情（默认语言）
   @JsonKey(
     
     name: r'details',
@@ -189,6 +214,7 @@ class AppFeatureDto {
 
 
 
+      /// 截图键值，多个用逗号分隔
   @JsonKey(
     
     name: r'screenshotKeys',
@@ -198,6 +224,45 @@ class AppFeatureDto {
 
 
   String? screenshotKeys;
+
+
+
+      /// 多语言显示名称，JSON格式：{\"en\": \"Feature Name\", \"zh-Hans\": \"功能名称\", ...}
+  @JsonKey(
+    
+    name: r'displayNameLocalized',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? displayNameLocalized;
+
+
+
+      /// 多语言描述，JSON格式：{\"en\": \"Description\", \"zh-Hans\": \"描述\", ...}
+  @JsonKey(
+    
+    name: r'descriptionLocalized',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? descriptionLocalized;
+
+
+
+      /// 多语言详情，JSON格式：{\"en\": \"Details\", \"zh-Hans\": \"详情\", ...}
+  @JsonKey(
+    
+    name: r'detailsLocalized',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? detailsLocalized;
 
 
 
@@ -213,11 +278,15 @@ class AppFeatureDto {
       other.isDeleted == isDeleted &&
       other.deleterId == deleterId &&
       other.deletionTime == deletionTime &&
+      other.appId == appId &&
       other.name == name &&
       other.displayName == displayName &&
       other.description == description &&
       other.details == details &&
-      other.screenshotKeys == screenshotKeys;
+      other.screenshotKeys == screenshotKeys &&
+      other.displayNameLocalized == displayNameLocalized &&
+      other.descriptionLocalized == descriptionLocalized &&
+      other.detailsLocalized == detailsLocalized;
 
     @override
     int get hashCode =>
@@ -229,11 +298,15 @@ class AppFeatureDto {
         isDeleted.hashCode +
         (deleterId == null ? 0 : deleterId.hashCode) +
         (deletionTime == null ? 0 : deletionTime.hashCode) +
+        appId.hashCode +
         (name == null ? 0 : name.hashCode) +
         (displayName == null ? 0 : displayName.hashCode) +
         (description == null ? 0 : description.hashCode) +
         (details == null ? 0 : details.hashCode) +
-        (screenshotKeys == null ? 0 : screenshotKeys.hashCode);
+        (screenshotKeys == null ? 0 : screenshotKeys.hashCode) +
+        (displayNameLocalized == null ? 0 : displayNameLocalized.hashCode) +
+        (descriptionLocalized == null ? 0 : descriptionLocalized.hashCode) +
+        (detailsLocalized == null ? 0 : detailsLocalized.hashCode);
 
   factory AppFeatureDto.fromJson(Map<String, dynamic> json) => _$AppFeatureDtoFromJson(json);
 
