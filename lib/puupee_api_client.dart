@@ -103,6 +103,7 @@ export 'package:puupee_api_client/src/model/build_record_dto.dart';
 export 'package:puupee_api_client/src/model/build_record_dto_paged_result_dto.dart';
 export 'package:puupee_api_client/src/model/build_status.dart';
 export 'package:puupee_api_client/src/model/build_trigger.dart';
+export 'package:puupee_api_client/src/model/cdn_domain_dto.dart';
 export 'package:puupee_api_client/src/model/change_password_dto.dart';
 export 'package:puupee_api_client/src/model/change_password_input.dart';
 export 'package:puupee_api_client/src/model/check_sync_auth_result_dto.dart';

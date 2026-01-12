@@ -73,6 +73,7 @@ doc/BuildRecordDto.md
 doc/BuildRecordDtoPagedResultDto.md
 doc/BuildStatus.md
 doc/BuildTrigger.md
+doc/CdnDomainDto.md
 doc/ChangePasswordDto.md
 doc/ChangePasswordInput.md
 doc/CheckSyncAuthResultDto.md
@@ -345,6 +346,7 @@ lib/src/model/build_record_dto.dart
 lib/src/model/build_record_dto_paged_result_dto.dart
 lib/src/model/build_status.dart
 lib/src/model/build_trigger.dart
+lib/src/model/cdn_domain_dto.dart
 lib/src/model/change_password_dto.dart
 lib/src/model/change_password_input.dart
 lib/src/model/check_sync_auth_result_dto.dart
@@ -564,6 +566,7 @@ test/build_record_dto_paged_result_dto_test.dart
 test/build_record_dto_test.dart
 test/build_status_test.dart
 test/build_trigger_test.dart
+test/cdn_domain_dto_test.dart
 test/change_password_dto_test.dart
 test/change_password_input_test.dart
 test/check_sync_auth_result_dto_test.dart

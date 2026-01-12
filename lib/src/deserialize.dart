@@ -41,6 +41,7 @@ import 'package:puupee_api_client/src/model/avatar_dto.dart';
 import 'package:puupee_api_client/src/model/bind_device_dto.dart';
 import 'package:puupee_api_client/src/model/build_record_dto.dart';
 import 'package:puupee_api_client/src/model/build_record_dto_paged_result_dto.dart';
+import 'package:puupee_api_client/src/model/cdn_domain_dto.dart';
 import 'package:puupee_api_client/src/model/change_password_dto.dart';
 import 'package:puupee_api_client/src/model/change_password_input.dart';
 import 'package:puupee_api_client/src/model/check_sync_auth_result_dto.dart';
@@ -318,6 +319,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
         case 'BuildTrigger':
           
           
+        case 'CdnDomainDto':
+          return CdnDomainDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ChangePasswordDto':
           return ChangePasswordDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ChangePasswordInput':

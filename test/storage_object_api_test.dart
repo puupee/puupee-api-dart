@@ -7,6 +7,13 @@ void main() {
   final instance = PuupeeApiClient().getStorageObjectApi();
 
   group(StorageObjectApi, () {
+    // 获取所有 CDN Domain 配置
+    //
+    //Future<List<CdnDomainDto>> getCdnDomains() async
+    test('test getCdnDomains', () async {
+      // TODO
+    });
+
     //Future<StorageObjectCredentials> getFileCredential({ int userTotalSize, String rapidCode, String usage, String key }) async
     test('test getFileCredential', () async {
       // TODO
