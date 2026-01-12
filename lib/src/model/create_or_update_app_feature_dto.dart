@@ -22,6 +22,8 @@ class CreateOrUpdateAppFeatureDto {
 
      this.name,
 
+     this.locale,
+
      this.displayName,
 
      this.description,
@@ -29,12 +31,6 @@ class CreateOrUpdateAppFeatureDto {
      this.details,
 
      this.screenshotKeys,
-
-     this.displayNameLocalized,
-
-     this.descriptionLocalized,
-
-     this.detailsLocalized,
   });
 
       /// 所属应用ID
@@ -50,7 +46,7 @@ class CreateOrUpdateAppFeatureDto {
 
 
 
-      /// 功能名称（唯一标识）
+      /// 功能名称（唯一标识，同一功能的不同语言版本使用相同的 Name）
   @JsonKey(
     
     name: r'name',
@@ -63,7 +59,20 @@ class CreateOrUpdateAppFeatureDto {
 
 
 
-      /// 显示名称（默认语言）
+      /// 语言代码（如：en, zh-Hans, zh-Hant, fr 等）
+  @JsonKey(
+    
+    name: r'locale',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? locale;
+
+
+
+      /// 显示名称（当前语言）
   @JsonKey(
     
     name: r'displayName',
@@ -76,7 +85,7 @@ class CreateOrUpdateAppFeatureDto {
 
 
 
-      /// 描述（默认语言）
+      /// 描述（当前语言）
   @JsonKey(
     
     name: r'description',
@@ -89,7 +98,7 @@ class CreateOrUpdateAppFeatureDto {
 
 
 
-      /// 详情（默认语言）
+      /// 详情（当前语言）
   @JsonKey(
     
     name: r'details',
@@ -102,7 +111,7 @@ class CreateOrUpdateAppFeatureDto {
 
 
 
-      /// 截图键值，多个用逗号分隔
+      /// 截图键值，多个用逗号分隔（当前语言的截图）
   @JsonKey(
     
     name: r'screenshotKeys',
@@ -115,70 +124,27 @@ class CreateOrUpdateAppFeatureDto {
 
 
 
-      /// 多语言显示名称，JSON格式：{\"en\": \"Feature Name\", \"zh-Hans\": \"功能名称\", ...}
-  @JsonKey(
-    
-    name: r'displayNameLocalized',
-    required: false,
-    includeIfNull: false,
-  )
-
-
-  String? displayNameLocalized;
-
-
-
-      /// 多语言描述，JSON格式：{\"en\": \"Description\", \"zh-Hans\": \"描述\", ...}
-  @JsonKey(
-    
-    name: r'descriptionLocalized',
-    required: false,
-    includeIfNull: false,
-  )
-
-
-  String? descriptionLocalized;
-
-
-
-      /// 多语言详情，JSON格式：{\"en\": \"Details\", \"zh-Hans\": \"详情\", ...}
-  @JsonKey(
-    
-    name: r'detailsLocalized',
-    required: false,
-    includeIfNull: false,
-  )
-
-
-  String? detailsLocalized;
-
-
-
 
 
     @override
     bool operator ==(Object other) => identical(this, other) || other is CreateOrUpdateAppFeatureDto &&
       other.appId == appId &&
       other.name == name &&
+      other.locale == locale &&
       other.displayName == displayName &&
       other.description == description &&
       other.details == details &&
-      other.screenshotKeys == screenshotKeys &&
-      other.displayNameLocalized == displayNameLocalized &&
-      other.descriptionLocalized == descriptionLocalized &&
-      other.detailsLocalized == detailsLocalized;
+      other.screenshotKeys == screenshotKeys;
 
     @override
     int get hashCode =>
         appId.hashCode +
         (name == null ? 0 : name.hashCode) +
+        (locale == null ? 0 : locale.hashCode) +
         (displayName == null ? 0 : displayName.hashCode) +
         (description == null ? 0 : description.hashCode) +
         (details == null ? 0 : details.hashCode) +
-        (screenshotKeys == null ? 0 : screenshotKeys.hashCode) +
-        (displayNameLocalized == null ? 0 : displayNameLocalized.hashCode) +
-        (descriptionLocalized == null ? 0 : descriptionLocalized.hashCode) +
-        (detailsLocalized == null ? 0 : detailsLocalized.hashCode);
+        (screenshotKeys == null ? 0 : screenshotKeys.hashCode);
 
   factory CreateOrUpdateAppFeatureDto.fromJson(Map<String, dynamic> json) => _$CreateOrUpdateAppFeatureDtoFromJson(json);
 
