@@ -35,6 +35,7 @@ doc/AppPricingDtoPagedResultDto.md
 doc/AppPricingItemApi.md
 doc/AppPricingItemDto.md
 doc/AppPricingItemValueDto.md
+doc/AppPublisher.md
 doc/AppReleaseApi.md
 doc/AppReleaseDto.md
 doc/AppReleaseDtoPagedResultDto.md
@@ -314,6 +315,7 @@ lib/src/model/app_pricing_dto.dart
 lib/src/model/app_pricing_dto_paged_result_dto.dart
 lib/src/model/app_pricing_item_dto.dart
 lib/src/model/app_pricing_item_value_dto.dart
+lib/src/model/app_publisher.dart
 lib/src/model/app_release_dto.dart
 lib/src/model/app_release_dto_paged_result_dto.dart
 lib/src/model/app_run_dto.dart
@@ -528,6 +530,7 @@ test/app_pricing_dto_test.dart
 test/app_pricing_item_api_test.dart
 test/app_pricing_item_dto_test.dart
 test/app_pricing_item_value_dto_test.dart
+test/app_publisher_test.dart
 test/app_release_api_test.dart
 test/app_release_dto_paged_result_dto_test.dart
 test/app_release_dto_test.dart

@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **hash** | **String** |  | [optional] 
 **downloadUrl** | **String** |  | [optional] 
 **artifactType** | [**ArtifactType**](ArtifactType.md) |  | [optional] 
+**publisher** | [**AppPublisher**](AppPublisher.md) |  | [optional] 
 **isForceUpdate** | **bool** |  | [optional] 
 **appId** | **String** |  | [optional] 
 **isEnabled** | **bool** |  | [optional] 

@@ -46,6 +46,10 @@ AppReleaseDto _$AppReleaseDtoFromJson(Map<String, dynamic> json) =>
           'artifactType',
           (v) => $enumDecodeNullable(_$ArtifactTypeEnumMap, v),
         ),
+        publisher: $checkedConvert(
+          'publisher',
+          (v) => $enumDecodeNullable(_$AppPublisherEnumMap, v),
+        ),
         isForceUpdate: $checkedConvert('isForceUpdate', (v) => v as bool?),
         appId: $checkedConvert('appId', (v) => v as String?),
         isEnabled: $checkedConvert('isEnabled', (v) => v as bool?),
@@ -83,6 +87,8 @@ Map<String, dynamic> _$AppReleaseDtoToJson(AppReleaseDto instance) =>
       if (instance.downloadUrl case final value?) 'downloadUrl': value,
       if (_$ArtifactTypeEnumMap[instance.artifactType] case final value?)
         'artifactType': value,
+      if (_$AppPublisherEnumMap[instance.publisher] case final value?)
+        'publisher': value,
       if (instance.isForceUpdate case final value?) 'isForceUpdate': value,
       if (instance.appId case final value?) 'appId': value,
       if (instance.isEnabled case final value?) 'isEnabled': value,
@@ -104,20 +110,41 @@ const _$AppPlatformEnumMap = {
 };
 
 const _$ArtifactTypeEnumMap = {
+  ArtifactType.aab: 'Aab',
   ArtifactType.apk: 'Apk',
-  ArtifactType.ipa: 'Ipa',
-  ArtifactType.exe: 'Exe',
-  ArtifactType.msi: 'Msi',
-  ArtifactType.dmg: 'Dmg',
-  ArtifactType.pkg: 'Pkg',
+  ArtifactType.app: 'App',
   ArtifactType.appImage: 'AppImage',
-  ArtifactType.web: 'Web',
-  ArtifactType.service: 'Service',
-  ArtifactType.appStore: 'AppStore',
-  ArtifactType.googlePlay: 'GooglePlay',
-  ArtifactType.macAppStore: 'MacAppStore',
-  ArtifactType.microsoftStore: 'MicrosoftStore',
+  ArtifactType.deb: 'Deb',
+  ArtifactType.dmg: 'Dmg',
+  ArtifactType.docker: 'Docker',
+  ArtifactType.exe: 'Exe',
+  ArtifactType.hap: 'Hap',
+  ArtifactType.ipa: 'Ipa',
+  ArtifactType.msi: 'Msi',
+  ArtifactType.msix: 'Msix',
+  ArtifactType.pkg: 'Pkg',
+  ArtifactType.rpm: 'Rpm',
+  ArtifactType.zip: 'Zip',
   ArtifactType.other: 'Other',
+};
+
+const _$AppPublisherEnumMap = {
+  AppPublisher.web: 'Web',
+  AppPublisher.service: 'Service',
+  AppPublisher.appStore: 'AppStore',
+  AppPublisher.playStore: 'PlayStore',
+  AppPublisher.macAppStore: 'MacAppStore',
+  AppPublisher.microsoftStore: 'MicrosoftStore',
+  AppPublisher.appGallery: 'AppGallery',
+  AppPublisher.fir: 'Fir',
+  AppPublisher.firebaseHosting: 'FirebaseHosting',
+  AppPublisher.firebase: 'Firebase',
+  AppPublisher.gitHub: 'GitHub',
+  AppPublisher.pgyer: 'Pgyer',
+  AppPublisher.qiniu: 'Qiniu',
+  AppPublisher.vercel: 'Vercel',
+  AppPublisher.puupee: 'Puupee',
+  AppPublisher.other: 'Other',
 };
 
 const _$ReleaseChannelEnumMap = {

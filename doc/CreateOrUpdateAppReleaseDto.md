@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **size** | **int** |  | [optional] 
 **hash** | **String** |  | [optional] 
 **artifactType** | [**ArtifactType**](ArtifactType.md) |  | [optional] 
+**publisher** | [**AppPublisher**](AppPublisher.md) |  | [optional] 
 **isForceUpdate** | **bool** |  | [optional] 
 **appId** | **String** |  | [optional] 
 **isEnabled** | **bool** |  | [optional] 

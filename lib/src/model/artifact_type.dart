@@ -8,44 +8,50 @@ import 'package:json_annotation/json_annotation.dart';
 /// Represents the type of an artifact.
 enum ArtifactType {
           /// Represents the type of an artifact.
+      @JsonValue(r'Aab')
+      aab(r'Aab'),
+          /// Represents the type of an artifact.
       @JsonValue(r'Apk')
       apk(r'Apk'),
           /// Represents the type of an artifact.
-      @JsonValue(r'Ipa')
-      ipa(r'Ipa'),
-          /// Represents the type of an artifact.
-      @JsonValue(r'Exe')
-      exe(r'Exe'),
-          /// Represents the type of an artifact.
-      @JsonValue(r'Msi')
-      msi(r'Msi'),
-          /// Represents the type of an artifact.
-      @JsonValue(r'Dmg')
-      dmg(r'Dmg'),
-          /// Represents the type of an artifact.
-      @JsonValue(r'Pkg')
-      pkg(r'Pkg'),
+      @JsonValue(r'App')
+      app(r'App'),
           /// Represents the type of an artifact.
       @JsonValue(r'AppImage')
       appImage(r'AppImage'),
           /// Represents the type of an artifact.
-      @JsonValue(r'Web')
-      web(r'Web'),
+      @JsonValue(r'Deb')
+      deb(r'Deb'),
           /// Represents the type of an artifact.
-      @JsonValue(r'Service')
-      service(r'Service'),
+      @JsonValue(r'Dmg')
+      dmg(r'Dmg'),
           /// Represents the type of an artifact.
-      @JsonValue(r'AppStore')
-      appStore(r'AppStore'),
+      @JsonValue(r'Docker')
+      docker(r'Docker'),
           /// Represents the type of an artifact.
-      @JsonValue(r'GooglePlay')
-      googlePlay(r'GooglePlay'),
+      @JsonValue(r'Exe')
+      exe(r'Exe'),
           /// Represents the type of an artifact.
-      @JsonValue(r'MacAppStore')
-      macAppStore(r'MacAppStore'),
+      @JsonValue(r'Hap')
+      hap(r'Hap'),
           /// Represents the type of an artifact.
-      @JsonValue(r'MicrosoftStore')
-      microsoftStore(r'MicrosoftStore'),
+      @JsonValue(r'Ipa')
+      ipa(r'Ipa'),
+          /// Represents the type of an artifact.
+      @JsonValue(r'Msi')
+      msi(r'Msi'),
+          /// Represents the type of an artifact.
+      @JsonValue(r'Msix')
+      msix(r'Msix'),
+          /// Represents the type of an artifact.
+      @JsonValue(r'Pkg')
+      pkg(r'Pkg'),
+          /// Represents the type of an artifact.
+      @JsonValue(r'Rpm')
+      rpm(r'Rpm'),
+          /// Represents the type of an artifact.
+      @JsonValue(r'Zip')
+      zip(r'Zip'),
           /// Represents the type of an artifact.
       @JsonValue(r'Other')
       other(r'Other');

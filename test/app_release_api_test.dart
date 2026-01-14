@@ -30,21 +30,21 @@ void main() {
 
     // 获取版本列表
     //
-    //Future<AppReleaseDtoPagedResultDto> getAppReleaseList({ String appId, ReleaseChannel channel, String platform, String sorting, int skipCount, int maxResultCount }) async
+    //Future<AppReleaseDtoPagedResultDto> getAppReleaseList({ String appId, ReleaseChannel channel, String platform, String publisher, String sorting, int skipCount, int maxResultCount }) async
     test('test getAppReleaseList', () async {
       // TODO
     });
 
     // 获取最新版本
     //
-    //Future<AppReleaseDto> getLatest({ String appName, String platform, String artifactType }) async
+    //Future<AppReleaseDto> getLatest({ String appName, String platform, String artifactType, String publisher }) async
     test('test getLatest', () async {
       // TODO
     });
 
     // 开发者获取版本列表（版本的创建者为当前用户）
     //
-    //Future<AppReleaseDtoPagedResultDto> getListByDeveloper({ String appId, ReleaseChannel channel, String platform, String sorting, int skipCount, int maxResultCount }) async
+    //Future<AppReleaseDtoPagedResultDto> getListByDeveloper({ String appId, ReleaseChannel channel, String platform, String publisher, String sorting, int skipCount, int maxResultCount }) async
     test('test getListByDeveloper', () async {
       // TODO
     });

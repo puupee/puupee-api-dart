@@ -104,6 +104,11 @@ void main() {
       // TODO
     });
 
+    // AppPublisher publisher
+    test('to test the property `publisher`', () async {
+      // TODO
+    });
+
     // bool isForceUpdate
     test('to test the property `isForceUpdate`', () async {
       // TODO

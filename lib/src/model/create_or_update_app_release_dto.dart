@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:puupee_api_client/src/model/app_platform.dart';
 import 'package:puupee_api_client/src/model/artifact_type.dart';
+import 'package:puupee_api_client/src/model/app_publisher.dart';
 import 'package:puupee_api_client/src/model/release_channel.dart';
 import 'package:json_annotation/json_annotation.dart';
 
@@ -40,6 +41,8 @@ class CreateOrUpdateAppReleaseDto {
      this.hash,
 
      this.artifactType,
+
+     this.publisher,
 
      this.isForceUpdate,
 
@@ -176,6 +179,18 @@ class CreateOrUpdateAppReleaseDto {
 
   @JsonKey(
     
+    name: r'publisher',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  AppPublisher? publisher;
+
+
+
+  @JsonKey(
+    
     name: r'isForceUpdate',
     required: false,
     includeIfNull: false,
@@ -249,6 +264,7 @@ class CreateOrUpdateAppReleaseDto {
       other.size == size &&
       other.hash == hash &&
       other.artifactType == artifactType &&
+      other.publisher == publisher &&
       other.isForceUpdate == isForceUpdate &&
       other.appId == appId &&
       other.isEnabled == isEnabled &&
@@ -267,6 +283,7 @@ class CreateOrUpdateAppReleaseDto {
         (size == null ? 0 : size.hashCode) +
         (hash == null ? 0 : hash.hashCode) +
         artifactType.hashCode +
+        publisher.hashCode +
         isForceUpdate.hashCode +
         appId.hashCode +
         isEnabled.hashCode +

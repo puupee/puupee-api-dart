@@ -250,6 +250,9 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return AppPricingItemDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppPricingItemValueDto':
           return AppPricingItemValueDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppPublisher':
+          
+          
         case 'AppReleaseDto':
           return AppReleaseDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppReleaseDtoPagedResultDto':

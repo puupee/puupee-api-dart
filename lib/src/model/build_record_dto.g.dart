@@ -133,19 +133,21 @@ const _$AppPlatformEnumMap = {
 };
 
 const _$ArtifactTypeEnumMap = {
+  ArtifactType.aab: 'Aab',
   ArtifactType.apk: 'Apk',
-  ArtifactType.ipa: 'Ipa',
-  ArtifactType.exe: 'Exe',
-  ArtifactType.msi: 'Msi',
-  ArtifactType.dmg: 'Dmg',
-  ArtifactType.pkg: 'Pkg',
+  ArtifactType.app: 'App',
   ArtifactType.appImage: 'AppImage',
-  ArtifactType.web: 'Web',
-  ArtifactType.service: 'Service',
-  ArtifactType.appStore: 'AppStore',
-  ArtifactType.googlePlay: 'GooglePlay',
-  ArtifactType.macAppStore: 'MacAppStore',
-  ArtifactType.microsoftStore: 'MicrosoftStore',
+  ArtifactType.deb: 'Deb',
+  ArtifactType.dmg: 'Dmg',
+  ArtifactType.docker: 'Docker',
+  ArtifactType.exe: 'Exe',
+  ArtifactType.hap: 'Hap',
+  ArtifactType.ipa: 'Ipa',
+  ArtifactType.msi: 'Msi',
+  ArtifactType.msix: 'Msix',
+  ArtifactType.pkg: 'Pkg',
+  ArtifactType.rpm: 'Rpm',
+  ArtifactType.zip: 'Zip',
   ArtifactType.other: 'Other',
 };
 

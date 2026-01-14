@@ -71,6 +71,7 @@ export 'package:puupee_api_client/src/model/app_pricing_dto.dart';
 export 'package:puupee_api_client/src/model/app_pricing_dto_paged_result_dto.dart';
 export 'package:puupee_api_client/src/model/app_pricing_item_dto.dart';
 export 'package:puupee_api_client/src/model/app_pricing_item_value_dto.dart';
+export 'package:puupee_api_client/src/model/app_publisher.dart';
 export 'package:puupee_api_client/src/model/app_release_dto.dart';
 export 'package:puupee_api_client/src/model/app_release_dto_paged_result_dto.dart';
 export 'package:puupee_api_client/src/model/app_run_dto.dart';
