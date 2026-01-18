@@ -125,6 +125,7 @@ const _$ArtifactTypeEnumMap = {
   ArtifactType.pkg: 'Pkg',
   ArtifactType.rpm: 'Rpm',
   ArtifactType.zip: 'Zip',
+  ArtifactType.bin: 'Bin',
   ArtifactType.other: 'Other',
 };
 

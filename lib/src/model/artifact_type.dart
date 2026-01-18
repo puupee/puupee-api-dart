@@ -53,6 +53,9 @@ enum ArtifactType {
       @JsonValue(r'Zip')
       zip(r'Zip'),
           /// Represents the type of an artifact.
+      @JsonValue(r'Bin')
+      bin(r'Bin'),
+          /// Represents the type of an artifact.
       @JsonValue(r'Other')
       other(r'Other');
 
