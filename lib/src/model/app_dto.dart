@@ -5,6 +5,7 @@
 // ignore_for_file: unused_element
 import 'package:puupee_api_client/src/model/app_sdk_dto.dart';
 import 'package:puupee_api_client/src/model/app_type.dart';
+import 'package:puupee_api_client/src/model/app_locale_dto.dart';
 import 'package:puupee_api_client/src/model/git_repository_type.dart';
 import 'package:puupee_api_client/src/model/app_feature_dto.dart';
 import 'package:puupee_api_client/src/model/identity_user_dto.dart';
@@ -86,6 +87,8 @@ class AppDto {
      this.creator,
 
      this.features,
+
+     this.locales,
 
      this.sdks,
   });
@@ -198,6 +201,7 @@ class AppDto {
 
 
 
+      /// 根据 Accept-Language 解析的展示标题（非持久化字段，来自语言包）。
   @JsonKey(
     
     name: r'displayName',
@@ -234,6 +238,7 @@ class AppDto {
 
 
 
+      /// 根据 Accept-Language 解析的短描述（非持久化字段）。
   @JsonKey(
     
     name: r'description',
@@ -246,6 +251,7 @@ class AppDto {
 
 
 
+      /// 根据 Accept-Language 解析的图标存储键或 URL（非持久化字段）。
   @JsonKey(
     
     name: r'icon',
@@ -473,6 +479,19 @@ class AppDto {
 
 
 
+      /// 全部商店语言包（含素材）。
+  @JsonKey(
+    
+    name: r'locales',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  List<AppLocaleDto>? locales;
+
+
+
   @JsonKey(
     
     name: r'sdks',
@@ -520,6 +539,7 @@ class AppDto {
       other.latestReleases == latestReleases &&
       other.creator == creator &&
       other.features == features &&
+      other.locales == locales &&
       other.sdks == sdks;
 
     @override
@@ -555,6 +575,7 @@ class AppDto {
         (latestReleases == null ? 0 : latestReleases.hashCode) +
         creator.hashCode +
         (features == null ? 0 : features.hashCode) +
+        (locales == null ? 0 : locales.hashCode) +
         (sdks == null ? 0 : sdks.hashCode);
 
   factory AppDto.fromJson(Map<String, dynamic> json) => _$AppDtoFromJson(json);

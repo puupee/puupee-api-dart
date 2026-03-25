@@ -13,7 +13,7 @@ Method | HTTP request | Description
 [**deleteAppPricingById**](AppPricingApi.md#deleteapppricingbyid) | **DELETE** /api/app/app-pricing/{id} | 
 [**getAppPricingById**](AppPricingApi.md#getapppricingbyid) | **GET** /api/app/app-pricing/{id} | 
 [**getAppPricingList**](AppPricingApi.md#getapppricinglist) | **GET** /api/app/app-pricing | 
-[**getListByAppId**](AppPricingApi.md#getlistbyappid) | **GET** /api/app/app-pricing/by-app-id/{appId} | 
+[**getListByAppId**](AppPricingApi.md#getlistbyappid) | **GET** /api/app/app-pricing/by-app-id/{appId} | 获取应用定价方案列表，允许匿名访问供未登录用户查看订阅计划
 [**getPricingItemsByAppId**](AppPricingApi.md#getpricingitemsbyappid) | **GET** /api/app/app-pricing/pricing-items-by-app-id/{appId} | 
 [**updateAppPricing**](AppPricingApi.md#updateapppricing) | **PUT** /api/app/app-pricing/{id} | 
 
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 # **getListByAppId**
 > List<AppPricingDto> getListByAppId(appId)
 
-
+获取应用定价方案列表，允许匿名访问供未登录用户查看订阅计划
 
 ### Example
 ```dart

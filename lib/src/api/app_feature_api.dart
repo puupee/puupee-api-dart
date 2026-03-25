@@ -171,6 +171,7 @@ _responseData = rawData == null ? null : deserialize<AppFeatureDto, AppFeatureDt
   /// 
   ///
   /// Parameters:
+  /// * [appId] 
   /// * [sorting] 
   /// * [skipCount] 
   /// * [maxResultCount] 
@@ -184,6 +185,7 @@ _responseData = rawData == null ? null : deserialize<AppFeatureDto, AppFeatureDt
   /// Returns a [Future] containing a [Response] with a [AppFeatureDtoPagedResultDto] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<AppFeatureDtoPagedResultDto>> getAppFeatureList({ 
+    String? appId,
     String? sorting,
     int? skipCount,
     int? maxResultCount,
@@ -213,6 +215,7 @@ _responseData = rawData == null ? null : deserialize<AppFeatureDto, AppFeatureDt
     );
 
     final _queryParameters = <String, dynamic>{
+      if (appId != null) r'AppId': appId,
       if (sorting != null) r'Sorting': sorting,
       if (skipCount != null) r'SkipCount': skipCount,
       if (maxResultCount != null) r'MaxResultCount': maxResultCount,

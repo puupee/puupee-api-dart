@@ -3,6 +3,7 @@
 //
 
 // ignore_for_file: unused_element
+import 'package:puupee_api_client/src/model/app_feature_locale_dto.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'app_feature_dto.g.dart';
@@ -38,15 +39,9 @@ class AppFeatureDto {
 
      this.name,
 
-     this.locale,
+     this.sort,
 
-     this.displayName,
-
-     this.description,
-
-     this.details,
-
-     this.screenshotKeys,
+     this.featureLocales,
   });
 
   @JsonKey(
@@ -158,7 +153,7 @@ class AppFeatureDto {
 
 
 
-      /// 功能名称（唯一标识，同一功能的不同语言版本使用相同的 Name）
+      /// 功能名称（唯一标识，同一应用内唯一）
   @JsonKey(
     
     name: r'name',
@@ -171,68 +166,27 @@ class AppFeatureDto {
 
 
 
-      /// 语言代码（如：en, zh-Hans, zh-Hant, fr 等）
   @JsonKey(
     
-    name: r'locale',
+    name: r'sort',
     required: false,
     includeIfNull: false,
   )
 
 
-  String? locale;
+  int? sort;
 
 
 
-      /// 显示名称（当前语言）
   @JsonKey(
     
-    name: r'displayName',
+    name: r'featureLocales',
     required: false,
     includeIfNull: false,
   )
 
 
-  String? displayName;
-
-
-
-      /// 描述（当前语言）
-  @JsonKey(
-    
-    name: r'description',
-    required: false,
-    includeIfNull: false,
-  )
-
-
-  String? description;
-
-
-
-      /// 详情（当前语言）
-  @JsonKey(
-    
-    name: r'details',
-    required: false,
-    includeIfNull: false,
-  )
-
-
-  String? details;
-
-
-
-      /// 截图键值，多个用逗号分隔（当前语言的截图）
-  @JsonKey(
-    
-    name: r'screenshotKeys',
-    required: false,
-    includeIfNull: false,
-  )
-
-
-  String? screenshotKeys;
+  List<AppFeatureLocaleDto>? featureLocales;
 
 
 
@@ -250,11 +204,8 @@ class AppFeatureDto {
       other.deletionTime == deletionTime &&
       other.appId == appId &&
       other.name == name &&
-      other.locale == locale &&
-      other.displayName == displayName &&
-      other.description == description &&
-      other.details == details &&
-      other.screenshotKeys == screenshotKeys;
+      other.sort == sort &&
+      other.featureLocales == featureLocales;
 
     @override
     int get hashCode =>
@@ -268,11 +219,8 @@ class AppFeatureDto {
         (deletionTime == null ? 0 : deletionTime.hashCode) +
         appId.hashCode +
         (name == null ? 0 : name.hashCode) +
-        (locale == null ? 0 : locale.hashCode) +
-        (displayName == null ? 0 : displayName.hashCode) +
-        (description == null ? 0 : description.hashCode) +
-        (details == null ? 0 : details.hashCode) +
-        (screenshotKeys == null ? 0 : screenshotKeys.hashCode);
+        sort.hashCode +
+        (featureLocales == null ? 0 : featureLocales.hashCode);
 
   factory AppFeatureDto.fromJson(Map<String, dynamic> json) => _$AppFeatureDtoFromJson(json);
 

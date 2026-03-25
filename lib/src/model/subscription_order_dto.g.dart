@@ -71,6 +71,7 @@ const _$SubscriptionOrderTypeEnumMap = {
   SubscriptionOrderType.alipayAuto: 'AlipayAuto',
   SubscriptionOrderType.wechatOnce: 'WechatOnce',
   SubscriptionOrderType.wechatAuto: 'WechatAuto',
+  SubscriptionOrderType.payPalOnce: 'PayPalOnce',
 };
 
 const _$SubscriptionOrderStatusEnumMap = {

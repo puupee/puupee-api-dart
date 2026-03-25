@@ -28,11 +28,15 @@ AppFeatureDto _$AppFeatureDtoFromJson(Map<String, dynamic> json) =>
         ),
         appId: $checkedConvert('appId', (v) => v as String?),
         name: $checkedConvert('name', (v) => v as String?),
-        locale: $checkedConvert('locale', (v) => v as String?),
-        displayName: $checkedConvert('displayName', (v) => v as String?),
-        description: $checkedConvert('description', (v) => v as String?),
-        details: $checkedConvert('details', (v) => v as String?),
-        screenshotKeys: $checkedConvert('screenshotKeys', (v) => v as String?),
+        sort: $checkedConvert('sort', (v) => (v as num?)?.toInt()),
+        featureLocales: $checkedConvert(
+          'featureLocales',
+          (v) => (v as List<dynamic>?)
+              ?.map(
+                (e) => AppFeatureLocaleDto.fromJson(e as Map<String, dynamic>),
+              )
+              .toList(),
+        ),
       );
       return val;
     });
@@ -52,9 +56,8 @@ Map<String, dynamic> _$AppFeatureDtoToJson(AppFeatureDto instance) =>
         'deletionTime': value,
       if (instance.appId case final value?) 'appId': value,
       if (instance.name case final value?) 'name': value,
-      if (instance.locale case final value?) 'locale': value,
-      if (instance.displayName case final value?) 'displayName': value,
-      if (instance.description case final value?) 'description': value,
-      if (instance.details case final value?) 'details': value,
-      if (instance.screenshotKeys case final value?) 'screenshotKeys': value,
+      if (instance.sort case final value?) 'sort': value,
+      if (instance.featureLocales?.map((e) => e.toJson()).toList()
+          case final value?)
+        'featureLocales': value,
     };

@@ -24,15 +24,9 @@ class CreateOrUpdateAppDto {
 
      this.name,
 
-     this.displayName,
-
      this.framework,
 
      this.appType,
-
-     this.description,
-
-     this.icon,
 
      this.homePage,
 
@@ -79,18 +73,6 @@ class CreateOrUpdateAppDto {
 
   @JsonKey(
     
-    name: r'displayName',
-    required: false,
-    includeIfNull: false,
-  )
-
-
-  String? displayName;
-
-
-
-  @JsonKey(
-    
     name: r'framework',
     required: false,
     includeIfNull: false,
@@ -110,30 +92,6 @@ class CreateOrUpdateAppDto {
 
 
   AppType? appType;
-
-
-
-  @JsonKey(
-    
-    name: r'description',
-    required: false,
-    includeIfNull: false,
-  )
-
-
-  String? description;
-
-
-
-  @JsonKey(
-    
-    name: r'icon',
-    required: false,
-    includeIfNull: false,
-  )
-
-
-  String? icon;
 
 
 
@@ -333,11 +291,8 @@ class CreateOrUpdateAppDto {
     @override
     bool operator ==(Object other) => identical(this, other) || other is CreateOrUpdateAppDto &&
       other.name == name &&
-      other.displayName == displayName &&
       other.framework == framework &&
       other.appType == appType &&
-      other.description == description &&
-      other.icon == icon &&
       other.homePage == homePage &&
       other.sortIndex == sortIndex &&
       other.gitRepository == gitRepository &&
@@ -357,11 +312,8 @@ class CreateOrUpdateAppDto {
     @override
     int get hashCode =>
         (name == null ? 0 : name.hashCode) +
-        (displayName == null ? 0 : displayName.hashCode) +
         framework.hashCode +
         appType.hashCode +
-        (description == null ? 0 : description.hashCode) +
-        (icon == null ? 0 : icon.hashCode) +
         (homePage == null ? 0 : homePage.hashCode) +
         sortIndex.hashCode +
         (gitRepository == null ? 0 : gitRepository.hashCode) +

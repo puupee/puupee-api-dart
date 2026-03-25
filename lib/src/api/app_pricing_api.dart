@@ -333,7 +333,7 @@ _responseData = rawData == null ? null : deserialize<AppPricingDtoPagedResultDto
     );
   }
 
-  /// getListByAppId
+  /// 获取应用定价方案列表，允许匿名访问供未登录用户查看订阅计划
   /// 
   ///
   /// Parameters:

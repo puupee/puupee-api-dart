@@ -12,11 +12,6 @@ void main() {
       // TODO
     });
 
-    // String displayName
-    test('to test the property `displayName`', () async {
-      // TODO
-    });
-
     // AppFramework framework
     test('to test the property `framework`', () async {
       // TODO
@@ -24,16 +19,6 @@ void main() {
 
     // AppType appType
     test('to test the property `appType`', () async {
-      // TODO
-    });
-
-    // String description
-    test('to test the property `description`', () async {
-      // TODO
-    });
-
-    // String icon
-    test('to test the property `icon`', () async {
       // TODO
     });
 

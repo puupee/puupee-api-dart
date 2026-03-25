@@ -28,11 +28,11 @@ class AppApi {
 
   const AppApi(this._dio);
 
-  /// 创建新应用
+  /// createApp
   /// 
   ///
   /// Parameters:
-  /// * [createOrUpdateAppDto] - 
+  /// * [createOrUpdateAppDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -123,11 +123,11 @@ _responseData = rawData == null ? null : deserialize<AppDto, AppDto>(rawData, 'A
     );
   }
 
-  /// 删除应用
+  /// deleteAppById
   /// 
   ///
   /// Parameters:
-  /// * [id] - 
+  /// * [id] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -175,11 +175,11 @@ _responseData = rawData == null ? null : deserialize<AppDto, AppDto>(rawData, 'A
     return _response;
   }
 
-  /// 获取 APP 详情
+  /// getAppById
   /// 
   ///
   /// Parameters:
-  /// * [id] - 
+  /// * [id] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -252,7 +252,7 @@ _responseData = rawData == null ? null : deserialize<AppDto, AppDto>(rawData, 'A
     );
   }
 
-  /// 获取当前用户的应用列表
+  /// getAppList
   /// 
   ///
   /// Parameters:
@@ -343,11 +343,11 @@ _responseData = rawData == null ? null : deserialize<AppDtoPagedResultDto, AppDt
     );
   }
 
-  /// 获取 APP 详情
+  /// getByName
   /// 
   ///
   /// Parameters:
-  /// * [name] - 
+  /// * [name] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -509,11 +509,11 @@ _responseData = rawData == null ? null : deserialize<List<AppFeatureDto>, AppFea
     );
   }
 
-  /// 获取开发者所有 APP 包括未发布的
+  /// getListByDeveloperAll
   /// 
   ///
   /// Parameters:
-  /// * [developerAccount] - 
+  /// * [developerAccount] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -591,7 +591,7 @@ _responseData = rawData == null ? null : deserialize<AppDtoPagedResultDto, AppDt
     );
   }
 
-  /// 所有开发者已发布 APP 列表
+  /// getListPublic
   /// 
   ///
   /// Parameters:
@@ -679,7 +679,7 @@ _responseData = rawData == null ? null : deserialize<AppDtoPagedResultDto, AppDt
     );
   }
 
-  /// 获取APP列表包含用户订阅信息
+  /// getListWithUser
   /// 
   ///
   /// Parameters:
@@ -857,11 +857,11 @@ _responseData = rawData == null ? null : deserialize<List<AppSdkDto>, AppSdkDto>
     );
   }
 
-  /// 获取上传凭证
+  /// getUploadCredentials
   /// 
   ///
   /// Parameters:
-  /// * [key] - 
+  /// * [key] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -939,11 +939,11 @@ _responseData = rawData == null ? null : deserialize<StorageObjectCredentials, S
     );
   }
 
-  /// 获取 APP 详情
+  /// getWithUser
   /// 
   ///
   /// Parameters:
-  /// * [id] - 
+  /// * [id] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -1111,12 +1111,12 @@ _responseData = rawData == null ? null : deserialize<AppRunRecordDto, AppRunReco
     );
   }
 
-  /// 更新 APP 信息
+  /// updateApp
   /// 
   ///
   /// Parameters:
-  /// * [id] - 
-  /// * [createOrUpdateAppDto] - 
+  /// * [id] 
+  /// * [createOrUpdateAppDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request

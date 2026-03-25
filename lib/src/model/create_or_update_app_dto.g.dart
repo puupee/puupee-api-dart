@@ -11,7 +11,6 @@ CreateOrUpdateAppDto _$CreateOrUpdateAppDtoFromJson(
 ) => $checkedCreate('CreateOrUpdateAppDto', json, ($checkedConvert) {
   final val = CreateOrUpdateAppDto(
     name: $checkedConvert('name', (v) => v as String?),
-    displayName: $checkedConvert('displayName', (v) => v as String?),
     framework: $checkedConvert(
       'framework',
       (v) => $enumDecodeNullable(_$AppFrameworkEnumMap, v),
@@ -20,8 +19,6 @@ CreateOrUpdateAppDto _$CreateOrUpdateAppDtoFromJson(
       'appType',
       (v) => $enumDecodeNullable(_$AppTypeEnumMap, v),
     ),
-    description: $checkedConvert('description', (v) => v as String?),
-    icon: $checkedConvert('icon', (v) => v as String?),
     homePage: $checkedConvert('homePage', (v) => v as String?),
     sortIndex: $checkedConvert('sortIndex', (v) => (v as num?)?.toInt()),
     gitRepository: $checkedConvert('gitRepository', (v) => v as String?),
@@ -62,12 +59,9 @@ Map<String, dynamic> _$CreateOrUpdateAppDtoToJson(
   CreateOrUpdateAppDto instance,
 ) => <String, dynamic>{
   if (instance.name case final value?) 'name': value,
-  if (instance.displayName case final value?) 'displayName': value,
   if (_$AppFrameworkEnumMap[instance.framework] case final value?)
     'framework': value,
   if (_$AppTypeEnumMap[instance.appType] case final value?) 'appType': value,
-  if (instance.description case final value?) 'description': value,
-  if (instance.icon case final value?) 'icon': value,
   if (instance.homePage case final value?) 'homePage': value,
   if (instance.sortIndex case final value?) 'sortIndex': value,
   if (instance.gitRepository case final value?) 'gitRepository': value,

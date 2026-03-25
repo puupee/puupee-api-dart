@@ -27,6 +27,8 @@ void main() {
       // TODO
     });
 
+    // 获取应用定价方案列表，允许匿名访问供未登录用户查看订阅计划
+    //
     //Future<List<AppPricingDto>> getListByAppId(String appId) async
     test('test getListByAppId', () async {
       // TODO

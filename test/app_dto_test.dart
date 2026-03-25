@@ -52,6 +52,7 @@ void main() {
       // TODO
     });
 
+    // 根据 Accept-Language 解析的展示标题（非持久化字段，来自语言包）。
     // String displayName
     test('to test the property `displayName`', () async {
       // TODO
@@ -67,11 +68,13 @@ void main() {
       // TODO
     });
 
+    // 根据 Accept-Language 解析的短描述（非持久化字段）。
     // String description
     test('to test the property `description`', () async {
       // TODO
     });
 
+    // 根据 Accept-Language 解析的图标存储键或 URL（非持久化字段）。
     // String icon
     test('to test the property `icon`', () async {
       // TODO
@@ -170,6 +173,12 @@ void main() {
 
     // List<AppFeatureDto> features
     test('to test the property `features`', () async {
+      // TODO
+    });
+
+    // 全部商店语言包（含素材）。
+    // List<AppLocaleDto> locales
+    test('to test the property `locales`', () async {
       // TODO
     });
 

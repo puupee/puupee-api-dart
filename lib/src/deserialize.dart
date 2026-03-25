@@ -4,12 +4,15 @@ import 'package:puupee_api_client/src/model/api_key_create_dto.dart';
 import 'package:puupee_api_client/src/model/api_key_dto.dart';
 import 'package:puupee_api_client/src/model/api_key_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/api_key_update_dto.dart';
+import 'package:puupee_api_client/src/model/app_asset_dto.dart';
 import 'package:puupee_api_client/src/model/app_dto.dart';
 import 'package:puupee_api_client/src/model/app_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/app_feature_dto.dart';
 import 'package:puupee_api_client/src/model/app_feature_dto_paged_result_dto.dart';
+import 'package:puupee_api_client/src/model/app_feature_locale_dto.dart';
 import 'package:puupee_api_client/src/model/app_feedback_dto.dart';
 import 'package:puupee_api_client/src/model/app_feedback_dto_paged_result_dto.dart';
+import 'package:puupee_api_client/src/model/app_locale_dto.dart';
 import 'package:puupee_api_client/src/model/app_pricing_dto.dart';
 import 'package:puupee_api_client/src/model/app_pricing_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/app_pricing_item_dto.dart';
@@ -41,6 +44,7 @@ import 'package:puupee_api_client/src/model/avatar_dto.dart';
 import 'package:puupee_api_client/src/model/bind_device_dto.dart';
 import 'package:puupee_api_client/src/model/build_record_dto.dart';
 import 'package:puupee_api_client/src/model/build_record_dto_paged_result_dto.dart';
+import 'package:puupee_api_client/src/model/capture_pay_pal_order_dto.dart';
 import 'package:puupee_api_client/src/model/cdn_domain_dto.dart';
 import 'package:puupee_api_client/src/model/change_password_dto.dart';
 import 'package:puupee_api_client/src/model/change_password_input.dart';
@@ -55,14 +59,19 @@ import 'package:puupee_api_client/src/model/create_deploy_record_dto.dart';
 import 'package:puupee_api_client/src/model/create_message_template_release_dto.dart';
 import 'package:puupee_api_client/src/model/create_open_iddict_application_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_get_subscription_order_dto.dart';
+import 'package:puupee_api_client/src/model/create_or_update_app_asset_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_feature_dto.dart';
+import 'package:puupee_api_client/src/model/create_or_update_app_feature_locale_dto.dart';
+import 'package:puupee_api_client/src/model/create_or_update_app_locale_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_pricing_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_pricing_item_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_release_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_sdk_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_user_score_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_message_template_dto.dart';
+import 'package:puupee_api_client/src/model/create_pay_pal_order_dto.dart';
+import 'package:puupee_api_client/src/model/create_pay_pal_order_result_dto.dart';
 import 'package:puupee_api_client/src/model/create_push_notification_dto.dart';
 import 'package:puupee_api_client/src/model/create_update_app_tester_dto.dart';
 import 'package:puupee_api_client/src/model/create_update_message_source_dto.dart';
@@ -215,6 +224,14 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return ApiKeyDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ApiKeyUpdateDto':
           return ApiKeyUpdateDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppAssetDeviceType':
+          
+          
+        case 'AppAssetDto':
+          return AppAssetDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppAssetType':
+          
+          
         case 'AppDto':
           return AppDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppDtoPagedResultDto':
@@ -223,6 +240,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return AppFeatureDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppFeatureDtoPagedResultDto':
           return AppFeatureDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppFeatureLocaleDto':
+          return AppFeatureLocaleDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppFeedbackDto':
           return AppFeedbackDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppFeedbackDtoPagedResultDto':
@@ -236,6 +255,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
         case 'AppFramework':
           
           
+        case 'AppLocaleDto':
+          return AppLocaleDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppPlatform':
           
           
@@ -322,6 +343,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
         case 'BuildTrigger':
           
           
+        case 'CapturePayPalOrderDto':
+          return CapturePayPalOrderDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CdnDomainDto':
           return CdnDomainDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ChangePasswordDto':
@@ -350,10 +373,16 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return CreateOpenIddictApplicationDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateOrGetSubscriptionOrderDto':
           return CreateOrGetSubscriptionOrderDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'CreateOrUpdateAppAssetDto':
+          return CreateOrUpdateAppAssetDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateOrUpdateAppDto':
           return CreateOrUpdateAppDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateOrUpdateAppFeatureDto':
           return CreateOrUpdateAppFeatureDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'CreateOrUpdateAppFeatureLocaleDto':
+          return CreateOrUpdateAppFeatureLocaleDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'CreateOrUpdateAppLocaleDto':
+          return CreateOrUpdateAppLocaleDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateOrUpdateAppPricingDto':
           return CreateOrUpdateAppPricingDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateOrUpdateAppPricingItemDto':
@@ -366,6 +395,10 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return CreateOrUpdateAppUserScoreDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateOrUpdateMessageTemplateDto':
           return CreateOrUpdateMessageTemplateDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'CreatePayPalOrderDto':
+          return CreatePayPalOrderDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'CreatePayPalOrderResultDto':
+          return CreatePayPalOrderResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreatePushNotificationDto':
           return CreatePushNotificationDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'CreateUpdateAppTesterDto':

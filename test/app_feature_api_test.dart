@@ -17,7 +17,7 @@ void main() {
       // TODO
     });
 
-    //Future<AppFeatureDtoPagedResultDto> getAppFeatureList({ String sorting, int skipCount, int maxResultCount }) async
+    //Future<AppFeatureDtoPagedResultDto> getAppFeatureList({ String appId, String sorting, int skipCount, int maxResultCount }) async
     test('test getAppFeatureList', () async {
       // TODO
     });

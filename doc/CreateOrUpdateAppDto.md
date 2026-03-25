@@ -9,11 +9,8 @@ import 'package:puupee_api_client/api.dart';
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **String** |  | [optional] 
-**displayName** | **String** |  | [optional] 
 **framework** | [**AppFramework**](AppFramework.md) |  | [optional] 
 **appType** | [**AppType**](AppType.md) |  | [optional] 
-**description** | **String** |  | [optional] 
-**icon** | **String** |  | [optional] 
 **homePage** | **String** | 产品首页 | [optional] 
 **sortIndex** | **int** | 显示排序 | [optional] 
 **gitRepository** | **String** |  | [optional] 

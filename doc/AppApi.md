@@ -9,27 +9,27 @@ All URIs are relative to *http://localhost*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**createApp**](AppApi.md#createapp) | **POST** /api/app/app | 创建新应用
-[**deleteAppById**](AppApi.md#deleteappbyid) | **DELETE** /api/app/app/{id} | 删除应用
-[**getAppById**](AppApi.md#getappbyid) | **GET** /api/app/app/{id} | 获取 APP 详情
-[**getAppList**](AppApi.md#getapplist) | **GET** /api/app/app | 获取当前用户的应用列表
-[**getByName**](AppApi.md#getbyname) | **GET** /api/app/app/by-name | 获取 APP 详情
+[**createApp**](AppApi.md#createapp) | **POST** /api/app/app | 
+[**deleteAppById**](AppApi.md#deleteappbyid) | **DELETE** /api/app/app/{id} | 
+[**getAppById**](AppApi.md#getappbyid) | **GET** /api/app/app/{id} | 
+[**getAppList**](AppApi.md#getapplist) | **GET** /api/app/app | 
+[**getByName**](AppApi.md#getbyname) | **GET** /api/app/app/by-name | 
 [**getFeatureList**](AppApi.md#getfeaturelist) | **GET** /api/app/app/feature-list/{appId} | 
-[**getListByDeveloperAll**](AppApi.md#getlistbydeveloperall) | **GET** /api/app/app/by-developer-all | 获取开发者所有 APP 包括未发布的
-[**getListPublic**](AppApi.md#getlistpublic) | **GET** /api/app/app/public | 所有开发者已发布 APP 列表
-[**getListWithUser**](AppApi.md#getlistwithuser) | **GET** /api/app/app/with-user | 获取APP列表包含用户订阅信息
+[**getListByDeveloperAll**](AppApi.md#getlistbydeveloperall) | **GET** /api/app/app/by-developer-all | 
+[**getListPublic**](AppApi.md#getlistpublic) | **GET** /api/app/app/public | 
+[**getListWithUser**](AppApi.md#getlistwithuser) | **GET** /api/app/app/with-user | 
 [**getSdksById**](AppApi.md#getsdksbyid) | **GET** /api/app/app/sdks-by-id/{appId} | 
-[**getUploadCredentials**](AppApi.md#getuploadcredentials) | **GET** /api/app/app/upload-credentials | 获取上传凭证
-[**getWithUser**](AppApi.md#getwithuser) | **GET** /api/app/app/{id}/with-user | 获取 APP 详情
+[**getUploadCredentials**](AppApi.md#getuploadcredentials) | **GET** /api/app/app/upload-credentials | 
+[**getWithUser**](AppApi.md#getwithuser) | **GET** /api/app/app/{id}/with-user | 
 [**run**](AppApi.md#run) | **POST** /api/app/app/run | 
-[**updateApp**](AppApi.md#updateapp) | **PUT** /api/app/app/{id} | 更新 APP 信息
+[**updateApp**](AppApi.md#updateapp) | **PUT** /api/app/app/{id} | 
 [**updateRunState**](AppApi.md#updaterunstate) | **PUT** /api/app/app/{id}/run-state | 
 
 
 # **createApp**
 > AppDto createApp(createOrUpdateAppDto)
 
-创建新应用
+
 
 ### Example
 ```dart
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 # **deleteAppById**
 > deleteAppById(id)
 
-删除应用
+
 
 ### Example
 ```dart
@@ -114,7 +114,7 @@ void (empty response body)
 # **getAppById**
 > AppDto getAppById(id)
 
-获取 APP 详情
+
 
 ### Example
 ```dart
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 # **getAppList**
 > AppDtoPagedResultDto getAppList(creatorId, sorting, skipCount, maxResultCount)
 
-获取当前用户的应用列表
+
 
 ### Example
 ```dart
@@ -206,7 +206,7 @@ Name | Type | Description  | Notes
 # **getByName**
 > AppDto getByName(name)
 
-获取 APP 详情
+
 
 ### Example
 ```dart
@@ -294,7 +294,7 @@ Name | Type | Description  | Notes
 # **getListByDeveloperAll**
 > AppDtoPagedResultDto getListByDeveloperAll(developerAccount)
 
-获取开发者所有 APP 包括未发布的
+
 
 ### Example
 ```dart
@@ -337,7 +337,7 @@ Name | Type | Description  | Notes
 # **getListPublic**
 > AppDtoPagedResultDto getListPublic(type, developerAccount, currentAppName)
 
-所有开发者已发布 APP 列表
+
 
 ### Example
 ```dart
@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 # **getListWithUser**
 > AppWithUserDtoPagedResultDto getListWithUser(type, searchKey, sorting, skipCount, maxResultCount)
 
-获取APP列表包含用户订阅信息
+
 
 ### Example
 ```dart
@@ -480,7 +480,7 @@ Name | Type | Description  | Notes
 # **getUploadCredentials**
 > StorageObjectCredentials getUploadCredentials(key)
 
-获取上传凭证
+
 
 ### Example
 ```dart
@@ -523,7 +523,7 @@ Name | Type | Description  | Notes
 # **getWithUser**
 > AppWithUserDto getWithUser(id)
 
-获取 APP 详情
+
 
 ### Example
 ```dart
@@ -609,7 +609,7 @@ Name | Type | Description  | Notes
 # **updateApp**
 > AppDto updateApp(id, createOrUpdateAppDto)
 
-更新 APP 信息
+
 
 ### Example
 ```dart

@@ -82,6 +82,12 @@ AppDto _$AppDtoFromJson(Map<String, dynamic> json) =>
               ?.map((e) => AppFeatureDto.fromJson(e as Map<String, dynamic>))
               .toList(),
         ),
+        locales: $checkedConvert(
+          'locales',
+          (v) => (v as List<dynamic>?)
+              ?.map((e) => AppLocaleDto.fromJson(e as Map<String, dynamic>))
+              .toList(),
+        ),
         sdks: $checkedConvert(
           'sdks',
           (v) => (v as List<dynamic>?)
@@ -135,6 +141,8 @@ Map<String, dynamic> _$AppDtoToJson(AppDto instance) => <String, dynamic>{
   if (instance.creator?.toJson() case final value?) 'creator': value,
   if (instance.features?.map((e) => e.toJson()).toList() case final value?)
     'features': value,
+  if (instance.locales?.map((e) => e.toJson()).toList() case final value?)
+    'locales': value,
   if (instance.sdks?.map((e) => e.toJson()).toList() case final value?)
     'sdks': value,
 };

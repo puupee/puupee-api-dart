@@ -101,7 +101,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getAppFeatureList**
-> AppFeatureDtoPagedResultDto getAppFeatureList(sorting, skipCount, maxResultCount)
+> AppFeatureDtoPagedResultDto getAppFeatureList(appId, sorting, skipCount, maxResultCount)
 
 
 
@@ -112,12 +112,13 @@ import 'package:puupee_api_client/api.dart';
 //defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppFeatureApi();
+final String appId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
 final String sorting = sorting_example; // String | 
 final int skipCount = 56; // int | 
 final int maxResultCount = 56; // int | 
 
 try {
-    final response = api.getAppFeatureList(sorting, skipCount, maxResultCount);
+    final response = api.getAppFeatureList(appId, sorting, skipCount, maxResultCount);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling AppFeatureApi->getAppFeatureList: $e\n');
@@ -128,6 +129,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **appId** | **String**|  | [optional] 
  **sorting** | **String**|  | [optional] 
  **skipCount** | **int**|  | [optional] 
  **maxResultCount** | **int**|  | [optional] 
