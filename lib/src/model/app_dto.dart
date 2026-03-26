@@ -3,11 +3,8 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:puupee_api_client/src/model/app_sdk_dto.dart';
 import 'package:puupee_api_client/src/model/app_type.dart';
-import 'package:puupee_api_client/src/model/app_locale_dto.dart';
 import 'package:puupee_api_client/src/model/git_repository_type.dart';
-import 'package:puupee_api_client/src/model/app_feature_dto.dart';
 import 'package:puupee_api_client/src/model/identity_user_dto.dart';
 import 'package:puupee_api_client/src/model/app_release_dto.dart';
 import 'package:puupee_api_client/src/model/app_framework.dart';
@@ -85,12 +82,6 @@ class AppDto {
      this.latestReleases,
 
      this.creator,
-
-     this.features,
-
-     this.locales,
-
-     this.sdks,
   });
 
   @JsonKey(
@@ -467,43 +458,6 @@ class AppDto {
 
 
 
-  @JsonKey(
-    
-    name: r'features',
-    required: false,
-    includeIfNull: false,
-  )
-
-
-  List<AppFeatureDto>? features;
-
-
-
-      /// 全部商店语言包（含素材）。
-  @JsonKey(
-    
-    name: r'locales',
-    required: false,
-    includeIfNull: false,
-  )
-
-
-  List<AppLocaleDto>? locales;
-
-
-
-  @JsonKey(
-    
-    name: r'sdks',
-    required: false,
-    includeIfNull: false,
-  )
-
-
-  List<AppSdkDto>? sdks;
-
-
-
 
 
     @override
@@ -537,10 +491,7 @@ class AppDto {
       other.defaultStorageSize == defaultStorageSize &&
       other.defaultSingleFileMaxSize == defaultSingleFileMaxSize &&
       other.latestReleases == latestReleases &&
-      other.creator == creator &&
-      other.features == features &&
-      other.locales == locales &&
-      other.sdks == sdks;
+      other.creator == creator;
 
     @override
     int get hashCode =>
@@ -573,10 +524,7 @@ class AppDto {
         defaultStorageSize.hashCode +
         defaultSingleFileMaxSize.hashCode +
         (latestReleases == null ? 0 : latestReleases.hashCode) +
-        creator.hashCode +
-        (features == null ? 0 : features.hashCode) +
-        (locales == null ? 0 : locales.hashCode) +
-        (sdks == null ? 0 : sdks.hashCode);
+        creator.hashCode;
 
   factory AppDto.fromJson(Map<String, dynamic> json) => _$AppDtoFromJson(json);
 

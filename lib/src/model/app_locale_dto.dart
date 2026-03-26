@@ -3,7 +3,6 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:puupee_api_client/src/model/app_asset_dto.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 part 'app_locale_dto.g.dart';
@@ -58,8 +57,6 @@ class AppLocaleDto {
      this.privacyUrl,
 
      this.releaseNote,
-
-     this.assets,
   });
 
   @JsonKey(
@@ -302,18 +299,6 @@ class AppLocaleDto {
 
 
 
-  @JsonKey(
-    
-    name: r'assets',
-    required: false,
-    includeIfNull: false,
-  )
-
-
-  List<AppAssetDto>? assets;
-
-
-
 
 
     @override
@@ -337,8 +322,7 @@ class AppLocaleDto {
       other.promoText == promoText &&
       other.supportUrl == supportUrl &&
       other.privacyUrl == privacyUrl &&
-      other.releaseNote == releaseNote &&
-      other.assets == assets;
+      other.releaseNote == releaseNote;
 
     @override
     int get hashCode =>
@@ -361,8 +345,7 @@ class AppLocaleDto {
         (promoText == null ? 0 : promoText.hashCode) +
         (supportUrl == null ? 0 : supportUrl.hashCode) +
         (privacyUrl == null ? 0 : privacyUrl.hashCode) +
-        (releaseNote == null ? 0 : releaseNote.hashCode) +
-        (assets == null ? 0 : assets.hashCode);
+        (releaseNote == null ? 0 : releaseNote.hashCode);
 
   factory AppLocaleDto.fromJson(Map<String, dynamic> json) => _$AppLocaleDtoFromJson(json);
 

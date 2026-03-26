@@ -38,12 +38,6 @@ AppLocaleDto _$AppLocaleDtoFromJson(Map<String, dynamic> json) =>
         supportUrl: $checkedConvert('supportUrl', (v) => v as String?),
         privacyUrl: $checkedConvert('privacyUrl', (v) => v as String?),
         releaseNote: $checkedConvert('releaseNote', (v) => v as String?),
-        assets: $checkedConvert(
-          'assets',
-          (v) => (v as List<dynamic>?)
-              ?.map((e) => AppAssetDto.fromJson(e as Map<String, dynamic>))
-              .toList(),
-        ),
       );
       return val;
     });
@@ -73,6 +67,4 @@ Map<String, dynamic> _$AppLocaleDtoToJson(AppLocaleDto instance) =>
       if (instance.supportUrl case final value?) 'supportUrl': value,
       if (instance.privacyUrl case final value?) 'privacyUrl': value,
       if (instance.releaseNote case final value?) 'releaseNote': value,
-      if (instance.assets?.map((e) => e.toJson()).toList() case final value?)
-        'assets': value,
     };

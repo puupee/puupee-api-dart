@@ -8,17 +8,17 @@ import 'package:json_annotation/json_annotation.dart';
 /// 素材面向的设备类型（可空表示不限）。
 enum AppAssetDeviceType {
           /// 素材面向的设备类型（可空表示不限）。
-      @JsonValue(0)
-      number0('0'),
+      @JsonValue(r'Phone')
+      phone(r'Phone'),
           /// 素材面向的设备类型（可空表示不限）。
-      @JsonValue(1)
-      number1('1'),
+      @JsonValue(r'Pad')
+      pad(r'Pad'),
           /// 素材面向的设备类型（可空表示不限）。
-      @JsonValue(2)
-      number2('2'),
+      @JsonValue(r'Tv')
+      tv(r'Tv'),
           /// 素材面向的设备类型（可空表示不限）。
-      @JsonValue(3)
-      number3('3');
+      @JsonValue(r'Desktop')
+      desktop(r'Desktop');
 
   const AppAssetDeviceType(this.value);
 

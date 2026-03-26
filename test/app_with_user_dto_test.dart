@@ -171,22 +171,6 @@ void main() {
       // TODO
     });
 
-    // List<AppFeatureDto> features
-    test('to test the property `features`', () async {
-      // TODO
-    });
-
-    // 全部商店语言包（含素材）。
-    // List<AppLocaleDto> locales
-    test('to test the property `locales`', () async {
-      // TODO
-    });
-
-    // List<AppSdkDto> sdks
-    test('to test the property `sdks`', () async {
-      // TODO
-    });
-
     // 是否已经订阅
     // bool subscribed
     test('to test the property `subscribed`', () async {

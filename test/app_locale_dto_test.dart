@@ -107,10 +107,5 @@ void main() {
       // TODO
     });
 
-    // List<AppAssetDto> assets
-    test('to test the property `assets`', () async {
-      // TODO
-    });
-
   });
 }

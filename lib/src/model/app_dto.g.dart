@@ -76,24 +76,6 @@ AppDto _$AppDtoFromJson(Map<String, dynamic> json) =>
               ? null
               : IdentityUserDto.fromJson(v as Map<String, dynamic>),
         ),
-        features: $checkedConvert(
-          'features',
-          (v) => (v as List<dynamic>?)
-              ?.map((e) => AppFeatureDto.fromJson(e as Map<String, dynamic>))
-              .toList(),
-        ),
-        locales: $checkedConvert(
-          'locales',
-          (v) => (v as List<dynamic>?)
-              ?.map((e) => AppLocaleDto.fromJson(e as Map<String, dynamic>))
-              .toList(),
-        ),
-        sdks: $checkedConvert(
-          'sdks',
-          (v) => (v as List<dynamic>?)
-              ?.map((e) => AppSdkDto.fromJson(e as Map<String, dynamic>))
-              .toList(),
-        ),
       );
       return val;
     });
@@ -139,12 +121,6 @@ Map<String, dynamic> _$AppDtoToJson(AppDto instance) => <String, dynamic>{
       case final value?)
     'latestReleases': value,
   if (instance.creator?.toJson() case final value?) 'creator': value,
-  if (instance.features?.map((e) => e.toJson()).toList() case final value?)
-    'features': value,
-  if (instance.locales?.map((e) => e.toJson()).toList() case final value?)
-    'locales': value,
-  if (instance.sdks?.map((e) => e.toJson()).toList() case final value?)
-    'sdks': value,
 };
 
 const _$AppFrameworkEnumMap = {

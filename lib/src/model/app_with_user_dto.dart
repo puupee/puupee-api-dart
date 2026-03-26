@@ -3,11 +3,8 @@
 //
 
 // ignore_for_file: unused_element
-import 'package:puupee_api_client/src/model/app_sdk_dto.dart';
 import 'package:puupee_api_client/src/model/app_type.dart';
-import 'package:puupee_api_client/src/model/app_locale_dto.dart';
 import 'package:puupee_api_client/src/model/git_repository_type.dart';
-import 'package:puupee_api_client/src/model/app_feature_dto.dart';
 import 'package:puupee_api_client/src/model/identity_user_dto.dart';
 import 'package:puupee_api_client/src/model/app_release_dto.dart';
 import 'package:puupee_api_client/src/model/app_framework.dart';
@@ -85,12 +82,6 @@ class AppWithUserDto {
      this.latestReleases,
 
      this.creator,
-
-     this.features,
-
-     this.locales,
-
-     this.sdks,
 
      this.subscribed,
   });
@@ -469,43 +460,6 @@ class AppWithUserDto {
 
 
 
-  @JsonKey(
-    
-    name: r'features',
-    required: false,
-    includeIfNull: false,
-  )
-
-
-  List<AppFeatureDto>? features;
-
-
-
-      /// 全部商店语言包（含素材）。
-  @JsonKey(
-    
-    name: r'locales',
-    required: false,
-    includeIfNull: false,
-  )
-
-
-  List<AppLocaleDto>? locales;
-
-
-
-  @JsonKey(
-    
-    name: r'sdks',
-    required: false,
-    includeIfNull: false,
-  )
-
-
-  List<AppSdkDto>? sdks;
-
-
-
       /// 是否已经订阅
   @JsonKey(
     
@@ -553,9 +507,6 @@ class AppWithUserDto {
       other.defaultSingleFileMaxSize == defaultSingleFileMaxSize &&
       other.latestReleases == latestReleases &&
       other.creator == creator &&
-      other.features == features &&
-      other.locales == locales &&
-      other.sdks == sdks &&
       other.subscribed == subscribed;
 
     @override
@@ -590,9 +541,6 @@ class AppWithUserDto {
         defaultSingleFileMaxSize.hashCode +
         (latestReleases == null ? 0 : latestReleases.hashCode) +
         creator.hashCode +
-        (features == null ? 0 : features.hashCode) +
-        (locales == null ? 0 : locales.hashCode) +
-        (sdks == null ? 0 : sdks.hashCode) +
         subscribed.hashCode;
 
   factory AppWithUserDto.fromJson(Map<String, dynamic> json) => _$AppWithUserDtoFromJson(json);

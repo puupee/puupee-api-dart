@@ -28,7 +28,6 @@ Name | Type | Description | Notes
 **supportUrl** | **String** |  | [optional] 
 **privacyUrl** | **String** |  | [optional] 
 **releaseNote** | **String** |  | [optional] 
-**assets** | [**List&lt;AppAssetDto&gt;**](AppAssetDto.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

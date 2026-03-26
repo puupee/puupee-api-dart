@@ -68,15 +68,15 @@ Map<String, dynamic> _$AppAssetDtoToJson(AppAssetDto instance) =>
     };
 
 const _$AppAssetTypeEnumMap = {
-  AppAssetType.number0: 0,
-  AppAssetType.number1: 1,
-  AppAssetType.number2: 2,
-  AppAssetType.number3: 3,
+  AppAssetType.icon: 'Icon',
+  AppAssetType.screenshot: 'Screenshot',
+  AppAssetType.featureGraphic: 'FeatureGraphic',
+  AppAssetType.video: 'Video',
 };
 
 const _$AppAssetDeviceTypeEnumMap = {
-  AppAssetDeviceType.number0: 0,
-  AppAssetDeviceType.number1: 1,
-  AppAssetDeviceType.number2: 2,
-  AppAssetDeviceType.number3: 3,
+  AppAssetDeviceType.phone: 'Phone',
+  AppAssetDeviceType.pad: 'Pad',
+  AppAssetDeviceType.tv: 'Tv',
+  AppAssetDeviceType.desktop: 'Desktop',
 };

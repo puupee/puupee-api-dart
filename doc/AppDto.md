@@ -38,9 +38,6 @@ Name | Type | Description | Notes
 **defaultSingleFileMaxSize** | **int** | 默认单文件最大大小 | [optional] 
 **latestReleases** | [**List&lt;AppReleaseDto&gt;**](AppReleaseDto.md) |  | [optional] 
 **creator** | [**IdentityUserDto**](IdentityUserDto.md) |  | [optional] 
-**features** | [**List&lt;AppFeatureDto&gt;**](AppFeatureDto.md) |  | [optional] 
-**locales** | [**List&lt;AppLocaleDto&gt;**](AppLocaleDto.md) | 全部商店语言包（含素材）。 | [optional] 
-**sdks** | [**List&lt;AppSdkDto&gt;**](AppSdkDto.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
