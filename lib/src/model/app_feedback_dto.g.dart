@@ -45,6 +45,10 @@ AppFeedbackDto _$AppFeedbackDtoFromJson(Map<String, dynamic> json) =>
           'repliedAt',
           (v) => v == null ? null : DateTime.parse(v as String),
         ),
+        attachmentKeys: $checkedConvert(
+          'attachmentKeys',
+          (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+        ),
       );
       return val;
     });
@@ -75,6 +79,7 @@ Map<String, dynamic> _$AppFeedbackDtoToJson(
   if (instance.reply case final value?) 'reply': value,
   if (instance.repliedAt?.toIso8601String() case final value?)
     'repliedAt': value,
+  if (instance.attachmentKeys case final value?) 'attachmentKeys': value,
 };
 
 const _$AppFeedbackTypeEnumMap = {

@@ -20,6 +20,10 @@ CreateAppFeedbackDto _$CreateAppFeedbackDtoFromJson(
     contact: $checkedConvert('contact', (v) => v as String?),
     deviceInfo: $checkedConvert('deviceInfo', (v) => v as String?),
     appVersion: $checkedConvert('appVersion', (v) => v as String?),
+    attachmentKeys: $checkedConvert(
+      'attachmentKeys',
+      (v) => (v as List<dynamic>?)?.map((e) => e as String).toList(),
+    ),
   );
   return val;
 });
@@ -33,6 +37,7 @@ Map<String, dynamic> _$CreateAppFeedbackDtoToJson(
   if (instance.contact case final value?) 'contact': value,
   if (instance.deviceInfo case final value?) 'deviceInfo': value,
   if (instance.appVersion case final value?) 'appVersion': value,
+  if (instance.attachmentKeys case final value?) 'attachmentKeys': value,
 };
 
 const _$AppFeedbackTypeEnumMap = {

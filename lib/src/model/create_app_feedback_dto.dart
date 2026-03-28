@@ -8,6 +8,16 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'create_app_feedback_dto.g.dart';
 
+bool _listStringEquals(List<String>? a, List<String>? b) {
+  if (identical(a, b)) return true;
+  if (a == null || b == null) return a == b;
+  if (a.length != b.length) return false;
+  for (var i = 0; i < a.length; i++) {
+    if (a[i] != b[i]) return false;
+  }
+  return true;
+}
+
 
 @JsonSerializable(
   checked: true,
@@ -30,6 +40,8 @@ class CreateAppFeedbackDto {
      this.deviceInfo,
 
      this.appVersion,
+
+     this.attachmentKeys,
   });
 
       /// 应用ID
@@ -109,6 +121,17 @@ class CreateAppFeedbackDto {
 
 
 
+  /// 截图/图片附件（对象存储 key）
+  @JsonKey(
+    name: r'attachmentKeys',
+    required: false,
+    includeIfNull: false,
+  )
+
+  List<String>? attachmentKeys;
+
+
+
 
 
     @override
@@ -118,7 +141,8 @@ class CreateAppFeedbackDto {
       other.type == type &&
       other.contact == contact &&
       other.deviceInfo == deviceInfo &&
-      other.appVersion == appVersion;
+      other.appVersion == appVersion &&
+      _listStringEquals(other.attachmentKeys, attachmentKeys);
 
     @override
     int get hashCode =>
@@ -127,7 +151,8 @@ class CreateAppFeedbackDto {
         type.hashCode +
         (contact == null ? 0 : contact.hashCode) +
         (deviceInfo == null ? 0 : deviceInfo.hashCode) +
-        (appVersion == null ? 0 : appVersion.hashCode);
+        (appVersion == null ? 0 : appVersion.hashCode) +
+        (attachmentKeys == null ? 0 : Object.hashAll(attachmentKeys!));
 
   factory CreateAppFeedbackDto.fromJson(Map<String, dynamic> json) => _$CreateAppFeedbackDtoFromJson(json);
 
