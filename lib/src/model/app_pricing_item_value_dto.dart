@@ -34,6 +34,8 @@ class AppPricingItemValueDto {
 
      this.deletionTime,
 
+     this.key,
+
      this.isAvailable,
 
      this.hasValue,
@@ -143,6 +145,19 @@ class AppPricingItemValueDto {
 
 
 
+      /// 收费点键（与 AppPricingItem.key 对应）
+  @JsonKey(
+    
+    name: r'key',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? key;
+
+
+
       /// 是否可用
   @JsonKey(
     
@@ -230,6 +245,7 @@ class AppPricingItemValueDto {
       other.isDeleted == isDeleted &&
       other.deleterId == deleterId &&
       other.deletionTime == deletionTime &&
+      other.key == key &&
       other.isAvailable == isAvailable &&
       other.hasValue == hasValue &&
       other.intValue == intValue &&
@@ -247,6 +263,7 @@ class AppPricingItemValueDto {
         isDeleted.hashCode +
         (deleterId == null ? 0 : deleterId.hashCode) +
         (deletionTime == null ? 0 : deletionTime.hashCode) +
+        (key == null ? 0 : key.hashCode) +
         isAvailable.hashCode +
         hasValue.hashCode +
         intValue.hashCode +

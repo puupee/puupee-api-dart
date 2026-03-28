@@ -27,6 +27,7 @@ AppPricingItemValueDto _$AppPricingItemValueDtoFromJson(
       'deletionTime',
       (v) => v == null ? null : DateTime.parse(v as String),
     ),
+    key: $checkedConvert('key', (v) => v as String?),
     isAvailable: $checkedConvert('isAvailable', (v) => v as bool?),
     hasValue: $checkedConvert('hasValue', (v) => v as bool?),
     intValue: $checkedConvert('intValue', (v) => (v as num?)?.toInt()),
@@ -51,6 +52,7 @@ Map<String, dynamic> _$AppPricingItemValueDtoToJson(
   if (instance.deleterId case final value?) 'deleterId': value,
   if (instance.deletionTime?.toIso8601String() case final value?)
     'deletionTime': value,
+  if (instance.key case final value?) 'key': value,
   if (instance.isAvailable case final value?) 'isAvailable': value,
   if (instance.hasValue case final value?) 'hasValue': value,
   if (instance.intValue case final value?) 'intValue': value,

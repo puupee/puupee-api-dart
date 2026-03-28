@@ -18,6 +18,10 @@ class CreateOrUpdateAppPricingItemDto {
   /// Returns a new [CreateOrUpdateAppPricingItemDto] instance.
   CreateOrUpdateAppPricingItemDto({
 
+     this.key,
+
+     this.appId,
+
      this.name,
 
      this.description,
@@ -28,6 +32,32 @@ class CreateOrUpdateAppPricingItemDto {
 
      this.sortIndex,
   });
+
+      /// 收费点键
+  @JsonKey(
+    
+    name: r'key',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? key;
+
+
+
+      /// 所属应用 ID
+  @JsonKey(
+    
+    name: r'appId',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? appId;
+
+
 
       /// 名称: 坐席
   @JsonKey(
@@ -98,6 +128,8 @@ class CreateOrUpdateAppPricingItemDto {
 
     @override
     bool operator ==(Object other) => identical(this, other) || other is CreateOrUpdateAppPricingItemDto &&
+      other.key == key &&
+      other.appId == appId &&
       other.name == name &&
       other.description == description &&
       other.linkUrl == linkUrl &&
@@ -106,6 +138,8 @@ class CreateOrUpdateAppPricingItemDto {
 
     @override
     int get hashCode =>
+        (key == null ? 0 : key.hashCode) +
+        (appId == null ? 0 : appId.hashCode) +
         (name == null ? 0 : name.hashCode) +
         (description == null ? 0 : description.hashCode) +
         (linkUrl == null ? 0 : linkUrl.hashCode) +
