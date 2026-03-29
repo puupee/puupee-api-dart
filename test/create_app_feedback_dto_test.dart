@@ -42,5 +42,11 @@ void main() {
       // TODO
     });
 
+    // 截图/图片附件（对象存储 key，最多 5 个）
+    // List<String> attachmentKeys
+    test('to test the property `attachmentKeys`', () async {
+      // TODO
+    });
+
   });
 }

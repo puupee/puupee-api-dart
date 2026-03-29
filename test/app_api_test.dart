@@ -72,6 +72,11 @@ void main() {
       // TODO
     });
 
+    //Future setLinkedSdks(String appId, { SetAppLinkedSdksDto setAppLinkedSdksDto }) async
+    test('test setLinkedSdks', () async {
+      // TODO
+    });
+
     //Future<AppDto> updateApp(String id, { CreateOrUpdateAppDto createOrUpdateAppDto }) async
     test('test updateApp', () async {
       // TODO

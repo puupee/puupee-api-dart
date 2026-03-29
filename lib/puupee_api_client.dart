@@ -237,6 +237,7 @@ export 'package:puupee_api_client/src/model/return_value_api_description_model.d
 export 'package:puupee_api_client/src/model/send_password_reset_code_dto.dart';
 export 'package:puupee_api_client/src/model/send_test_email_input.dart';
 export 'package:puupee_api_client/src/model/send_verification_code_dto.dart';
+export 'package:puupee_api_client/src/model/set_app_linked_sdks_dto.dart';
 export 'package:puupee_api_client/src/model/storage_object_credentials.dart';
 export 'package:puupee_api_client/src/model/subscription_dto.dart';
 export 'package:puupee_api_client/src/model/subscription_order_dto.dart';

@@ -145,7 +145,7 @@ class AppPricingItemValueDto {
 
 
 
-      /// 收费点键（与 AppPricingItem.key 对应）
+      /// 收费点键，与 AppPricingItem.Key 对应（如 MaxListCount）
   @JsonKey(
     
     name: r'key',

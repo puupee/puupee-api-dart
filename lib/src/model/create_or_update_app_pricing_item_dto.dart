@@ -33,7 +33,7 @@ class CreateOrUpdateAppPricingItemDto {
      this.sortIndex,
   });
 
-      /// 收费点键
+      /// 键值, 例如: Seat, MaxListCount（见 AppPricingItemKeys）
   @JsonKey(
     
     name: r'key',
@@ -46,7 +46,7 @@ class CreateOrUpdateAppPricingItemDto {
 
 
 
-      /// 所属应用 ID
+      /// 所属应用
   @JsonKey(
     
     name: r'appId',

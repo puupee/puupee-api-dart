@@ -187,6 +187,7 @@ _responseData = rawData == null ? null : deserialize<AppSdkDto, AppSdkDto>(rawDa
     String? sorting,
     int? skipCount,
     int? maxResultCount,
+    String? filter,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -216,6 +217,7 @@ _responseData = rawData == null ? null : deserialize<AppSdkDto, AppSdkDto>(rawDa
       if (sorting != null) r'Sorting': sorting,
       if (skipCount != null) r'SkipCount': skipCount,
       if (maxResultCount != null) r'MaxResultCount': maxResultCount,
+      if (filter != null && filter.isNotEmpty) r'Filter': filter,
     };
 
     final _response = await _dio.request<Object>(

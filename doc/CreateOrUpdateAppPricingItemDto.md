@@ -8,6 +8,8 @@ import 'package:puupee_api_client/api.dart';
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**key** | **String** | 键值, 例如: Seat, MaxListCount（见 AppPricingItemKeys） | [optional] 
+**appId** | **String** | 所属应用 | [optional] 
 **name** | **String** | 名称: 坐席 | [optional] 
 **description** | **String** | 描述, 使用 Markdown 格式, 允许包含图片 | [optional] 
 **linkUrl** | **String** | 链接地址 | [optional] 

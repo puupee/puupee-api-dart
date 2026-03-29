@@ -105,5 +105,11 @@ void main() {
       // TODO
     });
 
+    // 附件对象存储 key 列表
+    // List<String> attachmentKeys
+    test('to test the property `attachmentKeys`', () async {
+      // TODO
+    });
+
   });
 }

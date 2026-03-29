@@ -166,6 +166,7 @@ import 'package:puupee_api_client/src/model/return_value_api_description_model.d
 import 'package:puupee_api_client/src/model/send_password_reset_code_dto.dart';
 import 'package:puupee_api_client/src/model/send_test_email_input.dart';
 import 'package:puupee_api_client/src/model/send_verification_code_dto.dart';
+import 'package:puupee_api_client/src/model/set_app_linked_sdks_dto.dart';
 import 'package:puupee_api_client/src/model/storage_object_credentials.dart';
 import 'package:puupee_api_client/src/model/subscription_dto.dart';
 import 'package:puupee_api_client/src/model/subscription_order_dto.dart';
@@ -599,6 +600,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return SendTestEmailInput.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'SendVerificationCodeDto':
           return SendVerificationCodeDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'SetAppLinkedSdksDto':
+          return SetAppLinkedSdksDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'StorageObjectCredentials':
           return StorageObjectCredentials.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'SubscriptionDto':

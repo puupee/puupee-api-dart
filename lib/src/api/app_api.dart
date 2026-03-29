@@ -20,6 +20,7 @@ import 'package:puupee_api_client/src/model/app_with_user_dto.dart';
 import 'package:puupee_api_client/src/model/app_with_user_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_dto.dart';
 import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
+import 'package:puupee_api_client/src/model/set_app_linked_sdks_dto.dart';
 import 'package:puupee_api_client/src/model/storage_object_credentials.dart';
 
 class AppApi {
@@ -1109,6 +1110,78 @@ _responseData = rawData == null ? null : deserialize<AppRunRecordDto, AppRunReco
       statusMessage: _response.statusMessage,
       extra: _response.extra,
     );
+  }
+
+  /// setLinkedSdks
+  /// 
+  ///
+  /// Parameters:
+  /// * [appId] 
+  /// * [setAppLinkedSdksDto] 
+  /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
+  /// * [headers] - Can be used to add additional headers to the request
+  /// * [extras] - Can be used to add flags to the request
+  /// * [validateStatus] - A [ValidateStatus] callback that can be used to determine request success based on the HTTP status of the response
+  /// * [onSendProgress] - A [ProgressCallback] that can be used to get the send progress
+  /// * [onReceiveProgress] - A [ProgressCallback] that can be used to get the receive progress
+  ///
+  /// Returns a [Future]
+  /// Throws [DioException] if API call or serialization fails
+  Future<Response<void>> setLinkedSdks({ 
+    required String appId,
+    SetAppLinkedSdksDto? setAppLinkedSdksDto,
+    CancelToken? cancelToken,
+    Map<String, dynamic>? headers,
+    Map<String, dynamic>? extra,
+    ValidateStatus? validateStatus,
+    ProgressCallback? onSendProgress,
+    ProgressCallback? onReceiveProgress,
+  }) async {
+    final _path = r'/api/app/app/set-linked-sdks/{appId}'.replaceAll('{' r'appId' '}', appId.toString());
+    final _options = Options(
+      method: r'POST',
+      headers: <String, dynamic>{
+        ...?headers,
+      },
+      extra: <String, dynamic>{
+        'secure': <Map<String, String>>[
+          {
+            'type': 'oauth2',
+            'name': 'oauth2',
+          },
+        ],
+        ...?extra,
+      },
+      contentType: 'application/json',
+      validateStatus: validateStatus,
+    );
+
+    dynamic _bodyData;
+
+    try {
+_bodyData=jsonEncode(setAppLinkedSdksDto);
+    } catch(error, stackTrace) {
+      throw DioException(
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
+        type: DioExceptionType.unknown,
+        error: error,
+        stackTrace: stackTrace,
+      );
+    }
+
+    final _response = await _dio.request<Object>(
+      _path,
+      data: _bodyData,
+      options: _options,
+      cancelToken: cancelToken,
+      onSendProgress: onSendProgress,
+      onReceiveProgress: onReceiveProgress,
+    );
+
+    return _response;
   }
 
   /// updateApp

@@ -8,16 +8,6 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'create_app_feedback_dto.g.dart';
 
-bool _listStringEquals(List<String>? a, List<String>? b) {
-  if (identical(a, b)) return true;
-  if (a == null || b == null) return a == b;
-  if (a.length != b.length) return false;
-  for (var i = 0; i < a.length; i++) {
-    if (a[i] != b[i]) return false;
-  }
-  return true;
-}
-
 
 @JsonSerializable(
   checked: true,
@@ -121,12 +111,14 @@ class CreateAppFeedbackDto {
 
 
 
-  /// 截图/图片附件（对象存储 key）
+      /// 截图/图片附件（对象存储 key，最多 5 个）
   @JsonKey(
+    
     name: r'attachmentKeys',
     required: false,
     includeIfNull: false,
   )
+
 
   List<String>? attachmentKeys;
 
@@ -142,7 +134,7 @@ class CreateAppFeedbackDto {
       other.contact == contact &&
       other.deviceInfo == deviceInfo &&
       other.appVersion == appVersion &&
-      _listStringEquals(other.attachmentKeys, attachmentKeys);
+      other.attachmentKeys == attachmentKeys;
 
     @override
     int get hashCode =>
@@ -152,7 +144,7 @@ class CreateAppFeedbackDto {
         (contact == null ? 0 : contact.hashCode) +
         (deviceInfo == null ? 0 : deviceInfo.hashCode) +
         (appVersion == null ? 0 : appVersion.hashCode) +
-        (attachmentKeys == null ? 0 : Object.hashAll(attachmentKeys!));
+        (attachmentKeys == null ? 0 : attachmentKeys.hashCode);
 
   factory CreateAppFeedbackDto.fromJson(Map<String, dynamic> json) => _$CreateAppFeedbackDtoFromJson(json);
 

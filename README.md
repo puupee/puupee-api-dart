@@ -98,6 +98,7 @@ Class | Method | HTTP request | Description
 [*AppApi*](doc/AppApi.md) | [**getUploadCredentials**](doc/AppApi.md#getuploadcredentials) | **GET** /api/app/app/upload-credentials | 
 [*AppApi*](doc/AppApi.md) | [**getWithUser**](doc/AppApi.md#getwithuser) | **GET** /api/app/app/{id}/with-user | 
 [*AppApi*](doc/AppApi.md) | [**run**](doc/AppApi.md#run) | **POST** /api/app/app/run | 
+[*AppApi*](doc/AppApi.md) | [**setLinkedSdks**](doc/AppApi.md#setlinkedsdks) | **POST** /api/app/app/set-linked-sdks/{appId} | 
 [*AppApi*](doc/AppApi.md) | [**updateApp**](doc/AppApi.md#updateapp) | **PUT** /api/app/app/{id} | 
 [*AppApi*](doc/AppApi.md) | [**updateRunState**](doc/AppApi.md#updaterunstate) | **PUT** /api/app/app/{id}/run-state | 
 [*AppAssetApi*](doc/AppAssetApi.md) | [**createAppAsset**](doc/AppAssetApi.md#createappasset) | **POST** /api/app/app-asset | 
@@ -455,6 +456,7 @@ Class | Method | HTTP request | Description
  - [SendPasswordResetCodeDto](doc/SendPasswordResetCodeDto.md)
  - [SendTestEmailInput](doc/SendTestEmailInput.md)
  - [SendVerificationCodeDto](doc/SendVerificationCodeDto.md)
+ - [SetAppLinkedSdksDto](doc/SetAppLinkedSdksDto.md)
  - [StorageObjectCredentials](doc/StorageObjectCredentials.md)
  - [SubscriptionDto](doc/SubscriptionDto.md)
  - [SubscriptionOrderDto](doc/SubscriptionOrderDto.md)

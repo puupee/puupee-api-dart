@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **isDeleted** | **bool** |  | [optional] 
 **deleterId** | **String** |  | [optional] 
 **deletionTime** | [**DateTime**](DateTime.md) |  | [optional] 
+**key** | **String** | 收费点键，与 AppPricingItem.Key 对应（如 MaxListCount） | [optional] 
 **isAvailable** | **bool** | 是否可用 | [optional] 
 **hasValue** | **bool** | 是否有值 | [optional] 
 **intValue** | **int** |  | [optional] 

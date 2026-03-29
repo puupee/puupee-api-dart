@@ -47,6 +47,12 @@ void main() {
       // TODO
     });
 
+    // 收费点键，与 AppPricingItem.Key 对应（如 MaxListCount）
+    // String key
+    test('to test the property `key`', () async {
+      // TODO
+    });
+
     // 是否可用
     // bool isAvailable
     test('to test the property `isAvailable`', () async {

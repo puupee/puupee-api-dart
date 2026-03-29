@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **appVersion** | **String** | 应用版本 | [optional] 
 **reply** | **String** | 回复内容 | [optional] 
 **repliedAt** | [**DateTime**](DateTime.md) | 回复时间 | [optional] 
+**attachmentKeys** | **List&lt;String&gt;** | 附件对象存储 key 列表 | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -22,6 +22,7 @@ Method | HTTP request | Description
 [**getUploadCredentials**](AppApi.md#getuploadcredentials) | **GET** /api/app/app/upload-credentials | 
 [**getWithUser**](AppApi.md#getwithuser) | **GET** /api/app/app/{id}/with-user | 
 [**run**](AppApi.md#run) | **POST** /api/app/app/run | 
+[**setLinkedSdks**](AppApi.md#setlinkedsdks) | **POST** /api/app/app/set-linked-sdks/{appId} | 
 [**updateApp**](AppApi.md#updateapp) | **PUT** /api/app/app/{id} | 
 [**updateRunState**](AppApi.md#updaterunstate) | **PUT** /api/app/app/{id}/run-state | 
 
@@ -594,6 +595,50 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AppRunRecordDto**](AppRunRecordDto.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **setLinkedSdks**
+> setLinkedSdks(appId, setAppLinkedSdksDto)
+
+
+
+### Example
+```dart
+import 'package:puupee_api_client/api.dart';
+// TODO Configure OAuth2 access token for authorization: oauth2
+//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
+
+final api = PuupeeApiClient().getAppApi();
+final String appId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
+final SetAppLinkedSdksDto setAppLinkedSdksDto = ; // SetAppLinkedSdksDto | 
+
+try {
+    api.setLinkedSdks(appId, setAppLinkedSdksDto);
+} on DioException catch (e) {
+    print('Exception when calling AppApi->setLinkedSdks: $e\n');
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **appId** | **String**|  | 
+ **setAppLinkedSdksDto** | [**SetAppLinkedSdksDto**](SetAppLinkedSdksDto.md)|  | [optional] 
+
+### Return type
+
+void (empty response body)
 
 ### Authorization
 
