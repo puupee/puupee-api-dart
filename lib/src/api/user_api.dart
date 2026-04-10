@@ -15,7 +15,6 @@ import 'package:puupee_api_client/src/model/identity_user_dto.dart';
 import 'package:puupee_api_client/src/model/identity_user_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/identity_user_update_dto.dart';
 import 'package:puupee_api_client/src/model/identity_user_update_roles_dto.dart';
-import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 
 class UserApi {
 

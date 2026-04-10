@@ -13,7 +13,6 @@ import 'package:puupee_api_client/src/model/api_key_create_dto.dart';
 import 'package:puupee_api_client/src/model/api_key_dto.dart';
 import 'package:puupee_api_client/src/model/api_key_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/api_key_update_dto.dart';
-import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 
 class ApiKeysApi {
 

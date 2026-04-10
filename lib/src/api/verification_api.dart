@@ -6,23 +6,20 @@ import 'dart:async';
 
 // ignore: unused_import
 import 'dart:convert';
-import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 import 'package:puupee_api_client/src/model/send_verification_code_dto.dart';
 
 class VerificationApi {
-
   final Dio _dio;
 
   const VerificationApi(this._dio);
 
   /// sendCode
-  /// 
+  ///
   ///
   /// Parameters:
-  /// * [sendVerificationCodeDto] 
+  /// * [sendVerificationCodeDto]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -32,7 +29,7 @@ class VerificationApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> sendCode({ 
+  Future<Response<void>> sendCode({
     SendVerificationCodeDto? sendVerificationCodeDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -44,15 +41,10 @@ class VerificationApi {
     final _path = r'/api/app/verification/send-code';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
+          {'type': 'oauth2', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -63,13 +55,10 @@ class VerificationApi {
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(sendVerificationCodeDto);
-    } catch(error, stackTrace) {
+      _bodyData = jsonEncode(sendVerificationCodeDto);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -89,10 +78,10 @@ _bodyData=jsonEncode(sendVerificationCodeDto);
   }
 
   /// sendCodeAnonymous
-  /// 
+  ///
   ///
   /// Parameters:
-  /// * [sendVerificationCodeDto] 
+  /// * [sendVerificationCodeDto]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -102,7 +91,7 @@ _bodyData=jsonEncode(sendVerificationCodeDto);
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> sendCodeAnonymous({ 
+  Future<Response<void>> sendCodeAnonymous({
     SendVerificationCodeDto? sendVerificationCodeDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -114,15 +103,10 @@ _bodyData=jsonEncode(sendVerificationCodeDto);
     final _path = r'/api/app/verification/send-code-anonymous';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
+          {'type': 'oauth2', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -133,13 +117,10 @@ _bodyData=jsonEncode(sendVerificationCodeDto);
     dynamic _bodyData;
 
     try {
-_bodyData=jsonEncode(sendVerificationCodeDto);
-    } catch(error, stackTrace) {
+      _bodyData = jsonEncode(sendVerificationCodeDto);
+    } catch (error, stackTrace) {
       throw DioException(
-         requestOptions: _options.compose(
-          _dio.options,
-          _path,
-        ),
+        requestOptions: _options.compose(_dio.options, _path),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -157,5 +138,4 @@ _bodyData=jsonEncode(sendVerificationCodeDto);
 
     return _response;
   }
-
 }

@@ -12,7 +12,6 @@ import 'package:dio/dio.dart';
 import 'package:puupee_api_client/src/model/app_tester_dto.dart';
 import 'package:puupee_api_client/src/model/app_tester_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/create_update_app_tester_dto.dart';
-import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 
 class AppTesterApi {
 

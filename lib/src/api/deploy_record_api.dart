@@ -14,7 +14,6 @@ import 'package:puupee_api_client/src/model/create_deploy_record_dto.dart';
 import 'package:puupee_api_client/src/model/deploy_record_dto.dart';
 import 'package:puupee_api_client/src/model/deploy_record_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/deploy_status.dart';
-import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 import 'package:puupee_api_client/src/model/update_deploy_record_dto.dart';
 
 class DeployRecordApi {

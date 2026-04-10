@@ -14,7 +14,6 @@ import 'package:puupee_api_client/src/model/change_password_dto.dart';
 import 'package:puupee_api_client/src/model/check_sync_auth_result_dto.dart';
 import 'package:puupee_api_client/src/model/identity_user_dto.dart';
 import 'package:puupee_api_client/src/model/register_dto.dart';
-import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 import 'package:puupee_api_client/src/model/reset_password_dto.dart';
 import 'package:puupee_api_client/src/model/send_password_reset_code_dto.dart';
 import 'package:puupee_api_client/src/model/user_profile_dto.dart';

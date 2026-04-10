@@ -13,7 +13,6 @@ import 'package:puupee_api_client/src/model/app_release_dto.dart';
 import 'package:puupee_api_client/src/model/app_release_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_release_dto.dart';
 import 'package:puupee_api_client/src/model/release_channel.dart';
-import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 
 class AppReleaseApi {
 

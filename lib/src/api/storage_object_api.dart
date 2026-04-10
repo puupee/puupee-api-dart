@@ -10,7 +10,6 @@ import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:puupee_api_client/src/model/cdn_domain_dto.dart';
-import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 import 'package:puupee_api_client/src/model/storage_object_credentials.dart';
 import 'package:puupee_api_client/src/model/user_storage_dto.dart';
 

@@ -11,7 +11,6 @@ import 'package:dio/dio.dart';
 
 import 'package:puupee_api_client/src/model/create_push_notification_dto.dart';
 import 'package:puupee_api_client/src/model/notification_info_dto_paged_result_dto.dart';
-import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 
 class NotificationApi {
 

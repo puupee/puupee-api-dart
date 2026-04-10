@@ -9,21 +9,19 @@ import 'dart:convert';
 import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
-import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 import 'package:puupee_api_client/src/model/user_data.dart';
 import 'package:puupee_api_client/src/model/user_data_list_result_dto.dart';
 
 class UserLookupApi {
-
   final Dio _dio;
 
   const UserLookupApi(this._dio);
 
   /// findById
-  /// 
+  ///
   ///
   /// Parameters:
-  /// * [id] 
+  /// * [id]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -33,7 +31,7 @@ class UserLookupApi {
   ///
   /// Returns a [Future] containing a [Response] with a [UserData] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<UserData>> findById({ 
+  Future<Response<UserData>> findById({
     required String id,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -42,18 +40,18 @@ class UserLookupApi {
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/identity/users/lookup/{id}'.replaceAll('{' r'id' '}', id.toString());
+    final _path = r'/api/identity/users/lookup/{id}'.replaceAll(
+      '{'
+      r'id'
+      '}',
+      id.toString(),
+    );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
+          {'type': 'oauth2', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -71,9 +69,14 @@ class UserLookupApi {
     UserData? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<UserData, UserData>(rawData, 'UserData', growable: true);
-
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<UserData, UserData>(
+              rawData,
+              'UserData',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -97,10 +100,10 @@ _responseData = rawData == null ? null : deserialize<UserData, UserData>(rawData
   }
 
   /// findByUserName
-  /// 
+  ///
   ///
   /// Parameters:
-  /// * [userName] 
+  /// * [userName]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -110,7 +113,7 @@ _responseData = rawData == null ? null : deserialize<UserData, UserData>(rawData
   ///
   /// Returns a [Future] containing a [Response] with a [UserData] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<UserData>> findByUserName({ 
+  Future<Response<UserData>> findByUserName({
     required String userName,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -119,18 +122,19 @@ _responseData = rawData == null ? null : deserialize<UserData, UserData>(rawData
     ProgressCallback? onSendProgress,
     ProgressCallback? onReceiveProgress,
   }) async {
-    final _path = r'/api/identity/users/lookup/by-username/{userName}'.replaceAll('{' r'userName' '}', userName.toString());
+    final _path = r'/api/identity/users/lookup/by-username/{userName}'
+        .replaceAll(
+          '{'
+          r'userName'
+          '}',
+          userName.toString(),
+        );
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
+          {'type': 'oauth2', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -148,9 +152,14 @@ _responseData = rawData == null ? null : deserialize<UserData, UserData>(rawData
     UserData? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<UserData, UserData>(rawData, 'UserData', growable: true);
-
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<UserData, UserData>(
+              rawData,
+              'UserData',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -174,10 +183,10 @@ _responseData = rawData == null ? null : deserialize<UserData, UserData>(rawData
   }
 
   /// getCount
-  /// 
+  ///
   ///
   /// Parameters:
-  /// * [filter] 
+  /// * [filter]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -187,7 +196,7 @@ _responseData = rawData == null ? null : deserialize<UserData, UserData>(rawData
   ///
   /// Returns a [Future] containing a [Response] with a [int] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<int>> getCount({ 
+  Future<Response<int>> getCount({
     String? filter,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -199,15 +208,10 @@ _responseData = rawData == null ? null : deserialize<UserData, UserData>(rawData
     final _path = r'/api/identity/users/lookup/count';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
+          {'type': 'oauth2', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -230,9 +234,10 @@ _responseData = rawData == null ? null : deserialize<UserData, UserData>(rawData
     int? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<int, int>(rawData, 'int', growable: true);
-
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<int, int>(rawData, 'int', growable: true);
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -256,13 +261,13 @@ _responseData = rawData == null ? null : deserialize<int, int>(rawData, 'int', g
   }
 
   /// search
-  /// 
+  ///
   ///
   /// Parameters:
-  /// * [filter] 
-  /// * [sorting] 
-  /// * [skipCount] 
-  /// * [maxResultCount] 
+  /// * [filter]
+  /// * [sorting]
+  /// * [skipCount]
+  /// * [maxResultCount]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -272,7 +277,7 @@ _responseData = rawData == null ? null : deserialize<int, int>(rawData, 'int', g
   ///
   /// Returns a [Future] containing a [Response] with a [UserDataListResultDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<UserDataListResultDto>> search({ 
+  Future<Response<UserDataListResultDto>> search({
     String? filter,
     String? sorting,
     int? skipCount,
@@ -287,15 +292,10 @@ _responseData = rawData == null ? null : deserialize<int, int>(rawData, 'int', g
     final _path = r'/api/identity/users/lookup/search';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{
-        ...?headers,
-      },
+      headers: <String, dynamic>{...?headers},
       extra: <String, dynamic>{
         'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
+          {'type': 'oauth2', 'name': 'oauth2'},
         ],
         ...?extra,
       },
@@ -321,9 +321,14 @@ _responseData = rawData == null ? null : deserialize<int, int>(rawData, 'int', g
     UserDataListResultDto? _responseData;
 
     try {
-final rawData = _response.data;
-_responseData = rawData == null ? null : deserialize<UserDataListResultDto, UserDataListResultDto>(rawData, 'UserDataListResultDto', growable: true);
-
+      final rawData = _response.data;
+      _responseData = rawData == null
+          ? null
+          : deserialize<UserDataListResultDto, UserDataListResultDto>(
+              rawData,
+              'UserDataListResultDto',
+              growable: true,
+            );
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -345,5 +350,4 @@ _responseData = rawData == null ? null : deserialize<UserDataListResultDto, User
       extra: _response.extra,
     );
   }
-
 }

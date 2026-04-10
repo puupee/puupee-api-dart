@@ -10,7 +10,6 @@ import 'package:puupee_api_client/src/deserialize.dart';
 import 'package:dio/dio.dart';
 
 import 'package:puupee_api_client/src/model/find_tenant_result_dto.dart';
-import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 
 class AbpTenantApi {
 

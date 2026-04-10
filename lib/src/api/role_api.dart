@@ -14,7 +14,6 @@ import 'package:puupee_api_client/src/model/identity_role_dto.dart';
 import 'package:puupee_api_client/src/model/identity_role_dto_list_result_dto.dart';
 import 'package:puupee_api_client/src/model/identity_role_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/identity_role_update_dto.dart';
-import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 
 class RoleApi {
 

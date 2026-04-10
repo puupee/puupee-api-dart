@@ -13,7 +13,6 @@ import 'package:puupee_api_client/src/model/app_pricing_dto.dart';
 import 'package:puupee_api_client/src/model/app_pricing_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/app_pricing_item_dto.dart';
 import 'package:puupee_api_client/src/model/create_or_update_app_pricing_dto.dart';
-import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 
 class AppPricingApi {
 

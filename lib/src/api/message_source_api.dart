@@ -11,7 +11,6 @@ import 'package:dio/dio.dart';
 
 import 'package:puupee_api_client/src/model/create_update_message_source_dto.dart';
 import 'package:puupee_api_client/src/model/message_source_dto.dart';
-import 'package:puupee_api_client/src/model/remote_service_error_response.dart';
 
 class MessageSourceApi {
 
