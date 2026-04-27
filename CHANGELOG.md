@@ -1,3 +1,7 @@
+## 1.20.2
+
+ - **DOCS**(puupee_api_client): 补齐文档目录分层.
+
 ## 1.20.1
 
  - **FIX**(puupee_api_client): 移除生成 API 未使用 import 并清理格式.
