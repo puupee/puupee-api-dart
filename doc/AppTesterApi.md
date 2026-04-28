@@ -25,8 +25,6 @@ Method | HTTP request | Description
 ### Example
 ```dart
 import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppTesterApi();
 final String appId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
@@ -53,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -70,8 +68,6 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppTesterApi();
 final CreateUpdateAppTesterDto createUpdateAppTesterDto = ; // CreateUpdateAppTesterDto | 
@@ -96,7 +92,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -113,8 +109,6 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppTesterApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
@@ -138,7 +132,7 @@ void (empty response body)
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -155,8 +149,6 @@ void (empty response body)
 ### Example
 ```dart
 import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppTesterApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
@@ -181,7 +173,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -198,8 +190,6 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppTesterApi();
 final String sorting = sorting_example; // String | 
@@ -228,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -245,8 +235,6 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppTesterApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
@@ -273,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 

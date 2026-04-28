@@ -57,6 +57,11 @@ void main() {
       // TODO
     });
 
+    //Future<AppStorefrontLandingDto> getStorefrontLanding(String appId) async
+    test('test getStorefrontLanding', () async {
+      // TODO
+    });
+
     //Future<StorageObjectCredentials> getUploadCredentials({ String key }) async
     test('test getUploadCredentials', () async {
       // TODO

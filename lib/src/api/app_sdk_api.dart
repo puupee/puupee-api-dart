@@ -49,12 +49,7 @@ class AppSdkApi {
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
-        ],
+        'secure': <Map<String, String>>[],
         ...?extra,
       },
       contentType: 'application/json',
@@ -144,12 +139,7 @@ _responseData = rawData == null ? null : deserialize<AppSdkDto, AppSdkDto>(rawDa
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
-        ],
+        'secure': <Map<String, String>>[],
         ...?extra,
       },
       validateStatus: validateStatus,
@@ -170,6 +160,7 @@ _responseData = rawData == null ? null : deserialize<AppSdkDto, AppSdkDto>(rawDa
   /// 
   ///
   /// Parameters:
+  /// * [filter] - 关键词：匹配名称、描述、隐私说明、主页等字段（包含匹配）。
   /// * [sorting] 
   /// * [skipCount] 
   /// * [maxResultCount] 
@@ -183,10 +174,10 @@ _responseData = rawData == null ? null : deserialize<AppSdkDto, AppSdkDto>(rawDa
   /// Returns a [Future] containing a [Response] with a [AppSdkDtoPagedResultDto] as data
   /// Throws [DioException] if API call or serialization fails
   Future<Response<AppSdkDtoPagedResultDto>> getAppSdkList({ 
+    String? filter,
     String? sorting,
     int? skipCount,
     int? maxResultCount,
-    String? filter,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -201,22 +192,17 @@ _responseData = rawData == null ? null : deserialize<AppSdkDto, AppSdkDto>(rawDa
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
-        ],
+        'secure': <Map<String, String>>[],
         ...?extra,
       },
       validateStatus: validateStatus,
     );
 
     final _queryParameters = <String, dynamic>{
+      if (filter != null) r'Filter': filter,
       if (sorting != null) r'Sorting': sorting,
       if (skipCount != null) r'SkipCount': skipCount,
       if (maxResultCount != null) r'MaxResultCount': maxResultCount,
-      if (filter != null && filter.isNotEmpty) r'Filter': filter,
     };
 
     final _response = await _dio.request<Object>(
@@ -288,12 +274,7 @@ _responseData = rawData == null ? null : deserialize<AppSdkDtoPagedResultDto, Ap
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
-        ],
+        'secure': <Map<String, String>>[],
         ...?extra,
       },
       contentType: 'application/json',

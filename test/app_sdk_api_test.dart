@@ -17,7 +17,7 @@ void main() {
       // TODO
     });
 
-    //Future<AppSdkDtoPagedResultDto> getAppSdkList({ String sorting, int skipCount, int maxResultCount }) async
+    //Future<AppSdkDtoPagedResultDto> getAppSdkList({ String filter, String sorting, int skipCount, int maxResultCount }) async
     test('test getAppSdkList', () async {
       // TODO
     });

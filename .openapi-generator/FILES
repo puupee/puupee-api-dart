@@ -53,6 +53,9 @@ doc/AppRunStatus.md
 doc/AppSdkApi.md
 doc/AppSdkDto.md
 doc/AppSdkDtoPagedResultDto.md
+doc/AppStorefrontFeatureBlockDto.md
+doc/AppStorefrontHeroDto.md
+doc/AppStorefrontLandingDto.md
 doc/AppTesterApi.md
 doc/AppTesterDto.md
 doc/AppTesterDtoPagedResultDto.md
@@ -73,6 +76,9 @@ doc/ApplicationLocalizationDto.md
 doc/ApplicationLocalizationResourceDto.md
 doc/ApplicationSettingConfigurationDto.md
 doc/ArtifactType.md
+doc/AuthCenterApi.md
+doc/AuthCenterSummaryDto.md
+doc/AuthorizedAppDto.md
 doc/AvatarApi.md
 doc/AvatarDto.md
 doc/BindDeviceDto.md
@@ -200,6 +206,8 @@ doc/NotificationApi.md
 doc/NotificationInfoDto.md
 doc/NotificationInfoDtoPagedResultDto.md
 doc/ObjectExtensionsDto.md
+doc/OpsCryptoApi.md
+doc/OpsCryptoVaultDto.md
 doc/ParameterApiDescriptionModel.md
 doc/PendingRenewalInfo.md
 doc/PermissionGrantInfoDto.md
@@ -249,6 +257,7 @@ doc/UpdatePermissionDto.md
 doc/UpdatePermissionsDto.md
 doc/UpdateProfileDto.md
 doc/UserApi.md
+doc/UserAuthProfileDto.md
 doc/UserData.md
 doc/UserDataListResultDto.md
 doc/UserLookupApi.md
@@ -279,6 +288,7 @@ lib/src/api/app_release_api.dart
 lib/src/api/app_sdk_api.dart
 lib/src/api/app_tester_api.dart
 lib/src/api/app_user_score_api.dart
+lib/src/api/auth_center_api.dart
 lib/src/api/avatar_api.dart
 lib/src/api/build_record_api.dart
 lib/src/api/deploy_record_api.dart
@@ -294,6 +304,7 @@ lib/src/api/message_source_route_sub_api.dart
 lib/src/api/message_template_api.dart
 lib/src/api/message_template_release_api.dart
 lib/src/api/notification_api.dart
+lib/src/api/ops_crypto_api.dart
 lib/src/api/permissions_api.dart
 lib/src/api/profile_api.dart
 lib/src/api/role_api.dart
@@ -345,6 +356,9 @@ lib/src/model/app_run_record_update_dto.dart
 lib/src/model/app_run_status.dart
 lib/src/model/app_sdk_dto.dart
 lib/src/model/app_sdk_dto_paged_result_dto.dart
+lib/src/model/app_storefront_feature_block_dto.dart
+lib/src/model/app_storefront_hero_dto.dart
+lib/src/model/app_storefront_landing_dto.dart
 lib/src/model/app_tester_dto.dart
 lib/src/model/app_tester_dto_paged_result_dto.dart
 lib/src/model/app_type.dart
@@ -363,6 +377,8 @@ lib/src/model/application_localization_dto.dart
 lib/src/model/application_localization_resource_dto.dart
 lib/src/model/application_setting_configuration_dto.dart
 lib/src/model/artifact_type.dart
+lib/src/model/auth_center_summary_dto.dart
+lib/src/model/authorized_app_dto.dart
 lib/src/model/avatar_dto.dart
 lib/src/model/bind_device_dto.dart
 lib/src/model/build_record_dto.dart
@@ -475,6 +491,7 @@ lib/src/model/name_value.dart
 lib/src/model/notification_info_dto.dart
 lib/src/model/notification_info_dto_paged_result_dto.dart
 lib/src/model/object_extensions_dto.dart
+lib/src/model/ops_crypto_vault_dto.dart
 lib/src/model/parameter_api_description_model.dart
 lib/src/model/pending_renewal_info.dart
 lib/src/model/permission_grant_info_dto.dart
@@ -516,6 +533,7 @@ lib/src/model/update_features_dto.dart
 lib/src/model/update_permission_dto.dart
 lib/src/model/update_permissions_dto.dart
 lib/src/model/update_profile_dto.dart
+lib/src/model/user_auth_profile_dto.dart
 lib/src/model/user_data.dart
 lib/src/model/user_data_list_result_dto.dart
 lib/src/model/user_profile_dto.dart
@@ -576,6 +594,9 @@ test/app_run_status_test.dart
 test/app_sdk_api_test.dart
 test/app_sdk_dto_paged_result_dto_test.dart
 test/app_sdk_dto_test.dart
+test/app_storefront_feature_block_dto_test.dart
+test/app_storefront_hero_dto_test.dart
+test/app_storefront_landing_dto_test.dart
 test/app_tester_api_test.dart
 test/app_tester_dto_paged_result_dto_test.dart
 test/app_tester_dto_test.dart
@@ -596,6 +617,9 @@ test/application_localization_dto_test.dart
 test/application_localization_resource_dto_test.dart
 test/application_setting_configuration_dto_test.dart
 test/artifact_type_test.dart
+test/auth_center_api_test.dart
+test/auth_center_summary_dto_test.dart
+test/authorized_app_dto_test.dart
 test/avatar_api_test.dart
 test/avatar_dto_test.dart
 test/bind_device_dto_test.dart
@@ -723,6 +747,8 @@ test/notification_api_test.dart
 test/notification_info_dto_paged_result_dto_test.dart
 test/notification_info_dto_test.dart
 test/object_extensions_dto_test.dart
+test/ops_crypto_api_test.dart
+test/ops_crypto_vault_dto_test.dart
 test/parameter_api_description_model_test.dart
 test/pending_renewal_info_test.dart
 test/permission_grant_info_dto_test.dart
@@ -772,6 +798,7 @@ test/update_permission_dto_test.dart
 test/update_permissions_dto_test.dart
 test/update_profile_dto_test.dart
 test/user_api_test.dart
+test/user_auth_profile_dto_test.dart
 test/user_data_list_result_dto_test.dart
 test/user_data_test.dart
 test/user_lookup_api_test.dart

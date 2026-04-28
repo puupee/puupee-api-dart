@@ -11,10 +11,10 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createAppPricing**](AppPricingApi.md#createapppricing) | **POST** /api/app/app-pricing | 
 [**deleteAppPricingById**](AppPricingApi.md#deleteapppricingbyid) | **DELETE** /api/app/app-pricing/{id} | 
-[**getAppPricingById**](AppPricingApi.md#getapppricingbyid) | **GET** /api/app/app-pricing/{id} | 
-[**getAppPricingList**](AppPricingApi.md#getapppricinglist) | **GET** /api/app/app-pricing | 
+[**getAppPricingById**](AppPricingApi.md#getapppricingbyid) | **GET** /api/app/app-pricing/{id} | 获取单条定价方案详情，允许匿名访问（与列表/商店展示一致）
+[**getAppPricingList**](AppPricingApi.md#getapppricinglist) | **GET** /api/app/app-pricing | 分页获取定价方案列表，允许匿名访问
 [**getListByAppId**](AppPricingApi.md#getlistbyappid) | **GET** /api/app/app-pricing/by-app-id/{appId} | 获取应用定价方案列表，允许匿名访问供未登录用户查看订阅计划
-[**getPricingItemsByAppId**](AppPricingApi.md#getpricingitemsbyappid) | **GET** /api/app/app-pricing/pricing-items-by-app-id/{appId} | 
+[**getPricingItemsByAppId**](AppPricingApi.md#getpricingitemsbyappid) | **GET** /api/app/app-pricing/pricing-items-by-app-id/{appId} | 获取应用定价功能项定义（与客户端「功能对比」行一致），允许匿名访问供官网等场景展示
 [**updateAppPricing**](AppPricingApi.md#updateapppricing) | **PUT** /api/app/app-pricing/{id} | 
 
 
@@ -26,8 +26,6 @@ Method | HTTP request | Description
 ### Example
 ```dart
 import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppPricingApi();
 final CreateOrUpdateAppPricingDto createOrUpdateAppPricingDto = ; // CreateOrUpdateAppPricingDto | 
@@ -52,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -69,8 +67,6 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppPricingApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
@@ -94,7 +90,7 @@ void (empty response body)
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -106,13 +102,11 @@ void (empty response body)
 # **getAppPricingById**
 > AppPricingDto getAppPricingById(id)
 
-
+获取单条定价方案详情，允许匿名访问（与列表/商店展示一致）
 
 ### Example
 ```dart
 import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppPricingApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
@@ -137,7 +131,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -149,13 +143,11 @@ Name | Type | Description  | Notes
 # **getAppPricingList**
 > AppPricingDtoPagedResultDto getAppPricingList(sorting, skipCount, maxResultCount)
 
-
+分页获取定价方案列表，允许匿名访问
 
 ### Example
 ```dart
 import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppPricingApi();
 final String sorting = sorting_example; // String | 
@@ -184,7 +176,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -201,8 +193,6 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppPricingApi();
 final String appId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
@@ -227,7 +217,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -239,13 +229,11 @@ Name | Type | Description  | Notes
 # **getPricingItemsByAppId**
 > List<AppPricingItemDto> getPricingItemsByAppId(appId)
 
-
+获取应用定价功能项定义（与客户端「功能对比」行一致），允许匿名访问供官网等场景展示
 
 ### Example
 ```dart
 import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppPricingApi();
 final String appId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
@@ -270,7 +258,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -287,8 +275,6 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppPricingApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
@@ -315,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 

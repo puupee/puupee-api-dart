@@ -17,6 +17,16 @@ void main() {
       // TODO
     });
 
+    // String body
+    test('to test the property `body`', () async {
+      // TODO
+    });
+
+    // String url
+    test('to test the property `url`', () async {
+      // TODO
+    });
+
     // String puupeeId
     test('to test the property `puupeeId`', () async {
       // TODO

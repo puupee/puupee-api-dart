@@ -23,8 +23,6 @@ Method | HTTP request | Description
 ### Example
 ```dart
 import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppSdkApi();
 final CreateOrUpdateAppSdkDto createOrUpdateAppSdkDto = ; // CreateOrUpdateAppSdkDto | 
@@ -49,7 +47,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -66,8 +64,6 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppSdkApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
@@ -91,7 +87,7 @@ void (empty response body)
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -101,23 +97,22 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getAppSdkList**
-> AppSdkDtoPagedResultDto getAppSdkList(sorting, skipCount, maxResultCount)
+> AppSdkDtoPagedResultDto getAppSdkList(filter, sorting, skipCount, maxResultCount)
 
 
 
 ### Example
 ```dart
 import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppSdkApi();
+final String filter = filter_example; // String | 关键词：匹配名称、描述、隐私说明、主页等字段（包含匹配）。
 final String sorting = sorting_example; // String | 
 final int skipCount = 56; // int | 
 final int maxResultCount = 56; // int | 
 
 try {
-    final response = api.getAppSdkList(sorting, skipCount, maxResultCount);
+    final response = api.getAppSdkList(filter, sorting, skipCount, maxResultCount);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling AppSdkApi->getAppSdkList: $e\n');
@@ -128,6 +123,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **filter** | **String**| 关键词：匹配名称、描述、隐私说明、主页等字段（包含匹配）。 | [optional] 
  **sorting** | **String**|  | [optional] 
  **skipCount** | **int**|  | [optional] 
  **maxResultCount** | **int**|  | [optional] 
@@ -138,7 +134,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -155,8 +151,6 @@ Name | Type | Description  | Notes
 ### Example
 ```dart
 import 'package:puupee_api_client/api.dart';
-// TODO Configure OAuth2 access token for authorization: oauth2
-//defaultApiClient.getAuthentication<OAuth>('oauth2').accessToken = 'YOUR_ACCESS_TOKEN';
 
 final api = PuupeeApiClient().getAppSdkApi();
 final String id = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 
@@ -183,7 +177,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[oauth2](../README.md#oauth2)
+No authorization required
 
 ### HTTP request headers
 

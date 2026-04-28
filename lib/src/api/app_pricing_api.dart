@@ -50,12 +50,7 @@ class AppPricingApi {
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
-        ],
+        'secure': <Map<String, String>>[],
         ...?extra,
       },
       contentType: 'application/json',
@@ -145,12 +140,7 @@ _responseData = rawData == null ? null : deserialize<AppPricingDto, AppPricingDt
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
-        ],
+        'secure': <Map<String, String>>[],
         ...?extra,
       },
       validateStatus: validateStatus,
@@ -167,7 +157,7 @@ _responseData = rawData == null ? null : deserialize<AppPricingDto, AppPricingDt
     return _response;
   }
 
-  /// getAppPricingById
+  /// 获取单条定价方案详情，允许匿名访问（与列表/商店展示一致）
   /// 
   ///
   /// Parameters:
@@ -197,12 +187,7 @@ _responseData = rawData == null ? null : deserialize<AppPricingDto, AppPricingDt
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
-        ],
+        'secure': <Map<String, String>>[],
         ...?extra,
       },
       validateStatus: validateStatus,
@@ -244,7 +229,7 @@ _responseData = rawData == null ? null : deserialize<AppPricingDto, AppPricingDt
     );
   }
 
-  /// getAppPricingList
+  /// 分页获取定价方案列表，允许匿名访问
   /// 
   ///
   /// Parameters:
@@ -278,12 +263,7 @@ _responseData = rawData == null ? null : deserialize<AppPricingDto, AppPricingDt
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
-        ],
+        'secure': <Map<String, String>>[],
         ...?extra,
       },
       validateStatus: validateStatus,
@@ -362,12 +342,7 @@ _responseData = rawData == null ? null : deserialize<AppPricingDtoPagedResultDto
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
-        ],
+        'secure': <Map<String, String>>[],
         ...?extra,
       },
       validateStatus: validateStatus,
@@ -409,7 +384,7 @@ _responseData = rawData == null ? null : deserialize<List<AppPricingDto>, AppPri
     );
   }
 
-  /// getPricingItemsByAppId
+  /// 获取应用定价功能项定义（与客户端「功能对比」行一致），允许匿名访问供官网等场景展示
   /// 
   ///
   /// Parameters:
@@ -439,12 +414,7 @@ _responseData = rawData == null ? null : deserialize<List<AppPricingDto>, AppPri
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
-        ],
+        'secure': <Map<String, String>>[],
         ...?extra,
       },
       validateStatus: validateStatus,
@@ -518,12 +488,7 @@ _responseData = rawData == null ? null : deserialize<List<AppPricingItemDto>, Ap
         ...?headers,
       },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {
-            'type': 'oauth2',
-            'name': 'oauth2',
-          },
-        ],
+        'secure': <Map<String, String>>[],
         ...?extra,
       },
       contentType: 'application/json',

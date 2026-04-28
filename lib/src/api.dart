@@ -24,6 +24,7 @@ import 'package:puupee_api_client/src/api/app_release_api.dart';
 import 'package:puupee_api_client/src/api/app_sdk_api.dart';
 import 'package:puupee_api_client/src/api/app_tester_api.dart';
 import 'package:puupee_api_client/src/api/app_user_score_api.dart';
+import 'package:puupee_api_client/src/api/auth_center_api.dart';
 import 'package:puupee_api_client/src/api/avatar_api.dart';
 import 'package:puupee_api_client/src/api/build_record_api.dart';
 import 'package:puupee_api_client/src/api/deploy_record_api.dart';
@@ -39,6 +40,7 @@ import 'package:puupee_api_client/src/api/message_source_route_sub_api.dart';
 import 'package:puupee_api_client/src/api/message_template_api.dart';
 import 'package:puupee_api_client/src/api/message_template_release_api.dart';
 import 'package:puupee_api_client/src/api/notification_api.dart';
+import 'package:puupee_api_client/src/api/ops_crypto_api.dart';
 import 'package:puupee_api_client/src/api/permissions_api.dart';
 import 'package:puupee_api_client/src/api/profile_api.dart';
 import 'package:puupee_api_client/src/api/role_api.dart';
@@ -203,6 +205,12 @@ class PuupeeApiClient {
     return AppUserScoreApi(dio);
   }
 
+  /// Get AuthCenterApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  AuthCenterApi getAuthCenterApi() {
+    return AuthCenterApi(dio);
+  }
+
   /// Get AvatarApi instance, base route and serializer can be overridden by a given but be careful,
   /// by doing that all interceptors will not be executed
   AvatarApi getAvatarApi() {
@@ -291,6 +299,12 @@ class PuupeeApiClient {
   /// by doing that all interceptors will not be executed
   NotificationApi getNotificationApi() {
     return NotificationApi(dio);
+  }
+
+  /// Get OpsCryptoApi instance, base route and serializer can be overridden by a given but be careful,
+  /// by doing that all interceptors will not be executed
+  OpsCryptoApi getOpsCryptoApi() {
+    return OpsCryptoApi(dio);
   }
 
   /// Get PermissionsApi instance, base route and serializer can be overridden by a given but be careful,

@@ -10,6 +10,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **title** | **String** |  | [optional] 
 **description** | **String** |  | [optional] 
+**body** | **String** |  | [optional] 
+**url** | **String** |  | [optional] 
 **puupeeId** | **String** |  | [optional] 
 **creatorId** | **String** |  | [optional] 
 **app** | **String** |  | [optional] 

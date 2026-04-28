@@ -1,3 +1,7 @@
+## 1.21.0
+
+ - **FEAT**(puupee_api_client): 同步推送通知请求字段.
+
 ## 1.20.2
 
  - **DOCS**(puupee_api_client): 补齐文档目录分层.

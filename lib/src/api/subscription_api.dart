@@ -20,15 +20,16 @@ import 'package:puupee_api_client/src/model/verify_receipt_dto.dart';
 import 'package:puupee_api_client/src/model/verify_receipt_result.dart';
 
 class SubscriptionApi {
+
   final Dio _dio;
 
   const SubscriptionApi(this._dio);
 
   /// 苹果订阅 Callback 地址
-  ///
+  /// 
   ///
   /// Parameters:
-  /// * [appleNotificaionDto] -
+  /// * [appleNotificaionDto] - 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -38,7 +39,7 @@ class SubscriptionApi {
   ///
   /// Returns a [Future]
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<void>> appleNotifications({
+  Future<Response<void>> appleNotifications({ 
     AppleNotificaionDto? appleNotificaionDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -50,11 +51,11 @@ class SubscriptionApi {
     final _path = r'/api/app/subscription/apple-notifications';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{...?headers},
+      headers: <String, dynamic>{
+        ...?headers,
+      },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {'type': 'oauth2', 'name': 'oauth2'},
-        ],
+        'secure': <Map<String, String>>[],
         ...?extra,
       },
       contentType: 'application/json',
@@ -64,10 +65,13 @@ class SubscriptionApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(appleNotificaionDto);
-    } catch (error, stackTrace) {
+_bodyData=jsonEncode(appleNotificaionDto);
+    } catch(error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(_dio.options, _path),
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -87,10 +91,10 @@ class SubscriptionApi {
   }
 
   /// 捕获 PayPal 订单并完成订阅
-  ///
+  /// 
   ///
   /// Parameters:
-  /// * [capturePayPalOrderDto]
+  /// * [capturePayPalOrderDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -100,7 +104,7 @@ class SubscriptionApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SubscriptionDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SubscriptionDto>> capturePayPalOrder({
+  Future<Response<SubscriptionDto>> capturePayPalOrder({ 
     CapturePayPalOrderDto? capturePayPalOrderDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -112,11 +116,11 @@ class SubscriptionApi {
     final _path = r'/api/app/subscription/capture-pay-pal-order';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{...?headers},
+      headers: <String, dynamic>{
+        ...?headers,
+      },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {'type': 'oauth2', 'name': 'oauth2'},
-        ],
+        'secure': <Map<String, String>>[],
         ...?extra,
       },
       contentType: 'application/json',
@@ -126,10 +130,13 @@ class SubscriptionApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(capturePayPalOrderDto);
-    } catch (error, stackTrace) {
+_bodyData=jsonEncode(capturePayPalOrderDto);
+    } catch(error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(_dio.options, _path),
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -148,14 +155,9 @@ class SubscriptionApi {
     SubscriptionDto? _responseData;
 
     try {
-      final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<SubscriptionDto, SubscriptionDto>(
-              rawData,
-              'SubscriptionDto',
-              growable: true,
-            );
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<SubscriptionDto, SubscriptionDto>(rawData, 'SubscriptionDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -179,10 +181,10 @@ class SubscriptionApi {
   }
 
   /// createOrder
-  ///
+  /// 
   ///
   /// Parameters:
-  /// * [createOrGetSubscriptionOrderDto]
+  /// * [createOrGetSubscriptionOrderDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -192,7 +194,7 @@ class SubscriptionApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SubscriptionOrderDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SubscriptionOrderDto>> createOrder({
+  Future<Response<SubscriptionOrderDto>> createOrder({ 
     CreateOrGetSubscriptionOrderDto? createOrGetSubscriptionOrderDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -204,11 +206,11 @@ class SubscriptionApi {
     final _path = r'/api/app/subscription/order';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{...?headers},
+      headers: <String, dynamic>{
+        ...?headers,
+      },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {'type': 'oauth2', 'name': 'oauth2'},
-        ],
+        'secure': <Map<String, String>>[],
         ...?extra,
       },
       contentType: 'application/json',
@@ -218,10 +220,13 @@ class SubscriptionApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(createOrGetSubscriptionOrderDto);
-    } catch (error, stackTrace) {
+_bodyData=jsonEncode(createOrGetSubscriptionOrderDto);
+    } catch(error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(_dio.options, _path),
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -240,14 +245,9 @@ class SubscriptionApi {
     SubscriptionOrderDto? _responseData;
 
     try {
-      final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<SubscriptionOrderDto, SubscriptionOrderDto>(
-              rawData,
-              'SubscriptionOrderDto',
-              growable: true,
-            );
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<SubscriptionOrderDto, SubscriptionOrderDto>(rawData, 'SubscriptionOrderDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -271,10 +271,10 @@ class SubscriptionApi {
   }
 
   /// 创建 PayPal 订单
-  ///
+  /// 
   ///
   /// Parameters:
-  /// * [createPayPalOrderDto]
+  /// * [createPayPalOrderDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -284,7 +284,7 @@ class SubscriptionApi {
   ///
   /// Returns a [Future] containing a [Response] with a [CreatePayPalOrderResultDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<CreatePayPalOrderResultDto>> createPayPalOrder({
+  Future<Response<CreatePayPalOrderResultDto>> createPayPalOrder({ 
     CreatePayPalOrderDto? createPayPalOrderDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -296,11 +296,11 @@ class SubscriptionApi {
     final _path = r'/api/app/subscription/pay-pal-order';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{...?headers},
+      headers: <String, dynamic>{
+        ...?headers,
+      },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {'type': 'oauth2', 'name': 'oauth2'},
-        ],
+        'secure': <Map<String, String>>[],
         ...?extra,
       },
       contentType: 'application/json',
@@ -310,10 +310,13 @@ class SubscriptionApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(createPayPalOrderDto);
-    } catch (error, stackTrace) {
+_bodyData=jsonEncode(createPayPalOrderDto);
+    } catch(error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(_dio.options, _path),
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -332,14 +335,9 @@ class SubscriptionApi {
     CreatePayPalOrderResultDto? _responseData;
 
     try {
-      final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<CreatePayPalOrderResultDto, CreatePayPalOrderResultDto>(
-              rawData,
-              'CreatePayPalOrderResultDto',
-              growable: true,
-            );
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<CreatePayPalOrderResultDto, CreatePayPalOrderResultDto>(rawData, 'CreatePayPalOrderResultDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -363,10 +361,10 @@ class SubscriptionApi {
   }
 
   /// getSubscriptionById
-  ///
+  /// 
   ///
   /// Parameters:
-  /// * [appId]
+  /// * [appId] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -376,7 +374,7 @@ class SubscriptionApi {
   ///
   /// Returns a [Future] containing a [Response] with a [SubscriptionDto] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<SubscriptionDto>> getSubscriptionById({
+  Future<Response<SubscriptionDto>> getSubscriptionById({ 
     String? appId,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -388,11 +386,11 @@ class SubscriptionApi {
     final _path = r'/api/app/subscription';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{...?headers},
+      headers: <String, dynamic>{
+        ...?headers,
+      },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {'type': 'oauth2', 'name': 'oauth2'},
-        ],
+        'secure': <Map<String, String>>[],
         ...?extra,
       },
       validateStatus: validateStatus,
@@ -414,14 +412,9 @@ class SubscriptionApi {
     SubscriptionDto? _responseData;
 
     try {
-      final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<SubscriptionDto, SubscriptionDto>(
-              rawData,
-              'SubscriptionDto',
-              growable: true,
-            );
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<SubscriptionDto, SubscriptionDto>(rawData, 'SubscriptionDto', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -445,7 +438,7 @@ class SubscriptionApi {
   }
 
   /// 获取用户订阅列表，每个应用只返回最新的一条订阅记录（含有效和已过期的）
-  ///
+  /// 
   ///
   /// Parameters:
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
@@ -457,7 +450,7 @@ class SubscriptionApi {
   ///
   /// Returns a [Future] containing a [Response] with a [List<SubscriptionDto>] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<List<SubscriptionDto>>> getSubscriptionList({
+  Future<Response<List<SubscriptionDto>>> getSubscriptionList({ 
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -468,11 +461,11 @@ class SubscriptionApi {
     final _path = r'/api/app/subscription/list';
     final _options = Options(
       method: r'GET',
-      headers: <String, dynamic>{...?headers},
+      headers: <String, dynamic>{
+        ...?headers,
+      },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {'type': 'oauth2', 'name': 'oauth2'},
-        ],
+        'secure': <Map<String, String>>[],
         ...?extra,
       },
       validateStatus: validateStatus,
@@ -489,14 +482,9 @@ class SubscriptionApi {
     List<SubscriptionDto>? _responseData;
 
     try {
-      final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<List<SubscriptionDto>, SubscriptionDto>(
-              rawData,
-              'List<SubscriptionDto>',
-              growable: true,
-            );
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<List<SubscriptionDto>, SubscriptionDto>(rawData, 'List<SubscriptionDto>', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -520,10 +508,10 @@ class SubscriptionApi {
   }
 
   /// verifyReceipt
-  ///
+  /// 
   ///
   /// Parameters:
-  /// * [verifyReceiptDto]
+  /// * [verifyReceiptDto] 
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -533,7 +521,7 @@ class SubscriptionApi {
   ///
   /// Returns a [Future] containing a [Response] with a [VerifyReceiptResult] as data
   /// Throws [DioException] if API call or serialization fails
-  Future<Response<VerifyReceiptResult>> verifyReceipt({
+  Future<Response<VerifyReceiptResult>> verifyReceipt({ 
     VerifyReceiptDto? verifyReceiptDto,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
@@ -545,11 +533,11 @@ class SubscriptionApi {
     final _path = r'/api/app/subscription/verify-receipt';
     final _options = Options(
       method: r'POST',
-      headers: <String, dynamic>{...?headers},
+      headers: <String, dynamic>{
+        ...?headers,
+      },
       extra: <String, dynamic>{
-        'secure': <Map<String, String>>[
-          {'type': 'oauth2', 'name': 'oauth2'},
-        ],
+        'secure': <Map<String, String>>[],
         ...?extra,
       },
       contentType: 'application/json',
@@ -559,10 +547,13 @@ class SubscriptionApi {
     dynamic _bodyData;
 
     try {
-      _bodyData = jsonEncode(verifyReceiptDto);
-    } catch (error, stackTrace) {
+_bodyData=jsonEncode(verifyReceiptDto);
+    } catch(error, stackTrace) {
       throw DioException(
-        requestOptions: _options.compose(_dio.options, _path),
+         requestOptions: _options.compose(
+          _dio.options,
+          _path,
+        ),
         type: DioExceptionType.unknown,
         error: error,
         stackTrace: stackTrace,
@@ -581,14 +572,9 @@ class SubscriptionApi {
     VerifyReceiptResult? _responseData;
 
     try {
-      final rawData = _response.data;
-      _responseData = rawData == null
-          ? null
-          : deserialize<VerifyReceiptResult, VerifyReceiptResult>(
-              rawData,
-              'VerifyReceiptResult',
-              growable: true,
-            );
+final rawData = _response.data;
+_responseData = rawData == null ? null : deserialize<VerifyReceiptResult, VerifyReceiptResult>(rawData, 'VerifyReceiptResult', growable: true);
+
     } catch (error, stackTrace) {
       throw DioException(
         requestOptions: _response.requestOptions,
@@ -610,4 +596,5 @@ class SubscriptionApi {
       extra: _response.extra,
     );
   }
+
 }

@@ -24,6 +24,9 @@ import 'package:puupee_api_client/src/model/app_run_record_dto.dart';
 import 'package:puupee_api_client/src/model/app_run_record_update_dto.dart';
 import 'package:puupee_api_client/src/model/app_sdk_dto.dart';
 import 'package:puupee_api_client/src/model/app_sdk_dto_paged_result_dto.dart';
+import 'package:puupee_api_client/src/model/app_storefront_feature_block_dto.dart';
+import 'package:puupee_api_client/src/model/app_storefront_hero_dto.dart';
+import 'package:puupee_api_client/src/model/app_storefront_landing_dto.dart';
 import 'package:puupee_api_client/src/model/app_tester_dto.dart';
 import 'package:puupee_api_client/src/model/app_tester_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/app_user_score_dto.dart';
@@ -40,6 +43,8 @@ import 'package:puupee_api_client/src/model/application_localization_configurati
 import 'package:puupee_api_client/src/model/application_localization_dto.dart';
 import 'package:puupee_api_client/src/model/application_localization_resource_dto.dart';
 import 'package:puupee_api_client/src/model/application_setting_configuration_dto.dart';
+import 'package:puupee_api_client/src/model/auth_center_summary_dto.dart';
+import 'package:puupee_api_client/src/model/authorized_app_dto.dart';
 import 'package:puupee_api_client/src/model/avatar_dto.dart';
 import 'package:puupee_api_client/src/model/bind_device_dto.dart';
 import 'package:puupee_api_client/src/model/build_record_dto.dart';
@@ -147,6 +152,7 @@ import 'package:puupee_api_client/src/model/name_value.dart';
 import 'package:puupee_api_client/src/model/notification_info_dto.dart';
 import 'package:puupee_api_client/src/model/notification_info_dto_paged_result_dto.dart';
 import 'package:puupee_api_client/src/model/object_extensions_dto.dart';
+import 'package:puupee_api_client/src/model/ops_crypto_vault_dto.dart';
 import 'package:puupee_api_client/src/model/parameter_api_description_model.dart';
 import 'package:puupee_api_client/src/model/pending_renewal_info.dart';
 import 'package:puupee_api_client/src/model/permission_grant_info_dto.dart';
@@ -185,6 +191,7 @@ import 'package:puupee_api_client/src/model/update_features_dto.dart';
 import 'package:puupee_api_client/src/model/update_permission_dto.dart';
 import 'package:puupee_api_client/src/model/update_permissions_dto.dart';
 import 'package:puupee_api_client/src/model/update_profile_dto.dart';
+import 'package:puupee_api_client/src/model/user_auth_profile_dto.dart';
 import 'package:puupee_api_client/src/model/user_data.dart';
 import 'package:puupee_api_client/src/model/user_data_list_result_dto.dart';
 import 'package:puupee_api_client/src/model/user_profile_dto.dart';
@@ -292,6 +299,12 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return AppSdkDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppSdkDtoPagedResultDto':
           return AppSdkDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppStorefrontFeatureBlockDto':
+          return AppStorefrontFeatureBlockDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppStorefrontHeroDto':
+          return AppStorefrontHeroDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AppStorefrontLandingDto':
+          return AppStorefrontLandingDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppTesterDto':
           return AppTesterDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AppTesterDtoPagedResultDto':
@@ -330,6 +343,10 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
         case 'ArtifactType':
           
           
+        case 'AuthCenterSummaryDto':
+          return AuthCenterSummaryDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'AuthorizedAppDto':
+          return AuthorizedAppDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'AvatarDto':
           return AvatarDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'BindDeviceDto':
@@ -559,6 +576,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return NotificationInfoDtoPagedResultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ObjectExtensionsDto':
           return ObjectExtensionsDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'OpsCryptoVaultDto':
+          return OpsCryptoVaultDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'ParameterApiDescriptionModel':
           return ParameterApiDescriptionModel.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'PendingRenewalInfo':
@@ -644,6 +663,8 @@ final _regMap = RegExp(r'^Map<String,(.*)>$');
           return UpdatePermissionsDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'UpdateProfileDto':
           return UpdateProfileDto.fromJson(value as Map<String, dynamic>) as ReturnType;
+        case 'UserAuthProfileDto':
+          return UserAuthProfileDto.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'UserData':
           return UserData.fromJson(value as Map<String, dynamic>) as ReturnType;
         case 'UserDataListResultDto':
