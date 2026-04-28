@@ -1,3 +1,7 @@
+## 1.22.0
+
+ - **FEAT**(puupee_api_client): 同步认证中心 API 客户端.
+
 ## 1.21.0
 
  - **FEAT**(puupee_api_client): 同步推送通知请求字段.
