@@ -12,6 +12,8 @@ CreatePushNotificationDto _$CreatePushNotificationDtoFromJson(
   final val = CreatePushNotificationDto(
     title: $checkedConvert('title', (v) => v as String?),
     description: $checkedConvert('description', (v) => v as String?),
+    body: $checkedConvert('body', (v) => v as String?),
+    url: $checkedConvert('url', (v) => v as String?),
     puupeeId: $checkedConvert('puupeeId', (v) => v as String?),
     creatorId: $checkedConvert('creatorId', (v) => v as String?),
     app: $checkedConvert('app', (v) => v as String?),
@@ -24,6 +26,8 @@ Map<String, dynamic> _$CreatePushNotificationDtoToJson(
 ) => <String, dynamic>{
   if (instance.title case final value?) 'title': value,
   if (instance.description case final value?) 'description': value,
+  if (instance.body case final value?) 'body': value,
+  if (instance.url case final value?) 'url': value,
   if (instance.puupeeId case final value?) 'puupeeId': value,
   if (instance.creatorId case final value?) 'creatorId': value,
   if (instance.app case final value?) 'app': value,
