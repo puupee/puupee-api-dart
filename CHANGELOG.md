@@ -1,3 +1,7 @@
+## 1.26.1
+
+ - **REFACTOR**(felorx_api_client): 移除旧定价字段.
+
 ## 1.26.0
 
  - **FEAT**(felorx_api_client): 支持 FDU 制品类型.
