@@ -44,6 +44,7 @@ BuildRecordDto _$BuildRecordDtoFromJson(
       'artifactType',
       (v) => $enumDecodeNullable(_$ArtifactTypeEnumMap, v),
     ),
+    architecture: $checkedConvert('architecture', (v) => v as String?),
     environment: $checkedConvert('environment', (v) => v as String?),
     buildNumber: $checkedConvert('buildNumber', (v) => (v as num?)?.toInt()),
     status: $checkedConvert(
@@ -88,6 +89,7 @@ Map<String, dynamic> _$BuildRecordDtoToJson(BuildRecordDto instance) =>
       'trigger': ?_$BuildTriggerEnumMap[instance.trigger],
       'platform': ?_$AppPlatformEnumMap[instance.platform],
       'artifactType': ?_$ArtifactTypeEnumMap[instance.artifactType],
+      'architecture': ?instance.architecture,
       'environment': ?instance.environment,
       'buildNumber': ?instance.buildNumber,
       'status': ?_$BuildStatusEnumMap[instance.status],

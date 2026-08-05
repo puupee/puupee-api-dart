@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 
 # **buildRecordGetLatest**
-> BuildRecordDto buildRecordGetLatest(appId, platform, environment)
+> BuildRecordDto buildRecordGetLatest(appId, platform, environment, architecture)
 
 
 
@@ -35,9 +35,10 @@ final api = FelorxApiClient().getBuildRecordApi();
 final String appId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 final AppPlatform platform = ; // AppPlatform |
 final String environment = environment_example; // String |
+final String architecture = architecture_example; // String |
 
 try {
-    final response = api.buildRecordGetLatest(appId, platform, environment);
+    final response = api.buildRecordGetLatest(appId, platform, environment, architecture);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling BuildRecordApi->buildRecordGetLatest: $e\n');
@@ -51,6 +52,7 @@ Name | Type | Description  | Notes
  **appId** | **String**|  |
  **platform** | [**AppPlatform**](.md)|  | [optional]
  **environment** | **String**|  | [optional]
+ **architecture** | **String**|  | [optional]
 
 ### Return type
 
@@ -190,7 +192,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getBuildRecordList**
-> BuildRecordDtoPagedResultDto getBuildRecordList(appId, status, platform, environment, version, branch, sorting, skipCount, maxResultCount)
+> BuildRecordDtoPagedResultDto getBuildRecordList(appId, status, platform, architecture, environment, version, branch, sorting, skipCount, maxResultCount)
 
 
 
@@ -202,6 +204,7 @@ final api = FelorxApiClient().getBuildRecordApi();
 final String appId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String | 应用ID
 final BuildStatus status = ; // BuildStatus | 构建状态
 final AppPlatform platform = ; // AppPlatform | 目标平台
+final String architecture = architecture_example; // String | 目标架构
 final String environment = environment_example; // String | 环境
 final String version = version_example; // String | 版本号
 final String branch = branch_example; // String | 分支名称
@@ -210,7 +213,7 @@ final int skipCount = 56; // int |
 final int maxResultCount = 56; // int |
 
 try {
-    final response = api.getBuildRecordList(appId, status, platform, environment, version, branch, sorting, skipCount, maxResultCount);
+    final response = api.getBuildRecordList(appId, status, platform, architecture, environment, version, branch, sorting, skipCount, maxResultCount);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling BuildRecordApi->getBuildRecordList: $e\n');
@@ -224,6 +227,7 @@ Name | Type | Description  | Notes
  **appId** | **String**| 应用ID | [optional]
  **status** | [**BuildStatus**](.md)| 构建状态 | [optional]
  **platform** | [**AppPlatform**](.md)| 目标平台 | [optional]
+ **architecture** | **String**| 目标架构 | [optional]
  **environment** | **String**| 环境 | [optional]
  **version** | **String**| 版本号 | [optional]
  **branch** | **String**| 分支名称 | [optional]
@@ -499,4 +503,3 @@ No authorization required
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

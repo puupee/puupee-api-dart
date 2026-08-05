@@ -60,6 +60,8 @@ class AppReleaseDto {
 
      this.artifactType,
 
+     this.architecture,
+
      this.publisher,
 
      this.isForceUpdate,
@@ -302,6 +304,18 @@ class AppReleaseDto {
 
 
   @JsonKey(
+
+    name: r'architecture',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? architecture;
+
+
+
+  @JsonKey(
     
     name: r'publisher',
     required: false,
@@ -384,6 +398,7 @@ class AppReleaseDto {
       other.hash == hash &&
       other.downloadUrl == downloadUrl &&
       other.artifactType == artifactType &&
+      other.architecture == architecture &&
       other.publisher == publisher &&
       other.isForceUpdate == isForceUpdate &&
       other.appId == appId &&
@@ -411,6 +426,7 @@ class AppReleaseDto {
         (hash == null ? 0 : hash.hashCode) +
         (downloadUrl == null ? 0 : downloadUrl.hashCode) +
         artifactType.hashCode +
+        (architecture == null ? 0 : architecture.hashCode) +
         publisher.hashCode +
         isForceUpdate.hashCode +
         appId.hashCode +
@@ -427,4 +443,3 @@ class AppReleaseDto {
   }
 
 }
-

@@ -240,6 +240,7 @@ _responseData = rawData == null ? null : deserialize<AppReleaseDto, AppReleaseDt
   /// * [channel]
   /// * [platform]
   /// * [publisher]
+  /// * [architecture]
   /// * [sorting]
   /// * [skipCount]
   /// * [maxResultCount]
@@ -257,6 +258,7 @@ _responseData = rawData == null ? null : deserialize<AppReleaseDto, AppReleaseDt
     ReleaseChannel? channel,
     String? platform,
     String? publisher,
+    String? architecture,
     String? sorting,
     int? skipCount,
     int? maxResultCount,
@@ -285,6 +287,7 @@ _responseData = rawData == null ? null : deserialize<AppReleaseDto, AppReleaseDt
       if (channel != null) r'Channel': channel,
       if (platform != null) r'Platform': platform,
       if (publisher != null) r'Publisher': publisher,
+      if (architecture != null) r'Architecture': architecture,
       if (sorting != null) r'Sorting': sorting,
       if (skipCount != null) r'SkipCount': skipCount,
       if (maxResultCount != null) r'MaxResultCount': maxResultCount,
@@ -335,6 +338,7 @@ _responseData = rawData == null ? null : deserialize<AppReleaseDtoPagedResultDto
   /// * [platform]
   /// * [artifactType]
   /// * [publisher]
+  /// * [architecture]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -349,6 +353,7 @@ _responseData = rawData == null ? null : deserialize<AppReleaseDtoPagedResultDto
     String? platform,
     String? artifactType,
     String? publisher,
+    String? architecture,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -374,6 +379,7 @@ _responseData = rawData == null ? null : deserialize<AppReleaseDtoPagedResultDto
       if (platform != null) r'Platform': platform,
       if (artifactType != null) r'ArtifactType': artifactType,
       if (publisher != null) r'Publisher': publisher,
+      if (architecture != null) r'Architecture': architecture,
     };
 
     final _response = await _dio.request<Object>(
@@ -421,6 +427,7 @@ _responseData = rawData == null ? null : deserialize<AppReleaseDto, AppReleaseDt
   /// * [channel]
   /// * [platform]
   /// * [publisher]
+  /// * [architecture]
   /// * [sorting]
   /// * [skipCount]
   /// * [maxResultCount]
@@ -438,6 +445,7 @@ _responseData = rawData == null ? null : deserialize<AppReleaseDto, AppReleaseDt
     ReleaseChannel? channel,
     String? platform,
     String? publisher,
+    String? architecture,
     String? sorting,
     int? skipCount,
     int? maxResultCount,
@@ -466,6 +474,7 @@ _responseData = rawData == null ? null : deserialize<AppReleaseDto, AppReleaseDt
       if (channel != null) r'Channel': channel,
       if (platform != null) r'Platform': platform,
       if (publisher != null) r'Publisher': publisher,
+      if (architecture != null) r'Architecture': architecture,
       if (sorting != null) r'Sorting': sorting,
       if (skipCount != null) r'SkipCount': skipCount,
       if (maxResultCount != null) r'MaxResultCount': maxResultCount,

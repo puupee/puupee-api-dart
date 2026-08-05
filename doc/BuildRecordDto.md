@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **trigger** | [**BuildTrigger**](BuildTrigger.md) |  | [optional]
 **platform** | [**AppPlatform**](AppPlatform.md) |  | [optional]
 **artifactType** | [**ArtifactType**](ArtifactType.md) |  | [optional]
+**architecture** | **String** | 目标架构；空值或空字符串表示通用制品。 | [optional]
 **environment** | **String** | 环境 | [optional]
 **buildNumber** | **int** | 构建号 | [optional]
 **status** | [**BuildStatus**](BuildStatus.md) |  | [optional]
@@ -38,5 +39,4 @@ Name | Type | Description | Notes
 **duration** | **int** | 构建持续时间 (秒) | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

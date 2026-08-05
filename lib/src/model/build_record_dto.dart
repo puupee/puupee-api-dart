@@ -52,6 +52,8 @@ class BuildRecordDto {
 
     this.artifactType,
 
+    this.architecture,
+
     this.environment,
 
     this.buildNumber,
@@ -132,6 +134,10 @@ class BuildRecordDto {
   @JsonKey(name: r'artifactType', required: false, includeIfNull: false)
   ArtifactType? artifactType;
 
+  /// 目标架构；空值或空字符串表示通用制品。
+  @JsonKey(name: r'architecture', required: false, includeIfNull: false)
+  String? architecture;
+
   /// 环境
   @JsonKey(name: r'environment', required: false, includeIfNull: false)
   String? environment;
@@ -203,6 +209,7 @@ class BuildRecordDto {
           other.trigger == trigger &&
           other.platform == platform &&
           other.artifactType == artifactType &&
+          other.architecture == architecture &&
           other.environment == environment &&
           other.buildNumber == buildNumber &&
           other.status == status &&
@@ -235,6 +242,7 @@ class BuildRecordDto {
       trigger.hashCode +
       platform.hashCode +
       artifactType.hashCode +
+      (architecture == null ? 0 : architecture.hashCode) +
       (environment == null ? 0 : environment.hashCode) +
       (buildNumber == null ? 0 : buildNumber.hashCode) +
       status.hashCode +

@@ -32,6 +32,7 @@ class BuildRecordApi {
   /// * [appId]
   /// * [platform]
   /// * [environment]
+  /// * [architecture]
   /// * [cancelToken] - A [CancelToken] that can be used to cancel the operation
   /// * [headers] - Can be used to add additional headers to the request
   /// * [extras] - Can be used to add flags to the request
@@ -45,6 +46,7 @@ class BuildRecordApi {
     required String appId,
     AppPlatform? platform,
     String? environment,
+    String? architecture,
     CancelToken? cancelToken,
     Map<String, dynamic>? headers,
     Map<String, dynamic>? extra,
@@ -68,6 +70,7 @@ class BuildRecordApi {
     final _queryParameters = <String, dynamic>{
       if (platform != null) r'platform': platform,
       if (environment != null) r'environment': environment,
+      if (architecture != null) r'architecture': architecture,
     };
 
     final _response = await _dio.request<Object>(
@@ -323,6 +326,7 @@ _responseData = rawData == null ? null : deserialize<BuildRecordDto, BuildRecord
   /// * [appId] - 应用ID
   /// * [status] - 构建状态
   /// * [platform] - 目标平台
+  /// * [architecture] - 目标架构
   /// * [environment] - 环境
   /// * [version] - 版本号
   /// * [branch] - 分支名称
@@ -342,6 +346,7 @@ _responseData = rawData == null ? null : deserialize<BuildRecordDto, BuildRecord
     String? appId,
     BuildStatus? status,
     AppPlatform? platform,
+    String? architecture,
     String? environment,
     String? version,
     String? branch,
@@ -372,6 +377,7 @@ _responseData = rawData == null ? null : deserialize<BuildRecordDto, BuildRecord
       if (appId != null) r'AppId': appId,
       if (status != null) r'Status': status,
       if (platform != null) r'Platform': platform,
+      if (architecture != null) r'Architecture': architecture,
       if (environment != null) r'Environment': environment,
       if (version != null) r'Version': version,
       if (branch != null) r'Branch': branch,

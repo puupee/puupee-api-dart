@@ -15,11 +15,11 @@ Name | Type | Description | Notes
 **trigger** | [**BuildTrigger**](BuildTrigger.md) |  | [optional]
 **platform** | [**AppPlatform**](AppPlatform.md) |  |
 **artifactType** | [**ArtifactType**](ArtifactType.md) |  |
+**architecture** | **String** | 目标架构（x64、arm64、arm、riscv64、universal 或 multiarch）。 | [optional]
 **environment** | **String** | 环境 | [optional]
 **ciSystem** | **String** | CI/CD 系统信息 | [optional]
 **ciBuildId** | **String** | CI/CD 构建ID | [optional]
 **ciBuildUrl** | **String** | CI/CD 构建URL | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 

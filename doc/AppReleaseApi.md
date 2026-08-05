@@ -141,7 +141,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getAppReleaseList**
-> AppReleaseDtoPagedResultDto getAppReleaseList(appId, channel, platform, publisher, sorting, skipCount, maxResultCount)
+> AppReleaseDtoPagedResultDto getAppReleaseList(appId, channel, platform, publisher, architecture, sorting, skipCount, maxResultCount)
 
 获取版本列表
 
@@ -154,12 +154,13 @@ final String appId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 final ReleaseChannel channel = ; // ReleaseChannel |
 final String platform = platform_example; // String |
 final String publisher = publisher_example; // String |
+final String architecture = architecture_example; // String |
 final String sorting = sorting_example; // String |
 final int skipCount = 56; // int |
 final int maxResultCount = 56; // int |
 
 try {
-    final response = api.getAppReleaseList(appId, channel, platform, publisher, sorting, skipCount, maxResultCount);
+    final response = api.getAppReleaseList(appId, channel, platform, publisher, architecture, sorting, skipCount, maxResultCount);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling AppReleaseApi->getAppReleaseList: $e\n');
@@ -174,6 +175,7 @@ Name | Type | Description  | Notes
  **channel** | [**ReleaseChannel**](.md)|  | [optional]
  **platform** | **String**|  | [optional]
  **publisher** | **String**|  | [optional]
+ **architecture** | **String**|  | [optional]
  **sorting** | **String**|  | [optional]
  **skipCount** | **int**|  | [optional]
  **maxResultCount** | **int**|  | [optional]
@@ -194,7 +196,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getLatest**
-> AppReleaseDto getLatest(appName, platform, artifactType, publisher)
+> AppReleaseDto getLatest(appName, platform, artifactType, publisher, architecture)
 
 获取最新版本
 
@@ -207,9 +209,10 @@ final String appName = appName_example; // String |
 final String platform = platform_example; // String |
 final String artifactType = artifactType_example; // String |
 final String publisher = publisher_example; // String |
+final String architecture = architecture_example; // String |
 
 try {
-    final response = api.getLatest(appName, platform, artifactType, publisher);
+    final response = api.getLatest(appName, platform, artifactType, publisher, architecture);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling AppReleaseApi->getLatest: $e\n');
@@ -224,6 +227,7 @@ Name | Type | Description  | Notes
  **platform** | **String**|  | [optional]
  **artifactType** | **String**|  | [optional]
  **publisher** | **String**|  | [optional]
+ **architecture** | **String**|  | [optional]
 
 ### Return type
 
@@ -241,7 +245,7 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **getListByDeveloper**
-> AppReleaseDtoPagedResultDto getListByDeveloper(appId, channel, platform, publisher, sorting, skipCount, maxResultCount)
+> AppReleaseDtoPagedResultDto getListByDeveloper(appId, channel, platform, publisher, architecture, sorting, skipCount, maxResultCount)
 
 开发者获取版本列表（版本的创建者为当前用户）
 
@@ -254,12 +258,13 @@ final String appId = 38400000-8cf0-11bd-b23e-10b96e4ef00d; // String |
 final ReleaseChannel channel = ; // ReleaseChannel |
 final String platform = platform_example; // String |
 final String publisher = publisher_example; // String |
+final String architecture = architecture_example; // String |
 final String sorting = sorting_example; // String |
 final int skipCount = 56; // int |
 final int maxResultCount = 56; // int |
 
 try {
-    final response = api.getListByDeveloper(appId, channel, platform, publisher, sorting, skipCount, maxResultCount);
+    final response = api.getListByDeveloper(appId, channel, platform, publisher, architecture, sorting, skipCount, maxResultCount);
     print(response);
 } on DioException catch (e) {
     print('Exception when calling AppReleaseApi->getListByDeveloper: $e\n');
@@ -274,6 +279,7 @@ Name | Type | Description  | Notes
  **channel** | [**ReleaseChannel**](.md)|  | [optional]
  **platform** | **String**|  | [optional]
  **publisher** | **String**|  | [optional]
+ **architecture** | **String**|  | [optional]
  **sorting** | **String**|  | [optional]
  **skipCount** | **int**|  | [optional]
  **maxResultCount** | **int**|  | [optional]
@@ -335,4 +341,3 @@ No authorization required
  - **Accept**: text/plain, application/json, text/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-

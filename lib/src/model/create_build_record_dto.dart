@@ -35,6 +35,8 @@ class CreateBuildRecordDto {
 
     required  this.artifactType,
 
+     this.architecture,
+
      this.environment,
 
      this.ciSystem,
@@ -132,6 +134,19 @@ class CreateBuildRecordDto {
 
 
 
+      /// 目标架构（x64、arm64、arm、riscv64、universal 或 multiarch）。
+  @JsonKey(
+
+    name: r'architecture',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? architecture;
+
+
+
       /// 环境
   @JsonKey(
     
@@ -195,6 +210,7 @@ class CreateBuildRecordDto {
       other.trigger == trigger &&
       other.platform == platform &&
       other.artifactType == artifactType &&
+      other.architecture == architecture &&
       other.environment == environment &&
       other.ciSystem == ciSystem &&
       other.ciBuildId == ciBuildId &&
@@ -209,6 +225,7 @@ class CreateBuildRecordDto {
         trigger.hashCode +
         platform.hashCode +
         artifactType.hashCode +
+        (architecture == null ? 0 : architecture.hashCode) +
         (environment == null ? 0 : environment.hashCode) +
         (ciSystem == null ? 0 : ciSystem.hashCode) +
         (ciBuildId == null ? 0 : ciBuildId.hashCode) +
@@ -224,4 +241,3 @@ class CreateBuildRecordDto {
   }
 
 }
-

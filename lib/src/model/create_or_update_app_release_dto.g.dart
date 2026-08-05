@@ -26,6 +26,7 @@ CreateOrUpdateAppReleaseDto _$CreateOrUpdateAppReleaseDtoFromJson(
       'artifactType',
       (v) => $enumDecodeNullable(_$ArtifactTypeEnumMap, v),
     ),
+    architecture: $checkedConvert('architecture', (v) => v as String?),
     publisher: $checkedConvert(
       'publisher',
       (v) => $enumDecodeNullable(_$AppPublisherEnumMap, v),
@@ -55,6 +56,7 @@ Map<String, dynamic> _$CreateOrUpdateAppReleaseDtoToJson(
   'size': ?instance.size,
   'hash': ?instance.hash,
   'artifactType': ?_$ArtifactTypeEnumMap[instance.artifactType],
+  'architecture': ?instance.architecture,
   'publisher': ?_$AppPublisherEnumMap[instance.publisher],
   'isForceUpdate': ?instance.isForceUpdate,
   'appId': ?instance.appId,

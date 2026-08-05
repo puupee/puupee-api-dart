@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **size** | **int** |  | [optional]
 **hash** | **String** |  | [optional]
 **artifactType** | [**ArtifactType**](ArtifactType.md) |  | [optional]
+**architecture** | **String** |  | [optional]
 **publisher** | [**AppPublisher**](AppPublisher.md) |  | [optional]
 **isForceUpdate** | **bool** |  | [optional]
 **appId** | **String** |  | [optional]
@@ -26,5 +27,4 @@ Name | Type | Description | Notes
 **buildRecordId** | **String** | 构建记录ID（可选，如果提供则使用对应构建的BuildNumber作为VersionCode） | [optional]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
-
 
