@@ -82,6 +82,16 @@ const _$AiProviderTypeEnumMap = {
 
 const _$AiCapabilityEnumMap = {
   AiCapability.chat: 'Chat',
+  AiCapability.responses: 'Responses',
+  AiCapability.responsesStreaming: 'ResponsesStreaming',
+  AiCapability.responsesStateful: 'ResponsesStateful',
+  AiCapability.responsesBackground: 'ResponsesBackground',
+  AiCapability.responsesCompaction: 'ResponsesCompaction',
+  AiCapability.responsesInputTokens: 'ResponsesInputTokens',
+  AiCapability.responsesWebSocket: 'ResponsesWebSocket',
+  AiCapability.functionCalling: 'FunctionCalling',
+  AiCapability.hostedTools: 'HostedTools',
+  AiCapability.reasoning: 'Reasoning',
   AiCapability.vision: 'Vision',
   AiCapability.ocr: 'Ocr',
   AiCapability.imageLabel: 'ImageLabel',

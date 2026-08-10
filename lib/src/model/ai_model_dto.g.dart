@@ -38,6 +38,20 @@ AiModelDto _$AiModelDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
             ?.map((e) => $enumDecode(_$AiCapabilityEnumMap, e))
             .toList(),
       ),
+      verifiedCapabilities: $checkedConvert(
+        'verified_capabilities',
+        (v) => (v as List<dynamic>?)
+            ?.map((e) => $enumDecode(_$AiCapabilityEnumMap, e))
+            .toList(),
+      ),
+      capabilityTestedAt: $checkedConvert(
+        'capability_tested_at',
+        (v) => v == null ? null : DateTime.parse(v as String),
+      ),
+      capabilityCertificateVersion: $checkedConvert(
+        'capability_certificate_version',
+        (v) => v as String?,
+      ),
       enabled: $checkedConvert('enabled', (v) => v as bool?),
       isDefault: $checkedConvert('is_default', (v) => v as bool?),
       defaultParameters: $checkedConvert(
@@ -53,6 +67,9 @@ AiModelDto _$AiModelDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
     'providerId': 'provider_id',
     'routeName': 'route_name',
     'displayName': 'display_name',
+    'verifiedCapabilities': 'verified_capabilities',
+    'capabilityTestedAt': 'capability_tested_at',
+    'capabilityCertificateVersion': 'capability_certificate_version',
     'isDefault': 'is_default',
     'defaultParameters': 'default_parameters',
   },
@@ -75,6 +92,11 @@ Map<String, dynamic> _$AiModelDtoToJson(AiModelDto instance) =>
       'capabilities': ?instance.capabilities
           ?.map((e) => _$AiCapabilityEnumMap[e]!)
           .toList(),
+      'verified_capabilities': ?instance.verifiedCapabilities
+          ?.map((e) => _$AiCapabilityEnumMap[e]!)
+          .toList(),
+      'capability_tested_at': ?instance.capabilityTestedAt?.toIso8601String(),
+      'capability_certificate_version': ?instance.capabilityCertificateVersion,
       'enabled': ?instance.enabled,
       'is_default': ?instance.isDefault,
       'default_parameters': ?instance.defaultParameters,
@@ -82,6 +104,16 @@ Map<String, dynamic> _$AiModelDtoToJson(AiModelDto instance) =>
 
 const _$AiCapabilityEnumMap = {
   AiCapability.chat: 'Chat',
+  AiCapability.responses: 'Responses',
+  AiCapability.responsesStreaming: 'ResponsesStreaming',
+  AiCapability.responsesStateful: 'ResponsesStateful',
+  AiCapability.responsesBackground: 'ResponsesBackground',
+  AiCapability.responsesCompaction: 'ResponsesCompaction',
+  AiCapability.responsesInputTokens: 'ResponsesInputTokens',
+  AiCapability.responsesWebSocket: 'ResponsesWebSocket',
+  AiCapability.functionCalling: 'FunctionCalling',
+  AiCapability.hostedTools: 'HostedTools',
+  AiCapability.reasoning: 'Reasoning',
   AiCapability.vision: 'Vision',
   AiCapability.ocr: 'Ocr',
   AiCapability.imageLabel: 'ImageLabel',

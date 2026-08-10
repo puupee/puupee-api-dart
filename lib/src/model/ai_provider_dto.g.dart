@@ -45,6 +45,20 @@ AiProviderDto _$AiProviderDtoFromJson(
             ?.map((e) => $enumDecode(_$AiCapabilityEnumMap, e))
             .toList(),
       ),
+      verifiedCapabilities: $checkedConvert(
+        'verified_capabilities',
+        (v) => (v as List<dynamic>?)
+            ?.map((e) => $enumDecode(_$AiCapabilityEnumMap, e))
+            .toList(),
+      ),
+      capabilityTestedAt: $checkedConvert(
+        'capability_tested_at',
+        (v) => v == null ? null : DateTime.parse(v as String),
+      ),
+      capabilityCertificateVersion: $checkedConvert(
+        'capability_certificate_version',
+        (v) => v as String?,
+      ),
       secretConfigured: $checkedConvert('secret_configured', (v) => v as bool?),
       metadata: $checkedConvert(
         'metadata',
@@ -65,6 +79,9 @@ AiProviderDto _$AiProviderDtoFromJson(
     'displayName': 'display_name',
     'providerType': 'provider_type',
     'baseUrl': 'base_url',
+    'verifiedCapabilities': 'verified_capabilities',
+    'capabilityTestedAt': 'capability_tested_at',
+    'capabilityCertificateVersion': 'capability_certificate_version',
     'secretConfigured': 'secret_configured',
   },
 );
@@ -88,6 +105,11 @@ Map<String, dynamic> _$AiProviderDtoToJson(AiProviderDto instance) =>
       'capabilities': ?instance.capabilities
           ?.map((e) => _$AiCapabilityEnumMap[e]!)
           .toList(),
+      'verified_capabilities': ?instance.verifiedCapabilities
+          ?.map((e) => _$AiCapabilityEnumMap[e]!)
+          .toList(),
+      'capability_tested_at': ?instance.capabilityTestedAt?.toIso8601String(),
+      'capability_certificate_version': ?instance.capabilityCertificateVersion,
       'secret_configured': ?instance.secretConfigured,
       'metadata': ?instance.metadata,
       'models': ?instance.models?.map((e) => e.toJson()).toList(),
@@ -101,6 +123,16 @@ const _$AiProviderTypeEnumMap = {
 
 const _$AiCapabilityEnumMap = {
   AiCapability.chat: 'Chat',
+  AiCapability.responses: 'Responses',
+  AiCapability.responsesStreaming: 'ResponsesStreaming',
+  AiCapability.responsesStateful: 'ResponsesStateful',
+  AiCapability.responsesBackground: 'ResponsesBackground',
+  AiCapability.responsesCompaction: 'ResponsesCompaction',
+  AiCapability.responsesInputTokens: 'ResponsesInputTokens',
+  AiCapability.responsesWebSocket: 'ResponsesWebSocket',
+  AiCapability.functionCalling: 'FunctionCalling',
+  AiCapability.hostedTools: 'HostedTools',
+  AiCapability.reasoning: 'Reasoning',
   AiCapability.vision: 'Vision',
   AiCapability.ocr: 'Ocr',
   AiCapability.imageLabel: 'ImageLabel',

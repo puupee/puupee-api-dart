@@ -68,6 +68,7 @@ export 'package:felorx_api_client/src/model/ai_chat_choice_dto.dart';
 export 'package:felorx_api_client/src/model/ai_chat_completion_dto.dart';
 export 'package:felorx_api_client/src/model/ai_chat_message_dto.dart';
 export 'package:felorx_api_client/src/model/ai_model_dto.dart';
+export 'package:felorx_api_client/src/model/ai_protocol.dart';
 export 'package:felorx_api_client/src/model/ai_provider_dto.dart';
 export 'package:felorx_api_client/src/model/ai_provider_dto_paged_result_dto.dart';
 export 'package:felorx_api_client/src/model/ai_provider_type.dart';
