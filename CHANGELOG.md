@@ -1,3 +1,8 @@
+## 1.27.0
+
+ - **FIX**(felorx_api_client): 补齐 Responses 能力协议契约.
+ - **FEAT**(felorx_api_client): 生成多架构构建发布接口.
+
 ## 1.26.1
 
  - **REFACTOR**(felorx_api_client): 移除旧定价字段.
