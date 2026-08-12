@@ -37,6 +37,7 @@ DeviceDto _$DeviceDtoFromJson(Map<String, dynamic> json) => $checkedCreate(
       ),
       brand: $checkedConvert('brand', (v) => v as String?),
       systemVersion: $checkedConvert('systemVersion', (v) => v as String?),
+      appName: $checkedConvert('appName', (v) => v as String?),
     );
     return val;
   },
@@ -57,6 +58,7 @@ Map<String, dynamic> _$DeviceDtoToJson(DeviceDto instance) => <String, dynamic>{
   'platform': ?_$AppPlatformEnumMap[instance.platform],
   'brand': ?instance.brand,
   'systemVersion': ?instance.systemVersion,
+  'appName': ?instance.appName,
 };
 
 const _$AppPlatformEnumMap = {

@@ -30,6 +30,8 @@ class BindDeviceDto {
      this.brand,
 
      this.systemVersion,
+
+     this.appName,
   });
 
   @JsonKey(
@@ -104,6 +106,19 @@ class BindDeviceDto {
 
 
 
+      /// 发起绑定的应用名。服务端优先使用访问令牌中的可信 app_name 声明。
+  @JsonKey(
+
+    name: r'appName',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? appName;
+
+
+
 
 
     @override
@@ -113,7 +128,8 @@ class BindDeviceDto {
       other.name == name &&
       other.platform == platform &&
       other.brand == brand &&
-      other.systemVersion == systemVersion;
+      other.systemVersion == systemVersion &&
+      other.appName == appName;
 
     @override
     int get hashCode =>
@@ -122,7 +138,8 @@ class BindDeviceDto {
         (name == null ? 0 : name.hashCode) +
         platform.hashCode +
         (brand == null ? 0 : brand.hashCode) +
-        (systemVersion == null ? 0 : systemVersion.hashCode);
+        (systemVersion == null ? 0 : systemVersion.hashCode) +
+        (appName == null ? 0 : appName.hashCode);
 
   factory BindDeviceDto.fromJson(Map<String, dynamic> json) => _$BindDeviceDtoFromJson(json);
 
@@ -134,4 +151,3 @@ class BindDeviceDto {
   }
 
 }
-

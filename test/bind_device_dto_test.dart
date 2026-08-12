@@ -37,5 +37,11 @@ void main() {
       // TODO
     });
 
+    // 发起绑定的应用名。服务端优先使用访问令牌中的可信 app_name 声明。
+    // String appName
+    test('to test the property `appName`', () async {
+      // TODO
+    });
+
   });
 }

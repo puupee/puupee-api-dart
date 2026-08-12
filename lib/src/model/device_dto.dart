@@ -46,6 +46,8 @@ class DeviceDto {
      this.brand,
 
      this.systemVersion,
+
+     this.appName,
   });
 
   @JsonKey(
@@ -61,7 +63,7 @@ class DeviceDto {
 
 
   @JsonKey(
-    
+
     name: r'creationTime',
     required: false,
     includeIfNull: false,
@@ -216,6 +218,18 @@ class DeviceDto {
 
 
 
+  @JsonKey(
+
+    name: r'appName',
+    required: false,
+    includeIfNull: false,
+  )
+
+
+  String? appName;
+
+
+
 
 
     @override
@@ -233,7 +247,8 @@ class DeviceDto {
       other.name == name &&
       other.platform == platform &&
       other.brand == brand &&
-      other.systemVersion == systemVersion;
+      other.systemVersion == systemVersion &&
+      other.appName == appName;
 
     @override
     int get hashCode =>
@@ -250,7 +265,8 @@ class DeviceDto {
         (name == null ? 0 : name.hashCode) +
         platform.hashCode +
         (brand == null ? 0 : brand.hashCode) +
-        (systemVersion == null ? 0 : systemVersion.hashCode);
+        (systemVersion == null ? 0 : systemVersion.hashCode) +
+        (appName == null ? 0 : appName.hashCode);
 
   factory DeviceDto.fromJson(Map<String, dynamic> json) => _$DeviceDtoFromJson(json);
 
@@ -262,4 +278,3 @@ class DeviceDto {
   }
 
 }
-
