@@ -1,3 +1,7 @@
+## 1.29.0
+
+ - **FEAT**(felorx_api_client): update version to 1.28.0 and add new entry to CHANGELOG.md.
+
 ## 1.28.0
 
  - **FEAT**(felorx_api_client): 生成设备应用名字段.
