@@ -1,3 +1,7 @@
+## 1.28.0
+
+ - **FEAT**(felorx_api_client): 生成设备应用名字段.
+
 ## 1.27.0
 
  - **FIX**(felorx_api_client): 补齐 Responses 能力协议契约.
