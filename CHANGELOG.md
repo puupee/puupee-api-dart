@@ -1,3 +1,7 @@
+## 1.32.0
+
+ - **FEAT**(felorx_api_client): update version to 1.31.0 and add entry to CHANGELOG.md.
+
 ## 1.31.0
 
  - **FEAT**(felorx_api_client): update version to 1.30.0 and add entry to CHANGELOG.md.
